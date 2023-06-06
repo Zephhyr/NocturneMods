@@ -1,0 +1,65 @@
+	[HarmonyPatch(typeof(nbCalc), "nbGetHojoCounterMin")]
+        private class CheckAiBuffMaxPatch
+        {
+            public static void Postfix(ref int formindex, ref int n, ref int __result)
+            {
+                nbParty_t party = nbMainProcess.nbGetPartyFromFormindex(formindex);
+                int result;
+                short[] count = party.count;
+                short stacks;
+                bool check1;
+                bool check2;
+                switch (n)
+                {
+                    case 0:
+                        stacks = count[4];
+                        check1 = stacks - 3 < 0;
+                        check2 = stacks == 3;
+                        break;
+                    case 1:
+                        stacks = count[4];
+                        check1 = stacks + 3 > 0;
+                        check2 = stacks == -3;
+                        break;
+                    case 2:
+                        stacks = count[5];
+                        check1 = stacks - 3 < 0;
+                        check2 = stacks == 3;
+                        break;
+                    case 3:
+                        stacks = count[5];
+                        check1 = stacks + 3 > 0;
+                        check2 = stacks == -3;
+                        break;
+                    case 4:
+                        stacks = count[6];
+                        check1 = stacks - 3 < 0;
+                        check2 = stacks == 3;
+                        break;
+                    case 5:
+                        stacks = count[6];
+                        check1 = stacks + 3 > 0;
+                        check2 = stacks == -3;
+                        break;
+                    case 6:
+                        stacks = count[7];
+                        check1 = stacks - 3 < 0;
+                        check2 = stacks == 3;
+                        break;
+                    case 7:
+                        stacks = count[7];
+                        check1 = stacks + 3 > 0;
+                        check2 = stacks == -3;
+                        break;
+                    case 8:
+                        stacks = count[8];
+                        check1 = stacks - 3 < 0;
+                        check2 = stacks == 3;
+                        break;
+                    case 9:
+                        stacks = count[8];
+                        check1 = stacks + 3 > 0;
+                        check2 = stacks == -3;
+                        break;
+                }
+            }

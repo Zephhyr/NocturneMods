@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HarmonyX" Version="2.10.1" />
+    <PackageReference Include="Il2CppAssemblyUnhollower.BaseLib" Version="0.4.15.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>bin\Debug\net6.0\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="UnhollowerBaseLib">
+      <HintPath>bin\Debug\net6.0\UnhollowerBaseLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
