@@ -6,20 +6,17 @@ using Il2Cppnewdata_H;
 using Il2Cppresult2_H;
 using Il2Cppnewbattle_H;
 using Il2Cppeffect_H;
-using MelonLoader.CoreClrUtils;
-using static UnityEngine.ScriptingUtility;
-using System.Diagnostics;
+using UnityEngine;
 
 [assembly: MelonInfo(typeof(NewBossAI.NewBossAI), "New Boss AI", "1.0.0", "Zephhyr")]
-[assembly: MelonGame("", "smt3hd")]
+[assembly: MelonGame("アトラス", "smt3hd")]
 
 namespace NewBossAI
 {
-    internal class NewBossAI : MelonMod
+    internal partial class NewBossAI : MelonMod
     {
-        private static Random random = new Random();
+        private static System.Random random = new System.Random();
         private static Dictionary<int, ActionTracker> actionTrackers = new Dictionary<int, ActionTracker>();
-        private static Dictionary<int, short> extraTurns = new Dictionary<int, short>();
 
         public override void OnInitializeMelon()
         {
@@ -48,10 +45,7 @@ namespace NewBossAI
                 if (a.newaddpresstype == 15 && nskill == 81)
                 {
                     a.newaddpresstype = 18;
-                    if (!extraTurns.ContainsKey(a.work.id))
-                        extraTurns.Add(a.work.id, 1);
-                    else
-                        extraTurns[a.work.id] += 1;
+                    actionTrackers[a.work.id].extraTurns += 1;
                 }
             }
         }
@@ -63,7 +57,7 @@ namespace NewBossAI
                 if (ptype == 18)
                 {
                     nbMakePacket.nbAddNewPressPacket(startframe, uniqueid, 1, 1);
-                    nbHelpProcess.nbDispText("Turn Count Increased!", string.Empty, 2, 45, 2315190144, false);
+                    nbHelpProcess.nbDispText("Turn Count increased!", string.Empty, 2, 45, 2315190144, false);
                 }
             }
         }
@@ -76,7 +70,6 @@ namespace NewBossAI
             public static void Postfix()
             {
                 actionTrackers.Clear();
-                extraTurns.Clear();
                 MelonLogger.Msg("-Battle Starts-");
             }
         }
@@ -99,11 +92,8 @@ namespace NewBossAI
                             actionTrackers.Add(unit.id, new ActionTracker());
                         }
 
-                        if (extraTurns.ContainsKey(unit.id))
-                        {
-                            nbMainProcess.nbGetMainProcessData().press4_p += extraTurns[unit.id];
-                            nbMainProcess.nbGetMainProcessData().press4_ten += extraTurns[unit.id];
-                        }
+                        nbMainProcess.nbGetMainProcessData().press4_p += actionTrackers[unit.id].extraTurns;
+                        nbMainProcess.nbGetMainProcessData().press4_ten += actionTrackers[unit.id].extraTurns;
                     }
                     
                     foreach (var actionCounter in actionTrackers.Values)
@@ -133,6 +123,10 @@ namespace NewBossAI
 
         private static void RunNewBossAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
+            MelonLogger.Msg("currentBattleTurnCount:" + actionTrackers[a.work.id].currentBattleTurnCount);
+            MelonLogger.Msg("currentBattleActionCount:" + actionTrackers[a.work.id].currentBattleActionCount);
+            MelonLogger.Msg("currentTurnActionCount:" + actionTrackers[a.work.id].currentTurnActionCount);
+            MelonLogger.Msg("-Action Starts-");
             switch (a.work.id)
             {
                 case 256: RunNewForneusAI(ref a, ref code, ref n); break;
@@ -142,10 +136,7 @@ namespace NewBossAI
 
         private static void RunNewForneusAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
-            MelonLogger.Msg("currentBattleTurnCount:" + actionTrackers[a.work.id].currentBattleTurnCount);
-            MelonLogger.Msg("currentBattleActionCount:" + actionTrackers[a.work.id].currentBattleActionCount);
-            MelonLogger.Msg("currentTurnActionCount:" + actionTrackers[a.work.id].currentTurnActionCount);
-            MelonLogger.Msg("-Action Starts-");
+            
             ushort currentHpPercent = BossCurrentHpPercent(ref a);
             MelonLogger.Msg("Forneus HP%: " + currentHpPercent);
             MelonLogger.Msg("Forneus HP: " + a.work.hp);
@@ -254,14 +245,17 @@ namespace NewBossAI
         public ushort currentBattleTurnCount;
         public ushort currentBattleActionCount;
         public ushort currentTurnActionCount;
+        public short extraTurns;
         public List<ushort> skillsUsedThisBattle;
         public List<ushort> skillsUsedThisTurn;
+        
 
         public ActionTracker()
         {
             this.currentBattleTurnCount = 0;
             this.currentBattleActionCount = 0;
             this.currentTurnActionCount = 0;
+            this.extraTurns = 0;
             this.skillsUsedThisBattle = new List<ushort>();
             this.skillsUsedThisTurn = new List<ushort>();
         }

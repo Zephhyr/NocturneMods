@@ -16,8 +16,11 @@
           "Il2Cppmscorlib": "3.7.1.6",
           "MelonLoader": "0.6.1.0",
           "UnhollowerBaseLib": "0.4.18.0",
+          "Unity.TextMeshPro": "0.0.0.0",
           "UnityEngine.CoreModule": "0.0.0.0",
-          "UnityEngine": "0.0.0.0"
+          "UnityEngine": "0.0.0.0",
+          "UnityEngine.TextCoreModule": "0.0.0.0",
+          "UnityEngine.UI": "1.0.0.0"
         },
         "runtime": {
           "NewBossAI.dll": {}
@@ -619,6 +622,14 @@
           }
         }
       },
+      "Unity.TextMeshPro/0.0.0.0": {
+        "runtime": {
+          "Unity.TextMeshPro.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
       "UnityEngine.CoreModule/0.0.0.0": {
         "runtime": {
           "UnityEngine.CoreModule.dll": {
@@ -635,9 +646,9 @@
           }
         }
       },
-      "UnityEngine.AnimationModule/0.0.0.0": {
+      "UnityEngine.TextCoreModule/0.0.0.0": {
         "runtime": {
-          "UnityEngine.AnimationModule.dll": {
+          "UnityEngine.TextCoreModule.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -651,9 +662,9 @@
           }
         }
       },
-      "Unity.TextMeshPro/0.0.0.0": {
+      "UnityEngine.AnimationModule/0.0.0.0": {
         "runtime": {
-          "Unity.TextMeshPro.dll": {
+          "UnityEngine.AnimationModule.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -854,14 +865,6 @@
       "UnityEngine.InputLegacyModule/0.0.0.0": {
         "runtime": {
           "UnityEngine.InputLegacyModule.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "UnityEngine.TextCoreModule/0.0.0.0": {
-        "runtime": {
-          "UnityEngine.TextCoreModule.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -1380,6 +1383,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Unity.TextMeshPro/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "UnityEngine.CoreModule/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
@@ -1390,7 +1398,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "UnityEngine.AnimationModule/0.0.0.0": {
+    "UnityEngine.TextCoreModule/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -1400,7 +1408,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Unity.TextMeshPro/0.0.0.0": {
+    "UnityEngine.AnimationModule/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -1526,11 +1534,6 @@
       "sha512": ""
     },
     "UnityEngine.InputLegacyModule/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "UnityEngine.TextCoreModule/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
