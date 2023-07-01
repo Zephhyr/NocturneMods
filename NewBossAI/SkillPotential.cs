@@ -948,7 +948,7 @@ namespace NewBossAI
          * DISPLAY SKILL POTENTIAL VALUES
          *********************************************************************************************/
         [HarmonyPatch(typeof(cmpDrawStatus), nameof(cmpDrawStatus.cmpDrawSkill))]
-        private class Patch
+        private class SkillPotentialPatch
         {
             public static void Prefix(datUnitWork_t pStock)
             {
@@ -957,7 +957,7 @@ namespace NewBossAI
         }
 
         [HarmonyPatch(typeof(cmpDrawSkill), nameof(cmpDrawSkill.cmpSkillNameCostDraw))]
-        private class Patch2
+        private class SkillPotentialPatch2
         {
             public static void Prefix(datUnitWork_t pStock)
             {
@@ -966,7 +966,7 @@ namespace NewBossAI
         }
 
         [HarmonyPatch(typeof(nbMainProcess), nameof(nbMainProcess.nbSetActionMaePhase))]
-        private class Patch3
+        private class SkillPotentialPatch3
         {
             public static void Prefix(ref nbMainProcessData_t data)
             {
@@ -979,13 +979,13 @@ namespace NewBossAI
         }
 
         [HarmonyPatch(typeof(datSkillName), nameof(datSkillName.Get))] // After getting the name of a skill
-        private class Patch4
+        private class SkillPotentialPatch4
         {
             public static void Postfix(ref int id, ref string __result)
             {
                 if (id < datNormalSkill.tbl.Length) // If it isn't a passive skill
                 {
-                    sbyte skillPotential = Utility.GetSkillPotential(id, currentDemonID);
+                    sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(id, currentDemonID);
 
                     if (skillPotential != 0)
                     {
@@ -998,46 +998,50 @@ namespace NewBossAI
         /*********************************************************************************************
          * ADJUST SKILL COST WITH POTENTIAL
          *********************************************************************************************/
-        [HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetSkillCost))] // After getting the cost of a skill during battle
-        private class Patch5
+        [HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetSkillCost))] 
+        private class SkillPotentialPatch5
         {
-            public static void Postfix(ref datUnitWork_t w, ref int nskill, ref int __result)
+            public static void Prefix(ref datUnitWork_t w, ref int nskill) // Before getting the cost of a skill during battle
             {
                 if (nskill < datNormalSkill.tbl.Length) // If it isn't a passive skill
                 {
-                    sbyte skillPotential = Utility.GetSkillPotential(nskill, w.id);
+                    tmp_datNormalSkill.cost = datNormalSkill.tbl[nskill].cost; // Memorize the original skill cost
+
+                    sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(nskill, w.id);
 
                     if (skillPotential != 0)
                     {
-                        __result = Utility.ApplySkillPotentialCost(nskill, skillPotential);
+                        datNormalSkill.tbl[nskill].cost = SkillPotentialUtility.ApplySkillPotentialCost(nskill, skillPotential); // Update the skill cost
                     }
+                }
+            }
+            public static void Postfix(ref datUnitWork_t w, ref int nskill, ref int __result) // After getting the cost of a skill during battle
+            {
+                if (nskill < datNormalSkill.tbl.Length)
+                {
+                    datNormalSkill.tbl[nskill].cost = tmp_datNormalSkill.cost; // Revert the skill cost
                 }
             }
         }
 
-        [HarmonyPatch(typeof(cmpDrawSkill), nameof(cmpDrawSkill.cmpSkillNameCostDraw))] // Before getting the cost of a skill for display outside of battle
-        private class Patch6
+        [HarmonyPatch(typeof(cmpDrawSkill), nameof(cmpDrawSkill.cmpSkillNameCostDraw))] 
+        private class SkillPotentialPatch6
         {
-            public static void Prefix(ref ushort SkillID, ref datUnitWork_t pStock)
+            public static void Prefix(ref ushort SkillID, ref datUnitWork_t pStock) // Before getting the cost of a skill for display outside of battle
             {
                 if (SkillID < datNormalSkill.tbl.Length) // If it isn't a passive skill
                 {
                     tmp_datNormalSkill.cost = datNormalSkill.tbl[SkillID].cost; // Memorize the original skill cost
 
-                    sbyte skillPotential = Utility.GetSkillPotential(SkillID, pStock.id);
+                    sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(SkillID, pStock.id);
 
                     if (skillPotential != 0)
                     {
-                        datNormalSkill.tbl[SkillID].cost = Utility.ApplySkillPotentialCost(SkillID, skillPotential); // Update the skill cost
+                        datNormalSkill.tbl[SkillID].cost = SkillPotentialUtility.ApplySkillPotentialCost(SkillID, skillPotential); // Update the skill cost
                     }
                 }
             }
-        }
-
-        [HarmonyPatch(typeof(cmpDrawSkill), nameof(cmpDrawSkill.cmpSkillNameCostDraw))] // After getting the cost of a skill for display outside of battle
-        private class Patch7
-        {
-            public static void Postfix(ref ushort SkillID)
+            public static void Postfix(ref ushort SkillID) // After getting the cost of a skill for display outside of battle
             {
                 if (SkillID < datNormalSkill.tbl.Length)
                 {
@@ -1046,10 +1050,10 @@ namespace NewBossAI
             }
         }
 
-        [HarmonyPatch(typeof(cmpCalc), nameof(cmpCalc.cmpUseSkill))] // Before using a skill from the Command Menu
-        private class Patch8
+        [HarmonyPatch(typeof(cmpCalc), nameof(cmpCalc.cmpUseSkill))]
+        private class SkillPotentialPatch7
         {
-            public static void Prefix()
+            public static void Prefix() // Before using a skill from the Command Menu
             {
                 int nskill = cmpCalc.cmpGetSelectSkillID(); // Get the used skill
                 datUnitWork_t work = cmpCalc.cmpGetSelectSrcStock(); // Get the demon's ID
@@ -1057,20 +1061,15 @@ namespace NewBossAI
                 if (nskill < datNormalSkill.tbl.Length) // If it isn't a passive skill
                 {
                     tmp_datNormalSkill.cost = datNormalSkill.tbl[nskill].cost; // Memorize the original skill cost
-                    sbyte skillPotential = Utility.GetSkillPotential(nskill, work.id);
+                    sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(nskill, work.id);
 
                     if (skillPotential != 0)
                     {
-                        datNormalSkill.tbl[nskill].cost = Utility.ApplySkillPotentialCost(nskill, skillPotential); // Update the skill cost
+                        datNormalSkill.tbl[nskill].cost = SkillPotentialUtility.ApplySkillPotentialCost(nskill, skillPotential); // Update the skill cost
                     }
                 }
             }
-        }
-
-        [HarmonyPatch(typeof(cmpCalc), nameof(cmpCalc.cmpUseSkill))] // After using a skill from the Command Menu
-        private class Patch9
-        {
-            public static void Postfix()
+            public static void Postfix() // After using a skill from the Command Menu
             {
                 int nskill = cmpCalc.cmpGetSelectSkillID();
 
@@ -1081,42 +1080,38 @@ namespace NewBossAI
             }
         }
 
-
-
         /*********************************************************************************************
          * ADJUST HEAL WITH POTENTIAL (OUTSIDE OF BATTLE)
          *********************************************************************************************/
         [HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetSkillKouka))] // After using a healing skill from the Command Menu
-        private class Patch10
+        private class SkillPotentialPatch8
         {
             public static void Postfix(ref int nskill, ref int type, ref datUnitWork_t s, ref int __result)
             {
                 if (nskill < datNormalSkill.tbl.Length && type == 0) // If it isn't a passive skill and the method is called for the first time
                 {
-                    sbyte skillPotential = Utility.GetSkillPotential(nskill, s.id);
+                    sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(nskill, s.id);
 
                     if (skillPotential != 0)
                     {
-                        __result = Convert.ToInt32(Utility.ApplyHealMultiplier(skillPotential, __result));
+                        __result = Convert.ToInt32(SkillPotentialUtility.ApplyHealMultiplier(skillPotential, __result));
                     }
                 }
             }
         }
 
-
-
         /*********************************************************************************************
          * ADJUST DAMAGE/HEAL WITH POTENTIAL (DURING BATTLE)
          *********************************************************************************************/
         [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetKoukaHp))] // After altering HP during battle
-        private class Patch11
+        private class SkillPotentialPatch9
         {
             public static void Postfix(ref int nskill, ref int sformindex, ref int __result)
             {
                 if (nskill < datNormalSkill.tbl.Length && __result != -1) // If it isn't a passive skill and HP have been altered
                 {
                     int demonID = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id; // Get the demon's ID
-                    sbyte skillPotential = Utility.GetSkillPotential(nskill, demonID);
+                    sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(nskill, demonID);
 
                     if (skillPotential != 0)
                     {
@@ -1124,11 +1119,11 @@ namespace NewBossAI
 
                         if (healsHP)
                         {
-                            __result = Convert.ToInt32(Utility.ApplyHealMultiplier(skillPotential, __result));
+                            __result = Convert.ToInt32(SkillPotentialUtility.ApplyHealMultiplier(skillPotential, __result));
                         }
                         else
                         {
-                            __result = Convert.ToInt32(Utility.ApplyDamageMultiplier(skillPotential, __result));
+                            __result = Convert.ToInt32(SkillPotentialUtility.ApplyDamageMultiplier(skillPotential, __result));
                         }
                     }
                 }
@@ -1136,14 +1131,14 @@ namespace NewBossAI
         }
 
         [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetKoukaMp))]
-        private class Patch12
+        private class SkillPotentialPatch10
         {
             public static void Postfix(ref int nskill, ref int sformindex, ref int __result)
             {
                 if (nskill < datNormalSkill.tbl.Length && __result != -1) // If it isn't a passive skill and MP have been altered
                 {
                     int demonID = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id; // Get the demon's ID
-                    sbyte skillPotential = Utility.GetSkillPotential(nskill, demonID);
+                    sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(nskill, demonID);
 
                     if (skillPotential != 0)
                     {
@@ -1151,24 +1146,22 @@ namespace NewBossAI
 
                         if (healsMP)
                         {
-                            __result = Convert.ToInt32(Utility.ApplyHealMultiplier(skillPotential, __result));
+                            __result = Convert.ToInt32(SkillPotentialUtility.ApplyHealMultiplier(skillPotential, __result));
                         }
                         else
                         {
-                            __result = Convert.ToInt32(Utility.ApplyDamageMultiplier(skillPotential, __result));
+                            __result = Convert.ToInt32(SkillPotentialUtility.ApplyDamageMultiplier(skillPotential, __result));
                         }
                     }
                 }
             }
         }
 
-
-
         /*********************************************************************************************
          * ADJUST AILMENT RATE WITH POTENTIAL
          *********************************************************************************************/
         [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetKoukaBadDamage))] // Before attempting to inflinct an ailment
-        private class Patch14
+        private class SkillPotentialPatch11
         {
             public static void Prefix(ref int nskill, ref int sformindex)
             {
@@ -1177,18 +1170,18 @@ namespace NewBossAI
                     tmp_datNormalSkill.badlevel = datNormalSkill.tbl[nskill].badlevel; // Memorize the original ailment rate
                     int demonID = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id; // Get the demon's ID
 
-                    sbyte skillPotential = Utility.GetSkillPotential(nskill, demonID);
+                    sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(nskill, demonID);
 
                     if (skillPotential != 0)
                     {
-                        datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(Utility.ApplyAilmentMultiplier(skillPotential, tmp_datNormalSkill.badlevel));
+                        datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(SkillPotentialUtility.ApplyAilmentMultiplier(skillPotential, tmp_datNormalSkill.badlevel));
                     }
                 }
             }
         }
 
         [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetKoukaBadDamage))] // After attempting to inflinct an ailment
-        private class Patch15
+        private class SkillPotentialPatch12
         {
             public static void Postfix(ref int nskill)
             {
@@ -1199,13 +1192,11 @@ namespace NewBossAI
             }
         }
 
-
-
         /*********************************************************************************************
          * APPEND POTENTIAL TEXT TO AFFINITY TEXT
          *********************************************************************************************/
         [HarmonyPatch(typeof(datAisyoName), nameof(datAisyoName.Get))]
-        private class Patch16
+        private class SkillPotentialPatch13
         {
             public static void Postfix(ref int id, ref string __result)
             {
@@ -1213,13 +1204,11 @@ namespace NewBossAI
             }
         }
 
-
-
         /*********************************************************************************************
          * REPLACE MAGATAMA HELP TEXT
          *********************************************************************************************/
         [HarmonyPatch(typeof(datHeartsHelp_msg), nameof(datHeartsHelp_msg.Get))]
-        private class Patch17
+        private class SkillPotentialPatch14
         {
             public static bool Prefix(ref int id, ref string __result)
             {
@@ -1228,13 +1217,11 @@ namespace NewBossAI
             }
         }
 
-
-
         /*********************************************************************************************
          * EXTEND AFFINITY TEXT RECTANGLE IN STATUS SCREEN
          *********************************************************************************************/
         [HarmonyPatch(typeof(cmpDrawStatus), nameof(cmpDrawStatus.cmpDrawAisyoHelp))]
-        private class Patch18
+        private class SkillPotentialPatch15
         {
             public static void Postfix()
             {
@@ -1243,13 +1230,11 @@ namespace NewBossAI
             }
         }
 
-
-
         /*********************************************************************************************
          * REMOVE POTENTIAL TEXT FROM ATTRIBUTES IN ANALYZE PANEL
          *********************************************************************************************/
         [HarmonyPatch(typeof(nbPanelProcess), nameof(nbPanelProcess.nbPanelAnalyzeRun))]
-        private class Patch19
+        private class SkillPotentialPatch16
         {
             public static void Postfix()
             {
@@ -1266,7 +1251,7 @@ namespace NewBossAI
         /*********************************************************************************************
          * UTILITY FUNCTIONS
          *********************************************************************************************/
-        private class Utility
+        private class SkillPotentialUtility
         {
             public static sbyte GetSkillPotential(int skillID, int demonID)
             {

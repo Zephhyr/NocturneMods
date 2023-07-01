@@ -21,8 +21,7 @@ namespace NewBossAI
         public override void OnInitializeMelon()
         {
             BossForneus();
-            NewBeastEye();
-            PhysicalAttacksCureFreezeAndShock();
+            ApplySkillChanges();
         }
 
         [HarmonyPatch(typeof(nbInit), nameof(nbInit.nbCallNewBattle))]
@@ -38,9 +37,10 @@ namespace NewBossAI
         [HarmonyPatch(typeof(nbMainProcess), nameof(nbMainProcess.nbSetPressMaePhase))]
         private class MainPhasePatch
         {
-            public static void Postfix()
+            public static void Postfix(ref nbMainProcessData_t data)
             {
-                var mainProcessData = nbMainProcess.nbGetMainProcessData();
+                //var mainProcessData = nbMainProcess.nbGetMainProcessData();
+                var mainProcessData = data;
                 short activeUnit = mainProcessData.activeunit;
 
                 if (activeUnit >= 4)
