@@ -88,7 +88,6 @@ namespace NewBossAI
                                        ref int cnt, ref int frame, ref float koukaritu)
             {
                 datUnitWork_t target = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
-                MelonLogger.Msg("badstatus: " + target.badstatus);
                 if (datNormalSkill.tbl[nskill].koukatype == 0 && (target.badstatus == 1 || target.badstatus == 2))
                 {
                     var form = a.data.form[dformindex];
