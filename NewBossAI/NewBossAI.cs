@@ -22,47 +22,8 @@ namespace NewBossAI
         {
             BossForneus();
             NewBeastEye();
+            PhysicalAttacksCureFreezeAndShock();
         }
-
-        [HarmonyPatch(typeof(datSkillName), nameof(datSkillName.Get))]
-        private class SkillNamesPatch
-        {
-            public static void Postfix(ref int id, ref string __result)
-            {
-                switch (id)
-                {
-                    case 81: __result = "Beast Eye"; return;
-                    case 219: __result = "Rage"; return;
-                    case 220: __result = "Psycho Rage"; return;
-                }
-            }
-        }
-        [HarmonyPatch(typeof(nbActionProcess), nameof(nbActionProcess.SetAddPressPacket))]
-        private class PressPatch1
-        {
-            public static void Postfix(ref nbActionProcessData_t a, ref int nskill)
-            {
-                if (a.newaddpresstype == 15 && nskill == 81)
-                {
-                    a.newaddpresstype = 18;
-                    actionTrackers[a.work.id].extraTurns += 1;
-                }
-            }
-        }
-        [HarmonyPatch(typeof(nbMakePacket), nameof(nbMakePacket.nbMakeNewPressPacket))]
-        private class PressPatch2
-        {
-            public static void Postfix(ref int startframe, ref int uniqueid, ref int ptype, ref nbFormation_t form)
-            {
-                if (ptype == 18)
-                {
-                    nbMakePacket.nbAddNewPressPacket(startframe, uniqueid, 1, 1);
-                    nbHelpProcess.nbDispText("Turn Count increased!", string.Empty, 2, 45, 2315190144, false);
-                }
-            }
-        }
-
-        //------------------------------------------------------------
 
         [HarmonyPatch(typeof(nbInit), nameof(nbInit.nbCallNewBattle))]
         private class InitBattlePatch
@@ -115,22 +76,15 @@ namespace NewBossAI
             {
                 actionTrackers[a.work.id].currentBattleActionCount++;
                 actionTrackers[a.work.id].currentTurnActionCount++;
-
-                if (a.work.id >= 256)
-                    RunNewBossAI(ref a, ref code, ref n);
-            }
-        }
-
-        private static void RunNewBossAI(ref nbActionProcessData_t a, ref int code, ref int n)
-        {
-            MelonLogger.Msg("currentBattleTurnCount:" + actionTrackers[a.work.id].currentBattleTurnCount);
-            MelonLogger.Msg("currentBattleActionCount:" + actionTrackers[a.work.id].currentBattleActionCount);
-            MelonLogger.Msg("currentTurnActionCount:" + actionTrackers[a.work.id].currentTurnActionCount);
-            MelonLogger.Msg("-Action Starts-");
-            switch (a.work.id)
-            {
-                case 256: RunNewForneusAI(ref a, ref code, ref n); break;
-                default: break;
+                MelonLogger.Msg("currentBattleTurnCount:" + actionTrackers[a.work.id].currentBattleTurnCount);
+                MelonLogger.Msg("currentBattleActionCount:" + actionTrackers[a.work.id].currentBattleActionCount);
+                MelonLogger.Msg("currentTurnActionCount:" + actionTrackers[a.work.id].currentTurnActionCount);
+                MelonLogger.Msg("-Action Starts-");
+                switch (a.work.id)
+                {
+                    case 256: RunNewForneusAI(ref a, ref code, ref n); break;
+                    default: break;
+                }
             }
         }
 
@@ -233,27 +187,6 @@ namespace NewBossAI
             datDevilFormat.tbl[256].maxhp = 800;
             datDevilFormat.tbl[256].hp = 800;
             datDevilAI.divTbls[2][0].ailevel = 0;
-        }
-
-        private static void OverWriteSkillEffect(ushort targetId, ushort originId)
-        {
-            datNormalSkillVisual.tbl[targetId] = datNormalSkillVisual.tbl[originId];
-            nbActionProcess.sobedtbl[targetId] = nbActionProcess.sobedtbl[originId];
-            nbCamera_SkillPtrTable.tbl[targetId] = nbCamera_SkillPtrTable.tbl[originId];
-        }
-
-        private static void NewBeastEye()
-        {
-            datSkill.tbl[81].keisyoform = 512;
-            datSkill.tbl[81].skillattr = 5;
-            datNormalSkill.tbl[81].hojotype = 4096;
-            datNormalSkill.tbl[81].hojopoint = 2;
-            datNormalSkill.tbl[81].hpbase = 0;
-            datNormalSkill.tbl[81].hpn = 50;
-            datNormalSkill.tbl[81].hptype = 0;
-            datNormalSkill.tbl[81].program = 13;
-            datNormalSkill.tbl[81].use = 2;
-            OverWriteSkillEffect(81, 219);
         }
     }
 

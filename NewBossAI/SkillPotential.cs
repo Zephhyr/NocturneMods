@@ -10,7 +10,6 @@ using System;
 using Il2CppTMPro;
 using System.Text.RegularExpressions;
 using UnityEngine;
-using static UnityEngine.UI.CanvasScaler;
 
 namespace NewBossAI
 {
@@ -429,7 +428,7 @@ namespace NewBossAI
             new sbyte[] {4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 2    , 2    , 0    , 0    , 0    , 0    , 0 }, // Murakumo
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 5    , 3    , 0 }, // Geis
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 5    , 5    , 5    , 0    , 0    , 0    , 5    , 0 }, // Djed
-            new sbyte[] {3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 7    , 7    , 7    , 0    , 0    , 0    , 0    , 0 }, // Muspell
+            new sbyte[] {0    , 3    , 3    , 3    , 3    , 0    , 0    , 0    , 7    , 7    , 7    , 0    , 0    , 0    , 0    , 0 }, // Muspell
             new sbyte[] {0    , 7    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Gehenna
             new sbyte[] {7    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Kamurogi
             new sbyte[] {2    , 0    , 0    , 0    , 0    , 0    , 0    , 8    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // Satan
@@ -828,56 +827,56 @@ namespace NewBossAI
             "", // 381 
             "", // 382 
             "", // 383 
-            "  <material=\"MsgFont4\">+1: Phys", // 384 Marogareh
-            "  <material=\"MsgFont4\">+1: Phys", // 385 Marogareh
-            "  <material=\"MsgFont4\">+3: Ice • +1: Support", // 386 Wadatsumi
-            "  <material=\"MsgFont4\">+3: Ice • +1: Support", // 387 Wadatsumi
-            "  <material=\"MsgFont4\">+3: Healing • +1: Light", // 388 Ankh
-            "  <material=\"MsgFont4\">+3: Healing • +1: Light", // 389 Ankh
-            "  <material=\"MsgFont4\">+3: Support", // 390 Iyomante
-            "  <material=\"MsgFont4\">+3: Support", // 391 Iyomante
-            "  <material=\"MsgFont4\">+3: Fire • +1: Support", // 392 Shiranui
-            "  <material=\"MsgFont4\">+3: Fire • +1: Support", // 393 Shiranui
-            "  <material=\"MsgFont4\">+3: Force • +1: Support", // 394 Hifumi
-            "  <material=\"MsgFont4\">+3: Force • +1: Support", // 395 Hifumi
-            "  <material=\"MsgFont4\">+3: Phys", // 396 Kamudo
-            "  <material=\"MsgFont4\">+3: Phys", // 397 Kamudo
-            "  <material=\"MsgFont4\">+5: Elec", // 398 Narukami
-            "  <material=\"MsgFont4\">+5: Elec", // 399 Narukami
-            "  <material=\"MsgFont4\">+5: Dark", // 400 Anathema
-            "  <material=\"MsgFont4\">+5: Dark", // 401 Anathema
-            "  <material=\"MsgFont4\">+6: Ice • +2: Ailments", // 402 Miasma
-            "  <material=\"MsgFont4\">+6: Ice • +2: Ailments", // 403 Miasma
-            "  <material=\"MsgFont4\">+5: Light • +3: Phys", // 404 Nirvana
-            "  <material=\"MsgFont4\">+5: Light • +3: Phys", // 405 Nirvana
-            "  <material=\"MsgFont4\">+4: Phys • +2: Ailments", // 406 Murakumo
-            "  <material=\"MsgFont4\">+4: Phys • +2: Ailments", // 407 Murakumo
-            "  <material=\"MsgFont4\">+5: Light/Healing • +3: Support", // 408 Geis
-            "  <material=\"MsgFont4\">+5: Light/Healing • +3: Support", // 409 Geis
-            "  <material=\"MsgFont4\">+5: Ailments/Support", // 410 Djed
-            "  <material=\"MsgFont4\">+5: Ailments/Support", // 411 Djed
-            "  <material=\"MsgFont4\">+7: Ailments • +3: Phys", // 412 Muspell
-            "  <material=\"MsgFont4\">+7: Ailments • +3: Phys", // 413 Muspell
-            "  <material=\"MsgFont4\">+7: Fire • +3: Dark", // 414 Gehenna
-            "  <material=\"MsgFont4\">+7: Fire • +3: Dark", // 415 Gehenna
-            "  <material=\"MsgFont4\">+7: Phys", // 416 Kamurogi
-            "  <material=\"MsgFont4\">+7: Phys", // 417 Kamurogi
-            "  <material=\"MsgFont4\">+8: Dark • +2: Phys/Support", // 418 Satan
-            "  <material=\"MsgFont4\">+8: Dark • +2: Phys/Support", // 419 Satan
-            "  <material=\"MsgFont4\">+9: Elec", // 420 Adama
-            "  <material=\"MsgFont4\">+9: Elec", // 421 Adama
-            "  <material=\"MsgFont4\">+6: Phys • +3: Support", // 422 Vimana
-            "  <material=\"MsgFont4\">+6: Phys • +3: Support", // 423 Vimana
-            "  <material=\"MsgFont4\">+8: Force • +4: Phys", // 424 Gundari
-            "  <material=\"MsgFont4\">+8: Force • +4: Phys", // 425 Gundari
-            "  <material=\"MsgFont4\">+7: Light/Healing", // 426 Sophia
-            "  <material=\"MsgFont4\">+7: Light/Healing", // 427 Sophia
-            "  <material=\"MsgFont4\">+9: Phys", // 428 Gaea
-            "  <material=\"MsgFont4\">+9: Phys", // 429 Gaea
-            "  <material=\"MsgFont4\">+7: Almighty • +5: Magic • +3: Support", // 430 Kailash
-            "  <material=\"MsgFont4\">+7: Almighty • +5: Magic • +3: Support", // 430 Kailash
-            "  <material=\"MsgFont4\">+9: Phys/Magic/Almighty/Ailments • +5: Healing/Support", // 432 Masakados
-            "  <material=\"MsgFont4\">+9: Phys/Magic/Almighty/Ailments • +5: Healing/Support", // 433 Masakados
+            "  <material=\"MsgFont4\">+1: Phys<material=\"MsgFont1\">", // 384 Marogareh
+            "  <material=\"MsgFont4\">+1: Phys<material=\"MsgFont1\">", // 385 Marogareh
+            "  <material=\"MsgFont4\">+3: Ice • +1: Support<material=\"MsgFont1\">", // 386 Wadatsumi
+            "  <material=\"MsgFont4\">+3: Ice • +1: Support<material=\"MsgFont1\">", // 387 Wadatsumi
+            "  <material=\"MsgFont4\">+3: Healing • +1: Light<material=\"MsgFont1\">", // 388 Ankh
+            "  <material=\"MsgFont4\">+3: Healing • +1: Light<material=\"MsgFont1\">", // 389 Ankh
+            "  <material=\"MsgFont4\">+3: Support<material=\"MsgFont1\">", // 390 Iyomante
+            "  <material=\"MsgFont4\">+3: Support<material=\"MsgFont1\">", // 391 Iyomante
+            "  <material=\"MsgFont4\">+3: Fire • +1: Support<material=\"MsgFont1\">", // 392 Shiranui
+            "  <material=\"MsgFont4\">+3: Fire • +1: Support<material=\"MsgFont1\">", // 393 Shiranui
+            "  <material=\"MsgFont4\">+3: Force • +1: Support<material=\"MsgFont1\">", // 394 Hifumi
+            "  <material=\"MsgFont4\">+3: Force • +1: Support<material=\"MsgFont1\">", // 395 Hifumi
+            "  <material=\"MsgFont4\">+3: Phys<material=\"MsgFont1\">", // 396 Kamudo
+            "  <material=\"MsgFont4\">+3: Phys<material=\"MsgFont1\">", // 397 Kamudo
+            "  <material=\"MsgFont4\">+5: Elec<material=\"MsgFont1\">", // 398 Narukami
+            "  <material=\"MsgFont4\">+5: Elec<material=\"MsgFont1\">", // 399 Narukami
+            "  <material=\"MsgFont4\">+5: Dark<material=\"MsgFont1\">", // 400 Anathema
+            "  <material=\"MsgFont4\">+5: Dark<material=\"MsgFont1\">", // 401 Anathema
+            "  <material=\"MsgFont4\">+6: Ice • +2: Ailments<material=\"MsgFont1\">", // 402 Miasma
+            "  <material=\"MsgFont4\">+6: Ice • +2: Ailments<material=\"MsgFont1\">", // 403 Miasma
+            "  <material=\"MsgFont4\">+5: Light • +3: Phys<material=\"MsgFont1\">", // 404 Nirvana
+            "  <material=\"MsgFont4\">+5: Light • +3: Phys<material=\"MsgFont1\">", // 405 Nirvana
+            "  <material=\"MsgFont4\">+4: Phys • +2: Ailments<material=\"MsgFont1\">", // 406 Murakumo
+            "  <material=\"MsgFont4\">+4: Phys • +2: Ailments<material=\"MsgFont1\">", // 407 Murakumo
+            "  <material=\"MsgFont4\">+5: Light/Healing • +3: Support<material=\"MsgFont1\">", // 408 Geis
+            "  <material=\"MsgFont4\">+5: Light/Healing • +3: Support<material=\"MsgFont1\">", // 409 Geis
+            "  <material=\"MsgFont4\">+5: Ailments/Support<material=\"MsgFont1\">", // 410 Djed
+            "  <material=\"MsgFont4\">+5: Ailments/Support<material=\"MsgFont1\">", // 411 Djed
+            "  <material=\"MsgFont4\">+7: Ailments • +3: Magic<material=\"MsgFont1\">", // 412 Muspell
+            "  <material=\"MsgFont4\">+7: Ailments • +3: Magic<material=\"MsgFont1\">", // 413 Muspell
+            "  <material=\"MsgFont4\">+7: Fire • +3: Dark<material=\"MsgFont1\">", // 414 Gehenna
+            "  <material=\"MsgFont4\">+7: Fire • +3: Dark<material=\"MsgFont1\">", // 415 Gehenna
+            "  <material=\"MsgFont4\">+7: Phys<material=\"MsgFont1\">", // 416 Kamurogi
+            "  <material=\"MsgFont4\">+7: Phys<material=\"MsgFont1\">", // 417 Kamurogi
+            "  <material=\"MsgFont4\">+8: Dark • +2: Phys/Support<material=\"MsgFont1\">", // 418 Satan
+            "  <material=\"MsgFont4\">+8: Dark • +2: Phys/Support<material=\"MsgFont1\">", // 419 Satan
+            "  <material=\"MsgFont4\">+9: Elec<material=\"MsgFont1\">", // 420 Adama
+            "  <material=\"MsgFont4\">+9: Elec<material=\"MsgFont1\">", // 421 Adama
+            "  <material=\"MsgFont4\">+6: Phys • +3: Support<material=\"MsgFont1\">", // 422 Vimana
+            "  <material=\"MsgFont4\">+6: Phys • +3: Support<material=\"MsgFont1\">", // 423 Vimana
+            "  <material=\"MsgFont4\">+8: Force • +4: Phys<material=\"MsgFont1\">", // 424 Gundari
+            "  <material=\"MsgFont4\">+8: Force • +4: Phys<material=\"MsgFont1\">", // 425 Gundari
+            "  <material=\"MsgFont4\">+7: Light/Healing<material=\"MsgFont1\">", // 426 Sophia
+            "  <material=\"MsgFont4\">+7: Light/Healing<material=\"MsgFont1\">", // 427 Sophia
+            "  <material=\"MsgFont4\">+9: Phys<material=\"MsgFont1\">", // 428 Gaea
+            "  <material=\"MsgFont4\">+9: Phys<material=\"MsgFont1\">", // 429 Gaea
+            "  <material=\"MsgFont4\">+7: Almighty • +5: Magic • +3: Support<material=\"MsgFont1\">", // 430 Kailash
+            "  <material=\"MsgFont4\">+7: Almighty • +5: Magic • +3: Support<material=\"MsgFont1\">", // 430 Kailash
+            "  <material=\"MsgFont4\">+9: Phys/Magic/Almighty/Ailments • +5: Healing/Support<material=\"MsgFont1\">", // 432 Masakados
+            "  <material=\"MsgFont4\">+9: Phys/Magic/Almighty/Ailments • +5: Healing/Support<material=\"MsgFont1\">", // 433 Masakados
             "", // 434 
             "", // 435 
             "", // 436 
@@ -916,7 +915,7 @@ namespace NewBossAI
             "Imparts Support magic\r\n<material=\"MsgFont2\">Null: Curse\r\n" +
             "<material=\"MsgFont4\">+5: Ailments/Support", // Djed
             "Imparts Ailment magic\r\n<material=\"MsgFont2\">Strong: Ailments\r\n" +
-            "<material=\"MsgFont4\">+7: Ailments • +3: Phys", // Muspell
+            "<material=\"MsgFont4\">+7: Ailments • +3: Magic", // Muspell
             "Imparts Fire magic\r\n<material=\"MsgFont2\">Drain: Fire<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ice\r\n" +
             "<material=\"MsgFont4\">+7: Fire • +3: Dark", // Gehenna
             "Imparts Physical skills\r\n<material=\"MsgFont2\">Strong: Phys<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: All types of magic\r\n" +
@@ -1173,7 +1172,7 @@ namespace NewBossAI
         {
             public static void Prefix(ref int nskill, ref int sformindex)
             {
-                if (nskill < datNormalSkill.tbl.Length) // If it isn't a passive skill
+                if (nskill < datNormalSkill.tbl.Length && datNormalSkill.tbl[nskill].badlevel != 255) // If it isn't a passive skill
                 {
                     tmp_datNormalSkill.badlevel = datNormalSkill.tbl[nskill].badlevel; // Memorize the original ailment rate
                     int demonID = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id; // Get the demon's ID
@@ -1193,7 +1192,7 @@ namespace NewBossAI
         {
             public static void Postfix(ref int nskill)
             {
-                if (nskill < datNormalSkill.tbl.Length)
+                if (nskill < datNormalSkill.tbl.Length && datNormalSkill.tbl[nskill].badlevel != 255)
                 {
                     datNormalSkill.tbl[nskill].badlevel = tmp_datNormalSkill.badlevel; // Revert the ailment rate
                 }
@@ -1373,8 +1372,7 @@ namespace NewBossAI
 
             public static float ApplyHealMultiplier(sbyte skillPotential, int heal)
             {
-                MelonLogger.Msg("HEALING!");
-
+                //MelonLogger.Msg("HEALING!");
                 float multiplier = 1;
 
                 switch (skillPotential)
@@ -1416,8 +1414,7 @@ namespace NewBossAI
 
             public static float ApplyDamageMultiplier(sbyte skillPotential, int damage)
             {
-                MelonLogger.Msg("ATTACKING!");
-
+                //MelonLogger.Msg("ATTACKING!");
                 float multiplier = 1;
 
                 switch (skillPotential)
@@ -1483,8 +1480,7 @@ namespace NewBossAI
 
             public static float ApplyAilmentMultiplier(sbyte skillPotential, float ailmentRate)
             {
-                MelonLogger.Msg("INFLINCTING AILMENT!");
-
+                //MelonLogger.Msg("INFLINCTING AILMENT!");
                 float multiplier = 1;
 
                 switch (skillPotential)
