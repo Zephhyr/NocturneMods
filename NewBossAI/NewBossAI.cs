@@ -136,7 +136,6 @@ namespace NewBossAI
 
         private static void RunNewForneusAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
-            
             ushort currentHpPercent = BossCurrentHpPercent(ref a);
             MelonLogger.Msg("Forneus HP%: " + currentHpPercent);
             MelonLogger.Msg("Forneus HP: " + a.work.hp);
@@ -202,6 +201,24 @@ namespace NewBossAI
             if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(skillId)) actionTrackers[a.work.id].skillsUsedThisTurn.Add(skillId);
         }
 
+        private static void SetTargetingRule(ref int code, ref int n, int newCode, int newN)
+        {
+            // -Rules-
+            // 0  - Default AI
+            // 1  - Target lowest HP
+            // 2  - Target affected by status
+            // 3  - Target specific ID
+            // 4  - Target weak-to-light
+            // 5  - Target weak-to-dark
+            // 6  - Target Demi-Fiend
+            // 7  - ?
+            // 8  - Target Randomly
+            // 9  - ?
+            // 10 - Target lowest level
+            code = newCode;
+            n = newN;
+        }
+
         private static ushort BossCurrentHpPercent(ref nbActionProcessData_t a)
         {
             ushort maxhp = a.work.maxhp;
@@ -215,7 +232,7 @@ namespace NewBossAI
         {
             datDevilFormat.tbl[256].maxhp = 800;
             datDevilFormat.tbl[256].hp = 800;
-            datDevilAI.divTbls[2][0].ailevel = 1;
+            datDevilAI.divTbls[2][0].ailevel = 0;
         }
 
         private static void OverWriteSkillEffect(ushort targetId, ushort originId)

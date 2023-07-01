@@ -10,6 +10,7 @@ using System;
 using Il2CppTMPro;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using static UnityEngine.UI.CanvasScaler;
 
 namespace NewBossAI
 {
@@ -970,7 +971,11 @@ namespace NewBossAI
         {
             public static void Prefix(ref nbMainProcessData_t data)
             {
-                currentDemonID = nbMainProcess.nbGetUnitWorkFromFormindex(data.activeunit).id; // Remember the current demon before an action is executed during battle
+                if (data.activeunit >= 0)
+                {
+                    var unitFormIndex = data.party[data.activeunit].formindex;
+                    currentDemonID = nbMainProcess.nbGetUnitWorkFromFormindex(unitFormIndex).id;
+                }
             }
         }
 
@@ -1134,7 +1139,7 @@ namespace NewBossAI
         [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetKoukaMp))]
         private class Patch12
         {
-            public static void Prefix(ref int nskill, ref int sformindex, ref int __result)
+            public static void Postfix(ref int nskill, ref int sformindex, ref int __result)
             {
                 if (nskill < datNormalSkill.tbl.Length && __result != -1) // If it isn't a passive skill and MP have been altered
                 {
@@ -1177,7 +1182,7 @@ namespace NewBossAI
 
                     if (skillPotential != 0)
                     {
-                        datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(Utility.ApplyAilmentMultiplier(skillPotential, skillPotential));
+                        datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(Utility.ApplyAilmentMultiplier(skillPotential, tmp_datNormalSkill.badlevel));
                     }
                 }
             }
