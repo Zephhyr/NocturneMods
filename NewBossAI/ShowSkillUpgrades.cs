@@ -7,7 +7,7 @@ namespace NewBossAI
     internal partial class NewBossAI : MelonMod
     {
         [HarmonyPatch(typeof(frFont), nameof(frFont.frReplaceLocalizeText))]
-        private class Patch
+        private class SkillChangePatch
         {
             public static void Postfix(ref string message, ref frMsgInfo_t mi, ref List<int> index, ref string __result)
             {

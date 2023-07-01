@@ -10,7 +10,7 @@ namespace NewBossAI
 {
     internal partial class NewBossAI : MelonMod
     {
-        public static datUnitWork_t[]? enemyUnits;
+        public static datUnitWork_t[] enemyUnits = new datUnitWork_t[] { };
         public static bool[] targets = new bool[16] { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }; 
         public static Material? material;
 
