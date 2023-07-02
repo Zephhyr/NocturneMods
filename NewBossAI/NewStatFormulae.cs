@@ -12,7 +12,7 @@ namespace NewBossAI
     {
         #region datCalc
 
-        [HarmonyPatch(typeof(datCalc), "datGetBaseMaxHp")]
+        [HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetBaseMaxHp))]
         private class BaseMaxHpPatch
         {
             public static bool Prefix(ref datUnitWork_t work, ref int __result)
@@ -24,7 +24,7 @@ namespace NewBossAI
             }
         }
 
-        [HarmonyPatch(typeof(datCalc), "datGetMaxHp")]
+        [HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetMaxHp))]
         private class MaxHpPatch
         {
             public static bool Prefix(ref datUnitWork_t work, ref uint __result)
@@ -42,7 +42,7 @@ namespace NewBossAI
             }
         }
 
-        [HarmonyPatch(typeof(datCalc), "datGetBaseMaxMp")]
+        [HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetBaseMaxMp))]
         private class BaseMaxMpPatch
         {
             public static bool Prefix(ref datUnitWork_t work, ref int __result)
@@ -54,7 +54,7 @@ namespace NewBossAI
             }
         }
 
-        [HarmonyPatch(typeof(datCalc), "datGetMaxMp")]
+        [HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetMaxMp))]
         private class MaxMpPatch
         {
             public static bool Prefix(ref datUnitWork_t work, ref uint __result)
@@ -72,7 +72,7 @@ namespace NewBossAI
             }
         }
 
-        [HarmonyPatch(typeof(datCalc), "datGetNormalAtkPow")]
+        [HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetNormalAtkPow))]
         private class NormalAtkPowPatch
         {
             public static bool Prefix(ref datUnitWork_t work, ref int __result)
@@ -84,7 +84,7 @@ namespace NewBossAI
             }
         }
 
-        [HarmonyPatch(typeof(datCalc), "datGetMagicHitPow")]
+        [HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetMagicHitPow))]
         private class MagicHitPowPatch
         {
             public static bool Prefix(ref datUnitWork_t work, ref int __result)
@@ -98,7 +98,7 @@ namespace NewBossAI
             }
         }
 
-        [HarmonyPatch(typeof(datCalc), "datGetDefPow")]
+        [HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetDefPow))]
         private class DefPowPatch
         {
             public static bool Prefix(ref datUnitWork_t work, ref int __result)
@@ -109,7 +109,7 @@ namespace NewBossAI
             }
         }
 
-        [HarmonyPatch(typeof(datCalc), "datGetSakePow")]
+        [HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetSakePow))]
         private class SakePowPatch
         {
             public static bool Prefix(ref datUnitWork_t work, ref int __result)
@@ -126,7 +126,7 @@ namespace NewBossAI
 
         #region nbCalc
 
-        [HarmonyPatch(typeof(nbCalc), "nbGetButuriAttack")]
+        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetButuriAttack))]
         private class PhysicalAttackPatch
         {
             public static bool Prefix(ref int nskill, ref int sformindex, ref int dformindex, ref int waza, ref int __result)
@@ -151,7 +151,7 @@ namespace NewBossAI
             }
         }
 
-        [HarmonyPatch(typeof(nbCalc), "nbGetMaxHpWazaPoint")]
+        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetMaxHpWazaPoint))]
         private class MaxHpAttackPatch
         {
             public static bool Prefix(ref int nskill, ref int sformindex, ref int dformindex, ref int waza, ref int __result)
@@ -174,7 +174,7 @@ namespace NewBossAI
             }
         }
 
-        //[HarmonyPatch(typeof(nbCalc), "nbGetMagicAttack")]
+        //[HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetMagicAttack))]
         //private class magicAttackPatch
         //{
         //    public static void Postfix(ref int nskill, ref int sformindex, ref int dformindex, ref int waza, ref int __result)
@@ -206,7 +206,7 @@ namespace NewBossAI
         //    }
         //}
 
-        [HarmonyPatch(typeof(nbCalc), "nbCheckSensei")]
+        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbCheckSensei))]
         private class CheckSenseiPatch
         {
             public static bool Prefix(ref nbMainProcessData_t data, ref int __result)
@@ -236,7 +236,7 @@ namespace NewBossAI
             }
         }
 
-        [HarmonyPatch(typeof(nbCalc), "nbCheckBackAttack")]
+        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbCheckBackAttack))]
         private class CheckBackAttackPatch
         {
             public static bool Prefix(ref nbMainProcessData_t data, ref int __result)
@@ -258,7 +258,7 @@ namespace NewBossAI
             }
         }
 
-        //[HarmonyPatch(typeof(nbCalc), "nbGetHitType")]
+        //[HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetHitType))]
         //private class GetHitTypePatch
         //{
         //    public static void Postfix(ref nbActionProcessData_t ad, ref int nskill, ref int sformindex, ref int dformindex, ref int __result)
@@ -281,6 +281,6 @@ namespace NewBossAI
         //        //return false;
         //    }
         //}
-            #endregion nbCalc
+        #endregion nbCalc
     }
 }

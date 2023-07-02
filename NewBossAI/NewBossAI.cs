@@ -8,7 +8,7 @@ using Il2Cppnewbattle_H;
 using Il2Cppeffect_H;
 using UnityEngine;
 
-[assembly: MelonInfo(typeof(NewBossAI.NewBossAI), "New Boss AI", "1.0.0", "Zephhyr")]
+[assembly: MelonInfo(typeof(NewBossAI.NewBossAI), "New Boss AI", "1.0.0", "Zephhyr, Matthiew Purple")]
 [assembly: MelonGame("アトラス", "smt3hd")]
 
 namespace NewBossAI

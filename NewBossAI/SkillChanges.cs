@@ -28,16 +28,32 @@ namespace NewBossAI
             }
         }
 
-        [HarmonyPatch(typeof(Localize), nameof(Localize.GetLocalizeText), new Type[] { typeof(string) })]
-        private class LocalizeSkillNamesPatch
+        [HarmonyPatch(typeof(datSkillHelp_msg), nameof(datSkillHelp_msg.Get))]
+        private class SkillDescriptionPatch
         {
-            public static bool Prefix(ref string ID, ref string __result)
+            public static bool Prefix(ref int id, ref string __result)
             {
-                switch (ID)
+                switch (id)
                 {
-                    case "<DATSKILLHELP_L0299>": __result = "Greatly raises critical\nhit rate of normal attacks."; return false;
-                    case "<DATSKILLHELP_L0300>": __result = "Drastically raises critical\nhit rate of normal attacks\nduring full Kagutsuchi."; return false;
-                    case "<DATSKILLHELP_L0301>":__result = "Drastically raises critical\nhit rate of normal attacks\nduring new Kagutsuchi."; return false;
+                    case 69: __result = "Repels Magical attacks \nfor one ally once \nnext turn."; return false;
+                    case 70: __result = "Repels Physical attacks \nfor one ally once \nnext turn."; return false;
+                    case 299: __result = "Greatly raises critical\nhit rate of normal attacks."; return false;
+                    case 300: __result = "Drastically raises critical\nhit rate of normal attacks\nduring full Kagutsuchi."; return false;
+                    case 301: __result = "Drastically raises critical\nhit rate of normal attacks\nduring new Kagutsuchi."; return false;
+                    default: return true;
+                }
+            }
+        }
+
+        [HarmonyPatch(typeof(datItemHelp_msg), nameof(datItemHelp_msg.Get))]
+        private class ItemDescriptionPatch
+        {
+            public static bool Prefix(ref int id, ref string __result)
+            {
+                switch (id)
+                {
+                    case 34: __result = "Repels Magical attacks \nfor one ally once \nnext turn."; return false;
+                    case 35: __result = "Repels Physical attacks \nfor one ally once \nnext turn."; return false;
                     default: return true;
                 }
             }
@@ -124,6 +140,8 @@ namespace NewBossAI
         {
             // Normal Skills
             Zio();
+            Makarakarn();
+            Tetrakarn();
             NewBeastEye();
             NewDragonEye();
 
@@ -135,6 +153,16 @@ namespace NewBossAI
         private static void Zio()
         {
             //datNormalSkill.tbl[13];
+        }
+
+        private static void Makarakarn()
+        {
+            datNormalSkill.tbl[69].targettype = 0;
+        }
+
+        private static void Tetrakarn()
+        {
+            datNormalSkill.tbl[70].targettype = 0;
         }
 
         private static void NewBeastEye()
