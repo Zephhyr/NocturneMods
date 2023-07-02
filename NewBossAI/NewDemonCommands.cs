@@ -52,6 +52,28 @@ namespace NewBossAI
 
                     s.commlist[2] = itemCommands;
                     s.commcnt[2] = itemIndices.Count;
+
+                    // Test - Add chosen skill
+                    var skillIndices = new List<ushort> { };
+                    var skills = s.commlist[0].ToList().Where(x => x != 0);
+
+                    if (skills.Any(x => x != 0))
+                        skillIndices.AddRange(skills);
+
+                    if (!skillIndices.Contains(89))
+                    {
+                        skillIndices[skillIndices.FindIndex(s => s == 32770)] = 89;
+                        skillIndices.Add(32770);
+                    }
+
+                    skillIndices = skillIndices.Distinct().ToList();
+
+                    var skillCommands = new ushort[288];
+                    for (ushort i = 0; i < skillIndices.Count; i++)
+                        skillCommands[i] = skillIndices[i];
+
+                    s.commlist[0] = skillCommands;
+                    s.commcnt[0] = skillIndices.Count;
                 }
             }
         }

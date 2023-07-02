@@ -19,8 +19,9 @@ namespace NewBossAI
             {
                 switch (id)
                 {
-                    case 88: __result = "Beast Eye"; return false;
-                    case 89: __result = "Dragon Eye"; return false;
+                    case 87: __result = "Beast Eye"; return false;
+                    case 88: __result = "Dragon Eye"; return false;
+                    case 89: __result = "Concentrate"; return false;
                     case 219: __result = "Rage"; return false;
                     case 220: __result = "Psycho Rage"; return false;
                     default: return true;
@@ -37,6 +38,8 @@ namespace NewBossAI
                 {
                     case 69: __result = "Repels Magical attacks \nfor one ally once \nnext turn."; return false; // Makarakarn
                     case 70: __result = "Repels Physical attacks \nfor one ally once \nnext turn."; return false; // Tetrakarn
+                    case 89: __result = "More than doubles damage \nof next Magical attack."; return false; // Concentrate
+                    case 224: __result = "More than doubles damage \nof next Physical attack."; return false; // Focus
                     case 296: __result = "Guarantees escape \nwhen possible."; return false; // Fast Retreat
                     case 298: __result = "Prevents being attacked \nfrom behind."; return false; // Mind's Eye
                     case 299: __result = "Greatly raises critical \nhit rate of normal attacks."; return false; // Might
@@ -59,14 +62,14 @@ namespace NewBossAI
         {
             public static void Postfix(ref nbActionProcessData_t a, ref int nskill)
             {
-                if (a.newaddpresstype == 15 && nskill == 88)
+                if (a.newaddpresstype == 15 && nskill == 87)
                 {
-                    if (nskill == 88)
+                    if (nskill == 87)
                     {
                         a.newaddpresstype = 18;
                         actionTrackers[a.work.id].extraTurns += 1;
                     }
-                    else if (nskill == 89)
+                    else if (nskill == 88)
                     {
                         a.newaddpresstype = 19;
                         actionTrackers[a.work.id].extraTurns += 2;
@@ -172,80 +175,103 @@ namespace NewBossAI
         private static void ApplySkillChanges()
         {
             // Normal Skills
-            Zio();
-            Makarakarn();
-            Tetrakarn();
-            HourglassSkill();
-            NewBeastEye();
-            NewDragonEye();
+            Zio(13);
+            Makarakarn(69);
+            Tetrakarn(70);
+            HourglassSkill(78);
+            NewBeastEye(87);
+            NewDragonEye(88);
+            Concentrate(89);
+            Focus(224);
 
             //Passive Skills
-            Might();
-            DrainAttack();
+            Might(11);
+            DrainAttack(14);
         }
 
-        private static void Zio()
+        private static void Zio(ushort id)
         {
-            //datNormalSkill.tbl[13];
+            //datNormalSkill.tbl[id];
         }
 
-        private static void Makarakarn()
+        private static void Makarakarn(ushort id)
         {
-            datNormalSkill.tbl[69].targettype = 0;
+            datNormalSkill.tbl[id].targettype = 0;
         }
 
-        private static void Tetrakarn()
+        private static void Tetrakarn(ushort id)
         {
-            datNormalSkill.tbl[70].targettype = 0;
+            datNormalSkill.tbl[id].targettype = 0;
         }
 
-        private static void HourglassSkill()
+        private static void HourglassSkill(ushort id)
         {
-            datSkill.tbl[78].capacity = 4;
-            datSkill.tbl[78].skillattr = 15; // Utility skill
-            datNormalSkill.tbl[78].koukatype = 1; // Not Physical
-            datNormalSkill.tbl[78].program = 14; // Phase shift
-            datNormalSkill.tbl[78].targetcntmax = 1;
-            datNormalSkill.tbl[78].targetcntmin = 1;
-            datNormalSkill.tbl[78].targettype = 3; // Field
+            datSkill.tbl[id].capacity = 4;
+            datSkill.tbl[id].skillattr = 15; // Utility skill
+            datNormalSkill.tbl[id].koukatype = 1; // Not Physical
+            datNormalSkill.tbl[id].program = 14; // Phase shift
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targettype = 3; // Field
         }
 
-        private static void NewBeastEye()
+        private static void NewBeastEye(ushort id)
         {
-            datSkill.tbl[88].keisyoform = 512;
-            datSkill.tbl[88].skillattr = 5;
-            datNormalSkill.tbl[88].hojotype = 4096;
-            datNormalSkill.tbl[88].hojopoint = 2;
-            datNormalSkill.tbl[88].hpbase = 0;
-            datNormalSkill.tbl[88].hpn = 50;
-            datNormalSkill.tbl[88].hptype = 0;
-            datNormalSkill.tbl[88].program = 13;
-            datNormalSkill.tbl[88].use = 2;
-            OverWriteSkillEffect(88, 219);
+            datSkill.tbl[id].keisyoform = 512;
+            datSkill.tbl[id].skillattr = 5;
+            datNormalSkill.tbl[id].hojotype = 4096;
+            datNormalSkill.tbl[id].hojopoint = 2;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 50;
+            datNormalSkill.tbl[id].hptype = 0;
+            datNormalSkill.tbl[id].program = 13;
+            datNormalSkill.tbl[id].use = 2;
+            OverWriteSkillEffect(id, 219);
         }
 
-        private static void NewDragonEye()
+        private static void NewDragonEye(ushort id)
         {
-            datSkill.tbl[89].keisyoform = 512;
-            datSkill.tbl[89].skillattr = 5;
-            datNormalSkill.tbl[89].hojotype = 4096;
-            datNormalSkill.tbl[89].hojopoint = 2;
-            datNormalSkill.tbl[89].hpbase = 0;
-            datNormalSkill.tbl[89].hpn = 50;
-            datNormalSkill.tbl[89].hptype = 0;
-            datNormalSkill.tbl[89].program = 13;
-            datNormalSkill.tbl[89].use = 2;
-            OverWriteSkillEffect(89, 219);
+            datSkill.tbl[id].keisyoform = 512;
+            datSkill.tbl[id].skillattr = 5;
+            datNormalSkill.tbl[id].hojotype = 4096;
+            datNormalSkill.tbl[id].hojopoint = 2;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 50;
+            datNormalSkill.tbl[id].hptype = 0;
+            datNormalSkill.tbl[id].program = 13;
+            datNormalSkill.tbl[id].use = 2;
+            OverWriteSkillEffect(id, 219);
         }
 
-        private static void Might()
+        private static void Concentrate(ushort id)
         {
-            datSpecialSkill.tbl[11].n = 750;
+            datSkill.tbl[id].capacity = 2;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 14;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 5;
+            datNormalSkill.tbl[id].hojotype = 33554432;
+            datNormalSkill.tbl[id].targetrule = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 5;
+            OverWriteSkillEffect(id, 224);
         }
 
-        private static void DrainAttack()
+        private static void Focus(ushort id)
         {
-            datSpecialSkill.tbl[14].n = 1;
+            datSkill.tbl[id].skillattr = 14;
+        }
+
+        private static void Might(ushort id)
+        {
+            datSpecialSkill.tbl[id].n = 750;
+        }
+
+        private static void DrainAttack(ushort id)
+        {
+            datSpecialSkill.tbl[id].n = 1;
         }
     }
 }

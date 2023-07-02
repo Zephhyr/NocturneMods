@@ -68,7 +68,7 @@ namespace DDS2Buffs
                     }
                 }
 
-                if (type == 4 && count[15] > 0)
+                if ((type == 4 && count[15] > 0) || (type == 5 && count[19] > 0))
                     newEffect *= 2.5;
 
                 __result = (float) newEffect;

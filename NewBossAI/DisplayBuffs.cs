@@ -29,27 +29,27 @@ namespace NewBossAI
                     nbParty_t party_member = nbMainProcess.nbGetPartyFromFormindex(target_formindex);
 
                     // If there is at least one buffed applied
-                    if (Utility.AtLeastOneBuff(party_member))
+                    if (DisplayBuffsUtility.AtLeastOneBuff(party_member))
                     {
                         // Converts the buffs info into a list of strings with the proper format
-                        List<string> buffs_strings = Utility.GetBuffStrings(party_member);
+                        List<string> buffs_strings = DisplayBuffsUtility.GetBuffStrings(party_member);
 
                         // Converts the list of strings into one continuous string to put after the target's name
-                        text2 += Utility.GetBuffLine(buffs_strings);
+                        text2 += DisplayBuffsUtility.GetBuffLine(buffs_strings);
 
                         // Makes the text box bigger
-                        Utility.ChangeBoxSize();
+                        DisplayBuffsUtility.ChangeBoxSize();
                     }
                     else
                     {
                         // Reverts the box size
-                        Utility.RevertBoxSize();
+                        DisplayBuffsUtility.RevertBoxSize();
                     }
                 }
                 else
                 {
                     // Reverts the box size
-                    Utility.RevertBoxSize();
+                    DisplayBuffsUtility.RevertBoxSize();
                 }
             }
         }
@@ -70,7 +70,7 @@ namespace NewBossAI
 
 
 
-        private class Utility
+        private class DisplayBuffsUtility
         {
             // Converts the buffs info into a list of strings with the proper format
             public static List<string> GetBuffStrings(nbParty_t party)
@@ -91,6 +91,14 @@ namespace NewBossAI
                     }
                     buffs_strings.Add(buff);
                 }
+
+                if (party.count[15] == 1 && party.count[19] == 0)
+                    buffs_strings.Add("1");
+                else if (party.count[15] == 0 && party.count[19] == 1)
+                    buffs_strings.Add("2");
+                else if (party.count[15] == 1 && party.count[19] == 1)
+                    buffs_strings.Add("3");
+                else buffs_strings.Add("0");
 
                 return buffs_strings;
             }
@@ -123,6 +131,29 @@ namespace NewBossAI
                     result += "HT:" + buffs_strings[2];
                 }
 
+                switch (buffs_strings[4])
+                {
+                    case "1":
+                        {
+                            if (result != "\n ") result += " ";
+                            result += "Focused";
+                            break;
+                        }
+                    case "2":
+                        {
+                            if (result != "\n ") result += " ";
+                            result += "Concentrating";
+                            break;
+                        }
+                    case "3":
+                        {
+                            if (result != "\n ") result += " ";
+                            result += "Charged";
+                            break;
+                        }
+                    default: break;
+                }
+
                 return result;
             }
 
@@ -136,6 +167,9 @@ namespace NewBossAI
                         return true;
                     }
                 }
+
+                if (party.count[15] == 1 || party.count[19] == 1)
+                    return true;
 
                 return false;
             }

@@ -40,13 +40,11 @@ namespace NewBossAI
         {
             public static void Postfix(ref nbMainProcessData_t data)
             {
-                //var mainProcessData = nbMainProcess.nbGetMainProcessData();
-                var mainProcessData = data;
-                short activeUnit = mainProcessData.activeunit;
+                short activeUnit = data.activeunit;
 
                 if (activeUnit >= 4)
                 {
-                    var enemyUnits = mainProcessData.enemyunit.Where(x => x.id != 0);
+                    var enemyUnits = data.enemyunit.Where(x => x.id != 0);
                     foreach (var unit in enemyUnits)
                     {
                         if (!actionTrackers.ContainsKey(unit.id))
@@ -95,9 +93,9 @@ namespace NewBossAI
             MelonLogger.Msg("Forneus HP%: " + currentHpPercent);
             MelonLogger.Msg("Forneus HP: " + a.work.hp);
             
-            if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(88))
+            if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(87))
             {
-                UseSkill(ref a, 88); return;
+                UseSkill(ref a, 87); return;
             }
 
             if (currentHpPercent > 60)
