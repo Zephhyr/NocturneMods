@@ -37,23 +37,11 @@ namespace NewBossAI
                 {
                     case 69: __result = "Repels Magical attacks \nfor one ally once \nnext turn."; return false;
                     case 70: __result = "Repels Physical attacks \nfor one ally once \nnext turn."; return false;
-                    case 299: __result = "Greatly raises critical\nhit rate of normal attacks."; return false;
-                    case 300: __result = "Drastically raises critical\nhit rate of normal attacks\nduring full Kagutsuchi."; return false;
-                    case 301: __result = "Drastically raises critical\nhit rate of normal attacks\nduring new Kagutsuchi."; return false;
-                    default: return true;
-                }
-            }
-        }
-
-        [HarmonyPatch(typeof(datItemHelp_msg), nameof(datItemHelp_msg.Get))]
-        private class ItemDescriptionPatch
-        {
-            public static bool Prefix(ref int id, ref string __result)
-            {
-                switch (id)
-                {
-                    case 34: __result = "Repels Magical attacks \nfor one ally once \nnext turn."; return false;
-                    case 35: __result = "Repels Physical attacks \nfor one ally once \nnext turn."; return false;
+                    case 296: __result = "Guarantees escape \nwhen possible."; return false;
+                    case 299: __result = "Greatly raises critical \nhit rate of normal attacks."; return false;
+                    case 300: __result = "Drastically raises critical \nhit rate of normal attacks \nduring full Kagutsuchi."; return false;
+                    case 301: __result = "Drastically raises critical \nhit rate of normal attacks \nduring new Kagutsuchi."; return false;
+                    case 357: __result = "Attacks ignore all resistances \nexcept Repel."; return false;
                     default: return true;
                 }
             }
