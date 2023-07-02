@@ -96,7 +96,7 @@ namespace NewBossAI
             
             if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(81))
             {
-                UseSkill(ref a, 81); return;
+                UseSkill(ref a, 88); return;
             }
 
             if (currentHpPercent > 60)
