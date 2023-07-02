@@ -94,7 +94,7 @@ namespace NewBossAI
             MelonLogger.Msg("Forneus HP%: " + currentHpPercent);
             MelonLogger.Msg("Forneus HP: " + a.work.hp);
             
-            if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(81))
+            if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(88))
             {
                 UseSkill(ref a, 88); return;
             }
