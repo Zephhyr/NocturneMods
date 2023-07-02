@@ -22,6 +22,7 @@ namespace NewBossAI
         {
             BossForneus();
             ApplySkillChanges();
+            ApplyItemChanges();
         }
 
         [HarmonyPatch(typeof(nbInit), nameof(nbInit.nbCallNewBattle))]

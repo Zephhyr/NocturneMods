@@ -42,6 +42,11 @@ namespace NewBossAI
                     case 299: __result = "Greatly raises critical \nhit rate of normal attacks."; return false; // Might
                     case 300: __result = "Drastically raises critical \nhit rate of normal attacks \nduring full Kagutsuchi."; return false; // Bright Might
                     case 301: __result = "Drastically raises critical \nhit rate of normal attacks \nduring new Kagutsuchi."; return false; // Dark Might
+                    case 313: __result = "Protects against Physical Attacks"; return false; // Anti-Phys
+                    case 314: __result = "Protects against Fire Attacks"; return false; // Anti-Fire
+                    case 315: __result = "Protects against Ice Attacks"; return false; // Anti-Ice
+                    case 316: __result = "Protects against Elec Attacks"; return false; // Anti-Elec
+                    case 317: __result = "Protects against Force Attacks"; return false; // Anti-Force
                     case 354: __result = "Earn 100% EXP when \nnot participating in battle."; return false; // Watchful
                     case 357: __result = "Attacks ignore all resistances \nexcept Repel."; return false; // Pierce
                     default: return true;
@@ -170,6 +175,7 @@ namespace NewBossAI
             Zio();
             Makarakarn();
             Tetrakarn();
+            HourglassSkill();
             NewBeastEye();
             NewDragonEye();
 

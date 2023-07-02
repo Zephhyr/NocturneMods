@@ -41,7 +41,7 @@ namespace NewBossAI
             }
 
             [HarmonyPatch(typeof(fclShopCalc), nameof(fclShopCalc.shpCreateItemList))]
-            private class BuyGeisPatch
+            private class ShopItemsPatch
             {
                 public static void Postfix(ref fclDataShop_t pData)
                 {
@@ -53,9 +53,24 @@ namespace NewBossAI
                     }
                 }
             }
+
+            [HarmonyPatch(typeof(fclShopCalc), nameof(fclShopCalc.shpCalcItemPrice))]
+            private class ShopPricesPatch
+            {
+                public static void Postfix(ref sbyte Mode, ref int __result)
+                {
+                    // If buying on Hard then multiply prices by 2/3
+                    if (Mode == 0 && dds3ConfigMain.cfgGetBit(9u) == 2) __result = __result * 2 / 3;
+                }
+            }
         }
 
         //------------------------------------------------------------
+
+        private static void ApplyItemChanges()
+        {
+            HourglassItem();
+        }
 
         private static void HourglassItem()
         {
