@@ -16,7 +16,7 @@ namespace NewBossAI
 
         // Before removing HP or MP from someone during combat
         [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbAddHpMp))]
-        private class Patch
+        private class InfiniteBossMpPatch
         {
             public static void Prefix(ref int formindex, ref int type, ref int n)
             {

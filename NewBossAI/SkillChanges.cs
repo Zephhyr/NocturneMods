@@ -35,14 +35,15 @@ namespace NewBossAI
             {
                 switch (id)
                 {
-                    case 69: __result = "Repels Magical attacks \nfor one ally once \nnext turn."; return false;
-                    case 70: __result = "Repels Physical attacks \nfor one ally once \nnext turn."; return false;
-                    case 296: __result = "Guarantees escape \nwhen possible."; return false;
-                    case 298: __result = "Prevents being attacked \nfrom behind."; return false;
-                    case 299: __result = "Greatly raises critical \nhit rate of normal attacks."; return false;
-                    case 300: __result = "Drastically raises critical \nhit rate of normal attacks \nduring full Kagutsuchi."; return false;
-                    case 301: __result = "Drastically raises critical \nhit rate of normal attacks \nduring new Kagutsuchi."; return false;
-                    case 357: __result = "Attacks ignore all resistances \nexcept Repel."; return false;
+                    case 69: __result = "Repels Magical attacks \nfor one ally once \nnext turn."; return false; // Makarakarn
+                    case 70: __result = "Repels Physical attacks \nfor one ally once \nnext turn."; return false; // Tetrakarn
+                    case 296: __result = "Guarantees escape \nwhen possible."; return false; // Fast Retreat
+                    case 298: __result = "Prevents being attacked \nfrom behind."; return false; // Mind's Eye
+                    case 299: __result = "Greatly raises critical \nhit rate of normal attacks."; return false; // Might
+                    case 300: __result = "Drastically raises critical \nhit rate of normal attacks \nduring full Kagutsuchi."; return false; // Bright Might
+                    case 301: __result = "Drastically raises critical \nhit rate of normal attacks \nduring new Kagutsuchi."; return false; // Dark Might
+                    case 354: __result = "Earn 100% EXP when \nnot participating in battle."; return false; // Watchful
+                    case 357: __result = "Attacks ignore all resistances \nexcept Repel."; return false; // Pierce
                     default: return true;
                 }
             }
