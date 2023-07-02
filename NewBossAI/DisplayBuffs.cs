@@ -1,7 +1,6 @@
 ﻿using MelonLoader;
 using HarmonyLib;
 using Il2Cpp;
-using display_buffs_06;
 using Il2Cppnewbattle_H;
 using UnityEngine;
 
@@ -13,7 +12,7 @@ namespace NewBossAI
 
         // Before displaying the text box
         [HarmonyPatch(typeof(nbHelpProcess), nameof(nbHelpProcess.nbDispText))]
-        private class Patch
+        private class DisplayBuffsPatch
         {
             public static void Prefix(ref string text2)
             {
@@ -57,7 +56,7 @@ namespace NewBossAI
 
         // Before displaying the target's info
         [HarmonyPatch(typeof(nbTarSelProcess), nameof(nbTarSelProcess.DispTargetHelp))]
-        private class Patch2
+        private class DisplayBuffsPatch2
         {
             public static void Prefix(ref nbTarSelProcessData_t t)
             {

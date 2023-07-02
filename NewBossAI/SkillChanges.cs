@@ -128,6 +128,33 @@ namespace NewBossAI
             }
         }
 
+        [HarmonyPatch(typeof(datCalc), nameof(datCalc.datExecSkill))]
+        private class OutOfBattleSkillPatch
+        {
+            public static void Postfix(ref int nskill)
+            {
+                // If using an hourglass, set the Kagutsuchi phase to full
+                if (nskill == 78)
+                {
+                    if (evtMoon.evtGetAgeOfMoon16() != 8)
+                    {
+                        // If the full Kagutsuchi has already passed
+                        if (evtMoon.evtGetAgeOfMoon16() > 8)
+                        {
+                            // Clear all effects that last "until a new kagutsuchi"
+                            fldMain.fldEsutoMaClearMsg();
+                            fldMain.fldRiberaMaClearMsg();
+                            fldMain.fldRifutoMaClearMsg();
+                            fldMain.fldLightMaClearMsg();
+                        }
+
+                        dds3GlobalWork.DDS3_GBWK.Moon.MoveCnt = 0; // Beginning of a new phase
+                        evtMoon.evtSetAgeOfMoon(8); // Set Kagutsuchi's phase to full
+                    }
+                }
+            }
+        }
+
         //------------------------------------------------------------
 
         private static void OverWriteSkillEffect(ushort targetId, ushort originId)
@@ -164,6 +191,17 @@ namespace NewBossAI
         private static void Tetrakarn()
         {
             datNormalSkill.tbl[70].targettype = 0;
+        }
+
+        private static void HourglassSkill()
+        {
+            datSkill.tbl[78].capacity = 4;
+            datSkill.tbl[78].skillattr = 15; // Utility skill
+            datNormalSkill.tbl[78].koukatype = 1; // Not Physical
+            datNormalSkill.tbl[78].program = 14; // Phase shift
+            datNormalSkill.tbl[78].targetcntmax = 1;
+            datNormalSkill.tbl[78].targetcntmin = 1;
+            datNormalSkill.tbl[78].targettype = 3; // Field
         }
 
         private static void NewBeastEye()
