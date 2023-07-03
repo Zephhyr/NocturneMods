@@ -80,7 +80,7 @@ namespace NewBossAI
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 058 Jack-o'-Lantern
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 059 High Pixie
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 060 Jack Frost
-            new sbyte[] {0    , 0    , 0    , 1    , 0    , 0    , 0    , -1   , -1   , -1   , 0    , 0    , 0    , 1    , 1    , 0 }, // 061 Pixie
+            new sbyte[] {0    , 0    , 0    , 1    , 0    , 1    , 0    , -1   , -1   , -1   , 0    , 0    , 0    , 1    , 1    , 0 }, // 061 Pixie
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 062 Throne
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 063 Dominion
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 064 Virtue
@@ -504,7 +504,7 @@ namespace NewBossAI
             "", // 058 Jack-o'-Lantern
             "", // 059 High Pixie
             "", // 060 Jack Frost
-            "  <material=\"MsgFont4\">+1: Elec/Healing/Support  <material=\"MsgFont1\">-1: Dark/Curse/Mind", // 061 Pixie
+            "  <material=\"MsgFont4\">+1: Elec/Almighty/Healing/Support  <material=\"MsgFont1\">-1: Dark/Curse/Mind", // 061 Pixie
             "", // 062 Throne
             "", // 063 Dominion
             "", // 064 Virtue

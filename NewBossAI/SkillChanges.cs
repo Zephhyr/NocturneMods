@@ -38,10 +38,18 @@ namespace NewBossAI
             {
                 switch (id)
                 {
+                    case 28: __result = "Low Light damage to one foe. \nChance to instakill when \nweak to Light."; return false; // Hama
+                    case 29: __result = "High Light damage to one foe. \nChance to instakill when \nweak to Light."; return false; // Hamaon
+                    case 30: __result = "Low Light damage to all foes. \nChance to instakill when \nweak to Light."; return false; // Mahama
+                    case 31: __result = "High Light damage to all foes. \nChance to instakill when \nweak to Light."; return false; // Mahamaon
+                    case 32: __result = "Low Dark damage to one foe. \nChance to instakill when \nweak to Dark."; return false; // Mudo
+                    case 33: __result = "High Dark damage to one foe. \nChance to instakill when \nweak to Dark."; return false; // Mudoon
+                    case 34: __result = "Low Dark damage to all foes. \nChance to instakill when \nweak to Dark."; return false; // Mamudo
+                    case 35: __result = "High Dark damage to all foes. \nChance to instakill when \nweak to Dark."; return false; // Mamudoon
                     case 69: __result = "Repels Magical attacks \nfor one ally once \nnext turn."; return false; // Makarakarn
                     case 70: __result = "Repels Physical attacks \nfor one ally once \nnext turn."; return false; // Tetrakarn
                     case 89: __result = "More than doubles damage \nof next Magical attack."; return false; // Concentrate
-                    case 90: __result = "Curse: Low damage to all foes. \nMay inflict Poison."; return false; // Poison Arrow
+                    case 90: __result = "Low Curse damage to all foes. \nMay inflict Poison."; return false; // Poison Arrow
                     case 91: __result = "More than doubles damage \nof next attack and grants Pierce."; return false; // Impaler's Charge
                     case 224: __result = "More than doubles damage \nof next Physical attack."; return false; // Focus
                     case 296: __result = "Guarantees escape \nwhen possible."; return false; // Fast Retreat
@@ -200,6 +208,13 @@ namespace NewBossAI
             // Normal Skills
             Zio(13);
             Hama(28);
+            Hamaon(29);
+            Mahama(30);
+            Mahamaon(31);
+            Mudo(32);
+            Mudoon(33);
+            Mamudo(34);
+            Mamudoon(35);
             Makarakarn(69);
             Tetrakarn(70);
             HourglassSkill(78);
@@ -222,11 +237,81 @@ namespace NewBossAI
         private static void Hama(ushort id)
         {
             datSkill.tbl[id].capacity = 6;
+            datNormalSkill.tbl[id].badlevel = 30;
             datNormalSkill.tbl[id].hpn = 40;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].magicbase = 10;
+            datNormalSkill.tbl[id].magiclimit = 120;
+        }
+
+        private static void Hamaon(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datNormalSkill.tbl[id].badlevel = 50;
+            datNormalSkill.tbl[id].hpn = 70;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].magicbase = 20;
             datNormalSkill.tbl[id].magiclimit = 220;
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 5;
+        }
+
+        private static void Mahama(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datNormalSkill.tbl[id].badlevel = 20;
+            datNormalSkill.tbl[id].hpn = 25;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].magicbase = 10;
+            datNormalSkill.tbl[id].magiclimit = 120;
+        }
+
+        private static void Mahamaon(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datNormalSkill.tbl[id].badlevel = 30;
+            datNormalSkill.tbl[id].hpn = 60;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].magicbase = 20;
+            datNormalSkill.tbl[id].magiclimit = 220;
+        }
+
+        private static void Mudo(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datNormalSkill.tbl[id].badlevel = 30;
+            datNormalSkill.tbl[id].hpn = 40;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].magicbase = 10;
+            datNormalSkill.tbl[id].magiclimit = 120;
+        }
+
+        private static void Mudoon(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datNormalSkill.tbl[id].badlevel = 50;
+            datNormalSkill.tbl[id].hpn = 70;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].magicbase = 20;
+            datNormalSkill.tbl[id].magiclimit = 220;
+        }
+
+        private static void Mamudo(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datNormalSkill.tbl[id].badlevel = 20;
+            datNormalSkill.tbl[id].hpn = 25;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].magicbase = 10;
+            datNormalSkill.tbl[id].magiclimit = 120;
+        }
+
+        private static void Mamudoon(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datNormalSkill.tbl[id].badlevel = 30;
+            datNormalSkill.tbl[id].hpn = 60;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].magicbase = 20;
+            datNormalSkill.tbl[id].magiclimit = 220;
         }
 
         private static void Makarakarn(ushort id)
