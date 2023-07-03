@@ -54,7 +54,7 @@ namespace NewBossAI
                     s.commcnt[2] = itemIndices.Count;
 
                     // Test - Add chosen skill
-                    ushort testSkill = 90;
+                    ushort testSkill = 28;
 
                     var skillIndices = new List<ushort> { };
                     var skills = s.commlist[0].ToList().Where(x => x != 0);

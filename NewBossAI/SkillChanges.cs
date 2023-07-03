@@ -167,6 +167,25 @@ namespace NewBossAI
             }
         }
 
+        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetKoukaBadDamage))]
+        private class InflictStatusPatch
+        {
+            public static void Postfix(ref int nskill, int sformindex, int dformindex, float ai, int nvirtual, ref uint __result)
+            {
+                int[] lightSkills = new int[] { 28, 29, 30, 31 };
+                int[] darkSkills = new int[] { 32, 33, 34, 35 };
+
+                var lightResistance = Convert.ToString(nbCalc.nbGetAisyo(nskill, dformindex, 6), 2);
+                var darkResistance = Convert.ToString(nbCalc.nbGetAisyo(nskill, dformindex, 7), 2);
+
+                if ((lightSkills.Contains(nskill) && !(lightResistance.Length == 32 && lightResistance[0] == Char.Parse("1") && lightResistance[10] == Char.Parse("0"))) ||
+                    (darkSkills.Contains(nskill) && !(darkResistance.Length == 32 && darkResistance[0] == Char.Parse("1") && darkResistance[10] == Char.Parse("0"))))
+                {
+                    __result = 0;
+                }
+            }
+        }
+
         //------------------------------------------------------------
 
         private static void OverWriteSkillEffect(ushort targetId, ushort originId)
@@ -180,6 +199,7 @@ namespace NewBossAI
         {
             // Normal Skills
             Zio(13);
+            Hama(28);
             Makarakarn(69);
             Tetrakarn(70);
             HourglassSkill(78);
@@ -197,6 +217,16 @@ namespace NewBossAI
         private static void Zio(ushort id)
         {
             //datNormalSkill.tbl[id];
+        }
+
+        private static void Hama(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datNormalSkill.tbl[id].hpn = 40;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].magicbase = 20;
+            datNormalSkill.tbl[id].magiclimit = 220;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 5;
         }
 
         private static void Makarakarn(ushort id)
