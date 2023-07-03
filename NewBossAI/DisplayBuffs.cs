@@ -92,11 +92,11 @@ namespace NewBossAI
                     buffs_strings.Add(buff);
                 }
 
-                if (party.count[15] == 1 && party.count[19] == 0)
+                if (party.count[15] > 0 && party.count[19] == 0)
                     buffs_strings.Add("1");
-                else if (party.count[15] == 0 && party.count[19] == 1)
+                else if (party.count[15] == 0 && party.count[19] > 0)
                     buffs_strings.Add("2");
-                else if (party.count[15] == 1 && party.count[19] == 1)
+                else if (party.count[15] > 0 && party.count[19] > 0)
                     buffs_strings.Add("3");
                 else buffs_strings.Add("0");
 
@@ -135,19 +135,19 @@ namespace NewBossAI
                 {
                     case "1":
                         {
-                            if (result != "\n ") result += " ";
+                            if (result != "\n ") result += "  ";
                             result += "Focused";
                             break;
                         }
                     case "2":
                         {
-                            if (result != "\n ") result += " ";
+                            if (result != "\n ") result += "  ";
                             result += "Concentrating";
                             break;
                         }
                     case "3":
                         {
-                            if (result != "\n ") result += " ";
+                            if (result != "\n ") result += "  ";
                             result += "Charged";
                             break;
                         }

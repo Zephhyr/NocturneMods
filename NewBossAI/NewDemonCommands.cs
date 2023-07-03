@@ -54,15 +54,17 @@ namespace NewBossAI
                     s.commcnt[2] = itemIndices.Count;
 
                     // Test - Add chosen skill
+                    ushort testSkill = 90;
+
                     var skillIndices = new List<ushort> { };
                     var skills = s.commlist[0].ToList().Where(x => x != 0);
 
                     if (skills.Any(x => x != 0))
                         skillIndices.AddRange(skills);
 
-                    if (!skillIndices.Contains(89))
+                    if (!skillIndices.Contains(testSkill))
                     {
-                        skillIndices[skillIndices.FindIndex(s => s == 32770)] = 89;
+                        skillIndices[skillIndices.FindIndex(s => s == 32770)] = testSkill;
                         skillIndices.Add(32770);
                     }
 

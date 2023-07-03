@@ -32,7 +32,9 @@ namespace NewBossAI
             public static void Postfix(ref uint __result, ref int attr, ref int formindex, ref int nskill)
             {
                 // If the attack is not a repel, the attacker has Pierce, the attack is physical/magical/almighty and it's resisted/blocked/drained
-                if (nskill != -1 && hasPierce && attr <= 11 && (__result < 100 || (__result >= 65536 && __result < 131072) || (__result > 262143 && __result < 2147483648)))
+                if ((__result < 100 || (__result >= 65536 && __result < 131072) || (__result > 262143 && __result < 2147483648)) && attr <= 11 && 
+                    ((nskill != -1 && hasPierce) ||
+                    (nbMainProcess.nbGetMainProcessData().party[nbMainProcess.nbGetMainProcessData().activeunit].count[15] > 0 && nbMainProcess.nbGetMainProcessData().party[nbMainProcess.nbGetMainProcessData().activeunit].count[19] > 0)))
                 {
                     __result = 100; // Forces the affinity to become "neutral"
                     nbMainProcess.nbGetMainProcessData().d31_kantuu = 1; // Displays the "Pierced!" message

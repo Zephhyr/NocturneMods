@@ -22,6 +22,8 @@ namespace NewBossAI
                     case 87: __result = "Beast Eye"; return false;
                     case 88: __result = "Dragon Eye"; return false;
                     case 89: __result = "Concentrate"; return false;
+                    case 90: __result = "Poison Arrow"; return false;
+                    case 91: __result = "Impaler's Charge"; return false;
                     case 219: __result = "Rage"; return false;
                     case 220: __result = "Psycho Rage"; return false;
                     default: return true;
@@ -39,6 +41,8 @@ namespace NewBossAI
                     case 69: __result = "Repels Magical attacks \nfor one ally once \nnext turn."; return false; // Makarakarn
                     case 70: __result = "Repels Physical attacks \nfor one ally once \nnext turn."; return false; // Tetrakarn
                     case 89: __result = "More than doubles damage \nof next Magical attack."; return false; // Concentrate
+                    case 90: __result = "Curse: Low damage to all foes. \nMay inflict Poison."; return false; // Poison Arrow
+                    case 91: __result = "More than doubles damage \nof next attack and grants Pierce."; return false; // Impaler's Charge
                     case 224: __result = "More than doubles damage \nof next Physical attack."; return false; // Focus
                     case 296: __result = "Guarantees escape \nwhen possible."; return false; // Fast Retreat
                     case 298: __result = "Prevents being attacked \nfrom behind."; return false; // Mind's Eye
@@ -182,6 +186,7 @@ namespace NewBossAI
             NewBeastEye(87);
             NewDragonEye(88);
             Concentrate(89);
+            ImpalersCharge(91);
             Focus(224);
 
             //Passive Skills
@@ -252,9 +257,29 @@ namespace NewBossAI
             datNormalSkill.tbl[id].basstatus = 0;
             datNormalSkill.tbl[id].cost = 5;
             datNormalSkill.tbl[id].hojotype = 33554432;
+            datNormalSkill.tbl[id].targetarea = 9;
             datNormalSkill.tbl[id].targetrule = 1;
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 5;
+            OverWriteSkillEffect(id, 224);
+        }
+
+        private static void ImpalersCharge(ushort id)
+        {
+            datSkill.tbl[id].capacity = 2;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 14;
+            datSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 20;
+            datNormalSkill.tbl[id].hojotype = 50331648;
+            datNormalSkill.tbl[id].targetarea = 9;
+            datNormalSkill.tbl[id].targetrule = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+            datNormalSkill.tbl[id].flag = 0;
             tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 5;
             OverWriteSkillEffect(id, 224);
         }

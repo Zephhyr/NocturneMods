@@ -53,8 +53,8 @@ namespace NewBossAI
         {
             public static void Postfix(ref int nskill, ref uint select, ref int __result)
             {
-                if ((nskill == 89 || nskill == 224) && (nbMainProcess.nbGetMainProcessData().party[nbMainProcess.nbGetMainProcessData().activeunit].count[15] == 1 ||
-                    nbMainProcess.nbGetMainProcessData().party[nbMainProcess.nbGetMainProcessData().activeunit].count[19] == 1))
+                if ((nskill == 89 || nskill == 91 || nskill == 224) && (nbMainProcess.nbGetMainProcessData().party[nbMainProcess.nbGetMainProcessData().activeunit].count[15] > 0 ||
+                    nbMainProcess.nbGetMainProcessData().party[nbMainProcess.nbGetMainProcessData().activeunit].count[19] > 0))
                 {
                     __result = 4;
                 }
