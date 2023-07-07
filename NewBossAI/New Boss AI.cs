@@ -25,6 +25,15 @@ namespace NewBossAI
             ApplyDemonChanges();
         }
 
+        //[HarmonyPatch(typeof(datEncount), nameof(datEncount.Get))]
+        //private class EncounterPatch
+        //{
+        //    public static void Prefix(ref int id)
+        //    {
+        //        id = 1025;
+        //    }
+        //}
+
         [HarmonyPatch(typeof(nbInit), nameof(nbInit.nbCallNewBattle))]
         private class InitBattlePatch
         {
@@ -84,6 +93,7 @@ namespace NewBossAI
                     case 256: RunNewForneusAI(ref a, ref code, ref n); break;
                     default: break;
                 }
+                MelonLogger.Msg("skill: " + a.work.nowindex);
             }
         }
 
@@ -93,9 +103,9 @@ namespace NewBossAI
             MelonLogger.Msg("Forneus HP%: " + currentHpPercent);
             MelonLogger.Msg("Forneus HP: " + a.work.hp);
             
-            if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(87))
+            if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(422))
             {
-                UseSkill(ref a, 87); return;
+                UseSkill(ref a, 422); return;
             }
 
             if (currentHpPercent > 60)

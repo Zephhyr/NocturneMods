@@ -14,7 +14,8 @@ namespace NewBossAI
         {
             public static void Prefix(ref nbCommSelProcessData_t s, ref int type, ref int ox, ref int oy, ref int a)
             {
-                if (s.my.formindex != 0)
+                //if (s.my.formindex != 0)
+                if (nbMainProcess.nbGetUnitWorkFromFormindex(s.my.formindex).id != 0)
                 {
                     // Self-Switch
                     var party = s.data.party;
@@ -53,29 +54,17 @@ namespace NewBossAI
                     s.commlist[2] = itemCommands;
                     s.commcnt[2] = itemIndices.Count;
 
-                    // Test - Add chosen skill
-                    ushort testSkill = 28;
-
-                    var skillIndices = new List<ushort> { };
-                    var skills = s.commlist[0].ToList().Where(x => x != 0);
-
-                    if (skills.Any(x => x != 0))
-                        skillIndices.AddRange(skills);
-
-                    if (!skillIndices.Contains(testSkill))
-                    {
-                        skillIndices[skillIndices.FindIndex(s => s == 32770)] = testSkill;
-                        skillIndices.Add(32770);
-                    }
-
-                    skillIndices = skillIndices.Distinct().ToList();
-
+                    // Test - Add all skills
                     var skillCommands = new ushort[288];
-                    for (ushort i = 0; i < skillIndices.Count; i++)
-                        skillCommands[i] = skillIndices[i];
+                    for (ushort i = 0; i < 288; i++)
+                        skillCommands[i] = i;
+                    skillCommands[0] = s.commlist[0][0];
+                    skillCommands[1] = 424;
+                    skillCommands[2] = 425;
+                    skillCommands[3] = 426;
 
                     s.commlist[0] = skillCommands;
-                    s.commcnt[0] = skillIndices.Count;
+                    s.commcnt[0] = 288;
                 }
             }
         }
