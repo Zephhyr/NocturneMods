@@ -31,6 +31,8 @@ namespace NewBossAI
         {
             public static void Prefix(ref nbActionProcessData_t a)
             {
+                actionProcessData = a;
+
                 chargeNowcommand = a.work.nowcommand;
                 chargeNowindex = a.work.nowindex;
                 focusState = a.party.count[15];
@@ -39,6 +41,8 @@ namespace NewBossAI
 
             public static void Postfix(ref nbActionProcessData_t a)
             {
+                actionProcessData = a;
+
                 sbyte skillattr = -1;
                 if (chargeNowcommand == 1)
                     skillattr = datSkill.tbl[chargeNowindex].skillattr;
@@ -56,7 +60,7 @@ namespace NewBossAI
         }
 
         [HarmonyPatch(typeof(nbSkillError), nameof(nbSkillError.nbCheckBattleSkillError2))]
-        private class FocusPatch4
+        private class FocusPatch3
         {
             public static void Postfix(ref int nskill, ref uint select, ref int __result)
             {
@@ -69,7 +73,7 @@ namespace NewBossAI
         }
 
         [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbSetHojoKouka))]
-        private class FocusPatch6
+        private class FocusPatch4
         {
             public static void Postfix(ref int formindex, ref uint hojotype, ref int hojopoint, ref int nvirtual, ref int __result)
             {

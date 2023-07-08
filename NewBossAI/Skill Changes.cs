@@ -7,12 +7,13 @@ using Il2Cppresult2_H;
 using Il2Cppnewbattle_H;
 using Il2Cppeffect_H;
 using UnityEngine;
-using System.ComponentModel.DataAnnotations;
 
 namespace NewBossAI
 {
     internal partial class NewBossAI : MelonMod
     {
+        public static nbActionProcessData_t? actionProcessData;
+
         [HarmonyPatch(typeof(datSkillName), nameof(datSkillName.Get))]
         private class SkillNamesPatch
         {
@@ -90,11 +91,22 @@ namespace NewBossAI
             }
         }
 
+        [HarmonyPatch(typeof(nbActionProcess), nameof(nbActionProcess.InitActionProcessData))]
+        private class ActionProcessDataPatch
+        {
+            public static void Postfix(ref nbActionProcessData_t __result)
+            {
+                actionProcessData = __result;
+            }
+        }
+
         [HarmonyPatch(typeof(nbActionProcess), nameof(nbActionProcess.SetAddPressPacket))]
         private class BeastEyePatch1
         {
             public static void Postfix(ref nbActionProcessData_t a, ref int nskill)
             {
+                actionProcessData = a;
+
                 if (a.newaddpresstype == 15 && (nskill == 422 || nskill == 423))
                 {
                     if (nskill == 422)
@@ -134,6 +146,8 @@ namespace NewBossAI
             public static void Postfix(ref nbActionProcessData_t a, ref int koukatype, ref int nskill, ref int sformindex, ref int dformindex, 
                                        ref int cnt, ref int frame, ref float koukaritu)
             {
+                actionProcessData = a;
+
                 datUnitWork_t target = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
                 if (datNormalSkill.tbl[nskill].koukatype == 0 && (target.badstatus == 1 || target.badstatus == 2))
                 {
@@ -148,6 +162,8 @@ namespace NewBossAI
         {
             public static void Postfix(ref nbActionProcessData_t ad, ref int nskill, ref int sformindex, ref int dformindex, ref int __result)
             {
+                actionProcessData = ad;
+
                 if (__result == 1 && (ad.autoskill == 300 || ad.autoskill == 301))
                 {
                     __result = random.Next(2);
@@ -296,6 +312,9 @@ namespace NewBossAI
             // Passive Skills
             Might(11);
             DrainAttack(14);
+            Counter(17);
+            Counter(18);
+            Counter(19);
         }
 
         // Physical Skills
@@ -721,6 +740,11 @@ namespace NewBossAI
         }
 
         private static void DrainAttack(ushort id)
+        {
+            datSpecialSkill.tbl[id].n = 1;
+        }
+
+        private static void Counter(ushort id)
         {
             datSpecialSkill.tbl[id].n = 1;
         }

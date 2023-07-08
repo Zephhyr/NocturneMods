@@ -25,14 +25,14 @@ namespace NewBossAI
             ApplyDemonChanges();
         }
 
-        //[HarmonyPatch(typeof(datEncount), nameof(datEncount.Get))]
-        //private class EncounterPatch
-        //{
-        //    public static void Prefix(ref int id)
-        //    {
-        //        id = 1025;
-        //    }
-        //}
+        [HarmonyPatch(typeof(datEncount), nameof(datEncount.Get))]
+        private class EncounterPatch
+        {
+            public static void Prefix(ref int id)
+            {
+                id = 744;
+            }
+        }
 
         [HarmonyPatch(typeof(nbInit), nameof(nbInit.nbCallNewBattle))]
         private class InitBattlePatch
@@ -82,6 +82,8 @@ namespace NewBossAI
         {
             public static void Prefix(ref nbActionProcessData_t a, ref int code, ref int n)
             {
+                actionProcessData = a;
+
                 actionTrackers[a.work.id].currentBattleActionCount++;
                 actionTrackers[a.work.id].currentTurnActionCount++;
                 MelonLogger.Msg("currentBattleTurnCount:" + actionTrackers[a.work.id].currentBattleTurnCount);

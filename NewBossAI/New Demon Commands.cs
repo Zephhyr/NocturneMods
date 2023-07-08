@@ -74,6 +74,8 @@ namespace NewBossAI
         {
             public static void Prefix(nbActionProcessData_t act, ref int partyindex, ref int ctype, ref int crule, ref int carea)
             {
+                actionProcessData = act;
+
                 if (partyindex != 0 && ctype == 0 && (crule == 12 || crule == 2) && carea == 1 && act.work.nowcommand == 6)
                     crule = 1;
             }

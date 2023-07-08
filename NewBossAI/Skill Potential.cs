@@ -96,7 +96,7 @@ namespace NewBossAI
             new sbyte[] {0    , 0    , 4    , -5   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 074 Forneus
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 075 Yurlungur
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 076 Quetzalcoatl
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 077 Naga Raja
+            new sbyte[] {3    , -4   , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 077 Naga Raja
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 078 Mizuchi
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 079 Naga
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 080 Nozuchi
@@ -520,7 +520,7 @@ namespace NewBossAI
             "  <material=\"MsgFont4\">+4: Ice • +2: Support  <material=\"MsgFont1\">-5: Elec", // 074 Forneus
             "", // 075 Yurlungur
             "", // 076 Quetzalcoatl
-            "", // 077 Naga Raja
+            "  <material=\"MsgFont4\">+3: Phys/Elec • +1: Support  <material=\"MsgFont1\">-4: Fire", // 077 Naga Raja
             "", // 078 Mizuchi
             "", // 079 Naga
             "", // 080 Nozuchi
@@ -972,6 +972,7 @@ namespace NewBossAI
             {
                 if (data.activeunit >= 0)
                 {
+                    //var unitFormIndex = data.party[actionProcessData.partyindex].formindex;
                     var unitFormIndex = data.party[data.activeunit].formindex;
                     currentDemonID = nbMainProcess.nbGetUnitWorkFromFormindex(unitFormIndex).id;
                 }
@@ -983,9 +984,21 @@ namespace NewBossAI
         {
             public static void Postfix(ref int id, ref string __result)
             {
-                if (id < datNormalSkill.tbl.Length) // If it isn't a passive skill
+                if (id < 288 || id > 421) // If it isn't a passive skill
                 {
-                    sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(id, currentDemonID);
+                    MelonLogger.Msg("id: " + id);
+                    MelonLogger.Msg("activeunit: " + nbMainProcess.nbGetMainProcessData().activeunit);
+                    MelonLogger.Msg("partyindex: " + actionProcessData.partyindex);
+
+                    sbyte skillPotential = 0;
+                    if (id != 164 && id != 165 && id != 166)
+                        skillPotential = SkillPotentialUtility.GetSkillPotential(id, currentDemonID);
+                    else
+                        skillPotential = SkillPotentialUtility.GetSkillPotential(id, nbMainProcess.nbGetUnitWorkFromFormindex(nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].formindex).id);
+                    MelonLogger.Msg("skillPotential: " + skillPotential);
+
+                    //sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(id, actionProcessData.partyindex);
+                    //sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(id, currentDemonID);
 
                     if (skillPotential != 0)
                     {
@@ -1003,7 +1016,7 @@ namespace NewBossAI
         {
             public static void Prefix(ref datUnitWork_t w, ref int nskill) // Before getting the cost of a skill during battle
             {
-                if (nskill < datNormalSkill.tbl.Length) // If it isn't a passive skill
+                if (nskill < 288 || nskill > 421) // If it isn't a passive skill
                 {
                     tmp_datNormalSkill.cost = datNormalSkill.tbl[nskill].cost; // Memorize the original skill cost
 
@@ -1029,7 +1042,7 @@ namespace NewBossAI
         {
             public static void Prefix(ref ushort SkillID, ref datUnitWork_t pStock) // Before getting the cost of a skill for display outside of battle
             {
-                if (SkillID < datNormalSkill.tbl.Length) // If it isn't a passive skill
+                if (SkillID < 288 || SkillID > 421) // If it isn't a passive skill
                 {
                     tmp_datNormalSkill.cost = datNormalSkill.tbl[SkillID].cost; // Memorize the original skill cost
 
@@ -1058,7 +1071,7 @@ namespace NewBossAI
                 int nskill = cmpCalc.cmpGetSelectSkillID(); // Get the used skill
                 datUnitWork_t work = cmpCalc.cmpGetSelectSrcStock(); // Get the demon's ID
 
-                if (nskill < datNormalSkill.tbl.Length) // If it isn't a passive skill
+                if (nskill < 288 || nskill > 421) // If it isn't a passive skill
                 {
                     tmp_datNormalSkill.cost = datNormalSkill.tbl[nskill].cost; // Memorize the original skill cost
                     sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(nskill, work.id);
@@ -1088,7 +1101,7 @@ namespace NewBossAI
         {
             public static void Postfix(ref int nskill, ref int type, ref datUnitWork_t s, ref int __result)
             {
-                if (nskill < datNormalSkill.tbl.Length && type == 0) // If it isn't a passive skill and the method is called for the first time
+                if ((nskill < 288 || nskill > 421) && type == 0) // If it isn't a passive skill and the method is called for the first time
                 {
                     sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(nskill, s.id);
 
@@ -1108,7 +1121,7 @@ namespace NewBossAI
         {
             public static void Postfix(ref int nskill, ref int sformindex, ref int __result)
             {
-                if (nskill < datNormalSkill.tbl.Length && __result != -1) // If it isn't a passive skill and HP have been altered
+                if ((nskill < 288 || nskill > 421) && __result != -1) // If it isn't a passive skill and HP have been altered
                 {
                     int demonID = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id; // Get the demon's ID
                     sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(nskill, demonID);
@@ -1135,7 +1148,7 @@ namespace NewBossAI
         {
             public static void Postfix(ref int nskill, ref int sformindex, ref int __result)
             {
-                if (nskill < datNormalSkill.tbl.Length && __result != -1) // If it isn't a passive skill and MP have been altered
+                if ((nskill < 288 || nskill > 421) && __result != -1) // If it isn't a passive skill and MP have been altered
                 {
                     int demonID = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id; // Get the demon's ID
                     sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(nskill, demonID);
@@ -1165,7 +1178,7 @@ namespace NewBossAI
         {
             public static void Prefix(ref int nskill, ref int sformindex)
             {
-                if (nskill < datNormalSkill.tbl.Length && datNormalSkill.tbl[nskill].badlevel != 255) // If it isn't a passive skill
+                if ((nskill < 288 || nskill > 421) && datNormalSkill.tbl[nskill].badlevel != 255) // If it isn't a passive skill
                 {
                     tmp_datNormalSkill.badlevel = datNormalSkill.tbl[nskill].badlevel; // Memorize the original ailment rate
                     int demonID = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id; // Get the demon's ID
@@ -1185,7 +1198,7 @@ namespace NewBossAI
         {
             public static void Postfix(ref int nskill)
             {
-                if (nskill < datNormalSkill.tbl.Length && datNormalSkill.tbl[nskill].badlevel != 255)
+                if ((nskill < 288 || nskill > 421) && datNormalSkill.tbl[nskill].badlevel != 255)
                 {
                     datNormalSkill.tbl[nskill].badlevel = tmp_datNormalSkill.badlevel; // Revert the ailment rate
                 }
@@ -1255,7 +1268,7 @@ namespace NewBossAI
         {
             public static sbyte GetSkillPotential(int skillID, int demonID)
             {
-                sbyte skillAttribute = (sbyte)(skillID == 224 ? 14 : datSkill.tbl[skillID].skillattr); // Get the attribute of the skill (and force Focus to be a support skill)
+                sbyte skillAttribute = datSkill.tbl[skillID].skillattr; // Get the attribute of the skill
 
                 if (skillAttribute != -1) // Filters a lot of unused skills
                 {

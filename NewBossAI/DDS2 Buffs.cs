@@ -7,7 +7,7 @@ using Il2Cppnewdata_H;
 using Il2Cppfield_H;
 using Il2Cppkernel_H;
 
-namespace DDS2Buffs
+namespace NewBossAI
 {
     internal partial class NewBossAI : MelonMod
     {
@@ -109,6 +109,8 @@ namespace DDS2Buffs
         {
             public static void Prefix(ref nbActionProcessData_t a, ref int seq)
             {
+                actionProcessData = a;
+
                 var party = nbMainProcess.nbGetMainProcessData().party;
                 foreach (var unit in party)
                 {
