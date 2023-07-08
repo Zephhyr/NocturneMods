@@ -39,8 +39,15 @@ namespace NewBossAI
 
             public static void Postfix(ref nbActionProcessData_t a)
             {
-                if (chargeNowindex <= 287 && ((datNormalSkill.tbl[chargeNowindex].koukatype == 0 && focusState == 1) ||
-                    (datNormalSkill.tbl[chargeNowindex].koukatype == 1 || datNormalSkill.tbl[chargeNowindex].koukatype == 12) && concentrateState == 1))
+                sbyte skillattr = -1;
+                if (chargeNowcommand == 1)
+                    skillattr = datSkill.tbl[chargeNowindex].skillattr;
+                else if (chargeNowcommand == 2)
+                    skillattr = datSkill.tbl[datItem.tbl[chargeNowindex].skillid].skillattr;
+
+                if (skillattr >= 0 && skillattr <= 11 && (chargeNowindex <= 287 || chargeNowindex >= 422) 
+                    && ((datNormalSkill.tbl[chargeNowindex].koukatype == 0 && focusState == 1) ||
+                    (datNormalSkill.tbl[chargeNowindex].koukatype == 1 && (datNormalSkill.tbl[chargeNowindex].hptype == 1 || datNormalSkill.tbl[chargeNowindex].hptype == 12)) && concentrateState == 1))
                 {
                     a.party.count[15] = 0;
                     a.party.count[19] = 0;
@@ -53,7 +60,7 @@ namespace NewBossAI
         {
             public static void Postfix(ref int nskill, ref uint select, ref int __result)
             {
-                if ((nskill == 89 || nskill == 91 || nskill == 224) && (nbMainProcess.nbGetMainProcessData().party[nbMainProcess.nbGetMainProcessData().activeunit].count[15] > 0 ||
+                if ((nskill == 224 || nskill == 424 || nskill == 425) && (nbMainProcess.nbGetMainProcessData().party[nbMainProcess.nbGetMainProcessData().activeunit].count[15] > 0 ||
                     nbMainProcess.nbGetMainProcessData().party[nbMainProcess.nbGetMainProcessData().activeunit].count[19] > 0))
                 {
                     __result = 4;
@@ -68,7 +75,7 @@ namespace NewBossAI
             {
                 var arr = Convert.ToString(hojotype, 2);
 
-                if (arr.Length >= 26 && arr[arr.Length - 26] == Char.Parse("1"))
+                if (arr.Length >= 26 && arr[arr.Length - 26] == '1')
                 {
                     var ivar2 = nbCalc.nbSetHojoAddCounter(formindex, 19, 1, nvirtual);
                     if (ivar2 == 0)
