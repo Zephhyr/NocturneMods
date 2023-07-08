@@ -62,6 +62,8 @@ namespace NewBossAI
                     skillCommands[1] = 424;
                     skillCommands[2] = 425;
                     skillCommands[3] = 426;
+                    skillCommands[4] = 427;
+                    skillCommands[5] = 428;
 
                     s.commlist[0] = skillCommands;
                     s.commcnt[0] = 288;

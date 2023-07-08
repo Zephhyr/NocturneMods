@@ -96,7 +96,7 @@ namespace NewBossAI
             new sbyte[] {0    , 0    , 4    , -5   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 074 Forneus
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 075 Yurlungur
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 076 Quetzalcoatl
-            new sbyte[] {3    , -4   , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 077 Naga Raja
+            new sbyte[] {4    , -5   , 0    , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 077 Naga Raja
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 078 Mizuchi
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 079 Naga
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 080 Nozuchi
@@ -520,7 +520,7 @@ namespace NewBossAI
             "  <material=\"MsgFont4\">+4: Ice • +2: Support  <material=\"MsgFont1\">-5: Elec", // 074 Forneus
             "", // 075 Yurlungur
             "", // 076 Quetzalcoatl
-            "  <material=\"MsgFont4\">+3: Phys/Elec • +1: Support  <material=\"MsgFont1\">-4: Fire", // 077 Naga Raja
+            "  <material=\"MsgFont4\">+4: Phys/Elec • +1: Support  <material=\"MsgFont1\">-5: Fire", // 077 Naga Raja
             "", // 078 Mizuchi
             "", // 079 Naga
             "", // 080 Nozuchi

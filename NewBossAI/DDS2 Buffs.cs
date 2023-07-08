@@ -69,7 +69,7 @@ namespace NewBossAI
                 }
 
                 if ((type == 4 && count[15] > 0) || (type == 5 && count[19] > 0))
-                    newEffect *= 2.5;
+                    newEffect *= 2.2;
 
                 __result = (float) newEffect;
                 return false;
