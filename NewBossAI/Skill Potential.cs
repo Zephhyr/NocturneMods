@@ -972,7 +972,6 @@ namespace NewBossAI
             {
                 if (data.activeunit >= 0)
                 {
-                    //var unitFormIndex = data.party[actionProcessData.partyindex].formindex;
                     var unitFormIndex = data.party[data.activeunit].formindex;
                     currentDemonID = nbMainProcess.nbGetUnitWorkFromFormindex(unitFormIndex).id;
                 }
@@ -991,9 +990,6 @@ namespace NewBossAI
                         skillPotential = SkillPotentialUtility.GetSkillPotential(id, currentDemonID);
                     else
                         skillPotential = SkillPotentialUtility.GetSkillPotential(id, nbMainProcess.nbGetUnitWorkFromFormindex(nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].formindex).id);
-
-                    //sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(id, actionProcessData.partyindex);
-                    //sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(id, currentDemonID);
 
                     if (skillPotential != 0)
                     {
