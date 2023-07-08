@@ -986,16 +986,11 @@ namespace NewBossAI
             {
                 if (id < 288 || id > 421) // If it isn't a passive skill
                 {
-                    MelonLogger.Msg("id: " + id);
-                    MelonLogger.Msg("activeunit: " + nbMainProcess.nbGetMainProcessData().activeunit);
-                    MelonLogger.Msg("partyindex: " + actionProcessData.partyindex);
-
                     sbyte skillPotential = 0;
                     if (id != 164 && id != 165 && id != 166)
                         skillPotential = SkillPotentialUtility.GetSkillPotential(id, currentDemonID);
                     else
                         skillPotential = SkillPotentialUtility.GetSkillPotential(id, nbMainProcess.nbGetUnitWorkFromFormindex(nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].formindex).id);
-                    MelonLogger.Msg("skillPotential: " + skillPotential);
 
                     //sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(id, actionProcessData.partyindex);
                     //sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(id, currentDemonID);
