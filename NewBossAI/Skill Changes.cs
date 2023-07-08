@@ -41,9 +41,10 @@ namespace NewBossAI
                     case 423: __result = "Dragon Eye"; return false;     
                     case 424: __result = "Concentrate"; return false;
                     case 425: __result = "Impaler's Charge"; return false;
-                    case 426: __result = "Pulinpaon"; return false;      
-                    case 427: __result = "Poison Volley"; return false;      
-                    case 428: __result = "Poison Salvo"; return false;      
+                    case 426: __result = "Sakura Rage"; return false;
+                    case 436: __result = "Pulinpaon"; return false;      
+                    case 437: __result = "Poison Volley"; return false;      
+                    case 438: __result = "Poison Salvo"; return false;      
                     default: return true;
                 }
             }
@@ -87,9 +88,10 @@ namespace NewBossAI
                     // New Skills
                     case 424: __result = "More than doubles damage \nof next Magical attack."; return false; // Concentrate
                     case 425: __result = "More than doubles damage \nof next attack and grants Pierce."; return false; // Impaler's Charge
-                    case 426: __result = "High Mind damage to one foe. \nChance to inflict Panic."; return false; // Pulinpaon
-                    case 427: __result = "Medium Curse damage to all foes. \nMay inflict Poison."; return false; // Poison Volley
-                    case 428: __result = "High Curse damage to one foe. \nMay inflict Poison."; return false; // Poison Salvo
+                    case 426: __result = "Physical damage to all foes. \nChance to inflict Charm."; return false; // Sakura Rage
+                    case 436: __result = "High Mind damage to one foe. \nChance to inflict Panic."; return false; // Pulinpaon
+                    case 437: __result = "Medium Curse damage to all foes. \nMay inflict Poison."; return false; // Poison Volley
+                    case 438: __result = "High Curse damage to one foe. \nMay inflict Poison."; return false; // Poison Salvo
                     default: return true;
                 }
             }
@@ -247,6 +249,13 @@ namespace NewBossAI
             nbCamera_SkillPtrTable.tbl[targetId] = nbCamera_SkillPtrTable.tbl[originId];
         }
 
+        private static void OverWriteSkillEffect(ushort targetId, ushort animOriginId, ushort effectOriginId)
+        {
+            datNormalSkillVisual.tbl[targetId] = datNormalSkillVisual.tbl[animOriginId];
+            nbActionProcess.sobedtbl[targetId] = nbActionProcess.sobedtbl[effectOriginId];
+            nbCamera_SkillPtrTable.tbl[targetId] = nbCamera_SkillPtrTable.tbl[animOriginId];
+        }
+
         private static void ApplySkillChanges()
         {
             //datSkill_t[] skills = new datSkill_t[512];
@@ -312,9 +321,11 @@ namespace NewBossAI
             NewDragonEye(423);
             Concentrate(424);
             ImpalersCharge(425);
-            Pulinpaon(426);
-            PoisonVolley(427);
-            PoisonSalvo(428);
+            SakuraRage(426);
+            PoisonVolley(436);
+            PoisonSalvo(437);
+            Pulinpaon(438);
+            
             
             // Passive Skills
             Might(11);
@@ -322,14 +333,62 @@ namespace NewBossAI
         }
 
         // Physical Skills
-        
-        
+
+        private static void SakuraRage(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 16;
+            datSkill.tbl[id].skillattr = 0;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 20;
+            datNormalSkill.tbl[id].badtype = 1;
+            datNormalSkill.tbl[id].basstatus = 128;
+            datNormalSkill.tbl[id].cost = 23;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 1;
+            datNormalSkill.tbl[id].criticalpoint = 20;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 6;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 34;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 5;
+            datNormalSkill.tbl[id].targetcntmin = 3;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 1;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
+            OverWriteSkillEffect(id, 98, 285);
+        }
+
         // Fire Skills
 
 
         // Ice Skills
-        
-        
+
+
         // Elec Skills
 
         private static void Zio(ushort id)
