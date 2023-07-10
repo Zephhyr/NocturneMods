@@ -249,11 +249,6 @@ namespace NewBossAI
         {
             public static void Prefix(ref string text1, ref string text2, ref int type)
             {
-                MelonLogger.Msg("-nbDispText-");
-                MelonLogger.Msg("text1: " + text1);
-                MelonLogger.Msg("text2: " + text2);
-                MelonLogger.Msg("type: " + type);
-
                 if (type == 1 && actionProcessData.work.nowcommand == 1 && actionProcessData.work.nowindex == 54)
                 {
                     type = 0;

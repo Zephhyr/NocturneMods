@@ -19,9 +19,9 @@ namespace NewBossAI
         {
             public static void Prefix(ref int formindex, ref int type, ref int point)
             {
-                if (chargeNowindex <= 287 && type == 15 && (chargeNowcommand == 6 || datNormalSkill.tbl[chargeNowindex].koukatype == 0))
+                if ((chargeNowindex <= 287 || chargeNowindex >= 424) && type == 15 && (chargeNowcommand == 6 || datNormalSkill.tbl[chargeNowindex].koukatype == 0))
                     point = focusState;
-                else if (chargeNowindex <= 287 && type == 19 && (chargeNowcommand == 6 || datNormalSkill.tbl[chargeNowindex].koukatype == 1))
+                else if ((chargeNowindex <= 287 || chargeNowindex >= 424) && type == 19 && (chargeNowcommand == 6 || datNormalSkill.tbl[chargeNowindex].koukatype == 1))
                     point = concentrateState;
             }
         }
