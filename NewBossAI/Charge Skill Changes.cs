@@ -77,6 +77,10 @@ namespace NewBossAI
         {
             public static void Postfix(ref int formindex, ref uint hojotype, ref int hojopoint, ref int nvirtual, ref int __result)
             {
+                MelonLogger.Msg("-nbSetHojoKouka-");
+                MelonLogger.Msg("hojotype: " + hojotype);
+                MelonLogger.Msg("hojopoint: " + hojopoint);
+
                 var arr = Convert.ToString(hojotype, 2);
 
                 if (arr.Length >= 26 && arr[arr.Length - 26] == '1')
@@ -88,6 +92,10 @@ namespace NewBossAI
 
                     nbHelpProcess.nbDispText(datDevilName.Get(nbMainProcess.nbGetUnitWorkFromFormindex(formindex).id) + " is building up power!", string.Empty, 2, 45, 2315190144, false);
                 }
+                else if (hojotype == 2 && hojopoint == 1)
+                    nbHelpProcess.nbDispText("Physical Attack decreased!", string.Empty, 2, 45, 2315190144, false);
+                else if (hojotype == 128 && hojopoint == 1)
+                    nbHelpProcess.nbDispText("Defense decreased!", string.Empty, 2, 45, 2315190144, false);
             }
         }
     }
