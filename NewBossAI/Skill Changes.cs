@@ -74,6 +74,7 @@ namespace NewBossAI
                     case 70: __result = "Repels Physical attacks \nfor one ally once \nnext turn."; return false; // Tetrakarn
                     case 90: __result = "Low Curse damage to one foe. \nMay inflict Poison."; return false; // Poison Arrow
                     case 224: __result = "More than doubles damage \nof next Physical attack."; return false; // Focus
+                    case 276: __result = "Maximizes own Evasion/Hit Rate."; return false; // Red Capote
                     case 296: __result = "Guarantees escape \nwhen possible."; return false; // Fast Retreat
                     case 298: __result = "Prevents being attacked \nfrom behind."; return false; // Mind's Eye
                     case 299: __result = "Greatly raises critical \nhit rate of normal attacks."; return false; // Might
@@ -249,10 +250,15 @@ namespace NewBossAI
         {
             public static void Prefix(ref string text1, ref string text2, ref int type)
             {
-                if (type == 1 && actionProcessData.work.nowcommand == 1 && actionProcessData.work.nowindex == 54)
+                if (type == 1 && actionProcessData.work.nowcommand == 1)
                 {
-                    type = 0;
-                    text1 = "Decreased enemy's Defense!";
+                    switch (actionProcessData.work.nowindex)
+                    {
+                        case 54: type = 0; text1 = "Decreased enemy's Defense!"; break;
+                        case 276: type = 0; text1 = "Evasion/Hit Rate maximized!"; break;
+                        default: break;
+                    }
+                    
                 }
             }
         }
@@ -333,6 +339,7 @@ namespace NewBossAI
             HourglassSkill(78);
             PoisonArrow(90);
             Focus(224);
+            RedCapote(276);
 
             NewBeastEye(422);
             NewDragonEye(423);
@@ -818,6 +825,11 @@ namespace NewBossAI
         private static void Focus(ushort id)
         {
             datSkill.tbl[id].skillattr = 14;
+        }
+
+        private static void RedCapote(ushort id)
+        {
+            datNormalSkill.tbl[id].hojopoint = 6;
         }
 
         private static void Concentrate(ushort id)
