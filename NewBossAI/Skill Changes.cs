@@ -244,6 +244,24 @@ namespace NewBossAI
             }
         }
 
+        [HarmonyPatch(typeof(nbHelpProcess), nameof(nbHelpProcess.nbDispText))]
+        private class DispTextPatch
+        {
+            public static void Prefix(ref string text1, ref string text2, ref int type)
+            {
+                MelonLogger.Msg("-nbDispText-");
+                MelonLogger.Msg("text1: " + text1);
+                MelonLogger.Msg("text2: " + text2);
+                MelonLogger.Msg("type: " + type);
+
+                if (type == 1 && actionProcessData.work.nowcommand == 1 && actionProcessData.work.nowindex == 54)
+                {
+                    type = 0;
+                    text1 = "Decreased enemy's Defense!";
+                }
+            }
+        }
+
         //------------------------------------------------------------
 
         private static void OverWriteSkillEffect(ushort targetId, ushort originId)
