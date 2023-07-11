@@ -44,6 +44,8 @@ namespace NewBossAI
                     case 426: __result = "Sakura Rage"; return false;
                     case 427: __result = "Fang Breaker"; return false;
                     case 428: __result = "Defense Kuzushi"; return false;
+                    case 429: __result = "Primal Force"; return false;
+                    case 430: __result = "Chi Blast"; return false;
                     case 436: __result = "Pulinpaon"; return false;      
                     case 437: __result = "Poison Volley"; return false;      
                     case 438: __result = "Poison Salvo"; return false;      
@@ -94,6 +96,8 @@ namespace NewBossAI
                     case 426: __result = "High Physical damage to all foes. \nChance to inflict Charm."; return false; // Sakura Rage
                     case 427: __result = "Low Physical damage to one foe. \nLowers target's Physical Attack."; return false; // Fang Breaker
                     case 428: __result = "Low Physical damage to one foe. \nLowers target's Defense."; return false; // Defense Kuzushi
+                    case 429: __result = "Severe Physical damage to one foe."; return false; // Primal Force
+                    case 430: __result = "Low Physical damage to one foe. \nHigh critial rate."; return false; // Chi Blast
                     case 436: __result = "High Mind damage to one foe. \nChance to inflict Panic."; return false; // Pulinpaon
                     case 437: __result = "Medium Curse damage to all foes. \nMay inflict Poison."; return false; // Poison Volley
                     case 438: __result = "High Curse damage to one foe. \nMay inflict Poison."; return false; // Poison Salvo
@@ -348,6 +352,8 @@ namespace NewBossAI
             SakuraRage(426);
             FangBreaker(427);
             DefenseKuzushi(428);
+            PrimalForce(429);
+            ChiBlast(430);
             PoisonVolley(436);
             PoisonSalvo(437);
             Pulinpaon(438);
@@ -505,6 +511,104 @@ namespace NewBossAI
 
             tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 96, 107);
+        }
+
+        private static void PrimalForce(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 16;
+            datSkill.tbl[id].skillattr = 0;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 17;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 1;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 3;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 0;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 76;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
+            OverWriteSkillEffect(id, 96, 139);
+        }
+
+        private static void ChiBlast(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 128;
+            datSkill.tbl[id].skillattr = 0;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 17;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 1;
+            datNormalSkill.tbl[id].criticalpoint = 50;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 12;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 0;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 28;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
+            OverWriteSkillEffect(id, 65, 101);
         }
 
         // Fire Skills
