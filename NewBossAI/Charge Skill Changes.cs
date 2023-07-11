@@ -88,9 +88,9 @@ namespace NewBossAI
 
                     nbHelpProcess.nbDispText(datDevilName.Get(nbMainProcess.nbGetUnitWorkFromFormindex(formindex).id) + " is building up power!", string.Empty, 2, 45, 2315190144, false);
                 }
-                else if (actionProcessData.work.nowcommand == 1 && actionProcessData.work.nowindex == 427 && hojotype == 2 && hojopoint == 1)
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 2 && hojopoint == 1 && (actionProcessData.work.nowindex == 427 || actionProcessData.work.nowindex == 435))
                     nbHelpProcess.nbDispText("Decreased Physical Attack!", string.Empty, 2, 45, 2315190144, false);
-                else if (actionProcessData.work.nowcommand == 1 && actionProcessData.work.nowindex == 428 && hojotype == 128 && hojopoint == 1)
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 128 && hojopoint == 1 && actionProcessData.work.nowindex == 428)
                     nbHelpProcess.nbDispText("Decreased Defense!", string.Empty, 2, 45, 2315190144, false);
             }
         }

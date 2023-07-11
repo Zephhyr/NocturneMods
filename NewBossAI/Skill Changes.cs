@@ -50,6 +50,8 @@ namespace NewBossAI
                     case 432: __result = "Gate of Hell"; return false;
                     case 433: __result = "Akasha Arts"; return false;
                     case 434: __result = "Bloodbath"; return false;
+                    case 435: __result = "Scald"; return false;
+                    case 436: __result = "Trisagion"; return false;
                     case 446: __result = "Pulinpaon"; return false;      
                     case 447: __result = "Poison Volley"; return false;      
                     case 448: __result = "Poison Salvo"; return false;      
@@ -106,6 +108,8 @@ namespace NewBossAI
                     case 432: __result = "High Physical damage to all foes. \nChance to inflict Stone."; return false; // Gate of Hell
                     case 433: __result = "High Physical damage to one foe."; return false; // Akasha Arts
                     case 434: __result = "High Physical damage to random foes. \nHigh critial rate."; return false; // Bloodbath
+                    case 435: __result = "Low Fire damage to all foes. \nLowers targets' Physical Attack."; return false; // Scald
+                    case 436: __result = "Severe Fire damage to all foes."; return false; // Trisagion
                     case 446: __result = "High Mind damage to one foe. \nChance to inflict Panic."; return false; // Pulinpaon
                     case 447: __result = "Medium Curse damage to all foes. \nMay inflict Poison."; return false; // Poison Volley
                     case 448: __result = "High Curse damage to one foe. \nMay inflict Poison."; return false; // Poison Salvo
@@ -366,6 +370,8 @@ namespace NewBossAI
             GateOfHell(432);
             AkashaArts(433);
             Bloodbath(434);
+            Scald(435);
+            Trisagion(436);
             PoisonVolley(446);
             PoisonSalvo(447);
             Pulinpaon(448);
@@ -547,7 +553,7 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hitlevel = 100;
             datNormalSkill.tbl[id].hitprog = 0;
             datNormalSkill.tbl[id].hittype = 1;
-            datNormalSkill.tbl[id].hojopoint = 0;
+            datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
             datNormalSkill.tbl[id].hpn = 76;
@@ -596,7 +602,7 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hitlevel = 100;
             datNormalSkill.tbl[id].hitprog = 0;
             datNormalSkill.tbl[id].hittype = 1;
-            datNormalSkill.tbl[id].hojopoint = 0;
+            datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
             datNormalSkill.tbl[id].hpn = 28;
@@ -645,7 +651,7 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hitlevel = 100;
             datNormalSkill.tbl[id].hitprog = 0;
             datNormalSkill.tbl[id].hittype = 1;
-            datNormalSkill.tbl[id].hojopoint = 0;
+            datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
             datNormalSkill.tbl[id].hpn = 42;
@@ -694,7 +700,7 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hitlevel = 100;
             datNormalSkill.tbl[id].hitprog = 0;
             datNormalSkill.tbl[id].hittype = 1;
-            datNormalSkill.tbl[id].hojopoint = 0;
+            datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
             datNormalSkill.tbl[id].hpn = 43;
@@ -743,7 +749,7 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hitlevel = 100;
             datNormalSkill.tbl[id].hitprog = 0;
             datNormalSkill.tbl[id].hittype = 1;
-            datNormalSkill.tbl[id].hojopoint = 0;
+            datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
             datNormalSkill.tbl[id].hpn = 42;
@@ -821,6 +827,103 @@ namespace NewBossAI
 
         // Fire Skills
 
+        private static void Scald(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 1;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 12;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 1;
+            datNormalSkill.tbl[id].hojotype = 2;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 27;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 10;
+            datNormalSkill.tbl[id].magiclimit = 120;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
+            OverWriteSkillEffect(id, 4, 101);
+        }
+
+        private static void Trisagion(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 1;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 40;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 80;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 20;
+            datNormalSkill.tbl[id].magiclimit = 220;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
+            OverWriteSkillEffect(id, 179);
+        }
 
         // Ice Skills
 
