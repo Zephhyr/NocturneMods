@@ -128,7 +128,7 @@ namespace NewBossAI
                 if (buffs_strings[4] != "")
                 {
                     if (result != "\n ") result += " ";
-                    result += "HT:" + buffs_strings[2];
+                    result += "HT:" + buffs_strings[4];
                 }
 
                 if (buffs_strings[2] != "")
@@ -142,19 +142,19 @@ namespace NewBossAI
                     case "1":
                         {
                             if (result != "\n ") result += "  ";
-                            result += "<material=\"MsgFont3\">Focused";
+                            result += "<material=\"MsgFont3\">Focus";
                             break;
                         }
                     case "2":
                         {
                             if (result != "\n ") result += "  ";
-                            result += "<material=\"MsgFont3\">Concentrating";
+                            result += "<material=\"MsgFont3\">Concentrate";
                             break;
                         }
                     case "3":
                         {
                             if (result != "\n ") result += "  ";
-                            result += "<material=\"MsgFont3\">Charged";
+                            result += "<material=\"MsgFont3\">Animus";
                             break;
                         }
                     default: break;

@@ -40,7 +40,7 @@ namespace NewBossAI
                     case 422: __result = "Beast Eye"; return false;      
                     case 423: __result = "Dragon Eye"; return false;     
                     case 424: __result = "Concentrate"; return false;
-                    case 425: __result = "Impaler's Charge"; return false;
+                    case 425: __result = "Impaler's Animus"; return false;
                     case 426: __result = "Sakura Rage"; return false;
                     case 427: __result = "Fang Breaker"; return false;
                     case 428: __result = "Defense Kuzushi"; return false;
@@ -56,8 +56,11 @@ namespace NewBossAI
                     case 438: __result = "Cocytus"; return false;
                     case 439: __result = "Fimbulvetr"; return false;
                     case 440: __result = "Jolt"; return false;
-                    case 441: __result = "Mjolnir"; return false;
+                    case 441: __result = "Thunder Gods"; return false;
                     case 442: __result = "Thunder Reign"; return false;
+                    case 443: __result = "Dervish"; return false;
+                    case 444: __result = "Heavenly Cyclone"; return false;
+                    case 445: __result = "Vayavya"; return false;
 
                     case 456: __result = "Pulinpaon"; return false;      
                     case 457: __result = "Poison Volley"; return false;      
@@ -105,7 +108,7 @@ namespace NewBossAI
                     
                     // New Skills
                     case 424: __result = "More than doubles damage \nof next Magical attack."; return false; // Concentrate
-                    case 425: __result = "More than doubles damage \nof next attack and grants Pierce."; return false; // Impaler's Charge
+                    case 425: __result = "More than doubles damage \nof next attack and grants Pierce."; return false; // Impaler's Animus
                     case 426: __result = "High Physical damage to all foes. \nChance to inflict Charm."; return false; // Sakura Rage
                     case 427: __result = "Low Physical damage to one foe. \nLowers target's Physical Attack."; return false; // Fang Breaker
                     case 428: __result = "Low Physical damage to one foe. \nLowers target's Defense."; return false; // Defense Kuzushi
@@ -121,8 +124,11 @@ namespace NewBossAI
                     case 438: __result = "High Ice damage to random foes."; return false; // Cocytus
                     case 439: __result = "Massive Ice damage to all foes."; return false; // Fimbulvetr
                     case 440: __result = "Low Elec damage to one foe. \nHigh chance to inflict shock"; return false; // Jolt
-                    case 441: __result = "Massive Elec damage to one foe."; return false; // Mjolnir
+                    case 441: __result = "Massive Elec damage to one foe."; return false; // Thunder Gods
                     case 442: __result = "Massive Elec damage to all foes."; return false; // Thunder Reign
+                    case 443: __result = "Low Force damage to all foes. \nLowers targets' Evasion"; return false; // Dervish
+                    case 444: __result = "High Force damage to random foes."; return false; // Heavenly Cyclone
+                    case 445: __result = "Massive Force damage to all foes."; return false; // Heavenly Cyclone
 
                     case 456: __result = "High Mind damage to one foe. \nChance to inflict Panic."; return false; // Pulinpaon
                     case 457: __result = "Medium Curse damage to all foes. \nMay inflict Poison."; return false; // Poison Volley
@@ -374,7 +380,7 @@ namespace NewBossAI
             NewBeastEye(422);
             NewDragonEye(423);
             Concentrate(424);
-            ImpalersCharge(425);
+            ImpalersAnimus(425);
             SakuraRage(426);
             FangBreaker(427);
             DefenseKuzushi(428);
@@ -390,8 +396,11 @@ namespace NewBossAI
             Cocytus(438);
             Fimbulvetr(439);
             Jolt(440);
-            Mjolnir(441);
+            ThunderGods(441);
             ThunderReign(442);
+            Dervish(443);
+            HeavenlyCyclone(444);
+            Vayavya(445);
 
             PoisonVolley(456);
             PoisonSalvo(457);
@@ -875,7 +884,7 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hpbase = 0;
             datNormalSkill.tbl[id].hpn = 27;
             datNormalSkill.tbl[id].hptype = 1;
-            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].koukatype = 1;
             datNormalSkill.tbl[id].magicbase = 10;
             datNormalSkill.tbl[id].magiclimit = 120;
             datNormalSkill.tbl[id].minus = 100;
@@ -924,7 +933,7 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hpbase = 0;
             datNormalSkill.tbl[id].hpn = 80;
             datNormalSkill.tbl[id].hptype = 1;
-            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].koukatype = 1;
             datNormalSkill.tbl[id].magicbase = 20;
             datNormalSkill.tbl[id].magiclimit = 220;
             datNormalSkill.tbl[id].minus = 100;
@@ -975,7 +984,7 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hpbase = 0;
             datNormalSkill.tbl[id].hpn = 33;
             datNormalSkill.tbl[id].hptype = 1;
-            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].koukatype = 1;
             datNormalSkill.tbl[id].magicbase = 10;
             datNormalSkill.tbl[id].magiclimit = 120;
             datNormalSkill.tbl[id].minus = 100;
@@ -1024,7 +1033,7 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hpbase = 0;
             datNormalSkill.tbl[id].hpn = 27;
             datNormalSkill.tbl[id].hptype = 1;
-            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].koukatype = 1;
             datNormalSkill.tbl[id].magicbase = 20;
             datNormalSkill.tbl[id].magiclimit = 220;
             datNormalSkill.tbl[id].minus = 100;
@@ -1073,7 +1082,7 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hpbase = 0;
             datNormalSkill.tbl[id].hpn = 70;
             datNormalSkill.tbl[id].hptype = 1;
-            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].koukatype = 1;
             datNormalSkill.tbl[id].magicbase = 20;
             datNormalSkill.tbl[id].magiclimit = 220;
             datNormalSkill.tbl[id].minus = 100;
@@ -1127,7 +1136,7 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hpbase = 0;
             datNormalSkill.tbl[id].hpn = 70;
             datNormalSkill.tbl[id].hptype = 1;
-            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].koukatype = 1;
             datNormalSkill.tbl[id].magicbase = 20;
             datNormalSkill.tbl[id].magiclimit = 220;
             datNormalSkill.tbl[id].minus = 100;
@@ -1189,7 +1198,7 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hpbase = 0;
             datNormalSkill.tbl[id].hpn = 27;
             datNormalSkill.tbl[id].hptype = 1;
-            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].koukatype = 1;
             datNormalSkill.tbl[id].magicbase = 10;
             datNormalSkill.tbl[id].magiclimit = 120;
             datNormalSkill.tbl[id].minus = 100;
@@ -1211,7 +1220,7 @@ namespace NewBossAI
             OverWriteSkillEffect(id, 182);
         }
 
-        private static void Mjolnir(ushort id)
+        private static void ThunderGods(ushort id)
         {
             datSkill.tbl[id].capacity = 6;
             datSkill.tbl[id].flag = 0;
@@ -1238,7 +1247,7 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hpbase = 0;
             datNormalSkill.tbl[id].hpn = 80;
             datNormalSkill.tbl[id].hptype = 1;
-            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].koukatype = 1;
             datNormalSkill.tbl[id].magicbase = 20;
             datNormalSkill.tbl[id].magiclimit = 220;
             datNormalSkill.tbl[id].minus = 100;
@@ -1287,7 +1296,7 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hpbase = 0;
             datNormalSkill.tbl[id].hpn = 70;
             datNormalSkill.tbl[id].hptype = 1;
-            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].koukatype = 1;
             datNormalSkill.tbl[id].magicbase = 20;
             datNormalSkill.tbl[id].magiclimit = 220;
             datNormalSkill.tbl[id].minus = 100;
@@ -1310,8 +1319,203 @@ namespace NewBossAI
             //nbActionProcess.sobedtbl[id].se0_str = nbActionProcess.sobedtbl[193].se0_str;
         }
 
+        private static void Mjolnir(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 256;
+            datSkill.tbl[id].skillattr = 3;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 30;
+            datNormalSkill.tbl[id].badtype = 1;
+            datNormalSkill.tbl[id].basstatus = 1;
+            datNormalSkill.tbl[id].cost = 15;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 1;
+            datNormalSkill.tbl[id].criticalpoint = 20;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 50;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 20;
+            datNormalSkill.tbl[id].magiclimit = 220;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
+            OverWriteSkillEffect(id, 106, 15);
+        }
+
         // Force Skills
 
+        private static void Dervish(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 4;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 12;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 1;
+            datNormalSkill.tbl[id].hojotype = 32;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 27;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 10;
+            datNormalSkill.tbl[id].magiclimit = 120;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
+            OverWriteSkillEffect(id, 22, 184);
+        }
+
+        private static void HeavenlyCyclone(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 4;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 32;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 32;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 20;
+            datNormalSkill.tbl[id].magiclimit = 220;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 7;
+            datNormalSkill.tbl[id].targetcntmin = 3;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 1;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
+            OverWriteSkillEffect(id, 24, 282);
+        }
+
+        private static void Vayavya(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 4;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 40;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 80;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 20;
+            datNormalSkill.tbl[id].magiclimit = 220;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
+            OverWriteSkillEffect(id, 186);
+        }
 
         // Almighty Skills
 
@@ -1671,7 +1875,7 @@ namespace NewBossAI
             OverWriteSkillEffect(id, 224);
         }
 
-        private static void ImpalersCharge(ushort id)
+        private static void ImpalersAnimus(ushort id)
         {
             datSkill.tbl[id].capacity = 2;
             datSkill.tbl[id].flag = 0;

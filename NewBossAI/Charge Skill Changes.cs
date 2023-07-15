@@ -49,7 +49,7 @@ namespace NewBossAI
                 else if (chargeNowcommand == 5)
                     skillattr = datSkill.tbl[datItem.tbl[chargeNowindex].skillid].skillattr;
 
-                bool validskill = (chargeNowindex <= 287 || chargeNowindex >= 422);
+                bool validskill = chargeNowindex <= 287 || chargeNowindex >= 422;
                 bool chargedPhysical = datNormalSkill.tbl[chargeNowindex].koukatype == 0 && focusState == 1;
                 bool chargedMagical = datNormalSkill.tbl[chargeNowindex].koukatype == 1 && (datNormalSkill.tbl[chargeNowindex].hptype == 1 || datNormalSkill.tbl[chargeNowindex].hptype == 12) && concentrateState == 1;
 
@@ -84,9 +84,8 @@ namespace NewBossAI
                 if (arr.Length >= 26 && arr[arr.Length - 26] == '1')
                 {
                     var ivar2 = nbCalc.nbSetHojoAddCounter(formindex, 19, 1, nvirtual);
-                    if (ivar2 == 0)
-                        __result += ivar2;
-                    else __result -= ivar2;
+                    if (ivar2 != 0)
+                        __result -= ivar2;
 
                     nbHelpProcess.nbDispText(datDevilName.Get(nbMainProcess.nbGetUnitWorkFromFormindex(formindex).id) + " is building up power!", string.Empty, 2, 45, 2315190144, false);
                 }
@@ -96,6 +95,14 @@ namespace NewBossAI
                     nbHelpProcess.nbDispText("Decreased Defense!", string.Empty, 2, 45, 2315190144, false);
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 544 && hojopoint == 1 && actionProcessData.work.nowindex == 437)
                     nbHelpProcess.nbDispText("Decreased Evasion/Hit Rate!", string.Empty, 2, 45, 2315190144, false);
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 32 && hojopoint == 1 && actionProcessData.work.nowindex == 443)
+                    nbHelpProcess.nbDispText("Decreased Evasion!", string.Empty, 2, 45, 2315190144, false);
+
+                var count = nbMainProcess.nbGetMainProcessData().party[nbMainProcess.nbGetMainProcessData().form[formindex].partyindex].count;
+                MelonLogger.Msg("-nbSetHojoKouka-");
+                foreach (var c in count)
+                    MelonLogger.Msg(c);
+
             }
         }
     }
