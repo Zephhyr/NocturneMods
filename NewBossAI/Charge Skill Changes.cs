@@ -44,18 +44,20 @@ namespace NewBossAI
                 actionProcessData = a;
 
                 sbyte skillattr = -1;
-                if (chargeNowcommand == 1)
+                if (chargeNowcommand == 0 || chargeNowcommand == 1)
                     skillattr = datSkill.tbl[chargeNowindex].skillattr;
-                else if (chargeNowcommand == 2)
+                else if (chargeNowcommand == 5)
                     skillattr = datSkill.tbl[datItem.tbl[chargeNowindex].skillid].skillattr;
 
-                if (skillattr >= 0 && skillattr <= 11 && (chargeNowindex <= 287 || chargeNowindex >= 422) 
-                    && ((datNormalSkill.tbl[chargeNowindex].koukatype == 0 && focusState == 1) ||
-                    (datNormalSkill.tbl[chargeNowindex].koukatype == 1 && (datNormalSkill.tbl[chargeNowindex].hptype == 1 || datNormalSkill.tbl[chargeNowindex].hptype == 12)) && concentrateState == 1))
+                bool validskill = (chargeNowindex <= 287 || chargeNowindex >= 422);
+                bool chargedPhysical = datNormalSkill.tbl[chargeNowindex].koukatype == 0 && focusState == 1;
+                bool chargedMagical = datNormalSkill.tbl[chargeNowindex].koukatype == 1 && (datNormalSkill.tbl[chargeNowindex].hptype == 1 || datNormalSkill.tbl[chargeNowindex].hptype == 12) && concentrateState == 1;
+
+                if (skillattr >= 0 && skillattr <= 11 && validskill && (chargedPhysical || chargedMagical))
                 {
                     a.party.count[15] = 0;
                     a.party.count[19] = 0;
-                }                   
+                }
             }
         }
 
@@ -92,6 +94,8 @@ namespace NewBossAI
                     nbHelpProcess.nbDispText("Decreased Physical Attack!", string.Empty, 2, 45, 2315190144, false);
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 128 && hojopoint == 1 && actionProcessData.work.nowindex == 428)
                     nbHelpProcess.nbDispText("Decreased Defense!", string.Empty, 2, 45, 2315190144, false);
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 544 && hojopoint == 1 && actionProcessData.work.nowindex == 437)
+                    nbHelpProcess.nbDispText("Decreased Evasion/Hit Rate!", string.Empty, 2, 45, 2315190144, false);
             }
         }
     }

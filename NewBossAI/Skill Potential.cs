@@ -1316,28 +1316,28 @@ namespace NewBossAI
                         multiplier = IsAttackingType ? 1 / 1.30f : 1 / 1.5f;
                         break;
                     case 4:
-                        multiplier = IsAttackingType ? 1 / 1.25f : 1 / 1.35f;
+                        multiplier = IsAttackingType ? 1 / 1.25f : 1 / 1.4f;
                         break;
                     case 3:
-                        multiplier = IsAttackingType ? 1 / 1.2f : 1 / 1.25f;
+                        multiplier = IsAttackingType ? 1 / 1.2f : 1 / 1.3f;
                         break;
                     case 2:
                         multiplier = IsAttackingType ? 1 / 1.15f : 1 / 1.2f;
                         break;
                     case 1:
-                        multiplier = IsAttackingType ? 1 / 1.1f : 1 / 1.15f;
+                        multiplier = IsAttackingType ? 1 / 1.1f : 1 / 1.1f;
                         break;
                     case -1:
-                        multiplier = IsAttackingType ? 1.1f : 1.15f;
+                        multiplier = IsAttackingType ? 1.1f : 1.1f;
                         break;
                     case -2:
                         multiplier = IsAttackingType ? 1.15f : 1.2f;
                         break;
                     case -3:
-                        multiplier = IsAttackingType ? 1.2f : 1.25f;
+                        multiplier = IsAttackingType ? 1.2f : 1.3f;
                         break;
                     case -4:
-                        multiplier = IsAttackingType ? 1.25f : 1.35f;
+                        multiplier = IsAttackingType ? 1.25f : 1.4f;
                         break;
                     case -5:
                         multiplier = IsAttackingType ? 1.3f : 1.5f;

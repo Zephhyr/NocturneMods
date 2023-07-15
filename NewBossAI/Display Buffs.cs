@@ -77,7 +77,7 @@ namespace NewBossAI
             {
                 List<string> buffs_strings = new List<string>();
 
-                for (int i = 4; i < 8; i++)
+                for (int i = 4; i <= 8; i++)
                 {
                     string buff = "";
 
@@ -125,30 +125,36 @@ namespace NewBossAI
                     result += "DF:" + buffs_strings[3];
                 }
 
-                if (buffs_strings[2] != "")
+                if (buffs_strings[4] != "")
                 {
                     if (result != "\n ") result += " ";
                     result += "HT:" + buffs_strings[2];
                 }
 
-                switch (buffs_strings[4])
+                if (buffs_strings[2] != "")
+                {
+                    if (result != "\n ") result += " ";
+                    result += "EV:" + buffs_strings[2];
+                }
+
+                switch (buffs_strings[5])
                 {
                     case "1":
                         {
                             if (result != "\n ") result += "  ";
-                            result += "Focused";
+                            result += "<material=\"MsgFont3\">Focused";
                             break;
                         }
                     case "2":
                         {
                             if (result != "\n ") result += "  ";
-                            result += "Concentrating";
+                            result += "<material=\"MsgFont3\">Concentrating";
                             break;
                         }
                     case "3":
                         {
                             if (result != "\n ") result += "  ";
-                            result += "Charged";
+                            result += "<material=\"MsgFont3\">Charged";
                             break;
                         }
                     default: break;
