@@ -7,6 +7,7 @@ using Il2Cppresult2_H;
 using Il2Cppnewbattle_H;
 using Il2Cppeffect_H;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 namespace NewBossAI
 {
@@ -34,9 +35,11 @@ namespace NewBossAI
                     case 94: __result = "Medicine"; return false;                     
                     case 113: __result = "Venom Needle"; return false;      
                     case 219: __result = "Rage"; return false;           
-                    case 220: __result = "Psycho Rage"; return false;    
+                    case 220: __result = "Psycho Rage"; return false;
 
                     // New Skills
+                    case 188: __result = "Punishment"; return false;      
+                    case 189: __result = "Judgement Light"; return false;      
                     case 422: __result = "Beast Eye"; return false;      
                     case 423: __result = "Dragon Eye"; return false;     
                     case 424: __result = "Concentrate"; return false;
@@ -61,6 +64,8 @@ namespace NewBossAI
                     case 443: __result = "Dervish"; return false;
                     case 444: __result = "Heavenly Cyclone"; return false;
                     case 445: __result = "Vayavya"; return false;
+                    case 446: __result = "Wicked Curse"; return false;
+                    case 447: __result = "Damnation"; return false;
 
                     case 456: __result = "Pulinpaon"; return false;      
                     case 457: __result = "Poison Volley"; return false;      
@@ -107,6 +112,8 @@ namespace NewBossAI
                     case 357: __result = "Attacks ignore all resistances \nexcept Repel."; return false; // Pierce
                     
                     // New Skills
+                    case 188: __result = "Light: Chance to instakill one foe."; return false; // Punishment
+                    case 189: __result = "Light: Chance to instakill all foes."; return false; // Judgement Light
                     case 424: __result = "More than doubles damage \nof next Magical attack."; return false; // Concentrate
                     case 425: __result = "More than doubles damage \nof next attack and grants Pierce."; return false; // Impaler's Animus
                     case 426: __result = "High Physical damage to all foes. \nChance to inflict Charm."; return false; // Sakura Rage
@@ -128,7 +135,9 @@ namespace NewBossAI
                     case 442: __result = "Massive Elec damage to all foes."; return false; // Thunder Reign
                     case 443: __result = "Low Force damage to all foes. \nLowers targets' Evasion"; return false; // Dervish
                     case 444: __result = "High Force damage to random foes."; return false; // Heavenly Cyclone
-                    case 445: __result = "Massive Force damage to all foes."; return false; // Heavenly Cyclone
+                    case 445: __result = "Massive Force damage to all foes."; return false; // Vayavya
+                    case 446: __result = "Dark: Chance to instakill one foe."; return false; // Wicked Curse
+                    case 447: __result = "Dark: Chance to instakill all foes."; return false; // Damnation
 
                     case 456: __result = "High Mind damage to one foe. \nChance to inflict Panic."; return false; // Pulinpaon
                     case 457: __result = "Medium Curse damage to all foes. \nMay inflict Poison."; return false; // Poison Volley
@@ -303,16 +312,59 @@ namespace NewBossAI
 
         private static void OverWriteSkillEffect(ushort targetId, ushort originId)
         {
-            datNormalSkillVisual.tbl[targetId] = datNormalSkillVisual.tbl[originId];
-            nbActionProcess.sobedtbl[targetId] = nbActionProcess.sobedtbl[originId];
-            nbCamera_SkillPtrTable.tbl[targetId] = nbCamera_SkillPtrTable.tbl[originId];
+            datNormalSkillVisual.tbl[targetId] = new datNormalSkillVisual_t { 
+                motion = datNormalSkillVisual.tbl[originId].motion,
+                animetype = datNormalSkillVisual.tbl[originId].animetype,
+                hatudo = datNormalSkillVisual.tbl[originId].hatudo,
+                bedno = datNormalSkillVisual.tbl[originId].bedno
+            };
+            nbActionProcess.sobedtbl[targetId] = new nbActionProcess.SOBED {
+                keyname = nbActionProcess.sobedtbl[originId].keyname,
+                bed_fname = nbActionProcess.sobedtbl[originId].bed_fname,
+                se0_str = nbActionProcess.sobedtbl[originId].se0_str,
+                se1_str = nbActionProcess.sobedtbl[originId].se1_str,
+                tga_fname = nbActionProcess.sobedtbl[originId].tga_fname,
+                pbdata = nbActionProcess.sobedtbl[originId].pbdata
+            };
+            nbCamera_SkillPtrTable.tbl[targetId] = new nbCameraSkillPtr_t {
+                ptr_shot_1 = nbCamera_SkillPtrTable.tbl[originId].ptr_shot_1,
+                ptr_shot_23 = nbCamera_SkillPtrTable.tbl[originId].ptr_shot_23,
+                ptr_angleH = nbCamera_SkillPtrTable.tbl[originId].ptr_angleH,
+                ptr_angleW = nbCamera_SkillPtrTable.tbl[originId].ptr_angleW,
+                ptr_H = nbCamera_SkillPtrTable.tbl[originId].ptr_H,
+                ptr_W = nbCamera_SkillPtrTable.tbl[originId].ptr_W,
+                anim = nbCamera_SkillPtrTable.tbl[originId].anim
+            };
         }
 
         private static void OverWriteSkillEffect(ushort targetId, ushort animOriginId, ushort effectOriginId)
         {
-            datNormalSkillVisual.tbl[targetId] = datNormalSkillVisual.tbl[animOriginId];
-            nbActionProcess.sobedtbl[targetId] = nbActionProcess.sobedtbl[effectOriginId];
-            nbCamera_SkillPtrTable.tbl[targetId] = nbCamera_SkillPtrTable.tbl[effectOriginId];
+            datNormalSkillVisual.tbl[targetId] = new datNormalSkillVisual_t
+            {
+                motion = datNormalSkillVisual.tbl[animOriginId].motion,
+                animetype = datNormalSkillVisual.tbl[animOriginId].animetype,
+                hatudo = datNormalSkillVisual.tbl[animOriginId].hatudo,
+                bedno = datNormalSkillVisual.tbl[animOriginId].bedno
+            };
+            nbActionProcess.sobedtbl[targetId] = new nbActionProcess.SOBED
+            {
+                keyname = nbActionProcess.sobedtbl[effectOriginId].keyname,
+                bed_fname = nbActionProcess.sobedtbl[effectOriginId].bed_fname,
+                se0_str = nbActionProcess.sobedtbl[effectOriginId].se0_str,
+                se1_str = nbActionProcess.sobedtbl[effectOriginId].se1_str,
+                tga_fname = nbActionProcess.sobedtbl[effectOriginId].tga_fname,
+                pbdata = nbActionProcess.sobedtbl[effectOriginId].pbdata
+            };
+            nbCamera_SkillPtrTable.tbl[targetId] = new nbCameraSkillPtr_t
+            {
+                ptr_shot_1 = nbCamera_SkillPtrTable.tbl[effectOriginId].ptr_shot_1,
+                ptr_shot_23 = nbCamera_SkillPtrTable.tbl[effectOriginId].ptr_shot_23,
+                ptr_angleH = nbCamera_SkillPtrTable.tbl[effectOriginId].ptr_angleH,
+                ptr_angleW = nbCamera_SkillPtrTable.tbl[effectOriginId].ptr_angleW,
+                ptr_H = nbCamera_SkillPtrTable.tbl[effectOriginId].ptr_H,
+                ptr_W = nbCamera_SkillPtrTable.tbl[effectOriginId].ptr_W,
+                anim = nbCamera_SkillPtrTable.tbl[effectOriginId].anim
+            };
         }
 
         private static void ApplySkillChanges()
@@ -377,6 +429,8 @@ namespace NewBossAI
             Focus(224);
             RedCapote(276);
 
+            Punishment(188);
+            JudgementLight(189);
             NewBeastEye(422);
             NewDragonEye(423);
             Concentrate(424);
@@ -401,6 +455,9 @@ namespace NewBossAI
             Dervish(443);
             HeavenlyCyclone(444);
             Vayavya(445);
+            WickedCurse(446);
+            Damnation(447);
+            Mjolnir(448);
 
             PoisonVolley(456);
             PoisonSalvo(457);
@@ -1156,7 +1213,7 @@ namespace NewBossAI
 
             tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 181);
-            nbActionProcess.sobedtbl[id].bed_fname = nbActionProcess.sobedtbl[12].bed_fname;
+            nbActionProcess.sobedtbl[id].bed_fname =  nbActionProcess.sobedtbl[12].bed_fname;
             nbActionProcess.sobedtbl[id].keyname = nbActionProcess.sobedtbl[181].keyname;
             nbActionProcess.sobedtbl[id].se0_str = nbActionProcess.sobedtbl[181].se0_str;
             nbActionProcess.sobedtbl[id].se1_str = nbActionProcess.sobedtbl[12].se1_str;
@@ -1366,6 +1423,8 @@ namespace NewBossAI
 
             tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 106, 15);
+            datNormalSkillVisual.tbl[id].bedno = datNormalSkillVisual.tbl[15].bedno;
+            datNormalSkillVisual.tbl[id].hatudo = datNormalSkillVisual.tbl[15].hatudo;
         }
 
         // Force Skills
@@ -1561,6 +1620,104 @@ namespace NewBossAI
             datNormalSkill.tbl[id].magiclimit = 220;
         }
 
+        private static void Punishment(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 6;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 50;
+            datNormalSkill.tbl[id].badtype = 1;
+            datNormalSkill.tbl[id].basstatus = 2048;
+            datNormalSkill.tbl[id].cost = 10;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 0;
+            datNormalSkill.tbl[id].hptype = 0;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
+            datNormalSkillVisual.tbl[id] = datNormalSkillVisual.tbl[28];
+        }
+
+        private static void JudgementLight(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 6;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 30;
+            datNormalSkill.tbl[id].badtype = 1;
+            datNormalSkill.tbl[id].basstatus = 2048;
+            datNormalSkill.tbl[id].cost = 10;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 0;
+            datNormalSkill.tbl[id].hptype = 0;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
+            datNormalSkillVisual.tbl[id] = datNormalSkillVisual.tbl[28];
+        }
+
         // Dark Skills
 
         private static void Mudo(ushort id)
@@ -1601,6 +1758,104 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].magicbase = 20;
             datNormalSkill.tbl[id].magiclimit = 220;
+        }
+
+        private static void WickedCurse(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 7;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 50;
+            datNormalSkill.tbl[id].badtype = 1;
+            datNormalSkill.tbl[id].basstatus = 2048;
+            datNormalSkill.tbl[id].cost = 10;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 0;
+            datNormalSkill.tbl[id].hptype = 0;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
+            OverWriteSkillEffect(id, 32, 243);
+        }
+
+        private static void Damnation(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 7;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 30;
+            datNormalSkill.tbl[id].badtype = 1;
+            datNormalSkill.tbl[id].basstatus = 2048;
+            datNormalSkill.tbl[id].cost = 10;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 0;
+            datNormalSkill.tbl[id].hptype = 0;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
+            OverWriteSkillEffect(id, 32, 243);
         }
 
         // Curse Skills

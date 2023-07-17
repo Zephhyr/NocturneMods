@@ -97,12 +97,6 @@ namespace NewBossAI
                     nbHelpProcess.nbDispText("Decreased Evasion/Hit Rate!", string.Empty, 2, 45, 2315190144, false);
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 32 && hojopoint == 1 && actionProcessData.work.nowindex == 443)
                     nbHelpProcess.nbDispText("Decreased Evasion!", string.Empty, 2, 45, 2315190144, false);
-
-                var count = nbMainProcess.nbGetMainProcessData().party[nbMainProcess.nbGetMainProcessData().form[formindex].partyindex].count;
-                MelonLogger.Msg("-nbSetHojoKouka-");
-                foreach (var c in count)
-                    MelonLogger.Msg(c);
-
             }
         }
     }
