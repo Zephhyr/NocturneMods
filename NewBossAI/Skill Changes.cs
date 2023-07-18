@@ -34,6 +34,8 @@ namespace NewBossAI
                     case 92: __result = "Bead of Life"; return false;                 
                     case 94: __result = "Medicine"; return false;                     
                     case 113: __result = "Venom Needle"; return false;      
+                    case 133: __result = "Javelin Rain"; return false;      
+                    case 143: __result = "Xeros-Beat"; return false;      
                     case 219: __result = "Rage"; return false;           
                     case 220: __result = "Psycho Rage"; return false;
 
@@ -64,12 +66,16 @@ namespace NewBossAI
                     case 443: __result = "Dervish"; return false;
                     case 444: __result = "Heavenly Cyclone"; return false;
                     case 445: __result = "Vayavya"; return false;
-                    case 446: __result = "Wicked Curse"; return false;
-                    case 447: __result = "Damnation"; return false;
-
-                    case 456: __result = "Pulinpaon"; return false;      
-                    case 457: __result = "Poison Volley"; return false;      
-                    case 458: __result = "Poison Salvo"; return false;      
+                    case 446: __result = "Damnation"; return false;
+                    case 447: __result = "Millennia Curse"; return false;
+                    case 448: __result = "Poison Volley"; return false;
+                    case 449: __result = "Poison Salvo"; return false;
+                    case 450: __result = "Neural Shock"; return false;
+                    case 451: __result = "Neural Storm"; return false;
+                    case 452: __result = "Pulinpaon"; return false;      
+                    case 453: __result = "Antichthon"; return false;      
+                    case 454: __result = "Last Word"; return false;
+                    case 455: __result = "Soul Drain"; return false;
                     default: return true;
                 }
             }
@@ -91,6 +97,7 @@ namespace NewBossAI
                     case 33: __result = "High Dark damage to one foe. \nChance to instakill when \nweak to Dark."; return false; // Mudoon
                     case 34: __result = "Low Dark damage to all foes. \nChance to instakill when \nweak to Dark."; return false; // Mamudo
                     case 35: __result = "High Dark damage to all foes. \nChance to instakill when \nweak to Dark."; return false; // Mamudoon
+                    case 59: __result = "Low Nerve damage to one foe. \nChance to inflict Bind."; return false; // Pulinpa
                     case 61: __result = "Low Mind damage to one foe. \nChance to inflict Panic."; return false; // Pulinpa
                     case 63: __result = "High Mind damage to all foes. \nChance to inflict Panic."; return false; // Tentarafoo
                     case 69: __result = "Repels Magical attacks \nfor one ally once \nnext turn."; return false; // Makarakarn
@@ -136,12 +143,17 @@ namespace NewBossAI
                     case 443: __result = "Low Force damage to all foes. \nLowers targets' Evasion"; return false; // Dervish
                     case 444: __result = "High Force damage to random foes."; return false; // Heavenly Cyclone
                     case 445: __result = "Massive Force damage to all foes."; return false; // Vayavya
-                    case 446: __result = "Dark: Chance to instakill one foe."; return false; // Wicked Curse
-                    case 447: __result = "Dark: Chance to instakill all foes."; return false; // Damnation
+                    case 446: __result = "Dark: Chance to instakill one foe."; return false; // Damnation
+                    case 447: __result = "Dark: Chance to instakill all foes."; return false; // Millennia Curse
+                    case 448: __result = "Medium Curse damage to all foes. \nMay inflict Poison."; return false; // Poison Volley
+                    case 449: __result = "High Curse damage to one foe. \nMay inflict Poison."; return false; // Poison Salvo
+                    case 450: __result = "High Nerve damage to one foe. \nMay inflict Stun."; return false; // Neural Shock
+                    case 451: __result = "High Nerve damage to all foes. \nMay inflict Stun."; return false; // Neural Storm
+                    case 452: __result = "High Mind damage to one foe. \nChance to inflict Panic."; return false; // Pulinpaon
+                    case 453: __result = "High Almighty damage to one foe. \n Lowers targets' Attack/Defense/Evasion/Hit Rate."; return false; // Antichthon
+                    case 454: __result = "Massive Almighty damage to one foe."; return false; // Last Word
+                    case 455: __result = "Drains HP/MP from one foe."; return false; // Soul Drain
 
-                    case 456: __result = "High Mind damage to one foe. \nChance to inflict Panic."; return false; // Pulinpaon
-                    case 457: __result = "Medium Curse damage to all foes. \nMay inflict Poison."; return false; // Poison Volley
-                    case 458: __result = "High Curse damage to one foe. \nMay inflict Poison."; return false; // Poison Salvo
                     default: return true;
                 }
             }
@@ -421,7 +433,9 @@ namespace NewBossAI
             Mudoon(33);
             Mamudo(34);
             Mamudoon(35);
+            Shibaboo(59);
             Pulinpa(61);
+            Tentarafoo(63);
             Makarakarn(69);
             Tetrakarn(70);
             HourglassSkill(78);
@@ -455,15 +469,17 @@ namespace NewBossAI
             Dervish(443);
             HeavenlyCyclone(444);
             Vayavya(445);
-            WickedCurse(446);
-            Damnation(447);
-            Mjolnir(448);
+            Damnation(446);
+            MillenniaCurse(447);
+            PoisonVolley(448);
+            PoisonSalvo(449);
+            NeuralShock(450);
+            NeuralStorm(451);
+            Pulinpaon(452);
+            Antichthon(453);
+            LastWord(454);
+            SoulDrain(455);
 
-            PoisonVolley(456);
-            PoisonSalvo(457);
-            Pulinpaon(458);
-            
-            
             // Passive Skills
             Might(11);
             DrainAttack(14);
@@ -1578,6 +1594,153 @@ namespace NewBossAI
 
         // Almighty Skills
 
+        private static void Antichthon(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 5;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 40;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 1;
+            datNormalSkill.tbl[id].hojotype = 682;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 50;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 20;
+            datNormalSkill.tbl[id].magiclimit = 220;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
+            OverWriteSkillEffect(id, 25, 270);
+        }
+
+        private static void LastWord(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 5;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 40;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 0;
+            datNormalSkill.tbl[id].hojotype = 99;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 80;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 20;
+            datNormalSkill.tbl[id].magiclimit = 220;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
+            OverWriteSkillEffect(id, 202, 160);
+        }
+
+        private static void SoulDrain(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 5;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 40;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 0;
+            datNormalSkill.tbl[id].hojotype = 99;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 45;
+            datNormalSkill.tbl[id].hptype = 12;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 10;
+            datNormalSkill.tbl[id].magiclimit = 120;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 45;
+            datNormalSkill.tbl[id].mptype = 12;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
+            OverWriteSkillEffect(id, 192);
+        }
+
         // Light Skills
 
         private static void Hama(ushort id)
@@ -1760,7 +1923,7 @@ namespace NewBossAI
             datNormalSkill.tbl[id].magiclimit = 220;
         }
 
-        private static void WickedCurse(ushort id)
+        private static void Damnation(ushort id)
         {
             datSkill.tbl[id].capacity = 6;
             datSkill.tbl[id].flag = 0;
@@ -1809,7 +1972,7 @@ namespace NewBossAI
             OverWriteSkillEffect(id, 32, 243);
         }
 
-        private static void Damnation(ushort id)
+        private static void MillenniaCurse(ushort id)
         {
             datSkill.tbl[id].capacity = 6;
             datSkill.tbl[id].flag = 0;
@@ -1865,7 +2028,7 @@ namespace NewBossAI
             datSkill.tbl[id].capacity = 6;
             datSkill.tbl[id].flag = 0;
             datSkill.tbl[id].keisyoform = 1;
-            datSkill.tbl[id].skillattr = 0;
+            datSkill.tbl[id].skillattr = 8;
             datSkill.tbl[id].index = (short)id;
             datSkill.tbl[id].type = 0;
 
@@ -1982,6 +2145,113 @@ namespace NewBossAI
 
         // Nerve Skills
 
+        private static void Shibaboo(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datNormalSkill.tbl[id].badlevel = 20;
+            datNormalSkill.tbl[id].hpn = 30;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].magicbase = 10;
+            datNormalSkill.tbl[id].magiclimit = 120;
+        }
+
+        private static void NeuralShock(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 9;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 30;
+            datNormalSkill.tbl[id].badtype = 1;
+            datNormalSkill.tbl[id].basstatus = 256;
+            datNormalSkill.tbl[id].cost = 10;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 70;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 20;
+            datNormalSkill.tbl[id].magiclimit = 220;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
+            OverWriteSkillEffect(id, 59, 261);
+        }
+
+        private static void NeuralStorm(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 9;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 20;
+            datNormalSkill.tbl[id].badtype = 1;
+            datNormalSkill.tbl[id].basstatus = 256;
+            datNormalSkill.tbl[id].cost = 10;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 50;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 20;
+            datNormalSkill.tbl[id].magiclimit = 220;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
+            OverWriteSkillEffect(id, 59, 187);
+        }
 
         // Mind Skills
 
@@ -1991,6 +2261,15 @@ namespace NewBossAI
             datNormalSkill.tbl[id].badlevel = 30;
             datNormalSkill.tbl[id].hpn = 30;
             datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].magicbase = 10;
+            datNormalSkill.tbl[id].magiclimit = 120;
+        }
+
+        private static void Tentarafoo(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datNormalSkill.tbl[id].badlevel = 20;
+            datNormalSkill.tbl[id].hpn = 55;
             datNormalSkill.tbl[id].magicbase = 10;
             datNormalSkill.tbl[id].magiclimit = 120;
         }
@@ -2044,14 +2323,7 @@ namespace NewBossAI
             OverWriteSkillEffect(id, 63);
         }
 
-        private static void Tentarafoo(ushort id)
-        {
-            datSkill.tbl[id].capacity = 6;
-            datNormalSkill.tbl[id].badlevel = 30;
-            datNormalSkill.tbl[id].hpn = 55;
-            datNormalSkill.tbl[id].magicbase = 10;
-            datNormalSkill.tbl[id].magiclimit = 120;
-        }
+        
 
         // Self-Destruct Skills
 
