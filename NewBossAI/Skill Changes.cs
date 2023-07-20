@@ -76,6 +76,9 @@ namespace NewBossAI
                     case 453: __result = "Antichthon"; return false;      
                     case 454: __result = "Last Word"; return false;
                     case 455: __result = "Soul Drain"; return false;
+                    case 456: __result = "Amrita"; return false;
+                    case 457: __result = "Heat Riser"; return false;
+                    case 458: __result = "Luster Candy"; return false;
                     default: return true;
                 }
             }
@@ -100,6 +103,8 @@ namespace NewBossAI
                     case 59: __result = "Low Nerve damage to one foe. \nChance to inflict Bind."; return false; // Pulinpa
                     case 61: __result = "Low Mind damage to one foe. \nChance to inflict Panic."; return false; // Pulinpa
                     case 63: __result = "High Mind damage to all foes. \nChance to inflict Panic."; return false; // Tentarafoo
+                    case 64: __result = "Raises party's Physical/Magical Attack."; return false; // Tarukaja
+                    case 67: __result = "Raises party's Magical Attack/Hit Rate."; return false; // Makakaja
                     case 69: __result = "Repels Magical attacks \nfor one ally once \nnext turn."; return false; // Makarakarn
                     case 70: __result = "Repels Physical attacks \nfor one ally once \nnext turn."; return false; // Tetrakarn
                     case 90: __result = "Low Curse damage to one foe. \nMay inflict Poison."; return false; // Poison Arrow
@@ -153,6 +158,9 @@ namespace NewBossAI
                     case 453: __result = "High Almighty damage to one foe. \n Lowers targets' Attack/Defense/Evasion/Hit Rate."; return false; // Antichthon
                     case 454: __result = "Massive Almighty damage to one foe."; return false; // Last Word
                     case 455: __result = "Drains HP/MP from one foe."; return false; // Soul Drain
+                    case 456: __result = "Cures all ailments for the party."; return false; // Amrita
+                    case 457: __result = "Greatly raises own Attack/Defense/Evasion/Hit Rate."; return false; // Heat Riser
+                    case 458: __result = "Raises party's Attack/Defense/Evasion/Hit Rate."; return false; // Luster Candy
 
                     default: return true;
                 }
@@ -305,14 +313,57 @@ namespace NewBossAI
         [HarmonyPatch(typeof(nbHelpProcess), nameof(nbHelpProcess.nbDispText))]
         private class DispTextPatch
         {
-            public static void Prefix(ref string text1, ref string text2, ref int type)
+            public static void Prefix(ref string text1, ref string text2, ref int type, int max, uint col)
             {
                 if (type == 1 && actionProcessData.work.nowcommand == 1)
                 {
                     switch (actionProcessData.work.nowindex)
                     {
-                        case 54: type = 0; text1 = "Decreased enemy's Defense!"; break;
-                        case 276: type = 0; text1 = "Evasion/Hit Rate maximized!"; break;
+                        case 54:
+                            {
+                                type = 0;
+                                var limitReached = true;
+                                foreach (var unitBuffs in currentSideBuffs)
+                                {
+                                    if (unitBuffs[7] >= -2)
+                                        limitReached = false;
+                                }
+                                text1 = limitReached ? "Limit reached!" : "Decreased enemy's Defense!"; 
+                                break; 
+                            }
+                        case 64: 
+                            { 
+                                type = 0;
+                                var limitReached = true;
+                                foreach (var unitBuffs in currentSideBuffs)
+                                {
+                                    if (unitBuffs[4] <= 2 || unitBuffs[5] <= 2)
+                                        limitReached = false;
+                                }
+                                text1 = limitReached ? "Limit reached!" : "Physical/Magical Attack increased!"; 
+                                break; 
+                            }
+                        case 67: 
+                            { 
+                                type = 0;
+                                var limitReached = true;
+                                foreach (var unitBuffs in currentSideBuffs)
+                                {
+                                    if (unitBuffs[5] <= 2 || unitBuffs[8] <= 2)
+                                        limitReached = false;
+                                }
+                                text1 = limitReached ? "Limit reached!" : "Magical Attack/Hit Rate increased!"; 
+                                break; 
+                            }
+                        case 276: 
+                            { 
+                                type = 0;
+                                var limitReached = true;
+                                if (currentUnitBuffs[6] <= 2 || currentUnitBuffs[8] <= 2)
+                                    limitReached = false;
+                                text1 = limitReached ? "Limit reached!" : "Evasion/Hit Rate maximized!"; 
+                                break; 
+                            }
                         default: break;
                     }
                     
@@ -436,6 +487,8 @@ namespace NewBossAI
             Shibaboo(59);
             Pulinpa(61);
             Tentarafoo(63);
+            Tarukaja(64);
+            Makakaja(67);
             Makarakarn(69);
             Tetrakarn(70);
             HourglassSkill(78);
@@ -479,6 +532,9 @@ namespace NewBossAI
             Antichthon(453);
             LastWord(454);
             SoulDrain(455);
+            Amrita(456);
+            HeatRiser(457);
+            LusterCandy(458);
 
             // Passive Skills
             Might(11);
@@ -2323,15 +2379,71 @@ namespace NewBossAI
             OverWriteSkillEffect(id, 63);
         }
 
-        
-
         // Self-Destruct Skills
 
 
         // Healing Skills
 
+        private static void Amrita(ushort id)
+        {
+            datSkill.tbl[id].capacity = 6;
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 13;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 2;
+            datNormalSkill.tbl[id].basstatus = 1535;
+            datNormalSkill.tbl[id].cost = 20;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 255;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 50;
+            datNormalSkill.tbl[id].hptype = 0;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 9;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
+            OverWriteSkillEffect(id, 44);
+        }
 
         // Support Skills
+
+        private static void Tarukaja(ushort id)
+        {
+            datNormalSkill.tbl[id].hojotype = 5;
+        }
+
+        private static void Makakaja(ushort id)
+        {
+            datNormalSkill.tbl[id].hojotype = 260;
+        }
 
         private static void Makarakarn(ushort id)
         {
@@ -2449,6 +2561,104 @@ namespace NewBossAI
 
             tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 224);
+        }
+
+        private static void HeatRiser(ushort id)
+        {
+            datSkill.tbl[id].capacity = 2;
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 14;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 50;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 255;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 2;
+            datNormalSkill.tbl[id].hojotype = 341;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 50;
+            datNormalSkill.tbl[id].hptype = 0;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 9;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 1;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
+            OverWriteSkillEffect(id, 224);
+        }
+
+        private static void LusterCandy(ushort id)
+        {
+            datSkill.tbl[id].capacity = 2;
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 14;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 50;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 255;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 1;
+            datNormalSkill.tbl[id].hojotype = 341;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 50;
+            datNormalSkill.tbl[id].hptype = 0;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 9;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
+            OverWriteSkillEffect(id, 219);
         }
 
         // Utility Skills
