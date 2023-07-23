@@ -8,85 +8,136 @@ namespace NewBossAI
 {
     internal partial class NewBossAI : MelonMod
     {
-        private static List<Tuple<datUnitWork_t, int, int>> demonsWithResist = new List<Tuple<datUnitWork_t, int, int>>();
-
-        // After checking for the element of an attack
         [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetAisyo))]
-        private class AnitDamagePatch
+        private class AntiDamagePatch
         {
             public static void Postfix(ref int formindex, ref int attr, ref uint __result)
             {
-                datUnitWork_t targetUnit = nbMainProcess.nbGetUnitWorkFromFormindex(formindex);
+                var work = nbMainProcess.nbGetUnitWorkFromFormindex(formindex);
 
-                // If the target with "Resist X" has already been added to the list
-                foreach (Tuple<datUnitWork_t, int, int> demonInfo in demonsWithResist)
+                var resistance = Convert.ToString(__result, 2);
+                while (resistance.Length < 32)
+                    resistance = "0" + resistance;
+
+                var substring = resistance.Substring(resistance.Length - 10).TrimStart('0');
+
+                uint ratio = 100;
+                if (string.IsNullOrEmpty(substring))
+                    ratio = 0;
+                else
+                    ratio = Convert.ToUInt32(substring, 2);
+
+                if (ratio == 75)
+                    __result -= 25;
+
+                bool isWeak = resistance[0] == '1';
+
+                switch(attr)
                 {
-                    if (demonInfo.Item1.id == targetUnit.id)
-                    {
-                        __result = 50; // Resist
-                        return;
-                    }
+                    case 0:
+                        {
+                            if (isWeak && datCalc.datCheckSyojiSkill(work, 313) != 0)
+                                __result -= 2147483648;
+                            break;
+                        }
+                    case 1:
+                        {
+                            if (isWeak && (datCalc.datCheckSyojiSkill(work, 314) != 0 || datCalc.datCheckSyojiSkill(work, 364) != 0))
+                                __result -= 2147483648;
+                            if (datCalc.datCheckSyojiSkill(work, 364) != 0)
+                            {
+                                if (__result == 150)
+                                    __result = 100;
+                                __result -= Convert.ToUInt32(__result / 2);
+                            }
+                            break;
+                        }
+                    case 2:
+                        {
+                            if (isWeak && (datCalc.datCheckSyojiSkill(work, 315) != 0 || datCalc.datCheckSyojiSkill(work, 364) != 0))
+                                __result -= 2147483648;
+                            if (datCalc.datCheckSyojiSkill(work, 364) != 0)
+                            {
+                                if (__result == 150)
+                                    __result = 100;
+                                __result -= Convert.ToUInt32(__result / 2);
+                            }
+                            break;
+                        }
+                    case 3:
+                        {
+                            if (isWeak && (datCalc.datCheckSyojiSkill(work, 316) != 0 || datCalc.datCheckSyojiSkill(work, 364) != 0))
+                                __result -= 2147483648;
+                            if (datCalc.datCheckSyojiSkill(work, 364) != 0)
+                            {
+                                if (__result == 150)
+                                    __result = 100;
+                                __result -= Convert.ToUInt32(__result / 2);
+                            }
+                            break;
+                        }
+                    case 4:
+                        {
+                            if (isWeak && (datCalc.datCheckSyojiSkill(work, 317) != 0 || datCalc.datCheckSyojiSkill(work, 364) != 0))
+                                __result -= 2147483648;
+                            if (datCalc.datCheckSyojiSkill(work, 364) != 0)
+                            {
+                                if (__result == 150)
+                                    __result = 100;
+                                __result -= Convert.ToUInt32(__result / 2);
+                            }
+                            break;
+                        }
+                    case 6:
+                        {
+                            if (isWeak && datCalc.datCheckSyojiSkill(work, 318) != 0)
+                                __result -= 2147483648;
+                            break;
+                        }
+                    case 7:
+                        {
+                            if (isWeak && datCalc.datCheckSyojiSkill(work, 319) != 0)
+                                __result -= 2147483648;
+                            break;
+                        }
+                    case 8:
+                        {
+                            if (isWeak && (datCalc.datCheckSyojiSkill(work, 320) != 0 || datCalc.datCheckSyojiSkill(work, 365) != 0))
+                                __result -= 2147483648;
+                            if (datCalc.datCheckSyojiSkill(work, 365) != 0)
+                            {
+                                if (__result == 150)
+                                    __result = 100;
+                                __result -= Convert.ToUInt32(__result / 2);
+                            }
+                            break;
+                        }
+                    case 9:
+                        {
+                            if (isWeak && (datCalc.datCheckSyojiSkill(work, 321) != 0 || datCalc.datCheckSyojiSkill(work, 365) != 0))
+                                __result -= 2147483648;
+                            if (datCalc.datCheckSyojiSkill(work, 365) != 0)
+                            {
+                                if (__result == 150)
+                                    __result = 100;
+                                __result -= Convert.ToUInt32(__result / 2);
+                            }
+                            break;
+                        }
+                    case 10:
+                        {
+                            if (isWeak && (datCalc.datCheckSyojiSkill(work, 322) != 0 || datCalc.datCheckSyojiSkill(work, 365) != 0))
+                                __result -= 2147483648;
+                            if (datCalc.datCheckSyojiSkill(work, 365) != 0)
+                            {
+                                if (__result == 150)
+                                    __result = 100;
+                                __result -= Convert.ToUInt32(__result / 2);
+                            }
+                            break;
+                        }
+                    default: break;
                 }
-
-                //If not neutral, pseudo-weak nor weak, act as normal
-                if ((__result < 100 || __result > 999) && __result < 1000000000) return;
-
-                int antiSkillID;
-
-                switch (attr)
-                {
-                    //Anti-Phys
-                    case 0: antiSkillID = 313; break;
-                    //Anti-Fire
-                    case 1: antiSkillID = 314; break;
-                    //Anti-Ice
-                    case 2: antiSkillID = 315; break;
-                    //Anti-Elec
-                    case 3: antiSkillID = 316; break;
-                    //Anti-Force
-                    case 4: antiSkillID = 317; break;
-                    //Anti-Light
-                    case 6: antiSkillID = 318; break;
-                    //Anti-Dark
-                    case 7: antiSkillID = 319; break;
-                    //Anti-Curse
-                    case 8: antiSkillID = 320; break;
-                    //Anti-Nerve
-                    case 9: antiSkillID = 321; break;
-                    //Anti-Mind
-                    case 10: antiSkillID = 322; break;
-                    default: return;
-                }
-
-                //If the target has the corresponding Anti-X skill
-                for (int i = 0; i < targetUnit.skill.Count; i++)
-                {
-                    if (targetUnit.skill[i] == antiSkillID)
-                    {
-                        __result = 50; // Resist
-
-                        demonsWithResist.Add(new Tuple<datUnitWork_t, int, int>(targetUnit, i, antiSkillID)); // Adds the demon to the list
-                        targetUnit.skill[i] = 0; // Removes the skill temporarily
-                        return;
-                    }
-                }
-            }
-        }
-
-        // After a "turn"
-        [HarmonyPatch(typeof(nbUnitProcess), nameof(nbUnitProcess.nbUnitProcess2))]
-        private class AntiDamagePatch2
-        {
-            public static void Postfix()
-            {
-                // For each demon with "Resist X"
-                foreach (Tuple<datUnitWork_t, int, int> demonInfo in demonsWithResist)
-                {
-                    demonInfo.Item1.skill[demonInfo.Item2] = demonInfo.Item3; // Puts the removed skill back
-                }
-
-                // Clears the list
-                demonsWithResist.Clear();
             }
         }
     }

@@ -42,6 +42,14 @@ namespace NewBossAI
                     // New Skills
                     case 188: __result = "Punishment"; return false;      
                     case 189: __result = "Judgement Light"; return false;      
+
+                    case 362: __result = "Phys Boost"; return false;      
+                    case 363: __result = "Magic Boost"; return false;      
+                    case 364: __result = "Anti-Magic"; return false;      
+                    case 365: __result = "Anti-Ailments"; return false;
+                    case 366: __result = "Abyssal Mask"; return false;
+                    case 367: __result = "Knowledge of Tools"; return false;
+
                     case 422: __result = "Beast Eye"; return false;      
                     case 423: __result = "Dragon Eye"; return false;     
                     case 424: __result = "Concentrate"; return false;
@@ -115,17 +123,30 @@ namespace NewBossAI
                     case 299: __result = "Greatly raises critical \nhit rate of normal attacks."; return false; // Might
                     case 300: __result = "Drastically raises critical \nhit rate of normal attacks \nduring full Kagutsuchi."; return false; // Bright Might
                     case 301: __result = "Drastically raises critical \nhit rate of normal attacks \nduring new Kagutsuchi."; return false; // Dark Might
-                    case 313: __result = "Protects against Physical Attacks"; return false; // Anti-Phys
-                    case 314: __result = "Protects against Fire Attacks"; return false; // Anti-Fire
-                    case 315: __result = "Protects against Ice Attacks"; return false; // Anti-Ice
-                    case 316: __result = "Protects against Elec Attacks"; return false; // Anti-Elec
-                    case 317: __result = "Protects against Force Attacks"; return false; // Anti-Force
+                    case 309: __result = "Raises Fire attack damage by 30%."; return false; // Fire Boost
+                    case 310: __result = "Raises Ice attack damage by 30%."; return false; // Ice Boost
+                    case 311: __result = "Raises Elec attack damage by 30%."; return false; // Elec Boost
+                    case 312: __result = "Raises Force attack damage by 30%."; return false; // Force Boost
+                    case 313: __result = "Protects against Physical attacks"; return false; // Anti-Phys
+                    case 314: __result = "Protects against Fire attacks"; return false; // Anti-Fire
+                    case 315: __result = "Protects against Ice attacks"; return false; // Anti-Ice
+                    case 316: __result = "Protects against Elec attacks"; return false; // Anti-Elec
+                    case 317: __result = "Protects against Force attacks"; return false; // Anti-Force
                     case 354: __result = "Earn 100% EXP when \nnot participating in battle."; return false; // Watchful
                     case 357: __result = "Attacks ignore all resistances \nexcept Repel."; return false; // Pierce
+                    case 361: __result = "Pierce & raises damage of all attacks by 30%."; return false; // Raidou the Eternal/Son's Oath
                     
                     // New Skills
                     case 188: __result = "Light: Chance to instakill one foe."; return false; // Punishment
                     case 189: __result = "Light: Chance to instakill all foes."; return false; // Judgement Light
+
+                    case 362: __result = "Raises Physical attack damage by 30%."; return false; // Phys Boost 
+                    case 363: __result = "Raises Magical attack damage by 30%."; return false; // Magic Boost
+                    case 364: __result = "Protects against Magical attacks."; return false; // Anti-Magic 
+                    case 365: __result = "Protects against Ailment attacks."; return false; // Anti-Ailments
+                    case 366: __result = "Protects against ailments and instakills."; return false; // Abyssal Mask
+                    case 367: __result = "Allows the use of items."; return false; // Knowledge of Tools
+
                     case 424: __result = "More than doubles damage \nof next Magical attack."; return false; // Concentrate
                     case 425: __result = "More than doubles damage \nof next attack and grants Pierce."; return false; // Impaler's Animus
                     case 426: __result = "High Physical damage to all foes. \nChance to inflict Charm."; return false; // Sakura Rage
@@ -307,6 +328,18 @@ namespace NewBossAI
                         __result = 0;
                     }
                 }
+
+                var work = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
+
+                if (__result == 1 && datCalc.datCheckSyojiSkill(work, 366) != 0 && datNormalSkill.tbl[nskill].basstatus != 1 && datNormalSkill.tbl[nskill].basstatus != 2)
+                {
+                    __result = (uint)random.Next(2);
+                }
+
+                if (work.id >= 256 && (datNormalSkill.tbl[nskill].basstatus == 8 || datNormalSkill.tbl[nskill].basstatus == 16 || datNormalSkill.tbl[nskill].basstatus == 32 || datNormalSkill.tbl[nskill].basstatus == 128 || datNormalSkill.tbl[nskill].basstatus == 1024 || datNormalSkill.tbl[nskill].basstatus == 2048))
+                {
+                    __result = 0;
+                }
             }
         }
 
@@ -367,6 +400,81 @@ namespace NewBossAI
                         default: break;
                     }
                     
+                }
+            }
+        }
+
+        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetAisyoRitu))]
+        private class GetAisyoRituPatch
+        {
+            public static void Postfix(ref int nskill, ref int sformindex, ref int dformindex, ref float __result)
+            {
+                var skillattr = datSkill.tbl[nskill].skillattr;
+                var work = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
+
+                switch (skillattr)
+                {
+                    case 0:
+                        {
+                            if (datCalc.datCheckSyojiSkill(work, 361) != 0)
+                            {
+                                __result = (__result / 1.5f) * 1.3f;
+                            }
+                            else if (datCalc.datCheckSyojiSkill(work, 362) != 0)
+                            {
+                                __result = __result * 1.3f;
+                            }
+                            break;
+                        }
+                    case 1:
+                        {
+                            if (datCalc.datCheckSyojiSkill(work, 309) != 0 || datCalc.datCheckSyojiSkill(work, 361) != 0)
+                            {
+                                __result = (__result / 1.5f) * 1.3f;
+                            }
+                            else if (datCalc.datCheckSyojiSkill(work, 363) != 0)
+                            {
+                                __result = __result * 1.3f;
+                            }
+                            break;
+                        }
+                    case 2:
+                        {
+                            if (datCalc.datCheckSyojiSkill(work, 310) != 0 || datCalc.datCheckSyojiSkill(work, 361) != 0)
+                            {
+                                __result = (__result / 1.5f) * 1.3f;
+                            }
+                            else if (datCalc.datCheckSyojiSkill(work, 363) != 0)
+                            {
+                                __result = __result * 1.3f;
+                            }
+                            break;
+                        }
+                    case 3:
+                        {
+                            if (datCalc.datCheckSyojiSkill(work, 311) != 0 || datCalc.datCheckSyojiSkill(work, 361) != 0)
+                            {
+                                __result = (__result / 1.5f) * 1.3f;
+                            }
+                            else if (datCalc.datCheckSyojiSkill(work, 363) != 0)
+                            {
+                                __result = __result * 1.3f;
+                            }
+                            break;
+                        }
+                    case 4:
+                        {
+                            if (datCalc.datCheckSyojiSkill(work, 312) != 0 || datCalc.datCheckSyojiSkill(work, 361) != 0)
+                            {
+                                __result = (__result / 1.5f) * 1.3f;
+                            }
+                            else if (datCalc.datCheckSyojiSkill(work, 363) != 0)
+                            {
+                                __result = __result * 1.3f;
+                            }
+                            break;
+                        }
+                    default: break;
                 }
             }
         }
@@ -539,6 +647,8 @@ namespace NewBossAI
             // Passive Skills
             Might(11);
             DrainAttack(14);
+            AntiMagic(76);
+            AntiAilments(77);
         }
 
         // Physical Skills
@@ -2784,6 +2894,22 @@ namespace NewBossAI
         private static void DrainAttack(ushort id)
         {
             datSpecialSkill.tbl[id].n = 1;
+        }
+
+        private static void AntiMagic(ushort id)
+        {
+            datSpecialSkill.tbl[id].a = 0;
+            datSpecialSkill.tbl[id].b = 0;
+            datSpecialSkill.tbl[id].m = 0;
+            datSpecialSkill.tbl[id].n = 50;
+        }
+
+        private static void AntiAilments(ushort id)
+        {
+            datSpecialSkill.tbl[id].a = 0;
+            datSpecialSkill.tbl[id].b = 0;
+            datSpecialSkill.tbl[id].m = 0;
+            datSpecialSkill.tbl[id].n = 50;
         }
     }
 }

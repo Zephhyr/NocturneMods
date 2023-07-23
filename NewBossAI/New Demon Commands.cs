@@ -40,19 +40,23 @@ namespace NewBossAI
                     s.commlist[3] = stockCommands;
                     s.commcnt[3] = stockIndices.Count;
 
-                    // Use Items
-                    var items = dds3GlobalWork.DDS3_GBWK.item;
-                    var itemIndices = new List<ushort>();
-                    for (ushort i = 0; i <= 56; i++)
-                        if (items[i] != 0 && datItem.tbl[i].use >= 2 && datItem.tbl[i].skillid != 72)
-                            itemIndices.Add(i);
+                    if (datCalc.datCheckSyojiSkill(nbMainProcess.nbGetUnitWorkFromFormindex(s.my.formindex), 367) != 0)
+                    {
+                        // Use Items
+                        var items = dds3GlobalWork.DDS3_GBWK.item;
+                        var itemIndices = new List<ushort>();
+                        for (ushort i = 0; i <= 56; i++)
+                            if (items[i] != 0 && datItem.tbl[i].use >= 2 && datItem.tbl[i].skillid != 72)
+                                itemIndices.Add(i);
 
-                    var itemCommands = new ushort[288];
-                    for (ushort i = 0; i < itemIndices.Count; i++)
-                        itemCommands[i] = itemIndices[i];
+                        var itemCommands = new ushort[288];
+                        for (ushort i = 0; i < itemIndices.Count; i++)
+                            itemCommands[i] = itemIndices[i];
 
-                    s.commlist[2] = itemCommands;
-                    s.commcnt[2] = itemIndices.Count;
+                        s.commlist[2] = itemCommands;
+                        s.commcnt[2] = itemIndices.Count;
+                    }
+                    
 
                     // Test - Add all skills
                     var skillCommands = new ushort[288];

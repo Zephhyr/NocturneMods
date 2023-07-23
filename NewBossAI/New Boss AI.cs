@@ -25,14 +25,14 @@ namespace NewBossAI
             ApplyDemonChanges();
         }
 
-        //[HarmonyPatch(typeof(datEncount), nameof(datEncount.Get))]
-        //private class EncounterPatch
-        //{
-        //    public static void Prefix(ref int id)
-        //    {
-        //        id = 744;
-        //    }
-        //}
+        [HarmonyPatch(typeof(datEncount), nameof(datEncount.Get))]
+        private class EncounterPatch
+        {
+            public static void Prefix(ref int id)
+            {
+                id = 744;
+            }
+        }
 
         [HarmonyPatch(typeof(nbInit), nameof(nbInit.nbCallNewBattle))]
         private class InitBattlePatch

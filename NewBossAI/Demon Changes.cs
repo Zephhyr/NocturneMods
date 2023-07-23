@@ -14,10 +14,22 @@ namespace NewBossAI
     {
         private static void ApplyDemonChanges()
         {
+            NagaRaja(77);
+            Yaksini(100);
             BossForneus(256);
         }
 
         // 2148532374 = Weak but status-immune
+
+        private static void NagaRaja(ushort id)
+        {
+            //datDevilFormat.tbl[id].skill[4] = 367;
+        }
+
+        private static void Yaksini(ushort id)
+        {
+            tblSkill.fclSkillTbl[id].Event[0].Param = 367;
+        }
 
         private static void BossForneus(ushort id)
         {
