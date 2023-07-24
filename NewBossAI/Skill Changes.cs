@@ -254,34 +254,6 @@ namespace NewBossAI
             }
         }
 
-        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetHitType))]
-        private class CritPassivesPatch
-        {
-            public static void Postfix(ref nbActionProcessData_t ad, ref int nskill, ref int sformindex, ref int dformindex, ref int __result)
-            {
-                actionProcessData = ad;
-
-                if (__result == 1 && (ad.autoskill == 300 || ad.autoskill == 301))
-                {
-                    __result = random.Next(2);
-                    ad.autoskill = 0;
-                }
-                else if (ad.autoskill == 299)
-                    ad.autoskill = 0;
-            }
-        }
-
-
-        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbCheckBackAttack))]
-        private class MindsEyePatch
-        {
-            public static void Postfix(ref int __result)
-            {
-                // If someone has Mind's Eye, then always avoid back attacks
-                if (datCalc.datCheckSkillInParty(298) == 1) __result = 0;
-            }
-        }
-
         [HarmonyPatch(typeof(datCalc), nameof(datCalc.datExecSkill))]
         private class OutOfBattleSkillPatch
         {

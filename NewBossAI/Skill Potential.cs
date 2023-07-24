@@ -1164,30 +1164,27 @@ namespace NewBossAI
         /*********************************************************************************************
          * ADJUST AILMENT RATE WITH POTENTIAL
          *********************************************************************************************/
-        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetKoukaBadDamage))] // Before attempting to inflinct an ailment
+        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetKoukaBadDamage))] 
         private class SkillPotentialPatch11
         {
-            public static void Prefix(ref int nskill, ref int sformindex)
+            public static void Prefix(ref int nskill, ref int sformindex) // Before attempting to inflinct an ailment
             {
                 if ((nskill < 288 || nskill > 421) && datNormalSkill.tbl[nskill].badlevel != 255) // If it isn't a passive skill
                 {
                     tmp_datNormalSkill.badlevel = datNormalSkill.tbl[nskill].badlevel; // Memorize the original ailment rate
+                    
+                    var work = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
+                    var luk = datCalc.datGetParam(work, 5);
+
                     int demonID = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id; // Get the demon's ID
 
                     sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(nskill, demonID);
 
-                    if (skillPotential != 0)
-                    {
-                        datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(SkillPotentialUtility.ApplyAilmentMultiplier(skillPotential, tmp_datNormalSkill.badlevel));
-                    }
+                    datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(SkillPotentialUtility.ApplyAilmentMultiplier(skillPotential, luk, tmp_datNormalSkill.badlevel));
                 }
             }
-        }
 
-        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetKoukaBadDamage))] // After attempting to inflinct an ailment
-        private class SkillPotentialPatch12
-        {
-            public static void Postfix(ref int nskill)
+            public static void Postfix(ref int nskill) // After attempting to inflinct an ailment
             {
                 if ((nskill < 288 || nskill > 421) && datNormalSkill.tbl[nskill].badlevel != 255)
                 {
@@ -1200,7 +1197,7 @@ namespace NewBossAI
          * APPEND POTENTIAL TEXT TO AFFINITY TEXT
          *********************************************************************************************/
         [HarmonyPatch(typeof(datAisyoName), nameof(datAisyoName.Get))]
-        private class SkillPotentialPatch13
+        private class SkillPotentialPatch12
         {
             public static void Postfix(ref int id, ref string __result)
             {
@@ -1212,7 +1209,7 @@ namespace NewBossAI
          * REPLACE MAGATAMA HELP TEXT
          *********************************************************************************************/
         [HarmonyPatch(typeof(datHeartsHelp_msg), nameof(datHeartsHelp_msg.Get))]
-        private class SkillPotentialPatch14
+        private class SkillPotentialPatch13
         {
             public static bool Prefix(ref int id, ref string __result)
             {
@@ -1225,7 +1222,7 @@ namespace NewBossAI
          * EXTEND AFFINITY TEXT RECTANGLE IN STATUS SCREEN
          *********************************************************************************************/
         [HarmonyPatch(typeof(cmpDrawStatus), nameof(cmpDrawStatus.cmpDrawAisyoHelp))]
-        private class SkillPotentialPatch15
+        private class SkillPotentialPatch14
         {
             public static void Postfix()
             {
@@ -1238,7 +1235,7 @@ namespace NewBossAI
          * REMOVE POTENTIAL TEXT FROM ATTRIBUTES IN ANALYZE PANEL
          *********************************************************************************************/
         [HarmonyPatch(typeof(nbPanelProcess), nameof(nbPanelProcess.nbPanelAnalyzeRun))]
-        private class SkillPotentialPatch16
+        private class SkillPotentialPatch15
         {
             public static void Postfix()
             {
@@ -1467,7 +1464,7 @@ namespace NewBossAI
                 return damage * multiplier;
             }
 
-            public static float ApplyAilmentMultiplier(sbyte skillPotential, float ailmentRate)
+            public static float ApplyAilmentMultiplier(sbyte skillPotential, int luk, float ailmentRate)
             {
                 //MelonLogger.Msg("INFLINCTING AILMENT!");
                 float multiplier = 1;
@@ -1528,9 +1525,11 @@ namespace NewBossAI
                     case -9:
                         multiplier = 1 / 1.5f;
                         break;
+                    default: break;
                 }
 
-                return ailmentRate * multiplier;
+                var lukMultiplier = 1 + ((float)luk / 100);
+                return ailmentRate * multiplier * lukMultiplier;
             }
         }
     }

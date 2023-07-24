@@ -30,7 +30,8 @@ namespace NewBossAI
         {
             public static void Prefix(ref int id)
             {
-                id = 744;
+                //id = 744; // 3* Naga Raja
+                //id = 1031; // Mother Harlot
             }
         }
 

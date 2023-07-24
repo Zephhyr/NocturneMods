@@ -5,11 +5,14 @@ using System.Collections.Generic;
 using Il2Cpp;
 using Il2Cppnewdata_H;
 using Il2Cppfield_H;
+using Il2Cppbasic_H;
 
 namespace NewBossAI
 {
     internal partial class NewBossAI : MelonMod
     {
+        static private byte[] tmp_dropPoint;
+
         #region datCalc
 
         [HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetBaseMaxHp))]
@@ -93,7 +96,7 @@ namespace NewBossAI
                 var mag = datCalc.datGetParam(work, 2);
                 var agi = datCalc.datGetParam(work, 4);
                 var luk = datCalc.datGetParam(work, 5);
-                __result = level + mag + agi + (luk * 2);
+                __result = level + mag + (agi * 2) + luk;
                 return false;
             }
         }
@@ -117,7 +120,17 @@ namespace NewBossAI
                 var level = work.level;
                 var agi = datCalc.datGetParam(work, 4);
                 var luk = datCalc.datGetParam(work, 5);
-                __result = level + (agi * 2) + luk + 10;
+                __result = level + (agi * 2) + luk;
+                return false;
+            }
+        }
+
+        [HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetLevelForDraw))]
+        private class GetLevelForDrawPatch
+        {
+            public static bool Prefix(ref datUnitWork_t work, ref int __result)
+            {
+                __result = work.level;
                 return false;
             }
         }
@@ -159,7 +172,13 @@ namespace NewBossAI
                 datUnitWork_t workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
                 //datUnitWork_t workFromFormindex2 = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
 
-                double atkPow = workFromFormindex1.maxhp * waza * 0.8 / 69.6;
+                var maxhp = (double) workFromFormindex1.maxhp;
+                var currenthp = (double) (int) (workFromFormindex1.hp + (datNormalSkill.tbl[nskill].cost * maxhp / 100));
+                double hpPercentage = (currenthp / maxhp);
+                double hpModifier = 0.5 + hpPercentage / 2;
+
+                //double atkPow = workFromFormindex1.maxhp * waza * 0.8 / 69.6;
+                double atkPow = ((workFromFormindex1.level + datCalc.datGetParam(workFromFormindex1, 0)) * waza / 14.5) * hpModifier;
 
                 //double defPow = datCalc.datGetParam(workFromFormindex2, 3);
 
@@ -173,38 +192,6 @@ namespace NewBossAI
                 return false;
             }
         }
-
-        //[HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetMagicAttack))]
-        //private class magicAttackPatch
-        //{
-        //    public static void Postfix(ref int nskill, ref int sformindex, ref int dformindex, ref int waza, ref int __result)
-        //    {
-        //        datUnitWork_t workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
-        //        datUnitWork_t workFromFormindex2 = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
-
-        //        var newWaza = 30 * Math.Log(waza) - 70;
-
-        //        double atkPow = (workFromFormindex1.level + datCalc.datGetParam(workFromFormindex1, 2)) * newWaza / 14.5;
-        //        //double atkPow = (workFromFormindex1.level + datCalc.datGetParam(workFromFormindex1, 2) * 2) * Math.Pow(waza, 0.75) / 12;
-        //        //double atkPow2 = 0.004 * (5 * (datCalc.datGetParam(workFromFormindex1, 2) + 36) - workFromFormindex1.level) * (24 * waza * (workFromFormindex1.level / 255) + datNormalSkill.tbl[nskill].magicbase);
-
-        //        //double defPow = datCalc.datGetParam(workFromFormindex2, 3);
-
-        //        var atkBuff = nbCalc.nbGetHojoRitu(sformindex, 5);
-        //        var defBuff = nbCalc.nbGetHojoRitu(dformindex, 7);
-
-        //        MelonLogger.Msg("atkBuff: " + atkBuff);
-        //        MelonLogger.Msg("defBuff: " + defBuff);
-
-        //        atkPow *= atkBuff * defBuff;
-        //        //defPow /= atkBuff * defBuff;
-
-        //        MelonLogger.Msg("waza:" + waza);
-        //        MelonLogger.Msg("newWaza:" + newWaza);
-        //        MelonLogger.Msg("atkPow:" + atkPow);
-        //        MelonLogger.Msg("normal:" + __result);
-        //    }
-        //}
 
         [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbCheckSensei))]
         private class CheckSenseiPatch
@@ -241,6 +228,11 @@ namespace NewBossAI
         {
             public static bool Prefix(ref nbMainProcessData_t data, ref int __result)
             {
+                if (datCalc.datCheckSkillInParty(298) == 1)
+                {
+                    __result = 0;
+                    return false;
+                }
                 var lvAvg = nbCalc.nbGetLvAvg2(data, 1);
                 var avgAgi = nbCalc.nbGetParamAvg2(data, 1, 4);
                 var avgLuk = nbCalc.nbGetParamAvg2(data, 1, 5);
@@ -252,35 +244,142 @@ namespace NewBossAI
 
                 double chance = 12 * (lvAvg + avgAgi + (avgLuk * 2)) / (level + agi + (luk * 2));
                 var rand = dds3KernelCore.dds3GetRandIntA(128);
-                __result = rand > chance ? 0 : 1 - datEncount.Get(data.encno).backattack;
+                __result = rand < chance ? 0 : 1 + datEncount.Get(data.encno).backattack;
 
                 return false;
             }
         }
 
-        //[HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetHitType))]
-        //private class GetHitTypePatch
-        //{
-        //    public static void Postfix(ref nbActionProcessData_t ad, ref int nskill, ref int sformindex, ref int dformindex, ref int __result)
-        //    //public static bool Prefix(ref nbActionProcessData_t ad, ref int nskill, ref int sformindex, ref int dformindex, ref int __result)
-        //    {
-        //        datUnitWork_t workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
-        //        datUnitWork_t workFromFormindex2 = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
+        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbCheckEscape))]
+        private class CheckEscapePatch
+        {
+            public static bool Prefix(ref nbMainProcessData_t data, ref int __result)
+            {
+                var encounter = datEncount.Get(data.encno);
+                if ((encounter.flag >> 5 & 1) != 0 || datCalc.datCheckSkillInParty(296) != 0)
+                    __result = 1;
+                else
+                {
+                    bool allDisabled = true;
+                    foreach (var enemy in data.enemyunit)
+                    {
+                        if (enemy.badstatus != 4 && enemy.badstatus != 8 && enemy.badstatus != 16 && enemy.badstatus != 128 && enemy.badstatus != 1024 && enemy.badstatus != 2048)
+                        {
+                            allDisabled = false;
+                            break;
+                        }
+                    }
+                    if (allDisabled)
+                    {
+                        __result = 1;
+                        return false;
+                    }
 
-        //        var aisyo = nbCalc.nbGetAisyo(nskill, dformindex, datSkill.tbl[nskill].skillattr);
+                    var allyAvgAgi = nbCalc.nbGetParamAvg2(data, 0, 4);
+                    var allyAvgLuk = nbCalc.nbGetParamAvg2(data, 0, 5);
+                    var enemyAvgAgi = nbCalc.nbGetParamAvg2(data, 1, 4);
+                    var enemyAvgLuk = nbCalc.nbGetParamAvg2(data, 1, 5);
+                    var attemptCount = data.esccnt;
+                    var moonModifier = evtMoon.evtGetAgeOfMoon() == 8 ? 20 : 0;
 
-        //        if (nskill == 0)
-        //        {
-        //            if (datCalc.datCheckSyojiSkill(workFromFormindex1, 300) != 0 && evtMoon.evtGetAgeOfMoon() == 8)
-        //                ad.autoskill = 300;
-        //            else if (datCalc.datCheckSyojiSkill(workFromFormindex1, 301) != 0 && evtMoon.evtGetAgeOfMoon() == 0)
-        //                ad.autoskill = 301;
-        //        }
+                    double chance = 20 * ((allyAvgAgi + allyAvgLuk) / (enemyAvgAgi + enemyAvgLuk)) + 20 - moonModifier + 10 * attemptCount;
+                    if (dds3ConfigMain.cfgGetBit(9) == 2)
+                        chance /= 2;
+                    var rand = dds3KernelCore.dds3GetRandIntA(100);
+                    __result = rand < chance ? 1 - encounter.esc : 0;
+                }
 
-        //        MelonLogger.Msg("normalResult: " + __result);
-        //        //return false;
-        //    }
-        //}
+                return false;
+            }
+        }
+
+        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetHitType))]
+        private class GetHitTypePatch
+        {
+            public static bool Prefix(ref nbActionProcessData_t ad, ref int nskill, ref int sformindex, ref int dformindex, ref int __result)
+            {
+                datUnitWork_t workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
+                datUnitWork_t workFromFormindex2 = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
+
+                var aisyo = nbCalc.nbGetAisyo(nskill, dformindex, datSkill.tbl[nskill].skillattr);
+                var resistance = Convert.ToString(aisyo, 2);
+                while (resistance.Length < 32)
+                    resistance = "0" + resistance;
+                bool isWeak = resistance[0] == '1';
+
+                if (isWeak)
+                    __result = 2;
+                else if (workFromFormindex2.badstatus == 1 || workFromFormindex2.badstatus == 2)
+                    __result = 1;
+                else
+                {
+                    var critRate = datNormalSkill.tbl[nskill].criticalpoint;
+                    if (nskill == 0)
+                    {
+                        if ((datCalc.datCheckSyojiSkill(workFromFormindex1, 300) != 0 && evtMoon.evtGetAgeOfMoon() == 8) ||
+                            (datCalc.datCheckSyojiSkill(workFromFormindex1, 301) != 0 && evtMoon.evtGetAgeOfMoon() == 0))
+                            critRate = 50;
+                        else if (datCalc.datCheckSyojiSkill(workFromFormindex1, 299) != 0)
+                            critRate = 30;
+                    }
+                    var luk = datCalc.datGetParam(workFromFormindex1, 5);
+                    var lukMultiplier = 1 + ((float)luk / 100);
+                    var critChance = critRate * lukMultiplier;
+
+                    var rand = dds3KernelCore.dds3GetRandIntA(100);
+                    __result = rand < critChance ? 1 : 0;
+                }
+                return false;
+            }
+        }
+
+        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetKoukaType))]
+        private class GetKoukaTypePatch
+        {
+            public static void Postfix(ref int nskill, ref int sformindex, ref int dformindex, ref int __result)
+            {
+                if (datNormalSkill.tbl[nskill].koukatype == 0 && (__result == 0 || __result == 4))
+                {
+                    datUnitWork_t workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
+                    datUnitWork_t workFromFormindex2 = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
+
+                    var userLevel = workFromFormindex1.level;
+                    var userAgi = datCalc.datGetParam(workFromFormindex1, 4);
+                    var userLuk = datCalc.datGetParam(workFromFormindex1, 5);
+                    var accuracyBuff = nbCalc.nbGetHojoRitu(sformindex, 8);
+                    
+                    var targetLevel = workFromFormindex2.level;
+                    var targetAgi = datCalc.datGetParam(workFromFormindex2, 4);
+                    var targetLuk = datCalc.datGetParam(workFromFormindex2, 5);
+                    var evasionBuff = nbCalc.nbGetHojoRitu(dformindex, 6);
+
+                    var chance = ((datNormalSkill.tbl[nskill].hitlevel - datNormalSkill.tbl[nskill].failpoint) + (userLevel + (userAgi * 2) + userLuk) - (targetLevel + (targetAgi * 2) + targetLuk)) * accuracyBuff * evasionBuff;
+                    var rand = dds3KernelCore.dds3GetRandIntA(100);
+                    __result = rand < chance ? 0 : 4;
+                }
+            }
+        }
+
+        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetExpMakaItem))]
+        private class GetExpMakaItemPatch
+        {
+            public static void Prefix(ref datUnitWork_t w)
+            {
+                var luk = datCalc.datGetParam(nbMainProcess.nbGetUnitWorkFromFormindex(0), 5);
+                var lukMultiplier = 1 + ((float)luk / 100);
+
+                tmp_dropPoint = datDevilFormat.tbl[w.id].droppoint;
+
+                for (int i = 0; i < datDevilFormat.tbl[w.id].droppoint.Length; i++)
+                    datDevilFormat.tbl[w.id].droppoint[i] = Convert.ToByte(datDevilFormat.tbl[w.id].droppoint[i] * lukMultiplier);
+            }
+
+            public static void Postfix(ref datUnitWork_t w)
+            {
+                datDevilFormat.tbl[w.id].droppoint = tmp_dropPoint;
+            }
+        }
+
         #endregion nbCalc
     }
 }
