@@ -4,7 +4,7 @@ using Il2Cppnewbattle_H;
 using System.Collections.Generic;
 using Il2Cpp;
 
-[assembly: MelonInfo(typeof(DemonsCanUseItems.DemonsCanUseItems), "Demons Can Use Items", "1.0.2", "Zephhyr")]
+[assembly: MelonInfo(typeof(DemonsCanUseItems.DemonsCanUseItems), "Demons Can Use Items", "1.0.3", "Zephhyr")]
 [assembly: MelonGame("", "smt3hd")]
 
 namespace DemonsCanUseItems
@@ -16,7 +16,7 @@ namespace DemonsCanUseItems
         {
             public static void Prefix(ref nbCommSelProcessData_t s, ref int type, ref int ox, ref int oy, ref int a)
             {
-                if (s.my.formindex != 0)
+                if (nbMainProcess.nbGetUnitWorkFromFormindex(s.my.formindex).id != 0)
                 {
                     var items = dds3GlobalWork.DDS3_GBWK.item;
                     var itemIndices = new List<ushort>();

@@ -28,7 +28,7 @@ namespace NewBossAI
 
         private static void Yaksini(ushort id)
         {
-            //tblSkill.fclSkillTbl[id].Event[0].Param = 367;
+            //tblSkill.fclSkillTbl[id].Event[0].Param = 208;
         }
 
         private static void BossForneus(ushort id)

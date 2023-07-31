@@ -138,7 +138,24 @@ namespace NewBossAI
                     else
                         nbHelpProcess.nbDispText("Decreased Physical Attack!", string.Empty, 2, 45, 2315190144, false);
                 }
-                else if (actionProcessData.work.nowcommand == 1 && hojotype == 128 && hojopoint == 1 && actionProcessData.work.nowindex == 428)
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 10 && hojopoint == 1 && actionProcessData.work.nowindex == 268)
+                {
+                    var limitReached = true;
+                    foreach (var unitBuffs in currentSideBuffs)
+                    {
+                        if (unitBuffs[4] >= -2 || currentUnitBuffs[5] >= -2)
+                        {
+                            limitReached = false;
+                            break;
+                        }
+                    }
+
+                    if (limitReached)
+                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    else
+                        nbHelpProcess.nbDispText("Decreased Physical/Magical Attack!", string.Empty, 2, 45, 2315190144, false);
+                }
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 128 && hojopoint == 1 && (actionProcessData.work.nowindex == 202 || actionProcessData.work.nowindex == 428))
                 {
                     var limitReached = true;
                     if (currentUnitBuffs[7] >= -2)
@@ -149,10 +166,10 @@ namespace NewBossAI
                     else
                         nbHelpProcess.nbDispText("Decreased Defense!", string.Empty, 2, 45, 2315190144, false);
                 }
-                else if (actionProcessData.work.nowcommand == 1 && hojotype == 544 && hojopoint == 1 && actionProcessData.work.nowindex == 437)
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 544 && hojopoint == 1 && (actionProcessData.work.nowindex == 244 || actionProcessData.work.nowindex == 267 || actionProcessData.work.nowindex == 285 || actionProcessData.work.nowindex == 437))
                 {
                     var limitReached = true;
-                    if (currentUnitBuffs[6] >= -2 || currentUnitBuffs[6] >= -2)
+                    if (currentUnitBuffs[6] >= -2 || currentUnitBuffs[8] >= -2)
                         limitReached = false;
 
                     if (limitReached)
@@ -177,7 +194,58 @@ namespace NewBossAI
                     else
                         nbHelpProcess.nbDispText("Decreased Evasion!", string.Empty, 2, 45, 2315190144, false);
                 }
-                else if (actionProcessData.work.nowcommand == 1 && hojotype == 341 && hojopoint == 2 && actionProcessData.work.nowindex == 457)
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 512 && hojopoint == 1 && actionProcessData.work.nowindex == 268)
+                {
+                    var limitReached = true;
+                    foreach (var unitBuffs in currentSideBuffs)
+                    {
+                        if (unitBuffs[8] >= -2)
+                        {
+                            limitReached = false;
+                            break;
+                        }
+                    }
+
+                    if (limitReached)
+                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    else
+                        nbHelpProcess.nbDispText("Decreased Hit Rate!", string.Empty, 2, 45, 2315190144, false);
+                }
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 160 && hojopoint == 1 && actionProcessData.work.nowindex == 262)
+                {
+                    var limitReached = true;
+                    foreach (var unitBuffs in currentSideBuffs)
+                    {
+                        if (currentUnitBuffs[6] >= -2 || currentUnitBuffs[7] >= -2)
+                        {
+                            limitReached = false;
+                            break;
+                        }
+                    }
+
+                    if (limitReached)
+                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    else
+                        nbHelpProcess.nbDispText("Decreased Evasion/Defence!", string.Empty, 2, 45, 2315190144, false);
+                }
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 273 && hojopoint == 1 && actionProcessData.work.nowindex == 284)
+                {
+                    var limitReached = true;
+                    foreach (var unitBuffs in currentSideBuffs)
+                    {
+                        if (unitBuffs[4] <= 2 || unitBuffs[6] <= 2 || unitBuffs[8] <= 2)
+                        {
+                            limitReached = false;
+                            break;
+                        }
+                    }
+
+                    if (limitReached)
+                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    else
+                        nbHelpProcess.nbDispText("Physical Attack/Evasion/Hit Rate increased!", string.Empty, 2, 45, 2315190144, false);
+                }
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 341 && hojopoint == 2 && actionProcessData.work.nowindex == 458)
                 {
                     var limitReached = true;
                     for (int i = 4; i <= 8; i++)
@@ -192,7 +260,7 @@ namespace NewBossAI
                     else
                         nbHelpProcess.nbDispText("Greatly increased all stats performance!", string.Empty, 2, 45, 2315190144, false);
                 }
-                else if (actionProcessData.work.nowcommand == 1 && hojotype == 341 && hojopoint == 1 && actionProcessData.work.nowindex == 458)
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 341 && hojopoint == 1 && actionProcessData.work.nowindex == 459)
                 {
                     var limitReached = true;
                     foreach (var unitBuffs in currentSideBuffs)
@@ -209,6 +277,10 @@ namespace NewBossAI
                         nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
                     else
                         nbHelpProcess.nbDispText("Increased all stats performance!", string.Empty, 2, 45, 2315190144, false);
+                }
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 263168 && hojopoint == 1 && actionProcessData.work.nowindex == 460)
+                {
+                    nbHelpProcess.nbDispText("All -kaja & -nda effects negated!", string.Empty, 2, 45, 2315190144, false);
                 }
             }
         }

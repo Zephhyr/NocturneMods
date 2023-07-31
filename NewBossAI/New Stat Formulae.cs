@@ -82,7 +82,7 @@ namespace NewBossAI
             {
                 var level = work.level;
                 var str = datCalc.datGetParam(work, 0);
-                __result = Convert.ToInt32((level + str) * 32 / 14.5);
+                __result = Convert.ToInt32((level + str) * 32 / 15);
                 return false;
             }
         }
@@ -149,7 +149,7 @@ namespace NewBossAI
 
                 double atkPow = nskill == 0 ?
                     datCalc.datGetNormalAtkPow(workFromFormindex1) :
-                    (workFromFormindex1.level + datCalc.datGetParam(workFromFormindex1, 0)) * waza / 14.5;
+                    (workFromFormindex1.level + datCalc.datGetParam(workFromFormindex1, 0)) * waza / 15;
 
                 //double defPow = datCalc.datGetParam(workFromFormindex2, 3);
 
@@ -173,12 +173,12 @@ namespace NewBossAI
                 //datUnitWork_t workFromFormindex2 = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
 
                 var maxhp = (double) workFromFormindex1.maxhp;
-                var currenthp = (double) (int) (workFromFormindex1.hp + (datNormalSkill.tbl[nskill].cost * maxhp / 100));
+                var currenthp = (double) (int) (workFromFormindex1.hp + (datCalc.datGetSkillCost(workFromFormindex1, nskill) * maxhp / 100));
                 double hpPercentage = (currenthp / maxhp);
                 double hpModifier = 0.5 + hpPercentage / 2;
 
                 //double atkPow = workFromFormindex1.maxhp * waza * 0.8 / 69.6;
-                double atkPow = ((workFromFormindex1.level + datCalc.datGetParam(workFromFormindex1, 0)) * waza / 14.5) * hpModifier;
+                double atkPow = ((workFromFormindex1.level + datCalc.datGetParam(workFromFormindex1, 0)) * waza / 15) * hpModifier;
 
                 //double defPow = datCalc.datGetParam(workFromFormindex2, 3);
 
@@ -282,7 +282,7 @@ namespace NewBossAI
                     var attemptCount = data.esccnt;
                     var moonModifier = evtMoon.evtGetAgeOfMoon() == 8 ? 20 : 0;
 
-                    double chance = 20 * ((allyAvgAgi + allyAvgLuk) / (enemyAvgAgi + enemyAvgLuk)) + 20 - moonModifier + 10 * attemptCount;
+                    double chance = 20 * ((allyAvgAgi + allyAvgLuk) / (enemyAvgAgi + enemyAvgLuk)) + 40 - moonModifier + 10 * attemptCount;
                     if (dds3ConfigMain.cfgGetBit(9) == 2)
                         chance /= 2;
                     var rand = dds3KernelCore.dds3GetRandIntA(100);
@@ -309,7 +309,7 @@ namespace NewBossAI
 
                 if (isWeak)
                     __result = 2;
-                else if (workFromFormindex2.badstatus == 1 || workFromFormindex2.badstatus == 2)
+                else if (datNormalSkill.tbl[nskill].koukatype == 0 && (workFromFormindex2.badstatus == 1 || workFromFormindex2.badstatus == 2))
                     __result = 1;
                 else
                 {
