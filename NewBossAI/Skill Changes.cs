@@ -941,8 +941,12 @@ namespace NewBossAI
             // Passive Skills
             Might(11);
             DrainAttack(14);
+            PhysBoost(74);
+            MagicBoost(75);
             AntiMagic(76);
             AntiAilments(77);
+            AbyssalMask(78);
+            KnowledgeOfTools(79);
 
             foreach (var skill in datSkill.tbl)
                 skill.capacity = 0;
@@ -964,6 +968,8 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hpn = 48;
             datNormalSkill.tbl[id].failpoint = 30;
             datNormalSkill.tbl[id].criticalpoint = 30;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 5;
         }
 
         private static void Berserk(ushort id)
@@ -972,6 +978,8 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hpn = 20;
             datNormalSkill.tbl[id].failpoint = 6;
             datNormalSkill.tbl[id].criticalpoint = 12;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 4;
         }
 
         private static void Tempest(ushort id)
@@ -1005,6 +1013,8 @@ namespace NewBossAI
             datNormalSkill.tbl[id].failpoint = 16;
             datNormalSkill.tbl[id].criticalpoint = 30;
             datNormalSkill.tbl[id].badlevel = 24;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 9;
         }
 
         private static void BrutalSlash(ushort id)
@@ -1030,6 +1040,8 @@ namespace NewBossAI
             datNormalSkill.tbl[id].failpoint = 40;
             datNormalSkill.tbl[id].criticalpoint = 40;
             datNormalSkill.tbl[id].badlevel = 30;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 9;
         }
 
         private static void StasisBlade(ushort id)
@@ -1047,6 +1059,8 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hpn = 48;
             datNormalSkill.tbl[id].failpoint = 20;
             datNormalSkill.tbl[id].criticalpoint = 20;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 4;
         }
 
         private static void Deathbound(ushort id)
@@ -1143,6 +1157,8 @@ namespace NewBossAI
             datNormalSkill.tbl[id].failpoint = 22;
             datNormalSkill.tbl[id].criticalpoint = 22;
             datNormalSkill.tbl[id].badlevel = 40;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 6;
         }
 
         private static void StunBite(ushort id)
@@ -1160,6 +1176,8 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hpn = 56;
             datNormalSkill.tbl[id].failpoint = 40;
             datNormalSkill.tbl[id].criticalpoint = 40;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 7;
         }
 
         private static void FeralClaw(ushort id)
@@ -1246,6 +1264,7 @@ namespace NewBossAI
 
         private static void Earthquake(ushort id)
         {
+            datSkill.tbl[id].keisyoform = 128;
             datNormalSkill.tbl[id].cost = 40;
             datNormalSkill.tbl[id].hpn = 60;
             datNormalSkill.tbl[id].hitlevel = 200;
@@ -1382,8 +1401,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 98, 285);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 9;
         }
 
         private static void FangBreaker(ushort id)
@@ -1430,8 +1451,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 96);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 5;
         }
 
         private static void DefenseKuzushi(ushort id)
@@ -1478,8 +1501,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 96, 107);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 5;
         }
 
         private static void PrimalForce(ushort id)
@@ -1526,8 +1551,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 96, 139);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 10;
         }
 
         private static void ChiBlast(ushort id)
@@ -1574,8 +1601,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 65, 101);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 6;
         }
 
         private static void Revelation(ushort id)
@@ -1622,8 +1651,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 28, 143);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 11;
         }
 
         private static void GateOfHell(ushort id)
@@ -1670,8 +1701,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 98, 281);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 11;
         }
 
         private static void AkashicArts(ushort id)
@@ -1718,8 +1751,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 96, 275);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 11;
         }
 
         private static void Bloodbath(ushort id)
@@ -1766,8 +1801,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 100);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 10;
         }
 
         // Fire Skills
@@ -1836,6 +1873,8 @@ namespace NewBossAI
             datNormalSkill.tbl[id].magiclimit = 58;
             datNormalSkill.tbl[id].targetcntmax = 5;
             datNormalSkill.tbl[id].targetcntmin = 3;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 4;
         }
 
         private static void Hellfire(ushort id)
@@ -1846,6 +1885,8 @@ namespace NewBossAI
             datNormalSkill.tbl[id].magiclimit = 154;
             datNormalSkill.tbl[id].targetcntmax = 6;
             datNormalSkill.tbl[id].targetcntmin = 3;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 8;
         }
 
         private static void Prominence(ushort id)
@@ -1856,6 +1897,8 @@ namespace NewBossAI
             datNormalSkill.tbl[id].magiclimit = 296;
             datNormalSkill.tbl[id].targetcntmax = 7;
             datNormalSkill.tbl[id].targetcntmin = 3;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 11;
         }
 
         private static void Trisagion(ushort id)
@@ -1865,6 +1908,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hpn = 80;
             datNormalSkill.tbl[id].magicbase = 30;
             datNormalSkill.tbl[id].magiclimit = 32767;
+
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 10;
         }
 
         private static void HellBurner(ushort id)
@@ -1947,8 +1994,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 4, 101);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 5;
         }
 
         private static void Ragnarok(ushort id)
@@ -1995,8 +2044,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 179);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 12;
         }
 
         // Ice Skills
@@ -2064,6 +2115,8 @@ namespace NewBossAI
             datNormalSkill.tbl[id].targetcntmax = 5;
             datNormalSkill.tbl[id].targetcntmin = 3;
             datNormalSkill.tbl[id].badlevel = 15;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 4;
         }
 
         private static void GlacialBlast(ushort id)
@@ -2075,6 +2128,8 @@ namespace NewBossAI
             datNormalSkill.tbl[id].targetcntmax = 6;
             datNormalSkill.tbl[id].targetcntmin = 3;
             datNormalSkill.tbl[id].badlevel = 18;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 8;
         }
 
         private static void IcyDeath(ushort id)
@@ -2160,8 +2215,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 7);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 4;
         }
 
         private static void Cocytus(ushort id)
@@ -2208,7 +2265,6 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 7, 180);
         }
 
@@ -2256,13 +2312,16 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 181);
             nbActionProcess.sobedtbl[id].bed_fname = nbActionProcess.sobedtbl[12].bed_fname;
             nbActionProcess.sobedtbl[id].keyname = nbActionProcess.sobedtbl[181].keyname;
             nbActionProcess.sobedtbl[id].se0_str = nbActionProcess.sobedtbl[181].se0_str;
             nbActionProcess.sobedtbl[id].se1_str = nbActionProcess.sobedtbl[12].se1_str;
             nbActionProcess.sobedtbl[id].tga_fname = nbActionProcess.sobedtbl[181].tga_fname;
+
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 12;
         }
 
         private static void Niflheim(ushort id)
@@ -2309,7 +2368,6 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 181);
             nbActionProcess.sobedtbl[id].bed_fname =  nbActionProcess.sobedtbl[12].bed_fname;
             nbActionProcess.sobedtbl[id].keyname = nbActionProcess.sobedtbl[181].keyname;
@@ -2384,6 +2442,8 @@ namespace NewBossAI
             datNormalSkill.tbl[id].targetcntmax = 5;
             datNormalSkill.tbl[id].targetcntmin = 3;
             datNormalSkill.tbl[id].badlevel = 15;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 4;
         }
 
         private static void BoltStorm(ushort id)
@@ -2395,6 +2455,8 @@ namespace NewBossAI
             datNormalSkill.tbl[id].targetcntmax = 6;
             datNormalSkill.tbl[id].targetcntmin = 3;
             datNormalSkill.tbl[id].badlevel = 18;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 8;
         }
 
         private static void MishagujiRaiden(ushort id)
@@ -2452,8 +2514,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 182);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 4;
         }
 
         private static void ThunderGods(ushort id)
@@ -2500,8 +2564,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 15, 193);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 10;
         }
 
         private static void ThunderReign(ushort id)
@@ -2548,9 +2614,11 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 15, 195);
             //nbActionProcess.sobedtbl[id].se0_str = nbActionProcess.sobedtbl[193].se0_str;
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 12;
         }
 
         private static void Mjolnir(ushort id)
@@ -2597,7 +2665,6 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 106, 15);
             datNormalSkillVisual.tbl[id].bedno = datNormalSkillVisual.tbl[15].bedno;
             datNormalSkillVisual.tbl[id].hatudo = datNormalSkillVisual.tbl[15].hatudo;
@@ -2661,6 +2728,8 @@ namespace NewBossAI
             datNormalSkill.tbl[id].magiclimit = 58;
             datNormalSkill.tbl[id].targetcntmax = 5;
             datNormalSkill.tbl[id].targetcntmin = 3;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 0;
         }
 
         private static void Tornado(ushort id)
@@ -2671,6 +2740,8 @@ namespace NewBossAI
             datNormalSkill.tbl[id].magiclimit = 154;
             datNormalSkill.tbl[id].targetcntmax = 6;
             datNormalSkill.tbl[id].targetcntmin = 3;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 82;
         }
 
         private static void WindCutter(ushort id)
@@ -2679,6 +2750,8 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hpn = 80;
             datNormalSkill.tbl[id].magicbase = 30;
             datNormalSkill.tbl[id].magiclimit = 32767;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 10;
         }
 
         private static void WetWind(ushort id)
@@ -2752,8 +2825,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 22, 184);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 5;
         }
 
         private static void HeavenlyCyclone(ushort id)
@@ -2800,9 +2875,11 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             //OverWriteSkillEffect(id, 23);
             OverWriteSkillEffectDante(id, 23, 6);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 11;
         }
 
         private static void Vayavya(ushort id)
@@ -2849,8 +2926,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 186);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 12;
         }
 
         private static void StormGale(ushort id)
@@ -2897,8 +2976,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 22, 184);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 4;
         }
 
         private static void WingedFury(ushort id)
@@ -2945,9 +3026,12 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             //OverWriteSkillEffect(id, 184, 24);
             OverWriteSkillEffectDante(id, 184, 6);
+
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 11;
         }
 
         // Almighty Skills
@@ -2974,6 +3058,8 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hpn = 48;
             datNormalSkill.tbl[id].magicbase = 24;
             datNormalSkill.tbl[id].magiclimit = 350;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 12;
         }
 
         private static void Pestilence(ushort id)
@@ -2998,6 +3084,8 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hpn = 27;
             datNormalSkill.tbl[id].magicbase = 12;
             datNormalSkill.tbl[id].magiclimit = 74;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 2;
         }
 
         private static void ManaDrain(ushort id)
@@ -3151,8 +3239,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 25, 270);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 12;
         }
 
         private static void LastWord(ushort id)
@@ -3199,8 +3289,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 202, 160);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 14;
         }
 
         private static void SoulDrain(ushort id)
@@ -3247,8 +3339,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 192);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 9;
         }
 
         // Light Skills
@@ -3299,6 +3393,8 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hpn = 45;
             datNormalSkill.tbl[id].magicbase = 18;
             datNormalSkill.tbl[id].magiclimit = 222;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 4;
         }
 
         private static void Starlight(ushort id)
@@ -3315,6 +3411,8 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hpn = 60;
             datNormalSkill.tbl[id].magicbase = 30;
             datNormalSkill.tbl[id].magiclimit = 32767;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 12;
         }
 
         private static void GodsBow(ushort id)
@@ -3370,8 +3468,8 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             datNormalSkillVisual.tbl[id] = datNormalSkillVisual.tbl[28];
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 5;
         }
 
         private static void JudgementLight(ushort id)
@@ -3418,8 +3516,8 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             datNormalSkillVisual.tbl[id] = datNormalSkillVisual.tbl[28];
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 7;
         }
 
         private static void GodlyLight(ushort id)
@@ -3540,8 +3638,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 32, 243);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 5;
         }
 
         private static void MillenniaCurse(ushort id)
@@ -3588,8 +3688,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 32, 243);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 7;
         }
 
         // Curse Skills
@@ -3597,6 +3699,8 @@ namespace NewBossAI
         private static void Makajam(ushort id)
         {
             datNormalSkill.tbl[id].cost = 6;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 4;
         }
 
         private static void Makajamon(ushort id)
@@ -3622,7 +3726,9 @@ namespace NewBossAI
             datNormalSkill.tbl[id].magiclimit = 80;
             datNormalSkill.tbl[id].targettype = 0;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 3;
         }
 
         private static void MuteGaze(ushort id)
@@ -3648,8 +3754,6 @@ namespace NewBossAI
             datNormalSkill.tbl[id].targetcntmin = 1;
             datNormalSkill.tbl[id].targetrandom = 0;
             datNormalSkill.tbl[id].targettype = 1;
-
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
         }
 
         private static void DismalTune(ushort id)
@@ -3716,8 +3820,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 90);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 8;
         }
 
         private static void PoisonSalvo(ushort id)
@@ -3764,8 +3870,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 90);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 8;
         }
 
         // Nerve Skills
@@ -3778,12 +3886,16 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].magicbase = 12;
             datNormalSkill.tbl[id].magiclimit = 80;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 3;
         }
 
         private static void StunGaze(ushort id)
         {
             datNormalSkill.tbl[id].cost = 6;
             datNormalSkill.tbl[id].badlevel = 50;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 2;
         }
 
         private static void BindingCry(ushort id)
@@ -3836,8 +3948,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 59, 261);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 8;
         }
 
         private static void NeuralStorm(ushort id)
@@ -3884,8 +3998,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 59, 187);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 10;
         }
 
         // Mind Skills
@@ -4030,8 +4146,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 63);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 8;
         }
 
         // Self-Destruct Skills
@@ -4184,8 +4302,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 44);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 7;
         }
 
         private static void Diamrita(ushort id)
@@ -4232,8 +4352,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 44);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 7;
         }
 
         // Support Skills
@@ -4246,6 +4368,8 @@ namespace NewBossAI
         private static void Sukunda(ushort id)
         {
             datNormalSkill.tbl[id].cost = 15;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 2;
         }
 
         private static void Rakunda(ushort id)
@@ -4262,27 +4386,37 @@ namespace NewBossAI
         {
             datNormalSkill.tbl[id].cost = 15;
             datNormalSkill.tbl[id].hojotype = 5;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 4;
         }
 
         private static void Sukukaja(ushort id)
         {
             datNormalSkill.tbl[id].cost = 15;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 4;
         }
 
         private static void Rakukaja(ushort id)
         {
             datNormalSkill.tbl[id].cost = 15;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 4;
         }
 
         private static void Makakaja(ushort id)
         {
             datNormalSkill.tbl[id].cost = 15;
             datNormalSkill.tbl[id].hojotype = 260;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 4;
         }
 
         private static void Tetraja(ushort id)
         {
             datNormalSkill.tbl[id].cost = 30;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 5;
         }
 
         private static void Makarakarn(ushort id)
@@ -4300,6 +4434,8 @@ namespace NewBossAI
         private static void Analyze(ushort id)
         {
             datNormalSkill.tbl[id].cost = 3;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 2;
         }
 
         private static void Trafuri(ushort id)
@@ -4330,6 +4466,10 @@ namespace NewBossAI
         private static void Dekunda(ushort id)
         {
             datNormalSkill.tbl[id].cost = 20;
+
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 3;
         }
 
         private static void WarCry(ushort id)
@@ -4350,6 +4490,8 @@ namespace NewBossAI
         private static void Debilitate(ushort id)
         {
             datNormalSkill.tbl[id].cost = 60;
+
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 10;
         }
 
         private static void BeckonCall(ushort id)
@@ -4419,7 +4561,6 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 284, 65);
         }
 
@@ -4467,8 +4608,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 5;
             OverWriteSkillEffect(id, 224);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 6;
         }
 
         private static void ImpalersAnimus(ushort id)
@@ -4515,7 +4658,6 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 224);
         }
 
@@ -4563,8 +4705,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 224);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 8;
         }
 
         private static void LusterCandy(ushort id)
@@ -4611,8 +4755,10 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 219);
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 10;
         }
 
         private static void SilentPrayer(ushort id)
@@ -4659,9 +4805,12 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 77, 131);
             //nbActionProcess.sobedtbl[id].se1_str = nbActionProcess.sobedtbl[189].se1_str;
+
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = id;
+            skillLevel.Level = 8;
         }
 
         // Utility Skills
@@ -4759,7 +4908,6 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 219);
         }
 
@@ -4807,7 +4955,6 @@ namespace NewBossAI
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[id].Level = 0;
             OverWriteSkillEffect(id, 219);
         }
 
@@ -4823,12 +4970,40 @@ namespace NewBossAI
             datSpecialSkill.tbl[id].n = 1;
         }
 
+        private static void PhysBoost(ushort id)
+        {
+            datSpecialSkill.tbl[id].a = 2;
+            datSpecialSkill.tbl[id].b = 1;
+            datSpecialSkill.tbl[id].m = 3;
+            datSpecialSkill.tbl[id].n = 4;
+
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = 362;
+            skillLevel.Level = 7;
+        }
+
+        private static void MagicBoost(ushort id)
+        {
+            datSpecialSkill.tbl[id].a = 2;
+            datSpecialSkill.tbl[id].b = 1;
+            datSpecialSkill.tbl[id].m = 3;
+            datSpecialSkill.tbl[id].n = 4;
+
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = 363;
+            skillLevel.Level = 8;
+        }
+
         private static void AntiMagic(ushort id)
         {
             datSpecialSkill.tbl[id].a = 0;
             datSpecialSkill.tbl[id].b = 0;
             datSpecialSkill.tbl[id].m = 0;
             datSpecialSkill.tbl[id].n = 50;
+
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = 364;
+            skillLevel.Level = 8;
         }
 
         private static void AntiAilments(ushort id)
@@ -4837,6 +5012,34 @@ namespace NewBossAI
             datSpecialSkill.tbl[id].b = 0;
             datSpecialSkill.tbl[id].m = 0;
             datSpecialSkill.tbl[id].n = 50;
+
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = 365;
+            skillLevel.Level = 8;
+        }
+
+        private static void AbyssalMask(ushort id)
+        {
+            datSpecialSkill.tbl[id].a = 2;
+            datSpecialSkill.tbl[id].b = 1;
+            datSpecialSkill.tbl[id].m = 3;
+            datSpecialSkill.tbl[id].n = 4;
+
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = 366;
+            skillLevel.Level = 8;
+        }
+
+        private static void KnowledgeOfTools(ushort id)
+        {
+            datSpecialSkill.tbl[id].a = 2;
+            datSpecialSkill.tbl[id].b = 1;
+            datSpecialSkill.tbl[id].m = 3;
+            datSpecialSkill.tbl[id].n = 4;
+
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            skillLevel.SkillID = 367;
+            skillLevel.Level = 5;
         }
     }
 }
