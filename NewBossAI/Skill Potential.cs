@@ -57,7 +57,7 @@ namespace NewBossAI
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 036 Flaemis
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 037 Aquans
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 038 Aeros
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 039 Erthys
+            new sbyte[] {0    , 0    , 0    , 3    , -4   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 039 Erthys
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 040 Saki Mitama
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 041 Kushi Mitama
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 042 Nigi Mitama
@@ -70,16 +70,16 @@ namespace NewBossAI
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 048 Karasu Tengu
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 049 Dís
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 050 Isora
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 051 Apsaras
+            new sbyte[] {0    , -3   , 0    , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 1    , 0 }, // 051 Apsaras
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 052 Koppa Tengu
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 053 Titania
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 054 Oberon
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 055 Troll
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 056 Setanta
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 057 Kelpie
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 058 Jack-o'-Lantern
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 059 High Pixie
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 060 Jack Frost
+            new sbyte[] {0    , 5    , -5   , 0    , 0    , 0    , -1   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 058 Jack-o'-Lantern
+            new sbyte[] {0    , 0    , 0    , 2    , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 1    , 0 }, // 059 High Pixie
+            new sbyte[] {0    , -4   , 3    , 0    , 0    , 0    , 1    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 060 Jack Frost
             new sbyte[] {0    , 0    , 0    , 1    , 0    , 1    , 0    , -1   , -1   , 0    , -1   , 1    , 0    , 1    , 1    , 0 }, // 061 Pixie
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 062 Throne
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 063 Dominion
@@ -123,7 +123,7 @@ namespace NewBossAI
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 100 Yaksini
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 101 Yomotsu-Shikome
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 102 Taraka
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 103 Datsue-Ba
+            new sbyte[] {0    , 0    , 1    , -3   , 0    , 0    , 0    , 0    , 3    , 3    , 3    , 0    , 0    , 0    , 0    , 0 }, // 103 Datsue-Ba
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 104 Mada
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 105 Girimekhala
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 106 Taotie
@@ -140,24 +140,24 @@ namespace NewBossAI
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 117 Succubus
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 118 Incubus
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 119 Fomorian
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 120 Lilim
+            new sbyte[] {0    , 0    , -3   , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0 }, // 120 Lilim
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 121 Hresvelgr
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 122 Mothman
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 123 Raiju
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 124 Nue
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 125 Bicorn
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 126 Zhen
+            new sbyte[] {1    , -3   , 0    , 0    , 2    , 0    , 0    , 0    , 2    , 2    , 0    , 0    , 0    , 0    , 0    , 0 }, // 126 Zhen
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 127 Vetala
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 128 Legion
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 129 Yaka
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 130 Choronzon
-            new sbyte[] {1    , 1    , -3   , -3   , -3   , 0    , -3   , 3    , 3    , 0    , 0    , 0    , 0    , -1   , 0    , 0 }, // 131 Preta
+            new sbyte[] {1    , -3   , -3   , -3   , -3   , 0    , -3   , 3    , 3    , 0    , 0    , 0    , 0    , -1   , 0    , 0 }, // 131 Preta
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 132 Shadow
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 133 Black Ooze
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 134 Blob
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 135 Slime
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 136 Mou-Ryo
-            new sbyte[] {0    , -1   , -1   , -1   , 1    , 1    , -3   , 0    , 0    , 0    , 0    , 1    , 0    , -3   , 0    , 0 }, // 137 Will o' Wisp
+            new sbyte[] {1    , -3   , -3   , -3   , -3   , 0    , -3   , 0    , 3    , 3    , 3    , 0    , 0    , 0    , -1   , 0 }, // 135 Slime
+            new sbyte[] {0    , 1    , 0    , 0    , 0    , 0    , -3   , 3    , 1    , 1    , 1    , 0    , 0    , -1   , 0    , 0 }, // 136 Mou-Ryo
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 1    , -3   , 0    , 1    , 1    , 1    , 1    , 0    , -3   , 0    , 0 }, // 137 Will o' Wisp
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 138 Michael
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 139 Gabriel
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 140 Raphael
@@ -342,8 +342,8 @@ namespace NewBossAI
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 315 Boss Kaiwan
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 316 Forced Nekomata
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 317 Boss Troll
-            new sbyte[] {0    , -1   , -1   , -1   , 1    , 1    , -3   , 0    , 0    , 0    , 0    , 1    , 0    , -3   , 0    , 0 }, // 318 Forced Will o' Wisp
-            new sbyte[] {1    , 1    , -3   , -3   , -3   , 0    , -3   , 3    , 3    , 0    , 0    , 0    , 0    , -1   , 0    , 0 }, // 319 Forced Preta
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 1    , -3   , 0    , 1    , 1    , 1    , 1    , 0    , -3   , 0    , 0 }, // 318 Forced Will o' Wisp
+            new sbyte[] {1    , -3   , -3   , -3   , -3   , 0    , -3   , 3    , 3    , 0    , 0    , 0    , 0    , -1   , 0    , 0 }, // 319 Forced Preta
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 320 Boss Bishamonten 1
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 321 Boss Mara
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 322 Boss Bishamonten 2
@@ -482,7 +482,7 @@ namespace NewBossAI
             "", // 036 Flaemis
             "", // 037 Aquans
             "", // 038 Aeros
-            "", // 039 Erthys
+            "  <material=\"MsgFont4\">+3: Elec • +1: Support  <material=\"MsgFont1\">-4: Force", // 039 Erthys
             "", // 040 Saki Mitama
             "", // 041 Kushi Mitama
             "", // 042 Nigi Mitama
@@ -494,16 +494,16 @@ namespace NewBossAI
             "", // 048 Karasu Tengu
             "", // 049 Dís
             "", // 050 Isora
-            "", // 051 Apsaras
+            "  <material=\"MsgFont4\">+2: Elec • +1: Healing/Support  <material=\"MsgFont1\">-3: Fire", // 051 Apsaras
             "", // 052 Koppa Tengu
             "", // 053 Titania
             "", // 054 Oberon
             "", // 055 Troll
             "", // 056 Setanta
             "", // 057 Kelpie
-            "", // 058 Jack-o'-Lantern
-            "", // 059 High Pixie
-            "", // 060 Jack Frost
+            "  <material=\"MsgFont4\">+5: Fire • +1: Support  <material=\"MsgFont1\">-5: Ice • -1: Light", // 058 Jack-o'-Lantern
+            "  <material=\"MsgFont4\">+2: Elec/Force • +1: Healing/Support<material=\"MsgFont1\">", // 059 High Pixie
+            "  <material=\"MsgFont4\">+3: Ice • +1: Light  <material=\"MsgFont1\">-4: Fire", // 060 Jack Frost
             "  <material=\"MsgFont4\">+1: Elec/Almighty/Healing/Support  <material=\"MsgFont1\">-1: Dark/Curse/Mind", // 061 Pixie
             "", // 062 Throne
             "", // 063 Dominion
@@ -546,7 +546,7 @@ namespace NewBossAI
             "", // 100 Yaksini
             "", // 101 Yomotsu-Shikome
             "", // 102 Taraka
-            "", // 103 Datsue-Ba
+            "  <material=\"MsgFont4\">+3: Ailments • +1: Ice  <material=\"MsgFont1\">-3: Elec", // 103 Datsue-Ba
             "", // 104 Mada
             "", // 105 Girimekhala
             "", // 106 Taotie
@@ -563,24 +563,24 @@ namespace NewBossAI
             "", // 117 Succubus
             "", // 118 Incubus
             "", // 119 Fomorian
-            "", // 120 Lilim
+            "  <material=\"MsgFont4\">+3: Mind • +2: Elec  <material=\"MsgFont1\">-3: Ice", // 120 Lilim
             "", // 121 Hresvelgr
             "", // 122 Mothman
             "", // 123 Raiju
             "", // 124 Nue
             "", // 125 Bicorn
-            "", // 126 Zhen
+            "  <material=\"MsgFont4\">+2: Force/Curse/Nerve • +1: Phys  <material=\"MsgFont1\">-3: Fire", // 126 Zhen
             "", // 127 Vetala
             "", // 128 Legion
             "", // 129 Yaka
             "", // 130 Choronzon
-            "  <material=\"MsgFont4\">+3: Dark/Curse • +1: Phys/Fire  <material=\"MsgFont1\">-1: Healing • -3: Ice/Elec/Force", // 131 Preta
+            "  <material=\"MsgFont4\">+3: Dark/Curse • +1: Phys  <material=\"MsgFont1\">-1: Healing • -3: Magic/Light", // 131 Preta
             "", // 132 Shadow
             "", // 133 Black Ooze
             "", // 134 Blob
-            "", // 135 Slime
-            "", // 136 Mou-Ryo
-            "  <material=\"MsgFont4\">+1: Force/Almighty  <material=\"MsgFont1\">-1: Fire/Ice/Elec • -3: Light/Healing", // 137 Will o' Wisp
+            "  <material=\"MsgFont4\">+3: Ailments • +1: Phys  <material=\"MsgFont1\">-1: Support • -3: Magic/Light", // 135 Slime
+            "  <material=\"MsgFont4\">+3: Dark • +1: Fire/Ailments  <material=\"MsgFont1\">-1: Healing • -3: Light", // 136 Mou-Ryo
+            "  <material=\"MsgFont4\">+1: Almighty/Ailments  <material=\"MsgFont1\">-3: Light/Healing", // 137 Will o' Wisp
             "", // 138 Michael
             "", // 139 Gabriel
             "", // 140 Raphael
@@ -1226,8 +1226,8 @@ namespace NewBossAI
         {
             public static void Postfix()
             {
-                cmpStatus._statusUIScr.aisyoText.rectTransform.offsetMax = new Vector2(3000, -20);
-                cmpStatus._statusUIScr.aisyoText.rectTransform.sizeDelta = new Vector2(3000, 44);
+                cmpStatus._statusUIScr.aisyoText.rectTransform.offsetMax = new Vector2(3200, -20);
+                cmpStatus._statusUIScr.aisyoText.rectTransform.sizeDelta = new Vector2(3200, 44);
             }
         }
 

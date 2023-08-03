@@ -119,8 +119,8 @@ namespace NewBossAI
                     case 59: __result = "Low Nerve damage to one foe. \nMay inflict Bind."; return false; // Shibaboo
                     case 61: __result = "Low Mind damage to one foe. \nMay inflict Panic."; return false; // Pulinpa
                     case 63: __result = "High Mind damage to all foes. \nMay inflict Panic."; return false; // Tentarafoo
-                    case 64: __result = "Raises party's Physical/Magical Attack."; return false; // Tarukaja
-                    case 67: __result = "Raises party's Magical Attack/Hit Rate."; return false; // Makakaja
+                    case 64: __result = "Raises party's \nPhysical/Magical Attack."; return false; // Tarukaja
+                    case 67: __result = "Raises party's \nMagical Attack/Hit Rate."; return false; // Makakaja
                     case 69: __result = "Repels Magical attacks \nfor one ally once \nnext turn."; return false; // Makarakarn
                     case 70: __result = "Repels Physical attacks \nfor one ally once \nnext turn."; return false; // Tetrakarn
                     case 90: __result = "Low Curse damage to one foe. \nMay inflict Poison."; return false; // Poison Arrow
@@ -168,7 +168,7 @@ namespace NewBossAI
                     case 280: __result = "Medium Physical damage to random foes. \nMay inflict Panic."; return false; // Terrorblade
                     case 281: __result = "Medium Physical damage to all foes."; return false; // Hell Spin
                     case 282: __result = "Medium Force damage to all foes. \nNegates -kaja effects."; return false; // Hell Exhaust
-                    case 283: __result = "Medium Strength-based Fire damage to all foes."; return false; // Hell Burner
+                    case 283: __result = "Medium Strength-based Fire damage \nto all foes."; return false; // Hell Burner
                     case 284: __result = "Raises party's Physical Attack/Evasion/Hit Rate."; return false; // Hell Throttle
                     case 285: __result = "Lowers all foes' Evasion/Hit Rate. \nMay inflict Panic."; return false; // Babylon Goblet
                     case 286: __result = "High Almighty damage to all foes. \nHeals user's HP and may inflict Charm."; return false; // Death Lust
@@ -236,11 +236,11 @@ namespace NewBossAI
                     case 455: __result = "Drains HP/MP from one foe."; return false; // Soul Drain
                     case 456: __result = "Cures all ailments for the party."; return false; // Amrita
                     case 457: __result = "Moderate HP recovery and cures \nall ailments for one ally."; return false; // Diamrita
-                    case 458: __result = "Greatly raises own Attack/Defense/Evasion/Hit Rate."; return false; // Heat Riser
-                    case 459: __result = "Raises party's Attack/Defense/Evasion/Hit Rate."; return false; // Luster Candy
+                    case 458: __result = "Greatly raises own \nAttack/Defense/Evasion/Hit Rate."; return false; // Heat Riser
+                    case 459: __result = "Raises party's \nAttack/Defense/Evasion/Hit Rate."; return false; // Luster Candy
                     case 460: __result = "Negates -kaja & -nda effects \non all foes & allies."; return false; // Silent Prayer
                     case 461: __result = "Low Force damage to random foes."; return false; // Storm Gale
-                    case 462: __result = "High Strength-based Force damage to all foes."; return false; // Winged Fury
+                    case 462: __result = "High Strength-based Force damage \nto all foes."; return false; // Winged Fury
 
                     default: return true;
                 }
