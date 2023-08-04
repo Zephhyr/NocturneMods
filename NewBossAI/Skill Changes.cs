@@ -117,7 +117,7 @@ namespace NewBossAI
                     case 33: __result = "High Dark damage to one foe. \nMay instakill when weak to Dark."; return false; // Mudoon
                     case 34: __result = "Low Dark damage to all foes. \nMay instakill when weak to Dark."; return false; // Mamudo
                     case 35: __result = "High Dark damage to all foes. \nMay instakill when weak to Dark."; return false; // Mamudoon
-                    case 42: __result = "Donates MP to one ally."; return false; // Makatora
+                    //case 42: __result = "Donates MP to one ally."; return false; // Makatora
                     case 59: __result = "Low Nerve damage to one foe. \nMay inflict Bind."; return false; // Shibaboo
                     case 61: __result = "Low Mind damage to one foe. \nMay inflict Panic."; return false; // Pulinpa
                     case 63: __result = "High Mind damage to all foes. \nMay inflict Panic."; return false; // Tentarafoo
@@ -696,7 +696,7 @@ namespace NewBossAI
             Media(39);
             Mediarama(40);
             Mediarahan(41);
-            //Makatora
+            Makatora(42);
             Patra(43);
             MePatra(44);
             Mutudi(45);
@@ -4915,6 +4915,11 @@ namespace NewBossAI
         }
 
         // Utility Skills
+
+        private static void Makatora(ushort id)
+        {
+            datSkill.tbl[id].skillattr = 15; // Utility skill
+        }
 
         private static void HourglassSkill(ushort id)
         {

@@ -19,6 +19,8 @@ namespace NewBossAI
             {
                 switch (ID)
                 {
+                    case "<AISYO_L0033>": // Shiisaa
+                        __result = "Null: Elec/Light • Str: Force • Weak: Fire"; return false;
                     case "<AISYO_L0038>": // Aeros
                         __result = "Null: Force • Weak: Elec"; return false;
                     case "<AISYO_L0039>": // Erthys
@@ -115,6 +117,7 @@ namespace NewBossAI
         private static void ApplyDemonChanges()
         {
             // Demons
+            Shiisaa(33);
             Aeros(38);
             Erthys(39);
             HighPixie(59);
@@ -137,6 +140,36 @@ namespace NewBossAI
         }
 
         // 2148532374 = Weak but status-immune
+
+        private static void Shiisaa(ushort id)
+        {
+            // Affinties
+            datAisyo.tbl[id][0] = 100; // Phys
+            datAisyo.tbl[id][1] = 2147483798; // Fire
+            datAisyo.tbl[id][2] = 100; // Ice
+            datAisyo.tbl[id][3] = 65536; // Elec
+            datAisyo.tbl[id][4] = 50; // Force
+            datAisyo.tbl[id][6] = 65536; // Light
+            datAisyo.tbl[id][7] = 100; // Dark
+            datAisyo.tbl[id][8] = 100; // Curse
+            datAisyo.tbl[id][9] = 100; // Nerve
+            datAisyo.tbl[id][10] = 100; // Mind
+
+            tblSkill.fclSkillTbl[id].Event[0].Param = 182;
+            tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 123;
+            tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 203;
+            tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 14;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 388;
+            tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 15;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 121;
+            tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 16;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 305;
+            tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 17;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 314;
+            tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 18;
+        }
 
         private static void Aeros(ushort id)
         {

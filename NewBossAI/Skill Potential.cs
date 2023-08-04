@@ -51,7 +51,7 @@ namespace NewBossAI
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 030 Baihu
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 031 Senri
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 032 Zhuque
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 033 Shiisaa
+            new sbyte[] {1    , -3   , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 033 Shiisaa
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 034 Xiezhai
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 035 Unicorn
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 036 Flaemis
@@ -79,7 +79,7 @@ namespace NewBossAI
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 057 Kelpie
             new sbyte[] {0    , 5    , -5   , 0    , 0    , 0    , -1   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 058 Jack-o'-Lantern
             new sbyte[] {0    , 0    , 0    , 2    , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 1    , 0 }, // 059 High Pixie
-            new sbyte[] {0    , -4   , 3    , 0    , 0    , 0    , 1    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 060 Jack Frost
+            new sbyte[] {0    , -5   , 4    , 0    , 0    , 0    , 1    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 060 Jack Frost
             new sbyte[] {0    , 0    , 0    , 1    , 0    , 1    , 0    , -1   , -1   , 0    , -1   , 1    , 0    , 1    , 1    , 0 }, // 061 Pixie
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 062 Throne
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 063 Dominion
@@ -104,12 +104,12 @@ namespace NewBossAI
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 082 Orthrus
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 083 Suparna
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 084 Badb Catha
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 085 Inugami
+            new sbyte[] {0    , 3    , 0    , 0    , -4   , 0    , 0    , 0    , 2    , 0    , 2    , 0    , 0    , 1    , 1    , 0 }, // 085 Inugami
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 086 Nekomata
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 087 Gogmagog
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 088 Titan
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 089 Sarutahiko
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 090 Sudama
+            new sbyte[] {0    , -3   , -2   , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 090 Sudama
             new sbyte[] {0    , 2    , -3   , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0    , 0    , 0    , 1    , 1    , 0 }, // 091 Hua Po
             new sbyte[] {0    , -3   , 0    , 0    , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0    , 0 }, // 092 Kodama
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 093 Shiki-Ouji
@@ -476,7 +476,7 @@ namespace NewBossAI
             "", // 030 Baihu
             "", // 031 Senri
             "", // 032 Zhuque
-            "", // 033 Shiisaa
+            "  <material=\"MsgFont4\">+3: Elec • +2: Support • +1: Phys  <material=\"MsgFont1\">-3: Fire", // 033 Shiisaa
             "", // 034 Xiezhai
             "", // 035 Unicorn
             "", // 036 Flaemis
@@ -501,9 +501,9 @@ namespace NewBossAI
             "", // 055 Troll
             "", // 056 Setanta
             "", // 057 Kelpie
-            "  <material=\"MsgFont4\">+5: Fire • +1: Support  <material=\"MsgFont1\">-1: Light • -5: Ice ", // 058 Jack-o'-Lantern
+            "  <material=\"MsgFont4\">+5: Fire • +1: Support  <material=\"MsgFont1\">-1: Light • -5: Ice", // 058 Jack-o'-Lantern
             "  <material=\"MsgFont4\">+2: Elec/Force • +1: Healing/Support<material=\"MsgFont1\">", // 059 High Pixie
-            "  <material=\"MsgFont4\">+3: Ice • +1: Light  <material=\"MsgFont1\">-4: Fire", // 060 Jack Frost
+            "  <material=\"MsgFont4\">+4: Ice • +1: Light  <material=\"MsgFont1\">-5: Fire", // 060 Jack Frost
             "  <material=\"MsgFont4\">+1: Elec/Almighty/Healing/Support  <material=\"MsgFont1\">-1: Dark/Curse/Mind", // 061 Pixie
             "", // 062 Throne
             "", // 063 Dominion
@@ -528,12 +528,12 @@ namespace NewBossAI
             "", // 082 Orthrus
             "", // 083 Suparna
             "", // 084 Badb Catha
-            "", // 085 Inugami
+            "  <material=\"MsgFont4\">+3: Fire • +2: Curse/Mind • +1: Healing/Support  <material=\"MsgFont1\">-4: Force", // 085 Inugami
             "", // 086 Nekomata
             "", // 087 Gogmagog
             "", // 088 Titan
             "", // 089 Sarutahiko
-            "", // 090 Sudama
+            "  <material=\"MsgFont4\">+3: Force • +2: Support  <material=\"MsgFont1\">-2: Ice  • -3: Fire", // 090 Sudama
             "  <material=\"MsgFont4\">+2: Fire • +1: Mind/Healing/Support  <material=\"MsgFont1\">-3: Ice", // 091 Hua Po
             "  <material=\"MsgFont4\">+2: Force • +1: Healing  <material=\"MsgFont1\">-3: Fire", // 092 Kodama
             "", // 093 Shiki-Ouji
