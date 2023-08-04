@@ -94,6 +94,8 @@ namespace NewBossAI
                     case 460: __result = "Silent Prayer"; return false;
                     case 461: __result = "Storm Gale"; return false;
                     case 462: __result = "Winged Fury"; return false;
+                    case 463: __result = "Jack Bufu"; return false;
+                    case 464: __result = "Humble Blessing"; return false;
                     default: return true;
                 }
             }
@@ -214,7 +216,7 @@ namespace NewBossAI
                     case 433: __result = "High Physical damage to one foe."; return false; // Akashic Arts
                     case 434: __result = "High Physical damage to random foes. \nHigh critial rate."; return false; // Bloodbath
                     case 435: __result = "Low Fire damage to all foes. \nLowers targets' Physical Attack."; return false; // Scald
-                    case 436: __result = "Massive Fire damage to all foes."; return false; // Trisagion
+                    case 436: __result = "Massive Fire damage to all foes."; return false; // Ragnarok
                     case 437: __result = "Low Ice damage to one foe. \nLowers target's Evasion/Hit Rate."; return false; // Refrigerate
                     case 438: __result = "High Ice damage to random foes."; return false; // Cocytus
                     case 439: __result = "Massive Ice damage to all foes."; return false; // Fimbulvetr
@@ -241,6 +243,8 @@ namespace NewBossAI
                     case 460: __result = "Negates -kaja & -nda effects \non all foes & allies."; return false; // Silent Prayer
                     case 461: __result = "Low Force damage to random foes."; return false; // Storm Gale
                     case 462: __result = "High Strength-based Force damage \nto all foes."; return false; // Winged Fury
+                    case 463: __result = "Low Ice damage to one foe. \nLowers target's Defense."; return false; // Jack Bufu
+                    case 464: __result = "Slight HP recovery for the party."; return false; // Humble Blessing
 
                     default: return true;
                 }
@@ -937,6 +941,9 @@ namespace NewBossAI
             SilentPrayer(460);
             StormGale(461);
             WingedFury(462);
+
+            JackBufu(463);
+            HumbleBlessing(464);
 
             // Passive Skills
             Might(11);
@@ -2322,6 +2329,53 @@ namespace NewBossAI
             var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
             skillLevel.SkillID = id;
             skillLevel.Level = 12;
+        }
+
+        private static void JackBufu(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 512;
+            datSkill.tbl[id].skillattr = 2;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 20;
+            datNormalSkill.tbl[id].badtype = 1;
+            datNormalSkill.tbl[id].basstatus = 2;
+            datNormalSkill.tbl[id].cost = 6;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 1;
+            datNormalSkill.tbl[id].hojotype = 128;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 27;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 12;
+            datNormalSkill.tbl[id].magiclimit = 74;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 7);
         }
 
         private static void Niflheim(ushort id)
@@ -4356,6 +4410,53 @@ namespace NewBossAI
             var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
             skillLevel.SkillID = id;
             skillLevel.Level = 7;
+        }
+
+        private static void HumbleBlessing(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 512;
+            datSkill.tbl[id].skillattr = 13;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 16;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 255;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 8;
+            datNormalSkill.tbl[id].hptype = 2;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 9;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 3;
+
+            OverWriteSkillEffect(id, 39);
         }
 
         // Support Skills

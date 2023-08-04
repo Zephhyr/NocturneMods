@@ -143,7 +143,7 @@ namespace NewBossAI
                     var limitReached = true;
                     foreach (var unitBuffs in currentSideBuffs)
                     {
-                        if (unitBuffs[4] >= -2 || currentUnitBuffs[5] >= -2)
+                        if (unitBuffs[4] >= -2 || unitBuffs[5] >= -2)
                         {
                             limitReached = false;
                             break;
@@ -155,7 +155,24 @@ namespace NewBossAI
                     else
                         nbHelpProcess.nbDispText("Decreased Physical/Magical Attack!", string.Empty, 2, 45, 2315190144, false);
                 }
-                else if (actionProcessData.work.nowcommand == 1 && hojotype == 128 && hojopoint == 1 && (actionProcessData.work.nowindex == 202 || actionProcessData.work.nowindex == 428))
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 128 && hojopoint == 1 && actionProcessData.work.nowindex == 202)
+                {
+                    var limitReached = true;
+                    foreach (var unitBuffs in currentSideBuffs)
+                    {
+                        if (unitBuffs[7] >= -2)
+                        {
+                            limitReached = false;
+                            break;
+                        }
+                    }
+
+                    if (limitReached)
+                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    else
+                        nbHelpProcess.nbDispText("Decreased Defense!", string.Empty, 2, 45, 2315190144, false);
+                }
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 128 && hojopoint == 1 && (actionProcessData.work.nowindex == 428 || actionProcessData.work.nowindex == 463))
                 {
                     var limitReached = true;
                     if (currentUnitBuffs[7] >= -2)

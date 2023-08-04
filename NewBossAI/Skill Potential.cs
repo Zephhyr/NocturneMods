@@ -56,7 +56,7 @@ namespace NewBossAI
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 035 Unicorn
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 036 Flaemis
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 037 Aquans
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 038 Aeros
+            new sbyte[] {0    , 0    , 0    , -4   , 3    , 0    , 0    , 0    , 1    , 1    , 1    , 0    , 0    , 0    , 0    , 0 }, // 038 Aeros
             new sbyte[] {0    , 0    , 0    , 3    , -4   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 039 Erthys
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 040 Saki Mitama
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 041 Kushi Mitama
@@ -87,7 +87,7 @@ namespace NewBossAI
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 065 Power
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 066 Principality
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 067 Archangel
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 068 Angel
+            new sbyte[] {0    , 0    , 0    , -3   , 0    , 0    , 3    , -4   , 0    , 0    , 0    , 0    , 0    , 2    , 2    , 0 }, // 068 Angel
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 069 Flauros
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 070 Decarabia
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 071 Ose
@@ -150,7 +150,7 @@ namespace NewBossAI
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 127 Vetala
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 128 Legion
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 129 Yaka
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 130 Choronzon
+            new sbyte[] {2    , 2    , 0    , 0    , 0    , 0    , -4   , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 130 Choronzon
             new sbyte[] {1    , -3   , -3   , -3   , -3   , 0    , -3   , 3    , 3    , 0    , 0    , 0    , 0    , -1   , 0    , 0 }, // 131 Preta
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 132 Shadow
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 133 Black Ooze
@@ -481,7 +481,7 @@ namespace NewBossAI
             "", // 035 Unicorn
             "", // 036 Flaemis
             "", // 037 Aquans
-            "", // 038 Aeros
+            "  <material=\"MsgFont4\">+3: Force • +1: Ailments  <material=\"MsgFont1\">-4: Elec", // 038 Aeros
             "  <material=\"MsgFont4\">+3: Elec • +1: Support  <material=\"MsgFont1\">-4: Force", // 039 Erthys
             "", // 040 Saki Mitama
             "", // 041 Kushi Mitama
@@ -501,7 +501,7 @@ namespace NewBossAI
             "", // 055 Troll
             "", // 056 Setanta
             "", // 057 Kelpie
-            "  <material=\"MsgFont4\">+5: Fire • +1: Support  <material=\"MsgFont1\">-5: Ice • -1: Light", // 058 Jack-o'-Lantern
+            "  <material=\"MsgFont4\">+5: Fire • +1: Support  <material=\"MsgFont1\">-1: Light • -5: Ice ", // 058 Jack-o'-Lantern
             "  <material=\"MsgFont4\">+2: Elec/Force • +1: Healing/Support<material=\"MsgFont1\">", // 059 High Pixie
             "  <material=\"MsgFont4\">+3: Ice • +1: Light  <material=\"MsgFont1\">-4: Fire", // 060 Jack Frost
             "  <material=\"MsgFont4\">+1: Elec/Almighty/Healing/Support  <material=\"MsgFont1\">-1: Dark/Curse/Mind", // 061 Pixie
@@ -511,7 +511,7 @@ namespace NewBossAI
             "", // 065 Power
             "", // 066 Principality
             "", // 067 Archangel
-            "", // 068 Angel
+            "  <material=\"MsgFont4\">+3: Light • +2: Healing/Support  <material=\"MsgFont1\">-3: Elec • -4: Dark", // 068 Angel
             "", // 069 Flauros
             "", // 070 Decarabia
             "", // 071 Ose
@@ -573,7 +573,7 @@ namespace NewBossAI
             "", // 127 Vetala
             "", // 128 Legion
             "", // 129 Yaka
-            "", // 130 Choronzon
+            "  <material=\"MsgFont4\">+2: Phys/Fire/Dark  <material=\"MsgFont1\">-4: Light", // 130 Choronzon
             "  <material=\"MsgFont4\">+3: Dark/Curse • +1: Phys  <material=\"MsgFont1\">-1: Healing • -3: Magic/Light", // 131 Preta
             "", // 132 Shadow
             "", // 133 Black Ooze
@@ -1031,8 +1031,13 @@ namespace NewBossAI
         [HarmonyPatch(typeof(cmpDrawSkill), nameof(cmpDrawSkill.cmpSkillNameCostDraw))] 
         private class SkillPotentialPatch6
         {
-            public static void Prefix(ref ushort SkillID, ref datUnitWork_t pStock) // Before getting the cost of a skill for display outside of battle
+            public static bool Prefix(ref int idx, ref uint Col, ref ushort SkillID, ref datUnitWork_t pStock, 
+                                        ref sbyte MskFlag, ref sbyte SelFlag, ref int MatCol) // Before getting the cost of a skill for display outside of battle
             {
+                int cost;
+                bool numDraw = false;
+                uint ctype;
+
                 if (SkillID < 288 || SkillID > 421) // If it isn't a passive skill
                 {
                     tmp_datNormalSkill.cost = datNormalSkill.tbl[SkillID].cost; // Memorize the original skill cost
@@ -1043,7 +1048,29 @@ namespace NewBossAI
                     {
                         datNormalSkill.tbl[SkillID].cost = SkillPotentialUtility.ApplySkillPotentialCost(SkillID, skillPotential); // Update the skill cost
                     }
+
+                    cost = cmpDrawSkill.cmpGetSkillCost(SkillID, pStock);
+                    if (cost != 0)
+                        numDraw = true;
+                    ctype = (uint)datNormalSkill.tbl[SkillID].costtype;
                 }
+                else if (MskFlag == 0)
+                {
+                    cost = -2;
+                    ctype = 0;
+                    if (SelFlag == 0)
+                        cost = -1;
+                }
+                else
+                {
+                    cost = -1;
+                    ctype = 0;
+                }
+
+                var text = datSkillName.Get(SkillID);
+                cmpInit.cmpItemTextSet(idx, text, Col, 1, (int)ctype, numDraw, cost, 0, SelFlag, MskFlag);
+
+                return false;
             }
             public static void Postfix(ref ushort SkillID) // After getting the cost of a skill for display outside of battle
             {
@@ -1226,8 +1253,8 @@ namespace NewBossAI
         {
             public static void Postfix()
             {
-                cmpStatus._statusUIScr.aisyoText.rectTransform.offsetMax = new Vector2(3200, -20);
-                cmpStatus._statusUIScr.aisyoText.rectTransform.sizeDelta = new Vector2(3200, 44);
+                cmpStatus._statusUIScr.aisyoText.rectTransform.offsetMax = new Vector2(3500, -20);
+                cmpStatus._statusUIScr.aisyoText.rectTransform.sizeDelta = new Vector2(3500, 44);
             }
         }
 
