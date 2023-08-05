@@ -214,7 +214,7 @@ namespace NewBossAI
                     case 430: __result = "Low Physical damage to all foes. \nHigh critial rate."; return false; // Chi Blast
                     case 431: __result = "High Physical damage to all foes. \nMay inflict Mute."; return false; // Revelation
                     case 432: __result = "High Physical damage to all foes. \nMay inflict Stone."; return false; // Gate of Hell
-                    case 433: __result = "High Physical damage to one foe."; return false; // Akashic Arts
+                    case 433: __result = "High Physical damage to one foe. \nHigh critial rate."; return false; // Akashic Arts
                     case 434: __result = "High Physical damage to random foes. \nHigh critial rate."; return false; // Bloodbath
                     case 435: __result = "Low Fire damage to all foes. \nLowers targets' Physical Attack."; return false; // Scald
                     case 436: __result = "Massive Fire damage to all foes."; return false; // Ragnarok
