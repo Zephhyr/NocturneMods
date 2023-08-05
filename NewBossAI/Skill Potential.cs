@@ -69,7 +69,7 @@ namespace NewBossAI
             //          {Phys , Fire , Ice  , Elec , Force, Alm  , Light, Dark , Curse, Nerve, Mind , SD   , N/A  , Heal , Supp , Util}
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 048 Karasu Tengu
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 049 Dís
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 050 Isora
+            new sbyte[] {0    , -4   , 3    , 0    , 0    , 0    , 0    , 0    , 3    , 3    , 3    , 0    , 0    , 1    , 0    , 0 }, // 050 Isora
             new sbyte[] {0    , -3   , 0    , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 1    , 0 }, // 051 Apsaras
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 052 Koppa Tengu
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 053 Titania
@@ -99,7 +99,7 @@ namespace NewBossAI
             new sbyte[] {4    , -5   , 0    , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 077 Naga Raja
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 078 Mizuchi
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 079 Naga
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 080 Nozuchi
+            new sbyte[] {2    , 0    , 0    , -4   , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 080 Nozuchi
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 081 Cerberus
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 082 Orthrus
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 083 Suparna
@@ -493,7 +493,7 @@ namespace NewBossAI
             "", // 047 Jinn
             "", // 048 Karasu Tengu
             "", // 049 Dís
-            "", // 050 Isora
+            "  <material=\"MsgFont4\">+3: Ice/Ailments • +1: Healing  <material=\"MsgFont1\">-4: Fire", // 050 Isora
             "  <material=\"MsgFont4\">+2: Elec • +1: Healing/Support  <material=\"MsgFont1\">-3: Fire", // 051 Apsaras
             "", // 052 Koppa Tengu
             "", // 053 Titania
@@ -523,7 +523,7 @@ namespace NewBossAI
             "  <material=\"MsgFont4\">+4: Phys/Elec • +1: Support  <material=\"MsgFont1\">-5: Fire", // 077 Naga Raja
             "", // 078 Mizuchi
             "", // 079 Naga
-            "", // 080 Nozuchi
+            "  <material=\"MsgFont4\">+3: Curse • +2: Phys • +1: Support  <material=\"MsgFont1\">-4: Elec", // 080 Nozuchi
             "", // 081 Cerberus
             "", // 082 Orthrus
             "", // 083 Suparna
@@ -533,7 +533,7 @@ namespace NewBossAI
             "", // 087 Gogmagog
             "", // 088 Titan
             "", // 089 Sarutahiko
-            "  <material=\"MsgFont4\">+3: Force • +2: Support  <material=\"MsgFont1\">-2: Ice  • -3: Fire", // 090 Sudama
+            "  <material=\"MsgFont4\">+3: Force • +2: Support  <material=\"MsgFont1\">-2: Ice • -3: Fire", // 090 Sudama
             "  <material=\"MsgFont4\">+2: Fire • +1: Mind/Healing/Support  <material=\"MsgFont1\">-3: Ice", // 091 Hua Po
             "  <material=\"MsgFont4\">+2: Force • +1: Healing  <material=\"MsgFont1\">-3: Fire", // 092 Kodama
             "", // 093 Shiki-Ouji

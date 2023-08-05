@@ -37,6 +37,7 @@ namespace NewBossAI
                     case 133: __result = "Javelin Rain"; return false;      
                     case 143: __result = "Xeros Beat"; return false;      
                     case 179: __result = "Trisagion"; return false;      
+                    case 202: __result = "Toxic Spray"; return false;           
                     case 219: __result = "Rage"; return false;           
                     case 220: __result = "Psycho Rage"; return false;
                     case 285: __result = "Babylon Goblet"; return false;
