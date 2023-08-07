@@ -23,6 +23,9 @@ namespace NewBossAI
             ApplySkillChanges();
             ApplyItemChanges();
             ApplyDemonChanges();
+
+            for (int i = 0; i < tblSkill.fclSkillTbl[149].Event.Length; i++)
+                MelonLogger.Msg(tblSkill.fclSkillTbl[149].Event[i].Param + " - " + tblSkill.fclSkillTbl[149].Event[i].TargetLevel + " - " + tblSkill.fclSkillTbl[149].Event[i].Type);
         }
 
         [HarmonyPatch(typeof(datEncount), nameof(datEncount.Get))]

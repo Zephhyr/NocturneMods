@@ -1579,7 +1579,7 @@ namespace NewBossAI
             datNormalSkill.tbl[id].cost = 17;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 1;
-            datNormalSkill.tbl[id].criticalpoint = 40;
+            datNormalSkill.tbl[id].criticalpoint = 50;
             datNormalSkill.tbl[id].deadtype = 0;
             datNormalSkill.tbl[id].failpoint = 12;
             datNormalSkill.tbl[id].flag = 0;
@@ -1729,7 +1729,7 @@ namespace NewBossAI
             datNormalSkill.tbl[id].cost = 20;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 1;
-            datNormalSkill.tbl[id].criticalpoint = 30;
+            datNormalSkill.tbl[id].criticalpoint = 50;
             datNormalSkill.tbl[id].deadtype = 0;
             datNormalSkill.tbl[id].failpoint = 3;
             datNormalSkill.tbl[id].flag = 0;
@@ -1739,7 +1739,7 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 54;
+            datNormalSkill.tbl[id].hpn = 52;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].koukatype = 0;
             datNormalSkill.tbl[id].magicbase = 0;
@@ -1779,7 +1779,7 @@ namespace NewBossAI
             datNormalSkill.tbl[id].cost = 35;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 1;
-            datNormalSkill.tbl[id].criticalpoint = 44;
+            datNormalSkill.tbl[id].criticalpoint = 50;
             datNormalSkill.tbl[id].deadtype = 0;
             datNormalSkill.tbl[id].failpoint = 13;
             datNormalSkill.tbl[id].flag = 0;
