@@ -7,6 +7,7 @@ using Il2Cppresult2_H;
 using Il2Cppnewbattle_H;
 using Il2Cppeffect_H;
 using UnityEngine;
+using static Il2Cpp.SteamDlcFileUtil;
 
 [assembly: MelonInfo(typeof(NewBossAI.NewBossAI), "New Boss AI", "1.0.0", "Zephhyr, Matthiew Purple")]
 [assembly: MelonGame("アトラス", "smt3hd")]
@@ -30,6 +31,7 @@ namespace NewBossAI
         {
             public static void Prefix(ref int id)
             {
+                //id = 725; // Karasu Tengu
                 //id = 744; // 3* Naga Raja
                 //id = 1031; // Mother Harlot
             }
