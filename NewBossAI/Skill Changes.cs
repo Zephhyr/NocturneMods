@@ -153,6 +153,7 @@ namespace NewBossAI
                     case 195: __result = "Massive Light damage to all foes."; return false; // Radiance
                     case 199: __result = "Dark: Chance to reduce HP of one foe to 1."; return false; // Evil Gaze
                     case 202: __result = "Lowers all foes' Defense. \nMay inflict Poison."; return false; // Toxic Cloud
+                    case 207: __result = "Medium Curse damage to all foes. \nMay inflict Mute."; return false; // Dismal Tune
                     case 208: __result = "Chance to reduce HP of all foes to 1."; return false; // Sol Niger
                     case 217: __result = "Massive Mind damage to all foes. \nMay inflict Panic."; return false; // Intoxicate
                     case 224: __result = "More than doubles damage \nof next Physical attack."; return false; // Focus
