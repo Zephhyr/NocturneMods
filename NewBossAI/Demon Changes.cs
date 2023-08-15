@@ -83,6 +83,8 @@ namespace NewBossAI
                         __result = "Null: Elec/Nerve • Str: Dark • Weak: Ice"; return false;
                     case "<AISYO_L0103>": // Datsue-Ba
                         __result = "Null: Nerve/Mind • Str: Ice • Weak: Elec"; return false;
+                    case "<AISYO_L0107>": // Pazuzu
+                        __result = "Null: Dark • Str: Force/Mind • Weak: Ice"; return false;
                     case "<AISYO_L0117>": // Succubus
                         __result = "Null: Mind • Str: Ice/Curse/Nerve • Weak: Light"; return false;
                     case "<AISYO_L0118>": // Incubus
@@ -202,6 +204,7 @@ namespace NewBossAI
             Kushinada(19);
             KikuriHime(20);
 
+            TakeMikazuchi(24);
             Okuninushi(25);
             Koumokuten(26);
             Zouchouten(27);
@@ -243,6 +246,7 @@ namespace NewBossAI
             Archangel(67);
             Angel(68);
 
+            Ose(71);
             Berith(72);
             Eligor(73);
             Forneus(74);
@@ -266,6 +270,7 @@ namespace NewBossAI
             Taraka(102);
             DatsueBa(103);
 
+            Pazuzu(107);
             Baphomet(108);
 
             Succubus(117);
@@ -297,6 +302,8 @@ namespace NewBossAI
             QingLong(148);
             Xuanwu(149);
 
+            Yatagarasu(153);
+
             Pisaca(167);
 
             Phantom(178);
@@ -308,8 +315,6 @@ namespace NewBossAI
             // Bosses
             BossForneus(256);
         }
-
-        
 
         private static void Horus(ushort id)
         {
@@ -414,6 +419,29 @@ namespace NewBossAI
             tblSkill.fclSkillTbl[id].Event[6].Param = 365;
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 28;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
+        }
+
+        private static void TakeMikazuchi(ushort id)
+        {
+            // Skills
+            tblSkill.fclSkillTbl[id].Event[0].Param = 15;
+            tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 440;
+            tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 428;
+            tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 410;
+            tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 46;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 105;
+            tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 47;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 183;
+            tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 48;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 349;
+            tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 49;
+            tblSkill.fclSkillTbl[id].Event[6].Type = 1;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 362;
+            tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 50;
+            tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
 
         private static void Okuninushi(ushort id)
@@ -1124,6 +1152,14 @@ namespace NewBossAI
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 15;
         }
 
+        private static void Ose(ushort id)
+        {
+            // Skills
+            tblSkill.fclSkillTbl[id].Event[5].Param = 224;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 313;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 69;
+        }
+
         private static void Berith(ushort id)
         {
             // Skills
@@ -1541,6 +1577,40 @@ namespace NewBossAI
             tblSkill.fclSkillTbl[id].Event[6].Param = 60;
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 11;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
+        }
+
+        private static void Pazuzu(ushort id)
+        {
+            // Affinties
+            datAisyo.tbl[id][0] = 100; // Phys
+            datAisyo.tbl[id][1] = 100; // Fire
+            datAisyo.tbl[id][2] = 2147483798; // Ice
+            datAisyo.tbl[id][3] = 100; // Elec
+            datAisyo.tbl[id][4] = 50; // Force
+            datAisyo.tbl[id][6] = 100; // Light
+            datAisyo.tbl[id][7] = 65536; // Dark
+            datAisyo.tbl[id][8] = 100; // Curse
+            datAisyo.tbl[id][9] = 100; // Nerve
+            datAisyo.tbl[id][10] = 50; // Mind
+
+            // Skills
+            tblSkill.fclSkillTbl[id].Event[0].Param = 196;
+            tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 185;
+            tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 414;
+            tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 327;
+            tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 46;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 40;
+            tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 47;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 114;
+            tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 48;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 63;
+            tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 49;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 187;
+            tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 50;
+            tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
 
         private static void Baphomet(ushort id)
@@ -2043,6 +2113,16 @@ namespace NewBossAI
             tblSkill.fclSkillTbl[id].Event[11].Param = 430;
             tblSkill.fclSkillTbl[id].Event[11].TargetLevel = 29;
             tblSkill.fclSkillTbl[id].Event[11].Type = 6;
+        }
+
+        private static void Yatagarasu(ushort id)
+        {
+            // Skills
+            tblSkill.fclSkillTbl[id].Event[1].Param = 29;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 21;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 444;
+            tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 51;
+            tblSkill.fclSkillTbl[id].Event[6].Type = 1;
         }
 
         private static void Pisaca(ushort id)
