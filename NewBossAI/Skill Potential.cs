@@ -33,11 +33,11 @@ namespace NewBossAI
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 012 Shiva
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 013 Beidou Xingjun
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 014 Qitian Dasheng
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 015 Dionysus
+            new sbyte[] {3    , 3    , -4   , 0    , 0    , 3    , 0    , 0    , 4    , 0    , 4    , 3    , 0    , 0    , 0    , 0 }, // 015 Dionysus
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 016 Kali
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 017 Skadi
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 018 Parvati
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 019 Kushinada
+            new sbyte[] {-3   , 0    , 0    , 0    , 0    , 0    , 4    , -5   , 0    , 0    , 0    , 0    , 0    , 4    , 2    , 0 }, // 019 Kushinada
             new sbyte[] {-3   , -5   , 0    , 0    , 0    , 0    , 2    , 0    , 0    , 0    , 2    , 0    , 0    , 3    , 2    , 0 }, // 020 Kikuri-Hime
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 021 Bishamonten
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 022 Thor
@@ -48,7 +48,7 @@ namespace NewBossAI
             new sbyte[] {4    , 0    , 0    , 0    , -4   , 0    , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 027 Zouchouten
             new sbyte[] {2    , -3   , 0    , 4    , 0    , 0    , 0    , 0    , 0    , -1   , -1   , 0    , 0    , 0    , 0    , 0 }, // 028 Take-Minakata
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 029 Chimera
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 030 Baihu
+            new sbyte[] {3    , -6   , 3    , 5    , -3   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 030 Baihu
             new sbyte[] {-3   , -3   , 0    , 0    , 4    , 0    , 0    , -3   , 0    , 0    , 0    , 0    , 0    , 2    , 2    , 0 }, // 031 Senri
             new sbyte[] {0    , 5    , -6   , 2    , 0    , 0    , 0    , 0    , 1    , 1    , 1    , 0    , 0    , 0    , 1    , 0 }, // 032 Zhuque
             new sbyte[] {1    , -3   , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 033 Shiisaa
@@ -65,7 +65,7 @@ namespace NewBossAI
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 044 Efreet
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 045 Pulukishi
             new sbyte[] {4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -4   , -4   , -4   , 0    , 0    , 0    , 1    , 0 }, // 046 Ongkhot
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 047 Jinn
+            new sbyte[] {0    , 0    , 0    , -7   , 6    , 0    , 0    , 0    , 0    , -7   , 0    , 0    , 0    , 1    , 1    , 0 }, // 047 Jinn
             //          {Phys , Fire , Ice  , Elec , Force, Alm  , Light, Dark , Curse, Nerve, Mind , SD   , N/A  , Heal , Supp , Util}
             new sbyte[] {0    , 3    , 0    , -3   , 3    , 0    , 0    , 0    , -3   , -3   , -3   , 0    , 0    , 0    , 1    , 0 }, // 048 Karasu Tengu
             new sbyte[] {-4   , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 4    , 0    , 0    , 0    , 0    , 2    , 0    , 0 }, // 049 Dís
@@ -75,7 +75,7 @@ namespace NewBossAI
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 053 Titania
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 054 Oberon
             new sbyte[] {4    , -4   , 4    , -4   , 0    , 0    , 0    , 0    , 0    , -4   , -4   , 0    , 0    , 1    , 0    , 0 }, // 055 Troll
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 056 Setanta
+            new sbyte[] {4    , 0    , 0    , -3   , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 056 Setanta
             new sbyte[] {0    , 0    , 0    , 0    , -3   , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 3    , 1    , 0 }, // 057 Kelpie
             new sbyte[] {0    , 5    , -5   , 0    , 0    , 0    , -1   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 058 Jack-o'-Lantern
             new sbyte[] {0    , 0    , 0    , 2    , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 1    , 0 }, // 059 High Pixie
@@ -83,7 +83,7 @@ namespace NewBossAI
             new sbyte[] {0    , 0    , 0    , 1    , 0    , 1    , 0    , -1   , -1   , 0    , -1   , 1    , 0    , 1    , 1    , 0 }, // 061 Pixie
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 062 Throne
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 063 Dominion
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 064 Virtue
+            new sbyte[] {0    , 0    , 0    , 4    , -5   , 0    , 4    , -5   , 0    , 0    , 0    , 0    , 0    , 2    , 2    , 0 }, // 064 Virtue
             new sbyte[] {4    , 0    , 0    , 0    , 0    , 0    , 4    , -6   , 0    , 0    , 0    , 0    , 0    , 1    , 1    , 0 }, // 065 Power
             new sbyte[] {2    , 0    , 0    , 0    , 0    , 0    , 4    , -5   , 0    , 0    , 0    , 0    , 0    , 2    , 2    , 0 }, // 066 Principality
             new sbyte[] {3    , 1    , -3   , 0    , 0    , 0    , 3    , -5   , 0    , 0    , 0    , 0    , 0    , 1    , 1    , 0 }, // 067 Archangel
@@ -114,13 +114,13 @@ namespace NewBossAI
             new sbyte[] {0    , -3   , 0    , 0    , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0    , 0 }, // 092 Kodama
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 093 Shiki-Ouji
             new sbyte[] {4    , -2   , -2   , -2   , -2   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -2   , 0    , 0 }, // 094 Oni
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 095 Yomotsu-Ikusa
+            new sbyte[] {3    , 0    , 0    , 0    , 0    , 0    , -3   , 3    , 3    , -3   , -3   , 0    , 0    , 0    , -3   , 0 }, // 095 Yomotsu-Ikusa
             //          {Phys , Fire , Ice  , Elec , Force, Alm  , Light, Dark , Curse, Nerve, Mind , SD   , N/A  , Heal , Supp , Util}
             new sbyte[] {4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -5   , -5   , -5   , 0    , 0    , -2   , 0    , 0 }, // 096 Momunofu
             new sbyte[] {0    , -3   , 0    , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 097 Shikigami
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 098 Rangda
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 099 Dakini
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 100 Yaksini
+            new sbyte[] {2    , 0    , 0    , -4   , 2    , 0    , 0    , 0    , 4    , 4    , 4    , 0    , 0    , 0    , 0    , 0 }, // 100 Yaksini
             new sbyte[] {0    , -4   , 0    , 0    , 3    , 0    , -4   , 3    , 5    , 5    , 5    , 0    , 0    , 0    , 0    , 0 }, // 101 Yomotsu-Shikome
             new sbyte[] {3    , 0    , -4   , 3    , 0    , 0    , 0    , 0    , 0    , 2    , 0    , 0    , 0    , -2   , 0    , 0 }, // 102 Taraka
             new sbyte[] {0    , 0    , 1    , -3   , 0    , 0    , 0    , 0    , 3    , 3    , 3    , 0    , 0    , 0    , 0    , 0 }, // 103 Datsue-Ba
@@ -142,7 +142,7 @@ namespace NewBossAI
             new sbyte[] {3    , 0    , 3    , -3   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 119 Fomorian
             new sbyte[] {0    , 0    , -3   , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0 }, // 120 Lilim
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 121 Hresvelgr
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 122 Mothman
+            new sbyte[] {0    , 3    , 0    , -3   , 0    , 0    , 0    , 0    , 5    , 5    , 5    , 0    , 0    , 0    , 1    , 0 }, // 122 Mothman
             new sbyte[] {3    , 0    , 0    , 3    , -4   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -2   , 0    , 0 }, // 123 Raiju
             new sbyte[] {2    , -4   , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 124 Nue
             new sbyte[] {2    , 0    , 0    , -3   , 0    , 0    , -3   , 2    , 2    , 2    , 2    , 0    , 0    , -1   , 0    , 0 }, // 125 Bicorn
@@ -169,7 +169,7 @@ namespace NewBossAI
             new sbyte[] {2    , 0    , 0    , -5   , 5    , 0    , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 145 Kurama Tengu
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 146 Hanuman
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 147 Cu Chulainn
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 148 Qing Long
+            new sbyte[] {0    , -7   , 3    , -3   , 5    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0 }, // 148 Qing Long
             new sbyte[] {0    , 0    , 5    , -6   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 149 Xuanwu
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 150 Barong
             new sbyte[] {0    , 2    , 0    , 0    , 0    , -3   , 2    , 0    , -3   , -3   , -3   , -3   , 0    , 3    , 2    , 0 }, // 151 Makami
@@ -199,7 +199,7 @@ namespace NewBossAI
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 175 Atropos
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 176 Loa
             new sbyte[] {3    , 0    , -4   , 0    , 0    , 0    , -4   , 3    , 3    , 3    , 3    , 0    , 0    , -2   , 1    , 0 }, // 177 Chatterskull
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 178 Phantom
+            new sbyte[] {0    , 0    , 0    , 5    , -4   , 2    , -4   , 0    , 0    , 0    , 0    , 2    , 0    , -4   , 2    , 0 }, // 178 Phantom
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 179 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 180 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 181 
@@ -222,7 +222,7 @@ namespace NewBossAI
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 197 Red Rider
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 198 Black Rider
             new sbyte[] {4    , 0    , -4   , -4   , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 199 Matador
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 200 Hell Biker
+            new sbyte[] {3    , 4    , -5   , 0    , 4    , 0    , -5   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0 }, // 200 Hell Biker
             new sbyte[] {-4   , -4   , 0    , 0    , 0    , 0    , 4    , 4    , 0    , 0    , 4    , 0    , 0    , 2    , 0    , 0 }, // 201 Daisoujou
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 202 Mother Harlot
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 203 Trumpeter
@@ -458,11 +458,11 @@ namespace NewBossAI
             "", // 012 Shiva
             "", // 013 Beidou Xingjun
             "", // 014 Qitian Dasheng
-            "", // 015 Dionysus
+            "  <material=\"MsgFont4\">+4: Curse/Mind • +3: Phys/Fire/Almighty  <material=\"MsgFont1\">-4: Ice", // 015 Dionysus
             "", // 016 Kali
             "", // 017 Skadi
             "", // 018 Parvati
-            "", // 019 Kushinada
+            "  <material=\"MsgFont4\">+4: Light/Heal • +2: Supp  <material=\"MsgFont1\">-3: Phys • -5: Dark", // 019 Kushinada
             "  <material=\"MsgFont4\">+3: Heal • +2: Light/Mind/Supp  <material=\"MsgFont1\">-3: Phys • -5: Fire", // 020 Kikuri-Hime
             "", // 021 Bishamonten
             "", // 022 Thor
@@ -473,7 +473,7 @@ namespace NewBossAI
             "  <material=\"MsgFont4\">+4: Phys/Light • +2: Support  <material=\"MsgFont1\">-4: Force", // 027 Zouchouten
             "  <material=\"MsgFont4\">+4: Elec • +2: Phys  <material=\"MsgFont1\">-1: Nerve/Mind • -3: Fire", // 028 Take-Minakata
             "", // 029 Chimera
-            "", // 030 Baihu
+            "  <material=\"MsgFont4\">+5: Elec • +3: Phys/Ice • +2: Supp  <material=\"MsgFont1\">-3: Force • -6: Fire", // 030 Baihu
             "  <material=\"MsgFont4\">+4: Force • +2: Heal/Supp  <material=\"MsgFont1\">-3: Phys/Elec/Dark", // 031 Senri
             "  <material=\"MsgFont4\">+5: Fire • +2: Elec • +1: Ailments/Supp  <material=\"MsgFont1\">-3: Phys • -6: Ice", // 032 Zhuque
             "  <material=\"MsgFont4\">+3: Elec • +2: Supp • +1: Phys  <material=\"MsgFont1\">-3: Fire", // 033 Shiisaa
@@ -490,7 +490,7 @@ namespace NewBossAI
             "", // 044 Efreet
             "", // 045 Pulukishi
             "  <material=\"MsgFont4\">+4: Phys • +1: Supp  <material=\"MsgFont1\">-4: Ailments", // 046 Ongkhot
-            "", // 047 Jinn
+            "  <material=\"MsgFont4\">+6: Force • +1: Heal/Supp  <material=\"MsgFont1\">-7: Elec/Nerve", // 047 Jinn
             "  <material=\"MsgFont4\">+3: Fire/Force • +1: Supp  <material=\"MsgFont1\">-3: Elec/Ailments", // 048 Karasu Tengu
             "  <material=\"MsgFont4\">+4: Curse • +2: Fire/Heal  <material=\"MsgFont1\">-4: Phys", // 049 Dís
             "  <material=\"MsgFont4\">+3: Ice/Ailments • +1: Heal  <material=\"MsgFont1\">-4: Fire", // 050 Isora
@@ -499,7 +499,7 @@ namespace NewBossAI
             "", // 053 Titania
             "", // 054 Oberon
             "  <material=\"MsgFont4\">+4: Phys/Ice • +1: Heal  <material=\"MsgFont1\">-3: Fire/Elec/Nerve/Mind", // 055 Troll
-            "", // 056 Setanta
+            "  <material=\"MsgFont4\">+4: Phys • +2: Force/Supp  <material=\"MsgFont1\">-3: Elec", // 056 Setanta
             "  <material=\"MsgFont4\">+3: Mind/Heal • +1: Supp  <material=\"MsgFont1\">-3: Force", // 057 Kelpie
             "  <material=\"MsgFont4\">+5: Fire • +1: Supp  <material=\"MsgFont1\">-1: Light • -5: Ice", // 058 Jack-o'-Lantern
             "  <material=\"MsgFont4\">+2: Elec/Force • +1: Heal/Supp<material=\"MsgFont1\">", // 059 High Pixie
@@ -507,7 +507,7 @@ namespace NewBossAI
             "  <material=\"MsgFont4\">+1: Elec/Almighty/Heal/Supp  <material=\"MsgFont1\">-1: Dark/Curse/Mind", // 061 Pixie
             "", // 062 Throne
             "", // 063 Dominion
-            "", // 064 Virtue
+            "  <material=\"MsgFont4\">+4: Elec/Light • +2: Heal/Supp  <material=\"MsgFont1\">-5: Force/Dark", // 064 Virtue
             "  <material=\"MsgFont4\">+4: Phys/Light • +1: Heal/Supp  <material=\"MsgFont1\">-6: Dark", // 065 Power
             "  <material=\"MsgFont4\">+4: Light • +2: Phys/Heal/Supp  <material=\"MsgFont1\">-5: Dark", // 066 Principality
             "  <material=\"MsgFont4\">+3: Phys/Light • +1: Fire/Heal/Supp  <material=\"MsgFont1\">-3: Ice • -5: Dark", // 067 Archangel
@@ -538,12 +538,12 @@ namespace NewBossAI
             "  <material=\"MsgFont4\">+2: Force • +1: Heal  <material=\"MsgFont1\">-3: Fire", // 092 Kodama
             "", // 093 Shiki-Ouji
             "  <material=\"MsgFont4\">+4: Phys  <material=\"MsgFont1\">-2: Magic/Heal", // 094 Oni
-            "", // 095 Yomotsu-Ikusa
+            "  <material=\"MsgFont4\">+3: Phys/Dark/Curse  <material=\"MsgFont1\">-3: Light/Nerve/Mind/Supp", // 095 Yomotsu-Ikusa
             "  <material=\"MsgFont4\">+4: Phys  <material=\"MsgFont1\">-2: Heal • -5: Ailments", // 096 Momunofu
             "  <material=\"MsgFont4\">+2: Elec • +1: Supp  <material=\"MsgFont1\">-3: Fire", // 097 Shikigami
             "", // 098 Rangda
             "", // 099 Dakini
-            "", // 100 Yaksini
+            "  <material=\"MsgFont4\">+4: Ailments • +2: Phys/Force  <material=\"MsgFont1\">-4: Elec", // 100 Yaksini
             "  <material=\"MsgFont4\">+5: Ailments • +3: Force/Dark  <material=\"MsgFont1\">-4: Fire/Light", // 101 Yomotsu-Shikome
             "  <material=\"MsgFont4\">+3: Phys/Elec • +2: Nerve  <material=\"MsgFont1\">-2: Heal • -4: Ice", // 102 Taraka
             "  <material=\"MsgFont4\">+3: Ailments • +1: Ice  <material=\"MsgFont1\">-3: Elec", // 103 Datsue-Ba
@@ -565,7 +565,7 @@ namespace NewBossAI
             "  <material=\"MsgFont4\">+3: Phys/Ice  <material=\"MsgFont1\">-3: Elec", // 119 Fomorian
             "  <material=\"MsgFont4\">+3: Mind • +2: Elec  <material=\"MsgFont1\">-3: Ice", // 120 Lilim
             "", // 121 Hresvelgr
-            "", // 122 Mothman
+            "  <material=\"MsgFont4\">+5: Ailments • +3: Fire • +1: Supp  <material=\"MsgFont1\">-3: Elec", // 122 Mothman
             "  <material=\"MsgFont4\">+3: Phys/Elec  <material=\"MsgFont1\">-2: Heal • -3: Force", // 123 Raiju
             "  <material=\"MsgFont4\">+4: Ice • +2: Phys  <material=\"MsgFont1\">-4: Fire", // 124 Nue
             "  <material=\"MsgFont4\">+2: Phys/Dark/Ailments  <material=\"MsgFont1\">-1: Heal • -3: Elec/Light", // 125 Bicorn
@@ -591,7 +591,7 @@ namespace NewBossAI
             "  <material=\"MsgFont4\">+5: Force • +2: Phys/Light/Supp  <material=\"MsgFont1\">-5: Elec", // 145 Kurama Tengu
             "", // 146 Hanuman
             "", // 147 Cu Chulainn
-            "", // 148 Qing Long
+            "  <material=\"MsgFont4\">+5: Force • +3: Ice/Light/Supp  <material=\"MsgFont1\">-3: Elec • -7: Fire", // 148 Qing Long
             "  <material=\"MsgFont4\">+5: Ice • +2: Supp  <material=\"MsgFont1\">-6: Elec", // 149 Xuanwu
             "", // 150 Barong
             "  <material=\"MsgFont4\">+3: Heal • +2: Fire/Light/Supp  <material=\"MsgFont1\">-3: Almighty/Ailments", // 151 Makami
@@ -621,7 +621,7 @@ namespace NewBossAI
             "", // 175 Atropos
             "", // 176 Loa
             "  <material=\"MsgFont4\">+3: Phys/Dark/Ailments • +1: Supp  <material=\"MsgFont1\">-2: Heal • -4: Ice/Light", // 177 Chatterskull
-            "", // 178 Phantom
+            "  <material=\"MsgFont4\">+5: Elec • +2: Almighty/Supp  <material=\"MsgFont1\">-4: Force/Light/Heal", // 178 Phantom
             "", // 179 
             "", // 180 
             "", // 181 
@@ -643,7 +643,7 @@ namespace NewBossAI
             "", // 197 Red Rider
             "", // 198 Black Rider
             "  <material=\"MsgFont4\">+4: Phys/Force • +2: Supp  <material=\"MsgFont1\">-4: Ice/Elec", // 199 Matador
-            "", // 200 Hell Biker
+            "  <material=\"MsgFont4\">+4: Fire/Force • +3: Phys/Supp  <material=\"MsgFont1\">-5: Ice/Light", // 200 Hell Biker
             "  <material=\"MsgFont4\">+4: Light/Dark/Mind • +2: Heal  <material=\"MsgFont1\">-4: Phys/Fire", // 201 Daisoujou
             "", // 202 Mother Harlot
             "", // 203 Trumpeter
