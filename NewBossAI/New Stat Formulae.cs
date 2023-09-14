@@ -40,7 +40,7 @@ namespace NewBossAI
                     boost += 0.2;
                 if (datCalc.datCheckSyojiSkill(work, 292) == 1)
                     boost += 0.3;
-                __result = Convert.ToUInt32(baseHp * boost);
+                __result = Math.Min(Convert.ToUInt32(baseHp * boost), 999);
                 return false;
             }
         }
@@ -70,7 +70,7 @@ namespace NewBossAI
                     boost += 0.2;
                 if (datCalc.datCheckSyojiSkill(work, 295) == 1)
                     boost += 0.3;
-                __result = Convert.ToUInt32(baseMp * boost);
+                __result = Math.Min(Convert.ToUInt32(baseMp * boost), 999);
                 return false;
             }
         }

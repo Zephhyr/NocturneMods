@@ -93,6 +93,8 @@ namespace NewBossAI
                         __result = "Null: Elec/Nerve • Str: Dark • Weak: Ice"; return false;
                     case "<AISYO_L0103>": // Datsue-Ba
                         __result = "Null: Nerve/Mind • Str: Ice • Weak: Elec"; return false;
+                    case "<AISYO_L0105>": // Girimekhala
+                        __result = "Rpl: Phys • Null: Dark • Weak: Light/Mind"; return false;
                     case "<AISYO_L0107>": // Pazuzu
                         __result = "Null: Dark • Str: Force/Mind • Weak: Ice"; return false;
                     case "<AISYO_L0117>": // Succubus
@@ -123,6 +125,12 @@ namespace NewBossAI
                         __result = "Drn: Force • Null: Light • Str: Ice • Weak: Fire"; return false;
                     case "<AISYO_L0149>": // Xuanwu
                         __result = "Drn: Ice • Null: Light • Str: Curse • Weak: Elec"; return false;
+                    case "<AISYO_L0150>": // Barong
+                        __result = "Rpl: Light • Drn: Elec • Str: Ice • Weak: Dark"; return false;
+                    case "<AISYO_L0169>": // Kin-Ki
+                        __result = "Str: Phys/Nerve/Mind • Weak: Curse"; return false;
+                    case "<AISYO_L0173>": // Clotho
+                        __result = "Null: Light/Dark • Str: Ailments"; return false;
                     case "<AISYO_L0178>": // Phantom
                         __result = "Null: Dark • Str: Phys/Elec • Weak: Force/Light"; return false;
                     case "<AISYO_L0196>": // White Rider
@@ -273,6 +281,7 @@ namespace NewBossAI
             Archangel(67);
             Angel(68);
 
+            Decarabia(70);
             Ose(71);
             Berith(72);
             Eligor(73);
@@ -301,6 +310,7 @@ namespace NewBossAI
             Taraka(102);
             DatsueBa(103);
 
+            Girimekhala(105);
             Pazuzu(107);
             Baphomet(108);
 
@@ -329,6 +339,7 @@ namespace NewBossAI
             MouRyo(136);
             WillOWisp(137);
 
+            Ganesha(142);
             Valkyrie(143);
 
             Arahabaki(144);
@@ -339,11 +350,17 @@ namespace NewBossAI
             QingLong(148);
             Xuanwu(149);
 
+            Barong(150);
+
             Yatagarasu(153);
 
             Pisaca(167);
 
             Kaiwan(168);
+
+            KinKi(169);
+
+            Clotho(173);
 
             Loa(176);
 
@@ -1373,6 +1390,16 @@ namespace NewBossAI
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 15;
         }
 
+        private static void Decarabia(ushort id)
+        {
+            // Skills
+            tblSkill.fclSkillTbl[id].Event[3].Param = 196;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 25;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 212;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 72;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 328;
+        }
+
         private static void Ose(ushort id)
         {
             // Skills
@@ -1873,6 +1900,25 @@ namespace NewBossAI
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
         }
 
+        private static void Girimekhala(ushort id)
+        {
+            // Affinties
+            datAisyo.tbl[id][6] = 2147483798; // Light
+            datAisyo.tbl[id][10] = 2147483798; // Mind
+
+            // Skills
+            tblSkill.fclSkillTbl[id].Event[4].Param = 450;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 450;
+            tblSkill.fclSkillTbl[id].Event[8].Param = 102;
+            tblSkill.fclSkillTbl[id].Event[9].Param = 102;
+            tblSkill.fclSkillTbl[id].Event[10].Param = 105;
+            tblSkill.fclSkillTbl[id].Event[10].TargetLevel = 63;
+            tblSkill.fclSkillTbl[id].Event[10].Type = 1;
+            tblSkill.fclSkillTbl[id].Event[11].Param = 105;
+            tblSkill.fclSkillTbl[id].Event[11].TargetLevel = 63;
+            tblSkill.fclSkillTbl[id].Event[11].Type = 6;
+        }
+
         private static void Pazuzu(ushort id)
         {
             // Affinties
@@ -2351,6 +2397,21 @@ namespace NewBossAI
             datAisyo.tbl[id][10] = 100; // Mind
         }
 
+        private static void Ganesha(ushort id)
+        {
+            // Skills
+            tblSkill.fclSkillTbl[id].Event[0].Param = 362;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 323;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 459;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 155;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 337;
+            tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 63;
+            tblSkill.fclSkillTbl[id].Event[4].Type = 6;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 365;
+            tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 64;
+            tblSkill.fclSkillTbl[id].Event[5].Type = 6;
+        }
+
         private static void Valkyrie(ushort id)
         {
             // Skills
@@ -2366,8 +2427,8 @@ namespace NewBossAI
             tblSkill.fclSkillTbl[id].Event[10].TargetLevel = 38;
             tblSkill.fclSkillTbl[id].Event[10].Type = 1;
             tblSkill.fclSkillTbl[id].Event[11].Param = 362;
-            tblSkill.fclSkillTbl[id].Event[11].TargetLevel = 38;
-            tblSkill.fclSkillTbl[id].Event[10].Type = 6;
+            tblSkill.fclSkillTbl[id].Event[11].TargetLevel = 39;
+            tblSkill.fclSkillTbl[id].Event[11].Type = 6;
         }
 
         private static void Arahabaki(ushort id)
@@ -2475,6 +2536,17 @@ namespace NewBossAI
             tblSkill.fclSkillTbl[id].Event[11].Type = 6;
         }
 
+        private static void Barong(ushort id)
+        {
+            // Affinties
+            datAisyo.tbl[id][2] = 50; // Ice
+
+            // Skills
+            tblSkill.fclSkillTbl[id].Event[6].Param = 413;
+            tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 65;
+            tblSkill.fclSkillTbl[id].Event[6].Type = 1;
+        }
+
         private static void Yatagarasu(ushort id)
         {
             // Skills
@@ -2511,6 +2583,41 @@ namespace NewBossAI
         {
             // Skills
             tblSkill.fclSkillTbl[id].Event[6].Param = 447;
+        }
+
+        private static void KinKi(ushort id)
+        {
+            // Affinties
+            datAisyo.tbl[id][0] = 10; // Phys
+            datAisyo.tbl[id][9] = 50; // Nerve
+            datAisyo.tbl[id][10] = 50; // Mind
+
+            // Skills
+            tblSkill.fclSkillTbl[id].Event[3].Param = 99;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 205;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 434;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 323;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 433;
+            tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 64;
+            tblSkill.fclSkillTbl[id].Event[7].Type = 1;
+        }
+
+        private static void Clotho(ushort id)
+        {
+            // Affinties
+            datAisyo.tbl[id][8] = 50; // Curse
+            datAisyo.tbl[id][9] = 50; // Nerve
+            datAisyo.tbl[id][10] = 50; // Mind
+
+            // Skills
+            tblSkill.fclSkillTbl[id].Event[1].Param = 31;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 41;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 215;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 50;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 25;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 212;
+            tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 63;
+            tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
 
         private static void Loa(ushort id)
