@@ -21,7 +21,7 @@ namespace NewBossAI
 
         public override void OnInitializeMelon()
         {
-            //foreach (var skill in tblSkill.fclSkillTbl[142].Event)
+            //foreach (var skill in tblSkill.fclSkillTbl[152].Event)
             //    MelonLogger.Msg(skill.TargetLevel + " - " + skill.Param + " - " + skill.Type);
 
             ApplySkillChanges();

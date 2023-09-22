@@ -172,7 +172,7 @@ namespace NewBossAI
                     else
                         nbHelpProcess.nbDispText("Decreased Defense!", string.Empty, 2, 45, 2315190144, false);
                 }
-                else if (actionProcessData.work.nowcommand == 1 && hojotype == 128 && hojopoint == 1 && (actionProcessData.work.nowindex == 428 || actionProcessData.work.nowindex == 463))
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 128 && hojopoint == 1 && (actionProcessData.work.nowindex == 428 || actionProcessData.work.nowindex == 463 || actionProcessData.work.nowindex == 466))
                 {
                     var limitReached = true;
                     if (currentUnitBuffs[7] >= -2)

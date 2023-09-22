@@ -97,6 +97,8 @@ namespace NewBossAI
                     case 462: __result = "Winged Fury"; return false;
                     case 463: __result = "Jack Bufu"; return false;
                     case 464: __result = "Humble Blessing"; return false;
+                    case 465: __result = "Rend"; return false;
+                    case 466: __result = "Jack Bufudyne"; return false;
                     default: return true;
                 }
             }
@@ -212,10 +214,10 @@ namespace NewBossAI
                     case 427: __result = "Low Physical damage to one foe. \nLowers target's Physical Attack."; return false; // Fang Breaker
                     case 428: __result = "Low Physical damage to one foe. \nLowers target's Defense."; return false; // Defense Kuzushi
                     case 429: __result = "Massive Physical damage to one foe."; return false; // Primal Force
-                    case 430: __result = "Low Physical damage to all foes. \nHigh critial rate."; return false; // Chi Blast
+                    case 430: __result = "Low Physical damage to all foes. \nHigh critical rate."; return false; // Chi Blast
                     case 431: __result = "High Physical damage to all foes. \nMay inflict Mute."; return false; // Revelation
                     case 432: __result = "High Physical damage to all foes. \nMay inflict Stone."; return false; // Gate of Hell
-                    case 433: __result = "High Physical damage to one foe. \nHigh critial rate."; return false; // Akashic Arts
+                    case 433: __result = "High Physical damage to one foe. \nHigh critical rate."; return false; // Akashic Arts
                     case 434: __result = "High Physical damage to random foes. \nHigh critial rate."; return false; // Bloodbath
                     case 435: __result = "Low Fire damage to all foes. \nLowers targets' Physical Attack."; return false; // Scald
                     case 436: __result = "Massive Fire damage to all foes."; return false; // Ragnarok
@@ -247,6 +249,8 @@ namespace NewBossAI
                     case 462: __result = "High Strength-based Force damage \nto all foes."; return false; // Winged Fury
                     case 463: __result = "Low Ice damage to one foe. \nLowers target's Defense."; return false; // Jack Bufu
                     case 464: __result = "Slight HP recovery for the party."; return false; // Humble Blessing
+                    case 465: __result = "Massive Physical damage to one foe. \nHigh critical rate."; return false; // Rend
+                    case 466: __result = "Massive Ice damage to one foe. \nLowers target's Defense."; return false; // Jack Bufudyne
 
                     default: return true;
                 }
@@ -902,6 +906,7 @@ namespace NewBossAI
 
             Punishment(188);
             JudgementLight(189);
+
             NewBeastEye(422);
             NewDragonEye(423);
             Concentrate(424);
@@ -946,6 +951,8 @@ namespace NewBossAI
 
             JackBufu(463);
             HumbleBlessing(464);
+            Rend(465);
+            JackBufudyne(466);
 
             // Passive Skills
             Might(11);
@@ -1816,6 +1823,53 @@ namespace NewBossAI
             skillLevel.Level = 10;
         }
 
+        private static void Rend(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 512;
+            datSkill.tbl[id].skillattr = 0;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 18;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 1;
+            datNormalSkill.tbl[id].criticalpoint = 40;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 10;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 60;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 126);
+        }
+
         // Fire Skills
 
         private static void Agi(ushort id)
@@ -2233,7 +2287,7 @@ namespace NewBossAI
         private static void Cocytus(ushort id)
         {
             datSkill.tbl[id].flag = 0;
-            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].keisyoform = 512;
             datSkill.tbl[id].skillattr = 2;
             datSkill.tbl[id].index = (short)id;
             datSkill.tbl[id].type = 0;
@@ -2378,6 +2432,53 @@ namespace NewBossAI
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 7);
+        }
+
+        private static void JackBufudyne(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 512;
+            datSkill.tbl[id].skillattr = 2;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 20;
+            datNormalSkill.tbl[id].badtype = 1;
+            datNormalSkill.tbl[id].basstatus = 2;
+            datNormalSkill.tbl[id].cost = 32;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 1;
+            datNormalSkill.tbl[id].hojotype = 128;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 70;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 30;
+            datNormalSkill.tbl[id].magiclimit = 32767;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 9);
         }
 
         private static void Niflheim(ushort id)
