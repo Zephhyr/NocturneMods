@@ -231,9 +231,22 @@ namespace NewBossAI
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 160 && hojopoint == 1 && actionProcessData.work.nowindex == 262)
                 {
                     var limitReached = true;
+                    if (currentUnitBuffs[6] >= -2 || currentUnitBuffs[7] >= -2)
+                    {
+                        limitReached = false;
+                    }
+
+                    if (limitReached)
+                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    else
+                        nbHelpProcess.nbDispText("Decreased Evasion/Defense!", string.Empty, 2, 45, 2315190144, false);
+                }
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 160 && hojopoint == 1 && actionProcessData.work.nowindex == 468)
+                {
+                    var limitReached = true;
                     foreach (var unitBuffs in currentSideBuffs)
                     {
-                        if (currentUnitBuffs[6] >= -2 || currentUnitBuffs[7] >= -2)
+                        if (unitBuffs[6] >= -2 || unitBuffs[7] >= -2)
                         {
                             limitReached = false;
                             break;
@@ -243,7 +256,43 @@ namespace NewBossAI
                     if (limitReached)
                         nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
                     else
-                        nbHelpProcess.nbDispText("Decreased Evasion/Defence!", string.Empty, 2, 45, 2315190144, false);
+                        nbHelpProcess.nbDispText("Decreased Evasion/Defense!", string.Empty, 2, 45, 2315190144, false);
+                }
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 682 && hojopoint == 1 && actionProcessData.work.nowindex == 453)
+                {
+                    var limitReached = true;
+                    for (int i = 4; i <= 8; i++)
+                    {
+                        if (currentUnitBuffs[i] >= -2)
+                            limitReached = false;
+                        break;
+                    }
+
+                    if (limitReached)
+                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    else
+                        nbHelpProcess.nbDispText("Decreased all stats performance!", string.Empty, 2, 45, 2315190144, false);
+                }
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 682 && hojopoint == 1 && actionProcessData.work.nowindex == 467)
+                {
+                    var limitReached = true;
+                    foreach (var unitBuffs in currentSideBuffs)
+                    {
+                        for (int i = 4; i <= 8; i++)
+                        {
+                            if (unitBuffs[i] >= -2)
+                            {
+                                limitReached = false;
+                                break;
+                            }
+                            break;
+                        }
+                    }
+
+                    if (limitReached)
+                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    else
+                        nbHelpProcess.nbDispText("Decreased all stats performance!", string.Empty, 2, 45, 2315190144, false);
                 }
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 273 && hojopoint == 1 && actionProcessData.work.nowindex == 284)
                 {

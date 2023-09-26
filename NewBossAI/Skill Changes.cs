@@ -53,6 +53,7 @@ namespace NewBossAI
                     case 365: __result = "Anti-Ailments"; return false;
                     case 366: __result = "Abyssal Mask"; return false;
                     case 367: __result = "Knowledge of Tools"; return false;
+                    case 368: __result = "Laevateinn"; return false;
 
                     case 422: __result = "Beast Eye"; return false;      
                     case 423: __result = "Dragon Eye"; return false;     
@@ -99,6 +100,8 @@ namespace NewBossAI
                     case 464: __result = "Humble Blessing"; return false;
                     case 465: __result = "Rend"; return false;
                     case 466: __result = "Jack Bufudyne"; return false;
+                    case 467: __result = "Divine Light"; return false;
+                    case 468: __result = "Niflheim"; return false;
                     default: return true;
                 }
             }
@@ -207,6 +210,7 @@ namespace NewBossAI
                     case 365: __result = "Protects against Ailment attacks."; return false; // Anti-Ailments
                     case 366: __result = "Protects against ailments and instakills."; return false; // Abyssal Mask
                     case 367: __result = "Allows the use of items."; return false; // Knowledge of Tools
+                    case 368: __result = "Fire Boost & greatly empowers \nnormal attacks."; return false; // Laevateinn
 
                     case 424: __result = "More than doubles damage \nof next Magical attack."; return false; // Concentrate
                     case 425: __result = "More than doubles damage \nof next attack and grants Pierce."; return false; // Impaler's Animus
@@ -251,6 +255,8 @@ namespace NewBossAI
                     case 464: __result = "Slight HP recovery for the party."; return false; // Humble Blessing
                     case 465: __result = "Massive Physical damage to one foe. \nHigh critical rate."; return false; // Rend
                     case 466: __result = "Massive Ice damage to one foe. \nLowers target's Defense."; return false; // Jack Bufudyne
+                    case 467: __result = "High Physical damage to all foes. \nLowers targets' Attack/Defense/Evasion/Hit Rate."; return false; // Divine Light
+                    case 468: __result = "Massive Ice damage to all foes. \nLowers targets' Defense/Evasion."; return false; // Niflheim
 
                     default: return true;
                 }
@@ -473,7 +479,7 @@ namespace NewBossAI
                             {
                                 __result = (__result / 1.5f) * 1.3f;
                             }
-                            else if (datCalc.datCheckSyojiSkill(work, 363) != 0)
+                            else if (datCalc.datCheckSyojiSkill(work, 363) != 0 || datCalc.datCheckSyojiSkill(work, 368) != 0)
                             {
                                 __result = __result * 1.3f;
                             }
@@ -953,16 +959,20 @@ namespace NewBossAI
             HumbleBlessing(464);
             Rend(465);
             JackBufudyne(466);
+            DivineLight(467);
+            Niflheim(468);
 
             // Passive Skills
             Might(11);
             DrainAttack(14);
+
             PhysBoost(74);
             MagicBoost(75);
             AntiMagic(76);
             AntiAilments(77);
             AbyssalMask(78);
             KnowledgeOfTools(79);
+            Laevateinn(80);
 
             foreach (var skill in datSkill.tbl)
                 skill.capacity = 0;
@@ -1870,6 +1880,53 @@ namespace NewBossAI
             OverWriteSkillEffect(id, 126);
         }
 
+        private static void DivineLight(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 512;
+            datSkill.tbl[id].skillattr = 0;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 30;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 1;
+            datNormalSkill.tbl[id].criticalpoint = 10;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 15;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 1;
+            datNormalSkill.tbl[id].hojotype = 682;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 48;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 98, 189);
+        }
+
         // Fire Skills
 
         private static void Agi(ushort id)
@@ -2484,15 +2541,15 @@ namespace NewBossAI
         private static void Niflheim(ushort id)
         {
             datSkill.tbl[id].flag = 0;
-            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].keisyoform = 512;
             datSkill.tbl[id].skillattr = 2;
             datSkill.tbl[id].index = (short)id;
             datSkill.tbl[id].type = 0;
 
-            datNormalSkill.tbl[id].badlevel = 22;
+            datNormalSkill.tbl[id].badlevel = 25;
             datNormalSkill.tbl[id].badtype = 1;
             datNormalSkill.tbl[id].basstatus = 2;
-            datNormalSkill.tbl[id].cost = 35;
+            datNormalSkill.tbl[id].cost = 60;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 2;
             datNormalSkill.tbl[id].criticalpoint = 0;
@@ -2502,14 +2559,14 @@ namespace NewBossAI
             datNormalSkill.tbl[id].hitlevel = 100;
             datNormalSkill.tbl[id].hitprog = 0;
             datNormalSkill.tbl[id].hittype = 1;
-            datNormalSkill.tbl[id].hojopoint = 99;
-            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hojopoint = 1;
+            datNormalSkill.tbl[id].hojotype = 160;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 70;
+            datNormalSkill.tbl[id].hpn = 60;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].koukatype = 1;
-            datNormalSkill.tbl[id].magicbase = 20;
-            datNormalSkill.tbl[id].magiclimit = 220;
+            datNormalSkill.tbl[id].magicbase = 30;
+            datNormalSkill.tbl[id].magiclimit = 32767;
             datNormalSkill.tbl[id].minus = 100;
             datNormalSkill.tbl[id].mpbase = 0;
             datNormalSkill.tbl[id].mpn = 50;
@@ -5181,6 +5238,8 @@ namespace NewBossAI
 
         private static void PhysBoost(ushort id)
         {
+            datSkill.tbl[362].keisyoform = 1;
+
             datSpecialSkill.tbl[id].a = 2;
             datSpecialSkill.tbl[id].b = 1;
             datSpecialSkill.tbl[id].m = 3;
@@ -5193,6 +5252,8 @@ namespace NewBossAI
 
         private static void MagicBoost(ushort id)
         {
+            datSkill.tbl[363].keisyoform = 1;
+
             datSpecialSkill.tbl[id].a = 2;
             datSpecialSkill.tbl[id].b = 1;
             datSpecialSkill.tbl[id].m = 3;
@@ -5205,6 +5266,8 @@ namespace NewBossAI
 
         private static void AntiMagic(ushort id)
         {
+            datSkill.tbl[364].keisyoform = 1;
+
             datSpecialSkill.tbl[id].a = 0;
             datSpecialSkill.tbl[id].b = 0;
             datSpecialSkill.tbl[id].m = 0;
@@ -5217,6 +5280,8 @@ namespace NewBossAI
 
         private static void AntiAilments(ushort id)
         {
+            datSkill.tbl[365].keisyoform = 1;
+
             datSpecialSkill.tbl[id].a = 0;
             datSpecialSkill.tbl[id].b = 0;
             datSpecialSkill.tbl[id].m = 0;
@@ -5229,6 +5294,8 @@ namespace NewBossAI
 
         private static void AbyssalMask(ushort id)
         {
+            datSkill.tbl[366].keisyoform = 1;
+
             datSpecialSkill.tbl[id].a = 2;
             datSpecialSkill.tbl[id].b = 1;
             datSpecialSkill.tbl[id].m = 3;
@@ -5241,6 +5308,8 @@ namespace NewBossAI
 
         private static void KnowledgeOfTools(ushort id)
         {
+            datSkill.tbl[367].keisyoform = 1;
+
             datSpecialSkill.tbl[id].a = 2;
             datSpecialSkill.tbl[id].b = 1;
             datSpecialSkill.tbl[id].m = 3;
@@ -5249,6 +5318,16 @@ namespace NewBossAI
             var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
             skillLevel.SkillID = 367;
             skillLevel.Level = 5;
+        }
+
+        private static void Laevateinn(ushort id)
+        {
+            datSkill.tbl[368].keisyoform = 512;
+
+            datSpecialSkill.tbl[id].a = 2;
+            datSpecialSkill.tbl[id].b = 1;
+            datSpecialSkill.tbl[id].m = 3;
+            datSpecialSkill.tbl[id].n = 4;
         }
     }
 }
