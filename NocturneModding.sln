@@ -47,7 +47,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StackAttackPassives", "StackAttackPassives\StackAttackPassives.csproj", "{46AA5532-2514-469A-B0B5-07804B664BB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewBossAI", "NewBossAI\NewBossAI.csproj", "{29AE3DE4-0B15-45E5-B77A-202185D62EDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewBossAI", "NewBossAI\NewBossAI.csproj", "{29AE3DE4-0B15-45E5-B77A-202185D62EDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NocturneInsaniax", "NocturneInsaniax\NocturneInsaniax.csproj", "{5B0600D2-8397-4C9B-B19E-F084009A164A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -147,6 +149,10 @@ Global
 		{29AE3DE4-0B15-45E5-B77A-202185D62EDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29AE3DE4-0B15-45E5-B77A-202185D62EDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29AE3DE4-0B15-45E5-B77A-202185D62EDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B0600D2-8397-4C9B-B19E-F084009A164A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B0600D2-8397-4C9B-B19E-F084009A164A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B0600D2-8397-4C9B-B19E-F084009A164A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B0600D2-8397-4C9B-B19E-F084009A164A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
