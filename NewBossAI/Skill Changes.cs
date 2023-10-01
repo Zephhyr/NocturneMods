@@ -102,6 +102,9 @@ namespace NewBossAI
                     case 466: __result = "Jack Bufudyne"; return false;
                     case 467: __result = "Divine Light"; return false;
                     case 468: __result = "Niflheim"; return false;
+                    case 469: __result = "Mjolnir"; return false;
+                    case 470: __result = "Tandava"; return false;
+                    case 471: __result = "Chaturbhuja"; return false;
                     default: return true;
                 }
             }
@@ -257,6 +260,9 @@ namespace NewBossAI
                     case 466: __result = "Massive Ice damage to one foe. \nLowers target's Defense."; return false; // Jack Bufudyne
                     case 467: __result = "High Physical damage to all foes. \nLowers targets' Attack/Defense/Evasion/Hit Rate."; return false; // Divine Light
                     case 468: __result = "Massive Ice damage to all foes. \nLowers targets' Defense/Evasion."; return false; // Niflheim
+                    case 469: __result = "High Strength-based Elec damage \nto one foe."; return false; // Mjolnir
+                    case 470: __result = "Massive Almighty damage to all foes. \nMinimizes targets' Defense."; return false; // Tandava
+                    case 471: __result = "Massive Strength-based Almighty damage \nto random foes."; return false; // Chaturbhuja
 
                     default: return true;
                 }
@@ -961,6 +967,9 @@ namespace NewBossAI
             JackBufudyne(466);
             DivineLight(467);
             Niflheim(468);
+            Mjolnir(469);
+            Tandava(470);
+            Chaturbhuja(471);
 
             // Passive Skills
             Might(11);
@@ -2838,7 +2847,7 @@ namespace NewBossAI
         private static void Mjolnir(ushort id)
         {
             datSkill.tbl[id].flag = 0;
-            datSkill.tbl[id].keisyoform = 256;
+            datSkill.tbl[id].keisyoform = 512;
             datSkill.tbl[id].skillattr = 3;
             datSkill.tbl[id].index = (short)id;
             datSkill.tbl[id].type = 0;
@@ -2851,7 +2860,7 @@ namespace NewBossAI
             datNormalSkill.tbl[id].costtype = 1;
             datNormalSkill.tbl[id].criticalpoint = 20;
             datNormalSkill.tbl[id].deadtype = 0;
-            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].failpoint = 10;
             datNormalSkill.tbl[id].flag = 0;
             datNormalSkill.tbl[id].hitlevel = 100;
             datNormalSkill.tbl[id].hitprog = 0;
@@ -3557,6 +3566,100 @@ namespace NewBossAI
             var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
             skillLevel.SkillID = id;
             skillLevel.Level = 9;
+        }
+
+        private static void Tandava(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 512;
+            datSkill.tbl[id].skillattr = 5;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 100;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 120;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 6;
+            datNormalSkill.tbl[id].hojotype = 128;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 60;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 30;
+            datNormalSkill.tbl[id].magiclimit = 32767;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 196, 173);
+        }
+
+        private static void Chaturbhuja(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 512;
+            datSkill.tbl[id].skillattr = 5;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 100;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 1;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 120;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 20;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 30;
+            datNormalSkill.tbl[id].magiclimit = 32767;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 15;
+            datNormalSkill.tbl[id].targetcntmin = 10;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 1;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 196, 235);
         }
 
         // Light Skills

@@ -172,6 +172,23 @@ namespace NewBossAI
                     else
                         nbHelpProcess.nbDispText("Decreased Defense!", string.Empty, 2, 45, 2315190144, false);
                 }
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 128 && hojopoint == 6 && actionProcessData.work.nowindex == 470)
+                {
+                    var limitReached = true;
+                    foreach (var unitBuffs in currentSideBuffs)
+                    {
+                        if (unitBuffs[7] >= -2)
+                        {
+                            limitReached = false;
+                            break;
+                        }
+                    }
+
+                    if (limitReached)
+                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    else
+                        nbHelpProcess.nbDispText("Defense minimized!", string.Empty, 2, 45, 2315190144, false);
+                }
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 128 && hojopoint == 1 && (actionProcessData.work.nowindex == 428 || actionProcessData.work.nowindex == 463 || actionProcessData.work.nowindex == 466))
                 {
                     var limitReached = true;

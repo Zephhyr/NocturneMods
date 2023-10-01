@@ -63,7 +63,7 @@ namespace NewBossAI
                     for (ushort i = 0; i < 288; i++)
                         skillCommands[i] = i;
                     skillCommands[0] = s.commlist[0][0];
-                    skillCommands[1] = 468;
+                    skillCommands[1] = 471;
                     //skillCommands[2] = 462;
                     //skillCommands[3] = 443;
 
