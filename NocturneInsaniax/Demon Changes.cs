@@ -500,10 +500,10 @@ namespace NocturneInsaniax
         private static void Vishnu(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[1].Param = 433;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 195;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 454;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 471;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 433; // Akashic Arts
+            tblSkill.fclSkillTbl[id].Event[3].Param = 195; // Radiance
+            tblSkill.fclSkillTbl[id].Event[5].Param = 454; // Last Word
+            tblSkill.fclSkillTbl[id].Event[7].Param = 471; // Chaturbhuja
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 98;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -523,17 +523,17 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[3].Param = 31;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 395;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 189;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 454;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 295;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 31; // Mahamaon
+            tblSkill.fclSkillTbl[id].Event[4].Param = 395; // Death Pact
+            tblSkill.fclSkillTbl[id].Event[5].Param = 189; // Judgement Light
+            tblSkill.fclSkillTbl[id].Event[6].Param = 454; // Last Word
+            tblSkill.fclSkillTbl[id].Event[7].Param = 295; // Mana Surge
         }
 
         private static void Amaterasu(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[3].Param = 459;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 459; // Luster Candy
         }
 
         private static void Odin(ushort id)
@@ -551,22 +551,22 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 18;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 18; // Maziodyne
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 9;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 9; // Bufudyne
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 108;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 108; // Deathbound
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 441;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 441; // Thunder Gods
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 66;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 391;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 391; // Wooing
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 67;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 428;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 428; // Defense Kuzushi
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 68;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 12;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 12; // Mabufudyne
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 69;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 442;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 442; // Thunder Reign
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 70;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -574,22 +574,22 @@ namespace NocturneInsaniax
         private static void Atavaka(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 299;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 299; // Might
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 107;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 107; // Mighty Gust
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 430;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 430; // Chi Blast
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 345;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 345; // Endure
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 48;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 450;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 450; // Neural Shock
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 49;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 313;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 313; // Anti-Phys
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 50;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 110;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 110; // Chaos Blade
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 51;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 306;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 306; // Retaliate
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 52;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -597,21 +597,21 @@ namespace NocturneInsaniax
         private static void Horus(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 354;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 354; // Endure
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 30;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 30; // Mahama
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 294;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 294; // Mana Gain
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 193;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 193; // Violet Flash
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 39;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 77;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 77; // Dekunda
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 40;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 40;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 40; // Mediarama
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 41;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 456;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 456; // Amrita
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 42;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 75;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 75; // Liftoma
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 43;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -619,21 +619,21 @@ namespace NocturneInsaniax
         private static void Lakshmi(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 41;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 41; // Mediarahan
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 387;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 387; // Seduce
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 197;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 197; // Stone Gaze
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 347;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 347; // Mana Aid
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 55;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 456;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 456; // Amrita
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 56;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 295;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 295; // Mana Surge
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 57;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 50;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 50; // Samarecarm
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 58;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 51;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 51; // Recarmdra
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 59;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -641,24 +641,24 @@ namespace NocturneInsaniax
         private static void Scathach(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 444;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 444; // Heavenly Cyclone
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 299;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 299; // Might
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 448;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 448; // Poison Volley
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 342;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 342; // Force Repel
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 65;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 188;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 188; // Punishment
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 66;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 186;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 186; // Wind Cutter
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 67;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 390;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 390; // Dark Pledge
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 68;
-            tblSkill.fclSkillTbl[id].Event[8].Param = 347;
+            tblSkill.fclSkillTbl[id].Event[8].Param = 347; // Mana Aid
             tblSkill.fclSkillTbl[id].Event[8].TargetLevel = 69;
             tblSkill.fclSkillTbl[id].Event[8].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[9].Param = 17;
+            tblSkill.fclSkillTbl[id].Event[9].Param = 17; // Mazionga
             tblSkill.fclSkillTbl[id].Event[9].TargetLevel = 69;
             tblSkill.fclSkillTbl[id].Event[9].Type = 5;
         }
@@ -666,19 +666,19 @@ namespace NocturneInsaniax
         private static void Sarasvati(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 198;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 198; // Mute Gaze
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 350;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 350; // Mana Refill
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 49;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 49; // Recarm
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 443;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 443; // Dervish
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 31;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 387;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 387; // Seduce
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 32;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 312;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 312; // Force Boost
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 33;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 185;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 185; // Tornado
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 34;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
         }
@@ -686,26 +686,26 @@ namespace NocturneInsaniax
         private static void Sati(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[6].Param = 215;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 25;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 215; // Allure
+            tblSkill.fclSkillTbl[id].Event[7].Param = 25; // Megido
         }
 
         private static void Shiva(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 436;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 442;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 104;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 453;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 348;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 470;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 333;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 436; // Ragnarok
+            tblSkill.fclSkillTbl[id].Event[1].Param = 442; // Thunder Reign
+            tblSkill.fclSkillTbl[id].Event[2].Param = 104; // Hassohappa
+            tblSkill.fclSkillTbl[id].Event[3].Param = 453; // Antichthon
+            tblSkill.fclSkillTbl[id].Event[4].Param = 348; // Victory Cry
+            tblSkill.fclSkillTbl[id].Event[5].Param = 470; // Tandava
+            tblSkill.fclSkillTbl[id].Event[6].Param = 333; // Phys Drain
         }
 
         private static void BeidouXingjun(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[7].Param = 432;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 432; // Gate of Hell
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 66;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -716,7 +716,7 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][7] = 100; // Dark
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[1].Param = 362;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 362; // Phys Boost
         }
 
         private static void Dionysus(ushort id)
@@ -725,28 +725,28 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 65536; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[4].Param = 426;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 426; // Sakura Rage
         }
 
         private static void Kali(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[2].Param = 307;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 307; // Avenge
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
             tblSkill.fclSkillTbl[id].Event[2].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 362;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 362; // Phys Boost
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 68;
             tblSkill.fclSkillTbl[id].Event[3].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 6;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 6; // Maragidyne
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 69;
             tblSkill.fclSkillTbl[id].Event[4].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 292;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 292; // Life Surge
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 70;
             tblSkill.fclSkillTbl[id].Event[5].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 105;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 105; // Dark Sword
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 71;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 341;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 341; // Elec Repel
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 72;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -766,18 +766,18 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[2].Param = 67;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 67;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 341;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 341;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 155;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 155;
-            tblSkill.fclSkillTbl[id].Event[8].Param = 468;
-            tblSkill.fclSkillTbl[id].Event[9].Param = 468;
-            tblSkill.fclSkillTbl[id].Event[10].Param = 310;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 67; // Makakaja
+            tblSkill.fclSkillTbl[id].Event[3].Param = 67; // Makakaja
+            tblSkill.fclSkillTbl[id].Event[4].Param = 341; // Elec Repel
+            tblSkill.fclSkillTbl[id].Event[5].Param = 341; // Elec Repel
+            tblSkill.fclSkillTbl[id].Event[6].Param = 155; // Earthquake
+            tblSkill.fclSkillTbl[id].Event[7].Param = 155; // Earthquake
+            tblSkill.fclSkillTbl[id].Event[8].Param = 468; // Niflheim
+            tblSkill.fclSkillTbl[id].Event[9].Param = 468; // Niflheim
+            tblSkill.fclSkillTbl[id].Event[10].Param = 310; // Ice Boost
             tblSkill.fclSkillTbl[id].Event[10].TargetLevel = 79;
             tblSkill.fclSkillTbl[id].Event[10].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[11].Param = 310;
+            tblSkill.fclSkillTbl[id].Event[11].Param = 310; // Ice Boost
             tblSkill.fclSkillTbl[id].Event[11].TargetLevel = 79;
             tblSkill.fclSkillTbl[id].Event[11].Type = 6;
         }
@@ -797,10 +797,10 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 50; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[7].Param = 195;
-            tblSkill.fclSkillTbl[id].Event[8].Param = 195;
-            tblSkill.fclSkillTbl[id].Event[9].Param = 218;
-            tblSkill.fclSkillTbl[id].Event[10].Param = 218;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 195; // Radiance
+            tblSkill.fclSkillTbl[id].Event[8].Param = 195; // Radiance
+            tblSkill.fclSkillTbl[id].Event[9].Param = 218; // Prayer
+            tblSkill.fclSkillTbl[id].Event[10].Param = 218; // Prayer
         }
 
         private static void Kushinada(ushort id)
@@ -818,21 +818,21 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 50; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 40;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 40; // Mediarama
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 47;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 47; // Paraladi
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 90;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 90; // Poison Arrow
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 5;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 5; // Maragion
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 42;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 456;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 456; // Amrita
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 43;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 353;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 353; // Lucky Find
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 44;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 367;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 367; // Knowledge of Tools
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 45;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 392;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 392; // Beseech
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 46;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -840,19 +840,19 @@ namespace NocturneInsaniax
         private static void KikuriHime(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 37;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 37; // Diarama
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 214;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 214; // Sexy Gaze
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 418;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 418; // Maiden Plea
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 46;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 46; // Posumudi
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 25;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 44;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 44; // Me Patra
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 26;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 49;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 49; // Recarm
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 27;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 365;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 365; // Anti-Ailments
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 28;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
         }
@@ -860,21 +860,21 @@ namespace NocturneInsaniax
         private static void Bishamonten(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 104;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 104; // Hassohappa
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 304;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 304; // Attack All
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 179;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 179; // Trisagion
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 345;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 345; // Endure
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 73;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 309;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 309; // Fire Boost
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 74;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 195;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 195; // Radiance
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 75;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 364;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 364; // Anti-Magic
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 76;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 458;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 458; // Heat Riser
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 77;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -885,21 +885,21 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][0] = 50; // Phys
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 311;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 311; // Elec Boost
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 469;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 469; // Mjolnir
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 100;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 100; // Hades Blast
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 307;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 307; // Avenge
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 77;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 442;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 442; // Thunder Reign
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 78;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 457;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 457; // Diamrita
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 79;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 429;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 429; // Primal Force
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 80;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 365;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 365; // Anti-Ailments
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 81;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -907,21 +907,21 @@ namespace NocturneInsaniax
         private static void Jikokuten(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 106;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 106; // Stasis Blade
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 38;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 38; // Diarahan
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 181;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 181; // Glacial Blast
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 77;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 77; // Dekunda
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 53;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 12;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 12; // Mabufudyne
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 54;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 390;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 390; // Dark Pledge
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 55;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 424;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 424; // Concentrate
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 56;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 329;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 329; // Null Dark
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 57;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -929,22 +929,22 @@ namespace NocturneInsaniax
         private static void TakeMikazuchi(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 15;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 15; // Ziodyne
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 440;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 440; // Jolt
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 428;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 428; // Defense Kuzushi
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 410;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 410; // Arbitration
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 46;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 105;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 105; // Dark Sword
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 47;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 183;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 183; // Bolt Storm
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 48;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 349;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 349; // Life Refill
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 49;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 362;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 362; // Phys Boost
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 50;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -952,22 +952,22 @@ namespace NocturneInsaniax
         private static void Okuninushi(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 110;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 110; // Chaos Blade
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 34;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 34; // Mamudo
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 391;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 391; // Wooing
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 3;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 3; // Agidyne
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 40;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 56;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 56; // Makajamon
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 41;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 428;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 428; // Defense Kuzushi
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 42;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 223;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 223; // Beckon Call
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 43;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 40;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 40; // Mediarama
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 44;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -975,22 +975,22 @@ namespace NocturneInsaniax
         private static void Koumokuten(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 103;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 103; // Brutal Slash
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 291;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 291; // Life Gain
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 392;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 392; // Beseech
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 430;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 430; // Chi Blast
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 34;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 185;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 185; // Tornado
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 35;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 68;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 68; // Tetraja
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 36;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 428;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 428; // Defense Kuzushi
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 37;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 424;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 424; // Concentrate
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 38;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -1010,21 +1010,21 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 107;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 107; // Mighty Gust
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 440;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 440; // Jolt
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 30;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 30; // Mahama
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 193;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 193; // Violet Flash
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 28;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 319;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 319; // Anti-Dark
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 29;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 99;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 99; // Tempest
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 30;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 299;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 299; // Might
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 31;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 188;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 188; // Punishment
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 32;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -1044,27 +1044,27 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[5].Param = 427;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 427; // Fang Breaker
         }
 
         private static void Chimera(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 435;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 435; // Scald
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 309;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 309; // Fire Boost
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 203;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 203; // War Cry
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 126;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 126; // Iron Claw
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 56;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 178;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 178; // Prominence
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 57;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 213;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 213; // Sonic Wave
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 58;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 386;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 386; // Kidnap
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 59;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 116;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 116; // Kamikaze
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 60;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -1084,21 +1084,21 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 346;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 346; // Life Aid
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 120;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 120; // Stone Bite
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 183;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 183; // Bolt Storm
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 299;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 299; // Might
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 44;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 15;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 15; // Ziodyne
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 45;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 224;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 224; // Focus
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 46;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 9;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 9; // Bufudyne
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 47;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 126;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 126; // Iron Claw
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 48;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -1106,14 +1106,14 @@ namespace NocturneInsaniax
         private static void Senri(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[2].Param = 353;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 353;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 399;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 399;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 23;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 23;
-            tblSkill.fclSkillTbl[id].Event[8].Param = 367;
-            tblSkill.fclSkillTbl[id].Event[9].Param = 367;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 353; // Lucky Find
+            tblSkill.fclSkillTbl[id].Event[3].Param = 353; // Lucky Find
+            tblSkill.fclSkillTbl[id].Event[4].Param = 399; // Stone Hunt
+            tblSkill.fclSkillTbl[id].Event[5].Param = 399; // Stone Hunt
+            tblSkill.fclSkillTbl[id].Event[6].Param = 23; // Mazanma
+            tblSkill.fclSkillTbl[id].Event[7].Param = 23; // Mazanma
+            tblSkill.fclSkillTbl[id].Event[8].Param = 367; // Knowledge of Tools
+            tblSkill.fclSkillTbl[id].Event[9].Param = 367; // Knowledge of Tools
         }
 
         private static void Zhuque(ushort id)
@@ -1131,21 +1131,21 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 75;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 75; // Liftoma
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 176;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 176; // Fire Breath
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 53;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 53; // Sukunda
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 49;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 49; // Recarm
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 37;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 410;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 410; // Arbitration
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 38;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 5;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 5; // Maragion
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 39;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 17;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 17; // Mazionga
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 40;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 346;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 346; // Life Aid
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 41;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -1165,21 +1165,21 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 182;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 182; // Shock
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 123;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 123; // Feral Claw
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 388;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 388; // Brainwash
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 203;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 203; // War Cry
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 14;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 121;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 121; // Stun Bite
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 15;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 305;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 305; // Counter
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 16;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 440;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 440; // Jolt
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 17;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 314;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 314; // Anti-Fire
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 18;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -1187,21 +1187,21 @@ namespace NocturneInsaniax
         private static void Xiezhai(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 202;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 202; // Toxic Cloud
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 45;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 45; // Mutudi
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 97;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 97; // Hell Thrust
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 193;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 193; // Violet Flash
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 27;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 437;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 437; // Refrigerate
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 28;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 47;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 47; // Paraladi
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 29;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 11;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 11; // Mabufula
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 30;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 365;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 365; // Anti-Ailments
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 31;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -1251,17 +1251,17 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 36;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 36; // Dia
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 19;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 19; // Zan
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 59;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 59; // Shibaboo
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 12;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 62;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 62; // Marin Karin
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 13;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 322;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 322; // Anti-Mind
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 14;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 113;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 113; // Venom Needle
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 15;
         }
 
@@ -1280,19 +1280,19 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 13;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 13; // Zio
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 43;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 43; // Patra
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 66;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 66; // Rakukaja
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 112;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 112; // Stun Needle
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 8;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 320;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 320; // Anti-Curse
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 9;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 410;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 410; // Arbitration
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 10;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 16;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 16; // Mazio
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 11;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
         }
@@ -1360,23 +1360,23 @@ namespace NocturneInsaniax
         private static void Efreet(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[2].Param = 350;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 350;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 6;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 6;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 67;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 67;
-            tblSkill.fclSkillTbl[id].Event[8].Param = 178;
-            tblSkill.fclSkillTbl[id].Event[9].Param = 178;
-            tblSkill.fclSkillTbl[id].Event[10].Param = 223;
-            tblSkill.fclSkillTbl[id].Event[11].Param = 223;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 350; // Mana Refill
+            tblSkill.fclSkillTbl[id].Event[3].Param = 350; // Mana Refill
+            tblSkill.fclSkillTbl[id].Event[4].Param = 6; // Maragidyne
+            tblSkill.fclSkillTbl[id].Event[5].Param = 6; // Maragidyne
+            tblSkill.fclSkillTbl[id].Event[6].Param = 67; // Makakaja
+            tblSkill.fclSkillTbl[id].Event[7].Param = 67; // Makakaja
+            tblSkill.fclSkillTbl[id].Event[8].Param = 178; // Prominence
+            tblSkill.fclSkillTbl[id].Event[9].Param = 178; // Prominence
+            tblSkill.fclSkillTbl[id].Event[10].Param = 223; // Beckon Call
+            tblSkill.fclSkillTbl[id].Event[11].Param = 223; // Beckon Call
         }
 
         private static void Jinn(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[2].Param = 443;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 457;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 443; // Dervish
+            tblSkill.fclSkillTbl[id].Event[3].Param = 457; // Diamrita
         }
 
         private static void KarasuTengu(ushort id)
@@ -1394,9 +1394,9 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 2147483798; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 461;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 2;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 2;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 461; // Storm Gale
+            tblSkill.fclSkillTbl[id].Event[5].Param = 2; // Agilao
+            tblSkill.fclSkillTbl[id].Event[6].Param = 2; // Agilao
         }
 
         private static void Dis(ushort id)
@@ -1414,7 +1414,7 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[7].Param = 456;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 456; // Amrita
         }
 
         private static void Isora(ushort id)
@@ -1432,19 +1432,19 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 71;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 71; // Analyze
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 118;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 118; // Venom Bite
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 386;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 386; // Kidnap
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 180;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 180; // Ice Breath
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 15;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 210;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 210; // Lullaby
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 16;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 39;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 39; // Media
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 17;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 437;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 437; // Refrigerate
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 18;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
         }
@@ -1452,13 +1452,13 @@ namespace NocturneInsaniax
         private static void KoppaTengu(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 461;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 461; // Storm Gale
         }
 
         private static void Titania(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[3].Param = 452;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 452; // Pulinpaon
         }
 
         private static void Troll(ushort id)
@@ -1467,21 +1467,21 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][9] = 2147483798; // Nerve
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 397;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 397; // Begging
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 45;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 45; // Mutudi
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 98;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 98; // Berserk
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 181;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 181; // Glacial Blast
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 39;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 291;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 291; // Life Gain
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 40;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 427;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 427; // Fang Breaker
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 41;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 76;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 76; // Lightoma
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 42;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 38;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 38; // Diarahan
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 43;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -1489,19 +1489,19 @@ namespace NocturneInsaniax
         private static void Setanta(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[3].Param = 99;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 99; // Tempest
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 44;
             tblSkill.fclSkillTbl[id].Event[3].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 306;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 306; // Retaliate
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 45;
             tblSkill.fclSkillTbl[id].Event[4].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 205;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 205; // Taunt
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 46;
             tblSkill.fclSkillTbl[id].Event[5].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 391;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 391; // Wooing
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 47;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 355;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 355; // Charisma
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 48;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
             tblSkill.fclSkillTbl[id].Event[8].Type = 0;
@@ -1523,21 +1523,21 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 61;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 61; // Pulinpa
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 410;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 410; // Arbitration
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 47;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 47; // Paraladi
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 437;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 437; // Refrigerate
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 27;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 121;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 121; // Stun Bite
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 28;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 331;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 331; // Null Nerve
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 29;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 62;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 62; // Marin Karin
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 30;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 457;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 457; // Diamrita
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 30;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -1545,19 +1545,19 @@ namespace NocturneInsaniax
         private static void HighPixie(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[1].Param = 461;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 461; // Storm Gale
         }
 
         private static void JackFrost(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 463;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 463; // Jack Bufu
         }
 
         private static void Pixie(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[6].Param = 461;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 461; // Storm Gale
 
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 36;
@@ -1572,21 +1572,21 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][4] = 50; // Force
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 38;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 38; // Diarahan
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 29;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 29; // Hamaon
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 413;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 413; // Persuade
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 70;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 70; // Tetrakarn
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 51;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 67;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 67; // Makakaja
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 52;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 55;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 55; // Makajam
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 53;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 189;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 189; // Judgement Light
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 54;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 218;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 218; // Prayer
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 55;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -1606,21 +1606,21 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 30;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 30; // Mahama
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 440;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 440; // Jolt
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 40;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 40; // Mediarama
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 114;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 114; // Arid Needle
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 42;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 69;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 69; // Makarakarn
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 43;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 17;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 17; // Mazionga
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 44;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 68;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 68; // Tetraja
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 45;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 29;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 29; // Hamaon
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 46;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -1628,21 +1628,21 @@ namespace NocturneInsaniax
         private static void Power(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 427;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 427; // Fang Breaker
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 388;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 388; // Brainwash
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 64;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 64; // Tarukaja
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 30;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 30; // Mahama
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 34;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 99;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 99; // Tempest
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 35;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 193;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 193; // Violet Flash
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 36;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 331;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 331; // Null Nerve
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 37;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 109;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 109; // Guillotine
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 38;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -1650,19 +1650,19 @@ namespace NocturneInsaniax
         private static void Principality(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 300;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 300; // Bright Might
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 20;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 20; // Zanma
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 101;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 101; // Heat Wave
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 37;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 37; // Diarama
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 29;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 435;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 435; // Scald
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 30;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 188;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 188; // Punishment
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 31;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 293;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 293; // Mana Bonus
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 32;
         }
 
@@ -1681,21 +1681,21 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 64;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 64; // Tarukaja
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 107;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 107; // Mighty Gust
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 413;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 413; // Persuade
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 28;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 28; // Hama
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 19;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 73;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 73; // Estoma
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 20;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 101;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 101; // Heat Wave
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 21;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 37;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 37; // Diarama
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 22;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 435;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 435; // Scald
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 23;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -1715,64 +1715,64 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 464;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 464; // Humble Blessing
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 28;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 28; // Hama
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 411;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 411; // Detain
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 43;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 43; // Patra
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 12;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 48;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 48; // Petradi
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 13;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 22;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 22; // Mazan
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 14;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 346;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 346; // Life Aid
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 15;
         }
 
         private static void Flauros(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[5].Param = 292;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 104;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 366;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 292; // Life Surge
+            tblSkill.fclSkillTbl[id].Event[6].Param = 104; // Hassohappa
+            tblSkill.fclSkillTbl[id].Event[7].Param = 366; // Abyssal Mask
         }
 
         private static void Decarabia(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[3].Param = 196;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 25;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 212;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 72;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 328;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 196; // Hell Gaze
+            tblSkill.fclSkillTbl[id].Event[4].Param = 25; // Megido
+            tblSkill.fclSkillTbl[id].Event[5].Param = 212; // Eternal Rest
+            tblSkill.fclSkillTbl[id].Event[6].Param = 72; // Trafuri
+            tblSkill.fclSkillTbl[id].Event[7].Param = 328; // Null Light
         }
 
         private static void Ose(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[5].Param = 224;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 313;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 69;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 224; // Focus
+            tblSkill.fclSkillTbl[id].Event[6].Param = 313; // Anti-Phys
+            tblSkill.fclSkillTbl[id].Event[7].Param = 69; // Makarakarn
         }
 
         private static void Berith(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 446;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 446; // Damnation
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 386;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 386; // Kidnap
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 101;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 101; // Heat Wave
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 177;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 177; // Hellfire
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 38;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 57;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 57; // Dekaja
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 39;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 309;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 309; // Fire Boost
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 40;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 207;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 207; // Dismal Tune
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 41;
             tblSkill.fclSkillTbl[id].Event[7].Type = 0;
         }
@@ -1780,21 +1780,21 @@ namespace NocturneInsaniax
         private static void Eligor(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 97;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 97; // Hell Thrust
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 66;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 66; // Rakukaja
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 32;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 32; // Mudo
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 98;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 98; // Berserk
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 30;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 427;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 427; // Fang Breaker
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 31;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 301;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 301; // Dark Might
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 32;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 435;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 435; // Scald
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 33;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 414;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 414; // Intimidate
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 34;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -1802,15 +1802,15 @@ namespace NocturneInsaniax
         private static void Forneus(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[6].Param = 244;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 244; // Icy Death
         }
 
         private static void Yurlungur(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[5].Param = 186;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 50;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 445;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 186; // Wind Cutter
+            tblSkill.fclSkillTbl[id].Event[6].Param = 50; // Samarecarm
+            tblSkill.fclSkillTbl[id].Event[7].Param = 445; // Vayavya
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 75;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -1818,29 +1818,29 @@ namespace NocturneInsaniax
         private static void Quetzalcoatl(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 120;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 98;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 181;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 202;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 310;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 335;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 51;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 432;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 120; // Stone Bite
+            tblSkill.fclSkillTbl[id].Event[1].Param = 98; // Berserk
+            tblSkill.fclSkillTbl[id].Event[2].Param = 181; // Glacial Blast
+            tblSkill.fclSkillTbl[id].Event[3].Param = 202; // Toxic Cloud
+            tblSkill.fclSkillTbl[id].Event[4].Param = 310; // Ice Boost
+            tblSkill.fclSkillTbl[id].Event[5].Param = 335; // Ice Drain
+            tblSkill.fclSkillTbl[id].Event[6].Param = 51; // Recarmdra
+            tblSkill.fclSkillTbl[id].Event[7].Param = 432; // Gate of Hell
         }
 
         private static void NagaRaja(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[2].Param = 99;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 99;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 183;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 183;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 305;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 305;
-            tblSkill.fclSkillTbl[id].Event[8].Param = 391;
-            tblSkill.fclSkillTbl[id].Event[9].Param = 391;
-            tblSkill.fclSkillTbl[id].Event[10].Param = 324;
-            tblSkill.fclSkillTbl[id].Event[11].Param = 324;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 99; // Tempest
+            tblSkill.fclSkillTbl[id].Event[3].Param = 99; // Tempest
+            tblSkill.fclSkillTbl[id].Event[4].Param = 183; // Bolt Storm
+            tblSkill.fclSkillTbl[id].Event[5].Param = 183; // Bolt Storm
+            tblSkill.fclSkillTbl[id].Event[6].Param = 305; // Counter
+            tblSkill.fclSkillTbl[id].Event[7].Param = 305; // Counter
+            tblSkill.fclSkillTbl[id].Event[8].Param = 391; // Wooing
+            tblSkill.fclSkillTbl[id].Event[9].Param = 391; // Wooing
+            tblSkill.fclSkillTbl[id].Event[10].Param = 324; // Null Fire
+            tblSkill.fclSkillTbl[id].Event[11].Param = 324; // Null Fire
 
             //datDevilFormat.tbl[id].skill[4] = 367;
             //datDevilFormat.tbl[id].dropmakka = 65000;
@@ -1861,20 +1861,20 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 96;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 96; // Lunge
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 90;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 90; // Poison Arrow
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 420;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 420; // Flatter
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 305;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 305; // Counter
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 15;
             tblSkill.fclSkillTbl[id].Event[3].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 202;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 202; // Toxic Cloud
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 16;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 66;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 66; // Rakukaja
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 17;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 115;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 115; // Sacrifice
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 18;
         }
 
@@ -1886,9 +1886,9 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 50; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 122;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 465;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 411;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 122; // Hell Fang
+            tblSkill.fclSkillTbl[id].Event[4].Param = 465; // Rend
+            tblSkill.fclSkillTbl[id].Event[7].Param = 411; // Detain
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 66;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -1908,22 +1908,22 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 50; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 176;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 176; // Fire Breath
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 125;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 125; // Stun Claw
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 385;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 385; // Scout
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 309;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 309; // Fire Boost
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 35;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 203;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 203; // War Cry
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 36;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 430;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 430; // Chi Blast
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 37;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 5;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 5; // Maragion
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 38;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 122;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 122; // Hell Fang
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 39;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -1931,28 +1931,28 @@ namespace NocturneInsaniax
         private static void Suparna(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[3].Param = 124;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 124; // Venom Claw
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 55;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 462;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 462; // Winged Fury
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 56;
         }
 
         private static void BadbCatha(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 75;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 75; // Liftoma
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 111;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 111; // Needle Rush
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 411;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 411; // Detain
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 443;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 443; // Dervish
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 24;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 317;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 317; // Anti-Force
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 25;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 347;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 347; // Mana Aid
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 26;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 23;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 23; // Mazanma
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 27;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
         }
@@ -1972,19 +1972,19 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 125;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 125; // Stun Claw
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 62;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 62; // Marin Karin
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 47;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 47; // Paraladi
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 293;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 293; // Mana Bonus
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 19;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 396;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 396; // Plead
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 20;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 198;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 198; // Mute Gaze
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 21;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 443;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 443; // Dervish
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 22;
         }
 
@@ -1994,21 +1994,21 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][0] = 50; // Phys
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 392;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 392; // Beseech
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 109;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 109; // Guillotine
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 205;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 205; // Taunt
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 427;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 427; // Fang Breaker
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 50;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 176;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 176; // Fire Breath
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 51;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 292;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 292; // Life Surge
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 52;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 306;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 306; // Retaliate
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 53;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 209;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 209; // Stun Gaze
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 54;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -2028,19 +2028,19 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 98;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 98; // Berserk
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 76;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 76; // Lightoma
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 409;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 409; // Haggle
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 48;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 48; // Petradi
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 36;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 305;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 305; // Counter
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 37;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 224;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 224; // Focus
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 38;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 97;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 97; // Hell Thrust
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 39;
         }
 
@@ -2097,7 +2097,7 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[7].Param = 428;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 428; // Defense Kuzushi
         }
 
         private static void YomotsuIkusa(ushort id)
@@ -2115,21 +2115,21 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 114;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 114; // Arid Needle
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 48;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 48; // Petradi
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 71;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 71; // Analyze
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 397;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 397; // Begging
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 45;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 107;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 107; // Mighty Gust
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 46;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 448;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 448; // Poison Volley
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 47;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 33;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 33; // Mudoon
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 48;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 390;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 390; // Dark Pledge
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 49;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -2149,17 +2149,17 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 2147483798; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 96;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 96; // Lunge
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 413;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 413; // Persuade
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 224;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 224; // Focus
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 21;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 290;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 290; // Life Bonus
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 22;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 107;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 107; // Mighty Gust
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 23;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 116;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 116; // Kamikaze
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 24;
         }
 
@@ -2199,15 +2199,15 @@ namespace NocturneInsaniax
         private static void Rangda(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[3].Param = 350;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 350; // Mana Refill
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 73;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 178;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 178; // Prominence
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 74;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 434;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 434; // Bloodbath
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 75;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 56;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 56; // Makajamon
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 76;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 445;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 445; // Vayavya
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 77;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -2218,21 +2218,21 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][0] = 50; // Phys
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 207;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 207; // Dismal Tune
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 346;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 346; // Life Aid
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 34;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 34; // Mamudo
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 102;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 102; // Blight
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 53;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 3;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 3; // Agidyne
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 54;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 345;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 345; // Endure
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 55;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 105;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 105; // Dark Sword
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 56;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 386;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 386; // Kidnap
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 57;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -2241,21 +2241,21 @@ namespace NocturneInsaniax
         private static void Yaksini(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 386;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 386; // Kidnap
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 109;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 109; // Guillotine
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 74;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 74; // Riberama
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 21;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 21; // Zandyne
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 44;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 211;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 211; // Binding Cry
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 45;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 325;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 325; // Null Ice
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 46;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 63;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 63; // Tentarafoo
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 47;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 306;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 306; // Retaliate
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 48;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -2265,19 +2265,19 @@ namespace NocturneInsaniax
             // Skills
             tblSkill.fclSkillTbl[id].Event[0].Param = 401;
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 197;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 197; // Stone Gaze
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 23;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 23; // Mazanma
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 319;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 319; // Anti-Dark
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 33;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 213;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 213; // Sonic Wave
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 34;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 112;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 112; // Stun Needle
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 35;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 448;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 448; // Poison Volley
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 36;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 302;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 302; // Drain Attack
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 37;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -2297,21 +2297,21 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 59;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 59; // Shibaboo
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 66;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 66; // Rakukaja
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 71;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 71; // Analyze
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 205;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 205; // Taunt
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 21;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 392;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 392; // Beseech
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 22;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 116;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 116; // Kamikaze
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 23;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 14;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 14; // Zionga
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 24;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 101;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 101; // Heat Wave
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 25;
         }
 
@@ -2330,19 +2330,19 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 65536; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 111;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 111; // Needle Rush
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 59;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 59; // Shibaboo
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 7;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 7; // Bufu
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 409;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 409; // Haggle
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 8;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 43;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 43; // Patra
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 9;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 55;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 55; // Makajam
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 10;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 60;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 60; // Dormina
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 11;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
         }
@@ -2350,10 +2350,10 @@ namespace NocturneInsaniax
         private static void Mada(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[4].Param = 459;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 365;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 292;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 38;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 459; // Luster Candy
+            tblSkill.fclSkillTbl[id].Event[5].Param = 365; // Anti-Ailments
+            tblSkill.fclSkillTbl[id].Event[6].Param = 292; // Life Surge
+            tblSkill.fclSkillTbl[id].Event[7].Param = 38; // Diarahan
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 88;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -2365,14 +2365,14 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 2147483798; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[4].Param = 450;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 450;
-            tblSkill.fclSkillTbl[id].Event[8].Param = 102;
-            tblSkill.fclSkillTbl[id].Event[9].Param = 102;
-            tblSkill.fclSkillTbl[id].Event[10].Param = 105;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 450; // Neural Shock
+            tblSkill.fclSkillTbl[id].Event[5].Param = 450; // Neural Shock
+            tblSkill.fclSkillTbl[id].Event[8].Param = 102; // Blight
+            tblSkill.fclSkillTbl[id].Event[9].Param = 102; // Blight
+            tblSkill.fclSkillTbl[id].Event[10].Param = 105; // Dark Sword
             tblSkill.fclSkillTbl[id].Event[10].TargetLevel = 63;
             tblSkill.fclSkillTbl[id].Event[10].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[11].Param = 105;
+            tblSkill.fclSkillTbl[id].Event[11].Param = 105; // Dark Sword
             tblSkill.fclSkillTbl[id].Event[11].TargetLevel = 63;
             tblSkill.fclSkillTbl[id].Event[11].Type = 6;
         }
@@ -2380,21 +2380,21 @@ namespace NocturneInsaniax
         private static void Taotie(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 25;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 25; // Megido
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 68;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 68; // Tetraja
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 192;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 192; // Life Drain
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 367;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 367; // Knowledge of Tools
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 66;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 196;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 196; // Hell Gaze
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 67;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 330;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 330; // Null Curse
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 68;
             tblSkill.fclSkillTbl[id].Event[6].Param = 401;
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 69;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 26;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 26; // Megidola
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 70;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -2414,21 +2414,21 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 50; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 196;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 196; // Hell Gaze
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 185;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 185; // Tornado
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 414;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 414; // Intimidate
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 327;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 327; // Force
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 46;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 40;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 40; // Mediarama
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 47;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 114;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 114; // Arid Needle
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 48;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 63;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 63; // Tentarafoo
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 49;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 187;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 187; // Wet Wind
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 50;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -2436,21 +2436,21 @@ namespace NocturneInsaniax
         private static void Baphomet(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 67;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 67; // Makakaja
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 223;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 223; // Beckon Call
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 390;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 390; // Dark Pledge
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 5;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 5; // Maragion
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 34;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 446;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 446; // Damnation
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 35;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 207;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 207; // Dismal Tune
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 36;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 293;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 293; // Mana Bonus
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 37;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 424;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 424; // Concentrate
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 38;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -2470,11 +2470,11 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 65536; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[3].Param = 363;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 27;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 364;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 223;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 445;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 363; // Magic Boost
+            tblSkill.fclSkillTbl[id].Event[4].Param = 27; // Megidolaon
+            tblSkill.fclSkillTbl[id].Event[5].Param = 364; // Anti-Magic
+            tblSkill.fclSkillTbl[id].Event[6].Param = 223; // Beckon Call
+            tblSkill.fclSkillTbl[id].Event[7].Param = 445; // Vayavya
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 96;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -2494,16 +2494,16 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[4].Param = 208;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 208;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 70;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 70;
-            tblSkill.fclSkillTbl[id].Event[8].Param = 122;
-            tblSkill.fclSkillTbl[id].Event[9].Param = 122;
-            tblSkill.fclSkillTbl[id].Event[10].Param = 348;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 208; // Sol Niger
+            tblSkill.fclSkillTbl[id].Event[5].Param = 208; // Sol Niger
+            tblSkill.fclSkillTbl[id].Event[6].Param = 70; // Tetrakarn
+            tblSkill.fclSkillTbl[id].Event[7].Param = 70; // Tetrakarn
+            tblSkill.fclSkillTbl[id].Event[8].Param = 122; // Hell Fang
+            tblSkill.fclSkillTbl[id].Event[9].Param = 122; // Hell Fang
+            tblSkill.fclSkillTbl[id].Event[10].Param = 348; // Victory Cry
             tblSkill.fclSkillTbl[id].Event[10].TargetLevel = 82;
             tblSkill.fclSkillTbl[id].Event[10].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[11].Param = 348;
+            tblSkill.fclSkillTbl[id].Event[11].Param = 348; // Victory Cry
             tblSkill.fclSkillTbl[id].Event[11].TargetLevel = 82;
             tblSkill.fclSkillTbl[id].Event[11].Type = 6;
         }
@@ -2515,13 +2515,13 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][8] = 65536; // Curse
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 178;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 368;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 203;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 336;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 436;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 304;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 391;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 178; // Prominence
+            tblSkill.fclSkillTbl[id].Event[1].Param = 368; // Laevateinn
+            tblSkill.fclSkillTbl[id].Event[3].Param = 203; // War Cry
+            tblSkill.fclSkillTbl[id].Event[4].Param = 336; // Elec Drain
+            tblSkill.fclSkillTbl[id].Event[5].Param = 436; // Ragnarok
+            tblSkill.fclSkillTbl[id].Event[6].Param = 304; // Attack All
+            tblSkill.fclSkillTbl[id].Event[7].Param = 391; // Wooing
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 79;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -2541,29 +2541,29 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[5].Param = 100;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 307;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 340;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 100; // Hades Blast
+            tblSkill.fclSkillTbl[id].Event[6].Param = 307; // Avenge
+            tblSkill.fclSkillTbl[id].Event[7].Param = 340; // Ice Repel
         }
 
         private static void Loki(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 12;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 12; // Mabufudyne
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 56;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 56; // Makajamon
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 437;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 437; // Refrigerate
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 394;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 394; // Mischief
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 53;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 355;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 355; // Charisma
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 54;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 325;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 325; // Null Ice
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 55;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 72;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 72; // Trafuri
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 56;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 33;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 33; // Mudoon
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 57;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -2575,18 +2575,18 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 65536; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[3].Param = 441;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 441;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 455;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 455;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 122;
-            tblSkill.fclSkillTbl[id].Event[8].Param = 122;
-            tblSkill.fclSkillTbl[id].Event[9].Param = 295;
-            tblSkill.fclSkillTbl[id].Event[10].Param = 295;
-            tblSkill.fclSkillTbl[id].Event[11].Param = 27;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 441; // Thunder Gods
+            tblSkill.fclSkillTbl[id].Event[4].Param = 441; // Thunder Gods
+            tblSkill.fclSkillTbl[id].Event[5].Param = 455; // Soul Drain
+            tblSkill.fclSkillTbl[id].Event[6].Param = 455; // Soul Drain
+            tblSkill.fclSkillTbl[id].Event[7].Param = 122; // Hell Fang
+            tblSkill.fclSkillTbl[id].Event[8].Param = 122; // Hell Fang
+            tblSkill.fclSkillTbl[id].Event[9].Param = 295; // Mana Surge
+            tblSkill.fclSkillTbl[id].Event[10].Param = 295; // Mana Surge
+            tblSkill.fclSkillTbl[id].Event[11].Param = 27; // Megidolaon
             tblSkill.fclSkillTbl[id].Event[11].TargetLevel = 85;
             tblSkill.fclSkillTbl[id].Event[11].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[12].Param = 27;
+            tblSkill.fclSkillTbl[id].Event[12].Param = 27; // Megidolaon
             tblSkill.fclSkillTbl[id].Event[12].TargetLevel = 85;
             tblSkill.fclSkillTbl[id].Event[12].Type = 6;
         }
@@ -2597,10 +2597,10 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 65536; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[4].Param = 181;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 455;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 334;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 26;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 181; // Glacial Blast
+            tblSkill.fclSkillTbl[id].Event[5].Param = 455; // Soul Drain
+            tblSkill.fclSkillTbl[id].Event[6].Param = 334; // Fire Drain
+            tblSkill.fclSkillTbl[id].Event[7].Param = 26; // Megidola
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 74;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -2608,16 +2608,16 @@ namespace NocturneInsaniax
         private static void QueenMab(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[3].Param = 41;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 41;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 18;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 18;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 69;
-            tblSkill.fclSkillTbl[id].Event[8].Param = 69;
-            tblSkill.fclSkillTbl[id].Event[9].Param = 424;
-            tblSkill.fclSkillTbl[id].Event[10].Param = 424;
-            tblSkill.fclSkillTbl[id].Event[11].Param = 452;
-            tblSkill.fclSkillTbl[id].Event[12].Param = 452;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 41; // Mediarahan
+            tblSkill.fclSkillTbl[id].Event[4].Param = 41; // Mediarahan
+            tblSkill.fclSkillTbl[id].Event[5].Param = 18; // Maziodyne
+            tblSkill.fclSkillTbl[id].Event[6].Param = 18; // Maziodyne
+            tblSkill.fclSkillTbl[id].Event[7].Param = 69; // Makarakarn
+            tblSkill.fclSkillTbl[id].Event[8].Param = 69; // Makarakarn
+            tblSkill.fclSkillTbl[id].Event[9].Param = 424; // Concentrate
+            tblSkill.fclSkillTbl[id].Event[10].Param = 424; // Concentrate
+            tblSkill.fclSkillTbl[id].Event[11].Param = 452; // Pulinpaon
+            tblSkill.fclSkillTbl[id].Event[12].Param = 452; // Pulinpaon
         }
 
         private static void Succubus(ushort id)
@@ -2650,21 +2650,21 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 65536; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 420;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 420; // Flatter
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 214;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 214; // Sexy Gaze
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 461;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 461; // Storm Gale
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 125;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 125; // Stun Claw
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 26;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 391;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 391; // Wooing
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 27;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 199;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 199; // Evil Gaze
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 28;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 192;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 192; // Life Drain
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 29;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 23;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 23; // Mazanma
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 30;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -2672,19 +2672,19 @@ namespace NocturneInsaniax
         private static void Fomorian(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 7;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 7; // Bufu
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 210;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 210; // Lullaby
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 96;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 96; // Lunge
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 98;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 98; // Berserk
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 19;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 290;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 290; // Life Bonus
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 20;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 386;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 386; // Kidnap
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 21;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 10;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 10; // Mabufu
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 22;
         }
 
@@ -2703,20 +2703,20 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 50; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 54;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 54; // Rakunda
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 214;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 214; // Sexy Gaze
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 71;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 71; // Analyze
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 61;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 61; // Pulinpa
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 9;
             tblSkill.fclSkillTbl[id].Event[3].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 390;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 390; // Dark Pledge
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 10;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 52;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 52; // Tarunda
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 11;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 16;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 16; // Mazio
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 12;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
         }
@@ -2736,17 +2736,17 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[2].Param = 462;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 462; // Winged Fury
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 126;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 126; // Iron Claw
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 76;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 323;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 323; // Null Phys
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 77;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 349;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 349; // Life Refill
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 78;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 365;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 365; // Anti-Ailments
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 79;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 341;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 341; // Elec Repel
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 80;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -2757,22 +2757,22 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][8] = 65536; // Curse
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 199;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 199; // Evil Gaze
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 125;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 125; // Stun Claw
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 216;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 216; // Panic Voice
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 72;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 72; // Trafuri
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 44;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 177;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 177; // Hellfire
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 45;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 450;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 450; // Neural Shock
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 46;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 326;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 326; // Null Elec
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 47;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 452;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 452; // Pulinpaon
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 48;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -2780,19 +2780,19 @@ namespace NocturneInsaniax
         private static void Raiju(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 14;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 14; // Zionga
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 76;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 76; // Lightoma
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 440;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 440; // Jolt
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 123;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 123; // Feral Claw
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 26;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 182;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 182; // Shock
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 27;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 111;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 111; // Needle Rush
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 28;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 311;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 311; // Elec Boost
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 29;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
         }
@@ -2800,19 +2800,19 @@ namespace NocturneInsaniax
         private static void Nue(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 125;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 125; // Stun Claw
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 203;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 203; // War Cry
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 180;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 180; // Ice Breath
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 437;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 437; // Refrigerate
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 32;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 216;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 216; // Panic Voice
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 33;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 310;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 310; // Ice Boost
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 34;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 34;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 34; // Mamudo
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 35;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
         }
@@ -2832,21 +2832,21 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 50; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 209;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 209; // Stun Gaze
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 46;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 46; // Posumudi
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 19;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 19; // Zan
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 113;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 113; // Venom Needle
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 7;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 90;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 90; // Poison Arrow
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 8;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 461;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 461; // Storm Gale
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 9;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 203;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 203; // War Cry
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 10;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 331;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 331; // Null Nerve
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 11;
         }
 
@@ -2858,33 +2858,33 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 50; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 125;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 125; // Stun Claw
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 192;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 192; // Life Drain
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 449;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 449; // Poison Salvo
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 115;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 115; // Sacrifice
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 64;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 306;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 306; // Retaliate
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 65;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 202;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 202; // Toxic Cloud
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 66;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 25;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 25; // Megido
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 67;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 434;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 434; // Bloodbath
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 68;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
 
         private static void Legion(ushort id)
         {
-            tblSkill.fclSkillTbl[id].Event[5].Param = 452;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 452; // Pulinpaon
         }
 
         private static void Yaka(ushort id)
         {
-            tblSkill.fclSkillTbl[id].Event[2].Param = 34;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 34; // Mamudo
         }
 
         private static void Choronzon(ushort id)
@@ -2917,17 +2917,17 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 123;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 123; // Feral Claw
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 65;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 65; // Sukukaja
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 190;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 190; // Deathtouch
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 5;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 124;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 124; // Venom Claw
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 6;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 32;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 32; // Mudo
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 7;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 204;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 204; // Fog Breath
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 8;
 
             // Enemy Stats
@@ -2940,7 +2940,7 @@ namespace NocturneInsaniax
         private static void Shadow(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[2].Param = 18;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 18; // Maziodyne
         }
 
         private static void BlackOoze(ushort id)
@@ -2958,21 +2958,21 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 198;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 198; // Mute Gaze
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 119;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 119; // Charm Bite
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 190;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 190; // Deathtouch
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 448;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 448; // Poison Volley
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 29;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 115;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 115; // Sacrifice
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 30;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 191;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 191; // Mana Drain
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 31;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 216;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 216; // Panic Voice
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 32;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 318;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 318; // Anti-Light
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 33;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -3007,17 +3007,17 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 190;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 190; // Deathtouch
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 117;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 117; // Feral Bite
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 202;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 202; // Toxic Cloud
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 7;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 118;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 118; // Venom Bite
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 8;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 152;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 152; // Last Resort
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 9;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 213;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 213; // Sonic Wave
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 10;
 
             // Enemy Stats
@@ -3073,19 +3073,19 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 61;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 61; // Pulinpa
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 113;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 113; // Venom Needle
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 32;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 32; // Mudo
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 1;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 1; // Agi
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 8;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 190;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 190; // Deathtouch
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 9;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 347;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 347; // Mana Aid
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 10;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 4;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 4; // Maragi
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 11;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
         }
@@ -3144,18 +3144,18 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[2].Param = 362;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 362; // Phys Boost
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 348;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 348; // Victory Cry
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 91;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 459;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 459; // Luster Candy
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 92;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 467;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 467; // Divine Light
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 93;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 295;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 295; // Mana Surge
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 94;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 27;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 27; // Megidolaon
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 95;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -3175,13 +3175,13 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[1].Param = 439;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 424;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 426;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 459;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 195;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 363;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 413;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 439; // Fimbulvetr
+            tblSkill.fclSkillTbl[id].Event[2].Param = 424; // Concentrate
+            tblSkill.fclSkillTbl[id].Event[3].Param = 426; // Sakura Rage
+            tblSkill.fclSkillTbl[id].Event[4].Param = 459; // Luster Candy
+            tblSkill.fclSkillTbl[id].Event[5].Param = 195; // Radiance
+            tblSkill.fclSkillTbl[id].Event[6].Param = 363; // Magic Boost
+            tblSkill.fclSkillTbl[id].Event[7].Param = 413; // Persuade
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 92;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -3201,13 +3201,13 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 462;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 106;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 31;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 218;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 366;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 350;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 189;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 462; // Winged Fury
+            tblSkill.fclSkillTbl[id].Event[2].Param = 106; // Stasis Blade
+            tblSkill.fclSkillTbl[id].Event[3].Param = 31; // Mahamaon
+            tblSkill.fclSkillTbl[id].Event[4].Param = 218; // Prayer
+            tblSkill.fclSkillTbl[id].Event[5].Param = 366; // Abyssal Mask
+            tblSkill.fclSkillTbl[id].Event[6].Param = 350; // Mana Refill
+            tblSkill.fclSkillTbl[id].Event[7].Param = 189; // Judgement Light
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 89;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -3227,11 +3227,11 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 431;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 179;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 26;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 195;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 458;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 431; // Revelation
+            tblSkill.fclSkillTbl[id].Event[1].Param = 179; // Trisagion
+            tblSkill.fclSkillTbl[id].Event[2].Param = 26; // Megidola
+            tblSkill.fclSkillTbl[id].Event[3].Param = 195; // Radiance
+            tblSkill.fclSkillTbl[id].Event[4].Param = 458; // Heat Riser
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 78;
             tblSkill.fclSkillTbl[id].Event[4].Type = 6;
         }
@@ -3239,14 +3239,14 @@ namespace NocturneInsaniax
         private static void Ganesha(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 362;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 323;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 459;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 155;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 337;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 362; // Phys Boost
+            tblSkill.fclSkillTbl[id].Event[1].Param = 323; // Null Phys
+            tblSkill.fclSkillTbl[id].Event[2].Param = 459; // Luster Candy
+            tblSkill.fclSkillTbl[id].Event[3].Param = 155; // Earthquake
+            tblSkill.fclSkillTbl[id].Event[4].Param = 337; // Force Drain
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 63;
             tblSkill.fclSkillTbl[id].Event[4].Type = 6;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 365;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 365; // Anti-Ailments
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 64;
             tblSkill.fclSkillTbl[id].Event[5].Type = 6;
         }
@@ -3254,18 +3254,18 @@ namespace NocturneInsaniax
         private static void Valkyrie(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[2].Param = 305;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 305;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 393;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 393;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 109;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 109;
-            tblSkill.fclSkillTbl[id].Event[8].Param = 299;
-            tblSkill.fclSkillTbl[id].Event[9].Param = 299;
-            tblSkill.fclSkillTbl[id].Event[10].Param = 362;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 305; // Counter
+            tblSkill.fclSkillTbl[id].Event[3].Param = 305; // Counter
+            tblSkill.fclSkillTbl[id].Event[4].Param = 393; // Soul Recruit
+            tblSkill.fclSkillTbl[id].Event[5].Param = 393; // Soul Recruit
+            tblSkill.fclSkillTbl[id].Event[6].Param = 109; // Guillotine
+            tblSkill.fclSkillTbl[id].Event[7].Param = 109; // Guillotine
+            tblSkill.fclSkillTbl[id].Event[8].Param = 299; // Might
+            tblSkill.fclSkillTbl[id].Event[9].Param = 299; // Might
+            tblSkill.fclSkillTbl[id].Event[10].Param = 362; // Phys Boost
             tblSkill.fclSkillTbl[id].Event[10].TargetLevel = 38;
             tblSkill.fclSkillTbl[id].Event[10].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[11].Param = 362;
+            tblSkill.fclSkillTbl[id].Event[11].Param = 362; // Phys Boost
             tblSkill.fclSkillTbl[id].Event[11].TargetLevel = 39;
             tblSkill.fclSkillTbl[id].Event[11].Type = 6;
         }
@@ -3285,22 +3285,22 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 2147483798; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[2].Param = 197;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 197;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 446;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 446;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 216;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 216;
-            tblSkill.fclSkillTbl[id].Event[8].Param = 25;
-            tblSkill.fclSkillTbl[id].Event[9].Param = 25;
-            tblSkill.fclSkillTbl[id].Event[10].Param = 365;
-            tblSkill.fclSkillTbl[id].Event[11].Param = 365;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 197; // Stone Gaze
+            tblSkill.fclSkillTbl[id].Event[3].Param = 197; // Stone Gaze
+            tblSkill.fclSkillTbl[id].Event[4].Param = 446; // Damnation
+            tblSkill.fclSkillTbl[id].Event[5].Param = 446; // Damnation
+            tblSkill.fclSkillTbl[id].Event[6].Param = 216; // Panic Voice
+            tblSkill.fclSkillTbl[id].Event[7].Param = 216; // Panic Voice
+            tblSkill.fclSkillTbl[id].Event[8].Param = 25; // Megido
+            tblSkill.fclSkillTbl[id].Event[9].Param = 25; // Megido
+            tblSkill.fclSkillTbl[id].Event[10].Param = 365; // Anti-Ailments
+            tblSkill.fclSkillTbl[id].Event[11].Param = 365; // Anti-Ailments
         }
 
         private static void KuramaTengu(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[3].Param = 21;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 21; // Zandyne
         }
 
         private static void CuChulainn(ushort id)
@@ -3309,16 +3309,16 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][0] = 50; // Phys
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[3].Param = 21;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 21;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 426;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 426;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 362;
-            tblSkill.fclSkillTbl[id].Event[8].Param = 362;
-            tblSkill.fclSkillTbl[id].Event[9].Param = 304;
-            tblSkill.fclSkillTbl[id].Event[10].Param = 304;
-            tblSkill.fclSkillTbl[id].Event[11].Param = 108;
-            tblSkill.fclSkillTbl[id].Event[12].Param = 108;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 21; // Zandyne
+            tblSkill.fclSkillTbl[id].Event[4].Param = 21; // Zandyne
+            tblSkill.fclSkillTbl[id].Event[5].Param = 426; // Sakura Rage
+            tblSkill.fclSkillTbl[id].Event[6].Param = 426; // Sakura Rage
+            tblSkill.fclSkillTbl[id].Event[7].Param = 362; // Phys Boost
+            tblSkill.fclSkillTbl[id].Event[8].Param = 362; // Phys Boost
+            tblSkill.fclSkillTbl[id].Event[9].Param = 304; // Attack All
+            tblSkill.fclSkillTbl[id].Event[10].Param = 304; // Attack All
+            tblSkill.fclSkillTbl[id].Event[11].Param = 108; // Deathbound
+            tblSkill.fclSkillTbl[id].Event[12].Param = 108; // Deathbound
         }
 
         private static void QingLong(ushort id)
@@ -3336,18 +3336,18 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[3].Param = 185;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 185;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 120;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 120;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 181;
-            tblSkill.fclSkillTbl[id].Event[8].Param = 181;
-            tblSkill.fclSkillTbl[id].Event[9].Param = 291;
-            tblSkill.fclSkillTbl[id].Event[10].Param = 291;
-            tblSkill.fclSkillTbl[id].Event[11].Param = 29;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 185; // Tornado
+            tblSkill.fclSkillTbl[id].Event[4].Param = 185; // Tornado
+            tblSkill.fclSkillTbl[id].Event[5].Param = 120; // Stone Bite
+            tblSkill.fclSkillTbl[id].Event[6].Param = 120; // Stone Bite
+            tblSkill.fclSkillTbl[id].Event[7].Param = 181; // Glacial Blast
+            tblSkill.fclSkillTbl[id].Event[8].Param = 181; // Glacial Blast
+            tblSkill.fclSkillTbl[id].Event[9].Param = 291; // Life Gain
+            tblSkill.fclSkillTbl[id].Event[10].Param = 291; // Life Gain
+            tblSkill.fclSkillTbl[id].Event[11].Param = 29; // Hamaon
             tblSkill.fclSkillTbl[id].Event[11].TargetLevel = 49;
             tblSkill.fclSkillTbl[id].Event[11].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[12].Param = 29;
+            tblSkill.fclSkillTbl[id].Event[12].Param = 29; // Hamaon
             tblSkill.fclSkillTbl[id].Event[12].TargetLevel = 49;
             tblSkill.fclSkillTbl[id].Event[12].Type = 6;
         }
@@ -3367,10 +3367,10 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[10].Param = 430;
+            tblSkill.fclSkillTbl[id].Event[10].Param = 430; // Chi Blast
             tblSkill.fclSkillTbl[id].Event[10].TargetLevel = 29;
             tblSkill.fclSkillTbl[id].Event[10].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[11].Param = 430;
+            tblSkill.fclSkillTbl[id].Event[11].Param = 430; // Chi Blast
             tblSkill.fclSkillTbl[id].Event[11].TargetLevel = 29;
             tblSkill.fclSkillTbl[id].Event[11].Type = 6;
         }
@@ -3381,7 +3381,7 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][2] = 50; // Ice
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[6].Param = 413;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 413; // Persuade
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 65;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
         }
@@ -3395,18 +3395,18 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 65536; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 31;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 186;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 345;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 126;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 31; // Mahamaon
+            tblSkill.fclSkillTbl[id].Event[1].Param = 186; // Wind Cutter
+            tblSkill.fclSkillTbl[id].Event[2].Param = 345; // Endure
+            tblSkill.fclSkillTbl[id].Event[3].Param = 126; // Iron Claw
         }
 
         private static void Yatagarasu(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[1].Param = 29;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 21;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 444;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 29; // Hamaon
+            tblSkill.fclSkillTbl[id].Event[2].Param = 21; // Zandyne
+            tblSkill.fclSkillTbl[id].Event[6].Param = 444; // Heavenly Cyclone
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 51;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
         }
@@ -3420,14 +3420,14 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 65536; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[5].Param = 183;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 183;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 326;
-            tblSkill.fclSkillTbl[id].Event[8].Param = 326;
-            tblSkill.fclSkillTbl[id].Event[9].Param = 186;
-            tblSkill.fclSkillTbl[id].Event[10].Param = 186;
-            tblSkill.fclSkillTbl[id].Event[11].Param = 307;
-            tblSkill.fclSkillTbl[id].Event[12].Param = 307;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 183; // Bolt Storm
+            tblSkill.fclSkillTbl[id].Event[6].Param = 183; // Bolt Storm
+            tblSkill.fclSkillTbl[id].Event[7].Param = 326; // Null Elec
+            tblSkill.fclSkillTbl[id].Event[8].Param = 326; // Null Elec
+            tblSkill.fclSkillTbl[id].Event[9].Param = 186; // Wind Cutter
+            tblSkill.fclSkillTbl[id].Event[10].Param = 186; // Wind Cutter
+            tblSkill.fclSkillTbl[id].Event[11].Param = 307; // Avenge
+            tblSkill.fclSkillTbl[id].Event[12].Param = 307; // Avenge
         }
 
         private static void Albion(ushort id)
@@ -3439,16 +3439,16 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][4] = 80; // Force
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[4].Param = 100;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 100;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 333;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 333;
-            tblSkill.fclSkillTbl[id].Event[8].Param = 106;
-            tblSkill.fclSkillTbl[id].Event[9].Param = 106;
-            tblSkill.fclSkillTbl[id].Event[10].Param = 51;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 100; // Hades Blast
+            tblSkill.fclSkillTbl[id].Event[5].Param = 100; // Hades Blast
+            tblSkill.fclSkillTbl[id].Event[6].Param = 333; // Phys Drain
+            tblSkill.fclSkillTbl[id].Event[7].Param = 333; // Phys Drain
+            tblSkill.fclSkillTbl[id].Event[8].Param = 106; // Stasis Blade
+            tblSkill.fclSkillTbl[id].Event[9].Param = 106; // Stasis Blade
+            tblSkill.fclSkillTbl[id].Event[10].Param = 51; // Recarmdra
             tblSkill.fclSkillTbl[id].Event[10].TargetLevel = 69;
             tblSkill.fclSkillTbl[id].Event[10].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[11].Param = 51;
+            tblSkill.fclSkillTbl[id].Event[11].Param = 51; // Recarmdra
             tblSkill.fclSkillTbl[id].Event[11].TargetLevel = 69;
             tblSkill.fclSkillTbl[id].Event[11].Type = 6;
         }
@@ -3468,11 +3468,11 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 65536; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 432;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 432; // Gate of Hell
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 242;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 242; // God's Curse
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 77;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 338;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 338; // Phys Repel
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 78;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -3480,21 +3480,21 @@ namespace NocturneInsaniax
         private static void Pisaca(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 90;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 90; // Poison Arrow
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 53;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 53; // Sukunda
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 209;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 209; // Stun Gaze
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 440;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 440; // Jolt
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 29;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 192;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 192; // Life Drain
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 30;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 213;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 213; // Sonic Wave
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 31;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 77;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 77; // Dekunda
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 32;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 17;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 17; // Mazionga
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 33;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -3502,7 +3502,7 @@ namespace NocturneInsaniax
         private static void Kaiwan(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[6].Param = 447;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 447; // Millenia Curse
         }
 
         private static void KinKi(ushort id)
@@ -3513,11 +3513,11 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 50; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[3].Param = 99;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 205;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 434;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 323;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 433;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 99; // Tempest
+            tblSkill.fclSkillTbl[id].Event[4].Param = 205; // Taunt
+            tblSkill.fclSkillTbl[id].Event[5].Param = 434; // Bloodbath
+            tblSkill.fclSkillTbl[id].Event[6].Param = 323; // Null Phys
+            tblSkill.fclSkillTbl[id].Event[7].Param = 433; // Akashic Arts
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 64;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -3530,11 +3530,11 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 50; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[3].Param = 426;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 199;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 9;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 346;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 385;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 426; // Sakura Rage
+            tblSkill.fclSkillTbl[id].Event[4].Param = 199; // Evil Gaze
+            tblSkill.fclSkillTbl[id].Event[5].Param = 9; // Bufudyne
+            tblSkill.fclSkillTbl[id].Event[6].Param = 346; // Life Aid
+            tblSkill.fclSkillTbl[id].Event[7].Param = 385; // Scout
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 67;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -3548,7 +3548,7 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 50; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[7].Param = 429;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 429; // Primal Force
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 67;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -3561,14 +3561,14 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 65536; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 105;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 33;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 26;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 432;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 362;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 223;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 458;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 348;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 105; // Dark Sword
+            tblSkill.fclSkillTbl[id].Event[1].Param = 33; // Mudoon
+            tblSkill.fclSkillTbl[id].Event[2].Param = 26; // Megidola
+            tblSkill.fclSkillTbl[id].Event[3].Param = 432; // Gate of Hell
+            tblSkill.fclSkillTbl[id].Event[4].Param = 362; // Phys Boost
+            tblSkill.fclSkillTbl[id].Event[5].Param = 223; // Beckon Call
+            tblSkill.fclSkillTbl[id].Event[6].Param = 458; // Heat Riser
+            tblSkill.fclSkillTbl[id].Event[7].Param = 348; // Victory Cry
         }
 
         private static void Clotho(ushort id)
@@ -3579,12 +3579,12 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 50; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[1].Param = 31;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 41;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 215;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 50;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 25;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 212;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 31; // Mahamaon
+            tblSkill.fclSkillTbl[id].Event[3].Param = 41; // Mediarahan
+            tblSkill.fclSkillTbl[id].Event[4].Param = 215; // Allure
+            tblSkill.fclSkillTbl[id].Event[5].Param = 50; // Samarecarm
+            tblSkill.fclSkillTbl[id].Event[6].Param = 25; // Megido
+            tblSkill.fclSkillTbl[id].Event[7].Param = 212; // Eternal Rest
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 63;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -3596,19 +3596,19 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][7] = 50; // Dark
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[4].Param = 70;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 206;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 304;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 72;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 70; // Tetrakarn
+            tblSkill.fclSkillTbl[id].Event[5].Param = 206; // Debilitate
+            tblSkill.fclSkillTbl[id].Event[6].Param = 304; // Attack All
+            tblSkill.fclSkillTbl[id].Event[7].Param = 72; // Trafuri
         }
 
         private static void Atropos(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[3].Param = 3;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 295;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 26;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 363;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 3; // Agidyne
+            tblSkill.fclSkillTbl[id].Event[4].Param = 295; // Mana Surge
+            tblSkill.fclSkillTbl[id].Event[5].Param = 26; // Megidola
+            tblSkill.fclSkillTbl[id].Event[6].Param = 363; // Magic Boost
             tblSkill.fclSkillTbl[id].Event[7].Param = 0;
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 0;
             tblSkill.fclSkillTbl[id].Event[7].Type = 0;
@@ -3617,14 +3617,14 @@ namespace NocturneInsaniax
         private static void Loa(ushort id)
         {
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 34;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 68;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 77;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 448;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 35;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 451;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 206;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 152;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 34; // Mamudo
+            tblSkill.fclSkillTbl[id].Event[1].Param = 68; // Tetraja
+            tblSkill.fclSkillTbl[id].Event[2].Param = 77; // Dekunda
+            tblSkill.fclSkillTbl[id].Event[3].Param = 448; // Poison Volley
+            tblSkill.fclSkillTbl[id].Event[4].Param = 35; // Mamudoon
+            tblSkill.fclSkillTbl[id].Event[5].Param = 451; // Neural Storm
+            tblSkill.fclSkillTbl[id].Event[6].Param = 206; // Debilitate
+            tblSkill.fclSkillTbl[id].Event[7].Param = 152; // Last Resort
         }
 
         private static void Phantom(ushort id)
@@ -3672,10 +3672,10 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 65536; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[1].Param = 6;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 431;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 27;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 458;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 6; // Maragidyne
+            tblSkill.fclSkillTbl[id].Event[2].Param = 431; // Revelation
+            tblSkill.fclSkillTbl[id].Event[3].Param = 27; // Megidolaon
+            tblSkill.fclSkillTbl[id].Event[5].Param = 458; // Heat Riser
         }
 
         private static void BeelzebubFly(ushort id)
@@ -3693,17 +3693,17 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 65536; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[1].Param = 24;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 462;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 24; // Mazandyne
+            tblSkill.fclSkillTbl[id].Event[6].Param = 462; // Winged Fury
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 98;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 462;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 462; // Winged Fury
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 98;
             tblSkill.fclSkillTbl[id].Event[7].Type = 6;
-            tblSkill.fclSkillTbl[id].Event[8].Param = 442;
+            tblSkill.fclSkillTbl[id].Event[8].Param = 442; // Thunder Reign
             tblSkill.fclSkillTbl[id].Event[8].TargetLevel = 99;
             tblSkill.fclSkillTbl[id].Event[8].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[9].Param = 442;
+            tblSkill.fclSkillTbl[id].Event[9].Param = 442; // Thunder Reign
             tblSkill.fclSkillTbl[id].Event[9].TargetLevel = 99;
             tblSkill.fclSkillTbl[id].Event[9].Type = 6;
         }
@@ -3723,23 +3723,23 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 65536; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 79;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 79; // Pestilence
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 63;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 63; // Tentarafoo
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 102;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 102; // Blight
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 212;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 212; // Eternal Rest
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 64;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 449;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 449; // Poison Salvo
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 65;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 451;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 451; // Neural Storm
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 66;
             tblSkill.fclSkillTbl[id].Event[5].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 206;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 206; // Debilitate
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 67;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 431;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 431; // Revelation
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 68;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -3759,23 +3759,23 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 65536; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 287;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 287; // God's Bow
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 68;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 68; // Tetraja
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 31;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 31; // Mahamaon
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 178;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 178; // Prominence
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 53;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 57;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 57; // Dekaja
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 54;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 347;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 347; // Mana Aid
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 55;
             tblSkill.fclSkillTbl[id].Event[5].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 323;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 323; // Null Phys
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 56;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 179;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 179; // Trisagion
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 57;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -3795,23 +3795,23 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 280;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 280; // Terrorblade
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 183;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 183; // Bolt Storm
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 77;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 77; // Dekunda
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 64;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 64; // Tarukaja
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 56;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 428;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 428; // Defense Kuzushi
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 57;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 451;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 451; // Neural Storm
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 58;
             tblSkill.fclSkillTbl[id].Event[5].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 307;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 307; // Avenge
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 59;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 186;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 186; // Wind Cutter
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 60;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -3831,23 +3831,23 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 65536; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 261;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 261; // Soul Divide
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 181;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 181; // Glacial Blast
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 192;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 192; // Life Drain
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 65;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 65; // Sukukaja
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 62;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 35;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 35; // Mamudoon
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 63;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 26;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 26; // Megidola
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 64;
             tblSkill.fclSkillTbl[id].Event[5].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 295;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 295; // Mana Surge
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 65;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 439;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 439; // Fimbulvetr
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 66;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -3867,22 +3867,22 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 443;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 443; // Dervish
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 275;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 275; // Andalucia
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 224;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 224; // Focus
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 77;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 77; // Dekunda
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 31;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 205;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 205; // Taunt
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 32;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 276;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 276; // Red Capote
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 33;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 349;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 349; // Life Refill
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 34;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 306;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 306; // Retaliate
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 35;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -3902,24 +3902,24 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 281;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 281; // Hell Spin
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 282;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 282; // Exhaust
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 435;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 435; // Scald
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 97;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 97; // Hell Thrust
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 43;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 283;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 283; // Hell Burner
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 44;
             tblSkill.fclSkillTbl[id].Event[4].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 284;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 284; // Hell Throttle
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 45;
             tblSkill.fclSkillTbl[id].Event[5].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 309;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 309; // Fire Boost
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 46;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 292;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 292; // Life Surge
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 47;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -3939,23 +3939,23 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 65536; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[0].Param = 279;
+            tblSkill.fclSkillTbl[id].Event[0].Param = 279; // Meditation
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 30;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 30; // Mahama
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 67;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 67; // Makakaja
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 34;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 34; // Mamudo
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 38;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 424;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 424; // Concentrate
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 39;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 278;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 278; // Preach
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 40;
             tblSkill.fclSkillTbl[id].Event[5].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 457;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 457; // Diamrita
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 41;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 331;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 331; // Null Nerve
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 42;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -3971,13 +3971,13 @@ namespace NocturneInsaniax
 
             // Skills
 
-            tblSkill.fclSkillTbl[id].Event[5].Param = 441;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 441; // Thunder Gods
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 72;
             tblSkill.fclSkillTbl[id].Event[5].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 451;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 451; // Neural Storm
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 73;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 286;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 286; // Death Lust
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 74;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -3998,11 +3998,11 @@ namespace NocturneInsaniax
 
             // Skills
 
-            tblSkill.fclSkillTbl[id].Event[5].Param = 458;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 57;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 453;
-            tblSkill.fclSkillTbl[id].Event[8].Param = 27;
-            tblSkill.fclSkillTbl[id].Event[9].Param = 159;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 458; // Heat Riser
+            tblSkill.fclSkillTbl[id].Event[6].Param = 57; // Dekaja
+            tblSkill.fclSkillTbl[id].Event[7].Param = 453; // Antichthon
+            tblSkill.fclSkillTbl[id].Event[8].Param = 27; // Megidolaon
+            tblSkill.fclSkillTbl[id].Event[9].Param = 159; // Evil Melody
             tblSkill.fclSkillTbl[id].Event[9].TargetLevel = 82;
             tblSkill.fclSkillTbl[id].Event[9].Type = 1;
         }
@@ -4019,17 +4019,17 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][7] = 65536; // Dark
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[2].Param = 205;
+            tblSkill.fclSkillTbl[id].Event[2].Param = 205; // Taunt
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 466;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 466; // Jack Bufudyne
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 67;
-            tblSkill.fclSkillTbl[id].Event[4].Param = 434;
+            tblSkill.fclSkillTbl[id].Event[4].Param = 434; // Bloodbath
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 68;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 6;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 6; // Maragidyne
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 69;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 365;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 365; // Anti-Ailments
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 70;
-            tblSkill.fclSkillTbl[id].Event[7].Param = 438;
+            tblSkill.fclSkillTbl[id].Event[7].Param = 438; // Cocytus
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 71;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
         }
@@ -4051,20 +4051,20 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 65536; // Mind
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[1].Param = 24;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 27;
+            tblSkill.fclSkillTbl[id].Event[1].Param = 24; // Mazandyne
+            tblSkill.fclSkillTbl[id].Event[2].Param = 27; // Megidolaon
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
             tblSkill.fclSkillTbl[id].Event[2].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[3].Param = 354;
+            tblSkill.fclSkillTbl[id].Event[3].Param = 354; // Endure
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 85;
             tblSkill.fclSkillTbl[id].Event[3].Type = 1;
             tblSkill.fclSkillTbl[id].Event[4].Param = 0;
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 85;
             tblSkill.fclSkillTbl[id].Event[4].Type = 7;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 311;
+            tblSkill.fclSkillTbl[id].Event[5].Param = 311; // Elec Boost
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 86;
             tblSkill.fclSkillTbl[id].Event[5].Type = 1;
-            tblSkill.fclSkillTbl[id].Event[6].Param = 194;
+            tblSkill.fclSkillTbl[id].Event[6].Param = 194; // Starlight
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 86;
             tblSkill.fclSkillTbl[id].Event[6].Type = 5;
         }
