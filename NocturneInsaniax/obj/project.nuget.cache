@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xJFTSN/T4G/vWQeuY45x0DN9GpS1jMRLlz4S1aWiWzX0zY2XQYx7HZL96P6DKPVfhK5tMLo3IK3sOxF/fHfwzQ==",
+  "dgSpecHash": "8KNvQ6Lxf2CmPbBwK3lsfzpGyslhFXCiNw+GYWjCzvwFBlTfE63kaNG+AYf8wSfqcoRAW+bCkoEGsbq6VAeH2Q==",
   "success": true,
   "projectFilePath": "D:\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\NocturneInsaniax.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "C:\\Users\\alpha\\.nuget\\packages\\mono.cecil\\0.11.4\\mono.cecil.0.11.4.nupkg.sha512",
     "C:\\Users\\alpha\\.nuget\\packages\\monomod.runtimedetour\\22.3.23.4\\monomod.runtimedetour.22.3.23.4.nupkg.sha512",
     "C:\\Users\\alpha\\.nuget\\packages\\monomod.utils\\22.3.23.4\\monomod.utils.22.3.23.4.nupkg.sha512",
+    "C:\\Users\\alpha\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
     "C:\\Users\\alpha\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\alpha\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\alpha\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",

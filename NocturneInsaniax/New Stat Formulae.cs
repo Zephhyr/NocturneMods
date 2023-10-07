@@ -247,7 +247,7 @@ namespace NocturneInsaniax
 
                 double chance = 12 * (lvAvg + avgAgi + (avgLuk * 2)) / (level + agi + (luk * 2));
                 var rand = dds3KernelCore.dds3GetRandIntA(128);
-                __result = rand < chance ? 0 : 1 + datEncount.Get(data.encno).backattack;
+                __result = rand > chance ? 0 : 1 + datEncount.Get(data.encno).backattack;
 
                 return false;
             }
@@ -345,6 +345,12 @@ namespace NocturneInsaniax
                 {
                     datUnitWork_t workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
                     datUnitWork_t workFromFormindex2 = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
+
+                    if (workFromFormindex2.badstatus == 1 || workFromFormindex2.badstatus == 2 || workFromFormindex2.badstatus == 4 || workFromFormindex2.badstatus == 16 || workFromFormindex2.badstatus == 256 || workFromFormindex2.badstatus == 1024)
+                    {
+                        __result = 0;
+                        return;
+                    }
 
                     var userLevel = workFromFormindex1.level;
                     var userAgi = datCalc.datGetParam(workFromFormindex1, 4);

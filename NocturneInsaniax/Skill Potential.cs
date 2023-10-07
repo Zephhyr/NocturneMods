@@ -1259,10 +1259,22 @@ namespace NocturneInsaniax
         }
 
         /*********************************************************************************************
+         * DISPLAY CORRECT POTENTIAL VALUES IN ANALYZE PANEL
+         *********************************************************************************************/
+        [HarmonyPatch(typeof(nbPanelProcess), nameof(nbPanelProcess.nbPanelAnalyzeDraw))]
+        private class SkillPotentialPatch15
+        {
+            public static void Prefix(ref datUnitWork_t pUnitWork)
+            {
+                currentDemonID = pUnitWork.id;
+            }
+        }
+
+        /*********************************************************************************************
          * REMOVE POTENTIAL TEXT FROM ATTRIBUTES IN ANALYZE PANEL
          *********************************************************************************************/
         [HarmonyPatch(typeof(nbPanelProcess), nameof(nbPanelProcess.nbPanelAnalyzeRun))]
-        private class SkillPotentialPatch15
+        private class SkillPotentialPatch16
         {
             public static void Postfix()
             {

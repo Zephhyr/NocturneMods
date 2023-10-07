@@ -55,6 +55,10 @@
             "Il2CppInterop.Runtime": {
               "target": "Package",
               "version": "[1.4.5, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.2, )"
             }
           },
           "imports": [

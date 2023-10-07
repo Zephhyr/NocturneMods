@@ -13,16 +13,8 @@ namespace NocturneInsaniax
 {
     internal partial class NocturneInsaniax : MelonMod
     {
-        [HarmonyPatch(typeof(datEncount), nameof(datEncount.Get))]
-        private class EncounterPatch
-        {
-            public static void Prefix(ref int id)
-            {
-                //id = 725; // Karasu Tengu
-                //id = 744; // 3* Naga Raja
-                //id = 1031; // Mother Harlot
-            }
-        }
+        private static System.Random random = new System.Random();
+        private static Dictionary<int, ActionTracker> actionTrackers = new Dictionary<int, ActionTracker>();
 
         [HarmonyPatch(typeof(nbInit), nameof(nbInit.nbCallNewBattle))]
         private class InitBattlePatch
@@ -94,13 +86,25 @@ namespace NocturneInsaniax
             ushort currentHpPercent = BossCurrentHpPercent(ref a);
             MelonLogger.Msg("Forneus HP%: " + currentHpPercent);
             MelonLogger.Msg("Forneus HP: " + a.work.hp);
-            
+
+            if (currentHpPercent <= 60 && actionTrackers[a.work.id].phase == 1)
+                actionTrackers[a.work.id].phase = 2;
+            else if (currentHpPercent <= 20 && actionTrackers[a.work.id].phase == 2)
+                actionTrackers[a.work.id].phase = 3;
+
             if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(422))
             {
                 UseSkill(ref a, 422); return;
             }
-
-            if (currentHpPercent > 60)
+            else if (actionTrackers[a.work.id].currentBattleActionCount == 2)
+            {
+                UseSkill(ref a, 7);
+                SetTargetingRule(ref code, ref n, 6, n);
+                return;
+            }
+            
+            if (actionTrackers[a.work.id].phase == 1)
+            //if (currentHpPercent > 60)
             {
                 int randomValue = random.Next(2);
                 switch (randomValue)
@@ -109,7 +113,8 @@ namespace NocturneInsaniax
                     case 1: UseSkill(ref a, 7); break;
                 }
             }
-            else if (currentHpPercent > 20)
+            else if (actionTrackers[a.work.id].phase == 2)
+            //else if (currentHpPercent > 20)
             {
                 if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(10))
                     UseSkill(ref a, 10);
@@ -125,9 +130,9 @@ namespace NocturneInsaniax
             }
             else
             {
-                if (actionTrackers[a.work.id].currentTurnActionCount == 1 && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(219))
-                    UseSkill(ref a, 219);
-                else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(244))
+                //if (actionTrackers[a.work.id].currentTurnActionCount == 1 && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(219))
+                //    UseSkill(ref a, 219);
+                if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(244))
                     UseSkill(ref a, 244);
                 else
                 {
@@ -184,10 +189,11 @@ namespace NocturneInsaniax
 
     internal class ActionTracker
     {
-        public ushort currentBattleTurnCount;
-        public ushort currentBattleActionCount;
-        public ushort currentTurnActionCount;
+        public short currentBattleTurnCount;
+        public short currentBattleActionCount;
+        public short currentTurnActionCount;
         public short extraTurns;
+        public short phase;
         public List<ushort> skillsUsedThisBattle;
         public List<ushort> skillsUsedThisTurn;
         
@@ -198,6 +204,7 @@ namespace NocturneInsaniax
             this.currentBattleActionCount = 0;
             this.currentTurnActionCount = 0;
             this.extraTurns = 0;
+            this.phase = 1;
             this.skillsUsedThisBattle = new List<ushort>();
             this.skillsUsedThisTurn = new List<ushort>();
         }

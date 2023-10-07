@@ -993,8 +993,8 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 10;
             datNormalSkill.tbl[id].hpn = 42;
-            datNormalSkill.tbl[id].failpoint = 24;
-            datNormalSkill.tbl[id].criticalpoint = 24;
+            datNormalSkill.tbl[id].failpoint = 20;
+            datNormalSkill.tbl[id].criticalpoint = 20;
         }
 
         private static void HellThrust(ushort id)
@@ -1127,7 +1127,7 @@ namespace NocturneInsaniax
         private static void NeedleRush(ushort id)
         {
             datNormalSkill.tbl[id].cost = 10;
-            datNormalSkill.tbl[id].hpn = 42;
+            datNormalSkill.tbl[id].hpn = 40;
             datNormalSkill.tbl[id].failpoint = 20;
             datNormalSkill.tbl[id].criticalpoint = 20;
         }
