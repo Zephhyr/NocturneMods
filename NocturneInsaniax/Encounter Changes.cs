@@ -22,6 +22,10 @@ namespace NocturneInsaniax
                     nbMisc.nbSetRenzokuEncount(1271);
                     __result = 1;
                 }
+                else if (data.encno == 1270 && datEncount.tbl[1271].devil.All(x => x == 0))
+                {
+                    __result = 0;
+                }
                 else if (data.encno == 1271)
                 {
                     __result = 0;
@@ -47,7 +51,8 @@ namespace NocturneInsaniax
                 MelonLogger.Msg("encpackno: " + encpackno);
 
 
-                if (evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0)
+                if (true)
+                //if (evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0)
                 {
                     encno = NewKagutsuchiEncounter(encno, encpackno);
                 }
@@ -78,6 +83,7 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].maxcall = 0;
             datEncount.tbl[1270].maxparty = 0;
             datEncount.tbl[1270].stageid = 0;
+            datEncount.tbl[1270].devil = new ushort[11];
 
             datEncount.tbl[1271].backattack = -1;
             datEncount.tbl[1271].btlsound = 15;
@@ -104,8 +110,15 @@ namespace NocturneInsaniax
                 case 122: ShinjukuMedicalCentreSlimeEncounter(); return 1270;
                 case 123: ShinjukuMedicalCentreSlimeEncounter(); return 1270;
 
-                case 7: ShinjukuMedicalCentreSlimeEncounter(); return 1270;
-                case 12: ShinjukuMedicalCentreSlimeEncounter(); return 1270;
+                case 7: Overworld1MouRyoZhenEncounter(); return 1270;
+                case 12: Overworld1AngelEncounter(); return 1270;
+
+                case 8: YoyogiParkHighPixieEncounter(); return 1270;
+
+                case 5: ShibuyaChoronzonEncounter(); return 1270;
+                case 6: ShibuyaChoronzonEncounter(); return 1270;
+                case 32: ShibuyaChoronzonEncounter(); return 1270;
+
                 default: return encno;
             }
         }
@@ -116,6 +129,38 @@ namespace NocturneInsaniax
 
             datEncount.tbl[1271].devil[0] = 135;
             datEncount.tbl[1271].devil[1] = 135;
+        }
+
+        private static void Overworld1MouRyoZhenEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 136;
+            datEncount.tbl[1270].devil[1] = 136;
+
+            datEncount.tbl[1271].devil[0] = 126;
+            datEncount.tbl[1271].devil[1] = 126;
+            datEncount.tbl[1271].devil[2] = 126;
+        }
+
+        private static void Overworld1AngelEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 68;
+            datEncount.tbl[1270].devil[1] = 68;
+        }
+
+        private static void YoyogiParkHighPixieEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 61;
+            datEncount.tbl[1270].devil[1] = 59;
+            datEncount.tbl[1270].devil[2] = 61;
+        }
+
+        private static void ShibuyaChoronzonEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 130;
+
+            datEncount.tbl[1271].devil[0] = 136;
+            datEncount.tbl[1271].devil[1] = 130;
+            datEncount.tbl[1271].devil[2] = 136;
         }
 
         //------------------------------------------------------------
