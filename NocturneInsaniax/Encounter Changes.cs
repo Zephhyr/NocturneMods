@@ -51,8 +51,8 @@ namespace NocturneInsaniax
                 MelonLogger.Msg("encpackno: " + encpackno);
 
 
-                if (true)
-                //if (evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0)
+                //if (true)
+                if (evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0)
                 {
                     encno = NewKagutsuchiEncounter(encno, encpackno);
                 }
@@ -119,6 +119,8 @@ namespace NocturneInsaniax
                 case 6: ShibuyaChoronzonEncounter(); return 1270;
                 case 32: ShibuyaChoronzonEncounter(); return 1270;
 
+                case 9: AmalaNetworkShiisaaEncounter(); return 1270;
+
                 default: return encno;
             }
         }
@@ -161,6 +163,12 @@ namespace NocturneInsaniax
             datEncount.tbl[1271].devil[0] = 136;
             datEncount.tbl[1271].devil[1] = 130;
             datEncount.tbl[1271].devil[2] = 136;
+        }
+
+        private static void AmalaNetworkShiisaaEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 33;
+            datEncount.tbl[1270].devil[1] = 33;
         }
 
         //------------------------------------------------------------

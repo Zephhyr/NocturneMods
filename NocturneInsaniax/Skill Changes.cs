@@ -340,7 +340,7 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int nskill)
             {
-                // If using an hourglass, set the Kagutsuchi phase to full
+                // If using a bright hourglass, set the Kagutsuchi phase to full
                 if (nskill == 78)
                 {
                     if (evtMoon.evtGetAgeOfMoon16() != 8)
@@ -357,6 +357,21 @@ namespace NocturneInsaniax
 
                         dds3GlobalWork.DDS3_GBWK.Moon.MoveCnt = 0; // Beginning of a new phase
                         evtMoon.evtSetAgeOfMoon(8); // Set Kagutsuchi's phase to full
+                    }
+                }
+                // If using a dark hourglass, set the Kagutsuchi phase to full
+                else if (nskill == 91)
+                {
+                    if (evtMoon.evtGetAgeOfMoon16() != 0)
+                    {
+                        // Clear all effects that last "until a new kagutsuchi"
+                        fldMain.fldEsutoMaClearMsg();
+                        fldMain.fldRiberaMaClearMsg();
+                        fldMain.fldRifutoMaClearMsg();
+                        fldMain.fldLightMaClearMsg();
+
+                        dds3GlobalWork.DDS3_GBWK.Moon.MoveCnt = 0; // Beginning of a new phase
+                        evtMoon.evtSetAgeOfMoon(0); // Set Kagutsuchi's phase to full
                     }
                 }
             }
@@ -756,11 +771,13 @@ namespace NocturneInsaniax
             Lightoma(76);
             Dekunda(77);
 
-            HourglassSkill(78);
+            BrightHourglassSkill(78);
 
             Pestilence(79);
 
             PoisonArrow(90);
+
+            DarkHourglassSkill(91);
 
             Lunge(96);
             HellThrust(97);
@@ -800,6 +817,8 @@ namespace NocturneInsaniax
             IronClaw(126);
 
             GodlyLight(127);
+
+            NeedleOrbSkill(128);
 
             DeadlyFury(131);
             JavelinRain(133);
@@ -1840,6 +1859,53 @@ namespace NocturneInsaniax
             var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
             skillLevel.SkillID = id;
             skillLevel.Level = 10;
+        }
+
+        private static void NeedleOrbSkill(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 128;
+            datSkill.tbl[id].skillattr = 0;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 1;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 1;
+            datNormalSkill.tbl[id].criticalpoint = 18;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 18;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 24;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 5;
+            datNormalSkill.tbl[id].targetcntmin = 3;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 1;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 111);
         }
 
         private static void Rend(ushort id)
@@ -4061,6 +4127,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].basstatus = 64;
             datNormalSkill.tbl[id].cost = 20;
             datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].hitlevel = 255;
             datNormalSkill.tbl[id].hojopoint = 1;
             datNormalSkill.tbl[id].hojotype = 128;
             datNormalSkill.tbl[id].hpn = 50;
@@ -5184,7 +5251,17 @@ namespace NocturneInsaniax
             datSkill.tbl[id].skillattr = 15; // Utility skill
         }
 
-        private static void HourglassSkill(ushort id)
+        private static void BrightHourglassSkill(ushort id)
+        {
+            datSkill.tbl[id].skillattr = 15; // Utility skill
+            datNormalSkill.tbl[id].koukatype = 1; // Not Physical
+            datNormalSkill.tbl[id].program = 14; // Phase shift
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targettype = 3; // Field
+        }
+
+        private static void DarkHourglassSkill(ushort id)
         {
             datSkill.tbl[id].skillattr = 15; // Utility skill
             datNormalSkill.tbl[id].koukatype = 1; // Not Physical
