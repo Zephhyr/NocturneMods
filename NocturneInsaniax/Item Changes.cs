@@ -198,5 +198,32 @@ namespace NocturneInsaniax
             fclJunkShopTable.fclShopItemPackTbl[id].ItemList[8].ID = 67; // Iyomante
             fclJunkShopTable.fclShopItemPackTbl[id].ItemList[9].ID = 68; // Shiranui
         }
+
+        //------------------------------------------------------------
+
+        private static void ApplyItemBoxChanges()
+        {
+            //fldGlobal.fldHitData._fldItemBoxTbl[335]._Param = int.MaxValue;
+            //fldGlobal.fldHitData._fldItemBoxTbl[335]._Type = 2;
+            //fldGlobal.fldHitData._fldItemBoxTbl[335]._ItemID = 0;
+            //fldGlobal.fldHitData._fldItemBoxTbl[335]._ItemNum = 0;
+            //fldGlobal.fldHitData._fldItemBoxTbl[335]._Trap = 1;
+            //fldGlobal.fldHitData._fldItemBoxTbl[335]._Param = 451;
+
+            //fldGlobal.fldHitData._fldNpcUp[52]._model_id2 = 74;
+
+            //fldGlobal.fldHitData._fldItemBoxTbl[20]._Param = 9000000;
+
+            // First Item Box in Amala Network 1
+            fldGlobal.fldHitData._fldItemBoxTbl[22]._ItemID = 29;
+            fldGlobal.fldHitData._fldItemBoxTbl[22]._ItemNum = 2;
+
+            // First Item Box in Treasure Room in Amala Network 1
+            fldGlobal.fldHitData._fldItemBoxTbl[27]._ItemID = 27;
+
+            // New Item Box outside Shibuya
+            fldGlobal.fldHitData._fldItemBoxTbl[335]._ItemID = 47;
+            fldGlobal.fldHitData._fldItemBoxTbl[335]._ItemNum = 5;
+        }
     }
 }

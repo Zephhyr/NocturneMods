@@ -7,7 +7,6 @@ using Il2Cppresult2_H;
 using Il2Cppnewbattle_H;
 using Il2Cppeffect_H;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 namespace NocturneInsaniax
 {
@@ -394,6 +393,7 @@ namespace NocturneInsaniax
                         (darkSkills.Contains(nskill) && !(darkResistance.Length == 32 && darkResistance[darkResistance.Length - 32] == '1' && darkResistance[darkResistance.Length - 21] == '0')))
                     {
                         __result = 0;
+                        return;
                     }
                 }
 
@@ -402,11 +402,15 @@ namespace NocturneInsaniax
                 if (__result == 1 && datCalc.datCheckSyojiSkill(work, 366) != 0 && datNormalSkill.tbl[nskill].basstatus != 1 && datNormalSkill.tbl[nskill].basstatus != 2)
                 {
                     __result = (uint)random.Next(2);
+                    return;
                 }
 
-                if (work.id >= 256 && (datNormalSkill.tbl[nskill].basstatus == 8 || datNormalSkill.tbl[nskill].basstatus == 16 || datNormalSkill.tbl[nskill].basstatus == 32 || datNormalSkill.tbl[nskill].basstatus == 128 || datNormalSkill.tbl[nskill].basstatus == 1024 || datNormalSkill.tbl[nskill].basstatus == 2048))
+                int[] bossList = new int[] { 256, 257, 294, 295, 296 };
+
+                if (bossList.Contains(work.id) && (datNormalSkill.tbl[nskill].basstatus == 8 || datNormalSkill.tbl[nskill].basstatus == 16 || datNormalSkill.tbl[nskill].basstatus == 32 || datNormalSkill.tbl[nskill].basstatus == 128 || datNormalSkill.tbl[nskill].basstatus == 1024 || datNormalSkill.tbl[nskill].basstatus == 2048))
                 {
                     __result = 0;
+                    return;
                 }
             }
         }

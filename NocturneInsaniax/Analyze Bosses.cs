@@ -58,7 +58,7 @@ namespace NocturneInsaniax
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill03/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(244);
                             break;
                         case 0257: //Specter1 (Not merged)
-                            affinitiesText = "Null: Light/Dark/Nerve/Mind • Str: Magic";
+                            affinitiesText = "Null: Dark• Str: Magic";
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill01/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(1);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(190);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill03/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(232);
@@ -76,17 +76,17 @@ namespace NocturneInsaniax
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill03/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(57);
                             break;
                         case 0294: //Specter4 (6 merged)
-                            affinitiesText = "Null: Light/Dark/Nerve/Mind • Str: Magic";
+                            affinitiesText = "Null: Dark • Str: Magic";
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill01/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(153);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(1);
                             break;
                         case 0295: //Specter5 (4 or 5 merged)
-                            affinitiesText = "Null: Light/Dark/Nerve/Mind • Str: Magic";
+                            affinitiesText = "Null: Dark • Str: Magic";
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill01/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(153);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(1);
                             break;
                         case 0296: //Specter6 (2 or 3 merged)
-                            affinitiesText = "Null: Light/Dark/Nerve/Mind • Str: Magic";
+                            affinitiesText = "Null: Dark • Str: Magic";
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill01/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(153);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(1);
                             break;

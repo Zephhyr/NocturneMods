@@ -74,14 +74,44 @@ namespace NocturneInsaniax
                 MelonLogger.Msg("-Action Starts-");
                 switch (a.work.id)
                 {
-                    case 256: RunNewForneusAI(ref a, ref code, ref n); break;
+                    case 33: ShiisaaAI(ref a, ref code, ref n); break;
+                    case 256: NewForneusAI(ref a, ref code, ref n); break;
+                    case 294: BigSpecterAI(ref a, ref code, ref n); break;
+                    case 295: BigSpecterAI(ref a, ref code, ref n); break;
+                    case 296: BigSpecterAI(ref a, ref code, ref n); break;
                     default: break;
                 }
                 MelonLogger.Msg("skill: " + a.work.nowindex);
             }
         }
 
-        private static void RunNewForneusAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        private static void ShiisaaAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (actionTrackers[a.work.id].currentBattleActionCount <= 2)
+                UseSkill(ref a, 203);
+            else
+            {
+                int randomValue = random.Next(5);
+                switch (randomValue)
+                {
+                    case 0: UseNormalAttack(ref a); break;
+                    case 1: UseSkill(ref a, 121); break;
+                    case 2: UseSkill(ref a, 123); break;
+                    case 3: UseSkill(ref a, 182); break;
+                    case 4: UseSkill(ref a, 182); break;
+                }
+            }
+        }
+
+        private static void BigSpecterAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(422))
+            {
+                UseSkill(ref a, 422); return;
+            }
+        }
+
+        private static void NewForneusAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
             ushort currentHpPercent = BossCurrentHpPercent(ref a);
             MelonLogger.Msg("Forneus HP%: " + currentHpPercent);

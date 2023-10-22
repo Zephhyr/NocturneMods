@@ -13,7 +13,7 @@ namespace NocturneInsaniax
     {
         public override void OnInitializeMelon()
         {
-            //foreach (var skill in tblSkill.fclSkillTbl[194].Event)
+            //foreach (var skill in tblSkill.fclSkillTbl[192].Event)
             //    MelonLogger.Msg(skill.TargetLevel + " - " + skill.Param + " - " + skill.Type);
 
             //foreach (var skill in tblHearts.fclHeartsTbl[1].Skill)
@@ -98,10 +98,10 @@ namespace NocturneInsaniax
 
             public static void Postfix(string pFileName, string akey)
             {
-                if (pFileName == "dds3data/fld/f/f002/f002_001")
+                if (pFileName == "dds3data/fld/f/f002/f002_001") // Overworld 1
                 {
                     // Co-ordinates are divided by 100 in-game
-                    fld_Npc.fldItemBoxAdd(335, -117.80762f, -821.31445f, -3201.4497f, new Vector4(0, 0, 0, 1));
+                    fld_Npc.fldItemBoxAdd(335, -117.80762f, -821.31445f, -3201.4497f, new Vector4(0, 0, 0, 1)); // Add Item Box outside Shibuya
                 }
             }
         }
@@ -117,23 +117,7 @@ namespace NocturneInsaniax
                 //var output = JsonConvert.SerializeObject(fld_Npc.gfldTakaraWork);
                 //MelonLogger.Msg(output);
 
-                //fldGlobal.fldHitData._fldItemBoxTbl[335]._Param = int.MaxValue;
-                //fldGlobal.fldHitData._fldItemBoxTbl[335]._Type = 2;
-                //fldGlobal.fldHitData._fldItemBoxTbl[335]._ItemID = 0;
-                //fldGlobal.fldHitData._fldItemBoxTbl[335]._ItemNum = 0;
-                //fldGlobal.fldHitData._fldItemBoxTbl[335]._Trap = 1;
-                //fldGlobal.fldHitData._fldItemBoxTbl[335]._Param = 451;
-
-                //fldGlobal.fldHitData._fldNpcUp[52]._model_id2 = 74;
-
-                //fldGlobal.fldHitData._fldItemBoxTbl[20]._Param = 9000000;
-                
-                
-                fldGlobal.fldHitData._fldItemBoxTbl[22]._ItemID = 29;
-                fldGlobal.fldHitData._fldItemBoxTbl[22]._ItemNum = 2;
-
-                fldGlobal.fldHitData._fldItemBoxTbl[335]._ItemID = 47;
-                fldGlobal.fldHitData._fldItemBoxTbl[335]._ItemNum = 5;            
+                ApplyItemBoxChanges();
             }
         }
     }

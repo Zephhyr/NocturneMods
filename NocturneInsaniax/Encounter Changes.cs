@@ -120,6 +120,8 @@ namespace NocturneInsaniax
                 case 32: ShibuyaChoronzonEncounter(); return 1270;
 
                 case 9: AmalaNetworkShiisaaEncounter(); return 1270;
+                case 10: AmalaNetworkShiisaaEncounter(); return 1270;
+                case 11: AmalaNetworkShiisaaEncounter(); return 1270;
 
                 default: return encno;
             }
@@ -177,6 +179,7 @@ namespace NocturneInsaniax
         {
             datEncount.tbl[1269].flag = 13; // Forced Kodama + Will o' Wisp in Unknown Realm
             datEncount.tbl[14].flag = 11; // Boss Forneus
+            datEncount.tbl[20].maxparty = 7; // Boss Specter 1
         }
     }
 }

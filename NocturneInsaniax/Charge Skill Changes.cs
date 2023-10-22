@@ -93,7 +93,7 @@ namespace NocturneInsaniax
                 else
                 {
                     currentSideBuffs = new short[nbMainProcess.nbGetMainProcessData().enemypcnt][];
-                    for (int i = 4; i < (4 + nbMainProcess.nbGetMainProcessData().enemypcnt); i++)
+                    for (int i = 4; i < (4 + nbMainProcess.nbGetMainProcessData().enemypcnt) && nbMainProcess.nbGetMainProcessData().enemyunit[i - 4].hp > 0 && nbMainProcess.nbGetMainProcessData().enemyunit[i - 4].badstatus != 2048; i++)
                         currentSideBuffs[i - 4] =  nbMainProcess.nbGetMainProcessData().party[nbMainProcess.nbGetMainProcessData().form[i].partyindex].count;
                 }
             }

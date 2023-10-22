@@ -280,7 +280,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 254 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 255 
             new sbyte[] {0    , 0    , 4    , -5   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 256 Boss Forneus
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 257 Boss Specter 1 (Mini)
+            new sbyte[] {0    , 3    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0 }, // 257 Boss Specter 1 (Mini)
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 258 Boss Ahriman 2
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 259 Boss Noah 2
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 260 Forced Incubus
@@ -318,9 +318,9 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 291 Boss Ahriman 1
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 292 Boss Noah 1
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 293 Boss Kagutsuchi 1
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 294 Boss Specter 1 (Merged 6)
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 295 Boss Specter 1 (Merged 4-5)
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 296 Boss Specter 1 (Merged 2-3)
+            new sbyte[] {0    , 6    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 294 Boss Specter 1 (Merged 6)
+            new sbyte[] {0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 295 Boss Specter 1 (Merged 4-5)
+            new sbyte[] {0    , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 296 Boss Specter 1 (Merged 2-3)
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 297 Boss Mizuchi
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 298 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 299 Boss Sakahagi

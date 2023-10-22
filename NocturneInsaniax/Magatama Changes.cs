@@ -233,7 +233,7 @@ namespace NocturneInsaniax
 
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 176;
-            tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 9;
+            tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 8;
             tblHearts.fclHeartsTbl[id].Skill[1].ID = 309;
             tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 14;
             tblHearts.fclHeartsTbl[id].Skill[2].ID = 101;
