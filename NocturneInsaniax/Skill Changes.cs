@@ -12,6 +12,7 @@ namespace NocturneInsaniax
 {
     internal partial class NocturneInsaniax : MelonMod
     {
+        public static int[] bossList = new int[] { 256, 257, 294, 295, 296 };
         public static nbActionProcessData_t? actionProcessData;
 
         [HarmonyPatch(typeof(datSkillName), nameof(datSkillName.Get))]
@@ -326,10 +327,23 @@ namespace NocturneInsaniax
                 actionProcessData = a;
 
                 datUnitWork_t target = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
-                if (datNormalSkill.tbl[nskill].koukatype == 0 && (target.badstatus == 1 || target.badstatus == 2))
+                if ((datNormalSkill.tbl[nskill].koukatype == 0 && (target.badstatus == 1 || target.badstatus == 2)) || target.badstatus == 256)
                 {
                     var form = a.data.form[dformindex];
                     nbMakePacket.nbMakeBadKaifukuPacket(frame, a.uniqueid, ref form);
+                }
+            }
+        }
+
+        [HarmonyPatch(typeof(nbActionProcess), nameof(nbActionProcess.SetDamagePacket))]
+        private class PoisonDamagePatch
+        {
+            public static void Prefix(ref nbActionProcessData_t a, ref int hp)
+            {
+                if (a.work.badstatus == 64)
+                {
+                    if (bossList.Contains(a.work.id))
+                        hp = Math.Max(a.work.hp / 16, a.work.maxhp / 64);
                 }
             }
         }
@@ -404,8 +418,6 @@ namespace NocturneInsaniax
                     __result = (uint)random.Next(2);
                     return;
                 }
-
-                int[] bossList = new int[] { 256, 257, 294, 295, 296 };
 
                 if (bossList.Contains(work.id) && (datNormalSkill.tbl[nskill].basstatus == 8 || datNormalSkill.tbl[nskill].basstatus == 16 || datNormalSkill.tbl[nskill].basstatus == 32 || datNormalSkill.tbl[nskill].basstatus == 128 || datNormalSkill.tbl[nskill].basstatus == 1024 || datNormalSkill.tbl[nskill].basstatus == 2048))
                 {

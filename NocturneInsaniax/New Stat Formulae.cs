@@ -311,9 +311,14 @@ namespace NocturneInsaniax
                 bool isWeak = resistance[0] == '1';
 
                 if (isWeak)
-                    __result = 2;
-                else if (datNormalSkill.tbl[nskill].koukatype == 0 && (workFromFormindex2.badstatus == 1 || workFromFormindex2.badstatus == 2))
-                    __result = 1;
+                    __result = 2; // Weak hit
+                else if (workFromFormindex2.badstatus == 4 || workFromFormindex2.badstatus == 256 ||// If target is asleep or stunned
+                    (datSkill.tbl[nskill].skillattr == 1 && workFromFormindex2.badstatus == 64) || // If attack is fire and target is poisoned
+                    (datSkill.tbl[nskill].skillattr == 2 && workFromFormindex2.badstatus == 16) || // If attack is ice and target is bound
+                    (datSkill.tbl[nskill].skillattr == 3 && workFromFormindex2.badstatus == 32) || // If attack is elec and target is muted
+                    (datSkill.tbl[nskill].skillattr == 4 && workFromFormindex2.badstatus == 8) || // If attack is force and target is panicked
+                    (datNormalSkill.tbl[nskill].koukatype == 0 && (workFromFormindex2.badstatus == 1 || workFromFormindex2.badstatus == 2))) // If attack is physical and target is shocked or frozen
+                    __result = 1; // Critical hit
                 else
                 {
                     var critRate = datNormalSkill.tbl[nskill].criticalpoint;
@@ -346,9 +351,14 @@ namespace NocturneInsaniax
                     datUnitWork_t workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
                     datUnitWork_t workFromFormindex2 = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
 
-                    if (workFromFormindex2.badstatus == 1 || workFromFormindex2.badstatus == 2 || workFromFormindex2.badstatus == 4 || workFromFormindex2.badstatus == 16 || workFromFormindex2.badstatus == 256 || workFromFormindex2.badstatus == 1024)
+                    if (workFromFormindex2.badstatus == 1 || // Shocked
+                        workFromFormindex2.badstatus == 2 || // Frozen
+                        workFromFormindex2.badstatus == 4 || // Asleep
+                        workFromFormindex2.badstatus == 16 || // Bound
+                        workFromFormindex2.badstatus == 256 || // Stunned
+                        workFromFormindex2.badstatus == 1024) // Petrified
                     {
-                        __result = 0;
+                        __result = 0; // Hit
                         return;
                     }
 

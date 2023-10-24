@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using Il2Cpp;
+using Il2Cppnewbattle_H;
 using MelonLoader;
 using Newtonsoft.Json;
 using UnityEngine;

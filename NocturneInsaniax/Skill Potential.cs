@@ -970,6 +970,27 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref nbMainProcessData_t data)
             {
+                if (actionProcessData != null)
+                {
+                    if (actionProcessData.work.badstatus == 4 ||
+                        actionProcessData.work.badstatus == 16 ||
+                        actionProcessData.work.badstatus == 32 ||
+                        actionProcessData.work.badstatus == 64 ||
+                        actionProcessData.work.badstatus == 256)
+                    {
+                        var luk = datCalc.datGetParam(actionProcessData.work, 5) + 20;
+                        if (datCalc.datCheckSyojiSkill(actionProcessData.work, 366) != 0)
+                            luk += 20;
+                        var rand = dds3KernelCore.dds3GetRandIntA(100);
+
+                        if (rand < luk)
+                        {
+                            var form = actionProcessData.form;
+                            nbMakePacket.nbMakeBadKaifukuPacket(0, actionProcessData.uniqueid, ref form);
+                        }
+                    }
+                }
+
                 if (data.activeunit >= 0)
                 {
                     var unitFormIndex = data.party[data.activeunit].formindex;

@@ -56,15 +56,15 @@ namespace NocturneInsaniax
                         s.commlist[2] = itemCommands;
                         s.commcnt[2] = itemIndices.Count;
                     }
-                    
+
 
                     // Test - Add all skills
                     //var skillCommands = new ushort[288];
                     //for (ushort i = 0; i < 288; i++)
                     //    skillCommands[i] = i;
                     //skillCommands[0] = s.commlist[0][0];
-                    //skillCommands[1] = 471;
-                    //skillCommands[2] = 462;
+                    //skillCommands[1] = 90;
+                    //skillCommands[2] = 214;
                     //skillCommands[3] = 443;
 
                     //s.commlist[0] = skillCommands;
