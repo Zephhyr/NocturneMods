@@ -108,7 +108,11 @@ namespace NocturneInsaniax
                     if (ivar2 != 0)
                         __result -= ivar2;
 
-                    nbHelpProcess.nbDispText(datDevilName.Get(nbMainProcess.nbGetUnitWorkFromFormindex(formindex).id) + " is building up power!", string.Empty, 2, 45, 2315190144, false);
+                    string devilName = nbMainProcess.nbGetUnitWorkFromFormindex(formindex).id != 0
+                        ? datDevilName.Get(nbMainProcess.nbGetUnitWorkFromFormindex(formindex).id)
+                        : frName.frGetCNameString(0);
+
+                    nbHelpProcess.nbDispText(devilName + " is building up power!", string.Empty, 2, 45, 2315190144, false);
                 }
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 2 && hojopoint == 1 && actionProcessData.work.nowindex == 427)
                 {

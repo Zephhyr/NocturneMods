@@ -353,29 +353,15 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int nskill)
             {
-                // If using a bright hourglass, set the Kagutsuchi phase to full
+                // If using an hourglass
                 if (nskill == 78)
                 {
-                    if (evtMoon.evtGetAgeOfMoon16() != 8)
+                    if (evtMoon.evtGetAgeOfMoon16() < 8)
                     {
-                        // If the full Kagutsuchi has already passed
-                        if (evtMoon.evtGetAgeOfMoon16() > 8)
-                        {
-                            // Clear all effects that last "until a new kagutsuchi"
-                            fldMain.fldEsutoMaClearMsg();
-                            fldMain.fldRiberaMaClearMsg();
-                            fldMain.fldRifutoMaClearMsg();
-                            fldMain.fldLightMaClearMsg();
-                        }
-
                         dds3GlobalWork.DDS3_GBWK.Moon.MoveCnt = 0; // Beginning of a new phase
                         evtMoon.evtSetAgeOfMoon(8); // Set Kagutsuchi's phase to full
                     }
-                }
-                // If using a dark hourglass, set the Kagutsuchi phase to full
-                else if (nskill == 91)
-                {
-                    if (evtMoon.evtGetAgeOfMoon16() != 0)
+                    else if (evtMoon.evtGetAgeOfMoon16() < 16)
                     {
                         // Clear all effects that last "until a new kagutsuchi"
                         fldMain.fldEsutoMaClearMsg();
@@ -385,6 +371,37 @@ namespace NocturneInsaniax
 
                         dds3GlobalWork.DDS3_GBWK.Moon.MoveCnt = 0; // Beginning of a new phase
                         evtMoon.evtSetAgeOfMoon(0); // Set Kagutsuchi's phase to full
+                    }
+                }
+                // If using a cursed gospel
+                if (nskill == 91)
+                {
+                    datUnitWork_t unit = dds3GlobalWork.DDS3_GBWK.unitwork[0];
+                    if (unit.level > 1)
+                    {
+                        unit.level--;
+                        unit.exp = rstCalcCore.GetNextExpDisp(unit, 0) - 1;
+
+                        bool hasLostStat = false;
+                        List<short> statList = new List<short> { 0, 2, 3, 4, 5 };
+
+                        while (!hasLostStat)
+                        {
+                            short stat = statList[random.Next(statList.Count)];
+
+                            // If the BASE stat is higher than 1 (total stat minus magatama stat)
+                            if (unit.param[stat] - tblHearts.fclHeartsTbl[dds3GlobalWork.DDS3_GBWK.heartsequip].GrowParamTbl[stat] > 1)
+                            {
+                                unit.param[stat]--;
+                                hasLostStat = true;
+                            }
+                            else
+                            {
+                                statList.Remove(stat);
+                            }
+                        }
+
+                        dds3GlobalWork.DDS3_GBWK.unitwork[0] = unit;
                     }
                 }
             }
@@ -787,13 +804,13 @@ namespace NocturneInsaniax
             Lightoma(76);
             Dekunda(77);
 
-            BrightHourglassSkill(78);
+            HourglassSkill(78);
 
             Pestilence(79);
 
             PoisonArrow(90);
 
-            DarkHourglassSkill(91);
+            CursedGospelSkill(91);
 
             Lunge(96);
             HellThrust(97);
@@ -5267,7 +5284,7 @@ namespace NocturneInsaniax
             datSkill.tbl[id].skillattr = 15; // Utility skill
         }
 
-        private static void BrightHourglassSkill(ushort id)
+        private static void HourglassSkill(ushort id)
         {
             datSkill.tbl[id].skillattr = 15; // Utility skill
             datNormalSkill.tbl[id].koukatype = 1; // Not Physical
@@ -5277,7 +5294,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].targettype = 3; // Field
         }
 
-        private static void DarkHourglassSkill(ushort id)
+        private static void CursedGospelSkill(ushort id)
         {
             datSkill.tbl[id].skillattr = 15; // Utility skill
             datNormalSkill.tbl[id].koukatype = 1; // Not Physical

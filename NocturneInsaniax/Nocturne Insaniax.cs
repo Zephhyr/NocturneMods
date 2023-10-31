@@ -28,6 +28,9 @@ namespace NocturneInsaniax
             //}
             //MelonLogger.Msg("]");
 
+            //var output = JsonConvert.SerializeObject(fclRagShopTable.fclRagItemPackTbl);
+            //MelonLogger.Msg(output);
+
             ApplySkillChanges();
             ApplyItemChanges();
             ApplyShopChanges();
