@@ -119,9 +119,19 @@ namespace NocturneInsaniax
                 case 6: ShibuyaChoronzonEncounter(); return 1270;
                 case 32: ShibuyaChoronzonEncounter(); return 1270;
 
-                case 9: AmalaNetworkShiisaaEncounter(); return 1270;
-                case 10: AmalaNetworkShiisaaEncounter(); return 1270;
-                case 11: AmalaNetworkShiisaaEncounter(); return 1270;
+                case 9: AmalaNetworkAquansEncounter(); return 1270;
+                case 10: AmalaNetworkAquansEncounter(); return 1270;
+                case 11: AmalaNetworkAquansEncounter(); return 1270;
+
+                case 13: GinzaShiisaaEncounter(); return 1270;
+                case 33: GinzaShiisaaEncounter(); return 1270;
+                case 34: GinzaShiisaaEncounter(); return 1270;
+
+                case 14: OverworldArchangelEncounter(); return 1270;
+
+                case 15: HarumiWarehouseChatterskullEncounter(); return 1270;
+
+                case 128: UnderpassAmeNoUzumeEncounter(); return 1270;
 
                 default: return encno;
             }
@@ -167,10 +177,35 @@ namespace NocturneInsaniax
             datEncount.tbl[1271].devil[2] = 136;
         }
 
-        private static void AmalaNetworkShiisaaEncounter()
+        private static void AmalaNetworkAquansEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 37;
+        }
+
+        private static void GinzaShiisaaEncounter()
         {
             datEncount.tbl[1270].devil[0] = 33;
             datEncount.tbl[1270].devil[1] = 33;
+        }
+
+        private static void OverworldArchangelEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 67;
+            datEncount.tbl[1270].devil[1] = 67;
+        }
+
+        private static void HarumiWarehouseChatterskullEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 177;
+            datEncount.tbl[1270].devil[1] = 177;
+            datEncount.tbl[1270].devil[2] = 177;
+        }
+
+        private static void UnderpassAmeNoUzumeEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 90;
+            datEncount.tbl[1270].devil[1] = 11;
+            datEncount.tbl[1270].devil[2] = 90;
         }
 
         //------------------------------------------------------------

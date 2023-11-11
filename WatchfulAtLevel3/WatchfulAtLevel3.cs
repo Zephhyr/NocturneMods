@@ -91,6 +91,18 @@ namespace WatchfulAtLevel3
             tblSkill.fclSkillTbl[192].Event[11].Param = 361; // Son's Oath
             tblSkill.fclSkillTbl[192].Event[11].TargetLevel = 80;
             tblSkill.fclSkillTbl[192].Event[11].Type = 1;
+
+            // Stats
+            datDevilFormat.tbl[192].level = 1;
+            datDevilFormat.tbl[192].param[0] = 8;
+            datDevilFormat.tbl[192].param[2] = 6;
+            datDevilFormat.tbl[192].param[3] = 6;
+            datDevilFormat.tbl[192].param[4] = 8;
+            datDevilFormat.tbl[192].param[5] = 3;
+            datDevilFormat.tbl[192].hp = 42;
+            datDevilFormat.tbl[192].maxhp = 42;
+            datDevilFormat.tbl[192].mp = 21;
+            datDevilFormat.tbl[192].maxmp = 21;
         }
 
         [HarmonyPatch(typeof(datSkillName), nameof(datSkillName.Get))]

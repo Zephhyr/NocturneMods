@@ -70,7 +70,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 3    , 0    , -3   , 3    , 0    , 0    , 0    , -3   , -3   , -3   , 0    , 0    , 0    , 1    , 0 }, // 048 Karasu Tengu
             new sbyte[] {-4   , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 4    , 0    , 0    , 0    , 0    , 2    , 0    , 0 }, // 049 Dís
             new sbyte[] {0    , -4   , 3    , 0    , 0    , 0    , 0    , 0    , 3    , 3    , 3    , 0    , 0    , 1    , 0    , 0 }, // 050 Isora
-            new sbyte[] {0    , -3   , 0    , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 1    , 0 }, // 051 Apsaras
+            new sbyte[] {0    , -3   , 0    , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0    , 0    , 1    , 1    , 0 }, // 051 Apsaras
             new sbyte[] {0    , 0    , 0    , -3   , 3    , 0    , 0    , 0    , -3   , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 052 Koppa Tengu
             new sbyte[] {-4   , 4    , 4    , 4    , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 1    , 0 }, // 053 Titania
             new sbyte[] {0    , 3    , 3    , 3    , 3    , -4   , 0    , -4   , 0    , 0    , 0    , 0    , 0    , 2    , 2    , 0 }, // 054 Oberon
@@ -494,7 +494,7 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+3: Fire/Force • +1: Supp  <material=\"MsgFont1\">-3: Elec/Ailments", // 048 Karasu Tengu
             "  <material=\"MsgFont4\">+4: Curse • +2: Fire/Heal  <material=\"MsgFont1\">-4: Phys", // 049 Dís
             "  <material=\"MsgFont4\">+3: Ice/Ailments • +1: Heal  <material=\"MsgFont1\">-4: Fire", // 050 Isora
-            "  <material=\"MsgFont4\">+2: Elec • +1: Heal/Supp  <material=\"MsgFont1\">-3: Fire", // 051 Apsaras
+            "  <material=\"MsgFont4\">+2: Elec/Mind • +1: Heal/Supp  <material=\"MsgFont1\">-3: Fire", // 051 Apsaras
             "  <material=\"MsgFont4\">+3: Force • +1: Supp  <material=\"MsgFont1\">-3: Elec/Curse", // 052 Koppa Tengu
             "  <material=\"MsgFont4\">+4: Magic • +3: Heal • +1: Supp  <material=\"MsgFont1\">-4: Phys", // 053 Titania
             "  <material=\"MsgFont4\">+3: Magic • +2: Heal/Supp  <material=\"MsgFont1\">-4: Dark/Almighty", // 054 Oberon

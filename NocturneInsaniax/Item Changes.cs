@@ -32,7 +32,7 @@ namespace NocturneInsaniax
                     case 59: __result = "Focus Rock"; return false;
                     case 60: __result = "Concentrate Rock"; return false;
                     case 62: __result = "Cursed Gospel"; return false;
-                    case 63: __result = "Impel Rock"; return false;
+                    case 63: __result = "Impel Stone"; return false;
                     default: return true;
                 }
             }
@@ -147,7 +147,7 @@ namespace NocturneInsaniax
             FocusRockItem(59);
             ConcentrateRockItem(60);
             CursedGospelItem(62);
-            ImpelRockItem(63);
+            ImpelStoneItem(63);
         }
 
         private static void ChakraElixir(ushort id)
@@ -250,7 +250,7 @@ namespace NocturneInsaniax
             datItem.tbl[id].use = 1;
         }
 
-        private static void ImpelRockItem(ushort id)
+        private static void ImpelStoneItem(ushort id)
         {
             datItem.tbl[id].flag = 4;
             datItem.tbl[id].price = 12500;
