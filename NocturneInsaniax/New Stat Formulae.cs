@@ -312,12 +312,13 @@ namespace NocturneInsaniax
 
                 if (isWeak)
                     __result = 2; // Weak hit
-                else if (workFromFormindex2.badstatus == 4 || workFromFormindex2.badstatus == 256 ||// If target is asleep or stunned
+                else if ((workFromFormindex2.badstatus == 4 || workFromFormindex2.badstatus == 256 ||// If target is asleep or stunned
                     (datSkill.tbl[nskill].skillattr == 1 && workFromFormindex2.badstatus == 64) || // If attack is fire and target is poisoned
                     (datSkill.tbl[nskill].skillattr == 2 && workFromFormindex2.badstatus == 16) || // If attack is ice and target is bound
                     (datSkill.tbl[nskill].skillattr == 3 && workFromFormindex2.badstatus == 32) || // If attack is elec and target is muted
                     (datSkill.tbl[nskill].skillattr == 4 && workFromFormindex2.badstatus == 8) || // If attack is force and target is panicked
                     (datNormalSkill.tbl[nskill].koukatype == 0 && (workFromFormindex2.badstatus == 1 || workFromFormindex2.badstatus == 2))) // If attack is physical and target is shocked or frozen
+                    && (datNormalSkill.tbl[nskill].hptype == 1 || datNormalSkill.tbl[nskill].hptype == 6 || datNormalSkill.tbl[nskill].hptype == 12 || datNormalSkill.tbl[nskill].hptype == 14))
                     __result = 1; // Critical hit
                 else
                 {
@@ -373,6 +374,8 @@ namespace NocturneInsaniax
                     var evasionBuff = nbCalc.nbGetHojoRitu(dformindex, 6);
 
                     var chance = ((datNormalSkill.tbl[nskill].hitlevel - datNormalSkill.tbl[nskill].failpoint) + (userLevel + (userAgi * 2) + userLuk) - (targetLevel + (targetAgi * 2) + targetLuk)) * accuracyBuff * evasionBuff;
+                    if (workFromFormindex1.badstatus == 256)
+                        chance /= 2;
                     var rand = dds3KernelCore.dds3GetRandIntA(100);
                     __result = rand < chance ? 0 : 4;
                 }

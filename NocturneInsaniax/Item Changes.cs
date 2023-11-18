@@ -364,12 +364,15 @@ namespace NocturneInsaniax
 
             //fldGlobal.fldHitData._fldItemBoxTbl[20]._Param = 9000000;
 
-            // First Item Box in Amala Network 1
+            // First Item Box in Amala Network 1 (Needle Orbs)
             fldGlobal.fldHitData._fldItemBoxTbl[22]._ItemID = 29;
             fldGlobal.fldHitData._fldItemBoxTbl[22]._ItemNum = 2;
 
-            // First Item Box in Treasure Room in Amala Network 1
+            // First Item Box in Treasure Room in Amala Network 1 (Megido Rock)
             fldGlobal.fldHitData._fldItemBoxTbl[27]._ItemID = 27;
+
+            // Medusa Eye Item Box in Underpass Manikin Hideout
+            fldGlobal.fldHitData._fldItemBoxTbl[40]._ItemID = 32;
 
             // New Item Box outside Shibuya
             fldGlobal.fldHitData._fldItemBoxTbl[335]._ItemID = 47;

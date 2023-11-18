@@ -8,6 +8,8 @@ using Il2Cppnewbattle_H;
 using Il2Cppeffect_H;
 using UnityEngine;
 using static Il2Cpp.SteamDlcFileUtil;
+using Newtonsoft.Json;
+using static UnityEngine.UI.CanvasScaler;
 
 namespace NocturneInsaniax
 {
@@ -39,9 +41,7 @@ namespace NocturneInsaniax
                     foreach (var unit in enemyUnits)
                     {
                         if (!actionTrackers.ContainsKey(unit.id))
-                        {
                             actionTrackers.Add(unit.id, new ActionTracker());
-                        }
 
                         nbMainProcess.nbGetMainProcessData().press4_p += actionTrackers[unit.id].extraTurns;
                         nbMainProcess.nbGetMainProcessData().press4_ten += actionTrackers[unit.id].extraTurns;
@@ -74,14 +74,42 @@ namespace NocturneInsaniax
                 MelonLogger.Msg("-Action Starts-");
                 switch (a.work.id)
                 {
+                    case 11: AmeNoUzumeAI(ref a, ref code, ref n); break;
                     case 33: ShiisaaAI(ref a, ref code, ref n); break;
-                    case 256: NewForneusAI(ref a, ref code, ref n); break;
+                    case 256: BossForneusAI(ref a, ref code, ref n); break;
                     case 294: BigSpecterAI(ref a, ref code, ref n); break;
                     case 295: BigSpecterAI(ref a, ref code, ref n); break;
                     case 296: BigSpecterAI(ref a, ref code, ref n); break;
+                    case 317: BossTrollAI(ref a, ref code, ref n); break;
                     default: break;
                 }
                 MelonLogger.Msg("skill: " + a.work.nowindex);
+            }
+        }
+
+        private static void AmeNoUzumeAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (actionTrackers[a.work.id].currentTurnActionCount <= 1 &&
+                nbMainProcess.nbGetMainProcessData().enemypcnt == 1)
+            {
+                if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(229))
+                {
+                    UseSummonSkill(ref a, 229, 89);
+                }
+                else
+                    UseSkill(ref a, 219);
+            }
+            else
+            {
+                int randomValue = random.Next(5);
+                switch (randomValue)
+                {
+                    case 0: UseNormalAttack(ref a); break;
+                    case 1: UseSkill(ref a, 22); break;
+                    case 2: UseSkill(ref a, 22); break;
+                    case 3: UseSkill(ref a, 28); break;
+                    case 4: UseSkill(ref a, 28); break;
+                }
             }
         }
 
@@ -103,15 +131,7 @@ namespace NocturneInsaniax
             }
         }
 
-        private static void BigSpecterAI(ref nbActionProcessData_t a, ref int code, ref int n)
-        {
-            if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(422))
-            {
-                UseSkill(ref a, 422); return;
-            }
-        }
-
-        private static void NewForneusAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        private static void BossForneusAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
             ushort currentHpPercent = BossCurrentHpPercent(ref a);
             MelonLogger.Msg("Forneus HP%: " + currentHpPercent);
@@ -176,6 +196,38 @@ namespace NocturneInsaniax
             }
         }
 
+        private static void BigSpecterAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(422))
+            {
+                UseSkill(ref a, 422); return;
+            }
+        }
+
+        private static void BossTrollAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (BossCurrentHpPercent(ref a) <= 50 && actionTrackers[a.work.id].phase == 1)
+                actionTrackers[a.work.id].phase = 2;
+
+            if (actionTrackers[a.work.id].phase == 2 && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(219))
+            {
+                UseSkill(ref a, 219); return;
+            }
+            else
+            {
+                int randomValue = random.Next(4);
+                switch (randomValue)
+                {
+                    case 0: UseNormalAttack(ref a); break;
+                    case 1: UseSkill(ref a, 98); break;
+                    case 2: UseSkill(ref a, 181); break;
+                    case 3: UseSkill(ref a, 427); break;
+                }
+            }
+        }
+
+        //------------------------------------------------------------
+
         private static void UseNormalAttack(ref nbActionProcessData_t a)
         {
             a.work.nowcommand = 0;
@@ -184,6 +236,19 @@ namespace NocturneInsaniax
 
         private static void UseSkill(ref nbActionProcessData_t a, ushort skillId)
         {
+            a.work.nowcommand = 1;
+            a.work.nowindex = skillId;
+
+            if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(skillId)) actionTrackers[a.work.id].skillsUsedThisBattle.Add(skillId);
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(skillId)) actionTrackers[a.work.id].skillsUsedThisTurn.Add(skillId);
+        }
+
+        private static void UseSummonSkill(ref nbActionProcessData_t a, ushort skillId, ushort devilId)
+        {
+            a.aisummonid = devilId;
+            if (!actionTrackers.ContainsKey(devilId))
+                actionTrackers.Add(devilId, new ActionTracker());
+            
             a.work.nowcommand = 1;
             a.work.nowindex = skillId;
 

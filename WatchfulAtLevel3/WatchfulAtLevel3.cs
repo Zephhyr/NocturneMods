@@ -34,7 +34,7 @@ namespace WatchfulAtLevel3
             tblSkill.fclSkillTbl[191].Event[4].TargetLevel = 17;
             tblSkill.fclSkillTbl[191].Event[4].Type = 1;
             tblSkill.fclSkillTbl[191].Event[5].Param = 264; // Twosome Time
-            tblSkill.fclSkillTbl[191].Event[5].TargetLevel = 30;
+            tblSkill.fclSkillTbl[191].Event[5].TargetLevel = 23;
             tblSkill.fclSkillTbl[191].Event[5].Type = 1;
             tblSkill.fclSkillTbl[191].Event[6].Param = 263; // Rebellion Gaming
             tblSkill.fclSkillTbl[191].Event[6].TargetLevel = 40;
@@ -71,7 +71,7 @@ namespace WatchfulAtLevel3
             tblSkill.fclSkillTbl[192].Event[4].TargetLevel = 17;
             tblSkill.fclSkillTbl[192].Event[4].Type = 1;
             tblSkill.fclSkillTbl[192].Event[5].Param = 264; // Twosome Time
-            tblSkill.fclSkillTbl[192].Event[5].TargetLevel = 30;
+            tblSkill.fclSkillTbl[192].Event[5].TargetLevel = 23;
             tblSkill.fclSkillTbl[192].Event[5].Type = 1;
             tblSkill.fclSkillTbl[192].Event[6].Param = 263; // Rebellion Gaming
             tblSkill.fclSkillTbl[192].Event[6].TargetLevel = 40;
@@ -116,6 +116,50 @@ namespace WatchfulAtLevel3
                     case 263: __result = "Rebellion Gaming"; return false;
                     default: return true;
                 }
+            }
+
+            public static void Postfix(ref int id, ref string __result)
+            {
+                if (__result == "Rebellion")
+                    __result =  "Rebellion Gaming";
+                else if (__result == "Boogie-Woogie")
+                    __result =  "Jackpot";
+                else if (__result == "Enter Yoshitsune")
+                    __result =  "Upper Slash";
+                else if (__result == "Mishaguji Raiden")
+                    __result =  "Round Robin";
+                else if (__result == "Hitokoto Storm")
+                    __result =  "Approching Storm";
+                else if (__result == "Raptor Guardian")
+                    __result =  "Griffon Vigor";
+                else if (__result == "Mokoi Boomerang")
+                    __result = "Bayonet";
+                else if (__result == "Tekisatsu")
+                    __result =  "Stinger";
+                else if (__result == "Jiraiya Dance")
+                    __result =  "Nightmare Combo";
+                else if (__result == "Raidou the Eternal")
+                    __result =  "More Power";
+            }
+        }
+
+        [HarmonyPatch(typeof(datDevilName), nameof(datDevilName.Get))]
+        private class DevilNamesPatch
+        {
+            public static void Postfix(ref int id, ref string __result)
+            {
+                if (__result == "Raidou")
+                    __result = "Vergil";
+            }
+        }
+
+        [HarmonyPatch(typeof(datRaceName), nameof(datRaceName.Get))]
+        private class DevilRacePatch
+        {
+            public static void Postfix(ref int id, ref string __result)
+            {
+                if (id == 40)
+                    __result = "Demi-Fiend";
             }
         }
     }

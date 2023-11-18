@@ -327,7 +327,8 @@ namespace NocturneInsaniax
                 actionProcessData = a;
 
                 datUnitWork_t target = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
-                if ((datNormalSkill.tbl[nskill].koukatype == 0 && (target.badstatus == 1 || target.badstatus == 2)) || target.badstatus == 256)
+                if (((datNormalSkill.tbl[nskill].koukatype == 0 && (target.badstatus == 1 || target.badstatus == 2)) || (target.badstatus == 256 && random.Next(2) == 1))
+                    && (datNormalSkill.tbl[nskill].hptype == 1 || datNormalSkill.tbl[nskill].hptype == 6 || datNormalSkill.tbl[nskill].hptype == 12 || datNormalSkill.tbl[nskill].hptype == 14))
                 {
                     var form = a.data.form[dformindex];
                     nbMakePacket.nbMakeBadKaifukuPacket(frame, a.uniqueid, ref form);

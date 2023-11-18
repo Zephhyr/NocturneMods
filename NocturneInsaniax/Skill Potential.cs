@@ -341,7 +341,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 314 Ambush High Pixie
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 315 Boss Kaiwan
             new sbyte[] {3    , 0    , -4   , 0    , 2    , 0    , 0    , 0    , 3    , 3    , 3    , 0    , 0    , 0    , 0    , 0 }, // 316 Forced Nekomata
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 317 Boss Troll
+            new sbyte[] {4    , -4   , 4    , -4   , 0    , 0    , 0    , 0    , 0    , -4   , -4   , 0    , 0    , 1    , 0    , 0 }, // 317 Boss Troll
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 1    , -3   , 0    , 1    , 1    , 1    , 1    , 0    , -3   , 0    , 0 }, // 318 Forced Will o' Wisp
             new sbyte[] {1    , -3   , -3   , -3   , -3   , 0    , -3   , 3    , 3    , 0    , 0    , 0    , 0    , -1   , 0    , 0 }, // 319 Forced Preta
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 320 Boss Bishamonten 1
@@ -972,11 +972,11 @@ namespace NocturneInsaniax
             {
                 if (actionProcessData != null)
                 {
-                    if (actionProcessData.work.badstatus == 4 ||
-                        actionProcessData.work.badstatus == 16 ||
-                        actionProcessData.work.badstatus == 32 ||
-                        actionProcessData.work.badstatus == 64 ||
-                        actionProcessData.work.badstatus == 256)
+                    if (actionProcessData.work.badstatus == 4 || // Asleep
+                        actionProcessData.work.badstatus == 16 || // Bound
+                        actionProcessData.work.badstatus == 32 || // 
+                        actionProcessData.work.badstatus == 64 || //
+                        actionProcessData.work.badstatus == 256) // Stunned
                     {
                         var luk = datCalc.datGetParam(actionProcessData.work, 5) + 20;
                         if (datCalc.datCheckSyojiSkill(actionProcessData.work, 366) != 0)

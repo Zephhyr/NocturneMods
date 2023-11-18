@@ -19,6 +19,8 @@ namespace NocturneInsaniax
             Ankh(3);
             Iyomante(4);
             Shiranui(5);
+            Hifumi(6);
+            Kamudo(7);
         }
 
         private static void Marogareh(ushort id)
@@ -244,6 +246,98 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 21;
             tblHearts.fclHeartsTbl[id].Skill[5].ID = 314;
             tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 23;
+        }
+
+        private static void Hifumi(ushort id)
+        {
+            // Affinities
+            datAisyo.tbl[388][0] = 100; // Phys
+            datAisyo.tbl[388][1] = 2147483798; // Fire
+            datAisyo.tbl[388][2] = 100; // Ice
+            datAisyo.tbl[388][3] = 100; // Elec
+            datAisyo.tbl[388][4] = 65536; // Force
+            datAisyo.tbl[388][6] = 100; // Light
+            datAisyo.tbl[388][7] = 100; // Dark
+            datAisyo.tbl[388][8] = 100; // Curse
+            datAisyo.tbl[388][9] = 100; // Nerve
+            datAisyo.tbl[388][10] = 100; // Mind
+
+            datAisyo.tbl[389][0] = 100; // Phys
+            datAisyo.tbl[389][1] = 2147483798; // Fire
+            datAisyo.tbl[389][2] = 100; // Ice
+            datAisyo.tbl[389][3] = 100; // Elec
+            datAisyo.tbl[389][4] = 65536; // Force
+            datAisyo.tbl[389][6] = 100; // Light
+            datAisyo.tbl[389][7] = 100; // Dark
+            datAisyo.tbl[389][8] = 100; // Curse
+            datAisyo.tbl[389][9] = 100; // Nerve
+            datAisyo.tbl[389][10] = 100; // Mind
+
+            // Stats
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 3; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 3; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 5; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 5; // Luck
+
+            // Skills
+            tblHearts.fclHeartsTbl[id].Skill[0].ID = 461;
+            tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 10;
+            tblHearts.fclHeartsTbl[id].Skill[1].ID = 312;
+            tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 18;
+            tblHearts.fclHeartsTbl[id].Skill[2].ID = 203;
+            tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 24;
+            tblHearts.fclHeartsTbl[id].Skill[3].ID = 317;
+            tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 26;
+            tblHearts.fclHeartsTbl[id].Skill[4].ID = 185;
+            tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 30;
+            tblHearts.fclHeartsTbl[id].Skill[5].ID = 327;
+            tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 40;
+        }
+
+        private static void Kamudo(ushort id)
+        {
+            // Affinities
+            datAisyo.tbl[390][0] = 50; // Phys
+            datAisyo.tbl[390][1] = 100; // Fire
+            datAisyo.tbl[390][2] = 100; // Ice
+            datAisyo.tbl[390][3] = 100; // Elec
+            datAisyo.tbl[390][4] = 100; // Force
+            datAisyo.tbl[390][6] = 100; // Light
+            datAisyo.tbl[390][7] = 100; // Dark
+            datAisyo.tbl[390][8] = 2147483798; // Curse
+            datAisyo.tbl[390][9] = 2147483798; // Nerve
+            datAisyo.tbl[390][10] = 2147483798; // Mind
+
+            datAisyo.tbl[391][0] = 50; // Phys
+            datAisyo.tbl[391][1] = 100; // Fire
+            datAisyo.tbl[391][2] = 100; // Ice
+            datAisyo.tbl[391][3] = 100; // Elec
+            datAisyo.tbl[391][4] = 100; // Force
+            datAisyo.tbl[391][6] = 100; // Light
+            datAisyo.tbl[391][7] = 100; // Dark
+            datAisyo.tbl[391][8] = 2147483798; // Curse
+            datAisyo.tbl[391][9] = 2147483798; // Nerve
+            datAisyo.tbl[391][10] = 2147483798; // Mind
+
+            // Stats
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 3; // Vitality
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 3; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 1; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 1; // Luck
+
+            // Skills
+            tblHearts.fclHeartsTbl[id].Skill[0].ID = 430;
+            tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 18;
+            tblHearts.fclHeartsTbl[id].Skill[1].ID = 224;
+            tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 21;
+            tblHearts.fclHeartsTbl[id].Skill[2].ID = 99;
+            tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 24;
+            tblHearts.fclHeartsTbl[id].Skill[3].ID = 97;
+            tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 27;
+            tblHearts.fclHeartsTbl[id].Skill[4].ID = 299;
+            tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 30;
+            tblHearts.fclHeartsTbl[id].Skill[5].ID = 345;
+            tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 40;
         }
     }
 }

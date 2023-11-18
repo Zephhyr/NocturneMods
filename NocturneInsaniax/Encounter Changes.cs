@@ -51,8 +51,8 @@ namespace NocturneInsaniax
                 MelonLogger.Msg("encpackno: " + encpackno);
 
 
-                //if (true)
-                if (evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0)
+                if (true)
+                //if (evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0)
                 {
                     encno = NewKagutsuchiEncounter(encno, encpackno);
                 }
@@ -131,7 +131,10 @@ namespace NocturneInsaniax
 
                 case 15: HarumiWarehouseChatterskullEncounter(); return 1270;
 
+                case 16: UnderpassAmeNoUzumeEncounter(); return 1270;
                 case 128: UnderpassAmeNoUzumeEncounter(); return 1270;
+
+                case 19: UnderpassForneusEncounter(); return 1270;
 
                 default: return encno;
             }
@@ -203,9 +206,19 @@ namespace NocturneInsaniax
 
         private static void UnderpassAmeNoUzumeEncounter()
         {
+            datEncount.tbl[1270].maxcall = 1;
+            datEncount.tbl[1270].maxparty = 3;
+
             datEncount.tbl[1270].devil[0] = 90;
             datEncount.tbl[1270].devil[1] = 11;
             datEncount.tbl[1270].devil[2] = 90;
+        }
+
+        private static void UnderpassForneusEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 50;
+            datEncount.tbl[1270].devil[1] = 74;
+            datEncount.tbl[1270].devil[2] = 50;
         }
 
         //------------------------------------------------------------
