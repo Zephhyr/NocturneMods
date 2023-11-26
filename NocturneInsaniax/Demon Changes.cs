@@ -4490,7 +4490,7 @@ namespace NocturneInsaniax
             // Skills
             tblSkill.fclSkillTbl[id].Event[0].Param = 281; // Hell Spin
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 282; // Exhaust
+            tblSkill.fclSkillTbl[id].Event[1].Param = 282; // Hell Exhaust
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
             tblSkill.fclSkillTbl[id].Event[2].Param = 435; // Scald
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
@@ -4901,8 +4901,7 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 2000;
             datDevilFormat.tbl[id].hp = 2000;
-            datDevilFormat.tbl[id].level = 24;
-            datDevilFormat.tbl[id].param[2] = 12;
+            datDevilFormat.tbl[id].param[0] = 6;
             datDevilFormat.tbl[id].flag = 34;
 
             // Display Skill

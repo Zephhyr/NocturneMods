@@ -374,6 +374,10 @@ namespace NocturneInsaniax
             // Medusa Eye Item Box in Underpass Manikin Hideout
             fldGlobal.fldHitData._fldItemBoxTbl[40]._ItemID = 32;
 
+            // Dekaja Rock Item Box in Underpass before Matador
+            fldGlobal.fldHitData._fldItemBoxTbl[42]._ItemID = 36;
+            fldGlobal.fldHitData._fldItemBoxTbl[42]._ItemNum = 1;
+
             // New Item Box outside Shibuya
             fldGlobal.fldHitData._fldItemBoxTbl[335]._ItemID = 47;
             fldGlobal.fldHitData._fldItemBoxTbl[335]._ItemNum = 5;
