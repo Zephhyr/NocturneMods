@@ -286,6 +286,25 @@ namespace NocturneInsaniax
 
         private static void ApplyDemonChanges()
         {
+            // Negotiation Items
+            foreach (var itemSet in datDevilNegoFormat.tbl)
+            {
+                itemSet.itema[0].ritu = 40;
+                itemSet.itema[1].ritu = 30;
+                itemSet.itema[2].ritu = 20;
+                itemSet.itema[3].ritu = 10;
+
+                itemSet.itemb[0].ritu = 40;
+                itemSet.itemb[1].ritu = 30;
+                itemSet.itemb[2].ritu = 20;
+                itemSet.itemb[3].ritu = 10;
+
+                itemSet.stone[0].ritu = 40;
+                itemSet.stone[1].ritu = 30;
+                itemSet.stone[2].ritu = 20;
+                itemSet.stone[3].ritu = 10;
+            }
+
             // Demons
             Vishnu(1);
             Mitra(2);
@@ -507,6 +526,8 @@ namespace NocturneInsaniax
             ForcedNekomata(316);
             BossTroll(317);
             ForcedWillOWisp(318);
+
+            BossMatador(349);
         }
 
         private static void Vishnu(ushort id)
@@ -522,7 +543,7 @@ namespace NocturneInsaniax
 
         private static void Mitra(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 131072; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
             datAisyo.tbl[id][2] = 50; // Ice
@@ -550,7 +571,7 @@ namespace NocturneInsaniax
 
         private static void Odin(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 65536; // Ice
@@ -745,7 +766,7 @@ namespace NocturneInsaniax
 
         private static void QitianDasheng(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][7] = 100; // Dark
 
             // Skills
@@ -754,7 +775,7 @@ namespace NocturneInsaniax
 
         private static void Dionysus(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][10] = 65536; // Mind
 
             // Skills
@@ -786,7 +807,7 @@ namespace NocturneInsaniax
 
         private static void Skadi(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 262144; // Ice
@@ -817,7 +838,7 @@ namespace NocturneInsaniax
 
         private static void Parvati(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 262144; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -838,7 +859,7 @@ namespace NocturneInsaniax
 
         private static void Kushinada(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -914,7 +935,7 @@ namespace NocturneInsaniax
 
         private static void Thor(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
 
             // Skills
@@ -1030,7 +1051,7 @@ namespace NocturneInsaniax
 
         private static void Zouchouten(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -1064,7 +1085,7 @@ namespace NocturneInsaniax
 
         private static void TakeMinakata(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483798; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -1104,7 +1125,7 @@ namespace NocturneInsaniax
 
         private static void Baihu(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483798; // Fire
             datAisyo.tbl[id][2] = 50; // Ice
@@ -1151,7 +1172,7 @@ namespace NocturneInsaniax
 
         private static void Zhuque(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 262144; // Fire
             datAisyo.tbl[id][2] = 2147483798; // Ice
@@ -1185,7 +1206,7 @@ namespace NocturneInsaniax
 
         private static void Shiisaa(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483798; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -1258,7 +1279,7 @@ namespace NocturneInsaniax
 
         private static void Flaemis(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 262144; // Fire
             datAisyo.tbl[id][2] = 2147483798; // Ice
@@ -1273,7 +1294,7 @@ namespace NocturneInsaniax
 
         private static void Aquans(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483798; // Fire
             datAisyo.tbl[id][2] = 131072; // Ice
@@ -1288,7 +1309,7 @@ namespace NocturneInsaniax
 
         private static void Aeros(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -1356,7 +1377,7 @@ namespace NocturneInsaniax
 
         private static void Erthys(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -1405,7 +1426,7 @@ namespace NocturneInsaniax
 
         private static void SakiMitama(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -1420,7 +1441,7 @@ namespace NocturneInsaniax
 
         private static void KushiMitama(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -1435,7 +1456,7 @@ namespace NocturneInsaniax
 
         private static void NigiMitama(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -1450,7 +1471,7 @@ namespace NocturneInsaniax
 
         private static void AraMitama(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -1487,7 +1508,7 @@ namespace NocturneInsaniax
 
         private static void KarasuTengu(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -1507,7 +1528,7 @@ namespace NocturneInsaniax
 
         private static void Dis(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 262144; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -1525,7 +1546,7 @@ namespace NocturneInsaniax
 
         private static void Isora(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483798; // Fire
             datAisyo.tbl[id][2] = 65536; // Ice
@@ -1620,7 +1641,7 @@ namespace NocturneInsaniax
 
         private static void Troll(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][9] = 2147483798; // Nerve
 
             // Skills
@@ -1667,7 +1688,7 @@ namespace NocturneInsaniax
 
         private static void Kelpie(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 50; // Ice
@@ -1795,7 +1816,7 @@ namespace NocturneInsaniax
 
         private static void Dominion(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][4] = 50; // Force
 
             // Skills
@@ -1820,7 +1841,7 @@ namespace NocturneInsaniax
 
         private static void Virtue(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -1895,7 +1916,7 @@ namespace NocturneInsaniax
 
         private static void Archangel(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
             datAisyo.tbl[id][2] = 2147483798; // Ice
@@ -1955,7 +1976,7 @@ namespace NocturneInsaniax
 
         private static void Angel(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -2157,7 +2178,7 @@ namespace NocturneInsaniax
 
         private static void Nozuchi(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -2189,7 +2210,7 @@ namespace NocturneInsaniax
 
         private static void Cerberus(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][8] = 50; // Curse
             datAisyo.tbl[id][9] = 50; // Nerve
             datAisyo.tbl[id][10] = 50; // Mind
@@ -2204,7 +2225,7 @@ namespace NocturneInsaniax
 
         private static void Orthrus(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 262144; // Fire
             datAisyo.tbl[id][2] = 2147483798; // Ice
@@ -2268,7 +2289,7 @@ namespace NocturneInsaniax
 
         private static void Nekomata(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
             datAisyo.tbl[id][2] = 2147483798; // Ice
@@ -2329,7 +2350,7 @@ namespace NocturneInsaniax
 
         private static void Titan(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
 
             // Skills
@@ -2354,7 +2375,7 @@ namespace NocturneInsaniax
 
         private static void Sarutahiko(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -2440,7 +2461,7 @@ namespace NocturneInsaniax
 
         private static void Oni(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -2458,7 +2479,7 @@ namespace NocturneInsaniax
 
         private static void YomotsuIkusa(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -2492,7 +2513,7 @@ namespace NocturneInsaniax
 
         private static void Momunofu(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -2521,7 +2542,7 @@ namespace NocturneInsaniax
 
         private static void Shikigami(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483798; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -2570,7 +2591,7 @@ namespace NocturneInsaniax
 
         private static void Dakini(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
 
             // Skills
@@ -2640,7 +2661,7 @@ namespace NocturneInsaniax
 
         private static void Taraka(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 2147483798; // Ice
@@ -2673,7 +2694,7 @@ namespace NocturneInsaniax
 
         private static void DatsueBa(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 50; // Ice
@@ -2733,7 +2754,7 @@ namespace NocturneInsaniax
 
         private static void Girimekhala(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][6] = 2147483798; // Light
             datAisyo.tbl[id][10] = 2147483798; // Mind
 
@@ -2774,7 +2795,7 @@ namespace NocturneInsaniax
 
         private static void Pazuzu(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 2147483798; // Ice
@@ -2830,7 +2851,7 @@ namespace NocturneInsaniax
 
         private static void Mot(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -2854,7 +2875,7 @@ namespace NocturneInsaniax
 
         private static void Aciel(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 2147483798; // Phys
             datAisyo.tbl[id][1] = 65536; // Fire
             datAisyo.tbl[id][2] = 65536; // Ice
@@ -2883,7 +2904,7 @@ namespace NocturneInsaniax
 
         private static void Surt(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][8] = 65536; // Curse
 
@@ -2901,7 +2922,7 @@ namespace NocturneInsaniax
 
         private static void Abaddon(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
             datAisyo.tbl[id][2] = 50; // Ice
@@ -2943,7 +2964,7 @@ namespace NocturneInsaniax
 
         private static void Lilith(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][6] = 100; // Light
             datAisyo.tbl[id][10] = 65536; // Mind
 
@@ -2966,7 +2987,7 @@ namespace NocturneInsaniax
 
         private static void Nyx(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][10] = 65536; // Mind
 
             // Skills
@@ -2995,7 +3016,7 @@ namespace NocturneInsaniax
 
         private static void Succubus(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 50; // Ice
@@ -3010,7 +3031,7 @@ namespace NocturneInsaniax
 
         private static void Incubus(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -3069,7 +3090,7 @@ namespace NocturneInsaniax
 
         private static void Lilim(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 2147483798; // Ice
@@ -3122,11 +3143,14 @@ namespace NocturneInsaniax
             datDevilAI.divTbls[0][120].aitable[2][1].ritu = 40;
             datDevilAI.divTbls[0][120].aitable[2][2].skill = 32768;
             datDevilAI.divTbls[0][120].aitable[2][2].ritu = 20;
+
+            // Negotiation Items
+            datDevilNegoFormat.tbl[120].itema[0].item = 36;
         }
 
         private static void Hresvelgr(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 2147483798; // Fire
             datAisyo.tbl[id][2] = 131072; // Ice
@@ -3156,7 +3180,7 @@ namespace NocturneInsaniax
 
         private static void Mothman(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][8] = 65536; // Curse
 
             // Skills
@@ -3222,7 +3246,7 @@ namespace NocturneInsaniax
 
         private static void Zhen(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483798; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -3293,7 +3317,7 @@ namespace NocturneInsaniax
 
         private static void Vetala(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][8] = 50; // Curse
             datAisyo.tbl[id][9] = 50; // Nerve
             datAisyo.tbl[id][10] = 50; // Mind
@@ -3346,7 +3370,7 @@ namespace NocturneInsaniax
 
         private static void Choronzon(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 65536; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -3396,7 +3420,7 @@ namespace NocturneInsaniax
 
         private static void Preta(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483798; // Fire
             datAisyo.tbl[id][2] = 2147483798; // Ice
@@ -3437,7 +3461,7 @@ namespace NocturneInsaniax
 
         private static void BlackOoze(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -3471,7 +3495,7 @@ namespace NocturneInsaniax
 
         private static void Blob(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 2147483798; // Fire
             datAisyo.tbl[id][2] = 2147483798; // Ice
@@ -3512,7 +3536,7 @@ namespace NocturneInsaniax
 
         private static void Slime(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 2147483798; // Fire
             datAisyo.tbl[id][2] = 2147483798; // Ice
@@ -3578,7 +3602,7 @@ namespace NocturneInsaniax
 
         private static void MouRyo(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -3643,7 +3667,7 @@ namespace NocturneInsaniax
 
         private static void WillOWisp(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 2147483798; // Fire
             datAisyo.tbl[id][2] = 2147483798; // Ice
@@ -3682,7 +3706,7 @@ namespace NocturneInsaniax
 
         private static void Michael(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
             datAisyo.tbl[id][2] = 50; // Ice
@@ -3713,7 +3737,7 @@ namespace NocturneInsaniax
 
         private static void Gabriel(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
             datAisyo.tbl[id][2] = 131072; // Ice
@@ -3739,7 +3763,7 @@ namespace NocturneInsaniax
 
         private static void Raphael(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 50; // Ice
@@ -3765,7 +3789,7 @@ namespace NocturneInsaniax
 
         private static void Uriel(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 131072; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -3823,7 +3847,7 @@ namespace NocturneInsaniax
 
         private static void Arahabaki(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 65536; // Phys
             datAisyo.tbl[id][1] = 2147483798; // Fire
             datAisyo.tbl[id][2] = 2147483798; // Ice
@@ -3856,7 +3880,7 @@ namespace NocturneInsaniax
 
         private static void CuChulainn(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
 
             // Skills
@@ -3874,7 +3898,7 @@ namespace NocturneInsaniax
 
         private static void QingLong(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483798; // Fire
             datAisyo.tbl[id][2] = 50; // Ice
@@ -3905,7 +3929,7 @@ namespace NocturneInsaniax
 
         private static void Xuanwu(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 262144; // Ice
@@ -3928,7 +3952,7 @@ namespace NocturneInsaniax
 
         private static void Barong(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][2] = 50; // Ice
 
             // Skills
@@ -3939,7 +3963,7 @@ namespace NocturneInsaniax
 
         private static void Garuda(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][4] = 131072; // Force
             datAisyo.tbl[id][8] = 65536; // Curse
             datAisyo.tbl[id][9] = 65536; // Nerve
@@ -3964,7 +3988,7 @@ namespace NocturneInsaniax
 
         private static void Gurulu(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][4] = 131072; // Force
             datAisyo.tbl[id][8] = 65536; // Curse
             datAisyo.tbl[id][9] = 65536; // Nerve
@@ -3985,7 +4009,7 @@ namespace NocturneInsaniax
 
         private static void Albion(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][1] = 80; // Fire
             datAisyo.tbl[id][2] = 80; // Ice
             datAisyo.tbl[id][3] = 80; // Elec
@@ -4008,7 +4032,7 @@ namespace NocturneInsaniax
 
         private static void Samael(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -4060,7 +4084,7 @@ namespace NocturneInsaniax
 
         private static void KinKi(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 10; // Phys
             datAisyo.tbl[id][9] = 50; // Nerve
             datAisyo.tbl[id][10] = 50; // Mind
@@ -4077,7 +4101,7 @@ namespace NocturneInsaniax
 
         private static void SuiKi(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][8] = 50; // Curse
             datAisyo.tbl[id][9] = 50; // Nerve
             datAisyo.tbl[id][10] = 50; // Mind
@@ -4094,7 +4118,7 @@ namespace NocturneInsaniax
 
         private static void FuuKi(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][3] = 2147483798; // Elec
             datAisyo.tbl[id][8] = 50; // Curse
             datAisyo.tbl[id][9] = 50; // Nerve
@@ -4108,7 +4132,7 @@ namespace NocturneInsaniax
 
         private static void OngyoKi(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][8] = 65536; // Curse
             datAisyo.tbl[id][9] = 65536; // Nerve
             datAisyo.tbl[id][10] = 65536; // Mind
@@ -4126,7 +4150,7 @@ namespace NocturneInsaniax
 
         private static void Clotho(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][8] = 50; // Curse
             datAisyo.tbl[id][9] = 50; // Nerve
             datAisyo.tbl[id][10] = 50; // Mind
@@ -4144,7 +4168,7 @@ namespace NocturneInsaniax
 
         private static void Lachesis(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][6] = 50; // Light
             datAisyo.tbl[id][7] = 50; // Dark
 
@@ -4191,7 +4215,7 @@ namespace NocturneInsaniax
 
         private static void Phantom(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -4206,7 +4230,7 @@ namespace NocturneInsaniax
 
         private static void DanteRaidou(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
             datAisyo.tbl[id][2] = 50; // Ice
@@ -4221,7 +4245,7 @@ namespace NocturneInsaniax
 
         private static void Metatron(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 65536; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -4242,7 +4266,7 @@ namespace NocturneInsaniax
 
         private static void BeelzebubFly(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 50; // Ice
@@ -4272,7 +4296,7 @@ namespace NocturneInsaniax
 
         private static void PaleRider(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 50; // Ice
@@ -4308,7 +4332,7 @@ namespace NocturneInsaniax
 
         private static void WhiteRider(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 65536; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -4344,7 +4368,7 @@ namespace NocturneInsaniax
 
         private static void RedRider(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -4380,7 +4404,7 @@ namespace NocturneInsaniax
 
         private static void BlackRider(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 262144; // Ice
@@ -4416,7 +4440,7 @@ namespace NocturneInsaniax
 
         private static void Matador(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -4451,7 +4475,7 @@ namespace NocturneInsaniax
 
         private static void HellBiker(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 65536; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -4488,7 +4512,7 @@ namespace NocturneInsaniax
 
         private static void Daisoujou(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
@@ -4524,7 +4548,7 @@ namespace NocturneInsaniax
 
         private static void MotherHarlot(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][6] = 50; // Light
             datAisyo.tbl[id][7] = 50; // Dark
             datAisyo.tbl[id][8] = 50; // Curse
@@ -4545,7 +4569,7 @@ namespace NocturneInsaniax
 
         private static void Trumpeter(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
             datAisyo.tbl[id][2] = 50; // Ice
@@ -4569,7 +4593,7 @@ namespace NocturneInsaniax
 
         private static void BlackFrost(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
             datAisyo.tbl[id][2] = 262144; // Ice
@@ -4598,7 +4622,7 @@ namespace NocturneInsaniax
         {
             datDevilFormat.tbl[id].aisyoid = (short) id;
 
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 50; // Ice
@@ -4752,7 +4776,12 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 1400;
             datDevilFormat.tbl[id].hp = 1400;
-            
+            datDevilFormat.tbl[id].level = 18;
+            datDevilFormat.tbl[id].param[0] = 14;
+            datDevilFormat.tbl[id].param[2] = 10;
+            datDevilFormat.tbl[id].param[4] = 9;
+            datDevilFormat.tbl[id].param[5] = 9;
+
             datDevilFormat.tbl[id].dropexp = 200;
 
             // Enemy Skills
@@ -4783,7 +4812,7 @@ namespace NocturneInsaniax
 
         private static void ForcedNekomata(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
             datAisyo.tbl[id][2] = 2147483798; // Ice
@@ -4832,7 +4861,7 @@ namespace NocturneInsaniax
 
         private static void ForcedWillOWisp(ushort id)
         {
-            // Affinties
+            // Affinities
             datAisyo.tbl[id][0] = 60; // Phys
             datAisyo.tbl[id][1] = 2147483798; // Fire
             datAisyo.tbl[id][2] = 2147483798; // Ice
@@ -4853,6 +4882,31 @@ namespace NocturneInsaniax
 
             // AI
             datDevilAI.divTbls[2][62].aitable[1][0].skill = 67;
+        }
+
+        private static void BossMatador(ushort id)
+        {
+            // Affinities
+            datAisyo.tbl[id][0] = 100; // Phys
+            datAisyo.tbl[id][1] = 100; // Fire
+            datAisyo.tbl[id][2] = 100; // Ice
+            datAisyo.tbl[id][3] = 100; // Elec
+            datAisyo.tbl[id][4] = 65536; // Force
+            datAisyo.tbl[id][6] = 100; // Light
+            datAisyo.tbl[id][7] = 65536; // Dark
+            datAisyo.tbl[id][8] = 100; // Curse
+            datAisyo.tbl[id][9] = 100; // Nerve
+            datAisyo.tbl[id][10] = 100; // Mind
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].maxhp = 2000;
+            datDevilFormat.tbl[id].hp = 2000;
+            datDevilFormat.tbl[id].level = 24;
+            datDevilFormat.tbl[id].param[2] = 12;
+            datDevilFormat.tbl[id].flag = 34;
+
+            // Display Skill
+            datDevilFormat.tbl[id].skill[0] = 366;
         }
     }
 }

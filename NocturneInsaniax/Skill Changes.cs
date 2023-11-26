@@ -12,7 +12,7 @@ namespace NocturneInsaniax
 {
     internal partial class NocturneInsaniax : MelonMod
     {
-        public static int[] bossList = new int[] { 256, 257, 294, 295, 296 };
+        public static int[] bossList = new int[] { 256, 257, 294, 295, 296, 349 };
         public static nbActionProcessData_t? actionProcessData;
 
         [HarmonyPatch(typeof(datSkillName), nameof(datSkillName.Get))]
@@ -373,6 +373,41 @@ namespace NocturneInsaniax
                         dds3GlobalWork.DDS3_GBWK.Moon.MoveCnt = 0; // Beginning of a new phase
                         evtMoon.evtSetAgeOfMoon(0); // Set Kagutsuchi's phase to full
                     }
+
+                    // Test - Add rigged demons to party
+                    //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 130).Count() == 0)
+                    //{
+                    //    datCalc.datAddDevil(130, 0);
+                    //    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 130))
+                    //    {
+                    //        work.skill[2] = 317;
+                    //        work.skill[3] = 301;
+                    //        work.skill[4] = 52;
+                    //        work.skillcnt = 5;
+                    //    }
+                    //}
+                    //else if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 38).Count() == 0)
+                    //{
+                    //    datCalc.datAddDevil(38, 0);
+                    //    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 38))
+                    //    {
+                    //        work.skill[3] = 65;
+                    //        work.skill[4] = 66;
+                    //        work.skill[5] = 39;
+                    //        work.skillcnt = 6;
+                    //    }
+                    //}
+                    //else if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 68).Count() == 0)
+                    //{
+                    //    datCalc.datAddDevil(68, 0);
+                    //    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 68))
+                    //    {
+                    //        work.skill[3] = 66;
+                    //        work.skill[4] = 67;
+                    //        work.skill[5] = 54;
+                    //        work.skillcnt = 6;
+                    //    }
+                    //}
                 }
                 // If using a cursed gospel
                 if (nskill == 91)

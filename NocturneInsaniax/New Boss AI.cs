@@ -81,6 +81,7 @@ namespace NocturneInsaniax
                     case 295: BigSpecterAI(ref a, ref code, ref n); break;
                     case 296: BigSpecterAI(ref a, ref code, ref n); break;
                     case 317: BossTrollAI(ref a, ref code, ref n); break;
+                    case 349: BossMatadorAI(ref a, ref code, ref n); break;
                     default: break;
                 }
                 MelonLogger.Msg("skill: " + a.work.nowindex);
@@ -199,14 +200,12 @@ namespace NocturneInsaniax
         private static void BigSpecterAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
             if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(422))
-            {
-                UseSkill(ref a, 422); return;
-            }
+                UseSkill(ref a, 422);
         }
 
         private static void BossTrollAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
-            if (BossCurrentHpPercent(ref a) <= 50 && actionTrackers[a.work.id].phase == 1)
+            if (BossCurrentHpPercent(ref a) <= 25 && actionTrackers[a.work.id].phase == 1)
                 actionTrackers[a.work.id].phase = 2;
 
             if (actionTrackers[a.work.id].phase == 2 && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(219))
@@ -224,6 +223,20 @@ namespace NocturneInsaniax
                     case 3: UseSkill(ref a, 427); break;
                 }
             }
+        }
+
+        private static void BossMatadorAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            ushort currentHpPercent = BossCurrentHpPercent(ref a);
+            MelonLogger.Msg("Matador HP%: " + currentHpPercent);
+            MelonLogger.Msg("Matador HP: " + a.work.hp);
+
+            if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(422))
+                UseSkill(ref a, 422);
+            else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(276))
+                UseSkill(ref a, 276);
+            else if (a.work.nowindex == 22)
+                UseSkill(ref a, 443);
         }
 
         //------------------------------------------------------------

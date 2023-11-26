@@ -51,8 +51,8 @@ namespace NocturneInsaniax
                 MelonLogger.Msg("encpackno: " + encpackno);
 
 
-                if (true)
-                //if (evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0)
+                //if (true)
+                if (evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0)
                 {
                     encno = NewKagutsuchiEncounter(encno, encpackno);
                 }

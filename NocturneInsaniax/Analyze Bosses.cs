@@ -764,12 +764,12 @@ namespace NocturneInsaniax
                         case 0349: //Matador
                             affinitiesText = datAisyoName.Get(199);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill01/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(276);
-                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(22);
+                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(443);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill03/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(275);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill04/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(224);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill05/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(205);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill06/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(77);
-                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill07/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(219);
+                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill07/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(366);
                             break;
                         case 0351: //Daisoujou
                             affinitiesText = datAisyoName.Get(201);
