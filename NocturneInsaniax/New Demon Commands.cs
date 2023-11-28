@@ -25,8 +25,8 @@ namespace NocturneInsaniax
                             partyIndices.Add(party[i].statindex);
 
                     var stock = dds3GlobalWork.DDS3_GBWK.stocklist.Distinct();
-                    if (stock.Count() > (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id != 0).Count() + 1))
-                        stock = stock.SkipLast(stock.Count() - (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id != 0).Count() + 1));
+                    if (stock.Count() > (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id != 0 && x.hp > 0).Count() + 1))
+                        stock = stock.SkipLast(stock.Count() - (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id != 0 && x.hp > 0).Count() + 1));
 
                     var stockIndices = new List<ushort>();
                     foreach (var i in stock.Where(x => x != 0))

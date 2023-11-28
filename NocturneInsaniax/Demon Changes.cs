@@ -2206,6 +2206,41 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 17;
             tblSkill.fclSkillTbl[id].Event[6].Param = 115; // Sacrifice
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 18;
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 180;
+            datDevilFormat.tbl[id].maxhp = 180;
+            datDevilFormat.tbl[id].mp = 80;
+            datDevilFormat.tbl[id].maxmp = 80;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[4] = 90; // Poison Arrow
+
+            // AI
+            datDevilAI.divTbls[0][80].aitable[0][0].skill = 202;
+            datDevilAI.divTbls[0][80].aitable[0][0].ritu = 40;
+            datDevilAI.divTbls[0][80].aitable[0][1].skill = 96;
+            datDevilAI.divTbls[0][80].aitable[0][1].ritu = 20;
+            datDevilAI.divTbls[0][80].aitable[0][2].skill = 66;
+            datDevilAI.divTbls[0][80].aitable[0][2].ritu = 20;
+            datDevilAI.divTbls[0][80].aitable[0][3].skill = 90;
+            datDevilAI.divTbls[0][80].aitable[0][3].ritu = 20;
+
+            datDevilAI.divTbls[0][80].aitable[1][0].skill = 202;
+            datDevilAI.divTbls[0][80].aitable[1][0].ritu = 20;
+            datDevilAI.divTbls[0][80].aitable[1][1].skill = 90;
+            datDevilAI.divTbls[0][80].aitable[1][1].ritu = 40;
+            datDevilAI.divTbls[0][80].aitable[1][2].skill = 66;
+            datDevilAI.divTbls[0][80].aitable[1][2].ritu = 20;
+            datDevilAI.divTbls[0][80].aitable[1][3].skill = 96;
+            datDevilAI.divTbls[0][80].aitable[1][3].ritu = 20;
+
+            datDevilAI.divTbls[0][80].aitable[2][0].skill = 115;
+            datDevilAI.divTbls[0][80].aitable[2][0].ritu = 5;
+            datDevilAI.divTbls[0][80].aitable[2][1].skill = 96;
+            datDevilAI.divTbls[0][80].aitable[2][1].ritu = 50;
+            datDevilAI.divTbls[0][80].aitable[2][2].skill = 32768;
+            datDevilAI.divTbls[0][80].aitable[2][2].ritu = 45;
         }
 
         private static void Cerberus(ushort id)
@@ -4882,6 +4917,27 @@ namespace NocturneInsaniax
 
             // AI
             datDevilAI.divTbls[2][62].aitable[1][0].skill = 67;
+        }
+
+        private static void ForcedPreta(ushort id)
+        {
+            // Affinities
+            datAisyo.tbl[id][0] = 100; // Phys
+            datAisyo.tbl[id][1] = 2147483798; // Fire
+            datAisyo.tbl[id][2] = 2147483798; // Ice
+            datAisyo.tbl[id][3] = 2147483798; // Elec
+            datAisyo.tbl[id][4] = 2147483798; // Force
+            datAisyo.tbl[id][6] = 2147483798; // Light
+            datAisyo.tbl[id][7] = 65536; // Dark
+            datAisyo.tbl[id][8] = 100; // Curse
+            datAisyo.tbl[id][9] = 100; // Nerve
+            datAisyo.tbl[id][10] = 100; // Mind
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 20;
+            datDevilFormat.tbl[id].maxhp = 20;
+            datDevilFormat.tbl[id].mp = 32;
+            datDevilFormat.tbl[id].maxmp = 32;
         }
 
         private static void BossMatador(ushort id)

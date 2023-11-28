@@ -135,6 +135,14 @@ namespace NocturneInsaniax
                 case 128: UnderpassAmeNoUzumeEncounter(); return 1270;
 
                 case 19: UnderpassForneusEncounter(); return 1270;
+                case 20: UnderpassForneusEncounter(); return 1270;
+
+                case 17: UnderpassAmeNoUzumeEncounter(); return 1270;
+                case 18: UnderpassAmeNoUzumeEncounter(); return 1270;
+                case 129: UnderpassAmeNoUzumeEncounter(); return 1270;
+                case 130: UnderpassAmeNoUzumeEncounter(); return 1270;
+
+                case 22: UnderpassAmeNoUzumeEncounter(); return 1270;
 
                 default: return encno;
             }

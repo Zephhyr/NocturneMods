@@ -51,6 +51,16 @@ namespace NocturneInsaniax
                     int ID = nbPanelProcess.pNbPanelAnalyzeUnitWork.id; // Target's ID
                     switch (ID)
                     {
+                        case 0318: //Will o' Wisp
+                            affinitiesText = datAisyoName.Get(137);
+                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill01/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(190);
+                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(67);
+                            break;
+                        case 0319: //Preta
+                            affinitiesText = datAisyoName.Get(131);
+                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill01/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(123);
+                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(65);
+                            break;
                         case 0256: //Forneus
                             affinitiesText = datAisyoName.Get(74);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill01/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(7);

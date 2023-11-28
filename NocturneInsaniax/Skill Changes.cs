@@ -4813,6 +4813,7 @@ namespace NocturneInsaniax
 
         private static void HumbleBlessing(ushort id)
         {
+            datSkill.tbl[id].capacity = 2;
             datSkill.tbl[id].flag = 0;
             datSkill.tbl[id].keisyoform = 512;
             datSkill.tbl[id].skillattr = 13;
