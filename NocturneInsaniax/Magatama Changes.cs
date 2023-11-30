@@ -118,27 +118,27 @@ namespace NocturneInsaniax
         private static void Ankh(ushort id)
         {
             // Affinities
-            datAisyo.tbl[386][0] = 100; // Phys
-            datAisyo.tbl[386][1] = 100; // Fire
-            datAisyo.tbl[386][2] = 100; // Ice
-            datAisyo.tbl[386][3] = 100; // Elec
-            datAisyo.tbl[386][4] = 100; // Force
-            datAisyo.tbl[386][6] = 65536; // Light
-            datAisyo.tbl[386][7] = 2147483798; // Dark
-            datAisyo.tbl[386][8] = 100; // Curse
-            datAisyo.tbl[386][9] = 100; // Nerve
-            datAisyo.tbl[386][10] = 100; // Mind
+            datAisyo.tbl[388][0] = 100; // Phys
+            datAisyo.tbl[388][1] = 100; // Fire
+            datAisyo.tbl[388][2] = 100; // Ice
+            datAisyo.tbl[388][3] = 100; // Elec
+            datAisyo.tbl[388][4] = 100; // Force
+            datAisyo.tbl[388][6] = 65536; // Light
+            datAisyo.tbl[388][7] = 2147483798; // Dark
+            datAisyo.tbl[388][8] = 100; // Curse
+            datAisyo.tbl[388][9] = 100; // Nerve
+            datAisyo.tbl[388][10] = 100; // Mind
 
-            datAisyo.tbl[387][0] = 100; // Phys
-            datAisyo.tbl[387][1] = 100; // Fire
-            datAisyo.tbl[387][2] = 100; // Ice
-            datAisyo.tbl[387][3] = 100; // Elec
-            datAisyo.tbl[387][4] = 100; // Force
-            datAisyo.tbl[387][6] = 65536; // Light
-            datAisyo.tbl[387][7] = 2147483798; // Dark
-            datAisyo.tbl[387][8] = 100; // Curse
-            datAisyo.tbl[387][9] = 100; // Nerve
-            datAisyo.tbl[387][10] = 100; // Mind
+            datAisyo.tbl[389][0] = 100; // Phys
+            datAisyo.tbl[389][1] = 100; // Fire
+            datAisyo.tbl[389][2] = 100; // Ice
+            datAisyo.tbl[389][3] = 100; // Elec
+            datAisyo.tbl[389][4] = 100; // Force
+            datAisyo.tbl[389][6] = 65536; // Light
+            datAisyo.tbl[389][7] = 2147483798; // Dark
+            datAisyo.tbl[389][8] = 100; // Curse
+            datAisyo.tbl[389][9] = 100; // Nerve
+            datAisyo.tbl[389][10] = 100; // Mind
 
             // Stats
             tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 3; // Luck
@@ -160,27 +160,27 @@ namespace NocturneInsaniax
         private static void Iyomante(ushort id)
         {
             // Affinities
-            datAisyo.tbl[386][0] = 100; // Phys
-            datAisyo.tbl[386][1] = 100; // Fire
-            datAisyo.tbl[386][2] = 100; // Ice
-            datAisyo.tbl[386][3] = 100; // Elec
-            datAisyo.tbl[386][4] = 100; // Force
-            datAisyo.tbl[386][6] = 100; // Light
-            datAisyo.tbl[386][7] = 100; // Dark
-            datAisyo.tbl[386][8] = 100; // Curse
-            datAisyo.tbl[386][9] = 100; // Nerve
-            datAisyo.tbl[386][10] = 65536; // Mind
+            datAisyo.tbl[390][0] = 100; // Phys
+            datAisyo.tbl[390][1] = 100; // Fire
+            datAisyo.tbl[390][2] = 100; // Ice
+            datAisyo.tbl[390][3] = 100; // Elec
+            datAisyo.tbl[390][4] = 100; // Force
+            datAisyo.tbl[390][6] = 100; // Light
+            datAisyo.tbl[390][7] = 100; // Dark
+            datAisyo.tbl[390][8] = 100; // Curse
+            datAisyo.tbl[390][9] = 100; // Nerve
+            datAisyo.tbl[390][10] = 65536; // Mind
 
-            datAisyo.tbl[387][0] = 100; // Phys
-            datAisyo.tbl[387][1] = 100; // Fire
-            datAisyo.tbl[387][2] = 100; // Ice
-            datAisyo.tbl[387][3] = 100; // Elec
-            datAisyo.tbl[387][4] = 100; // Force
-            datAisyo.tbl[387][6] = 100; // Light
-            datAisyo.tbl[387][7] = 100; // Dark
-            datAisyo.tbl[387][8] = 100; // Curse
-            datAisyo.tbl[387][9] = 100; // Nerve
-            datAisyo.tbl[387][10] = 65536; // Mind
+            datAisyo.tbl[391][0] = 100; // Phys
+            datAisyo.tbl[391][1] = 100; // Fire
+            datAisyo.tbl[391][2] = 100; // Ice
+            datAisyo.tbl[391][3] = 100; // Elec
+            datAisyo.tbl[391][4] = 100; // Force
+            datAisyo.tbl[391][6] = 100; // Light
+            datAisyo.tbl[391][7] = 100; // Dark
+            datAisyo.tbl[391][8] = 100; // Curse
+            datAisyo.tbl[391][9] = 100; // Nerve
+            datAisyo.tbl[391][10] = 65536; // Mind
 
             // Stats
             tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 3; // Strength
@@ -207,27 +207,27 @@ namespace NocturneInsaniax
         private static void Shiranui(ushort id)
         {
             // Affinities
-            datAisyo.tbl[386][0] = 100; // Phys
-            datAisyo.tbl[386][1] = 65536; // Fire
-            datAisyo.tbl[386][2] = 100; // Ice
-            datAisyo.tbl[386][3] = 100; // Elec
-            datAisyo.tbl[386][4] = 2147483798; // Force
-            datAisyo.tbl[386][6] = 100; // Light
-            datAisyo.tbl[386][7] = 100; // Dark
-            datAisyo.tbl[386][8] = 100; // Curse
-            datAisyo.tbl[386][9] = 100; // Nerve
-            datAisyo.tbl[386][10] = 100; // Mind
+            datAisyo.tbl[392][0] = 100; // Phys
+            datAisyo.tbl[392][1] = 65536; // Fire
+            datAisyo.tbl[392][2] = 100; // Ice
+            datAisyo.tbl[392][3] = 100; // Elec
+            datAisyo.tbl[392][4] = 2147483798; // Force
+            datAisyo.tbl[392][6] = 100; // Light
+            datAisyo.tbl[392][7] = 100; // Dark
+            datAisyo.tbl[392][8] = 100; // Curse
+            datAisyo.tbl[392][9] = 100; // Nerve
+            datAisyo.tbl[392][10] = 100; // Mind
 
-            datAisyo.tbl[387][0] = 100; // Phys
-            datAisyo.tbl[387][1] = 65536; // Fire
-            datAisyo.tbl[387][2] = 100; // Ice
-            datAisyo.tbl[387][3] = 100; // Elec
-            datAisyo.tbl[387][4] = 2147483798; // Force
-            datAisyo.tbl[387][6] = 100; // Light
-            datAisyo.tbl[387][7] = 100; // Dark
-            datAisyo.tbl[387][8] = 100; // Curse
-            datAisyo.tbl[387][9] = 100; // Nerve
-            datAisyo.tbl[387][10] = 100; // Mind
+            datAisyo.tbl[393][0] = 100; // Phys
+            datAisyo.tbl[393][1] = 65536; // Fire
+            datAisyo.tbl[393][2] = 100; // Ice
+            datAisyo.tbl[393][3] = 100; // Elec
+            datAisyo.tbl[393][4] = 2147483798; // Force
+            datAisyo.tbl[393][6] = 100; // Light
+            datAisyo.tbl[393][7] = 100; // Dark
+            datAisyo.tbl[393][8] = 100; // Curse
+            datAisyo.tbl[393][9] = 100; // Nerve
+            datAisyo.tbl[393][10] = 100; // Mind
 
             // Stats
             tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 5; // Agility
@@ -251,27 +251,27 @@ namespace NocturneInsaniax
         private static void Hifumi(ushort id)
         {
             // Affinities
-            datAisyo.tbl[388][0] = 100; // Phys
-            datAisyo.tbl[388][1] = 2147483798; // Fire
-            datAisyo.tbl[388][2] = 100; // Ice
-            datAisyo.tbl[388][3] = 100; // Elec
-            datAisyo.tbl[388][4] = 65536; // Force
-            datAisyo.tbl[388][6] = 100; // Light
-            datAisyo.tbl[388][7] = 100; // Dark
-            datAisyo.tbl[388][8] = 100; // Curse
-            datAisyo.tbl[388][9] = 100; // Nerve
-            datAisyo.tbl[388][10] = 100; // Mind
+            datAisyo.tbl[394][0] = 100; // Phys
+            datAisyo.tbl[394][1] = 2147483798; // Fire
+            datAisyo.tbl[394][2] = 100; // Ice
+            datAisyo.tbl[394][3] = 100; // Elec
+            datAisyo.tbl[394][4] = 65536; // Force
+            datAisyo.tbl[394][6] = 100; // Light
+            datAisyo.tbl[394][7] = 100; // Dark
+            datAisyo.tbl[394][8] = 100; // Curse
+            datAisyo.tbl[394][9] = 100; // Nerve
+            datAisyo.tbl[394][10] = 100; // Mind
 
-            datAisyo.tbl[389][0] = 100; // Phys
-            datAisyo.tbl[389][1] = 2147483798; // Fire
-            datAisyo.tbl[389][2] = 100; // Ice
-            datAisyo.tbl[389][3] = 100; // Elec
-            datAisyo.tbl[389][4] = 65536; // Force
-            datAisyo.tbl[389][6] = 100; // Light
-            datAisyo.tbl[389][7] = 100; // Dark
-            datAisyo.tbl[389][8] = 100; // Curse
-            datAisyo.tbl[389][9] = 100; // Nerve
-            datAisyo.tbl[389][10] = 100; // Mind
+            datAisyo.tbl[395][0] = 100; // Phys
+            datAisyo.tbl[395][1] = 2147483798; // Fire
+            datAisyo.tbl[395][2] = 100; // Ice
+            datAisyo.tbl[395][3] = 100; // Elec
+            datAisyo.tbl[395][4] = 65536; // Force
+            datAisyo.tbl[395][6] = 100; // Light
+            datAisyo.tbl[395][7] = 100; // Dark
+            datAisyo.tbl[395][8] = 100; // Curse
+            datAisyo.tbl[395][9] = 100; // Nerve
+            datAisyo.tbl[395][10] = 100; // Mind
 
             // Stats
             tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 3; // Agility
@@ -297,27 +297,27 @@ namespace NocturneInsaniax
         private static void Kamudo(ushort id)
         {
             // Affinities
-            datAisyo.tbl[390][0] = 50; // Phys
-            datAisyo.tbl[390][1] = 100; // Fire
-            datAisyo.tbl[390][2] = 100; // Ice
-            datAisyo.tbl[390][3] = 100; // Elec
-            datAisyo.tbl[390][4] = 100; // Force
-            datAisyo.tbl[390][6] = 100; // Light
-            datAisyo.tbl[390][7] = 100; // Dark
-            datAisyo.tbl[390][8] = 2147483798; // Curse
-            datAisyo.tbl[390][9] = 2147483798; // Nerve
-            datAisyo.tbl[390][10] = 2147483798; // Mind
+            datAisyo.tbl[396][0] = 50; // Phys
+            datAisyo.tbl[396][1] = 100; // Fire
+            datAisyo.tbl[396][2] = 100; // Ice
+            datAisyo.tbl[396][3] = 100; // Elec
+            datAisyo.tbl[396][4] = 100; // Force
+            datAisyo.tbl[396][6] = 100; // Light
+            datAisyo.tbl[396][7] = 100; // Dark
+            datAisyo.tbl[396][8] = 2147483798; // Curse
+            datAisyo.tbl[396][9] = 2147483798; // Nerve
+            datAisyo.tbl[396][10] = 2147483798; // Mind
 
-            datAisyo.tbl[391][0] = 50; // Phys
-            datAisyo.tbl[391][1] = 100; // Fire
-            datAisyo.tbl[391][2] = 100; // Ice
-            datAisyo.tbl[391][3] = 100; // Elec
-            datAisyo.tbl[391][4] = 100; // Force
-            datAisyo.tbl[391][6] = 100; // Light
-            datAisyo.tbl[391][7] = 100; // Dark
-            datAisyo.tbl[391][8] = 2147483798; // Curse
-            datAisyo.tbl[391][9] = 2147483798; // Nerve
-            datAisyo.tbl[391][10] = 2147483798; // Mind
+            datAisyo.tbl[397][0] = 50; // Phys
+            datAisyo.tbl[397][1] = 100; // Fire
+            datAisyo.tbl[397][2] = 100; // Ice
+            datAisyo.tbl[397][3] = 100; // Elec
+            datAisyo.tbl[397][4] = 100; // Force
+            datAisyo.tbl[397][6] = 100; // Light
+            datAisyo.tbl[397][7] = 100; // Dark
+            datAisyo.tbl[397][8] = 2147483798; // Curse
+            datAisyo.tbl[397][9] = 2147483798; // Nerve
+            datAisyo.tbl[397][10] = 2147483798; // Mind
 
             // Stats
             tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 3; // Vitality

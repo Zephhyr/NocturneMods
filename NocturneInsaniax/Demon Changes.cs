@@ -526,6 +526,7 @@ namespace NocturneInsaniax
             ForcedNekomata(316);
             BossTroll(317);
             ForcedWillOWisp(318);
+            ForcedPreta(319);
 
             BossMatador(349);
         }
