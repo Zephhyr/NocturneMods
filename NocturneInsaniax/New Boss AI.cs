@@ -75,7 +75,9 @@ namespace NocturneInsaniax
                 switch (a.work.id)
                 {
                     case 11: AmeNoUzumeAI(ref a, ref code, ref n); break;
+                    case 28: TakeMinakataAI(ref a, ref code, ref n); break;
                     case 33: ShiisaaAI(ref a, ref code, ref n); break;
+                    case 35: UnicornAI(ref a, ref code, ref n); break;
                     case 256: BossForneusAI(ref a, ref code, ref n); break;
                     case 294: BigSpecterAI(ref a, ref code, ref n); break;
                     case 295: BigSpecterAI(ref a, ref code, ref n); break;
@@ -114,6 +116,40 @@ namespace NocturneInsaniax
             }
         }
 
+        private static void TakeMinakataAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(220))
+            {
+                UseSkill(ref a, 220);
+            }
+            else if (AllyPartyBuffed(1))
+            {
+                UseSkill(ref a, 57);
+            }
+            else if (BossFocused(ref a))
+            {
+                int randomValue = random.Next(4);
+                switch (randomValue)
+                {
+                    case 0: UseNormalAttack(ref a); break;
+                    case 1: UseSkill(ref a, 16); break;
+                    case 2: UseSkill(ref a, 14); break;
+                    case 3: UseSkill(ref a, 427); break;
+                }
+            }
+            else
+            {
+                int randomValue = random.Next(4);
+                switch (randomValue)
+                {
+                    case 0: UseSkill(ref a, 16); break;
+                    case 1: UseSkill(ref a, 14); break;
+                    case 2: UseSkill(ref a, 224); break;
+                    case 3: UseSkill(ref a, 427); break;
+                }
+            }
+        }
+
         private static void ShiisaaAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
             if (actionTrackers[a.work.id].currentBattleActionCount <= 2)
@@ -128,6 +164,39 @@ namespace NocturneInsaniax
                     case 2: UseSkill(ref a, 123); break;
                     case 3: UseSkill(ref a, 182); break;
                     case 4: UseSkill(ref a, 182); break;
+                }
+            }
+        }
+
+        private static void UnicornAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (actionTrackers[a.work.id].currentBattleActionCount <= 1)
+                UseSkill(ref a, 66);
+            else if (nbMainProcess.nbGetMainProcessData().enemypcnt <= 2)
+                UseSummonSkill(ref a, 226, 125);
+            else
+            {
+                if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp).Any())
+                {
+                    int randomValue = random.Next(5);
+                    switch (randomValue)
+                    {
+                        case 0: UseSkill(ref a, 37); break;
+                        case 1: UseSkill(ref a, 39); break;
+                        case 2: UseSkill(ref a, 10); break;
+                        case 3: UseSkill(ref a, 10); break;
+                        case 4: UseSkill(ref a, 121); break;
+                    }
+                }
+                else
+                {
+                    int randomValue = random.Next(3);
+                    switch (randomValue)
+                    {
+                        case 0: UseNormalAttack(ref a); break;
+                        case 1: UseSkill(ref a, 10); break;
+                        case 2: UseSkill(ref a, 121); break;
+                    }
                 }
             }
         }
@@ -155,7 +224,6 @@ namespace NocturneInsaniax
             }
             
             if (actionTrackers[a.work.id].phase == 1)
-            //if (currentHpPercent > 60)
             {
                 int randomValue = random.Next(2);
                 switch (randomValue)
@@ -165,7 +233,6 @@ namespace NocturneInsaniax
                 }
             }
             else if (actionTrackers[a.work.id].phase == 2)
-            //else if (currentHpPercent > 20)
             {
                 if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(10))
                     UseSkill(ref a, 10);
@@ -292,6 +359,44 @@ namespace NocturneInsaniax
             ushort maxhp = a.work.maxhp;
             ushort currenthp = a.work.hp;
             return (ushort) ((currenthp*100)/maxhp);
+        }
+
+        private static bool BossFocused(ref nbActionProcessData_t a)
+        {
+            return (a.party.count[15] != 0);
+        }
+
+        private static bool BossConcentrated(ref nbActionProcessData_t a)
+        {
+            return (a.party.count[19] != 0);
+        }
+
+        private static bool AllyPartyBuffed(ushort threshold)
+        {
+            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3);
+            foreach (var unit in allyParty)
+            {
+                for (int i = 4; i <= 8; i++)
+                {
+                    if (unit.count[i] >= threshold)
+                        return true;
+                }
+            }
+            return false;
+        }
+
+        private static bool EnemyPartyDebuffed(ushort threshold)
+        {
+            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex >= 4);
+            foreach (var unit in allyParty)
+            {
+                for (int i = 4; i <= 8; i++)
+                {
+                    if (unit.count[i] <= threshold * -1)
+                        return true;
+                }
+            }
+            return false;
         }
     }
 

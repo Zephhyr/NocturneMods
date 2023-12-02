@@ -51,8 +51,8 @@ namespace NocturneInsaniax
                 MelonLogger.Msg("encpackno: " + encpackno);
 
 
-                //if (true)
-                if (evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0)
+                if (true)
+                //if (evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0)
                 {
                     encno = NewKagutsuchiEncounter(encno, encpackno);
                 }
@@ -142,7 +142,12 @@ namespace NocturneInsaniax
                 case 129: UnderpassAmeNoUzumeEncounter(); return 1270;
                 case 130: UnderpassAmeNoUzumeEncounter(); return 1270;
 
-                case 22: UnderpassAmeNoUzumeEncounter(); return 1270;
+                case 22: OverworldUnicornEncounter(); return 1270;
+
+                case 23: IkebukuroTakeMinakataEncounter(); return 1270;
+                case 24: IkebukuroTakeMinakataEncounter(); return 1270;
+                case 25: IkebukuroTakeMinakataEncounter(); return 1270;
+                case 35: IkebukuroTakeMinakataEncounter(); return 1270;
 
                 default: return encno;
             }
@@ -227,6 +232,21 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].devil[0] = 50;
             datEncount.tbl[1270].devil[1] = 74;
             datEncount.tbl[1270].devil[2] = 50;
+        }
+
+        private static void OverworldUnicornEncounter()
+        {
+            datEncount.tbl[1270].maxcall = 8;
+            datEncount.tbl[1270].maxparty = 3;
+
+            datEncount.tbl[1270].devil[0] = 125;
+            datEncount.tbl[1270].devil[1] = 35;
+            datEncount.tbl[1270].devil[2] = 125;
+        }
+
+        private static void IkebukuroTakeMinakataEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 28;
         }
 
         //------------------------------------------------------------
