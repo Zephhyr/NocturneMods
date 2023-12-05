@@ -28,7 +28,7 @@ namespace NocturneInsaniax
             //}
             //MelonLogger.Msg("]");
 
-            //var output = JsonConvert.SerializeObject(datDevilNegoFormat.tbl);
+            //var output = JsonConvert.SerializeObject(fclJunkShopTable.fclShopItemBoxTbl);
             //MelonLogger.Msg(output);
 
             ApplySkillChanges();
@@ -44,7 +44,7 @@ namespace NocturneInsaniax
         {
             public static void Prefix(int idx, float x, float y, float z, Vector4 rot)
             {
-                MelonLogger.Msg("fld_Npc.fldItemBoxAdd");
+                MelonLogger.Msg("-fld_Npc.fldItemBoxAdd-");
                 MelonLogger.Msg("idx: " + idx);
                 MelonLogger.Msg("x: " + x);
                 MelonLogger.Msg("y: " + y);
@@ -58,7 +58,7 @@ namespace NocturneInsaniax
         {
             public static void Prefix(int Type, float x, float y, float z, Vector4 rot, int hojiID, ref string name, int eveidx)
             {
-                MelonLogger.Msg("fld_Npc.fldNpcAdd");
+                MelonLogger.Msg("-fld_Npc.fldNpcAdd-");
                 MelonLogger.Msg("Type: " + Type);
                 MelonLogger.Msg("x: " + x);
                 MelonLogger.Msg("y: " + y);
@@ -75,7 +75,7 @@ namespace NocturneInsaniax
         {
             public static void Prefix(int idx)
             {
-                MelonLogger.Msg("fld_Npc.fldItemBoxOpen");
+                MelonLogger.Msg("-fld_Npc.fldItemBoxOpen-");
                 MelonLogger.Msg("idx: " + idx);
             }
         }
@@ -85,7 +85,7 @@ namespace NocturneInsaniax
         {
             public static void Prefix(int idx)
             {
-                MelonLogger.Msg("fldGlobal.fldGbSetTakaraOpen");
+                MelonLogger.Msg("-fldGlobal.fldGbSetTakaraOpen-");
                 MelonLogger.Msg("idx: " + idx);
             }
         }
@@ -95,7 +95,7 @@ namespace NocturneInsaniax
         {
             public static void Prefix(string pFileName, string akey)
             {
-                MelonLogger.Msg("fldFileResolver.fldLoadFile");
+                MelonLogger.Msg("-fldFileResolver.fldLoadFile-");
                 MelonLogger.Msg("pFileName: " + pFileName);
                 MelonLogger.Msg("akey: " + akey);
             }

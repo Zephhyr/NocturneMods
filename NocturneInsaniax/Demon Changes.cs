@@ -97,6 +97,8 @@ namespace NocturneInsaniax
                         __result = "Null: Elec • Weak: Fire"; return false;
                     case "<AISYO_L0099>": // Dakini
                         __result = "Str: Phys/Fire • Weak: Ice"; return false;
+                    case "<AISYO_L0100>": // Yaksini
+                        __result = "Null: Force • Str: Nerve • Weak: Elec"; return false;
                     case "<AISYO_L0102>": // Taraka
                         __result = "Null: Elec/Nerve • Str: Dark • Weak: Ice"; return false;
                     case "<AISYO_L0103>": // Datsue-Ba
@@ -524,6 +526,10 @@ namespace NocturneInsaniax
             BossSpecter1Merged1(294);
             BossSpecter1Merged2(295);
             BossSpecter1Merged3(296);
+
+            BossOrthrus(300);
+            BossYaksini(301);
+            BossThor1(302);
 
             ForcedNekomata(316);
             BossTroll(317);
@@ -2749,6 +2755,18 @@ namespace NocturneInsaniax
 
         private static void Yaksini(ushort id)
         {
+            // Affinities
+            datAisyo.tbl[id][0] = 100; // Phys
+            datAisyo.tbl[id][1] = 100; // Fire
+            datAisyo.tbl[id][2] = 100; // Ice
+            datAisyo.tbl[id][3] = 2147483798; // Elec
+            datAisyo.tbl[id][4] = 65536; // Force
+            datAisyo.tbl[id][6] = 100; // Light
+            datAisyo.tbl[id][7] = 100; // Dark
+            datAisyo.tbl[id][8] = 100; // Curse
+            datAisyo.tbl[id][9] = 50; // Nerve
+            datAisyo.tbl[id][10] = 100; // Mind
+
             // Skills
             tblSkill.fclSkillTbl[id].Event[0].Param = 386; // Kidnap
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
@@ -4929,6 +4947,88 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 160;
             datDevilFormat.tbl[id].hp = 160;
             datDevilFormat.tbl[id].flag = 547;
+        }
+
+        private static void BossOrthrus(ushort id)
+        {
+            // Affinities
+            datAisyo.tbl[id][0] = 100; // Phys
+            datAisyo.tbl[id][1] = 262144; // Fire
+            datAisyo.tbl[id][2] = 2147483798; // Ice
+            datAisyo.tbl[id][3] = 100; // Elec
+            datAisyo.tbl[id][4] = 100; // Force
+            datAisyo.tbl[id][6] = 100; // Light
+            datAisyo.tbl[id][7] = 100; // Dark
+            datAisyo.tbl[id][8] = 100; // Curse
+            datAisyo.tbl[id][9] = 100; // Nerve
+            datAisyo.tbl[id][10] = 50; // Mind
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].maxhp = 1600;
+            datDevilFormat.tbl[id].hp = 1600;
+            datDevilFormat.tbl[id].level = 30;
+            datDevilFormat.tbl[id].param[0] = 8;
+            datDevilFormat.tbl[id].param[2] = 12;
+            datDevilFormat.tbl[id].param[3] = 14;
+            datDevilFormat.tbl[id].param[4] = 6;
+            datDevilFormat.tbl[id].param[5] = 6;
+
+            datDevilFormat.tbl[id].dropexp = 300;
+        }
+
+        private static void BossYaksini(ushort id)
+        {
+            // Affinities
+            datAisyo.tbl[id][0] = 100; // Phys
+            datAisyo.tbl[id][1] = 100; // Fire
+            datAisyo.tbl[id][2] = 100; // Ice
+            datAisyo.tbl[id][3] = 2147483798; // Elec
+            datAisyo.tbl[id][4] = 65536; // Force
+            datAisyo.tbl[id][6] = 100; // Light
+            datAisyo.tbl[id][7] = 100; // Dark
+            datAisyo.tbl[id][8] = 100; // Curse
+            datAisyo.tbl[id][9] = 50; // Nerve
+            datAisyo.tbl[id][10] = 100; // Mind
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].maxhp = 1800;
+            datDevilFormat.tbl[id].hp = 1800;
+            datDevilFormat.tbl[id].level = 32;
+            datDevilFormat.tbl[id].param[0] = 8;
+            datDevilFormat.tbl[id].param[2] = 16;
+            datDevilFormat.tbl[id].param[3] = 18;
+            datDevilFormat.tbl[id].param[4] = 8;
+            datDevilFormat.tbl[id].param[5] = 8;
+
+            datDevilFormat.tbl[id].dropexp = 400;
+        }
+
+        private static void BossThor1(ushort id)
+        {
+            // Affinities
+            datAisyo.tbl[id][0] = 100; // Phys
+            datAisyo.tbl[id][1] = 100; // Fire
+            datAisyo.tbl[id][2] = 100; // Ice
+            datAisyo.tbl[id][3] = 262144; // Elec
+            datAisyo.tbl[id][4] = 100; // Force
+            datAisyo.tbl[id][6] = 65536; // Light
+            datAisyo.tbl[id][7] = 100; // Dark
+            datAisyo.tbl[id][8] = 2147483798; // Curse
+            datAisyo.tbl[id][9] = 2147483798; // Nerve
+            datAisyo.tbl[id][10] = 100; // Mind
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].maxhp = 3000;
+            datDevilFormat.tbl[id].hp = 3000;
+            datDevilFormat.tbl[id].level = 36;
+            datDevilFormat.tbl[id].param[0] = 10;
+            datDevilFormat.tbl[id].param[2] = 20;
+            datDevilFormat.tbl[id].param[3] = 20;
+            datDevilFormat.tbl[id].param[4] = 10;
+            datDevilFormat.tbl[id].param[5] = 10;
+            datDevilFormat.tbl[id].flag = 547;
+
+            datDevilFormat.tbl[id].dropexp = 800;
         }
 
         private static void BossTroll(ushort id)

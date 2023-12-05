@@ -324,9 +324,9 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 297 Boss Mizuchi
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 298 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 299 Boss Sakahagi
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 300 Boss Orthrus
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 301 Boss Yaksini
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 302 Boss Thor
+            new sbyte[] {4    , 4    , -6   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -2   , 1    , 0 }, // 300 Boss Orthrus
+            new sbyte[] {2    , 0    , 0    , -4   , 2    , 0    , 0    , 0    , 4    , 4    , 4    , 0    , 0    , 0    , 0    , 0 }, // 301 Boss Yaksini
+            new sbyte[] {5    , 0    , 0    , 5    , -7   , 0    , 0    , 0    , -3   , -3   , -3   , 0    , 0    , 0    , 2    , 0 }, // 302 Boss Thor
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 303 Boss Black Frost
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 304 Ambush Karasu Tengu
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 305 Ambush Karasu Tengu
@@ -979,7 +979,7 @@ namespace NocturneInsaniax
                         actionProcessData.work.badstatus == 256) // Stunned
                     {
                         var luk = datCalc.datGetParam(actionProcessData.work, 5) + 20;
-                        if (datCalc.datCheckSyojiSkill(actionProcessData.work, 366) != 0)
+                        if (datCalc.datCheckSyojiSkill(actionProcessData.work, 360) != 0 || datCalc.datCheckSyojiSkill(actionProcessData.work, 366) != 0)
                             luk += 20;
                         var rand = dds3KernelCore.dds3GetRandIntA(100);
 

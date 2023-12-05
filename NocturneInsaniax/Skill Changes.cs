@@ -12,7 +12,7 @@ namespace NocturneInsaniax
 {
     internal partial class NocturneInsaniax : MelonMod
     {
-        public static int[] bossList = new int[] { 256, 257, 294, 295, 296, 349 };
+        public static int[] bossList = new int[] { 256, 257, 294, 295, 296, 300, 301, 302, 349 };
         public static nbActionProcessData_t? actionProcessData;
 
         [HarmonyPatch(typeof(datSkillName), nameof(datSkillName.Get))]
@@ -47,6 +47,7 @@ namespace NocturneInsaniax
                     case 188: __result = "Punishment"; return false;      
                     case 189: __result = "Judgement Light"; return false;      
 
+                    case 360: __result = "Never Yield"; return false;      
                     case 362: __result = "Phys Boost"; return false;      
                     case 363: __result = "Magic Boost"; return false;      
                     case 364: __result = "Anti-Magic"; return false;      
@@ -201,6 +202,7 @@ namespace NocturneInsaniax
                     case 317: __result = "Protects against Force attacks"; return false; // Anti-Force
                     case 354: __result = "Earn 100% EXP when \nnot participating in battle."; return false; // Watchful
                     case 357: __result = "Attacks ignore all resistances \nexcept Repel."; return false; // Pierce
+                    case 360: __result = "Protects against ailments and instakills \n& Survive a fatal blow with 1 HP \nremaining once per battle."; return false; // Raidou Endure/Never Yield
                     case 361: __result = "Pierce & raises damage of all attacks by 30%."; return false; // Raidou the Eternal/Son's Oath
                     
                     // New Skills
@@ -260,7 +262,7 @@ namespace NocturneInsaniax
                     case 466: __result = "Massive Ice damage to one foe. \nLowers target's Defense."; return false; // Jack Bufudyne
                     case 467: __result = "High Physical damage to all foes. \nLowers targets' Attack/Defense/Evasion/Hit Rate."; return false; // Divine Light
                     case 468: __result = "Massive Ice damage to all foes. \nLowers targets' Defense/Evasion."; return false; // Niflheim
-                    case 469: __result = "High Strength-based Elec damage \nto one foe."; return false; // Mjolnir
+                    case 469: __result = "High Strength-based Elec damage \nto one foe. \nDamage relative to HP."; return false; // Mjolnir
                     case 470: __result = "Massive Almighty damage to all foes. \nMinimizes targets' Defense."; return false; // Tandava
                     case 471: __result = "Massive Strength-based Almighty damage \nto random foes."; return false; // Chaturbhuja
 
@@ -375,25 +377,25 @@ namespace NocturneInsaniax
                     }
 
                     // Test - Add rigged demons to party
-                    //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 130).Count() == 0)
+                    //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 85).Count() == 0)
                     //{
-                    //    datCalc.datAddDevil(130, 0);
-                    //    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 130))
+                    //    datCalc.datAddDevil(85, 0);
+                    //    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 85))
                     //    {
-                    //        work.skill[2] = 317;
-                    //        work.skill[3] = 301;
-                    //        work.skill[4] = 52;
+                    //        work.skill[2] = 64;
+                    //        work.skill[3] = 65;
+                    //        work.skill[4] = 66;
                     //        work.skillcnt = 5;
                     //    }
                     //}
-                    //else if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 38).Count() == 0)
+                    //else if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 33).Count() == 0)
                     //{
-                    //    datCalc.datAddDevil(38, 0);
-                    //    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 38))
+                    //    datCalc.datAddDevil(33, 0);
+                    //    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 33))
                     //    {
                     //        work.skill[3] = 65;
                     //        work.skill[4] = 66;
-                    //        work.skill[5] = 39;
+                    //        work.skill[5] = 64;
                     //        work.skillcnt = 6;
                     //    }
                     //}
@@ -405,7 +407,19 @@ namespace NocturneInsaniax
                     //        work.skill[3] = 66;
                     //        work.skill[4] = 67;
                     //        work.skill[5] = 54;
-                    //        work.skillcnt = 6;
+                    //        work.skill[6] = 326;
+                    //        work.skillcnt = 7;
+                    //    }
+                    //}
+                    //else
+                    //{
+                    //    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 68))
+                    //    {
+                    //        work.skill[3] = 66;
+                    //        work.skill[4] = 67;
+                    //        work.skill[5] = 54;
+                    //        work.skill[6] = 326;
+                    //        work.skillcnt = 7;
                     //    }
                     //}
                 }
@@ -3004,7 +3018,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
             datNormalSkill.tbl[id].hpn = 50;
-            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].hptype = 6;
             datNormalSkill.tbl[id].koukatype = 0;
             datNormalSkill.tbl[id].magicbase = 20;
             datNormalSkill.tbl[id].magiclimit = 220;
