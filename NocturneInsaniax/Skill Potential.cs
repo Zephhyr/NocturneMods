@@ -416,13 +416,13 @@ namespace NocturneInsaniax
             //          {Phys , Fire , Ice  , Elec , Force, Alm  , Light, Dark , Curse, Nerve, Mind , SD   , N/A  , Heal , Supp , Util}
             new sbyte[] {1    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Marogareh
             new sbyte[] {0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // Wadatsumi
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 1    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0 }, // Ankh
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 1    , 0    , 0    , 0    , 1    , 0    , 0    , 3    , 0    , 0 }, // Ankh
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0 }, // Iyomante
             new sbyte[] {0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // Shiranui
             new sbyte[] {0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // Hifumi
             new sbyte[] {3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Kamudo
-            new sbyte[] {2    , 0    , 0    , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Narukami
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Anathema
+            new sbyte[] {2    , 0    , 0    , 4    , 0    , 0    , 0    , 0    , 0    , 2    , 0    , 0    , 0    , 0    , 0    , 0 }, // Narukami
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 5    , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Anathema
             new sbyte[] {0    , 0    , 6    , 0    , 0    , 0    , 0    , 0    , 2    , 2    , 2    , 0    , 0    , 0    , 0    , 0 }, // Miasma
             new sbyte[] {3    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Nirvana
             new sbyte[] {4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 2    , 2    , 0    , 0    , 0    , 0    , 0 }, // Murakumo
@@ -435,7 +435,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 9    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Adama
             new sbyte[] {6    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0 }, // Vimana
             new sbyte[] {4    , 0    , 0    , 0    , 8    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Gundari
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 7    , 0    , 0    , 0    , 0    , 0    , 0    , 7    , 0    , 0 }, // Sophia
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 7    , 0    , 0    , 0    , 0    , 0    , 0    , 4    , 0    , 0 }, // Sophia
             new sbyte[] {9    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Gaea
             new sbyte[] {0    , 5    , 5    , 5    , 5    , 7    , 0    , 0    , 0    , 0    , 0    , 7    , 0    , 0    , 3    , 0 }, // Kailash
             new sbyte[] {9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 0    , 5    , 5    , 0 }  // Masakados
@@ -831,8 +831,8 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+1: Phys<material=\"MsgFont1\">", // 385 Marogareh
             "  <material=\"MsgFont4\">+3: Ice • +1: Supp<material=\"MsgFont1\">", // 386 Wadatsumi
             "  <material=\"MsgFont4\">+3: Ice • +1: Supp<material=\"MsgFont1\">", // 387 Wadatsumi
-            "  <material=\"MsgFont4\">+3: Heal • +1: Light<material=\"MsgFont1\">", // 388 Ankh
-            "  <material=\"MsgFont4\">+3: Heal • +1: Light<material=\"MsgFont1\">", // 389 Ankh
+            "  <material=\"MsgFont4\">+3: Heal • +1: Light/Mind<material=\"MsgFont1\">", // 388 Ankh
+            "  <material=\"MsgFont4\">+3: Heal • +1: Light/Mind<material=\"MsgFont1\">", // 389 Ankh
             "  <material=\"MsgFont4\">+3: Supp<material=\"MsgFont1\">", // 390 Iyomante
             "  <material=\"MsgFont4\">+3: Supp<material=\"MsgFont1\">", // 391 Iyomante
             "  <material=\"MsgFont4\">+3: Fire • +1: Supp<material=\"MsgFont1\">", // 392 Shiranui
@@ -841,10 +841,10 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+3: Force • +1: Supp<material=\"MsgFont1\">", // 395 Hifumi
             "  <material=\"MsgFont4\">+3: Phys<material=\"MsgFont1\">", // 396 Kamudo
             "  <material=\"MsgFont4\">+3: Phys<material=\"MsgFont1\">", // 397 Kamudo
-            "  <material=\"MsgFont4\">+4: Elec • +2: Phys<material=\"MsgFont1\">", // 398 Narukami
-            "  <material=\"MsgFont4\">+4: Elec • +2: Phys<material=\"MsgFont1\">", // 399 Narukami
-            "  <material=\"MsgFont4\">+5: Dark<material=\"MsgFont1\">", // 400 Anathema
-            "  <material=\"MsgFont4\">+5: Dark<material=\"MsgFont1\">", // 401 Anathema
+            "  <material=\"MsgFont4\">+4: Elec • +2: Phys/Nerve<material=\"MsgFont1\">", // 398 Narukami
+            "  <material=\"MsgFont4\">+4: Elec • +2: Phys/Nerve<material=\"MsgFont1\">", // 399 Narukami
+            "  <material=\"MsgFont4\">+5: Dark • +2: Curse<material=\"MsgFont1\">", // 400 Anathema
+            "  <material=\"MsgFont4\">+5: Dark • +2: Curse<material=\"MsgFont1\">", // 401 Anathema
             "  <material=\"MsgFont4\">+6: Ice • +2: Ailments<material=\"MsgFont1\">", // 402 Miasma
             "  <material=\"MsgFont4\">+6: Ice • +2: Ailments<material=\"MsgFont1\">", // 403 Miasma
             "  <material=\"MsgFont4\">+5: Light • +3: Phys<material=\"MsgFont1\">", // 404 Nirvana
@@ -869,8 +869,8 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+6: Phys • +3: Supp<material=\"MsgFont1\">", // 423 Vimana
             "  <material=\"MsgFont4\">+8: Force • +4: Phys<material=\"MsgFont1\">", // 424 Gundari
             "  <material=\"MsgFont4\">+8: Force • +4: Phys<material=\"MsgFont1\">", // 425 Gundari
-            "  <material=\"MsgFont4\">+7: Light/Heal<material=\"MsgFont1\">", // 426 Sophia
-            "  <material=\"MsgFont4\">+7: Light/Heal<material=\"MsgFont1\">", // 427 Sophia
+            "  <material=\"MsgFont4\">+7: Light  • +4: Heal<material=\"MsgFont1\">", // 426 Sophia
+            "  <material=\"MsgFont4\">+7: Light  • +4: Heal<material=\"MsgFont1\">", // 427 Sophia
             "  <material=\"MsgFont4\">+9: Phys<material=\"MsgFont1\">", // 428 Gaea
             "  <material=\"MsgFont4\">+9: Phys<material=\"MsgFont1\">", // 429 Gaea
             "  <material=\"MsgFont4\">+7: Almighty • +5: Magic • +3: Supp<material=\"MsgFont1\">", // 430 Kailash
@@ -891,7 +891,7 @@ namespace NocturneInsaniax
             "Imparts Ice magic\r\n<material=\"MsgFont2\">Null: Ice<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Elec\r\n" +
             "<material=\"MsgFont4\">+3: Ice • +1: Supp", // Wadatsumi
             "Imparts Healing magic\r\n<material=\"MsgFont2\">Null: Light<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Dark\r\n" +
-            "<material=\"MsgFont4\">+3: Heal • +1: Light", // Ankh
+            "<material=\"MsgFont4\">+3: Heal • +1: Light/Mind", // Ankh
             "Imparts Support magic\r\n<material=\"MsgFont2\">Null: Mind\r\n" +
             "<material=\"MsgFont4\">+3: Supp", // Iyomante
             "Imparts Fire magic\r\n<material=\"MsgFont2\">Null: Fire<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Force\r\n" +
@@ -901,9 +901,9 @@ namespace NocturneInsaniax
             "Imparts Physical skills\r\n<material=\"MsgFont2\">Strong: Phys<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ailments\r\n" +
             "<material=\"MsgFont4\">+3: Phys", // Kamudo
             "Imparts Electricity magic\r\n<material=\"MsgFont2\">Null: Elec<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ice\r\n" +
-            "<material=\"MsgFont4\">+4: Elec • +2: Phys", // Narukami
+            "<material=\"MsgFont4\">+4: Elec • +2: Phys/Nerve", // Narukami
             "Imparts Dark magic\r\n<material=\"MsgFont2\">Null: Dark<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Light\r\n" +
-            "<material=\"MsgFont4\">+5: Dark", // Anathema
+            "<material=\"MsgFont4\">+5: Dark • +2: Curse", // Anathema
             "Imparts Ice magic\r\n<material=\"MsgFont2\">Null: Ice<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire\r\n" +
             "<material=\"MsgFont4\">+6: Ice • +2: Ailments", // Miasma
             "Imparts Light magic\r\n<material=\"MsgFont2\">Null: Light<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Dark\r\n" +
@@ -929,7 +929,7 @@ namespace NocturneInsaniax
             "Imparts Force magic\r\n<material=\"MsgFont2\">Drain: Force<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Elec\r\n" +
             "<material=\"MsgFont4\">+8: Force • +4: Phys", // Gundari
             "Imparts Healing magic\r\n<material=\"MsgFont2\">Null: Light\r\n" +
-            "<material=\"MsgFont4\">+7: Light/Heal", // Sophia
+            "<material=\"MsgFont4\">+7: Light  • +4: Heal", // Sophia
             "Imparts Physical skills\r\n<material=\"MsgFont2\">Strong: Phys<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Force/Light/Dark\r\n" +
             "<material=\"MsgFont4\">+9: Phys", // Gaea
             "Imparts Almighty magic\r\nNormal resistance\r\n" +

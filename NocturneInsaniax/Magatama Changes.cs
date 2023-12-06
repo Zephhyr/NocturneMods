@@ -150,12 +150,14 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 5;
             tblHearts.fclHeartsTbl[id].Skill[1].ID = 290;
             tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 6;
-            tblHearts.fclHeartsTbl[id].Skill[2].ID = 296;
-            tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 11;
-            tblHearts.fclHeartsTbl[id].Skill[3].ID = 39;
-            tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 16;
-            tblHearts.fclHeartsTbl[id].Skill[4].ID = 346;
-            tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 21;
+            tblHearts.fclHeartsTbl[id].Skill[2].ID = 61;
+            tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 8;
+            tblHearts.fclHeartsTbl[id].Skill[3].ID = 296;
+            tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 12;
+            tblHearts.fclHeartsTbl[id].Skill[4].ID = 39;
+            tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 16;
+            tblHearts.fclHeartsTbl[id].Skill[5].ID = 346;
+            tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 20;
         }
 
         private static void Iyomante(ushort id)
@@ -202,7 +204,9 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Skill[3].ID = 300;
             tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 18;
             tblHearts.fclHeartsTbl[id].Skill[4].ID = 298;
-            tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 22;
+            tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 23;
+            tblHearts.fclHeartsTbl[id].Skill[5].ID = 77;
+            tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 28;
         }
 
         private static void Shiranui(ushort id)
