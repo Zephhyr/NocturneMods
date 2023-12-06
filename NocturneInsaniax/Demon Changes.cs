@@ -536,6 +536,7 @@ namespace NocturneInsaniax
             ForcedWillOWisp(318);
             ForcedPreta(319);
 
+            BossDanteRaidou1(339);
             BossMatador(349);
         }
 
@@ -5175,6 +5176,32 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 20;
             datDevilFormat.tbl[id].mp = 32;
             datDevilFormat.tbl[id].maxmp = 32;
+        }
+
+        private static void BossDanteRaidou1(ushort id)
+        {
+            // Affinities
+            datAisyo.tbl[id][0] = 50; // Phys
+            datAisyo.tbl[id][1] = 50; // Fire
+            datAisyo.tbl[id][2] = 50; // Ice
+            datAisyo.tbl[id][3] = 50; // Elec
+            datAisyo.tbl[id][4] = 50; // Force
+            datAisyo.tbl[id][6] = 50; // Light
+            datAisyo.tbl[id][7] = 50; // Dark
+            datAisyo.tbl[id][8] = 50; // Curse
+            datAisyo.tbl[id][9] = 50; // Nerve
+            datAisyo.tbl[id][10] = 50; // Mind
+            datAisyo.tbl[id][11] = 100; // Self-Destruct
+
+            datDevilFormat.tbl[id].maxhp = 2000;
+            datDevilFormat.tbl[id].hp = 2000;
+            datDevilFormat.tbl[id].level = 40;
+            datDevilFormat.tbl[id].param[0] = 2;
+            datDevilFormat.tbl[id].param[2] = 10;
+            datDevilFormat.tbl[id].param[3] = 10;
+            datDevilFormat.tbl[id].param[4] = 8;
+            datDevilFormat.tbl[id].param[5] = 8;
+            datDevilFormat.tbl[id].flag = 34;
         }
 
         private static void BossMatador(ushort id)

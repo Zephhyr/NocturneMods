@@ -255,8 +255,9 @@ namespace NocturneInsaniax
         {
             datEncount.tbl[1269].flag = 13; // Forced Kodama + Will o' Wisp in Unknown Realm
             datEncount.tbl[14].flag = 11; // Boss Forneus
-            datEncount.tbl[85].flag = 11; // Boss Thor 1
             datEncount.tbl[20].maxparty = 7; // Boss Specter 1
+            datEncount.tbl[85].flag = 11; // Boss Thor 1
+            datEncount.tbl[1033].flag = 11; // Boss Raidou/Dante 1
         }
     }
 }

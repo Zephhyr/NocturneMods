@@ -364,9 +364,9 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 336 Ambush Jack-o'-Lantern
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 337 Boss Thor 2
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 338 
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 339 Boss Raidou/Dante 1
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 340 Chase Raidou/Dante
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 341 Boss Raidou/Dante 2
+            new sbyte[] {5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0 }, // 339 Boss Raidou/Dante 1
+            new sbyte[] {6    , 0    , 0    , 6    , 6    , 4    , 0    , 0    , 0    , 0    , 0    , 4    , 0    , 0    , 4    , 0 }, // 340 Chase Raidou/Dante
+            new sbyte[] {6    , 0    , 0    , 6    , 6    , 4    , 0    , 0    , 0    , 0    , 0    , 4    , 0    , 0    , 4    , 0 }, // 341 Boss Raidou/Dante 2
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 342 Boss Metatron
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 343 Boss Beelzebub
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 344 Boss Lucifer
@@ -421,7 +421,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // Shiranui
             new sbyte[] {0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // Hifumi
             new sbyte[] {3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Kamudo
-            new sbyte[] {0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Narukami
+            new sbyte[] {2    , 0    , 0    , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Narukami
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Anathema
             new sbyte[] {0    , 0    , 6    , 0    , 0    , 0    , 0    , 0    , 2    , 2    , 2    , 0    , 0    , 0    , 0    , 0 }, // Miasma
             new sbyte[] {3    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Nirvana
@@ -841,8 +841,8 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+3: Force • +1: Supp<material=\"MsgFont1\">", // 395 Hifumi
             "  <material=\"MsgFont4\">+3: Phys<material=\"MsgFont1\">", // 396 Kamudo
             "  <material=\"MsgFont4\">+3: Phys<material=\"MsgFont1\">", // 397 Kamudo
-            "  <material=\"MsgFont4\">+5: Elec<material=\"MsgFont1\">", // 398 Narukami
-            "  <material=\"MsgFont4\">+5: Elec<material=\"MsgFont1\">", // 399 Narukami
+            "  <material=\"MsgFont4\">+4: Elec • +2: Phys<material=\"MsgFont1\">", // 398 Narukami
+            "  <material=\"MsgFont4\">+4: Elec • +2: Phys<material=\"MsgFont1\">", // 399 Narukami
             "  <material=\"MsgFont4\">+5: Dark<material=\"MsgFont1\">", // 400 Anathema
             "  <material=\"MsgFont4\">+5: Dark<material=\"MsgFont1\">", // 401 Anathema
             "  <material=\"MsgFont4\">+6: Ice • +2: Ailments<material=\"MsgFont1\">", // 402 Miasma
@@ -901,7 +901,7 @@ namespace NocturneInsaniax
             "Imparts Physical skills\r\n<material=\"MsgFont2\">Strong: Phys<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ailments\r\n" +
             "<material=\"MsgFont4\">+3: Phys", // Kamudo
             "Imparts Electricity magic\r\n<material=\"MsgFont2\">Null: Elec<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ice\r\n" +
-            "<material=\"MsgFont4\">+5: Elec", // Narukami
+            "<material=\"MsgFont4\">+4: Elec • +2: Phys", // Narukami
             "Imparts Dark magic\r\n<material=\"MsgFont2\">Null: Dark<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Light\r\n" +
             "<material=\"MsgFont4\">+5: Dark", // Anathema
             "Imparts Ice magic\r\n<material=\"MsgFont2\">Null: Ice<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire\r\n" +
@@ -1004,7 +1004,9 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int id, ref string __result)
             {
-                if (id < 288 || id > 421) // If it isn't a passive skill
+                if (id == 422 && currentDemonID == 339)
+                    __result = "Accelerate";
+                else if (id < 288 || id > 421) // If it isn't a passive skill
                 {
                     sbyte skillPotential = 0;
                     if (id != 164 && id != 165 && id != 166)

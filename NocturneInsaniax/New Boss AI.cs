@@ -86,6 +86,7 @@ namespace NocturneInsaniax
                     case 301: BossYaksiniAI(ref a, ref code, ref n); break;
                     case 302: BossThor1AI(ref a, ref code, ref n); break;
                     case 317: BossTrollAI(ref a, ref code, ref n); break;
+                    case 339: BossDanteRaidou1AI(ref a, ref code, ref n); break;
                     case 349: BossMatadorAI(ref a, ref code, ref n); break;
                     default: break;
                 }
@@ -499,13 +500,27 @@ namespace NocturneInsaniax
             }
         }
 
+        private static void BossDanteRaidou1AI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            ushort currentHpPercent = BossCurrentHpPercent(ref a);
+            MelonLogger.Msg("Boss HP%: " + currentHpPercent);
+            MelonLogger.Msg("Boss HP: " + a.work.hp);
+
+            if (actionTrackers[a.work.id].extraTurns < 1)
+                UseSkill(ref a, 422);
+            else if (actionTrackers[a.work.id].currentBattleActionCount == 2)
+            {
+                UseNormalAttack(ref a);
+            }
+        }
+
         private static void BossMatadorAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
             ushort currentHpPercent = BossCurrentHpPercent(ref a);
             MelonLogger.Msg("Matador HP%: " + currentHpPercent);
             MelonLogger.Msg("Matador HP: " + a.work.hp);
 
-            if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(422))
+            if (actionTrackers[a.work.id].extraTurns < 1)
                 UseSkill(ref a, 422);
             else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(276))
                 UseSkill(ref a, 276);
