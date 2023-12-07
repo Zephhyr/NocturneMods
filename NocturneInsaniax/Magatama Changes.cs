@@ -150,7 +150,7 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 5;
             tblHearts.fclHeartsTbl[id].Skill[1].ID = 290;
             tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 6;
-            tblHearts.fclHeartsTbl[id].Skill[2].ID = 61;
+            tblHearts.fclHeartsTbl[id].Skill[2].ID = 43;
             tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 8;
             tblHearts.fclHeartsTbl[id].Skill[3].ID = 296;
             tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 12;
@@ -379,7 +379,7 @@ namespace NocturneInsaniax
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 182;
             tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 14;
-            tblHearts.fclHeartsTbl[id].Skill[1].ID = 450;
+            tblHearts.fclHeartsTbl[id].Skill[1].ID = 112;
             tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 18;
             tblHearts.fclHeartsTbl[id].Skill[2].ID = 316;
             tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 24;
