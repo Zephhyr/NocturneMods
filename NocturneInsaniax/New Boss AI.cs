@@ -78,6 +78,7 @@ namespace NocturneInsaniax
                     case 28: TakeMinakataAI(ref a, ref code, ref n); break;
                     case 33: ShiisaaAI(ref a, ref code, ref n); break;
                     case 35: UnicornAI(ref a, ref code, ref n); break;
+                    case 124: NKENueAI(ref a, ref code, ref n); break;
                     case 256: BossForneusAI(ref a, ref code, ref n); break;
                     case 294: BigSpecterAI(ref a, ref code, ref n); break;
                     case 295: BigSpecterAI(ref a, ref code, ref n); break;
@@ -88,6 +89,7 @@ namespace NocturneInsaniax
                     case 317: BossTrollAI(ref a, ref code, ref n); break;
                     case 339: BossDanteRaidou1AI(ref a, ref code, ref n); break;
                     case 349: BossMatadorAI(ref a, ref code, ref n); break;
+                    case 351: BossDaisoujouAI(ref a, ref code, ref n); break;
                     default: break;
                 }
                 MelonLogger.Msg("skill: " + a.work.nowindex);
@@ -203,6 +205,12 @@ namespace NocturneInsaniax
                     }
                 }
             }
+        }
+
+        private static void NKENueAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (a.work.nowindex == 227 && a.data.encno == 1270)
+                UseNormalAttack(ref a);
         }
 
         private static void BossForneusAI(ref nbActionProcessData_t a, ref int code, ref int n)
@@ -324,7 +332,7 @@ namespace NocturneInsaniax
                     int randomValue = random.Next(3);
                     switch (randomValue)
                     {
-                        case 0: UseSkill(ref a, 122); break;
+                        case 0: UseSkill(ref a, 430); break;
                         case 1: UseSkill(ref a, 3); break;
                         case 2: UseSkill(ref a, 177); break;
                     }
@@ -528,6 +536,99 @@ namespace NocturneInsaniax
                 UseSkill(ref a, 443);
         }
 
+        private static void BossDaisoujouAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            ushort currentHpPercent = BossCurrentHpPercent(ref a);
+            MelonLogger.Msg("Daisoujou HP%: " + currentHpPercent);
+            MelonLogger.Msg("Daisoujou HP: " + a.work.hp);
+
+            if (currentHpPercent <= 80 && actionTrackers[a.work.id].phase == 1)
+                actionTrackers[a.work.id].phase = 2;
+            else if (currentHpPercent <= 50 && actionTrackers[a.work.id].phase == 2)
+                actionTrackers[a.work.id].phase = 3;
+
+            if (actionTrackers[a.work.id].phase == 1)
+            {
+                if (actionTrackers[a.work.id].extraTurns < 1)
+                    UseSkill(ref a, 422);
+                else if (actionTrackers[a.work.id].currentBattleActionCount == 2)
+                {
+                    UseSkill(ref a, 279);
+                }
+                else
+                {
+                    int randomValue = random.Next(2);
+                    switch (randomValue)
+                    {
+                        case 0: UseNormalAttack(ref a); break;
+                        case 1: UseSkill(ref a, 279); break;
+                    }
+                }
+            }
+            else if (actionTrackers[a.work.id].phase == 2)
+            {
+                if (!EnemyPartyBuffed(3, 5) && random.Next(2) == 0)
+                {
+                    UseSkill(ref a, 67);
+                }
+                else if (AllyPartyBuffed(1) && random.Next(3) == 0)
+                {
+                    UseSkill(ref a, 57);
+                }
+                else
+                {
+                    int randomValue = random.Next(3);
+                    switch (randomValue)
+                    {
+                        case 0: UseSkill(ref a, 279); break;
+                        case 1: UseSkill(ref a, 30); break;
+                        case 2: UseSkill(ref a, 34); break;
+                    }
+                }
+            }
+            else if (actionTrackers[a.work.id].phase == 3)
+            {
+                if (actionTrackers[a.work.id].extraTurns < 2)
+                {
+                    UseSkill(ref a, 422); return;
+                }
+                else if (!EnemyPartyBuffed(3, 5) && random.Next(3) == 0)
+                {
+                    UseSkill(ref a, 67);
+                }
+                else if (AllyPartyBuffed(1) && random.Next(3) == 0)
+                {
+                    UseSkill(ref a, 57);
+                }
+                else
+                {
+                    if (BossConcentrated(ref a))
+                    {
+                        int randomValue = random.Next(3);
+                        switch (randomValue)
+                        {
+                            case 1: UseSkill(ref a, 278); break;
+                            case 2: UseSkill(ref a, 30); break;
+                            case 3: UseSkill(ref a, 34); break;
+                        }
+                    }
+                    else
+                    {
+                        int randomValue = random.Next(6);
+                        switch (randomValue)
+                        {
+                            case 0: UseSkill(ref a, 279); break;
+                            case 1: UseSkill(ref a, 278); break;
+                            case 2: UseSkill(ref a, 30); break;
+                            case 3: UseSkill(ref a, 34); break;
+                            case 4: UseSkill(ref a, 424); break;
+                            case 5: UseSkill(ref a, 424); break;
+                        }
+                    }
+                }
+            }
+        }
+
         //------------------------------------------------------------
 
         private static void UseNormalAttack(ref nbActionProcessData_t a)
@@ -607,9 +708,48 @@ namespace NocturneInsaniax
             return false;
         }
 
+        private static bool AllyPartyDebuffed(ushort threshold)
+        {
+            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].hp != 0);
+            foreach (var unit in allyParty)
+            {
+                for (int i = 4; i <= 8; i++)
+                {
+                    if (unit.count[i] <= threshold * -1)
+                        return true;
+                }
+            }
+            return false;
+        }
+
+        private static bool EnemyPartyBuffed(ushort threshold)
+        {
+            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex >= 4 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].hp != 0);
+            foreach (var unit in allyParty)
+            {
+                for (int i = 4; i <= 8; i++)
+                {
+                    if (unit.count[i] >= threshold)
+                        return true;
+                }
+            }
+            return false;
+        }
+
+        private static bool EnemyPartyBuffed(ushort threshold, int type)
+        {
+            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex >= 4 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].hp != 0);
+            foreach (var unit in allyParty)
+            {
+                if (unit.count[type] >= threshold)
+                    return true;
+            }
+            return false;
+        }
+
         private static bool EnemyPartyDebuffed(ushort threshold)
         {
-            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex >= 4);
+            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex >= 4 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].hp != 0);
             foreach (var unit in allyParty)
             {
                 for (int i = 4; i <= 8; i++)

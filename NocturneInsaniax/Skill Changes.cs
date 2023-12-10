@@ -377,42 +377,39 @@ namespace NocturneInsaniax
                     }
 
                     // Test - Add rigged demons to party
-                    //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 134).Count() == 0)
+                    //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 11).Count() == 0)
                     //{
-                    //    datCalc.datAddDevil(134, 0);
-                    //    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 134))
+                    //    datCalc.datAddDevil(11, 0);
+                    //    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 11))
                     //    {
-                    //        work.skill[2] = 64;
-                    //        work.skill[3] = 65;
-                    //        work.skill[4] = 66;
-                    //        work.skill[5] = 190;
-                    //        work.skill[6] = 301;
-                    //        work.skill[7] = 302;
+                    //        work.skill[2] = 52;
+                    //        work.skill[3] = 53;
+                    //        work.skill[4] = 54;
+                    //        work.skill[5] = 302;
+                    //        work.skill[6] = 329;
+                    //        work.skill[7] = 332;
                     //        work.skillcnt = 8;
                     //    }
                     //}
-                    //else if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 96).Count() == 0)
+                    //else if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 67).Count() == 0)
                     //{
-                    //    datCalc.datAddDevil(96, 0);
-                    //    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 96))
+                    //    datCalc.datAddDevil(67, 0);
+                    //    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 67))
                     //    {
-                    //        work.skill[2] = 64;
                     //        work.skill[3] = 65;
                     //        work.skill[4] = 66;
-                    //        work.skill[5] = 190;
-                    //        work.skill[6] = 301;
-                    //        work.skill[7] = 302;
+                    //        work.skill[5] = 302;
+                    //        work.skill[6] = 329;
+                    //        work.skill[7] = 332;
                     //        work.skillcnt = 8;
                     //    }
                     //}
                     //else
                     //{
-                    //    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 130))
+                    //    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 134))
                     //    {
-                    //        work.skill[3] = 301;
-                    //        work.skill[6] = 54;
-                    //        work.skill[7] = 302;
-                    //        work.skillcnt = 8;
+                    //        work.skill[1] = 328;
+                    //        work.skill[6] = 332;
                     //    }
                     //}
                 }

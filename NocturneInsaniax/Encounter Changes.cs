@@ -149,6 +149,14 @@ namespace NocturneInsaniax
                 case 25: IkebukuroTakeMinakataEncounter(); return 1270;
                 case 35: IkebukuroTakeMinakataEncounter(); return 1270;
 
+                case 26: MantraHeadquartersNueEncounter(); return 1270;
+                case 27: MantraHeadquartersNueEncounter(); return 1270;
+                case 28: MantraHeadquartersNueEncounter(); return 1270;
+                case 29: MantraHeadquartersNueEncounter(); return 1270;
+                case 30: MantraHeadquartersNueEncounter(); return 1270;
+                case 132: MantraHeadquartersNueEncounter(); return 1270;
+                case 133: MantraHeadquartersNueEncounter(); return 1270;
+
                 default: return encno;
             }
         }
@@ -247,6 +255,13 @@ namespace NocturneInsaniax
         private static void IkebukuroTakeMinakataEncounter()
         {
             datEncount.tbl[1270].devil[0] = 28;
+        }
+
+        private static void MantraHeadquartersNueEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 124;
+            datEncount.tbl[1270].devil[1] = 124;
+            datEncount.tbl[1270].devil[2] = 124;
         }
 
         //------------------------------------------------------------
