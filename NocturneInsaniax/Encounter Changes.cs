@@ -51,8 +51,8 @@ namespace NocturneInsaniax
                 MelonLogger.Msg("encpackno: " + encpackno);
 
 
-                //if (true)
-                if (evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0)
+                if (true)
+                //if (evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0)
                 {
                     encno = NewKagutsuchiEncounter(encno, encpackno);
                 }
@@ -157,6 +157,15 @@ namespace NocturneInsaniax
                 case 132: MantraHeadquartersNueEncounter(); return 1270;
                 case 133: MantraHeadquartersNueEncounter(); return 1270;
 
+                case 160: GinzaMakamiEncounter(); return 1270;
+                case 161: GinzaMakamiEncounter(); return 1270;
+                case 162: GinzaMakamiEncounter(); return 1270;
+
+                //case 38: GinzaMakamiEncounter(); return 1270;
+                //case 39: GinzaMakamiEncounter(); return 1270;
+                //case 41: GinzaMakamiEncounter(); return 1270;
+                //case 82: GinzaMakamiEncounter(); return 1270;
+
                 default: return encno;
             }
         }
@@ -257,11 +266,29 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].devil[0] = 28;
         }
 
+        private static void TestManikinEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 156;
+            datEncount.tbl[1270].devil[1] = 157;
+            datEncount.tbl[1270].devil[2] = 158;
+            datEncount.tbl[1270].devil[3] = 159;
+            datEncount.tbl[1270].devil[4] = 160;
+        }
+
         private static void MantraHeadquartersNueEncounter()
         {
             datEncount.tbl[1270].devil[0] = 124;
             datEncount.tbl[1270].devil[1] = 124;
             datEncount.tbl[1270].devil[2] = 124;
+        }
+
+        private static void GinzaMakamiEncounter()
+        {
+            datEncount.tbl[1270].maxparty = 3;
+
+            datEncount.tbl[1270].devil[0] = 0;
+            datEncount.tbl[1270].devil[1] = 151;
+            datEncount.tbl[1270].devil[2] = 0;
         }
 
         //------------------------------------------------------------
@@ -273,6 +300,19 @@ namespace NocturneInsaniax
             datEncount.tbl[20].maxparty = 7; // Boss Specter 1
             datEncount.tbl[85].flag = 11; // Boss Thor 1
             datEncount.tbl[1033].flag = 11; // Boss Raidou/Dante 1
+
+            datEncount.tbl[144].maxparty = 6; // Forced Incubus + Koppa Tengu
+            datEncount.tbl[144].maxcall = 0; // Forced Incubus + Koppa Tengu
+            datEncount.tbl[144].devil[0] = 0;
+            datEncount.tbl[144].devil[1] = 0;
+            datEncount.tbl[144].devil[2] = 260;
+            datEncount.tbl[144].devil[3] = 261;
+
+            datEncount.tbl[115].flag = 11;
+            datEncount.tbl[115].maxparty = 3;
+            datEncount.tbl[115].devil[0] = 0;
+            datEncount.tbl[115].devil[1] = 312;
+            datEncount.tbl[115].devil[2] = 0;
         }
     }
 }

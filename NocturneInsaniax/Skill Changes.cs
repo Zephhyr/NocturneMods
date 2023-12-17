@@ -12,7 +12,7 @@ namespace NocturneInsaniax
 {
     internal partial class NocturneInsaniax : MelonMod
     {
-        public static int[] bossList = new int[] { 256, 257, 294, 295, 296, 300, 301, 302, 339, 349 };
+        public static int[] bossList = new int[] { 256, 257, 294, 295, 296, 300, 301, 302, 307, 308, 309, 312, 313, 339, 349, 351 };
         public static nbActionProcessData_t? actionProcessData;
 
         [HarmonyPatch(typeof(datSkillName), nameof(datSkillName.Get))]
@@ -962,6 +962,9 @@ namespace NocturneInsaniax
             PanicVoice(216);
             Intoxicate(217);
             Prayer(218);
+
+            Rage(219);
+            PsychoRage(220);
 
             BeckonCall(223);
             Focus(224);
@@ -5346,6 +5349,16 @@ namespace NocturneInsaniax
         }
 
         // Enemy-Only Skills
+
+        private static void Rage(ushort id)
+        {
+            datSkill.tbl[id].skillattr = 15; // Utility skill
+        }
+
+        private static void PsychoRage(ushort id)
+        {
+            datSkill.tbl[id].skillattr = 15; // Utility skill
+        }
 
         private static void BaelsBane(ushort id)
         {
