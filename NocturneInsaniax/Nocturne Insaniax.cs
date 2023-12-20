@@ -5,7 +5,7 @@ using MelonLoader;
 using Newtonsoft.Json;
 using UnityEngine;
 
-[assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax", "0.8.0", "Zephhyr, Matthiew Purple")]
+[assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax Demo", "0.8.0", "Zephhyr, Matthiew Purple")]
 [assembly: MelonGame("アトラス", "smt3hd")]
 
 namespace NocturneInsaniax
@@ -15,21 +15,21 @@ namespace NocturneInsaniax
         public override void OnInitializeMelon()
         {
             //foreach (var skill in tblSkill.fclSkillTbl[192].Event)
-            //    MelonLogger.Msg(skill.TargetLevel + " - " + skill.Param + " - " + skill.Type);
+            //    //MelonLogger.Msg(skill.TargetLevel + " - " + skill.Param + " - " + skill.Type);
 
             //foreach (var skill in tblHearts.fclHeartsTbl[1].Skill)
-            //    MelonLogger.Msg(skill.TargetLevel + " - " + skill.ID);
+            //    //MelonLogger.Msg(skill.TargetLevel + " - " + skill.ID);
 
-            //MelonLogger.Msg("[");
+            ////MelonLogger.Msg("[");
             //foreach (var v in fld_Npc.fldNpc)
             //{
             //    var output = JsonConvert.SerializeObject(v);
-            //    MelonLogger.Msg(output + ",");
+            //    //MelonLogger.Msg(output + ",");
             //}
-            //MelonLogger.Msg("]");
+            ////MelonLogger.Msg("]");
 
             //var output = JsonConvert.SerializeObject(fclJunkShopTable.fclShopItemBoxTbl);
-            //MelonLogger.Msg(output);
+            ////MelonLogger.Msg(output);
 
             ApplySkillChanges();
             ApplyItemChanges();
@@ -44,12 +44,12 @@ namespace NocturneInsaniax
         {
             public static void Prefix(int idx, float x, float y, float z, Vector4 rot)
             {
-                MelonLogger.Msg("-fld_Npc.fldItemBoxAdd-");
-                MelonLogger.Msg("idx: " + idx);
-                MelonLogger.Msg("x: " + x);
-                MelonLogger.Msg("y: " + y);
-                MelonLogger.Msg("z: " + z);
-                MelonLogger.Msg("rot: " + rot);
+                //MelonLogger.Msg("-fld_Npc.fldItemBoxAdd-");
+                //MelonLogger.Msg("idx: " + idx);
+                //MelonLogger.Msg("x: " + x);
+                //MelonLogger.Msg("y: " + y);
+                //MelonLogger.Msg("z: " + z);
+                //MelonLogger.Msg("rot: " + rot);
             }
         }
 
@@ -58,15 +58,15 @@ namespace NocturneInsaniax
         {
             public static void Prefix(int Type, float x, float y, float z, Vector4 rot, int hojiID, ref string name, int eveidx)
             {
-                MelonLogger.Msg("-fld_Npc.fldNpcAdd-");
-                MelonLogger.Msg("Type: " + Type);
-                MelonLogger.Msg("x: " + x);
-                MelonLogger.Msg("y: " + y);
-                MelonLogger.Msg("z: " + z);
-                MelonLogger.Msg("rot: " + rot);
-                MelonLogger.Msg("hojiID: " + hojiID);
-                MelonLogger.Msg("name: " + name);
-                MelonLogger.Msg("eveidx: " + eveidx);
+                //MelonLogger.Msg("-fld_Npc.fldNpcAdd-");
+                //MelonLogger.Msg("Type: " + Type);
+                //MelonLogger.Msg("x: " + x);
+                //MelonLogger.Msg("y: " + y);
+                //MelonLogger.Msg("z: " + z);
+                //MelonLogger.Msg("rot: " + rot);
+                //MelonLogger.Msg("hojiID: " + hojiID);
+                //MelonLogger.Msg("name: " + name);
+                //MelonLogger.Msg("eveidx: " + eveidx);
             }
         }
 
@@ -75,8 +75,8 @@ namespace NocturneInsaniax
         {
             public static void Prefix(int idx)
             {
-                MelonLogger.Msg("-fld_Npc.fldItemBoxOpen-");
-                MelonLogger.Msg("idx: " + idx);
+                //MelonLogger.Msg("-fld_Npc.fldItemBoxOpen-");
+                //MelonLogger.Msg("idx: " + idx);
             }
         }
 
@@ -85,8 +85,8 @@ namespace NocturneInsaniax
         {
             public static void Prefix(int idx)
             {
-                MelonLogger.Msg("-fldGlobal.fldGbSetTakaraOpen-");
-                MelonLogger.Msg("idx: " + idx);
+                //MelonLogger.Msg("-fldGlobal.fldGbSetTakaraOpen-");
+                //MelonLogger.Msg("idx: " + idx);
             }
         }
 
@@ -95,9 +95,9 @@ namespace NocturneInsaniax
         {
             public static void Prefix(string pFileName, string akey)
             {
-                MelonLogger.Msg("-fldFileResolver.fldLoadFile-");
-                MelonLogger.Msg("pFileName: " + pFileName);
-                MelonLogger.Msg("akey: " + akey);
+                //MelonLogger.Msg("-fldFileResolver.fldLoadFile-");
+                //MelonLogger.Msg("pFileName: " + pFileName);
+                //MelonLogger.Msg("akey: " + akey);
             }
 
             public static void Postfix(string pFileName, string akey)
@@ -115,11 +115,11 @@ namespace NocturneInsaniax
         {
             public static void Postfix()
             {
-                MelonLogger.Msg("fldMain.fldFirstInit");
+                //MelonLogger.Msg("fldMain.fldFirstInit");
                 //var output = JsonConvert.SerializeObject(fldGlobal.fldHitData._fldItemBoxTbl);
                 //var output = JsonConvert.SerializeObject(fldGlobal.fldHitData._fldNpcUp);
                 //var output = JsonConvert.SerializeObject(fld_Npc.gfldTakaraWork);
-                //MelonLogger.Msg(output);
+                ////MelonLogger.Msg(output);
 
                 ApplyItemBoxChanges();
             }

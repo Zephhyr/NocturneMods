@@ -25,7 +25,7 @@ namespace NocturneInsaniax
             public static void Postfix()
             {
                 actionTrackers.Clear();
-                MelonLogger.Msg("-Battle Starts-");
+                //MelonLogger.Msg("-Battle Starts-");
             }
         }
 
@@ -55,7 +55,7 @@ namespace NocturneInsaniax
                         actionCounter.skillsUsedThisTurn.Clear();
                     }
 
-                    MelonLogger.Msg("-Enemy Turn Starts-");
+                    //MelonLogger.Msg("-Enemy Turn Starts-");
                 }
             }
         }
@@ -69,11 +69,11 @@ namespace NocturneInsaniax
 
                 actionTrackers[a.work.id].currentBattleActionCount++;
                 actionTrackers[a.work.id].currentTurnActionCount++;
-                MelonLogger.Msg("ID: " + a.work.id);
-                MelonLogger.Msg("currentBattleTurnCount:" + actionTrackers[a.work.id].currentBattleTurnCount);
-                MelonLogger.Msg("currentBattleActionCount:" + actionTrackers[a.work.id].currentBattleActionCount);
-                MelonLogger.Msg("currentTurnActionCount:" + actionTrackers[a.work.id].currentTurnActionCount);
-                MelonLogger.Msg("-Action Starts-");
+                //MelonLogger.Msg("ID: " + a.work.id);
+                //MelonLogger.Msg("currentBattleTurnCount:" + actionTrackers[a.work.id].currentBattleTurnCount);
+                //MelonLogger.Msg("currentBattleActionCount:" + actionTrackers[a.work.id].currentBattleActionCount);
+                //MelonLogger.Msg("currentTurnActionCount:" + actionTrackers[a.work.id].currentTurnActionCount);
+                //MelonLogger.Msg("-Action Starts-");
                 switch (a.work.id)
                 {
                     case 11: AmeNoUzumeAI(ref a, ref code, ref n); break;
@@ -108,7 +108,7 @@ namespace NocturneInsaniax
                     case 351: BossDaisoujouAI(ref a, ref code, ref n); break;
                     default: break;
                 }
-                MelonLogger.Msg("skill: " + a.work.nowindex);
+                //MelonLogger.Msg("skill: " + a.work.nowindex);
             }
         }
 
@@ -322,8 +322,8 @@ namespace NocturneInsaniax
         private static void BossForneusAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
             ushort currentHpPercent = BossCurrentHpPercent(ref a);
-            MelonLogger.Msg("Forneus HP%: " + currentHpPercent);
-            MelonLogger.Msg("Forneus HP: " + a.work.hp);
+            //MelonLogger.Msg("Forneus HP%: " + currentHpPercent);
+            //MelonLogger.Msg("Forneus HP: " + a.work.hp);
 
             if (currentHpPercent <= 60 && actionTrackers[a.work.id].phase == 1)
                 actionTrackers[a.work.id].phase = 2;
@@ -465,8 +465,8 @@ namespace NocturneInsaniax
         private static void BossOrthrusAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
             ushort currentHpPercent = BossCurrentHpPercent(ref a);
-            MelonLogger.Msg("Boss HP%: " + currentHpPercent);
-            MelonLogger.Msg("Boss HP: " + a.work.hp);
+            //MelonLogger.Msg("Boss HP%: " + currentHpPercent);
+            //MelonLogger.Msg("Boss HP: " + a.work.hp);
 
             if (currentHpPercent <= 60 && actionTrackers[a.work.id].phase == 1)
                 actionTrackers[a.work.id].phase = 2;
@@ -525,8 +525,8 @@ namespace NocturneInsaniax
         private static void BossYaksiniAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
             ushort currentHpPercent = BossCurrentHpPercent(ref a);
-            MelonLogger.Msg("Boss HP%: " + currentHpPercent);
-            MelonLogger.Msg("Boss HP: " + a.work.hp);
+            //MelonLogger.Msg("Boss HP%: " + currentHpPercent);
+            //MelonLogger.Msg("Boss HP: " + a.work.hp);
 
             if (currentHpPercent <= 65 && actionTrackers[a.work.id].phase == 1)
                 actionTrackers[a.work.id].phase = 2;
@@ -587,8 +587,8 @@ namespace NocturneInsaniax
         private static void BossThor1AI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
             ushort currentHpPercent = BossCurrentHpPercent(ref a);
-            MelonLogger.Msg("Boss HP%: " + currentHpPercent);
-            MelonLogger.Msg("Boss HP: " + a.work.hp);
+            //MelonLogger.Msg("Boss HP%: " + currentHpPercent);
+            //MelonLogger.Msg("Boss HP: " + a.work.hp);
 
             if (currentHpPercent <= 50 && actionTrackers[a.work.id].phase == 1)
                 actionTrackers[a.work.id].phase = 2;
@@ -805,8 +805,8 @@ namespace NocturneInsaniax
         private static void BossDanteRaidou1AI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
             ushort currentHpPercent = BossCurrentHpPercent(ref a);
-            MelonLogger.Msg("Boss HP%: " + currentHpPercent);
-            MelonLogger.Msg("Boss HP: " + a.work.hp);
+            //MelonLogger.Msg("Boss HP%: " + currentHpPercent);
+            //MelonLogger.Msg("Boss HP: " + a.work.hp);
 
             if (actionTrackers[a.work.id].extraTurns < 1)
                 UseSkill(ref a, 422);
@@ -819,8 +819,8 @@ namespace NocturneInsaniax
         private static void BossMatadorAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
             ushort currentHpPercent = BossCurrentHpPercent(ref a);
-            MelonLogger.Msg("Matador HP%: " + currentHpPercent);
-            MelonLogger.Msg("Matador HP: " + a.work.hp);
+            //MelonLogger.Msg("Matador HP%: " + currentHpPercent);
+            //MelonLogger.Msg("Matador HP: " + a.work.hp);
 
             if (actionTrackers[a.work.id].extraTurns < 1)
                 UseSkill(ref a, 422);
@@ -833,8 +833,8 @@ namespace NocturneInsaniax
         private static void BossDaisoujouAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
             ushort currentHpPercent = BossCurrentHpPercent(ref a);
-            MelonLogger.Msg("Daisoujou HP%: " + currentHpPercent);
-            MelonLogger.Msg("Daisoujou HP: " + a.work.hp);
+            //MelonLogger.Msg("Daisoujou HP%: " + currentHpPercent);
+            //MelonLogger.Msg("Daisoujou HP: " + a.work.hp);
 
             if (currentHpPercent <= 80 && actionTrackers[a.work.id].phase == 1)
                 actionTrackers[a.work.id].phase = 2;

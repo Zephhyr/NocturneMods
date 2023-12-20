@@ -38,7 +38,7 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int enc)
             {
-                MelonLogger.Msg("nbMisc.nbSetRenzokuEncount");
+                //MelonLogger.Msg("nbMisc.nbSetRenzokuEncount");
             }
         }
 
@@ -47,16 +47,16 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref int encpackno, ref int packno, ref int packindex, ref int encno, ref int stagemajor, ref int stageminor)
             {
-                MelonLogger.Msg("nbMainProcess.nbInitMainProcess");
-                MelonLogger.Msg("encpackno: " + encpackno);
+                //MelonLogger.Msg("nbMainProcess.nbInitMainProcess");
+                //MelonLogger.Msg("encpackno: " + encpackno);
 
-                //if (dds3GlobalWork.DDS3_GBWK.hearts.Contains(9) || dds3ConfigMain.cfgGetBit(9u) == 0)
-                //{
-                //    encno = 1278;
-                //    return;
-                //}
-                if (true)
-                //if (evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0 && random.Next(2) == 0)
+                if (dds3GlobalWork.DDS3_GBWK.hearts.Contains(9) || dds3ConfigMain.cfgGetBit(9u) == 0)
+                {
+                    encno = 1278;
+                    return;
+                }
+                //if (true)
+                if (evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0 && random.Next(2) == 0)
                 {
                     encno = NewKagutsuchiEncounter(encno, encpackno);
                 }
@@ -69,7 +69,7 @@ namespace NocturneInsaniax
         //{
         //    public static void Prefix()
         //    {
-        //        MelonLogger.Msg("nbNegoProcess.nbInitNegoProcess");
+        //        //MelonLogger.Msg("nbNegoProcess.nbInitNegoProcess");
         //    }
         //}
 
