@@ -12,7 +12,7 @@ namespace NocturneInsaniax
 {
     internal partial class NocturneInsaniax : MelonMod
     {
-        public static int[] bossList = new int[] { 256, 257, 294, 295, 296, 300, 301, 302, 307, 308, 309, 312, 313, 339, 349, 351 };
+        public static int[] bossList = new int[] { 256, 257, 262, 263, 294, 295, 296, 300, 301, 302, 307, 308, 309, 312, 313, 339, 349, 351 };
         public static nbActionProcessData_t? actionProcessData;
 
         [HarmonyPatch(typeof(datSkillName), nameof(datSkillName.Get))]
@@ -379,17 +379,12 @@ namespace NocturneInsaniax
                     // Test - Add rigged demons to party
                     //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 11).Count() == 0)
                     //{
-                    //    datCalc.datAddDevil(11, 0);
-                    //    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 11))
-                    //    {
-                    //        work.skill[2] = 52;
-                    //        work.skill[3] = 53;
-                    //        work.skill[4] = 54;
-                    //        work.skill[5] = 302;
-                    //        work.skill[6] = 329;
-                    //        work.skill[7] = 332;
-                    //        work.skillcnt = 8;
-                    //    }
+                        //datCalc.datAddDevil(11, 0);
+                        //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 11))
+                        //{
+                        //    work.skill[6] = 313;
+                        //    work.skillcnt = 8;
+                        //}
                     //}
                     //else if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 67).Count() == 0)
                     //{

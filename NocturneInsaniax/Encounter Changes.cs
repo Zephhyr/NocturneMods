@@ -50,9 +50,13 @@ namespace NocturneInsaniax
                 MelonLogger.Msg("nbMainProcess.nbInitMainProcess");
                 MelonLogger.Msg("encpackno: " + encpackno);
 
-
+                //if (dds3GlobalWork.DDS3_GBWK.hearts.Contains(9) || dds3ConfigMain.cfgGetBit(9u) == 0)
+                //{
+                //    encno = 1278;
+                //    return;
+                //}
                 if (true)
-                //if (evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0)
+                //if (evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0 && random.Next(2) == 0)
                 {
                     encno = NewKagutsuchiEncounter(encno, encpackno);
                 }
@@ -161,10 +165,14 @@ namespace NocturneInsaniax
                 case 161: GinzaMakamiEncounter(); return 1270;
                 case 162: GinzaMakamiEncounter(); return 1270;
 
-                //case 38: GinzaMakamiEncounter(); return 1270;
-                //case 39: GinzaMakamiEncounter(); return 1270;
-                //case 41: GinzaMakamiEncounter(); return 1270;
-                //case 82: GinzaMakamiEncounter(); return 1270;
+                case 38: AssemblyOfNihiloXuanwuKikuriHimeEncounter(); return 1270;
+                case 39: AssemblyOfNihiloXuanwuKikuriHimeEncounter(); return 1270;
+                case 40: AssemblyOfNihiloXuanwuKikuriHimeEncounter(); return 1270;
+                case 41: AssemblyOfNihiloXuanwuKikuriHimeEncounter(); return 1270;
+                case 42: AssemblyOfNihiloXuanwuKikuriHimeEncounter(); return 1270;
+                case 43: AssemblyOfNihiloXuanwuKikuriHimeEncounter(); return 1270;
+                case 44: AssemblyOfNihiloXuanwuKikuriHimeEncounter(); return 1270;
+                case 82: AssemblyOfNihiloXuanwuKikuriHimeEncounter(); return 1270;
 
                 default: return encno;
             }
@@ -291,6 +299,12 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].devil[2] = 0;
         }
 
+        private static void AssemblyOfNihiloXuanwuKikuriHimeEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 149;
+            datEncount.tbl[1270].devil[1] = 20;
+        }
+
         //------------------------------------------------------------
 
         private static void ApplyEncounterChanges()
@@ -302,17 +316,21 @@ namespace NocturneInsaniax
             datEncount.tbl[1033].flag = 11; // Boss Raidou/Dante 1
 
             datEncount.tbl[144].maxparty = 6; // Forced Incubus + Koppa Tengu
-            datEncount.tbl[144].maxcall = 0; // Forced Incubus + Koppa Tengu
+            datEncount.tbl[144].maxcall = 0;
             datEncount.tbl[144].devil[0] = 0;
             datEncount.tbl[144].devil[1] = 0;
             datEncount.tbl[144].devil[2] = 260;
             datEncount.tbl[144].devil[3] = 261;
 
-            datEncount.tbl[115].flag = 11;
+            datEncount.tbl[115].flag = 11; // Boss Berith
             datEncount.tbl[115].maxparty = 3;
             datEncount.tbl[115].devil[0] = 0;
             datEncount.tbl[115].devil[1] = 312;
             datEncount.tbl[115].devil[2] = 0;
+
+            datEncount.tbl[117].flag = 11; // Boss Ose
+
+            datEncount.tbl[1278].devil[0] = 400;
         }
     }
 }
