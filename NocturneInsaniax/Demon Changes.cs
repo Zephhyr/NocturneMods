@@ -2826,6 +2826,9 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 24;
             datDevilFormat.tbl[id].mp = 28;
             datDevilFormat.tbl[id].maxmp = 28;
+
+            datDevilFormat.tbl[id].param[4] = 5;
+            datDevilFormat.tbl[id].param[5] = 6;
         }
 
         private static void Oni(ushort id)

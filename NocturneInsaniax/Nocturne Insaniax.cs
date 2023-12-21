@@ -5,7 +5,7 @@ using MelonLoader;
 using Newtonsoft.Json;
 using UnityEngine;
 
-[assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax Demo", "0.8.0", "Zephhyr, Matthiew Purple")]
+[assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax Demo", "0.8.1", "Zephhyr, Matthiew Purple")]
 [assembly: MelonGame("アトラス", "smt3hd")]
 
 namespace NocturneInsaniax

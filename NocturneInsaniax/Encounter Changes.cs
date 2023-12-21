@@ -309,7 +309,9 @@ namespace NocturneInsaniax
 
         private static void ApplyEncounterChanges()
         {
+            datEncount.tbl[1267].devil[0] = 319; // Forced Preta
             datEncount.tbl[1269].flag = 13; // Forced Kodama + Will o' Wisp in Unknown Realm
+            datEncount.tbl[1269].devil[1] = 318;
             datEncount.tbl[14].flag = 11; // Boss Forneus
             datEncount.tbl[20].maxparty = 7; // Boss Specter 1
             datEncount.tbl[85].flag = 11; // Boss Thor 1
