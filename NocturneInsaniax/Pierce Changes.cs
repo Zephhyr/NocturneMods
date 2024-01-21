@@ -34,7 +34,7 @@ namespace NocturneInsaniax
                 bool hasPierce = datCalc.datCheckSyojiSkill(nbMainProcess.nbGetUnitWorkFromFormindex(nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].formindex), 357) == 1 ||
                     datCalc.datCheckSyojiSkill(nbMainProcess.nbGetUnitWorkFromFormindex(nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].formindex), 361) == 1;
                 
-                bool charged = (nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].count[15] > 0 && nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].count[19] > 0);
+                bool charged = (nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].count[15] > 0 && nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].count[20] > 0);
 
                 if (nskill != -1 && attr >= 0 && attr <= 11 && datSkill.tbl[nskill].skillattr >= 0 && datSkill.tbl[nskill].skillattr <= 11 && (hasPierce || charged))
                 {

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\NocturneInsaniax.csproj": {}
+    "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\NocturneInsaniax.csproj": {}
   },
   "projects": {
-    "D:\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\NocturneInsaniax.csproj": {
+    "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\NocturneInsaniax.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\NocturneInsaniax.csproj",
+        "projectUniqueName": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\NocturneInsaniax.csproj",
         "projectName": "NocturneInsaniax",
-        "projectPath": "D:\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\NocturneInsaniax.csproj",
-        "packagesPath": "C:\\Users\\alpha\\.nuget\\packages\\",
-        "outputPath": "D:\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\obj\\",
+        "projectPath": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\NocturneInsaniax.csproj",
+        "packagesPath": "C:\\Users\\Zephhyr\\.nuget\\packages\\",
+        "outputPath": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\alpha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Zephhyr\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -77,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

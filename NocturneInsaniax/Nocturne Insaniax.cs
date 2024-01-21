@@ -104,8 +104,13 @@ namespace NocturneInsaniax
             {
                 if (pFileName == "dds3data/fld/f/f002/f002_001") // Overworld 1
                 {
-                    // Co-ordinates are divided by 100 in-game
+                    // Co-ordinates are divided by 100 in-game, y co-ordinate is reversed
                     fld_Npc.fldItemBoxAdd(335, -117.80762f, -821.31445f, -3201.4497f, new Vector4(0, 0, 0, 1)); // Add Item Box outside Shibuya
+                }
+                if (pFileName == "dds3data/fld/f/f004/f004_001") // Overworld 1
+                {
+                    // -42.0961 14.5565 -33.3055
+                    fld_Npc.fldItemBoxAdd(336, -4209.61f, -1455.65f, -3330.55f, new Vector4(0, 0, 0, 1)); // Add Item Box outside Ikebukuro
                 }
             }
         }

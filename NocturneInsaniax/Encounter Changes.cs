@@ -174,6 +174,17 @@ namespace NocturneInsaniax
                 case 44: AssemblyOfNihiloXuanwuKikuriHimeEncounter(); return 1270;
                 case 82: AssemblyOfNihiloXuanwuKikuriHimeEncounter(); return 1270;
 
+                case 52: Overworld1AngelEncounter(); return 1270;
+                case 53: Overworld1AngelEncounter(); return 1270;
+                case 54: Overworld1AngelEncounter(); return 1270;
+                case 55: Overworld1AngelEncounter(); return 1270;
+                case 56: Overworld1AngelEncounter(); return 1270;
+                case 57: Overworld1AngelEncounter(); return 1270;
+                case 58: Overworld1AngelEncounter(); return 1270;
+                case 59: Overworld1AngelEncounter(); return 1270;
+                case 60: Overworld1AngelEncounter(); return 1270;
+                case 61: Overworld1AngelEncounter(); return 1270;
+
                 default: return encno;
             }
         }
@@ -331,6 +342,9 @@ namespace NocturneInsaniax
             datEncount.tbl[115].devil[2] = 0;
 
             datEncount.tbl[117].flag = 11; // Boss Ose
+
+            datEncount.tbl[193].maxcall = 1; // Forced Naga
+            datEncount.tbl[193].maxparty = 2;
 
             datEncount.tbl[1278].devil[0] = 400;
         }

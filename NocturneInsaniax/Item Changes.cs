@@ -7,6 +7,7 @@ using Il2Cppresult2_H;
 using Il2Cppnewbattle_H;
 using Il2Cppeffect_H;
 using UnityEngine;
+using Il2Cppfield_H;
 
 namespace NocturneInsaniax
 {
@@ -364,6 +365,7 @@ namespace NocturneInsaniax
 
             //fldGlobal.fldHitData._fldItemBoxTbl[20]._Param = 9000000;
 
+
             // First Item Box in Amala Network 1 (Needle Orbs)
             fldGlobal.fldHitData._fldItemBoxTbl[22]._ItemID = 29;
             fldGlobal.fldHitData._fldItemBoxTbl[22]._ItemNum = 2;
@@ -381,6 +383,15 @@ namespace NocturneInsaniax
             // New Item Box outside Shibuya
             fldGlobal.fldHitData._fldItemBoxTbl[335]._ItemID = 47;
             fldGlobal.fldHitData._fldItemBoxTbl[335]._ItemNum = 5;
+
+            // New Item Box outside Ikebukuro
+            fldGlobal.fldHitData._fldItemBoxTbl[336]._ItemID = 59;
+            fldGlobal.fldHitData._fldItemBoxTbl[336]._ItemNum = 2;
+
+            // Item Box surrounded by damage-floor near Ikebukuro
+            fldGlobal.fldHitData._fldItemBoxTbl[236]._ItemNum = 10;
+
+            //fldGlobal.fldHitData._fldItemBoxTbl.Add(new fldTakaraTbl_t { _ItemID = 47, _ItemNum = 5 });
         }
     }
 }

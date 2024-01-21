@@ -4,6 +4,7 @@ using Il2Cppnewbattle_H;
 using Il2Cppnewdata_H;
 using MelonLoader;
 using MelonLoader.TinyJSON;
+using System.Runtime.CompilerServices;
 
 namespace NocturneInsaniax
 {
@@ -17,14 +18,59 @@ namespace NocturneInsaniax
         public static short[] currentUnitBuffs;
         public static short[][] currentSideBuffs;
 
+        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbSetHojoAddCounter))]
+        private class PartyPatch
+        {
+            public static void Prefix(ref int formindex, ref int type, ref int point)
+            {
+                try
+                {
+                    nbParty_t party = nbMainProcess.nbGetPartyFromFormindex(formindex);
+                    var oldcount = party.count;
+                    var newcount = new short[21];
+                    for (int i = 0; i < oldcount.Length; i++)
+                    {
+                        newcount[i] = oldcount[i];
+                    }
+                    party.count = newcount;
+                }
+                catch { }
+            }
+        }
+
+        [HarmonyPatch(typeof(nbActionProcess), nameof(nbActionProcess.SetPlayerSummonPacket))]
+        private class SummonPatch
+        {
+            public static void Postfix(ref nbActionProcessData_t a, ref int nskill, ref int sformindex, ref int dformindex, ref int sframe)
+            {
+                var party = a.data.party;
+                var part = party.Where(p => p.formindex == -1).FirstOrDefault();
+                var count = part.count;
+                count[20] = 0;
+            }
+        }
+
         [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbSetHojoCounter))]
         private class FocusPatch
         {
             public static void Prefix(ref int formindex, ref int type, ref int point)
             {
+                try
+                {
+                    nbParty_t party = nbMainProcess.nbGetPartyFromFormindex(formindex);
+                    var oldcount = party.count;
+                    var newcount = new short[21];
+                    for (int i = 0; i < oldcount.Length; i++)
+                    {
+                        newcount[i] = oldcount[i];
+                    }
+                    party.count = newcount;
+                }
+                catch { }
+
                 if ((chargeNowindex <= 287 || chargeNowindex >= 424) && type == 15 && (chargeNowcommand == 6 || datNormalSkill.tbl[chargeNowindex].koukatype == 0))
                     point = focusState;
-                else if ((chargeNowindex <= 287 || chargeNowindex >= 424) && type == 19 && (chargeNowcommand == 6 || datNormalSkill.tbl[chargeNowindex].koukatype == 1))
+                else if ((chargeNowindex <= 287 || chargeNowindex >= 424) && type == 20 && (chargeNowcommand == 6 || datNormalSkill.tbl[chargeNowindex].koukatype == 1))
                     point = concentrateState;
             }
         }
@@ -39,7 +85,7 @@ namespace NocturneInsaniax
                 chargeNowcommand = a.work.nowcommand;
                 chargeNowindex = a.work.nowindex;
                 focusState = a.party.count[15];
-                concentrateState = a.party.count[19];
+                concentrateState = a.party.count[20];
             }
 
             public static void Postfix(ref nbActionProcessData_t a)
@@ -59,7 +105,7 @@ namespace NocturneInsaniax
                 if (skillattr >= 0 && skillattr <= 11 && validskill && (chargedPhysical || chargedMagical))
                 {
                     a.party.count[15] = 0;
-                    a.party.count[19] = 0;
+                    a.party.count[20] = 0;
                 }
             }
         }
@@ -70,7 +116,7 @@ namespace NocturneInsaniax
             public static void Postfix(ref int nskill, ref uint select, ref int __result)
             {
                 if ((nskill == 224 || nskill == 424 || nskill == 425) && (nbMainProcess.nbGetMainProcessData().party[nbMainProcess.nbGetMainProcessData().activeunit].count[15] > 0 ||
-                    nbMainProcess.nbGetMainProcessData().party[nbMainProcess.nbGetMainProcessData().activeunit].count[19] > 0))
+                    nbMainProcess.nbGetMainProcessData().party[nbMainProcess.nbGetMainProcessData().activeunit].count[20] > 0))
                 {
                     __result = 4;
                 }
@@ -104,7 +150,7 @@ namespace NocturneInsaniax
 
                 if (arr.Length >= 26 && arr[arr.Length - 26] == '1')
                 {
-                    var ivar2 = nbCalc.nbSetHojoAddCounter(formindex, 19, 1, nvirtual);
+                    var ivar2 = nbCalc.nbSetHojoAddCounter(formindex, 20, 1, nvirtual);
                     if (ivar2 != 0)
                         __result -= ivar2;
 

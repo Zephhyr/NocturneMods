@@ -68,7 +68,7 @@ namespace NocturneInsaniax
                     }
                 }
 
-                if ((type == 4 && count[15] > 0) || (type == 5 && count[19] > 0))
+                if ((type == 4 && count[15] > 0) || (type == 5 && count[20] > 0))
                     newEffect *= 2.2;
 
                 __result = (float) newEffect;

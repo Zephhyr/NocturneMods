@@ -288,7 +288,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , -7   , 5    , 0    , 0    , 2    , 0    , 0    , 0    , 2    , 0 }, // 262 Forced Kaiwan
             new sbyte[] {5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -4   , -4   , -4   , 0    , 0    , 0    , 3    , 0 }, // 263 Boss Ose
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 264 Boss Kagutsuchi 2
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 265 Ambush Mizuchi
+            new sbyte[] {0    , -5   , 4    , 0    , 0    , 0    , 0    , 0    , -5   , 0    , 4    , 0    , 0    , 0    , 2    , 0 }, // 265 Ambush Mizuchi
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 266 Boss Kin-Ki
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 267 Boss Sui-Ki
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 268 Boss Fuu-Ki
@@ -321,7 +321,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 6    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 294 Boss Specter 1 (Merged 6)
             new sbyte[] {0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 295 Boss Specter 1 (Merged 4-5)
             new sbyte[] {0    , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 296 Boss Specter 1 (Merged 2-3)
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 297 Boss Mizuchi
+            new sbyte[] {0    , -5   , 4    , 0    , 0    , 0    , 0    , 0    , -5   , 0    , 4    , 0    , 0    , 0    , 2    , 0 }, // 297 Boss Mizuchi
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 298 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 299 Boss Sakahagi
             new sbyte[] {4    , 4    , -6   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -2   , 1    , 0 }, // 300 Boss Orthrus
@@ -375,7 +375,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 347 Boss Red Rider
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 348 Boss Black Rider
             new sbyte[] {4    , 0    , -4   , -4   , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 349 Boss Matador
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 350 Boss Hell Biker
+            new sbyte[] {3    , 4    , -4   , 0    , 4    , 0    , -4   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0 }, // 350 Boss Hell Biker
             new sbyte[] {-4   , -4   , 0    , 0    , 0    , 0    , 4    , 4    , 0    , 0    , 4    , 0    , 0    , 2    , 0    , 0 }, // 351 Boss Daisoujou
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 352 Boss Mother Harlot
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 353 Boss Trumpeter
@@ -423,7 +423,7 @@ namespace NocturneInsaniax
             new sbyte[] {3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // Kamudo
             new sbyte[] {2    , 0    , 0    , 4    , 0    , 0    , 0    , 0    , 0    , 2    , 0    , 0    , 0    , 0    , 0    , 0 }, // Narukami
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 5    , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Anathema
-            new sbyte[] {0    , 0    , 6    , 0    , 0    , 0    , 0    , 0    , 2    , 2    , 2    , 0    , 0    , 0    , 0    , 0 }, // Miasma
+            new sbyte[] {0    , 0    , 6    , 0    , 0    , 0    , 0    , 0    , 3    , 3    , 3    , 0    , 0    , 0    , 0    , 0 }, // Miasma
             new sbyte[] {3    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Nirvana
             new sbyte[] {4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 2    , 2    , 0    , 0    , 0    , 0    , 0 }, // Murakumo
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 3    , 0 }, // Geis
@@ -845,8 +845,8 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+4: Elec • +2: Phys/Nerve<material=\"MsgFont1\">", // 399 Narukami
             "  <material=\"MsgFont4\">+5: Dark • +2: Curse<material=\"MsgFont1\">", // 400 Anathema
             "  <material=\"MsgFont4\">+5: Dark • +2: Curse<material=\"MsgFont1\">", // 401 Anathema
-            "  <material=\"MsgFont4\">+6: Ice • +2: Ailments<material=\"MsgFont1\">", // 402 Miasma
-            "  <material=\"MsgFont4\">+6: Ice • +2: Ailments<material=\"MsgFont1\">", // 403 Miasma
+            "  <material=\"MsgFont4\">+6: Ice • +3: Ailments<material=\"MsgFont1\">", // 402 Miasma
+            "  <material=\"MsgFont4\">+6: Ice • +3: Ailments<material=\"MsgFont1\">", // 403 Miasma
             "  <material=\"MsgFont4\">+5: Light • +3: Phys<material=\"MsgFont1\">", // 404 Nirvana
             "  <material=\"MsgFont4\">+5: Light • +3: Phys<material=\"MsgFont1\">", // 405 Nirvana
             "  <material=\"MsgFont4\">+4: Phys • +2: Ailments<material=\"MsgFont1\">", // 406 Murakumo
@@ -904,8 +904,8 @@ namespace NocturneInsaniax
             "<material=\"MsgFont4\">+4: Elec • +2: Phys/Nerve", // Narukami
             "Imparts Dark magic\r\n<material=\"MsgFont2\">Null: Dark<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Light\r\n" +
             "<material=\"MsgFont4\">+5: Dark • +2: Curse", // Anathema
-            "Imparts Ice magic\r\n<material=\"MsgFont2\">Null: Ice<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire\r\n" +
-            "<material=\"MsgFont4\">+6: Ice • +2: Ailments", // Miasma
+            "Imparts Ailment and Ice magic\r\n<material=\"MsgFont2\">Null: Ice<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire\r\n" +
+            "<material=\"MsgFont4\">+6: Ice • +3: Ailments", // Miasma
             "Imparts Light magic\r\n<material=\"MsgFont2\">Null: Light<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Dark\r\n" +
             "<material=\"MsgFont4\">+5: Light • +3: Phys", // Nirvana
             "Imparts Ailment-nullifying skills\r\n<material=\"MsgFont2\">Strong: Phys<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire/Ice\r\n" +
@@ -1004,8 +1004,10 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int id, ref string __result)
             {
-                if (id == 422 && currentDemonID == 339)
+                if (id == 422 && (currentDemonID == 200 || currentDemonID == 339 || currentDemonID == 340 || currentDemonID == 341 || currentDemonID == 350))
                     __result = "Accelerate";
+                if (id == 226 && (currentDemonID == 79))
+                    __result = "Backup";
                 else if (id < 288 || id > 421) // If it isn't a passive skill
                 {
                     sbyte skillPotential = 0;
@@ -1162,7 +1164,7 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int nskill, ref int sformindex, ref int __result)
             {
-                if ((nskill < 288 || nskill > 421) && __result != -1) // If it isn't a passive skill and HP have been altered
+                if ((nskill < 288 || nskill > 421) && __result != -1 && datNormalSkill.tbl[nskill].hptype != 3) // If it isn't a passive skill and HP have been altered
                 {
                     int demonID = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id; // Get the demon's ID
                     sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(nskill, demonID);

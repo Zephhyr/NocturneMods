@@ -92,11 +92,11 @@ namespace NocturneInsaniax
                     buffs_strings.Add(buff);
                 }
 
-                if (party.count[15] > 0 && party.count[19] == 0)
+                if (party.count[15] > 0 && party.count[20] == 0)
                     buffs_strings.Add("1");
-                else if (party.count[15] == 0 && party.count[19] > 0)
+                else if (party.count[15] == 0 && party.count[20] > 0)
                     buffs_strings.Add("2");
-                else if (party.count[15] > 0 && party.count[19] > 0)
+                else if (party.count[15] > 0 && party.count[20] > 0)
                     buffs_strings.Add("3");
                 else buffs_strings.Add("0");
 
@@ -174,7 +174,7 @@ namespace NocturneInsaniax
                     }
                 }
 
-                if (party.count[15] == 1 || party.count[19] == 1)
+                if (party.count[15] == 1 || party.count[20] == 1)
                     return true;
 
                 return false;

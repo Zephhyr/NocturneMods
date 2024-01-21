@@ -12,7 +12,7 @@ namespace NocturneInsaniax
 {
     internal partial class NocturneInsaniax : MelonMod
     {
-        public static int[] bossList = new int[] { 256, 257, 262, 263, 294, 295, 296, 300, 301, 302, 307, 308, 309, 312, 313, 339, 349, 351 };
+        public static int[] bossList = new int[] { 256, 257, 262, 263, 294, 295, 296, 300, 301, 302, 307, 308, 309, 312, 313, 339, 349, 350, 351 };
         public static nbActionProcessData_t? actionProcessData;
 
         [HarmonyPatch(typeof(datSkillName), nameof(datSkillName.Get))]
@@ -329,7 +329,7 @@ namespace NocturneInsaniax
                 actionProcessData = a;
 
                 datUnitWork_t target = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
-                if (((datNormalSkill.tbl[nskill].koukatype == 0 && (target.badstatus == 1 || target.badstatus == 2)) || (target.badstatus == 256 && random.Next(2) == 1))
+                if (((datNormalSkill.tbl[nskill].koukatype == 0 && (target.badstatus == 1 || target.badstatus == 2)) || target.badstatus == 256 )
                     && (datNormalSkill.tbl[nskill].hptype == 1 || datNormalSkill.tbl[nskill].hptype == 6 || datNormalSkill.tbl[nskill].hptype == 12 || datNormalSkill.tbl[nskill].hptype == 14))
                 {
                     var form = a.data.form[dformindex];
@@ -377,35 +377,46 @@ namespace NocturneInsaniax
                     }
 
                     // Test - Add rigged demons to party
-                    //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 11).Count() == 0)
+                    //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 149).Count() == 0)
                     //{
-                        //datCalc.datAddDevil(11, 0);
-                        //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 11))
-                        //{
-                        //    work.skill[6] = 313;
-                        //    work.skillcnt = 8;
-                        //}
+                    //    datCalc.datAddDevil(149, 0);
+                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 149)) // Xuanwu
+                    //{
+                    //    work.skill[2] = 206;
+                    //    work.skill[3] = 459;
+                    //    work.skill[4] = 2;
+                    //    work.skill[5] = 191;
+                    //    work.skill[6] = 424;
+                    //    work.skill[7] = 305;
+                    //    work.skillcnt = 8;
                     //}
-                    //else if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 67).Count() == 0)
-                    //{
-                    //    datCalc.datAddDevil(67, 0);
-                    //    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 67))
-                    //    {
-                    //        work.skill[3] = 65;
-                    //        work.skill[4] = 66;
-                    //        work.skill[5] = 302;
-                    //        work.skill[6] = 329;
-                    //        work.skill[7] = 332;
-                    //        work.skillcnt = 8;
-                    //    }
                     //}
-                    //else
+                    //else if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 74).Count() == 0)
                     //{
-                    //    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 134))
-                    //    {
-                    //        work.skill[1] = 328;
-                    //        work.skill[6] = 332;
-                    //    }
+                    //    datCalc.datAddDevil(74, 0);
+                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 74)) // Forneus
+                    //{
+                    //    work.skill[2] = 206;
+                    //    work.skill[3] = 459;
+                    //    work.skill[4] = 2;
+                    //    work.skill[5] = 191;
+                    //    work.skill[6] = 424;
+                    //    work.skill[7] = 305;
+                    //    work.skillcnt = 8;
+                    //}
+                    //}
+                    //else if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 35).Count() == 0)
+                    //{
+                    //    datCalc.datAddDevil(35, 0);
+                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 35)) // Unicorn
+                    //{
+                    //    work.skill[3] = 206;
+                    //    work.skill[4] = 459;
+                    //    work.skill[5] = 456;
+                    //    work.skill[6] = 2;
+                    //    work.skill[7] = 191;
+                    //    work.skillcnt = 8;
+                    //}
                     //}
                 }
                 // If using a cursed gospel
@@ -464,7 +475,6 @@ namespace NocturneInsaniax
                 }
 
                 var work = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
-
                 if (__result == 1 && datCalc.datCheckSyojiSkill(work, 366) != 0 && datNormalSkill.tbl[nskill].basstatus != 1 && datNormalSkill.tbl[nskill].basstatus != 2)
                 {
                     __result = (uint)random.Next(2);
@@ -1478,8 +1488,8 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 12;
             datNormalSkill.tbl[id].hpn = 32;
-            datNormalSkill.tbl[id].failpoint = 4;
-            datNormalSkill.tbl[id].criticalpoint = 10;
+            datNormalSkill.tbl[id].failpoint = 12;
+            datNormalSkill.tbl[id].criticalpoint = 12;
         }
 
         private static void SakuraRage(ushort id)
@@ -2185,9 +2195,9 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].cost = 16;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 1;
-            datNormalSkill.tbl[id].criticalpoint = 20;
+            datNormalSkill.tbl[id].criticalpoint = 12;
             datNormalSkill.tbl[id].deadtype = 0;
-            datNormalSkill.tbl[id].failpoint = 10;
+            datNormalSkill.tbl[id].failpoint = 12;
             datNormalSkill.tbl[id].flag = 0;
             datNormalSkill.tbl[id].hitlevel = 100;
             datNormalSkill.tbl[id].hitprog = 0;
@@ -3451,6 +3461,7 @@ namespace NocturneInsaniax
         private static void ManaDrain(ushort id)
         {
             datNormalSkill.tbl[id].cost = 3;
+            datNormalSkill.tbl[id].criticalpoint = 0;
             datNormalSkill.tbl[id].hpn = 14;
             datNormalSkill.tbl[id].magicbase = 12;
             datNormalSkill.tbl[id].magiclimit = 44;
