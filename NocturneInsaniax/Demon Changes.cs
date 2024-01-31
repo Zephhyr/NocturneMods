@@ -793,8 +793,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].skill[1] = 39; // Media
             datDevilFormat.tbl[id].skill[2] = 28; // Hama
             datDevilFormat.tbl[id].skill[3] = 229; // Laughter
-            datDevilFormat.tbl[id].skill[4] = 366; // Abyssal Mask
-            datDevilFormat.tbl[id].skill[5] = 219; // Rage
+            datDevilFormat.tbl[id].skill[4] = 219; // Rage
+            datDevilFormat.tbl[id].skill[5] = 366; // Abyssal Mask
         }
 
         private static void Shiva(ushort id)
@@ -1362,6 +1362,24 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[7].Param = 365; // Anti-Ailments
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 31;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 1200;
+            datDevilFormat.tbl[id].maxhp = 1200;
+            datDevilFormat.tbl[id].mp = 400;
+            datDevilFormat.tbl[id].maxmp = 400;
+
+            datDevilFormat.tbl[id].dropexp = 400;
+            datDevilFormat.tbl[id].dropmakka = 2000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 11; // Mabufula
+            datDevilFormat.tbl[id].skill[1] = 97; // Hell Thrust
+            datDevilFormat.tbl[id].skill[2] = 193; // Violet Flash
+            datDevilFormat.tbl[id].skill[3] = 202; // Toxic Cloud
+            datDevilFormat.tbl[id].skill[4] = 437; // Refrigerate
+            datDevilFormat.tbl[id].skill[5] = 220; // Psycho Rage
+            datDevilFormat.tbl[id].skill[6] = 366; // Abyssal Mask
         }
 
         private static void Unicorn(ushort id)

@@ -174,16 +174,16 @@ namespace NocturneInsaniax
                 case 44: AssemblyOfNihiloXuanwuKikuriHimeEncounter(); return 1270;
                 case 82: AssemblyOfNihiloXuanwuKikuriHimeEncounter(); return 1270;
 
-                case 52: Overworld1AngelEncounter(); return 1270;
-                case 53: Overworld1AngelEncounter(); return 1270;
-                case 54: Overworld1AngelEncounter(); return 1270;
-                case 55: Overworld1AngelEncounter(); return 1270;
-                case 56: Overworld1AngelEncounter(); return 1270;
-                case 57: Overworld1AngelEncounter(); return 1270;
-                case 58: Overworld1AngelEncounter(); return 1270;
-                case 59: Overworld1AngelEncounter(); return 1270;
-                case 60: Overworld1AngelEncounter(); return 1270;
-                case 61: Overworld1AngelEncounter(); return 1270;
+                case 52: KabukichoPrisonXiezhaiEncounter(); return 1270;
+                case 53: KabukichoPrisonXiezhaiEncounter(); return 1270;
+                case 54: KabukichoPrisonXiezhaiEncounter(); return 1270;
+                case 55: KabukichoPrisonXiezhaiEncounter(); return 1270;
+                case 56: KabukichoPrisonXiezhaiEncounter(); return 1270;
+                case 57: KabukichoPrisonXiezhaiEncounter(); return 1270;
+                case 58: KabukichoPrisonXiezhaiEncounter(); return 1270;
+                case 59: KabukichoPrisonXiezhaiEncounter(); return 1270;
+                case 60: KabukichoPrisonXiezhaiEncounter(); return 1270;
+                case 61: KabukichoPrisonXiezhaiEncounter(); return 1270;
 
                 default: return encno;
             }
@@ -314,6 +314,11 @@ namespace NocturneInsaniax
         {
             datEncount.tbl[1270].devil[0] = 149;
             datEncount.tbl[1270].devil[1] = 20;
+        }
+
+        private static void KabukichoPrisonXiezhaiEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 34;
         }
 
         //------------------------------------------------------------

@@ -92,6 +92,7 @@ namespace NocturneInsaniax
                     case 20: KikuriHimeAI(ref a, ref code, ref n); break;
                     case 28: TakeMinakataAI(ref a, ref code, ref n); break;
                     case 33: ShiisaaAI(ref a, ref code, ref n); break;
+                    case 34: XiezhaiAI(ref a, ref code, ref n); break;
                     case 35: UnicornAI(ref a, ref code, ref n); break;
                     case 79: ForcedNagaAI(ref a, ref code, ref n); break;
                     case 124: NKENueAI(ref a, ref code, ref n); break;
@@ -234,6 +235,26 @@ namespace NocturneInsaniax
                     case 2: UseSkill(ref a, 123); break;
                     case 3: UseSkill(ref a, 182); break;
                     case 4: UseSkill(ref a, 182); break;
+                }
+            }
+        }
+
+        private static void XiezhaiAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(220))
+            {
+                UseSkill(ref a, 220);
+            }
+            else
+            {
+                int randomValue = random.Next(4);
+                switch (randomValue)
+                {
+                    case 0: UseSkill(ref a, 11); break;
+                    case 1: UseSkill(ref a, 97); break;
+                    case 2: UseSkill(ref a, 193); break;
+                    case 3: UseSkill(ref a, 202); break;
+                    case 4: UseSkill(ref a, 437); break;
                 }
             }
         }
