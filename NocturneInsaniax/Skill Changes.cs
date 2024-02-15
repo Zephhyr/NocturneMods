@@ -12,7 +12,7 @@ namespace NocturneInsaniax
 {
     internal partial class NocturneInsaniax : MelonMod
     {
-        public static int[] bossList = new int[] { 256, 257, 262, 263, 294, 295, 296, 300, 301, 302, 307, 308, 309, 312, 313, 339, 349, 350, 351 };
+        public static int[] bossList = new int[] { 256, 257, 262, 263, 294, 295, 296, 297, 300, 301, 302, 307, 308, 309, 312, 313, 339, 349, 350, 351 };
         public static nbActionProcessData_t? actionProcessData;
 
         [HarmonyPatch(typeof(datSkillName), nameof(datSkillName.Get))]

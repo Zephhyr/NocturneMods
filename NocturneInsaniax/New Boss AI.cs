@@ -95,6 +95,7 @@ namespace NocturneInsaniax
                     case 34: XiezhaiAI(ref a, ref code, ref n); break;
                     case 35: UnicornAI(ref a, ref code, ref n); break;
                     case 79: ForcedNagaAI(ref a, ref code, ref n); break;
+                    case 108: BaphometAI(ref a, ref code, ref n); break;
                     case 124: NKENueAI(ref a, ref code, ref n); break;
                     case 149: XuanwuAI(ref a, ref code, ref n); break;
                     case 151: MakamiAI(ref a, ref code, ref n); break;
@@ -180,8 +181,8 @@ namespace NocturneInsaniax
                     switch (randomValue)
                     {
                         case 0: UseNormalAttack(ref a); break;
+                        case 1: UseSkill(ref a, 214); break;
                         case 2: UseSkill(ref a, 214); break;
-                        case 3: UseSkill(ref a, 214); break;
                     }
                 }
             }
@@ -197,7 +198,7 @@ namespace NocturneInsaniax
             {
                 UseSkill(ref a, 57);
             }
-            else if (BossFocused(ref a))
+            else if (EnemyFocused(ref a))
             {
                 int randomValue = random.Next(4);
                 switch (randomValue)
@@ -300,6 +301,12 @@ namespace NocturneInsaniax
                 UseSkill(ref a, 97);
             else if (a.data.encno == 193 && actionTrackers[a.work.id].currentBattleActionCount <= 3)
                 UseSummonSkill(ref a, 226, 95);
+        }
+
+        private static void BaphometAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (!EnemyConcentrated(ref a) && random.Next(10) < 3)
+                UseSkill(ref a, 424);
         }
 
         private static void NKENueAI(ref nbActionProcessData_t a, ref int code, ref int n)
@@ -478,7 +485,7 @@ namespace NocturneInsaniax
             }
             else
             {
-                if (BossFocused(ref a))
+                if (EnemyFocused(ref a))
                 {
                     int randomValue = random.Next(3);
                     switch (randomValue)
@@ -1097,7 +1104,7 @@ namespace NocturneInsaniax
                 }
                 else
                 {
-                    if (BossConcentrated(ref a))
+                    if (EnemyConcentrated(ref a))
                     {
                         int randomValue = random.Next(3);
                         switch (randomValue)
@@ -1209,14 +1216,14 @@ namespace NocturneInsaniax
             return (ushort) ((currenthp*100)/maxhp);
         }
 
-        private static bool BossFocused(ref nbActionProcessData_t a)
+        private static bool EnemyFocused(ref nbActionProcessData_t a)
         {
-            return (a.party.count[15] != 0);
+            return a.party.count[15] != 0;
         }
 
-        private static bool BossConcentrated(ref nbActionProcessData_t a)
+        private static bool EnemyConcentrated(ref nbActionProcessData_t a)
         {
-            return (a.party.count[20] != 0);
+            return a.party.count[20] != 0;
         }
 
         private static bool AllyPartyBuffed(ushort threshold)
