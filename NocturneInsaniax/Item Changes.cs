@@ -383,6 +383,15 @@ namespace NocturneInsaniax
             // Chakra Pot Item Box in Ikebukuro Tunnel
             fldGlobal.fldHitData._fldItemBoxTbl[94]._ItemNum = 3;
 
+            // Dekunda Item Box in Ikebukuro Tunnel
+            fldGlobal.fldHitData._fldItemBoxTbl[95]._ItemID = 33;
+
+            // Bead Item Box in Ikebukuro Tunnel
+            fldGlobal.fldHitData._fldItemBoxTbl[95]._ItemID = 4;
+
+            // Bead Item Box in Ikebukuro Tunnel
+            fldGlobal.fldHitData._fldItemBoxTbl[103]._ItemID = 5;
+
             // New Item Box outside Shibuya
             fldGlobal.fldHitData._fldItemBoxTbl[335]._ItemID = 47;
             fldGlobal.fldHitData._fldItemBoxTbl[335]._ItemNum = 5;

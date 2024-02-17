@@ -14,7 +14,6 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref nbCommSelProcessData_t s, ref int type, ref int ox, ref int oy, ref int a)
             {
-                //if (s.my.formindex != 0)
                 if (nbMainProcess.nbGetUnitWorkFromFormindex(s.my.formindex).id != 0)
                 {
                     // Self-Switch
@@ -63,8 +62,8 @@ namespace NocturneInsaniax
                     //for (ushort i = 0; i < 288; i++)
                     //    skillCommands[i] = i;
                     //skillCommands[0] = s.commlist[0][0];
-                    //skillCommands[1] = 90;
-                    //skillCommands[2] = 214;
+                    //skillCommands[1] = 472;
+                    //skillCommands[2] = 469;
                     //skillCommands[3] = 443;
 
                     //s.commlist[0] = skillCommands;

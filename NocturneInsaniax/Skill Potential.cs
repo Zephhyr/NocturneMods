@@ -289,10 +289,10 @@ namespace NocturneInsaniax
             new sbyte[] {5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -4   , -4   , -4   , 0    , 0    , 0    , 3    , 0 }, // 263 Boss Ose
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 264 Boss Kagutsuchi 2
             new sbyte[] {0    , -5   , 4    , 0    , 0    , 0    , 0    , 0    , -5   , 0    , 4    , 0    , 0    , 0    , 2    , 0 }, // 265 Ambush Mizuchi
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 266 Boss Kin-Ki
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 267 Boss Sui-Ki
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 268 Boss Fuu-Ki
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 269 Boss Ongyo-Ki
+            new sbyte[] {6    , -2   , -2   , -2   , -2   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -2   , 2    , 0 }, // 266 Boss Kin-Ki
+            new sbyte[] {2    , -7   , 6    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -2   , 2    , 0 }, // 267 Boss Sui-Ki
+            new sbyte[] {2    , 0    , 0    , -7   , 6    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -2   , 2    , 0 }, // 268 Boss Fuu-Ki
+            new sbyte[] {6    , 0    , 0    , 0    , 0    , 3    , -7   , 6    , 3    , 3    , 3    , 3    , 0    , -2   , 3    , 0 }, // 269 Boss Ongyo-Ki
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 270 Boss Clotho (Solo)
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 271 Boss Lachesis (Solo)
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 272 Boss Atropos (Solo)
@@ -425,7 +425,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 5    , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Anathema
             new sbyte[] {0    , 0    , 6    , 0    , 0    , 0    , 0    , 0    , 3    , 3    , 3    , 0    , 0    , 0    , 0    , 0 }, // Miasma
             new sbyte[] {3    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Nirvana
-            new sbyte[] {4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 2    , 2    , 0    , 0    , 0    , 0    , 0 }, // Murakumo
+            new sbyte[] {5    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 2    , 2    , 2    , 0    , 0    , 0    , 0    , 0 }, // Murakumo
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 3    , 0 }, // Geis
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 5    , 5    , 5    , 0    , 0    , 0    , 5    , 0 }, // Djed
             new sbyte[] {0    , 3    , 3    , 3    , 3    , 0    , 0    , 0    , 7    , 7    , 7    , 0    , 0    , 0    , 0    , 0 }, // Muspell
@@ -849,8 +849,8 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+6: Ice • +3: Ailments<material=\"MsgFont1\">", // 403 Miasma
             "  <material=\"MsgFont4\">+5: Light • +3: Phys<material=\"MsgFont1\">", // 404 Nirvana
             "  <material=\"MsgFont4\">+5: Light • +3: Phys<material=\"MsgFont1\">", // 405 Nirvana
-            "  <material=\"MsgFont4\">+4: Phys • +2: Ailments<material=\"MsgFont1\">", // 406 Murakumo
-            "  <material=\"MsgFont4\">+4: Phys • +2: Ailments<material=\"MsgFont1\">", // 407 Murakumo
+            "  <material=\"MsgFont4\">+5: Phys/Force • +2: Ailments<material=\"MsgFont1\">", // 406 Murakumo
+            "  <material=\"MsgFont4\">+5: Phys/Force • +2: Ailments<material=\"MsgFont1\">", // 407 Murakumo
             "  <material=\"MsgFont4\">+5: Light • +3: Heal/Supp<material=\"MsgFont1\">", // 408 Geis
             "  <material=\"MsgFont4\">+5: Light • +3: Heal/Supp<material=\"MsgFont1\">", // 409 Geis
             "  <material=\"MsgFont4\">+5: Ailments/Supp<material=\"MsgFont1\">", // 410 Djed
@@ -909,7 +909,7 @@ namespace NocturneInsaniax
             "Imparts Light magic\r\n<material=\"MsgFont2\">Null: Light<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Dark\r\n" +
             "<material=\"MsgFont4\">+5: Light • +3: Phys", // Nirvana
             "Imparts Ailment-nullifying skills\r\n<material=\"MsgFont2\">Strong: Phys<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire/Ice\r\n" +
-            "<material=\"MsgFont4\">+4: Phys • +2: Ailments", // Murakumo
+            "<material=\"MsgFont4\">+5: Phys/Force • +2: Ailments", // Murakumo
             "Imparts Healing magic\r\n<material=\"MsgFont2\">Null: Light\r\n" +
             "<material=\"MsgFont4\">+5: Light • +3: Heal/Supp", // Geis
             "Imparts Support magic\r\n<material=\"MsgFont2\">Null: Curse\r\n" +

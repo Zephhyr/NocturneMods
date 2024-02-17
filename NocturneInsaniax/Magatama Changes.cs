@@ -24,6 +24,7 @@ namespace NocturneInsaniax
             Narukami(8);
             Anathema(9);
             Miasma(10);
+            Murakumo(12);
         }
 
         private static void Marogareh(ushort id)
@@ -381,16 +382,16 @@ namespace NocturneInsaniax
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 182;
             tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 14;
-            tblHearts.fclHeartsTbl[id].Skill[1].ID = 112;
+            tblHearts.fclHeartsTbl[id].Skill[1].ID = 125;
             tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 18;
-            tblHearts.fclHeartsTbl[id].Skill[2].ID = 316;
-            tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 24;
-            tblHearts.fclHeartsTbl[id].Skill[3].ID = 125;
+            tblHearts.fclHeartsTbl[id].Skill[2].ID = 311;
+            tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 20;
+            tblHearts.fclHeartsTbl[id].Skill[3].ID = 316;
             tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 30;
             tblHearts.fclHeartsTbl[id].Skill[4].ID = 469;
-            tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 36;
+            tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 44;
             tblHearts.fclHeartsTbl[id].Skill[5].ID = 326;
-            tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 42;
+            tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 46;
         }
 
         private static void Anathema(ushort id)
@@ -485,6 +486,60 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 45;
             tblHearts.fclHeartsTbl[id].Skill[6].ID = 335;
             tblHearts.fclHeartsTbl[id].Skill[6].TargetLevel = 54;
+        }
+
+        private static void Murakumo(ushort id)
+        {
+            // Affinities
+            datAisyo.tbl[406][0] = 50; // Phys
+            datAisyo.tbl[406][1] = 2147483748; // Fire
+            datAisyo.tbl[406][2] = 2147483748; // Ice
+            datAisyo.tbl[406][3] = 100; // Elec
+            datAisyo.tbl[406][4] = 100; // Force
+            datAisyo.tbl[406][6] = 100; // Light
+            datAisyo.tbl[406][7] = 100; // Dark
+            datAisyo.tbl[406][8] = 100; // Curse
+            datAisyo.tbl[406][9] = 100; // Nerve
+            datAisyo.tbl[406][10] = 100; // Mind
+
+            datAisyo.tbl[407][0] = 50; // Phys
+            datAisyo.tbl[407][1] = 2147483748; // Fire
+            datAisyo.tbl[407][2] = 2147483748; // Ice
+            datAisyo.tbl[407][3] = 100; // Elec
+            datAisyo.tbl[407][4] = 100; // Force
+            datAisyo.tbl[407][6] = 100; // Light
+            datAisyo.tbl[407][7] = 100; // Dark
+            datAisyo.tbl[407][8] = 100; // Curse
+            datAisyo.tbl[407][9] = 100; // Nerve
+            datAisyo.tbl[407][10] = 100; // Mind
+
+            // Stats
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 6; // Strength
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 6; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 6; // Magic
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 6; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 3; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 3; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 3; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 3; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 1; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 1; // Luck
+
+            // Skills
+            tblHearts.fclHeartsTbl[id].Skill[0].ID = 102;
+            tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 33;
+            tblHearts.fclHeartsTbl[id].Skill[1].ID = 332;
+            tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 35;
+            tblHearts.fclHeartsTbl[id].Skill[2].ID = 144;
+            tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 37;
+            tblHearts.fclHeartsTbl[id].Skill[3].ID = 331;
+            tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 40;
+            tblHearts.fclHeartsTbl[id].Skill[4].ID = 472;
+            tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 44;
+            tblHearts.fclHeartsTbl[id].Skill[5].ID = 330;
+            tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 45;
+            tblHearts.fclHeartsTbl[id].Skill[6].ID = 366;
+            tblHearts.fclHeartsTbl[id].Skill[6].TargetLevel = 56;
         }
     }
 }

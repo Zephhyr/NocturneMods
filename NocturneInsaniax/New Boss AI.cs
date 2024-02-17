@@ -103,6 +103,10 @@ namespace NocturneInsaniax
                     case 261: ForcedKoppaTenguAI(ref a, ref code, ref n); break;
                     case 262: ForcedKaiwanAI(ref a, ref code, ref n); break;
                     case 263: BossOseAI(ref a, ref code, ref n); break;
+                    case 266: BossKinKiAI(ref a, ref code, ref n); break;
+                    case 267: BossSuiKiAI(ref a, ref code, ref n); break;
+                    case 268: BossFuuKiAI(ref a, ref code, ref n); break;
+                    case 269: BossOngyoKiAI(ref a, ref code, ref n); break;
                     case 294: BigSpecterAI(ref a, ref code, ref n); break;
                     case 295: BigSpecterAI(ref a, ref code, ref n); break;
                     case 296: BigSpecterAI(ref a, ref code, ref n); break;
@@ -507,6 +511,133 @@ namespace NocturneInsaniax
                     }
                 }
             }
+        }
+
+        private static void BossKinKiAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            ushort currentHpPercent = BossCurrentHpPercent(ref a);
+            MelonLogger.Msg("Kin-Ki HP%: " + currentHpPercent);
+            MelonLogger.Msg("Kin-Ki HP: " + a.work.hp);
+
+            if (currentHpPercent <= 40 && actionTrackers[a.work.id].phase == 1)
+                actionTrackers[a.work.id].phase = 2;
+
+            if (actionTrackers[a.work.id].phase == 1 && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(219))
+            {
+                UseSkill(ref a, 219); return;
+            }
+            else if (actionTrackers[a.work.id].phase == 2 && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(220))
+            {
+                UseSkill(ref a, 220); return;
+            }
+            else if (EnemyPartyDebuffed(1) && random.Next(4) == 0)
+            {
+                UseSkill(ref a, 77); return;
+            }
+            else
+            {
+                int randomValue = random.Next(7);
+                switch (randomValue)
+                {
+                    case 0: UseNormalAttack(ref a); break;
+                    case 1: UseSkill(ref a, 52); break;
+                    case 2: UseSkill(ref a, 54); break;
+                    case 3: UseSkill(ref a, 64); break;
+                    case 4: UseSkill(ref a, 66); break;
+                    case 5: UseSkill(ref a, 97); break;
+                    case 6: UseSkill(ref a, 99); break;
+                }
+            }
+        }
+
+        private static void BossSuiKiAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            ushort currentHpPercent = BossCurrentHpPercent(ref a);
+            MelonLogger.Msg("Sui-Ki HP%: " + currentHpPercent);
+            MelonLogger.Msg("Sui-Ki HP: " + a.work.hp);
+
+            if (currentHpPercent <= 50 && actionTrackers[a.work.id].phase == 1)
+                actionTrackers[a.work.id].phase = 2;
+
+            if (actionTrackers[a.work.id].phase == 1 && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(219))
+            {
+                UseSkill(ref a, 219); return;
+            }
+            else if (actionTrackers[a.work.id].phase == 2 && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(220))
+            {
+                UseSkill(ref a, 220); return;
+            }
+            else if (AllyPartyStatus(2))
+            {
+                UseSkill(ref a, 97); SetTargetingRule(ref code, ref n, 2, 2); return;
+            }
+            else if (AllyPartyBuffed(1) && random.Next(4) == 0)
+            {
+                UseSkill(ref a, 57); return;
+            }
+            else
+            {
+                int randomValue = random.Next(6);
+                switch (randomValue)
+                {
+                    case 0: UseSkill(ref a, 9); break;
+                    case 1: UseSkill(ref a, 181); break;
+                    case 2: UseSkill(ref a, 97); break;
+                    case 3: UseSkill(ref a, 98); break;
+                    case 4: UseSkill(ref a, 199); break;
+                    case 5: UseSkill(ref a, 67); break;
+                }
+            }
+        }
+
+        private static void BossFuuKiAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            ushort currentHpPercent = BossCurrentHpPercent(ref a);
+            MelonLogger.Msg("Fuu-Ki HP%: " + currentHpPercent);
+            MelonLogger.Msg("Fuu-Ki HP: " + a.work.hp);
+
+            if (currentHpPercent <= 50 && actionTrackers[a.work.id].phase == 1)
+                actionTrackers[a.work.id].phase = 2;
+
+            if (actionTrackers[a.work.id].phase == 1 && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(219))
+            {
+                UseSkill(ref a, 219); return;
+            }
+            else if (actionTrackers[a.work.id].phase == 2 && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(220))
+            {
+                UseSkill(ref a, 220); return;
+            }
+            else if (AllyPartyBuffed(1) && random.Next(4) == 0)
+            {
+                UseSkill(ref a, 57); return;
+            }
+            else
+            {
+                int randomValue = random.Next(6);
+                switch (randomValue)
+                {
+                    case 0: UseSkill(ref a, 21); break;
+                    case 1: UseSkill(ref a, 185); break;
+                    case 2: UseSkill(ref a, 97); break;
+                    case 3: UseSkill(ref a, 110); break;
+                    case 4: UseSkill(ref a, 216); break;
+                    case 5: UseSkill(ref a, 67); break;
+                }
+            }
+        }
+
+        private static void BossOngyoKiAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            ushort currentHpPercent = BossCurrentHpPercent(ref a);
+            MelonLogger.Msg("Ongyo-Ki HP%: " + currentHpPercent);
+            MelonLogger.Msg("Ongyo-Ki HP: " + a.work.hp);
+
+            if (a.work.nowindex == 64)
+                UseSkill(ref a, 206);
+            else if (a.work.nowindex == 65)
+                UseSkill(ref a, 25);
+            else if (a.work.nowindex == 2)
+                UseSkill(ref a, 105);
         }
 
         private static void BigSpecterAI(ref nbActionProcessData_t a, ref int code, ref int n)
@@ -1295,10 +1426,10 @@ namespace NocturneInsaniax
 
         private static bool AllyPartyStatus(ushort status)
         {
-            var allyParty = nbMainProcess.nbGetMainProcessData().form.Where(x => x.formindex <= 3 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].hp != 0);
+            var allyParty = nbMainProcess.nbGetMainProcessData().form.Where(x => x.formindex <= 3);
             foreach (var unit in allyParty)
             {
-                if (nbMainProcess.nbGetUnitWorkFromFormindex(unit.formindex).badstatus == status)
+                if (nbMainProcess.nbGetUnitWorkFromFormindex(unit.formindex).badstatus == status && nbMainProcess.nbGetUnitWorkFromFormindex(unit.formindex).hp != 0)
                     return true;
             }
             return false;

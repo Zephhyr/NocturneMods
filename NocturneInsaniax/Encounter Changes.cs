@@ -185,6 +185,13 @@ namespace NocturneInsaniax
                 case 60: KabukichoPrisonXiezhaiEncounter(); return 1270;
                 case 61: KabukichoPrisonXiezhaiEncounter(); return 1270;
 
+                //case 81: Overworld1AngelEncounter(); return 1270;
+                //case 83: Overworld1AngelEncounter(); return 1270;
+                //case 62: Overworld1AngelEncounter(); return 1270;
+                //case 63: Overworld1AngelEncounter(); return 1270;
+                //case 64: Overworld1AngelEncounter(); return 1270;
+                //case 65: Overworld1AngelEncounter(); return 1270;
+
                 default: return encno;
             }
         }

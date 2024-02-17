@@ -12,7 +12,7 @@ namespace NocturneInsaniax
 {
     internal partial class NocturneInsaniax : MelonMod
     {
-        public static int[] bossList = new int[] { 256, 257, 262, 263, 294, 295, 296, 297, 300, 301, 302, 307, 308, 309, 312, 313, 339, 349, 350, 351 };
+        public static int[] bossList = new int[] { 256, 257, 262, 263, 266, 267, 268, 269, 294, 295, 296, 297, 300, 301, 302, 307, 308, 309, 312, 313, 339, 349, 350, 351 };
         public static nbActionProcessData_t? actionProcessData;
 
         [HarmonyPatch(typeof(datSkillName), nameof(datSkillName.Get))]
@@ -106,6 +106,7 @@ namespace NocturneInsaniax
                     case 469: __result = "Mjolnir"; return false;
                     case 470: __result = "Tandava"; return false;
                     case 471: __result = "Chaturbhuja"; return false;
+                    case 472: __result = "Kusanagi"; return false;
                     default: return true;
                 }
             }
@@ -265,6 +266,7 @@ namespace NocturneInsaniax
                     case 469: __result = "High Strength-based Elec damage \nto one foe. \nDamage relative to HP."; return false; // Mjolnir
                     case 470: __result = "Massive Almighty damage to all foes. \nMinimizes targets' Defense."; return false; // Tandava
                     case 471: __result = "Massive Strength-based Almighty damage \nto random foes."; return false; // Chaturbhuja
+                    case 472: __result = "High Strength-based Force damage \nto one foe. \nDamage relative to HP."; return false; // Kusanagi
 
                     default: return true;
                 }
@@ -380,41 +382,34 @@ namespace NocturneInsaniax
                     //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 149).Count() == 0)
                     //{
                     //    datCalc.datAddDevil(149, 0);
-                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 149)) // Xuanwu
+                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 134)) // Blob
                     //{
-                    //    work.skill[2] = 206;
-                    //    work.skill[3] = 459;
-                    //    work.skill[4] = 2;
-                    //    work.skill[5] = 191;
-                    //    work.skill[6] = 424;
-                    //    work.skill[7] = 305;
+                    //    work.skill[0] = 206;
+                    //    work.skill[2] = 459;
+                    //    work.skill[3] = 14;
+                    //    work.skill[4] = 424;
                     //    work.skillcnt = 8;
                     //}
                     //}
                     //else if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 74).Count() == 0)
                     //{
                     //    datCalc.datAddDevil(74, 0);
-                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 74)) // Forneus
+                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 96)) // Momunofu
                     //{
-                    //    work.skill[2] = 206;
-                    //    work.skill[3] = 459;
-                    //    work.skill[4] = 2;
-                    //    work.skill[5] = 191;
-                    //    work.skill[6] = 424;
-                    //    work.skill[7] = 305;
+                    //    work.skill[1] = 206;
+                    //    work.skill[2] = 459;
+                    //    work.skill[3] = 14;
                     //    work.skillcnt = 8;
                     //}
                     //}
                     //else if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 35).Count() == 0)
                     //{
                     //    datCalc.datAddDevil(35, 0);
-                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 35)) // Unicorn
+                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 11)) // Ame-No-Uzume
                     //{
-                    //    work.skill[3] = 206;
-                    //    work.skill[4] = 459;
-                    //    work.skill[5] = 456;
-                    //    work.skill[6] = 2;
-                    //    work.skill[7] = 191;
+                    //    work.skill[1] = 206;
+                    //    work.skill[2] = 459;
+                    //    work.skill[3] = 14;
                     //    work.skillcnt = 8;
                     //}
                     //}
@@ -1070,6 +1065,7 @@ namespace NocturneInsaniax
             Mjolnir(469);
             Tandava(470);
             Chaturbhuja(471);
+            Kusanagi(472);
 
             // Passive Skills
             Might(11);
@@ -1866,7 +1862,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 52;
+            datNormalSkill.tbl[id].hpn = 54;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].koukatype = 0;
             datNormalSkill.tbl[id].magicbase = 0;
@@ -3402,6 +3398,55 @@ namespace NocturneInsaniax
             var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
             skillLevel.SkillID = id;
             skillLevel.Level = 11;
+        }
+
+        private static void Kusanagi(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 512;
+            datSkill.tbl[id].skillattr = 4;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 14;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 1;
+            datNormalSkill.tbl[id].criticalpoint = 20;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 10;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 52;
+            datNormalSkill.tbl[id].hptype = 6;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 20;
+            datNormalSkill.tbl[id].magiclimit = 220;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 106, 21);
+            datNormalSkillVisual.tbl[id].bedno = datNormalSkillVisual.tbl[21].bedno;
+            datNormalSkillVisual.tbl[id].hatudo = datNormalSkillVisual.tbl[21].hatudo;
         }
 
         // Almighty Skills
