@@ -72,10 +72,6 @@ namespace NocturneInsaniax
             {
                 public static void Postfix(ref fclDataShop_t pData)
                 {
-                    if (pData.Place == 4 && !dds3GlobalWork.DDS3_GBWK.hearts.Contains(13)) // Adds Geis to shop number 4 (Asakusa) if you don't already have it
-                    {
-                        pData.BuyItemList[pData.BuyItemCnt++] = 76;
-                    }
                 }
             }
 
@@ -149,6 +145,8 @@ namespace NocturneInsaniax
             ConcentrateRockItem(60);
             CursedGospelItem(62);
             ImpelStoneItem(63);
+
+            GeisItem(76);
         }
 
         private static void ChakraElixir(ushort id)
@@ -259,11 +257,17 @@ namespace NocturneInsaniax
             datItem.tbl[id].use = 2;
         }
 
+        private static void GeisItem(ushort id)
+        {
+            datItem.tbl[id].price = 20000;
+        }
+
         //------------------------------------------------------------
 
         private static void ApplyShopChanges()
         {
             ShibuyaShop(1);
+            AsakusaShop(4);
             RagShop();
         }
 
@@ -273,6 +277,21 @@ namespace NocturneInsaniax
             fclJunkShopTable.fclShopItemPackTbl[id].ItemList[6].ID = 57; // Hourglass
             fclJunkShopTable.fclShopItemPackTbl[id].ItemList[7].ID = 67; // Iyomante
             fclJunkShopTable.fclShopItemPackTbl[id].ItemList[8].ID = 68; // Shiranui
+        }
+
+        private static void AsakusaShop(ushort id)
+        {
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[2].ID = 48; // Agilao Rock
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[3].ID = 49; // Bufula Rock
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[4].ID = 50; // Zionga Rock
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[5].ID = 51; // Zanma Rock
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[6].ID = 25; // Mahama Rock
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[7].ID = 26; // Mamudo Rock
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[8].ID = 55; // Light Ball
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[9].ID = 54; // Float Ball
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[10].ID = 74; // Nirvana
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[11].ID = 76; // Geis
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[12].ID = 79; // Gehenna
         }
 
         private static void RagShop()
@@ -402,6 +421,15 @@ namespace NocturneInsaniax
 
             // Item Box surrounded by damage-floor near Ikebukuro
             fldGlobal.fldHitData._fldItemBoxTbl[236]._ItemNum = 10;
+
+            // Great Chakra Item Box in First Kalpa
+            fldGlobal.fldHitData._fldItemBoxTbl[256]._ItemID = 8;
+
+            // Great Chakra Item Box in First Kalpa
+            fldGlobal.fldHitData._fldItemBoxTbl[257]._ItemID = 5;
+
+            // Great Chakra Item Box in First Kalpa
+            fldGlobal.fldHitData._fldItemBoxTbl[261]._ItemID = 5;
 
             //fldGlobal.fldHitData._fldItemBoxTbl.Add(new fldTakaraTbl_t { _ItemID = 47, _ItemNum = 5 });
         }

@@ -185,12 +185,21 @@ namespace NocturneInsaniax
                 case 60: KabukichoPrisonXiezhaiEncounter(); return 1270;
                 case 61: KabukichoPrisonXiezhaiEncounter(); return 1270;
 
-                //case 81: Overworld1AngelEncounter(); return 1270;
-                //case 83: Overworld1AngelEncounter(); return 1270;
-                //case 62: Overworld1AngelEncounter(); return 1270;
-                //case 63: Overworld1AngelEncounter(); return 1270;
-                //case 64: Overworld1AngelEncounter(); return 1270;
-                //case 65: Overworld1AngelEncounter(); return 1270;
+                case 81: IkebukuroTunnelSarasvatiEncounter(); return 1270;
+                case 83: IkebukuroTunnelSarasvatiEncounter(); return 1270;
+                case 62: IkebukuroTunnelSarasvatiEncounter(); return 1270;
+                case 63: IkebukuroTunnelSarasvatiEncounter(); return 1270;
+                case 64: IkebukuroTunnelSarasvatiEncounter(); return 1270;
+                case 65: IkebukuroTunnelSarasvatiEncounter(); return 1270;
+
+                case 173: FirstKalpaEncounter1(); return 1270; // First rooms
+                case 174: FirstKalpaEncounter2(); return 1270; // Hallways
+                case 175: FirstKalpaEncounter1(); return 1270; // First side-rooms
+                case 176: FirstKalpaEncounter2(); return 1270; // Hallways
+                case 177: FirstKalpaEncounter3(); return 1270; // Trap room
+                case 178: FirstKalpaEncounter3(); return 1270; // Trap room basement
+                case 179: FirstKalpaEncounter2(); return 1270; // Exit Hallway
+                case 180: FirstKalpaEncounter4(); return 1270; // B1
 
                 default: return encno;
             }
@@ -326,6 +335,83 @@ namespace NocturneInsaniax
         private static void KabukichoPrisonXiezhaiEncounter()
         {
             datEncount.tbl[1270].devil[0] = 34;
+        }
+
+        private static void IkebukuroTunnelSarasvatiEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 9;
+        }
+
+        private static void FirstKalpaMatadorEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 199;
+            datEncount.tbl[1270].btlsound = 10;
+        }
+
+        private static void FirstKalpaXuanwuKikuriHimeEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 149;
+            datEncount.tbl[1270].devil[1] = 20;
+
+            datEncount.tbl[1271].devil[0] = 37;
+            datEncount.tbl[1271].devil[1] = 37;
+            datEncount.tbl[1271].devil[2] = 37;
+            datEncount.tbl[1271].devil[3] = 37;
+        }
+
+        private static void FirstKalpaXiezhaiEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 34;
+
+            datEncount.tbl[1271].devil[0] = 144;
+            datEncount.tbl[1271].devil[1] = 144;
+            datEncount.tbl[1271].devil[2] = 144;
+            datEncount.tbl[1271].devil[3] = 144;
+        }
+
+        private static void FirstKalpaSenriEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 31;
+            datEncount.tbl[1270].devil[1] = 31;
+
+            datEncount.tbl[1271].maxcall = 8;
+            datEncount.tbl[1271].maxparty = 3;
+
+            datEncount.tbl[1271].devil[0] = 125;
+            datEncount.tbl[1271].devil[1] = 35;
+            datEncount.tbl[1271].devil[2] = 125;
+        }
+
+        private static void FirstKalpaEncounter1()
+        {
+            if (random.Next(3) == 0)
+                FirstKalpaMatadorEncounter();
+            else
+                GinzaMakamiEncounter();
+        }
+
+        private static void FirstKalpaEncounter2()
+        {
+            if (random.Next(3) == 0)
+                FirstKalpaMatadorEncounter();
+            else
+                FirstKalpaXuanwuKikuriHimeEncounter();
+        }
+
+        private static void FirstKalpaEncounter3()
+        {
+            if (random.Next(3) == 0)
+                FirstKalpaMatadorEncounter();
+            else
+                FirstKalpaXiezhaiEncounter();
+        }
+
+        private static void FirstKalpaEncounter4()
+        {
+            if (random.Next(3) == 0)
+                FirstKalpaMatadorEncounter();
+            else
+                FirstKalpaSenriEncounter();
         }
 
         //------------------------------------------------------------

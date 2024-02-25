@@ -88,9 +88,11 @@ namespace NocturneInsaniax
                 MelonLogger.Msg("-Action Starts-");
                 switch (a.work.id)
                 {
+                    case 9: SarasvatiAI(ref a, ref code, ref n); break;
                     case 11: AmeNoUzumeAI(ref a, ref code, ref n); break;
                     case 20: KikuriHimeAI(ref a, ref code, ref n); break;
                     case 28: TakeMinakataAI(ref a, ref code, ref n); break;
+                    case 31: SenriAI(ref a, ref code, ref n); break;
                     case 33: ShiisaaAI(ref a, ref code, ref n); break;
                     case 34: XiezhaiAI(ref a, ref code, ref n); break;
                     case 35: UnicornAI(ref a, ref code, ref n); break;
@@ -99,6 +101,7 @@ namespace NocturneInsaniax
                     case 124: NKENueAI(ref a, ref code, ref n); break;
                     case 149: XuanwuAI(ref a, ref code, ref n); break;
                     case 151: MakamiAI(ref a, ref code, ref n); break;
+                    case 199: NKEMatadorAI(ref a, ref code, ref n); break;
                     case 256: BossForneusAI(ref a, ref code, ref n); break;
                     case 261: ForcedKoppaTenguAI(ref a, ref code, ref n); break;
                     case 262: ForcedKaiwanAI(ref a, ref code, ref n); break;
@@ -130,6 +133,26 @@ namespace NocturneInsaniax
                     default: break;
                 }
                 MelonLogger.Msg("skill: " + a.work.nowindex);
+            }
+        }
+
+        private static void SarasvatiAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(220))
+            {
+                UseSkill(ref a, 220);
+            }
+            else
+            {
+                int randomValue = random.Next(5);
+                switch (randomValue)
+                {
+                    case 0: UseNormalAttack(ref a); break;
+                    case 1: UseSkill(ref a, 443); break;
+                    case 2: UseSkill(ref a, 443); break;
+                    case 3: UseSkill(ref a, 185); break;
+                    case 4: UseSkill(ref a, 198); break;
+                }
             }
         }
 
@@ -222,6 +245,27 @@ namespace NocturneInsaniax
                     case 1: UseSkill(ref a, 14); break;
                     case 2: UseSkill(ref a, 224); break;
                     case 3: UseSkill(ref a, 427); break;
+                }
+            }
+        }
+
+        private static void SenriAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (actionTrackers[a.work.id].currentTurnActionCount <= 1 &&
+                nbMainProcess.nbGetMainProcessData().enemypcnt == 1)
+            {
+                UseSkill(ref a, 219);
+            }
+            else
+            {
+                int randomValue = random.Next(5);
+                switch (randomValue)
+                {
+                    case 0: UseSkill(ref a, 125); break;
+                    case 1: UseSkill(ref a, 23); break;
+                    case 2: UseSkill(ref a, 443); break;
+                    case 3: UseSkill(ref a, 62); break;
+                    case 4: UseSkill(ref a, 198); break;
                 }
             }
         }
@@ -373,6 +417,56 @@ namespace NocturneInsaniax
                     }
                 }
                 
+            }
+        }
+
+        private static void NKEMatadorAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(277))
+            {
+                UseSkill(ref a, 277); return;
+            }
+            else if (actionTrackers[a.work.id].currentBattleActionCount == 2)
+            {
+                UseSkill(ref a, 276); return;
+            }
+            else if (actionTrackers[a.work.id].currentBattleActionCount == 3)
+            {
+                UseSkill(ref a, 275); return;
+            }
+            else if (actionTrackers[a.work.id].currentBattleActionCount == 4)
+            {
+                UseSkill(ref a, 224); return;
+            }
+            else if (EnemyPartyDebuffed(1) && random.Next(3) == 0)
+            {
+                UseSkill(ref a, 77); return;
+            }
+            else if (!EnemyPartyBuffed(3, 8) && random.Next(3) == 0)
+            {
+                UseSkill(ref a, 276); return;
+            }
+            else
+            {
+                if (EnemyFocused(ref a))
+                {
+                    int randomValue = random.Next(2);
+                    switch (randomValue)
+                    {
+                        case 0: UseNormalAttack(ref a); break;
+                        case 1: UseSkill(ref a, 443); break;
+                    }
+                }
+                else
+                {
+                    int randomValue = random.Next(3);
+                    switch (randomValue)
+                    {
+                        case 0: UseNormalAttack(ref a); break;
+                        case 1: UseSkill(ref a, 443); break;
+                        case 2: UseSkill(ref a, 275); break;
+                    }
+                }
             }
         }
 

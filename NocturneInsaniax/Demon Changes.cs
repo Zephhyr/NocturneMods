@@ -905,6 +905,22 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[6].Param = 185; // Tornado
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 34;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 1500;
+            datDevilFormat.tbl[id].maxhp = 1500;
+            datDevilFormat.tbl[id].mp = 480;
+            datDevilFormat.tbl[id].maxmp = 480;
+
+            datDevilFormat.tbl[id].dropexp = 600;
+            datDevilFormat.tbl[id].dropmakka = 2400;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 443; // Dervish
+            datDevilFormat.tbl[id].skill[1] = 185; // Tornado
+            datDevilFormat.tbl[id].skill[2] = 198; // Mute Gaze
+            datDevilFormat.tbl[id].skill[3] = 312; // Force Boost
+            datDevilFormat.tbl[id].skill[4] = 366; // Abyssal Mask
         }
 
         private static void Sati(ushort id)
@@ -1498,6 +1514,24 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[7].Param = 23; // Mazanma
             tblSkill.fclSkillTbl[id].Event[8].Param = 367; // Knowledge of Tools
             tblSkill.fclSkillTbl[id].Event[9].Param = 367; // Knowledge of Tools
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 420;
+            datDevilFormat.tbl[id].maxhp = 420;
+            datDevilFormat.tbl[id].mp = 164;
+            datDevilFormat.tbl[id].maxmp = 164;
+
+            datDevilFormat.tbl[id].dropexp = 200;
+            datDevilFormat.tbl[id].dropmakka = 1000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 23; // Mazanma
+            datDevilFormat.tbl[id].skill[1] = 443; // Dervish
+            datDevilFormat.tbl[id].skill[2] = 125; // Stun Claw
+            datDevilFormat.tbl[id].skill[3] = 62; // Marin Karin
+            datDevilFormat.tbl[id].skill[4] = 198; // Mute Gaze
+            datDevilFormat.tbl[id].skill[5] = 219; // Rage
+            datDevilFormat.tbl[id].skill[6] = 366; // Abyssal Mask
         }
 
         private static void Zhuque(ushort id)
@@ -7379,6 +7413,25 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[7].Param = 306; // Retaliate
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 35;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 1800;
+            datDevilFormat.tbl[id].maxhp = 1800;
+            datDevilFormat.tbl[id].mp = 540;
+            datDevilFormat.tbl[id].maxmp = 540;
+
+            datDevilFormat.tbl[id].dropexp = 800;
+            datDevilFormat.tbl[id].dropmakka = 3000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 443; // Dervish
+            datDevilFormat.tbl[id].skill[1] = 275; // Andalucia
+            datDevilFormat.tbl[id].skill[2] = 276; // Red Capote
+            datDevilFormat.tbl[id].skill[3] = 224; // Focus
+            datDevilFormat.tbl[id].skill[4] = 205; // Taunt
+            datDevilFormat.tbl[id].skill[5] = 77; // Dekunda
+            datDevilFormat.tbl[id].skill[6] = 277; // Startle
+            datDevilFormat.tbl[id].skill[7] = 366; // Abyssal Mask
         }
 
         private static void HellBiker(ushort id)
@@ -7879,8 +7932,8 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 65536; // Mind
 
             // Enemy Stats
-            datDevilFormat.tbl[id].maxhp = 6600;
-            datDevilFormat.tbl[id].hp = 6600;
+            datDevilFormat.tbl[id].maxhp = 6000;
+            datDevilFormat.tbl[id].hp = 6000;
             datDevilFormat.tbl[id].level = 54;
             datDevilFormat.tbl[id].param[0] = 30;
             datDevilFormat.tbl[id].param[2] = 24;

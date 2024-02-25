@@ -43,6 +43,9 @@ namespace NocturneInsaniax
                     case 285: __result = "Babylon Goblet"; return false;
                     case 286: __result = "Death Lust"; return false;
 
+                        // High King = "King of Kings"
+                        // Root of Evil = "In the beginning, there was darkness"
+
                     // New Skills
                     case 188: __result = "Punishment"; return false;      
                     case 189: __result = "Judgement Light"; return false;      
@@ -999,6 +1002,8 @@ namespace NocturneInsaniax
 
             Andalucia(275);
             RedCapote(276);
+
+            Startle(277);
 
             Preach(278);
             Meditation(279);
@@ -3173,7 +3178,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hpbase = 0;
             datNormalSkill.tbl[id].hpn = 30;
             datNormalSkill.tbl[id].hptype = 1;
-            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].koukatype = 1;
             datNormalSkill.tbl[id].magicbase = 12;
             datNormalSkill.tbl[id].magiclimit = 80;
             datNormalSkill.tbl[id].minus = 100;
@@ -5538,6 +5543,17 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].targettype = 1;
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 219);
+        }
+
+        private static void Startle(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 512;
+            datSkill.tbl[id].skillattr = 15;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
 
             OverWriteSkillEffect(id, 219);
         }
