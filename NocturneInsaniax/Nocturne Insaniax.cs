@@ -2,7 +2,7 @@
 using Il2Cpp;
 using Il2Cppnewbattle_H;
 using MelonLoader;
-using Newtonsoft.Json;
+using MelonLoader.CoreClrUtils;
 using UnityEngine;
 
 [assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax", "0.8.0", "Zephhyr, Matthiew Purple")]
@@ -37,6 +37,78 @@ namespace NocturneInsaniax
             ApplyMagatamaChanges();
             ApplyDemonChanges();
             ApplyEncounterChanges();
+        }
+
+        public override void OnLateUpdate()
+        {
+            if (cmpModel.cmpDevilObj != null)
+            {
+                var modelName = cmpModel.cmpDevilObj.name;
+                switch (modelName)
+                {
+                    case "devil_0x121":
+                        {
+                            var oseHallelModel = cmpModel.cmpDevilObj;
+                            oseHallelModel.transform.position = new Vector3(-0.08f, -1.48f, 0);
+                            oseHallelModel.transform.eulerAngles = new Vector3(270f, 194f, 0);
+                            break;
+                        }
+                    case "devil_0x122":
+                        {
+                            var flaurosHallelModel = cmpModel.cmpDevilObj;
+                            flaurosHallelModel.transform.position = new Vector3(-0.08f, -1.28f, -0.04f);
+                            flaurosHallelModel.transform.eulerAngles = new Vector3(0f, 196f, 0);
+                            break;
+                        }
+                    case "devil_0x117":
+                        {
+                            var urthonaModel = cmpModel.cmpDevilObj;
+                            urthonaModel.transform.position = new Vector3(0f, -1.0f, 0f);
+                            urthonaModel.transform.eulerAngles = new Vector3(270f, 195f, 0);
+                            urthonaModel.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+                            break;
+                        }
+                    case "devil_0x118":
+                        {
+                            var urizenModel = cmpModel.cmpDevilObj;
+                            urizenModel.transform.position = new Vector3(0f, -1.0f, 0f);
+                            urizenModel.transform.eulerAngles = new Vector3(270f, 195f, 0);
+                            urizenModel.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+                            break;
+                        }
+                    case "devil_0x119":
+                        {
+                            var luvahModel = cmpModel.cmpDevilObj;
+                            luvahModel.transform.position = new Vector3(0f, -1.0f, 0f);
+                            luvahModel.transform.eulerAngles = new Vector3(270f, 195f, 0);
+                            luvahModel.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+                            break;
+                        }
+                    case "devil_0x11a":
+                        {
+                            var tharmusModel = cmpModel.cmpDevilObj;
+                            tharmusModel.transform.position = new Vector3(0f, -1.0f, 0f);
+                            tharmusModel.transform.eulerAngles = new Vector3(270f, 195f, 0);
+                            tharmusModel.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+                            break;
+                        }
+                    case "devil_0x141":
+                        {
+                            var maraModel = cmpModel.cmpDevilObj;
+                            maraModel.transform.position = new Vector3(0f, -0.6f, 0f);
+                            maraModel.transform.eulerAngles = new Vector3(270f, 195f, 0);
+                            break;
+                        }
+                    case "devil_0xe0":
+                        {
+                            var tamLinModel = cmpModel.cmpDevilObj;
+                            tamLinModel.transform.position = new Vector3(-0.04f, -1f, -1f);
+                            tamLinModel.transform.eulerAngles = new Vector3(270f, 196f, 0);
+                            break;
+                        }
+                    default: break;
+                }
+            }
         }
 
         [HarmonyPatch(typeof(fld_Npc), nameof(fld_Npc.fldItemBoxAdd))]
@@ -120,7 +192,7 @@ namespace NocturneInsaniax
         {
             public static void Postfix()
             {
-                MelonLogger.Msg("fldMain.fldFirstInit");
+                MelonLogger.Msg("-fldMain.fldFirstInit-");
                 //var output = JsonConvert.SerializeObject(fldGlobal.fldHitData._fldItemBoxTbl);
                 //var output = JsonConvert.SerializeObject(fldGlobal.fldHitData._fldNpcUp);
                 //var output = JsonConvert.SerializeObject(fld_Npc.gfldTakaraWork);

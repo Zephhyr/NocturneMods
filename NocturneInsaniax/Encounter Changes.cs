@@ -384,7 +384,7 @@ namespace NocturneInsaniax
 
         private static void FirstKalpaEncounter1()
         {
-            if (random.Next(3) == 0)
+            if (random.Next(4) == 0)
                 FirstKalpaMatadorEncounter();
             else
                 GinzaMakamiEncounter();
@@ -392,7 +392,7 @@ namespace NocturneInsaniax
 
         private static void FirstKalpaEncounter2()
         {
-            if (random.Next(3) == 0)
+            if (random.Next(4) == 0)
                 FirstKalpaMatadorEncounter();
             else
                 FirstKalpaXuanwuKikuriHimeEncounter();
@@ -400,7 +400,7 @@ namespace NocturneInsaniax
 
         private static void FirstKalpaEncounter3()
         {
-            if (random.Next(3) == 0)
+            if (random.Next(4) == 0)
                 FirstKalpaMatadorEncounter();
             else
                 FirstKalpaXiezhaiEncounter();
@@ -408,7 +408,7 @@ namespace NocturneInsaniax
 
         private static void FirstKalpaEncounter4()
         {
-            if (random.Next(3) == 0)
+            if (random.Next(4) == 0)
                 FirstKalpaMatadorEncounter();
             else
                 FirstKalpaSenriEncounter();

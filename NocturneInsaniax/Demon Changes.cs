@@ -267,6 +267,10 @@ namespace NocturneInsaniax
                         __result = "Doppelgänger"; return false;
                     case "<AISYO_L0187>":
                         __result = "Rpl: Phys • Str: Ailments • Weak: Light/Dark"; return false;
+                    case "<DEVIL_L0224>":
+                        __result = "Tam Lin"; return false;
+                    case "<AISYO_L0224>":
+                        __result = "Str: Phys/Fire/Elec/Light • Weak: Ice/Dark"; return false;
                     default: return true;
                 }
             }
@@ -297,8 +301,39 @@ namespace NocturneInsaniax
                         __result = "A Buddhist demon that represents the fear of death. He sent his daughter to tempt Buddha during his meditations. Improper summoning has caused him to manifest with rather flaccid appearence and power."; break;
                     case "<COLLECTIONBOOK_L0187>":
                         __result = "A phantom copy of a living being. Doppelgängers are a sign of bad luck. Often, others see your doppelgänger from afar, but it is said you may also see your own doppelgänger right before you die."; break;
+                    case "<COLLECTIONBOOK_L0224>":
+                        __result = "A faerie knight from Scotland. As a member of the Seelie Court, he is charged with protecting Carterhaugh. He was originally a child from the area, but after his kidnapping by the faeries at age nine, he took up their ways."; break;
+
                     default: break;
                 }
+            }
+        }
+
+        [HarmonyPatch(typeof(fclCombineCalcCore), "cmbChkIkenieExtPatternDev")]
+        private class SpecialFusionPatch
+        {
+            public static void Postfix(ref datUnitWork_t pDevil1, ref datUnitWork_t pDevil2, ref datUnitWork_t pSacrifice,
+                                        ref sbyte CurseFlag, ref sbyte LevelMode, ref ushort __result)
+            {
+                var normalResult = fclCombineCalcCore.cmbCalcNormal2(pDevil1, pDevil2, CurseFlag, LevelMode);
+                //if (normalResult == 71 && (pSacrifice.id == 62 || datDevilFormat.Get(pSacrifice.id).race == 24))
+                //    __result = 179;
+                //else if (normalResult == 69 && (pSacrifice.id == 62 || datDevilFormat.Get(pSacrifice.id).race == 24))
+                //    __result = 180;
+                //else if (normalResult == 90 && pSacrifice.id == 39)
+                //    __result = 181;
+                //else if (normalResult == 90 && pSacrifice.id == 36)
+                //    __result = 182;
+                //else if (normalResult == 90 && pSacrifice.id == 38)
+                //    __result = 183;
+                //else if (normalResult == 90 && pSacrifice.id == 37)
+                //    __result = 184;
+                //else if (normalResult == 178 && pSacrifice.id == 130)
+                //    __result = 185;
+                //else if (datDevilFormat.Get(normalResult).race == 19 && pSacrifice.id == 135)
+                //    __result = 186;
+                //if (normalResult == 71 && (pSacrifice.id == 62 || datDevilFormat.Get(pSacrifice.id).race == 24))
+                    __result = 224;
             }
         }
 
@@ -533,6 +568,8 @@ namespace NocturneInsaniax
 
             Phantom(178);
 
+
+            // Maniax Demons
             DanteRaidou(192);
             Metatron(193);
             BeelzebubFly(194);
@@ -549,6 +586,9 @@ namespace NocturneInsaniax
 
             BlackFrost(206);
             BeelzebubMan(207);
+
+            // Recolour Demons
+            TamLin(224);
 
             // Bosses
             BossForneus(256);
@@ -7612,6 +7652,73 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[6].Param = 311; // Elec Boost
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 86;
             tblSkill.fclSkillTbl[id].Event[6].Type = 5;
+        }
+
+        private static void TamLin(ushort id)
+        {
+            datDevilFormat.tbl[id].aisyoid = (short)id;
+
+            datDevilFormat.tbl[id].flag = 3;
+            datDevilFormat.tbl[id].race = 26;
+            datDevilFormat.tbl[id].level = 27;
+            datDevilFormat.tbl[id].aisyoid = (short)id;
+            datDevilFormat.tbl[id].param = new sbyte[] { 14, 0, 8, 11, 12, 9 };
+            datDevilFormat.tbl[id].keisyotype = 6;
+            datDevilFormat.tbl[id].keisyoform = 2457;
+
+            datDevilName.txt[id] = "Tam Lin";
+
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 0, 1, 2, 2, 1 };
+
+            tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 103, TargetLevel = 0, Type = 1 }; // Brutal Slash
+            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 182, TargetLevel = 0, Type = 1 }; // Shock
+            tblSkill.fclSkillTbl[id].Event[2] = new fclSkillParam_t { Param = 305, TargetLevel = 0, Type = 1 }; // Counter
+            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 64, TargetLevel = 28, Type = 1 }; // Tarukaja
+            tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 30, TargetLevel = 29, Type = 1 }; // Mahama
+            tblSkill.fclSkillTbl[id].Event[5] = new fclSkillParam_t { Param = 205, TargetLevel = 30, Type = 1 }; // Taunt
+            tblSkill.fclSkillTbl[id].Event[6] = new fclSkillParam_t { Param = 315, TargetLevel = 31, Type = 1 }; // Anti-Ice
+            tblSkill.fclSkillTbl[id].Event[7] = new fclSkillParam_t { Param = 102, TargetLevel = 32, Type = 1 }; // Blight
+
+            // Affinities
+            datAisyo.tbl[id][0] = 50; // Phys
+            datAisyo.tbl[id][1] = 50; // Fire
+            datAisyo.tbl[id][2] = 2147483798; // Ice
+            datAisyo.tbl[id][3] = 50; // Elec
+            datAisyo.tbl[id][4] = 100; // Force
+            datAisyo.tbl[id][6] = 50; // Light
+            datAisyo.tbl[id][7] = 2147483798; // Dark
+            datAisyo.tbl[id][8] = 100; // Curse
+            datAisyo.tbl[id][9] = 100; // Nerve
+            datAisyo.tbl[id][10] = 100; // Mind
+
+            mdlFileDefTable.devilModelFileTable[id].texFile = "";
+            mdlFileDefTable.devilModelFileTable[id].modelFile = "d0xe0.PB";
+            mdlFileDefTable.devilModelFileTable[id].motionFile = "";
+            mdlFileDefTable.devilModelFileTable[id].akey = "dvl0xe0";
+            mdlFileDefTable.devilModelFileTable[id].fname = "devil_0xe0";
+
+            mdlFileDefTable.devilOnModelFileTable[id].texFile = "";
+            mdlFileDefTable.devilOnModelFileTable[id].modelFile = "devil/on/0xe0_on.PB";
+            mdlFileDefTable.devilOnModelFileTable[id].motionFile = "";
+            mdlFileDefTable.devilOnModelFileTable[id].akey = "";
+            mdlFileDefTable.devilOnModelFileTable[id].fname = "";
+
+            mdlFileDefTable.devilModelIndex[id].major = 1;
+            mdlFileDefTable.devilModelIndex[id].minor = 224;
+            mdlFileDefTable.devilModelIndex[id].scale = 4096;
+            mdlFileDefTable.devilModelIndex[id].radius = 1000;
+
+            mdlFileDefTable.devilModelIndex[id].major = 6;
+            mdlFileDefTable.devilModelIndex[id].minor = 224;
+            mdlFileDefTable.devilModelIndex[id].scale = 4096;
+            mdlFileDefTable.devilModelIndex[id].radius = 1000;
+
+            datDevilVisual07.tbl_7_0E0_0FF[0] = datDevilVisual04.tbl_4_080_09F[19];
+            datDevilVisual07.tbl_7_0E0_0FF[0].formscale = 1f;
+
+            datMotionSeTable.tbl[id] = 147;
+
+            datDevilNegoFormat.tbl[id] = datDevilNegoFormat.tbl[147];
         }
 
         // 2148532374 = Weak but status-immune

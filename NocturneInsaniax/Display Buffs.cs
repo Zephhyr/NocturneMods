@@ -173,9 +173,12 @@ namespace NocturneInsaniax
                         return true;
                     }
                 }
-
-                if (party.count[15] == 1 || party.count[20] == 1)
-                    return true;
+                try
+                {
+                    if (party.count[15] == 1 || party.count[20] == 1)
+                        return true;
+                }
+                catch { }
 
                 return false;
             }
