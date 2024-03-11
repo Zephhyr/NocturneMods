@@ -102,6 +102,7 @@ namespace NocturneInsaniax
                     case 149: XuanwuAI(ref a, ref code, ref n); break;
                     case 151: MakamiAI(ref a, ref code, ref n); break;
                     case 199: NKEMatadorAI(ref a, ref code, ref n); break;
+                    case 224: TamLinAI(ref a, ref code, ref n); break;
                     case 256: BossForneusAI(ref a, ref code, ref n); break;
                     case 261: ForcedKoppaTenguAI(ref a, ref code, ref n); break;
                     case 262: ForcedKaiwanAI(ref a, ref code, ref n); break;
@@ -466,6 +467,27 @@ namespace NocturneInsaniax
                         case 1: UseSkill(ref a, 443); break;
                         case 2: UseSkill(ref a, 275); break;
                     }
+                }
+            }
+        }
+
+        private static void TamLinAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(219))
+            {
+                UseSkill(ref a, 219);
+            }
+            else
+            {
+                int randomValue = random.Next(6);
+                switch (randomValue)
+                {
+                    case 0: UseNormalAttack(ref a); break;
+                    case 1: UseSkill(ref a, 103); break;
+                    case 2: UseSkill(ref a, 182); break;
+                    case 3: UseSkill(ref a, 30); break;
+                    case 4: UseSkill(ref a, 64); break;
+                    case 5: UseSkill(ref a, 205); break;
                 }
             }
         }

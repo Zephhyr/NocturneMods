@@ -348,6 +348,11 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].btlsound = 10;
         }
 
+        private static void FirstKalpaTamLinEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 224;
+        }
+
         private static void FirstKalpaXuanwuKikuriHimeEncounter()
         {
             datEncount.tbl[1270].devil[0] = 149;
@@ -387,7 +392,7 @@ namespace NocturneInsaniax
             if (random.Next(4) == 0)
                 FirstKalpaMatadorEncounter();
             else
-                GinzaMakamiEncounter();
+                FirstKalpaTamLinEncounter();
         }
 
         private static void FirstKalpaEncounter2()

@@ -1,8 +1,8 @@
 ﻿using HarmonyLib;
 using Il2Cpp;
 using Il2Cppnewbattle_H;
+using Il2CppTMPro;
 using MelonLoader;
-using MelonLoader.CoreClrUtils;
 using UnityEngine;
 
 [assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax", "0.8.0", "Zephhyr, Matthiew Purple")]
@@ -110,6 +110,62 @@ namespace NocturneInsaniax
                 }
             }
         }
+
+        [HarmonyPatch(typeof(Smg), nameof(Smg.SmgTableInit))]
+        private class SmgTableInitPatch
+        {
+            public static void Postfix()
+            {
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D224_MSEE0_03", "D224_MSEE0_03", 503316480, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D224_MSEE0_04", "D224_MSEE0_04", 503382016, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D224_MSEE0_08", "D224_MSEE0_08", 503447552, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D224_MSEE0_12", "D224_MSEE0_12", 503513088, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D224_MSEE0_14", "D224_MSEE0_14", 93519872, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D224_MSEE0_15", "D224_MSEE0_15", 93519873, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D224_MSEE0_23", "D224_MSEE0_23", 422838272, false);
+            }
+        }
+
+        [HarmonyPatch(typeof(SndAssetBundleManager), nameof(SndAssetBundleManager.Initialize))]
+        private class SndAssetBundleManagerInitializePatch
+        {
+            public static void Postfix()
+            {
+                var TamLinKeys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
+                TamLinKeys.Add("D224_MSEE0_03", new SndAssetBundleManager.SndData { key = "dvl0xe0", path = 4, id = 0, name = "D224_MSEE0_03", diff = true });
+                TamLinKeys.Add("D224_MSEE0_04", new SndAssetBundleManager.SndData { key = "dvl0xe0", path = 4, id = 0, name = "D224_MSEE0_04", diff = true });
+                TamLinKeys.Add("D224_MSEE0_08", new SndAssetBundleManager.SndData { key = "dvl0xe0", path = 4, id = 0, name = "D224_MSEE0_08", diff = true });
+                TamLinKeys.Add("D224_MSEE0_12", new SndAssetBundleManager.SndData { key = "dvl0xe0", path = 4, id = 0, name = "D224_MSEE0_12", diff = true });
+                TamLinKeys.Add("D224_MSEE0_14", new SndAssetBundleManager.SndData { key = "dvl0xe0", path = 4, id = 0, name = "D224_MSEE0_14", diff = true });
+                TamLinKeys.Add("D224_MSEE0_15", new SndAssetBundleManager.SndData { key = "dvl0xe0", path = 4, id = 0, name = "D224_MSEE0_15", diff = true });
+                TamLinKeys.Add("D224_MSEE0_23", new SndAssetBundleManager.SndData { key = "dvl0xe0", path = 4, id = 0, name = "D224_MSEE0_23", diff = true });
+                SndAssetBundleManager.SEBundleTable.Add("dvl0xe0", TamLinKeys);
+            }
+        }
+
+        //[HarmonyPatch(typeof(nbSound), nameof(nbSound.nbGetMotionSeNo))]
+        //private class nbGetMotionSeNoPatch
+        //{
+        //    public static void Postfix(int id, int mot, int __result)
+        //    {
+        //        MelonLogger.Msg("--nbSound.nbGetMotionSeNo--");
+        //        MelonLogger.Msg("id: " + id);
+        //        MelonLogger.Msg("mot: " + mot);
+        //        MelonLogger.Msg("result: " + __result);
+        //    }
+        //}
+
+        //[HarmonyPatch(typeof(nbSound), nameof(nbSound.GetMotionMIDI))]
+        //private class GetMotionMIDIPatch
+        //{
+        //    public static void Postfix(int id, int mot, uint __result)
+        //    {
+        //        MelonLogger.Msg("--nbSound.GetMotionMIDI--");
+        //        MelonLogger.Msg("id: " + id);
+        //        MelonLogger.Msg("mot: " + mot);
+        //        MelonLogger.Msg("result: " + __result);
+        //    }
+        //}
 
         [HarmonyPatch(typeof(fld_Npc), nameof(fld_Npc.fldItemBoxAdd))]
         private class ItemBoxAddPatch

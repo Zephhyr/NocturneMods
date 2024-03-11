@@ -316,23 +316,23 @@ namespace NocturneInsaniax
                                         ref sbyte CurseFlag, ref sbyte LevelMode, ref ushort __result)
             {
                 var normalResult = fclCombineCalcCore.cmbCalcNormal2(pDevil1, pDevil2, CurseFlag, LevelMode);
-                //if (normalResult == 71 && (pSacrifice.id == 62 || datDevilFormat.Get(pSacrifice.id).race == 24))
-                //    __result = 179;
-                //else if (normalResult == 69 && (pSacrifice.id == 62 || datDevilFormat.Get(pSacrifice.id).race == 24))
-                //    __result = 180;
-                //else if (normalResult == 90 && pSacrifice.id == 39)
-                //    __result = 181;
-                //else if (normalResult == 90 && pSacrifice.id == 36)
-                //    __result = 182;
-                //else if (normalResult == 90 && pSacrifice.id == 38)
-                //    __result = 183;
-                //else if (normalResult == 90 && pSacrifice.id == 37)
-                //    __result = 184;
-                //else if (normalResult == 178 && pSacrifice.id == 130)
-                //    __result = 185;
-                //else if (datDevilFormat.Get(normalResult).race == 19 && pSacrifice.id == 135)
-                //    __result = 186;
-                //if (normalResult == 71 && (pSacrifice.id == 62 || datDevilFormat.Get(pSacrifice.id).race == 24))
+                if (normalResult == 71 && (pSacrifice.id == 62 || datDevilFormat.Get(pSacrifice.id).race == 24))
+                    __result = 179;
+                else if (normalResult == 69 && (pSacrifice.id == 62 || datDevilFormat.Get(pSacrifice.id).race == 24))
+                    __result = 180;
+                else if (normalResult == 90 && pSacrifice.id == 39)
+                    __result = 181;
+                else if (normalResult == 90 && pSacrifice.id == 36)
+                    __result = 182;
+                else if (normalResult == 90 && pSacrifice.id == 38)
+                    __result = 183;
+                else if (normalResult == 90 && pSacrifice.id == 37)
+                    __result = 184;
+                else if (normalResult == 178 && pSacrifice.id == 130)
+                    __result = 185;
+                else if (datDevilFormat.Get(normalResult).race == 19 && pSacrifice.id == 135)
+                    __result = 186;
+                else if (datDevilFormat.Get(normalResult).race == 10 && pSacrifice.id == 125)
                     __result = 224;
             }
         }
@@ -7691,6 +7691,26 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][9] = 100; // Nerve
             datAisyo.tbl[id][10] = 100; // Mind
 
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 1200;
+            datDevilFormat.tbl[id].maxhp = 1200;
+            datDevilFormat.tbl[id].mp = 200;
+            datDevilFormat.tbl[id].maxmp = 200;
+
+            datDevilFormat.tbl[id].dropexp = 400;
+            datDevilFormat.tbl[id].dropmakka = 2000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 103; // Brutal Slash
+            datDevilFormat.tbl[id].skill[1] = 182; // Shock
+            datDevilFormat.tbl[id].skill[2] = 30; // Mahama
+            datDevilFormat.tbl[id].skill[3] = 64; // Tarukaja
+            datDevilFormat.tbl[id].skill[4] = 205; // Taunt
+            datDevilFormat.tbl[id].skill[5] = 219; // Rage
+            datDevilFormat.tbl[id].skill[6] = 305; // Counter
+            datDevilFormat.tbl[id].skill[7] = 366; // Abyssal Mask
+            
+
             mdlFileDefTable.devilModelFileTable[id].texFile = "";
             mdlFileDefTable.devilModelFileTable[id].modelFile = "d0xe0.PB";
             mdlFileDefTable.devilModelFileTable[id].motionFile = "";
@@ -7716,7 +7736,11 @@ namespace NocturneInsaniax
             datDevilVisual07.tbl_7_0E0_0FF[0] = datDevilVisual04.tbl_4_080_09F[19];
             datDevilVisual07.tbl_7_0E0_0FF[0].formscale = 1f;
 
-            datMotionSeTable.tbl[id] = 147;
+            //MelonLogger.Msg("Tam Lin motion se");
+            //foreach (var motion in datDevilVisual07.tbl_7_0E0_0FF[0].motion)
+            //    MelonLogger.Msg(motion.se_no);
+
+            //datMotionSeTable.tbl[id] = 147;
 
             datDevilNegoFormat.tbl[id] = datDevilNegoFormat.tbl[147];
         }

@@ -18,6 +18,8 @@
           "MelonLoader": "0.6.1.0",
           "UnhollowerBaseLib": "0.4.18.0",
           "Unity.TextMeshPro": "0.0.0.0",
+          "UnityEngine.AnimationModule": "0.0.0.0",
+          "UnityEngine.AudioModule": "0.0.0.0",
           "UnityEngine.CoreModule": "0.0.0.0",
           "UnityEngine": "0.0.0.0",
           "UnityEngine.TextCoreModule": "0.0.0.0",
@@ -639,6 +641,22 @@
           }
         }
       },
+      "UnityEngine.AnimationModule/0.0.0.0": {
+        "runtime": {
+          "UnityEngine.AnimationModule.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "UnityEngine.AudioModule/0.0.0.0": {
+        "runtime": {
+          "UnityEngine.AudioModule.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
       "UnityEngine.CoreModule/0.0.0.0": {
         "runtime": {
           "UnityEngine.CoreModule.dll": {
@@ -671,14 +689,6 @@
           }
         }
       },
-      "UnityEngine.AnimationModule/0.0.0.0": {
-        "runtime": {
-          "UnityEngine.AnimationModule.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
       "Il2CppSystem/4.0.0.0": {
         "runtime": {
           "Il2CppSystem.dll": {
@@ -698,14 +708,6 @@
       "UnityEngine.AssetBundleModule/0.0.0.0": {
         "runtime": {
           "UnityEngine.AssetBundleModule.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "UnityEngine.AudioModule/0.0.0.0": {
-        "runtime": {
-          "UnityEngine.AudioModule.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -1404,6 +1406,16 @@
       "serviceable": false,
       "sha512": ""
     },
+    "UnityEngine.AnimationModule/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UnityEngine.AudioModule/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "UnityEngine.CoreModule/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
@@ -1424,11 +1436,6 @@
       "serviceable": false,
       "sha512": ""
     },
-    "UnityEngine.AnimationModule/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Il2CppSystem/4.0.0.0": {
       "type": "reference",
       "serviceable": false,
@@ -1440,11 +1447,6 @@
       "sha512": ""
     },
     "UnityEngine.AssetBundleModule/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "UnityEngine.AudioModule/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
