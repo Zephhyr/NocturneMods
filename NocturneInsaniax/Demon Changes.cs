@@ -7,6 +7,7 @@ using Il2Cppresult2_H;
 using Il2Cppnewbattle_H;
 using Il2Cppeffect_H;
 using UnityEngine;
+using Il2Cppmodel_H;
 
 namespace NocturneInsaniax
 {
@@ -263,14 +264,18 @@ namespace NocturneInsaniax
                         __result = "Mara"; return false;
                     case "<AISYO_L0186>":
                         __result = "Null: Light/Dark/Ailments"; return false;
-                    case "<DEVIL_L0187>":
-                        __result = "Doppelgänger"; return false;
-                    case "<AISYO_L0187>":
-                        __result = "Rpl: Phys • Str: Ailments • Weak: Light/Dark"; return false;
                     case "<DEVIL_L0224>":
                         __result = "Tam Lin"; return false;
                     case "<AISYO_L0224>":
                         __result = "Str: Phys/Fire/Elec/Light • Weak: Ice/Dark"; return false;
+                    case "<DEVIL_L0225>":
+                        __result = "Doppelgänger"; return false;
+                    case "<AISYO_L0225>":
+                        __result = "Rpl: Phys • Str: Ailments • Weak: Light/Dark"; return false;
+                    case "<DEVIL_L0254>":
+                        __result = "YHVH"; return false;
+                    case "<AISYO_L0254>":
+                        __result = "Str: All"; return false;
                     default: return true;
                 }
             }
@@ -299,11 +304,10 @@ namespace NocturneInsaniax
                         __result = "A spirit of the dead in Western folklore. A specter's appearance is said to be horrifying beyond anything imaginable. Those to whom it appears are paralyzed with fear, but are very rarely harmed."; break;
                     case "<COLLECTIONBOOK_L0186>":
                         __result = "A Buddhist demon that represents the fear of death. He sent his daughter to tempt Buddha during his meditations. Improper summoning has caused him to manifest with rather flaccid appearence and power."; break;
-                    case "<COLLECTIONBOOK_L0187>":
-                        __result = "A phantom copy of a living being. Doppelgängers are a sign of bad luck. Often, others see your doppelgänger from afar, but it is said you may also see your own doppelgänger right before you die."; break;
                     case "<COLLECTIONBOOK_L0224>":
                         __result = "A faerie knight from Scotland. As a member of the Seelie Court, he is charged with protecting Carterhaugh. He was originally a child from the area, but after his kidnapping by the faeries at age nine, he took up their ways."; break;
-
+                    case "<COLLECTIONBOOK_L0225>":
+                        __result = "A phantom copy of a living being. Doppelgängers are a sign of bad luck. Often, others see your doppelgänger from afar, but it is said you may also see your own doppelgänger right before you die."; break;
                     default: break;
                 }
             }
@@ -334,6 +338,8 @@ namespace NocturneInsaniax
                     __result = 186;
                 else if (datDevilFormat.Get(normalResult).race == 10 && pSacrifice.id == 125)
                     __result = 224;
+                else
+                    __result = 225;
             }
         }
 
@@ -589,6 +595,10 @@ namespace NocturneInsaniax
 
             // Recolour Demons
             TamLin(224);
+            Doppelganger(225);
+
+            // YHVH
+            YHVH(254);
 
             // Bosses
             BossForneus(256);
@@ -1606,6 +1616,22 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[7].Param = 346; // Life Aid
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 41;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 1700;
+            datDevilFormat.tbl[id].maxhp = 1700;
+            datDevilFormat.tbl[id].mp = 480;
+            datDevilFormat.tbl[id].maxmp = 480;
+
+            datDevilFormat.tbl[id].dropexp = 800;
+            datDevilFormat.tbl[id].dropmakka = 3000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 5; // Maragion
+            datDevilFormat.tbl[id].skill[1] = 17; // Mazionga
+            datDevilFormat.tbl[id].skill[2] = 53; // Sukunda
+            datDevilFormat.tbl[id].skill[3] = 277; // Startle
+            datDevilFormat.tbl[id].skill[4] = 366; // Abyssal Mask
         }
 
         private static void Shiisaa(ushort id)
@@ -1695,7 +1721,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].skill[2] = 193; // Violet Flash
             datDevilFormat.tbl[id].skill[3] = 202; // Toxic Cloud
             datDevilFormat.tbl[id].skill[4] = 437; // Refrigerate
-            datDevilFormat.tbl[id].skill[5] = 220; // Psycho Rage
+            datDevilFormat.tbl[id].skill[5] = 277; // Startle
             datDevilFormat.tbl[id].skill[6] = 366; // Abyssal Mask
         }
 
@@ -7509,6 +7535,25 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[7].Param = 292; // Life Surge
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 47;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 3000;
+            datDevilFormat.tbl[id].maxhp = 3000;
+            datDevilFormat.tbl[id].mp = 720;
+            datDevilFormat.tbl[id].maxmp = 720;
+
+            datDevilFormat.tbl[id].dropexp = 1600;
+            datDevilFormat.tbl[id].dropmakka = 4000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 281; // Hell Spin
+            datDevilFormat.tbl[id].skill[1] = 282; // Hell Exhaust
+            datDevilFormat.tbl[id].skill[2] = 283; // Hell Burner
+            datDevilFormat.tbl[id].skill[3] = 284; // Hell Throttle
+            datDevilFormat.tbl[id].skill[4] = 97; // Hell Thrust
+            datDevilFormat.tbl[id].skill[5] = 77; // Dekunda
+            datDevilFormat.tbl[id].skill[6] = 277; // Startle
+            datDevilFormat.tbl[id].skill[7] = 366; // Abyssal Mask
         }
 
         private static void Daisoujou(ushort id)
@@ -7545,6 +7590,25 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[7].Param = 331; // Null Nerve
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 42;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 3000;
+            datDevilFormat.tbl[id].maxhp = 3000;
+            datDevilFormat.tbl[id].mp = 720;
+            datDevilFormat.tbl[id].maxmp = 720;
+
+            datDevilFormat.tbl[id].dropexp = 1600;
+            datDevilFormat.tbl[id].dropmakka = 4000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 30; // Mahama
+            datDevilFormat.tbl[id].skill[1] = 34; // Mamudo
+            datDevilFormat.tbl[id].skill[2] = 279; // Meditation
+            datDevilFormat.tbl[id].skill[3] = 278; // Preach
+            datDevilFormat.tbl[id].skill[4] = 67; // Makakaja
+            datDevilFormat.tbl[id].skill[5] = 57; // Dekaja
+            datDevilFormat.tbl[id].skill[6] = 277; // Startle
+            datDevilFormat.tbl[id].skill[7] = 366; // Abyssal Mask
         }
 
         private static void MotherHarlot(ushort id)
@@ -7666,7 +7730,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].keisyotype = 6;
             datDevilFormat.tbl[id].keisyoform = 2457;
 
-            datDevilName.txt[id] = "Tam Lin";
+            datDevilName.txt[id] = "タム・リン";
 
             tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 0, 1, 2, 2, 1 };
 
@@ -7723,11 +7787,6 @@ namespace NocturneInsaniax
             mdlFileDefTable.devilOnModelFileTable[id].akey = "";
             mdlFileDefTable.devilOnModelFileTable[id].fname = "";
 
-            mdlFileDefTable.devilModelIndex[id].major = 1;
-            mdlFileDefTable.devilModelIndex[id].minor = 224;
-            mdlFileDefTable.devilModelIndex[id].scale = 4096;
-            mdlFileDefTable.devilModelIndex[id].radius = 1000;
-
             mdlFileDefTable.devilModelIndex[id].major = 6;
             mdlFileDefTable.devilModelIndex[id].minor = 224;
             mdlFileDefTable.devilModelIndex[id].scale = 4096;
@@ -7736,13 +7795,85 @@ namespace NocturneInsaniax
             datDevilVisual07.tbl_7_0E0_0FF[0] = datDevilVisual04.tbl_4_080_09F[19];
             datDevilVisual07.tbl_7_0E0_0FF[0].formscale = 1f;
 
-            //MelonLogger.Msg("Tam Lin motion se");
-            //foreach (var motion in datDevilVisual07.tbl_7_0E0_0FF[0].motion)
-            //    MelonLogger.Msg(motion.se_no);
-
-            //datMotionSeTable.tbl[id] = 147;
-
             datDevilNegoFormat.tbl[id] = datDevilNegoFormat.tbl[147];
+        }
+
+        private static void Doppelganger(ushort id)
+        {
+            datDevilFormat.tbl[id].aisyoid = (short)id;
+
+            datDevilFormat.tbl[id].flag = 128;
+            datDevilFormat.tbl[id].race = 23;
+            datDevilFormat.tbl[id].level = 23;
+            datDevilFormat.tbl[id].aisyoid = (short)id;
+            datDevilFormat.tbl[id].param = new sbyte[] { 17, 0, 17, 17, 17, 17 };
+            datDevilFormat.tbl[id].keisyotype = 6;
+            datDevilFormat.tbl[id].keisyoform = 2523;
+
+            datDevilName.txt[id] = "ドッペルゲンガー";
+
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 0, 1, 2, 2, 1 };
+
+            tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 103, TargetLevel = 0, Type = 1 }; // Brutal Slash
+            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 182, TargetLevel = 0, Type = 1 }; // Shock
+            tblSkill.fclSkillTbl[id].Event[2] = new fclSkillParam_t { Param = 305, TargetLevel = 0, Type = 1 }; // Counter
+            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 64, TargetLevel = 28, Type = 1 }; // Tarukaja
+            tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 30, TargetLevel = 29, Type = 1 }; // Mahama
+            tblSkill.fclSkillTbl[id].Event[5] = new fclSkillParam_t { Param = 205, TargetLevel = 30, Type = 1 }; // Taunt
+            tblSkill.fclSkillTbl[id].Event[6] = new fclSkillParam_t { Param = 315, TargetLevel = 31, Type = 1 }; // Anti-Ice
+            tblSkill.fclSkillTbl[id].Event[7] = new fclSkillParam_t { Param = 102, TargetLevel = 32, Type = 1 }; // Blight
+
+            // Affinities
+            datAisyo.tbl[id][0] = 131072; // Phys
+            datAisyo.tbl[id][1] = 100; // Fire
+            datAisyo.tbl[id][2] = 100; // Ice
+            datAisyo.tbl[id][3] = 100; // Elec
+            datAisyo.tbl[id][4] = 100; // Force
+            datAisyo.tbl[id][6] = 2147483798; // Light
+            datAisyo.tbl[id][7] = 2147483798; // Dark
+            datAisyo.tbl[id][8] = 50; // Curse
+            datAisyo.tbl[id][9] = 50; // Nerve
+            datAisyo.tbl[id][10] = 50; // Mind
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 1200;
+            datDevilFormat.tbl[id].maxhp = 1200;
+            datDevilFormat.tbl[id].mp = 200;
+            datDevilFormat.tbl[id].maxmp = 200;
+
+            datDevilFormat.tbl[id].dropexp = 400;
+            datDevilFormat.tbl[id].dropmakka = 2000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 103; // Brutal Slash
+            datDevilFormat.tbl[id].skill[1] = 182; // Shock
+            datDevilFormat.tbl[id].skill[2] = 30; // Mahama
+            datDevilFormat.tbl[id].skill[3] = 64; // Tarukaja
+            datDevilFormat.tbl[id].skill[4] = 205; // Taunt
+            datDevilFormat.tbl[id].skill[5] = 219; // Rage
+            datDevilFormat.tbl[id].skill[6] = 305; // Counter
+            datDevilFormat.tbl[id].skill[7] = 366; // Abyssal Mask
+
+
+            mdlFileDefTable.devilModelFileTable[id].texFile = "";
+            mdlFileDefTable.devilModelFileTable[id].modelFile = "d0xe1.PB";
+            mdlFileDefTable.devilModelFileTable[id].motionFile = "";
+            mdlFileDefTable.devilModelFileTable[id].akey = "dvl0xe1";
+            mdlFileDefTable.devilModelFileTable[id].fname = "devil_0xe1";
+
+            mdlFileDefTable.devilOnModelFileTable[id].texFile = "";
+            mdlFileDefTable.devilOnModelFileTable[id].modelFile = "devil/on/0xe1_on.PB";
+            mdlFileDefTable.devilOnModelFileTable[id].motionFile = "";
+            mdlFileDefTable.devilOnModelFileTable[id].akey = "";
+            mdlFileDefTable.devilOnModelFileTable[id].fname = "";
+
+            mdlFileDefTable.devilModelIndex[id].major = 6;
+            mdlFileDefTable.devilModelIndex[id].minor = 225;
+            mdlFileDefTable.devilModelIndex[id].scale = 4096;
+            mdlFileDefTable.devilModelIndex[id].radius = 1000;
+
+            datDevilVisual07.tbl_7_0E0_0FF[1] = datHuman.datHumanVisual[0];
+            datDevilVisual07.tbl_7_0E0_0FF[1].formscale = 1f;
         }
 
         // 2148532374 = Weak but status-immune
@@ -8625,6 +8756,108 @@ namespace NocturneInsaniax
 
             // Display Skill
             datDevilFormat.tbl[id].skill[0] = 366;
+        }
+
+        private static void YHVH(ushort id)
+        {
+            datDevilFormat.tbl[id].aisyoid = (short)id;
+
+            datDevilFormat.tbl[id].flag = 563;
+            datDevilFormat.tbl[id].race = 36;
+            //datDevilFormat.tbl[id].level = 90;
+            datDevilFormat.tbl[id].level = 1;
+            datDevilFormat.tbl[id].aisyoid = (short)id;
+            datDevilFormat.tbl[id].param = new sbyte[] { 40, 0, 40, 40, 40, 40 };
+            datDevilFormat.tbl[id].keisyotype = 5;
+            datDevilFormat.tbl[id].keisyoform = 411;
+
+            datDevilName.txt[id] = "ヤハウェ";
+
+            // Affinities
+            datAisyo.tbl[id][0] = 50; // Phys
+            datAisyo.tbl[id][1] = 50; // Fire
+            datAisyo.tbl[id][2] = 50; // Ice
+            datAisyo.tbl[id][3] = 50; // Elec
+            datAisyo.tbl[id][4] = 50; // Force
+            datAisyo.tbl[id][6] = 50; // Light
+            datAisyo.tbl[id][7] = 50; // Dark
+            datAisyo.tbl[id][8] = 50; // Curse
+            datAisyo.tbl[id][9] = 50; // Nerve
+            datAisyo.tbl[id][10] = 50; // Mind
+
+            //tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 0, 4, 4, 4, 4 };
+
+            //tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 2, TargetLevel = 0, Type = 1 }; // Agilao
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 60000;
+            datDevilFormat.tbl[id].maxhp = 60000;
+            datDevilFormat.tbl[id].mp = 60000;
+            datDevilFormat.tbl[id].maxmp = 60000;
+
+            datDevilFormat.tbl[id].dropexp = 0;
+            datDevilFormat.tbl[id].dropmakka = 0;
+
+            mdlFileDefTable.devilModelFileTable[id].texFile = "";
+            mdlFileDefTable.devilModelFileTable[id].modelFile = "d0xfe.PB";
+            mdlFileDefTable.devilModelFileTable[id].motionFile = "";
+            mdlFileDefTable.devilModelFileTable[id].akey = "dvl0xfe";
+            mdlFileDefTable.devilModelFileTable[id].fname = "devil_0xfe";
+
+            mdlFileDefTable.devilOnModelFileTable[id].texFile = "";
+            mdlFileDefTable.devilOnModelFileTable[id].modelFile = "devil/on/0xfe_on.PB";
+            mdlFileDefTable.devilOnModelFileTable[id].motionFile = "";
+            mdlFileDefTable.devilOnModelFileTable[id].akey = "";
+            mdlFileDefTable.devilOnModelFileTable[id].fname = "";
+
+            mdlFileDefTable.devilModelIndex[id].major = 6;
+            mdlFileDefTable.devilModelIndex[id].minor = 254;
+            mdlFileDefTable.devilModelIndex[id].scale = 4096;
+            mdlFileDefTable.devilModelIndex[id].radius = 1000;
+
+            datUnitVisual_t yhvhVisual = new datUnitVisual_t();
+            yhvhVisual.center = new Vector4(0, -0, 0);
+            yhvhVisual.formsize = 0;
+            yhvhVisual.formheight = 500;
+            yhvhVisual.formscale = 1.4f;
+            yhvhVisual.oneshotr = 200;
+            yhvhVisual.allshotr = 450;
+            yhvhVisual.modelsize = 1;
+            yhvhVisual.shadowsize = 2;
+            yhvhVisual.badframe = 8;
+            yhvhVisual.autowait = 0;
+            yhvhVisual.reserve1 = 0;
+            yhvhVisual.reserve2 = 0;
+            yhvhVisual.reserve3 = 0;
+            yhvhVisual.motion = new datUnitMotion_s[] {
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= 1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= 3, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= 4, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= 5, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= 8, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= 9, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= 10, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= 11, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 }
+            };
+            datDevilVisual07.tbl_7_0E0_0FF[30] = yhvhVisual;
         }
     }
 }

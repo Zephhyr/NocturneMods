@@ -370,10 +370,10 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 342 Boss Metatron
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 343 Boss Beelzebub
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 344 Boss Lucifer
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 345 Boss Pale Rider
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 346 Boss White Rider
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 347 Boss Red Rider
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 348 Boss Black Rider
+            new sbyte[] {4    , -5   , 0    , -5   , 0    , 4    , 0    , 0    , 7    , 7    , 7    , 4    , 0    , 0    , 2    , 0 }, // 345 Boss Pale Rider
+            new sbyte[] {0    , 5    , 0    , -5   , 0    , 0    , 7    , -5   , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0 }, // 346 Boss White Rider
+            new sbyte[] {6    , -5   , -5   , 4    , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 347 Boss Red Rider
+            new sbyte[] {0    , 0    , 7    , -5   , -5   , 5    , 0    , 3    , 0    , 0    , 0    , 5    , 0    , 0    , 3    , 0 }, // 348 Boss Black Rider
             new sbyte[] {4    , 0    , -4   , -4   , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 349 Boss Matador
             new sbyte[] {3    , 4    , -4   , 0    , 4    , 0    , -4   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0 }, // 350 Boss Hell Biker
             new sbyte[] {-4   , -4   , 0    , 0    , 0    , 0    , 4    , 4    , 0    , 0    , 4    , 0    , 0    , 2    , 0    , 0 }, // 351 Boss Daisoujou
@@ -1006,6 +1006,8 @@ namespace NocturneInsaniax
             {
                 if (id == 422 && (currentDemonID == 200 || currentDemonID == 339 || currentDemonID == 340 || currentDemonID == 341 || currentDemonID == 350))
                     __result = "Accelerate";
+                if (id == 277 && (currentDemonID == 200))
+                    __result = "Rev Up";
                 if (id == 226 && (currentDemonID == 79))
                     __result = "Backup";
                 else if (id < 288 || id > 421) // If it isn't a passive skill

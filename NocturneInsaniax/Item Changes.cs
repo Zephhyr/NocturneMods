@@ -425,11 +425,21 @@ namespace NocturneInsaniax
             // Great Chakra Item Box in First Kalpa
             fldGlobal.fldHitData._fldItemBoxTbl[256]._ItemID = 8;
 
-            // Great Chakra Item Box in First Kalpa
+            // Bead Chain Item Box in First Kalpa
             fldGlobal.fldHitData._fldItemBoxTbl[257]._ItemID = 5;
 
-            // Great Chakra Item Box in First Kalpa
+            // Bead Chain Item Box in First Kalpa
             fldGlobal.fldHitData._fldItemBoxTbl[261]._ItemID = 5;
+
+            // Great Chakra Item Box in Second Kalpa
+            fldGlobal.fldHitData._fldItemBoxTbl[276]._ItemID = 8;
+
+            //YHVH Box
+            fldGlobal.fldHitData._fldItemBoxTbl[351]._Type = 2;
+            fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemID = 0;
+            fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemNum = 0;
+            fldGlobal.fldHitData._fldItemBoxTbl[351]._Trap = 1;
+            fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 1278;
 
             //fldGlobal.fldHitData._fldItemBoxTbl.Add(new fldTakaraTbl_t { _ItemID = 47, _ItemNum = 5 });
         }

@@ -3,6 +3,7 @@ using Il2Cpp;
 using Il2Cppnewbattle_H;
 using Il2CppTMPro;
 using MelonLoader;
+using Newtonsoft.Json;
 using UnityEngine;
 
 [assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax", "0.8.0", "Zephhyr, Matthiew Purple")]
@@ -29,6 +30,9 @@ namespace NocturneInsaniax
             //MelonLogger.Msg("]");
 
             //var output = JsonConvert.SerializeObject(fclJunkShopTable.fclShopItemBoxTbl);
+            //MelonLogger.Msg(output);
+
+            //var output = JsonConvert.SerializeObject(datDevilVisual02.tbl_2_040_05F[28].motion);
             //MelonLogger.Msg(output);
 
             ApplySkillChanges();
@@ -106,6 +110,13 @@ namespace NocturneInsaniax
                             tamLinModel.transform.eulerAngles = new Vector3(270f, 196f, 0);
                             break;
                         }
+                    case "devil_0xe1":
+                        {
+                            var demiModel = cmpModel.cmpDevilObj;
+                            demiModel.transform.position = new Vector3(-0.04f, -0.9f, -1.4f);
+                            demiModel.transform.eulerAngles = new Vector3(0f, 180f, 0);
+                            break;
+                        }
                     default: break;
                 }
             }
@@ -116,13 +127,59 @@ namespace NocturneInsaniax
         {
             public static void Postfix()
             {
+                // Tam Lin
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D224_MSEE0_03", "D224_MSEE0_03", 503316480, false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D224_MSEE0_04", "D224_MSEE0_04", 503382016, false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D224_MSEE0_08", "D224_MSEE0_08", 503447552, false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D224_MSEE0_12", "D224_MSEE0_12", 503513088, false);
-                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D224_MSEE0_14", "D224_MSEE0_14", 93519872, false);
-                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D224_MSEE0_15", "D224_MSEE0_15", 93519873, false);
-                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D224_MSEE0_23", "D224_MSEE0_23", 422838272, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D224_MSEE0_14", "D224_MSEE0_14", 93519872 , false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D224_MSEE0_15", "D224_MSEE0_15", 93519873 , false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D224_MSEE0_23", "D224_MSEE0_23", 503578624, false);
+
+                // Doppelganger
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_03", "D225_MSEE1_03", 504365056, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_04", "D225_MSEE1_04", 504430592, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_05", "D225_MSEE1_05", 504496128, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_06", "D225_MSEE1_06", 504561664, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_08", "D225_MSEE1_08", 504627200, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_10", "D225_MSEE1_10", 504692736, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_12", "D225_MSEE1_12", 504758272, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_14", "D225_MSEE1_14", 504823808, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_15", "D225_MSEE1_15", 504889344, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_16", "D225_MSEE1_16", 504954880, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_17", "D225_MSEE1_17", 505020416, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_18", "D225_MSEE1_18", 505085952, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_20", "D225_MSEE1_20", 505151488, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_21", "D225_MSEE1_21", 505217024, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_24", "D225_MSEE1_24", 505282560, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_03_E", "D225_MSEE1_03_E", (268435472 + 235929600), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_04_E", "D225_MSEE1_04_E", (268501008 + 235929600), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_05_E", "D225_MSEE1_05_E", (268566544 + 235929600), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_06_E", "D225_MSEE1_06_E", (268632080 + 235929600), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_08_E", "D225_MSEE1_08_E", (268697616 + 235929600), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_10_E", "D225_MSEE1_10_E", (268763152 + 235929600), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_12_E", "D225_MSEE1_12_E", (268828688 + 235929600), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_14_E", "D225_MSEE1_14_E", (268894224 + 235929600), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_15_E", "D225_MSEE1_15_E", (268959760 + 235929600), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_16_E", "D225_MSEE1_16_E", (269025296 + 235929600), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_17_E", "D225_MSEE1_17_E", (269090832 + 235929600), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_18_E", "D225_MSEE1_18_E", (269156368 + 235929600), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_20_E", "D225_MSEE1_20_E", (269221904 + 235929600), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_21_E", "D225_MSEE1_21_E", (269287440 + 235929600), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_24_E", "D225_MSEE1_24_E", (269352976 + 235929600), false);
+
+                // 
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D254_MSEFE_01", "D254_MSEFE_01", 534839296, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D254_MSEFE_03", "D254_MSEFE_03", 534970368, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D254_MSEFE_04", "D254_MSEFE_04", 535035904, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D254_MSEFE_05", "D254_MSEFE_05", 535101440, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D254_MSEFE_08", "D254_MSEFE_08", 535298048, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D254_MSEFE_09", "D254_MSEFE_09", 535363584, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D254_MSEFE_10", "D254_MSEFE_10", 535429120, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D254_MSEFE_11", "D254_MSEFE_11", 535494656, false);
+
+                //foreach (var sound in Smg.Instance._tableSe_MSE)
+                //    MelonLogger.Msg(sound.key + " - " + sound.value.MidiId);
             }
         }
 
@@ -131,17 +188,79 @@ namespace NocturneInsaniax
         {
             public static void Postfix()
             {
-                var TamLinKeys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
-                TamLinKeys.Add("D224_MSEE0_03", new SndAssetBundleManager.SndData { key = "dvl0xe0", path = 4, id = 0, name = "D224_MSEE0_03", diff = true });
-                TamLinKeys.Add("D224_MSEE0_04", new SndAssetBundleManager.SndData { key = "dvl0xe0", path = 4, id = 0, name = "D224_MSEE0_04", diff = true });
-                TamLinKeys.Add("D224_MSEE0_08", new SndAssetBundleManager.SndData { key = "dvl0xe0", path = 4, id = 0, name = "D224_MSEE0_08", diff = true });
-                TamLinKeys.Add("D224_MSEE0_12", new SndAssetBundleManager.SndData { key = "dvl0xe0", path = 4, id = 0, name = "D224_MSEE0_12", diff = true });
-                TamLinKeys.Add("D224_MSEE0_14", new SndAssetBundleManager.SndData { key = "dvl0xe0", path = 4, id = 0, name = "D224_MSEE0_14", diff = true });
-                TamLinKeys.Add("D224_MSEE0_15", new SndAssetBundleManager.SndData { key = "dvl0xe0", path = 4, id = 0, name = "D224_MSEE0_15", diff = true });
-                TamLinKeys.Add("D224_MSEE0_23", new SndAssetBundleManager.SndData { key = "dvl0xe0", path = 4, id = 0, name = "D224_MSEE0_23", diff = true });
-                SndAssetBundleManager.SEBundleTable.Add("dvl0xe0", TamLinKeys);
+                var tamLinKeys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
+                tamLinKeys.Add("D224_MSEE0_03", new SndAssetBundleManager.SndData { key = "dvl0xe0", path = 4, id = 0, name = "D224_MSEE0_03", diff = true });
+                tamLinKeys.Add("D224_MSEE0_04", new SndAssetBundleManager.SndData { key = "dvl0xe0", path = 4, id = 0, name = "D224_MSEE0_04", diff = true });
+                tamLinKeys.Add("D224_MSEE0_08", new SndAssetBundleManager.SndData { key = "dvl0xe0", path = 4, id = 0, name = "D224_MSEE0_08", diff = true });
+                tamLinKeys.Add("D224_MSEE0_12", new SndAssetBundleManager.SndData { key = "dvl0xe0", path = 4, id = 0, name = "D224_MSEE0_12", diff = true });
+                tamLinKeys.Add("D224_MSEE0_14", new SndAssetBundleManager.SndData { key = "dvl0xe0", path = 4, id = 0, name = "D224_MSEE0_14", diff = true });
+                tamLinKeys.Add("D224_MSEE0_15", new SndAssetBundleManager.SndData { key = "dvl0xe0", path = 4, id = 0, name = "D224_MSEE0_15", diff = true });
+                tamLinKeys.Add("D224_MSEE0_23", new SndAssetBundleManager.SndData { key = "dvl0xe0", path = 4, id = 0, name = "D224_MSEE0_23", diff = true });
+                SndAssetBundleManager.SEBundleTable.Add("dvl0xe0", tamLinKeys);
+
+                var doppelgangerKeys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
+                doppelgangerKeys.Add("D225_MSEE1_03", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_03", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_04", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_04", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_05", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_04", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_06", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_04", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_08", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_08", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_10", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_08", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_12", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_12", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_14", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_14", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_15", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_15", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_16", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_15", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_17", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_15", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_18", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_15", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_20", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_15", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_21", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_15", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_24", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_24", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_03_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_03_E", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_04_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_04_E", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_05_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_04_E", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_06_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_04_E", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_08_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_08_E", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_10_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_08_E", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_12_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_12_E", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_14_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_14_E", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_15_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_15_E", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_16_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_15_E", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_17_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_15_E", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_18_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_15_E", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_20_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_15_E", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_21_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_15_E", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_24_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_24_E", diff = true });
+                SndAssetBundleManager.SEBundleTable.Add("dvl0xe1", doppelgangerKeys);
+
+                var yhvhKeys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
+                yhvhKeys.Add("D254_MSEFE_01", new SndAssetBundleManager.SndData { key = "dvl0xfe", path = 4, id = 0, name = "D254_MSEFE_01", diff = true });
+                yhvhKeys.Add("D254_MSEFE_03", new SndAssetBundleManager.SndData { key = "dvl0xfe", path = 4, id = 0, name = "D254_MSEFE_03", diff = true });
+                yhvhKeys.Add("D254_MSEFE_04", new SndAssetBundleManager.SndData { key = "dvl0xfe", path = 4, id = 0, name = "D254_MSEFE_04", diff = true });
+                yhvhKeys.Add("D254_MSEFE_05", new SndAssetBundleManager.SndData { key = "dvl0xfe", path = 4, id = 0, name = "D254_MSEFE_05", diff = true });
+                yhvhKeys.Add("D254_MSEFE_08", new SndAssetBundleManager.SndData { key = "dvl0xfe", path = 4, id = 0, name = "D254_MSEFE_08", diff = true });
+                yhvhKeys.Add("D254_MSEFE_09", new SndAssetBundleManager.SndData { key = "dvl0xfe", path = 4, id = 0, name = "D254_MSEFE_09", diff = true });
+                yhvhKeys.Add("D254_MSEFE_10", new SndAssetBundleManager.SndData { key = "dvl0xfe", path = 4, id = 0, name = "D254_MSEFE_10", diff = true });
+                yhvhKeys.Add("D254_MSEFE_11", new SndAssetBundleManager.SndData { key = "dvl0xfe", path = 4, id = 0, name = "D254_MSEFE_11", diff = true });
+                SndAssetBundleManager.SEBundleTable.Add("dvl0xfe", yhvhKeys);
             }
         }
+
+        //[HarmonyPatch(typeof(SndAssetBundleManager), nameof(SndAssetBundleManager.LoadKeysMSE))]
+        //private class LoadKeysMSEPatch
+        //{
+        //    public static void Postfix()
+        //    {
+        //        MelonLogger.Msg("--SndAssetBundleManager.LoadKeysMSE--");
+        //        //MelonLogger.Msg("DF keys");
+        //        //for (int i = 0; i <= 25; i++)
+        //        //    MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(0, i));
+        //        //MelonLogger.Msg("Dop keys");
+        //        //for (int i = 0; i <= 25; i++)
+        //        //    MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(225, i));
+        //        //MelonLogger.Msg("YHVH keys");
+        //        //for (int i = 0; i <= 25; i++)
+        //        //    MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(254, i));
+        //    }
+        //}
 
         //[HarmonyPatch(typeof(nbSound), nameof(nbSound.nbGetMotionSeNo))]
         //private class nbGetMotionSeNoPatch
@@ -235,10 +354,15 @@ namespace NocturneInsaniax
                     // Co-ordinates are divided by 100 in-game, y co-ordinate is reversed
                     fld_Npc.fldItemBoxAdd(335, -117.80762f, -821.31445f, -3201.4497f, new Vector4(0, 0, 0, 1)); // Add Item Box outside Shibuya
                 }
-                if (pFileName == "dds3data/fld/f/f004/f004_001") // Overworld 1
+                if (pFileName == "dds3data/fld/f/f004/f004_001") // Overworld 3
                 {
                     // -42.0961 14.5565 -33.3055
                     fld_Npc.fldItemBoxAdd(336, -4209.61f, -1455.65f, -3330.55f, new Vector4(0, 0, 0, 1)); // Add Item Box outside Ikebukuro
+                }
+                if (pFileName == "dds3data/fld/f/f027/f027_001") // Asakusa 1
+                {
+                    // 4.0364 0.2 31.4621
+                    fld_Npc.fldItemBoxAdd(351, -403.64f, -20f, 3146.21f, new Vector4(0, 0, 0, 1)); // Add Item Box outside Ikebukuro
                 }
             }
         }

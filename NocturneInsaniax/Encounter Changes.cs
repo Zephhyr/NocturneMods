@@ -103,6 +103,8 @@ namespace NocturneInsaniax
 
             switch (encpackno)
             {
+                // Base Game
+
                 case 1: ShinjukuMedicalCentreSlimeEncounter(); return 1270;
                 case 2: ShinjukuMedicalCentreSlimeEncounter(); return 1270;
                 case 3: ShinjukuMedicalCentreSlimeEncounter(); return 1270;
@@ -192,6 +194,11 @@ namespace NocturneInsaniax
                 case 64: IkebukuroTunnelSarasvatiEncounter(); return 1270;
                 case 65: IkebukuroTunnelSarasvatiEncounter(); return 1270;
 
+                //case 66: OverworldZhuqueEncounter(); return 1270;
+                case 66: OverworldZhuqueEncounter(); return 1278;
+
+                // Labyrinth of Amala
+
                 case 173: FirstKalpaEncounter1(); return 1270; // First rooms
                 case 174: FirstKalpaEncounter2(); return 1270; // Hallways
                 case 175: FirstKalpaEncounter1(); return 1270; // First side-rooms
@@ -200,6 +207,16 @@ namespace NocturneInsaniax
                 case 178: FirstKalpaEncounter3(); return 1270; // Trap room basement
                 case 179: FirstKalpaEncounter2(); return 1270; // Exit Hallway
                 case 180: FirstKalpaEncounter4(); return 1270; // B1
+
+                case 181: SecondKalpaEncounter1(); return 1270; // 1F Hallways
+                case 182: SecondKalpaEncounter1(); return 1270; // 1F Rooms
+                case 183: SecondKalpaEncounter1(); return 1270; // B1 Hallways
+                case 184: SecondKalpaEncounter1(); return 1270; // B1 Rooms
+                case 185: SecondKalpaEncounter2(); return 1270; // B2 Hallways
+                case 186: SecondKalpaEncounter2(); return 1270; // B2 Rooms
+                case 187: SecondKalpaEncounter3(); return 1270; // B3/B4 Hallways
+                case 188: SecondKalpaEncounter3(); return 1270; // B3/B4 Rooms
+                //case 191: SecondKalpaEncounter4(); return 1270; // Cursed Corridor
 
                 default: return encno;
             }
@@ -342,6 +359,11 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].devil[0] = 9;
         }
 
+        private static void OverworldZhuqueEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 32;
+        }
+
         private static void FirstKalpaMatadorEncounter()
         {
             datEncount.tbl[1270].devil[0] = 199;
@@ -387,6 +409,35 @@ namespace NocturneInsaniax
             datEncount.tbl[1271].devil[2] = 125;
         }
 
+        private static void SecondKalpaDaisoujouEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 201;
+            datEncount.tbl[1270].btlsound = 10;
+        }
+
+        private static void SecondKalpaHellBikerEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 200;
+            datEncount.tbl[1270].btlsound = 10;
+        }
+
+        private static void SecondKalpaShadowEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 132;
+            datEncount.tbl[1270].devil[1] = 132;
+            datEncount.tbl[1270].devil[2] = 132;
+        }
+
+        private static void SecondKalpaShikiOujiEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 93;
+        }
+
+        private static void SecondKalpaHresvelgrEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 121;
+        }
+
         private static void FirstKalpaEncounter1()
         {
             if (random.Next(4) == 0)
@@ -419,6 +470,30 @@ namespace NocturneInsaniax
                 FirstKalpaSenriEncounter();
         }
 
+        private static void SecondKalpaEncounter1()
+        {
+            if (random.Next(4) == 0)
+                SecondKalpaDaisoujouEncounter();
+            else
+                SecondKalpaShadowEncounter();
+        }
+
+        private static void SecondKalpaEncounter2()
+        {
+            if (random.Next(4) == 0)
+                SecondKalpaDaisoujouEncounter();
+            else
+                SecondKalpaShikiOujiEncounter();
+        }
+
+        private static void SecondKalpaEncounter3()
+        {
+            if (random.Next(4) == 0)
+                SecondKalpaHellBikerEncounter();
+            else
+                SecondKalpaHresvelgrEncounter();
+        }
+
         //------------------------------------------------------------
 
         private static void ApplyEncounterChanges()
@@ -449,7 +524,12 @@ namespace NocturneInsaniax
             datEncount.tbl[193].maxcall = 1; // Forced Naga
             datEncount.tbl[193].maxparty = 2;
 
-            datEncount.tbl[1278].devil[0] = 400;
+            //YHVH
+            datEncount.tbl[1278].devil[0] = 254;
+            datEncount.tbl[1278].backattack = -1;
+            datEncount.tbl[1278].formationtype = 13;
+            datEncount.tbl[1278].areaid = 2;
+            datEncount.tbl[1278].stageid = 240;
         }
     }
 }

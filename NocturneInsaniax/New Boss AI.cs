@@ -93,6 +93,7 @@ namespace NocturneInsaniax
                     case 20: KikuriHimeAI(ref a, ref code, ref n); break;
                     case 28: TakeMinakataAI(ref a, ref code, ref n); break;
                     case 31: SenriAI(ref a, ref code, ref n); break;
+                    case 32: ZhuqueAI(ref a, ref code, ref n); break;
                     case 33: ShiisaaAI(ref a, ref code, ref n); break;
                     case 34: XiezhaiAI(ref a, ref code, ref n); break;
                     case 35: UnicornAI(ref a, ref code, ref n); break;
@@ -102,6 +103,8 @@ namespace NocturneInsaniax
                     case 149: XuanwuAI(ref a, ref code, ref n); break;
                     case 151: MakamiAI(ref a, ref code, ref n); break;
                     case 199: NKEMatadorAI(ref a, ref code, ref n); break;
+                    case 200: NKEHellBikerAI(ref a, ref code, ref n); break;
+                    case 201: NKEDaisoujouAI(ref a, ref code, ref n); break;
                     case 224: TamLinAI(ref a, ref code, ref n); break;
                     case 256: BossForneusAI(ref a, ref code, ref n); break;
                     case 261: ForcedKoppaTenguAI(ref a, ref code, ref n); break;
@@ -271,6 +274,24 @@ namespace NocturneInsaniax
             }
         }
 
+        private static void ZhuqueAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(220))
+            {
+                UseSkill(ref a, 277);
+            }
+            else
+            {
+                int randomValue = random.Next(3);
+                switch (randomValue)
+                {
+                    case 0: UseSkill(ref a, 5); break;
+                    case 1: UseSkill(ref a, 17); break;
+                    case 2: UseSkill(ref a, 53); break;
+                }
+            }
+        }
+
         private static void ShiisaaAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
             if (actionTrackers[a.work.id].currentBattleActionCount <= 2)
@@ -293,11 +314,11 @@ namespace NocturneInsaniax
         {
             if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(220))
             {
-                UseSkill(ref a, 220);
+                UseSkill(ref a, 277);
             }
             else
             {
-                int randomValue = random.Next(4);
+                int randomValue = random.Next(5);
                 switch (randomValue)
                 {
                     case 0: UseSkill(ref a, 11); break;
@@ -467,6 +488,77 @@ namespace NocturneInsaniax
                         case 1: UseSkill(ref a, 443); break;
                         case 2: UseSkill(ref a, 275); break;
                     }
+                }
+            }
+        }
+
+        private static void NKEHellBikerAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(277))
+            {
+                UseSkill(ref a, 277); return;
+            }
+            else if (actionTrackers[a.work.id].currentBattleActionCount == 2)
+            {
+                UseSkill(ref a, 282);
+            }
+            else
+            {
+                if (actionTrackers[a.work.id].currentTurnActionCount >= 4 && EnemyPartyDebuffed(1) && random.Next(4) == 0)
+                {
+                    UseSkill(ref a, 77);
+                }
+                else if (!EnemyPartyBuffed(3, 4) && !EnemyPartyBuffed(3, 6) && random.Next(2 + Convert.ToInt32(actionTrackers[a.work.id].skillsUsedThisTurn.Contains(284))) == 0)
+                {
+                    UseSkill(ref a, 284);
+                }
+                else
+                {
+                    int randomValue = random.Next(5);
+                    switch (randomValue)
+                    {
+                        case 0: HellBikerAttackPattern(ref a); break;
+                        case 1: HellBikerAttackPattern(ref a); break;
+                        case 2: HellBikerAttackPattern(ref a); break;
+                        case 3: UseSkill(ref a, 282); break;
+                        case 4: UseSkill(ref a, 283); break;
+                    }
+                }
+            }
+        }
+
+        private static void NKEDaisoujouAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(277))
+            {
+                UseSkill(ref a, 277); return;
+            }
+            else if (actionTrackers[a.work.id].currentBattleActionCount == 2)
+            {
+                UseSkill(ref a, 30); return;
+            }
+            else if (actionTrackers[a.work.id].currentBattleActionCount == 3)
+            {
+                UseSkill(ref a, 34); return;
+            }
+            else if (actionTrackers[a.work.id].currentBattleActionCount == 4)
+            {
+                UseSkill(ref a, 67); return;
+            }
+            else if (AllyPartyBuffed(1) && random.Next(4) == 0)
+            {
+                UseSkill(ref a, 57);
+            }
+            else
+            {
+                int randomValue = random.Next(5);
+                switch (randomValue)
+                {
+                    case 0: UseNormalAttack(ref a); break;
+                    case 1: UseSkill(ref a, 279); break;
+                    case 2: UseSkill(ref a, 278); break;
+                    case 3: UseSkill(ref a, 30); break;
+                    case 4: UseSkill(ref a, 34); break;
                 }
             }
         }
