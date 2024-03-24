@@ -8831,14 +8831,14 @@ namespace NocturneInsaniax
             yhvhVisual.reserve3 = 0;
             yhvhVisual.motion = new datUnitMotion_s[] {
                 new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= 1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 1, movetype= 0, actframe= 30, se_no= 3, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
                 new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= 3, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= 4, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 3, movetype= 0, actframe= 30, se_no= 10, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 4, movetype= 0, actframe= 30, se_no= 4, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
                 new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= 5, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
                 new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
                 new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= 8, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 3, movetype= 0, actframe= 40, se_no= 10, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 25 },
                 new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= 9, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
                 new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= 10, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
                 new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= 11, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },

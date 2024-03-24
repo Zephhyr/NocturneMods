@@ -110,6 +110,7 @@ namespace NocturneInsaniax
                     case 470: __result = "Tandava"; return false;
                     case 471: __result = "Chaturbhuja"; return false;
                     case 472: __result = "Kusanagi"; return false;
+                    case 499: __result = "Crush"; return false;
                     default: return true;
                 }
             }
@@ -1060,6 +1061,20 @@ namespace NocturneInsaniax
             SilentPrayer(460);
             StormGale(461);
             WingedFury(462);
+
+            Crush(499);
+            //Rampage(500);
+            //InfernoOfGod(501);
+            //HailstormOfGod(502);
+            //LightningOfGod(503);
+            //TornadoOfGod(504);
+            //PlannedChaos(505);
+            //MouthOfGod(506);
+            //BlackHole(507);
+            //Supernova(508);
+            //InfinitePower(509);
+            //UnendingCurse(510);
+            //DivineHarmony(511);
 
             JackBufu(463);
             HumbleBlessing(464);
@@ -5556,6 +5571,57 @@ namespace NocturneInsaniax
             datSkill.tbl[id].type = 0;
 
             OverWriteSkillEffect(id, 219);
+        }
+
+        // YHVH Skills
+
+        private static void Crush(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 16;
+            datSkill.tbl[id].skillattr = 0;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 0;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 1;
+            datNormalSkill.tbl[id].criticalpoint = 10;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 20;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 32;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 96, 107);
+
+            MelonLogger.Msg(datNormalSkillVisual.tbl[id].motion);
         }
 
         // Passive Skills

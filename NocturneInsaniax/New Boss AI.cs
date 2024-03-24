@@ -106,6 +106,7 @@ namespace NocturneInsaniax
                     case 200: NKEHellBikerAI(ref a, ref code, ref n); break;
                     case 201: NKEDaisoujouAI(ref a, ref code, ref n); break;
                     case 224: TamLinAI(ref a, ref code, ref n); break;
+                    case 254: YHVHAI(ref a, ref code, ref n); break;
                     case 256: BossForneusAI(ref a, ref code, ref n); break;
                     case 261: ForcedKoppaTenguAI(ref a, ref code, ref n); break;
                     case 262: ForcedKaiwanAI(ref a, ref code, ref n); break;
@@ -582,6 +583,19 @@ namespace NocturneInsaniax
                     case 5: UseSkill(ref a, 205); break;
                 }
             }
+        }
+
+        private static void YHVHAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            UseSkill(ref a, 499); return;
+            //if (actionTrackers[a.work.id].currentBattleActionCount == 1)
+            //{
+            //    UseSkill(ref a, 499); return;
+            //}
+            //else
+            //{
+            //    UseSkill(ref a, 2); return;
+            //}
         }
 
         private static void BossForneusAI(ref nbActionProcessData_t a, ref int code, ref int n)
