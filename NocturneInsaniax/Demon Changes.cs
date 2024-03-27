@@ -8816,12 +8816,12 @@ namespace NocturneInsaniax
             mdlFileDefTable.devilModelIndex[id].radius = 1000;
 
             datUnitVisual_t yhvhVisual = new datUnitVisual_t();
-            yhvhVisual.center = new Vector4(0, -0, 0);
+            yhvhVisual.center = new Vector4(0, 0, 0);
             yhvhVisual.formsize = 0;
             yhvhVisual.formheight = 500;
-            yhvhVisual.formscale = 1.4f;
-            yhvhVisual.oneshotr = 200;
-            yhvhVisual.allshotr = 450;
+            yhvhVisual.formscale = 1.5f;
+            yhvhVisual.oneshotr = 600;
+            yhvhVisual.allshotr = 1000;
             yhvhVisual.modelsize = 1;
             yhvhVisual.shadowsize = 2;
             yhvhVisual.badframe = 8;
@@ -8830,32 +8830,32 @@ namespace NocturneInsaniax
             yhvhVisual.reserve2 = 0;
             yhvhVisual.reserve3 = 0;
             yhvhVisual.motion = new datUnitMotion_s[] {
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 1, movetype= 0, actframe= 30, se_no= 3, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 3, movetype= 0, actframe= 30, se_no= 10, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 4, movetype= 0, actframe= 30, se_no= 4, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= 5, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= 8, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 3, movetype= 0, actframe= 40, se_no= 10, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 25 },
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= 9, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= 10, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= 11, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 30, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 }
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 1, movetype= 0, actframe= 40, se_no= 3, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 60, se_no= 5, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 }, //Scorn
+                new datUnitMotion_s{ motion_no= 9, movetype= 0, actframe= 40, se_no= 9, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 40 }, //Infinite Power
+                new datUnitMotion_s{ motion_no= 4, movetype= 0, actframe= 40, se_no= 3, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 }, //Supernova
+                new datUnitMotion_s{ motion_no= 5, movetype= 0, actframe= 40, se_no= 4, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 }, //Rampage
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= 8, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 3, movetype= 1, actframe= 40, se_no= 10, se_endtype= 0, se_endframe= -1, motionsp= 0.8f, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 25 }, //Crush
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= 9, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= 10, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= 11, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 }
             };
             datDevilVisual07.tbl_7_0E0_0FF[30] = yhvhVisual;
         }

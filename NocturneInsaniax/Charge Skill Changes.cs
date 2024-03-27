@@ -411,6 +411,10 @@ namespace NocturneInsaniax
                     else
                         nbHelpProcess.nbDispText("Increased all stats performance!", string.Empty, 2, 45, 2315190144, false);
                 }
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 341 && hojopoint == 6 && actionProcessData.work.nowindex == 509)
+                {
+                    nbHelpProcess.nbDispText("All stats maximized!", string.Empty, 2, 45, 2315190144, false);
+                }
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 263168 && hojopoint == 1 && actionProcessData.work.nowindex == 460)
                 {
                     nbHelpProcess.nbDispText("All -kaja & -nda effects negated!", string.Empty, 2, 45, 2315190144, false);

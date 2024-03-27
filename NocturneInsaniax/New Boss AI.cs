@@ -43,7 +43,11 @@ namespace NocturneInsaniax
                     foreach (var unit in enemyUnits)
                     {
                         if (!actionTrackers.ContainsKey(unit.id))
+                        {
                             actionTrackers.Add(unit.id, new ActionTracker());
+                            if (unit.id == 254)
+                                actionTrackers[unit.id].extraTurns = 1;
+                        }
 
                         nbMainProcess.nbGetMainProcessData().press4_p += actionTrackers[unit.id].extraTurns;
                         nbMainProcess.nbGetMainProcessData().press4_ten += actionTrackers[unit.id].extraTurns;
@@ -587,15 +591,42 @@ namespace NocturneInsaniax
 
         private static void YHVHAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
-            UseSkill(ref a, 499); return;
-            //if (actionTrackers[a.work.id].currentBattleActionCount == 1)
+            if (actionTrackers[a.work.id].currentBattleActionCount == 1)
+            {
+                UseSkill(ref a, 498); return;
+            }
+            //else if (actionTrackers[a.work.id].currentBattleActionCount == 2)
             //{
-            //    UseSkill(ref a, 499); return;
+            //    UseSkill(ref a, 509); return;
             //}
-            //else
-            //{
-            //    UseSkill(ref a, 2); return;
-            //}
+            else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(508))
+            {
+                UseSkill(ref a, 508); return;
+            }
+            else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(500))
+            {
+                UseSkill(ref a, 500); return;
+            }
+            else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(501))
+            {
+                UseSkill(ref a, 501); return;
+            }
+            else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(502))
+            {
+                UseSkill(ref a, 502); return;
+            }
+            else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(503))
+            {
+                UseSkill(ref a, 503); return;
+            }
+            else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(504))
+            {
+                UseSkill(ref a, 504); return;
+            }
+            else
+            {
+                UseSkill(ref a, 499); return;
+            }
         }
 
         private static void BossForneusAI(ref nbActionProcessData_t a, ref int code, ref int n)

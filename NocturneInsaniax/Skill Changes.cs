@@ -7,6 +7,7 @@ using Il2Cppresult2_H;
 using Il2Cppnewbattle_H;
 using Il2Cppeffect_H;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 namespace NocturneInsaniax
 {
@@ -110,7 +111,20 @@ namespace NocturneInsaniax
                     case 470: __result = "Tandava"; return false;
                     case 471: __result = "Chaturbhuja"; return false;
                     case 472: __result = "Kusanagi"; return false;
+                    case 498: __result = "Scorn"; return false;
                     case 499: __result = "Crush"; return false;
+                    case 500: __result = "Rampage"; return false;
+                    case 501: __result = "Inferno of God"; return false;
+                    case 502: __result = "Hailstorm of God"; return false;
+                    case 503: __result = "Lightning of God"; return false;
+                    case 504: __result = "Tornado of God"; return false;
+                    case 505: __result = "Planned Chaos"; return false;
+                    case 506: __result = "Mouth of God"; return false;
+                    case 507: __result = "Black Hole"; return false;
+                    case 508: __result = "Supernova"; return false;
+                    case 509: __result = "Infinite Power"; return false;
+                    case 510: __result = "Unending Curse"; return false;
+                    case 511: __result = "Divine Harmony"; return false;
                     default: return true;
                 }
             }
@@ -306,6 +320,10 @@ namespace NocturneInsaniax
                         actionTrackers[a.work.id].extraTurns += 2;
                     }
                 }
+                else if (a.newaddpresstype == 15 && (nskill == 498))
+                {
+                    a.newaddpresstype = 20;
+                }
             }
         }
         [HarmonyPatch(typeof(nbMakePacket), nameof(nbMakePacket.nbMakeNewPressPacket))]
@@ -313,7 +331,11 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int startframe, ref int uniqueid, ref int ptype, ref nbFormation_t form)
             {
-                if (ptype == 18)
+                if (ptype == 20 && nbMainProcess.nbGetUnitWorkFromFormindex(form.formindex).id == 254)
+                {
+                    nbHelpProcess.nbDispText("YHVH trembles with scorn...", string.Empty, 2, 45, 2315190144, false);
+                }
+                else if (ptype == 18)
                 {
                     nbMakePacket.nbAddNewPressPacket(startframe, uniqueid, 1, 1);
                     nbHelpProcess.nbDispText("Turn Count increased!", string.Empty, 2, 45, 2315190144, false);
@@ -1062,17 +1084,18 @@ namespace NocturneInsaniax
             StormGale(461);
             WingedFury(462);
 
+            Scorn(498);
             Crush(499);
-            //Rampage(500);
-            //InfernoOfGod(501);
-            //HailstormOfGod(502);
-            //LightningOfGod(503);
-            //TornadoOfGod(504);
+            Rampage(500);
+            InfernoOfGod(501);
+            HailstormOfGod(502);
+            LightningOfGod(503);
+            TornadoOfGod(504);
             //PlannedChaos(505);
             //MouthOfGod(506);
             //BlackHole(507);
-            //Supernova(508);
-            //InfinitePower(509);
+            Supernova(508);
+            InfinitePower(509);
             //UnendingCurse(510);
             //DivineHarmony(511);
 
@@ -5575,6 +5598,78 @@ namespace NocturneInsaniax
 
         // YHVH Skills
 
+        private static void Scorn(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 512;
+            datSkill.tbl[id].skillattr = 15;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 1;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 255;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 2;
+            datNormalSkill.tbl[id].hojotype = 4096;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 50;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 13;
+            datNormalSkill.tbl[id].targetarea = 9;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            datNormalSkillVisual.tbl[id] = new datNormalSkillVisual_t
+            {
+                motion = 2,//datNormalSkillVisual.tbl[0].motion,
+                animetype = datNormalSkillVisual.tbl[0].animetype,
+                hatudo = datNormalSkillVisual.tbl[0].hatudo,
+                bedno = datNormalSkillVisual.tbl[0].bedno
+            };
+            nbActionProcess.sobedtbl[id] = new nbActionProcess.SOBED
+            {
+                keyname = nbActionProcess.sobedtbl[96].keyname,
+                bed_fname = nbActionProcess.sobedtbl[96].bed_fname,
+                se0_str = nbActionProcess.sobedtbl[0].se0_str,
+                se1_str = nbActionProcess.sobedtbl[0].se1_str,
+                tga_fname = nbActionProcess.sobedtbl[96].tga_fname,
+                pbdata = nbActionProcess.sobedtbl[96].pbdata
+            };
+            nbCamera_SkillPtrTable.tbl[id] = new nbCameraSkillPtr_t
+            {
+                ptr_shot_1 = nbCamera_SkillPtrTable.tbl[96].ptr_shot_1,
+                ptr_shot_23 = nbCamera_SkillPtrTable.tbl[96].ptr_shot_23,
+                ptr_angleH = nbCamera_SkillPtrTable.tbl[96].ptr_angleH,
+                ptr_angleW = nbCamera_SkillPtrTable.tbl[96].ptr_angleW,
+                ptr_H = nbCamera_SkillPtrTable.tbl[96].ptr_H,
+                ptr_W = nbCamera_SkillPtrTable.tbl[96].ptr_W,
+                anim = nbCamera_SkillPtrTable.tbl[96].anim
+            };
+        }
+
         private static void Crush(ushort id)
         {
             datSkill.tbl[id].flag = 0;
@@ -5591,7 +5686,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].costtype = 1;
             datNormalSkill.tbl[id].criticalpoint = 10;
             datNormalSkill.tbl[id].deadtype = 0;
-            datNormalSkill.tbl[id].failpoint = 20;
+            datNormalSkill.tbl[id].failpoint = 0;
             datNormalSkill.tbl[id].flag = 0;
             datNormalSkill.tbl[id].hitlevel = 100;
             datNormalSkill.tbl[id].hitprog = 0;
@@ -5620,8 +5715,342 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 96, 107);
+        }
 
-            MelonLogger.Msg(datNormalSkillVisual.tbl[id].motion);
+        private static void Rampage(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 128;
+            datSkill.tbl[id].skillattr = 0;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 0;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 1;
+            datNormalSkill.tbl[id].criticalpoint = 10;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 0;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 20;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 8;
+            datNormalSkill.tbl[id].targetcntmin = 3;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 1;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 98);
+            datNormalSkillVisual.tbl[id].motion = 5;
+        }
+
+        private static void InfernoOfGod(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 1;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 0;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 60;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 30;
+            datNormalSkill.tbl[id].magiclimit = 32767;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 178);
+            datNormalSkillVisual.tbl[id].motion = 4;
+        }
+
+        private static void HailstormOfGod(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 2;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 0;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 60;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 30;
+            datNormalSkill.tbl[id].magiclimit = 32767;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 181);
+            datNormalSkillVisual.tbl[id].motion = 4;
+        }
+
+        private static void LightningOfGod(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 3;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 0;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 60;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 30;
+            datNormalSkill.tbl[id].magiclimit = 32767;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 183);
+            datNormalSkillVisual.tbl[id].motion = 4;
+        }
+
+        private static void TornadoOfGod(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 4;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 0;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 60;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 30;
+            datNormalSkill.tbl[id].magiclimit = 32767;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 24);
+            datNormalSkillVisual.tbl[id].motion = 4;
+        }
+
+        private static void Supernova(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 5;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 0;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 60;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 30;
+            datNormalSkill.tbl[id].magiclimit = 32767;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 221);
+            datNormalSkillVisual.tbl[id].motion = 4;
+        }
+
+        private static void InfinitePower(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 14;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 0;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 255;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 6;
+            datNormalSkill.tbl[id].hojotype = 341;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 50;
+            datNormalSkill.tbl[id].hptype = 0;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 9;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 1;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 224);
+            datNormalSkillVisual.tbl[id].motion = 3;
         }
 
         // Passive Skills
