@@ -599,16 +599,24 @@ namespace NocturneInsaniax
             //{
             //    UseSkill(ref a, 509); return;
             //}
+            //else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(510))
+            //{
+            //    UseSkill(ref a, 510); return;
+            //}
+            else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(511))
+            {
+                UseSkill(ref a, 511); return;
+            }
             else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(507))
             {
                 UseSkill(ref a, 507); return;
             }
-            else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(506))
-            {
-                UseSkill(ref a, 506); 
-                SetTargetingRule(ref code, ref n, 10, n);
-                return;
-            }
+            //else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(506))
+            //{
+            //    UseSkill(ref a, 506); 
+            //    SetTargetingRule(ref code, ref n, 10, n);
+            //    return;
+            //}
             else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(505))
             {
                 UseSkill(ref a, 505); return;

@@ -177,6 +177,7 @@ namespace NocturneInsaniax
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D254_MSEFE_09", "D254_MSEFE_09", 535363584, false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D254_MSEFE_10", "D254_MSEFE_10", 535429120, false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D254_MSEFE_11", "D254_MSEFE_11", 535494656, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D254_MSEFE_12", "D254_MSEFE_12", 535560192, false);
 
                 //foreach (var sound in Smg.Instance._tableSe_MSE)
                 //    MelonLogger.Msg(sound.key + " - " + sound.value.MidiId);
@@ -240,6 +241,7 @@ namespace NocturneInsaniax
                 yhvhKeys.Add("D254_MSEFE_09", new SndAssetBundleManager.SndData { key = "dvl0xfe", path = 4, id = 0, name = "D254_MSEFE_09", diff = true });
                 yhvhKeys.Add("D254_MSEFE_10", new SndAssetBundleManager.SndData { key = "dvl0xfe", path = 4, id = 0, name = "D254_MSEFE_10", diff = true });
                 yhvhKeys.Add("D254_MSEFE_11", new SndAssetBundleManager.SndData { key = "dvl0xfe", path = 4, id = 0, name = "D254_MSEFE_11", diff = true });
+                yhvhKeys.Add("D254_MSEFE_12", new SndAssetBundleManager.SndData { key = "dvl0xfe", path = 4, id = 0, name = "D254_MSEFE_12", diff = true });
                 SndAssetBundleManager.SEBundleTable.Add("dvl0xfe", yhvhKeys);
             }
         }

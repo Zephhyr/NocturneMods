@@ -415,9 +415,22 @@ namespace NocturneInsaniax
                 {
                     nbHelpProcess.nbDispText("All stats maximized!", string.Empty, 2, 45, 2315190144, false);
                 }
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 682 && hojopoint == 6 && actionProcessData.work.nowindex == 510)
+                {
+                    nbHelpProcess.nbDispText("All stats minimized!", string.Empty, 2, 45, 2315190144, false);
+                }
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 263168 && hojopoint == 1 && actionProcessData.work.nowindex == 460)
                 {
                     nbHelpProcess.nbDispText("All -kaja & -nda effects negated!", string.Empty, 2, 45, 2315190144, false);
+                }
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 263168 && hojopoint == 1 && actionProcessData.work.nowindex == 511)
+                {
+                    foreach (var unit in nbMainProcess.nbGetMainProcessData().party)
+                    {
+                        for (int i = 4; i <= 15; i++)
+                            unit.count[i] = 0;
+                    }
+                    nbHelpProcess.nbDispText("All effects negated!", string.Empty, 2, 45, 2315190144, false);
                 }
             }
         }
