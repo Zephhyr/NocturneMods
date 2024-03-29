@@ -8833,14 +8833,14 @@ namespace NocturneInsaniax
                 new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
                 new datUnitMotion_s{ motion_no= 1, movetype= 0, actframe= 40, se_no= 3, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
                 new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 60, se_no= 5, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 }, //Scorn
-                new datUnitMotion_s{ motion_no= 9, movetype= 0, actframe= 40, se_no= 9, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 40 }, //Infinite Power
-                new datUnitMotion_s{ motion_no= 4, movetype= 0, actframe= 40, se_no= 3, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 }, //Supernova
-                new datUnitMotion_s{ motion_no= 5, movetype= 0, actframe= 40, se_no= 4, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 }, //Rampage
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= 8, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 }, //Planned Chaos
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= 11, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 }, //Mouth Of God
-                new datUnitMotion_s{ motion_no= 3, movetype= 1, actframe= 40, se_no= 10, se_endtype= 0, se_endframe= -1, motionsp= 0.8f, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 25 }, //Crush
-                new datUnitMotion_s{ motion_no= 9, movetype= 0, actframe= 40, se_no= 10, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 40 }, //Unending Curse
-                new datUnitMotion_s{ motion_no= 9, movetype= 0, actframe= 40, se_no= 12, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 40 },
+                new datUnitMotion_s{ motion_no= 9, movetype= 0, actframe= 33, se_no= 9, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 40 }, //Infinite Power
+                new datUnitMotion_s{ motion_no= 5, movetype= 0, actframe= 37, se_no= 3, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 140, movey= 0, movez= 210, bframe= 0, hframe= 30 }, //Supernova
+                new datUnitMotion_s{ motion_no= 8, movetype= 1, actframe= 38, se_no= 4, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 20 }, //Rampage
+                new datUnitMotion_s{ motion_no= 10, movetype= 1, actframe= 30, se_no= 8, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 }, //Planned Chaos
+                new datUnitMotion_s{ motion_no= 18, movetype= 1, actframe= 31, se_no= 11, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 }, //Mouth Of God
+                new datUnitMotion_s{ motion_no= 3, movetype= 1, actframe= 37, se_no= 10, se_endtype= 0, se_endframe= -1, motionsp= 0.8f, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 25 }, //Crush
+                new datUnitMotion_s{ motion_no= 9, movetype= 0, actframe= 33, se_no= 10, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 40 }, //Unending Curse
+                new datUnitMotion_s{ motion_no= 9, movetype= 0, actframe= 33, se_no= 12, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 40 }, //Divine Harmony
                 new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
                 new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
                 new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
