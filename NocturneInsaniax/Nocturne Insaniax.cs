@@ -288,6 +288,19 @@ namespace NocturneInsaniax
         //    }
         //}
 
+        [HarmonyPatch(typeof(nbStageProcess), nameof(nbStageProcess.nbStageLoad))]
+        private class nbStageLoadPatch
+        {
+            public static void Prefix(int major, int minor)
+            {
+                MelonLogger.Msg("--nbStageProcess.nbStageLoad--");
+                MelonLogger.Msg("id: " + major);
+                MelonLogger.Msg("mot: " + minor);
+            }
+        }
+
+
+
         [HarmonyPatch(typeof(fld_Npc), nameof(fld_Npc.fldItemBoxAdd))]
         private class ItemBoxAddPatch
         {

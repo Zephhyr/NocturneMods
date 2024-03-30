@@ -5763,6 +5763,16 @@ namespace NocturneInsaniax
 
             OverWriteSkillEffect(id, 98);
             datNormalSkillVisual.tbl[id].motion = 5;
+            nbCamera_SkillPtrTable.tbl[id] = new nbCameraSkillPtr_t
+            {
+                ptr_shot_1 = nbCamera_SkillPtrTable.tbl[208].ptr_shot_1,
+                ptr_shot_23 = nbCamera_SkillPtrTable.tbl[208].ptr_shot_23,
+                ptr_angleH = nbCamera_SkillPtrTable.tbl[208].ptr_angleH,
+                ptr_angleW = nbCamera_SkillPtrTable.tbl[208].ptr_angleW,
+                ptr_H = nbCamera_SkillPtrTable.tbl[208].ptr_H,
+                ptr_W = nbCamera_SkillPtrTable.tbl[208].ptr_W,
+                anim = nbCamera_SkillPtrTable.tbl[208].anim
+            };
         }
 
         private static void InfernoOfGod(ushort id)
@@ -5811,6 +5821,16 @@ namespace NocturneInsaniax
 
             OverWriteSkillEffect(id, 178);
             datNormalSkillVisual.tbl[id].motion = 4;
+            nbCamera_SkillPtrTable.tbl[id] = new nbCameraSkillPtr_t
+            {
+                ptr_shot_1 = nbCamera_SkillPtrTable.tbl[208].ptr_shot_1,
+                ptr_shot_23 = nbCamera_SkillPtrTable.tbl[208].ptr_shot_23,
+                ptr_angleH = nbCamera_SkillPtrTable.tbl[208].ptr_angleH,
+                ptr_angleW = nbCamera_SkillPtrTable.tbl[208].ptr_angleW,
+                ptr_H = nbCamera_SkillPtrTable.tbl[208].ptr_H,
+                ptr_W = nbCamera_SkillPtrTable.tbl[208].ptr_W,
+                anim = nbCamera_SkillPtrTable.tbl[208].anim
+            };
         }
 
         private static void HailstormOfGod(ushort id)
@@ -5859,6 +5879,16 @@ namespace NocturneInsaniax
 
             OverWriteSkillEffect(id, 181);
             datNormalSkillVisual.tbl[id].motion = 4;
+            nbCamera_SkillPtrTable.tbl[id] = new nbCameraSkillPtr_t
+            {
+                ptr_shot_1 = nbCamera_SkillPtrTable.tbl[208].ptr_shot_1,
+                ptr_shot_23 = nbCamera_SkillPtrTable.tbl[208].ptr_shot_23,
+                ptr_angleH = nbCamera_SkillPtrTable.tbl[208].ptr_angleH,
+                ptr_angleW = nbCamera_SkillPtrTable.tbl[208].ptr_angleW,
+                ptr_H = nbCamera_SkillPtrTable.tbl[208].ptr_H,
+                ptr_W = nbCamera_SkillPtrTable.tbl[208].ptr_W,
+                anim = nbCamera_SkillPtrTable.tbl[208].anim
+            };
         }
 
         private static void LightningOfGod(ushort id)
@@ -5907,6 +5937,16 @@ namespace NocturneInsaniax
 
             OverWriteSkillEffect(id, 183);
             datNormalSkillVisual.tbl[id].motion = 4;
+            nbCamera_SkillPtrTable.tbl[id] = new nbCameraSkillPtr_t
+            {
+                ptr_shot_1 = nbCamera_SkillPtrTable.tbl[208].ptr_shot_1,
+                ptr_shot_23 = nbCamera_SkillPtrTable.tbl[208].ptr_shot_23,
+                ptr_angleH = nbCamera_SkillPtrTable.tbl[208].ptr_angleH,
+                ptr_angleW = nbCamera_SkillPtrTable.tbl[208].ptr_angleW,
+                ptr_H = nbCamera_SkillPtrTable.tbl[208].ptr_H,
+                ptr_W = nbCamera_SkillPtrTable.tbl[208].ptr_W,
+                anim = nbCamera_SkillPtrTable.tbl[208].anim
+            };
         }
 
         private static void TornadoOfGod(ushort id)
@@ -5955,6 +5995,16 @@ namespace NocturneInsaniax
 
             OverWriteSkillEffect(id, 24);
             datNormalSkillVisual.tbl[id].motion = 4;
+            nbCamera_SkillPtrTable.tbl[id] = new nbCameraSkillPtr_t
+            {
+                ptr_shot_1 = nbCamera_SkillPtrTable.tbl[208].ptr_shot_1,
+                ptr_shot_23 = nbCamera_SkillPtrTable.tbl[208].ptr_shot_23,
+                ptr_angleH = nbCamera_SkillPtrTable.tbl[208].ptr_angleH,
+                ptr_angleW = nbCamera_SkillPtrTable.tbl[208].ptr_angleW,
+                ptr_H = nbCamera_SkillPtrTable.tbl[208].ptr_H,
+                ptr_W = nbCamera_SkillPtrTable.tbl[208].ptr_W,
+                anim = nbCamera_SkillPtrTable.tbl[208].anim
+            };
         }
 
         private static void PlannedChaos(ushort id)
@@ -6003,6 +6053,16 @@ namespace NocturneInsaniax
 
             OverWriteSkillEffect(id, 25, 270);
             datNormalSkillVisual.tbl[id].motion = 6;
+            nbCamera_SkillPtrTable.tbl[id] = new nbCameraSkillPtr_t
+            {
+                ptr_shot_1 = nbCamera_SkillPtrTable.tbl[208].ptr_shot_1,
+                ptr_shot_23 = nbCamera_SkillPtrTable.tbl[208].ptr_shot_23,
+                ptr_angleH = nbCamera_SkillPtrTable.tbl[208].ptr_angleH,
+                ptr_angleW = nbCamera_SkillPtrTable.tbl[208].ptr_angleW,
+                ptr_H = nbCamera_SkillPtrTable.tbl[208].ptr_H,
+                ptr_W = nbCamera_SkillPtrTable.tbl[208].ptr_W,
+                anim = nbCamera_SkillPtrTable.tbl[208].anim
+            };
         }
 
         private static void MouthOfGod(ushort id)
@@ -6051,6 +6111,16 @@ namespace NocturneInsaniax
 
             OverWriteSkillEffect(id, 32, 243);
             datNormalSkillVisual.tbl[id].motion = 7;
+            nbCamera_SkillPtrTable.tbl[id] = new nbCameraSkillPtr_t
+            {
+                ptr_shot_1 = nbCamera_SkillPtrTable.tbl[208].ptr_shot_1,
+                ptr_shot_23 = nbCamera_SkillPtrTable.tbl[208].ptr_shot_23,
+                ptr_angleH = nbCamera_SkillPtrTable.tbl[208].ptr_angleH,
+                ptr_angleW = nbCamera_SkillPtrTable.tbl[208].ptr_angleW,
+                ptr_H = nbCamera_SkillPtrTable.tbl[208].ptr_H,
+                ptr_W = nbCamera_SkillPtrTable.tbl[208].ptr_W,
+                anim = nbCamera_SkillPtrTable.tbl[208].anim
+            };
         }
 
         private static void BlackHole(ushort id)
@@ -6099,6 +6169,16 @@ namespace NocturneInsaniax
 
             OverWriteSkillEffect(id, 191);
             datNormalSkillVisual.tbl[id].motion = 6;
+            nbCamera_SkillPtrTable.tbl[id] = new nbCameraSkillPtr_t
+            {
+                ptr_shot_1 = nbCamera_SkillPtrTable.tbl[208].ptr_shot_1,
+                ptr_shot_23 = nbCamera_SkillPtrTable.tbl[208].ptr_shot_23,
+                ptr_angleH = nbCamera_SkillPtrTable.tbl[208].ptr_angleH,
+                ptr_angleW = nbCamera_SkillPtrTable.tbl[208].ptr_angleW,
+                ptr_H = nbCamera_SkillPtrTable.tbl[208].ptr_H,
+                ptr_W = nbCamera_SkillPtrTable.tbl[208].ptr_W,
+                anim = nbCamera_SkillPtrTable.tbl[208].anim
+            };
         }
 
         private static void Supernova(ushort id)
@@ -6147,6 +6227,16 @@ namespace NocturneInsaniax
 
             OverWriteSkillEffect(id, 221);
             datNormalSkillVisual.tbl[id].motion = 4;
+            nbCamera_SkillPtrTable.tbl[id] = new nbCameraSkillPtr_t
+            {
+                ptr_shot_1 = nbCamera_SkillPtrTable.tbl[208].ptr_shot_1,
+                ptr_shot_23 = nbCamera_SkillPtrTable.tbl[208].ptr_shot_23,
+                ptr_angleH = nbCamera_SkillPtrTable.tbl[208].ptr_angleH,
+                ptr_angleW = nbCamera_SkillPtrTable.tbl[208].ptr_angleW,
+                ptr_H = nbCamera_SkillPtrTable.tbl[208].ptr_H,
+                ptr_W = nbCamera_SkillPtrTable.tbl[208].ptr_W,
+                anim = nbCamera_SkillPtrTable.tbl[208].anim
+            };
         }
 
         private static void InfinitePower(ushort id)

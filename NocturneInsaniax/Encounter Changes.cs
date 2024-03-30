@@ -194,8 +194,7 @@ namespace NocturneInsaniax
                 case 64: IkebukuroTunnelSarasvatiEncounter(); return 1270;
                 case 65: IkebukuroTunnelSarasvatiEncounter(); return 1270;
 
-                //case 66: OverworldZhuqueEncounter(); return 1270;
-                case 66: OverworldZhuqueEncounter(); return 1278;
+                case 66: OverworldZhuqueEncounter(); return 1270;
 
                 // Labyrinth of Amala
 
@@ -529,7 +528,7 @@ namespace NocturneInsaniax
             datEncount.tbl[1278].backattack = -1;
             datEncount.tbl[1278].formationtype = 13;
             datEncount.tbl[1278].areaid = 2;
-            datEncount.tbl[1278].stageid = 240;
+            datEncount.tbl[1278].stageid = 246;
         }
     }
 }
