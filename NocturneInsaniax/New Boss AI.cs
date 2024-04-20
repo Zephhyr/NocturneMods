@@ -26,6 +26,8 @@ namespace NocturneInsaniax
             public static void Postfix()
             {
                 actionTrackers.Clear();
+                foreach (var party in nbMainProcess.nbGetMainProcessData().party)
+                    party.count = new short[21];
                 MelonLogger.Msg("-Battle Starts-");
             }
         }
@@ -47,6 +49,11 @@ namespace NocturneInsaniax
                             actionTrackers.Add(unit.id, new ActionTracker());
                             if (unit.id == 254)
                                 actionTrackers[unit.id].extraTurns = 1;
+                        }
+
+                        if (unit.hp == 0 && !data.enemyunit.Where(x => x.id == unit.id && x.hp != 0).Any())
+                        {
+                            actionTrackers.Remove(unit.id);
                         }
 
                         nbMainProcess.nbGetMainProcessData().press4_p += actionTrackers[unit.id].extraTurns;
@@ -104,6 +111,7 @@ namespace NocturneInsaniax
                     case 79: ForcedNagaAI(ref a, ref code, ref n); break;
                     case 108: BaphometAI(ref a, ref code, ref n); break;
                     case 124: NKENueAI(ref a, ref code, ref n); break;
+                    case 143: ValkyrieAI(ref a, ref code, ref n); break;
                     case 149: XuanwuAI(ref a, ref code, ref n); break;
                     case 151: MakamiAI(ref a, ref code, ref n); break;
                     case 199: NKEMatadorAI(ref a, ref code, ref n); break;
@@ -136,9 +144,12 @@ namespace NocturneInsaniax
                     case 315: ForcedKaiwanAI(ref a, ref code, ref n); break;
                     case 317: BossTrollAI(ref a, ref code, ref n); break;
                     case 339: BossDanteRaidou1AI(ref a, ref code, ref n); break;
+                    case 346: BossWhiteRiderAI(ref a, ref code, ref n); break;
+                    case 347: BossRedRiderAI(ref a, ref code, ref n); break;
                     case 349: BossMatadorAI(ref a, ref code, ref n); break;
                     case 350: BossHellBikerAI(ref a, ref code, ref n); break;
                     case 351: BossDaisoujouAI(ref a, ref code, ref n); break;
+                    case 359: BossVirtueAI(ref a, ref code, ref n); break;
                     default: break;
                 }
                 MelonLogger.Msg("skill: " + a.work.nowindex);
@@ -200,7 +211,7 @@ namespace NocturneInsaniax
             }
             else
             {
-                if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp).Any())
+                if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.hp != 0).Any())
                 {
                     int randomValue = random.Next(4);
                     switch (randomValue)
@@ -281,7 +292,7 @@ namespace NocturneInsaniax
 
         private static void ZhuqueAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
-            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(220))
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(277))
             {
                 UseSkill(ref a, 277);
             }
@@ -317,7 +328,7 @@ namespace NocturneInsaniax
 
         private static void XiezhaiAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
-            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(220))
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(277))
             {
                 UseSkill(ref a, 277);
             }
@@ -343,7 +354,7 @@ namespace NocturneInsaniax
                 UseSummonSkill(ref a, 226, 125);
             else
             {
-                if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp).Any())
+                if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.hp != 0).Any())
                 {
                     int randomValue = random.Next(5);
                     switch (randomValue)
@@ -390,6 +401,48 @@ namespace NocturneInsaniax
                 UseNormalAttack(ref a);
         }
 
+        private static void ValkyrieAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(277) && 
+                nbMainProcess.nbGetMainProcessData().enemypcnt == 1)
+            {
+                UseSkill(ref a, 277);
+            }
+            else if (actionTrackers[a.work.id].currentBattleTurnCount == 1)
+            {
+                UseSummonSkill(ref a, 226, 88);
+            }
+            else if (actionTrackers[a.work.id].currentBattleTurnCount != 1 &&
+                nbMainProcess.nbGetMainProcessData().enemypcnt == 1)
+            {
+                UseSummonSkill(ref a, 226, 88);
+            }
+            else if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.hp != 0).Any())
+            {
+                int randomValue = random.Next(5);
+                switch (randomValue)
+                {
+                    case 0: UseNormalAttack(ref a); break;
+                    case 1: UseSkill(ref a, 109); break;
+                    case 2: UseSkill(ref a, 2); break;
+                    case 3: UseSkill(ref a, 37); break;
+                    case 4: UseSkill(ref a, 37); break;
+                }
+            }
+            else
+            {
+                int randomValue = random.Next(5);
+                switch (randomValue)
+                {
+                    case 0: UseNormalAttack(ref a); break;
+                    case 1: UseSkill(ref a, 109); break;
+                    case 2: UseSkill(ref a, 109); break;
+                    case 3: UseSkill(ref a, 2); break;
+                    case 4: UseSkill(ref a, 2); break;
+                }
+            }
+        }
+
         private static void XuanwuAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
             int randomValue = random.Next(6);
@@ -420,7 +473,7 @@ namespace NocturneInsaniax
             }
             else
             {
-                if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp).Any())
+                if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.hp != 0).Any())
                 {
                     int randomValue = random.Next(5);
                     switch (randomValue)
@@ -1365,6 +1418,50 @@ namespace NocturneInsaniax
             }
         }
 
+        private static void BossWhiteRiderAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            ushort currentHpPercent = BossCurrentHpPercent(ref a);
+            MelonLogger.Msg("White Rider HP%: " + currentHpPercent);
+            MelonLogger.Msg("White Rider HP: " + a.work.hp);
+
+            if (actionTrackers[a.work.id].extraTurns < 1)
+                UseSkill(ref a, 423);
+            else if (actionTrackers[a.work.id].currentBattleTurnCount == 1)
+            {
+                if (nbMainProcess.nbGetMainProcessData().enemypcnt < 3)
+                {
+                    UseSummonSkill(ref a, 226, 359);
+                }
+            }
+            else if (a.work.nowindex == 226)
+            {
+                if (!actionTrackers.ContainsKey(359))
+                    actionTrackers.Add(359, new ActionTracker());
+            }
+        }
+
+        private static void BossRedRiderAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            ushort currentHpPercent = BossCurrentHpPercent(ref a);
+            MelonLogger.Msg("Red Rider HP%: " + currentHpPercent);
+            MelonLogger.Msg("Red Rider HP: " + a.work.hp);
+
+            if (actionTrackers[a.work.id].extraTurns < 1)
+                UseSkill(ref a, 423);
+            else if (actionTrackers[a.work.id].currentBattleTurnCount == 1)
+            {
+                if (nbMainProcess.nbGetMainProcessData().enemypcnt < 3)
+                {
+                    UseSummonSkill(ref a, 226, 360);
+                }
+            }
+            else if (a.work.nowindex == 226)
+            {
+                if (!actionTrackers.ContainsKey(360))
+                    actionTrackers.Add(360, new ActionTracker());
+            }
+        }
+
         private static void BossMatadorAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
             ushort currentHpPercent = BossCurrentHpPercent(ref a);
@@ -1535,6 +1632,28 @@ namespace NocturneInsaniax
                     }
                 }
             }
+        }
+
+        private static void BossVirtueAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (actionTrackers[a.work.id].currentBattleActionCount == 1)
+                UseSkill(ref a, 54);
+            else if (actionTrackers[a.work.id].currentBattleActionCount == 2)
+                UseSkill(ref a, 68);
+            else if (a.work.nowindex == 69)
+                UseSkill(ref a, 68);
+            //else
+            //{
+            //    bool tetrajaUp = false;
+            //    var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => (x.partyindex == 4 || x.partyindex == 6) && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].hp != 0);
+            //    foreach (var unit in allyParty)
+            //    {
+            //        if (unit.count[11] >= 1)
+            //            tetrajaUp = true;
+            //    }
+            //    if (!tetrajaUp)
+            //        UseSkill(ref a, 68);
+            //}
         }
 
         //------------------------------------------------------------

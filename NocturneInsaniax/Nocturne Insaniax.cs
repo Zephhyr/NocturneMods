@@ -1,10 +1,14 @@
 ﻿using HarmonyLib;
 using Il2Cpp;
+using Il2Cppbasic_H;
 using Il2Cppnewbattle_H;
 using Il2CppTMPro;
 using MelonLoader;
+using MelonLoader.CoreClrUtils;
 using Newtonsoft.Json;
+using System.Runtime.InteropServices;
 using UnityEngine;
+using static Il2Cpp.nbActionProcess;
 
 [assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax", "0.8.0", "Zephhyr, Matthiew Purple")]
 [assembly: MelonGame("アトラス", "smt3hd")]
@@ -168,7 +172,7 @@ namespace NocturneInsaniax
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_21_E", "D225_MSEE1_21_E", (269287440 + 235929600), false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_24_E", "D225_MSEE1_24_E", (269352976 + 235929600), false);
 
-                // 
+                // YHVH
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D254_MSEFE_01", "D254_MSEFE_01", 534839296, false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D254_MSEFE_03", "D254_MSEFE_03", 534970368, false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D254_MSEFE_04", "D254_MSEFE_04", 535035904, false);
@@ -178,6 +182,10 @@ namespace NocturneInsaniax
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D254_MSEFE_10", "D254_MSEFE_10", 535429120, false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D254_MSEFE_11", "D254_MSEFE_11", 535494656, false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D254_MSEFE_12", "D254_MSEFE_12", 535560192, false);
+
+                // Music
+                Smg.Instance._TblAdd(Smg.eType.BGM, "B1600_B1601_BGM01", "B1600_B1601_BGM01_L_", 9134875, true);
+
 
                 //foreach (var sound in Smg.Instance._tableSe_MSE)
                 //    MelonLogger.Msg(sound.key + " - " + sound.value.MidiId);
@@ -243,6 +251,30 @@ namespace NocturneInsaniax
                 yhvhKeys.Add("D254_MSEFE_11", new SndAssetBundleManager.SndData { key = "dvl0xfe", path = 4, id = 0, name = "D254_MSEFE_11", diff = true });
                 yhvhKeys.Add("D254_MSEFE_12", new SndAssetBundleManager.SndData { key = "dvl0xfe", path = 4, id = 0, name = "D254_MSEFE_12", diff = true });
                 SndAssetBundleManager.SEBundleTable.Add("dvl0xfe", yhvhKeys);
+
+                var bgmKeys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
+                bgmKeys.Add("B1600_B1601_BGM01", new SndAssetBundleManager.SndData { key = "b_bgm16", path = 1, id = 0, name = "B1600_B1601_BGM01", diff = true });
+                SndAssetBundleManager.BGMBundleTable.Add("b_bgm16", bgmKeys);
+            }
+        }
+
+        [HarmonyPatch(typeof(nbEncount), nameof(nbEncount.nbGetBgmCategoryInBattle))]
+        private class nbGetBgmCategoryInBattlePatch
+        {
+            public static void Postfix(int __result)
+            {
+                //MelonLogger.Msg("--nbEncount.nbGetBgmCategoryInBattle--");
+                switch (__result)
+                {
+                    case 16:  
+                        nbSound.bgmno = "B1600_B1601_BGM01";
+                        nbSound.bgmsub = 0;
+                        nbSound.bgmloadphase = 1;
+                        nbSound.bgmdone = 0;
+                        nbSound.bgmkey = 16;
+                        break;
+                    default: break;
+                }
             }
         }
 
@@ -288,16 +320,115 @@ namespace NocturneInsaniax
         //    }
         //}
 
-        [HarmonyPatch(typeof(nbStageProcess), nameof(nbStageProcess.nbStageLoad))]
-        private class nbStageLoadPatch
-        {
-            public static void Prefix(int major, int minor)
-            {
-                MelonLogger.Msg("--nbStageProcess.nbStageLoad--");
-                MelonLogger.Msg("id: " + major);
-                MelonLogger.Msg("mot: " + minor);
-            }
-        }
+
+
+        //[HarmonyPatch(typeof(itfMesManager), nameof(itfMesManager.itfMesMngMessage))]
+        //private class itfMesMngMessagePatch
+        //{
+        //    public static void Postfix(int __result)
+        //    {
+        //        MelonLogger.Msg("--itfMesManager.itfMesMngMessage--");
+        //        MelonLogger.Msg("result: " + __result);
+        //    }
+        //}
+
+        //[HarmonyPatch(typeof(ScrTraceCode), nameof(ScrTraceCode.scrGetMessageHandle))]
+        //private class scrGetMessageHandlePatch
+        //{
+        //    public static void Postfix(int __result)
+        //    {
+        //        MelonLogger.Msg("--ScrTraceCode.scrGetMessageHandle--");
+        //        MelonLogger.Msg("result: " + __result);
+        //    }
+        //}
+
+        //[HarmonyPatch(typeof(ScrTraceCode), nameof(ScrTraceCode.scrGetIntPara))]
+        //private class scrGetIntParaPatch
+        //{
+        //    public static void Postfix(int n,int __result)
+        //    {
+        //        MelonLogger.Msg("--ScrTraceCode.scrGetIntPara--");
+        //        MelonLogger.Msg("n: " + n);
+        //        MelonLogger.Msg("result: " + __result);
+        //    }
+        //}
+
+        //[HarmonyPatch(typeof(itfMesManager), nameof(itfMesManager.itfMesMngRequestMessage))]
+        //private class itfMesMngRequestMessagePatch
+        //{
+        //    public static void Postfix(int id, int message, int page, int callmode, int __result)
+        //    {
+        //        MelonLogger.Msg("--itfMesManager.itfMesMngRequestMessage--");
+        //        MelonLogger.Msg("id: " + id);
+        //        MelonLogger.Msg("message: " + message);
+        //        MelonLogger.Msg("page: " + page);
+        //        MelonLogger.Msg("callmode: " + callmode);
+        //        MelonLogger.Msg("result: " + __result);
+        //        //var stackFrames = NativeStackWalk.GetNativeStackFrames();
+        //        //foreach (var frame in stackFrames)
+        //        //    MelonLogger.Msg(frame.Function);
+        //    }
+        //}
+
+        //[HarmonyPatch(typeof(itfMesManager), nameof(itfMesManager.check_aimsg))]
+        //private class check_aimsgPatch
+        //{
+        //    public static void Postfix(string tagid, bool __result)
+        //    {
+        //        MelonLogger.Msg("--itfMesManager.check_aimsg--");
+        //        MelonLogger.Msg("tagid: " + tagid);
+        //        MelonLogger.Msg("result: " + __result);
+        //    }
+        //}
+
+        //[HarmonyPatch(typeof(nbAi), nameof(nbAi.nbAiChkJoken))]
+        //private class nbAiChkJokenPatch
+        //{
+        //    public static void Postfix(nbActionProcessData_t a, uint jo, int __result)
+        //    {
+        //        MelonLogger.Msg("--nbAi.nbAiChkJoken--");
+        //        MelonLogger.Msg("a: " + a);
+        //        MelonLogger.Msg("jo: " + jo);
+        //        MelonLogger.Msg("result: " + __result);
+        //    }
+        //}
+
+        //[HarmonyPatch(typeof(EventEMsgData), nameof(EventEMsgData.GetMsgText))]
+        //private class GetMsgTextPatch
+        //{
+        //    public static void Postfix(string id, string __result)
+        //    {
+        //        MelonLogger.Msg("--EventEMsgData.GetMsgText--");
+        //        MelonLogger.Msg("id: " + id);
+        //        MelonLogger.Msg("result: " + __result);
+        //    }
+        //}
+
+        //[HarmonyPatch(typeof(nbEventProcess), nameof(nbEventProcess.nbInitEventProcess))]
+        //private class nbInitEventProcessPatch
+        //{
+        //    public static void Postfix(nbMainProcessData_t data)
+        //    {
+        //        MelonLogger.Msg("--nbEventProcess.nbInitEventProcess--");
+        //        MelonLogger.Msg("eventno: " + data.eventno);
+        //        MelonLogger.Msg("eventrid: " + data.eventrid);
+        //        MelonLogger.Msg("eventcamera: " + data.eventcamera.name);
+        //    }
+        //}
+
+        //[HarmonyPatch(typeof(nbEventProcess), nameof(nbEventProcess.nbLoadBattleEventPack))]
+        //private class nbLoadBattleEventPackPatch
+        //{
+        //    public static void Postfix(nbMainProcessData_t data, bool __result)
+        //    {
+        //        MelonLogger.Msg("--nbEventProcess.nbLoadBattleEventPack--");
+        //        MelonLogger.Msg("eventno: " + data.eventno);
+        //        MelonLogger.Msg("eventrid: " + data.eventrid);
+        //        MelonLogger.Msg("result: " + __result);
+        //    }
+        //}
+
+
 
 
 

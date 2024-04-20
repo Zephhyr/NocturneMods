@@ -44,9 +44,12 @@ namespace NocturneInsaniax
             public static void Postfix(ref nbActionProcessData_t a, ref int nskill, ref int sformindex, ref int dformindex, ref int sframe)
             {
                 var party = a.data.party;
-                var part = party.Where(p => p.formindex == -1).FirstOrDefault();
-                var count = part.count;
-                count[20] = 0;
+                if (party.Where(p => p.formindex == -1).Any())
+                {
+                    var part = party.Where(p => p.formindex == -1).FirstOrDefault();
+                    var count = part.count;
+                    count[20] = 0;
+                }
             }
         }
 
@@ -158,7 +161,7 @@ namespace NocturneInsaniax
                         ? datDevilName.Get(nbMainProcess.nbGetUnitWorkFromFormindex(formindex).id)
                         : frName.frGetCNameString(0);
 
-                    nbHelpProcess.nbDispText(devilName + " is building up power!", string.Empty, 2, 45, 2315190144, false);
+                    nbHelpProcess.nbDispText(devilName + " is building up energy!", string.Empty, 2, 45, 2315190144, false);
                 }
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 2 && hojopoint == 1 && actionProcessData.work.nowindex == 427)
                 {

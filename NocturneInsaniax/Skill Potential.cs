@@ -1010,6 +1010,14 @@ namespace NocturneInsaniax
                     __result = "Rev Up";
                 if (id == 226 && (currentDemonID == 79))
                     __result = "Backup";
+                if (id == 226 && (currentDemonID == 345))
+                    __result = "Call Evil";
+                if (id == 226 && (currentDemonID == 346))
+                    __result = "Call Angel";
+                if (id == 226 && (currentDemonID == 347))
+                    __result = "Call Soldier";
+                if (id == 226 && (currentDemonID == 348))
+                    __result = "Call Souls";
                 else if (id < 288 || id > 421) // If it isn't a passive skill
                 {
                     sbyte skillPotential = 0;

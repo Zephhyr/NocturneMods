@@ -13,7 +13,9 @@ namespace NocturneInsaniax
 {
     internal partial class NocturneInsaniax : MelonMod
     {
-        public static int[] bossList = new int[] { 256, 257, 262, 263, 266, 267, 268, 269, 294, 295, 296, 297, 300, 301, 302, 307, 308, 309, 312, 313, 339, 349, 350, 351 };
+        public static int[] bossList = new int[] { 
+            256, 257, 262, 263, 266, 267, 268, 269, 294, 295, 296, 297, 300, 301, 302, 307, 308, 309, 312, 313, 339, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353
+        };
         public static nbActionProcessData_t? actionProcessData;
 
         [HarmonyPatch(typeof(datSkillName), nameof(datSkillName.Get))]
@@ -407,35 +409,44 @@ namespace NocturneInsaniax
                     // Test - Add rigged demons to party
                     //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 149).Count() == 0)
                     //{
-                        datCalc.datAddDevil(254, 0);
-                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 134)) // Blob
+                    //datCalc.datAddDevil(224, 0);
+                    //datCalc.datAddDevil(143, 0);
+                    //datCalc.datAddDevil(31, 0);
+                    //datCalc.datAddDevil(43, 0);
+                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 224)) // Tam Lin
                     //{
-                    //    work.skill[0] = 206;
-                    //    work.skill[2] = 459;
-                    //    work.skill[3] = 14;
-                    //    work.skill[4] = 424;
+                    //    work.skill[3] = 206;
+                    //    work.skill[4] = 459;
+                    //    work.skill[5] = 224;
+                    //    work.skill[6] = 191;
+                    //    work.skill[7] = 327;
                     //    work.skillcnt = 8;
                     //}
-                    //}
-                    //else if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 74).Count() == 0)
+                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 143)) // Valkyrie
                     //{
-                    //    datCalc.datAddDevil(74, 0);
-                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 96)) // Momunofu
-                    //{
-                    //    work.skill[1] = 206;
-                    //    work.skill[2] = 459;
-                    //    work.skill[3] = 14;
+                    //    work.skill[2] = 206;
+                    //    work.skill[3] = 459;
+                    //    work.skill[4] = 224;
+                    //    work.skill[5] = 191;
+                    //    work.skill[6] = 313;
+                    //    work.skill[7] = 327;
                     //    work.skillcnt = 8;
                     //}
+                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 31)) // Senri
+                    //{
+                    //    work.skill[0] = 332;
+                    //    work.skill[1] = 44;
+                    //    work.skill[2] = 206;
+                    //    work.skill[3] = 459;
+                    //    work.skill[4] = 40;
+                    //    work.skill[5] = 191;
+                    //    work.skill[6] = 313;
+                    //    work.skill[7] = 324;
+                    //    work.skillcnt = 8;
                     //}
-                    //else if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 35).Count() == 0)
+                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 144)) // Arahabki
                     //{
-                    //    datCalc.datAddDevil(35, 0);
-                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 11)) // Ame-No-Uzume
-                    //{
-                    //    work.skill[1] = 206;
-                    //    work.skill[2] = 459;
-                    //    work.skill[3] = 14;
+                    //    work.skill[7] = 197;
                     //    work.skillcnt = 8;
                     //}
                     //}

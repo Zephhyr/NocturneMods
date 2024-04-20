@@ -49,6 +49,7 @@ namespace NocturneInsaniax
             {
                 MelonLogger.Msg("-nbMainProcess.nbInitMainProcess-");
                 MelonLogger.Msg("encpackno: " + encpackno);
+                MelonLogger.Msg("bgmno: " + nbSound.bgmno);
 
                 //if (dds3GlobalWork.DDS3_GBWK.hearts.Contains(9) || dds3ConfigMain.cfgGetBit(9u) == 0)
                 //{
@@ -60,7 +61,6 @@ namespace NocturneInsaniax
                 {
                     encno = NewKagutsuchiEncounter(encno, encpackno);
                 }
-                
             }
         }
 
@@ -194,7 +194,10 @@ namespace NocturneInsaniax
                 case 64: IkebukuroTunnelSarasvatiEncounter(); return 1270;
                 case 65: IkebukuroTunnelSarasvatiEncounter(); return 1270;
 
-                case 66: OverworldZhuqueEncounter(); return 1270;
+                //case 66: OverworldZhuqueEncounter(); return 1270;
+                case 66: OverworldZhuqueEncounter(); return 990;
+
+                case 68: AsakusaValkyrieEncounter(); return 1270;
 
                 // Labyrinth of Amala
 
@@ -363,6 +366,17 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].devil[0] = 32;
         }
 
+        private static void AsakusaValkyrieEncounter()
+        {
+            datEncount.tbl[1270].maxparty = 3;
+
+            datEncount.tbl[1270].devil[0] = 0;
+            datEncount.tbl[1270].devil[1] = 143;
+            datEncount.tbl[1270].devil[2] = 0;
+        }
+
+        // Labyrinth of Amala
+
         private static void FirstKalpaMatadorEncounter()
         {
             datEncount.tbl[1270].devil[0] = 199;
@@ -522,6 +536,9 @@ namespace NocturneInsaniax
 
             datEncount.tbl[193].maxcall = 1; // Forced Naga
             datEncount.tbl[193].maxparty = 2;
+
+            datEncount.tbl[990].devil[0] = 225; // Ambush Cube Doppelganger
+            datEncount.tbl[990].btlsound = 16;
 
             //YHVH
             datEncount.tbl[1278].devil[0] = 254;
