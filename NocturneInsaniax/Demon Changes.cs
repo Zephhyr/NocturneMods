@@ -8,6 +8,7 @@ using Il2Cppnewbattle_H;
 using Il2Cppeffect_H;
 using UnityEngine;
 using Il2Cppmodel_H;
+using static UnityEngine.GraphicsBuffer;
 
 namespace NocturneInsaniax
 {
@@ -80,6 +81,8 @@ namespace NocturneInsaniax
                         __result = "Null: Light • Str: Fire • Weak: Ice/Dark"; return false;
                     case "<AISYO_L0068>": // Angel
                         __result = "Null: Light • Str: Force • Weak: Elec/Dark"; return false;
+                    case "<AISYO_L0069>": // Flauros
+                        __result = "Rpl: Dark • Null: Fire • Weak: Nerve"; return false;
                     case "<AISYO_L0080>": // Nozuchi
                         __result = "Null: Force/Curse • Weak: Elec"; return false;
                     case "<AISYO_L0082>": // Orthrus
@@ -276,6 +279,10 @@ namespace NocturneInsaniax
                         __result = "YHVH"; return false;
                     case "<AISYO_L0254>":
                         __result = "Str: All"; return false;
+                    case "<DEVIL_L0362>":
+                        __result = "Flauros"; return false;
+                    case "<AISYO_L0362>":
+                        __result = "Rpl: Dark • Null: Fire • Weak: Nerve"; return false;
                     default: return true;
                 }
             }
@@ -338,13 +345,69 @@ namespace NocturneInsaniax
                     __result = 186;
                 else if (datDevilFormat.Get(normalResult).race == 10 && pSacrifice.id == 125)
                     __result = 224;
-                else
-                    __result = 225;
+                //else
+                //    __result = 225;
             }
+        }
+
+        private static datUnitVisual_t CopyDevilVisual(datUnitVisual_t origin)
+        {
+            return new datUnitVisual_t
+            {
+                center = origin.center,
+                formsize = origin.formsize,
+                formheight = origin.formheight,
+                formscale = origin.formscale,
+                oneshotr = origin.oneshotr,
+                allshotr = origin.allshotr,
+                modelsize = origin.modelsize,
+                shadowsize = origin.shadowsize,
+                badframe = origin.badframe,
+                autowait = origin.autowait,
+                motion = origin.motion,
+                reserve1 = origin.reserve1,
+                reserve2 = origin.reserve2,
+                reserve3 = origin.reserve3
+            };
         }
 
         private static void ApplyDemonChanges()
         {
+            dds3ModelFileTable_t[] devilModelFileTable = new dds3ModelFileTable_t[368];
+            for (int i = 0; i < mdlFileDefTable.devilModelFileTable.Length; i++)
+                devilModelFileTable[i] = mdlFileDefTable.devilModelFileTable[i];
+            for (int i = mdlFileDefTable.devilModelFileTable.Length; i < devilModelFileTable.Length; i++)
+                devilModelFileTable[i] = new dds3ModelFileTable_t();
+            mdlFileDefTable.devilModelFileTable = devilModelFileTable;
+
+            dds3ModelFileTable_t[] devilOnModelFileTable = new dds3ModelFileTable_t[368];
+            for (int i = 0; i < mdlFileDefTable.devilOnModelFileTable.Length; i++)
+                devilOnModelFileTable[i] = mdlFileDefTable.devilOnModelFileTable[i];
+            for (int i = mdlFileDefTable.devilOnModelFileTable.Length; i < devilOnModelFileTable.Length; i++)
+                devilOnModelFileTable[i] = new dds3ModelFileTable_t();
+            mdlFileDefTable.devilOnModelFileTable = devilOnModelFileTable;
+
+            dds3ModelFileIndex_t[] devilModelIndex = new dds3ModelFileIndex_t[368];
+            for (int i = 0; i < mdlFileDefTable.devilModelIndex.Length; i++)
+                devilModelIndex[i] = mdlFileDefTable.devilModelIndex[i];
+            for (int i = mdlFileDefTable.devilModelIndex.Length; i < devilModelIndex.Length; i++)
+                devilModelIndex[i] = new dds3ModelFileIndex_t();
+            mdlFileDefTable.devilModelIndex = devilModelIndex;
+
+            dds3ModelFileIndex_t[] devilOnModelIndex = new dds3ModelFileIndex_t[368];
+            for (int i = 0; i < mdlFileDefTable.devilOnModelIndex.Length; i++)
+                devilOnModelIndex[i] = mdlFileDefTable.devilOnModelIndex[i];
+            for (int i = mdlFileDefTable.devilOnModelIndex.Length; i < devilOnModelIndex.Length; i++)
+                devilOnModelIndex[i] = new dds3ModelFileIndex_t();
+            mdlFileDefTable.devilOnModelIndex = devilOnModelIndex;
+
+            //ushort[] motionSeTbl = new ushort[368];
+            //for (int i = 0; i < datMotionSeTable.tbl.Length; i++)
+            //    motionSeTbl[i] = datMotionSeTable.tbl[i];
+            //for (int i = datMotionSeTable.tbl.Length; i < motionSeTbl.Length; i++)
+            //    motionSeTbl[i] = (ushort) 0;
+            //datMotionSeTable.tbl = motionSeTbl;
+
             // Negotiation Items
             foreach (var itemSet in datDevilNegoFormat.tbl)
             {
@@ -574,6 +637,16 @@ namespace NocturneInsaniax
 
             Phantom(178);
 
+            // Fusable Bosses Demons
+            OseHallel(179);
+            FlaurosHallel(180);
+            Urthona(181);
+            Urizen(182);
+            Luvah(183);
+            Tharmus(184);
+            Specter(185);
+            Mara(186);
+            Doppelganger(187);
 
             // Maniax Demons
             DanteRaidou(192);
@@ -648,6 +721,9 @@ namespace NocturneInsaniax
 
             BossVirtue(359);
             BossPower(360);
+
+            // New Bosses
+            BossFlauros(362);
         }
 
         private static void Vishnu(ushort id)
@@ -3143,6 +3219,18 @@ namespace NocturneInsaniax
 
         private static void Flauros(ushort id)
         {
+            // Affinities
+            datAisyo.tbl[id][0] = 100; // Phys
+            datAisyo.tbl[id][1] = 65536; // Fire
+            datAisyo.tbl[id][2] = 100; // Ice
+            datAisyo.tbl[id][3] = 100; // Elec
+            datAisyo.tbl[id][4] = 100; // Force
+            datAisyo.tbl[id][6] = 100; // Light
+            datAisyo.tbl[id][7] = 131072; // Dark
+            datAisyo.tbl[id][8] = 100; // Curse
+            datAisyo.tbl[id][9] = 2147483798; // Nerve
+            datAisyo.tbl[id][10] = 100; // Mind
+
             // Skills
             tblSkill.fclSkillTbl[id].Event[5].Param = 292; // Life Surge
             tblSkill.fclSkillTbl[id].Event[6].Param = 104; // Hassohappa
@@ -7742,10 +7830,417 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[6].Type = 5;
         }
 
+        private static void OseHallel(int id)
+        {
+            datDevilFormat.tbl[id].flag = 3;
+            datDevilFormat.tbl[id].race = 24;
+            datDevilFormat.tbl[id].level = 70;
+            datDevilFormat.tbl[id].aisyoid = (short)id;
+            datDevilFormat.tbl[id].param = new sbyte[] { 25, 0, 15, 20, 22, 20 };
+            datDevilFormat.tbl[id].keisyotype = 1;
+            datDevilFormat.tbl[id].keisyoform = 2459;
+
+            datDevilName.txt[id] = "オセ・ハレル";
+
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 0, 2, 2, 3, 2 };
+
+            tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 110, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 206, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[2] = new fclSkillParam_t { Param = 70, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 57, TargetLevel = 71, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 77, TargetLevel = 72, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[5] = new fclSkillParam_t { Param = 69, TargetLevel = 73, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[6] = new fclSkillParam_t { Param = 41, TargetLevel = 74, Type = 1 };
+
+            // Affinities
+            datAisyo.tbl[id][0] = 50;
+            datAisyo.tbl[id][1] = 100;
+            datAisyo.tbl[id][2] = 1048676;
+            datAisyo.tbl[id][3] = 1048676;
+            datAisyo.tbl[id][4] = 100;
+            datAisyo.tbl[id][6] = 65536;
+            datAisyo.tbl[id][7] = 65536;
+            datAisyo.tbl[id][8] = 65536;
+            datAisyo.tbl[id][9] = 65536;
+            datAisyo.tbl[id][10] = 65536;
+
+            mdlFileDefTable.devilModelFileTable[id] = mdlFileDefTable.devilModelFileTable[289];
+            mdlFileDefTable.devilOnModelFileTable[id] = mdlFileDefTable.devilOnModelFileTable[289];
+            mdlFileDefTable.devilModelIndex[id] = mdlFileDefTable.devilModelIndex[289];
+            mdlFileDefTable.devilOnModelIndex[id] = mdlFileDefTable.devilOnModelIndex[289];
+
+            mdlFileDefTable.devilModelIndex[id].major = 6;
+            mdlFileDefTable.devilModelIndex[id].minor = 289;
+            mdlFileDefTable.devilModelIndex[id].scale = 4096;
+            mdlFileDefTable.devilModelIndex[id].radius = 1000;
+
+            datDevilVisual05.tbl_5_0A0_0BF[19] = CopyDevilVisual(datDevilVisual09.tbl_9_120_13F[1]);
+            datDevilVisual05.tbl_5_0A0_0BF[19].formscale = 1f;
+
+            datMotionSeTable.tbl[id] = 289;
+
+            datDevilNegoFormat.tbl[id] = datDevilNegoFormat.tbl[71];
+        }
+
+        private static void FlaurosHallel(int id)
+        {
+            datDevilFormat.tbl[id].flag = 3;
+            datDevilFormat.tbl[id].race = 24;
+            datDevilFormat.tbl[id].level = 70;
+            datDevilFormat.tbl[id].aisyoid = (short)id;
+            datDevilFormat.tbl[id].param = new sbyte[] { 35, 0, 15, 30, 18, 14 };
+            datDevilFormat.tbl[id].keisyotype = 1;
+            datDevilFormat.tbl[id].keisyoform = 2523;
+
+            datDevilName.txt[id] = "フラロウス・ハレル";
+
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 0, 1, 3, 2, 1 };
+
+            tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 105, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 166, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[2] = new fclSkillParam_t { Param = 203, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 186, TargetLevel = 71, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 178, TargetLevel = 72, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[5] = new fclSkillParam_t { Param = 345, TargetLevel = 73, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[6] = new fclSkillParam_t { Param = 104, TargetLevel = 74, Type = 1 };
+
+            // Affinities
+            datAisyo.tbl[id][0] = 50;
+            datAisyo.tbl[id][1] = 100;
+            datAisyo.tbl[id][2] = 1048676;
+            datAisyo.tbl[id][3] = 1048676;
+            datAisyo.tbl[id][4] = 100;
+            datAisyo.tbl[id][6] = 65536;
+            datAisyo.tbl[id][7] = 65536;
+            datAisyo.tbl[id][8] = 65536;
+            datAisyo.tbl[id][9] = 65536;
+            datAisyo.tbl[id][10] = 65536;
+
+            mdlFileDefTable.devilModelFileTable[id] = mdlFileDefTable.devilModelFileTable[290];
+            mdlFileDefTable.devilOnModelFileTable[id] = mdlFileDefTable.devilOnModelFileTable[290];
+            mdlFileDefTable.devilModelIndex[id] = mdlFileDefTable.devilModelIndex[290];
+            mdlFileDefTable.devilOnModelIndex[id] = mdlFileDefTable.devilOnModelIndex[290];
+
+            mdlFileDefTable.devilModelIndex[id].major = 6;
+            mdlFileDefTable.devilModelIndex[id].minor = 290;
+            mdlFileDefTable.devilModelIndex[id].scale = 4096;
+            mdlFileDefTable.devilModelIndex[id].radius = 1000;
+
+            datDevilVisual05.tbl_5_0A0_0BF[20] = CopyDevilVisual(datDevilVisual09.tbl_9_120_13F[2]);
+            datDevilVisual05.tbl_5_0A0_0BF[20].formscale = 1f;
+
+            datMotionSeTable.tbl[id] = 290;
+
+            datDevilNegoFormat.tbl[id] = datDevilNegoFormat.tbl[69];
+        }
+
+        private static void Urthona(int id)
+        {
+            datDevilFormat.tbl[id].flag = 3;
+            datDevilFormat.tbl[id].race = 32;
+            datDevilFormat.tbl[id].level = 30;
+            datDevilFormat.tbl[id].aisyoid = (short)id;
+            datDevilFormat.tbl[id].param = new sbyte[] { 20, 0, 10, 20, 8, 11 };
+            datDevilFormat.tbl[id].keisyotype = 4;
+            datDevilFormat.tbl[id].keisyoform = 2177;
+
+            datDevilName.txt[id] = "アーソナ";
+
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 0, 1, 2, 1, 1 };
+
+            tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 14, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 49, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[2] = new fclSkillParam_t { Param = 17, TargetLevel = 31, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 305, TargetLevel = 32, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 311, TargetLevel = 33, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[5] = new fclSkillParam_t { Param = 15, TargetLevel = 34, Type = 1 };
+
+            // Affinities
+            datAisyo.tbl[id][0] = 100;
+            datAisyo.tbl[id][1] = 100;
+            datAisyo.tbl[id][2] = 100;
+            datAisyo.tbl[id][3] = 131072;
+            datAisyo.tbl[id][4] = 2147483798;
+            datAisyo.tbl[id][6] = 100;
+            datAisyo.tbl[id][7] = 100;
+            datAisyo.tbl[id][8] = 100;
+            datAisyo.tbl[id][9] = 100;
+            datAisyo.tbl[id][10] = 100;
+
+            mdlFileDefTable.devilModelFileTable[id] = mdlFileDefTable.devilModelFileTable[279];
+            mdlFileDefTable.devilOnModelFileTable[id] = mdlFileDefTable.devilOnModelFileTable[279];
+            mdlFileDefTable.devilModelIndex[id] = mdlFileDefTable.devilModelIndex[279];
+            mdlFileDefTable.devilOnModelIndex[id] = mdlFileDefTable.devilOnModelIndex[279];
+
+            mdlFileDefTable.devilModelIndex[id].major = 6;
+            mdlFileDefTable.devilModelIndex[id].minor = 279;
+            mdlFileDefTable.devilModelIndex[id].scale = 4096;
+            mdlFileDefTable.devilModelIndex[id].radius = 1000;
+
+            datDevilVisual05.tbl_5_0A0_0BF[21] = CopyDevilVisual(datDevilVisual08.tbl_8_100_11F[23]);
+            datDevilVisual05.tbl_5_0A0_0BF[21].formscale = 0.6f;
+
+            datMotionSeTable.tbl[id] = 279;
+
+            datDevilNegoFormat.tbl[id] = datDevilNegoFormat.tbl[155];
+        }
+
+        private static void Urizen(int id)
+        {
+            datDevilFormat.tbl[id].flag = 3;
+            datDevilFormat.tbl[id].race = 32;
+            datDevilFormat.tbl[id].level = 30;
+            datDevilFormat.tbl[id].aisyoid = (short)id;
+            datDevilFormat.tbl[id].param = new sbyte[] { 20, 0, 10, 20, 8, 11 };
+            datDevilFormat.tbl[id].keisyotype = 4;
+            datDevilFormat.tbl[id].keisyoform = 2177;
+
+            datDevilName.txt[id] = "ユリゼン";
+
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 0, 1, 2, 1, 1 };
+
+            tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 2, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 49, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[2] = new fclSkillParam_t { Param = 5, TargetLevel = 31, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 305, TargetLevel = 32, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 309, TargetLevel = 33, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[5] = new fclSkillParam_t { Param = 3, TargetLevel = 34, Type = 1 };
+
+            // Affinities
+            datAisyo.tbl[id][0] = 100;
+            datAisyo.tbl[id][1] = 131072;
+            datAisyo.tbl[id][2] = 2147483798;
+            datAisyo.tbl[id][3] = 100;
+            datAisyo.tbl[id][4] = 100;
+            datAisyo.tbl[id][6] = 100;
+            datAisyo.tbl[id][7] = 100;
+            datAisyo.tbl[id][8] = 100;
+            datAisyo.tbl[id][9] = 100;
+            datAisyo.tbl[id][10] = 100;
+
+            mdlFileDefTable.devilModelFileTable[id] = mdlFileDefTable.devilModelFileTable[280];
+            mdlFileDefTable.devilOnModelFileTable[id] = mdlFileDefTable.devilOnModelFileTable[280];
+            mdlFileDefTable.devilModelIndex[id] = mdlFileDefTable.devilModelIndex[280];
+            mdlFileDefTable.devilOnModelIndex[id] = mdlFileDefTable.devilOnModelIndex[280];
+
+            mdlFileDefTable.devilModelIndex[id].major = 6;
+            mdlFileDefTable.devilModelIndex[id].minor = 280;
+            mdlFileDefTable.devilModelIndex[id].scale = 4096;
+            mdlFileDefTable.devilModelIndex[id].radius = 1000;
+
+            datDevilVisual05.tbl_5_0A0_0BF[22] = CopyDevilVisual(datDevilVisual08.tbl_8_100_11F[24]);
+            datDevilVisual05.tbl_5_0A0_0BF[22].formscale = 0.6f;
+
+            datMotionSeTable.tbl[id] = 280;
+
+            datDevilNegoFormat.tbl[id] = datDevilNegoFormat.tbl[155];
+        }
+
+        private static void Luvah(int id)
+        {
+            datDevilFormat.tbl[id].flag = 3;
+            datDevilFormat.tbl[id].race = 32;
+            datDevilFormat.tbl[id].level = 30;
+            datDevilFormat.tbl[id].aisyoid = (short)id;
+            datDevilFormat.tbl[id].param = new sbyte[] { 20, 0, 10, 20, 8, 11 };
+            datDevilFormat.tbl[id].keisyotype = 4;
+            datDevilFormat.tbl[id].keisyoform = 2177;
+
+            datDevilName.txt[id] = "ルヴァ";
+
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 0, 1, 2, 1, 1 };
+
+            tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 20, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 49, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[2] = new fclSkillParam_t { Param = 23, TargetLevel = 31, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 305, TargetLevel = 32, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 312, TargetLevel = 33, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[5] = new fclSkillParam_t { Param = 21, TargetLevel = 34, Type = 1 };
+
+            // Affinities
+            datAisyo.tbl[id][0] = 100;
+            datAisyo.tbl[id][1] = 100;
+            datAisyo.tbl[id][2] = 100;
+            datAisyo.tbl[id][3] = 2147483798;
+            datAisyo.tbl[id][4] = 131072;
+            datAisyo.tbl[id][6] = 100;
+            datAisyo.tbl[id][7] = 100;
+            datAisyo.tbl[id][8] = 100;
+            datAisyo.tbl[id][9] = 100;
+            datAisyo.tbl[id][10] = 100;
+
+            mdlFileDefTable.devilModelFileTable[id] = mdlFileDefTable.devilModelFileTable[281];
+            mdlFileDefTable.devilOnModelFileTable[id] = mdlFileDefTable.devilOnModelFileTable[281];
+            mdlFileDefTable.devilModelIndex[id] = mdlFileDefTable.devilModelIndex[281];
+            mdlFileDefTable.devilOnModelIndex[id] = mdlFileDefTable.devilOnModelIndex[281];
+
+            mdlFileDefTable.devilModelIndex[id].major = 6;
+            mdlFileDefTable.devilModelIndex[id].minor = 281;
+            mdlFileDefTable.devilModelIndex[id].scale = 4096;
+            mdlFileDefTable.devilModelIndex[id].radius = 1000;
+
+            datDevilVisual05.tbl_5_0A0_0BF[23] = CopyDevilVisual(datDevilVisual08.tbl_8_100_11F[25]);
+            datDevilVisual05.tbl_5_0A0_0BF[23].formscale = 0.6f;
+
+            datMotionSeTable.tbl[id] = 281;
+
+            datDevilNegoFormat.tbl[id] = datDevilNegoFormat.tbl[155];
+        }
+
+        private static void Tharmus(int id)
+        {
+            datDevilFormat.tbl[id].flag = 3;
+            datDevilFormat.tbl[id].race = 32;
+            datDevilFormat.tbl[id].level = 30;
+            datDevilFormat.tbl[id].aisyoid = (short)id;
+            datDevilFormat.tbl[id].param = new sbyte[] { 20, 0, 10, 20, 8, 11 };
+            datDevilFormat.tbl[id].keisyotype = 4;
+            datDevilFormat.tbl[id].keisyoform = 2177;
+
+            datDevilName.txt[id] = "サーマス";
+
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 0, 1, 2, 1, 1 };
+
+            tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 8, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 49, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[2] = new fclSkillParam_t { Param = 11, TargetLevel = 31, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 305, TargetLevel = 32, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 310, TargetLevel = 33, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[5] = new fclSkillParam_t { Param = 9, TargetLevel = 34, Type = 1 };
+
+            // Affinities
+            datAisyo.tbl[id][0] = 100;
+            datAisyo.tbl[id][1] = 2147483798;
+            datAisyo.tbl[id][2] = 131072;
+            datAisyo.tbl[id][3] = 100;
+            datAisyo.tbl[id][4] = 100;
+            datAisyo.tbl[id][6] = 100;
+            datAisyo.tbl[id][7] = 100;
+            datAisyo.tbl[id][8] = 100;
+            datAisyo.tbl[id][9] = 100;
+            datAisyo.tbl[id][10] = 100;
+
+            mdlFileDefTable.devilModelFileTable[id] = mdlFileDefTable.devilModelFileTable[282];
+            mdlFileDefTable.devilOnModelFileTable[id] = mdlFileDefTable.devilOnModelFileTable[282];
+            mdlFileDefTable.devilModelIndex[id] = mdlFileDefTable.devilModelIndex[282];
+            mdlFileDefTable.devilOnModelIndex[id] = mdlFileDefTable.devilOnModelIndex[282];
+
+            mdlFileDefTable.devilModelIndex[id].major = 6;
+            mdlFileDefTable.devilModelIndex[id].minor = 282;
+            mdlFileDefTable.devilModelIndex[id].scale = 4096;
+            mdlFileDefTable.devilModelIndex[id].radius = 1000;
+
+            datDevilVisual05.tbl_5_0A0_0BF[24] = CopyDevilVisual(datDevilVisual08.tbl_8_100_11F[26]);
+            datDevilVisual05.tbl_5_0A0_0BF[24].formscale = 0.6f;
+
+            datMotionSeTable.tbl[id] = 282;
+
+            datDevilNegoFormat.tbl[id] = datDevilNegoFormat.tbl[155];
+        }
+
+        private static void Specter(int id)
+        {
+            datDevilFormat.tbl[id].flag = 3;
+            datDevilFormat.tbl[id].race = 23;
+            datDevilFormat.tbl[id].level = 40;
+            datDevilFormat.tbl[id].aisyoid = (short)id;
+            datDevilFormat.tbl[id].param = new sbyte[] { 24, 0, 18, 20, 8, 6 };
+            datDevilFormat.tbl[id].keisyotype = 4;
+            datDevilFormat.tbl[id].keisyoform = 2177;
+
+            datDevilName.txt[id] = "スペクター";
+
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 0, 2, 2, 1, 1 };
+
+            tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 153, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 192, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[2] = new fclSkillParam_t { Param = 3, TargetLevel = 41, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 25, TargetLevel = 42, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 152, TargetLevel = 43, Type = 1 };
+
+            // Affinities
+            datAisyo.tbl[id][0] = 100;
+            datAisyo.tbl[id][1] = 100;
+            datAisyo.tbl[id][2] = 1048676;
+            datAisyo.tbl[id][3] = 1048676;
+            datAisyo.tbl[id][4] = 100;
+            datAisyo.tbl[id][6] = 65536;
+            datAisyo.tbl[id][7] = 65536;
+            datAisyo.tbl[id][8] = 65536;
+            datAisyo.tbl[id][9] = 65536;
+            datAisyo.tbl[id][10] = 65536;
+
+            mdlFileDefTable.devilModelFileTable[id] = mdlFileDefTable.devilModelFileTable[257];
+            mdlFileDefTable.devilOnModelFileTable[id] = mdlFileDefTable.devilOnModelFileTable[257];
+            mdlFileDefTable.devilModelIndex[id] = mdlFileDefTable.devilModelIndex[257];
+            mdlFileDefTable.devilOnModelIndex[id] = mdlFileDefTable.devilOnModelIndex[257];
+
+            mdlFileDefTable.devilModelIndex[id].major = 6;
+            mdlFileDefTable.devilModelIndex[id].minor = 257;
+            mdlFileDefTable.devilModelIndex[id].scale = 4096;
+            mdlFileDefTable.devilModelIndex[id].radius = 1000;
+
+            datDevilVisual05.tbl_5_0A0_0BF[25] = CopyDevilVisual(datDevilVisual08.tbl_8_100_11F[1]);
+            datDevilVisual05.tbl_5_0A0_0BF[25].formscale = 0.8f;
+
+            datMotionSeTable.tbl[id] = 257;
+
+            datDevilNegoFormat.tbl[id] = datDevilNegoFormat.tbl[178];
+        }
+
+        private static void Mara(int id)
+        {
+            datDevilFormat.tbl[id].flag = 3;
+            datDevilFormat.tbl[id].race = 19;
+            datDevilFormat.tbl[id].level = 85;
+            datDevilFormat.tbl[id].aisyoid = (short)id;
+            datDevilFormat.tbl[id].param = new sbyte[] { 30, 0, 40, 25, 14, 15 };
+            datDevilFormat.tbl[id].keisyotype = 6;
+            datDevilFormat.tbl[id].keisyoform = 187;
+
+            datDevilName.txt[id] = "マーラ";
+
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 0, 4, 2, 1, 1 };
+
+            tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 62, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 56, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[2] = new fclSkillParam_t { Param = 97, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 24, TargetLevel = 86, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 207, TargetLevel = 87, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[5] = new fclSkillParam_t { Param = 100, TargetLevel = 88, Type = 1 };
+
+            // Affinities
+            datAisyo.tbl[id][0] = 100;
+            datAisyo.tbl[id][1] = 100;
+            datAisyo.tbl[id][2] = 1048676;
+            datAisyo.tbl[id][3] = 1048676;
+            datAisyo.tbl[id][4] = 100;
+            datAisyo.tbl[id][6] = 65536;
+            datAisyo.tbl[id][7] = 65536;
+            datAisyo.tbl[id][8] = 65536;
+            datAisyo.tbl[id][9] = 65536;
+            datAisyo.tbl[id][10] = 65536;
+
+            mdlFileDefTable.devilModelFileTable[id] = mdlFileDefTable.devilModelFileTable[321];
+            mdlFileDefTable.devilOnModelFileTable[id] = mdlFileDefTable.devilOnModelFileTable[321];
+            mdlFileDefTable.devilModelIndex[id] = mdlFileDefTable.devilModelIndex[321];
+            mdlFileDefTable.devilOnModelIndex[id] = mdlFileDefTable.devilOnModelIndex[321];
+
+            mdlFileDefTable.devilModelIndex[id].major = 6;
+            mdlFileDefTable.devilModelIndex[id].minor = 321;
+            mdlFileDefTable.devilModelIndex[id].scale = 4096;
+            mdlFileDefTable.devilModelIndex[id].radius = 1000;
+
+            datDevilVisual05.tbl_5_0A0_0BF[26] = CopyDevilVisual(datDevilVisual10.tbl_10_140_15F[1]);
+            datDevilVisual05.tbl_5_0A0_0BF[26].formscale = 1f;
+
+            datMotionSeTable.tbl[id] = 321;
+
+            datDevilNegoFormat.tbl[id] = datDevilNegoFormat.tbl[133];
+        }
+
         private static void TamLin(ushort id)
         {
-            datDevilFormat.tbl[id].aisyoid = (short)id;
-
             datDevilFormat.tbl[id].flag = 3;
             datDevilFormat.tbl[id].race = 26;
             datDevilFormat.tbl[id].level = 27;
@@ -7816,7 +8311,7 @@ namespace NocturneInsaniax
             mdlFileDefTable.devilModelIndex[id].scale = 4096;
             mdlFileDefTable.devilModelIndex[id].radius = 1000;
 
-            datDevilVisual07.tbl_7_0E0_0FF[0] = datDevilVisual04.tbl_4_080_09F[19];
+            datDevilVisual07.tbl_7_0E0_0FF[0] = CopyDevilVisual(datDevilVisual04.tbl_4_080_09F[19]);
             datDevilVisual07.tbl_7_0E0_0FF[0].formscale = 1f;
 
             datDevilNegoFormat.tbl[id] = datDevilNegoFormat.tbl[147];
@@ -7824,8 +8319,6 @@ namespace NocturneInsaniax
 
         private static void Doppelganger(ushort id)
         {
-            datDevilFormat.tbl[id].aisyoid = (short)id;
-
             datDevilFormat.tbl[id].flag = 128;
             datDevilFormat.tbl[id].race = 23;
             datDevilFormat.tbl[id].level = 60;
@@ -7838,12 +8331,13 @@ namespace NocturneInsaniax
 
             tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 0, 2, 2, 2, 2 };
 
-            tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 69, TargetLevel = 0, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 63, TargetLevel = 0, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[2] = new fclSkillParam_t { Param = 196, TargetLevel = 61, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 68, TargetLevel = 62, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 345, TargetLevel = 63, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[5] = new fclSkillParam_t { Param = 26, TargetLevel = 64, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 69, TargetLevel = 0, Type = 1 }; // Makarakarn
+            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 63, TargetLevel = 0, Type = 1 }; // Tentarafoo
+            tblSkill.fclSkillTbl[id].Event[2] = new fclSkillParam_t { Param = 196, TargetLevel = 0, Type = 1 }; // Hell Gaze
+            tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 345, TargetLevel = 61, Type = 1 }; // Endure
+            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 68, TargetLevel = 62, Type = 1 }; // Tetraja
+            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 366, TargetLevel = 63, Type = 1 }; // Abyssal Mask
+            tblSkill.fclSkillTbl[id].Event[5] = new fclSkillParam_t { Param = 26, TargetLevel = 64, Type = 1 }; // Megidola
 
             // Affinities
             datAisyo.tbl[id][0] = 131072; // Phys
@@ -7867,14 +8361,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].dropmakka = 512;
 
             // Enemy Skills
-            datDevilFormat.tbl[id].skill[0] = 103; // Brutal Slash
-            datDevilFormat.tbl[id].skill[1] = 182; // Shock
-            datDevilFormat.tbl[id].skill[2] = 30; // Mahama
-            datDevilFormat.tbl[id].skill[3] = 64; // Tarukaja
-            datDevilFormat.tbl[id].skill[4] = 205; // Taunt
-            datDevilFormat.tbl[id].skill[5] = 219; // Rage
-            datDevilFormat.tbl[id].skill[6] = 305; // Counter
-            datDevilFormat.tbl[id].skill[7] = 366; // Abyssal Mask
+            datDevilFormat.tbl[id].skill[0] = 69; // Makarakarn
+            datDevilFormat.tbl[id].skill[1] = 63; // Tentarafoo
+            datDevilFormat.tbl[id].skill[2] = 196; // Hell Gaze
+            datDevilFormat.tbl[id].skill[3] = 219; // Rage
+            datDevilFormat.tbl[id].skill[4] = 345; // Endure
+            datDevilFormat.tbl[id].skill[5] = 366; // Abyssal Mask
 
 
             mdlFileDefTable.devilModelFileTable[id].texFile = "";
@@ -7894,7 +8386,7 @@ namespace NocturneInsaniax
             mdlFileDefTable.devilModelIndex[id].scale = 4096;
             mdlFileDefTable.devilModelIndex[id].radius = 1000;
 
-            datDevilVisual07.tbl_7_0E0_0FF[1] = datHuman.datHumanVisual[0];
+            datDevilVisual07.tbl_7_0E0_0FF[1] = CopyDevilVisual(datHuman.datHumanVisual[0]);
             datDevilVisual07.tbl_7_0E0_0FF[1].formscale = 1f;
         }
 
@@ -8872,10 +9364,69 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].dropmakka = 0;
         }
 
+        private static void BossFlauros(int id)
+        {
+            datDevilFormat.tbl[id].flag = 547;
+            datDevilFormat.tbl[id].race = 12;
+            datDevilFormat.tbl[id].level = 50;
+            datDevilFormat.tbl[id].aisyoid = (short)id;
+            datDevilFormat.tbl[id].param = new sbyte[] { 30, 0, 16, 30, 18, 16 };
+            datDevilFormat.tbl[id].keisyotype = 1;
+            datDevilFormat.tbl[id].keisyoform = 2523;
+
+            datDevilName.txt[id] = "フラロウス";
+
+            // Affinities
+            datAisyo.tbl[id][0] = 100; // Phys
+            datAisyo.tbl[id][1] = 65536; // Fire
+            datAisyo.tbl[id][2] = 100; // Ice
+            datAisyo.tbl[id][3] = 100; // Elec
+            datAisyo.tbl[id][4] = 100; // Force
+            datAisyo.tbl[id][6] = 100; // Light
+            datAisyo.tbl[id][7] = 131072; // Dark
+            datAisyo.tbl[id][8] = 100; // Curse
+            datAisyo.tbl[id][9] = 2147483798; // Nerve
+            datAisyo.tbl[id][10] = 100; // Mind
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 10000;
+            datDevilFormat.tbl[id].maxhp = 10000;
+            datDevilFormat.tbl[id].mp = 10000;
+            datDevilFormat.tbl[id].maxmp = 10000;
+
+            datDevilFormat.tbl[id].dropexp = 4000;
+            datDevilFormat.tbl[id].dropmakka = 10000;
+
+            // Display Skill
+            datDevilFormat.tbl[id].skill[0] = 64;
+            datDevilFormat.tbl[id].skill[1] = 33;
+            datDevilFormat.tbl[id].skill[2] = 108;
+            datDevilFormat.tbl[id].skill[3] = 126;
+            datDevilFormat.tbl[id].skill[4] = 435;
+            datDevilFormat.tbl[id].skill[5] = 299;
+            datDevilFormat.tbl[id].skill[6] = 306;
+            datDevilFormat.tbl[id].skill[7] = 309;
+
+            mdlFileDefTable.devilModelFileTable[id] = mdlFileDefTable.devilModelFileTable[69];
+            mdlFileDefTable.devilOnModelFileTable[id] = mdlFileDefTable.devilOnModelFileTable[69];
+            mdlFileDefTable.devilModelIndex[id] = mdlFileDefTable.devilModelIndex[69];
+            mdlFileDefTable.devilOnModelIndex[id] = mdlFileDefTable.devilOnModelIndex[69];
+
+            mdlFileDefTable.devilModelIndex[id].major = 6;
+            mdlFileDefTable.devilModelIndex[id].minor = 69;
+            mdlFileDefTable.devilModelIndex[id].scale = 4096;
+            mdlFileDefTable.devilModelIndex[id].radius = 1000;
+
+            datDevilVisual11.tbl_11_160_17F[10] = CopyDevilVisual(datDevilVisual02.tbl_2_040_05F[5]);
+            datDevilVisual11.tbl_11_160_17F[10].formscale = 1.6f;
+
+            datMotionSeTable.tbl[id] = 69;
+
+            //datDevilNegoFormat.tbl[id] = datDevilNegoFormat.tbl[69];
+        }
+
         private static void YHVH(ushort id)
         {
-            datDevilFormat.tbl[id].aisyoid = (short)id;
-
             datDevilFormat.tbl[id].flag = 563;
             datDevilFormat.tbl[id].race = 36;
             //datDevilFormat.tbl[id].level = 90;
@@ -8898,10 +9449,6 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][8] = 50; // Curse
             datAisyo.tbl[id][9] = 50; // Nerve
             datAisyo.tbl[id][10] = 50; // Mind
-
-            //tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 0, 4, 4, 4, 4 };
-
-            //tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 2, TargetLevel = 0, Type = 1 }; // Agilao
 
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 60000;
@@ -8946,15 +9493,15 @@ namespace NocturneInsaniax
             yhvhVisual.motion = new datUnitMotion_s[] {
                 new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
                 new datUnitMotion_s{ motion_no= 1, movetype= 0, actframe= 40, se_no= 3, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
-                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 60, se_no= 5, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 }, //Scorn
-                new datUnitMotion_s{ motion_no= 9, movetype= 0, actframe= 33, se_no= 9, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 40 }, //Infinite Power
-                new datUnitMotion_s{ motion_no= 5, movetype= 0, actframe= 37, se_no= 3, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 140, movey= 0, movez= 210, bframe= 0, hframe= 30 }, //Supernova
-                new datUnitMotion_s{ motion_no= 8, movetype= 1, actframe= 38, se_no= 4, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 20 }, //Rampage
-                new datUnitMotion_s{ motion_no= 10, movetype= 1, actframe= 30, se_no= 8, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 }, //Planned Chaos
-                new datUnitMotion_s{ motion_no= 18, movetype= 1, actframe= 31, se_no= 11, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 }, //Mouth Of God
-                new datUnitMotion_s{ motion_no= 3, movetype= 1, actframe= 37, se_no= 10, se_endtype= 0, se_endframe= -1, motionsp= 0.8f, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 25 }, //Crush
-                new datUnitMotion_s{ motion_no= 9, movetype= 0, actframe= 33, se_no= 10, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 40 }, //Unending Curse
-                new datUnitMotion_s{ motion_no= 9, movetype= 0, actframe= 33, se_no= 12, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 40 }, //Divine Harmony
+                new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 60, se_no= 5, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 }, // Scorn
+                new datUnitMotion_s{ motion_no= 9, movetype= 0, actframe= 33, se_no= 9, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 40 }, // Infinite Power
+                new datUnitMotion_s{ motion_no= 5, movetype= 0, actframe= 37, se_no= 3, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 140, movey= 0, movez= 210, bframe= 0, hframe= 30 }, // Supernova
+                new datUnitMotion_s{ motion_no= 8, movetype= 1, actframe= 38, se_no= 4, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 20 }, // Rampage
+                new datUnitMotion_s{ motion_no= 10, movetype= 1, actframe= 30, se_no= 8, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 }, // Planned Chaos
+                new datUnitMotion_s{ motion_no= 18, movetype= 1, actframe= 31, se_no= 11, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 }, // Mouth Of God
+                new datUnitMotion_s{ motion_no= 3, movetype= 1, actframe= 37, se_no= 10, se_endtype= 0, se_endframe= -1, motionsp= 0.8f, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 25 }, // Crush
+                new datUnitMotion_s{ motion_no= 9, movetype= 0, actframe= 33, se_no= 10, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 40 }, // Unending Curse
+                new datUnitMotion_s{ motion_no= 9, movetype= 0, actframe= 33, se_no= 12, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 40 }, // Divine Harmony
                 new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
                 new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },
                 new datUnitMotion_s{ motion_no= 0, movetype= 0, actframe= 40, se_no= -1, se_endtype= 0, se_endframe= -1, motionsp= 1, atarisize= 100, movey= 0, movez= 0, bframe= 0, hframe= 10 },

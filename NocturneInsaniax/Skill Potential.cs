@@ -88,7 +88,7 @@ namespace NocturneInsaniax
             new sbyte[] {2    , 0    , 0    , 0    , 0    , 0    , 4    , -5   , 0    , 0    , 0    , 0    , 0    , 2    , 2    , 0 }, // 066 Principality
             new sbyte[] {3    , 1    , -3   , 0    , 0    , 0    , 3    , -5   , 0    , 0    , 0    , 0    , 0    , 1    , 1    , 0 }, // 067 Archangel
             new sbyte[] {0    , 0    , 0    , -3   , 0    , 0    , 3    , -4   , 0    , 0    , 0    , 0    , 0    , 2    , 2    , 0 }, // 068 Angel
-            new sbyte[] {6    , 0    , 0    , 0    , 0    , 0    , 0    , 4    , -6   , -6   , -6   , 0    , 0    , 0    , 0    , 0 }, // 069 Flauros
+            new sbyte[] {6    , 4    , 0    , 0    , 0    , 0    , 0    , 4    , -6   , -6   , -6   , 0    , 0    , 0    , 0    , 0 }, // 069 Flauros
             new sbyte[] {0    , 3    , 0    , 0    , 0    , 3    , -4   , 3    , 0    , 0    , 5    , 3    , 0    , 0    , 0    , 0 }, // 070 Decarabia
             new sbyte[] {5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -4   , -4   , -4   , 0    , 0    , 0    , 3    , 0 }, // 071 Ose
             new sbyte[] {4    , 4    , -4   , 0    , 0    , 0    , 0    , 2    , 0    , 0    , 0    , 0    , 0    , -1   , 0    , 0 }, // 072 Berith
@@ -247,7 +247,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 222 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 223 
             new sbyte[] {4    , 0    , 0    , 3    , 0    , 0    , 3    , -3   , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 224 Tam Lin
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 225 
+            new sbyte[] {3    , 0    , 0    , 0    , 0    , 0    , -5   , 5    , 0    , 0    , 0    , 0    , 0    , -3   , 3    , 0 }, // 225 Doppelganger
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 226 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 227 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 228 
@@ -383,11 +383,11 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 355 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 356 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 357 
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 358 Boss Loa
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 359 Boss Virtue
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 360 Boss Power
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 361 Boss Legion
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 362 
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , -4   , 5    , 5    , 5    , 5    , 0    , 0    , 0    , 2    , 0 }, // 358 Boss Loa
+            new sbyte[] {0    , 0    , 0    , 4    , -5   , 0    , 4    , -5   , 0    , 0    , 0    , 0    , 0    , 2    , 2    , 0 }, // 359 Boss Virtue
+            new sbyte[] {4    , 0    , 0    , 0    , 0    , 0    , 4    , -6   , 0    , 0    , 0    , 0    , 0    , 1    , 1    , 0 }, // 360 Boss Power
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , -5   , 4    , 0    , 0    , 4    , 0    , 0    , -2   , 1    , 0 }, // 361 Boss Legion
+            new sbyte[] {6    , 4    , 0    , 0    , 0    , 0    , 0    , 4    , -6   , -6   , -6   , 0    , 0    , 0    , 0    , 0 }, // 362 Boss Flauros
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 363 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 364 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 365 
@@ -512,7 +512,7 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+4: Light • +2: Phys/Heal/Supp  <material=\"MsgFont1\">-5: Dark", // 066 Principality
             "  <material=\"MsgFont4\">+3: Phys/Light • +1: Fire/Heal/Supp  <material=\"MsgFont1\">-3: Ice • -5: Dark", // 067 Archangel
             "  <material=\"MsgFont4\">+3: Light • +2: Heal/Supp  <material=\"MsgFont1\">-3: Elec • -4: Dark", // 068 Angel
-            "  <material=\"MsgFont4\">+6: Phys • +4: Dark  <material=\"MsgFont1\">-6: Ailments", // 069 Flauros
+            "  <material=\"MsgFont4\">+6: Phys • +4: Fire/Dark  <material=\"MsgFont1\">-6: Ailments", // 069 Flauros
             "  <material=\"MsgFont4\">+5: Mind • +3: Fire/Almighty/Dark  <material=\"MsgFont1\">-4: Light", // 070 Decarabia
             "  <material=\"MsgFont4\">+5: Phys • +3: Supp  <material=\"MsgFont1\">-4: Ailments", // 071 Ose
             "  <material=\"MsgFont4\">+4: Phys/Fire • +2: Dark  <material=\"MsgFont1\">-1: Heal • -4: Ice", // 072 Berith
@@ -668,7 +668,7 @@ namespace NocturneInsaniax
             "", // 222 
             "", // 223 
             "  <material=\"MsgFont4\">+4: Phys • +3: Elec/Light • +2: Supp  <material=\"MsgFont1\">-3: Dark", // 224 Tam Lin
-            "", // 225 
+            "  <material=\"MsgFont4\">+5: Dark • +3: Phys/Supp  <material=\"MsgFont1\">-3: Heal • -5: Light", // 225 Doppelganger
             "", // 226 
             "", // 227 
             "", // 228 
@@ -805,7 +805,7 @@ namespace NocturneInsaniax
             "", // 359 Boss Virtue
             "", // 360 Boss Power
             "", // 361 Boss Legion
-            "", // 362 
+            "", // 362 Boss Flauros
             "", // 363 
             "", // 364 
             "", // 365 

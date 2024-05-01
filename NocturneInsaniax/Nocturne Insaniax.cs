@@ -1,14 +1,15 @@
 ﻿using HarmonyLib;
 using Il2Cpp;
 using Il2Cppbasic_H;
+using Il2Cppkernel_H;
 using Il2Cppnewbattle_H;
+using Il2Cppnewdata_H;
 using Il2CppTMPro;
 using MelonLoader;
 using MelonLoader.CoreClrUtils;
 using Newtonsoft.Json;
 using System.Runtime.InteropServices;
 using UnityEngine;
-using static Il2Cpp.nbActionProcess;
 
 [assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax", "0.8.0", "Zephhyr, Matthiew Purple")]
 [assembly: MelonGame("アトラス", "smt3hd")]
@@ -36,7 +37,7 @@ namespace NocturneInsaniax
             //var output = JsonConvert.SerializeObject(fclJunkShopTable.fclShopItemBoxTbl);
             //MelonLogger.Msg(output);
 
-            //var output = JsonConvert.SerializeObject(datDevilVisual02.tbl_2_040_05F[28].motion);
+            //var output = JsonConvert.SerializeObject(datDevilVisual11.tbl_11_160_17F);
             //MelonLogger.Msg(output);
 
             ApplySkillChanges();
@@ -116,13 +117,28 @@ namespace NocturneInsaniax
                         }
                     case "devil_0xe1":
                         {
-                            var demiModel = cmpModel.cmpDevilObj;
-                            demiModel.transform.position = new Vector3(-0.04f, -0.9f, -1.4f);
-                            demiModel.transform.eulerAngles = new Vector3(0f, 180f, 0);
+                            var doppelgangerModel = cmpModel.cmpDevilObj;
+                            doppelgangerModel.transform.position = new Vector3(-0.04f, -0.9f, -1.4f);
+                            doppelgangerModel.transform.eulerAngles = new Vector3(0f, 180f, 0);
                             break;
                         }
                     default: break;
                 }
+            }
+        }
+
+        [HarmonyPatch(typeof(fldMain), nameof(fldMain.fldFirstInit))]
+        private class fldFirstInitPatch
+        {
+            public static void Postfix()
+            {
+                MelonLogger.Msg("-fldMain.fldFirstInit-");
+                //var output = JsonConvert.SerializeObject(fldGlobal.fldHitData._fldItemBoxTbl);
+                //var output = JsonConvert.SerializeObject(fldGlobal.fldHitData._fldNpcUp);
+                //var output = JsonConvert.SerializeObject(fld_Npc.gfldTakaraWork);
+                //MelonLogger.Msg(output);
+
+                ApplyItemBoxChanges();
             }
         }
 
@@ -428,7 +444,7 @@ namespace NocturneInsaniax
         //    }
         //}
 
-
+        
 
 
 
@@ -505,26 +521,18 @@ namespace NocturneInsaniax
                     // -42.0961 14.5565 -33.3055
                     fld_Npc.fldItemBoxAdd(336, -4209.61f, -1455.65f, -3330.55f, new Vector4(0, 0, 0, 1)); // Add Item Box outside Ikebukuro
                 }
+                if (pFileName == "dds3data/fld/f/f020/f020_006") // Assembly of Nihilo Core
+                {
+                    // 1.9422 0 -2.6764
+                    // 0 45 0
+                    fld_Npc.fldItemBoxAdd(350, 194.22f, 0f, -267.64f, new Vector4(0, 45, 0, 1)); // Add Item Box in Nihilo Core
+                }
                 if (pFileName == "dds3data/fld/f/f027/f027_001") // Asakusa 1
                 {
                     // 4.0364 0.2 31.4621
-                    fld_Npc.fldItemBoxAdd(351, -403.64f, -20f, 3146.21f, new Vector4(0, 0, 0, 1)); // Add Item Box outside Ikebukuro
+                    fld_Npc.fldItemBoxAdd(351, -403.64f, -20f, 3146.21f, new Vector4(0, 0, 0, 1)); // Add Item Box in Asakusa
                 }
-            }
-        }
-
-        [HarmonyPatch(typeof(fldMain), nameof(fldMain.fldFirstInit))]
-        private class fldFirstInitPatch
-        {
-            public static void Postfix()
-            {
-                MelonLogger.Msg("-fldMain.fldFirstInit-");
-                //var output = JsonConvert.SerializeObject(fldGlobal.fldHitData._fldItemBoxTbl);
-                //var output = JsonConvert.SerializeObject(fldGlobal.fldHitData._fldNpcUp);
-                //var output = JsonConvert.SerializeObject(fld_Npc.gfldTakaraWork);
-                //MelonLogger.Msg(output);
-
-                ApplyItemBoxChanges();
+                
             }
         }
     }

@@ -133,7 +133,7 @@ namespace NocturneInsaniax
                 case 33: GinzaShiisaaEncounter(); return 1270;
                 case 34: GinzaShiisaaEncounter(); return 1270;
 
-                case 14: OverworldArchangelEncounter(); return 1270;
+                case 14: Overworld2ArchangelEncounter(); return 1270;
 
                 case 15: HarumiWarehouseChatterskullEncounter(); return 1270;
 
@@ -148,7 +148,7 @@ namespace NocturneInsaniax
                 case 129: UnderpassAmeNoUzumeEncounter(); return 1270;
                 case 130: UnderpassAmeNoUzumeEncounter(); return 1270;
 
-                case 22: OverworldUnicornEncounter(); return 1270;
+                case 22: Overworld3UnicornEncounter(); return 1270;
 
                 case 23: IkebukuroTakeMinakataEncounter(); return 1270;
                 case 24: IkebukuroTakeMinakataEncounter(); return 1270;
@@ -194,10 +194,13 @@ namespace NocturneInsaniax
                 case 64: IkebukuroTunnelSarasvatiEncounter(); return 1270;
                 case 65: IkebukuroTunnelSarasvatiEncounter(); return 1270;
 
-                //case 66: OverworldZhuqueEncounter(); return 1270;
-                case 66: OverworldZhuqueEncounter(); return 990;
+                case 66: Overworld4ZhuqueEncounter(); return 1270;
 
                 case 68: AsakusaValkyrieEncounter(); return 1270;
+
+                case 21: Overworld2VirtueEncounter(); return 1270;
+
+                case 46: BackOfNihiloBerithEligorEncounterEncounter(); return 1270;
 
                 // Labyrinth of Amala
 
@@ -275,7 +278,7 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].devil[1] = 33;
         }
 
-        private static void OverworldArchangelEncounter()
+        private static void Overworld2ArchangelEncounter()
         {
             datEncount.tbl[1270].devil[0] = 67;
             datEncount.tbl[1270].devil[1] = 67;
@@ -305,7 +308,7 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].devil[2] = 50;
         }
 
-        private static void OverworldUnicornEncounter()
+        private static void Overworld3UnicornEncounter()
         {
             datEncount.tbl[1270].maxcall = 8;
             datEncount.tbl[1270].maxparty = 3;
@@ -361,9 +364,10 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].devil[0] = 9;
         }
 
-        private static void OverworldZhuqueEncounter()
+        private static void Overworld4ZhuqueEncounter()
         {
-            datEncount.tbl[1270].devil[0] = 32;
+            //datEncount.tbl[1270].devil[0] = 32;
+            datEncount.tbl[1270].devil[0] = 362;
         }
 
         private static void AsakusaValkyrieEncounter()
@@ -373,6 +377,24 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].devil[0] = 0;
             datEncount.tbl[1270].devil[1] = 143;
             datEncount.tbl[1270].devil[2] = 0;
+        }
+
+        private static void Overworld2VirtueEncounter()
+        {
+            datEncount.tbl[1270].maxparty = 3;
+
+            datEncount.tbl[1270].devil[0] = 64;
+            datEncount.tbl[1270].devil[1] = 64;
+            datEncount.tbl[1270].devil[2] = 64;
+        }
+
+        private static void BackOfNihiloBerithEligorEncounterEncounter()
+        {
+            datEncount.tbl[1270].maxparty = 3;
+
+            datEncount.tbl[1270].devil[0] = 73;
+            datEncount.tbl[1270].devil[1] = 72;
+            datEncount.tbl[1270].devil[2] = 73;
         }
 
         // Labyrinth of Amala
@@ -446,9 +468,10 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].devil[0] = 93;
         }
 
-        private static void SecondKalpaHresvelgrEncounter()
+        private static void SecondKalpaDoppelgangerEncounter()
         {
-            datEncount.tbl[1270].devil[0] = 121;
+            datEncount.tbl[1270].devil[0] = 225;
+            datEncount.tbl[1270].btlsound = 16;
         }
 
         private static void FirstKalpaEncounter1()
@@ -504,7 +527,7 @@ namespace NocturneInsaniax
             if (random.Next(4) == 0)
                 SecondKalpaHellBikerEncounter();
             else
-                SecondKalpaHresvelgrEncounter();
+                SecondKalpaDoppelgangerEncounter();
         }
 
         //------------------------------------------------------------
@@ -540,12 +563,25 @@ namespace NocturneInsaniax
             datEncount.tbl[990].devil[0] = 225; // Ambush Cube Doppelganger
             datEncount.tbl[990].btlsound = 16;
 
-            //YHVH
+            // Boss Flauros
+            datEncount.tbl[1277].devil[0] = 362;
+            datEncount.tbl[1277].backattack = -1;
+            datEncount.tbl[1277].btlsound = 5;
+            datEncount.tbl[1277].flag = 13;
+            datEncount.tbl[1277].formationtype = 0;
+            datEncount.tbl[1277].areaid = 6;
+            datEncount.tbl[1277].stageid = 220;
+            datEncount.tbl[1277].maxcall = 0;
+            datEncount.tbl[1277].maxparty = 0;
+
+            // YHVH
             datEncount.tbl[1278].devil[0] = 254;
             datEncount.tbl[1278].backattack = -1;
             datEncount.tbl[1278].formationtype = 13;
             datEncount.tbl[1278].areaid = 2;
             datEncount.tbl[1278].stageid = 246;
+            datEncount.tbl[1278].maxcall = 0;
+            datEncount.tbl[1278].maxparty = 0;
         }
     }
 }

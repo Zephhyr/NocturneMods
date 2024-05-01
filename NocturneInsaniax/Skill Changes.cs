@@ -7,14 +7,13 @@ using Il2Cppresult2_H;
 using Il2Cppnewbattle_H;
 using Il2Cppeffect_H;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 namespace NocturneInsaniax
 {
     internal partial class NocturneInsaniax : MelonMod
     {
         public static int[] bossList = new int[] { 
-            256, 257, 262, 263, 266, 267, 268, 269, 294, 295, 296, 297, 300, 301, 302, 307, 308, 309, 312, 313, 339, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353
+            256, 257, 262, 263, 266, 267, 268, 269, 294, 295, 296, 297, 300, 301, 302, 307, 308, 309, 312, 313, 339, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 362
         };
         public static nbActionProcessData_t? actionProcessData;
 
@@ -407,6 +406,7 @@ namespace NocturneInsaniax
                     }
 
                     // Test - Add rigged demons to party
+                    dds3GlobalWork.DDS3_GBWK.maka = 4000;
                     //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 149).Count() == 0)
                     //{
                     //datCalc.datAddDevil(224, 0);

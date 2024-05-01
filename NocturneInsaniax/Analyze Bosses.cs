@@ -979,7 +979,7 @@ namespace NocturneInsaniax
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill09/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(269);
                             break;
                         default:
-                            if (actionProcessData.data.encno == 1270 || actionProcessData.data.encno == 1271)
+                            if (new int[]{ 1270, 1271, 1277, 1278 }.Contains(actionProcessData.data.encno))
                             {
                                 // Remove HP and MP info
                                 AnalyzeBossesUtility.DisplayHPMP(false);

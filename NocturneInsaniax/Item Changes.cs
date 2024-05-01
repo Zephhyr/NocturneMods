@@ -422,6 +422,15 @@ namespace NocturneInsaniax
             // Item Box surrounded by damage-floor near Ikebukuro
             fldGlobal.fldHitData._fldItemBoxTbl[236]._ItemNum = 10;
 
+            // Medicine Item Box in treasure room in Back of Nihilo
+            fldGlobal.fldHitData._fldItemBoxTbl[88]._ItemNum = 10;
+
+            // Bead Item Box in treasure room in Back of Nihilo
+            fldGlobal.fldHitData._fldItemBoxTbl[89]._ItemNum = 3;
+
+            // Tetraja Rock Item Box in treasure room in Back of Nihilo
+            fldGlobal.fldHitData._fldItemBoxTbl[80]._ItemNum = 3;
+
             // Great Chakra Item Box in First Kalpa
             fldGlobal.fldHitData._fldItemBoxTbl[256]._ItemID = 8;
 
@@ -434,7 +443,14 @@ namespace NocturneInsaniax
             // Great Chakra Item Box in Second Kalpa
             fldGlobal.fldHitData._fldItemBoxTbl[276]._ItemID = 8;
 
-            //YHVH Box
+            // Boss Flauros Box
+            fldGlobal.fldHitData._fldItemBoxTbl[350]._Type = 2;
+            fldGlobal.fldHitData._fldItemBoxTbl[350]._ItemID = 0;
+            fldGlobal.fldHitData._fldItemBoxTbl[350]._ItemNum = 0;
+            fldGlobal.fldHitData._fldItemBoxTbl[350]._Trap = 1;
+            fldGlobal.fldHitData._fldItemBoxTbl[350]._Param = 1277;
+
+            // YHVH Box
             fldGlobal.fldHitData._fldItemBoxTbl[351]._Type = 2;
             fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemID = 0;
             fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemNum = 0;

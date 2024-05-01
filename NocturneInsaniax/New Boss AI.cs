@@ -118,6 +118,7 @@ namespace NocturneInsaniax
                     case 200: NKEHellBikerAI(ref a, ref code, ref n); break;
                     case 201: NKEDaisoujouAI(ref a, ref code, ref n); break;
                     case 224: TamLinAI(ref a, ref code, ref n); break;
+                    case 225: DoppelgangerAI(ref a, ref code, ref n); break;
                     case 254: YHVHAI(ref a, ref code, ref n); break;
                     case 256: BossForneusAI(ref a, ref code, ref n); break;
                     case 261: ForcedKoppaTenguAI(ref a, ref code, ref n); break;
@@ -150,6 +151,7 @@ namespace NocturneInsaniax
                     case 350: BossHellBikerAI(ref a, ref code, ref n); break;
                     case 351: BossDaisoujouAI(ref a, ref code, ref n); break;
                     case 359: BossVirtueAI(ref a, ref code, ref n); break;
+                    case 362: BossFlaurosAI(ref a, ref code, ref n); break;
                     default: break;
                 }
                 MelonLogger.Msg("skill: " + a.work.nowindex);
@@ -638,6 +640,26 @@ namespace NocturneInsaniax
                     case 3: UseSkill(ref a, 30); break;
                     case 4: UseSkill(ref a, 64); break;
                     case 5: UseSkill(ref a, 205); break;
+                }
+            }
+        }
+
+        private static void DoppelgangerAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(219))
+            {
+                UseSkill(ref a, 219);
+            }
+            else
+            {
+                int randomValue = random.Next(5);
+                switch (randomValue)
+                {
+                    case 0: UseNormalAttack(ref a); break;
+                    case 1: UseNormalAttack(ref a); break;
+                    case 2: UseNormalAttack(ref a); break;
+                    case 3: UseSkill(ref a, 63); break;
+                    case 4: UseSkill(ref a, 196); break;
                 }
             }
         }
@@ -1654,6 +1676,31 @@ namespace NocturneInsaniax
             //    if (!tetrajaUp)
             //        UseSkill(ref a, 68);
             //}
+        }
+
+        private static void BossFlaurosAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (actionTrackers[a.work.id].currentBattleActionCount == 1)
+            {
+                UseSkill(ref a, 423); return;
+            }
+            else if (actionTrackers[a.work.id].currentBattleActionCount == 2)
+            {
+                UseSkill(ref a, 64); return;
+            }
+            else
+            {
+                int randomValue = random.Next(6);
+                switch (randomValue)
+                {
+                    case 0: UseNormalAttack(ref a); break;
+                    case 1: UseSkill(ref a, 64); break;
+                    case 2: UseSkill(ref a, 33); break;
+                    case 3: UseSkill(ref a, 108); break;
+                    case 4: UseSkill(ref a, 126); break;
+                    case 5: UseSkill(ref a, 435); break;
+                }
+            }
         }
 
         //------------------------------------------------------------
