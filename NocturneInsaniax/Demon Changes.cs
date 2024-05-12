@@ -9433,8 +9433,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].level = 1;
             datDevilFormat.tbl[id].aisyoid = (short)id;
             datDevilFormat.tbl[id].param = new sbyte[] { 40, 0, 40, 40, 40, 40 };
+            //datDevilFormat.tbl[id].param = new sbyte[] { 1, 0, 1, 1, 1, 1 };
             datDevilFormat.tbl[id].keisyotype = 5;
             datDevilFormat.tbl[id].keisyoform = 411;
+
+            datDevilAI.divTbls[1][126].scriptid = 133;
+            datDevilAI.divTbls[1][126].deadscriptid = 40;
 
             datDevilName.txt[id] = "ヤハウェ";
 
@@ -9451,7 +9455,8 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 50; // Mind
 
             // Enemy Stats
-            datDevilFormat.tbl[id].hp = 60000;
+            //datDevilFormat.tbl[id].hp = 60000;
+            datDevilFormat.tbl[id].hp = 1;
             datDevilFormat.tbl[id].maxhp = 60000;
             datDevilFormat.tbl[id].mp = 60000;
             datDevilFormat.tbl[id].maxmp = 60000;

@@ -366,8 +366,7 @@ namespace NocturneInsaniax
 
         private static void Overworld4ZhuqueEncounter()
         {
-            //datEncount.tbl[1270].devil[0] = 32;
-            datEncount.tbl[1270].devil[0] = 362;
+            datEncount.tbl[1270].devil[0] = 32;
         }
 
         private static void AsakusaValkyrieEncounter()

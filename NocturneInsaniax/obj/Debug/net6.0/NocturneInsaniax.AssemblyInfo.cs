@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NocturneInsaniax")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9b15ff605f4a0415d0e744e63d692637e2ac8304")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c8182c2fc29a7c881741633d2f94ac5a9a208cc3")]
 [assembly: System.Reflection.AssemblyProductAttribute("NocturneInsaniax")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NocturneInsaniax")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
