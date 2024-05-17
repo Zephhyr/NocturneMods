@@ -187,6 +187,7 @@ namespace NocturneInsaniax
 
                 var atkBuff = nbCalc.nbGetHojoRitu(sformindex, 4);
                 var defBuff = nbCalc.nbGetHojoRitu(dformindex, 7);
+                if (nskill == 475 && defBuff < 1) defBuff = 1; 
 
                 atkPow *= atkBuff * defBuff;
                 //defPow /= atkBuff * defBuff;
@@ -376,6 +377,7 @@ namespace NocturneInsaniax
                     var targetAgi = datCalc.datGetParam(workFromFormindex2, 4);
                     var targetLuk = datCalc.datGetParam(workFromFormindex2, 5);
                     var evasionBuff = nbCalc.nbGetHojoRitu(dformindex, 6);
+                    if (nskill == 475 && evasionBuff < 1) evasionBuff = 1;
 
                     var chance = ((datNormalSkill.tbl[nskill].hitlevel - datNormalSkill.tbl[nskill].failpoint) + (userLevel + (userAgi * 2) + userLuk) - (targetLevel + (targetAgi * 2) + targetLuk)) * accuracyBuff * evasionBuff;
                     if (workFromFormindex1.badstatus == 256)

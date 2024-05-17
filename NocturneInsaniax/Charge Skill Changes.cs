@@ -208,6 +208,17 @@ namespace NocturneInsaniax
                     else
                         nbHelpProcess.nbDispText("Decreased Physical/Magical Attack!", string.Empty, 2, 45, 2315190144, false);
                 }
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 10 && hojopoint == 1 && actionProcessData.work.nowindex == 473)
+                {
+                    var limitReached = true;
+                    if (currentUnitBuffs[4] >= -2 || currentUnitBuffs[5] >= -2)
+                        limitReached = false;
+
+                    if (limitReached)
+                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    else
+                        nbHelpProcess.nbDispText("Decreased Physical/Magical Attack!", string.Empty, 2, 45, 2315190144, false);
+                }
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 128 && hojopoint == 1 && actionProcessData.work.nowindex == 202)
                 {
                     var limitReached = true;

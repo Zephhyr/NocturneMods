@@ -831,7 +831,7 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 66;
             tblSkill.fclSkillTbl[id].Event[4].Param = 391; // Wooing
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 67;
-            tblSkill.fclSkillTbl[id].Event[5].Param = 428; // Defense Kuzushi
+            tblSkill.fclSkillTbl[id].Event[5].Param = 475; // Gungnir
             tblSkill.fclSkillTbl[id].Event[5].TargetLevel = 68;
             tblSkill.fclSkillTbl[id].Event[6].Param = 12; // Mabufudyne
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 69;
@@ -847,7 +847,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxmp = 360;
 
             // Enemy Skills
-            datDevilFormat.tbl[id].skill[1] = 428; // Defense Kuzushi
+            datDevilFormat.tbl[id].skill[1] = 475; // Gungnir
             datDevilFormat.tbl[id].skill[3] = 441; // Thunder Gods
             datDevilFormat.tbl[id].skill[5] = 18; // Maziodyne
 
@@ -871,7 +871,7 @@ namespace NocturneInsaniax
             datDevilAI.divTbls[0][4].aitable[1][2].ritu = 30;
             datDevilAI.divTbls[0][4].aitable[1][3].skill = 18;
             datDevilAI.divTbls[0][4].aitable[1][3].ritu = 30;
-            datDevilAI.divTbls[0][4].aitable[1][4].skill = 428;
+            datDevilAI.divTbls[0][4].aitable[1][4].skill = 475;
             datDevilAI.divTbls[0][4].aitable[1][4].ritu = 20;
 
             datDevilAI.divTbls[0][4].aitable[2][0].skill = 9;
@@ -2703,6 +2703,9 @@ namespace NocturneInsaniax
 
         private static void PyroJack(ushort id)
         {
+            // Skills
+            tblSkill.fclSkillTbl[id].Event[5].Param = 473; // Jack Agilao
+
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 222;
             datDevilFormat.tbl[id].maxhp = 222;
@@ -2710,13 +2713,13 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxmp = 116;
 
             // Enemy Skills
-            datDevilFormat.tbl[id].skill[0] = 2;
+            datDevilFormat.tbl[id].skill[0] = 473;
             datDevilFormat.tbl[id].skill[1] = 4;
             datDevilFormat.tbl[id].skill[2] = 96;
             datDevilFormat.tbl[id].skill[3] = 209;
 
             // AI
-            datDevilAI.divTbls[0][58].aitable[0][0].skill = 2;
+            datDevilAI.divTbls[0][58].aitable[0][0].skill = 473;
             datDevilAI.divTbls[0][58].aitable[0][0].ritu = 40;
             datDevilAI.divTbls[0][58].aitable[0][1].skill = 4;
             datDevilAI.divTbls[0][58].aitable[0][1].ritu = 30;
@@ -2725,7 +2728,7 @@ namespace NocturneInsaniax
             datDevilAI.divTbls[0][58].aitable[0][3].skill = 209;
             datDevilAI.divTbls[0][58].aitable[0][3].ritu = 15;
 
-            datDevilAI.divTbls[0][58].aitable[1][0].skill = 2;
+            datDevilAI.divTbls[0][58].aitable[1][0].skill = 473;
             datDevilAI.divTbls[0][58].aitable[1][0].ritu = 40;
             datDevilAI.divTbls[0][58].aitable[1][1].skill = 4;
             datDevilAI.divTbls[0][58].aitable[1][1].ritu = 30;
@@ -6570,10 +6573,10 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][0] = 50; // Phys
 
             // Skills
-            tblSkill.fclSkillTbl[id].Event[3].Param = 21; // Zandyne
-            tblSkill.fclSkillTbl[id].Event[4].Param = 21; // Zandyne
-            tblSkill.fclSkillTbl[id].Event[5].Param = 426; // Sakura Rage
-            tblSkill.fclSkillTbl[id].Event[6].Param = 426; // Sakura Rage
+            tblSkill.fclSkillTbl[id].Event[3].Param = 426; // Sakura Rage
+            tblSkill.fclSkillTbl[id].Event[4].Param = 426; // Sakura Rage
+            tblSkill.fclSkillTbl[id].Event[5].Param = 474; // Gae Bolg
+            tblSkill.fclSkillTbl[id].Event[6].Param = 474; // Gae Bolg
             tblSkill.fclSkillTbl[id].Event[7].Param = 362; // Phys Boost
             tblSkill.fclSkillTbl[id].Event[8].Param = 362; // Phys Boost
             tblSkill.fclSkillTbl[id].Event[9].Param = 304; // Attack All

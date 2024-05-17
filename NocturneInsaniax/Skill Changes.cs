@@ -112,6 +112,10 @@ namespace NocturneInsaniax
                     case 470: __result = "Tandava"; return false;
                     case 471: __result = "Chaturbhuja"; return false;
                     case 472: __result = "Kusanagi"; return false;
+                    case 473: __result = "Jack Agilao"; return false;
+                    case 474: __result = "Gae Bolg"; return false;
+                    case 475: __result = "Gungnir"; return false;
+
                     case 498: __result = "Scorn"; return false;
                     case 499: __result = "Crush"; return false;
                     case 500: __result = "Rampage"; return false;
@@ -277,7 +281,7 @@ namespace NocturneInsaniax
                     case 461: __result = "Low Force damage to random foes."; return false; // Storm Gale
                     case 462: __result = "High Strength-based Force damage \nto all foes."; return false; // Winged Fury
                     case 463: __result = "Low Ice damage to one foe. \nLowers target's Defense."; return false; // Jack Bufu
-                    case 464: __result = "Slight HP recovery for the party."; return false; // Humble Blessing
+                    case 464: __result = "Slight HP recovery \nfor the party. \n(Cannot be used outside of battle)"; return false; // Humble Blessing
                     case 465: __result = "Massive Physical damage to one foe. \nHigh critical rate."; return false; // Rend
                     case 466: __result = "Massive Ice damage to one foe. \nLowers target's Defense."; return false; // Jack Bufudyne
                     case 467: __result = "High Physical damage to all foes. \nLowers targets' Attack/Defense/Evasion/Hit Rate."; return false; // Divine Light
@@ -286,7 +290,9 @@ namespace NocturneInsaniax
                     case 470: __result = "Massive Almighty damage to all foes. \nMinimizes targets' Defense."; return false; // Tandava
                     case 471: __result = "Massive Strength-based Almighty damage \nto random foes."; return false; // Chaturbhuja
                     case 472: __result = "High Strength-based Force damage \nto one foe. \nDamage relative to HP."; return false; // Kusanagi
-
+                    case 473: __result = "Medium Fire damage to one foe. \nLowers target's Physical/Magical Attack."; return false; // Jack Agilao
+                    case 474: __result = "High Strength-based Force damage \nto one foe. \nDamage relative to HP.  \nHigh critical rate."; return false; // Gae Bolg
+                    case 475: __result = "High Physical damage to one foe. \nDamage relative to HP.  \nIgnores target's -kaja effects"; return false; // Gungnir
                     default: return true;
                 }
             }
@@ -412,7 +418,7 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(224, 0);
                     //datCalc.datAddDevil(143, 0);
                     //datCalc.datAddDevil(31, 0);
-                    //datCalc.datAddDevil(43, 0);
+                    //datCalc.datAddDevil(58, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 224)) // Tam Lin
                     //{
                     //    work.skill[3] = 206;
@@ -1095,6 +1101,21 @@ namespace NocturneInsaniax
             StormGale(461);
             WingedFury(462);
 
+            JackBufu(463);
+            HumbleBlessing(464);
+            Rend(465);
+            JackBufudyne(466);
+            DivineLight(467);
+            Niflheim(468);
+            Mjolnir(469);
+            Tandava(470);
+            Chaturbhuja(471);
+            Kusanagi(472);
+            JackAgilao(473);
+            GaeBolg(474);
+            Gungnir(475);
+
+            // YHVH Skills
             Scorn(498);
             Crush(499);
             Rampage(500);
@@ -1109,17 +1130,6 @@ namespace NocturneInsaniax
             InfinitePower(509);
             UnendingCurse(510);
             DivineHarmony(511);
-
-            JackBufu(463);
-            HumbleBlessing(464);
-            Rend(465);
-            JackBufudyne(466);
-            DivineLight(467);
-            Niflheim(468);
-            Mjolnir(469);
-            Tandava(470);
-            Chaturbhuja(471);
-            Kusanagi(472);
 
             // Passive Skills
             Might(11);
@@ -2133,6 +2143,53 @@ namespace NocturneInsaniax
             OverWriteSkillEffect(id, 98, 189);
         }
 
+        private static void Gungnir(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 16;
+            datSkill.tbl[id].skillattr = 0;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 18;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 1;
+            datNormalSkill.tbl[id].criticalpoint = 20;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 20;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 52;
+            datNormalSkill.tbl[id].hptype = 6;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 107);
+        }
+
         // Fire Skills
 
         private static void Agi(ushort id)
@@ -2374,6 +2431,53 @@ namespace NocturneInsaniax
             var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
             skillLevel.SkillID = id;
             skillLevel.Level = 12;
+        }
+
+        private static void JackAgilao(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 512;
+            datSkill.tbl[id].skillattr = 1;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 10;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 1;
+            datNormalSkill.tbl[id].hojotype = 10;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 45;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 18;
+            datNormalSkill.tbl[id].magiclimit = 222;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 2);
         }
 
         // Ice Skills
@@ -3479,6 +3583,55 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
             datNormalSkill.tbl[id].hpn = 52;
+            datNormalSkill.tbl[id].hptype = 6;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 20;
+            datNormalSkill.tbl[id].magiclimit = 220;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 106, 21);
+            datNormalSkillVisual.tbl[id].bedno = datNormalSkillVisual.tbl[21].bedno;
+            datNormalSkillVisual.tbl[id].hatudo = datNormalSkillVisual.tbl[21].hatudo;
+        }
+
+        private static void GaeBolg(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 512;
+            datSkill.tbl[id].skillattr = 4;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 16;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 1;
+            datNormalSkill.tbl[id].criticalpoint = 40;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 10;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 50;
             datNormalSkill.tbl[id].hptype = 6;
             datNormalSkill.tbl[id].koukatype = 0;
             datNormalSkill.tbl[id].magicbase = 20;
