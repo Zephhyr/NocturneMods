@@ -962,13 +962,20 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
 
             // Enemy Stats
-            datDevilFormat.tbl[id].hp = 2400;
-            datDevilFormat.tbl[id].maxhp = 2400;
+            datDevilFormat.tbl[id].hp = 2000;
+            datDevilFormat.tbl[id].maxhp = 2000;
             datDevilFormat.tbl[id].mp = 640;
             datDevilFormat.tbl[id].maxmp = 640;
 
+            datDevilFormat.tbl[id].dropexp = 1000;
+            datDevilFormat.tbl[id].dropmakka = 5000;
+
             // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 30; // Mahama
             datDevilFormat.tbl[id].skill[1] = 193; // Violet Flash
+            datDevilFormat.tbl[id].skill[2] = 40; // Mediarama
+            datDevilFormat.tbl[id].skill[3] = 226; // Gathering
+            datDevilFormat.tbl[id].skill[4] = 366; // Abyssal Mask
         }
 
         private static void Lakshmi(ushort id)
@@ -6565,6 +6572,23 @@ namespace NocturneInsaniax
 
             // Skills
             tblSkill.fclSkillTbl[id].Event[3].Param = 21; // Zandyne
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 2200;
+            datDevilFormat.tbl[id].maxhp = 2200;
+            datDevilFormat.tbl[id].mp = 640;
+            datDevilFormat.tbl[id].maxmp = 640;
+
+            datDevilFormat.tbl[id].dropexp = 1000;
+            datDevilFormat.tbl[id].dropmakka = 5000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 21; // Zandyne
+            datDevilFormat.tbl[id].skill[1] = 193; // Violet Flash
+            datDevilFormat.tbl[id].skill[2] = 204; // Fog Breath
+            datDevilFormat.tbl[id].skill[3] = 226; // Gathering
+            datDevilFormat.tbl[id].skill[4] = 312; // Force Boost
+            datDevilFormat.tbl[id].skill[5] = 366; // Abyssal Mask
         }
 
         private static void CuChulainn(ushort id)

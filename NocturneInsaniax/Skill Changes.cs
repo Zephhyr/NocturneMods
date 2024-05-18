@@ -228,7 +228,21 @@ namespace NocturneInsaniax
                     case 357: __result = "Attacks ignore all resistances \nexcept Repel."; return false; // Pierce
                     case 360: __result = "Protects against ailments and instakills \n& Survive a fatal blow with 1 HP \nremaining once per battle."; return false; // Raidou Endure/Never Yield
                     case 361: __result = "Pierce & raises damage of all attacks by 30%."; return false; // Raidou the Eternal/Son's Oath
-                    
+
+                    case 385: __result = "Invite a demon to join. \nEffective when speaker is adult \nand target is female."; return false; // Scout
+                    case 386: __result = "Invite a demon to join. \nEffective when speaker is older \nthan target."; return false; // Kidnap
+                    case 387: __result = "Invite a demon to join. \nEffective when speaker is female \nand target is male."; return false; // Seduce
+                    case 388: __result = "Invite a demon to join. \nEffective when speaker is much higher \nlevel than target."; return false; // Brainwash
+                    case 390: __result = "Invite a demon to join. \nEffective during new Kagutsuchi."; return false; // Dark Pledge
+                    case 391: __result = "Invite a demon to join. \nEffective when speaker is young male \nor old female and target \nis young female."; return false; // Wooing
+                    case 392: __result = "Invite a demon to join. \nEffective when speaker is much lower \nlevel than target."; return false; // Beseech
+                    case 393: __result = "Invite a demon to join in Odin's name. \nEffective when target is male."; return false; // Soul Recruit
+                    case 394: __result = "Invite a demon to join using sex appeal. \nEffective when speaker is male \nand target is female."; return false; // Mischief
+
+                    case 396: __result = "Ask for Macca and items."; return false; // Plead
+                    case 397: __result = "Ask for Macca and items. \nEffective when speaker is much lower \nlevel than target."; return false; // Begging
+                    case 398: __result = "Ask for Macca and items. \nEffective when speaker is much higher \nlevel than target."; return false; // Threaten
+
                     // New Skills
                     case 188: __result = "Light: Chance to instakill one foe."; return false; // Punishment
                     case 189: __result = "Light: Chance to instakill all foes."; return false; // Judgement Light
@@ -417,8 +431,8 @@ namespace NocturneInsaniax
                     //{
                     //datCalc.datAddDevil(224, 0);
                     //datCalc.datAddDevil(143, 0);
-                    //datCalc.datAddDevil(31, 0);
-                    //datCalc.datAddDevil(58, 0);
+                    //datCalc.datAddDevil(4, 0);
+                    //datCalc.datAddDevil(147, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 224)) // Tam Lin
                     //{
                     //    work.skill[3] = 206;

@@ -202,6 +202,15 @@ namespace NocturneInsaniax
 
                 case 46: BackOfNihiloBerithEligorEncounterEncounter(); return 1270;
 
+                case 71: Overworld5HorusEncounter(); return 1270;
+
+                case 166: ObeliskKuramaTenguEncounter(); return 1270;
+                case 72: ObeliskKuramaTenguEncounter(); return 1270;
+                case 73: ObeliskKuramaTenguEncounter(); return 1270;
+                case 74: ObeliskKuramaTenguEncounter(); return 1270;
+                case 75: ObeliskKuramaTenguEncounter(); return 1270;
+                case 76: ObeliskKuramaTenguEncounter(); return 1270;
+
                 // Labyrinth of Amala
 
                 case 173: FirstKalpaEncounter1(); return 1270; // First rooms
@@ -394,6 +403,24 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].devil[0] = 73;
             datEncount.tbl[1270].devil[1] = 72;
             datEncount.tbl[1270].devil[2] = 73;
+        }
+
+        private static void Overworld5HorusEncounter()
+        {
+            datEncount.tbl[1270].maxparty = 3;
+
+            datEncount.tbl[1270].devil[0] = 0;
+            datEncount.tbl[1270].devil[1] = 6;
+            datEncount.tbl[1270].devil[2] = 0;
+        }
+
+        private static void ObeliskKuramaTenguEncounter()
+        {
+            datEncount.tbl[1270].maxparty = 3;
+
+            datEncount.tbl[1270].devil[0] = 0;
+            datEncount.tbl[1270].devil[1] = 145;
+            datEncount.tbl[1270].devil[2] = 0;
         }
 
         // Labyrinth of Amala

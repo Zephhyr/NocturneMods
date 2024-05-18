@@ -99,6 +99,7 @@ namespace NocturneInsaniax
                 MelonLogger.Msg("-Action Starts-");
                 switch (a.work.id)
                 {
+                    case 6: HorusAI(ref a, ref code, ref n); break;
                     case 9: SarasvatiAI(ref a, ref code, ref n); break;
                     case 11: AmeNoUzumeAI(ref a, ref code, ref n); break;
                     case 20: KikuriHimeAI(ref a, ref code, ref n); break;
@@ -112,6 +113,7 @@ namespace NocturneInsaniax
                     case 108: BaphometAI(ref a, ref code, ref n); break;
                     case 124: NKENueAI(ref a, ref code, ref n); break;
                     case 143: ValkyrieAI(ref a, ref code, ref n); break;
+                    case 145: KuramaTenguAI(ref a, ref code, ref n); break;
                     case 149: XuanwuAI(ref a, ref code, ref n); break;
                     case 151: MakamiAI(ref a, ref code, ref n); break;
                     case 199: NKEMatadorAI(ref a, ref code, ref n); break;
@@ -155,6 +157,48 @@ namespace NocturneInsaniax
                     default: break;
                 }
                 MelonLogger.Msg("skill: " + a.work.nowindex);
+            }
+        }
+
+        private static void HorusAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(220) &&
+                nbMainProcess.nbGetMainProcessData().enemypcnt == 1)
+            {
+                UseSkill(ref a, 220);
+            }
+            else if (actionTrackers[a.work.id].currentBattleTurnCount == 1)
+            {
+                UseSummonSkill(ref a, 226, (ushort)(64 + random.Next(2)));
+            }
+            else if (actionTrackers[a.work.id].currentBattleTurnCount != 1 &&
+                nbMainProcess.nbGetMainProcessData().enemypcnt == 1)
+            {
+                UseSummonSkill(ref a, 226, (ushort) (64 + random.Next(2)));
+            }
+            else if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.hp != 0).Any())
+            {
+                int randomValue = random.Next(5);
+                switch (randomValue)
+                {
+                    case 0: UseNormalAttack(ref a); break;
+                    case 1: UseSkill(ref a, 30); break;
+                    case 2: UseSkill(ref a, 193); break;
+                    case 3: UseSkill(ref a, 40); break;
+                    case 4: UseSkill(ref a, 40); break;
+                }
+            }
+            else
+            {
+                int randomValue = random.Next(5);
+                switch (randomValue)
+                {
+                    case 0: UseNormalAttack(ref a); break;
+                    case 1: UseSkill(ref a, 30); break;
+                    case 2: UseSkill(ref a, 30); break;
+                    case 3: UseSkill(ref a, 193); break;
+                    case 4: UseSkill(ref a, 193); break;
+                }
             }
         }
 
@@ -441,6 +485,40 @@ namespace NocturneInsaniax
                     case 2: UseSkill(ref a, 109); break;
                     case 3: UseSkill(ref a, 2); break;
                     case 4: UseSkill(ref a, 2); break;
+                }
+            }
+        }
+
+        private static void KuramaTenguAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(277) &&
+                nbMainProcess.nbGetMainProcessData().enemypcnt == 1)
+            {
+                UseSkill(ref a, 277);
+            }
+            else if (actionTrackers[a.work.id].currentBattleTurnCount == 1)
+            {
+                UseSummonSkill(ref a, 226, 48);
+            }
+            else if (actionTrackers[a.work.id].currentBattleTurnCount != 1 &&
+                nbMainProcess.nbGetMainProcessData().enemypcnt == 1)
+            {
+                UseSummonSkill(ref a, 226, 48);
+            }
+            else
+            {
+                int randomValue = random.Next(9);
+                switch (randomValue)
+                {
+                    case 0: UseNormalAttack(ref a); break;
+                    case 1: UseSkill(ref a, 21); break;
+                    case 2: UseSkill(ref a, 21); break;
+                    case 3: UseSkill(ref a, 21); break;
+                    case 4: UseSkill(ref a, 193); break;
+                    case 5: UseSkill(ref a, 193); break;
+                    case 6: UseSkill(ref a, 193); break;
+                    case 7: UseSkill(ref a, 204); break;
+                    case 8: UseSkill(ref a, 204); break;
                 }
             }
         }

@@ -320,7 +320,7 @@ namespace NocturneInsaniax
                     if (limitReached)
                         nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
                     else
-                        nbHelpProcess.nbDispText("Decreased Evasion/Defense!", string.Empty, 2, 45, 2315190144, false);
+                        nbHelpProcess.nbDispText("Decreased Defense/Evasion!", string.Empty, 2, 45, 2315190144, false);
                 }
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 160 && hojopoint == 1 && actionProcessData.work.nowindex == 468)
                 {
@@ -337,7 +337,7 @@ namespace NocturneInsaniax
                     if (limitReached)
                         nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
                     else
-                        nbHelpProcess.nbDispText("Decreased Evasion/Defense!", string.Empty, 2, 45, 2315190144, false);
+                        nbHelpProcess.nbDispText("Decreased Defense/Evasion!", string.Empty, 2, 45, 2315190144, false);
                 }
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 682 && hojopoint == 1 && actionProcessData.work.nowindex == 453)
                 {

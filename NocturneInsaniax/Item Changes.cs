@@ -34,6 +34,7 @@ namespace NocturneInsaniax
                     case 60: __result = "Concentrate Rock"; return false;
                     case 62: __result = "Cursed Gospel"; return false;
                     case 63: __result = "Impel Stone"; return false;
+                    case 107: __result = "Malachite"; return false;
                     default: return true;
                 }
             }
@@ -60,9 +61,10 @@ namespace NocturneInsaniax
                     case 59: __result = "More than doubles damage \nof next Physical attack."; return false; // Focus Rock
                     case 60: __result = "More than doubles damage \nof next Magical attack."; return false; // Concentrate Rock
                     case 62: __result = "Demi-fiend earns enough \nEXP to level up but \nloses one level."; return false; // Cursed Gospel
-                    case 63: __result = "Grants four flashing \nturn icons. \n(Limit: 1)"; return false; // Impel Rock
+                    case 63: __result = "Grants four flashing \nturn icons. \n(Limit: 1)"; return false; // Impel Stone
                     case 76: __result = "Healing-type Magatama"; return false; // Geis
                     case 86: __result = "Physical-type Magatama"; return false; // Gaea
+                    case 107: __result = "A beautiful gemstone that symbolizes earth."; return false; // Malachite
                     default: return true;
                 }
             }
@@ -361,12 +363,12 @@ namespace NocturneInsaniax
             fclRagShopTable.fclRagItemTbl[20].Rate[2].Nums = 1;
 
             fclRagShopTable.fclRagItemTbl[21].ItemID = 86;
-            fclRagShopTable.fclRagItemTbl[21].Rate[0].ItemID = 99;
-            fclRagShopTable.fclRagItemTbl[21].Rate[0].Nums = 2;
+            fclRagShopTable.fclRagItemTbl[21].Rate[0].ItemID = 96;
+            fclRagShopTable.fclRagItemTbl[21].Rate[0].Nums = 3;
             fclRagShopTable.fclRagItemTbl[21].Rate[1].ItemID = 101;
             fclRagShopTable.fclRagItemTbl[21].Rate[1].Nums = 3;
-            fclRagShopTable.fclRagItemTbl[21].Rate[2].ItemID = 105;
-            fclRagShopTable.fclRagItemTbl[21].Rate[2].Nums = 4;
+            fclRagShopTable.fclRagItemTbl[21].Rate[2].ItemID = 107;
+            fclRagShopTable.fclRagItemTbl[21].Rate[2].Nums = 1;
         }
 
         //------------------------------------------------------------
@@ -430,6 +432,54 @@ namespace NocturneInsaniax
 
             // Tetraja Rock Item Box in treasure room in Back of Nihilo
             fldGlobal.fldHitData._fldItemBoxTbl[80]._ItemNum = 3;
+
+            // Life Stone Item Box outside the Obelisk
+            fldGlobal.fldHitData._fldItemBoxTbl[238]._ItemNum = 10;
+
+            // Macca Item Box outside the Obelisk
+            fldGlobal.fldHitData._fldItemBoxTbl[170]._Param = 20000;
+
+            // Concentrate Rock Item Box in Obelisk
+            fldGlobal.fldHitData._fldItemBoxTbl[118]._ItemID = 60;
+            fldGlobal.fldHitData._fldItemBoxTbl[118]._ItemNum = 3;
+
+            // Chakra Drop Item Box in Obelisk
+            fldGlobal.fldHitData._fldItemBoxTbl[120]._ItemNum = 5;
+
+            // Dekunda Rock Item Box in Obelisk
+            fldGlobal.fldHitData._fldItemBoxTbl[122]._ItemID = 33;
+            fldGlobal.fldHitData._fldItemBoxTbl[122]._ItemNum = 3;
+
+            // Dekaja Rock Item Box in Obelisk
+            fldGlobal.fldHitData._fldItemBoxTbl[123]._ItemNum = 3;
+
+            // Macca Item Box in Obelisk
+            fldGlobal.fldHitData._fldItemBoxTbl[127]._Param = 18000;
+
+            // Bead Item Box in Obelisk
+            fldGlobal.fldHitData._fldItemBoxTbl[129]._ItemID = 4;
+            fldGlobal.fldHitData._fldItemBoxTbl[129]._ItemNum = 2;
+
+            // Great Chakra Item Box in Obelisk
+            fldGlobal.fldHitData._fldItemBoxTbl[134]._ItemID = 8;
+
+            // Dekunda Rock Item Box in Obelisk Treasure Room
+            fldGlobal.fldHitData._fldItemBoxTbl[166]._ItemID = 33;
+            fldGlobal.fldHitData._fldItemBoxTbl[166]._ItemNum = 10;
+
+            // Malachite Item Box in Obelisk Treasure Room
+            fldGlobal.fldHitData._fldItemBoxTbl[135]._ItemID = 107;
+
+            // Eternal Spyglass Item Box in Obelisk Treasure Room
+            fldGlobal.fldHitData._fldItemBoxTbl[136]._Trap = 0;
+            fldGlobal.fldHitData._fldItemBoxTbl[136]._ItemID = 46;
+            fldGlobal.fldHitData._fldItemBoxTbl[136]._ItemNum = 1;
+
+            // Dekunda Rock Item Box in Obelisk Treasure Room
+            fldGlobal.fldHitData._fldItemBoxTbl[137]._ItemID = 36;
+            fldGlobal.fldHitData._fldItemBoxTbl[137]._ItemNum = 10;
+
+
 
             // Great Chakra Item Box in First Kalpa
             fldGlobal.fldHitData._fldItemBoxTbl[256]._ItemID = 8;
