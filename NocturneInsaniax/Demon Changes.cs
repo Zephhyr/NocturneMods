@@ -9,6 +9,7 @@ using Il2Cppeffect_H;
 using UnityEngine;
 using Il2Cppmodel_H;
 using static UnityEngine.GraphicsBuffer;
+using static Il2Cpp.TextManager;
 
 namespace NocturneInsaniax
 {
@@ -3623,15 +3624,15 @@ namespace NocturneInsaniax
 
         private static void Naga(ushort id)
         {
-            // Skills
-            tblSkill.fclSkillTbl[id].Event[3].Param = 204; // Fog Breath
-            tblSkill.fclSkillTbl[id].Event[4].Param = 302; // Drain Attack
-
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 444;
             datDevilFormat.tbl[id].maxhp = 444;
             datDevilFormat.tbl[id].mp = 144;
             datDevilFormat.tbl[id].maxmp = 144;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[3] = 204; // Fog Breath
+            datDevilFormat.tbl[id].skill[4] = 302; // Drain Attack
 
             // AI
             datDevilAI.divTbls[0][79].aitable[0][0].skill = 64;
