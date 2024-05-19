@@ -3598,16 +3598,16 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][9] = 100; // Nerve
             datAisyo.tbl[id][10] = 100; // Mind
 
-            // Skills
-            tblSkill.fclSkillTbl[id].Event[2].Param = 11; // Mabufula
-            tblSkill.fclSkillTbl[id].Event[3].Param = 67; // Makakaja
-            tblSkill.fclSkillTbl[id].Event[4].Param = 69; // Makarakarn
-
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 564;
             datDevilFormat.tbl[id].maxhp = 564;
             datDevilFormat.tbl[id].mp = 188;
             datDevilFormat.tbl[id].maxmp = 188;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[2] = 11; // Mabufula
+            datDevilFormat.tbl[id].skill[3] = 67; // Makakaja
+            datDevilFormat.tbl[id].skill[4] = 69; // Makarakarn
 
             // AI
             datDevilAI.divTbls[0][78].aitable[0][0].skill = 98;
