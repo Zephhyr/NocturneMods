@@ -64,7 +64,7 @@ namespace NocturneInsaniax
                     case 63: __result = "Grants four flashing \nturn icons. \n(Limit: 1)"; return false; // Impel Stone
                     case 76: __result = "Healing-type Magatama"; return false; // Geis
                     case 86: __result = "Physical-type Magatama"; return false; // Gaea
-                    case 107: __result = "A beautiful gemstone that symbolizes earth."; return false; // Malachite
+                    case 107: __result = "A beautiful gemstone \nthat symbolizes \nearth."; return false; // Malachite
                     default: return true;
                 }
             }

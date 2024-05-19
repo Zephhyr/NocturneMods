@@ -205,6 +205,7 @@ namespace NocturneInsaniax
                 case 71: Overworld5HorusEncounter(); return 1270;
 
                 case 166: ObeliskKuramaTenguEncounter(); return 1270;
+                case 167: ObeliskKuramaTenguEncounter(); return 1270;
                 case 72: ObeliskKuramaTenguEncounter(); return 1270;
                 case 73: ObeliskKuramaTenguEncounter(); return 1270;
                 case 74: ObeliskKuramaTenguEncounter(); return 1270;
