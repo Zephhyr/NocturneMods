@@ -479,6 +479,9 @@ namespace NocturneInsaniax
             fldGlobal.fldHitData._fldItemBoxTbl[137]._ItemID = 36;
             fldGlobal.fldHitData._fldItemBoxTbl[137]._ItemNum = 10;
 
+            // Dekunda Rock Item Box in Obelisk Treasure Room
+            fldGlobal.fldHitData._fldItemBoxTbl[131]._ItemID = 10;
+
 
 
             // Great Chakra Item Box in First Kalpa
@@ -505,7 +508,7 @@ namespace NocturneInsaniax
             fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemID = 0;
             fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemNum = 0;
             fldGlobal.fldHitData._fldItemBoxTbl[351]._Trap = 1;
-            fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 1278;
+            fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 713;//1278;
 
             //fldGlobal.fldHitData._fldItemBoxTbl.Add(new fldTakaraTbl_t { _ItemID = 47, _ItemNum = 5 });
         }

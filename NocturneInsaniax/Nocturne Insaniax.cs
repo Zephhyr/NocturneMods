@@ -190,6 +190,15 @@ namespace NocturneInsaniax
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_21_E", "D225_MSEE1_21_E", (269287440 + 235929600), false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_24_E", "D225_MSEE1_24_E", (269352976 + 235929600), false);
 
+                // Not Slime
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D253_MSEFD_03", "D253_MSEFD_03", 533725184, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D253_MSEFD_04", "D253_MSEFD_04", 533790720, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D253_MSEFD_05", "D253_MSEFD_05", 533856256, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D253_MSEFD_08", "D253_MSEFD_08", 533921792, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D253_MSEFD_14", "D253_MSEFD_14", 92602368, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D253_MSEFD_15", "D253_MSEFD_15", 92602369, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D253_MSEFD_23", "D253_MSEFD_23", 408158208, false);
+
                 // YHVH
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D254_MSEFE_01", "D254_MSEFE_01", 534839296, false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D254_MSEFE_03", "D254_MSEFE_03", 534970368, false);
@@ -258,6 +267,16 @@ namespace NocturneInsaniax
                 doppelgangerKeys.Add("D225_MSEE1_24_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_24_E", diff = true });
                 SndAssetBundleManager.SEBundleTable.Add("dvl0xe1", doppelgangerKeys);
 
+                var notSlimeKeys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
+                notSlimeKeys.Add("D253_MSEFD_03", new SndAssetBundleManager.SndData { key = "dvl0xfd", path = 4, id = 0, name = "D253_MSEFD_03", diff = true });
+                notSlimeKeys.Add("D253_MSEFD_04", new SndAssetBundleManager.SndData { key = "dvl0xfd", path = 4, id = 0, name = "D253_MSEFD_04", diff = true });
+                notSlimeKeys.Add("D253_MSEFD_05", new SndAssetBundleManager.SndData { key = "dvl0xfd", path = 4, id = 0, name = "D253_MSEFD_05", diff = true });
+                notSlimeKeys.Add("D253_MSEFD_08", new SndAssetBundleManager.SndData { key = "dvl0xfd", path = 4, id = 0, name = "D253_MSEFD_08", diff = true });
+                notSlimeKeys.Add("D253_MSEFD_14", new SndAssetBundleManager.SndData { key = "dvl0xfd", path = 4, id = 0, name = "D253_MSEFD_14", diff = true });
+                notSlimeKeys.Add("D253_MSEFD_15", new SndAssetBundleManager.SndData { key = "dvl0xfd", path = 4, id = 0, name = "D253_MSEFD_15", diff = true });
+                notSlimeKeys.Add("D253_MSEFD_23", new SndAssetBundleManager.SndData { key = "dvl0xfd", path = 4, id = 0, name = "D253_MSEFD_23", diff = true });
+                SndAssetBundleManager.SEBundleTable.Add("dvl0xfd", notSlimeKeys);
+
                 var yhvhKeys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
                 yhvhKeys.Add("D254_MSEFE_01", new SndAssetBundleManager.SndData { key = "dvl0xfe", path = 4, id = 0, name = "D254_MSEFE_01", diff = true });
                 yhvhKeys.Add("D254_MSEFE_03", new SndAssetBundleManager.SndData { key = "dvl0xfe", path = 4, id = 0, name = "D254_MSEFE_03", diff = true });
@@ -316,15 +335,12 @@ namespace NocturneInsaniax
         //    public static void Postfix()
         //    {
         //        MelonLogger.Msg("--SndAssetBundleManager.LoadKeysMSE--");
-        //        //MelonLogger.Msg("DF keys");
-        //        //for (int i = 0; i <= 25; i++)
-        //        //    MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(0, i));
-        //        //MelonLogger.Msg("Dop keys");
-        //        //for (int i = 0; i <= 25; i++)
-        //        //    MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(225, i));
-        //        //MelonLogger.Msg("YHVH keys");
-        //        //for (int i = 0; i <= 25; i++)
-        //        //    MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(254, i));
+        //        MelonLogger.Msg("BO keys");
+        //        for (int i = 0; i <= 25; i++)
+        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(133, i));
+        //        MelonLogger.Msg("Dop keys");
+        //        for (int i = 0; i <= 25; i++)
+        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(253, i));
         //    }
         //}
 

@@ -56,8 +56,8 @@ namespace NocturneInsaniax
                 //    encno = 1278;
                 //    return;
                 //}
-                //if (true)
-                if (evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0 && random.Next(2) == 0)
+                if (true)
+                //if (evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0 && random.Next(2) == 0)
                 {
                     encno = NewKagutsuchiEncounter(encno, encpackno);
                 }
@@ -206,6 +206,8 @@ namespace NocturneInsaniax
 
                 case 166: ObeliskKuramaTenguEncounter(); return 1270;
                 case 167: ObeliskKuramaTenguEncounter(); return 1270;
+                case 168: ObeliskKuramaTenguEncounter(); return 1270;
+                case 169: ObeliskKuramaTenguEncounter(); return 1270;
                 case 72: ObeliskKuramaTenguEncounter(); return 1270;
                 case 73: ObeliskKuramaTenguEncounter(); return 1270;
                 case 74: ObeliskKuramaTenguEncounter(); return 1270;
@@ -567,7 +569,10 @@ namespace NocturneInsaniax
             datEncount.tbl[14].flag = 11; // Boss Forneus
             datEncount.tbl[20].maxparty = 7; // Boss Specter 1
             datEncount.tbl[85].flag = 11; // Boss Thor 1
-            datEncount.tbl[1033].flag = 11; // Boss Raidou/Dante 1
+            datEncount.tbl[268].flag = 11; // Boss Clotho
+            datEncount.tbl[269].flag = 11; // Boss Lachesis
+            datEncount.tbl[270].flag = 11; // Boss Atropos
+            datEncount.tbl[271].flag = 11; // Boss Moirae Sisters
 
             datEncount.tbl[144].maxparty = 6; // Forced Incubus + Koppa Tengu
             datEncount.tbl[144].maxcall = 0;
@@ -586,6 +591,11 @@ namespace NocturneInsaniax
 
             datEncount.tbl[193].maxcall = 1; // Forced Naga
             datEncount.tbl[193].maxparty = 2;
+
+            datEncount.tbl[713].maxparty = 5; // Boss Mara
+            datEncount.tbl[713].devil[0] = 0;
+            datEncount.tbl[713].devil[1] = 0;
+            datEncount.tbl[713].devil[2] = 321;
 
             datEncount.tbl[990].devil[0] = 225; // Ambush Cube Doppelganger
             datEncount.tbl[990].btlsound = 16;

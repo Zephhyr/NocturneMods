@@ -200,14 +200,14 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , -4   , 5    , 5    , 5    , 5    , 0    , 0    , 0    , 2    , 0 }, // 176 Loa
             new sbyte[] {3    , 0    , -4   , 0    , 0    , 0    , -4   , 3    , 3    , 3    , 3    , 0    , 0    , -2   , 1    , 0 }, // 177 Chatterskull
             new sbyte[] {0    , 0    , 0    , 5    , -4   , 2    , -4   , 0    , 0    , 0    , 0    , 2    , 0    , -4   , 2    , 0 }, // 178 Phantom
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 179 
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 180 
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 181 
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 182 
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 183 
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 184 
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 185 
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 186 
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 179 Ose Hallel
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 180 Flaurose Hallel
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 181 Urthona
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 182 Urizen
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 183 Luvah
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 184 Tharmus
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 185 Specter
+            new sbyte[] {5    , 3    , -6   , 0    , 0    , 0    , 0    , 0    , 3    , 3    , 3    , 0    , 0    , 0    , 0    , 0 }, // 186 Mara
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 187 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 188 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 189 
@@ -276,7 +276,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 250 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 251 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 252 
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 253 
+            new sbyte[] {3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 1    , 0 }, // 253 Gamete
             new sbyte[] {9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 0    , 5    , 5    , 0 }, // 254 YHVH
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 255 
             new sbyte[] {0    , 0    , 4    , -5   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 256 Boss Forneus
@@ -293,9 +293,9 @@ namespace NocturneInsaniax
             new sbyte[] {2    , -7   , 6    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -2   , 2    , 0 }, // 267 Boss Sui-Ki
             new sbyte[] {2    , 0    , 0    , -7   , 6    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -2   , 2    , 0 }, // 268 Boss Fuu-Ki
             new sbyte[] {6    , 0    , 0    , 0    , 0    , 3    , -7   , 6    , 3    , 3    , 3    , 3    , 0    , -2   , 3    , 0 }, // 269 Boss Ongyo-Ki
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 270 Boss Clotho (Solo)
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 271 Boss Lachesis (Solo)
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 272 Boss Atropos (Solo)
+            new sbyte[] {-5   , 0    , 0    , 0    , 0    , 3    , 6    , 0    , 0    , 0    , 6    , 3    , 0    , 3    , 0    , 0 }, // 270 Boss Clotho (Solo)
+            new sbyte[] {-5   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 6    , 6    , 6    , 0    , 0    , 0    , 4    , 0 }, // 271 Boss Lachesis (Solo)
+            new sbyte[] {-5   , 6    , 6    , 6    , 6    , 4    , 0    , 0    , 0    , 0    , 0    , 4    , 0    , 0    , 0    , 0 }, // 272 Boss Atropos (Solo)
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 273 Boss Specter 2
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 274 Boss Girimekhala
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 275 Boss Specter 3
@@ -345,14 +345,14 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 1    , -3   , 0    , 1    , 1    , 1    , 1    , 0    , -3   , 0    , 0 }, // 318 Forced Will o' Wisp
             new sbyte[] {1    , -3   , -3   , -3   , -3   , 0    , -3   , 3    , 3    , 0    , 0    , 0    , 0    , -1   , 0    , 0 }, // 319 Forced Preta
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 320 Boss Bishamonten 1
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 321 Boss Mara
+            new sbyte[] {5    , 3    , -6   , 0    , 0    , 0    , 0    , 0    , 3    , 3    , 3    , 0    , 0    , 0    , 0    , 0 }, // 321 Boss Mara
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 322 Boss Bishamonten 2
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 323 Boss Jikokuten
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 324 Boss Koumokuten
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 325 Boss Zouchouten
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 326 Boss Clotho (Together)
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 327 Boss Lachesis (Together)
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 328 Boss Atropos (Together)
+            new sbyte[] {-5   , 0    , 0    , 0    , 0    , 3    , 6    , 0    , 0    , 0    , 6    , 3    , 0    , 3    , 0    , 0 }, // 326 Boss Clotho (Together)
+            new sbyte[] {-5   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 6    , 6    , 6    , 0    , 0    , 0    , 4    , 0 }, // 327 Boss Lachesis (Together)
+            new sbyte[] {-5   , 6    , 6    , 6    , 6    , 4    , 0    , 0    , 0    , 0    , 0    , 4    , 0    , 0    , 0    , 0 }, // 328 Boss Atropos (Together)
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 329 Boss Mitra
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 330 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 331 
@@ -427,7 +427,7 @@ namespace NocturneInsaniax
             new sbyte[] {3    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Nirvana
             new sbyte[] {5    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 2    , 2    , 2    , 0    , 0    , 0    , 0    , 0 }, // Murakumo
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 3    , 0 }, // Geis
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 5    , 5    , 5    , 0    , 0    , 0    , 5    , 0 }, // Djed
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 3    , 3    , 3    , 0    , 0    , 0    , 5    , 0 }, // Djed
             new sbyte[] {0    , 3    , 3    , 3    , 3    , 0    , 0    , 0    , 7    , 7    , 7    , 0    , 0    , 0    , 0    , 0 }, // Muspell
             new sbyte[] {0    , 7    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Gehenna
             new sbyte[] {7    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Kamurogi
@@ -622,14 +622,14 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+5: Dark/Ailments • +2: Supp  <material=\"MsgFont1\">-4: Light", // 176 Loa
             "  <material=\"MsgFont4\">+3: Phys/Dark/Ailments • +1: Supp  <material=\"MsgFont1\">-2: Heal • -4: Ice/Light", // 177 Chatterskull
             "  <material=\"MsgFont4\">+5: Elec • +2: Almighty/Supp  <material=\"MsgFont1\">-4: Force/Light/Heal", // 178 Phantom
-            "", // 179 
-            "", // 180 
-            "", // 181 
-            "", // 182 
-            "", // 183 
-            "", // 184 
-            "", // 185 
-            "", // 186 
+            "", // 179 Ose Hallel
+            "", // 180 Flauros Hallel
+            "", // 181 Urthona
+            "", // 182 Urizen
+            "", // 183 Luvah
+            "", // 184 Tharmus
+            "", // 185 Specter
+            "  <material=\"MsgFont4\">+5: Phys • +3: Fire/Ailments  <material=\"MsgFont1\">-6: Ice", // 186 Mara
             "", // 187 
             "", // 188 
             "", // 189 
@@ -853,8 +853,8 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+5: Phys/Force • +2: Ailments<material=\"MsgFont1\">", // 407 Murakumo
             "  <material=\"MsgFont4\">+5: Light • +3: Heal/Supp<material=\"MsgFont1\">", // 408 Geis
             "  <material=\"MsgFont4\">+5: Light • +3: Heal/Supp<material=\"MsgFont1\">", // 409 Geis
-            "  <material=\"MsgFont4\">+5: Ailments/Supp<material=\"MsgFont1\">", // 410 Djed
-            "  <material=\"MsgFont4\">+5: Ailments/Supp<material=\"MsgFont1\">", // 411 Djed
+            "  <material=\"MsgFont4\">+5: Supp • +3: Almighty/Ailments<material=\"MsgFont1\">", // 410 Djed
+            "  <material=\"MsgFont4\">+5: Supp • +3: Almighty/Ailments<material=\"MsgFont1\">", // 411 Djed
             "  <material=\"MsgFont4\">+7: Ailments • +3: Magic<material=\"MsgFont1\">", // 412 Muspell
             "  <material=\"MsgFont4\">+7: Ailments • +3: Magic<material=\"MsgFont1\">", // 413 Muspell
             "  <material=\"MsgFont4\">+7: Fire • +3: Dark<material=\"MsgFont1\">", // 414 Gehenna
@@ -912,8 +912,8 @@ namespace NocturneInsaniax
             "<material=\"MsgFont4\">+5: Phys/Force • +2: Ailments", // Murakumo
             "Imparts Healing magic\r\n<material=\"MsgFont2\">Null: Light\r\n" +
             "<material=\"MsgFont4\">+5: Light • +3: Heal/Supp", // Geis
-            "Imparts Support magic\r\n<material=\"MsgFont2\">Null: Curse\r\n" +
-            "<material=\"MsgFont4\">+5: Ailments/Supp", // Djed
+            "Imparts Support magic\r\n<material=\"MsgFont2\">Str: Ailments\r\n" +
+            "<material=\"MsgFont4\">+5: Supp • +3: Almighty/Ailments", // Djed
             "Imparts Ailment magic\r\n<material=\"MsgFont2\">Strong: Ailments\r\n" +
             "<material=\"MsgFont4\">+7: Ailments • +3: Magic", // Muspell
             "Imparts Fire magic\r\n<material=\"MsgFont2\">Drain: Fire<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ice\r\n" +
@@ -1018,6 +1018,8 @@ namespace NocturneInsaniax
                     __result = "Call Soldier";
                 if (id == 226 && (currentDemonID == 348))
                     __result = "Call Souls";
+                if (id == 252 && (currentDemonID == 321))
+                    __result = "Cursed Emission";
                 else if (id < 288 || id > 421) // If it isn't a passive skill
                 {
                     sbyte skillPotential = 0;
@@ -1186,6 +1188,11 @@ namespace NocturneInsaniax
                         if (healsHP)
                         {
                             __result = Convert.ToInt32(SkillPotentialUtility.ApplyHealMultiplier(skillPotential, __result));
+
+                            if (bossList.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id))
+                            {
+                                __result *= 2;
+                            }
                         }
                         else
                         {

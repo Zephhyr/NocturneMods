@@ -13,7 +13,8 @@ namespace NocturneInsaniax
     internal partial class NocturneInsaniax : MelonMod
     {
         public static int[] bossList = new int[] { 
-            256, 257, 262, 263, 266, 267, 268, 269, 294, 295, 296, 297, 300, 301, 302, 307, 308, 309, 312, 313, 339, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 362
+            256, 257, 262, 263, 266, 267, 268, 269, 270, 271, 272, 294, 295, 296, 297, 300, 301, 302, 307, 308, 309, 312, 313, 
+            321, 326, 327, 328, 339, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 362
         };
         public static nbActionProcessData_t? actionProcessData;
 
@@ -42,6 +43,7 @@ namespace NocturneInsaniax
                     case 202: __result = "Toxic Spray"; return false;           
                     case 219: __result = "Rage"; return false;           
                     case 220: __result = "Psycho Rage"; return false;
+                    case 252: __result = "Foul Gathering"; return false;
                     case 285: __result = "Babylon Goblet"; return false;
                     case 286: __result = "Death Lust"; return false;
 
@@ -159,6 +161,7 @@ namespace NocturneInsaniax
                     case 67: __result = "Raises party's \nMagical Attack/Hit Rate."; return false; // Makakaja
                     case 69: __result = "Repels Magical attacks \nfor one ally once \nnext turn."; return false; // Makarakarn
                     case 70: __result = "Repels Physical attacks \nfor one ally once \nnext turn."; return false; // Tetrakarn
+                    case 79: __result = "Medium Almighty damage to all foes. \nInstakills when poisoned."; return false; // Pestilence
                     case 90: __result = "Low Curse damage to one foe. \nMay inflict Poison."; return false; // Poison Arrow
                     case 101: __result = "Low Physical damage to all foes. \nDamage relative to HP."; return false; // Heat Wave
                     case 102: __result = "Medium Physical damage to all foes. \n May inflict Poison. \nDamage relative to HP."; return false; // Blight
@@ -1035,6 +1038,7 @@ namespace NocturneInsaniax
             WildDance(249);
             Domination(250);
 
+            FoulGathering(252);
             Apocalypse(253);
 
             FireOfSinai(257);
@@ -1910,7 +1914,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            OverWriteSkillEffect(id, 98, 281);
+            OverWriteSkillEffect(id, 98, 79);
             var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
             skillLevel.SkillID = id;
             skillLevel.Level = 11;
@@ -5660,6 +5664,20 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].mpn = 40;
             datNormalSkill.tbl[id].magicbase = 30;
             datNormalSkill.tbl[id].magiclimit = 32767;
+        }
+
+        private static void FoulGathering(ushort id)
+        {
+            nbCamera_SkillPtrTable.tbl[id] = new nbCameraSkillPtr_t
+            {
+                ptr_shot_1 = nbCamera_SkillPtrTable.tbl[208].ptr_shot_1,
+                ptr_shot_23 = nbCamera_SkillPtrTable.tbl[208].ptr_shot_23,
+                ptr_angleH = nbCamera_SkillPtrTable.tbl[208].ptr_angleH,
+                ptr_angleW = nbCamera_SkillPtrTable.tbl[208].ptr_angleW,
+                ptr_H = nbCamera_SkillPtrTable.tbl[208].ptr_H,
+                ptr_W = nbCamera_SkillPtrTable.tbl[208].ptr_W,
+                anim = nbCamera_SkillPtrTable.tbl[208].anim
+            };
         }
 
         private static void Apocalypse(ushort id)

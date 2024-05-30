@@ -24,7 +24,7 @@ namespace NocturneInsaniax
                 ushort id = nbMainProcess.nbGetUnitWorkFromFormindex(formindex).id;
 
                 // If an enemy (that shouldn't be able to run out of MP) is about to lose MP
-                if (formindex >= 4 && id >= 256 && !bossesWithMana.Contains(id) && type == 1 && n < 0) n = 0; // Makes it lose 0 MP
+                if (formindex >= 4 && bossList.Contains(id) && !bossesWithMana.Contains(id) && type == 1 && n < 0) n = 0; // Makes it lose 0 MP
             }
         }
     }

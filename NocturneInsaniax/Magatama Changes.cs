@@ -27,6 +27,7 @@ namespace NocturneInsaniax
             Nirvana(11);
             Murakumo(12);
             Geis(13);
+            Djed(14);
 
             Gehenna(16);
         }
@@ -212,7 +213,7 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 18;
             tblHearts.fclHeartsTbl[id].Skill[4].ID = 298;
             tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 23;
-            tblHearts.fclHeartsTbl[id].Skill[5].ID = 77;
+            tblHearts.fclHeartsTbl[id].Skill[5].ID = 57;
             tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 28;
         }
 
@@ -642,6 +643,60 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 56;
             tblHearts.fclHeartsTbl[id].Skill[6].ID = 350;
             tblHearts.fclHeartsTbl[id].Skill[6].TargetLevel = 50;
+        }
+
+        private static void Djed(ushort id)
+        {
+            // Affinities
+            datAisyo.tbl[410][0] = 100; // Phys
+            datAisyo.tbl[410][1] = 100; // Fire
+            datAisyo.tbl[410][2] = 100; // Ice
+            datAisyo.tbl[410][3] = 100; // Elec
+            datAisyo.tbl[410][4] = 100; // Force
+            datAisyo.tbl[410][6] = 100; // Light
+            datAisyo.tbl[410][7] = 100; // Dark
+            datAisyo.tbl[410][8] = 50; // Curse
+            datAisyo.tbl[410][9] = 50; // Nerve
+            datAisyo.tbl[410][10] = 50; // Mind
+
+            datAisyo.tbl[411][0] = 100; // Phys
+            datAisyo.tbl[411][1] = 100; // Fire
+            datAisyo.tbl[411][2] = 100; // Ice
+            datAisyo.tbl[411][3] = 100; // Elec
+            datAisyo.tbl[411][4] = 100; // Force
+            datAisyo.tbl[411][6] = 100; // Light
+            datAisyo.tbl[411][7] = 100; // Dark
+            datAisyo.tbl[411][8] = 50; // Curse
+            datAisyo.tbl[411][9] = 50; // Nerve
+            datAisyo.tbl[411][10] = 50; // Mind
+
+            // Stats
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 5; // Strength
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 5; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 2; // Magic
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 2; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 5; // Vitality
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 5; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 2; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 2; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 5; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 5; // Luck
+
+            // Skills
+            tblHearts.fclHeartsTbl[id].Skill[0].ID = 64;
+            tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 32;
+            tblHearts.fclHeartsTbl[id].Skill[1].ID = 65;
+            tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 35;
+            tblHearts.fclHeartsTbl[id].Skill[2].ID = 67;
+            tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 38;
+            tblHearts.fclHeartsTbl[id].Skill[3].ID = 66;
+            tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 41;
+            tblHearts.fclHeartsTbl[id].Skill[4].ID = 77;
+            tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 46;
+            tblHearts.fclHeartsTbl[id].Skill[5].ID = 25;
+            tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 60;
+            tblHearts.fclHeartsTbl[id].Skill[6].ID = 206;
+            tblHearts.fclHeartsTbl[id].Skill[6].TargetLevel = 72;
         }
 
         private static void Gehenna(ushort id)
