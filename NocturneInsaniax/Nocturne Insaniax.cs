@@ -124,6 +124,13 @@ namespace NocturneInsaniax
                             doppelgangerModel.transform.eulerAngles = new Vector3(0f, 180f, 0);
                             break;
                         }
+                    case "devil_0xe2":
+                        {
+                            var nightmareModel = cmpModel.cmpDevilObj;
+                            nightmareModel.transform.position = new Vector3(0.04f, -1.56f, 0.4f);
+                            nightmareModel.transform.eulerAngles = new Vector3(270f, 198f, 0);
+                            break;
+                        }
                     default: break;
                 }
             }
@@ -190,14 +197,23 @@ namespace NocturneInsaniax
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_21_E", "D225_MSEE1_21_E", (269287440 + 235929600), false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D225_MSEE1_24_E", "D225_MSEE1_24_E", (269352976 + 235929600), false);
 
-                // Not Slime
+                // Nightmare
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D226_MSEE2_03", "D226_MSEE2_03", 505413632, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D226_MSEE2_04", "D226_MSEE2_04", 505479168, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D226_MSEE2_05", "D226_MSEE2_05", 505544704, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D226_MSEE2_08", "D226_MSEE2_08", 505610240, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D226_MSEE2_14", "D226_MSEE2_14", 264830976, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D226_MSEE2_15", "D226_MSEE2_15", 264830977, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D226_MSEE2_23", "D226_MSEE2_23", 505675776, false);
+
+                // Gamete
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D253_MSEFD_03", "D253_MSEFD_03", 533725184, false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D253_MSEFD_04", "D253_MSEFD_04", 533790720, false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D253_MSEFD_05", "D253_MSEFD_05", 533856256, false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D253_MSEFD_08", "D253_MSEFD_08", 533921792, false);
-                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D253_MSEFD_14", "D253_MSEFD_14", 92602368, false);
-                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D253_MSEFD_15", "D253_MSEFD_15", 92602369, false);
-                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D253_MSEFD_23", "D253_MSEFD_23", 408158208, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D253_MSEFD_14", "D253_MSEFD_14", 218431488, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D253_MSEFD_15", "D253_MSEFD_15", 218431489, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D253_MSEFD_23", "D253_MSEFD_23", 533987328, false);
 
                 // YHVH
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D254_MSEFE_01", "D254_MSEFE_01", 534839296, false);
@@ -267,6 +283,16 @@ namespace NocturneInsaniax
                 doppelgangerKeys.Add("D225_MSEE1_24_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_24_E", diff = true });
                 SndAssetBundleManager.SEBundleTable.Add("dvl0xe1", doppelgangerKeys);
 
+                var nightmareKeys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
+                nightmareKeys.Add("D226_MSEE2_03", new SndAssetBundleManager.SndData { key = "dvl0xe2", path = 4, id = 0, name = "D226_MSEE2_03", diff = true });
+                nightmareKeys.Add("D226_MSEE2_04", new SndAssetBundleManager.SndData { key = "dvl0xe2", path = 4, id = 0, name = "D226_MSEE2_04", diff = true });
+                nightmareKeys.Add("D226_MSEE2_05", new SndAssetBundleManager.SndData { key = "dvl0xe2", path = 4, id = 0, name = "D226_MSEE2_05", diff = true });
+                nightmareKeys.Add("D226_MSEE2_08", new SndAssetBundleManager.SndData { key = "dvl0xe2", path = 4, id = 0, name = "D226_MSEE2_08", diff = true });
+                nightmareKeys.Add("D226_MSEE2_14", new SndAssetBundleManager.SndData { key = "dvl0xe2", path = 4, id = 0, name = "D226_MSEE2_14", diff = true });
+                nightmareKeys.Add("D226_MSEE2_15", new SndAssetBundleManager.SndData { key = "dvl0xe2", path = 4, id = 0, name = "D226_MSEE2_15", diff = true });
+                nightmareKeys.Add("D226_MSEE2_23", new SndAssetBundleManager.SndData { key = "dvl0xe2", path = 4, id = 0, name = "D226_MSEE2_23", diff = true });
+                SndAssetBundleManager.SEBundleTable.Add("dvl0xe2", nightmareKeys);
+
                 var notSlimeKeys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
                 notSlimeKeys.Add("D253_MSEFD_03", new SndAssetBundleManager.SndData { key = "dvl0xfd", path = 4, id = 0, name = "D253_MSEFD_03", diff = true });
                 notSlimeKeys.Add("D253_MSEFD_04", new SndAssetBundleManager.SndData { key = "dvl0xfd", path = 4, id = 0, name = "D253_MSEFD_04", diff = true });
@@ -301,11 +327,6 @@ namespace NocturneInsaniax
                 //        MelonLogger.Msg(sound.key + " - " + sound.value.name);
                 //    }
                 //}
-
-                //foreach (var sound in SndAssetBundleManager.VoiceBundleTable)
-                //{
-                //    MelonLogger.Msg(sound.key + " - " + sound.value.name);
-                //}
             }
         }
 
@@ -335,12 +356,12 @@ namespace NocturneInsaniax
         //    public static void Postfix()
         //    {
         //        MelonLogger.Msg("--SndAssetBundleManager.LoadKeysMSE--");
-        //        MelonLogger.Msg("BO keys");
+        //        MelonLogger.Msg("Kelpie keys");
         //        for (int i = 0; i <= 25; i++)
-        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(133, i));
-        //        MelonLogger.Msg("Dop keys");
+        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(57, i));
+        //        MelonLogger.Msg("Nightmare keys");
         //        for (int i = 0; i <= 25; i++)
-        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(253, i));
+        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(226, i));
         //    }
         //}
 

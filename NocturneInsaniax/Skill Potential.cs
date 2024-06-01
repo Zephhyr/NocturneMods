@@ -248,7 +248,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 223 
             new sbyte[] {4    , 0    , 0    , 3    , 0    , 0    , 3    , -3   , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 224 Tam Lin
             new sbyte[] {3    , 0    , 0    , 0    , 0    , 0    , -5   , 5    , 0    , 0    , 0    , 0    , 0    , -3   , 3    , 0 }, // 225 Doppelganger
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 226 
+            new sbyte[] {0    , 0    , 0    , 0    , 3    , 0    , -5   , 4    , 0    , 3    , 4    , 0    , 0    , 0    , 0    , 0 }, // 226 Nightmare
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 227 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 228 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 229 
@@ -669,7 +669,7 @@ namespace NocturneInsaniax
             "", // 223 
             "  <material=\"MsgFont4\">+4: Phys • +3: Elec/Light • +2: Supp  <material=\"MsgFont1\">-3: Dark", // 224 Tam Lin
             "  <material=\"MsgFont4\">+5: Dark • +3: Phys/Supp  <material=\"MsgFont1\">-3: Heal • -5: Light", // 225 Doppelganger
-            "", // 226 
+            "  <material=\"MsgFont4\">+4: Dark/Mind • +3: Force/Nerve  <material=\"MsgFont1\">-5: Light", // 226 Nightmare
             "", // 227 
             "", // 228 
             "", // 229 
@@ -1010,13 +1010,13 @@ namespace NocturneInsaniax
                     __result = "Rev Up";
                 if (id == 226 && (currentDemonID == 79))
                     __result = "Backup";
-                if (id == 226 && (currentDemonID == 345))
+                if ((id == 226 || id == 499) && (currentDemonID == 345))
                     __result = "Call Evil";
-                if (id == 226 && (currentDemonID == 346))
+                if ((id == 226 || id == 496) && (currentDemonID == 346))
                     __result = "Call Angel";
-                if (id == 226 && (currentDemonID == 347))
+                if ((id == 226 || id == 497) && (currentDemonID == 347))
                     __result = "Call Soldier";
-                if (id == 226 && (currentDemonID == 348))
+                if ((id == 226 || id == 498) && (currentDemonID == 348))
                     __result = "Call Souls";
                 if (id == 252 && (currentDemonID == 321))
                     __result = "Cursed Emission";

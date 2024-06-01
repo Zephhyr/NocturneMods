@@ -194,7 +194,7 @@ namespace NocturneInsaniax
                 case 64: IkebukuroTunnelSarasvatiEncounter(); return 1270;
                 case 65: IkebukuroTunnelSarasvatiEncounter(); return 1270;
 
-                case 66: Overworld4ZhuqueEncounter(); return 1270;
+                case 66: Overworld4ZhuqueEncounter(); return 713;
 
                 case 68: AsakusaValkyrieEncounter(); return 1270;
 
@@ -599,6 +599,10 @@ namespace NocturneInsaniax
 
             datEncount.tbl[990].devil[0] = 225; // Ambush Cube Doppelganger
             datEncount.tbl[990].btlsound = 16;
+
+            datEncount.tbl[653].devil[0] = 226; // Ambush Cube Nightmare
+            datEncount.tbl[653].devil[1] = 226;
+            datEncount.tbl[653].devil[2] = 226;
 
             // Boss Flauros
             datEncount.tbl[1277].devil[0] = 362;

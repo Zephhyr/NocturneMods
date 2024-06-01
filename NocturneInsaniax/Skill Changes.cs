@@ -26,6 +26,7 @@ namespace NocturneInsaniax
                 switch (id)
                 {            
                     // Vanilla Skills
+                    case 60: __result = "Lullaby"; return false;    
                     case 80: __result = "Muscle Drink"; return false;    
                     case 81: __result = "Life Stone"; return false;      
                     case 82: __result = "Chakra Drop"; return false;     
@@ -41,6 +42,7 @@ namespace NocturneInsaniax
                     case 143: __result = "Xeros Beat"; return false;      
                     case 179: __result = "Trisagion"; return false;      
                     case 202: __result = "Toxic Spray"; return false;           
+                    case 210: __result = "Dormina"; return false;           
                     case 219: __result = "Rage"; return false;           
                     case 220: __result = "Psycho Rage"; return false;
                     case 252: __result = "Foul Gathering"; return false;
@@ -432,39 +434,36 @@ namespace NocturneInsaniax
                     //dds3GlobalWork.DDS3_GBWK.maka = 4000;
                     //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 149).Count() == 0)
                     //{
-                    //datCalc.datAddDevil(224, 0);
-                    //datCalc.datAddDevil(143, 0);
+                    //datCalc.datAddDevil(57, 0);
+                    //datCalc.datAddDevil(226, 0);
                     //datCalc.datAddDevil(4, 0);
                     //datCalc.datAddDevil(147, 0);
-                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 224)) // Tam Lin
+                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
-                    //    work.skill[3] = 206;
-                    //    work.skill[4] = 459;
-                    //    work.skill[5] = 224;
-                    //    work.skill[6] = 191;
-                    //    work.skill[7] = 327;
+                    //    work.skill[0] = 192;
+                    //    work.skill[1] = 206;
+                    //    work.skill[2] = 459;
+                    //    work.skill[3] = 40;
+                    //    work.skill[4] = 456;
+                    //    work.skill[5] = 20;
+                    //    work.skill[6] = 312;
+                    //    work.skill[7] = 292;
                     //    work.skillcnt = 8;
                     //}
-                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 143)) // Valkyrie
+                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 167)) // Pisaca
                     //{
-                    //    work.skill[2] = 206;
-                    //    work.skill[3] = 459;
-                    //    work.skill[4] = 224;
-                    //    work.skill[5] = 191;
-                    //    work.skill[6] = 313;
-                    //    work.skill[7] = 327;
+                    //    work.skill[1] = 206;
+                    //    work.skill[2] = 459;
+                    //    work.skill[3] = 40;
+                    //    work.skill[4] = 456;
+                    //    work.skill[5] = 14;
+                    //    work.skill[6] = 311;
+                    //    work.skill[7] = 292;
                     //    work.skillcnt = 8;
                     //}
-                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 31)) // Senri
+                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 149)) // Xuanwu
                     //{
-                    //    work.skill[0] = 332;
-                    //    work.skill[1] = 44;
-                    //    work.skill[2] = 206;
-                    //    work.skill[3] = 459;
-                    //    work.skill[4] = 40;
-                    //    work.skill[5] = 191;
-                    //    work.skill[6] = 313;
-                    //    work.skill[7] = 324;
+                    //    work.skill[2] = 203;
                     //    work.skillcnt = 8;
                     //}
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 144)) // Arahabki
@@ -882,7 +881,7 @@ namespace NocturneInsaniax
             Dekaja(57);
 
             Shibaboo(59);
-            Dormina(60);
+            Lullaby(60);
             Pulinpa(61);
             MarinKarin(62);
             Tentarafoo(63);
@@ -1013,7 +1012,7 @@ namespace NocturneInsaniax
             DismalTune(207);
             SolNiger(208);
             StunGaze(209);
-            Lullaby(210);
+            Dormina(210);
             BindingCry(211);
             EternalRest(212);
             SonicWave(213);
@@ -4742,7 +4741,7 @@ namespace NocturneInsaniax
 
         // Mind Skills
 
-        private static void Dormina(ushort id)
+        private static void Lullaby(ushort id)
         {
             datNormalSkill.tbl[id].cost = 10;
         }
@@ -4772,7 +4771,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].badlevel = 25;
         }
 
-        private static void Lullaby(ushort id)
+        private static void Dormina(ushort id)
         {
             datNormalSkill.tbl[id].cost = 6;
             datNormalSkill.tbl[id].badlevel = 60;

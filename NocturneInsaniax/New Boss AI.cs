@@ -196,10 +196,12 @@ namespace NocturneInsaniax
                     case 339: BossDanteRaidou1AI(ref a, ref code, ref n); break;
                     case 346: BossWhiteRiderAI(ref a, ref code, ref n); break;
                     case 347: BossRedRiderAI(ref a, ref code, ref n); break;
+                    case 348: BossBlackRiderAI(ref a, ref code, ref n); break;
                     case 349: BossMatadorAI(ref a, ref code, ref n); break;
                     case 350: BossHellBikerAI(ref a, ref code, ref n); break;
                     case 351: BossDaisoujouAI(ref a, ref code, ref n); break;
                     case 359: BossVirtueAI(ref a, ref code, ref n); break;
+                    case 361: BossLegionAI(ref a, ref code, ref n); break;
                     case 362: BossFlaurosAI(ref a, ref code, ref n); break;
                     default: break;
                 }
@@ -2075,6 +2077,32 @@ namespace NocturneInsaniax
             }
         }
 
+        private static void BossBlackRiderAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            ushort currentHpPercent = BossCurrentHpPercent(ref a);
+            MelonLogger.Msg("Black Rider HP%: " + currentHpPercent);
+            MelonLogger.Msg("Black Rider HP: " + a.work.hp);
+
+            if (actionTrackers[a.work.id].extraTurns < 1)
+                UseSkill(ref a, 423);
+            else if (actionTrackers[a.work.id].currentBattleTurnCount == 1)
+            {
+                if (nbMainProcess.nbGetMainProcessData().enemypcnt < 3)
+                {
+                    UseSummonSkill(ref a, 226, 361);
+                }
+            }
+            else if (a.work.nowindex == 226)
+            {
+                if (!actionTrackers.ContainsKey(361))
+                    actionTrackers.Add(361, new ActionTracker());
+            }
+            else if (AllyPartyBuffed(1) && random.Next(3) == 0)
+                UseSkill(ref a, 57);
+            else if (a.work.nowindex == 27)
+                UseSkill(ref a, 26);
+        }
+
         private static void BossMatadorAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
             ushort currentHpPercent = BossCurrentHpPercent(ref a);
@@ -2267,6 +2295,14 @@ namespace NocturneInsaniax
             //    if (!tetrajaUp)
             //        UseSkill(ref a, 68);
             //}
+        }
+
+        private static void BossLegionAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (actionTrackers[a.work.id].currentBattleActionCount == 1)
+                UseSkill(ref a, 64);
+            else if (a.work.nowindex == 67)
+                UseSkill(ref a, 64);
         }
 
         private static void BossFlaurosAI(ref nbActionProcessData_t a, ref int code, ref int n)

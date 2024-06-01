@@ -178,7 +178,7 @@ namespace NocturneInsaniax
                 var maxhp = (double) workFromFormindex1.maxhp;
                 var currenthp = (double) (int) (workFromFormindex1.hp + (datCalc.datGetSkillCost(workFromFormindex1, nskill) * maxhp / 100));
                 double hpPercentage = (currenthp / maxhp);
-                double hpModifier = 0.5 + hpPercentage / 2;
+                double hpModifier = 0.5 + (hpPercentage / 2);
 
                 //double atkPow = workFromFormindex1.maxhp * waza * 0.8 / 69.6;
                 double atkPow = ((workFromFormindex1.level + datCalc.datGetParam(workFromFormindex1, 0)) * waza / 15) * hpModifier;
