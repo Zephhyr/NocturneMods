@@ -28,7 +28,7 @@ namespace NocturneInsaniax
             Murakumo(12);
             Geis(13);
             Djed(14);
-
+            Muspell(15);
             Gehenna(16);
         }
 
@@ -62,21 +62,21 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 2; // Luck
 
             // Skills
-            tblHearts.fclHeartsTbl[id].Skill[0].ID = 96;
+            tblHearts.fclHeartsTbl[id].Skill[0].ID = 96; // Lunge
             tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 2;
-            tblHearts.fclHeartsTbl[id].Skill[1].ID = 71;
+            tblHearts.fclHeartsTbl[id].Skill[1].ID = 71; // Analyze
             tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 3;
-            tblHearts.fclHeartsTbl[id].Skill[2].ID = 190;
+            tblHearts.fclHeartsTbl[id].Skill[2].ID = 190; // Deathtouch
             tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 4;
-            tblHearts.fclHeartsTbl[id].Skill[3].ID = 209;
+            tblHearts.fclHeartsTbl[id].Skill[3].ID = 209; // Stun Gaze
             tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 5;
-            tblHearts.fclHeartsTbl[id].Skill[4].ID = 98;
+            tblHearts.fclHeartsTbl[id].Skill[4].ID = 98; // Berserk
             tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 10;
-            tblHearts.fclHeartsTbl[id].Skill[5].ID = 305;
+            tblHearts.fclHeartsTbl[id].Skill[5].ID = 305; // Counter
             tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 14;
-            tblHearts.fclHeartsTbl[id].Skill[6].ID = 301;
+            tblHearts.fclHeartsTbl[id].Skill[6].ID = 301; // Dark Might
             tblHearts.fclHeartsTbl[id].Skill[6].TargetLevel = 18;
-            tblHearts.fclHeartsTbl[id].Skill[7].ID = 425;
+            tblHearts.fclHeartsTbl[id].Skill[7].ID = 425; // "Pierce"
             tblHearts.fclHeartsTbl[id].Skill[7].TargetLevel = 19;
         }
 
@@ -110,17 +110,17 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 4; // Magic
 
             // Skills
-            tblHearts.fclHeartsTbl[id].Skill[0].ID = 180;
+            tblHearts.fclHeartsTbl[id].Skill[0].ID = 180; // Ice Breath
             tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 7;
-            tblHearts.fclHeartsTbl[id].Skill[1].ID = 293;
+            tblHearts.fclHeartsTbl[id].Skill[1].ID = 293; // Mana Bonus
             tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 11;
-            tblHearts.fclHeartsTbl[id].Skill[2].ID = 310;
+            tblHearts.fclHeartsTbl[id].Skill[2].ID = 310; // Ice Boost
             tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 15;
-            tblHearts.fclHeartsTbl[id].Skill[3].ID = 204;
+            tblHearts.fclHeartsTbl[id].Skill[3].ID = 204; // Fog Breath
             tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 19;
-            tblHearts.fclHeartsTbl[id].Skill[4].ID = 437;
+            tblHearts.fclHeartsTbl[id].Skill[4].ID = 437; // Refrigerate
             tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 21;
-            tblHearts.fclHeartsTbl[id].Skill[5].ID = 315;
+            tblHearts.fclHeartsTbl[id].Skill[5].ID = 315; // Anti-Ice
             tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 23;
         }
 
@@ -154,17 +154,17 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 3; // Luck
 
             // Skills
-            tblHearts.fclHeartsTbl[id].Skill[0].ID = 36;
+            tblHearts.fclHeartsTbl[id].Skill[0].ID = 36; // Dia
             tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 5;
-            tblHearts.fclHeartsTbl[id].Skill[1].ID = 290;
+            tblHearts.fclHeartsTbl[id].Skill[1].ID = 290; // Life Bonus
             tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 6;
-            tblHearts.fclHeartsTbl[id].Skill[2].ID = 43;
+            tblHearts.fclHeartsTbl[id].Skill[2].ID = 43; // Patra
             tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 8;
-            tblHearts.fclHeartsTbl[id].Skill[3].ID = 296;
+            tblHearts.fclHeartsTbl[id].Skill[3].ID = 296; // Fast Retreat
             tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 12;
-            tblHearts.fclHeartsTbl[id].Skill[4].ID = 39;
+            tblHearts.fclHeartsTbl[id].Skill[4].ID = 39; // Media
             tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 16;
-            tblHearts.fclHeartsTbl[id].Skill[5].ID = 346;
+            tblHearts.fclHeartsTbl[id].Skill[5].ID = 346; // Life Aid
             tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 20;
         }
 
@@ -203,17 +203,17 @@ namespace NocturneInsaniax
 
 
             // Skills
-            tblHearts.fclHeartsTbl[id].Skill[0].ID = 52;
+            tblHearts.fclHeartsTbl[id].Skill[0].ID = 52; // Tarunda
             tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 8;
-            tblHearts.fclHeartsTbl[id].Skill[1].ID = 53;
+            tblHearts.fclHeartsTbl[id].Skill[1].ID = 53; // Sukunda
             tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 12;
-            tblHearts.fclHeartsTbl[id].Skill[2].ID = 54;
+            tblHearts.fclHeartsTbl[id].Skill[2].ID = 54; // Rakunda
             tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 16;
-            tblHearts.fclHeartsTbl[id].Skill[3].ID = 300;
+            tblHearts.fclHeartsTbl[id].Skill[3].ID = 300; // Bright Might
             tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 18;
-            tblHearts.fclHeartsTbl[id].Skill[4].ID = 298;
+            tblHearts.fclHeartsTbl[id].Skill[4].ID = 298; // Mind's Eye
             tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 23;
-            tblHearts.fclHeartsTbl[id].Skill[5].ID = 57;
+            tblHearts.fclHeartsTbl[id].Skill[5].ID = 57; // Dekaja
             tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 28;
         }
 
@@ -247,17 +247,17 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 5; // Agility
 
             // Skills
-            tblHearts.fclHeartsTbl[id].Skill[0].ID = 176;
+            tblHearts.fclHeartsTbl[id].Skill[0].ID = 176; // Fire Breath
             tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 8;
-            tblHearts.fclHeartsTbl[id].Skill[1].ID = 309;
+            tblHearts.fclHeartsTbl[id].Skill[1].ID = 309; // Fire Boost
             tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 14;
-            tblHearts.fclHeartsTbl[id].Skill[2].ID = 101;
+            tblHearts.fclHeartsTbl[id].Skill[2].ID = 101; // Heat Wave
             tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 16;
-            tblHearts.fclHeartsTbl[id].Skill[3].ID = 435;
+            tblHearts.fclHeartsTbl[id].Skill[3].ID = 435; // Scald
             tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 18;
-            tblHearts.fclHeartsTbl[id].Skill[4].ID = 205;
+            tblHearts.fclHeartsTbl[id].Skill[4].ID = 205; // Taunt
             tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 21;
-            tblHearts.fclHeartsTbl[id].Skill[5].ID = 314;
+            tblHearts.fclHeartsTbl[id].Skill[5].ID = 314; // Anti-Fire
             tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 23;
         }
 
@@ -293,17 +293,17 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 5; // Luck
 
             // Skills
-            tblHearts.fclHeartsTbl[id].Skill[0].ID = 461;
+            tblHearts.fclHeartsTbl[id].Skill[0].ID = 461; // Storm Gale
             tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 10;
-            tblHearts.fclHeartsTbl[id].Skill[1].ID = 312;
+            tblHearts.fclHeartsTbl[id].Skill[1].ID = 312; // Force Boost
             tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 18;
-            tblHearts.fclHeartsTbl[id].Skill[2].ID = 203;
+            tblHearts.fclHeartsTbl[id].Skill[2].ID = 203; // War Cry
             tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 24;
-            tblHearts.fclHeartsTbl[id].Skill[3].ID = 317;
+            tblHearts.fclHeartsTbl[id].Skill[3].ID = 317; // Anti-Force
             tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 26;
-            tblHearts.fclHeartsTbl[id].Skill[4].ID = 185;
+            tblHearts.fclHeartsTbl[id].Skill[4].ID = 185; // Tornado
             tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 30;
-            tblHearts.fclHeartsTbl[id].Skill[5].ID = 327;
+            tblHearts.fclHeartsTbl[id].Skill[5].ID = 327; // Null Force
             tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 40;
         }
 
@@ -339,17 +339,17 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 1; // Luck
 
             // Skills
-            tblHearts.fclHeartsTbl[id].Skill[0].ID = 430;
+            tblHearts.fclHeartsTbl[id].Skill[0].ID = 430; // Chi Blast
             tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 18;
-            tblHearts.fclHeartsTbl[id].Skill[1].ID = 224;
+            tblHearts.fclHeartsTbl[id].Skill[1].ID = 224; // Focus
             tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 21;
-            tblHearts.fclHeartsTbl[id].Skill[2].ID = 99;
+            tblHearts.fclHeartsTbl[id].Skill[2].ID = 99; // Tempest
             tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 24;
-            tblHearts.fclHeartsTbl[id].Skill[3].ID = 97;
+            tblHearts.fclHeartsTbl[id].Skill[3].ID = 97; // Hell Thrust
             tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 27;
-            tblHearts.fclHeartsTbl[id].Skill[4].ID = 299;
+            tblHearts.fclHeartsTbl[id].Skill[4].ID = 299; // Might
             tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 30;
-            tblHearts.fclHeartsTbl[id].Skill[5].ID = 345;
+            tblHearts.fclHeartsTbl[id].Skill[5].ID = 345; // Endure
             tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 40;
         }
 
@@ -385,17 +385,17 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 4; // Agility
 
             // Skills
-            tblHearts.fclHeartsTbl[id].Skill[0].ID = 182;
+            tblHearts.fclHeartsTbl[id].Skill[0].ID = 182; // Shock
             tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 14;
-            tblHearts.fclHeartsTbl[id].Skill[1].ID = 125;
+            tblHearts.fclHeartsTbl[id].Skill[1].ID = 125; // Stun Claw
             tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 18;
-            tblHearts.fclHeartsTbl[id].Skill[2].ID = 311;
+            tblHearts.fclHeartsTbl[id].Skill[2].ID = 311; // Elec Boost
             tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 20;
-            tblHearts.fclHeartsTbl[id].Skill[3].ID = 316;
+            tblHearts.fclHeartsTbl[id].Skill[3].ID = 316; // Anti-Elec
             tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 30;
-            tblHearts.fclHeartsTbl[id].Skill[4].ID = 469;
+            tblHearts.fclHeartsTbl[id].Skill[4].ID = 469; // Mjolnir
             tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 44;
-            tblHearts.fclHeartsTbl[id].Skill[5].ID = 326;
+            tblHearts.fclHeartsTbl[id].Skill[5].ID = 326; // Null Elec
             tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 46;
         }
 
@@ -429,17 +429,17 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 2; // Agility
 
             // Skills
-            tblHearts.fclHeartsTbl[id].Skill[0].ID = 191;
+            tblHearts.fclHeartsTbl[id].Skill[0].ID = 191; // Mana Drain
             tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 24;
-            tblHearts.fclHeartsTbl[id].Skill[1].ID = 424;
+            tblHearts.fclHeartsTbl[id].Skill[1].ID = 424; // Concentrate
             tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 27;
-            tblHearts.fclHeartsTbl[id].Skill[2].ID = 34;
+            tblHearts.fclHeartsTbl[id].Skill[2].ID = 34; // Mamudo
             tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 30;
-            tblHearts.fclHeartsTbl[id].Skill[3].ID = 319;
+            tblHearts.fclHeartsTbl[id].Skill[3].ID = 319; // Anti-Dark
             tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 34;
-            tblHearts.fclHeartsTbl[id].Skill[4].ID = 197;
+            tblHearts.fclHeartsTbl[id].Skill[4].ID = 197; // Stone Gaze
             tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 38;
-            tblHearts.fclHeartsTbl[id].Skill[5].ID = 35;
+            tblHearts.fclHeartsTbl[id].Skill[5].ID = 35; // Mamudoon
             tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 44;
         }
 
@@ -477,19 +477,19 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 4; // Luck
 
             // Skills
-            tblHearts.fclHeartsTbl[id].Skill[0].ID = 448;
+            tblHearts.fclHeartsTbl[id].Skill[0].ID = 448; // Poison Volley
             tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 28;
-            tblHearts.fclHeartsTbl[id].Skill[1].ID = 110;
+            tblHearts.fclHeartsTbl[id].Skill[1].ID = 110; // Chaos Blade
             tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 34;
-            tblHearts.fclHeartsTbl[id].Skill[2].ID = 181;
+            tblHearts.fclHeartsTbl[id].Skill[2].ID = 181; // Glacial Blast
             tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 36;
-            tblHearts.fclHeartsTbl[id].Skill[3].ID = 450;
+            tblHearts.fclHeartsTbl[id].Skill[3].ID = 450; // Neural Shock
             tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 38;
-            tblHearts.fclHeartsTbl[id].Skill[4].ID = 325;
+            tblHearts.fclHeartsTbl[id].Skill[4].ID = 325; // Null Ice
             tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 42;
-            tblHearts.fclHeartsTbl[id].Skill[5].ID = 63;
+            tblHearts.fclHeartsTbl[id].Skill[5].ID = 63; // Tentarafoo
             tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 45;
-            tblHearts.fclHeartsTbl[id].Skill[6].ID = 335;
+            tblHearts.fclHeartsTbl[id].Skill[6].ID = 335; // Ice Drain
             tblHearts.fclHeartsTbl[id].Skill[6].TargetLevel = 54;
         }
 
@@ -527,17 +527,17 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 8; // Luck
 
             // Skills
-            tblHearts.fclHeartsTbl[id].Skill[0].ID = 193;
+            tblHearts.fclHeartsTbl[id].Skill[0].ID = 193; // Violet Flash
             tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 30;
-            tblHearts.fclHeartsTbl[id].Skill[1].ID = 318;
+            tblHearts.fclHeartsTbl[id].Skill[1].ID = 318; // Anti-Light
             tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 33;
-            tblHearts.fclHeartsTbl[id].Skill[2].ID = 188;
+            tblHearts.fclHeartsTbl[id].Skill[2].ID = 188; // Punishment
             tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 37;
-            tblHearts.fclHeartsTbl[id].Skill[3].ID = 136;
+            tblHearts.fclHeartsTbl[id].Skill[3].ID = 136; // Divine Shot
             tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 41;
-            tblHearts.fclHeartsTbl[id].Skill[4].ID = 194;
+            tblHearts.fclHeartsTbl[id].Skill[4].ID = 194; // Starlight
             tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 46;
-            tblHearts.fclHeartsTbl[id].Skill[5].ID = 328;
+            tblHearts.fclHeartsTbl[id].Skill[5].ID = 328; // Null Light
             tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 51;
         }
 
@@ -579,19 +579,19 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 1; // Luck
 
             // Skills
-            tblHearts.fclHeartsTbl[id].Skill[0].ID = 102;
+            tblHearts.fclHeartsTbl[id].Skill[0].ID = 102; // Blight
             tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 33;
-            tblHearts.fclHeartsTbl[id].Skill[1].ID = 332;
+            tblHearts.fclHeartsTbl[id].Skill[1].ID = 332; // Null Mind
             tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 35;
-            tblHearts.fclHeartsTbl[id].Skill[2].ID = 144;
+            tblHearts.fclHeartsTbl[id].Skill[2].ID = 144; // Oni Kagura
             tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 37;
-            tblHearts.fclHeartsTbl[id].Skill[3].ID = 331;
+            tblHearts.fclHeartsTbl[id].Skill[3].ID = 331; // Null Nerve
             tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 40;
-            tblHearts.fclHeartsTbl[id].Skill[4].ID = 472;
+            tblHearts.fclHeartsTbl[id].Skill[4].ID = 472; // Kusanagi
             tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 44;
-            tblHearts.fclHeartsTbl[id].Skill[5].ID = 330;
+            tblHearts.fclHeartsTbl[id].Skill[5].ID = 330; // Null Curse
             tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 45;
-            tblHearts.fclHeartsTbl[id].Skill[6].ID = 366;
+            tblHearts.fclHeartsTbl[id].Skill[6].ID = 366; // Abyssal Mask
             tblHearts.fclHeartsTbl[id].Skill[6].TargetLevel = 54;
         }
 
@@ -629,19 +629,19 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 3; // Luck
 
             // Skills
-            tblHearts.fclHeartsTbl[id].Skill[0].ID = 37;
+            tblHearts.fclHeartsTbl[id].Skill[0].ID = 37; // Diarama
             tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 32;
-            tblHearts.fclHeartsTbl[id].Skill[1].ID = 349;
+            tblHearts.fclHeartsTbl[id].Skill[1].ID = 349; // Life Refill
             tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 36;
-            tblHearts.fclHeartsTbl[id].Skill[2].ID = 68;
+            tblHearts.fclHeartsTbl[id].Skill[2].ID = 68; // Tetraja
             tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 40;
-            tblHearts.fclHeartsTbl[id].Skill[3].ID = 456;
+            tblHearts.fclHeartsTbl[id].Skill[3].ID = 456; // Amrita
             tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 42;
-            tblHearts.fclHeartsTbl[id].Skill[4].ID = 40;
+            tblHearts.fclHeartsTbl[id].Skill[4].ID = 40; // Mediarama
             tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 44;
-            tblHearts.fclHeartsTbl[id].Skill[5].ID = 38;
+            tblHearts.fclHeartsTbl[id].Skill[5].ID = 38; // Diarahan
             tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 56;
-            tblHearts.fclHeartsTbl[id].Skill[6].ID = 350;
+            tblHearts.fclHeartsTbl[id].Skill[6].ID = 350; // Mana Refill
             tblHearts.fclHeartsTbl[id].Skill[6].TargetLevel = 50;
         }
 
@@ -683,20 +683,68 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 5; // Luck
 
             // Skills
-            tblHearts.fclHeartsTbl[id].Skill[0].ID = 64;
+            tblHearts.fclHeartsTbl[id].Skill[0].ID = 64; // Tarukaja
             tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 32;
-            tblHearts.fclHeartsTbl[id].Skill[1].ID = 65;
+            tblHearts.fclHeartsTbl[id].Skill[1].ID = 65; // Sukukaja
             tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 35;
-            tblHearts.fclHeartsTbl[id].Skill[2].ID = 67;
+            tblHearts.fclHeartsTbl[id].Skill[2].ID = 67; // Makakaja
             tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 38;
-            tblHearts.fclHeartsTbl[id].Skill[3].ID = 66;
+            tblHearts.fclHeartsTbl[id].Skill[3].ID = 66; // Rakukaja
             tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 41;
-            tblHearts.fclHeartsTbl[id].Skill[4].ID = 77;
+            tblHearts.fclHeartsTbl[id].Skill[4].ID = 77; // Dekunda
             tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 46;
-            tblHearts.fclHeartsTbl[id].Skill[5].ID = 25;
+            tblHearts.fclHeartsTbl[id].Skill[5].ID = 25; // Megido
             tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 60;
-            tblHearts.fclHeartsTbl[id].Skill[6].ID = 206;
+            tblHearts.fclHeartsTbl[id].Skill[6].ID = 206; // Debilitate
             tblHearts.fclHeartsTbl[id].Skill[6].TargetLevel = 72;
+        }
+
+        private static void Muspell(ushort id)
+        {
+            // Affinities
+            datAisyo.tbl[412][0] = 100; // Phys
+            datAisyo.tbl[412][1] = 100; // Fire
+            datAisyo.tbl[412][2] = 100; // Ice
+            datAisyo.tbl[412][3] = 100; // Elec
+            datAisyo.tbl[412][4] = 100; // Force
+            datAisyo.tbl[412][6] = 50; // Light
+            datAisyo.tbl[412][7] = 50; // Dark
+            datAisyo.tbl[412][8] = 100; // Curse
+            datAisyo.tbl[412][9] = 100; // Nerve
+            datAisyo.tbl[412][10] = 100; // Mind
+
+            datAisyo.tbl[413][0] = 100; // Phys
+            datAisyo.tbl[413][1] = 100; // Fire
+            datAisyo.tbl[413][2] = 100; // Ice
+            datAisyo.tbl[413][3] = 100; // Elec
+            datAisyo.tbl[413][4] = 100; // Force
+            datAisyo.tbl[413][6] = 50; // Light
+            datAisyo.tbl[413][7] = 50; // Dark
+            datAisyo.tbl[413][8] = 100; // Curse
+            datAisyo.tbl[413][9] = 100; // Nerve
+            datAisyo.tbl[413][10] = 100; // Mind
+
+            // Stats
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 6; // Vitality
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 6; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 3; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 3; // Luck
+
+            // Skills
+            tblHearts.fclHeartsTbl[id].Skill[0].ID = 56; // Makajamon
+            tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 36;
+            tblHearts.fclHeartsTbl[id].Skill[1].ID = 199; // Evil Gaze
+            tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 40;
+            tblHearts.fclHeartsTbl[id].Skill[2].ID = 294; // Mana Gain
+            tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 43;
+            tblHearts.fclHeartsTbl[id].Skill[3].ID = 449; // Poison Salvo
+            tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 46;
+            tblHearts.fclHeartsTbl[id].Skill[4].ID = 249; // Wild Dance
+            tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 49;
+            tblHearts.fclHeartsTbl[id].Skill[5].ID = 451; // Overload
+            tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 52;
+            tblHearts.fclHeartsTbl[id].Skill[6].ID = 133; // Javelin Rain
+            tblHearts.fclHeartsTbl[id].Skill[6].TargetLevel = 56;
         }
 
         private static void Gehenna(ushort id)
@@ -737,19 +785,19 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 1; // Luck
 
             // Skills
-            tblHearts.fclHeartsTbl[id].Skill[0].ID = 177;
+            tblHearts.fclHeartsTbl[id].Skill[0].ID = 177; // Hellfire
             tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 33;
-            tblHearts.fclHeartsTbl[id].Skill[1].ID = 446;
+            tblHearts.fclHeartsTbl[id].Skill[1].ID = 446; // Damnation
             tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 36;
-            tblHearts.fclHeartsTbl[id].Skill[2].ID = 324;
+            tblHearts.fclHeartsTbl[id].Skill[2].ID = 324; // Null Force
             tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 42;
-            tblHearts.fclHeartsTbl[id].Skill[3].ID = 178;
+            tblHearts.fclHeartsTbl[id].Skill[3].ID = 178; // Prominence
             tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 50;
-            tblHearts.fclHeartsTbl[id].Skill[4].ID = 334;
+            tblHearts.fclHeartsTbl[id].Skill[4].ID = 334; // Fire Drain
             tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 55;
-            tblHearts.fclHeartsTbl[id].Skill[5].ID = 432;
+            tblHearts.fclHeartsTbl[id].Skill[5].ID = 432; // Gate of Hell
             tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 60;
-            tblHearts.fclHeartsTbl[id].Skill[6].ID = 161;
+            tblHearts.fclHeartsTbl[id].Skill[6].ID = 161; // Magma Axis
             tblHearts.fclHeartsTbl[id].Skill[6].TargetLevel = 65;
         }
     }

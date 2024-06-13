@@ -19,12 +19,12 @@ namespace NocturneInsaniax
                     if (skillID == 0) break;
                     if (skillID == 425 && pStock.id == 0)
                     {
-                        // If you can get Pierce without TDE (mod) but aren't high level level enough
-                        if (EventBit.evtBitCheck(2241))
+                        // If you cannot get "Pierce"
+                        if (!EventBit.evtBitCheck(2241))
                         {
                             cmpStatus._statusUIScr.awaitText[i].text = "<material=\"TMC14\">？"; // Displays a "？"
                         }
-                        continue; //Skip Pierce on Demi-fiend
+                        continue; //Skip "Pierce" on Demi-fiend
                     }
 
                     string name = datSkillName.Get(skillID, pStock.id);

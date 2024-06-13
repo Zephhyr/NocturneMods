@@ -77,7 +77,7 @@ namespace NocturneInsaniax
                         if (!actionTrackers.ContainsKey(unit.id))
                         {
                             actionTrackers.Add(unit.id, new ActionTracker());
-                            if (unit.id == 254)
+                            if (unit.id == 252 || unit.id == 254)
                                 actionTrackers[unit.id].extraTurns = 1;
                         }
 
@@ -158,6 +158,7 @@ namespace NocturneInsaniax
                     case 224: TamLinAI(ref a, ref code, ref n); break;
                     case 225: DoppelgangerAI(ref a, ref code, ref n); break;
 
+                    case 252: BossDevilDanteAI(ref a, ref code, ref n); break;
                     case 253: BossGameteAI(ref a, ref code, ref n); break;
                     case 254: YHVHAI(ref a, ref code, ref n); break;
 
@@ -194,6 +195,8 @@ namespace NocturneInsaniax
                     case 328: BossAtropos2AI(ref a, ref code, ref n); break;
 
                     case 339: BossDanteRaidou1AI(ref a, ref code, ref n); break;
+                    case 340: ChaseDanteRaidouAI(ref a, ref code, ref n); break;
+                    case 341: BossDanteRaidou2AI(ref a, ref code, ref n); break;
                     case 346: BossWhiteRiderAI(ref a, ref code, ref n); break;
                     case 347: BossRedRiderAI(ref a, ref code, ref n); break;
                     case 348: BossBlackRiderAI(ref a, ref code, ref n); break;
@@ -2028,8 +2031,141 @@ namespace NocturneInsaniax
             if (actionTrackers[a.work.id].extraTurns < 1)
                 UseSkill(ref a, 422);
             else if (actionTrackers[a.work.id].currentBattleActionCount == 2)
-            {
                 UseNormalAttack(ref a);
+        }
+
+        private static void ChaseDanteRaidouAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (actionTrackers[a.work.id].currentBattleActionCount == 1)
+                UseSkill(ref a, 220);
+            else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(266))
+                UseSkill(ref a, 266);
+        }
+
+        private static void BossDanteRaidou2AI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            ushort currentHpPercent = BossCurrentHpPercent(ref a);
+            MelonLogger.Msg("Boss HP%: " + currentHpPercent);
+            MelonLogger.Msg("Boss HP: " + a.work.hp);
+
+            if (currentHpPercent <= 80 && actionTrackers[a.work.id].phase == 1)
+                actionTrackers[a.work.id].phase = 2;
+            else if (currentHpPercent <= 40 && actionTrackers[a.work.id].phase == 2)
+                actionTrackers[a.work.id].phase = 3;
+
+            if (actionTrackers[a.work.id].extraTurns < 1)
+                UseSkill(ref a, 422);
+            else if (actionTrackers[a.work.id].currentBattleActionCount == 2)
+                UseSkill(ref a, 265);
+            else if (actionTrackers[a.work.id].phase == 1)
+            {
+                if (EnemyPartyDebuffed(1) && random.Next(4) != 0)
+                {
+                    UseSkill(ref a, 274);
+                }
+                else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(264))
+                {
+                    int randomValue = random.Next(10);
+                    switch (randomValue)
+                    {
+                        case 0: UseNormalAttack(ref a); break;
+                        case 1: UseSkill(ref a, 262); break;
+                        case 2: UseSkill(ref a, 262); break;
+                        case 3: UseSkill(ref a, 262); break;
+                        case 4: UseSkill(ref a, 263); break;
+                        case 5: UseSkill(ref a, 263); break;
+                        case 6: UseSkill(ref a, 263); break;
+                        case 7: UseSkill(ref a, 264); break;
+                        case 8: UseSkill(ref a, 264); break;
+                        case 9: UseSkill(ref a, 264); break;
+                    }
+                }
+                else
+                {
+                    int randomValue = random.Next(5);
+                    switch (randomValue)
+                    {
+                        case 0: UseNormalAttack(ref a); break;
+                        case 1: UseSkill(ref a, 262); break;
+                        case 2: UseSkill(ref a, 262); break;
+                        case 3: UseSkill(ref a, 263); break;
+                        case 4: UseSkill(ref a, 263); break;
+                    }
+                }
+            }
+            else if (actionTrackers[a.work.id].phase == 2)
+            {
+                if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(265) && random.Next(4) == 0)
+                {
+                    UseSkill(ref a, 265);
+                }
+                else
+                {
+                    int randomValue = random.Next(10);
+                    switch (randomValue)
+                    {
+                        case 0: UseSkill(ref a, 266); break;
+                        case 1: UseSkill(ref a, 266); break;
+                        case 2: UseSkill(ref a, 266); break;
+                        case 3: UseSkill(ref a, 267); break;
+                        case 4: UseSkill(ref a, 267); break;
+                        case 5: UseSkill(ref a, 267); break;
+                        case 6: UseSkill(ref a, 268); break;
+                        case 7: UseSkill(ref a, 268); break;
+                        case 8: UseSkill(ref a, 268); break;
+                        case 9: UseSkill(ref a, 269); break;
+                    }
+                }
+            }
+            else if (actionTrackers[a.work.id].phase == 3)
+            {
+                if (EventBit.evtBitCheck(3712))
+                {
+                    UseSummonSkill(ref a, 497, 252);
+                }
+                //else
+                //{
+
+                //}
+            }
+        }
+
+        private static void BossDevilDanteAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            ushort currentHpPercent = BossCurrentHpPercent(ref a);
+            MelonLogger.Msg("Boss HP%: " + currentHpPercent);
+            MelonLogger.Msg("Boss HP: " + a.work.hp);
+
+            if (EnemyPartyDebuffed(1) && random.Next(4) == 0)
+            {
+                UseSkill(ref a, 274);
+            }
+            else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(264) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(267) && 
+                     !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(268) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(269))
+            {
+                int randomValue = random.Next(8);
+                switch (randomValue)
+                {
+                    case 0: UseNormalAttack(ref a); break;
+                    case 1: UseSkill(ref a, 262); break;
+                    case 2: UseSkill(ref a, 263); break;
+                    case 3: UseSkill(ref a, 264); break;
+                    case 4: UseSkill(ref a, 266); break;
+                    case 5: UseSkill(ref a, 267); break;
+                    case 6: UseSkill(ref a, 268); break;
+                    case 7: UseSkill(ref a, 269); break;
+                }
+            }
+            else
+            {
+                int randomValue = random.Next(4);
+                switch (randomValue)
+                {
+                    case 0: UseNormalAttack(ref a); break;
+                    case 1: UseSkill(ref a, 262); break;
+                    case 2: UseSkill(ref a, 263); break;
+                    case 3: UseSkill(ref a, 266); break;
+                }
             }
         }
 

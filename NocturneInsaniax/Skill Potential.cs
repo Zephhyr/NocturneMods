@@ -275,7 +275,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 249 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 250 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 251 
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 252 
+            new sbyte[] {7    , 0    , 0    , 7    , 7    , 5    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 5    , 0 }, // 252 Devil Dante
             new sbyte[] {3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 1    , 0 }, // 253 Gamete
             new sbyte[] {9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 0    , 5    , 5    , 0 }, // 254 YHVH
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 255 
@@ -428,7 +428,7 @@ namespace NocturneInsaniax
             new sbyte[] {5    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 2    , 2    , 2    , 0    , 0    , 0    , 0    , 0 }, // Murakumo
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 3    , 0 }, // Geis
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 3    , 3    , 3    , 0    , 0    , 0    , 5    , 0 }, // Djed
-            new sbyte[] {0    , 3    , 3    , 3    , 3    , 0    , 0    , 0    , 7    , 7    , 7    , 0    , 0    , 0    , 0    , 0 }, // Muspell
+            new sbyte[] {3    , 3    , 3    , 3    , 3    , 0    , 0    , 0    , 7    , 7    , 7    , 0    , 0    , 0    , 0    , 0 }, // Muspell
             new sbyte[] {0    , 7    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Gehenna
             new sbyte[] {7    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Kamurogi
             new sbyte[] {2    , 0    , 0    , 0    , 0    , 0    , 0    , 8    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // Satan
@@ -855,8 +855,8 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+5: Light • +3: Heal/Supp<material=\"MsgFont1\">", // 409 Geis
             "  <material=\"MsgFont4\">+5: Supp • +3: Almighty/Ailments<material=\"MsgFont1\">", // 410 Djed
             "  <material=\"MsgFont4\">+5: Supp • +3: Almighty/Ailments<material=\"MsgFont1\">", // 411 Djed
-            "  <material=\"MsgFont4\">+7: Ailments • +3: Magic<material=\"MsgFont1\">", // 412 Muspell
-            "  <material=\"MsgFont4\">+7: Ailments • +3: Magic<material=\"MsgFont1\">", // 413 Muspell
+            "  <material=\"MsgFont4\">+7: Ailments • +3: Phys/Magic<material=\"MsgFont1\">", // 412 Muspell
+            "  <material=\"MsgFont4\">+7: Ailments • +3: Phys/Magic<material=\"MsgFont1\">", // 413 Muspell
             "  <material=\"MsgFont4\">+7: Fire • +3: Dark<material=\"MsgFont1\">", // 414 Gehenna
             "  <material=\"MsgFont4\">+7: Fire • +3: Dark<material=\"MsgFont1\">", // 415 Gehenna
             "  <material=\"MsgFont4\">+7: Phys<material=\"MsgFont1\">", // 416 Kamurogi
@@ -912,10 +912,10 @@ namespace NocturneInsaniax
             "<material=\"MsgFont4\">+5: Phys/Force • +2: Ailments", // Murakumo
             "Imparts Healing magic\r\n<material=\"MsgFont2\">Null: Light\r\n" +
             "<material=\"MsgFont4\">+5: Light • +3: Heal/Supp", // Geis
-            "Imparts Support magic\r\n<material=\"MsgFont2\">Str: Ailments\r\n" +
+            "Imparts Support magic\r\n<material=\"MsgFont2\">Strong: Ailments\r\n" +
             "<material=\"MsgFont4\">+5: Supp • +3: Almighty/Ailments", // Djed
-            "Imparts Ailment magic\r\n<material=\"MsgFont2\">Strong: Ailments\r\n" +
-            "<material=\"MsgFont4\">+7: Ailments • +3: Magic", // Muspell
+            "Imparts Ailment magic\r\n<material=\"MsgFont2\">Strong: Light/Dark\r\n" +
+            "<material=\"MsgFont4\">+7: Ailments • +3: Phys/Magic", // Muspell
             "Imparts Fire magic\r\n<material=\"MsgFont2\">Drain: Fire<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ice\r\n" +
             "<material=\"MsgFont4\">+7: Fire • +3: Dark", // Gehenna
             "Imparts Physical skills\r\n<material=\"MsgFont2\">Strong: Phys<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: All types of magic\r\n" +
@@ -970,31 +970,40 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref nbMainProcessData_t data)
             {
+                if (data.activeunit >= 0)
+                {
+                    var unitFormIndex = data.party[data.activeunit].formindex;
+                    currentDemonID = nbMainProcess.nbGetUnitWorkFromFormindex(unitFormIndex).id;
+                }
+
                 if (actionProcessData != null)
                 {
+                    
+
                     if (actionProcessData.work.badstatus == 4 || // Asleep
                         actionProcessData.work.badstatus == 16 || // Bound
-                        actionProcessData.work.badstatus == 32 || // 
-                        actionProcessData.work.badstatus == 64 || //
+                        actionProcessData.work.badstatus == 32 || // Mute
+                        actionProcessData.work.badstatus == 64 || // Poison
                         actionProcessData.work.badstatus == 256) // Stunned
                     {
                         var luk = datCalc.datGetParam(actionProcessData.work, 5) + 20;
                         if (datCalc.datCheckSyojiSkill(actionProcessData.work, 360) != 0 || datCalc.datCheckSyojiSkill(actionProcessData.work, 366) != 0)
-                            luk += 20;
+                            luk += 10;
                         var rand = dds3KernelCore.dds3GetRandIntA(100);
 
                         if (rand < luk)
                         {
                             var form = actionProcessData.form;
-                            nbMakePacket.nbMakeBadKaifukuPacket(0, actionProcessData.uniqueid, ref form);
+                            nbMakePacket.nbMakeBadKaifukuPacket(0, 0, ref form);
                         }
                     }
-                }
 
-                if (data.activeunit >= 0)
-                {
-                    var unitFormIndex = data.party[data.activeunit].formindex;
-                    currentDemonID = nbMainProcess.nbGetUnitWorkFromFormindex(unitFormIndex).id;
+                    if (currentDemonID == 252 && actionProcessData.form.formindex > 3)
+                    {
+                        var form = actionProcessData.form;
+                        nbMakePacket.nbAddHpMpKoukaPacket(0, 0, ref form, 50, 0);
+                        nbMakePacket.nbAddNumEffKoukaPacket(1, 45, 0, ref form, 50, 0, 2);
+                    }
                 }
             }
         }
@@ -1008,6 +1017,8 @@ namespace NocturneInsaniax
                     __result = "Accelerate";
                 if (id == 277 && (currentDemonID == 200))
                     __result = "Rev Up";
+                if (id == 220 && (currentDemonID == 340))
+                    __result = "Pursuit";
                 if (id == 226 && (currentDemonID == 79))
                     __result = "Backup";
                 if ((id == 226 || id == 499) && (currentDemonID == 345))

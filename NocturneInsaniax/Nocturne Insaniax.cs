@@ -1,6 +1,8 @@
 ﻿using HarmonyLib;
 using Il2Cpp;
 using Il2Cppbasic_H;
+using Il2Cppcamp_H;
+using Il2Cppfacility_H;
 using Il2Cppinterface_H;
 using Il2Cppkernel_H;
 using Il2Cppnewbattle_H;
@@ -206,6 +208,31 @@ namespace NocturneInsaniax
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D226_MSEE2_15", "D226_MSEE2_15", 264830977, false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D226_MSEE2_23", "D226_MSEE2_23", 505675776, false);
 
+
+                // Devil Dante
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D252M_MSEFC_03", "D252M_MSEFC_03", 532676608, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D252M_MSEFC_04", "D252M_MSEFC_04", 532742144, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D252M_MSEFC_05", "D252M_MSEFC_05", 532807680, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D252M_MSEFC_06", "D252M_MSEFC_06", 532873216, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D252M_MSEFC_07", "D252M_MSEFC_07", 532938752, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D252M_MSEFC_08", "D252M_MSEFC_08", 533004288, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D252M_MSEFC_09", "D252M_MSEFC_09", 533069824, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D252M_MSEFC_10", "D252M_MSEFC_10", 533135360, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D252M_MSEFC_12", "D252M_MSEFC_12", 533200896, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D252M_MSEFC_16", "D252M_MSEFC_16", 533266432, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D252M_MSEFC_17", "D252M_MSEFC_17", 533331968, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D252M_MSEFC_18", "D252M_MSEFC_18", 533397504, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D252M_MSEFC_23", "D252M_MSEFC_23", 533463040, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D252M_MSEFC_03_E", "D252M_MSEFC_03_E", (469762066 + 62914558), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D252M_MSEFC_04_E", "D252M_MSEFC_04_E", (469827602 + 62914558), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D252M_MSEFC_06_E", "D252M_MSEFC_06_E", (469958674 + 62914558), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D252M_MSEFC_09_E", "D252M_MSEFC_09_E", (470155282 + 62914558), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D252M_MSEFC_10_E", "D252M_MSEFC_10_E", (470220818 + 62914558), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D252M_MSEFC_16_E", "D252M_MSEFC_16_E", (470351890 + 62914558), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D252M_MSEFC_17_E", "D252M_MSEFC_17_E", (470417426 + 62914558), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D252M_MSEFC_18_E", "D252M_MSEFC_18_E", (470482962 + 62914558), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D252M_MSEFC_23_E", "D252M_MSEFC_23_E", (470548498 + 62914558), false);
+
                 // Gamete
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D253_MSEFD_03", "D253_MSEFD_03", 533725184, false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D253_MSEFD_04", "D253_MSEFD_04", 533790720, false);
@@ -228,6 +255,7 @@ namespace NocturneInsaniax
 
                 // Music
                 Smg.Instance._TblAdd(Smg.eType.BGM, "B1600_B1601_BGM01", "B1600_B1601_BGM01_L_", 9134875, true);
+                Smg.Instance._TblAdd(Smg.eType.BGM, "B1700_B1701_BGM01", "B1700_B1701_BGM01_L_", 9134876, true);
 
 
                 //foreach (var sound in Smg.Instance._tableSe_MSE)
@@ -260,11 +288,11 @@ namespace NocturneInsaniax
                 doppelgangerKeys.Add("D225_MSEE1_12", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_12", diff = true });
                 doppelgangerKeys.Add("D225_MSEE1_14", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_14", diff = true });
                 doppelgangerKeys.Add("D225_MSEE1_15", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_15", diff = true });
-                doppelgangerKeys.Add("D225_MSEE1_16", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_15", diff = true });
-                doppelgangerKeys.Add("D225_MSEE1_17", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_15", diff = true });
-                doppelgangerKeys.Add("D225_MSEE1_18", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_15", diff = true });
-                doppelgangerKeys.Add("D225_MSEE1_20", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_15", diff = true });
-                doppelgangerKeys.Add("D225_MSEE1_21", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_15", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_16", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_16", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_17", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_17", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_18", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_18", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_20", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_20", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_21", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_21", diff = true });
                 doppelgangerKeys.Add("D225_MSEE1_24", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_24", diff = true });
                 doppelgangerKeys.Add("D225_MSEE1_03_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_03_E", diff = true });
                 doppelgangerKeys.Add("D225_MSEE1_04_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_04_E", diff = true });
@@ -275,11 +303,11 @@ namespace NocturneInsaniax
                 doppelgangerKeys.Add("D225_MSEE1_12_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_12_E", diff = true });
                 doppelgangerKeys.Add("D225_MSEE1_14_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_14_E", diff = true });
                 doppelgangerKeys.Add("D225_MSEE1_15_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_15_E", diff = true });
-                doppelgangerKeys.Add("D225_MSEE1_16_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_15_E", diff = true });
-                doppelgangerKeys.Add("D225_MSEE1_17_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_15_E", diff = true });
-                doppelgangerKeys.Add("D225_MSEE1_18_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_15_E", diff = true });
-                doppelgangerKeys.Add("D225_MSEE1_20_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_15_E", diff = true });
-                doppelgangerKeys.Add("D225_MSEE1_21_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_15_E", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_16_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_16_E", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_17_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_17_E", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_18_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_18_E", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_20_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_20_E", diff = true });
+                doppelgangerKeys.Add("D225_MSEE1_21_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_21_E", diff = true });
                 doppelgangerKeys.Add("D225_MSEE1_24_E", new SndAssetBundleManager.SndData { key = "dvl0xe1", path = 4, id = 0, name = "D225_MSEE1_24_E", diff = true });
                 SndAssetBundleManager.SEBundleTable.Add("dvl0xe1", doppelgangerKeys);
 
@@ -292,6 +320,35 @@ namespace NocturneInsaniax
                 nightmareKeys.Add("D226_MSEE2_15", new SndAssetBundleManager.SndData { key = "dvl0xe2", path = 4, id = 0, name = "D226_MSEE2_15", diff = true });
                 nightmareKeys.Add("D226_MSEE2_23", new SndAssetBundleManager.SndData { key = "dvl0xe2", path = 4, id = 0, name = "D226_MSEE2_23", diff = true });
                 SndAssetBundleManager.SEBundleTable.Add("dvl0xe2", nightmareKeys);
+
+                var devilDanteKeys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
+                devilDanteKeys.Add("D252M_MSEFC_03", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_03", diff = true });
+                devilDanteKeys.Add("D252M_MSEFC_04", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_04", diff = true });
+                devilDanteKeys.Add("D252M_MSEFC_05", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_05", diff = true });
+                devilDanteKeys.Add("D252M_MSEFC_06", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_06", diff = true });
+                devilDanteKeys.Add("D252M_MSEFC_07", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_07", diff = true });
+                devilDanteKeys.Add("D252M_MSEFC_08", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_08", diff = true });
+                devilDanteKeys.Add("D252M_MSEFC_09", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_09", diff = true });
+                devilDanteKeys.Add("D252M_MSEFC_10", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_10", diff = true });
+                devilDanteKeys.Add("D252M_MSEFC_12", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_12", diff = true });
+                devilDanteKeys.Add("D252M_MSEFC_16", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_16", diff = true });
+                devilDanteKeys.Add("D252M_MSEFC_17", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_17", diff = true });
+                devilDanteKeys.Add("D252M_MSEFC_18", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_18", diff = true });
+                devilDanteKeys.Add("D252M_MSEFC_23", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_23", diff = true });
+                devilDanteKeys.Add("D252M_MSEFC_03_E", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_03_E", diff = true });
+                devilDanteKeys.Add("D252M_MSEFC_04_E", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_04_E", diff = true });
+                devilDanteKeys.Add("D252M_MSEFC_05_E", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_05_E", diff = true });
+                devilDanteKeys.Add("D252M_MSEFC_06_E", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_06_E", diff = true });
+                devilDanteKeys.Add("D252M_MSEFC_07_E", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_07_E", diff = true });
+                devilDanteKeys.Add("D252M_MSEFC_08_E", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_08_E", diff = true });
+                devilDanteKeys.Add("D252M_MSEFC_09_E", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_09_E", diff = true });
+                devilDanteKeys.Add("D252M_MSEFC_10_E", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_10_E", diff = true });
+                devilDanteKeys.Add("D252M_MSEFC_12_E", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_12_E", diff = true });
+                devilDanteKeys.Add("D252M_MSEFC_16_E", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_16_E", diff = true });
+                devilDanteKeys.Add("D252M_MSEFC_17_E", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_17_E", diff = true });
+                devilDanteKeys.Add("D252M_MSEFC_18_E", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_18_E", diff = true });
+                devilDanteKeys.Add("D252M_MSEFC_23_E", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_23_E", diff = true });
+                SndAssetBundleManager.SEBundleTable.Add("dvl0xfcd", devilDanteKeys);
 
                 var notSlimeKeys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
                 notSlimeKeys.Add("D253_MSEFD_03", new SndAssetBundleManager.SndData { key = "dvl0xfd", path = 4, id = 0, name = "D253_MSEFD_03", diff = true });
@@ -315,9 +372,13 @@ namespace NocturneInsaniax
                 yhvhKeys.Add("D254_MSEFE_12", new SndAssetBundleManager.SndData { key = "dvl0xfe", path = 4, id = 0, name = "D254_MSEFE_12", diff = true });
                 SndAssetBundleManager.SEBundleTable.Add("dvl0xfe", yhvhKeys);
 
-                var bgmKeys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
-                bgmKeys.Add("B1600_B1601_BGM01", new SndAssetBundleManager.SndData { key = "b_bgm16", path = 1, id = 0, name = "B1600_B1601_BGM01", diff = true });
-                SndAssetBundleManager.BGMBundleTable.Add("b_bgm16", bgmKeys);
+                var bgm16Keys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
+                bgm16Keys.Add("B1600_B1601_BGM01", new SndAssetBundleManager.SndData { key = "b_bgm16", path = 1, id = 0, name = "B1600_B1601_BGM01", diff = true });
+                SndAssetBundleManager.BGMBundleTable.Add("b_bgm16", bgm16Keys);
+
+                var bgm17Keys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
+                bgm17Keys.Add("B1700_B1701_BGM01", new SndAssetBundleManager.SndData { key = "b_bgm17", path = 1, id = 0, name = "B1700_B1701_BGM01", diff = true });
+                SndAssetBundleManager.BGMBundleTable.Add("b_bgm17", bgm17Keys);
 
                 //foreach (var dic in SndAssetBundleManager.SEBundleTable)
                 //{
@@ -333,17 +394,32 @@ namespace NocturneInsaniax
         [HarmonyPatch(typeof(nbEncount), nameof(nbEncount.nbGetBgmCategoryInBattle))]
         private class nbGetBgmCategoryInBattlePatch
         {
-            public static void Postfix(int __result)
+            public static void Postfix(ref int __result)
             {
                 //MelonLogger.Msg("--nbEncount.nbGetBgmCategoryInBattle--");
+                if (__result == 14)
+                {
+                    if (!EventBit.evtBitCheck(3712))
+                        __result = 17;
+                    //var encno = nbMainProcess.nbGetMainProcessData().encno;
+                    //if (encno == 1033)
+                    //    __result = 17;
+                }
                 switch (__result)
                 {
-                    case 16:  
+                    case 16:  // CLUB MILTON
                         nbSound.bgmno = "B1600_B1601_BGM01";
                         nbSound.bgmsub = 0;
                         nbSound.bgmloadphase = 1;
                         nbSound.bgmdone = 0;
                         nbSound.bgmkey = 16;
+                        break;
+                    case 17: // Battle - Raidou
+                        nbSound.bgmno = "B1700_B1701_BGM01";
+                        nbSound.bgmsub = 0;
+                        nbSound.bgmloadphase = 1;
+                        nbSound.bgmdone = 0;
+                        nbSound.bgmkey = 17;
                         break;
                     default: break;
                 }
@@ -356,12 +432,12 @@ namespace NocturneInsaniax
         //    public static void Postfix()
         //    {
         //        MelonLogger.Msg("--SndAssetBundleManager.LoadKeysMSE--");
-        //        MelonLogger.Msg("Kelpie keys");
+        //        MelonLogger.Msg("Dante keys");
         //        for (int i = 0; i <= 25; i++)
-        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(57, i));
-        //        MelonLogger.Msg("Nightmare keys");
+        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(192, i));
+        //        MelonLogger.Msg("Devil keys");
         //        for (int i = 0; i <= 25; i++)
-        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(226, i));
+        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(252, i));
         //    }
         //}
 
@@ -389,6 +465,16 @@ namespace NocturneInsaniax
         //    }
         //}
 
+        //[HarmonyPatch(typeof(EventBit), nameof(EventBit.evtBitCheck))]
+        //private class evtBitCheckPatch
+        //{
+        //    public static void Postfix(ref int no, ref bool __result)
+        //    {
+        //        MelonLogger.Msg("--EventBit.evtBitCheck--");
+        //        if (no == 3712)
+        //            __result = false;
+        //    }
+        //}
 
 
         [HarmonyPatch(typeof(fld_Npc), nameof(fld_Npc.fldItemBoxAdd))]

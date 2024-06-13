@@ -7,13 +7,15 @@ using Il2Cppresult2_H;
 using Il2Cppnewbattle_H;
 using Il2Cppeffect_H;
 using UnityEngine;
+using Il2Cppmodel_H;
+using System.Xml;
 
 namespace NocturneInsaniax
 {
     internal partial class NocturneInsaniax : MelonMod
     {
         public static int[] bossList = new int[] { 
-            256, 257, 262, 263, 266, 267, 268, 269, 270, 271, 272, 294, 295, 296, 297, 300, 301, 302, 307, 308, 309, 312, 313, 
+            252, 254, 256, 257, 262, 263, 266, 267, 268, 269, 270, 271, 272, 294, 295, 296, 297, 300, 301, 302, 307, 308, 309, 312, 313, 
             321, 326, 327, 328, 339, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 362
         };
         public static nbActionProcessData_t? actionProcessData;
@@ -94,7 +96,7 @@ namespace NocturneInsaniax
                     case 448: __result = "Poison Volley"; return false;
                     case 449: __result = "Poison Salvo"; return false;
                     case 450: __result = "Neural Shock"; return false;
-                    case 451: __result = "Neural Storm"; return false;
+                    case 451: __result = "Overload"; return false;
                     case 452: __result = "Pulinpaon"; return false;      
                     case 453: __result = "Antichthon"; return false;      
                     case 454: __result = "Last Word"; return false;
@@ -120,6 +122,7 @@ namespace NocturneInsaniax
                     case 474: __result = "Gae Bolg"; return false;
                     case 475: __result = "Gungnir"; return false;
 
+                    case 497: __result = "Devil Trigger"; return false;
                     case 498: __result = "Scorn"; return false;
                     case 499: __result = "Crush"; return false;
                     case 500: __result = "Rampage"; return false;
@@ -203,6 +206,7 @@ namespace NocturneInsaniax
                     case 260: __result = "Massive Almighty damage to all foes. \nInstakills when not immune to Dark."; return false; // Death Flies
                     case 261: __result = "High Curse damage to all foes. \nInflicts Mute. Low accuracy."; return false; // Soul Divide
                     case 262: __result = "Low Physical damage to one foe. \nLowers target's Evasion/Defense."; return false; // Boogie-Woogie/E & I
+                    case 266: __result = "Medium Strength-based Almighty damage \nto one foe. \nMay instakill when not immune to Dark."; return false; // Tekisatsu/Stinger
                     case 267: __result = "High Elec damage to all foes. \nLowers targets' Evasion/Hit Rate."; return false; // Mishaguji Raiden/Roundtrip
                     case 268: __result = "High Force damage to all foes. \nLowers targets' Physical/Magical Attack."; return false; // Hitokoto Storm/Whirlwind
                     case 276: __result = "Maximizes own Evasion/Hit Rate."; return false; // Red Capote
@@ -215,6 +219,7 @@ namespace NocturneInsaniax
                     case 285: __result = "Lowers all foes' Evasion/Hit Rate. \nMay inflict Panic."; return false; // Babylon Goblet
                     case 286: __result = "High Almighty damage to all foes. \nHeals user's HP and may inflict Charm."; return false; // Death Lust
                     case 287: __result = "Massive Light damage to one foe. \nInstakills when weak to Light."; return false; // God's Bow
+                    
                     case 296: __result = "Guarantees escape \nwhen possible."; return false; // Fast Retreat
                     case 298: __result = "Prevents being attacked \nfrom behind."; return false; // Mind's Eye
                     case 299: __result = "Greatly raises critical \nhit rate of normal attacks."; return false; // Might
@@ -287,7 +292,7 @@ namespace NocturneInsaniax
                     case 448: __result = "Medium Curse damage to random foes. \nMay inflict Poison."; return false; // Poison Volley
                     case 449: __result = "High Curse damage to one foe. \nMay inflict Poison."; return false; // Poison Salvo
                     case 450: __result = "High Nerve damage to one foe. \nMay inflict Stun."; return false; // Neural Shock
-                    case 451: __result = "High Nerve damage to all foes. \nMay inflict Stun."; return false; // Neural Storm
+                    case 451: __result = "High Nerve damage to all foes. \nMay inflict Stun."; return false; // Overload
                     case 452: __result = "High Mind damage to one foe. \nMay inflict Panic."; return false; // Pulinpaon
                     case 453: __result = "High Almighty damage to one foe. \nLowers target's Attack/Defense/Evasion/Hit Rate."; return false; // Antichthon
                     case 454: __result = "Massive Almighty damage to one foe."; return false; // Last Word
@@ -441,7 +446,7 @@ namespace NocturneInsaniax
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    work.skill[0] = 192;
-                    //    work.skill[1] = 206;
+                    //    work.skill[1] = 313;
                     //    work.skill[2] = 459;
                     //    work.skill[3] = 40;
                     //    work.skill[4] = 456;
@@ -528,11 +533,18 @@ namespace NocturneInsaniax
                     }
                 }
 
+                if (nskill == 266)
+                {
+                    var darkResistance = nbCalc.nbGetAisyo(nskill, dformindex, 7);
+                    if (darkResistance == 65536 || darkResistance == 131072 || nbMainProcess.nbGetPartyFromFormindex(dformindex).count[11] == 1)
+                        __result = 0;
+                    return;
+                }
+
                 var work = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
                 if (__result == 1 && datCalc.datCheckSyojiSkill(work, 366) != 0 && datNormalSkill.tbl[nskill].basstatus != 1 && datNormalSkill.tbl[nskill].basstatus != 2)
                 {
                     __result = (uint)random.Next(2);
-                    return;
                 }
 
                 if (bossList.Contains(work.id) && (datNormalSkill.tbl[nskill].basstatus == 8 || datNormalSkill.tbl[nskill].basstatus == 16 || datNormalSkill.tbl[nskill].basstatus == 32 || datNormalSkill.tbl[nskill].basstatus == 128 || datNormalSkill.tbl[nskill].basstatus == 1024 || datNormalSkill.tbl[nskill].basstatus == 2048))
@@ -599,8 +611,42 @@ namespace NocturneInsaniax
                             }
                         default: break;
                     }
-                    
                 }
+            }
+        }
+
+        [HarmonyPatch(typeof(itfMesManager), nameof(itfMesManager.itfMesMngGetStrImmediate))]
+        private class itfMesMngGetStrImmediatePatch
+        {
+            public static void Postfix(ref int id, ref int message, ref int page, ref string __result)
+            {
+                if (nbMainProcess.nbGetMainProcessData().enemyunit[0].nowindex == 497 && __result == "Dante appeared! ")
+                {
+                    __result = "Dante transformed! ";
+                }
+            }
+        }
+
+        [HarmonyPatch(typeof(nbUnitProcess), nameof(nbUnitProcess.nbSummonUnit))]
+        private class nbSummonUnitPatch
+        {
+            public static void Prefix(ref int side, ref int stockno, ref int formindex)
+            {
+                if (nbMainProcess.nbGetMainProcessData().enemyunit[0].nowindex == 497)
+                {
+                    nbUnitProcess.nbReturnUnit(4, 0, 0);
+                    nbMakePacket.nbAddNewPressPacket(0, 0, -10, -10);
+                }
+            }
+        }
+
+        [HarmonyPatch(typeof(effModelTrackPoly), nameof(effModelTrackPoly.Eff_ModelTrackPoly_DANTE_Check))]
+        private class Eff_ModelTrackPoly_DANTE_CheckPatch
+        {
+            public static void Postfix(ref dds3ModelHandle_t hModel, ref int __result)
+            {
+                if (mdlManager.mdlGetMajorNum(ref hModel) == 1 && mdlManager.mdlGetMinorNum(ref hModel) == 252)
+                    __result = 1;
             }
         }
 
@@ -1089,32 +1135,41 @@ namespace NocturneInsaniax
             GateOfHell(432);
             AkashicArts(433);
             Bloodbath(434);
+
             Scald(435);
             Ragnarok(436);
+
             Refrigerate(437);
             Cocytus(438);
             Fimbulvetr(439);
+
             Jolt(440);
             ThunderGods(441);
             ThunderReign(442);
+
             Dervish(443);
             HeavenlyCyclone(444);
             Vayavya(445);
+
             Damnation(446);
             MillenniaCurse(447);
+
             PoisonVolley(448);
             PoisonSalvo(449);
             NeuralShock(450);
-            NeuralStorm(451);
+            Overload(451);
             Pulinpaon(452);
+
             Antichthon(453);
             LastWord(454);
             SoulDrain(455);
+            
             Amrita(456);
             Diamrita(457);
             HeatRiser(458);
             LusterCandy(459);
             SilentPrayer(460);
+            
             StormGale(461);
             WingedFury(462);
 
@@ -1131,6 +1186,8 @@ namespace NocturneInsaniax
             JackAgilao(473);
             GaeBolg(474);
             Gungnir(475);
+
+            DevilTrigger(497);
 
             // YHVH Skills
             Scorn(498);
@@ -1170,7 +1227,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 10;
             datNormalSkill.tbl[id].hpn = 42;
-            datNormalSkill.tbl[id].failpoint = 20;
+            datNormalSkill.tbl[id].failpoint = 10;
             datNormalSkill.tbl[id].criticalpoint = 20;
         }
 
@@ -1178,7 +1235,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 14;
             datNormalSkill.tbl[id].hpn = 48;
-            datNormalSkill.tbl[id].failpoint = 30;
+            datNormalSkill.tbl[id].failpoint = 15;
             datNormalSkill.tbl[id].criticalpoint = 30;
 
             tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 5;
@@ -1198,8 +1255,8 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 24;
             datNormalSkill.tbl[id].hpn = 30;
-            datNormalSkill.tbl[id].failpoint = 30;
-            datNormalSkill.tbl[id].criticalpoint = 30;
+            datNormalSkill.tbl[id].failpoint = 15;
+            datNormalSkill.tbl[id].criticalpoint = 25;
         }
 
         private static void HadesBlast(ushort id)
@@ -1222,7 +1279,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 30;
             datNormalSkill.tbl[id].hpn = 32;
-            datNormalSkill.tbl[id].failpoint = 16;
+            datNormalSkill.tbl[id].failpoint = 15;
             datNormalSkill.tbl[id].criticalpoint = 30;
             datNormalSkill.tbl[id].badlevel = 24;
 
@@ -1233,7 +1290,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 16;
             datNormalSkill.tbl[id].hpn = 52;
-            datNormalSkill.tbl[id].failpoint = 24;
+            datNormalSkill.tbl[id].failpoint = 12;
             datNormalSkill.tbl[id].criticalpoint = 24;
         }
 
@@ -1249,7 +1306,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 22;
             datNormalSkill.tbl[id].hpn = 60;
-            datNormalSkill.tbl[id].failpoint = 40;
+            datNormalSkill.tbl[id].failpoint = 20;
             datNormalSkill.tbl[id].criticalpoint = 40;
             datNormalSkill.tbl[id].badlevel = 30;
 
@@ -1260,7 +1317,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 22;
             datNormalSkill.tbl[id].hpn = 60;
-            datNormalSkill.tbl[id].failpoint = 40;
+            datNormalSkill.tbl[id].failpoint = 20;
             datNormalSkill.tbl[id].criticalpoint = 40;
             datNormalSkill.tbl[id].badlevel = 36;
         }
@@ -1269,7 +1326,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 14;
             datNormalSkill.tbl[id].hpn = 48;
-            datNormalSkill.tbl[id].failpoint = 20;
+            datNormalSkill.tbl[id].failpoint = 10;
             datNormalSkill.tbl[id].criticalpoint = 20;
 
             tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 4;
@@ -1287,7 +1344,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 18;
             datNormalSkill.tbl[id].hpn = 56;
-            datNormalSkill.tbl[id].failpoint = 30;
+            datNormalSkill.tbl[id].failpoint = 15;
             datNormalSkill.tbl[id].criticalpoint = 30;
             datNormalSkill.tbl[id].badlevel = 30;
         }
@@ -1296,7 +1353,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 32;
             datNormalSkill.tbl[id].hpn = 30;
-            datNormalSkill.tbl[id].failpoint = 6;
+            datNormalSkill.tbl[id].failpoint = 8;
             datNormalSkill.tbl[id].criticalpoint = 20;
             datNormalSkill.tbl[id].badlevel = 24;
         }
@@ -1305,7 +1362,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 10;
             datNormalSkill.tbl[id].hpn = 40;
-            datNormalSkill.tbl[id].failpoint = 20;
+            datNormalSkill.tbl[id].failpoint = 10;
             datNormalSkill.tbl[id].criticalpoint = 20;
         }
 
@@ -1313,7 +1370,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 12;
             datNormalSkill.tbl[id].hpn = 38;
-            datNormalSkill.tbl[id].failpoint = 18;
+            datNormalSkill.tbl[id].failpoint = 10;
             datNormalSkill.tbl[id].criticalpoint = 18;
             datNormalSkill.tbl[id].badlevel = 36;
         }
@@ -1322,7 +1379,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 12;
             datNormalSkill.tbl[id].hpn = 38;
-            datNormalSkill.tbl[id].failpoint = 18;
+            datNormalSkill.tbl[id].failpoint = 10;
             datNormalSkill.tbl[id].criticalpoint = 18;
             datNormalSkill.tbl[id].badlevel = 36;
         }
@@ -1331,7 +1388,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 12;
             datNormalSkill.tbl[id].hpn = 36;
-            datNormalSkill.tbl[id].failpoint = 18;
+            datNormalSkill.tbl[id].failpoint = 10;
             datNormalSkill.tbl[id].criticalpoint = 18;
             datNormalSkill.tbl[id].badlevel = 30;
         }
@@ -1340,7 +1397,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 10;
             datNormalSkill.tbl[id].hpn = 44;
-            datNormalSkill.tbl[id].failpoint = 24;
+            datNormalSkill.tbl[id].failpoint = 12;
             datNormalSkill.tbl[id].criticalpoint = 24;
         }
 
@@ -1348,7 +1405,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 12;
             datNormalSkill.tbl[id].hpn = 42;
-            datNormalSkill.tbl[id].failpoint = 22;
+            datNormalSkill.tbl[id].failpoint = 12;
             datNormalSkill.tbl[id].criticalpoint = 22;
             datNormalSkill.tbl[id].badlevel = 44;
         }
@@ -1357,7 +1414,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 12;
             datNormalSkill.tbl[id].hpn = 40;
-            datNormalSkill.tbl[id].failpoint = 22;
+            datNormalSkill.tbl[id].failpoint = 12;
             datNormalSkill.tbl[id].criticalpoint = 22;
             datNormalSkill.tbl[id].badlevel = 40;
         }
@@ -1366,7 +1423,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 12;
             datNormalSkill.tbl[id].hpn = 40;
-            datNormalSkill.tbl[id].failpoint = 22;
+            datNormalSkill.tbl[id].failpoint = 12;
             datNormalSkill.tbl[id].criticalpoint = 22;
             datNormalSkill.tbl[id].badlevel = 40;
 
@@ -1377,7 +1434,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 12;
             datNormalSkill.tbl[id].hpn = 42;
-            datNormalSkill.tbl[id].failpoint = 22;
+            datNormalSkill.tbl[id].failpoint = 12;
             datNormalSkill.tbl[id].criticalpoint = 22;
             datNormalSkill.tbl[id].badlevel = 44;
         }
@@ -1386,7 +1443,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 16;
             datNormalSkill.tbl[id].hpn = 56;
-            datNormalSkill.tbl[id].failpoint = 40;
+            datNormalSkill.tbl[id].failpoint = 20;
             datNormalSkill.tbl[id].criticalpoint = 40;
 
             tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 7;
@@ -1396,7 +1453,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 10;
             datNormalSkill.tbl[id].hpn = 44;
-            datNormalSkill.tbl[id].failpoint = 24;
+            datNormalSkill.tbl[id].failpoint = 12;
             datNormalSkill.tbl[id].criticalpoint = 24;
         }
 
@@ -1404,7 +1461,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 12;
             datNormalSkill.tbl[id].hpn = 42;
-            datNormalSkill.tbl[id].failpoint = 22;
+            datNormalSkill.tbl[id].failpoint = 12;
             datNormalSkill.tbl[id].criticalpoint = 22;
             datNormalSkill.tbl[id].badlevel = 44;
         }
@@ -1413,7 +1470,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 12;
             datNormalSkill.tbl[id].hpn = 42;
-            datNormalSkill.tbl[id].failpoint = 22;
+            datNormalSkill.tbl[id].failpoint = 12;
             datNormalSkill.tbl[id].criticalpoint = 22;
             datNormalSkill.tbl[id].badlevel = 44;
         }
@@ -1422,7 +1479,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 16;
             datNormalSkill.tbl[id].hpn = 56;
-            datNormalSkill.tbl[id].failpoint = 40;
+            datNormalSkill.tbl[id].failpoint = 20;
             datNormalSkill.tbl[id].criticalpoint = 40;
         }
 
@@ -1470,7 +1527,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 12;
             datNormalSkill.tbl[id].hpn = 24;
-            datNormalSkill.tbl[id].failpoint = 10;
+            datNormalSkill.tbl[id].failpoint = 2;
             datNormalSkill.tbl[id].criticalpoint = 20;
         }
 
@@ -1524,7 +1581,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hpn = 32;
             datNormalSkill.tbl[id].failpoint = 0;
             datNormalSkill.tbl[id].hitlevel = 120;
-            datNormalSkill.tbl[id].criticalpoint = 30;
+            datNormalSkill.tbl[id].criticalpoint = 18;
             datNormalSkill.tbl[id].hojopoint = 1;
             datNormalSkill.tbl[id].hojotype = 160;
         }
@@ -1534,7 +1591,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].cost = 12;
             datNormalSkill.tbl[id].hpn = 48;
             datNormalSkill.tbl[id].failpoint = 0;
-            datNormalSkill.tbl[id].criticalpoint = 40;
+            datNormalSkill.tbl[id].criticalpoint = 36;
         }
 
         private static void MokoiBoomerang(ushort id)
@@ -1542,7 +1599,8 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].cost = 16;
             datNormalSkill.tbl[id].hpn = 30;
             datNormalSkill.tbl[id].failpoint = 0;
-            datNormalSkill.tbl[id].criticalpoint = 40;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].badlevel = 24;
         }
 
         private static void Andalucia(ushort id)
@@ -1565,7 +1623,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 12;
             datNormalSkill.tbl[id].hpn = 32;
-            datNormalSkill.tbl[id].failpoint = 12;
+            datNormalSkill.tbl[id].failpoint = 6;
             datNormalSkill.tbl[id].criticalpoint = 12;
         }
 
@@ -1585,7 +1643,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].costtype = 1;
             datNormalSkill.tbl[id].criticalpoint = 20;
             datNormalSkill.tbl[id].deadtype = 0;
-            datNormalSkill.tbl[id].failpoint = 20;
+            datNormalSkill.tbl[id].failpoint = 10;
             datNormalSkill.tbl[id].flag = 0;
             datNormalSkill.tbl[id].hitlevel = 100;
             datNormalSkill.tbl[id].hitprog = 0;
@@ -1635,7 +1693,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].costtype = 1;
             datNormalSkill.tbl[id].criticalpoint = 10;
             datNormalSkill.tbl[id].deadtype = 0;
-            datNormalSkill.tbl[id].failpoint = 20;
+            datNormalSkill.tbl[id].failpoint = 10;
             datNormalSkill.tbl[id].flag = 0;
             datNormalSkill.tbl[id].hitlevel = 100;
             datNormalSkill.tbl[id].hitprog = 0;
@@ -1685,7 +1743,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].costtype = 1;
             datNormalSkill.tbl[id].criticalpoint = 10;
             datNormalSkill.tbl[id].deadtype = 0;
-            datNormalSkill.tbl[id].failpoint = 20;
+            datNormalSkill.tbl[id].failpoint = 10;
             datNormalSkill.tbl[id].flag = 0;
             datNormalSkill.tbl[id].hitlevel = 100;
             datNormalSkill.tbl[id].hitprog = 0;
@@ -1783,9 +1841,9 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].cost = 17;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 1;
-            datNormalSkill.tbl[id].criticalpoint = 50;
+            datNormalSkill.tbl[id].criticalpoint = 40;
             datNormalSkill.tbl[id].deadtype = 0;
-            datNormalSkill.tbl[id].failpoint = 12;
+            datNormalSkill.tbl[id].failpoint = 15;
             datNormalSkill.tbl[id].flag = 0;
             datNormalSkill.tbl[id].hitlevel = 100;
             datNormalSkill.tbl[id].hitprog = 0;
@@ -1835,7 +1893,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].costtype = 1;
             datNormalSkill.tbl[id].criticalpoint = 30;
             datNormalSkill.tbl[id].deadtype = 0;
-            datNormalSkill.tbl[id].failpoint = 8;
+            datNormalSkill.tbl[id].failpoint = 10;
             datNormalSkill.tbl[id].flag = 0;
             datNormalSkill.tbl[id].hitlevel = 100;
             datNormalSkill.tbl[id].hitprog = 0;
@@ -1885,7 +1943,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].costtype = 1;
             datNormalSkill.tbl[id].criticalpoint = 30;
             datNormalSkill.tbl[id].deadtype = 0;
-            datNormalSkill.tbl[id].failpoint = 8;
+            datNormalSkill.tbl[id].failpoint = 10;
             datNormalSkill.tbl[id].flag = 0;
             datNormalSkill.tbl[id].hitlevel = 100;
             datNormalSkill.tbl[id].hitprog = 0;
@@ -1985,7 +2043,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].costtype = 1;
             datNormalSkill.tbl[id].criticalpoint = 50;
             datNormalSkill.tbl[id].deadtype = 0;
-            datNormalSkill.tbl[id].failpoint = 13;
+            datNormalSkill.tbl[id].failpoint = 15;
             datNormalSkill.tbl[id].flag = 0;
             datNormalSkill.tbl[id].hitlevel = 100;
             datNormalSkill.tbl[id].hitprog = 0;
@@ -2035,7 +2093,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].costtype = 1;
             datNormalSkill.tbl[id].criticalpoint = 18;
             datNormalSkill.tbl[id].deadtype = 0;
-            datNormalSkill.tbl[id].failpoint = 18;
+            datNormalSkill.tbl[id].failpoint = 10;
             datNormalSkill.tbl[id].flag = 0;
             datNormalSkill.tbl[id].hitlevel = 100;
             datNormalSkill.tbl[id].hitprog = 0;
@@ -2176,7 +2234,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].costtype = 1;
             datNormalSkill.tbl[id].criticalpoint = 20;
             datNormalSkill.tbl[id].deadtype = 0;
-            datNormalSkill.tbl[id].failpoint = 20;
+            datNormalSkill.tbl[id].failpoint = 10;
             datNormalSkill.tbl[id].flag = 0;
             datNormalSkill.tbl[id].hitlevel = 100;
             datNormalSkill.tbl[id].hitprog = 0;
@@ -3009,6 +3067,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].badlevel = 21;
             datNormalSkill.tbl[id].hojopoint = 1;
             datNormalSkill.tbl[id].hojotype = 544;
+            datNormalSkill.tbl[id].hitlevel = 120;
         }
 
         private static void Jolt(ushort id)
@@ -3312,6 +3371,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].magiclimit = 32767;
             datNormalSkill.tbl[id].hojopoint = 1;
             datNormalSkill.tbl[id].hojotype = 10;
+            datNormalSkill.tbl[id].hitlevel = 120;
         }
 
         private static void HellExhaust(ushort id)
@@ -3782,10 +3842,11 @@ namespace NocturneInsaniax
 
         private static void Tekisatsu(ushort id)
         {
+            datNormalSkill.tbl[id].badtype = 1;
             datNormalSkill.tbl[id].cost = 12;
-            datNormalSkill.tbl[id].hpn = 48;
-            datNormalSkill.tbl[id].failpoint = 3;
-            datNormalSkill.tbl[id].criticalpoint = 4;
+            datNormalSkill.tbl[id].hpn = 42;
+            datNormalSkill.tbl[id].failpoint = 10;
+            datNormalSkill.tbl[id].criticalpoint = 0;
         }
 
         private static void JiraiyaDance(ushort id)
@@ -4689,7 +4750,7 @@ namespace NocturneInsaniax
             skillLevel.Level = 8;
         }
 
-        private static void NeuralStorm(ushort id)
+        private static void Overload(ushort id)
         {
             datSkill.tbl[id].flag = 0;
             datSkill.tbl[id].keisyoform = 1;
@@ -5789,6 +5850,55 @@ namespace NocturneInsaniax
             datSkill.tbl[id].type = 0;
 
             OverWriteSkillEffect(id, 219);
+        }
+
+        private static void DevilTrigger(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 512;
+            datSkill.tbl[id].skillattr = 15;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 0;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 0;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 50;
+            datNormalSkill.tbl[id].hptype = 0;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 0;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 3;
+            datNormalSkill.tbl[id].targetarea = 1;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 1;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 226);
+            datNormalSkillVisual.tbl[id].bedno = datNormalSkillVisual.tbl[15].bedno;
+            datNormalSkillVisual.tbl[id].hatudo = datNormalSkillVisual.tbl[15].hatudo;
         }
 
         // YHVH Skills

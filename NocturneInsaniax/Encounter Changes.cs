@@ -604,6 +604,16 @@ namespace NocturneInsaniax
             datEncount.tbl[653].devil[1] = 226;
             datEncount.tbl[653].devil[2] = 226;
 
+            datEncount.tbl[1033].flag = 11; // Dante/Raidou 1
+
+            datEncount.tbl[1035].maxcall = 4; // Dante/Raidou 2
+            datEncount.tbl[1035].maxparty = 5;
+            datEncount.tbl[1035].devil[0] = 0;
+            datEncount.tbl[1035].devil[1] = 0;
+            datEncount.tbl[1035].devil[2] = 341;
+            datEncount.tbl[1035].devil[3] = 0;
+            datEncount.tbl[1035].devil[4] = 0;
+
             // Boss Flauros
             datEncount.tbl[1277].devil[0] = 362;
             datEncount.tbl[1277].backattack = -1;

@@ -29,6 +29,8 @@ namespace NocturneInsaniax
 
                 if (ratio == 75)
                     __result -= 25;
+                if (ratio == 65)
+                    __result -= 15;
 
                 bool isWeak = resistance[0] == '1';
 
@@ -46,7 +48,7 @@ namespace NocturneInsaniax
                                 __result -= 2147483648;
                             if (datCalc.datCheckSyojiSkill(work, 364) != 0)
                             {
-                                if (__result == 150)
+                                if (__result == 150 || __result == 130)
                                     __result = 100;
                                 __result -= Convert.ToUInt32(__result / 2);
                             }
@@ -58,7 +60,7 @@ namespace NocturneInsaniax
                                 __result -= 2147483648;
                             if (datCalc.datCheckSyojiSkill(work, 364) != 0)
                             {
-                                if (__result == 150)
+                                if (__result == 150 || __result == 130)
                                     __result = 100;
                                 __result -= Convert.ToUInt32(__result / 2);
                             }
@@ -70,7 +72,7 @@ namespace NocturneInsaniax
                                 __result -= 2147483648;
                             if (datCalc.datCheckSyojiSkill(work, 364) != 0)
                             {
-                                if (__result == 150)
+                                if (__result == 150 || __result == 130)
                                     __result = 100;
                                 __result -= Convert.ToUInt32(__result / 2);
                             }
@@ -82,7 +84,7 @@ namespace NocturneInsaniax
                                 __result -= 2147483648;
                             if (datCalc.datCheckSyojiSkill(work, 364) != 0)
                             {
-                                if (__result == 150)
+                                if (__result == 150 || __result == 130)
                                     __result = 100;
                                 __result -= Convert.ToUInt32(__result / 2);
                             }
@@ -106,7 +108,7 @@ namespace NocturneInsaniax
                                 __result -= 2147483648;
                             if (datCalc.datCheckSyojiSkill(work, 365) != 0)
                             {
-                                if (__result == 150)
+                                if (__result == 150 || __result == 130)
                                     __result = 100;
                                 __result -= Convert.ToUInt32(__result / 2);
                             }
@@ -118,7 +120,7 @@ namespace NocturneInsaniax
                                 __result -= 2147483648;
                             if (datCalc.datCheckSyojiSkill(work, 365) != 0)
                             {
-                                if (__result == 150)
+                                if (__result == 150 || __result == 130)
                                     __result = 100;
                                 __result -= Convert.ToUInt32(__result / 2);
                             }
@@ -130,7 +132,7 @@ namespace NocturneInsaniax
                                 __result -= 2147483648;
                             if (datCalc.datCheckSyojiSkill(work, 365) != 0)
                             {
-                                if (__result == 150)
+                                if (__result == 150 || __result == 130)
                                     __result = 100;
                                 __result -= Convert.ToUInt32(__result / 2);
                             }

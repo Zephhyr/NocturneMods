@@ -142,6 +142,16 @@ namespace NocturneInsaniax
 
         #region nbCalc
 
+        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetCriticalPow))]
+        private class CriticalPowPatch
+        {
+            public static bool Prefix(ref int sformindex, ref float pow, ref float __result)
+            {
+                __result = pow * 1.3f;
+                return false;
+            }
+        }
+
         [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetButuriAttack))]
         private class PhysicalAttackPatch
         {
@@ -379,7 +389,7 @@ namespace NocturneInsaniax
                     var evasionBuff = nbCalc.nbGetHojoRitu(dformindex, 6);
                     if (nskill == 475 && evasionBuff < 1) evasionBuff = 1;
 
-                    var chance = ((datNormalSkill.tbl[nskill].hitlevel - datNormalSkill.tbl[nskill].failpoint) + (userLevel + (userAgi * 2) + userLuk) - (targetLevel + (targetAgi * 2) + targetLuk)) * accuracyBuff * evasionBuff;
+                    var chance = ((datNormalSkill.tbl[nskill].hitlevel - datNormalSkill.tbl[nskill].failpoint) + ((userLevel/2) + (userAgi*2) + (userLuk)) - ((targetLevel/2) + (targetAgi*2) + (targetLuk))) * accuracyBuff * evasionBuff;
                     if (workFromFormindex1.badstatus == 256)
                         chance /= 2;
                     var rand = dds3KernelCore.dds3GetRandIntA(100);
