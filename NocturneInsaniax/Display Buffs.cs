@@ -110,30 +110,45 @@ namespace NocturneInsaniax
 
                 if (buffs_strings[0] != "")
                 {
+                    buffs_strings[0] = buffs_strings[0].Contains("+")
+                        ? "<material=\"MsgFont4\">" + buffs_strings[0] + "<material=\"MsgFont0\">"
+                        : "<material=\"MsgFont1\">" + buffs_strings[0] + "<material=\"MsgFont0\">";
                     result += "AT:" + buffs_strings[0];
                 }
 
                 if (buffs_strings[1] != "")
                 {
                     if (result != "\n ") result += " ";
+                    buffs_strings[1] = buffs_strings[1].Contains("+")
+                        ? "<material=\"MsgFont4\">" + buffs_strings[1] + "<material=\"MsgFont0\">"
+                        : "<material=\"MsgFont1\">" + buffs_strings[1] + "<material=\"MsgFont0\">";
                     result += "MA:" + buffs_strings[1];
                 }
 
                 if (buffs_strings[3] != "")
                 {
                     if (result != "\n ") result += " ";
+                    buffs_strings[3] = buffs_strings[3].Contains("+")
+                        ? "<material=\"MsgFont4\">" + buffs_strings[3] + "<material=\"MsgFont0\">"
+                        : "<material=\"MsgFont1\">" + buffs_strings[3] + "<material=\"MsgFont0\">";
                     result += "DF:" + buffs_strings[3];
                 }
 
                 if (buffs_strings[4] != "")
                 {
                     if (result != "\n ") result += " ";
+                    buffs_strings[4] = buffs_strings[4].Contains("+")
+                        ? "<material=\"MsgFont4\">" + buffs_strings[4] + "<material=\"MsgFont0\">"
+                        : "<material=\"MsgFont1\">" + buffs_strings[4] + "<material=\"MsgFont0\">";
                     result += "HT:" + buffs_strings[4];
                 }
 
                 if (buffs_strings[2] != "")
                 {
                     if (result != "\n ") result += " ";
+                    buffs_strings[2] = buffs_strings[2].Contains("+")
+                        ? "<material=\"MsgFont4\">" + buffs_strings[2] + "<material=\"MsgFont0\">"
+                        : "<material=\"MsgFont1\">" + buffs_strings[2] + "<material=\"MsgFont0\">";
                     result += "EV:" + buffs_strings[2];
                 }
 

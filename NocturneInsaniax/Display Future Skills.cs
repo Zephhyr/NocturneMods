@@ -22,13 +22,15 @@ namespace NocturneInsaniax
                         // If you cannot get "Pierce"
                         if (!EventBit.evtBitCheck(2241))
                         {
-                            cmpStatus._statusUIScr.awaitText[i].text = "<material=\"TMC14\">？"; // Displays a "？"
+                            //cmpStatus._statusUIScr.awaitText[i].text = "<material=\"TMC14\">？"; // Displays a "？"
+                            cmpStatus._statusUIScr.awaitText[i].text = "？"; // Displays a "？"
                         }
                         continue; //Skip "Pierce" on Demi-fiend
                     }
 
                     string name = datSkillName.Get(skillID, pStock.id);
-                    cmpStatus._statusUIScr.awaitText[i].text = "<material=\"TMC14\">" + name;
+                    //cmpStatus._statusUIScr.awaitText[i].text = "<material=\"TMC14\">" + name;
+                    cmpStatus._statusUIScr.awaitText[i].text = name;
                 }
             }
         }

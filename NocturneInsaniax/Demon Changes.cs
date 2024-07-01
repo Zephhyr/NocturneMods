@@ -10969,8 +10969,8 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 50; // Mind
 
             // Enemy Stats
-            //datDevilFormat.tbl[id].hp = 60000;
-            datDevilFormat.tbl[id].hp = 1;
+            datDevilFormat.tbl[id].hp = 60000;
+            //datDevilFormat.tbl[id].hp = 1;
             datDevilFormat.tbl[id].maxhp = 60000;
             datDevilFormat.tbl[id].mp = 60000;
             datDevilFormat.tbl[id].maxmp = 60000;

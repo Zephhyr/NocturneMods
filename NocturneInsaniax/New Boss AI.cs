@@ -845,6 +845,10 @@ namespace NocturneInsaniax
             {
                 UseSkill(ref a, 509); return;
             }
+            if (actionTrackers[a.work.id].currentBattleActionCount == 3)
+            {
+                UseSkill(ref a, 498); return;
+            }
             else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(510))
             {
                 UseSkill(ref a, 510); return;

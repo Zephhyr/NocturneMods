@@ -12,7 +12,6 @@ using Il2CppTMPro;
 using MelonLoader;
 using MelonLoader.CoreClrUtils;
 using Newtonsoft.Json;
-using System.Runtime.InteropServices;
 using UnityEngine;
 
 [assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax", "0.8.0", "Zephhyr, Matthiew Purple")]
@@ -41,7 +40,7 @@ namespace NocturneInsaniax
             //var output = JsonConvert.SerializeObject(fclJunkShopTable.fclShopItemBoxTbl);
             //MelonLogger.Msg(output);
 
-            //var output = JsonConvert.SerializeObject(datDevilVisual11.tbl_11_160_17F);
+            //var output = JsonConvert.SerializeObject(frFont.ColMaterialName);
             //MelonLogger.Msg(output);
 
             ApplySkillChanges();
@@ -163,8 +162,8 @@ namespace NocturneInsaniax
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D224_MSEE0_04", "D224_MSEE0_04", 503382016, false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D224_MSEE0_08", "D224_MSEE0_08", 503447552, false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D224_MSEE0_12", "D224_MSEE0_12", 503513088, false);
-                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D224_MSEE0_14", "D224_MSEE0_14", 93519872 , false);
-                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D224_MSEE0_15", "D224_MSEE0_15", 93519873 , false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D224_MSEE0_14", "D224_MSEE0_14", 93519872, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D224_MSEE0_15", "D224_MSEE0_15", 93519873, false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D224_MSEE0_23", "D224_MSEE0_23", 503578624, false);
 
                 // Doppelganger
@@ -476,7 +475,7 @@ namespace NocturneInsaniax
         //    }
         //}
 
-
+        
         [HarmonyPatch(typeof(fld_Npc), nameof(fld_Npc.fldItemBoxAdd))]
         private class ItemBoxAddPatch
         {

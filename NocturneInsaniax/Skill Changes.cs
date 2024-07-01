@@ -9,6 +9,7 @@ using Il2Cppeffect_H;
 using UnityEngine;
 using Il2Cppmodel_H;
 using System.Xml;
+using Newtonsoft.Json;
 
 namespace NocturneInsaniax
 {
@@ -437,6 +438,7 @@ namespace NocturneInsaniax
 
                     // Test - Add rigged demons to party
                     //dds3GlobalWork.DDS3_GBWK.maka = 4000;
+
                     //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 149).Count() == 0)
                     //{
                     //datCalc.datAddDevil(57, 0);

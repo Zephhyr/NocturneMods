@@ -1015,21 +1015,21 @@ namespace NocturneInsaniax
             {
                 if (id == 422 && (currentDemonID == 200 || currentDemonID == 339 || currentDemonID == 340 || currentDemonID == 341 || currentDemonID == 350))
                     __result = "Accelerate";
-                if (id == 277 && (currentDemonID == 200))
+                else if(id == 277 && (currentDemonID == 200))
                     __result = "Rev Up";
-                if (id == 220 && (currentDemonID == 340))
+                else if(id == 220 && (currentDemonID == 340))
                     __result = "Pursuit";
-                if (id == 226 && (currentDemonID == 79))
+                else if(id == 226 && (currentDemonID == 79))
                     __result = "Backup";
-                if ((id == 226 || id == 499) && (currentDemonID == 345))
+                else if((id == 226 || id == 499) && (currentDemonID == 345))
                     __result = "Call Evil";
-                if ((id == 226 || id == 496) && (currentDemonID == 346))
+                else if((id == 226 || id == 496) && (currentDemonID == 346))
                     __result = "Call Angel";
-                if ((id == 226 || id == 497) && (currentDemonID == 347))
+                else if((id == 226 || id == 497) && (currentDemonID == 347))
                     __result = "Call Soldier";
-                if ((id == 226 || id == 498) && (currentDemonID == 348))
+                else if((id == 226 || id == 498) && (currentDemonID == 348))
                     __result = "Call Souls";
-                if (id == 252 && (currentDemonID == 321))
+                else if(id == 252 && (currentDemonID == 321))
                     __result = "Cursed Emission";
                 else if (id < 288 || id > 421) // If it isn't a passive skill
                 {

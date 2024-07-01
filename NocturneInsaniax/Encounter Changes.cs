@@ -194,7 +194,7 @@ namespace NocturneInsaniax
                 case 64: IkebukuroTunnelSarasvatiEncounter(); return 1270;
                 case 65: IkebukuroTunnelSarasvatiEncounter(); return 1270;
 
-                case 66: Overworld4ZhuqueEncounter(); return 713;
+                case 66: Overworld4ZhuqueEncounter(); return 1270;
 
                 case 68: AsakusaValkyrieEncounter(); return 1270;
 
@@ -628,6 +628,7 @@ namespace NocturneInsaniax
             // YHVH
             datEncount.tbl[1278].devil[0] = 254;
             datEncount.tbl[1278].backattack = -1;
+            datEncount.tbl[1278].flag = 11;
             datEncount.tbl[1278].formationtype = 13;
             datEncount.tbl[1278].areaid = 2;
             datEncount.tbl[1278].stageid = 246;
