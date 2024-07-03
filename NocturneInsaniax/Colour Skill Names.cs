@@ -7,9 +7,9 @@ using Il2Cppcamp_H;
 using Il2Cppfacility_H;
 using Il2Cppnewdata_H;
 using Il2Cppresult2_H;
-using static Il2Cpp.SteamDlcFileUtil;
-using MelonLoader.TinyJSON;
 using Il2Cppnewbattle_H;
+using static Il2Cpp.SteamDlcFileUtil;
+using static Il2CppXRD773Unity.CommonMesh;
 
 namespace NocturneInsaniax
 {
@@ -43,11 +43,16 @@ namespace NocturneInsaniax
                             break;
                     }
 
+                    VertexGradient attrGradient = GetSkillAttrGradient(attrColour, 1);
+
                     nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = attrColour;
+                    nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = true;
+                    nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().colorGradient = attrGradient;
                 }
                 else
                 {
                     nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = new Color(0.294f, 0.294f, 0.980f, 1);
+                    nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = false;
                 }
             }
         }
@@ -66,22 +71,28 @@ namespace NocturneInsaniax
                     Color attrColour = col2 == 2
                         ? GetSkillAttrColour(skillAttr, 0.7f)
                         : GetSkillAttrColour(skillAttr, 1);
+                    VertexGradient attrGradient = col2 == 2
+                        ? GetSkillAttrGradient(attrColour, 0.7f)
+                        : GetSkillAttrGradient(attrColour, 1);
 
-                    nbMainProcess.GetBattleUI().transform.Find("bmenu/normal_command/bmenu_command/bmenu_command0" + (listidx + 1) + "/bmenu_text01TM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = attrColour;
                     nbMainProcess.GetBattleUI().transform.Find("bmenu/normal_command/bmenu_command/bmenu_command0" + (listidx + 1) + "/bmenu_text01TM").gameObject.GetComponent<TextMeshProUGUI>().color = col2 == 2 ? new Color(1, 1, 1, 0.7f) : new Color(1, 1, 1, 1);
+                    nbMainProcess.GetBattleUI().transform.Find("bmenu/normal_command/bmenu_command/bmenu_command0" + (listidx + 1) + "/bmenu_text01TM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = attrColour;
+                    nbMainProcess.GetBattleUI().transform.Find("bmenu/normal_command/bmenu_command/bmenu_command0" + (listidx + 1) + "/bmenu_text01TM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = true;
+                    nbMainProcess.GetBattleUI().transform.Find("bmenu/normal_command/bmenu_command/bmenu_command0" + (listidx + 1) + "/bmenu_text01TM").gameObject.GetComponent<TextMeshProUGUI>().colorGradient = attrGradient;
                 }
                 else
                 {
                     if (col2 == 2)
                     {
-                        nbMainProcess.GetBattleUI().transform.Find("bmenu/normal_command/bmenu_command/bmenu_command0" + (listidx + 1) + "/bmenu_text01TM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = new Color(0.294f, 0.294f, 0.980f, 0.7f);
                         nbMainProcess.GetBattleUI().transform.Find("bmenu/normal_command/bmenu_command/bmenu_command0" + (listidx + 1) + "/bmenu_text01TM").gameObject.GetComponent<TextMeshProUGUI>().color = new Color(1, 1, 1, 0.7f);
+                        nbMainProcess.GetBattleUI().transform.Find("bmenu/normal_command/bmenu_command/bmenu_command0" + (listidx + 1) + "/bmenu_text01TM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = new Color(0.294f, 0.294f, 0.980f, 0.7f);
                     }
                     else
                     {
-                        nbMainProcess.GetBattleUI().transform.Find("bmenu/normal_command/bmenu_command/bmenu_command0" + (listidx + 1) + "/bmenu_text01TM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = new Color(0.294f, 0.294f, 0.980f, 1);
                         nbMainProcess.GetBattleUI().transform.Find("bmenu/normal_command/bmenu_command/bmenu_command0" + (listidx + 1) + "/bmenu_text01TM").gameObject.GetComponent<TextMeshProUGUI>().color = new Color(1, 1, 1, 1);
+                        nbMainProcess.GetBattleUI().transform.Find("bmenu/normal_command/bmenu_command/bmenu_command0" + (listidx + 1) + "/bmenu_text01TM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = new Color(0.294f, 0.294f, 0.980f, 1);
                     }
+                    nbMainProcess.GetBattleUI().transform.Find("bmenu/normal_command/bmenu_command/bmenu_command0" + (listidx + 1) + "/bmenu_text01TM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = false;
                 }
             }
         }
@@ -96,11 +107,44 @@ namespace NocturneInsaniax
                 Color attrColour = col2 == 2
                     ? GetSkillAttrColour(itemSkillAttr, 0.7f)
                     : GetSkillAttrColour(itemSkillAttr, 1);
+                VertexGradient attrGradient = col2 == 2
+                        ? GetSkillAttrGradient(attrColour, 0.7f)
+                        : GetSkillAttrGradient(attrColour, 1);
 
                 nbMainProcess.GetBattleUI().transform.Find("bmenu/normal_command/bmenu_command/bmenu_command0" + (listidx + 1) + "/bmenu_text01TM").gameObject.GetComponent<TextMeshProUGUI>().text =
                     nbMainProcess.GetBattleUI().transform.Find("bmenu/normal_command/bmenu_command/bmenu_command0" + (listidx + 1) + "/bmenu_text01TM").gameObject.GetComponent<TextMeshProUGUI>().text.Replace("<material=\"TMC00\">", "").Replace("<material=\"TMC01\">", "").Replace("<material=\"TMC02\">", "");
-                nbMainProcess.GetBattleUI().transform.Find("bmenu/normal_command/bmenu_command/bmenu_command0" + (listidx + 1) + "/bmenu_text01TM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = attrColour;
                 nbMainProcess.GetBattleUI().transform.Find("bmenu/normal_command/bmenu_command/bmenu_command0" + (listidx + 1) + "/bmenu_text01TM").gameObject.GetComponent<TextMeshProUGUI>().color = col2 == 2 ? new Color(1, 1, 1, 0.7f) : new Color(1, 1, 1, 1);
+                nbMainProcess.GetBattleUI().transform.Find("bmenu/normal_command/bmenu_command/bmenu_command0" + (listidx + 1) + "/bmenu_text01TM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = attrColour;
+                nbMainProcess.GetBattleUI().transform.Find("bmenu/normal_command/bmenu_command/bmenu_command0" + (listidx + 1) + "/bmenu_text01TM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = true;
+                nbMainProcess.GetBattleUI().transform.Find("bmenu/normal_command/bmenu_command/bmenu_command0" + (listidx + 1) + "/bmenu_text01TM").gameObject.GetComponent<TextMeshProUGUI>().colorGradient = attrGradient;
+            }
+        }
+
+        [HarmonyPatch(typeof(nbCommSelProcess), nameof(nbCommSelProcess.DispComm1Talk))]
+        private class DispComm1TalkColourPatch
+        {
+            public static void Postfix(ref nbCommSelProcessData_t s, ref ushort d, ref int ox, ref int oy, ref int oz, ref uint col, ref int listidx, ref int col2)
+            {
+                nbMainProcess.GetBattleUI().transform.Find("bmenu/normal_command/bmenu_command/bmenu_command0" + (listidx + 1) + "/bmenu_text01TM").gameObject.GetComponent<TextMeshProUGUI>().color = new Color(1, 1, 1, 1);
+                nbMainProcess.GetBattleUI().transform.Find("bmenu/normal_command/bmenu_command/bmenu_command0" + (listidx + 1) + "/bmenu_text01TM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = false;
+            }
+        }
+
+        [HarmonyPatch(typeof(nbPanelProcess), nameof(nbPanelProcess.nbPanelAnalyzeDraw))]
+        private class AnalyzeSkillColourPatch
+        {
+            public static void Postfix(ref datUnitWork_t pUnitWork)
+            {
+                foreach (var skill in datDevilFormat.tbl[pUnitWork.id].skill.Where(x => x != 0))
+                {
+                    var skillAttr = datSkill.tbl[skill].skillattr;
+                    Color attrColour = GetSkillAttrColour(skillAttr, 1);
+                    VertexGradient attrGradient = GetSkillAttrGradient(attrColour, 1);
+
+                    nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill0" + (datDevilFormat.tbl[pUnitWork.id].skill.IndexOf(skill) + 1) + "/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = attrColour;
+                    nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill0" + (datDevilFormat.tbl[pUnitWork.id].skill.IndexOf(skill) + 1) + "/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = true;
+                    nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill0" + (datDevilFormat.tbl[pUnitWork.id].skill.IndexOf(skill) + 1) + "/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().colorGradient = attrGradient;
+                }
             }
         }
 
@@ -109,21 +153,25 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int idx, ref uint Col, ref ushort SkillID, ref datUnitWork_t pStock, ref sbyte MskFlag, ref sbyte SelFlag, ref int MatCol)
             {
+                var skillAttr = datSkill.tbl[SkillID].skillattr;
+                Color attrColour = GetSkillAttrColour(skillAttr, 1);
+                VertexGradient attrGradient = GetSkillAttrGradient(attrColour, 1);
+
                 if (idx == 0)
                 {
-                    var skillAttr = datSkill.tbl[SkillID].skillattr;
-                    Color attrColour = GetSkillAttrColour(skillAttr, 1);
                     cmpInit._campUIScr.transform.Find("menu_itemskill/menu_item_window/menuitem_top/TextTM").gameObject.GetComponent<TextMeshProUGUI>().text
                     = cmpInit._campUIScr.transform.Find("menu_itemskill/menu_item_window/menuitem_top/TextTM").gameObject.GetComponent<TextMeshProUGUI>().text.Replace("<material=\"TMC00\">", "");
                     cmpInit._campUIScr.transform.Find("menu_itemskill/menu_item_window/menuitem_top/TextTM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = attrColour;
+                    cmpInit._campUIScr.transform.Find("menu_itemskill/menu_item_window/menuitem_top/TextTM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = true;
+                    cmpInit._campUIScr.transform.Find("menu_itemskill/menu_item_window/menuitem_top/TextTM").gameObject.GetComponent<TextMeshProUGUI>().colorGradient = attrGradient;
                 }
                 else
                 {
-                    var skillAttr = datSkill.tbl[SkillID].skillattr;
-                    Color attrColour = GetSkillAttrColour(skillAttr, 1);
                     cmpInit._campUIScr.transform.Find("menu_itemskill/menu_item_window/menuitem_base0" + (idx + 1) + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().text
                     = cmpInit._campUIScr.transform.Find("menu_itemskill/menu_item_window/menuitem_base0" + (idx + 1) + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().text.Replace("<material=\"TMC00\">", "");
                     cmpInit._campUIScr.transform.Find("menu_itemskill/menu_item_window/menuitem_base0" + (idx + 1) + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = attrColour;
+                    cmpInit._campUIScr.transform.Find("menu_itemskill/menu_item_window/menuitem_base0" + (idx + 1) + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = true;
+                    cmpInit._campUIScr.transform.Find("menu_itemskill/menu_item_window/menuitem_base0" + (idx + 1) + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().colorGradient = attrGradient;
                 }
             }
         }
@@ -149,18 +197,23 @@ namespace NocturneInsaniax
                     var itemSkillId = datItem.tbl[itemId].skillid;
                     var itemSkillAttr = datSkill.tbl[itemSkillId].skillattr;
                     Color attrColour = GetSkillAttrColour(itemSkillAttr, 1);
+                    VertexGradient attrGradient = GetSkillAttrGradient(attrColour, 1);
 
                     if (idx == 0)
                     {
                         cmpInit._campUIScr.transform.Find("menu_itemskill/menu_item_window/menuitem_top/TextTM").gameObject.GetComponent<TextMeshProUGUI>().text
                         = cmpInit._campUIScr.transform.Find("menu_itemskill/menu_item_window/menuitem_top/TextTM").gameObject.GetComponent<TextMeshProUGUI>().text.Replace("<material=\"TMC00\">", "").Replace("<material=\"TMC02\">", "");
                         cmpInit._campUIScr.transform.Find("menu_itemskill/menu_item_window/menuitem_top/TextTM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = attrColour;
+                        cmpInit._campUIScr.transform.Find("menu_itemskill/menu_item_window/menuitem_top/TextTM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = true;
+                        cmpInit._campUIScr.transform.Find("menu_itemskill/menu_item_window/menuitem_top/TextTM").gameObject.GetComponent<TextMeshProUGUI>().colorGradient = attrGradient;
                     }
                     else
                     {
                         cmpInit._campUIScr.transform.Find("menu_itemskill/menu_item_window/menuitem_base0" + (idx + 1) + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().text
                         = cmpInit._campUIScr.transform.Find("menu_itemskill/menu_item_window/menuitem_base0" + (idx + 1) + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().text.Replace("<material=\"TMC00\">", "").Replace("<material=\"TMC02\">", "");
                         cmpInit._campUIScr.transform.Find("menu_itemskill/menu_item_window/menuitem_base0" + (idx + 1) + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = attrColour;
+                        cmpInit._campUIScr.transform.Find("menu_itemskill/menu_item_window/menuitem_base0" + (idx + 1) + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = true;
+                        cmpInit._campUIScr.transform.Find("menu_itemskill/menu_item_window/menuitem_base0" + (idx + 1) + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().colorGradient = attrGradient;
                     }
                 }
             }
@@ -176,16 +229,24 @@ namespace NocturneInsaniax
                 {
                     var skillAttr = datSkill.tbl[skill].skillattr;
                     Color attrColour = GetSkillAttrColour(skillAttr, 1);
+                    VertexGradient attrGradient = GetSkillAttrGradient(attrColour, 1);
+
                     cmpStatus._statusUIScr.transform.Find("sskill/sskill_obtained0" + (pStock.skill.IndexOf(skill) + 1) + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().text
                     = cmpStatus._statusUIScr.transform.Find("sskill/sskill_obtained0" + (pStock.skill.IndexOf(skill) + 1) + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().text.Replace("<material=\"TMC00\">", "").Replace("<material=\"TMC21\">", "");
                     cmpStatus._statusUIScr.transform.Find("sskill/sskill_obtained0" + (pStock.skill.IndexOf(skill) + 1) + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = attrColour;
+                    cmpStatus._statusUIScr.transform.Find("sskill/sskill_obtained0" + (pStock.skill.IndexOf(skill) + 1) + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = true;
+                    cmpStatus._statusUIScr.transform.Find("sskill/sskill_obtained0" + (pStock.skill.IndexOf(skill) + 1) + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().colorGradient = attrGradient;
                 }
                 foreach (ushort skill in pSkillInfo.SkillID.Where(x => x != 0))
                 {
                     var skillAttr = datSkill.tbl[skill].skillattr;
                     Color attrColour = GetSkillAttrColour(skillAttr, 0.7f);
+                    VertexGradient attrGradient = GetSkillAttrGradient(attrColour, 0.7f);
+
                     cmpStatus._statusUIScr.transform.Find("sskill/sskill_await2_0" + (pSkillInfo.SkillID.IndexOf(skill) + 1) + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().color = new Color(1, 1, 1, 0.7f);
                     cmpStatus._statusUIScr.transform.Find("sskill/sskill_await2_0" + (pSkillInfo.SkillID.IndexOf(skill) + 1) + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = attrColour;
+                    cmpStatus._statusUIScr.transform.Find("sskill/sskill_await2_0" + (pSkillInfo.SkillID.IndexOf(skill) + 1) + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = true;
+                    cmpStatus._statusUIScr.transform.Find("sskill/sskill_await2_0" + (pSkillInfo.SkillID.IndexOf(skill) + 1) + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().colorGradient = attrGradient;
                 }
             }
         }
@@ -224,26 +285,101 @@ namespace NocturneInsaniax
             }
         }
 
+        [HarmonyPatch(typeof(fclShopDraw), nameof(fclShopDraw.shpDrawItem))]
+        private class shpDrawItemColourPatch
+        {
+            public static void Postfix(ref string path, ref uint col, ref ushort item, ref int price)
+            {
+                var itemSkillId = datItem.tbl[item].skillid;
+                var itemSkillAttr = datSkill.tbl[itemSkillId].skillattr;
+                Color attrColour = col == 2
+                    ? GetSkillAttrColour(itemSkillAttr, 0.7f)
+                    : GetSkillAttrColour(itemSkillAttr, 1);
+                VertexGradient attrGradient = col == 2
+                        ? GetSkillAttrGradient(attrColour, 0.7f)
+                        : GetSkillAttrGradient(attrColour, 1);
+
+                fclUI.GetGameObject("shoplist").transform.Find("shop_row/" + path + "/Text_nameTM").gameObject.GetComponent<TextMeshProUGUI>().text
+                    = fclUI.GetGameObject("shoplist").transform.Find("shop_row/" + path + "/Text_nameTM").gameObject.GetComponent<TextMeshProUGUI>().text.Replace("<material=\"TMC00\">", "");
+                fclUI.GetGameObject("shoplist").transform.Find("shop_row/" + path + "/Text_nameTM").gameObject.GetComponent<TextMeshProUGUI>().color = col == 2 ? new Color(1, 1, 1, 0.7f) : new Color(1, 1, 1, 1);
+                fclUI.GetGameObject("shoplist").transform.Find("shop_row/" + path + "/Text_nameTM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = attrColour;
+                fclUI.GetGameObject("shoplist").transform.Find("shop_row/" + path + "/Text_nameTM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = true;
+                fclUI.GetGameObject("shoplist").transform.Find("shop_row/" + path + "/Text_nameTM").gameObject.GetComponent<TextMeshProUGUI>().colorGradient = attrGradient;
+            }
+        }
+
+        [HarmonyPatch(typeof(fclRagDraw), nameof(fclRagDraw.ragDrawItemWindow))]
+        private class ragDrawItemColourPatch
+        {
+            public static void Postfix(ref lstListWindow_t pListWindow, ref byte Type, ref sbyte[] pIdxList, ref int top, ref sbyte Mode)
+            {
+                for (int i = 1; i <= 10; i++) 
+                {
+                    string index = i < 10 ? "0" + i: i.ToString();
+                    var text = fclUI.GetGameObject("ragitemlist").transform.Find("ragitem_row/ragitem_row" + index + "/Text_nameTM").gameObject.GetComponent<TextMeshProUGUI>().text.Replace("<material=\"TMC00\">", "").Replace("<material=\"TMC01\">", "");
+                    ushort itemId = 0;
+                    var items = fclRagShopTable.fclRagItemTbl.Where(x => x.ItemID != 0);
+                    foreach (var item in items)
+                    {
+                        var itemName = datItemName.Get(item.ItemID);
+                        if (itemName == text)
+                        {
+                            itemId = item.ItemID; break;
+                        }
+                    }
+
+                    var itemSkillId = datItem.tbl[itemId].skillid;
+                    var itemSkillAttr = datSkill.tbl[itemSkillId].skillattr;
+                    Color attrColour = GetSkillAttrColour(itemSkillAttr, 1);
+                    VertexGradient attrGradient = GetSkillAttrGradient(attrColour, 1);
+
+                    fclUI.GetGameObject("ragitemlist").transform.Find("ragitem_row/ragitem_row" + index + "/Text_nameTM").gameObject.GetComponent<TextMeshProUGUI>().text
+                        = fclUI.GetGameObject("ragitemlist").transform.Find("ragitem_row/ragitem_row" + index + "/Text_nameTM").gameObject.GetComponent<TextMeshProUGUI>().text.Replace("<material=\"TMC00\">", "").Replace("<material=\"TMC01\">", "");
+                    fclUI.GetGameObject("ragitemlist").transform.Find("ragitem_row/ragitem_row" + index + "/Text_nameTM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = attrColour;
+                    fclUI.GetGameObject("ragitemlist").transform.Find("ragitem_row/ragitem_row" + index + "/Text_nameTM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = true;
+                    fclUI.GetGameObject("ragitemlist").transform.Find("ragitem_row/ragitem_row" + index + "/Text_nameTM").gameObject.GetComponent<TextMeshProUGUI>().colorGradient = attrGradient;
+                }
+            }
+        }
+
+        [HarmonyPatch(typeof(fclRagDraw), nameof(fclRagDraw.ragDrawDevilWindow))]
+        private class ragDrawDevilWindowColourPatch
+        {
+            public static void Postfix(ref lstListWindow_t pListWindow, ref byte Type, ref sbyte[] pIdxList, ref int top, ref sbyte Mode)
+            {
+                for (int i = 1; i <= 10; i++)
+                {
+                    string index = i < 10 ? "0" + i : i.ToString();
+                    fclUI.GetGameObject("ragitemlist").transform.Find("ragitem_row/ragitem_row" + index + "/Text_nameTM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = false;
+                }
+            }
+        }
+
         public static Color GetSkillAttrColour(sbyte skillAttr, float a)
         {
             switch (skillAttr)
             {
-                case 0: return new Color(0.733f, 0.208f, 0.263f, a); // Phys
-                case 1: return new Color(0.800f, 0.318f, 0.094f, a); // Fire
-                case 2: return new Color(0.239f, 0.560f, 1.000f, a); // Ice
-                case 3: return new Color(0.671f, 0.557f, 0.164f, a); // Elec
-                case 4: return new Color(0.204f, 0.627f, 0.318f, a); // Force
-                case 5: return new Color(0.251f, 0.251f, 0.251f, a); // Almighty
-                case 6: return new Color(0.906f, 0.843f, 0.416f, a); // Light
-                case 7: return new Color(0.137f, 0.062f, 0.451f, a); // Dark
-                case 8: return new Color(0.161f, 0.239f, 0.784f, a); // Curse
-                case 9: return new Color(0.537f, 0.388f, 0.098f, a); // Nerve
-                case 10: return new Color(0.694f, 0.184f, 0.675f, a); // Mind
-                case 11: return new Color(0.251f, 0.251f, 0.251f, a); // Self-Destruct
+                case 00: return new Color(0.788f, 0.000f, 0.000f, a); // Phys
+                case 01: return new Color(1.000f, 0.369f, 0.000f, a); // Fire
+                case 02: return new Color(0.239f, 0.560f, 1.000f, a); // Ice
+                case 03: return new Color(1.000f, 0.784f, 0.000f, a); // Elec
+                case 04: return new Color(0.055f, 0.702f, 0.000f, a); // Force
+                case 05: return new Color(0.220f, 0.220f, 0.220f, a); // Almighty
+                case 06: return new Color(0.851f, 0.800f, 0.500f, a); // Light
+                case 07: return new Color(0.212f, 0.000f, 0.671f, a); // Dark
+                case 08: return new Color(0.588f, 0.224f, 1.000f, a); // Curse
+                case 09: return new Color(0.651f, 0.412f, 0.000f, a); // Nerve
+                case 10: return new Color(0.788f, 0.000f, 0.839f, a); // Mind
+                case 11: return new Color(0.220f, 0.220f, 0.220f, a); // Self-Destruct
                 case 13: return new Color(0.851f, 0.447f, 0.682f, a); // Heal
-                case 14: return new Color(0.172f, 0.784f, 0.529f, a); // Support
+                case 14: return new Color(0.282f, 0.929f, 0.624f, a); // Support
                 default: return new Color(0.294f, 0.294f, 0.980f, a); // Default
             }
+        }
+
+        public static VertexGradient GetSkillAttrGradient(Color attrColour, float a)
+        {
+            return new VertexGradient { topLeft = new Color(1, 1, 1, a), topRight = new Color(1, 1, 1, a), bottomLeft = attrColour, bottomRight = attrColour };
         }
     }
 }

@@ -437,7 +437,7 @@ namespace NocturneInsaniax
                     }
 
                     // Test - Add rigged demons to party
-                    //dds3GlobalWork.DDS3_GBWK.maka = 4000;
+                    //dds3GlobalWork.DDS3_GBWK.maka = 0;
 
                     //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 149).Count() == 0)
                     //{
