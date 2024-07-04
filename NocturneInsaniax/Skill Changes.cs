@@ -445,6 +445,7 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(226, 0);
                     //datCalc.datAddDevil(4, 0);
                     //datCalc.datAddDevil(147, 0);
+                    //datCalc.datAddDevil(30, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    work.skill[0] = 192;
@@ -4622,6 +4623,17 @@ namespace NocturneInsaniax
             var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
             skillLevel.SkillID = id;
             skillLevel.Level = 8;
+
+            nbCamera_SkillPtrTable.tbl[id] = new nbCameraSkillPtr_t
+            {
+                ptr_shot_1 = nbCamera_SkillPtrTable.tbl[98].ptr_shot_1,
+                ptr_shot_23 = nbCamera_SkillPtrTable.tbl[98].ptr_shot_23,
+                ptr_angleH = nbCamera_SkillPtrTable.tbl[98].ptr_angleH,
+                ptr_angleW = nbCamera_SkillPtrTable.tbl[98].ptr_angleW,
+                ptr_H = nbCamera_SkillPtrTable.tbl[98].ptr_H,
+                ptr_W = nbCamera_SkillPtrTable.tbl[98].ptr_W,
+                anim = nbCamera_SkillPtrTable.tbl[98].anim
+            };
         }
 
         private static void PoisonSalvo(ushort id)

@@ -353,6 +353,7 @@ namespace NocturneInsaniax
                     var rand = dds3KernelCore.dds3GetRandIntA(100);
                     __result = rand < critChance ? 1 : 0;
                 }
+
                 return false;
             }
         }

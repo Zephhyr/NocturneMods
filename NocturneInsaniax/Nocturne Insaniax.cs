@@ -21,6 +21,12 @@ namespace NocturneInsaniax
 {
     internal partial class NocturneInsaniax : MelonMod
     {
+        public static string configPath = "InsaniaxConfig.cfg";
+        public static MelonPreferences_Category ModGraphicsSettings;
+        public static MelonPreferences_Entry<bool> EnableSkillColourOutlines;
+        public static MelonPreferences_Entry<bool> EnableSkillColourGradient;
+
+
         public override void OnInitializeMelon()
         {
             //foreach (var skill in tblSkill.fclSkillTbl[192].Event)
@@ -43,12 +49,32 @@ namespace NocturneInsaniax
             //var output = JsonConvert.SerializeObject(frFont.ColMaterialName);
             //MelonLogger.Msg(output);
 
+
+            // Apply Changes
             ApplySkillChanges();
             ApplyItemChanges();
             ApplyShopChanges();
             ApplyMagatamaChanges();
             ApplyDemonChanges();
             ApplyEncounterChanges();
+
+            // Apply Config
+            ModGraphicsSettings = MelonPreferences.CreateCategory("EXTRA GRAPHICS");
+            EnableSkillColourOutlines = ModGraphicsSettings.CreateEntry("EnableSkillColourOutlines", true);
+            EnableSkillColourGradient = ModGraphicsSettings.CreateEntry("EnableSkillColourGradient", true);
+
+            ModGraphicsSettings.SetFilePath(configPath, autoload: true, printmsg: false);
+
+            if (File.Exists(configPath))
+            {
+                LoggerInstance.Msg("Mod config loaded.");
+                ModGraphicsSettings.LoadFromFile(false);
+            }
+            else
+            {
+                LoggerInstance.Msg("No config found - config created in root directory.");
+                ModGraphicsSettings.SaveToFile(false);
+            }
         }
 
         public override void OnLateUpdate()
@@ -475,7 +501,20 @@ namespace NocturneInsaniax
         //    }
         //}
 
-        
+        [HarmonyPatch(typeof(nbMainProcess), nameof(nbMainProcess.nbPushAction))]
+        private class nbPushActionPatch
+        {
+            public static void Postfix(ref int type, ref int from, ref int to, ref int d)
+            {
+                MelonLogger.Msg("--nbMainProcess.nbPushAction--");
+                MelonLogger.Msg("type: " + type);
+                MelonLogger.Msg("from: " + from);
+                MelonLogger.Msg("to: " + to);
+                MelonLogger.Msg("d: " + d);
+            }
+        }
+
+
         [HarmonyPatch(typeof(fld_Npc), nameof(fld_Npc.fldItemBoxAdd))]
         private class ItemBoxAddPatch
         {
