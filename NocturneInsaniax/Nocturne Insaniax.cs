@@ -13,6 +13,7 @@ using MelonLoader;
 using MelonLoader.CoreClrUtils;
 using Newtonsoft.Json;
 using UnityEngine;
+using System.Linq;
 
 [assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax", "0.8.0", "Zephhyr, Matthiew Purple")]
 [assembly: MelonGame("アトラス", "smt3hd")]
@@ -25,6 +26,7 @@ namespace NocturneInsaniax
         public static MelonPreferences_Category ModGraphicsSettings;
         public static MelonPreferences_Entry<bool> EnableSkillColourOutlines;
         public static MelonPreferences_Entry<bool> EnableSkillColourGradient;
+        public static MelonPreferences_Entry<bool> EnableColourPassives;
 
 
         public override void OnInitializeMelon()
@@ -62,6 +64,7 @@ namespace NocturneInsaniax
             ModGraphicsSettings = MelonPreferences.CreateCategory("EXTRA GRAPHICS");
             EnableSkillColourOutlines = ModGraphicsSettings.CreateEntry("EnableSkillColourOutlines", true);
             EnableSkillColourGradient = ModGraphicsSettings.CreateEntry("EnableSkillColourGradient", true);
+            EnableColourPassives = ModGraphicsSettings.CreateEntry("EnableColourPassives", true);
 
             ModGraphicsSettings.SetFilePath(configPath, autoload: true, printmsg: false);
 

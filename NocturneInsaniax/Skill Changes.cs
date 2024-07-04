@@ -1241,7 +1241,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].failpoint = 15;
             datNormalSkill.tbl[id].criticalpoint = 30;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 5;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 5;
         }
 
         private static void Berserk(ushort id)
@@ -1251,7 +1251,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].failpoint = 6;
             datNormalSkill.tbl[id].criticalpoint = 12;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 4;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 4;
         }
 
         private static void Tempest(ushort id)
@@ -1286,7 +1286,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].criticalpoint = 30;
             datNormalSkill.tbl[id].badlevel = 24;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 9;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 9;
         }
 
         private static void BrutalSlash(ushort id)
@@ -1313,7 +1313,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].criticalpoint = 40;
             datNormalSkill.tbl[id].badlevel = 30;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 9;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 9;
         }
 
         private static void StasisBlade(ushort id)
@@ -1332,7 +1332,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].failpoint = 10;
             datNormalSkill.tbl[id].criticalpoint = 20;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 4;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 4;
         }
 
         private static void Deathbound(ushort id)
@@ -1430,7 +1430,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].criticalpoint = 22;
             datNormalSkill.tbl[id].badlevel = 40;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 6;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 6;
         }
 
         private static void StunBite(ushort id)
@@ -1449,7 +1449,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].failpoint = 20;
             datNormalSkill.tbl[id].criticalpoint = 40;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 7;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 7;
         }
 
         private static void FeralClaw(ushort id)
@@ -1675,7 +1675,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 98, 285);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 9;
         }
@@ -1725,7 +1725,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 96);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 5;
         }
@@ -1775,7 +1775,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 96, 107);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 5;
         }
@@ -1825,7 +1825,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 96, 139);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 10;
         }
@@ -1875,7 +1875,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 65, 101);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 6;
         }
@@ -1925,7 +1925,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 28, 143);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 11;
         }
@@ -1975,7 +1975,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 98, 79);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 11;
         }
@@ -2025,7 +2025,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 96, 275);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 11;
         }
@@ -2075,7 +2075,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 100);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 10;
         }
@@ -2335,7 +2335,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].targetcntmax = 5;
             datNormalSkill.tbl[id].targetcntmin = 3;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 4;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 4;
         }
 
         private static void Hellfire(ushort id)
@@ -2347,7 +2347,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].targetcntmax = 6;
             datNormalSkill.tbl[id].targetcntmin = 3;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 8;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 8;
         }
 
         private static void Prominence(ushort id)
@@ -2359,7 +2359,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].targetcntmax = 7;
             datNormalSkill.tbl[id].targetcntmin = 3;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 11;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 11;
         }
 
         private static void Trisagion(ushort id)
@@ -2370,7 +2370,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].magicbase = 30;
             datNormalSkill.tbl[id].magiclimit = 32767;
 
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 10;
         }
@@ -2456,7 +2456,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 4, 101);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 5;
         }
@@ -2506,7 +2506,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 179);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 12;
         }
@@ -2624,7 +2624,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].targetcntmin = 3;
             datNormalSkill.tbl[id].badlevel = 15;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 4;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 4;
         }
 
         private static void GlacialBlast(ushort id)
@@ -2637,7 +2637,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].targetcntmin = 3;
             datNormalSkill.tbl[id].badlevel = 18;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 8;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 8;
         }
 
         private static void IcyDeath(ushort id)
@@ -2724,7 +2724,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 7);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 4;
         }
@@ -2827,7 +2827,7 @@ namespace NocturneInsaniax
             nbActionProcess.sobedtbl[id].se1_str = nbActionProcess.sobedtbl[12].se1_str;
             nbActionProcess.sobedtbl[id].tga_fname = nbActionProcess.sobedtbl[181].tga_fname;
 
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 12;
         }
@@ -3045,7 +3045,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].targetcntmin = 3;
             datNormalSkill.tbl[id].badlevel = 15;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 4;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 4;
         }
 
         private static void BoltStorm(ushort id)
@@ -3058,7 +3058,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].targetcntmin = 3;
             datNormalSkill.tbl[id].badlevel = 18;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 8;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 8;
         }
 
         private static void MishagujiRaiden(ushort id)
@@ -3118,7 +3118,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 182);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 4;
         }
@@ -3168,7 +3168,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 15, 193);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 10;
         }
@@ -3219,7 +3219,7 @@ namespace NocturneInsaniax
 
             OverWriteSkillEffect(id, 15, 195);
             //nbActionProcess.sobedtbl[id].se0_str = nbActionProcess.sobedtbl[193].se0_str;
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 12;
         }
@@ -3332,7 +3332,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].targetcntmax = 5;
             datNormalSkill.tbl[id].targetcntmin = 3;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 0;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 0;
         }
 
         private static void Tornado(ushort id)
@@ -3344,7 +3344,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].targetcntmax = 6;
             datNormalSkill.tbl[id].targetcntmin = 3;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 82;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 82;
         }
 
         private static void WindCutter(ushort id)
@@ -3354,7 +3354,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].magicbase = 30;
             datNormalSkill.tbl[id].magiclimit = 32767;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 10;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 10;
         }
 
         private static void WetWind(ushort id)
@@ -3430,7 +3430,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 22, 184);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 5;
         }
@@ -3481,7 +3481,7 @@ namespace NocturneInsaniax
 
             //OverWriteSkillEffect(id, 23);
             OverWriteSkillEffectDante(id, 23, 6);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 11;
         }
@@ -3531,7 +3531,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 186);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 12;
         }
@@ -3581,7 +3581,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 22, 184);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 4;
         }
@@ -3633,7 +3633,7 @@ namespace NocturneInsaniax
             //OverWriteSkillEffect(id, 184, 24);
             OverWriteSkillEffectDante(id, 184, 6);
 
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 11;
         }
@@ -3761,7 +3761,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].magicbase = 24;
             datNormalSkill.tbl[id].magiclimit = 350;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 12;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 12;
         }
 
         private static void Pestilence(ushort id)
@@ -3787,7 +3787,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].magicbase = 12;
             datNormalSkill.tbl[id].magiclimit = 74;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 2;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 2;
         }
 
         private static void ManaDrain(ushort id)
@@ -3944,7 +3944,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 25, 270);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 12;
         }
@@ -3994,7 +3994,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 202, 160);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 14;
         }
@@ -4044,7 +4044,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 192);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 9;
         }
@@ -4192,7 +4192,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].magicbase = 18;
             datNormalSkill.tbl[id].magiclimit = 222;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 4;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 4;
         }
 
         private static void Starlight(ushort id)
@@ -4210,7 +4210,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].magicbase = 30;
             datNormalSkill.tbl[id].magiclimit = 32767;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 12;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 12;
         }
 
         private static void GodsBow(ushort id)
@@ -4267,7 +4267,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             datNormalSkillVisual.tbl[id] = datNormalSkillVisual.tbl[28];
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 5;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 5;
         }
 
         private static void JudgementLight(ushort id)
@@ -4315,7 +4315,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             datNormalSkillVisual.tbl[id] = datNormalSkillVisual.tbl[28];
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 7;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 7;
         }
 
         private static void GodlyLight(ushort id)
@@ -4437,7 +4437,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 32, 243);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 5;
         }
@@ -4487,7 +4487,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 32, 243);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 7;
         }
@@ -4498,7 +4498,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 6;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 4;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 4;
         }
 
         private static void Makajamon(ushort id)
@@ -4524,7 +4524,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].magiclimit = 80;
             datNormalSkill.tbl[id].targettype = 0;
 
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 3;
         }
@@ -4620,7 +4620,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 90);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 8;
 
@@ -4681,7 +4681,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 90);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 8;
         }
@@ -4697,7 +4697,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].magicbase = 12;
             datNormalSkill.tbl[id].magiclimit = 80;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 3;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 3;
         }
 
         private static void StunGaze(ushort id)
@@ -4705,7 +4705,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].cost = 6;
             datNormalSkill.tbl[id].badlevel = 50;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 2;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 2;
         }
 
         private static void BindingCry(ushort id)
@@ -4759,7 +4759,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 59, 261);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 8;
         }
@@ -4809,7 +4809,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 59, 187);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 10;
         }
@@ -4957,7 +4957,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 63);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 8;
         }
@@ -5113,7 +5113,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 44);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 7;
         }
@@ -5163,7 +5163,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 44);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 7;
         }
@@ -5227,7 +5227,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 15;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 2;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 2;
         }
 
         private static void Rakunda(ushort id)
@@ -5245,21 +5245,21 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].cost = 15;
             datNormalSkill.tbl[id].hojotype = 5;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 4;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 4;
         }
 
         private static void Sukukaja(ushort id)
         {
             datNormalSkill.tbl[id].cost = 15;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 4;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 4;
         }
 
         private static void Rakukaja(ushort id)
         {
             datNormalSkill.tbl[id].cost = 15;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 4;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 4;
         }
 
         private static void Makakaja(ushort id)
@@ -5267,14 +5267,14 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].cost = 15;
             datNormalSkill.tbl[id].hojotype = 260;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 4;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 4;
         }
 
         private static void Tetraja(ushort id)
         {
             datNormalSkill.tbl[id].cost = 30;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 5;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 5;
         }
 
         private static void Makarakarn(ushort id)
@@ -5293,7 +5293,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 3;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 2;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 2;
         }
 
         private static void Trafuri(ushort id)
@@ -5325,7 +5325,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 20;
 
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 3;
         }
@@ -5349,7 +5349,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 60;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == id).FirstOrDefault().Level = 10;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 10;
         }
 
         private static void BeckonCall(ushort id)
@@ -5467,7 +5467,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 224);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 6;
         }
@@ -5564,7 +5564,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 224);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 8;
         }
@@ -5614,7 +5614,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 219);
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 10;
         }
@@ -5666,7 +5666,7 @@ namespace NocturneInsaniax
             OverWriteSkillEffect(id, 77, 131);
             //nbActionProcess.sobedtbl[id].se1_str = nbActionProcess.sobedtbl[189].se1_str;
 
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 8;
         }
@@ -6723,7 +6723,7 @@ namespace NocturneInsaniax
             datSpecialSkill.tbl[id].m = 3;
             datSpecialSkill.tbl[id].n = 4;
 
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = 362;
             skillLevel.Level = 7;
         }
@@ -6737,7 +6737,7 @@ namespace NocturneInsaniax
             datSpecialSkill.tbl[id].m = 3;
             datSpecialSkill.tbl[id].n = 4;
 
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = 363;
             skillLevel.Level = 8;
         }
@@ -6751,7 +6751,7 @@ namespace NocturneInsaniax
             datSpecialSkill.tbl[id].m = 0;
             datSpecialSkill.tbl[id].n = 50;
 
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = 364;
             skillLevel.Level = 8;
         }
@@ -6765,7 +6765,7 @@ namespace NocturneInsaniax
             datSpecialSkill.tbl[id].m = 0;
             datSpecialSkill.tbl[id].n = 50;
 
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = 365;
             skillLevel.Level = 8;
         }
@@ -6779,7 +6779,7 @@ namespace NocturneInsaniax
             datSpecialSkill.tbl[id].m = 3;
             datSpecialSkill.tbl[id].n = 4;
 
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = 366;
             skillLevel.Level = 8;
         }
@@ -6793,7 +6793,7 @@ namespace NocturneInsaniax
             datSpecialSkill.tbl[id].m = 3;
             datSpecialSkill.tbl[id].n = 4;
 
-            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 0).FirstOrDefault();
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = 367;
             skillLevel.Level = 5;
         }

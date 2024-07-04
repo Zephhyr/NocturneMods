@@ -938,7 +938,7 @@ namespace NocturneInsaniax
             "<material=\"MsgFont4\">+9: Phys/Magic/Almighty/Ailments • +5: Heal/Supp"  // Masakados
         };
 
-        static private int currentDemonID = 0; // Used to get the associated demon when displaying the potential of a skill
+        static private ushort currentDemonID = 0; // Used to get the associated demon when displaying the potential of a skill
 
         static private datNormalSkill_t tmp_datNormalSkill = new datNormalSkill_t(); // Used to temporarily store a skill before modifications
 

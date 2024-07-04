@@ -10,6 +10,7 @@ using Il2Cppresult2_H;
 using Il2Cppnewbattle_H;
 using static Il2Cpp.SteamDlcFileUtil;
 using static Il2CppXRD773Unity.CommonMesh;
+using MelonLoader.TinyJSON;
 
 namespace NocturneInsaniax
 {
@@ -31,14 +32,12 @@ namespace NocturneInsaniax
                         {
                             case 1:
                                 var skillId = actionProcessData.work.nowindex;
-                                var skillAttr = datSkill.tbl[skillId].skillattr;
-                                attrColour = GetSkillAttrColour(skillAttr, 1);
+                                attrColour = GetSkillAttrColour(skillId, 1);
                                 break;
                             case 5:
                                 var itemId = actionProcessData.work.nowindex;
                                 var itemSkillId = datItem.tbl[itemId].skillid;
-                                var itemSkillAttr = datSkill.tbl[itemSkillId].skillattr;
-                                attrColour = GetSkillAttrColour(itemSkillAttr, 1);
+                                attrColour = GetSkillAttrColour(itemSkillId, 1);
                                 break;
                             default:
                                 attrColour = new Color(0.294f, 0.294f, 0.980f, 1);
@@ -75,10 +74,9 @@ namespace NocturneInsaniax
 
                     if (d <= 511)
                     {
-                        var skillAttr = datSkill.tbl[d].skillattr;
                         Color attrColour = col2 == 2
-                            ? GetSkillAttrColour(skillAttr, 0.7f)
-                            : GetSkillAttrColour(skillAttr, 1);
+                            ? GetSkillAttrColour(d, 0.7f)
+                            : GetSkillAttrColour(d, 1);
                         VertexGradient attrGradient = col2 == 2
                             ? GetSkillAttrGradient(attrColour, 0.7f)
                             : GetSkillAttrGradient(attrColour, 1);
@@ -117,10 +115,9 @@ namespace NocturneInsaniax
                 if (EnableSkillColourOutlines.Value)
                 {
                     var itemSkillId = datItem.tbl[d].skillid;
-                    var itemSkillAttr = datSkill.tbl[itemSkillId].skillattr;
                     Color attrColour = col2 == 2
-                        ? GetSkillAttrColour(itemSkillAttr, 0.7f)
-                        : GetSkillAttrColour(itemSkillAttr, 1);
+                        ? GetSkillAttrColour(itemSkillId, 0.7f)
+                        : GetSkillAttrColour(itemSkillId, 1);
                     VertexGradient attrGradient = col2 == 2
                             ? GetSkillAttrGradient(attrColour, 0.7f)
                             : GetSkillAttrGradient(attrColour, 1);
@@ -160,8 +157,7 @@ namespace NocturneInsaniax
                 {
                     foreach (var skill in datDevilFormat.tbl[pUnitWork.id].skill.Where(x => x != 0))
                     {
-                        var skillAttr = datSkill.tbl[skill].skillattr;
-                        Color attrColour = GetSkillAttrColour(skillAttr, 1);
+                        Color attrColour = GetSkillAttrColour(skill, 1);
                         VertexGradient attrGradient = GetSkillAttrGradient(attrColour, 1);
 
                         nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill0" + (datDevilFormat.tbl[pUnitWork.id].skill.IndexOf(skill) + 1) + "/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = attrColour;
@@ -170,6 +166,16 @@ namespace NocturneInsaniax
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill0" + (datDevilFormat.tbl[pUnitWork.id].skill.IndexOf(skill) + 1) + "/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = true;
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill0" + (datDevilFormat.tbl[pUnitWork.id].skill.IndexOf(skill) + 1) + "/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().colorGradient = attrGradient;
                         }
+                    }
+
+                    var innateAttrColour = GetSkillAttrColour(innateSkillId, 1);
+                    VertexGradient innateAttrGradient = GetSkillAttrGradient(innateAttrColour, 1);
+
+                    nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill09/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = innateAttrColour;
+                    if (EnableSkillColourGradient.Value)
+                    {
+                        nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill09/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = true;
+                        nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill09/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().colorGradient = innateAttrGradient;
                     }
                 }
             }
@@ -182,8 +188,7 @@ namespace NocturneInsaniax
             {
                 if (EnableSkillColourOutlines.Value)
                 {
-                    var skillAttr = datSkill.tbl[SkillID].skillattr;
-                    Color attrColour = GetSkillAttrColour(skillAttr, 1);
+                    Color attrColour = GetSkillAttrColour(SkillID, 1);
                     VertexGradient attrGradient = GetSkillAttrGradient(attrColour, 1);
 
                     if (idx == 0)
@@ -209,7 +214,11 @@ namespace NocturneInsaniax
                         }
                     }
                 }
-                
+                else if (SkillID == innateSkillId)
+                {
+                    cmpInit._campUIScr.transform.Find("menu_itemskill/menu_item_window/menuitem_base0" + (idx + 1) + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().text
+                    = cmpInit._campUIScr.transform.Find("menu_itemskill/menu_item_window/menuitem_base0" + (idx + 1) + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().text.Replace("TMC00", "TMC01");
+                }
             }
         }
 
@@ -234,8 +243,7 @@ namespace NocturneInsaniax
                         }
 
                         var itemSkillId = datItem.tbl[itemId].skillid;
-                        var itemSkillAttr = datSkill.tbl[itemSkillId].skillattr;
-                        Color attrColour = GetSkillAttrColour(itemSkillAttr, 1);
+                        Color attrColour = GetSkillAttrColour(itemSkillId, 1);
                         VertexGradient attrGradient = GetSkillAttrGradient(attrColour, 1);
 
                         if (idx == 0)
@@ -273,10 +281,11 @@ namespace NocturneInsaniax
             {
                 if (EnableSkillColourOutlines.Value)
                 {
+                    
+
                     foreach (int skill in pStock.skill.Where(x => x != 0))
                     {
-                        var skillAttr = datSkill.tbl[skill].skillattr;
-                        Color attrColour = GetSkillAttrColour(skillAttr, 1);
+                        Color attrColour = GetSkillAttrColour((ushort)skill, 1);
                         VertexGradient attrGradient = GetSkillAttrGradient(attrColour, 1);
 
                         cmpStatus._statusUIScr.transform.Find("sskill/sskill_obtained0" + (pStock.skill.IndexOf(skill) + 1) + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().text
@@ -290,11 +299,15 @@ namespace NocturneInsaniax
                     }
                     foreach (ushort skill in pSkillInfo.SkillID.Where(x => x != 0))
                     {
-                        var skillAttr = datSkill.tbl[skill].skillattr;
-                        Color attrColour = GetSkillAttrColour(skillAttr, 0.7f);
-                        VertexGradient attrGradient = GetSkillAttrGradient(attrColour, 0.7f);
+                        var innateSkillId = NocturneInsaniax.innateSkillId;
+                        Color attrColour = skill == innateSkillId
+                            ? GetSkillAttrColour(skill, 1)
+                            : GetSkillAttrColour(skill, 0.7f);
+                        VertexGradient attrGradient = skill == innateSkillId
+                            ? GetSkillAttrGradient(attrColour, 1)
+                            : GetSkillAttrGradient(attrColour, 0.7f);
 
-                        cmpStatus._statusUIScr.transform.Find("sskill/sskill_await2_0" + (pSkillInfo.SkillID.IndexOf(skill) + 1) + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().color = new Color(1, 1, 1, 0.7f);
+                        cmpStatus._statusUIScr.transform.Find("sskill/sskill_await2_0" + (pSkillInfo.SkillID.IndexOf(skill) + 1) + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().color = skill == innateSkillId ? new Color(1, 1, 1, 1) : new Color(1, 1, 1, 0.7f);
                         cmpStatus._statusUIScr.transform.Find("sskill/sskill_await2_0" + (pSkillInfo.SkillID.IndexOf(skill) + 1) + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = attrColour;
                         if (EnableSkillColourGradient.Value)
                         {
@@ -350,10 +363,9 @@ namespace NocturneInsaniax
                 if (EnableSkillColourOutlines.Value)
                 {
                     var itemSkillId = datItem.tbl[item].skillid;
-                    var itemSkillAttr = datSkill.tbl[itemSkillId].skillattr;
                     Color attrColour = col == 2
-                        ? GetSkillAttrColour(itemSkillAttr, 0.7f)
-                        : GetSkillAttrColour(itemSkillAttr, 1);
+                        ? GetSkillAttrColour(itemSkillId, 0.7f)
+                        : GetSkillAttrColour(itemSkillId, 1);
                     VertexGradient attrGradient = col == 2
                             ? GetSkillAttrGradient(attrColour, 0.7f)
                             : GetSkillAttrGradient(attrColour, 1);
@@ -394,8 +406,7 @@ namespace NocturneInsaniax
                         }
 
                         var itemSkillId = datItem.tbl[itemId].skillid;
-                        var itemSkillAttr = datSkill.tbl[itemSkillId].skillattr;
-                        Color attrColour = GetSkillAttrColour(itemSkillAttr, 1);
+                        Color attrColour = GetSkillAttrColour(itemSkillId, 1);
                         VertexGradient attrGradient = GetSkillAttrGradient(attrColour, 1);
 
                         fclUI.GetGameObject("ragitemlist").transform.Find("ragitem_row/ragitem_row" + index + "/Text_nameTM").gameObject.GetComponent<TextMeshProUGUI>().text
@@ -427,8 +438,12 @@ namespace NocturneInsaniax
             }
         }
 
-        public static Color GetSkillAttrColour(sbyte skillAttr, float a)
+        public static Color GetSkillAttrColour(ushort skillId, float a)
         {
+            var skillAttr = (skillId >= 288 && skillId <= 421 && !EnableColourPassives.Value)
+                ? 15
+                : datSkill.tbl[skillId].skillattr;
+                
             switch (skillAttr)
             {
                 case 00: return new Color(0.788f, 0.000f, 0.000f, a); // Phys
