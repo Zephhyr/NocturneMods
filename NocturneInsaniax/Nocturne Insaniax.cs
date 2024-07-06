@@ -48,10 +48,6 @@ namespace NocturneInsaniax
             //var output = JsonConvert.SerializeObject(fclJunkShopTable.fclShopItemBoxTbl);
             //MelonLogger.Msg(output);
 
-            //var output = JsonConvert.SerializeObject(frFont.ColMaterialName);
-            //MelonLogger.Msg(output);
-
-
             // Apply Changes
             ApplySkillChanges();
             ApplyItemChanges();

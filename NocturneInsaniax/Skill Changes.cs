@@ -10,6 +10,7 @@ using UnityEngine;
 using Il2Cppmodel_H;
 using System.Xml;
 using Newtonsoft.Json;
+using static UnityEngine.GraphicsBuffer;
 
 namespace NocturneInsaniax
 {
@@ -474,11 +475,11 @@ namespace NocturneInsaniax
                     //    work.skill[2] = 203;
                     //    work.skillcnt = 8;
                     //}
-                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 144)) // Arahabki
-                    //{
-                    //    work.skill[7] = 197;
-                    //    work.skillcnt = 8;
-                    //}
+                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 144)) // Arahabaki
+                    {
+                        work.skill[7] = 419;
+                        work.skillcnt = 8;
+                    }
                     //}
                 }
                 // If using a cursed gospel

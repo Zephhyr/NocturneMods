@@ -771,6 +771,57 @@ namespace NocturneInsaniax
 
             // New Bosses
             BossFlauros(362);
+
+            // Universal Animation Fixes
+            foreach (var visual in datDevilVisual00.tbl_0_000_01F)
+            {
+                visual.motion[22].motion_no = 2;
+            }
+            foreach (var visual in datDevilVisual01.tbl_1_020_03F)
+            {
+                visual.motion[22].motion_no = 2;
+            }
+            foreach (var visual in datDevilVisual02.tbl_2_040_05F)
+            {
+                visual.motion[22].motion_no = 2;
+            }
+            foreach (var visual in datDevilVisual03.tbl_3_060_07F)
+            {
+                visual.motion[22].motion_no = 2;
+            }
+            foreach (var visual in datDevilVisual04.tbl_4_080_09F)
+            {
+                visual.motion[22].motion_no = 2;
+            }
+            foreach (var visual in datDevilVisual05.tbl_5_0A0_0BF)
+            {
+                visual.motion[22].motion_no = 2;
+            }
+            foreach (var visual in datDevilVisual06.tbl_6_0C0_0DF)
+            {
+                visual.motion[22].motion_no = 2;
+            }
+            foreach (var visual in datDevilVisual07.tbl_7_0E0_0FF)
+            {
+                visual.motion[22].motion_no = 2;
+            }
+            foreach (var visual in datDevilVisual08.tbl_8_100_11F)
+            {
+                visual.motion[22].motion_no = 2;
+            }
+            foreach (var visual in datDevilVisual09.tbl_9_120_13F)
+            {
+                visual.motion[22].motion_no = 2;
+            }
+            foreach (var visual in datDevilVisual10.tbl_10_140_15F)
+            {
+                visual.motion[22].motion_no = 2;
+            }
+            foreach (var visual in datDevilVisual11.tbl_11_160_17F)
+            {
+                visual.motion[22].motion_no = 2;
+            }
+            datDevilVisual07.tbl_7_0E0_0FF[30].motion[22].motion_no = 0;
         }
 
         private static void Vishnu(ushort id)

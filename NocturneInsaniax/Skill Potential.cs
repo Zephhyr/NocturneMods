@@ -997,13 +997,6 @@ namespace NocturneInsaniax
                             nbMakePacket.nbMakeBadKaifukuPacket(0, 0, ref form);
                         }
                     }
-
-                    if (currentDemonID == 252 && actionProcessData.form.formindex > 3)
-                    {
-                        var form = actionProcessData.form;
-                        nbMakePacket.nbAddHpMpKoukaPacket(0, 0, ref form, 50, 0);
-                        nbMakePacket.nbAddNumEffKoukaPacket(1, 45, 0, ref form, 50, 0, 2);
-                    }
                 }
             }
         }
