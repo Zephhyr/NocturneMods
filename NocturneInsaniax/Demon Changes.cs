@@ -8,8 +8,6 @@ using Il2Cppnewbattle_H;
 using Il2Cppeffect_H;
 using UnityEngine;
 using Il2Cppmodel_H;
-using static UnityEngine.GraphicsBuffer;
-using static Il2Cpp.TextManager;
 
 namespace NocturneInsaniax
 {
@@ -398,6 +396,25 @@ namespace NocturneInsaniax
             };
         }
 
+        private static void ApplyUniversalUnitVisualChange()
+        {
+            for (byte i = 0; i <= 31; i++)
+            {
+                datDevilVisual00.tbl_0_000_01F[i].motion[22].motion_no = 2;
+                datDevilVisual01.tbl_1_020_03F[i].motion[22].motion_no = 2;
+                datDevilVisual02.tbl_2_040_05F[i].motion[22].motion_no = 2;
+                datDevilVisual03.tbl_3_060_07F[i].motion[22].motion_no = 2;
+                datDevilVisual04.tbl_4_080_09F[i].motion[22].motion_no = 2;
+                datDevilVisual05.tbl_5_0A0_0BF[i].motion[22].motion_no = 2;
+                datDevilVisual06.tbl_6_0C0_0DF[i].motion[22].motion_no = 2;
+                datDevilVisual07.tbl_7_0E0_0FF[i].motion[22].motion_no = 2;
+                datDevilVisual08.tbl_8_100_11F[i].motion[22].motion_no = 2;
+                datDevilVisual09.tbl_9_120_13F[i].motion[22].motion_no = 2;
+                datDevilVisual10.tbl_10_140_15F[i].motion[22].motion_no = 2;
+                datDevilVisual11.tbl_11_160_17F[i].motion[22].motion_no = 2;
+            }
+        }
+
         private static void ApplyDemonChanges()
         {
             dds3ModelFileTable_t[] devilModelFileTable = new dds3ModelFileTable_t[368];
@@ -673,7 +690,6 @@ namespace NocturneInsaniax
             Tharmus(184);
             Specter(185);
             Mara(186);
-            Doppelganger(187);
 
             // Maniax Demons
             DanteRaidou(192);
@@ -773,54 +789,7 @@ namespace NocturneInsaniax
             BossFlauros(362);
 
             // Universal Animation Fixes
-            foreach (var visual in datDevilVisual00.tbl_0_000_01F)
-            {
-                visual.motion[22].motion_no = 2;
-            }
-            foreach (var visual in datDevilVisual01.tbl_1_020_03F)
-            {
-                visual.motion[22].motion_no = 2;
-            }
-            foreach (var visual in datDevilVisual02.tbl_2_040_05F)
-            {
-                visual.motion[22].motion_no = 2;
-            }
-            foreach (var visual in datDevilVisual03.tbl_3_060_07F)
-            {
-                visual.motion[22].motion_no = 2;
-            }
-            foreach (var visual in datDevilVisual04.tbl_4_080_09F)
-            {
-                visual.motion[22].motion_no = 2;
-            }
-            foreach (var visual in datDevilVisual05.tbl_5_0A0_0BF)
-            {
-                visual.motion[22].motion_no = 2;
-            }
-            foreach (var visual in datDevilVisual06.tbl_6_0C0_0DF)
-            {
-                visual.motion[22].motion_no = 2;
-            }
-            foreach (var visual in datDevilVisual07.tbl_7_0E0_0FF)
-            {
-                visual.motion[22].motion_no = 2;
-            }
-            foreach (var visual in datDevilVisual08.tbl_8_100_11F)
-            {
-                visual.motion[22].motion_no = 2;
-            }
-            foreach (var visual in datDevilVisual09.tbl_9_120_13F)
-            {
-                visual.motion[22].motion_no = 2;
-            }
-            foreach (var visual in datDevilVisual10.tbl_10_140_15F)
-            {
-                visual.motion[22].motion_no = 2;
-            }
-            foreach (var visual in datDevilVisual11.tbl_11_160_17F)
-            {
-                visual.motion[22].motion_no = 2;
-            }
+            ApplyUniversalUnitVisualChange();
             datDevilVisual07.tbl_7_0E0_0FF[30].motion[22].motion_no = 0;
         }
 

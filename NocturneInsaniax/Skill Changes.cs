@@ -10,8 +10,6 @@ using UnityEngine;
 using Il2Cppmodel_H;
 using System.Xml;
 using Newtonsoft.Json;
-using static UnityEngine.GraphicsBuffer;
-using static Il2Cpp.SteamDlcFileUtil;
 
 namespace NocturneInsaniax
 {
@@ -449,8 +447,9 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(4, 0);
                     //datCalc.datAddDevil(147, 0);
                     //datCalc.datAddDevil(30, 0);
-                    datCalc.datAddDevil(111, 0);
-                    datCalc.datAddDevil(20, 0);
+                    //datCalc.datAddDevil(111, 0);
+                    //datCalc.datAddDevil(20, 0);
+                    //datCalc.datAddDevil(69, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    work.skill[0] = 192;
@@ -692,7 +691,7 @@ namespace NocturneInsaniax
                             {
                                 __result = (__result / 1.5f) * 1.3f;
                             }
-                            else if (datCalc.datCheckSyojiSkill(work, 363) != 0 || datCalc.datCheckSyojiSkill(work, 368) != 0)
+                            else if (work.id == 111 || work.id == 335 || datCalc.datCheckSyojiSkill(work, 368) != 0)
                             {
                                 __result = __result * 1.3f;
                             }
@@ -736,6 +735,20 @@ namespace NocturneInsaniax
                         }
                     default: break;
                 }
+            }
+        }
+
+        [HarmonyPatch(typeof(SoundManager), nameof(SoundManager._PlaySE_Core))]
+        private class _PlaySE_CorePatch
+        {
+            public static bool Prefix(ref AudioClip audioClip, ref bool loop, ref float volume, ref float pan, ref string name, ref int id, ref int __result)
+            {
+                if (name == "BSE_SE02" && actionProcessData.work.nowcommand == 1 && (actionProcessData.work.nowindex == 165 || actionProcessData.work.nowindex == 166))
+                {
+                    __result = -1;
+                    return false;
+                }
+                return true;
             }
         }
 
@@ -1581,16 +1594,24 @@ namespace NocturneInsaniax
         private static void Counter(ushort id)
         {
             datNormalSkill.tbl[id].hpn = 32;
+
+            datNormalSkillVisual.tbl[id].motion = 3;
         }
 
         private static void Retaliate(ushort id)
         {
             datNormalSkill.tbl[id].hpn = 48;
+
+            OverWriteSkillEffect(id, 96);
+            datNormalSkillVisual.tbl[id].motion = 3;
         }
 
         private static void Avenge(ushort id)
         {
             datNormalSkill.tbl[id].hpn = 56;
+
+            OverWriteSkillEffect(id, 103);
+            datNormalSkillVisual.tbl[id].motion = 3;
         }
 
         private static void BoogieWoogie(ushort id)

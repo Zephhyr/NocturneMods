@@ -394,7 +394,6 @@ namespace NocturneInsaniax
         {
             public static void Postfix()
             {
-                MelonLogger.Msg("--fclCombineDraw.cmbDrawBirthDevilSelectSkill--");
                 if (EnableSkillColourOutlines.Value)
                 {
                     for (byte i = 1; i <= 5; i++) 
