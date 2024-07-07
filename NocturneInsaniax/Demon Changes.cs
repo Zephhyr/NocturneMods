@@ -5853,14 +5853,11 @@ namespace NocturneInsaniax
 
             // Skills
             tblSkill.fclSkillTbl[id].Event[0].Param = 178; // Prominence
-            tblSkill.fclSkillTbl[id].Event[1].Param = 368; // Laevateinn
+            tblSkill.fclSkillTbl[id].Event[1].Param = 391; // Wooing
             tblSkill.fclSkillTbl[id].Event[3].Param = 203; // War Cry
             tblSkill.fclSkillTbl[id].Event[4].Param = 336; // Elec Drain
             tblSkill.fclSkillTbl[id].Event[5].Param = 436; // Ragnarok
             tblSkill.fclSkillTbl[id].Event[6].Param = 304; // Attack All
-            tblSkill.fclSkillTbl[id].Event[7].Param = 391; // Wooing
-            tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 79;
-            tblSkill.fclSkillTbl[id].Event[7].Type = 1;
 
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 1998;
@@ -5871,7 +5868,6 @@ namespace NocturneInsaniax
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 178; // Prominence
             datDevilFormat.tbl[id].skill[2] = 436; // Ragnarok
-            datDevilFormat.tbl[id].skill[3] = 368; // Laevateinn
 
             // AI
             datDevilAI.divTbls[0][111].aitable[0][0].skill = 32768;

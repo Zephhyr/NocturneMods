@@ -352,7 +352,7 @@ namespace NocturneInsaniax
                     if (limitReached)
                         nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
                     else
-                        nbHelpProcess.nbDispText("Decreased all stats performance!", string.Empty, 2, 45, 2315190144, false);
+                        nbHelpProcess.nbDispText("All stats decreased!", string.Empty, 2, 45, 2315190144, false);
                 }
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 682 && hojopoint == 1 && actionProcessData.work.nowindex == 467)
                 {
@@ -373,7 +373,7 @@ namespace NocturneInsaniax
                     if (limitReached)
                         nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
                     else
-                        nbHelpProcess.nbDispText("Decreased all stats performance!", string.Empty, 2, 45, 2315190144, false);
+                        nbHelpProcess.nbDispText("All stats decreased!", string.Empty, 2, 45, 2315190144, false);
                 }
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 273 && hojopoint == 1 && actionProcessData.work.nowindex == 284)
                 {
@@ -405,7 +405,7 @@ namespace NocturneInsaniax
                     if (limitReached)
                         nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
                     else
-                        nbHelpProcess.nbDispText("Greatly increased all stats performance!", string.Empty, 2, 45, 2315190144, false);
+                        nbHelpProcess.nbDispText("All stats greatly increased!", string.Empty, 2, 45, 2315190144, false);
                 }
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 341 && hojopoint == 1 && actionProcessData.work.nowindex == 459)
                 {
@@ -423,7 +423,7 @@ namespace NocturneInsaniax
                     if (limitReached)
                         nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
                     else
-                        nbHelpProcess.nbDispText("Increased all stats performance!", string.Empty, 2, 45, 2315190144, false);
+                        nbHelpProcess.nbDispText("All stats increased!", string.Empty, 2, 45, 2315190144, false);
                 }
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 341 && hojopoint == 6 && actionProcessData.work.nowindex == 509)
                 {

@@ -11,6 +11,7 @@ using Il2Cppmodel_H;
 using System.Xml;
 using Newtonsoft.Json;
 using static UnityEngine.GraphicsBuffer;
+using static Il2Cpp.SteamDlcFileUtil;
 
 namespace NocturneInsaniax
 {
@@ -44,6 +45,9 @@ namespace NocturneInsaniax
                     case 113: __result = "Venom Needle"; return false;      
                     case 133: __result = "Javelin Rain"; return false;      
                     case 143: __result = "Xeros Beat"; return false;      
+                    case 164: __result = "Counter"; return false;      
+                    case 165: __result = "Retaliate"; return false;      
+                    case 166: __result = "Avenge"; return false;      
                     case 179: __result = "Trisagion"; return false;      
                     case 202: __result = "Toxic Spray"; return false;           
                     case 210: __result = "Dormina"; return false;           
@@ -67,7 +71,6 @@ namespace NocturneInsaniax
                     case 365: __result = "Anti-Ailments"; return false;
                     case 366: __result = "Abyssal Mask"; return false;
                     case 367: __result = "Knowledge of Tools"; return false;
-                    case 368: __result = "Laevateinn"; return false;
 
                     case 422: __result = "Beast Eye"; return false;      
                     case 423: __result = "Dragon Eye"; return false;     
@@ -265,7 +268,6 @@ namespace NocturneInsaniax
                     case 365: __result = "Protects against Ailment attacks."; return false; // Anti-Ailments
                     case 366: __result = "Protects against ailments and instakills."; return false; // Abyssal Mask
                     case 367: __result = "Allows the use of items."; return false; // Knowledge of Tools
-                    case 368: __result = "Fire Boost & greatly empowers \nnormal attacks."; return false; // Laevateinn
 
                     case 424: __result = "More than doubles damage \nof next Magical attack."; return false; // Concentrate
                     case 425: __result = "More than doubles damage \nof next attack and grants Pierce."; return false; // Impaler's Animus
@@ -447,6 +449,8 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(4, 0);
                     //datCalc.datAddDevil(147, 0);
                     //datCalc.datAddDevil(30, 0);
+                    datCalc.datAddDevil(111, 0);
+                    datCalc.datAddDevil(20, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    work.skill[0] = 192;
@@ -475,11 +479,11 @@ namespace NocturneInsaniax
                     //    work.skill[2] = 203;
                     //    work.skillcnt = 8;
                     //}
-                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 144)) // Arahabaki
-                    {
-                        work.skill[7] = 419;
-                        work.skillcnt = 8;
-                    }
+                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 144)) // Arahabaki
+                    //{
+                    //    work.skill[7] = 419;
+                    //    work.skillcnt = 8;
+                    //}
                     //}
                 }
                 // If using a cursed gospel
@@ -603,6 +607,12 @@ namespace NocturneInsaniax
                                 }
                                 text1 = limitReached ? "Limit reached!" : "Magical Attack/Hit Rate increased!"; 
                                 break; 
+                            }
+                        case 206:
+                            {
+                                if (text1 == "Decreased all stats performance!")
+                                    text1 = "All stats decreased!";
+                                break;
                             }
                         case 276: 
                             { 
@@ -1219,10 +1229,14 @@ namespace NocturneInsaniax
             AntiAilments(77);
             AbyssalMask(78);
             KnowledgeOfTools(79);
-            Laevateinn(80);
 
+            // Universal Changes
             foreach (var skill in datSkill.tbl)
                 skill.capacity = 0;
+
+            foreach (var skill in negoSkillScenarios.Keys)
+                if (tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == skill).Any())
+                    tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == skill).Level = 0;
         }
 
         // Physical Skills
@@ -6797,16 +6811,6 @@ namespace NocturneInsaniax
             var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = 367;
             skillLevel.Level = 5;
-        }
-
-        private static void Laevateinn(ushort id)
-        {
-            datSkill.tbl[368].keisyoform = 512;
-
-            datSpecialSkill.tbl[id].a = 2;
-            datSpecialSkill.tbl[id].b = 1;
-            datSpecialSkill.tbl[id].m = 3;
-            datSpecialSkill.tbl[id].n = 4;
         }
     }
 }

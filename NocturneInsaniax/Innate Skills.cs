@@ -15,390 +15,404 @@ namespace NocturneInsaniax
     {
         private static Dictionary<ushort, InnateSkill> innateSkills = new Dictionary<ushort, InnateSkill>
         {
-            { 000, new InnateSkill(383, "", "Description")}, // 000
-            { 001, new InnateSkill(383, "Vishnu", "Description")}, // 001 Vishnu
-            { 002, new InnateSkill(383, "Mitra", "Description")}, // 002 Mitra
-            { 003, new InnateSkill(383, "Amaterasu", "Description")}, // 003 Amaterasu
-            { 004, new InnateSkill(383, "Odin", "Description")}, // 004 Odin
-            { 005, new InnateSkill(383, "Atavaka", "Description")}, // 005 Atavaka
-            { 006, new InnateSkill(383, "Horus", "Description")}, // 006 Horus
-            { 007, new InnateSkill(383, "Lakshmi", "Description")}, // 007 Lakshmi
-            { 008, new InnateSkill(383, "Scathach", "Description")}, // 008 Scathach
-            { 009, new InnateSkill(383, "Sarasvati", "Description")}, // 009 Sarasvati
-            { 010, new InnateSkill(383, "Sati", "Description")}, // 010 Sati
-            { 011, new InnateSkill(383, "Ame-no-Uzume", "Description")}, // 011 Ame-no-Uzume
-            { 012, new InnateSkill(383, "Shiva", "Description")}, // 012 Shiva
-            { 013, new InnateSkill(383, "Beidou Xingjun", "Description")}, // 013 Beidou Xingjun
-            { 014, new InnateSkill(383, "Qitian Dasheng", "Description")}, // 014 Qitian Dasheng
-            { 015, new InnateSkill(383, "Dionysus", "Description")}, // 015 Dionysus
-            { 016, new InnateSkill(383, "Kali", "Description")}, // 016 Kali
-            { 017, new InnateSkill(383, "Skadi", "Description")}, // 017 Skadi
-            { 018, new InnateSkill(383, "Parvati", "Description")}, // 018 Parvati
-            { 019, new InnateSkill(383, "Kushinada", "Description")}, // 019 Kushinada
-            { 020, new InnateSkill(383, "Kikuri-Hime", "Description")}, // 020 Kikuri-Hime
-            { 021, new InnateSkill(383, "Bishamonten", "Description")}, // 021 Bishamonten
-            { 022, new InnateSkill(383, "Thor", "Description")}, // 022 Thor
-            { 023, new InnateSkill(383, "Jikokuten", "Description")}, // 023 Jikokuten
-            { 024, new InnateSkill(383, "Take-Mikazuchi", "Description")}, // 024 Take-Mikazuchi
-            { 025, new InnateSkill(383, "Okuninushi", "Description")}, // 025 Okuninushi
-            { 026, new InnateSkill(383, "Koumokuten", "Description")}, // 026 Koumokuten
-            { 027, new InnateSkill(383, "Zouchouten", "Description")}, // 027 Zouchouten
-            { 028, new InnateSkill(383, "Take-Minakata", "Description")}, // 028 Take-Minakata
-            { 029, new InnateSkill(383, "Chimera", "Description")}, // 029 Chimera
-            { 030, new InnateSkill(383, "Baihu", "Description")}, // 030 Baihu
-            { 031, new InnateSkill(383, "Senri", "Description")}, // 031 Senri
-            { 032, new InnateSkill(383, "Zhuque", "Description")}, // 032 Zhuque
-            { 033, new InnateSkill(383, "Shiisaa", "Description")}, // 033 Shiisaa
-            { 034, new InnateSkill(383, "Xiezhai", "Description")}, // 034 Xiezhai
-            { 035, new InnateSkill(383, "Unicorn", "Description")}, // 035 Unicorn
-            { 036, new InnateSkill(383, "Flaemis", "Description")}, // 036 Flaemis
-            { 037, new InnateSkill(383, "Aquans", "Description")}, // 037 Aquans
-            { 038, new InnateSkill(383, "Aeros", "Description")}, // 038 Aeros
-            { 039, new InnateSkill(383, "Erthys", "Description")}, // 039 Erthys
-            { 040, new InnateSkill(383, "Saki Mitama", "Description")}, // 040 Saki Mitama
-            { 041, new InnateSkill(383, "Kushi Mitama", "Description")}, // 041 Kushi Mitama
-            { 042, new InnateSkill(383, "Nigi Mitama", "Description")}, // 042 Nigi Mitama
-            { 043, new InnateSkill(383, "Ara Mitama", "Description")}, // 043 Ara Mitama
-            { 044, new InnateSkill(383, "Efreet", "Description")}, // 044 Efreet
-            { 045, new InnateSkill(383, "Pulukishi", "Description")}, // 045 Pulukishi
-            { 046, new InnateSkill(383, "Ongkhot", "Description")}, // 046 Ongkhot
-            { 047, new InnateSkill(383, "Jinn", "Description")}, // 047 Jinn
-            { 048, new InnateSkill(383, "Karasu Tengu", "Description")}, // 048 Karasu Tengu
-            { 049, new InnateSkill(383, "Dís", "Description")}, // 049 Dís
-            { 050, new InnateSkill(383, "Isora", "Description")}, // 050 Isora
-            { 051, new InnateSkill(383, "Apsaras", "Description")}, // 051 Apsaras
-            { 052, new InnateSkill(383, "Koppa Tengu", "Description")}, // 052 Koppa Tengu
-            { 053, new InnateSkill(383, "Titania", "Description")}, // 053 Titania
-            { 054, new InnateSkill(383, "Oberon", "Description")}, // 054 Oberon
-            { 055, new InnateSkill(383, "Troll", "Description")}, // 055 Troll
-            { 056, new InnateSkill(383, "Setanta", "Description")}, // 056 Setanta
-            { 057, new InnateSkill(383, "Kelpie", "Description")}, // 057 Kelpie
-            { 058, new InnateSkill(383, "Jack-o'-Lantern", "Description")}, // 058 Jack-o'-Lantern
-            { 059, new InnateSkill(383, "High Pixie", "Description")}, // 059 High Pixie
-            { 060, new InnateSkill(383, "Jack Frost", "Description")}, // 060 Jack Frost
-            { 061, new InnateSkill(383, "Pixie", "Description")}, // 061 Pixie
-            { 062, new InnateSkill(383, "Throne", "Description")}, // 062 Throne
-            { 063, new InnateSkill(383, "Dominion", "Description")}, // 063 Dominion
-            { 064, new InnateSkill(383, "Virtue", "Description")}, // 064 Virtue
-            { 065, new InnateSkill(383, "Power", "Description")}, // 065 Power
-            { 066, new InnateSkill(383, "Principality", "Description")}, // 066 Principality
-            { 067, new InnateSkill(383, "Archangel", "Description")}, // 067 Archangel
-            { 068, new InnateSkill(383, "Angel", "Description")}, // 068 Angel
-            { 069, new InnateSkill(383, "Flauros", "Description")}, // 069 Flauros
-            { 070, new InnateSkill(383, "Decarabia", "Description")}, // 070 Decarabia
-            { 071, new InnateSkill(383, "Ose", "Description")}, // 071 Ose
-            { 072, new InnateSkill(383, "Berith", "Description")}, // 072 Berith
-            { 073, new InnateSkill(383, "Eligor", "Description")}, // 073 Eligor
-            { 074, new InnateSkill(383, "Forneus", "Description")}, // 074 Forneus
-            { 075, new InnateSkill(383, "Yurlungur", "Description")}, // 075 Yurlungur
-            { 076, new InnateSkill(383, "Quetzalcoatl", "Description")}, // 076 Quetzalcoatl
-            { 077, new InnateSkill(383, "Naga Raja", "Description")}, // 077 Naga Raja
-            { 078, new InnateSkill(383, "Mizuchi", "Description")}, // 078 Mizuchi
-            { 079, new InnateSkill(383, "Naga", "Description")}, // 079 Naga
-            { 080, new InnateSkill(383, "Nozuchi", "Description")}, // 080 Nozuchi
-            { 081, new InnateSkill(383, "Cerberus", "Description")}, // 081 Cerberus
-            { 082, new InnateSkill(383, "Orthrus", "Description")}, // 082 Orthrus
-            { 083, new InnateSkill(383, "Suparna", "Description")}, // 083 Suparna
-            { 084, new InnateSkill(383, "Badb Catha", "Description")}, // 084 Badb Catha
-            { 085, new InnateSkill(383, "Inugami", "Description")}, // 085 Inugami
-            { 086, new InnateSkill(383, "Nekomata", "Description")}, // 086 Nekomata
-            { 087, new InnateSkill(383, "Gogmagog", "Description")}, // 087 Gogmagog
-            { 088, new InnateSkill(383, "Titan", "Description")}, // 088 Titan
-            { 089, new InnateSkill(383, "Sarutahiko", "Description")}, // 089 Sarutahiko
-            { 090, new InnateSkill(383, "Sudama", "Description")}, // 090 Sudama
-            { 091, new InnateSkill(383, "Hua Po", "Description")}, // 091 Hua Po
-            { 092, new InnateSkill(383, "Kodama", "Description")}, // 092 Kodama
-            { 093, new InnateSkill(383, "Shiki-Ouji", "Description")}, // 093 Shiki-Ouji
-            { 094, new InnateSkill(383, "Oni", "Description")}, // 094 Oni
-            { 095, new InnateSkill(383, "Yomotsu-Ikusa", "Description")}, // 095 Yomotsu-Ikusa
-            { 096, new InnateSkill(383, "Momunofu", "Description")}, // 096 Momunofu
-            { 097, new InnateSkill(383, "Shikigami", "Description")}, // 097 Shikigami
-            { 098, new InnateSkill(383, "Rangda", "Description")}, // 098 Rangda
-            { 099, new InnateSkill(383, "Dakini", "Description")}, // 099 Dakini
-            { 100, new InnateSkill(383, "Yaksini", "Description")}, // 100 Yaksini
-            { 101, new InnateSkill(383, "Yomotsu-Shikome", "Description")}, // 101 Yomotsu-Shikome
-            { 102, new InnateSkill(383, "Taraka", "Description")}, // 102 Taraka
-            { 103, new InnateSkill(383, "Datsue-Ba", "Description")}, // 103 Datsue-Ba
-            { 104, new InnateSkill(383, "Mada", "Description")}, // 104 Mada
-            { 105, new InnateSkill(383, "Girimekhala", "Description")}, // 105 Girimekhala
-            { 106, new InnateSkill(383, "Taotie", "Description")}, // 106 Taotie
-            { 107, new InnateSkill(383, "Pazuzu", "Description")}, // 107 Pazuzu
-            { 108, new InnateSkill(383, "Baphomet", "Description")}, // 108 Baphomet
-            { 109, new InnateSkill(383, "Mot", "Description")}, // 109 Mot
-            { 110, new InnateSkill(383, "Alciel", "Description")}, // 110 Alciel
-            { 111, new InnateSkill(383, "Surt", "Description")}, // 111 Surt
-            { 112, new InnateSkill(383, "Abaddon", "Description")}, // 112 Abaddon
-            { 113, new InnateSkill(383, "Loki", "Description")}, // 113 Loki
-            { 114, new InnateSkill(383, "Lilith", "Description")}, // 114 Lilith
-            { 115, new InnateSkill(383, "Nyx", "Description")}, // 115 Nyx
-            { 116, new InnateSkill(383, "Queen Mab", "Description")}, // 116 Queen Mab
-            { 117, new InnateSkill(383, "Succubus", "Description")}, // 117 Succubus
-            { 118, new InnateSkill(383, "Incubus", "Description")}, // 118 Incubus
-            { 119, new InnateSkill(383, "Fomorian", "Description")}, // 119 Fomorian
-            { 120, new InnateSkill(383, "Lilim", "Description")}, // 120 Lilim
-            { 121, new InnateSkill(383, "Hresvelgr", "Description")}, // 121 Hresvelgr
-            { 122, new InnateSkill(383, "Mothman", "Description")}, // 122 Mothman
-            { 123, new InnateSkill(383, "Raiju", "Description")}, // 123 Raiju
-            { 124, new InnateSkill(383, "Nue", "Description")}, // 124 Nue
-            { 125, new InnateSkill(383, "Bicorn", "Description")}, // 125 Bicorn
-            { 126, new InnateSkill(383, "Zhen", "Description")}, // 126 Zhen
-            { 127, new InnateSkill(383, "Vetala", "Description")}, // 127 Vetala
-            { 128, new InnateSkill(383, "Legion", "Description")}, // 128 Legion
-            { 129, new InnateSkill(383, "Yaka", "Description")}, // 129 Yaka
-            { 130, new InnateSkill(383, "Choronzon", "Description")}, // 130 Choronzon
-            { 131, new InnateSkill(383, "Preta", "Description")}, // 131 Preta
-            { 132, new InnateSkill(383, "Shadow", "Description")}, // 132 Shadow
-            { 133, new InnateSkill(383, "Black Ooze", "Description")}, // 133 Black Ooze
-            { 134, new InnateSkill(383, "Blob", "Description")}, // 134 Blob
-            { 135, new InnateSkill(383, "Slime", "Description")}, // 135 Slime
-            { 136, new InnateSkill(383, "Mou-Ryo", "Description")}, // 136 Mou-Ryo
-            { 137, new InnateSkill(383, "Will o' Wisp", "Description")}, // 137 Will o' Wisp
-            { 138, new InnateSkill(383, "Michael", "Description")}, // 138 Michael
-            { 139, new InnateSkill(383, "Gabriel", "Description")}, // 139 Gabriel
-            { 140, new InnateSkill(383, "Raphael", "Description")}, // 140 Raphael
-            { 141, new InnateSkill(383, "Uriel", "Description")}, // 141 Uriel
-            { 142, new InnateSkill(383, "Ganesha", "Description")}, // 142 Ganesha
-            { 143, new InnateSkill(383, "Valkyrie", "Description")}, // 143 Valkyrie
-            { 144, new InnateSkill(383, "Arahabaki", "Description")}, // 144 Arahabaki
-            { 145, new InnateSkill(383, "Kurama Tengu", "Description")}, // 145 Kurama Tengu
-            { 146, new InnateSkill(383, "Hanuman", "Description")}, // 146 Hanuman
-            { 147, new InnateSkill(383, "Cu Chulainn", "Description")}, // 147 Cu Chulainn
-            { 148, new InnateSkill(383, "Qing Long", "Description")}, // 148 Qing Long
-            { 149, new InnateSkill(383, "Xuanwu", "Description")}, // 149 Xuanwu
-            { 150, new InnateSkill(383, "Barong", "Description")}, // 150 Barong
-            { 151, new InnateSkill(383, "Makami", "Description")}, // 151 Makami
-            { 152, new InnateSkill(383, "Garuda", "Description")}, // 152 Garuda
-            { 153, new InnateSkill(383, "Yatagarasu", "Description")}, // 153 Yatagarasu
-            { 154, new InnateSkill(383, "Gurulu", "Description")}, // 154 Gurulu
-            { 155, new InnateSkill(383, "Albion", "Description")}, // 155 Albion
-            { 156, new InnateSkill(383, "Manikin", "Description")}, // 156 Manikin
-            { 157, new InnateSkill(383, "Manikin", "Description")}, // 157 Manikin
-            { 158, new InnateSkill(383, "Manikin", "Description")}, // 158 Manikin
-            { 159, new InnateSkill(383, "Manikin", "Description")}, // 159 Manikin
-            { 160, new InnateSkill(383, "Manikin", "Description")}, // 160 Manikin
-            { 161, new InnateSkill(383, "Samael", "Description")}, // 161 Samael
-            { 162, new InnateSkill(383, "Manikin", "Description")}, // 162 Manikin
-            { 163, new InnateSkill(383, "Manikin", "Description")}, // 163 Manikin
-            { 164, new InnateSkill(383, "Manikin", "Description")}, // 164 Manikin
-            { 165, new InnateSkill(383, "Manikin", "Description")}, // 165 Manikin
-            { 166, new InnateSkill(383, "Manikin", "Description")}, // 166 Manikin
-            { 167, new InnateSkill(383, "Pisaca", "Description")}, // 167 Pisaca
-            { 168, new InnateSkill(383, "Kaiwan", "Description")}, // 168 Kaiwan
-            { 169, new InnateSkill(383, "Kin-Ki", "Description")}, // 169 Kin-Ki
-            { 170, new InnateSkill(383, "Sui-Ki", "Description")}, // 170 Sui-Ki
-            { 171, new InnateSkill(383, "Fuu-Ki", "Description")}, // 171 Fuu-Ki
-            { 172, new InnateSkill(383, "Ongyo-Ki", "Description")}, // 172 Ongyo-Ki
-            { 173, new InnateSkill(383, "Clotho", "Description")}, // 173 Clotho
-            { 174, new InnateSkill(383, "Lachesis", "Description")}, // 174 Lachesis
-            { 175, new InnateSkill(383, "Atropos", "Description")}, // 175 Atropos
-            { 176, new InnateSkill(383, "Loa", "Description")}, // 176 Loa
-            { 177, new InnateSkill(383, "Chatterskull", "Description")}, // 177 Chatterskull
-            { 178, new InnateSkill(383, "Phantom", "Description")}, // 178 Phantom
-            { 179, new InnateSkill(383, "Ose Hallel", "Description")}, // 179 Ose Hallel
-            { 180, new InnateSkill(383, "Flaurose Hallel", "Description")}, // 180 Flaurose Hallel
-            { 181, new InnateSkill(383, "Urthona", "Description")}, // 181 Urthona
-            { 182, new InnateSkill(383, "Urizen", "Description")}, // 182 Urizen
-            { 183, new InnateSkill(383, "Luvah", "Description")}, // 183 Luvah
-            { 184, new InnateSkill(383, "Tharmus", "Description")}, // 184 Tharmus
-            { 185, new InnateSkill(383, "Specter", "Description")}, // 185 Specter
-            { 186, new InnateSkill(383, "Mara", "Description")}, // 186 Mara
-            { 187, new InnateSkill(383, "", "Description")}, // 187 
-            { 188, new InnateSkill(383, "", "Description")}, // 188 
-            { 189, new InnateSkill(383, "", "Description")}, // 189 
-            { 190, new InnateSkill(383, "", "Description")}, // 190 
-            { 191, new InnateSkill(383, "", "Description")}, // 191 
-            { 192, new InnateSkill(383, "Raidou/Dante", "Description")}, // 192 Raidou/Dante
-            { 193, new InnateSkill(383, "Metatron", "Description")}, // 193 Metatron
-            { 194, new InnateSkill(383, "Beelzebub (Fly)", "Description")}, // 194 Beelzebub (Fly)
-            { 195, new InnateSkill(383, "Pale Rider", "Description")}, // 195 Pale Rider
-            { 196, new InnateSkill(383, "White Rider", "Description")}, // 196 White Rider
-            { 197, new InnateSkill(383, "Red Rider", "Description")}, // 197 Red Rider
-            { 198, new InnateSkill(383, "Black Rider", "Description")}, // 198 Black Rider
-            { 199, new InnateSkill(383, "Matador", "Description")}, // 199 Matador
-            { 200, new InnateSkill(383, "Hell Biker", "Description")}, // 200 Hell Biker
-            { 201, new InnateSkill(383, "Daisoujou", "Description")}, // 201 Daisoujou
-            { 202, new InnateSkill(383, "Mother Harlot", "Description")}, // 202 Mother Harlot
-            { 203, new InnateSkill(383, "Trumpeter", "Description")}, // 203 Trumpeter
-            { 204, new InnateSkill(383, "Futomimi", "Description")}, // 204 Futomimi
-            { 205, new InnateSkill(383, "Sakahagi", "Description")}, // 205 Sakahagi
-            { 206, new InnateSkill(383, "Black Frost", "Description")}, // 206 Black Frost
-            { 207, new InnateSkill(383, "Beelzebub (Man)", "Description")}, // 207 Beelzebub (Man)
-            { 208, new InnateSkill(383, "", "Description")}, // 208 
-            { 209, new InnateSkill(383, "", "Description")}, // 209 
-            { 210, new InnateSkill(383, "", "Description")}, // 210 
-            { 211, new InnateSkill(383, "", "Description")}, // 211 
-            { 212, new InnateSkill(383, "", "Description")}, // 212 
-            { 213, new InnateSkill(383, "", "Description")}, // 213 
-            { 214, new InnateSkill(383, "", "Description")}, // 214 
-            { 215, new InnateSkill(383, "", "Description")}, // 215 
-            { 216, new InnateSkill(383, "", "Description")}, // 216 
-            { 217, new InnateSkill(383, "", "Description")}, // 217 
-            { 218, new InnateSkill(383, "", "Description")}, // 218 
-            { 219, new InnateSkill(383, "", "Description")}, // 219 
-            { 220, new InnateSkill(383, "", "Description")}, // 220 
-            { 221, new InnateSkill(383, "", "Description")}, // 221 
-            { 222, new InnateSkill(383, "", "Description")}, // 222 
-            { 223, new InnateSkill(383, "", "Description")}, // 223 
-            { 224, new InnateSkill(383, "Tam Lin", "Description")}, // 224 Tam Lin
-            { 225, new InnateSkill(383, "Doppelganger", "Description")}, // 225 Doppelganger
-            { 226, new InnateSkill(419, "Nightmare", "Description")}, // 226 Nightmare
-            { 227, new InnateSkill(383, "", "Description")}, // 227 
-            { 228, new InnateSkill(383, "", "Description")}, // 228 
-            { 229, new InnateSkill(383, "", "Description")}, // 229 
-            { 230, new InnateSkill(383, "", "Description")}, // 230 
-            { 231, new InnateSkill(383, "", "Description")}, // 231 
-            { 232, new InnateSkill(383, "", "Description")}, // 232 
-            { 233, new InnateSkill(383, "", "Description")}, // 233 
-            { 234, new InnateSkill(383, "", "Description")}, // 234 
-            { 235, new InnateSkill(383, "", "Description")}, // 235 
-            { 236, new InnateSkill(383, "", "Description")}, // 236 
-            { 237, new InnateSkill(383, "", "Description")}, // 237 
-            { 238, new InnateSkill(383, "", "Description")}, // 238 
-            { 239, new InnateSkill(383, "", "Description")}, // 239 
-            { 240, new InnateSkill(383, "", "Description")}, // 240 
-            { 241, new InnateSkill(383, "", "Description")}, // 241 
-            { 242, new InnateSkill(383, "", "Description")}, // 242 
-            { 243, new InnateSkill(383, "", "Description")}, // 243 
-            { 244, new InnateSkill(383, "", "Description")}, // 244 
-            { 245, new InnateSkill(383, "", "Description")}, // 245 
-            { 246, new InnateSkill(383, "", "Description")}, // 246 
-            { 247, new InnateSkill(383, "", "Description")}, // 247 
-            { 248, new InnateSkill(383, "", "Description")}, // 248 
-            { 249, new InnateSkill(383, "", "Description")}, // 249 
-            { 250, new InnateSkill(383, "", "Description")}, // 250 
-            { 251, new InnateSkill(383, "", "Description")}, // 251 
-            { 252, new InnateSkill(383, "Devil Dante", "Description")}, // 252 Devil Dante
-            { 253, new InnateSkill(383, "Gamete", "Description")}, // 253 Gamete
-            { 254, new InnateSkill(383, "YHVH", "Description")}, // 254 YHVH
-            { 255, new InnateSkill(383, "", "Description")}, // 255 
-            { 256, new InnateSkill(383, "Boss Forneus", "Description")}, // 256 Boss Forneus
-            { 257, new InnateSkill(383, "Boss Specter 1 (Mini)", "Description")}, // 257 Boss Specter 1 (Mini)
-            { 258, new InnateSkill(383, "Boss Ahriman 2", "Description")}, // 258 Boss Ahriman 2
-            { 259, new InnateSkill(383, "Boss Noah 2", "Description")}, // 259 Boss Noah 2
-            { 260, new InnateSkill(383, "Forced Incubus", "Description")}, // 260 Forced Incubus
-            { 261, new InnateSkill(383, "Forced Koppa Tengu", "Description")}, // 261 Forced Koppa Tengu
-            { 262, new InnateSkill(383, "Forced Kaiwan", "Description")}, // 262 Forced Kaiwan
-            { 263, new InnateSkill(383, "Boss Ose", "Description")}, // 263 Boss Ose
-            { 264, new InnateSkill(383, "Boss Kagutsuchi 2", "Description")}, // 264 Boss Kagutsuchi 2
-            { 265, new InnateSkill(383, "Ambush Mizuchi", "Description")}, // 265 Ambush Mizuchi
-            { 266, new InnateSkill(383, "Boss Kin-Ki", "Description")}, // 266 Boss Kin-Ki
-            { 267, new InnateSkill(383, "Boss Sui-Ki", "Description")}, // 267 Boss Sui-Ki
-            { 268, new InnateSkill(383, "Boss Fuu-Ki", "Description")}, // 268 Boss Fuu-Ki
-            { 269, new InnateSkill(383, "Boss Ongyo-Ki", "Description")}, // 269 Boss Ongyo-Ki
-            { 270, new InnateSkill(383, "Boss Clotho (Solo)", "Description")}, // 270 Boss Clotho (Solo)
-            { 271, new InnateSkill(383, "Boss Lachesis (Solo)", "Description")}, // 271 Boss Lachesis (Solo)
-            { 272, new InnateSkill(383, "Boss Atropos (Solo)", "Description")}, // 272 Boss Atropos (Solo)
-            { 273, new InnateSkill(383, "Boss Specter 2", "Description")}, // 273 Boss Specter 2
-            { 274, new InnateSkill(383, "Boss Girimekhala", "Description")}, // 274 Boss Girimekhala
-            { 275, new InnateSkill(383, "Boss Specter 3", "Description")}, // 275 Boss Specter 3
-            { 276, new InnateSkill(383, "Boss Aciel", "Description")}, // 276 Boss Aciel
-            { 277, new InnateSkill(383, "Boss Skadi", "Description")}, // 277 Boss Skadi
-            { 278, new InnateSkill(383, "Boss Albion", "Description")}, // 278 Boss Albion
-            { 279, new InnateSkill(383, "Boss Urthona", "Description")}, // 279 Boss Urthona
-            { 280, new InnateSkill(383, "Boss Urizen", "Description")}, // 280 Boss Urizen
-            { 281, new InnateSkill(383, "Boss Luvah", "Description")}, // 281 Boss Luvah
-            { 282, new InnateSkill(383, "Boss Tharmus", "Description")}, // 282 Boss Tharmus
-            { 283, new InnateSkill(383, "Boss Futomimi", "Description")}, // 283 Boss Futomimi
-            { 284, new InnateSkill(383, "Boss Gabriel", "Description")}, // 284 Boss Gabriel
-            { 285, new InnateSkill(383, "Boss Raphael", "Description")}, // 285 Boss Raphael
-            { 286, new InnateSkill(383, "Boss Uriel", "Description")}, // 286 Boss Uriel
-            { 287, new InnateSkill(383, "Boss Samael", "Description")}, // 287 Boss Samael
-            { 288, new InnateSkill(383, "Boss Baal Avatar", "Description")}, // 288 Boss Baal Avatar
-            { 289, new InnateSkill(383, "Boss Ose Hallel", "Description")}, // 289 Boss Ose Hallel
-            { 290, new InnateSkill(383, "Boss Flauros Hallel", "Description")}, // 290 Boss Flauros Hallel
-            { 291, new InnateSkill(383, "Boss Ahriman 1", "Description")}, // 291 Boss Ahriman 1
-            { 292, new InnateSkill(383, "Boss Noah 1", "Description")}, // 292 Boss Noah 1
-            { 293, new InnateSkill(383, "Boss Kagutsuchi 1", "Description")}, // 293 Boss Kagutsuchi 1
-            { 294, new InnateSkill(383, "Boss Specter 1 (Merged 6)", "Description")}, // 294 Boss Specter 1 (Merged 6)
-            { 295, new InnateSkill(383, "Boss Specter 1 (Merged 4-5)", "Description")}, // 295 Boss Specter 1 (Merged 4-5)
-            { 296, new InnateSkill(383, "Boss Specter 1 (Merged 2-3)", "Description")}, // 296 Boss Specter 1 (Merged 2-3)
-            { 297, new InnateSkill(383, "Boss Mizuchi", "Description")}, // 297 Boss Mizuchi
-            { 298, new InnateSkill(383, "", "Description")}, // 298 
-            { 299, new InnateSkill(383, "Boss Sakahagi", "Description")}, // 299 Boss Sakahagi
-            { 300, new InnateSkill(383, "Boss Orthrus", "Description")}, // 300 Boss Orthrus
-            { 301, new InnateSkill(383, "Boss Yaksini", "Description")}, // 301 Boss Yaksini
-            { 302, new InnateSkill(383, "Boss Thor", "Description")}, // 302 Boss Thor
-            { 303, new InnateSkill(383, "Boss Black Frost", "Description")}, // 303 Boss Black Frost
-            { 304, new InnateSkill(383, "Ambush Karasu Tengu", "Description")}, // 304 Ambush Karasu Tengu
-            { 305, new InnateSkill(383, "Ambush Karasu Tengu", "Description")}, // 305 Ambush Karasu Tengu
-            { 306, new InnateSkill(383, "Ambush Karasu Tengu", "Description")}, // 306 Ambush Karasu Tengu
-            { 307, new InnateSkill(383, "Boss Eligor", "Description")}, // 307 Boss Eligor
-            { 308, new InnateSkill(383, "Boss Eligor", "Description")}, // 308 Boss Eligor
-            { 309, new InnateSkill(383, "Boss Eligor", "Description")}, // 309 Boss Eligor
-            { 310, new InnateSkill(383, "Ambush Kelpie", "Description")}, // 310 Ambush Kelpie
-            { 311, new InnateSkill(383, "Ambush Kelpie", "Description")}, // 311 Ambush Kelpie
-            { 312, new InnateSkill(383, "Boss Berith", "Description")}, // 312 Boss Berith
-            { 313, new InnateSkill(383, "Boss Succubus", "Description")}, // 313 Boss Succubus
-            { 314, new InnateSkill(383, "Ambush High Pixie", "Description")}, // 314 Ambush High Pixie
-            { 315, new InnateSkill(383, "Boss Kaiwan", "Description")}, // 315 Boss Kaiwan
-            { 316, new InnateSkill(383, "Forced Nekomata", "Description")}, // 316 Forced Nekomata
-            { 317, new InnateSkill(383, "Boss Troll", "Description")}, // 317 Boss Troll
-            { 318, new InnateSkill(383, "Forced Will o' Wisp", "Description")}, // 318 Forced Will o' Wisp
-            { 319, new InnateSkill(383, "Forced Preta", "Description")}, // 319 Forced Preta
-            { 320, new InnateSkill(383, "Boss Bishamonten 1", "Description")}, // 320 Boss Bishamonten 1
-            { 321, new InnateSkill(383, "Boss Mara", "Description")}, // 321 Boss Mara
-            { 322, new InnateSkill(383, "Boss Bishamonten 2", "Description")}, // 322 Boss Bishamonten 2
-            { 323, new InnateSkill(383, "Boss Jikokuten", "Description")}, // 323 Boss Jikokuten
-            { 324, new InnateSkill(383, "Boss Koumokuten", "Description")}, // 324 Boss Koumokuten
-            { 325, new InnateSkill(383, "Boss Zouchouten", "Description")}, // 325 Boss Zouchouten
-            { 326, new InnateSkill(383, "Boss Clotho (Together)", "Description")}, // 326 Boss Clotho (Together)
-            { 327, new InnateSkill(383, "Boss Lachesis (Together)", "Description")}, // 327 Boss Lachesis (Together)
-            { 328, new InnateSkill(383, "Boss Atropos (Together)", "Description")}, // 328 Boss Atropos (Together)
-            { 329, new InnateSkill(383, "Boss Mitra", "Description")}, // 329 Boss Mitra
-            { 330, new InnateSkill(383, "", "Description")}, // 330 
-            { 331, new InnateSkill(383, "", "Description")}, // 331 
-            { 332, new InnateSkill(383, "", "Description")}, // 332 
-            { 333, new InnateSkill(383, "Boss Mada", "Description")}, // 333 Boss Mada
-            { 334, new InnateSkill(383, "Boss Mot", "Description")}, // 334 Boss Mot
-            { 335, new InnateSkill(383, "Boss Surt", "Description")}, // 335 Boss Surt
-            { 336, new InnateSkill(383, "Ambush Jack-o'-Lantern", "Description")}, // 336 Ambush Jack-o'-Lantern
-            { 337, new InnateSkill(383, "Boss Thor 2", "Description")}, // 337 Boss Thor 2
-            { 338, new InnateSkill(383, "", "Description")}, // 338 
-            { 339, new InnateSkill(383, "Boss Raidou/Dante 1", "Description")}, // 339 Boss Raidou/Dante 1
-            { 340, new InnateSkill(383, "Chase Raidou/Dante", "Description")}, // 340 Chase Raidou/Dante
-            { 341, new InnateSkill(383, "Boss Raidou/Dante 2", "Description")}, // 341 Boss Raidou/Dante 2
-            { 342, new InnateSkill(383, "Boss Metatron", "Description")}, // 342 Boss Metatron
-            { 343, new InnateSkill(383, "Boss Beelzebub", "Description")}, // 343 Boss Beelzebub
-            { 344, new InnateSkill(383, "Boss Lucifer", "Description")}, // 344 Boss Lucifer
-            { 345, new InnateSkill(383, "Boss Pale Rider", "Description")}, // 345 Boss Pale Rider
-            { 346, new InnateSkill(383, "Boss White Rider", "Description")}, // 346 Boss White Rider
-            { 347, new InnateSkill(383, "Boss Red Rider", "Description")}, // 347 Boss Red Rider
-            { 348, new InnateSkill(383, "Boss Black Rider", "Description")}, // 348 Boss Black Rider
-            { 349, new InnateSkill(383, "Boss Matador", "Description")}, // 349 Boss Matador
-            { 350, new InnateSkill(383, "Boss Hell Biker", "Description")}, // 350 Boss Hell Biker
-            { 351, new InnateSkill(383, "Boss Daisoujou", "Description")}, // 351 Boss Daisoujou
-            { 352, new InnateSkill(383, "Boss Mother Harlot", "Description")}, // 352 Boss Mother Harlot
-            { 353, new InnateSkill(383, "Boss Trumpeter", "Description")}, // 353 Boss Trumpeter
-            { 354, new InnateSkill(383, "", "Description")}, // 354 
-            { 355, new InnateSkill(383, "", "Description")}, // 355 
-            { 356, new InnateSkill(383, "", "Description")}, // 356 
-            { 357, new InnateSkill(383, "", "Description")}, // 357 
-            { 358, new InnateSkill(383, "Boss Loa", "Description")}, // 358 Boss Loa
-            { 359, new InnateSkill(383, "Boss Virtue", "Description")}, // 359 Boss Virtue
-            { 360, new InnateSkill(383, "Boss Power", "Description")}, // 360 Boss Power
-            { 361, new InnateSkill(383, "Boss Legion", "Description")}, // 361 Boss Legion
-            { 362, new InnateSkill(383, "Boss Flauros", "Description")}, // 362 Boss Flauros
-            { 363, new InnateSkill(383, "", "Description")}, // 363 
-            { 364, new InnateSkill(383, "", "Description")}, // 364 
-            { 365, new InnateSkill(383, "", "Description")}, // 365 
-            { 366, new InnateSkill(383, "", "Description")}, // 366 
-            { 367, new InnateSkill(383, "", "Description")}, // 367 
-            { 368, new InnateSkill(383, "", "Description")}, // 368 
-            { 369, new InnateSkill(383, "", "Description")}, // 369 
-            { 370, new InnateSkill(383, "", "Description")}, // 370 
-            { 371, new InnateSkill(383, "", "Description")}, // 371 
-            { 372, new InnateSkill(383, "", "Description")}, // 372 
-            { 373, new InnateSkill(383, "", "Description")}, // 373 
-            { 374, new InnateSkill(383, "", "Description")}, // 374 
-            { 375, new InnateSkill(383, "", "Description")}, // 375 
-            { 376, new InnateSkill(383, "", "Description")}, // 376 
-            { 377, new InnateSkill(383, "", "Description")}, // 377 
-            { 378, new InnateSkill(383, "", "Description")}, // 378 
-            { 379, new InnateSkill(383, "", "Description")}, // 379 
-            { 380, new InnateSkill(383, "", "Description")}, // 380 
-            { 381, new InnateSkill(383, "", "Description")}, // 381 
-            { 382, new InnateSkill(383, "", "Description")}, // 382 
-            { 383, new InnateSkill(383, "", "Description")}  // 383 
+            { 000, new InnateSkill(383, 15, "", "")}, // 000
+            { 001, new InnateSkill(383, 15, "Vishnu", "")}, // 001 Vishnu
+            { 002, new InnateSkill(383, 15, "Mitra", "")}, // 002 Mitra
+            { 003, new InnateSkill(383, 15, "Amaterasu", "")}, // 003 Amaterasu
+            { 004, new InnateSkill(383, 15, "Odin", "")}, // 004 Odin
+            { 005, new InnateSkill(383, 15, "Atavaka", "")}, // 005 Atavaka
+            { 006, new InnateSkill(383, 15, "Horus", "")}, // 006 Horus
+            { 007, new InnateSkill(383, 15, "Lakshmi", "")}, // 007 Lakshmi
+            { 008, new InnateSkill(383, 15, "Scathach", "")}, // 008 Scathach
+            { 009, new InnateSkill(383, 15, "Sarasvati", "")}, // 009 Sarasvati
+            { 010, new InnateSkill(383, 15, "Sati", "")}, // 010 Sati
+            { 011, new InnateSkill(383, 15, "Ame-no-Uzume", "")}, // 011 Ame-no-Uzume
+            { 012, new InnateSkill(383, 15, "Shiva", "")}, // 012 Shiva
+            { 013, new InnateSkill(383, 15, "Beidou Xingjun", "")}, // 013 Beidou Xingjun
+            { 014, new InnateSkill(383, 15, "Qitian Dasheng", "")}, // 014 Qitian Dasheng
+            { 015, new InnateSkill(419, 15, "Dionysus", "")}, // 015 Dionysus
+            { 016, new InnateSkill(383, 15, "Kali", "")}, // 016 Kali
+            { 017, new InnateSkill(383, 15, "Skadi", "")}, // 017 Skadi
+            { 018, new InnateSkill(383, 15, "Parvati", "")}, // 018 Parvati
+            { 019, new InnateSkill(383, 15, "Kushinada", "")}, // 019 Kushinada
+            { 020, new InnateSkill(418, 15, "Kikuri-Hime", "")}, // 020 Kikuri-Hime
+            { 021, new InnateSkill(383, 15, "Bishamonten", "")}, // 021 Bishamonten
+            { 022, new InnateSkill(383, 15, "Thor", "")}, // 022 Thor
+            { 023, new InnateSkill(383, 15, "Jikokuten", "")}, // 023 Jikokuten
+            { 024, new InnateSkill(383, 15, "Take-Mikazuchi", "")}, // 024 Take-Mikazuchi
+            { 025, new InnateSkill(383, 15, "Okuninushi", "")}, // 025 Okuninushi
+            { 026, new InnateSkill(383, 15, "Koumokuten", "")}, // 026 Koumokuten
+            { 027, new InnateSkill(383, 15, "Zouchouten", "")}, // 027 Zouchouten
+            { 028, new InnateSkill(383, 15, "Take-Minakata", "")}, // 028 Take-Minakata
+            { 029, new InnateSkill(383, 15, "Chimera", "")}, // 029 Chimera
+            { 030, new InnateSkill(383, 15, "Baihu", "")}, // 030 Baihu
+            { 031, new InnateSkill(383, 15, "Senri", "")}, // 031 Senri
+            { 032, new InnateSkill(383, 15, "Zhuque", "")}, // 032 Zhuque
+            { 033, new InnateSkill(383, 15, "Shiisaa", "")}, // 033 Shiisaa
+            { 034, new InnateSkill(383, 15, "Xiezhai", "")}, // 034 Xiezhai
+            { 035, new InnateSkill(383, 15, "Unicorn", "")}, // 035 Unicorn
+            { 036, new InnateSkill(383, 15, "Flaemis", "")}, // 036 Flaemis
+            { 037, new InnateSkill(383, 15, "Aquans", "")}, // 037 Aquans
+            { 038, new InnateSkill(383, 15, "Aeros", "")}, // 038 Aeros
+            { 039, new InnateSkill(383, 15, "Erthys", "")}, // 039 Erthys
+            { 040, new InnateSkill(383, 15, "Saki Mitama", "")}, // 040 Saki Mitama
+            { 041, new InnateSkill(383, 15, "Kushi Mitama", "")}, // 041 Kushi Mitama
+            { 042, new InnateSkill(383, 15, "Nigi Mitama", "")}, // 042 Nigi Mitama
+            { 043, new InnateSkill(383, 15, "Ara Mitama", "")}, // 043 Ara Mitama
+            { 044, new InnateSkill(383, 15, "Efreet", "")}, // 044 Efreet
+            { 045, new InnateSkill(383, 15, "Pulukishi", "")}, // 045 Pulukishi
+            { 046, new InnateSkill(383, 15, "Ongkhot", "")}, // 046 Ongkhot
+            { 047, new InnateSkill(383, 15, "Jinn", "")}, // 047 Jinn
+            { 048, new InnateSkill(383, 15, "Karasu Tengu", "")}, // 048 Karasu Tengu
+            { 049, new InnateSkill(383, 15, "Dís", "")}, // 049 Dís
+            { 050, new InnateSkill(383, 15, "Isora", "")}, // 050 Isora
+            { 051, new InnateSkill(383, 15, "Apsaras", "")}, // 051 Apsaras
+            { 052, new InnateSkill(383, 15, "Koppa Tengu", "")}, // 052 Koppa Tengu
+            { 053, new InnateSkill(383, 15, "Titania", "")}, // 053 Titania
+            { 054, new InnateSkill(383, 15, "Oberon", "")}, // 054 Oberon
+            { 055, new InnateSkill(383, 15, "Troll", "")}, // 055 Troll
+            { 056, new InnateSkill(383, 15, "Setanta", "")}, // 056 Setanta
+            { 057, new InnateSkill(383, 15, "Kelpie", "")}, // 057 Kelpie
+            { 058, new InnateSkill(383, 15, "Jack-o'-Lantern", "")}, // 058 Jack-o'-Lantern
+            { 059, new InnateSkill(383, 15, "High Pixie", "")}, // 059 High Pixie
+            { 060, new InnateSkill(383, 15, "Jack Frost", "")}, // 060 Jack Frost
+            { 061, new InnateSkill(383, 15, "Pixie", "")}, // 061 Pixie
+            { 062, new InnateSkill(383, 15, "Throne", "")}, // 062 Throne
+            { 063, new InnateSkill(383, 15, "Dominion", "")}, // 063 Dominion
+            { 064, new InnateSkill(383, 15, "Virtue", "")}, // 064 Virtue
+            { 065, new InnateSkill(383, 15, "Power", "")}, // 065 Power
+            { 066, new InnateSkill(383, 15, "Principality", "")}, // 066 Principality
+            { 067, new InnateSkill(383, 15, "Archangel", "")}, // 067 Archangel
+            { 068, new InnateSkill(383, 15, "Angel", "")}, // 068 Angel
+            { 069, new InnateSkill(383, 15, "Flauros", "")}, // 069 Flauros
+            { 070, new InnateSkill(383, 15, "Decarabia", "")}, // 070 Decarabia
+            { 071, new InnateSkill(383, 15, "Ose", "")}, // 071 Ose
+            { 072, new InnateSkill(383, 15, "Berith", "")}, // 072 Berith
+            { 073, new InnateSkill(383, 15, "Eligor", "")}, // 073 Eligor
+            { 074, new InnateSkill(383, 15, "Forneus", "")}, // 074 Forneus
+            { 075, new InnateSkill(383, 15, "Yurlungur", "")}, // 075 Yurlungur
+            { 076, new InnateSkill(383, 15, "Quetzalcoatl", "")}, // 076 Quetzalcoatl
+            { 077, new InnateSkill(383, 15, "Naga Raja", "")}, // 077 Naga Raja
+            { 078, new InnateSkill(383, 15, "Mizuchi", "")}, // 078 Mizuchi
+            { 079, new InnateSkill(383, 15, "Naga", "")}, // 079 Naga
+            { 080, new InnateSkill(383, 15, "Nozuchi", "")}, // 080 Nozuchi
+            { 081, new InnateSkill(383, 15, "Cerberus", "")}, // 081 Cerberus
+            { 082, new InnateSkill(383, 15, "Orthrus", "")}, // 082 Orthrus
+            { 083, new InnateSkill(383, 15, "Suparna", "")}, // 083 Suparna
+            { 084, new InnateSkill(383, 15, "Badb Catha", "")}, // 084 Badb Catha
+            { 085, new InnateSkill(383, 15, "Inugami", "")}, // 085 Inugami
+            { 086, new InnateSkill(383, 15, "Nekomata", "")}, // 086 Nekomata
+            { 087, new InnateSkill(383, 15, "Gogmagog", "")}, // 087 Gogmagog
+            { 088, new InnateSkill(383, 15, "Titan", "")}, // 088 Titan
+            { 089, new InnateSkill(383, 15, "Sarutahiko", "")}, // 089 Sarutahiko
+            { 090, new InnateSkill(383, 15, "Sudama", "")}, // 090 Sudama
+            { 091, new InnateSkill(383, 15, "Hua Po", "")}, // 091 Hua Po
+            { 092, new InnateSkill(383, 15, "Kodama", "")}, // 092 Kodama
+            { 093, new InnateSkill(383, 15, "Shiki-Ouji", "")}, // 093 Shiki-Ouji
+            { 094, new InnateSkill(383, 15, "Oni", "")}, // 094 Oni
+            { 095, new InnateSkill(383, 15, "Yomotsu-Ikusa", "")}, // 095 Yomotsu-Ikusa
+            { 096, new InnateSkill(383, 15, "Momunofu", "")}, // 096 Momunofu
+            { 097, new InnateSkill(383, 15, "Shikigami", "")}, // 097 Shikigami
+            { 098, new InnateSkill(383, 15, "Rangda", "")}, // 098 Rangda
+            { 099, new InnateSkill(383, 15, "Dakini", "")}, // 099 Dakini
+            { 100, new InnateSkill(383, 15, "Yaksini", "")}, // 100 Yaksini
+            { 101, new InnateSkill(383, 15, "Yomotsu-Shikome", "")}, // 101 Yomotsu-Shikome
+            { 102, new InnateSkill(383, 15, "Taraka", "")}, // 102 Taraka
+            { 103, new InnateSkill(383, 15, "Datsue-Ba", "")}, // 103 Datsue-Ba
+            { 104, new InnateSkill(383, 15, "Mada", "")}, // 104 Mada
+            { 105, new InnateSkill(383, 15, "Girimekhala", "")}, // 105 Girimekhala
+            { 106, new InnateSkill(383, 15, "Taotie", "")}, // 106 Taotie
+            { 107, new InnateSkill(383, 15, "Pazuzu", "")}, // 107 Pazuzu
+            { 108, new InnateSkill(383, 15, "Baphomet", "")}, // 108 Baphomet
+            { 109, new InnateSkill(383, 15, "Mot", "")}, // 109 Mot
+            { 110, new InnateSkill(383, 15, "Alciel", "")}, // 110 Alciel
+            { 111, new InnateSkill(383, 1, "Laevateinn", "Fire Boost & greatly empowers \nnormal attacks.")}, // 111 Surt
+            { 112, new InnateSkill(383, 15, "Abaddon", "")}, // 112 Abaddon
+            { 113, new InnateSkill(383, 15, "Loki", "")}, // 113 Loki
+            { 114, new InnateSkill(383, 15, "Lilith", "")}, // 114 Lilith
+            { 115, new InnateSkill(383, 15, "Nyx", "")}, // 115 Nyx
+            { 116, new InnateSkill(383, 15, "Queen Mab", "")}, // 116 Queen Mab
+            { 117, new InnateSkill(383, 15, "Succubus", "")}, // 117 Succubus
+            { 118, new InnateSkill(383, 15, "Incubus", "")}, // 118 Incubus
+            { 119, new InnateSkill(383, 15, "Fomorian", "")}, // 119 Fomorian
+            { 120, new InnateSkill(383, 15, "Lilim", "")}, // 120 Lilim
+            { 121, new InnateSkill(383, 15, "Hresvelgr", "")}, // 121 Hresvelgr
+            { 122, new InnateSkill(383, 15, "Mothman", "")}, // 122 Mothman
+            { 123, new InnateSkill(383, 15, "Raiju", "")}, // 123 Raiju
+            { 124, new InnateSkill(383, 15, "Nue", "")}, // 124 Nue
+            { 125, new InnateSkill(383, 15, "Bicorn", "")}, // 125 Bicorn
+            { 126, new InnateSkill(383, 15, "Zhen", "")}, // 126 Zhen
+            { 127, new InnateSkill(383, 15, "Vetala", "")}, // 127 Vetala
+            { 128, new InnateSkill(383, 15, "Legion", "")}, // 128 Legion
+            { 129, new InnateSkill(383, 15, "Yaka", "")}, // 129 Yaka
+            { 130, new InnateSkill(383, 15, "Choronzon", "")}, // 130 Choronzon
+            { 131, new InnateSkill(383, 15, "Preta", "")}, // 131 Preta
+            { 132, new InnateSkill(383, 15, "Shadow", "")}, // 132 Shadow
+            { 133, new InnateSkill(383, 15, "Black Ooze", "")}, // 133 Black Ooze
+            { 134, new InnateSkill(383, 15, "Blob", "")}, // 134 Blob
+            { 135, new InnateSkill(383, 15, "Slime", "")}, // 135 Slime
+            { 136, new InnateSkill(383, 15, "Mou-Ryo", "")}, // 136 Mou-Ryo
+            { 137, new InnateSkill(383, 15, "Will o' Wisp", "")}, // 137 Will o' Wisp
+            { 138, new InnateSkill(383, 15, "Michael", "")}, // 138 Michael
+            { 139, new InnateSkill(383, 15, "Gabriel", "")}, // 139 Gabriel
+            { 140, new InnateSkill(383, 15, "Raphael", "")}, // 140 Raphael
+            { 141, new InnateSkill(383, 15, "Uriel", "")}, // 141 Uriel
+            { 142, new InnateSkill(383, 15, "Ganesha", "")}, // 142 Ganesha
+            { 143, new InnateSkill(383, 15, "Valkyrie", "")}, // 143 Valkyrie
+            { 144, new InnateSkill(383, 15, "Arahabaki", "")}, // 144 Arahabaki
+            { 145, new InnateSkill(383, 15, "Kurama Tengu", "")}, // 145 Kurama Tengu
+            { 146, new InnateSkill(383, 15, "Hanuman", "")}, // 146 Hanuman
+            { 147, new InnateSkill(383, 15, "Cu Chulainn", "")}, // 147 Cu Chulainn
+            { 148, new InnateSkill(383, 15, "Qing Long", "")}, // 148 Qing Long
+            { 149, new InnateSkill(383, 15, "Xuanwu", "")}, // 149 Xuanwu
+            { 150, new InnateSkill(383, 15, "Barong", "")}, // 150 Barong
+            { 151, new InnateSkill(383, 15, "Makami", "")}, // 151 Makami
+            { 152, new InnateSkill(383, 15, "Garuda", "")}, // 152 Garuda
+            { 153, new InnateSkill(383, 15, "Yatagarasu", "")}, // 153 Yatagarasu
+            { 154, new InnateSkill(383, 15, "Gurulu", "")}, // 154 Gurulu
+            { 155, new InnateSkill(383, 15, "Albion", "")}, // 155 Albion
+            { 156, new InnateSkill(383, 15, "Manikin", "")}, // 156 Manikin
+            { 157, new InnateSkill(383, 15, "Manikin", "")}, // 157 Manikin
+            { 158, new InnateSkill(383, 15, "Manikin", "")}, // 158 Manikin
+            { 159, new InnateSkill(383, 15, "Manikin", "")}, // 159 Manikin
+            { 160, new InnateSkill(383, 15, "Manikin", "")}, // 160 Manikin
+            { 161, new InnateSkill(383, 15, "Samael", "")}, // 161 Samael
+            { 162, new InnateSkill(383, 15, "Manikin", "")}, // 162 Manikin
+            { 163, new InnateSkill(383, 15, "Manikin", "")}, // 163 Manikin
+            { 164, new InnateSkill(383, 15, "Manikin", "")}, // 164 Manikin
+            { 165, new InnateSkill(383, 15, "Manikin", "")}, // 165 Manikin
+            { 166, new InnateSkill(383, 15, "Manikin", "")}, // 166 Manikin
+            { 167, new InnateSkill(383, 15, "Pisaca", "")}, // 167 Pisaca
+            { 168, new InnateSkill(383, 15, "Kaiwan", "")}, // 168 Kaiwan
+            { 169, new InnateSkill(383, 15, "Kin-Ki", "")}, // 169 Kin-Ki
+            { 170, new InnateSkill(383, 15, "Sui-Ki", "")}, // 170 Sui-Ki
+            { 171, new InnateSkill(383, 15, "Fuu-Ki", "")}, // 171 Fuu-Ki
+            { 172, new InnateSkill(383, 15, "Ongyo-Ki", "")}, // 172 Ongyo-Ki
+            { 173, new InnateSkill(383, 15, "Clotho", "")}, // 173 Clotho
+            { 174, new InnateSkill(383, 15, "Lachesis", "")}, // 174 Lachesis
+            { 175, new InnateSkill(383, 15, "Atropos", "")}, // 175 Atropos
+            { 176, new InnateSkill(383, 15, "Loa", "")}, // 176 Loa
+            { 177, new InnateSkill(383, 15, "Chatterskull", "")}, // 177 Chatterskull
+            { 178, new InnateSkill(383, 15, "Phantom", "")}, // 178 Phantom
+            { 179, new InnateSkill(383, 15, "Ose Hallel", "")}, // 179 Ose Hallel
+            { 180, new InnateSkill(383, 15, "Flaurose Hallel", "")}, // 180 Flaurose Hallel
+            { 181, new InnateSkill(383, 15, "Urthona", "")}, // 181 Urthona
+            { 182, new InnateSkill(383, 15, "Urizen", "")}, // 182 Urizen
+            { 183, new InnateSkill(383, 15, "Luvah", "")}, // 183 Luvah
+            { 184, new InnateSkill(383, 15, "Tharmus", "")}, // 184 Tharmus
+            { 185, new InnateSkill(383, 15, "Specter", "")}, // 185 Specter
+            { 186, new InnateSkill(383, 15, "Mara", "")}, // 186 Mara
+            { 187, new InnateSkill(383, 15, "", "")}, // 187 
+            { 188, new InnateSkill(383, 15, "", "")}, // 188 
+            { 189, new InnateSkill(383, 15, "", "")}, // 189 
+            { 190, new InnateSkill(383, 15, "", "")}, // 190 
+            { 191, new InnateSkill(383, 15, "", "")}, // 191 
+            { 192, new InnateSkill(383, 15, "Raidou/Dante", "")}, // 192 Raidou/Dante
+            { 193, new InnateSkill(383, 15, "Metatron", "")}, // 193 Metatron
+            { 194, new InnateSkill(383, 15, "Beelzebub (Fly)", "")}, // 194 Beelzebub (Fly)
+            { 195, new InnateSkill(383, 15, "Pale Rider", "")}, // 195 Pale Rider
+            { 196, new InnateSkill(383, 15, "White Rider", "")}, // 196 White Rider
+            { 197, new InnateSkill(383, 15, "Red Rider", "")}, // 197 Red Rider
+            { 198, new InnateSkill(383, 15, "Black Rider", "")}, // 198 Black Rider
+            { 199, new InnateSkill(383, 15, "Matador", "")}, // 199 Matador
+            { 200, new InnateSkill(383, 15, "Hell Biker", "")}, // 200 Hell Biker
+            { 201, new InnateSkill(383, 15, "Daisoujou", "")}, // 201 Daisoujou
+            { 202, new InnateSkill(383, 15, "Mother Harlot", "")}, // 202 Mother Harlot
+            { 203, new InnateSkill(383, 15, "Trumpeter", "")}, // 203 Trumpeter
+            { 204, new InnateSkill(383, 15, "Futomimi", "")}, // 204 Futomimi
+            { 205, new InnateSkill(383, 15, "Sakahagi", "")}, // 205 Sakahagi
+            { 206, new InnateSkill(383, 15, "Black Frost", "")}, // 206 Black Frost
+            { 207, new InnateSkill(383, 15, "Beelzebub (Man)", "")}, // 207 Beelzebub (Man)
+            { 208, new InnateSkill(383, 15, "", "")}, // 208 
+            { 209, new InnateSkill(383, 15, "", "")}, // 209 
+            { 210, new InnateSkill(383, 15, "", "")}, // 210 
+            { 211, new InnateSkill(383, 15, "", "")}, // 211 
+            { 212, new InnateSkill(383, 15, "", "")}, // 212 
+            { 213, new InnateSkill(383, 15, "", "")}, // 213 
+            { 214, new InnateSkill(383, 15, "", "")}, // 214 
+            { 215, new InnateSkill(383, 15, "", "")}, // 215 
+            { 216, new InnateSkill(383, 15, "", "")}, // 216 
+            { 217, new InnateSkill(383, 15, "", "")}, // 217 
+            { 218, new InnateSkill(383, 15, "", "")}, // 218 
+            { 219, new InnateSkill(383, 15, "", "")}, // 219 
+            { 220, new InnateSkill(383, 15, "", "")}, // 220 
+            { 221, new InnateSkill(383, 15, "", "")}, // 221 
+            { 222, new InnateSkill(383, 15, "", "")}, // 222 
+            { 223, new InnateSkill(383, 15, "", "")}, // 223 
+            { 224, new InnateSkill(383, 15, "Tam Lin", "")}, // 224 Tam Lin
+            { 225, new InnateSkill(383, 15, "Doppelganger", "")}, // 225 Doppelganger
+            { 226, new InnateSkill(383, 15, "Nightmare", "")}, // 226 Nightmare
+            { 227, new InnateSkill(383, 15, "", "")}, // 227 
+            { 228, new InnateSkill(383, 15, "", "")}, // 228 
+            { 229, new InnateSkill(383, 15, "", "")}, // 229 
+            { 230, new InnateSkill(383, 15, "", "")}, // 230 
+            { 231, new InnateSkill(383, 15, "", "")}, // 231 
+            { 232, new InnateSkill(383, 15, "", "")}, // 232 
+            { 233, new InnateSkill(383, 15, "", "")}, // 233 
+            { 234, new InnateSkill(383, 15, "", "")}, // 234 
+            { 235, new InnateSkill(383, 15, "", "")}, // 235 
+            { 236, new InnateSkill(383, 15, "", "")}, // 236 
+            { 237, new InnateSkill(383, 15, "", "")}, // 237 
+            { 238, new InnateSkill(383, 15, "", "")}, // 238 
+            { 239, new InnateSkill(383, 15, "", "")}, // 239 
+            { 240, new InnateSkill(383, 15, "", "")}, // 240 
+            { 241, new InnateSkill(383, 15, "", "")}, // 241 
+            { 242, new InnateSkill(383, 15, "", "")}, // 242 
+            { 243, new InnateSkill(383, 15, "", "")}, // 243 
+            { 244, new InnateSkill(383, 15, "", "")}, // 244 
+            { 245, new InnateSkill(383, 15, "", "")}, // 245 
+            { 246, new InnateSkill(383, 15, "", "")}, // 246 
+            { 247, new InnateSkill(383, 15, "", "")}, // 247 
+            { 248, new InnateSkill(383, 15, "", "")}, // 248 
+            { 249, new InnateSkill(383, 15, "", "")}, // 249 
+            { 250, new InnateSkill(383, 15, "", "")}, // 250 
+            { 251, new InnateSkill(383, 15, "", "")}, // 251 
+            { 252, new InnateSkill(383, 15, "Devil Dante", "")}, // 252 Devil Dante
+            { 253, new InnateSkill(383, 15, "Gamete", "")}, // 253 Gamete
+            { 254, new InnateSkill(383, 15, "YHVH", "")}, // 254 YHVH
+            { 255, new InnateSkill(383, 15, "", "")}, // 255 
+            { 256, new InnateSkill(383, 15, "Boss Forneus", "")}, // 256 Boss Forneus
+            { 257, new InnateSkill(383, 15, "Boss Specter 1 (Mini)", "")}, // 257 Boss Specter 1 (Mini)
+            { 258, new InnateSkill(383, 15, "Boss Ahriman 2", "")}, // 258 Boss Ahriman 2
+            { 259, new InnateSkill(383, 15, "Boss Noah 2", "")}, // 259 Boss Noah 2
+            { 260, new InnateSkill(383, 15, "Forced Incubus", "")}, // 260 Forced Incubus
+            { 261, new InnateSkill(383, 15, "Forced Koppa Tengu", "")}, // 261 Forced Koppa Tengu
+            { 262, new InnateSkill(383, 15, "Forced Kaiwan", "")}, // 262 Forced Kaiwan
+            { 263, new InnateSkill(383, 15, "Boss Ose", "")}, // 263 Boss Ose
+            { 264, new InnateSkill(383, 15, "Boss Kagutsuchi 2", "")}, // 264 Boss Kagutsuchi 2
+            { 265, new InnateSkill(383, 15, "Ambush Mizuchi", "")}, // 265 Ambush Mizuchi
+            { 266, new InnateSkill(383, 15, "Boss Kin-Ki", "")}, // 266 Boss Kin-Ki
+            { 267, new InnateSkill(383, 15, "Boss Sui-Ki", "")}, // 267 Boss Sui-Ki
+            { 268, new InnateSkill(383, 15, "Boss Fuu-Ki", "")}, // 268 Boss Fuu-Ki
+            { 269, new InnateSkill(383, 15, "Boss Ongyo-Ki", "")}, // 269 Boss Ongyo-Ki
+            { 270, new InnateSkill(383, 15, "Boss Clotho (Solo)", "")}, // 270 Boss Clotho (Solo)
+            { 271, new InnateSkill(383, 15, "Boss Lachesis (Solo)", "")}, // 271 Boss Lachesis (Solo)
+            { 272, new InnateSkill(383, 15, "Boss Atropos (Solo)", "")}, // 272 Boss Atropos (Solo)
+            { 273, new InnateSkill(383, 15, "Boss Specter 2", "")}, // 273 Boss Specter 2
+            { 274, new InnateSkill(383, 15, "Boss Girimekhala", "")}, // 274 Boss Girimekhala
+            { 275, new InnateSkill(383, 15, "Boss Specter 3", "")}, // 275 Boss Specter 3
+            { 276, new InnateSkill(383, 15, "Boss Aciel", "")}, // 276 Boss Aciel
+            { 277, new InnateSkill(383, 15, "Boss Skadi", "")}, // 277 Boss Skadi
+            { 278, new InnateSkill(383, 15, "Boss Albion", "")}, // 278 Boss Albion
+            { 279, new InnateSkill(383, 15, "Boss Urthona", "")}, // 279 Boss Urthona
+            { 280, new InnateSkill(383, 15, "Boss Urizen", "")}, // 280 Boss Urizen
+            { 281, new InnateSkill(383, 15, "Boss Luvah", "")}, // 281 Boss Luvah
+            { 282, new InnateSkill(383, 15, "Boss Tharmus", "")}, // 282 Boss Tharmus
+            { 283, new InnateSkill(383, 15, "Boss Futomimi", "")}, // 283 Boss Futomimi
+            { 284, new InnateSkill(383, 15, "Boss Gabriel", "")}, // 284 Boss Gabriel
+            { 285, new InnateSkill(383, 15, "Boss Raphael", "")}, // 285 Boss Raphael
+            { 286, new InnateSkill(383, 15, "Boss Uriel", "")}, // 286 Boss Uriel
+            { 287, new InnateSkill(383, 15, "Boss Samael", "")}, // 287 Boss Samael
+            { 288, new InnateSkill(383, 15, "Boss Baal Avatar", "")}, // 288 Boss Baal Avatar
+            { 289, new InnateSkill(383, 15, "Boss Ose Hallel", "")}, // 289 Boss Ose Hallel
+            { 290, new InnateSkill(383, 15, "Boss Flauros Hallel", "")}, // 290 Boss Flauros Hallel
+            { 291, new InnateSkill(383, 15, "Boss Ahriman 1", "")}, // 291 Boss Ahriman 1
+            { 292, new InnateSkill(383, 15, "Boss Noah 1", "")}, // 292 Boss Noah 1
+            { 293, new InnateSkill(383, 15, "Boss Kagutsuchi 1", "")}, // 293 Boss Kagutsuchi 1
+            { 294, new InnateSkill(383, 15, "Boss Specter 1 (Merged 6)", "")}, // 294 Boss Specter 1 (Merged 6)
+            { 295, new InnateSkill(383, 15, "Boss Specter 1 (Merged 4-5)", "")}, // 295 Boss Specter 1 (Merged 4-5)
+            { 296, new InnateSkill(383, 15, "Boss Specter 1 (Merged 2-3)", "")}, // 296 Boss Specter 1 (Merged 2-3)
+            { 297, new InnateSkill(383, 15, "Boss Mizuchi", "")}, // 297 Boss Mizuchi
+            { 298, new InnateSkill(383, 15, "", "")}, // 298 
+            { 299, new InnateSkill(383, 15, "Boss Sakahagi", "")}, // 299 Boss Sakahagi
+            { 300, new InnateSkill(383, 15, "Boss Orthrus", "")}, // 300 Boss Orthrus
+            { 301, new InnateSkill(383, 15, "Boss Yaksini", "")}, // 301 Boss Yaksini
+            { 302, new InnateSkill(383, 15, "Boss Thor", "")}, // 302 Boss Thor
+            { 303, new InnateSkill(383, 15, "Boss Black Frost", "")}, // 303 Boss Black Frost
+            { 304, new InnateSkill(383, 15, "Ambush Karasu Tengu", "")}, // 304 Ambush Karasu Tengu
+            { 305, new InnateSkill(383, 15, "Ambush Karasu Tengu", "")}, // 305 Ambush Karasu Tengu
+            { 306, new InnateSkill(383, 15, "Ambush Karasu Tengu", "")}, // 306 Ambush Karasu Tengu
+            { 307, new InnateSkill(383, 15, "Boss Eligor", "")}, // 307 Boss Eligor
+            { 308, new InnateSkill(383, 15, "Boss Eligor", "")}, // 308 Boss Eligor
+            { 309, new InnateSkill(383, 15, "Boss Eligor", "")}, // 309 Boss Eligor
+            { 310, new InnateSkill(383, 15, "Ambush Kelpie", "")}, // 310 Ambush Kelpie
+            { 311, new InnateSkill(383, 15, "Ambush Kelpie", "")}, // 311 Ambush Kelpie
+            { 312, new InnateSkill(383, 15, "Boss Berith", "")}, // 312 Boss Berith
+            { 313, new InnateSkill(383, 15, "Boss Succubus", "")}, // 313 Boss Succubus
+            { 314, new InnateSkill(383, 15, "Ambush High Pixie", "")}, // 314 Ambush High Pixie
+            { 315, new InnateSkill(383, 15, "Boss Kaiwan", "")}, // 315 Boss Kaiwan
+            { 316, new InnateSkill(383, 15, "Forced Nekomata", "")}, // 316 Forced Nekomata
+            { 317, new InnateSkill(383, 15, "Boss Troll", "")}, // 317 Boss Troll
+            { 318, new InnateSkill(383, 15, "Forced Will o' Wisp", "")}, // 318 Forced Will o' Wisp
+            { 319, new InnateSkill(383, 15, "Forced Preta", "")}, // 319 Forced Preta
+            { 320, new InnateSkill(383, 15, "Boss Bishamonten 1", "")}, // 320 Boss Bishamonten 1
+            { 321, new InnateSkill(383, 15, "Boss Mara", "")}, // 321 Boss Mara
+            { 322, new InnateSkill(383, 15, "Boss Bishamonten 2", "")}, // 322 Boss Bishamonten 2
+            { 323, new InnateSkill(383, 15, "Boss Jikokuten", "")}, // 323 Boss Jikokuten
+            { 324, new InnateSkill(383, 15, "Boss Koumokuten", "")}, // 324 Boss Koumokuten
+            { 325, new InnateSkill(383, 15, "Boss Zouchouten", "")}, // 325 Boss Zouchouten
+            { 326, new InnateSkill(383, 15, "Boss Clotho (Together)", "")}, // 326 Boss Clotho (Together)
+            { 327, new InnateSkill(383, 15, "Boss Lachesis (Together)", "")}, // 327 Boss Lachesis (Together)
+            { 328, new InnateSkill(383, 15, "Boss Atropos (Together)", "")}, // 328 Boss Atropos (Together)
+            { 329, new InnateSkill(383, 15, "Boss Mitra", "")}, // 329 Boss Mitra
+            { 330, new InnateSkill(383, 15, "", "")}, // 330 
+            { 331, new InnateSkill(383, 15, "", "")}, // 331 
+            { 332, new InnateSkill(383, 15, "", "")}, // 332 
+            { 333, new InnateSkill(383, 15, "Boss Mada", "")}, // 333 Boss Mada
+            { 334, new InnateSkill(383, 15, "Boss Mot", "")}, // 334 Boss Mot
+            { 335, new InnateSkill(383, 1, "Laevateinn", "Fire Boost & greatly empowers \nnormal attacks.")}, // 335 Boss Surt
+            { 336, new InnateSkill(383, 15, "Ambush Jack-o'-Lantern", "")}, // 336 Ambush Jack-o'-Lantern
+            { 337, new InnateSkill(383, 15, "Boss Thor 2", "")}, // 337 Boss Thor 2
+            { 338, new InnateSkill(383, 15, "", "")}, // 338 
+            { 339, new InnateSkill(383, 15, "Boss Raidou/Dante 1", "")}, // 339 Boss Raidou/Dante 1
+            { 340, new InnateSkill(383, 15, "Chase Raidou/Dante", "")}, // 340 Chase Raidou/Dante
+            { 341, new InnateSkill(383, 15, "Boss Raidou/Dante 2", "")}, // 341 Boss Raidou/Dante 2
+            { 342, new InnateSkill(383, 15, "Boss Metatron", "")}, // 342 Boss Metatron
+            { 343, new InnateSkill(383, 15, "Boss Beelzebub", "")}, // 343 Boss Beelzebub
+            { 344, new InnateSkill(383, 15, "Boss Lucifer", "")}, // 344 Boss Lucifer
+            { 345, new InnateSkill(383, 15, "Boss Pale Rider", "")}, // 345 Boss Pale Rider
+            { 346, new InnateSkill(383, 15, "Boss White Rider", "")}, // 346 Boss White Rider
+            { 347, new InnateSkill(383, 15, "Boss Red Rider", "")}, // 347 Boss Red Rider
+            { 348, new InnateSkill(383, 15, "Boss Black Rider", "")}, // 348 Boss Black Rider
+            { 349, new InnateSkill(383, 15, "Boss Matador", "")}, // 349 Boss Matador
+            { 350, new InnateSkill(383, 15, "Boss Hell Biker", "")}, // 350 Boss Hell Biker
+            { 351, new InnateSkill(383, 15, "Boss Daisoujou", "")}, // 351 Boss Daisoujou
+            { 352, new InnateSkill(383, 15, "Boss Mother Harlot", "")}, // 352 Boss Mother Harlot
+            { 353, new InnateSkill(383, 15, "Boss Trumpeter", "")}, // 353 Boss Trumpeter
+            { 354, new InnateSkill(383, 15, "", "")}, // 354 
+            { 355, new InnateSkill(383, 15, "", "")}, // 355 
+            { 356, new InnateSkill(383, 15, "", "")}, // 356 
+            { 357, new InnateSkill(383, 15, "", "")}, // 357 
+            { 358, new InnateSkill(383, 15, "Boss Loa", "")}, // 358 Boss Loa
+            { 359, new InnateSkill(383, 15, "Boss Virtue", "")}, // 359 Boss Virtue
+            { 360, new InnateSkill(383, 15, "Boss Power", "")}, // 360 Boss Power
+            { 361, new InnateSkill(383, 15, "Boss Legion", "")}, // 361 Boss Legion
+            { 362, new InnateSkill(383, 15, "Boss Flauros", "")}, // 362 Boss Flauros
+            { 363, new InnateSkill(383, 15, "", "")}, // 363 
+            { 364, new InnateSkill(383, 15, "", "")}, // 364 
+            { 365, new InnateSkill(383, 15, "", "")}, // 365 
+            { 366, new InnateSkill(383, 15, "", "")}, // 366 
+            { 367, new InnateSkill(383, 15, "", "")}, // 367 
+            { 368, new InnateSkill(383, 15, "", "")}, // 368 
+            { 369, new InnateSkill(383, 15, "", "")}, // 369 
+            { 370, new InnateSkill(383, 15, "", "")}, // 370 
+            { 371, new InnateSkill(383, 15, "", "")}, // 371 
+            { 372, new InnateSkill(383, 15, "", "")}, // 372 
+            { 373, new InnateSkill(383, 15, "", "")}, // 373 
+            { 374, new InnateSkill(383, 15, "", "")}, // 374 
+            { 375, new InnateSkill(383, 15, "", "")}, // 375 
+            { 376, new InnateSkill(383, 15, "", "")}, // 376 
+            { 377, new InnateSkill(383, 15, "", "")}, // 377 
+            { 378, new InnateSkill(383, 15, "", "")}, // 378 
+            { 379, new InnateSkill(383, 15, "", "")}, // 379 
+            { 380, new InnateSkill(383, 15, "", "")}, // 380 
+            { 381, new InnateSkill(383, 15, "", "")}, // 381 
+            { 382, new InnateSkill(383, 15, "", "")}, // 382 
+            { 383, new InnateSkill(383, 15, "", "")}  // 383 
+        };
+
+        private static Dictionary<ushort, List<int>> negoSkillScenarios = new Dictionary<ushort, List<int>>
+        {
+            { 409, new List<int> { 0 } },          // Haggle
+            { 410, new List<int> { 1 } },          // Arbitration
+            { 411, new List<int> { 2 } },          // Detain
+            { 412, new List<int> { 3 } },          // Kinspeak
+            { 413, new List<int> { 0 } },          // Persuade
+            { 414, new List<int> { 0 } },          // Intimidate
+            { 415, new List<int> { 0 } },          // Nag
+            { 418, new List<int> { 1 } },          // Maiden Plea
+            { 419, new List<int> { 0, 1, 2, 3 } }, // Wine Party
+            { 420, new List<int> { 0 } },          // Flatter
         };
 
         static ushort innateSkillId = 383;
@@ -607,6 +621,18 @@ namespace NocturneInsaniax
             }
         }
 
+        [HarmonyPatch(typeof(nbHelpProcess), nameof(nbHelpProcess.nbDispText))]
+        private class DispInnateAttackPassiveNamePatch
+        {
+            public static void Prefix(ref string text1, ref string text2, ref int type, ref int max, ref uint col, ref bool type_skill)
+            {
+                if (text1 == "Attack" && datDevilFormat.Get(actionProcessData.work.id).attackattr != 0)
+                {
+                    text1 = innateSkills[actionProcessData.work.id].skillName;
+                }
+            }
+        }
+
         // Checks outside of battle for Life Refill/Mana Refill (on active party) every moon shift
         // Also checks Lucky Find/Mind's Eye (on active party) and Life/Mana Bonus/Gain/Surge (on everyone) when starting a battle
         // ALSO checks for Pierce/Son's Oath/[Relevant boost passive] (on attacker) and Endure/Never Yield/[Relevant passive resistances] (on attackee) when attacking
@@ -663,8 +689,8 @@ namespace NocturneInsaniax
                     var work = nbMainProcess.nbGetUnitWorkFromFormindex(party[i].formindex);
                     if (innateSkills[work.id].skillId >= 409 && innateSkills[work.id].skillId <= 420)
                     {
-                        var result = Convert.ToString(i, 2) + "0000000" + Convert.ToString(innateSkills[work.id].skillId, 2);
-                        __result = Convert.ToUInt32(result, 2);
+                        if (negoSkillScenarios[innateSkills[work.id].skillId].Contains(type))
+                            __result = Convert.ToUInt32(Convert.ToString(i, 2) + "0000000" + Convert.ToString(innateSkills[work.id].skillId, 2), 2);
                         break;
                     }
                 }
@@ -674,12 +700,14 @@ namespace NocturneInsaniax
         internal struct InnateSkill
         {
             public ushort skillId;
+            public sbyte skillAttr;
             public string skillName;
             public string skillHelp;
 
-            public InnateSkill(ushort skillId, string skillName, string skillHelp)
+            public InnateSkill(ushort skillId, sbyte skillAttr, string skillName, string skillHelp)
             { 
                 this.skillId = skillId; 
+                this.skillAttr = skillAttr; 
                 this.skillName = skillName; 
                 this.skillHelp = skillHelp; 
             }

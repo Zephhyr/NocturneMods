@@ -48,6 +48,9 @@ namespace NocturneInsaniax
             //var output = JsonConvert.SerializeObject(fclJunkShopTable.fclShopItemBoxTbl);
             //MelonLogger.Msg(output);
 
+            //var output = JsonConvert.SerializeObject(datNegoSkill.tbl);
+            //MelonLogger.Msg(output);
+
             // Apply Changes
             ApplySkillChanges();
             ApplyItemChanges();

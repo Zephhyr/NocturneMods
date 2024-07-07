@@ -82,7 +82,7 @@ namespace NocturneInsaniax
             {
                 var level = work.level;
                 var str = datCalc.datGetParam(work, 0);
-                if (datCalc.datCheckSyojiSkill(work, 368) == 1)
+                if (work.id == 111 || work.id == 335)
                     __result = Convert.ToInt32((level + str) * 48 / 15);
                 else
                     __result = Convert.ToInt32((level + str) * 32 / 15);
@@ -343,7 +343,7 @@ namespace NocturneInsaniax
                         if ((datCalc.datCheckSyojiSkill(workFromFormindex1, 300) != 0 && evtMoon.evtGetAgeOfMoon() == 8) ||
                             (datCalc.datCheckSyojiSkill(workFromFormindex1, 301) != 0 && evtMoon.evtGetAgeOfMoon() == 0))
                             critRate = 50;
-                        else if (datCalc.datCheckSyojiSkill(workFromFormindex1, 299) != 0 || datCalc.datCheckSyojiSkill(workFromFormindex1, 368) != 0)
+                        else if (datCalc.datCheckSyojiSkill(workFromFormindex1, 299) != 0 || (workFromFormindex1.id == 111 || workFromFormindex1.id == 335))
                             critRate = 30;
                     }
                     var luk = datCalc.datGetParam(workFromFormindex1, 5);
