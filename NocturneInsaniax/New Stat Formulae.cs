@@ -160,7 +160,7 @@ namespace NocturneInsaniax
                 datUnitWork_t workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
                 //datUnitWork_t workFromFormindex2 = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
 
-                double atkPow = nskill == 0 ?
+                double atkPow = (nskill == 0 || nskill == 167) ?
                     datCalc.datGetNormalAtkPow(workFromFormindex1) :
                     (workFromFormindex1.level + datCalc.datGetParam(workFromFormindex1, 0)) * waza / 15;
 
@@ -353,6 +353,9 @@ namespace NocturneInsaniax
                     var rand = dds3KernelCore.dds3GetRandIntA(100);
                     __result = rand < critChance ? 1 : 0;
                 }
+
+                if (__result == 1 && nskill == 0 && datCalc.datCheckSyojiSkill(workFromFormindex1, 300) != 0)
+                    nbMainProcess.nbPushAction(4, sformindex, dformindex, 167);
 
                 return false;
             }

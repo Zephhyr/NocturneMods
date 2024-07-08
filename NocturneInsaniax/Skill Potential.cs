@@ -1027,7 +1027,7 @@ namespace NocturneInsaniax
                 else if (id < 288 || id > 421) // If it isn't a passive skill
                 {
                     sbyte skillPotential = 0;
-                    if (id != 164 && id != 165 && id != 166)
+                    if (id != 164 && id != 165 && id != 166 && id != 167)
                         skillPotential = SkillPotentialUtility.GetSkillPotential(id, currentDemonID);
                     else
                         skillPotential = SkillPotentialUtility.GetSkillPotential(id, nbMainProcess.nbGetUnitWorkFromFormindex(nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].formindex).id);

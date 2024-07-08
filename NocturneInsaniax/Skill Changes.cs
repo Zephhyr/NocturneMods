@@ -29,27 +29,24 @@ namespace NocturneInsaniax
                 switch (id)
                 {            
                     // Vanilla Skills
-                    case 60: __result = "Lullaby"; return false;    
-                    case 80: __result = "Muscle Drink"; return false;    
-                    case 81: __result = "Life Stone"; return false;      
-                    case 82: __result = "Chakra Drop"; return false;     
-                    case 83: __result = "Chakra Pot"; return false;      
-                    case 84: __result = "Great Chakra"; return false;    
-                    case 85: __result = "Soma Droplet"; return false;    
-                    case 86: __result = "Soma"; return false;   
-                    case 90: __result = "Poison Arrow"; return false;    
-                    case 92: __result = "Bead of Life"; return false;                 
-                    case 94: __result = "Medicine"; return false;                     
-                    case 113: __result = "Venom Needle"; return false;      
-                    case 133: __result = "Javelin Rain"; return false;      
-                    case 143: __result = "Xeros Beat"; return false;      
-                    case 164: __result = "Counter"; return false;      
-                    case 165: __result = "Retaliate"; return false;      
-                    case 166: __result = "Avenge"; return false;      
-                    case 179: __result = "Trisagion"; return false;      
-                    case 202: __result = "Toxic Spray"; return false;           
-                    case 210: __result = "Dormina"; return false;           
-                    case 219: __result = "Rage"; return false;           
+                    case 60: __result = "Lullaby"; return false;
+                    case 80: __result = "Muscle Drink"; return false;
+                    case 81: __result = "Life Stone"; return false;
+                    case 82: __result = "Chakra Drop"; return false;
+                    case 83: __result = "Chakra Pot"; return false;
+                    case 84: __result = "Great Chakra"; return false;
+                    case 85: __result = "Soma Droplet"; return false;
+                    case 86: __result = "Soma"; return false;
+                    case 90: __result = "Poison Arrow"; return false;
+                    case 92: __result = "Bead of Life"; return false;
+                    case 94: __result = "Medicine"; return false;
+                    case 113: __result = "Venom Needle"; return false;
+                    case 133: __result = "Javelin Rain"; return false;
+                    case 143: __result = "Xeros Beat"; return false;
+                    case 179: __result = "Trisagion"; return false;
+                    case 202: __result = "Toxic Spray"; return false;
+                    case 210: __result = "Dormina"; return false;
+                    case 219: __result = "Rage"; return false;
                     case 220: __result = "Psycho Rage"; return false;
                     case 252: __result = "Foul Gathering"; return false;
                     case 285: __result = "Babylon Goblet"; return false;
@@ -59,13 +56,15 @@ namespace NocturneInsaniax
                         // Root of Evil = "In the beginning, there was darkness"
 
                     // New Skills
-                    case 188: __result = "Punishment"; return false;      
-                    case 189: __result = "Judgement Light"; return false;      
+                    case 167: __result = "Double Attack"; return false;
+                    case 188: __result = "Punishment"; return false;
+                    case 189: __result = "Judgement Light"; return false;
 
+                    case 308: __result = "Double Attack"; return false;
                     case 360: __result = "Never Yield"; return false;      
-                    case 362: __result = "Phys Boost"; return false;      
-                    case 363: __result = "Magic Boost"; return false;      
-                    case 364: __result = "Anti-Magic"; return false;      
+                    case 362: __result = "Phys Boost"; return false;
+                    case 363: __result = "Magic Boost"; return false;
+                    case 364: __result = "Anti-Magic"; return false;
                     case 365: __result = "Anti-Ailments"; return false;
                     case 366: __result = "Abyssal Mask"; return false;
                     case 367: __result = "Knowledge of Tools"; return false;
@@ -450,18 +449,18 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(111, 0);
                     //datCalc.datAddDevil(20, 0);
                     //datCalc.datAddDevil(69, 0);
-                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
-                    //{
-                    //    work.skill[0] = 192;
-                    //    work.skill[1] = 313;
-                    //    work.skill[2] = 459;
-                    //    work.skill[3] = 40;
-                    //    work.skill[4] = 456;
-                    //    work.skill[5] = 20;
-                    //    work.skill[6] = 312;
-                    //    work.skill[7] = 292;
-                    //    work.skillcnt = 8;
-                    //}
+                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
+                    {
+                        work.skill[0] = 300;// 192;
+                        work.skill[1] = 308;// 313;
+                        work.skill[2] = 459;
+                        work.skill[3] = 40;
+                        work.skill[4] = 456;
+                        work.skill[5] = 20;
+                        work.skill[6] = 312;
+                        work.skill[7] = 292;
+                        work.skillcnt = 8;
+                    }
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 167)) // Pisaca
                     //{
                     //    work.skill[1] = 206;
@@ -752,6 +751,28 @@ namespace NocturneInsaniax
             }
         }
 
+        [HarmonyPatch(typeof(nbMakePacket), nameof(nbMakePacket.nbMakeDamagePacket))]
+        private class RunSeKoukaPatch
+        {
+            public static void Postfix()
+            {
+                if (actionProcessData.work.nowcommand == 1 && actionProcessData.work.nowindex == 167)
+                {
+                    nbSound.nbPlaySe("BSE_SE02");
+                }
+            }
+        }
+
+        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetNormalSkillAttr))]
+        private class nbGetNormalSkillAttrPatch
+        {
+            public static void Postfix(ref int nskill, ref int __result)
+            {
+                if (nskill == 167 && datDevilFormat.tbl[currentDemonID].attackattr != 0)
+                    __result = datDevilFormat.tbl[currentDemonID].attackattr;
+            }
+        }
+
         //------------------------------------------------------------
 
         private static void OverWriteSkillEffect(ushort targetId, ushort originId)
@@ -886,6 +907,7 @@ namespace NocturneInsaniax
             nbCamera_SkillPtrTable.tbl = cameras;
 
             // Normal Skills
+            Attack(0);
             Agi(1);
             Agilao(2);
             Agidyne(3);
@@ -1044,6 +1066,7 @@ namespace NocturneInsaniax
             Counter(164);
             Retaliate(165);
             Avenge(166);
+            DoubleAttack(167);
 
             FireBreath(176);
             Hellfire(177);
@@ -1235,6 +1258,7 @@ namespace NocturneInsaniax
             // Passive Skills
             Might(11);
             DrainAttack(14);
+            DoubleAttackPassive(20);
 
             PhysBoost(74);
             MagicBoost(75);
@@ -1253,6 +1277,11 @@ namespace NocturneInsaniax
         }
 
         // Physical Skills
+
+        private static void Attack(ushort id)
+        {
+            datNormalSkill.tbl[id].failpoint = 4;
+        }
 
         private static void Lunge(ushort id)
         {
@@ -1664,6 +1693,55 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hpn = 32;
             datNormalSkill.tbl[id].failpoint = 6;
             datNormalSkill.tbl[id].criticalpoint = 12;
+        }
+
+        private static void DoubleAttack(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 152;
+            datSkill.tbl[id].skillattr = 0;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 0;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 0;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 3;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 32;
+            datNormalSkill.tbl[id].hptype = 14;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 164);
+            datNormalSkillVisual.tbl[id].motion = 3;
+            nbActionProcess.sobedtbl[id].se1_str = "BSE_SE02";
         }
 
         private static void SakuraRage(ushort id)
@@ -6750,6 +6828,20 @@ namespace NocturneInsaniax
             datSpecialSkill.tbl[id].n = 1;
         }
 
+        private static void DoubleAttackPassive(ushort id)
+        {
+            datSkill.tbl[308].keisyoform = 1;
+
+            datSpecialSkill.tbl[id].a = 2;
+            datSpecialSkill.tbl[id].b = 1;
+            datSpecialSkill.tbl[id].m = 3;
+            datSpecialSkill.tbl[id].n = 4;
+
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
+            skillLevel.SkillID = 308;
+            skillLevel.Level = 7;
+        }
+
         private static void PhysBoost(ushort id)
         {
             datSkill.tbl[362].keisyoform = 1;
@@ -6761,7 +6853,7 @@ namespace NocturneInsaniax
 
             var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = 362;
-            skillLevel.Level = 7;
+            skillLevel.Level = 8;
         }
 
         private static void MagicBoost(ushort id)
