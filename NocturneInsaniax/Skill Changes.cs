@@ -15,10 +15,12 @@ namespace NocturneInsaniax
 {
     internal partial class NocturneInsaniax : MelonMod
     {
-        public static int[] bossList = new int[] { 
+        public static ushort[] bossList = new ushort[] { 
             252, 254, 256, 257, 262, 263, 266, 267, 268, 269, 270, 271, 272, 294, 295, 296, 297, 300, 301, 302, 307, 308, 309, 312, 313, 
             321, 326, 327, 328, 339, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 362
         };
+        public static ushort[] pushedSkillList = new ushort[] { 148, 149, 150, 151, 164, 165, 166, 167 };
+
         public static nbActionProcessData_t? actionProcessData;
 
         [HarmonyPatch(typeof(datSkillName), nameof(datSkillName.Get))]
@@ -56,6 +58,10 @@ namespace NocturneInsaniax
                         // Root of Evil = "In the beginning, there was darkness"
 
                     // New Skills
+                    case 148: __result = "Renewal"; return false;
+                    case 149: __result = "Spirit Well"; return false;
+                    case 150: __result = "Qigong"; return false;
+                    case 151: __result = "Renewal, Spirit Well"; return false;
                     case 167: __result = "Double Attack"; return false;
                     case 188: __result = "Punishment"; return false;
                     case 189: __result = "Judgement Light"; return false;
@@ -68,6 +74,9 @@ namespace NocturneInsaniax
                     case 365: __result = "Anti-Ailments"; return false;
                     case 366: __result = "Abyssal Mask"; return false;
                     case 367: __result = "Knowledge of Tools"; return false;
+                    case 368: __result = "Renewal"; return false;
+                    case 369: __result = "Spirit Well"; return false;
+                    case 370: __result = "Qigong"; return false;
 
                     case 422: __result = "Beast Eye"; return false;      
                     case 423: __result = "Dragon Eye"; return false;     
@@ -259,12 +268,16 @@ namespace NocturneInsaniax
                     case 188: __result = "Light: Chance to instakill one foe."; return false; // Punishment
                     case 189: __result = "Light: Chance to instakill all foes."; return false; // Judgement Light
 
+                    case 308: __result = "Attack again after a critical normal attack."; return false; // Double Attack 
                     case 362: __result = "Raises Physical attack damage by 30%."; return false; // Phys Boost 
                     case 363: __result = "Raises Magical attack damage by 30%."; return false; // Magic Boost
                     case 364: __result = "Protects against Magical attacks."; return false; // Anti-Magic 
                     case 365: __result = "Protects against Ailment attacks."; return false; // Anti-Ailments
                     case 366: __result = "Protects against ailments and instakills."; return false; // Abyssal Mask
                     case 367: __result = "Allows the use of items."; return false; // Knowledge of Tools
+                    case 368: __result = "Very slight HP recovery \nafter each action."; return false; // Renewal
+                    case 369: __result = "Very slight MP recovery \nafter each action."; return false; // Spirit Well
+                    case 370: __result = "Slight HP/MP recovery \nafter each action. \n(Does not stack with \nsimilar effects)"; return false; // Qigong
 
                     case 424: __result = "More than doubles damage \nof next Magical attack."; return false; // Concentrate
                     case 425: __result = "More than doubles damage \nof next attack and grants Pierce."; return false; // Impaler's Animus
@@ -451,15 +464,16 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(69, 0);
                     foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     {
-                        work.skill[0] = 300;// 192;
-                        work.skill[1] = 308;// 313;
-                        work.skill[2] = 459;
-                        work.skill[3] = 40;
-                        work.skill[4] = 456;
-                        work.skill[5] = 20;
-                        work.skill[6] = 312;
-                        work.skill[7] = 292;
-                        work.skillcnt = 8;
+                        work.skill[0] = 370;
+                        //work.skill[0] = 192;
+                        //work.skill[1] = 313;
+                        //work.skill[2] = 459;
+                        //work.skill[3] = 40;
+                        //work.skill[4] = 456;
+                        //work.skill[5] = 20;
+                        //work.skill[6] = 312;
+                        //work.skill[7] = 292;
+                        //work.skillcnt = 8;
                     }
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 167)) // Pisaca
                     //{
@@ -773,6 +787,38 @@ namespace NocturneInsaniax
             }
         }
 
+        [HarmonyPatch(typeof(nbMainProcess), nameof(nbMainProcess.nbSetPhase))]
+        private class nbSetPhasePatch
+        {
+            public static void Postfix(ref int phase)
+            {
+                if (phase == 8)
+                {
+                    try
+                    {
+                        if (!(actionProcessData.work.nowcommand == 1 && pushedSkillList.Contains(actionProcessData.work.nowindex)) && 
+                            !(actionProcessData.work.nowcommand == 3 && actionProcessData.work.nowindex == 0) &&
+                            actionProcessData.work.nowcommand != 6)
+                        {
+                            if (datCalc.datCheckSyojiSkill(actionProcessData.work, 370) != 0)
+                                nbMainProcess.nbPushAction(4, actionProcessData.partyindex, actionProcessData.partyindex, 150);
+                            else
+                            {
+                                if (datCalc.datCheckSyojiSkill(actionProcessData.work, 368) != 0 && 
+                                    datCalc.datCheckSyojiSkill(actionProcessData.work, 369) != 0)
+                                    nbMainProcess.nbPushAction(4, actionProcessData.partyindex, actionProcessData.partyindex, 151);
+                                else if (datCalc.datCheckSyojiSkill(actionProcessData.work, 368) != 0)
+                                    nbMainProcess.nbPushAction(4, actionProcessData.partyindex, actionProcessData.partyindex, 148);
+                                else if (datCalc.datCheckSyojiSkill(actionProcessData.work, 369) != 0)
+                                    nbMainProcess.nbPushAction(4, actionProcessData.partyindex, actionProcessData.partyindex, 149);
+                            }
+                        }
+                    }
+                    catch { }
+                }
+            }
+        }
+
         //------------------------------------------------------------
 
         private static void OverWriteSkillEffect(ushort targetId, ushort originId)
@@ -1054,6 +1100,11 @@ namespace NocturneInsaniax
             OniKagura(144);
             Freikugel(147);
 
+            Renewal(148);
+            SpiritWell(149);
+            Qigong(150);
+            RenewalSpiritWell(151);
+
             LastResort(152);
 
             FoulHavoc(153);
@@ -1259,6 +1310,10 @@ namespace NocturneInsaniax
             Might(11);
             DrainAttack(14);
             DoubleAttackPassive(20);
+            LifeAid(58);
+            ManaAid(59);
+            LifeRefill(60);
+            ManaRefill(61);
 
             PhysBoost(74);
             MagicBoost(75);
@@ -1266,6 +1321,9 @@ namespace NocturneInsaniax
             AntiAilments(77);
             AbyssalMask(78);
             KnowledgeOfTools(79);
+            RenewalPassive(80);
+            QigongPassive(81);
+            LifeSpringPassive(82);
 
             // Universal Changes
             foreach (var skill in datSkill.tbl)
@@ -5282,6 +5340,202 @@ namespace NocturneInsaniax
             skillLevel.Level = 7;
         }
 
+        private static void Renewal(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = -1;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 0;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 255;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 10;
+            datNormalSkill.tbl[id].hptype = 11;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 9;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 1;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 81);
+            datNormalSkillVisual.tbl[id].motion = 0;
+            datNormalSkillVisual.tbl[id].hatudo = 0;
+        }
+
+        private static void SpiritWell(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = -1;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 0;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 255;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 50;
+            datNormalSkill.tbl[id].hptype = 0;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 4;
+            datNormalSkill.tbl[id].mptype = 11;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 9;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 1;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 82);
+            datNormalSkillVisual.tbl[id].motion = 0;
+            datNormalSkillVisual.tbl[id].hatudo = 0;
+        }
+
+        private static void Qigong(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = -1;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 0;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 255;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 15;
+            datNormalSkill.tbl[id].hptype = 11;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 6;
+            datNormalSkill.tbl[id].mptype = 11;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 9;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 1;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 85);
+            datNormalSkillVisual.tbl[id].motion = 0;
+            datNormalSkillVisual.tbl[id].hatudo = 0;
+        }
+
+        private static void RenewalSpiritWell(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = -1;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 0;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 255;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 10;
+            datNormalSkill.tbl[id].hptype = 11;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 4;
+            datNormalSkill.tbl[id].mptype = 11;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 9;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 1;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 85);
+            datNormalSkillVisual.tbl[id].motion = 0;
+            datNormalSkillVisual.tbl[id].hatudo = 0;
+        }
+
         private static void HumbleBlessing(ushort id)
         {
             datSkill.tbl[id].capacity = 2;
@@ -6828,6 +7082,26 @@ namespace NocturneInsaniax
             datSpecialSkill.tbl[id].n = 1;
         }
 
+        private static void LifeAid(ushort id)
+        {
+            datSpecialSkill.tbl[id].n = 2;
+        }
+
+        private static void ManaAid(ushort id)
+        {
+            datSpecialSkill.tbl[id].n = 4;
+        }
+
+        private static void LifeRefill(ushort id)
+        {
+            datSpecialSkill.tbl[id].n = 4;
+        }
+
+        private static void ManaRefill(ushort id)
+        {
+            datSpecialSkill.tbl[id].n = 10;
+        }
+
         private static void DoubleAttackPassive(ushort id)
         {
             datSkill.tbl[308].keisyoform = 1;
@@ -6924,6 +7198,48 @@ namespace NocturneInsaniax
             var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = 367;
             skillLevel.Level = 5;
+        }
+
+        private static void RenewalPassive(ushort id)
+        {
+            datSkill.tbl[368].keisyoform = 1;
+
+            datSpecialSkill.tbl[id].a = 2;
+            datSpecialSkill.tbl[id].b = 1;
+            datSpecialSkill.tbl[id].m = 3;
+            datSpecialSkill.tbl[id].n = 4;
+
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
+            skillLevel.SkillID = 368;
+            skillLevel.Level = 3;
+        }
+
+        private static void QigongPassive(ushort id)
+        {
+            datSkill.tbl[369].keisyoform = 1;
+
+            datSpecialSkill.tbl[id].a = 2;
+            datSpecialSkill.tbl[id].b = 1;
+            datSpecialSkill.tbl[id].m = 3;
+            datSpecialSkill.tbl[id].n = 4;
+
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
+            skillLevel.SkillID = 369;
+            skillLevel.Level = 3;
+        }
+
+        private static void LifeSpringPassive(ushort id)
+        {
+            datSkill.tbl[370].keisyoform = 1;
+
+            datSpecialSkill.tbl[id].a = 2;
+            datSpecialSkill.tbl[id].b = 1;
+            datSpecialSkill.tbl[id].m = 3;
+            datSpecialSkill.tbl[id].n = 4;
+
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
+            skillLevel.SkillID = 370;
+            skillLevel.Level = 7;
         }
     }
 }
