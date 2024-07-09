@@ -417,7 +417,7 @@ namespace NocturneInsaniax
                     var doppelgangerAllyPresent = GetCurrentSideParty(a).Any(x => nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 225);
                     if (doppelgangerAllyPresent && datNormalSkill.tbl[a.work.nowindex].targettype == 0)
                     {
-                        var doppelgangerParty = a.data.party.First(x => nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 225);
+                        var doppelgangerParty = a.data.party.First(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 225);
                         DarkMirrorCopy(a.work.nowindex);
 
                         if (datNormalSkill.tbl[a.work.nowindex].targetarea == 2)
@@ -426,13 +426,13 @@ namespace NocturneInsaniax
                             datNormalSkill.tbl[a.work.nowindex].targetrule == 0)
                             nbMainProcess.nbPushAction(4, doppelgangerParty.partyindex, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, 417);
                         else if (datNormalSkill.tbl[a.work.nowindex].targetarea == 9 &&
-                            datNormalSkill.tbl[a.work.nowindex].targetrule == 1)
+                            datNormalSkill.tbl[a.work.nowindex].targetrule == 1 && !((a.work.nowindex == 224 || a.work.nowindex == 424 || a.work.nowindex == 425) && (doppelgangerParty.count[15] != 0 || doppelgangerParty.count[20] != 0)))
                             nbMainProcess.nbPushAction(4, doppelgangerParty.partyindex, doppelgangerParty.partyindex, 417);
                     }
                     var doppelgangerEnemyPresent = GetOppositeSideParty(a).Any(x => nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 225);
                     if (doppelgangerEnemyPresent && datNormalSkill.tbl[a.work.nowindex].targettype == 0)
                     {
-                        var doppelgangerParty = a.data.party.First(x => nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 225);
+                        var doppelgangerParty = a.data.party.First(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 225);
                         DarkMirrorCopy(a.work.nowindex);
 
                         if (datNormalSkill.tbl[a.work.nowindex].targetarea == 2)
@@ -441,7 +441,7 @@ namespace NocturneInsaniax
                             datNormalSkill.tbl[a.work.nowindex].targetrule == 0)
                             nbMainProcess.nbPushAction(4, doppelgangerParty.partyindex, doppelgangerParty.partyindex, 417);
                         else if (datNormalSkill.tbl[a.work.nowindex].targetarea == 9 &&
-                            datNormalSkill.tbl[a.work.nowindex].targetrule == 1)
+                            datNormalSkill.tbl[a.work.nowindex].targetrule == 1 && !((a.work.nowindex == 224 || a.work.nowindex == 424 || a.work.nowindex == 425) && (doppelgangerParty.count[15] != 0 || doppelgangerParty.count[20] != 0)))
                             nbMainProcess.nbPushAction(4, doppelgangerParty.partyindex, doppelgangerParty.partyindex, 417);
                     }
                 }

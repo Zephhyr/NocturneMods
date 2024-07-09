@@ -163,7 +163,15 @@ namespace NocturneInsaniax
 
                     nbHelpProcess.nbDispText(devilName + " is building up energy!", string.Empty, 2, 45, 2315190144, false);
                 }
-                else if (actionProcessData.work.nowcommand == 1 && hojotype == 2 && hojopoint == 1 && actionProcessData.work.nowindex == 427)
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 16777216 && hojopoint == 99 && actionProcessData.work.nowindex == 417)
+                {
+                    string devilName = nbMainProcess.nbGetUnitWorkFromFormindex(formindex).id != 0
+                        ? datDevilName.Get(nbMainProcess.nbGetUnitWorkFromFormindex(formindex).id)
+                        : frName.frGetCNameString(0);
+
+                    nbHelpProcess.nbDispText(devilName + " is building up power!", string.Empty, 2, 45, 2315190144, false);
+                }
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 2 && hojopoint == 1 && actionProcessData.work.nowindex == 427 || actionProcessData.work.nowindex == 417)
                 {
                     var limitReached = true;
                     if (currentUnitBuffs[4] >= -2)
@@ -208,7 +216,7 @@ namespace NocturneInsaniax
                     else
                         nbHelpProcess.nbDispText("Decreased Physical/Magical Attack!", string.Empty, 2, 45, 2315190144, false);
                 }
-                else if (actionProcessData.work.nowcommand == 1 && hojotype == 10 && hojopoint == 1 && actionProcessData.work.nowindex == 473)
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 10 && hojopoint == 1 && actionProcessData.work.nowindex == 473 || actionProcessData.work.nowindex == 417)
                 {
                     var limitReached = true;
                     if (currentUnitBuffs[4] >= -2 || currentUnitBuffs[5] >= -2)
@@ -253,7 +261,7 @@ namespace NocturneInsaniax
                     else
                         nbHelpProcess.nbDispText("Defense minimized!", string.Empty, 2, 45, 2315190144, false);
                 }
-                else if (actionProcessData.work.nowcommand == 1 && hojotype == 128 && hojopoint == 1 && (actionProcessData.work.nowindex == 428 || actionProcessData.work.nowindex == 463 || actionProcessData.work.nowindex == 466))
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 128 && hojopoint == 1 && (actionProcessData.work.nowindex == 428 || actionProcessData.work.nowindex == 463 || actionProcessData.work.nowindex == 466 || actionProcessData.work.nowindex == 417))
                 {
                     var limitReached = true;
                     if (currentUnitBuffs[7] >= -2)
@@ -264,7 +272,7 @@ namespace NocturneInsaniax
                     else
                         nbHelpProcess.nbDispText("Decreased Defense!", string.Empty, 2, 45, 2315190144, false);
                 }
-                else if (actionProcessData.work.nowcommand == 1 && hojotype == 544 && hojopoint == 1 && (actionProcessData.work.nowindex == 244 || actionProcessData.work.nowindex == 267 || actionProcessData.work.nowindex == 285 || actionProcessData.work.nowindex == 437))
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 544 && hojopoint == 1 && (actionProcessData.work.nowindex == 244 || actionProcessData.work.nowindex == 267 || actionProcessData.work.nowindex == 285 || actionProcessData.work.nowindex == 437 || actionProcessData.work.nowindex == 417))
                 {
                     var limitReached = true;
                     if (currentUnitBuffs[6] >= -2 || currentUnitBuffs[8] >= -2)
@@ -339,7 +347,7 @@ namespace NocturneInsaniax
                     else
                         nbHelpProcess.nbDispText("Decreased Defense/Evasion!", string.Empty, 2, 45, 2315190144, false);
                 }
-                else if (actionProcessData.work.nowcommand == 1 && hojotype == 682 && hojopoint == 1 && actionProcessData.work.nowindex == 453)
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 682 && hojopoint == 1 && actionProcessData.work.nowindex == 453 || actionProcessData.work.nowindex == 417)
                 {
                     var limitReached = true;
                     for (int i = 4; i <= 8; i++)
@@ -392,7 +400,7 @@ namespace NocturneInsaniax
                     else
                         nbHelpProcess.nbDispText("Physical Attack/Evasion/Hit Rate increased!", string.Empty, 2, 45, 2315190144, false);
                 }
-                else if (actionProcessData.work.nowcommand == 1 && hojotype == 341 && hojopoint == 2 && actionProcessData.work.nowindex == 458)
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 341 && hojopoint == 2 && actionProcessData.work.nowindex == 458 || actionProcessData.work.nowindex == 417)
                 {
                     var limitReached = true;
                     for (int i = 4; i <= 8; i++)
