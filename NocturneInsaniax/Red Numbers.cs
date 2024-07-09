@@ -19,8 +19,6 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref nbActionProcessData_t a, ref int koukatype, ref int nskill, ref int sformindex, ref int dformindex, ref int cnt, ref int frame, ref float koukaritu)
             {
-                actionProcessData = a;
-
                 enemyUnits = dds3GlobalWork.DDS3_GBWK.unitwork;
                 if (datNormalSkill.tbl[nskill].targetarea != 1)
                 {

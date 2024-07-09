@@ -240,7 +240,7 @@ namespace NocturneInsaniax
             { 222, new InnateSkill(383, 15, "", "")}, // 222 
             { 223, new InnateSkill(383, 15, "", "")}, // 223 
             { 224, new InnateSkill(383, 15, "Tam Lin", "")}, // 224 Tam Lin
-            { 225, new InnateSkill(383, 15, "Doppelganger", "")}, // 225 Doppelganger
+            { 225, new InnateSkill(383, 15, "Evil Mirror", "Copies single-target skills \nused by the Demi-fiend \nwith reduced power.")}, // 225 Doppelganger
             { 226, new InnateSkill(383, 15, "Nightmare", "")}, // 226 Nightmare
             { 227, new InnateSkill(383, 15, "", "")}, // 227 
             { 228, new InnateSkill(383, 15, "", "")}, // 228 

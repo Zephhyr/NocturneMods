@@ -78,6 +78,8 @@ namespace NocturneInsaniax
                     case 369: __result = "Spirit Well"; return false;
                     case 370: __result = "Qigong"; return false;
 
+                    case 417: __result = "Evil Mirror"; return false;
+
                     case 422: __result = "Beast Eye"; return false;      
                     case 423: __result = "Dragon Eye"; return false;     
                     case 424: __result = "Concentrate"; return false;
@@ -270,14 +272,14 @@ namespace NocturneInsaniax
 
                     case 308: __result = "Attack again after a critical normal attack."; return false; // Double Attack 
                     case 362: __result = "Raises Physical attack damage by 30%."; return false; // Phys Boost 
-                    case 363: __result = "Raises Magical attack damage by 30%."; return false; // Magic Boost
-                    case 364: __result = "Protects against Magical attacks."; return false; // Anti-Magic 
-                    case 365: __result = "Protects against Ailment attacks."; return false; // Anti-Ailments
+                    case 363: __result = "Raises Magical attack damage by 30%. \n(Does not stack with similar effects)"; return false; // Magic Boost
+                    case 364: __result = "Protects against Magical attacks. \n(Does not stack with similar effects)"; return false; // Anti-Magic 
+                    case 365: __result = "Protects against Ailment attacks. \n(Does not stack with similar effects)"; return false; // Anti-Ailments
                     case 366: __result = "Protects against ailments and instakills."; return false; // Abyssal Mask
                     case 367: __result = "Allows the use of items."; return false; // Knowledge of Tools
                     case 368: __result = "Very slight HP recovery \nafter each action."; return false; // Renewal
                     case 369: __result = "Very slight MP recovery \nafter each action."; return false; // Spirit Well
-                    case 370: __result = "Slight HP/MP recovery \nafter each action. \n(Does not stack with \nsimilar effects)"; return false; // Qigong
+                    case 370: __result = "Slight HP/MP recovery \nafter each action. \n(Does not stack with similar effects)"; return false; // Qigong
 
                     case 424: __result = "More than doubles damage \nof next Magical attack."; return false; // Concentrate
                     case 425: __result = "More than doubles damage \nof next attack and grants Pierce."; return false; // Impaler's Animus
@@ -408,6 +410,41 @@ namespace NocturneInsaniax
                     var form = a.data.form[dformindex];
                     nbMakePacket.nbMakeBadKaifukuPacket(frame, a.uniqueid, ref form);
                 }
+
+                // Doppelganger's Dark Mirror
+                if (a.work.id == 0 && a.work.nowcommand == 1 && !pushedSkillList.Contains(a.work.nowindex))
+                {
+                    var doppelgangerAllyPresent = GetCurrentSideParty(a).Any(x => nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 225);
+                    if (doppelgangerAllyPresent && datNormalSkill.tbl[a.work.nowindex].targettype == 0)
+                    {
+                        var doppelgangerParty = a.data.party.First(x => nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 225);
+                        DarkMirrorCopy(a.work.nowindex);
+
+                        if (datNormalSkill.tbl[a.work.nowindex].targetarea == 2)
+                            nbMainProcess.nbPushAction(4, doppelgangerParty.partyindex, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, 417);
+                        else if (datNormalSkill.tbl[a.work.nowindex].targetarea == 9 &&
+                            datNormalSkill.tbl[a.work.nowindex].targetrule == 0)
+                            nbMainProcess.nbPushAction(4, doppelgangerParty.partyindex, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, 417);
+                        else if (datNormalSkill.tbl[a.work.nowindex].targetarea == 9 &&
+                            datNormalSkill.tbl[a.work.nowindex].targetrule == 1)
+                            nbMainProcess.nbPushAction(4, doppelgangerParty.partyindex, doppelgangerParty.partyindex, 417);
+                    }
+                    var doppelgangerEnemyPresent = GetOppositeSideParty(a).Any(x => nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 225);
+                    if (doppelgangerEnemyPresent && datNormalSkill.tbl[a.work.nowindex].targettype == 0)
+                    {
+                        var doppelgangerParty = a.data.party.First(x => nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 225);
+                        DarkMirrorCopy(a.work.nowindex);
+
+                        if (datNormalSkill.tbl[a.work.nowindex].targetarea == 2)
+                            nbMainProcess.nbPushAction(4, doppelgangerParty.partyindex, a.partyindex, 417);
+                        else if (datNormalSkill.tbl[a.work.nowindex].targetarea == 9 &&
+                            datNormalSkill.tbl[a.work.nowindex].targetrule == 0)
+                            nbMainProcess.nbPushAction(4, doppelgangerParty.partyindex, doppelgangerParty.partyindex, 417);
+                        else if (datNormalSkill.tbl[a.work.nowindex].targetarea == 9 &&
+                            datNormalSkill.tbl[a.work.nowindex].targetrule == 1)
+                            nbMainProcess.nbPushAction(4, doppelgangerParty.partyindex, doppelgangerParty.partyindex, 417);
+                    }
+                }
             }
         }
 
@@ -462,6 +499,7 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(111, 0);
                     //datCalc.datAddDevil(20, 0);
                     //datCalc.datAddDevil(69, 0);
+                    datCalc.datAddDevil(225, 0);
                     foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     {
                         work.skill[0] = 370;
@@ -817,6 +855,22 @@ namespace NocturneInsaniax
                     catch { }
                 }
             }
+        }
+
+        private static nbParty_t[] GetCurrentSideParty(nbActionProcessData_t a)
+        {
+            if (a.partyindex <= 3)
+                return a.data.party.Where(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).hp > 0).ToArray();
+            else
+                return a.data.party.Where(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).hp > 0).ToArray();
+        }
+
+        private static nbParty_t[] GetOppositeSideParty(nbActionProcessData_t a)
+        {
+            if (a.partyindex <= 3)
+                return a.data.party.Where(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).hp > 0).ToArray();
+            else
+                return a.data.party.Where(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).hp > 0).ToArray();
         }
 
         //------------------------------------------------------------
@@ -6232,6 +6286,53 @@ namespace NocturneInsaniax
             datSkill.tbl[id].type = 0;
 
             OverWriteSkillEffect(id, 219);
+        }
+
+        private static void DarkMirrorCopy(ushort id)
+        {
+            datSkill.tbl[417].flag = 0;
+            datSkill.tbl[417].keisyoform = 512;
+            datSkill.tbl[417].skillattr = datSkill.tbl[id].skillattr;
+            datSkill.tbl[417].index = 78;
+            datSkill.tbl[417].type = 0;
+
+            datNormalSkill.tbl[417].badlevel = datNormalSkill.tbl[id].badlevel;
+            datNormalSkill.tbl[417].badtype = datNormalSkill.tbl[id].badtype;
+            datNormalSkill.tbl[417].basstatus = datNormalSkill.tbl[id].basstatus;
+            datNormalSkill.tbl[417].cost = datNormalSkill.tbl[id].cost;
+            datNormalSkill.tbl[417].costbase = datNormalSkill.tbl[id].costbase;
+            datNormalSkill.tbl[417].costtype = datNormalSkill.tbl[id].costtype;
+            datNormalSkill.tbl[417].criticalpoint = datNormalSkill.tbl[id].criticalpoint;
+            datNormalSkill.tbl[417].deadtype = datNormalSkill.tbl[id].deadtype;
+            datNormalSkill.tbl[417].failpoint = datNormalSkill.tbl[id].failpoint;
+            datNormalSkill.tbl[417].flag = datNormalSkill.tbl[id].flag;
+            datNormalSkill.tbl[417].hitlevel = datNormalSkill.tbl[id].hitlevel;
+            datNormalSkill.tbl[417].hitprog = datNormalSkill.tbl[id].hitprog;
+            datNormalSkill.tbl[417].hittype = datNormalSkill.tbl[id].hittype;
+            datNormalSkill.tbl[417].hojopoint = datNormalSkill.tbl[id].hojopoint;
+            datNormalSkill.tbl[417].hojotype = datNormalSkill.tbl[id].hojotype;
+            datNormalSkill.tbl[417].hpbase = datNormalSkill.tbl[id].hpbase;
+            datNormalSkill.tbl[417].hpn = Convert.ToInt16(datNormalSkill.tbl[id].hpn / 2);
+            datNormalSkill.tbl[417].hptype = datNormalSkill.tbl[id].hptype;
+            datNormalSkill.tbl[417].koukatype = datNormalSkill.tbl[id].koukatype;
+            datNormalSkill.tbl[417].magicbase = datNormalSkill.tbl[id].magicbase;
+            datNormalSkill.tbl[417].magiclimit = datNormalSkill.tbl[id].magiclimit;
+            datNormalSkill.tbl[417].minus = datNormalSkill.tbl[id].minus;
+            datNormalSkill.tbl[417].mpbase = datNormalSkill.tbl[id].mpbase;
+            datNormalSkill.tbl[417].mpn = Convert.ToInt16(datNormalSkill.tbl[id].mpn / 2);
+            datNormalSkill.tbl[417].mptype = datNormalSkill.tbl[id].mptype;
+            datNormalSkill.tbl[417].program = datNormalSkill.tbl[id].program;
+            datNormalSkill.tbl[417].targetarea = datNormalSkill.tbl[id].targetarea;
+            datNormalSkill.tbl[417].targetcntmax = datNormalSkill.tbl[id].targetcntmax;
+            datNormalSkill.tbl[417].targetcntmin = datNormalSkill.tbl[id].targetcntmin;
+            datNormalSkill.tbl[417].targetprog = datNormalSkill.tbl[id].targetprog;
+            datNormalSkill.tbl[417].targetrandom = datNormalSkill.tbl[id].targetrandom;
+            datNormalSkill.tbl[417].targetrule = datNormalSkill.tbl[id].targetrule;
+            datNormalSkill.tbl[417].targettype = 1;
+            datNormalSkill.tbl[417].untargetbadstat = datNormalSkill.tbl[id].untargetbadstat;
+            datNormalSkill.tbl[417].use = 2;
+
+            OverWriteSkillEffect(417, id);
         }
 
         private static void DevilTrigger(ushort id)
