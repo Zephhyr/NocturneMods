@@ -32,12 +32,12 @@ namespace NocturneInsaniax
             { 014, new InnateSkill(383, 15, "Qitian Dasheng", "")}, // 014 Qitian Dasheng
             { 015, new InnateSkill(419, 15, "Dionysus", "")}, // 015 Dionysus
             { 016, new InnateSkill(383, 15, "Kali", "")}, // 016 Kali
-            { 017, new InnateSkill(383, 15, "Skadi", "")}, // 017 Skadi
+            { 017, new InnateSkill(383, 02, "Queen of Winter", "Ice Enhancer & Skadi's Ice \nattacks have an increased \nchance to inflict Freeze.")}, // 017 Skadi
             { 018, new InnateSkill(383, 15, "Parvati", "")}, // 018 Parvati
             { 019, new InnateSkill(383, 15, "Kushinada", "")}, // 019 Kushinada
             { 020, new InnateSkill(418, 15, "Kikuri-Hime", "")}, // 020 Kikuri-Hime
             { 021, new InnateSkill(383, 15, "Bishamonten", "")}, // 021 Bishamonten
-            { 022, new InnateSkill(383, 15, "Thor", "")}, // 022 Thor
+            { 022, new InnateSkill(383, 03, "Odinson", "Elec Enhancer & Thor's Elec \nattacks have an increased \nchance to inflict Shock.")}, // 022 Thor
             { 023, new InnateSkill(383, 15, "Jikokuten", "")}, // 023 Jikokuten
             { 024, new InnateSkill(383, 15, "Take-Mikazuchi", "")}, // 024 Take-Mikazuchi
             { 025, new InnateSkill(383, 15, "Okuninushi", "")}, // 025 Okuninushi
@@ -50,11 +50,11 @@ namespace NocturneInsaniax
             { 032, new InnateSkill(383, 15, "Zhuque", "")}, // 032 Zhuque
             { 033, new InnateSkill(383, 15, "Shiisaa", "")}, // 033 Shiisaa
             { 034, new InnateSkill(383, 15, "Xiezhai", "")}, // 034 Xiezhai
-            { 035, new InnateSkill(383, 15, "Unicorn", "")}, // 035 Unicorn
-            { 036, new InnateSkill(383, 15, "Flaemis", "")}, // 036 Flaemis
-            { 037, new InnateSkill(383, 15, "Aquans", "")}, // 037 Aquans
-            { 038, new InnateSkill(383, 15, "Aeros", "")}, // 038 Aeros
-            { 039, new InnateSkill(383, 15, "Erthys", "")}, // 039 Erthys
+            { 035, new InnateSkill(383, 06, "Light Enhancer", "While in the active party, \nraise allies' Light skill potential \nto Unicorns's if it was lower.")}, // 035 Unicorn
+            { 036, new InnateSkill(383, 01, "Fire Enhancer", "While in the active party, \nraise allies' Fire skill potential \nto Flaemis' if it was lower.")}, // 036 Flaemis
+            { 037, new InnateSkill(383, 02, "Ice Enhancer", "While in the active party, \nraise allies' Ice skill potential \nto Aquans' if it was lower.")}, // 037 Aquans
+            { 038, new InnateSkill(383, 04, "Force Enhancer", "While in the active party, \nraise allies' Force skill potential \nto Aeros' if it was lower.")}, // 038 Aeros
+            { 039, new InnateSkill(383, 03, "Elec Enhancer", "While in the active party, \nraise allies' Elec skill potential \nto Erthys' if it was lower.")}, // 039 Erthys
             { 040, new InnateSkill(383, 15, "Saki Mitama", "")}, // 040 Saki Mitama
             { 041, new InnateSkill(383, 15, "Kushi Mitama", "")}, // 041 Kushi Mitama
             { 042, new InnateSkill(383, 15, "Nigi Mitama", "")}, // 042 Nigi Mitama
@@ -78,7 +78,7 @@ namespace NocturneInsaniax
             { 060, new InnateSkill(383, 15, "Jack Frost", "")}, // 060 Jack Frost
             { 061, new InnateSkill(383, 15, "Pixie", "")}, // 061 Pixie
             { 062, new InnateSkill(383, 15, "Throne", "")}, // 062 Throne
-            { 063, new InnateSkill(383, 15, "Dominion", "")}, // 063 Dominion
+            { 063, new InnateSkill(383, 06, "Light Enhancer", "While in the active party, \nraise allies' Light skill potential \nto Dominion's if it was lower.")}, // 063 Dominion
             { 064, new InnateSkill(383, 15, "Virtue", "")}, // 064 Virtue
             { 065, new InnateSkill(383, 15, "Power", "")}, // 065 Power
             { 066, new InnateSkill(383, 15, "Principality", "")}, // 066 Principality
@@ -103,7 +103,7 @@ namespace NocturneInsaniax
             { 085, new InnateSkill(383, 15, "Inugami", "")}, // 085 Inugami
             { 086, new InnateSkill(383, 15, "Nekomata", "")}, // 086 Nekomata
             { 087, new InnateSkill(383, 15, "Gogmagog", "")}, // 087 Gogmagog
-            { 088, new InnateSkill(383, 15, "Titan", "")}, // 088 Titan
+            { 088, new InnateSkill(383, 00, "Phys Enhancer", "While in the active party, \nraise allies' Phys skill potential \nto Fomorian's if it was lower.")}, // 088 Titan
             { 089, new InnateSkill(383, 15, "Sarutahiko", "")}, // 089 Sarutahiko
             { 090, new InnateSkill(383, 15, "Sudama", "")}, // 090 Sudama
             { 091, new InnateSkill(383, 15, "Hua Po", "")}, // 091 Hua Po
@@ -126,7 +126,7 @@ namespace NocturneInsaniax
             { 108, new InnateSkill(383, 15, "Baphomet", "")}, // 108 Baphomet
             { 109, new InnateSkill(383, 15, "Mot", "")}, // 109 Mot
             { 110, new InnateSkill(383, 15, "Alciel", "")}, // 110 Alciel
-            { 111, new InnateSkill(383, 1, "Laevateinn", "Fire Boost & greatly empowers \nnormal attacks.")}, // 111 Surt
+            { 111, new InnateSkill(383, 01, "Laevateinn", "Fire Enhancer & Surt's normal \nattacks deal medium Fire damage.")}, // 111 Surt
             { 112, new InnateSkill(383, 15, "Abaddon", "")}, // 112 Abaddon
             { 113, new InnateSkill(383, 15, "Loki", "")}, // 113 Loki
             { 114, new InnateSkill(383, 15, "Lilith", "")}, // 114 Lilith
@@ -134,7 +134,7 @@ namespace NocturneInsaniax
             { 116, new InnateSkill(383, 15, "Queen Mab", "")}, // 116 Queen Mab
             { 117, new InnateSkill(383, 15, "Succubus", "")}, // 117 Succubus
             { 118, new InnateSkill(383, 15, "Incubus", "")}, // 118 Incubus
-            { 119, new InnateSkill(383, 15, "Fomorian", "")}, // 119 Fomorian
+            { 119, new InnateSkill(383, 00, "Phys Enhancer", "While in the active party, \nraise allies' Phys skill potential \nto Fomorian's if it was lower.")}, // 119 Fomorian
             { 120, new InnateSkill(383, 15, "Lilim", "")}, // 120 Lilim
             { 121, new InnateSkill(383, 15, "Hresvelgr", "")}, // 121 Hresvelgr
             { 122, new InnateSkill(383, 15, "Mothman", "")}, // 122 Mothman
@@ -147,7 +147,7 @@ namespace NocturneInsaniax
             { 129, new InnateSkill(383, 15, "Yaka", "")}, // 129 Yaka
             { 130, new InnateSkill(383, 15, "Choronzon", "")}, // 130 Choronzon
             { 131, new InnateSkill(383, 15, "Preta", "")}, // 131 Preta
-            { 132, new InnateSkill(383, 15, "Shadow", "")}, // 132 Shadow
+            { 132, new InnateSkill(383, 07, "Dark Enhancer", "While in the active party, \nraise allies' Dark skill potential \nto Shadow's if it was lower.")}, // 132 Shadow
             { 133, new InnateSkill(383, 15, "Black Ooze", "")}, // 133 Black Ooze
             { 134, new InnateSkill(383, 15, "Blob", "")}, // 134 Blob
             { 135, new InnateSkill(383, 15, "Slime", "")}, // 135 Slime
@@ -167,10 +167,10 @@ namespace NocturneInsaniax
             { 149, new InnateSkill(383, 15, "Xuanwu", "")}, // 149 Xuanwu
             { 150, new InnateSkill(383, 15, "Barong", "")}, // 150 Barong
             { 151, new InnateSkill(383, 15, "Makami", "")}, // 151 Makami
-            { 152, new InnateSkill(383, 15, "Garuda", "")}, // 152 Garuda
+            { 152, new InnateSkill(383, 04, "Force Enhancer", "While in the active party, \nraise allies' Force skill potential \nto Garuda's if it was lower.")}, // 152 Garuda
             { 153, new InnateSkill(383, 15, "Yatagarasu", "")}, // 153 Yatagarasu
             { 154, new InnateSkill(383, 15, "Gurulu", "")}, // 154 Gurulu
-            { 155, new InnateSkill(383, 15, "Albion", "")}, // 155 Albion
+            { 155, new InnateSkill(383, 15, "Milton", "Albion gains immunity to \nelements based on which \nZoas are in the active party.")}, // 155 Albion
             { 156, new InnateSkill(383, 15, "Manikin", "")}, // 156 Manikin
             { 157, new InnateSkill(383, 15, "Manikin", "")}, // 157 Manikin
             { 158, new InnateSkill(383, 15, "Manikin", "")}, // 158 Manikin
@@ -192,10 +192,10 @@ namespace NocturneInsaniax
             { 174, new InnateSkill(383, 15, "Lachesis", "")}, // 174 Lachesis
             { 175, new InnateSkill(383, 15, "Atropos", "")}, // 175 Atropos
             { 176, new InnateSkill(383, 15, "Loa", "")}, // 176 Loa
-            { 177, new InnateSkill(383, 15, "Chatterskull", "")}, // 177 Chatterskull
+            { 177, new InnateSkill(383, 07, "Dark Enhancer", "While in the active party, \nraise allies' Dark skill potential \nto Chatterskull's if it was lower.")}, // 177 Chatterskull
             { 178, new InnateSkill(383, 15, "Phantom", "")}, // 178 Phantom
             { 179, new InnateSkill(383, 15, "Ose Hallel", "")}, // 179 Ose Hallel
-            { 180, new InnateSkill(383, 15, "Flaurose Hallel", "")}, // 180 Flaurose Hallel
+            { 180, new InnateSkill(383, 15, "Flauros Hallel", "")}, // 180 Flauros Hallel
             { 181, new InnateSkill(383, 15, "Urthona", "")}, // 181 Urthona
             { 182, new InnateSkill(383, 15, "Urizen", "")}, // 182 Urizen
             { 183, new InnateSkill(383, 15, "Luvah", "")}, // 183 Luvah
@@ -292,8 +292,8 @@ namespace NocturneInsaniax
             { 274, new InnateSkill(383, 15, "Boss Girimekhala", "")}, // 274 Boss Girimekhala
             { 275, new InnateSkill(383, 15, "Boss Specter 3", "")}, // 275 Boss Specter 3
             { 276, new InnateSkill(383, 15, "Boss Aciel", "")}, // 276 Boss Aciel
-            { 277, new InnateSkill(383, 15, "Boss Skadi", "")}, // 277 Boss Skadi
-            { 278, new InnateSkill(383, 15, "Boss Albion", "")}, // 278 Boss Albion
+            { 277, new InnateSkill(383, 02, "Queen of Winter", "Ice Enhancer & Ice attacks \nhave an increased chance to \ninflict Freeze.")}, // 277 Boss Skadi
+            { 278, new InnateSkill(383, 15, "Milton", "Albion gains immunity to \nelements based on which \nZoas are in the active party.")}, // 278 Boss Albion
             { 279, new InnateSkill(383, 15, "Boss Urthona", "")}, // 279 Boss Urthona
             { 280, new InnateSkill(383, 15, "Boss Urizen", "")}, // 280 Boss Urizen
             { 281, new InnateSkill(383, 15, "Boss Luvah", "")}, // 281 Boss Luvah
@@ -317,7 +317,7 @@ namespace NocturneInsaniax
             { 299, new InnateSkill(383, 15, "Boss Sakahagi", "")}, // 299 Boss Sakahagi
             { 300, new InnateSkill(383, 15, "Boss Orthrus", "")}, // 300 Boss Orthrus
             { 301, new InnateSkill(383, 15, "Boss Yaksini", "")}, // 301 Boss Yaksini
-            { 302, new InnateSkill(383, 15, "Boss Thor", "")}, // 302 Boss Thor
+            { 302, new InnateSkill(383, 03, "Odinson", "Elec Enhancer & Thor's Elec \nattacks have an increased \nchance to inflict Shock.")}, // 302 Boss Thor
             { 303, new InnateSkill(383, 15, "Boss Black Frost", "")}, // 303 Boss Black Frost
             { 304, new InnateSkill(383, 15, "Ambush Karasu Tengu", "")}, // 304 Ambush Karasu Tengu
             { 305, new InnateSkill(383, 15, "Ambush Karasu Tengu", "")}, // 305 Ambush Karasu Tengu
@@ -350,9 +350,9 @@ namespace NocturneInsaniax
             { 332, new InnateSkill(383, 15, "", "")}, // 332 
             { 333, new InnateSkill(383, 15, "Boss Mada", "")}, // 333 Boss Mada
             { 334, new InnateSkill(383, 15, "Boss Mot", "")}, // 334 Boss Mot
-            { 335, new InnateSkill(383, 1, "Laevateinn", "Fire Boost & greatly empowers \nnormal attacks.")}, // 335 Boss Surt
+            { 335, new InnateSkill(383, 01, "Laevateinn", "Fire Enhancer & Surt's normal \nattacks deal medium Fire damage.")}, // 335 Boss Surt
             { 336, new InnateSkill(383, 15, "Ambush Jack-o'-Lantern", "")}, // 336 Ambush Jack-o'-Lantern
-            { 337, new InnateSkill(383, 15, "Boss Thor 2", "")}, // 337 Boss Thor 2
+            { 337, new InnateSkill(383, 03, "Odinson", "Elec Enhancer & Thor's Elec \nattacks have an increased \nchance to inflict Shock.")}, // 337 Boss Thor 2
             { 338, new InnateSkill(383, 15, "", "")}, // 338 
             { 339, new InnateSkill(383, 15, "Boss Raidou/Dante 1", "")}, // 339 Boss Raidou/Dante 1
             { 340, new InnateSkill(383, 15, "Chase Raidou/Dante", "")}, // 340 Chase Raidou/Dante
@@ -695,6 +695,14 @@ namespace NocturneInsaniax
                     }
                 }
             }
+        }
+
+        public static List<ushort> GetActivePartyOutsideOfBattle()
+        {
+            var party = new List<ushort>();
+            for (byte i = 0; i < cmpDrawStock.GBWK.pStockInfo.LocalStock[0].PartyCnt; i++)
+                party.Add(dds3GlobalWork.DDS3_GBWK.unitwork[cmpDrawStock.GBWK.pStockInfo.LocalStock[0].StockIdx[i]].id);
+            return party;
         }
 
         internal struct InnateSkill

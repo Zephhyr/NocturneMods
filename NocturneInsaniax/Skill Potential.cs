@@ -1182,7 +1182,7 @@ namespace NocturneInsaniax
             {
                 if ((nskill < 288 || nskill > 421) && __result != -1 && datNormalSkill.tbl[nskill].hptype != 3) // If it isn't a passive skill and HP have been altered
                 {
-                    int demonID = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id; // Get the demon's ID
+                    ushort demonID = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id; // Get the demon's ID
                     sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(nskill, demonID);
 
                     if (skillPotential != 0)
@@ -1214,7 +1214,7 @@ namespace NocturneInsaniax
             {
                 if ((nskill < 288 || nskill > 421) && __result != -1) // If it isn't a passive skill and MP have been altered
                 {
-                    int demonID = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id; // Get the demon's ID
+                    ushort demonID = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id; // Get the demon's ID
                     sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(nskill, demonID);
 
                     if (skillPotential != 0)
@@ -1249,11 +1249,19 @@ namespace NocturneInsaniax
                     var work = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
                     var luk = datCalc.datGetParam(work, 5);
 
-                    int demonID = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id; // Get the demon's ID
+                    ushort demonID = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id; // Get the demon's ID
 
                     sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(nskill, demonID);
 
                     datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(SkillPotentialUtility.ApplyAilmentMultiplier(skillPotential, luk, tmp_datNormalSkill.badlevel));
+
+                    // Skadi's Queen of Winter
+                    if ((demonID == 17 || demonID == 277) && datSkill.tbl[nskill].skillattr == 2)
+                        datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(datNormalSkill.tbl[nskill].badlevel * 1.5);
+
+                    // Thor's Odinson
+                    if ((demonID == 22 || demonID == 302 || demonID == 337) && datSkill.tbl[nskill].skillattr == 3)
+                        datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(datNormalSkill.tbl[nskill].badlevel * 1.5);
                 }
             }
 
@@ -1339,14 +1347,13 @@ namespace NocturneInsaniax
          *********************************************************************************************/
         private class SkillPotentialUtility
         {
-            public static sbyte GetSkillPotential(int skillID, int demonID)
+            public static sbyte GetSkillPotential(int skillID, ushort demonID)
             {
                 sbyte skillAttribute = datSkill.tbl[skillID].skillattr; // Get the attribute of the skill
+                sbyte skillType = datSkill.tbl[skillID].type;
 
-                if (skillAttribute != -1) // Filters a lot of unused skills
+                if (skillAttribute != -1 && skillType == 0) // Filters a lot of unused skills
                 {
-                    sbyte skillType = datSkill.tbl[skillID].type;
-
                     /*byte skillBadType;
                     if (skillID < datNormalSkill.tbl.Length)
                         skillBadType = datNormalSkill.tbl[skillID].badtype; // Get the ailment type if it exists
@@ -1355,21 +1362,158 @@ namespace NocturneInsaniax
 
                     sbyte skillPotential;
                     if (demonID == 0) // If the curent demon is Demi-fiend
-                    {
                         skillPotential = magatamaPotentials[dds3GlobalWork.DDS3_GBWK.heartsequip - 1][skillAttribute]; // Get the potential from the currently equipped Magatama
-                    }
                     else
-                    {
                         skillPotential = demonPotentials[demonID][skillAttribute]; // Get the potential from the demon list
-                    }
 
-                    if (skillType == 0) // Filters passive and special skills
+                    // Element Enhancers
+                    if (actionProcessData != null)
                     {
-                        //if (skillAttribute != 13 || (skillAttribute == 13 && skillBadType == 0)) // Retrict Heal skills to those that don't fully heal nor revive or cure
-                        //{
-                        return skillPotential;
-                        //}
+                        switch (skillAttribute)
+                        {
+                            case 0:
+                                {
+                                    foreach (var physEnhancerUser in new ushort[] { 88, 119 })
+                                    {
+                                        if ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == physEnhancerUser)) ||
+                                            (actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == physEnhancerUser)))
+                                            skillPotential = Math.Max(skillPotential, demonPotentials[physEnhancerUser][0]);
+                                    }
+                                    break;
+                                }
+                            case 1:
+                                {
+                                    foreach (var fireEnhancerUser in new ushort[] { 36, 111, 335 })
+                                    {
+                                        if ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == fireEnhancerUser)) ||
+                                            (actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == fireEnhancerUser)))
+                                            skillPotential = Math.Max(skillPotential, demonPotentials[fireEnhancerUser][1]);
+                                    }
+                                    break;
+                                }
+                            case 2:
+                                {
+                                    foreach (var iceEnhancerUser in new ushort[] { 17, 37 })
+                                    {
+                                        if ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == iceEnhancerUser)) ||
+                                            (actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == iceEnhancerUser)))
+                                            skillPotential = Math.Max(skillPotential, demonPotentials[iceEnhancerUser][2]);
+                                    }
+                                    break;
+                                }
+                            case 3:
+                                {
+                                    foreach (var elecEnhancerUser in new ushort[] { 22, 39, 302, 337 })
+                                    {
+                                        if ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == elecEnhancerUser)) ||
+                                            (actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == elecEnhancerUser)))
+                                            skillPotential = Math.Max(skillPotential, demonPotentials[elecEnhancerUser][3]);
+                                    }
+                                    break;
+                                }
+                            case 4:
+                                {
+                                    foreach (var forceEnhancerUser in new ushort[] { 38, 152 })
+                                    {
+                                        if ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == forceEnhancerUser)) ||
+                                            (actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == forceEnhancerUser)))
+                                            skillPotential = Math.Max(skillPotential, demonPotentials[forceEnhancerUser][4]);
+                                    }
+                                    break;
+                                }
+                            case 6:
+                                {
+                                    foreach (var lightEnhancerUser in new ushort[] { 35, 63 })
+                                    {
+                                        if ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == lightEnhancerUser)) ||
+                                            (actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == lightEnhancerUser)))
+                                            skillPotential = Math.Max(skillPotential, demonPotentials[lightEnhancerUser][6]);
+                                    }
+                                    break;
+                                }
+                            case 7:
+                                {
+                                    foreach (var darkEnhancerUser in new ushort[] { 132, 177 })
+                                    {
+                                        if ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == darkEnhancerUser)) ||
+                                            (actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == darkEnhancerUser)))
+                                            skillPotential = Math.Max(skillPotential, demonPotentials[darkEnhancerUser][7]);
+                                    }
+                                    break;
+                                }
+                        }
                     }
+                    //else if (GetActivePartyOutsideOfBattle().Contains(demonID))
+                    //{
+                    //    switch (skillAttribute)
+                    //    {
+                    //        case 0:
+                    //            {
+                    //                foreach (var physEnhancerUser in new ushort[] { 88, 119 })
+                    //                {
+                    //                    if (GetActivePartyOutsideOfBattle().Contains(physEnhancerUser) && skillPotential < demonPotentials[physEnhancerUser][0])
+                    //                        skillPotential = demonPotentials[physEnhancerUser][0];
+                    //                }
+                    //                break;
+                    //            }
+                    //        case 1:
+                    //            {
+                    //                foreach (var fireEnhancerUser in new ushort[] { 36, 111, 335 })
+                    //                {
+                    //                    if (GetActivePartyOutsideOfBattle().Contains(fireEnhancerUser) && skillPotential < demonPotentials[fireEnhancerUser][1])
+                    //                        skillPotential = demonPotentials[fireEnhancerUser][1];
+                    //                }
+                    //                break;
+                    //            }
+                    //        case 2:
+                    //            {
+                    //                foreach (var iceEnhancerUser in new ushort[] { 17, 37 })
+                    //                {
+                    //                    if (GetActivePartyOutsideOfBattle().Contains(iceEnhancerUser) && skillPotential < demonPotentials[iceEnhancerUser][2])
+                    //                        skillPotential = demonPotentials[iceEnhancerUser][2];
+                    //                }
+                    //                break;
+                    //            }
+                    //        case 3:
+                    //            {
+                    //                foreach (var elecEnhancerUser in new ushort[] { 22, 39, 302, 337 })
+                    //                {
+                    //                    if (GetActivePartyOutsideOfBattle().Contains(elecEnhancerUser) && skillPotential < demonPotentials[elecEnhancerUser][3])
+                    //                        skillPotential = demonPotentials[elecEnhancerUser][3];
+                    //                }
+                    //                break;
+                    //            }
+                    //        case 4:
+                    //            {
+                    //                foreach (var forceEnhancerUser in new ushort[] { 38, 152 })
+                    //                {
+                    //                    if (GetActivePartyOutsideOfBattle().Contains(forceEnhancerUser) && skillPotential < demonPotentials[forceEnhancerUser][4])
+                    //                        skillPotential = demonPotentials[forceEnhancerUser][4];
+                    //                }
+                    //                break;
+                    //            }
+                    //        case 6:
+                    //            {
+                    //                foreach (var lightEnhancerUser in new ushort[] { 35, 63 })
+                    //                {
+                    //                    if (GetActivePartyOutsideOfBattle().Contains(lightEnhancerUser) && skillPotential < demonPotentials[lightEnhancerUser][6])
+                    //                        skillPotential = demonPotentials[lightEnhancerUser][6];
+                    //                }
+                    //                break;
+                    //            }
+                    //        case 7:
+                    //            {
+                    //                foreach (var darkEnhancerUser in new ushort[] { 132, 177 })
+                    //                {
+                    //                    if (GetActivePartyOutsideOfBattle().Contains(darkEnhancerUser) && skillPotential < demonPotentials[darkEnhancerUser][7])
+                    //                        skillPotential = demonPotentials[darkEnhancerUser][7];
+                    //                }
+                    //                break;
+                    //            }
+                    //    }
+                    //}
+
+                    return skillPotential;
                 }
 
                 return 0;

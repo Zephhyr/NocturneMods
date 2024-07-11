@@ -19,7 +19,7 @@ namespace NocturneInsaniax
             252, 254, 256, 257, 262, 263, 266, 267, 268, 269, 270, 271, 272, 294, 295, 296, 297, 300, 301, 302, 307, 308, 309, 312, 313, 
             321, 326, 327, 328, 339, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 362
         };
-        public static ushort[] pushedSkillList = new ushort[] { 148, 149, 150, 151, 164, 165, 166, 167 };
+        public static ushort[] pushedSkillList = new ushort[] { 148, 149, 150, 151, 164, 165, 166, 167, 417 };
 
         public static nbActionProcessData_t? actionProcessData;
 
@@ -347,6 +347,15 @@ namespace NocturneInsaniax
             }
         }
 
+        [HarmonyPatch(typeof(nbMainProcess), nameof(nbMainProcess.nbSetEndPhase))]
+        private class nbSetEndPhasePatch
+        {
+            public static void Postfix()
+            {
+                actionProcessData = null;
+            }
+        }
+
         [HarmonyPatch(typeof(nbActionProcess), nameof(nbActionProcess.SetAddPressPacket))]
         private class BeastEyePatch1
         {
@@ -417,8 +426,8 @@ namespace NocturneInsaniax
                     var doppelgangerAllyPresent = GetCurrentSideParty(a).Any(x => nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 225);
                     if (doppelgangerAllyPresent && datNormalSkill.tbl[a.work.nowindex].targettype == 0)
                     {
-                        var doppelgangerParty = a.data.party.First(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 225);
                         DarkMirrorCopy(a.work.nowindex);
+                        var doppelgangerParty = a.data.party.First(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 225);
 
                         if (datNormalSkill.tbl[a.work.nowindex].targetarea == 2)
                             nbMainProcess.nbPushAction(4, doppelgangerParty.partyindex, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, 417);
@@ -432,17 +441,18 @@ namespace NocturneInsaniax
                     var doppelgangerEnemyPresent = GetOppositeSideParty(a).Any(x => nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 225);
                     if (doppelgangerEnemyPresent && datNormalSkill.tbl[a.work.nowindex].targettype == 0)
                     {
-                        var doppelgangerParty = a.data.party.First(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 225);
                         DarkMirrorCopy(a.work.nowindex);
-
-                        if (datNormalSkill.tbl[a.work.nowindex].targetarea == 2)
-                            nbMainProcess.nbPushAction(4, doppelgangerParty.partyindex, a.partyindex, 417);
-                        else if (datNormalSkill.tbl[a.work.nowindex].targetarea == 9 &&
-                            datNormalSkill.tbl[a.work.nowindex].targetrule == 0)
-                            nbMainProcess.nbPushAction(4, doppelgangerParty.partyindex, doppelgangerParty.partyindex, 417);
-                        else if (datNormalSkill.tbl[a.work.nowindex].targetarea == 9 &&
-                            datNormalSkill.tbl[a.work.nowindex].targetrule == 1 && !((a.work.nowindex == 224 || a.work.nowindex == 424 || a.work.nowindex == 425) && (doppelgangerParty.count[15] != 0 || doppelgangerParty.count[20] != 0)))
-                            nbMainProcess.nbPushAction(4, doppelgangerParty.partyindex, doppelgangerParty.partyindex, 417);
+                        foreach(var doppelgangerParty in a.data.party.Where(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 225))
+                        {
+                            if (datNormalSkill.tbl[a.work.nowindex].targetarea == 2)
+                                nbMainProcess.nbPushAction(4, doppelgangerParty.partyindex, a.partyindex, 417);
+                            else if (datNormalSkill.tbl[a.work.nowindex].targetarea == 9 &&
+                                datNormalSkill.tbl[a.work.nowindex].targetrule == 0)
+                                nbMainProcess.nbPushAction(4, doppelgangerParty.partyindex, doppelgangerParty.partyindex, 417);
+                            else if (datNormalSkill.tbl[a.work.nowindex].targetarea == 9 &&
+                                datNormalSkill.tbl[a.work.nowindex].targetrule == 1 && !((a.work.nowindex == 224 || a.work.nowindex == 424 || a.work.nowindex == 425) && (doppelgangerParty.count[15] != 0 || doppelgangerParty.count[20] != 0)))
+                                nbMainProcess.nbPushAction(4, doppelgangerParty.partyindex, doppelgangerParty.partyindex, 417);
+                        }
                     }
                 }
             }
@@ -489,6 +499,13 @@ namespace NocturneInsaniax
                     // Test - Add rigged demons to party
                     //dds3GlobalWork.DDS3_GBWK.maka = 0;
 
+                    //var enemyunit = nbMainProcess.nbGetMainProcessData().enemyunit;
+                    //MelonLogger.Msg("enemyunit Length: " + enemyunit.Length);
+
+                    //MelonLogger.Msg("enemyunit: ");
+                    //foreach (var unit in nbMainProcess.nbGetMainProcessData().enemyunit)
+                    //    MelonLogger.Msg(unit.id);
+
                     //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 149).Count() == 0)
                     //{
                     //datCalc.datAddDevil(57, 0);
@@ -499,20 +516,19 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(111, 0);
                     //datCalc.datAddDevil(20, 0);
                     //datCalc.datAddDevil(69, 0);
-                    datCalc.datAddDevil(225, 0);
-                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
-                    {
-                        work.skill[0] = 370;
-                        //work.skill[0] = 192;
-                        //work.skill[1] = 313;
-                        //work.skill[2] = 459;
-                        //work.skill[3] = 40;
-                        //work.skill[4] = 456;
-                        //work.skill[5] = 20;
-                        //work.skill[6] = 312;
-                        //work.skill[7] = 292;
-                        //work.skillcnt = 8;
-                    }
+                    datCalc.datAddDevil(38, 0);
+                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
+                    //{
+                    //    //work.skill[0] = 192;
+                    //    //work.skill[1] = 313;
+                    //    //work.skill[2] = 459;
+                    //    //work.skill[3] = 40;
+                    //    //work.skill[4] = 456;
+                    //    //work.skill[5] = 20;
+                    //    //work.skill[6] = 312;
+                    //    //work.skill[7] = 292;
+                    //    //work.skillcnt = 8;
+                    //}
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 167)) // Pisaca
                     //{
                     //    work.skill[1] = 206;
@@ -742,7 +758,7 @@ namespace NocturneInsaniax
                             {
                                 __result = (__result / 1.5f) * 1.3f;
                             }
-                            else if (work.id == 111 || work.id == 335 || datCalc.datCheckSyojiSkill(work, 368) != 0)
+                            else if (datCalc.datCheckSyojiSkill(work, 363) != 0)
                             {
                                 __result = __result * 1.3f;
                             }
