@@ -160,6 +160,13 @@ namespace NocturneInsaniax
                             nightmareModel.transform.eulerAngles = new Vector3(270f, 198f, 0);
                             break;
                         }
+                    case "devil_0xe3":
+                        {
+                            var gdonModel = cmpModel.cmpDevilObj;
+                            gdonModel.transform.position = new Vector3(-0.36f, -0.64f, 0.6f);
+                            gdonModel.transform.eulerAngles = new Vector3(0, 1982f, 0);
+                            break;
+                        }
                     default: break;
                 }
             }
@@ -235,6 +242,11 @@ namespace NocturneInsaniax
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D226_MSEE2_15", "D226_MSEE2_15", 264830977, false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D226_MSEE2_23", "D226_MSEE2_23", 505675776, false);
 
+                // Gdon
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D227_MSEE3_03", "D227_MSEE3_03", 506462208, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D227_MSEE3_04", "D227_MSEE3_04", 506527744, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D227_MSEE3_05", "D227_MSEE3_05", 506593280, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D227_MSEE3_23", "D227_MSEE3_23", 506658816, false);
 
                 // Devil Dante
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D252M_MSEFC_03", "D252M_MSEFC_03", 532676608, false);
@@ -348,6 +360,13 @@ namespace NocturneInsaniax
                 nightmareKeys.Add("D226_MSEE2_23", new SndAssetBundleManager.SndData { key = "dvl0xe2", path = 4, id = 0, name = "D226_MSEE2_23", diff = true });
                 SndAssetBundleManager.SEBundleTable.Add("dvl0xe2", nightmareKeys);
 
+                var gdonKeys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
+                gdonKeys.Add("D227_MSEE3_03", new SndAssetBundleManager.SndData { key = "dvl0xe3", path = 4, id = 0, name = "D227_MSEE3_03", diff = true });
+                gdonKeys.Add("D227_MSEE3_04", new SndAssetBundleManager.SndData { key = "dvl0xe3", path = 4, id = 0, name = "D227_MSEE3_04", diff = true });
+                gdonKeys.Add("D227_MSEE3_05", new SndAssetBundleManager.SndData { key = "dvl0xe3", path = 4, id = 0, name = "D227_MSEE3_05", diff = true });
+                gdonKeys.Add("D227_MSEE3_23", new SndAssetBundleManager.SndData { key = "dvl0xe3", path = 4, id = 0, name = "D227_MSEE3_23", diff = true });
+                SndAssetBundleManager.SEBundleTable.Add("dvl0xe3", gdonKeys);
+
                 var devilDanteKeys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
                 devilDanteKeys.Add("D252M_MSEFC_03", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_03", diff = true });
                 devilDanteKeys.Add("D252M_MSEFC_04", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_04", diff = true });
@@ -459,12 +478,12 @@ namespace NocturneInsaniax
         //    public static void Postfix()
         //    {
         //        MelonLogger.Msg("--SndAssetBundleManager.LoadKeysMSE--");
-        //        MelonLogger.Msg("Dante keys");
+        //        MelonLogger.Msg("Baihu keys");
         //        for (int i = 0; i <= 25; i++)
-        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(192, i));
-        //        MelonLogger.Msg("Devil keys");
+        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(30, i));
+        //        MelonLogger.Msg("Gdon keys");
         //        for (int i = 0; i <= 25; i++)
-        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(252, i));
+        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(227, i));
         //    }
         //}
 

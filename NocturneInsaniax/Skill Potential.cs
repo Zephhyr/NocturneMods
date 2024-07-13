@@ -91,7 +91,7 @@ namespace NocturneInsaniax
             new sbyte[] {6    , 4    , 0    , 0    , 0    , 0    , 0    , 4    , -6   , -6   , -6   , 0    , 0    , 0    , 0    , 0 }, // 069 Flauros
             new sbyte[] {0    , 3    , 0    , 0    , 0    , 3    , -4   , 3    , 0    , 0    , 5    , 3    , 0    , 0    , 0    , 0 }, // 070 Decarabia
             new sbyte[] {5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -4   , -4   , -4   , 0    , 0    , 0    , 3    , 0 }, // 071 Ose
-            new sbyte[] {4    , 4    , -4   , 0    , 0    , 0    , 0    , 2    , 0    , 0    , 0    , 0    , 0    , -1   , 0    , 0 }, // 072 Berith
+            new sbyte[] {4    , 4    , -1   , 0    , -4   , 0    , 0    , 2    , 0    , 0    , 0    , 0    , 0    , -1   , 0    , 0 }, // 072 Berith
             new sbyte[] {4    , 0    , 0    , -4   , 0    , 0    , 0    , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 073 Eligor
             new sbyte[] {0    , 0    , 4    , -5   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 074 Forneus
             new sbyte[] {0    , -6   , 6    , 5    , 0    , 0    , 0    , 0    , -6   , -6   , -6   , 0    , 0    , 2    , 0    , 0 }, // 075 Yurlungur
@@ -249,7 +249,7 @@ namespace NocturneInsaniax
             new sbyte[] {4    , 0    , 0    , 3    , 0    , 0    , 3    , -3   , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 224 Tam Lin
             new sbyte[] {3    , 0    , 0    , 0    , 0    , 0    , -5   , 5    , 0    , 0    , 0    , 0    , 0    , -3   , 3    , 0 }, // 225 Doppelganger
             new sbyte[] {0    , 0    , 0    , 0    , 3    , 0    , -5   , 4    , 0    , 3    , 4    , 0    , 0    , 0    , 0    , 0 }, // 226 Nightmare
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 227 
+            new sbyte[] {3    , 5    , -4   , 0    , 0    , 0    , 3    , 0    , -4   , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 227 Gdon
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 228 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 229 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 230 
@@ -516,7 +516,7 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+6: Phys • +4: Fire/Dark  <material=\"MsgFont1\">-6: Ailments", // 069 Flauros
             "  <material=\"MsgFont4\">+5: Mind • +3: Fire/Almighty/Dark  <material=\"MsgFont1\">-4: Light", // 070 Decarabia
             "  <material=\"MsgFont4\">+5: Phys • +3: Supp  <material=\"MsgFont1\">-4: Ailments", // 071 Ose
-            "  <material=\"MsgFont4\">+4: Phys/Fire • +2: Dark  <material=\"MsgFont1\">-1: Heal • -4: Ice", // 072 Berith
+            "  <material=\"MsgFont4\">+4: Phys/Fire • +2: Dark  <material=\"MsgFont1\">-1: Ice/Heal • -4: Force", // 072 Berith
             "  <material=\"MsgFont4\">+4: Phys • +2: Dark/Supp  <material=\"MsgFont1\">-4: Elec", // 073 Eligor
             "  <material=\"MsgFont4\">+4: Ice • +2: Supp  <material=\"MsgFont1\">-5: Elec", // 074 Forneus
             "  <material=\"MsgFont4\">+6: Ice • +5: Elec • +2: Heal  <material=\"MsgFont1\">-6: Fire/Ailments", // 075 Yurlungur
@@ -671,7 +671,7 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+4: Phys • +3: Elec/Light • +2: Supp  <material=\"MsgFont1\">-3: Dark", // 224 Tam Lin
             "  <material=\"MsgFont4\">+5: Dark • +3: Phys/Supp  <material=\"MsgFont1\">-3: Heal • -5: Light", // 225 Doppelganger
             "  <material=\"MsgFont4\">+4: Dark/Mind • +3: Force/Nerve  <material=\"MsgFont1\">-5: Light", // 226 Nightmare
-            "", // 227 
+            "  <material=\"MsgFont4\">+5: Fire • +3: Phys/Light  <material=\"MsgFont1\">-4: Ice/Curse", // 227 Gdon
             "", // 228 
             "", // 229 
             "", // 230 
