@@ -67,7 +67,7 @@ namespace NocturneInsaniax
             new sbyte[] {4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -4   , -4   , -4   , 0    , 0    , 0    , 1    , 0 }, // 046 Ongkhot
             new sbyte[] {0    , 0    , 0    , -7   , 6    , 0    , 0    , 0    , 0    , -7   , 0    , 0    , 0    , 1    , 1    , 0 }, // 047 Jinn
             //          {Phys , Fire , Ice  , Elec , Force, Alm  , Light, Dark , Curse, Nerve, Mind , SD   , N/A  , Heal , Supp , Util}
-            new sbyte[] {0    , 3    , 0    , -3   , 3    , 0    , 0    , 0    , -3   , -3   , -3   , 0    , 0    , 0    , 1    , 0 }, // 048 Karasu Tengu
+            new sbyte[] {0    , 2    , 0    , -3   , 4    , 0    , 0    , 0    , -3   , -3   , -3   , 0    , 0    , 0    , 2    , 0 }, // 048 Karasu Tengu
             new sbyte[] {-4   , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 4    , 0    , 0    , 0    , 0    , 2    , 0    , 0 }, // 049 Dís
             new sbyte[] {0    , -4   , 3    , 0    , 0    , 0    , 0    , 0    , 3    , 3    , 3    , 0    , 0    , 1    , 0    , 0 }, // 050 Isora
             new sbyte[] {0    , -3   , 0    , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0    , 0    , 1    , 1    , 0 }, // 051 Apsaras
@@ -94,7 +94,7 @@ namespace NocturneInsaniax
             new sbyte[] {4    , 4    , -4   , 0    , 0    , 0    , 0    , 2    , 0    , 0    , 0    , 0    , 0    , -1   , 0    , 0 }, // 072 Berith
             new sbyte[] {4    , 0    , 0    , -4   , 0    , 0    , 0    , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 073 Eligor
             new sbyte[] {0    , 0    , 4    , -5   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 074 Forneus
-            new sbyte[] {0    , -6   , 0    , 5    , 5    , 0    , 0    , 0    , -6   , -6   , -6   , 0    , 0    , 2    , 0    , 0 }, // 075 Yurlungur
+            new sbyte[] {0    , -6   , 6    , 5    , 0    , 0    , 0    , 0    , -6   , -6   , -6   , 0    , 0    , 2    , 0    , 0 }, // 075 Yurlungur
             new sbyte[] {0    , 0    , 5    , -6   , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 076 Quetzalcoatl
             new sbyte[] {4    , -5   , 2    , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 077 Naga Raja
             new sbyte[] {0    , -5   , 4    , 0    , 0    , 0    , 0    , 0    , -5   , 0    , 4    , 0    , 0    , 0    , 2    , 0 }, // 078 Mizuchi
@@ -118,12 +118,12 @@ namespace NocturneInsaniax
             //          {Phys , Fire , Ice  , Elec , Force, Alm  , Light, Dark , Curse, Nerve, Mind , SD   , N/A  , Heal , Supp , Util}
             new sbyte[] {4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -5   , -5   , -5   , 0    , 0    , -2   , 0    , 0 }, // 096 Momunofu
             new sbyte[] {0    , -3   , 0    , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 097 Shikigami
-            new sbyte[] {5    , 5    , 0    , -5   , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0    , 0 }, // 098 Rangda
+            new sbyte[] {4    , 6    , 0    , -5   , 6    , 0    , -3   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 098 Rangda
             new sbyte[] {4    , 4    , -5   , 0    , 0    , 0    , 0    , 0    , 2    , 2    , 2    , 0    , 0    , -2   , 0    , 0 }, // 099 Dakini
             new sbyte[] {2    , 0    , 0    , -4   , 2    , 0    , 0    , 0    , 4    , 4    , 4    , 0    , 0    , 0    , 0    , 0 }, // 100 Yaksini
             new sbyte[] {0    , -4   , 0    , 0    , 3    , 0    , -4   , 3    , 5    , 5    , 5    , 0    , 0    , 0    , 0    , 0 }, // 101 Yomotsu-Shikome
             new sbyte[] {3    , 0    , -4   , 3    , 0    , 0    , 0    , 0    , 0    , 2    , 0    , 0    , 0    , -2   , 0    , 0 }, // 102 Taraka
-            new sbyte[] {0    , 0    , 1    , -3   , 0    , 0    , 0    , 0    , 3    , 3    , 3    , 0    , 0    , 0    , 0    , 0 }, // 103 Datsue-Ba
+            new sbyte[] {0    , 0    , 2    , -3   , 0    , 0    , 0    , 0    , 2    , 2    , 2    , 0    , 0    , 0    , 0    , 0 }, // 103 Datsue-Ba
             new sbyte[] {5    , 5    , -5   , 0    , 0    , -5   , 0    , 0    , -5   , 0    , 5    , -5   , 0    , 3    , 3    , 0 }, // 104 Mada
             new sbyte[] {5    , -5   , -5   , -5   , -5   , 0    , -5   , 0    , 5    , 5    , -3   , 0    , 0    , -3   , 2    , 0 }, // 105 Girimekhala
             new sbyte[] {5    , -4   , -4   , -4   , -4   , 5    , 0    , 5    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0 }, // 106 Taotie
@@ -414,31 +414,32 @@ namespace NocturneInsaniax
         private static sbyte[][] magatamaPotentials = new sbyte[][]
         {
             //          {Phys , Fire , Ice  , Elec , Force, Alm  , Light, Dark , Curse, Nerve, Mind , SD   , N/A  , Heal , Supp , Util}
-            new sbyte[] {1    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Marogareh
-            new sbyte[] {0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // Wadatsumi
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 1    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0 }, // Ankh
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0    , 0    , 0    , 3    , 0 }, // Iyomante
-            new sbyte[] {0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // Shiranui
-            new sbyte[] {0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // Hifumi
-            new sbyte[] {3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // Kamudo
-            new sbyte[] {2    , 0    , 0    , 4    , 0    , 0    , 0    , 0    , 0    , 2    , 0    , 0    , 0    , 0    , 0    , 0 }, // Narukami
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 5    , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Anathema
-            new sbyte[] {0    , 0    , 6    , 0    , 0    , 0    , 0    , 0    , 3    , 3    , 3    , 0    , 0    , 0    , 0    , 0 }, // Miasma
-            new sbyte[] {3    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Nirvana
-            new sbyte[] {5    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 2    , 2    , 2    , 0    , 0    , 0    , 0    , 0 }, // Murakumo
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 3    , 0 }, // Geis
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 3    , 3    , 3    , 0    , 0    , 0    , 5    , 0 }, // Djed
-            new sbyte[] {3    , 3    , 3    , 3    , 3    , 0    , 0    , 0    , 7    , 7    , 7    , 0    , 0    , 0    , 0    , 0 }, // Muspell
-            new sbyte[] {0    , 7    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Gehenna
-            new sbyte[] {7    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Kamurogi
-            new sbyte[] {2    , 0    , 0    , 0    , 0    , 0    , 0    , 8    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // Satan
-            new sbyte[] {0    , 0    , 0    , 9    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Adama
-            new sbyte[] {6    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0 }, // Vimana
-            new sbyte[] {4    , 0    , 0    , 0    , 8    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Gundari
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 7    , 0    , 0    , 0    , 0    , 0    , 0    , 4    , 4    , 0 }, // Sophia
-            new sbyte[] {9    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // Gaea
-            new sbyte[] {0    , 5    , 5    , 5    , 5    , 7    , 0    , 0    , 0    , 0    , 0    , 7    , 0    , 0    , 3    , 0 }, // Kailash
-            new sbyte[] {9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 0    , 5    , 5    , 0 }  // Masakados
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 00
+            new sbyte[] {1    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 01 Marogareh
+            new sbyte[] {0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 02 Wadatsumi
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 1    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0 }, // 03 Ankh
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0    , 0    , 0    , 3    , 0 }, // 04 Iyomante
+            new sbyte[] {0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 05 Shiranui
+            new sbyte[] {0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 06 Hifumi
+            new sbyte[] {3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 07 Kamudo
+            new sbyte[] {2    , 0    , 0    , 4    , 0    , 0    , 0    , 0    , 0    , 2    , 0    , 0    , 0    , 0    , 0    , 0 }, // 08 Narukami
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 5    , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 09 Anathema
+            new sbyte[] {0    , 0    , 6    , 0    , 0    , 0    , 0    , 0    , 3    , 3    , 3    , 0    , 0    , 0    , 0    , 0 }, // 10 Miasma
+            new sbyte[] {3    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 11 Nirvana
+            new sbyte[] {5    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 2    , 2    , 2    , 0    , 0    , 0    , 0    , 0 }, // 12 Murakumo
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 3    , 0 }, // 13 Geis
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 3    , 3    , 3    , 0    , 0    , 0    , 5    , 0 }, // 14 Djed
+            new sbyte[] {3    , 3    , 3    , 3    , 3    , 0    , 0    , 0    , 7    , 7    , 7    , 0    , 0    , 0    , 0    , 0 }, // 15 Muspell
+            new sbyte[] {0    , 7    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 16 Gehenna
+            new sbyte[] {7    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 17 Kamurogi
+            new sbyte[] {2    , 0    , 0    , 0    , 0    , 0    , 0    , 8    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 18 Satan
+            new sbyte[] {0    , 0    , 0    , 9    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 19 Adama
+            new sbyte[] {6    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0 }, // 20 Vimana
+            new sbyte[] {4    , 0    , 0    , 0    , 8    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 21 Gundari
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 7    , 0    , 0    , 0    , 0    , 0    , 0    , 4    , 4    , 0 }, // 22 Sophia
+            new sbyte[] {9    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 23 Gaea
+            new sbyte[] {0    , 5    , 5    , 5    , 5    , 7    , 0    , 0    , 0    , 0    , 0    , 7    , 0    , 0    , 3    , 0 }, // 24 Kailash
+            new sbyte[] {9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 0    , 5    , 5    , 0 }  // 25 Masakados
         }; // Array of all Magatamas' skill potential
 
         private static string[] potentialHelp = new string[]
@@ -491,7 +492,7 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+4: Phys/Force • +3: Ailments  <material=\"MsgFont1\">-6: Elec", // 045 Pulukishi
             "  <material=\"MsgFont4\">+4: Phys • +1: Supp  <material=\"MsgFont1\">-4: Ailments", // 046 Ongkhot
             "  <material=\"MsgFont4\">+6: Force • +1: Heal/Supp  <material=\"MsgFont1\">-7: Elec/Nerve", // 047 Jinn
-            "  <material=\"MsgFont4\">+3: Fire/Force • +1: Supp  <material=\"MsgFont1\">-3: Elec/Ailments", // 048 Karasu Tengu
+            "  <material=\"MsgFont4\">+4: Force • +2: Fire/Supp  <material=\"MsgFont1\">-3: Elec/Ailments", // 048 Karasu Tengu
             "  <material=\"MsgFont4\">+4: Curse • +2: Fire/Heal  <material=\"MsgFont1\">-4: Phys", // 049 Dís
             "  <material=\"MsgFont4\">+3: Ice/Ailments • +1: Heal  <material=\"MsgFont1\">-4: Fire", // 050 Isora
             "  <material=\"MsgFont4\">+2: Elec/Mind • +1: Heal/Supp  <material=\"MsgFont1\">-3: Fire", // 051 Apsaras
@@ -518,7 +519,7 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+4: Phys/Fire • +2: Dark  <material=\"MsgFont1\">-1: Heal • -4: Ice", // 072 Berith
             "  <material=\"MsgFont4\">+4: Phys • +2: Dark/Supp  <material=\"MsgFont1\">-4: Elec", // 073 Eligor
             "  <material=\"MsgFont4\">+4: Ice • +2: Supp  <material=\"MsgFont1\">-5: Elec", // 074 Forneus
-            "  <material=\"MsgFont4\">+5: Elec/Force • +2: Heal  <material=\"MsgFont1\">-6: Fire/Ailments", // 075 Yurlungur
+            "  <material=\"MsgFont4\">+6: Ice • +5: Elec • +2: Heal  <material=\"MsgFont1\">-6: Fire/Ailments", // 075 Yurlungur
             "  <material=\"MsgFont4\">+5: Ice/Curse • +2: Supp  <material=\"MsgFont1\">-6: Elec", // 076 Quetzalcoatl
             "  <material=\"MsgFont4\">+4: Phys/Elec • +2: Ice/Supp  <material=\"MsgFont1\">-5: Fire", // 077 Naga Raja
             "  <material=\"MsgFont4\">+4: Ice/Mind • +2: Supp  <material=\"MsgFont1\">-5: Fire/Curse", // 078 Mizuchi
@@ -541,12 +542,12 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+3: Phys/Dark/Curse  <material=\"MsgFont1\">-3: Light/Nerve/Mind/Supp", // 095 Yomotsu-Ikusa
             "  <material=\"MsgFont4\">+4: Phys  <material=\"MsgFont1\">-2: Heal • -5: Ailments", // 096 Momunofu
             "  <material=\"MsgFont4\">+2: Elec • +1: Supp  <material=\"MsgFont1\">-3: Fire", // 097 Shikigami
-            "  <material=\"MsgFont4\">+5: Phys/Fire/Force • +2: Heal  <material=\"MsgFont1\">-5: Elec", // 098 Rangda
+            "  <material=\"MsgFont4\">+6: Fire/Force • +4: Phys  <material=\"MsgFont1\">-3: Light • -5: Elec", // 098 Rangda
             "  <material=\"MsgFont4\">+4: Phys/Fire • +2: Ailments  <material=\"MsgFont1\">-2: Supp • -5: Ice", // 099 Dakini
             "  <material=\"MsgFont4\">+4: Ailments • +2: Phys/Force  <material=\"MsgFont1\">-4: Elec", // 100 Yaksini
             "  <material=\"MsgFont4\">+5: Ailments • +3: Force/Dark  <material=\"MsgFont1\">-4: Fire/Light", // 101 Yomotsu-Shikome
             "  <material=\"MsgFont4\">+3: Phys/Elec • +2: Nerve  <material=\"MsgFont1\">-2: Heal • -4: Ice", // 102 Taraka
-            "  <material=\"MsgFont4\">+3: Ailments • +1: Ice  <material=\"MsgFont1\">-3: Elec", // 103 Datsue-Ba
+            "  <material=\"MsgFont4\">+2: Ice/Ailments  <material=\"MsgFont1\">-3: Elec", // 103 Datsue-Ba
             "  <material=\"MsgFont4\">+5: Phys/Fire/Mind • +3: Heal/Supp  <material=\"MsgFont1\">-5: Ice/Almighty/Curse", // 104 Mada
             "  <material=\"MsgFont4\">+5: Phys/Curse/Nerve • +2: Supp  <material=\"MsgFont1\">-3: Mind/Heal • -5: Magic/Light", // 105 Girimekhala
             "  <material=\"MsgFont4\">+5: Phys/Almighty/Dark  <material=\"MsgFont1\">-4: Magic", // 106 Taotie
@@ -1362,156 +1363,80 @@ namespace NocturneInsaniax
 
                     sbyte skillPotential;
                     if (demonID == 0) // If the curent demon is Demi-fiend
-                        skillPotential = magatamaPotentials[dds3GlobalWork.DDS3_GBWK.heartsequip - 1][skillAttribute]; // Get the potential from the currently equipped Magatama
+                        skillPotential = magatamaPotentials[dds3GlobalWork.DDS3_GBWK.heartsequip][skillAttribute]; // Get the potential from the currently equipped Magatama
                     else
                         skillPotential = demonPotentials[demonID][skillAttribute]; // Get the potential from the demon list
 
-                    // Element Enhancers
-                    if (actionProcessData != null)
-                    {
-                        switch (skillAttribute)
+                    // Element Gestalts and Enhancers
+                    if (actionProcessData != null && skillAttribute != 5 && skillAttribute <= 7)
+                    { 
+                        // Gestalts
+                        if (currentDemonID == 0 && skillAttribute <= 4 && dds3GlobalWork.DDS3_GBWK.heartsequip == gestaltMagatama[skillAttribute])
                         {
-                            case 0:
+                            foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
+                            {
+                                try
                                 {
-                                    foreach (var physEnhancerUser in new ushort[] { 88, 119 })
-                                    {
-                                        if ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == physEnhancerUser)) ||
-                                            (actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == physEnhancerUser)))
-                                            skillPotential = Math.Max(skillPotential, demonPotentials[physEnhancerUser][0]);
-                                    }
-                                    break;
-                                }
-                            case 1:
+                                    skillPotential += demonPotentials[nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id][skillAttribute];
+                                } catch { }
+                            }
+                        }
+                        else if (gestaltUsers[skillAttribute].Contains(currentDemonID))
+                        {
+                            if (actionProcessData.partyindex <= 3)
+                            {
+                                foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
                                 {
-                                    foreach (var fireEnhancerUser in new ushort[] { 36, 111, 335 })
+                                    try
                                     {
-                                        if ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == fireEnhancerUser)) ||
-                                            (actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == fireEnhancerUser)))
-                                            skillPotential = Math.Max(skillPotential, demonPotentials[fireEnhancerUser][1]);
-                                    }
-                                    break;
+                                        if (nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && ally.partyindex == 0)
+                                            skillPotential += magatamaPotentials[dds3GlobalWork.DDS3_GBWK.heartsequip][skillAttribute];
+                                        else if (nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id != currentDemonID)
+                                            skillPotential += demonPotentials[nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id][skillAttribute];
+                                    } catch { }
                                 }
-                            case 2:
+                            }
+                            else
+                            {
+                                foreach (var enemy in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex > 3))
                                 {
-                                    foreach (var iceEnhancerUser in new ushort[] { 17, 37 })
+                                    try
                                     {
-                                        if ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == iceEnhancerUser)) ||
-                                            (actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == iceEnhancerUser)))
-                                            skillPotential = Math.Max(skillPotential, demonPotentials[iceEnhancerUser][2]);
-                                    }
-                                    break;
+                                        if (((nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id == currentDemonID && enemy.partyindex != actionProcessData.partyindex) ||
+                                        (nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id != currentDemonID && nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id != 0)) &&
+                                        nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).hp != 0)
+                                            skillPotential += demonPotentials[nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id][skillAttribute];
+                                    } catch { }
                                 }
-                            case 3:
+                            }
+                        }
+                        // Enhancers
+                        foreach (var enhancerUser in enhancerUsers[skillAttribute])
+                        {
+                            if (actionProcessData.partyindex <= 3)
+                            {
+                                foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
                                 {
-                                    foreach (var elecEnhancerUser in new ushort[] { 22, 39, 302, 337 })
+                                    try
                                     {
-                                        if ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == elecEnhancerUser)) ||
-                                            (actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == elecEnhancerUser)))
-                                            skillPotential = Math.Max(skillPotential, demonPotentials[elecEnhancerUser][3]);
-                                    }
-                                    break;
+                                        if (nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == enhancerUser)
+                                            skillPotential = Math.Max(skillPotential, demonPotentials[enhancerUser][skillAttribute]);
+                                    } catch { }
                                 }
-                            case 4:
+                            }
+                            else
+                            {
+                                foreach (var enemy in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex > 3))
                                 {
-                                    foreach (var forceEnhancerUser in new ushort[] { 38, 152 })
+                                    try
                                     {
-                                        if ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == forceEnhancerUser)) ||
-                                            (actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == forceEnhancerUser)))
-                                            skillPotential = Math.Max(skillPotential, demonPotentials[forceEnhancerUser][4]);
-                                    }
-                                    break;
+                                        if (nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id == enhancerUser)
+                                            skillPotential = Math.Max(skillPotential, demonPotentials[enhancerUser][skillAttribute]);
+                                    } catch { }
                                 }
-                            case 6:
-                                {
-                                    foreach (var lightEnhancerUser in new ushort[] { 35, 63 })
-                                    {
-                                        if ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == lightEnhancerUser)) ||
-                                            (actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == lightEnhancerUser)))
-                                            skillPotential = Math.Max(skillPotential, demonPotentials[lightEnhancerUser][6]);
-                                    }
-                                    break;
-                                }
-                            case 7:
-                                {
-                                    foreach (var darkEnhancerUser in new ushort[] { 132, 177 })
-                                    {
-                                        if ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == darkEnhancerUser)) ||
-                                            (actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == darkEnhancerUser)))
-                                            skillPotential = Math.Max(skillPotential, demonPotentials[darkEnhancerUser][7]);
-                                    }
-                                    break;
-                                }
+                            }
                         }
                     }
-                    //else if (GetActivePartyOutsideOfBattle().Contains(demonID))
-                    //{
-                    //    switch (skillAttribute)
-                    //    {
-                    //        case 0:
-                    //            {
-                    //                foreach (var physEnhancerUser in new ushort[] { 88, 119 })
-                    //                {
-                    //                    if (GetActivePartyOutsideOfBattle().Contains(physEnhancerUser) && skillPotential < demonPotentials[physEnhancerUser][0])
-                    //                        skillPotential = demonPotentials[physEnhancerUser][0];
-                    //                }
-                    //                break;
-                    //            }
-                    //        case 1:
-                    //            {
-                    //                foreach (var fireEnhancerUser in new ushort[] { 36, 111, 335 })
-                    //                {
-                    //                    if (GetActivePartyOutsideOfBattle().Contains(fireEnhancerUser) && skillPotential < demonPotentials[fireEnhancerUser][1])
-                    //                        skillPotential = demonPotentials[fireEnhancerUser][1];
-                    //                }
-                    //                break;
-                    //            }
-                    //        case 2:
-                    //            {
-                    //                foreach (var iceEnhancerUser in new ushort[] { 17, 37 })
-                    //                {
-                    //                    if (GetActivePartyOutsideOfBattle().Contains(iceEnhancerUser) && skillPotential < demonPotentials[iceEnhancerUser][2])
-                    //                        skillPotential = demonPotentials[iceEnhancerUser][2];
-                    //                }
-                    //                break;
-                    //            }
-                    //        case 3:
-                    //            {
-                    //                foreach (var elecEnhancerUser in new ushort[] { 22, 39, 302, 337 })
-                    //                {
-                    //                    if (GetActivePartyOutsideOfBattle().Contains(elecEnhancerUser) && skillPotential < demonPotentials[elecEnhancerUser][3])
-                    //                        skillPotential = demonPotentials[elecEnhancerUser][3];
-                    //                }
-                    //                break;
-                    //            }
-                    //        case 4:
-                    //            {
-                    //                foreach (var forceEnhancerUser in new ushort[] { 38, 152 })
-                    //                {
-                    //                    if (GetActivePartyOutsideOfBattle().Contains(forceEnhancerUser) && skillPotential < demonPotentials[forceEnhancerUser][4])
-                    //                        skillPotential = demonPotentials[forceEnhancerUser][4];
-                    //                }
-                    //                break;
-                    //            }
-                    //        case 6:
-                    //            {
-                    //                foreach (var lightEnhancerUser in new ushort[] { 35, 63 })
-                    //                {
-                    //                    if (GetActivePartyOutsideOfBattle().Contains(lightEnhancerUser) && skillPotential < demonPotentials[lightEnhancerUser][6])
-                    //                        skillPotential = demonPotentials[lightEnhancerUser][6];
-                    //                }
-                    //                break;
-                    //            }
-                    //        case 7:
-                    //            {
-                    //                foreach (var darkEnhancerUser in new ushort[] { 132, 177 })
-                    //                {
-                    //                    if (GetActivePartyOutsideOfBattle().Contains(darkEnhancerUser) && skillPotential < demonPotentials[darkEnhancerUser][7])
-                    //                        skillPotential = demonPotentials[darkEnhancerUser][7];
-                    //                }
-                    //                break;
-                    //            }
-                    //    }
-                    //}
 
                     return skillPotential;
                 }
@@ -1526,6 +1451,54 @@ namespace NocturneInsaniax
 
                 switch (skillPotential)
                 {
+                    case 25:
+                        multiplier = 1 / 1.9f;
+                        break;
+                    case 24:
+                        multiplier = 1 / 1.875f;
+                        break;
+                    case 23:
+                        multiplier = 1 / 1.85f;
+                        break;
+                    case 22:
+                        multiplier = 1 / 1.825f;
+                        break;
+                    case 21:
+                        multiplier = 1 / 1.8f;
+                        break;
+                    case 20:
+                        multiplier = 1 / 1.775f;
+                        break;
+                    case 19:
+                        multiplier = 1 / 1.75f;
+                        break;
+                    case 18:
+                        multiplier = 1 / 1.725f;
+                        break;
+                    case 17:
+                        multiplier = 1 / 1.70f;
+                        break;
+                    case 16:
+                        multiplier = 1 / 1.675f;
+                        break;
+                    case 15:
+                        multiplier = 1 / 1.65f;
+                        break;
+                    case 14:
+                        multiplier = 1 / 1.625f;
+                        break;
+                    case 13:
+                        multiplier = 1 / 1.6f;
+                        break;
+                    case 12:
+                        multiplier = 1 / 1.575f;
+                        break;
+                    case 11:
+                        multiplier = 1 / 1.55f;
+                        break;
+                    case 10:
+                        multiplier = 1 / 1.525f;
+                        break;
                     case 9:
                         multiplier = 1 / 1.5f;
                         break;
@@ -1634,6 +1607,54 @@ namespace NocturneInsaniax
 
                 switch (skillPotential)
                 {
+                    case 25:
+                        multiplier = 1.9f;
+                        break;
+                    case 24:
+                        multiplier = 1.875f;
+                        break;
+                    case 23:
+                        multiplier = 1.85f;
+                        break;
+                    case 22:
+                        multiplier = 1.825f;
+                        break;
+                    case 21:
+                        multiplier = 1.8f;
+                        break;
+                    case 20:
+                        multiplier = 1.775f;
+                        break;
+                    case 19:
+                        multiplier = 1.75f;
+                        break;
+                    case 18:
+                        multiplier = 1.725f;
+                        break;
+                    case 17:
+                        multiplier = 1.70f;
+                        break;
+                    case 16:
+                        multiplier = 1.675f;
+                        break;
+                    case 15:
+                        multiplier = 1.65f;
+                        break;
+                    case 14:
+                        multiplier = 1.625f;
+                        break;
+                    case 13:
+                        multiplier = 1.6f;
+                        break;
+                    case 12:
+                        multiplier = 1.575f;
+                        break;
+                    case 11:
+                        multiplier = 1.55f;
+                        break;
+                    case 10:
+                        multiplier = 1.525f;
+                        break;
                     case 9:
                         multiplier = 1.50f;
                         break;
@@ -1700,6 +1721,54 @@ namespace NocturneInsaniax
 
                 switch (skillPotential)
                 {
+                    case 25:
+                        multiplier = 1.9f;
+                        break;
+                    case 24:
+                        multiplier = 1.875f;
+                        break;
+                    case 23:
+                        multiplier = 1.85f;
+                        break;
+                    case 22:
+                        multiplier = 1.825f;
+                        break;
+                    case 21:
+                        multiplier = 1.8f;
+                        break;
+                    case 20:
+                        multiplier = 1.775f;
+                        break;
+                    case 19:
+                        multiplier = 1.75f;
+                        break;
+                    case 18:
+                        multiplier = 1.725f;
+                        break;
+                    case 17:
+                        multiplier = 1.70f;
+                        break;
+                    case 16:
+                        multiplier = 1.675f;
+                        break;
+                    case 15:
+                        multiplier = 1.65f;
+                        break;
+                    case 14:
+                        multiplier = 1.625f;
+                        break;
+                    case 13:
+                        multiplier = 1.6f;
+                        break;
+                    case 12:
+                        multiplier = 1.575f;
+                        break;
+                    case 11:
+                        multiplier = 1.55f;
+                        break;
+                    case 10:
+                        multiplier = 1.525f;
+                        break;
                     case 9:
                         multiplier = 1.5f;
                         break;

@@ -78,6 +78,7 @@ namespace NocturneInsaniax
                     case 369: __result = "Spirit Well"; return false;
                     case 370: __result = "Qigong"; return false;
 
+                    case 416: __result = "Ramayana"; return false;
                     case 417: __result = "Evil Mirror"; return false;
 
                     case 422: __result = "Beast Eye"; return false;      
@@ -344,6 +345,7 @@ namespace NocturneInsaniax
             public static void Postfix(ref nbActionProcessData_t __result)
             {
                 actionProcessData = __result;
+                currentDemonID = actionProcessData.work.id;
             }
         }
 
@@ -420,10 +422,16 @@ namespace NocturneInsaniax
                     nbMakePacket.nbMakeBadKaifukuPacket(frame, a.uniqueid, ref form);
                 }
 
+                // Hanuman's Ramayana
+                if (a.work.id == 146 && 
+                    (a.work.nowcommand == 1 && new ushort[] { 36, 37, 38 }.Contains(a.work.nowindex) || 
+                    a.work.nowcommand == 5 && new ushort[] { 1, 2, 3, 4, 9, 10 }.Contains(a.work.nowindex)))
+                    nbMainProcess.nbPushAction(4, a.partyindex, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, 416);
+
                 // Doppelganger's Dark Mirror
                 if (a.work.id == 0 && a.work.nowcommand == 1 && !pushedSkillList.Contains(a.work.nowindex))
                 {
-                    var doppelgangerAllyPresent = GetCurrentSideParty(a).Any(x => nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 225);
+                    bool doppelgangerAllyPresent = GetCurrentSideParty(a).Any(x => nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 225);
                     if (doppelgangerAllyPresent && datNormalSkill.tbl[a.work.nowindex].targettype == 0)
                     {
                         DarkMirrorCopy(a.work.nowindex);
@@ -438,7 +446,7 @@ namespace NocturneInsaniax
                             datNormalSkill.tbl[a.work.nowindex].targetrule == 1 && !((a.work.nowindex == 224 || a.work.nowindex == 424 || a.work.nowindex == 425) && (doppelgangerParty.count[15] != 0 || doppelgangerParty.count[20] != 0)))
                             nbMainProcess.nbPushAction(4, doppelgangerParty.partyindex, doppelgangerParty.partyindex, 417);
                     }
-                    var doppelgangerEnemyPresent = GetOppositeSideParty(a).Any(x => nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 225);
+                    bool doppelgangerEnemyPresent = GetOppositeSideParty(a).Any(x => nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 225);
                     if (doppelgangerEnemyPresent && datNormalSkill.tbl[a.work.nowindex].targettype == 0)
                     {
                         DarkMirrorCopy(a.work.nowindex);
@@ -516,7 +524,7 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(111, 0);
                     //datCalc.datAddDevil(20, 0);
                     //datCalc.datAddDevil(69, 0);
-                    datCalc.datAddDevil(38, 0);
+                    datCalc.datAddDevil(146, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    //work.skill[0] = 192;
@@ -550,6 +558,12 @@ namespace NocturneInsaniax
                     //    work.skill[7] = 419;
                     //    work.skillcnt = 8;
                     //}
+                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 146)) // Hanuman
+                    {
+                        work.skill[2] = 37;
+                        work.skill[3] = 367;
+                        work.skillcnt = 4;
+                    }
                     //}
                 }
                 // If using a cursed gospel
@@ -1292,6 +1306,8 @@ namespace NocturneInsaniax
 
             Punishment(188);
             JudgementLight(189);
+
+            Ramayana(416);
 
             NewBeastEye(422);
             NewDragonEye(423);
@@ -6304,12 +6320,59 @@ namespace NocturneInsaniax
             OverWriteSkillEffect(id, 219);
         }
 
+        private static void Ramayana(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 13;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 2;
+            datNormalSkill.tbl[id].basstatus = 1535;
+            datNormalSkill.tbl[id].cost = 0;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 255;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 50;
+            datNormalSkill.tbl[id].hptype = 0;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 9;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 44);
+        }
+
         private static void DarkMirrorCopy(ushort id)
         {
             datSkill.tbl[417].flag = 0;
             datSkill.tbl[417].keisyoform = 512;
             datSkill.tbl[417].skillattr = datSkill.tbl[id].skillattr;
-            datSkill.tbl[417].index = 78;
+            datSkill.tbl[417].index = 417;
             datSkill.tbl[417].type = 0;
 
             datNormalSkill.tbl[417].badlevel = datNormalSkill.tbl[id].badlevel;
@@ -6344,7 +6407,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[417].targetprog = datNormalSkill.tbl[id].targetprog;
             datNormalSkill.tbl[417].targetrandom = datNormalSkill.tbl[id].targetrandom;
             datNormalSkill.tbl[417].targetrule = datNormalSkill.tbl[id].targetrule;
-            datNormalSkill.tbl[417].targettype = 1;
+            datNormalSkill.tbl[417].targettype = 0;
             datNormalSkill.tbl[417].untargetbadstat = datNormalSkill.tbl[id].untargetbadstat;
             datNormalSkill.tbl[417].use = 2;
 

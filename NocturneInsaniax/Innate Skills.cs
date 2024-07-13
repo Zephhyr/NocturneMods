@@ -13,7 +13,7 @@ namespace NocturneInsaniax
 {
     internal partial class NocturneInsaniax : MelonMod
     {
-        private static Dictionary<ushort, InnateSkill> innateSkills = new Dictionary<ushort, InnateSkill>
+        private static Dictionary<ushort, InnateSkill> demonInnateSkills = new Dictionary<ushort, InnateSkill>
         {
             { 000, new InnateSkill(383, 15, "", "")}, // 000
             { 001, new InnateSkill(383, 15, "Vishnu", "")}, // 001 Vishnu
@@ -31,13 +31,13 @@ namespace NocturneInsaniax
             { 013, new InnateSkill(383, 15, "Beidou Xingjun", "")}, // 013 Beidou Xingjun
             { 014, new InnateSkill(383, 15, "Qitian Dasheng", "")}, // 014 Qitian Dasheng
             { 015, new InnateSkill(419, 15, "Dionysus", "")}, // 015 Dionysus
-            { 016, new InnateSkill(383, 15, "Kali", "")}, // 016 Kali
-            { 017, new InnateSkill(383, 02, "Queen of Winter", "Ice Enhancer & Skadi's Ice \nattacks have an increased \nchance to inflict Freeze.")}, // 017 Skadi
+            { 016, new InnateSkill(383, 00, "Phys Gestalt", "Kali gains Phys skill potential \nbased on the total potential of \nallies in the active party.")}, // 016 Kali
+            { 017, new InnateSkill(383, 02, "Queen of Winter", "Ice Enhancer and Skadi's Ice \nattacks have an increased \nchance to inflict Freeze.")}, // 017 Skadi
             { 018, new InnateSkill(383, 15, "Parvati", "")}, // 018 Parvati
             { 019, new InnateSkill(383, 15, "Kushinada", "")}, // 019 Kushinada
             { 020, new InnateSkill(418, 15, "Kikuri-Hime", "")}, // 020 Kikuri-Hime
             { 021, new InnateSkill(383, 15, "Bishamonten", "")}, // 021 Bishamonten
-            { 022, new InnateSkill(383, 03, "Odinson", "Elec Enhancer & Thor's Elec \nattacks have an increased \nchance to inflict Shock.")}, // 022 Thor
+            { 022, new InnateSkill(383, 03, "Odinson", "Elec Enhancer and Thor's Elec \nattacks have an increased \nchance to inflict Shock.")}, // 022 Thor
             { 023, new InnateSkill(383, 15, "Jikokuten", "")}, // 023 Jikokuten
             { 024, new InnateSkill(383, 15, "Take-Mikazuchi", "")}, // 024 Take-Mikazuchi
             { 025, new InnateSkill(383, 15, "Okuninushi", "")}, // 025 Okuninushi
@@ -61,16 +61,16 @@ namespace NocturneInsaniax
             { 043, new InnateSkill(383, 15, "Ara Mitama", "")}, // 043 Ara Mitama
             { 044, new InnateSkill(383, 15, "Efreet", "")}, // 044 Efreet
             { 045, new InnateSkill(383, 15, "Pulukishi", "")}, // 045 Pulukishi
-            { 046, new InnateSkill(383, 15, "Ongkhot", "")}, // 046 Ongkhot
+            { 046, new InnateSkill(383, 00, "Phys Gestalt", "Ongkhot gains Phys skill potential \nbased on the total potential of \nallies in the active party.")}, // 046 Ongkhot
             { 047, new InnateSkill(383, 15, "Jinn", "")}, // 047 Jinn
-            { 048, new InnateSkill(383, 15, "Karasu Tengu", "")}, // 048 Karasu Tengu
+            { 048, new InnateSkill(383, 04, "Force Gestalt", "Karasu Tengu gains Force skill potential \nbased on the total potential of \nallies in the active party.")}, // 048 Karasu Tengu
             { 049, new InnateSkill(383, 15, "Dís", "")}, // 049 Dís
             { 050, new InnateSkill(383, 15, "Isora", "")}, // 050 Isora
             { 051, new InnateSkill(383, 15, "Apsaras", "")}, // 051 Apsaras
-            { 052, new InnateSkill(383, 15, "Koppa Tengu", "")}, // 052 Koppa Tengu
+            { 052, new InnateSkill(383, 04, "Force Gestalt", "Koppa Tengu gains Force skill potential \nbased on the total potential of \nallies in the active party.")}, // 052 Koppa Tengu
             { 053, new InnateSkill(383, 15, "Titania", "")}, // 053 Titania
             { 054, new InnateSkill(383, 15, "Oberon", "")}, // 054 Oberon
-            { 055, new InnateSkill(383, 15, "Troll", "")}, // 055 Troll
+            { 055, new InnateSkill(383, 02, "Ice Gestalt", "Troll gains Ice skill potential \nbased on the total potential of \nallies in the active party.")}, // 055 Troll
             { 056, new InnateSkill(383, 15, "Setanta", "")}, // 056 Setanta
             { 057, new InnateSkill(383, 15, "Kelpie", "")}, // 057 Kelpie
             { 058, new InnateSkill(383, 15, "Jack-o'-Lantern", "")}, // 058 Jack-o'-Lantern
@@ -80,21 +80,21 @@ namespace NocturneInsaniax
             { 062, new InnateSkill(383, 15, "Throne", "")}, // 062 Throne
             { 063, new InnateSkill(383, 06, "Light Enhancer", "While in the active party, \nraise allies' Light skill potential \nto Dominion's if it was lower.")}, // 063 Dominion
             { 064, new InnateSkill(383, 15, "Virtue", "")}, // 064 Virtue
-            { 065, new InnateSkill(383, 15, "Power", "")}, // 065 Power
+            { 065, new InnateSkill(383, 06, "Light Gestalt", "Power gains Light skill potential \nbased on the total potential of \nallies in the active party.")}, // 065 Power
             { 066, new InnateSkill(383, 15, "Principality", "")}, // 066 Principality
             { 067, new InnateSkill(383, 15, "Archangel", "")}, // 067 Archangel
             { 068, new InnateSkill(383, 15, "Angel", "")}, // 068 Angel
             { 069, new InnateSkill(383, 15, "Flauros", "")}, // 069 Flauros
             { 070, new InnateSkill(383, 15, "Decarabia", "")}, // 070 Decarabia
             { 071, new InnateSkill(383, 15, "Ose", "")}, // 071 Ose
-            { 072, new InnateSkill(383, 15, "Berith", "")}, // 072 Berith
+            { 072, new InnateSkill(383, 01, "Fire Gestalt", "Berith gains Fire skill potential \nbased on the total potential of \nallies in the active party.")}, // 072 Berith
             { 073, new InnateSkill(383, 15, "Eligor", "")}, // 073 Eligor
             { 074, new InnateSkill(383, 15, "Forneus", "")}, // 074 Forneus
-            { 075, new InnateSkill(383, 15, "Yurlungur", "")}, // 075 Yurlungur
+            { 075, new InnateSkill(383, 02, "Ice Gestalt", "Yurlungur gains Ice skill potential \nbased on the total potential of \nallies in the active party.")}, // 075 Yurlungur
             { 076, new InnateSkill(383, 15, "Quetzalcoatl", "")}, // 076 Quetzalcoatl
-            { 077, new InnateSkill(383, 15, "Naga Raja", "")}, // 077 Naga Raja
+            { 077, new InnateSkill(383, 03, "Elec Gestalt", "Naga Raja gains Elec skill potential \nbased on the total potential of \nallies in the active party.")}, // 077 Naga Raja
             { 078, new InnateSkill(383, 15, "Mizuchi", "")}, // 078 Mizuchi
-            { 079, new InnateSkill(383, 15, "Naga", "")}, // 079 Naga
+            { 079, new InnateSkill(383, 03, "Elec Gestalt", "Naga gains Elec skill potential \nbased on the total potential of \nallies in the active party.")}, // 079 Naga
             { 080, new InnateSkill(383, 15, "Nozuchi", "")}, // 080 Nozuchi
             { 081, new InnateSkill(383, 15, "Cerberus", "")}, // 081 Cerberus
             { 082, new InnateSkill(383, 15, "Orthrus", "")}, // 082 Orthrus
@@ -103,49 +103,49 @@ namespace NocturneInsaniax
             { 085, new InnateSkill(383, 15, "Inugami", "")}, // 085 Inugami
             { 086, new InnateSkill(383, 15, "Nekomata", "")}, // 086 Nekomata
             { 087, new InnateSkill(383, 15, "Gogmagog", "")}, // 087 Gogmagog
-            { 088, new InnateSkill(383, 00, "Phys Enhancer", "While in the active party, \nraise allies' Phys skill potential \nto Fomorian's if it was lower.")}, // 088 Titan
+            { 088, new InnateSkill(383, 00, "Phys Enhancer", "While in the active party, \nraise allies' Phys skill potential \nto Titan's if it was lower.")}, // 088 Titan
             { 089, new InnateSkill(383, 15, "Sarutahiko", "")}, // 089 Sarutahiko
             { 090, new InnateSkill(383, 15, "Sudama", "")}, // 090 Sudama
-            { 091, new InnateSkill(383, 15, "Hua Po", "")}, // 091 Hua Po
+            { 091, new InnateSkill(383, 01, "Fire Gestalt", "Hua Po gains Fire skill potential \nbased on the total potential of \nallies in the active party.")}, // 091 Hua Po
             { 092, new InnateSkill(383, 15, "Kodama", "")}, // 092 Kodama
             { 093, new InnateSkill(383, 15, "Shiki-Ouji", "")}, // 093 Shiki-Ouji
             { 094, new InnateSkill(383, 15, "Oni", "")}, // 094 Oni
             { 095, new InnateSkill(383, 15, "Yomotsu-Ikusa", "")}, // 095 Yomotsu-Ikusa
             { 096, new InnateSkill(383, 15, "Momunofu", "")}, // 096 Momunofu
-            { 097, new InnateSkill(383, 15, "Shikigami", "")}, // 097 Shikigami
-            { 098, new InnateSkill(383, 15, "Rangda", "")}, // 098 Rangda
+            { 097, new InnateSkill(383, 03, "Elec Gestalt", "Shikigami gains Elec skill potential \nbased on the total potential of \nallies in the active party.")}, // 097 Shikigami
+            { 098, new InnateSkill(383, 01, "Fire Gestalt", "Rangda gains Fire skill potential \nbased on the total potential of \nallies in the active party.")}, // 098 Rangda
             { 099, new InnateSkill(383, 15, "Dakini", "")}, // 099 Dakini
             { 100, new InnateSkill(383, 15, "Yaksini", "")}, // 100 Yaksini
             { 101, new InnateSkill(383, 15, "Yomotsu-Shikome", "")}, // 101 Yomotsu-Shikome
             { 102, new InnateSkill(383, 15, "Taraka", "")}, // 102 Taraka
-            { 103, new InnateSkill(383, 15, "Datsue-Ba", "")}, // 103 Datsue-Ba
+            { 103, new InnateSkill(383, 02, "Ice Gestalt", "Datsue-Ba gains Ice skill potential \nbased on the total potential of \nallies in the active party.")}, // 103 Datsue-Ba
             { 104, new InnateSkill(383, 15, "Mada", "")}, // 104 Mada
             { 105, new InnateSkill(383, 15, "Girimekhala", "")}, // 105 Girimekhala
             { 106, new InnateSkill(383, 15, "Taotie", "")}, // 106 Taotie
             { 107, new InnateSkill(383, 15, "Pazuzu", "")}, // 107 Pazuzu
-            { 108, new InnateSkill(383, 15, "Baphomet", "")}, // 108 Baphomet
+            { 108, new InnateSkill(383, 07, "Dark Gestalt", "Baphomet gains Dark skill potential \nbased on the total potential of \nallies in the active party.")}, // 108 Baphomet
             { 109, new InnateSkill(383, 15, "Mot", "")}, // 109 Mot
             { 110, new InnateSkill(383, 15, "Alciel", "")}, // 110 Alciel
-            { 111, new InnateSkill(383, 01, "Laevateinn", "Fire Enhancer & Surt's normal \nattacks deal medium Fire damage.")}, // 111 Surt
+            { 111, new InnateSkill(383, 01, "Laevateinn", "Fire Enhancer and Surt's normal \nattacks deal medium Fire damage.")}, // 111 Surt
             { 112, new InnateSkill(383, 15, "Abaddon", "")}, // 112 Abaddon
             { 113, new InnateSkill(383, 15, "Loki", "")}, // 113 Loki
             { 114, new InnateSkill(383, 15, "Lilith", "")}, // 114 Lilith
-            { 115, new InnateSkill(383, 15, "Nyx", "")}, // 115 Nyx
+            { 115, new InnateSkill(383, 15, "Nyx", "")}, // 115 Nyx - Elec Gestalt?
             { 116, new InnateSkill(383, 15, "Queen Mab", "")}, // 116 Queen Mab
             { 117, new InnateSkill(383, 15, "Succubus", "")}, // 117 Succubus
             { 118, new InnateSkill(383, 15, "Incubus", "")}, // 118 Incubus
             { 119, new InnateSkill(383, 00, "Phys Enhancer", "While in the active party, \nraise allies' Phys skill potential \nto Fomorian's if it was lower.")}, // 119 Fomorian
             { 120, new InnateSkill(383, 15, "Lilim", "")}, // 120 Lilim
-            { 121, new InnateSkill(383, 15, "Hresvelgr", "")}, // 121 Hresvelgr
+            { 121, new InnateSkill(383, 04, "Force Gestalt", "Hresvelgr gains Force skill potential \nbased on the total potential of \nallies in the active party.")}, // 121 Hresvelgr
             { 122, new InnateSkill(383, 15, "Mothman", "")}, // 122 Mothman
             { 123, new InnateSkill(383, 15, "Raiju", "")}, // 123 Raiju
             { 124, new InnateSkill(383, 15, "Nue", "")}, // 124 Nue
             { 125, new InnateSkill(383, 15, "Bicorn", "")}, // 125 Bicorn
-            { 126, new InnateSkill(383, 15, "Zhen", "")}, // 126 Zhen
+            { 126, new InnateSkill(383, 04, "Force Gestalt", "Zhen gains Force skill potential \nbased on the total potential of \nallies in the active party.")}, // 126 Zhen
             { 127, new InnateSkill(383, 15, "Vetala", "")}, // 127 Vetala
             { 128, new InnateSkill(383, 15, "Legion", "")}, // 128 Legion
             { 129, new InnateSkill(383, 15, "Yaka", "")}, // 129 Yaka
-            { 130, new InnateSkill(383, 15, "Choronzon", "")}, // 130 Choronzon
+            { 130, new InnateSkill(383, 00, "Phys Gestalt", "Choronzon gains Phys skill potential \nbased on the total potential of \nallies in the active party.")}, // 130 Choronzon
             { 131, new InnateSkill(383, 15, "Preta", "")}, // 131 Preta
             { 132, new InnateSkill(383, 07, "Dark Enhancer", "While in the active party, \nraise allies' Dark skill potential \nto Shadow's if it was lower.")}, // 132 Shadow
             { 133, new InnateSkill(383, 15, "Black Ooze", "")}, // 133 Black Ooze
@@ -161,7 +161,7 @@ namespace NocturneInsaniax
             { 143, new InnateSkill(383, 15, "Valkyrie", "")}, // 143 Valkyrie
             { 144, new InnateSkill(383, 15, "Arahabaki", "")}, // 144 Arahabaki
             { 145, new InnateSkill(383, 15, "Kurama Tengu", "")}, // 145 Kurama Tengu
-            { 146, new InnateSkill(383, 15, "Hanuman", "")}, // 146 Hanuman
+            { 146, new InnateSkill(383, 15, "Ramayana", "Phys Gestalt and after \nHanuman heals a single ally, \ncure their ailments.")}, // 146 Hanuman
             { 147, new InnateSkill(383, 15, "Cu Chulainn", "")}, // 147 Cu Chulainn
             { 148, new InnateSkill(383, 15, "Qing Long", "")}, // 148 Qing Long
             { 149, new InnateSkill(383, 15, "Xuanwu", "")}, // 149 Xuanwu
@@ -327,12 +327,12 @@ namespace NocturneInsaniax
             { 309, new InnateSkill(383, 15, "Boss Eligor", "")}, // 309 Boss Eligor
             { 310, new InnateSkill(383, 15, "Ambush Kelpie", "")}, // 310 Ambush Kelpie
             { 311, new InnateSkill(383, 15, "Ambush Kelpie", "")}, // 311 Ambush Kelpie
-            { 312, new InnateSkill(383, 15, "Boss Berith", "")}, // 312 Boss Berith
+            { 312, new InnateSkill(383, 01, "Fire Gestalt", "Berith gains Fire skill potential \nbased on the total potential of \nallies in the active party.")}, // 312 Boss Berith
             { 313, new InnateSkill(383, 15, "Boss Succubus", "")}, // 313 Boss Succubus
             { 314, new InnateSkill(383, 15, "Ambush High Pixie", "")}, // 314 Ambush High Pixie
             { 315, new InnateSkill(383, 15, "Boss Kaiwan", "")}, // 315 Boss Kaiwan
             { 316, new InnateSkill(383, 15, "Forced Nekomata", "")}, // 316 Forced Nekomata
-            { 317, new InnateSkill(383, 15, "Boss Troll", "")}, // 317 Boss Troll
+            { 317, new InnateSkill(383, 02, "Ice Gestalt", "Troll gains Ice skill potential \nbased on the total potential of \nallies in the active party.")}, // 317 Boss Troll
             { 318, new InnateSkill(383, 15, "Forced Will o' Wisp", "")}, // 318 Forced Will o' Wisp
             { 319, new InnateSkill(383, 15, "Forced Preta", "")}, // 319 Forced Preta
             { 320, new InnateSkill(383, 15, "Boss Bishamonten 1", "")}, // 320 Boss Bishamonten 1
@@ -401,18 +401,81 @@ namespace NocturneInsaniax
             { 383, new InnateSkill(383, 15, "", "")}  // 383 
         };
 
+        private static Dictionary<ushort, InnateSkill> magatamaInnateSkills = new Dictionary<ushort, InnateSkill>
+        {
+            { 00, new InnateSkill(383, 15, "", "")}, // 00
+            { 01, new InnateSkill(383, 15, "Marogareh", "")}, // 01 Marogareh
+            { 02, new InnateSkill(383, 02, "Ice Gestalt", "Gain Ice skill potential \nbased on the total potential of \nallies in the active party.")}, // 02 Wadatsumi
+            { 03, new InnateSkill(383, 15, "Ankh", "")}, // 03 Ankh
+            { 04, new InnateSkill(383, 15, "Iyomante", "")}, // 04 Iyomante
+            { 05, new InnateSkill(383, 01, "Fire Gestalt", "Gain Fire skill potential \nbased on the total potential of \nallies in the active party.")}, // 05 Shiranui
+            { 06, new InnateSkill(383, 04, "Force Gestalt", "Gain Force skill potential \nbased on the total potential of \nallies in the active party.")}, // 06 Hifumi
+            { 07, new InnateSkill(383, 00, "Phys Gestalt", "Gain Phys skill potential \nbased on the total potential of \nallies in the active party.")}, // 07 Kamudo
+            { 08, new InnateSkill(383, 03, "Elec Gestalt", "Gain Elec skill potential \nbased on the total potential of \nallies in the active party.")}, // 08 Narukami
+            { 09, new InnateSkill(383, 15, "Anathema", "")}, // 09 Anathema
+            { 10, new InnateSkill(383, 15, "Miasma", "")}, // 10 Miasma
+            { 11, new InnateSkill(383, 15, "Nirvana", "")}, // 11 Nirvana
+            { 12, new InnateSkill(383, 15, "Murakumo", "")}, // 12 Murakumo
+            { 13, new InnateSkill(383, 15, "Geis", "")}, // 13 Geis
+            { 14, new InnateSkill(383, 15, "Djed", "")}, // 14 Djed
+            { 15, new InnateSkill(419, 15, "Muspell", "")}, // 15 Muspell
+            { 16, new InnateSkill(383, 15, "Gehenna", "")}, // 16 Gehenna
+            { 17, new InnateSkill(383, 15, "Kamurogi", "")}, // 17 Kamurogi
+            { 18, new InnateSkill(383, 15, "Satan", "")}, // 18 Satan
+            { 19, new InnateSkill(383, 15, "Adama", "")}, // 19 Adama
+            { 20, new InnateSkill(418, 15, "Vimana", "")}, // 20 Vimana
+            { 21, new InnateSkill(383, 15, "Gundari", "")}, // 21 Gundari
+            { 22, new InnateSkill(383, 15, "Sophia", "")}, // 22 Sophia
+            { 23, new InnateSkill(383, 15, "Gaea", "")}, // 23 Gaea
+            { 24, new InnateSkill(383, 15, "Kailash", "")}, // 24 Kailash
+            { 25, new InnateSkill(383, 15, "Masakados", "")} // 25 Masakados
+        };
+
+        private static Dictionary<sbyte, List<ushort>> gestaltUsers = new Dictionary<sbyte, List<ushort>>
+        {
+            { 00, new List<ushort> { 16, 46, 130, 146 } }, // Phys
+            { 01, new List<ushort> { 72, 91, 98 } }, // Fire
+            { 02, new List<ushort> { 55, 75, 103 } }, // Ice
+            { 03, new List<ushort> { 77, 79, 97 } }, // Elec
+            { 04, new List<ushort> { 48, 52, 121, 126 } }, // Force
+            { 05, new List<ushort>() }, // Almighty (Not Used)
+            { 06, new List<ushort> { 65 } }, // Light
+            { 07, new List<ushort> { 108 } } // Dark
+        };
+
+        private static Dictionary<sbyte, byte> gestaltMagatama = new Dictionary<sbyte, byte>
+        {
+            { 00, 7 }, // Phys
+            { 01, 5 }, // Fire
+            { 02, 2 }, // Ice
+            { 03, 8 }, // Elec
+            { 04, 6 }, // Force
+        };
+
+        private static Dictionary<sbyte, List<ushort>> enhancerUsers = new Dictionary<sbyte, List<ushort>>
+        {
+            { 0, new List<ushort> { 88, 119 } }, // Phys
+            { 1, new List<ushort> { 36, 111, 335 } }, // Fire
+            { 2, new List<ushort> { 17, 37 } }, // Ice
+            { 3, new List<ushort> { 22, 39, 302, 337 } }, // Elec
+            { 4, new List<ushort> { 38, 152 } }, // Force
+            { 5, new List<ushort>() }, // Almighty (Not Used)
+            { 6, new List<ushort> { 35, 63 } }, // Light
+            { 7, new List<ushort> { 132, 177 } } // Dark
+        };
+
         private static Dictionary<ushort, List<int>> negoSkillScenarios = new Dictionary<ushort, List<int>>
         {
-            { 409, new List<int> { 0 } },          // Haggle
-            { 410, new List<int> { 1 } },          // Arbitration
-            { 411, new List<int> { 2 } },          // Detain
-            { 412, new List<int> { 3 } },          // Kinspeak
-            { 413, new List<int> { 0 } },          // Persuade
-            { 414, new List<int> { 0 } },          // Intimidate
-            { 415, new List<int> { 0 } },          // Nag
-            { 418, new List<int> { 1 } },          // Maiden Plea
+            { 409, new List<int> { 0 } }, // Haggle
+            { 410, new List<int> { 1 } }, // Arbitration
+            { 411, new List<int> { 2 } }, // Detain
+            { 412, new List<int> { 3 } }, // Kinspeak
+            { 413, new List<int> { 0 } }, // Persuade
+            { 414, new List<int> { 0 } }, // Intimidate
+            { 415, new List<int> { 0 } }, // Nag
+            { 418, new List<int> { 1 } }, // Maiden Plea
             { 419, new List<int> { 0, 1, 2, 3 } }, // Wine Party
-            { 420, new List<int> { 0 } },          // Flatter
+            { 420, new List<int> { 0 } } // Flatter
         };
 
         static ushort innateSkillId = 383;
@@ -485,26 +548,29 @@ namespace NocturneInsaniax
                 // If it's the trait skill
                 if (id == innateSkillId)
                 {
-                    string skillName;
-
                     // If it's Demi-fiend's trait skill
                     if (currentDemonID == 0)
                     {
-                        // Display the name of the currently equipped magatama
-                        skillName = datHeartsName.Get(dds3GlobalWork.DDS3_GBWK.heartsequip);
-                        __result = "Trait: " + skillName;
+                        if (demonInnateSkills[currentDemonID].skillId != 383)
+                        {
+                            __result = datSkillName.Get(magatamaInnateSkills[dds3GlobalWork.DDS3_GBWK.heartsequip].skillId);
+                        }
+                        else
+                        {
+                            __result = magatamaInnateSkills[dds3GlobalWork.DDS3_GBWK.heartsequip].skillName;
+                        }
                     }
 
                     // If it's a demon's trait skill
                     else
                     {
-                        if (innateSkills[currentDemonID].skillId != 383)
+                        if (demonInnateSkills[currentDemonID].skillId != 383)
                         {
-                            __result = datSkillName.Get(innateSkills[currentDemonID].skillId);
+                            __result = datSkillName.Get(demonInnateSkills[currentDemonID].skillId);
                         }
                         else
                         {
-                            __result = innateSkills[currentDemonID].skillName;
+                            __result = demonInnateSkills[currentDemonID].skillName;
                         }
                     }
                 }
@@ -523,20 +589,26 @@ namespace NocturneInsaniax
                     // If it's Demi-fiend's trait skill
                     if (currentDemonID == 0)
                     {
-                        // Display the name of the currently equipped magatama
-                        __result = datHeartsName.Get(dds3GlobalWork.DDS3_GBWK.heartsequip) + "'s trait skill.";
+                        if (demonInnateSkills[currentDemonID].skillId != 383)
+                        {
+                            __result = datSkillHelp_msg.Get(magatamaInnateSkills[dds3GlobalWork.DDS3_GBWK.heartsequip].skillId);
+                        }
+                        else
+                        {
+                            __result = magatamaInnateSkills[dds3GlobalWork.DDS3_GBWK.heartsequip].skillHelp;
+                        }
                     }
 
                     // If it's a demon's trait skill
                     else
                     {
-                        if (innateSkills[currentDemonID].skillId != 383)
+                        if (demonInnateSkills[currentDemonID].skillId != 383)
                         {
-                            __result = datSkillHelp_msg.Get(innateSkills[currentDemonID].skillId);
+                            __result = datSkillHelp_msg.Get(demonInnateSkills[currentDemonID].skillId);
                         }
                         else
                         {
-                            __result = innateSkills[currentDemonID].skillHelp;
+                            __result = demonInnateSkills[currentDemonID].skillHelp;
                         }
                     }
                 }
@@ -628,7 +700,7 @@ namespace NocturneInsaniax
             {
                 if (text1 == "Attack" && datDevilFormat.Get(actionProcessData.work.id).attackattr != 0)
                 {
-                    text1 = innateSkills[actionProcessData.work.id].skillName;
+                    text1 = demonInnateSkills[actionProcessData.work.id].skillName;
                 }
             }
         }
@@ -645,7 +717,7 @@ namespace NocturneInsaniax
         {
             public static void Postfix(datUnitWork_t work, uint skill, ref int __result)
             {
-                if (innateSkills[work.id].skillId == skill)
+                if (demonInnateSkills[work.id].skillId == skill)
                     __result = 1;
             }
         }
@@ -660,7 +732,7 @@ namespace NocturneInsaniax
                 for (int i = 1; i <= 3; i++)
                 {
                     var work = nbMainProcess.nbGetUnitWorkFromFormindex(party[i].formindex);
-                    if (innateSkills[work.id].skillId >= 409 && innateSkills[work.id].skillId <= 420)
+                    if (demonInnateSkills[work.id].skillId >= 409 && demonInnateSkills[work.id].skillId <= 420)
                     {
                         __result += 1;
                         break;
@@ -687,10 +759,10 @@ namespace NocturneInsaniax
                 for (short i = 1; i <= 3; i++)
                 {
                     var work = nbMainProcess.nbGetUnitWorkFromFormindex(party[i].formindex);
-                    if (innateSkills[work.id].skillId >= 409 && innateSkills[work.id].skillId <= 420)
+                    if (demonInnateSkills[work.id].skillId >= 409 && demonInnateSkills[work.id].skillId <= 420)
                     {
-                        if (negoSkillScenarios[innateSkills[work.id].skillId].Contains(type))
-                            __result = Convert.ToUInt32(Convert.ToString(i, 2) + "0000000" + Convert.ToString(innateSkills[work.id].skillId, 2), 2);
+                        if (negoSkillScenarios[demonInnateSkills[work.id].skillId].Contains(type))
+                            __result = Convert.ToUInt32(Convert.ToString(i, 2) + "0000000" + Convert.ToString(demonInnateSkills[work.id].skillId, 2), 2);
                         break;
                     }
                 }
