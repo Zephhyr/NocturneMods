@@ -524,7 +524,8 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(111, 0);
                     //datCalc.datAddDevil(20, 0);
                     //datCalc.datAddDevil(69, 0);
-                    datCalc.datAddDevil(146, 0);
+                    datCalc.datAddDevil(30, 0);
+                    datCalc.datAddDevil(227, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    //work.skill[0] = 192;
