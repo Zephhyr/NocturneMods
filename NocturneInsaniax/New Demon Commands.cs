@@ -69,6 +69,17 @@ namespace NocturneInsaniax
                     //s.commlist[0] = skillCommands;
                     //s.commcnt[0] = 288;
                 }
+                //else
+                //{
+                //    // Test - Add all skills
+                //    var skillCommands = new ushort[288];
+                //    for (ushort i = 0; i < 288; i++)
+                //        skillCommands[i] = i;
+                //    skillCommands[0] = s.commlist[0][0];
+
+                //    s.commlist[0] = skillCommands;
+                //    s.commcnt[0] = 288;
+                //}
             }
         }
 
