@@ -598,9 +598,8 @@ namespace NocturneInsaniax
             datEncount.tbl[713].devil[2] = 321;
 
             //datEncount.tbl[990].devil[0] = 225; // Ambush Cube Doppelganger
-            datEncount.tbl[990].devil[0] = 46; // Ambush Cube Doppelganger
-            datEncount.tbl[990].devil[1] = 46; // Ambush Cube Doppelganger
-            datEncount.tbl[990].devil[2] = 46; // Ambush Cube Doppelganger
+            datEncount.tbl[990].devil[0] = 70; // Ambush Cube Doppelganger
+            datEncount.tbl[990].devil[1] = 74; // Ambush Cube Doppelganger
             datEncount.tbl[990].btlsound = 16;
 
             datEncount.tbl[653].devil[0] = 226; // Ambush Cube Nightmare

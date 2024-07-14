@@ -28,6 +28,19 @@ namespace NocturneInsaniax
         {
             public static bool Prefix(ref int id, ref string __result)
             {
+                // Decarabia's Kept Waiting
+                try
+                {
+                    if (id == 150 && (actionProcessData.work.id == 70 &&
+                                ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 74)) ||
+                                (actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 74)))))
+                    {
+                        __result = "Kept Waiting";
+                        return false;
+                    }
+                } catch { }
+                
+
                 switch (id)
                 {            
                     // Vanilla Skills
@@ -207,7 +220,7 @@ namespace NocturneInsaniax
                     case 194: __result = "Medium Light damage to all foes."; return false; // Starlight
                     case 195: __result = "Massive Light damage to all foes."; return false; // Radiance
                     case 199: __result = "Dark: Chance to reduce HP of one foe to 1."; return false; // Evil Gaze
-                    case 202: __result = "Lowers all foes' Defense. \nMay inflict Poison."; return false; // Toxic Cloud
+                    case 202: __result = "Lowers all foes' Defense. \nMay inflict Poison."; return false; // Toxic Spray
                     case 207: __result = "Medium Curse damage to all foes. \nMay inflict Mute."; return false; // Dismal Tune
                     case 208: __result = "Chance to reduce HP of all foes to 1."; return false; // Sol Niger
                     case 217: __result = "Massive Mind damage to all foes. \nMay inflict Panic."; return false; // Intoxicate
@@ -523,9 +536,8 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(30, 0);
                     //datCalc.datAddDevil(111, 0);
                     //datCalc.datAddDevil(20, 0);
-                    //datCalc.datAddDevil(69, 0);
-                    datCalc.datAddDevil(30, 0);
-                    datCalc.datAddDevil(227, 0);
+                    datCalc.datAddDevil(70, 0);
+                    datCalc.datAddDevil(74, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    //work.skill[0] = 192;
@@ -559,10 +571,10 @@ namespace NocturneInsaniax
                     //    work.skill[7] = 419;
                     //    work.skillcnt = 8;
                     //}
-                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 146)) // Hanuman
+                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 74)) // Forneus
                     {
-                        work.skill[2] = 37;
-                        work.skill[3] = 367;
+                        work.skill[2] = 53;
+                        work.skill[3] = 65;
                         work.skillcnt = 4;
                     }
                     //}
@@ -869,7 +881,10 @@ namespace NocturneInsaniax
                             !(actionProcessData.work.nowcommand == 3 && actionProcessData.work.nowindex == 0) &&
                             actionProcessData.work.nowcommand != 6)
                         {
-                            if (datCalc.datCheckSyojiSkill(actionProcessData.work, 370) != 0)
+                            if (datCalc.datCheckSyojiSkill(actionProcessData.work, 370) != 0 ||
+                                (actionProcessData.work.id == 70 && // Decarabia's Kept Waiting
+                                ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 74)) ||
+                                (actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 74)))))
                                 nbMainProcess.nbPushAction(4, actionProcessData.partyindex, actionProcessData.partyindex, 150);
                             else
                             {
@@ -1235,7 +1250,7 @@ namespace NocturneInsaniax
 
             BaelsBane(201);
 
-            ToxicCloud(202);
+            ToxicSpray(202);
             WarCry(203);
             FogBreath(204);
             Taunt(205);
@@ -4794,7 +4809,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].badlevel = 50;
         }
 
-        private static void ToxicCloud(ushort id)
+        private static void ToxicSpray(ushort id)
         {
             datNormalSkill.tbl[id].badlevel = 30;
             datNormalSkill.tbl[id].badtype = 1;

@@ -3976,8 +3976,8 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[6].Param = 244; // Icy Death
 
             // Enemy Stats
-            datDevilFormat.tbl[id].hp = 200;
-            datDevilFormat.tbl[id].maxhp = 200;
+            datDevilFormat.tbl[id].hp = 280;
+            datDevilFormat.tbl[id].maxhp = 280;
             datDevilFormat.tbl[id].mp = 108;
             datDevilFormat.tbl[id].maxmp = 108;
 
