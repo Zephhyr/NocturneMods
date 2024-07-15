@@ -533,12 +533,8 @@ namespace NocturneInsaniax
                     // Test - Add rigged demons to party
                     //dds3GlobalWork.DDS3_GBWK.maka = 0;
 
-                    //var enemyunit = nbMainProcess.nbGetMainProcessData().enemyunit;
-                    //MelonLogger.Msg("enemyunit Length: " + enemyunit.Length);
-
-                    //MelonLogger.Msg("enemyunit: ");
-                    //foreach (var unit in nbMainProcess.nbGetMainProcessData().enemyunit)
-                    //    MelonLogger.Msg(unit.id);
+                    //var output = Newtonsoft.Json.JsonConvert.SerializeObject(nbActionProcess.sobedtbl);
+                    //MelonLogger.Msg(output);
 
                     //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 149).Count() == 0)
                     //{
@@ -548,9 +544,8 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(147, 0);
                     //datCalc.datAddDevil(30, 0);
                     //datCalc.datAddDevil(111, 0);
-                    //datCalc.datAddDevil(20, 0);
-                    //datCalc.datAddDevil(70, 0);
-                    //datCalc.datAddDevil(74, 0);
+                    datCalc.datAddDevil(21, 0);
+                    //datCalc.datAddDevil(130, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    //work.skill[0] = 192;

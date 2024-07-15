@@ -523,6 +523,18 @@ namespace NocturneInsaniax
         //    }
         //}
 
+        [HarmonyPatch(typeof(billManager), nameof(billManager.dds3BillboardFileLoad))]
+        private class dds3BillboardFileLoadPatch
+        {
+            public static void Postfix(ref int type, ref string pFileName, ref string akey)
+            {
+                MelonLogger.Msg("--billManager.dds3BillboardFileLoad--");
+                MelonLogger.Msg("type: " + type);
+                MelonLogger.Msg("pFileName: " + pFileName);
+                MelonLogger.Msg("akey: " + akey);
+            }
+        }
+
         [HarmonyPatch(typeof(billManager), nameof(billManager.dds3BillboardGeneral))]
         private class dds3BillboardGeneralPatch
         {
@@ -532,7 +544,6 @@ namespace NocturneInsaniax
                 MelonLogger.Msg("number: " + number);
             }
         }
-
         [HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_BasicCreate))]
         private class dds3Particle_BasicCreatePatch
         {
@@ -542,6 +553,150 @@ namespace NocturneInsaniax
                 MelonLogger.Msg("pCopy: " + pCopy);
             }
         }
+        [HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_SpiralCreate))]
+        private class dds3Particle_SpiralCreatePatch
+        {
+            public static void Postfix(ref int bPos, ref bool pCopy, ref int billno)
+            {
+                MelonLogger.Msg("--parManager.dds3Particle_SpiralCreate--");
+                MelonLogger.Msg("bPos: " + bPos);
+                MelonLogger.Msg("pCopy: " + pCopy);
+                MelonLogger.Msg("billno: " + billno);
+            }
+        }
+        [HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_SmokeCreate))]
+        private class dds3Particle_SmokeCreatePatch
+        {
+            public static void Postfix(ref int bPos, ref bool pCopy, ref int billno)
+            {
+                MelonLogger.Msg("--parManager.dds3Particle_SmokeCreate--");
+                MelonLogger.Msg("bPos: " + bPos);
+                MelonLogger.Msg("pCopy: " + pCopy);
+                MelonLogger.Msg("billno: " + billno);
+            }
+        }
+        [HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_SparkCreate))]
+        private class dds3Particle_SparkCreatePatch
+        {
+            public static void Postfix(ref int bPos, ref bool pCopy, ref int billno)
+            {
+                MelonLogger.Msg("--parManager.dds3Particle_SparkCreate--");
+                MelonLogger.Msg("bPos: " + bPos);
+                MelonLogger.Msg("pCopy: " + pCopy);
+                MelonLogger.Msg("billno: " + billno);
+            }
+        }
+        [HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_RadiateCreate))]
+        private class dds3Particle_RadiateCreatePatch
+        {
+            public static void Postfix(ref int bPos, ref bool pCopy, ref int billno)
+            {
+                MelonLogger.Msg("--parManager.dds3Particle_RadiateCreate--");
+                MelonLogger.Msg("bPos: " + bPos);
+                MelonLogger.Msg("pCopy: " + pCopy);
+                MelonLogger.Msg("billno: " + billno);
+            }
+        }
+        [HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_SphereSpiralCreate))]
+        private class dds3Particle_SphereSpiralCreatePatch
+        {
+            public static void Postfix(ref int bPos, ref bool pCopy, ref int billno)
+            {
+                MelonLogger.Msg("--parManager.dds3Particle_SphereSpiralCreate--");
+                MelonLogger.Msg("bPos: " + bPos);
+                MelonLogger.Msg("pCopy: " + pCopy);
+                MelonLogger.Msg("billno: " + billno);
+            }
+        }
+        [HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_SphereSmokeCreate))]
+        private class dds3Particle_SphereSmokeCreatePatch
+        {
+            public static void Postfix(ref int bPos, ref bool pCopy, ref int billno)
+            {
+                MelonLogger.Msg("--parManager.dds3Particle_SphereSmokeCreate--");
+                MelonLogger.Msg("bPos: " + bPos);
+                MelonLogger.Msg("pCopy: " + pCopy);
+                MelonLogger.Msg("billno: " + billno);
+            }
+        }
+        [HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_SphereRingCreate))]
+        private class dds3Particle_SphereRingCreatePatch
+        {
+            public static void Postfix(ref int bPos, ref bool pCopy, ref int billno)
+            {
+                MelonLogger.Msg("--parManager.dds3Particle_SphereRingCreate--");
+                MelonLogger.Msg("bPos: " + bPos);
+                MelonLogger.Msg("pCopy: " + pCopy);
+                MelonLogger.Msg("billno: " + billno);
+            }
+        }
+        [HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_Spark2Create))]
+        private class dds3Particle_Spark2CreatePatch
+        {
+            public static void Postfix(ref int bPos, ref bool pCopy, ref int billno)
+            {
+                MelonLogger.Msg("--parManager.dds3Particle_Spark2Create--");
+                MelonLogger.Msg("bPos: " + bPos);
+                MelonLogger.Msg("pCopy: " + pCopy);
+                MelonLogger.Msg("billno: " + billno);
+            }
+        }
+        [HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_SphereAtomCreate))]
+        private class dds3Particle_SphereAtomCreatePatch
+        {
+            public static void Postfix(ref int bPos, ref bool pCopy, ref int billno)
+            {
+                MelonLogger.Msg("--parManager.dds3Particle_SphereAtomCreate--");
+                MelonLogger.Msg("bPos: " + bPos);
+                MelonLogger.Msg("pCopy: " + pCopy);
+                MelonLogger.Msg("billno: " + billno);
+            }
+        }
+        [HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_NopCreate))]
+        private class dds3Particle_NopCreatePatch
+        {
+            public static void Postfix(ref int bPos, ref bool pCopy, ref int billno)
+            {
+                MelonLogger.Msg("--parManager.dds3Particle_NopCreate--");
+                MelonLogger.Msg("bPos: " + bPos);
+                MelonLogger.Msg("pCopy: " + pCopy);
+                MelonLogger.Msg("billno: " + billno);
+            }
+        }
+        [HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_SparkOffsetCreate))]
+        private class dds3Particle_SparkOffsetCreatePatch
+        {
+            public static void Postfix(ref int bPos, ref bool pCopy, ref int billno)
+            {
+                MelonLogger.Msg("--parManager.dds3Particle_SparkOffsetCreate--");
+                MelonLogger.Msg("bPos: " + bPos);
+                MelonLogger.Msg("pCopy: " + pCopy);
+                MelonLogger.Msg("billno: " + billno);
+            }
+        }
+        [HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_SmokeOffsetCreate))]
+        private class dds3Particle_SmokeOffsetCreatePatch
+        {
+            public static void Postfix(ref int bPos, ref bool pCopy, ref int billno)
+            {
+                MelonLogger.Msg("--parManager.dds3Particle_SmokeOffsetCreate--");
+                MelonLogger.Msg("bPos: " + bPos);
+                MelonLogger.Msg("pCopy: " + pCopy);
+                MelonLogger.Msg("billno: " + billno);
+            }
+        }
+        [HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_SphereSpiral2Create))]
+        private class dds3Particle_SphereSpiral2CreatePatch
+        {
+            public static void Postfix(ref int bPos, ref bool pCopy, ref int billno)
+            {
+                MelonLogger.Msg("--parManager.dds3Particle_SphereSpiral2Create--");
+                MelonLogger.Msg("bPos: " + bPos);
+                MelonLogger.Msg("pCopy: " + pCopy);
+                MelonLogger.Msg("billno: " + billno);
+            }
+        }
+
 
 
         [HarmonyPatch(typeof(fld_Npc), nameof(fld_Npc.fldItemBoxAdd))]

@@ -147,7 +147,37 @@ namespace NocturneInsaniax
         {
             public static bool Prefix(ref int sformindex, ref float pow, ref float __result)
             {
-                __result = pow * 1.3f;
+                byte fourOniCount = 0;
+
+                if (fourOni.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id))
+                {
+                    if (nbMainProcess.nbGetPartyFromFormindex(sformindex).partyindex <= 3)
+                    {
+                        foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
+                        {
+                            try
+                            {
+                                if (fourOni.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                    fourOniCount++;
+                            }
+                            catch { }
+                        }
+                    }
+                    else
+                    {
+                        foreach (var enemy in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex > 3))
+                        {
+                            try
+                            {
+                                if (fourOni.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
+                                    fourOniCount++;
+                            }
+                            catch { }
+                        }
+                    }
+                }
+
+                __result = pow * (1 + 0.3f + (fourOniCount * 0.1f));
                 return false;
             }
         }

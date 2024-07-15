@@ -68,8 +68,38 @@ namespace NocturneInsaniax
                     }
                 }
 
+                byte fourOniCount = 0;
+
+                if (fourOni.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(formindex).id))
+                {
+                    if (party.partyindex <= 3)
+                    {
+                        foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
+                        {
+                            try
+                            {
+                                if (fourOni.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                    fourOniCount++;
+                            }
+                            catch { }
+                        }
+                    }
+                    else
+                    {
+                        foreach (var enemy in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex > 3))
+                        {
+                            try
+                            {
+                                if (fourOni.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
+                                    fourOniCount++;
+                            }
+                            catch { }
+                        }
+                    }
+                }
+
                 if ((type == 4 && count[15] > 0) || (type == 5 && count[20] > 0))
-                    newEffect *= 2.2;
+                    newEffect *= (2.2 + (fourOniCount * 0.1));
 
                 __result = (float) newEffect;
                 return false;

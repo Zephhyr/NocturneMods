@@ -36,13 +36,13 @@ namespace NocturneInsaniax
             { 018, new InnateSkill(383, 15, "Parvati", "")}, // 018 Parvati
             { 019, new InnateSkill(415, 15, "Entice", "While in the active party, \nmay step in during negotiation to \ntempt a male demon.")}, // 019 Kushinada
             { 020, new InnateSkill(418, 15, "Maiden Plea", "While in the active party, \nmay step in during negotiation and \npacify an enraged demon.")}, // 020 Kikuri-Hime
-            { 021, new InnateSkill(383, 15, "Four Heavenly Kings", "")}, // 021 Bishamonten
+            { 021, new InnateSkill(383, 15, "Four Devas", "")}, // 021 Bishamonten
             { 022, new InnateSkill(383, 03, "Odinson", "Elec Enhancer & Thor's Elec \nattacks have an increased \nchance to inflict Shock.")}, // 022 Thor
-            { 023, new InnateSkill(383, 15, "Four Heavenly Kings", "")}, // 023 Jikokuten
+            { 023, new InnateSkill(383, 15, "Four Devas", "")}, // 023 Jikokuten
             { 024, new InnateSkill(410, 15, "Arbitration", "While in the active party, \nmay step in during negotiation and \nsoothe an enraged demon.")}, // 024 Take-Mikazuchi
             { 025, new InnateSkill(383, 15, "Okuninushi", "")}, // 025 Okuninushi
-            { 026, new InnateSkill(383, 15, "Four Heavenly Kings", "")}, // 026 Koumokuten
-            { 027, new InnateSkill(383, 15, "Four Heavenly Kings", "")}, // 027 Zouchouten
+            { 026, new InnateSkill(383, 15, "Four Devas", "")}, // 026 Koumokuten
+            { 027, new InnateSkill(383, 15, "Four Devas", "")}, // 027 Zouchouten
             { 028, new InnateSkill(414, 15, "Intimidate", "While in the active party, \nmay step in during negotiation to \n'convince' a lower level demon.")}, // 028 Take-Minakata
             { 029, new InnateSkill(383, 15, "Chimera", "")}, // 029 Chimera
             { 030, new InnateSkill(383, 15, "Baihu", "")}, // 030 Baihu
@@ -184,10 +184,10 @@ namespace NocturneInsaniax
             { 166, new InnateSkill(383, 15, "Manikin", "")}, // 166 Manikin
             { 167, new InnateSkill(353, 15, "Lucky Find", "Occasionally find items on the Vortex World Map while in the active party.")}, // 167 Pisaca
             { 168, new InnateSkill(383, 15, "Kaiwan", "")}, // 168 Kaiwan
-            { 169, new InnateSkill(383, 15, "Four Oni", "")}, // 169 Kin-Ki
-            { 170, new InnateSkill(383, 15, "Four Oni", "")}, // 170 Sui-Ki
-            { 171, new InnateSkill(383, 15, "Four Oni", "")}, // 171 Fuu-Ki
-            { 172, new InnateSkill(383, 15, "Four Oni", "")}, // 172 Ongyo-Ki
+            { 169, new InnateSkill(383, 15, "Four Oni", "Kin-Ki's charged/critical damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 169 Kin-Ki
+            { 170, new InnateSkill(383, 15, "Four Oni", "Sui-Ki's charged/critical damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 170 Sui-Ki
+            { 171, new InnateSkill(383, 15, "Four Oni", "Fuu-Ki's charged/critical damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 171 Fuu-Ki
+            { 172, new InnateSkill(383, 15, "Four Oni", "Ongyo-Ki's charged/critical damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 172 Ongyo-Ki
             { 173, new InnateSkill(383, 15, "Clotho", "")}, // 173 Clotho
             { 174, new InnateSkill(383, 15, "Lachesis", "")}, // 174 Lachesis
             { 175, new InnateSkill(383, 15, "Atropos", "")}, // 175 Atropos
@@ -281,10 +281,10 @@ namespace NocturneInsaniax
             { 263, new InnateSkill(383, 15, "Boss Ose", "")}, // 263 Boss Ose
             { 264, new InnateSkill(383, 15, "Boss Kagutsuchi 2", "")}, // 264 Boss Kagutsuchi 2
             { 265, new InnateSkill(383, 15, "Ambush Mizuchi", "")}, // 265 Ambush Mizuchi
-            { 266, new InnateSkill(383, 15, "Boss Kin-Ki", "")}, // 266 Boss Kin-Ki
-            { 267, new InnateSkill(383, 15, "Boss Sui-Ki", "")}, // 267 Boss Sui-Ki
-            { 268, new InnateSkill(383, 15, "Boss Fuu-Ki", "")}, // 268 Boss Fuu-Ki
-            { 269, new InnateSkill(383, 15, "Boss Ongyo-Ki", "")}, // 269 Boss Ongyo-Ki
+            { 266, new InnateSkill(383, 15, "Four Oni", "Kin-Ki's charged/critical damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 169 Boss Kin-Ki
+            { 267, new InnateSkill(383, 15, "Four Oni", "Sui-Ki's charged/critical damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 170 Boss Sui-Ki
+            { 268, new InnateSkill(383, 15, "Four Oni", "Fuu-Ki's charged/critical damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 171 Boss Fuu-Ki
+            { 269, new InnateSkill(383, 15, "Four Oni", "Ongyo-Ki's charged/critical damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 172 Boss Ongyo-Ki
             { 270, new InnateSkill(383, 15, "Boss Clotho (Solo)", "")}, // 270 Boss Clotho (Solo)
             { 271, new InnateSkill(383, 15, "Boss Lachesis (Solo)", "")}, // 271 Boss Lachesis (Solo)
             { 272, new InnateSkill(383, 15, "Boss Atropos (Solo)", "")}, // 272 Boss Atropos (Solo)
@@ -477,6 +477,8 @@ namespace NocturneInsaniax
             { 419, new List<int> { 0, 1, 2, 3 } }, // Wine Party
             { 420, new List<int> { 0 } } // Flatter
         };
+
+        private static ushort[] fourOni = new ushort[] { 169, 170, 171, 172, 266, 267, 268, 269 };
 
         static ushort innateSkillId = 383;
 
