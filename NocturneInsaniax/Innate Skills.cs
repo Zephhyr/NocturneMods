@@ -36,13 +36,13 @@ namespace NocturneInsaniax
             { 018, new InnateSkill(383, 15, "Parvati", "")}, // 018 Parvati
             { 019, new InnateSkill(415, 15, "Entice", "While in the active party, \nmay step in during negotiation to \ntempt a male demon.")}, // 019 Kushinada
             { 020, new InnateSkill(418, 15, "Maiden Plea", "While in the active party, \nmay step in during negotiation and \npacify an enraged demon.")}, // 020 Kikuri-Hime
-            { 021, new InnateSkill(383, 15, "Four Devas", "")}, // 021 Bishamonten
+            { 021, new InnateSkill(383, 14, "Four Devas", "When summoned from the stock, \nraise all stats of all Four Devas \nin the active party by one rank.")}, // 021 Bishamonten
             { 022, new InnateSkill(383, 03, "Odinson", "Elec Enhancer & Thor's Elec \nattacks have an increased \nchance to inflict Shock.")}, // 022 Thor
-            { 023, new InnateSkill(383, 15, "Four Devas", "")}, // 023 Jikokuten
+            { 023, new InnateSkill(383, 14, "Four Devas", "When summoned from the stock, \nraise all stats of all Four Devas \nin the active party by one rank.")}, // 023 Jikokuten
             { 024, new InnateSkill(410, 15, "Arbitration", "While in the active party, \nmay step in during negotiation and \nsoothe an enraged demon.")}, // 024 Take-Mikazuchi
             { 025, new InnateSkill(383, 15, "Okuninushi", "")}, // 025 Okuninushi
-            { 026, new InnateSkill(383, 15, "Four Devas", "")}, // 026 Koumokuten
-            { 027, new InnateSkill(383, 15, "Four Devas", "")}, // 027 Zouchouten
+            { 026, new InnateSkill(383, 14, "Four Devas", "When summoned from the stock, \nraise all stats of all Four Devas \nin the active party by one rank.")}, // 026 Koumokuten
+            { 027, new InnateSkill(383, 14, "Four Devas", "When summoned from the stock, \nraise all stats of all Four Devas \nin the active party by one rank.")}, // 027 Zouchouten
             { 028, new InnateSkill(414, 15, "Intimidate", "While in the active party, \nmay step in during negotiation to \n'convince' a lower level demon.")}, // 028 Take-Minakata
             { 029, new InnateSkill(383, 15, "Chimera", "")}, // 029 Chimera
             { 030, new InnateSkill(383, 15, "Baihu", "")}, // 030 Baihu
@@ -335,12 +335,12 @@ namespace NocturneInsaniax
             { 317, new InnateSkill(383, 02, "Ice Gestalt", "Troll gains Ice skill potential \nbased on the total potential of \nallies in the active party.")}, // 317 Boss Troll
             { 318, new InnateSkill(383, 15, "Forced Will o' Wisp", "")}, // 318 Forced Will o' Wisp
             { 319, new InnateSkill(383, 15, "Forced Preta", "")}, // 319 Forced Preta
-            { 320, new InnateSkill(383, 15, "Boss Bishamonten 1", "")}, // 320 Boss Bishamonten 1
+            { 320, new InnateSkill(383, 14, "Four Devas", "")}, // 320 Boss Bishamonten 1
             { 321, new InnateSkill(383, 15, "Boss Mara", "")}, // 321 Boss Mara
-            { 322, new InnateSkill(383, 15, "Boss Bishamonten 2", "")}, // 322 Boss Bishamonten 2
-            { 323, new InnateSkill(383, 15, "Boss Jikokuten", "")}, // 323 Boss Jikokuten
-            { 324, new InnateSkill(383, 15, "Boss Koumokuten", "")}, // 324 Boss Koumokuten
-            { 325, new InnateSkill(383, 15, "Boss Zouchouten", "")}, // 325 Boss Zouchouten
+            { 322, new InnateSkill(383, 14, "Four Devas", "")}, // 322 Boss Bishamonten 2
+            { 323, new InnateSkill(383, 14, "Four Devas", "")}, // 323 Boss Jikokuten
+            { 324, new InnateSkill(383, 14, "Four Devas", "")}, // 324 Boss Koumokuten
+            { 325, new InnateSkill(383, 14, "Four Devas", "")}, // 325 Boss Zouchouten
             { 326, new InnateSkill(383, 15, "Boss Clotho (Together)", "")}, // 326 Boss Clotho (Together)
             { 327, new InnateSkill(383, 15, "Boss Lachesis (Together)", "")}, // 327 Boss Lachesis (Together)
             { 328, new InnateSkill(383, 15, "Boss Atropos (Together)", "")}, // 328 Boss Atropos (Together)
@@ -478,6 +478,7 @@ namespace NocturneInsaniax
             { 420, new List<int> { 0 } } // Flatter
         };
 
+        private static ushort[] fourDevas = new ushort[] { 21, 23, 26, 27 };
         private static ushort[] fourOni = new ushort[] { 169, 170, 171, 172, 266, 267, 268, 269 };
 
         static ushort innateSkillId = 383;

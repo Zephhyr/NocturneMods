@@ -10,6 +10,7 @@ using UnityEngine;
 using Il2Cppmodel_H;
 using System.Xml;
 using Newtonsoft.Json;
+using System.Linq;
 
 namespace NocturneInsaniax
 {
@@ -93,6 +94,7 @@ namespace NocturneInsaniax
                     case 369: __result = "Spirit Well"; return false;
                     case 370: __result = "Qigong"; return false;
 
+                    case 408: __result = "Four Devas"; return false;
                     case 416: __result = "Ramayana"; return false;
                     case 417: __result = "Evil Mirror"; return false;
 
@@ -879,11 +881,24 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int phase)
             {
+                MelonLogger.Msg("--nbMainProcess.nbSetPhase--");
+                try
+                {
+                    MelonLogger.Msg("phase: " + phase);
+                    MelonLogger.Msg("nowcommand: " + actionProcessData.work.nowcommand);
+                    MelonLogger.Msg("nowindex: " + actionProcessData.work.nowindex);
+                    MelonLogger.Msg("partyindex: " + actionProcessData.partyindex);
+                    MelonLogger.Msg("nowtform: " + actionProcessData.work.nowtform);
+                    MelonLogger.Msg("id: " + nbMainProcess.nbGetUnitWorkFromFormindex(actionProcessData.work.nowtform).id);
+                    //MelonLogger.Msg("stockindex: " + dds3GlobalWork.DDS3_GBWK.unitwork[cmpDrawStock.GBWK.pStockInfo.LocalStock[0].StockIdx[actionProcessData.work.nowindex]].id);
+                } catch { }
+                
+
                 if (phase == 8)
                 {
                     try
                     {
-                        if (!(actionProcessData.work.nowcommand == 1 && pushedSkillList.Contains(actionProcessData.work.nowindex)) && 
+                        if (!(actionProcessData.work.nowcommand == 1 && pushedSkillList.Contains(actionProcessData.work.nowindex)) &&
                             !(actionProcessData.work.nowcommand == 3 && actionProcessData.work.nowindex == 0) &&
                             actionProcessData.work.nowcommand != 6)
                         {
@@ -894,13 +909,28 @@ namespace NocturneInsaniax
                                 nbMainProcess.nbPushAction(4, actionProcessData.partyindex, actionProcessData.partyindex, 150);
                             else
                             {
-                                if (datCalc.datCheckSyojiSkill(actionProcessData.work, 368) != 0 && 
+                                if (datCalc.datCheckSyojiSkill(actionProcessData.work, 368) != 0 &&
                                     datCalc.datCheckSyojiSkill(actionProcessData.work, 369) != 0)
                                     nbMainProcess.nbPushAction(4, actionProcessData.partyindex, actionProcessData.partyindex, 151);
                                 else if (datCalc.datCheckSyojiSkill(actionProcessData.work, 368) != 0)
                                     nbMainProcess.nbPushAction(4, actionProcessData.partyindex, actionProcessData.partyindex, 148);
                                 else if (datCalc.datCheckSyojiSkill(actionProcessData.work, 369) != 0)
                                     nbMainProcess.nbPushAction(4, actionProcessData.partyindex, actionProcessData.partyindex, 149);
+                            }
+                        }
+                        else if (actionProcessData.work.nowcommand == 6)
+                        {
+                            if (fourDevas.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(actionProcessData.work.nowtform).id))
+                            {
+                                var party = nbMainProcess.nbGetPartyFromFormindex(actionProcessData.work.nowtform);
+                                foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
+                                {
+                                    try
+                                    {
+                                        if (fourDevas.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                            nbMainProcess.nbPushAction(4, party.partyindex, ally.partyindex, 408);
+                                    } catch { }
+                                }
                             }
                         }
                     }
@@ -1329,6 +1359,7 @@ namespace NocturneInsaniax
             Punishment(188);
             JudgementLight(189);
 
+            FourDevas(408);
             Ramayana(416);
 
             NewBeastEye(422);
@@ -6340,6 +6371,53 @@ namespace NocturneInsaniax
             datSkill.tbl[id].type = 0;
 
             OverWriteSkillEffect(id, 219);
+        }
+
+        private static void FourDevas(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 14;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 0;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 255;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 1;
+            datNormalSkill.tbl[id].hojotype = 341;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 50;
+            datNormalSkill.tbl[id].hptype = 0;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 9;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 64);
         }
 
         private static void Ramayana(ushort id)

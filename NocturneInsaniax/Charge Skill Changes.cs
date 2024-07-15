@@ -188,7 +188,7 @@ namespace NocturneInsaniax
                     nbHelpProcess.nbDispText(devilName + " is building up power!", string.Empty, 2, 45, 2315190144, false);
                 }
                 // Fang Breaker
-                else if (actionProcessData.work.nowcommand == 1 && hojotype == 2 && actionProcessData.work.nowindex == 427 || actionProcessData.work.nowindex == 417)
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 2 && (actionProcessData.work.nowindex == 427 || actionProcessData.work.nowindex == 417))
                 {
                     var limitReached = true;
                     if (currentUnitBuffs[4] >= -2)
@@ -236,7 +236,7 @@ namespace NocturneInsaniax
                         nbHelpProcess.nbDispText("Decreased Physical/Magical Attack!", string.Empty, 2, 45, 2315190144, false);
                 }
                 // Jack Agilao
-                else if (actionProcessData.work.nowcommand == 1 && hojotype == 10 && actionProcessData.work.nowindex == 473 || actionProcessData.work.nowindex == 417)
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 10 && (actionProcessData.work.nowindex == 473 || actionProcessData.work.nowindex == 417))
                 {
                     var limitReached = true;
                     if (currentUnitBuffs[4] >= -2 || currentUnitBuffs[5] >= -2)
@@ -358,7 +358,7 @@ namespace NocturneInsaniax
                         nbHelpProcess.nbDispText("Decreased Defense/Evasion!", string.Empty, 2, 45, 2315190144, false);
                 }
                 // Antichthon
-                else if (actionProcessData.work.nowcommand == 1 && hojotype == 682 && actionProcessData.work.nowindex == 453 || actionProcessData.work.nowindex == 417)
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 682 && (actionProcessData.work.nowindex == 453 || actionProcessData.work.nowindex == 417))
                 {
                     var limitReached = true;
                     for (int i = 4; i <= 8; i++)
@@ -414,7 +414,7 @@ namespace NocturneInsaniax
                         nbHelpProcess.nbDispText("Physical Attack/Evasion/Hit Rate increased!", string.Empty, 2, 45, 2315190144, false);
                 }
                 // Heat Riser
-                else if (actionProcessData.work.nowcommand == 1 && hojotype == 341 && actionProcessData.work.nowindex == 458 || actionProcessData.work.nowindex == 417)
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 341 && (actionProcessData.work.nowindex == 458 || actionProcessData.work.nowindex == 417))
                 {
                     var limitReached = true;
                     for (int i = 4; i <= 8; i++)
@@ -430,7 +430,7 @@ namespace NocturneInsaniax
                         nbHelpProcess.nbDispText("All stats greatly increased!", string.Empty, 2, 45, 2315190144, false);
                 }
                 // Luster Candy
-                else if (actionProcessData.work.nowcommand == 1 && hojotype == 341 && actionProcessData.work.nowindex == 459)
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 341 && (actionProcessData.work.nowindex == 459 || actionProcessData.work.nowindex == 408))
                 {
                     var limitReached = true;
                     foreach (var unitBuffs in currentSideBuffs)
