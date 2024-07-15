@@ -14,6 +14,7 @@ using MelonLoader.CoreClrUtils;
 using Newtonsoft.Json;
 using UnityEngine;
 using System.Linq;
+using Il2Cppeffect_H;
 
 [assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax", "0.8.0", "Zephhyr, Matthiew Purple")]
 [assembly: MelonGame("アトラス", "smt3hd")]
@@ -522,16 +523,23 @@ namespace NocturneInsaniax
         //    }
         //}
 
-        [HarmonyPatch(typeof(nbMainProcess), nameof(nbMainProcess.nbPushAction))]
-        private class nbPushActionPatch
+        [HarmonyPatch(typeof(billManager), nameof(billManager.dds3BillboardGeneral))]
+        private class dds3BillboardGeneralPatch
         {
-            public static void Postfix(ref int type, ref int from, ref int to, ref int d)
+            public static void Postfix(ref int number)
             {
-                MelonLogger.Msg("--nbMainProcess.nbPushAction--");
-                MelonLogger.Msg("type: " + type);
-                MelonLogger.Msg("from: " + from);
-                MelonLogger.Msg("to: " + to);
-                MelonLogger.Msg("d: " + d);
+                MelonLogger.Msg("--billManager.dds3BillboardGeneral--");
+                MelonLogger.Msg("number: " + number);
+            }
+        }
+
+        [HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_BasicCreate))]
+        private class dds3Particle_BasicCreatePatch
+        {
+            public static void Postfix(ref dds3Particle_Basic_t pParBasic, ref bool pCopy)
+            {
+                MelonLogger.Msg("--parManager.dds3Particle_BasicCreate--");
+                MelonLogger.Msg("pCopy: " + pCopy);
             }
         }
 

@@ -30,20 +30,20 @@ namespace NocturneInsaniax
             { 012, new InnateSkill(383, 15, "Shiva", "")}, // 012 Shiva
             { 013, new InnateSkill(383, 15, "Beidou Xingjun", "")}, // 013 Beidou Xingjun
             { 014, new InnateSkill(383, 15, "Qitian Dasheng", "")}, // 014 Qitian Dasheng
-            { 015, new InnateSkill(419, 15, "Dionysus", "")}, // 015 Dionysus
+            { 015, new InnateSkill(419, 15, "Wine Party", "While in the active party, \nmay step in during negotiation to \nfix trouble with the power of liquor.")}, // 015 Dionysus
             { 016, new InnateSkill(383, 00, "Phys Gestalt", "Kali gains Phys skill potential \nbased on the total potential of \nallies in the active party.")}, // 016 Kali
             { 017, new InnateSkill(383, 02, "Queen of Winter", "Ice Enhancer & Skadi's Ice \nattacks have an increased \nchance to inflict Freeze.")}, // 017 Skadi
             { 018, new InnateSkill(383, 15, "Parvati", "")}, // 018 Parvati
-            { 019, new InnateSkill(383, 15, "Kushinada", "")}, // 019 Kushinada
-            { 020, new InnateSkill(418, 15, "Kikuri-Hime", "")}, // 020 Kikuri-Hime
-            { 021, new InnateSkill(383, 15, "Bishamonten", "")}, // 021 Bishamonten
+            { 019, new InnateSkill(415, 15, "Entice", "While in the active party, \nmay step in during negotiation to \ntempt a male demon.")}, // 019 Kushinada
+            { 020, new InnateSkill(418, 15, "Maiden Plea", "While in the active party, \nmay step in during negotiation and \npacify an enraged demon.")}, // 020 Kikuri-Hime
+            { 021, new InnateSkill(383, 15, "Four Heavenly Kings", "")}, // 021 Bishamonten
             { 022, new InnateSkill(383, 03, "Odinson", "Elec Enhancer & Thor's Elec \nattacks have an increased \nchance to inflict Shock.")}, // 022 Thor
-            { 023, new InnateSkill(383, 15, "Jikokuten", "")}, // 023 Jikokuten
-            { 024, new InnateSkill(383, 15, "Take-Mikazuchi", "")}, // 024 Take-Mikazuchi
+            { 023, new InnateSkill(383, 15, "Four Heavenly Kings", "")}, // 023 Jikokuten
+            { 024, new InnateSkill(410, 15, "Arbitration", "While in the active party, \nmay step in during negotiation and \nsoothe an enraged demon.")}, // 024 Take-Mikazuchi
             { 025, new InnateSkill(383, 15, "Okuninushi", "")}, // 025 Okuninushi
-            { 026, new InnateSkill(383, 15, "Koumokuten", "")}, // 026 Koumokuten
-            { 027, new InnateSkill(383, 15, "Zouchouten", "")}, // 027 Zouchouten
-            { 028, new InnateSkill(383, 15, "Take-Minakata", "")}, // 028 Take-Minakata
+            { 026, new InnateSkill(383, 15, "Four Heavenly Kings", "")}, // 026 Koumokuten
+            { 027, new InnateSkill(383, 15, "Four Heavenly Kings", "")}, // 027 Zouchouten
+            { 028, new InnateSkill(414, 15, "Intimidate", "While in the active party, \nmay step in during negotiation to \n'convince' a lower level demon.")}, // 028 Take-Minakata
             { 029, new InnateSkill(383, 15, "Chimera", "")}, // 029 Chimera
             { 030, new InnateSkill(383, 15, "Baihu", "")}, // 030 Baihu
             { 031, new InnateSkill(383, 15, "Senri", "")}, // 031 Senri
@@ -60,9 +60,9 @@ namespace NocturneInsaniax
             { 042, new InnateSkill(383, 15, "Nigi Mitama", "")}, // 042 Nigi Mitama
             { 043, new InnateSkill(383, 15, "Ara Mitama", "")}, // 043 Ara Mitama
             { 044, new InnateSkill(383, 15, "Efreet", "")}, // 044 Efreet
-            { 045, new InnateSkill(383, 15, "Pulukishi", "")}, // 045 Pulukishi
+            { 045, new InnateSkill(413, 15, "Silver Tongue", "While in the active party, \nmay step in during negotiation to \npersuade an indecisive demon.")}, // 045 Pulukishi
             { 046, new InnateSkill(383, 00, "Phys Gestalt", "Ongkhot gains Phys skill potential \nbased on the total potential of \nallies in the active party.")}, // 046 Ongkhot
-            { 047, new InnateSkill(383, 15, "Jinn", "")}, // 047 Jinn
+            { 047, new InnateSkill(420, 15, "Flatter", "While in the active party, \nmay step in during negotiation to \nconvince a higher level demon.")}, // 047 Jinn
             { 048, new InnateSkill(383, 04, "Force Gestalt", "Karasu Tengu gains Force skill potential \nbased on the total potential of \nallies in the active party.")}, // 048 Karasu Tengu
             { 049, new InnateSkill(383, 15, "Dís", "")}, // 049 Dís
             { 050, new InnateSkill(383, 15, "Isora", "")}, // 050 Isora
@@ -72,18 +72,18 @@ namespace NocturneInsaniax
             { 054, new InnateSkill(383, 15, "Oberon", "")}, // 054 Oberon
             { 055, new InnateSkill(383, 02, "Ice Gestalt", "Troll gains Ice skill potential \nbased on the total potential of \nallies in the active party.")}, // 055 Troll
             { 056, new InnateSkill(383, 15, "Setanta", "")}, // 056 Setanta
-            { 057, new InnateSkill(383, 15, "Kelpie", "")}, // 057 Kelpie
+            { 057, new InnateSkill(410, 15, "Arbitration", "While in the active party, \nmay step in during negotiation and \nsoothe an enraged demon.")}, // 057 Kelpie
             { 058, new InnateSkill(383, 15, "Jack-o'-Lantern", "")}, // 058 Jack-o'-Lantern
-            { 059, new InnateSkill(383, 15, "High Pixie", "")}, // 059 High Pixie
+            { 059, new InnateSkill(353, 15, "Lucky Find", "Occasionally find items on the Vortex World Map while in the active party.")}, // 059 High Pixie
             { 060, new InnateSkill(383, 15, "Jack Frost", "")}, // 060 Jack Frost
             { 061, new InnateSkill(383, 15, "Pixie", "")}, // 061 Pixie
             { 062, new InnateSkill(383, 15, "Throne", "")}, // 062 Throne
             { 063, new InnateSkill(383, 06, "Light Enhancer", "While in the active party, \nraise allies' Light skill potential \nto Dominion's if it was lower.")}, // 063 Dominion
-            { 064, new InnateSkill(383, 15, "Virtue", "")}, // 064 Virtue
+            { 064, new InnateSkill(411, 15, "Detain", "While in the active party, \nmay step in during negotiation and \nprevent a demon from making off with payment.")}, // 064 Virtue
             { 065, new InnateSkill(383, 06, "Light Gestalt", "Power gains Light skill potential \nbased on the total potential of \nallies in the active party.")}, // 065 Power
-            { 066, new InnateSkill(383, 15, "Principality", "")}, // 066 Principality
+            { 066, new InnateSkill(412, 15, "Kinspeak", "While in the active party, \nmay step in during negotiation to \nurge a demon of the same race.")}, // 066 Principality
             { 067, new InnateSkill(383, 15, "Archangel", "")}, // 067 Archangel
-            { 068, new InnateSkill(383, 15, "Angel", "")}, // 068 Angel
+            { 068, new InnateSkill(411, 15, "Detain", "While in the active party, \nmay step in during negotiation and \nprevent a demon from making off with payment.")}, // 068 Angel
             { 069, new InnateSkill(383, 15, "Flauros", "")}, // 069 Flauros
             { 070, new InnateSkill(383, 15, "Kept Waiting", "Decarabia gains slight HP/MP \nrecovery after each action if \nForneus is also in the active party.")}, // 070 Decarabia
             { 071, new InnateSkill(383, 15, "Ose", "")}, // 071 Ose
@@ -104,14 +104,14 @@ namespace NocturneInsaniax
             { 086, new InnateSkill(383, 15, "Nekomata", "")}, // 086 Nekomata
             { 087, new InnateSkill(383, 15, "Gogmagog", "")}, // 087 Gogmagog
             { 088, new InnateSkill(383, 00, "Phys Enhancer", "While in the active party, \nraise allies' Phys skill potential \nto Titan's if it was lower.")}, // 088 Titan
-            { 089, new InnateSkill(383, 15, "Sarutahiko", "")}, // 089 Sarutahiko
+            { 089, new InnateSkill(409, 15, "Haggle", "While in the active party, \nmay step in during negotiation and \nensure lesser demands.")}, // 089 Sarutahiko
             { 090, new InnateSkill(383, 15, "Sudama", "")}, // 090 Sudama
             { 091, new InnateSkill(383, 01, "Fire Gestalt", "Hua Po gains Fire skill potential \nbased on the total potential of \nallies in the active party.")}, // 091 Hua Po
-            { 092, new InnateSkill(383, 15, "Kodama", "")}, // 092 Kodama
+            { 092, new InnateSkill(412, 15, "Kinspeak", "While in the active party, \nmay step in during negotiation to \nurge a demon of the same race.")}, // 092 Kodama
             { 093, new InnateSkill(383, 15, "Shiki-Ouji", "")}, // 093 Shiki-Ouji
-            { 094, new InnateSkill(383, 15, "Oni", "")}, // 094 Oni
+            { 094, new InnateSkill(409, 15, "Haggle", "While in the active party, \nmay step in during negotiation and \nensure lesser demands.")}, // 094 Oni
             { 095, new InnateSkill(383, 15, "Yomotsu-Ikusa", "")}, // 095 Yomotsu-Ikusa
-            { 096, new InnateSkill(383, 15, "Momunofu", "")}, // 096 Momunofu
+            { 096, new InnateSkill(413, 15, "Silver Tongue", "While in the active party, \nmay step in during negotiation to \npersuade an indecisive demon.")}, // 096 Momunofu
             { 097, new InnateSkill(383, 03, "Elec Gestalt", "Shikigami gains Elec skill potential \nbased on the total potential of \nallies in the active party.")}, // 097 Shikigami
             { 098, new InnateSkill(383, 01, "Fire Gestalt", "Rangda gains Fire skill potential \nbased on the total potential of \nallies in the active party.")}, // 098 Rangda
             { 099, new InnateSkill(383, 15, "Dakini", "")}, // 099 Dakini
@@ -121,23 +121,23 @@ namespace NocturneInsaniax
             { 103, new InnateSkill(383, 02, "Ice Gestalt", "Datsue-Ba gains Ice skill potential \nbased on the total potential of \nallies in the active party.")}, // 103 Datsue-Ba
             { 104, new InnateSkill(383, 15, "Mada", "")}, // 104 Mada
             { 105, new InnateSkill(383, 15, "Girimekhala", "")}, // 105 Girimekhala
-            { 106, new InnateSkill(383, 15, "Taotie", "")}, // 106 Taotie
+            { 106, new InnateSkill(353, 15, "Lucky Find", "Occasionally find items on the Vortex World Map while in the active party.")}, // 106 Taotie
             { 107, new InnateSkill(383, 15, "Pazuzu", "")}, // 107 Pazuzu
             { 108, new InnateSkill(383, 07, "Dark Gestalt", "Baphomet gains Dark skill potential \nbased on the total potential of \nallies in the active party.")}, // 108 Baphomet
             { 109, new InnateSkill(383, 15, "Mot", "")}, // 109 Mot
             { 110, new InnateSkill(383, 15, "Alciel", "")}, // 110 Alciel
             { 111, new InnateSkill(383, 01, "Laevateinn", "Fire Enhancer & Surt's normal \nattacks deal medium Fire damage.")}, // 111 Surt
-            { 112, new InnateSkill(383, 15, "Abaddon", "")}, // 112 Abaddon
+            { 112, new InnateSkill(414, 15, "Intimidate", "While in the active party, \nmay step in during negotiation to \n'convince' a lower level demon.")}, // 112 Abaddon
             { 113, new InnateSkill(383, 15, "Loki", "")}, // 113 Loki
             { 114, new InnateSkill(383, 15, "Lilith", "")}, // 114 Lilith
             { 115, new InnateSkill(383, 15, "Nyx", "")}, // 115 Nyx - Elec Gestalt?
             { 116, new InnateSkill(383, 15, "Queen Mab", "")}, // 116 Queen Mab
-            { 117, new InnateSkill(383, 15, "Succubus", "")}, // 117 Succubus
+            { 117, new InnateSkill(415, 15, "Entice", "While in the active party, \nmay step in during negotiation to \ntempt a male demon.")}, // 117 Succubus
             { 118, new InnateSkill(383, 15, "Incubus", "")}, // 118 Incubus
             { 119, new InnateSkill(383, 00, "Phys Enhancer", "While in the active party, \nraise allies' Phys skill potential \nto Fomorian's if it was lower.")}, // 119 Fomorian
-            { 120, new InnateSkill(383, 15, "Lilim", "")}, // 120 Lilim
+            { 120, new InnateSkill(420, 15, "Flatter", "While in the active party, \nmay step in during negotiation to \nconvince a higher level demon.")}, // 120 Lilim
             { 121, new InnateSkill(383, 04, "Force Gestalt", "Hresvelgr gains Force skill potential \nbased on the total potential of \nallies in the active party.")}, // 121 Hresvelgr
-            { 122, new InnateSkill(383, 15, "Mothman", "")}, // 122 Mothman
+            { 122, new InnateSkill(353, 15, "Lucky Find", "Occasionally find items on the Vortex World Map while in the active party.")}, // 122 Mothman
             { 123, new InnateSkill(383, 15, "Raiju", "")}, // 123 Raiju
             { 124, new InnateSkill(383, 15, "Nue", "")}, // 124 Nue
             { 125, new InnateSkill(383, 15, "Bicorn", "")}, // 125 Bicorn
@@ -182,12 +182,12 @@ namespace NocturneInsaniax
             { 164, new InnateSkill(383, 15, "Manikin", "")}, // 164 Manikin
             { 165, new InnateSkill(383, 15, "Manikin", "")}, // 165 Manikin
             { 166, new InnateSkill(383, 15, "Manikin", "")}, // 166 Manikin
-            { 167, new InnateSkill(383, 15, "Pisaca", "")}, // 167 Pisaca
+            { 167, new InnateSkill(353, 15, "Lucky Find", "Occasionally find items on the Vortex World Map while in the active party.")}, // 167 Pisaca
             { 168, new InnateSkill(383, 15, "Kaiwan", "")}, // 168 Kaiwan
-            { 169, new InnateSkill(383, 15, "Kin-Ki", "")}, // 169 Kin-Ki
-            { 170, new InnateSkill(383, 15, "Sui-Ki", "")}, // 170 Sui-Ki
-            { 171, new InnateSkill(383, 15, "Fuu-Ki", "")}, // 171 Fuu-Ki
-            { 172, new InnateSkill(383, 15, "Ongyo-Ki", "")}, // 172 Ongyo-Ki
+            { 169, new InnateSkill(383, 15, "Four Oni", "")}, // 169 Kin-Ki
+            { 170, new InnateSkill(383, 15, "Four Oni", "")}, // 170 Sui-Ki
+            { 171, new InnateSkill(383, 15, "Four Oni", "")}, // 171 Fuu-Ki
+            { 172, new InnateSkill(383, 15, "Four Oni", "")}, // 172 Ongyo-Ki
             { 173, new InnateSkill(383, 15, "Clotho", "")}, // 173 Clotho
             { 174, new InnateSkill(383, 15, "Lachesis", "")}, // 174 Lachesis
             { 175, new InnateSkill(383, 15, "Atropos", "")}, // 175 Atropos

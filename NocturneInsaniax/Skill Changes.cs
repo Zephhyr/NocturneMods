@@ -66,6 +66,8 @@ namespace NocturneInsaniax
                     case 252: __result = "Foul Gathering"; return false;
                     case 285: __result = "Babylon Goblet"; return false;
                     case 286: __result = "Death Lust"; return false;
+                    case 413: __result = "Silver Tongue"; return false;
+                    case 415: __result = "Entice"; return false;
 
                         // High King = "King of Kings"
                         // Root of Evil = "In the beginning, there was darkness"
@@ -74,7 +76,7 @@ namespace NocturneInsaniax
                     case 148: __result = "Renewal"; return false;
                     case 149: __result = "Spirit Well"; return false;
                     case 150: __result = "Qigong"; return false;
-                    case 151: __result = "Renewal, Spirit Well"; return false;
+                    case 151: __result = "Renewal & Spirit Well"; return false;
                     case 167: __result = "Double Attack"; return false;
                     case 188: __result = "Punishment"; return false;
                     case 189: __result = "Judgement Light"; return false;
@@ -279,6 +281,17 @@ namespace NocturneInsaniax
                     case 396: __result = "Ask for Macca and items."; return false; // Plead
                     case 397: __result = "Ask for Macca and items. \nEffective when speaker is much lower \nlevel than target."; return false; // Begging
                     case 398: __result = "Ask for Macca and items. \nEffective when speaker is much higher \nlevel than target."; return false; // Threaten
+
+                    case 409: __result = "While in the active party, \nmay step in during negotiation and \nensure lesser demands."; return false; // Haggle
+                    case 410: __result = "While in the active party, \nmay step in during negotiation and \nsoothe an enraged demon."; return false; // Arbitration
+                    case 411: __result = "While in the active party, \nmay step in during negotiation and \nprevent a demon from making off with payment."; return false; // Detain
+                    case 412: __result = "While in the active party, \nmay step in during negotiation to \nurge a demon of the same race."; return false; // Kinspeak
+                    case 413: __result = "While in the active party, \nmay step in during negotiation to \npersuade an indecisive demon."; return false; // Silver Tongue
+                    case 414: __result = "While in the active party, \nmay step in during negotiation to \n'convince' a lower level demon."; return false; // Intimidate
+                    case 415: __result = "While in the active party, \nmay step in during negotiation to \ntempt a male demon."; return false; // Entice
+                    case 418: __result = "While in the active party, \nmay step in during negotiation and \npacify an enraged demon."; return false; // Maiden Plea
+                    case 419: __result = "While in the active party, \nmay step in during negotiation to \nfix trouble with the power of liquor."; return false; // Wine Party
+                    case 420: __result = "While in the active party, \nmay step in during negotiation to \nconvince a higher level demon."; return false; // Flatter
 
                     // New Skills
                     case 188: __result = "Light: Chance to instakill one foe."; return false; // Punishment
@@ -536,8 +549,8 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(30, 0);
                     //datCalc.datAddDevil(111, 0);
                     //datCalc.datAddDevil(20, 0);
-                    datCalc.datAddDevil(70, 0);
-                    datCalc.datAddDevil(74, 0);
+                    //datCalc.datAddDevil(70, 0);
+                    //datCalc.datAddDevil(74, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    //work.skill[0] = 192;
@@ -571,11 +584,9 @@ namespace NocturneInsaniax
                     //    work.skill[7] = 419;
                     //    work.skillcnt = 8;
                     //}
-                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 74)) // Forneus
+                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 59)) // High Pixie
                     {
-                        work.skill[2] = 53;
-                        work.skill[3] = 65;
-                        work.skillcnt = 4;
+                        work.skill[6] = 65;
                     }
                     //}
                 }
