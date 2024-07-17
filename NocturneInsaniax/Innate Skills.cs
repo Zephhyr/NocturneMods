@@ -69,7 +69,7 @@ namespace NocturneInsaniax
             { 051, new InnateSkill(383, 15, "Apsaras", "")}, // 051 Apsaras
             { 052, new InnateSkill(383, 04, "Force Gestalt", "Koppa Tengu gains Force skill potential \nbased on the total potential of \nallies in the active party.")}, // 052 Koppa Tengu
             { 053, new InnateSkill(383, 15, "Titania", "")}, // 053 Titania
-            { 054, new InnateSkill(383, 15, "Oberon", "")}, // 054 Oberon
+            { 054, new InnateSkill(383, 14, "Fairy King's Melody", "When summoned from the stock, \nnegate -nda effects on the party.")}, // 054 Oberon
             { 055, new InnateSkill(383, 02, "Ice Gestalt", "Troll gains Ice skill potential \nbased on the total potential of \nallies in the active party.")}, // 055 Troll
             { 056, new InnateSkill(383, 15, "Setanta", "")}, // 056 Setanta
             { 057, new InnateSkill(410, 15, "Arbitration", "While in the active party, \nmay step in during negotiation and \nsoothe an enraged demon.")}, // 057 Kelpie

@@ -15,6 +15,7 @@ using Newtonsoft.Json;
 using UnityEngine;
 using System.Linq;
 using Il2Cppeffect_H;
+using Il2Cppmodel_H;
 
 [assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax", "0.8.0", "Zephhyr, Matthiew Purple")]
 [assembly: MelonGame("アトラス", "smt3hd")]
@@ -520,6 +521,89 @@ namespace NocturneInsaniax
         //        MelonLogger.Msg("--EventBit.evtBitCheck--");
         //        if (no == 3712)
         //            __result = false;
+        //    }
+        //}
+
+        //[HarmonyPatch(typeof(mdlEffect), nameof(mdlEffect.mdlCreateEffect_P2A_D3P))]
+        //private class mdlCreateEffectPatch
+        //{
+        //    public static void Postfix(ref dds3ModelHandle_t aHandle, ref int aPlayGroup, ref int aType, ref int bPos)
+        //    {
+        //        MelonLogger.Msg("--mdlEffect.mdlCreateEffect_P2A_D3P--");
+        //        MelonLogger.Msg("aPlayGroup: " + aPlayGroup);
+        //        MelonLogger.Msg("aType: " + aType);
+        //        MelonLogger.Msg("bPos: " + bPos);
+        //        MelonLogger.Msg("aHandle.resrc.effectResrcList.items.Count: " + aHandle.resrc.effectResrcList.items.Count);
+        //        //MelonLogger.Msg("resrc: " + Newtonsoft.Json.JsonConvert.SerializeObject(aHandle.resrc));
+        //    }
+        //}
+
+        //[HarmonyPatch(typeof(mdlEffect), nameof(mdlEffect.mdlGenEffect))]
+        //private class mdlGenEffectPatch
+        //{
+        //    public static void Postfix(ref dds3ModelHandle_t aHandle, ref int aGroup, ref int aPlayGroup)
+        //    {
+        //        MelonLogger.Msg("--mdlEffect.mdlGenEffect--");
+        //        MelonLogger.Msg("aGroup: " + aGroup);
+        //        MelonLogger.Msg("aPlayGroup: " + aPlayGroup);
+        //        MelonLogger.Msg("aHandle.resrc.effectResrcList.items.Count: " + aHandle.resrc.effectResrcList.items.Count);
+        //        //MelonLogger.Msg("resrc: " + Newtonsoft.Json.JsonConvert.SerializeObject(aHandle.resrc));
+        //    }
+        //}
+
+        //[HarmonyPatch(typeof(mdlManager), nameof(mdlManager.mdlEffectCreateUnity))]
+        //private class mdlEffectCreateUnityPatch
+        //{
+        //    public static void Postfix(ref int aMajor, ref int aMinor, ref mdlEffectResrcList_t efc_res_list)
+        //    {
+        //        MelonLogger.Msg("--mdlManager.mdlEffectCreateUnity--");
+        //        MelonLogger.Msg("aMajor: " + aMajor);
+        //        MelonLogger.Msg("aMinor: " + aMinor);
+        //        MelonLogger.Msg("efc_res_list.items.Count: " + efc_res_list.items.Count);
+        //        MelonLogger.Msg("aKey: " + mdlFileDefTable.GetAkey(aMinor));
+        //        //MelonLogger.Msg("resrc: " + cmpModel.cmpModelHandle.resrc);
+        //        //MelonLogger.Msg("resrc: " + Newtonsoft.Json.JsonConvert.SerializeObject(cmpModel.cmpModelHandle.resrc));
+        //    }
+        //}
+
+        //[HarmonyPatch(typeof(mdlManager), nameof(mdlManager.mdlLoad))]
+        //private class mdlLoadPatch
+        //{
+        //    public static void Postfix(ref int aMajor, ref int aMinor, ref int bPos, ref dds3ModelHandle_t __result)
+        //    {
+        //        MelonLogger.Msg("--mdlManager.mdlLoad--");
+        //        MelonLogger.Msg("aMajor: " + aMajor);
+        //        MelonLogger.Msg("aMinor: " + aMinor);
+        //        MelonLogger.Msg("bPos: " + bPos);
+        //        //MelonLogger.Msg("aKey: " + mdlFileDefTable.GetAkey(aMinor));
+        //        //MelonLogger.Msg("resrc: " + cmpModel.cmpModelHandle.resrc);
+        //    }
+        //}
+
+        //[HarmonyPatch(typeof(cmpModel), nameof(cmpModel.cmpModelLoadForUnity))]
+        //private class cmpModelLoadForUnityPatch
+        //{
+        //    public static void Postfix(ref int MajorNo, ref int MinorNo, ref int BlockMode, ref bool __result)
+        //    {
+        //        MelonLogger.Msg("--cmpModel.cmpModelLoadForUnity--");
+        //        MelonLogger.Msg("MajorNo: " + MajorNo);
+        //        MelonLogger.Msg("MinorNo: " + MinorNo);
+        //        MelonLogger.Msg("BlockMode: " + BlockMode);
+        //        MelonLogger.Msg("result: " + __result);
+        //    }
+        //}
+
+        //[HarmonyPatch(typeof(cmpModel), nameof(cmpModel.cmpModelLoadEffectForUnity))]
+        //private class cmpModelLoadEffectForUnityPatch
+        //{
+        //    public static void Postfix(ref int MajorNo, ref int MinorNo, ref int BlockMode, ref bool __result)
+        //    {
+        //        MelonLogger.Msg("--cmpModel.cmpModelLoadEffectForUnity--");
+        //        MelonLogger.Msg("MajorNo: " + MajorNo);
+        //        MelonLogger.Msg("MinorNo: " + MinorNo);
+        //        MelonLogger.Msg("BlockMode: " + BlockMode);
+        //        MelonLogger.Msg("aFilename: " + "dds3data/dvl_pb/" + mdlFileDefTable.GetPBname(MinorNo) + ".bytes");
+        //        MelonLogger.Msg("result: " + __result);
         //    }
         //}
 

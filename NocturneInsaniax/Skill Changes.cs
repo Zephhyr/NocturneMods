@@ -24,6 +24,8 @@ namespace NocturneInsaniax
 
         public static nbActionProcessData_t? actionProcessData;
 
+        public static string postSummonSkillName = "";
+
         [HarmonyPatch(typeof(datSkillName), nameof(datSkillName.Get))]
         private class SkillNamesPatch
         {
@@ -94,7 +96,7 @@ namespace NocturneInsaniax
                     case 369: __result = "Spirit Well"; return false;
                     case 370: __result = "Qigong"; return false;
 
-                    case 408: __result = "Four Devas"; return false;
+                    case 408: __result = postSummonSkillName; return false;
                     case 416: __result = "Ramayana"; return false;
                     case 417: __result = "Evil Mirror"; return false;
 
@@ -535,7 +537,7 @@ namespace NocturneInsaniax
                     // Test - Add rigged demons to party
                     //dds3GlobalWork.DDS3_GBWK.maka = 0;
 
-                    //var output = Newtonsoft.Json.JsonConvert.SerializeObject(nbActionProcess.sobedtbl);
+                    //var output = Newtonsoft.Json.JsonConvert.SerializeObject(mdlManager.mdlResrcMajorList);
                     //MelonLogger.Msg(output);
 
                     //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 149).Count() == 0)
@@ -547,7 +549,7 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(30, 0);
                     //datCalc.datAddDevil(111, 0);
                     datCalc.datAddDevil(21, 0);
-                    //datCalc.datAddDevil(130, 0);
+                    datCalc.datAddDevil(54, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    //work.skill[0] = 192;
@@ -898,6 +900,7 @@ namespace NocturneInsaniax
                 {
                     try
                     {
+                        // Renewal, Spirit Well, Qigong
                         if (!(actionProcessData.work.nowcommand == 1 && pushedSkillList.Contains(actionProcessData.work.nowindex)) &&
                             !(actionProcessData.work.nowcommand == 3 && actionProcessData.work.nowindex == 0) &&
                             actionProcessData.work.nowcommand != 6)
@@ -918,9 +921,19 @@ namespace NocturneInsaniax
                                     nbMainProcess.nbPushAction(4, actionProcessData.partyindex, actionProcessData.partyindex, 149);
                             }
                         }
+                        // After Summon
                         else if (actionProcessData.work.nowcommand == 6)
                         {
-                            if (fourDevas.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(actionProcessData.work.nowtform).id))
+                            // Oberon's Fairy King's Melody
+                            if (nbMainProcess.nbGetUnitWorkFromFormindex(actionProcessData.work.nowtform).id == 54)
+                            {
+                                var party = nbMainProcess.nbGetPartyFromFormindex(actionProcessData.work.nowtform);
+                                postSummonSkillName = "Fairy King's Melody";
+                                PostSummonSkillCopy(77, 77, 1);
+                                nbMainProcess.nbPushAction(4, party.partyindex, party.partyindex, 408);
+                            }
+                            // Four Devas
+                            else if (fourDevas.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(actionProcessData.work.nowtform).id))
                             {
                                 var party = nbMainProcess.nbGetPartyFromFormindex(actionProcessData.work.nowtform);
                                 foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
@@ -928,13 +941,34 @@ namespace NocturneInsaniax
                                     try
                                     {
                                         if (fourDevas.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                        {
+                                            postSummonSkillName = "Four Devas";
+                                            PostSummonSkillCopy(459, 64, 0);
                                             nbMainProcess.nbPushAction(4, party.partyindex, ally.partyindex, 408);
+                                        }
                                     } catch { }
                                 }
                             }
                         }
                     }
                     catch { }
+                }
+            }
+        }
+
+        [HarmonyPatch(typeof(nbActionProcess), nameof(nbActionProcess.SetAction_SKILL))]
+        private class SetAction_SKILLPatch
+        {
+            public static void Prefix(ref nbActionProcessData_t a)
+            {
+                if (a.work.nowcommand == 1 && a.work.nowindex == 408)
+                {
+                    if (datNormalSkill.tbl[408].targettype == 1)
+                    {
+                        a.type = 0;
+                        a.target = 0;
+                        a.select = 15;
+                    }
                 }
             }
         }
@@ -1359,7 +1393,7 @@ namespace NocturneInsaniax
             Punishment(188);
             JudgementLight(189);
 
-            FourDevas(408);
+            //FourDevas(408);
             Ramayana(416);
 
             NewBeastEye(422);
@@ -6418,6 +6452,53 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 64);
+        }
+
+        private static void PostSummonSkillCopy(ushort functionId, ushort effectId, byte targetType)
+        {
+            datSkill.tbl[408].flag = 0;
+            datSkill.tbl[408].keisyoform = 512;
+            datSkill.tbl[408].skillattr = datSkill.tbl[functionId].skillattr;
+            datSkill.tbl[408].index = 408;
+            datSkill.tbl[408].type = 0;
+
+            datNormalSkill.tbl[408].badlevel = datNormalSkill.tbl[functionId].badlevel;
+            datNormalSkill.tbl[408].badtype = datNormalSkill.tbl[functionId].badtype;
+            datNormalSkill.tbl[408].basstatus = datNormalSkill.tbl[functionId].basstatus;
+            datNormalSkill.tbl[408].cost = 0;
+            datNormalSkill.tbl[408].costbase = datNormalSkill.tbl[functionId].costbase;
+            datNormalSkill.tbl[408].costtype = datNormalSkill.tbl[functionId].costtype;
+            datNormalSkill.tbl[408].criticalpoint = datNormalSkill.tbl[functionId].criticalpoint;
+            datNormalSkill.tbl[408].deadtype = datNormalSkill.tbl[functionId].deadtype;
+            datNormalSkill.tbl[408].failpoint = datNormalSkill.tbl[functionId].failpoint;
+            datNormalSkill.tbl[408].flag = datNormalSkill.tbl[functionId].flag;
+            datNormalSkill.tbl[408].hitlevel = datNormalSkill.tbl[functionId].hitlevel;
+            datNormalSkill.tbl[408].hitprog = datNormalSkill.tbl[functionId].hitprog;
+            datNormalSkill.tbl[408].hittype = datNormalSkill.tbl[functionId].hittype;
+            datNormalSkill.tbl[408].hojopoint = datNormalSkill.tbl[functionId].hojopoint;
+            datNormalSkill.tbl[408].hojotype = datNormalSkill.tbl[functionId].hojotype;
+            datNormalSkill.tbl[408].hpbase = datNormalSkill.tbl[functionId].hpbase;
+            datNormalSkill.tbl[408].hpn = datNormalSkill.tbl[functionId].hpn;
+            datNormalSkill.tbl[408].hptype = datNormalSkill.tbl[functionId].hptype;
+            datNormalSkill.tbl[408].koukatype = datNormalSkill.tbl[functionId].koukatype;
+            datNormalSkill.tbl[408].magicbase = datNormalSkill.tbl[functionId].magicbase;
+            datNormalSkill.tbl[408].magiclimit = datNormalSkill.tbl[functionId].magiclimit;
+            datNormalSkill.tbl[408].minus = datNormalSkill.tbl[functionId].minus;
+            datNormalSkill.tbl[408].mpbase = datNormalSkill.tbl[functionId].mpbase;
+            datNormalSkill.tbl[408].mpn = datNormalSkill.tbl[functionId].mpn;
+            datNormalSkill.tbl[408].mptype = datNormalSkill.tbl[functionId].mptype;
+            datNormalSkill.tbl[408].program = datNormalSkill.tbl[functionId].program;
+            datNormalSkill.tbl[408].targetarea = datNormalSkill.tbl[functionId].targetarea;
+            datNormalSkill.tbl[408].targetcntmax = datNormalSkill.tbl[functionId].targetcntmax;
+            datNormalSkill.tbl[408].targetcntmin = datNormalSkill.tbl[functionId].targetcntmin;
+            datNormalSkill.tbl[408].targetprog = datNormalSkill.tbl[functionId].targetprog;
+            datNormalSkill.tbl[408].targetrandom = datNormalSkill.tbl[functionId].targetrandom;
+            datNormalSkill.tbl[408].targetrule = datNormalSkill.tbl[functionId].targetrule;
+            datNormalSkill.tbl[408].targettype = targetType;
+            datNormalSkill.tbl[408].untargetbadstat = datNormalSkill.tbl[functionId].untargetbadstat;
+            datNormalSkill.tbl[408].use = 2;
+
+            OverWriteSkillEffect(408, effectId);
         }
 
         private static void Ramayana(ushort id)
