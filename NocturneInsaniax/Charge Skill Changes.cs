@@ -179,7 +179,7 @@ namespace NocturneInsaniax
                     nbHelpProcess.nbDispText(devilName + " is building up energy!", string.Empty, 2, 45, 2315190144, false);
                 }
                 // Doppelganger's Evil Mirror copying Focus
-                else if (actionProcessData.work.nowcommand == 1 && hojotype == 16777216 && hojopoint == 99 && actionProcessData.work.nowindex == 417)
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 16777216 && hojopoint == 99 && (actionProcessData.work.nowindex == 407 || actionProcessData.work.nowindex == 417))
                 {
                     string devilName = nbMainProcess.nbGetUnitWorkFromFormindex(formindex).id != 0
                         ? datDevilName.Get(nbMainProcess.nbGetUnitWorkFromFormindex(formindex).id)
@@ -447,6 +447,10 @@ namespace NocturneInsaniax
                         nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
                     else
                         nbHelpProcess.nbDispText("All stats increased!", string.Empty, 2, 45, 2315190144, false);
+                }
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 262144 && actionProcessData.work.nowindex == 408)
+                {
+                    nbHelpProcess.nbDispText("Negated all -nda effects!", string.Empty, 2, 45, 2315190144, false);
                 }
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 341 && actionProcessData.work.nowindex == 509)
                 {

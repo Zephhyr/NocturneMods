@@ -19,9 +19,9 @@ namespace NocturneInsaniax
             { 001, new InnateSkill(383, 15, "Vishnu", "")}, // 001 Vishnu
             { 002, new InnateSkill(383, 15, "Mitra", "")}, // 002 Mitra
             { 003, new InnateSkill(383, 15, "Amaterasu", "")}, // 003 Amaterasu
-            { 004, new InnateSkill(383, 15, "Odin", "")}, // 004 Odin
+            { 004, new InnateSkill(383, 14, "Runes of Wisdom", "When switching out, More than double \nthe damage of next the Strength-based \nattack for the switched ally.")}, // 004 Odin
             { 005, new InnateSkill(383, 15, "Atavaka", "")}, // 005 Atavaka
-            { 006, new InnateSkill(383, 15, "Horus", "")}, // 006 Horus
+            { 006, new InnateSkill(383, 14, "Eye of Horus", "When switching out, More than double \nthe damage of next the Magic-based \nattack for the switched ally.")}, // 006 Horus
             { 007, new InnateSkill(383, 15, "Lakshmi", "")}, // 007 Lakshmi
             { 008, new InnateSkill(383, 15, "Scathach", "")}, // 008 Scathach
             { 009, new InnateSkill(383, 15, "Sarasvati", "")}, // 009 Sarasvati
@@ -240,7 +240,7 @@ namespace NocturneInsaniax
             { 222, new InnateSkill(383, 15, "", "")}, // 222 
             { 223, new InnateSkill(383, 15, "", "")}, // 223 
             { 224, new InnateSkill(383, 15, "Tam Lin", "")}, // 224 Tam Lin
-            { 225, new InnateSkill(383, 15, "Evil Mirror", "Copies single-target skills \nused by the Demi-fiend \nwith reduced power.")}, // 225 Doppelganger
+            { 225, new InnateSkill(383, 15, "Evil Mirror", "Doppelgänger mimics single-target \nskills used by the Demi-fiend \nwith reduced power.")}, // 225 Doppelganger
             { 226, new InnateSkill(383, 15, "Nightmare", "")}, // 226 Nightmare
             { 227, new InnateSkill(383, 15, "Gdon", "")}, // 227 Gdon
             { 228, new InnateSkill(383, 15, "", "")}, // 228 
@@ -480,6 +480,7 @@ namespace NocturneInsaniax
 
         private static ushort[] fourDevas = new ushort[] { 21, 23, 26, 27 };
         private static ushort[] fourOni = new ushort[] { 169, 170, 171, 172, 266, 267, 268, 269 };
+        private static ushort[] fourHorsemen = new ushort[] { 195, 196, 197, 198 };
 
         static ushort innateSkillId = 383;
 
