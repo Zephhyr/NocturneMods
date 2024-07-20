@@ -1367,6 +1367,37 @@ namespace NocturneInsaniax
                     else
                         skillPotential = demonPotentials[demonID][skillAttribute]; // Get the potential from the demon list
 
+                    // AuspiciousBeast
+                    if (actionProcessData != null && auspiciousBeast.Contains(currentDemonID))
+                    {
+                        foreach (var auspiciousBeastUser in auspiciousBeast)
+                        {
+                            if (actionProcessData.partyindex <= 3)
+                            {
+                                foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
+                                {
+                                    try
+                                    {
+                                        if (nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == auspiciousBeastUser)
+                                            skillPotential = Math.Max(skillPotential, demonPotentials[auspiciousBeastUser][skillAttribute]);
+                                    }
+                                    catch { }
+                                }
+                            }
+                            else
+                            {
+                                foreach (var enemy in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex > 3))
+                                {
+                                    try
+                                    {
+                                        if (nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id == auspiciousBeastUser)
+                                            skillPotential = Math.Max(skillPotential, demonPotentials[auspiciousBeastUser][skillAttribute]);
+                                    }
+                                    catch { }
+                                }
+                            }
+                        }
+                    }
                     // Element Gestalts and Enhancers
                     if (actionProcessData != null && skillAttribute != 5 && skillAttribute <= 7)
                     { 

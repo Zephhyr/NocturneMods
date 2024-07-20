@@ -45,9 +45,9 @@ namespace NocturneInsaniax
             { 027, new InnateSkill(383, 14, "Four Devas", "When summoned from the stock, \nraise all stats of all Four Devas \nin the active party by one rank.")}, // 027 Zouchouten
             { 028, new InnateSkill(414, 15, "Intimidate", "While in the active party, \nmay step in during negotiation to \n'convince' a lower level demon.")}, // 028 Take-Minakata
             { 029, new InnateSkill(383, 15, "Chimera", "")}, // 029 Chimera
-            { 030, new InnateSkill(383, 15, "Baihu", "")}, // 030 Baihu
+            { 030, new InnateSkill(383, 15, "Auspicious Beast", "While in the active party, raise allied \nAuspicious Beast's skill potentials \nto Baihu's if they were lower.")}, // 030 Baihu
             { 031, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Senri's critical damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 031 Senri
-            { 032, new InnateSkill(383, 15, "Zhuque", "")}, // 032 Zhuque
+            { 032, new InnateSkill(383, 15, "Auspicious Beast", "While in the active party, raise allied \nAuspicious Beast's skill potentials \nto Zhuque's if they were lower.")}, // 032 Zhuque
             { 033, new InnateSkill(383, 15, "Shiisaa", "")}, // 033 Shiisaa
             { 034, new InnateSkill(383, 15, "Xiezhai", "")}, // 034 Xiezhai
             { 035, new InnateSkill(383, 06, "Light Enhancer", "While in the active party, \nraise allies' Light skill potential \nto Unicorns's if it was lower.")}, // 035 Unicorn
@@ -163,8 +163,8 @@ namespace NocturneInsaniax
             { 145, new InnateSkill(383, 15, "Kurama Tengu", "")}, // 145 Kurama Tengu
             { 146, new InnateSkill(383, 15, "Ramayana", "Phys Gestalt & after \nHanuman heals a single ally, \ncure their ailments.")}, // 146 Hanuman
             { 147, new InnateSkill(383, 15, "Cu Chulainn", "")}, // 147 Cu Chulainn
-            { 148, new InnateSkill(383, 15, "Qing Long", "")}, // 148 Qing Long
-            { 149, new InnateSkill(383, 15, "Xuanwu", "")}, // 149 Xuanwu
+            { 148, new InnateSkill(383, 15, "Auspicious Beast", "While in the active party, raise allied \nAuspicious Beast's skill potentials \nto Qing Long's if they were lower.")}, // 148 Qing Long
+            { 149, new InnateSkill(383, 15, "Auspicious Beast", "While in the active party, raise allied \nAuspicious Beast's skill potentials \nto Xuanwu's if they were lower.")}, // 149 Xuanwu
             { 150, new InnateSkill(383, 15, "Barong", "")}, // 150 Barong
             { 151, new InnateSkill(383, 15, "Makami", "")}, // 151 Makami
             { 152, new InnateSkill(383, 04, "Force Enhancer", "While in the active party, \nraise allies' Force skill potential \nto Garuda's if it was lower.")}, // 152 Garuda
@@ -479,6 +479,7 @@ namespace NocturneInsaniax
         };
 
         private static ushort[] pawToPawCombat = new ushort[] { 31, 69, 71, 86, 179, 180, 227, 263, 289, 290, 362 };
+        private static ushort[] auspiciousBeast = new ushort[] { 30, 32, 148, 149 };
         private static ushort[] fourDevas = new ushort[] { 21, 23, 26, 27 };
         private static ushort[] fourOni = new ushort[] { 169, 170, 171, 172, 266, 267, 268, 269 };
         private static ushort[] fourHorsemen = new ushort[] { 195, 196, 197, 198 };
