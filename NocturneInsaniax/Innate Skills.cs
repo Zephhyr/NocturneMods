@@ -26,7 +26,7 @@ namespace NocturneInsaniax
             { 008, new InnateSkill(383, 15, "Scathach", "")}, // 008 Scathach
             { 009, new InnateSkill(383, 15, "Sarasvati", "")}, // 009 Sarasvati
             { 010, new InnateSkill(383, 15, "Sati", "")}, // 010 Sati
-            { 011, new InnateSkill(383, 15, "Ame-no-Uzume", "")}, // 011 Ame-no-Uzume
+            { 011, new InnateSkill(383, 14, "Curious Dance", "When switching out, all -kaja and \n-nda effects on Ame-no-Uzume will \nbe passed to the switched ally.")}, // 011 Ame-no-Uzume
             { 012, new InnateSkill(383, 15, "Shiva", "")}, // 012 Shiva
             { 013, new InnateSkill(383, 15, "Beidou Xingjun", "")}, // 013 Beidou Xingjun
             { 014, new InnateSkill(383, 15, "Qitian Dasheng", "")}, // 014 Qitian Dasheng
@@ -34,7 +34,7 @@ namespace NocturneInsaniax
             { 016, new InnateSkill(383, 00, "Phys Gestalt", "Kali gains Phys skill potential \nbased on the total potential of \nallies in the active party.")}, // 016 Kali
             { 017, new InnateSkill(383, 02, "Queen of Winter", "Ice Enhancer & Skadi's Ice \nattacks have an increased \nchance to inflict Freeze.")}, // 017 Skadi
             { 018, new InnateSkill(383, 15, "Parvati", "")}, // 018 Parvati
-            { 019, new InnateSkill(415, 15, "Entice", "While in the active party, \nmay step in during negotiation to \ntempt a male demon.")}, // 019 Kushinada
+            { 019, new InnateSkill(383, 14, "Monstrous Offering", "When switching to a Fury demon \nall support effects on Kushinada-Hime \nwill be passed to the switched ally.")}, // 019 Kushinada
             { 020, new InnateSkill(418, 15, "Maiden Plea", "While in the active party, \nmay step in during negotiation and \npacify an enraged demon.")}, // 020 Kikuri-Hime
             { 021, new InnateSkill(383, 14, "Four Devas", "When summoned from the stock, \nraise all stats of all Four Devas \nin the active party by one rank.")}, // 021 Bishamonten
             { 022, new InnateSkill(383, 03, "Odinson", "Elec Enhancer & Thor's Elec \nattacks have an increased \nchance to inflict Shock.")}, // 022 Thor
@@ -210,10 +210,10 @@ namespace NocturneInsaniax
             { 192, new InnateSkill(383, 15, "Raidou/Dante", "")}, // 192 Raidou/Dante
             { 193, new InnateSkill(383, 15, "Metatron", "")}, // 193 Metatron
             { 194, new InnateSkill(383, 15, "Beelzebub (Fly)", "")}, // 194 Beelzebub (Fly)
-            { 195, new InnateSkill(383, 15, "Pale Rider", "")}, // 195 Pale Rider
-            { 196, new InnateSkill(383, 15, "White Rider", "")}, // 196 White Rider
-            { 197, new InnateSkill(383, 15, "Red Rider", "")}, // 197 Red Rider
-            { 198, new InnateSkill(383, 15, "Black Rider", "")}, // 198 Black Rider
+            { 195, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall support effects on Pale Rider \nwill be passed to the switched ally.")}, // 195 Pale Rider
+            { 196, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall support effects on White Rider \nwill be passed to the switched ally.")}, // 196 White Rider
+            { 197, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall support effects on Red Rider \nwill be passed to the switched ally.")}, // 197 Red Rider
+            { 198, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall support effects on Black Rider \nwill be passed to the switched ally.")}, // 198 Black Rider
             { 199, new InnateSkill(383, 15, "Matador", "")}, // 199 Matador
             { 200, new InnateSkill(383, 15, "Hell Biker", "")}, // 200 Hell Biker
             { 201, new InnateSkill(383, 15, "Daisoujou", "")}, // 201 Daisoujou

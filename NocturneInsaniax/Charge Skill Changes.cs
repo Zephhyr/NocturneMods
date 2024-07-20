@@ -178,6 +178,15 @@ namespace NocturneInsaniax
 
                     nbHelpProcess.nbDispText(devilName + " is building up energy!", string.Empty, 2, 45, 2315190144, false);
                 }
+                // Switch Out Skill passing on effects
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 1 && hojopoint == 0 && actionProcessData.work.nowindex == 407)
+                {
+                    string devilName = nbMainProcess.nbGetUnitWorkFromFormindex(formindex).id != 0
+                        ? datDevilName.Get(nbMainProcess.nbGetUnitWorkFromFormindex(formindex).id)
+                        : frName.frGetCNameString(0);
+
+                    nbHelpProcess.nbDispText("Effects passed to " + devilName + "!", string.Empty, 2, 45, 2315190144, false);
+                }
                 // Doppelganger's Evil Mirror copying Focus
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 16777216 && hojopoint == 99 && (actionProcessData.work.nowindex == 407 || actionProcessData.work.nowindex == 417))
                 {
