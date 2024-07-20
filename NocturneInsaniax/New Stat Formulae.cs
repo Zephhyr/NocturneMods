@@ -147,9 +147,42 @@ namespace NocturneInsaniax
         {
             public static bool Prefix(ref int sformindex, ref float pow, ref float __result)
             {
+                byte pawToPawCount = 0;
+                bool pawToPawActive = false;
                 byte fourOniCount = 0;
 
-                if (fourOni.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id))
+                // Paw-to-Paw Combat
+                if (pawToPawCombat.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id))
+                {
+                    if (nbMainProcess.nbGetPartyFromFormindex(sformindex).partyindex <= 3)
+                    {
+                        foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
+                        {
+                            try
+                            {
+                                if (pawToPawCombat.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                    pawToPawCount++; break;
+                            }
+                            catch { }
+                        }
+                    }
+                    else
+                    {
+                        foreach (var enemy in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex > 3))
+                        {
+                            try
+                            {
+                                if (pawToPawCombat.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
+                                    pawToPawCount++; break;
+                            }
+                            catch { }
+                        }
+                    }
+
+                    if (pawToPawCount >= 2) pawToPawActive = true;
+                }
+                // Four Oni
+                else if (fourOni.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id))
                 {
                     if (nbMainProcess.nbGetPartyFromFormindex(sformindex).partyindex <= 3)
                     {
@@ -177,7 +210,7 @@ namespace NocturneInsaniax
                     }
                 }
 
-                __result = pow * (1 + 0.3f + (fourOniCount * 0.1f));
+                __result = pow * (1 + 0.3f + (Convert.ToInt16(pawToPawActive) * 0.3f) + (fourOniCount * 0.1f));
                 return false;
             }
         }

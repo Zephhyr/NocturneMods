@@ -46,7 +46,7 @@ namespace NocturneInsaniax
             { 028, new InnateSkill(414, 15, "Intimidate", "While in the active party, \nmay step in during negotiation to \n'convince' a lower level demon.")}, // 028 Take-Minakata
             { 029, new InnateSkill(383, 15, "Chimera", "")}, // 029 Chimera
             { 030, new InnateSkill(383, 15, "Baihu", "")}, // 030 Baihu
-            { 031, new InnateSkill(383, 15, "Senri", "")}, // 031 Senri
+            { 031, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Senri's critical damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 031 Senri
             { 032, new InnateSkill(383, 15, "Zhuque", "")}, // 032 Zhuque
             { 033, new InnateSkill(383, 15, "Shiisaa", "")}, // 033 Shiisaa
             { 034, new InnateSkill(383, 15, "Xiezhai", "")}, // 034 Xiezhai
@@ -84,9 +84,9 @@ namespace NocturneInsaniax
             { 066, new InnateSkill(412, 15, "Kinspeak", "While in the active party, \nmay step in during negotiation to \nurge a demon of the same race.")}, // 066 Principality
             { 067, new InnateSkill(383, 15, "Archangel", "")}, // 067 Archangel
             { 068, new InnateSkill(411, 15, "Detain", "While in the active party, \nmay step in during negotiation and \nprevent a demon from making off with payment.")}, // 068 Angel
-            { 069, new InnateSkill(383, 15, "Flauros", "")}, // 069 Flauros
+            { 069, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Flauros' critical damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 069 Flauros
             { 070, new InnateSkill(383, 15, "Kept Waiting", "Decarabia gains slight HP/MP \nrecovery after each action if \nForneus is also in the active party.")}, // 070 Decarabia
-            { 071, new InnateSkill(383, 15, "Ose", "")}, // 071 Ose
+            { 071, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Ose's critical damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 071 Ose
             { 072, new InnateSkill(383, 01, "Fire Gestalt", "Berith gains Fire skill potential \nbased on the total potential of \nallies in the active party.")}, // 072 Berith
             { 073, new InnateSkill(383, 15, "Eligor", "")}, // 073 Eligor
             { 074, new InnateSkill(383, 15, "Best Friend", "Forneus' -nda effects reduce \nenemies' stats by one extra stage if \nDecarabia is also in the active party.")}, // 074 Forneus
@@ -101,7 +101,7 @@ namespace NocturneInsaniax
             { 083, new InnateSkill(383, 15, "Suparna", "")}, // 083 Suparna
             { 084, new InnateSkill(383, 15, "Badb Catha", "")}, // 084 Badb Catha
             { 085, new InnateSkill(383, 15, "Inugami", "")}, // 085 Inugami
-            { 086, new InnateSkill(383, 15, "Nekomata", "")}, // 086 Nekomata
+            { 086, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Nekomata's critical damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 086 Nekomata
             { 087, new InnateSkill(383, 15, "Gogmagog", "")}, // 087 Gogmagog
             { 088, new InnateSkill(383, 00, "Phys Enhancer", "While in the active party, \nraise allies' Phys skill potential \nto Titan's if it was lower.")}, // 088 Titan
             { 089, new InnateSkill(409, 15, "Haggle", "While in the active party, \nmay step in during negotiation and \nensure lesser demands.")}, // 089 Sarutahiko
@@ -194,8 +194,8 @@ namespace NocturneInsaniax
             { 176, new InnateSkill(383, 15, "Loa", "")}, // 176 Loa
             { 177, new InnateSkill(383, 07, "Dark Enhancer", "While in the active party, \nraise allies' Dark skill potential \nto Chatterskull's if it was lower.")}, // 177 Chatterskull
             { 178, new InnateSkill(383, 15, "Phantom", "")}, // 178 Phantom
-            { 179, new InnateSkill(383, 15, "Ose Hallel", "")}, // 179 Ose Hallel
-            { 180, new InnateSkill(383, 15, "Flauros Hallel", "")}, // 180 Flauros Hallel
+            { 179, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Ose Hallel's critical damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 179 Ose Hallel
+            { 180, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Flauros Hallel's critical damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 180 Flauros Hallel
             { 181, new InnateSkill(383, 15, "Urthona", "")}, // 181 Urthona
             { 182, new InnateSkill(383, 15, "Urizen", "")}, // 182 Urizen
             { 183, new InnateSkill(383, 15, "Luvah", "")}, // 183 Luvah
@@ -242,7 +242,7 @@ namespace NocturneInsaniax
             { 224, new InnateSkill(383, 15, "Tam Lin", "")}, // 224 Tam Lin
             { 225, new InnateSkill(383, 15, "Evil Mirror", "Doppelgänger mimics single-target \nskills used by the Demi-fiend \nwith reduced power.")}, // 225 Doppelganger
             { 226, new InnateSkill(383, 15, "Nightmare", "")}, // 226 Nightmare
-            { 227, new InnateSkill(383, 15, "Gdon", "")}, // 227 Gdon
+            { 227, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Gdon's critical damage increases \nby 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 227 Gdon
             { 228, new InnateSkill(383, 15, "", "")}, // 228 
             { 229, new InnateSkill(383, 15, "", "")}, // 229 
             { 230, new InnateSkill(383, 15, "", "")}, // 230 
@@ -478,6 +478,7 @@ namespace NocturneInsaniax
             { 420, new List<int> { 0 } } // Flatter
         };
 
+        private static ushort[] pawToPawCombat = new ushort[] { 31, 69, 71, 86, 179, 180, 227, 263, 289, 290, 362 };
         private static ushort[] fourDevas = new ushort[] { 21, 23, 26, 27 };
         private static ushort[] fourOni = new ushort[] { 169, 170, 171, 172, 266, 267, 268, 269 };
         private static ushort[] fourHorsemen = new ushort[] { 195, 196, 197, 198 };

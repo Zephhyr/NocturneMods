@@ -8869,7 +8869,7 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 0, 1, 3, 2, 1 };
 
             tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 105, TargetLevel = 0, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 166, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 307, TargetLevel = 0, Type = 1 };
             tblSkill.fclSkillTbl[id].Event[2] = new fclSkillParam_t { Param = 203, TargetLevel = 0, Type = 1 };
             tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 186, TargetLevel = 71, Type = 1 };
             tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 178, TargetLevel = 72, Type = 1 };
