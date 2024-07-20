@@ -64,7 +64,7 @@ namespace NocturneInsaniax
             { 046, new InnateSkill(383, 00, "Phys Gestalt", "Ongkhot gains Phys skill potential \nbased on the total potential of \nallies in the active party.")}, // 046 Ongkhot
             { 047, new InnateSkill(420, 15, "Flatter", "While in the active party, \nmay step in during negotiation to \nconvince a higher level demon.")}, // 047 Jinn
             { 048, new InnateSkill(383, 04, "Force Gestalt", "Karasu Tengu gains Force skill potential \nbased on the total potential of \nallies in the active party.")}, // 048 Karasu Tengu
-            { 049, new InnateSkill(383, 15, "Dís", "")}, // 049 Dís
+            { 049, new InnateSkill(383, 15, "Planck of Norn", "When switching out, a Press Turn \nicon will not be consumed.")}, // 049 Dís
             { 050, new InnateSkill(383, 15, "Isora", "")}, // 050 Isora
             { 051, new InnateSkill(383, 15, "Apsaras", "")}, // 051 Apsaras
             { 052, new InnateSkill(383, 04, "Force Gestalt", "Koppa Tengu gains Force skill potential \nbased on the total potential of \nallies in the active party.")}, // 052 Koppa Tengu
