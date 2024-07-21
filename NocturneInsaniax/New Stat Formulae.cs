@@ -149,10 +149,11 @@ namespace NocturneInsaniax
             {
                 byte pawToPawCount = 0;
                 bool pawToPawActive = false;
+                bool proxyGuardHoundActive = false;
                 byte fourOniCount = 0;
 
                 // Paw-to-Paw Combat
-                if (pawToPawCombat.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id))
+                if (pawToPawCombatIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id))
                 {
                     if (nbMainProcess.nbGetPartyFromFormindex(sformindex).partyindex <= 3)
                     {
@@ -160,7 +161,7 @@ namespace NocturneInsaniax
                         {
                             try
                             {
-                                if (pawToPawCombat.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                if (pawToPawCombatIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
                                     pawToPawCount++; break;
                             }
                             catch { }
@@ -172,7 +173,7 @@ namespace NocturneInsaniax
                         {
                             try
                             {
-                                if (pawToPawCombat.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
+                                if (pawToPawCombatIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
                                     pawToPawCount++; break;
                             }
                             catch { }
@@ -181,8 +182,8 @@ namespace NocturneInsaniax
 
                     if (pawToPawCount >= 2) pawToPawActive = true;
                 }
-                // Four Oni
-                else if (fourOni.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id))
+                // Proxy Guard Hound
+                if (proxyGuardHoundRaces.Contains(datDevilFormat.tbl[nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id].race))
                 {
                     if (nbMainProcess.nbGetPartyFromFormindex(sformindex).partyindex <= 3)
                     {
@@ -190,7 +191,35 @@ namespace NocturneInsaniax
                         {
                             try
                             {
-                                if (fourOni.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                if (proxyGuardHoundIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                    proxyGuardHoundActive = true; break;
+                            }
+                            catch { }
+                        }
+                    }
+                    else
+                    {
+                        foreach (var enemy in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex > 3))
+                        {
+                            try
+                            {
+                                if (proxyGuardHoundIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
+                                    proxyGuardHoundActive = true; break;
+                            }
+                            catch { }
+                        }
+                    }
+                }
+                // Four Oni
+                else if (fourOniIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id))
+                {
+                    if (nbMainProcess.nbGetPartyFromFormindex(sformindex).partyindex <= 3)
+                    {
+                        foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
+                        {
+                            try
+                            {
+                                if (fourOniIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
                                     fourOniCount++;
                             }
                             catch { }
@@ -202,7 +231,7 @@ namespace NocturneInsaniax
                         {
                             try
                             {
-                                if (fourOni.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
+                                if (fourOniIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
                                     fourOniCount++;
                             }
                             catch { }
@@ -210,7 +239,7 @@ namespace NocturneInsaniax
                     }
                 }
 
-                __result = pow * (1 + 0.3f + (Convert.ToInt16(pawToPawActive) * 0.3f) + (fourOniCount * 0.1f));
+                __result = pow * (1 + 0.3f + (Convert.ToInt16(pawToPawActive) * 0.3f) + (Convert.ToInt16(proxyGuardHoundActive) * 0.3f) + (fourOniCount * 0.1f));
                 return false;
             }
         }
@@ -419,6 +448,12 @@ namespace NocturneInsaniax
 
                 if (__result == 1 && nskill == 0 && datCalc.datCheckSyojiSkill(workFromFormindex1, 300) != 0)
                     nbMainProcess.nbPushAction(4, sformindex, dformindex, 167);
+
+                if (__result == 2 && faithfulCompanionIds.Contains(workFromFormindex1.id))
+                {
+                    faithfulCompanionActive = true;
+                    faithfulCompanionActive2 = true;
+                }
 
                 return false;
             }

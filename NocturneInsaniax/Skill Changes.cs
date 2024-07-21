@@ -22,6 +22,8 @@ namespace NocturneInsaniax
         };
         public static ushort[] pushedSkillList = new ushort[] { 148, 149, 150, 151, 164, 165, 166, 167, 407, 408, 416, 417 };
 
+        public static ushort previousUnitId;
+        public static short previousSingleTargetFormIndex = -1;
         public static ushort[] activeUnitIds = new ushort[16];
         public static short[][] activeUnitPartyCount = new short[16][];
 
@@ -553,8 +555,7 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(147, 0);
                     //datCalc.datAddDevil(30, 0);
                     //datCalc.datAddDevil(111, 0);
-                    datCalc.datAddDevil(30, 0);
-                    datCalc.datAddDevil(32, 0);
+                    datCalc.datAddDevil(56, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    //work.skill[0] = 192;
@@ -980,8 +981,8 @@ namespace NocturneInsaniax
                                     }
                                 }
                                 // Four Horsemen
-                                else if ((fourHorsemen.Contains(actionProcessData.work.id) || (actionProcessData.work.id == 0 && fourHorsemen.Contains(activeUnitIds[actionProcessData.work.nowtform])))
-                                    && fourHorsemen.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(actionProcessData.work.nowtform).id))
+                                else if ((fourHorsemenIds.Contains(actionProcessData.work.id) || (actionProcessData.work.id == 0 && fourHorsemenIds.Contains(activeUnitIds[actionProcessData.work.nowtform])))
+                                    && fourHorsemenIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(actionProcessData.work.nowtform).id))
                                 {
                                     var outgoingParty = activeUnitPartyCount[actionProcessData.work.nowtform];
                                     var incomingParty = nbMainProcess.nbGetPartyFromFormindex(actionProcessData.work.nowtform);
@@ -1011,14 +1012,14 @@ namespace NocturneInsaniax
                                 nbMainProcess.nbPushAction(4, party.partyindex, party.partyindex, 408);
                             }
                             // Four Devas
-                            else if (fourDevas.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(actionProcessData.work.nowtform).id))
+                            else if (fourDevasIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(actionProcessData.work.nowtform).id))
                             {
                                 var party = nbMainProcess.nbGetPartyFromFormindex(actionProcessData.work.nowtform);
                                 foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
                                 {
                                     try
                                     {
-                                        if (fourDevas.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                        if (fourDevasIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
                                         {
                                             postSummonSkillName = "Four Devas";
                                             PostSummonSkillCopy(224, 64, 0);
@@ -1050,6 +1051,16 @@ namespace NocturneInsaniax
                         }
                         
                     } catch { }
+
+                    if (!faithfulCompanionActive2)
+                        faithfulCompanionActive = false;
+                    faithfulCompanionActive2 = false;
+
+                    previousUnitId = actionProcessData.work.id;
+                    previousSingleTargetFormIndex = (actionProcessData.work.nowcommand == 0 && actionProcessData.work.nowindex == 0) ||
+                        (actionProcessData.work.nowcommand == 1 && datNormalSkill.tbl[actionProcessData.work.nowindex].targetarea == 2 && datNormalSkill.tbl[actionProcessData.work.nowindex].targettype == 0)
+                        ? actionProcessData.work.nowtform
+                        : (short) -1;
                 }
             }
         }

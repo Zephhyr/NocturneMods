@@ -1181,7 +1181,7 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int nskill, ref int sformindex, ref int __result)
             {
-                if ((nskill < 288 || nskill > 421) && __result != -1 && datNormalSkill.tbl[nskill].hptype != 3) // If it isn't a passive skill and HP have been altered
+                if (__result != -1 && datNormalSkill.tbl[nskill].hptype != 3) // HP has been altered
                 {
                     ushort demonID = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id; // Get the demon's ID
                     sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(nskill, demonID);
@@ -1202,6 +1202,8 @@ namespace NocturneInsaniax
                         else
                         {
                             __result = Convert.ToInt32(SkillPotentialUtility.ApplyDamageMultiplier(skillPotential, __result));
+                            if (faithfulCompanionActive)
+                                __result = Convert.ToInt32(__result * 1.2);
                         }
                     }
                 }
@@ -1368,9 +1370,9 @@ namespace NocturneInsaniax
                         skillPotential = demonPotentials[demonID][skillAttribute]; // Get the potential from the demon list
 
                     // AuspiciousBeast
-                    if (actionProcessData != null && auspiciousBeast.Contains(currentDemonID))
+                    if (actionProcessData != null && auspiciousBeastIds.Contains(currentDemonID))
                     {
-                        foreach (var auspiciousBeastUser in auspiciousBeast)
+                        foreach (var auspiciousBeastUser in auspiciousBeastIds)
                         {
                             if (actionProcessData.partyindex <= 3)
                             {

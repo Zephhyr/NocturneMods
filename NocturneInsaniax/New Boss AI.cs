@@ -67,6 +67,9 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref nbMainProcessData_t data)
             {
+                faithfulCompanionActive = false;
+                faithfulCompanionActive2 = false;
+
                 short activeUnit = data.activeunit;
 
                 if (activeUnit >= 4)

@@ -70,7 +70,7 @@ namespace NocturneInsaniax
 
                 byte fourOniCount = 0;
 
-                if (fourOni.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(formindex).id))
+                if (fourOniIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(formindex).id))
                 {
                     if (party.partyindex <= 3)
                     {
@@ -78,7 +78,7 @@ namespace NocturneInsaniax
                         {
                             try
                             {
-                                if (fourOni.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                if (fourOniIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
                                     fourOniCount++;
                             }
                             catch { }
@@ -90,7 +90,7 @@ namespace NocturneInsaniax
                         {
                             try
                             {
-                                if (fourOni.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
+                                if (fourOniIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
                                     fourOniCount++;
                             }
                             catch { }

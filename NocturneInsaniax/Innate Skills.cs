@@ -71,7 +71,7 @@ namespace NocturneInsaniax
             { 053, new InnateSkill(383, 15, "Titania", "")}, // 053 Titania
             { 054, new InnateSkill(383, 14, "Fairy King's Melody", "When summoned from the stock, \nnegate -nda effects on the party.")}, // 054 Oberon
             { 055, new InnateSkill(383, 02, "Ice Gestalt", "Troll gains Ice skill potential \nbased on the total potential of \nallies in the active party.")}, // 055 Troll
-            { 056, new InnateSkill(383, 15, "Setanta", "")}, // 056 Setanta
+            { 056, new InnateSkill(383, 15, "Proxy Guard Hound", "While in the active party, increases \ncritical damage by 30% for Avatar, \nHoly, Beast and Wilder allies.")}, // 056 Setanta
             { 057, new InnateSkill(410, 15, "Arbitration", "While in the active party, \nmay step in during negotiation and \nsoothe an enraged demon.")}, // 057 Kelpie
             { 058, new InnateSkill(383, 15, "Jack-o'-Lantern", "")}, // 058 Jack-o'-Lantern
             { 059, new InnateSkill(353, 15, "Lucky Find", "Occasionally find items on the Vortex World Map while in the active party.")}, // 059 High Pixie
@@ -96,11 +96,11 @@ namespace NocturneInsaniax
             { 078, new InnateSkill(383, 15, "Mizuchi", "")}, // 078 Mizuchi
             { 079, new InnateSkill(383, 03, "Elec Gestalt", "Naga gains Elec skill potential \nbased on the total potential of \nallies in the active party.")}, // 079 Naga
             { 080, new InnateSkill(383, 15, "Nozuchi", "")}, // 080 Nozuchi
-            { 081, new InnateSkill(383, 15, "Cerberus", "")}, // 081 Cerberus
-            { 082, new InnateSkill(383, 15, "Orthrus", "")}, // 082 Orthrus
+            { 081, new InnateSkill(383, 15, "Faithful Companion", "After Cerberus strikes a weakness, \nthe next ally deals 20% more \ndamage if they attack.")}, // 081 Cerberus
+            { 082, new InnateSkill(383, 15, "Faithful Companion", "After Orthrus strikes a weakness, \nthe next ally deals 20% more \ndamage if they attack.")}, // 082 Orthrus
             { 083, new InnateSkill(383, 15, "Suparna", "")}, // 083 Suparna
             { 084, new InnateSkill(383, 15, "Badb Catha", "")}, // 084 Badb Catha
-            { 085, new InnateSkill(383, 15, "Inugami", "")}, // 085 Inugami
+            { 085, new InnateSkill(383, 15, "Faithful Companion", "After Inugami strikes a weakness, \nthe next ally deals 20% more \ndamage if they attack.")}, // 085 Inugami
             { 086, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Nekomata's critical damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 086 Nekomata
             { 087, new InnateSkill(383, 15, "Gogmagog", "")}, // 087 Gogmagog
             { 088, new InnateSkill(383, 00, "Phys Enhancer", "While in the active party, \nraise allies' Phys skill potential \nto Titan's if it was lower.")}, // 088 Titan
@@ -162,11 +162,11 @@ namespace NocturneInsaniax
             { 144, new InnateSkill(383, 15, "Arahabaki", "")}, // 144 Arahabaki
             { 145, new InnateSkill(383, 15, "Kurama Tengu", "")}, // 145 Kurama Tengu
             { 146, new InnateSkill(383, 15, "Ramayana", "Phys Gestalt & after \nHanuman heals a single ally, \ncure their ailments.")}, // 146 Hanuman
-            { 147, new InnateSkill(383, 15, "Cu Chulainn", "")}, // 147 Cu Chulainn
+            { 147, new InnateSkill(383, 15, "Proxy Guard Hound", "While in the active party, increases \ncritical damage by 30% for Avatar, \nHoly, Beast and Wilder allies.")}, // 147 Cu Chulainn
             { 148, new InnateSkill(383, 15, "Auspicious Beast", "While in the active party, raise allied \nAuspicious Beast's skill potentials \nto Qing Long's if they were lower.")}, // 148 Qing Long
             { 149, new InnateSkill(383, 15, "Auspicious Beast", "While in the active party, raise allied \nAuspicious Beast's skill potentials \nto Xuanwu's if they were lower.")}, // 149 Xuanwu
             { 150, new InnateSkill(383, 15, "Barong", "")}, // 150 Barong
-            { 151, new InnateSkill(383, 15, "Makami", "")}, // 151 Makami
+            { 151, new InnateSkill(383, 15, "Faithful Companion", "After Makami strikes a weakness, \nthe next ally deals 20% more \ndamage if they attack.")}, // 151 Makami
             { 152, new InnateSkill(383, 04, "Force Enhancer", "While in the active party, \nraise allies' Force skill potential \nto Garuda's if it was lower.")}, // 152 Garuda
             { 153, new InnateSkill(383, 15, "Yatagarasu", "")}, // 153 Yatagarasu
             { 154, new InnateSkill(383, 15, "Gurulu", "")}, // 154 Gurulu
@@ -478,13 +478,19 @@ namespace NocturneInsaniax
             { 420, new List<int> { 0 } } // Flatter
         };
 
-        private static ushort[] pawToPawCombat = new ushort[] { 31, 69, 71, 86, 179, 180, 227, 263, 289, 290, 362 };
-        private static ushort[] auspiciousBeast = new ushort[] { 30, 32, 148, 149 };
-        private static ushort[] fourDevas = new ushort[] { 21, 23, 26, 27 };
-        private static ushort[] fourOni = new ushort[] { 169, 170, 171, 172, 266, 267, 268, 269 };
-        private static ushort[] fourHorsemen = new ushort[] { 195, 196, 197, 198 };
+        private static ushort[] pawToPawCombatIds = new ushort[] { 31, 69, 71, 86, 179, 180, 227, 263, 289, 290, 362 };
+        private static ushort[] auspiciousBeastIds = new ushort[] { 30, 32, 148, 149 };
+        private static ushort[] faithfulCompanionIds = new ushort[] { 81, 82, 85, 151 };
+        private static ushort[] proxyGuardHoundRaces = new ushort[] { 6, 14, 21, 28 };
+        private static ushort[] proxyGuardHoundIds = new ushort[] { 56, 147 };
+        private static ushort[] fourDevasIds = new ushort[] { 21, 23, 26, 27 };
+        private static ushort[] fourOniIds = new ushort[] { 169, 170, 171, 172, 266, 267, 268, 269 };
+        private static ushort[] fourHorsemenIds = new ushort[] { 195, 196, 197, 198 };
 
         static ushort innateSkillId = 383;
+
+        private static bool faithfulCompanionActive = false;
+        private static bool faithfulCompanionActive2 = false;
 
         [HarmonyPatch(typeof(cmpDrawStatus), nameof(cmpDrawStatus.cmpDrawSkill))]
         private class InnateSkillPatch1
