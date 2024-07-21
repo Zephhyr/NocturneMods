@@ -555,7 +555,7 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(147, 0);
                     //datCalc.datAddDevil(30, 0);
                     //datCalc.datAddDevil(111, 0);
-                    datCalc.datAddDevil(114, 0);
+                    datCalc.datAddDevil(131, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    //work.skill[0] = 192;
@@ -1058,9 +1058,13 @@ namespace NocturneInsaniax
 
                     previousUnitId = actionProcessData.work.id;
                     previousSingleTargetFormIndex = (actionProcessData.work.nowcommand == 0 && actionProcessData.work.nowindex == 0) ||
-                        (actionProcessData.work.nowcommand == 1 && datNormalSkill.tbl[actionProcessData.work.nowindex].targetarea == 2 && datNormalSkill.tbl[actionProcessData.work.nowindex].targettype == 0)
+                        (actionProcessData.work.nowcommand == 1 && datNormalSkill.tbl[actionProcessData.work.nowindex].targetarea == 2 && datNormalSkill.tbl[actionProcessData.work.nowindex].targettype == 0) ||
+                        (actionProcessData.work.nowcommand == 5 && datNormalSkill.tbl[datItem.tbl[actionProcessData.work.nowindex].skillid].targetarea == 2 && datNormalSkill.tbl[datItem.tbl[actionProcessData.work.nowindex].skillid].targettype == 0)
                         ? actionProcessData.work.nowtform
                         : (short) -1;
+
+                    MelonLogger.Msg("previousUnitId: " + previousUnitId);
+                    MelonLogger.Msg("previousSingleTargetFormIndex: " + previousSingleTargetFormIndex);
                 }
             }
         }

@@ -439,6 +439,7 @@ namespace NocturneInsaniax
                             critRate = 30;
                     }
 
+                    // Crit enabling innates
                     sbyte skillAttr = datSkill.tbl[nskill].skillattr;
                     if (critEnablerUsers.Keys.Contains(skillAttr))
                     {
@@ -468,6 +469,16 @@ namespace NocturneInsaniax
                         }
                     }
 
+                    // Focused Assault
+                    if (focusedAssaultIds.Contains(workFromFormindex1.id) && 
+                        datNormalSkill.tbl[nskill].targetarea == 2 && 
+                        datNormalSkill.tbl[nskill].targettype == 0 &&
+                        previousSingleTargetFormIndex == dformindex &&
+                        critRate > 0)
+                    {
+                        critRate += 20;
+                    }
+
                     var luk = datCalc.datGetParam(workFromFormindex1, 5);
                     var lukMultiplier = 1 + ((float)luk / 100);
                     var critChance = critRate * lukMultiplier;
@@ -494,12 +505,13 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int nskill, ref int sformindex, ref int dformindex, ref int __result)
             {
-                if (datNormalSkill.tbl[nskill].koukatype == 0 && (__result == 0 || __result == 4))
+                if (__result == 0 || __result == 4) // Hit or Miss
                 {
                     datUnitWork_t workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
                     datUnitWork_t workFromFormindex2 = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
 
-                    if (workFromFormindex2.badstatus == 1 || // Shocked
+                    if (datNormalSkill.tbl[nskill].hitlevel == 255 ||
+                        workFromFormindex2.badstatus == 1 || // Shocked
                         workFromFormindex2.badstatus == 2 || // Frozen
                         workFromFormindex2.badstatus == 4 || // Asleep
                         workFromFormindex2.badstatus == 16 || // Bound
@@ -510,21 +522,45 @@ namespace NocturneInsaniax
                         return;
                     }
 
+                    float chance = 0;
+
                     var userLevel = workFromFormindex1.level;
                     var userAgi = datCalc.datGetParam(workFromFormindex1, 4);
                     var userLuk = datCalc.datGetParam(workFromFormindex1, 5);
-                    var accuracyBuff = nbCalc.nbGetHojoRitu(sformindex, 8);
-                    
+
                     var targetLevel = workFromFormindex2.level;
                     var targetAgi = datCalc.datGetParam(workFromFormindex2, 4);
                     var targetLuk = datCalc.datGetParam(workFromFormindex2, 5);
+
+                    if (datNormalSkill.tbl[nskill].koukatype == 0)
+                    {
+                        chance = (datNormalSkill.tbl[nskill].hitlevel - datNormalSkill.tbl[nskill].failpoint)
+                        + ((userLevel / 2) + (userAgi * 2) + (userLuk))
+                        - ((targetLevel / 2) + (targetAgi * 2) + (targetLuk));
+                    }
+                    else if (datNormalSkill.tbl[nskill].koukatype == 1)
+                    {
+                        var userMag = datCalc.datGetParam(workFromFormindex1, 2);
+
+                        chance = datNormalSkill.tbl[nskill].hitlevel
+                        + ((userLevel / 2) + (userMag) + (userAgi * 2) + (userLuk))
+                        - ((targetLevel / 2) + (targetAgi * 2) + (targetLuk));
+                    }
+
+                    // Focused Assault
+                    if (focusedAssaultIds.Contains(workFromFormindex1.id) &&
+                        datNormalSkill.tbl[nskill].targetarea == 2 &&
+                        datNormalSkill.tbl[nskill].targettype == 0 &&
+                        previousSingleTargetFormIndex == dformindex)
+                    {
+                        chance += 20;
+                    }
+
+                    var accuracyBuff = nbCalc.nbGetHojoRitu(sformindex, 8);
                     var evasionBuff = nbCalc.nbGetHojoRitu(dformindex, 6);
                     if (nskill == 475 && evasionBuff < 1) evasionBuff = 1;
 
-                    var chance = ((datNormalSkill.tbl[nskill].hitlevel - datNormalSkill.tbl[nskill].failpoint) 
-                        + ((userLevel/2) + (userAgi*2) + (userLuk)) 
-                        - ((targetLevel/2) + (targetAgi*2) + (targetLuk))) 
-                        * accuracyBuff * evasionBuff;
+                    chance = chance * accuracyBuff * evasionBuff;
                     if (workFromFormindex1.badstatus == 256)
                         chance /= 2;
                     var rand = dds3KernelCore.dds3GetRandIntA(100);

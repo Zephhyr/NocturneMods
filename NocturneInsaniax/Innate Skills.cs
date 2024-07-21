@@ -20,7 +20,7 @@ namespace NocturneInsaniax
             { 002, new InnateSkill(383, 15, "Mitra", "")}, // 002 Mitra
             { 003, new InnateSkill(383, 06, "Blinding Radiance", "While in the active party, \nallied Light attacks may crit.")}, // 003 Amaterasu
             { 004, new InnateSkill(383, 14, "Runes of Wisdom", "When switching out, More than double \nthe damage of next the Strength-based \nattack for the switched ally.")}, // 004 Odin
-            { 005, new InnateSkill(383, 15, "Atavaka", "")}, // 005 Atavaka
+            { 005, new InnateSkill(383, 00, "Focused Assault", "Atavaka gains 20% accuracy and \ncritical chance when targetting the \nsame single foe as the previous ally.")}, // 005 Atavaka
             { 006, new InnateSkill(383, 14, "Eye of Horus", "When switching out, More than double \nthe damage of next the Magic-based \nattack for the switched ally.")}, // 006 Horus
             { 007, new InnateSkill(383, 15, "Lakshmi", "")}, // 007 Lakshmi
             { 008, new InnateSkill(383, 15, "Scathach", "")}, // 008 Scathach
@@ -82,7 +82,7 @@ namespace NocturneInsaniax
             { 064, new InnateSkill(411, 15, "Detain", "While in the active party, \nmay step in during negotiation and \nprevent a demon from making off with payment.")}, // 064 Virtue
             { 065, new InnateSkill(383, 06, "Light Gestalt", "Power gains Light skill potential \nbased on the total potential of \nallies in the active party.")}, // 065 Power
             { 066, new InnateSkill(412, 15, "Kinspeak", "While in the active party, \nmay step in during negotiation to \nurge a demon of the same race.")}, // 066 Principality
-            { 067, new InnateSkill(383, 15, "Archangel", "")}, // 067 Archangel
+            { 067, new InnateSkill(383, 00, "Focused Assault", "Archangel gains 20% accuracy and \ncritical chance when targetting the \nsame single foe as the previous ally.")}, // 067 Archangel
             { 068, new InnateSkill(411, 15, "Detain", "While in the active party, \nmay step in during negotiation and \nprevent a demon from making off with payment.")}, // 068 Angel
             { 069, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Flauros' critical damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 069 Flauros
             { 070, new InnateSkill(383, 15, "Kept Waiting", "Decarabia gains slight HP/MP \nrecovery after each action if \nForneus is also in the active party.")}, // 070 Decarabia
@@ -146,7 +146,7 @@ namespace NocturneInsaniax
             { 128, new InnateSkill(383, 15, "Legion", "")}, // 128 Legion
             { 129, new InnateSkill(383, 15, "Yaka", "")}, // 129 Yaka
             { 130, new InnateSkill(383, 00, "Phys Gestalt", "Choronzon gains Phys skill potential \nbased on the total potential of \nallies in the active party.")}, // 130 Choronzon
-            { 131, new InnateSkill(383, 15, "Preta", "")}, // 131 Preta
+            { 131, new InnateSkill(383, 00, "Focused Assault", "Preta gains 20% accuracy and \ncritical chance when targetting the \nsame single foe as the previous ally.")}, // 131 Preta
             { 132, new InnateSkill(383, 07, "Dark Enhancer", "While in the active party, \nraise allies' Dark skill potential \nto Shadow's if it was lower.")}, // 132 Shadow
             { 133, new InnateSkill(383, 15, "Black Ooze", "")}, // 133 Black Ooze
             { 134, new InnateSkill(383, 15, "Blob", "")}, // 134 Blob
@@ -506,6 +506,7 @@ namespace NocturneInsaniax
         private static ushort[] faithfulCompanionIds = new ushort[] { 81, 82, 85, 151 };
         private static ushort[] proxyGuardHoundRaces = new ushort[] { 6, 14, 21, 28 };
         private static ushort[] proxyGuardHoundIds = new ushort[] { 56, 147 };
+        private static ushort[] focusedAssaultIds = new ushort[] { 5, 67, 131 };
         private static ushort[] fourDevasIds = new ushort[] { 21, 23, 26, 27 };
         private static ushort[] fourOniIds = new ushort[] { 169, 170, 171, 172, 266, 267, 268, 269 };
         private static ushort[] fourHorsemenIds = new ushort[] { 195, 196, 197, 198 };
