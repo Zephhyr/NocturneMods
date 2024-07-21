@@ -438,6 +438,36 @@ namespace NocturneInsaniax
                         else if (datCalc.datCheckSyojiSkill(workFromFormindex1, 299) != 0 || (workFromFormindex1.id == 111 || workFromFormindex1.id == 335))
                             critRate = 30;
                     }
+
+                    sbyte skillAttr = datSkill.tbl[nskill].skillattr;
+                    if (critEnablerUsers.Keys.Contains(skillAttr))
+                    {
+                        if (actionProcessData.partyindex <= 3)
+                        {
+                            foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
+                            {
+                                try
+                                {
+                                    if (critEnablerUsers[skillAttr].Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                        critRate = Math.Max(critRate, (short) 10);
+                                }
+                                catch { }
+                            }
+                        }
+                        else
+                        {
+                            foreach (var enemy in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex > 3))
+                            {
+                                try
+                                {
+                                    if (critEnablerUsers[skillAttr].Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
+                                        critRate = Math.Max(critRate, (short) 10);
+                                }
+                                catch { }
+                            }
+                        }
+                    }
+
                     var luk = datCalc.datGetParam(workFromFormindex1, 5);
                     var lukMultiplier = 1 + ((float)luk / 100);
                     var critChance = critRate * lukMultiplier;

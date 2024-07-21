@@ -18,13 +18,13 @@ namespace NocturneInsaniax
             { 000, new InnateSkill(383, 15, "", "")}, // 000
             { 001, new InnateSkill(383, 15, "Vishnu", "")}, // 001 Vishnu
             { 002, new InnateSkill(383, 15, "Mitra", "")}, // 002 Mitra
-            { 003, new InnateSkill(383, 15, "Amaterasu", "")}, // 003 Amaterasu
+            { 003, new InnateSkill(383, 06, "Blinding Radiance", "While in the active party, \nallied Light attacks may crit.")}, // 003 Amaterasu
             { 004, new InnateSkill(383, 14, "Runes of Wisdom", "When switching out, More than double \nthe damage of next the Strength-based \nattack for the switched ally.")}, // 004 Odin
             { 005, new InnateSkill(383, 15, "Atavaka", "")}, // 005 Atavaka
             { 006, new InnateSkill(383, 14, "Eye of Horus", "When switching out, More than double \nthe damage of next the Magic-based \nattack for the switched ally.")}, // 006 Horus
             { 007, new InnateSkill(383, 15, "Lakshmi", "")}, // 007 Lakshmi
             { 008, new InnateSkill(383, 15, "Scathach", "")}, // 008 Scathach
-            { 009, new InnateSkill(383, 15, "Sarasvati", "")}, // 009 Sarasvati
+            { 009, new InnateSkill(383, 04, "Vina Raga", "While in the active party, \nallied Force attacks may crit.")}, // 009 Sarasvati
             { 010, new InnateSkill(383, 15, "Sati", "")}, // 010 Sati
             { 011, new InnateSkill(383, 14, "Curious Dance", "When switching out, all -kaja and \n-nda effects on Ame-no-Uzume will \nbe passed to the switched ally.")}, // 011 Ame-no-Uzume
             { 012, new InnateSkill(383, 15, "Shiva", "")}, // 012 Shiva
@@ -59,7 +59,7 @@ namespace NocturneInsaniax
             { 041, new InnateSkill(383, 15, "Kushi Mitama", "")}, // 041 Kushi Mitama
             { 042, new InnateSkill(383, 15, "Nigi Mitama", "")}, // 042 Nigi Mitama
             { 043, new InnateSkill(383, 15, "Ara Mitama", "")}, // 043 Ara Mitama
-            { 044, new InnateSkill(383, 15, "Efreet", "")}, // 044 Efreet
+            { 044, new InnateSkill(383, 01, "Malevolent Flames", "While in the active party, \nallied Fire attacks may crit.")}, // 044 Efreet
             { 045, new InnateSkill(413, 15, "Silver Tongue", "While in the active party, \nmay step in during negotiation to \npersuade an indecisive demon.")}, // 045 Pulukishi
             { 046, new InnateSkill(383, 00, "Phys Gestalt", "Ongkhot gains Phys skill potential \nbased on the total potential of \nallies in the active party.")}, // 046 Ongkhot
             { 047, new InnateSkill(420, 15, "Flatter", "While in the active party, \nmay step in during negotiation to \nconvince a higher level demon.")}, // 047 Jinn
@@ -91,7 +91,7 @@ namespace NocturneInsaniax
             { 073, new InnateSkill(383, 15, "Eligor", "")}, // 073 Eligor
             { 074, new InnateSkill(383, 15, "Best Friend", "Forneus' -nda effects reduce \nenemies' stats by one extra stage if \nDecarabia is also in the active party.")}, // 074 Forneus
             { 075, new InnateSkill(383, 02, "Ice Gestalt", "Yurlungur gains Ice skill potential \nbased on the total potential of \nallies in the active party.")}, // 075 Yurlungur
-            { 076, new InnateSkill(383, 15, "Quetzalcoatl", "")}, // 076 Quetzalcoatl
+            { 076, new InnateSkill(383, 02, "Breath of Plenty", "While in the active party, \nallied Ice attacks may crit.")}, // 076 Quetzalcoatl
             { 077, new InnateSkill(383, 03, "Elec Gestalt", "Naga Raja gains Elec skill potential \nbased on the total potential of \nallies in the active party.")}, // 077 Naga Raja
             { 078, new InnateSkill(383, 15, "Mizuchi", "")}, // 078 Mizuchi
             { 079, new InnateSkill(383, 03, "Elec Gestalt", "Naga gains Elec skill potential \nbased on the total potential of \nallies in the active party.")}, // 079 Naga
@@ -129,7 +129,7 @@ namespace NocturneInsaniax
             { 111, new InnateSkill(383, 01, "Laevateinn", "Fire Enhancer & Surt's normal \nattacks deal medium Fire damage.")}, // 111 Surt
             { 112, new InnateSkill(414, 15, "Intimidate", "While in the active party, \nmay step in during negotiation to \n'convince' a lower level demon.")}, // 112 Abaddon
             { 113, new InnateSkill(383, 15, "Loki", "")}, // 113 Loki
-            { 114, new InnateSkill(383, 15, "Lilith", "")}, // 114 Lilith
+            { 114, new InnateSkill(383, 05, "Forbidden Fruit", "While in the active party, \nallied Almighty attacks may crit.")}, // 114 Lilith
             { 115, new InnateSkill(383, 15, "Nyx", "")}, // 115 Nyx - Elec Gestalt?
             { 116, new InnateSkill(383, 15, "Queen Mab", "")}, // 116 Queen Mab
             { 117, new InnateSkill(415, 15, "Entice", "While in the active party, \nmay step in during negotiation to \ntempt a male demon.")}, // 117 Succubus
@@ -165,7 +165,7 @@ namespace NocturneInsaniax
             { 147, new InnateSkill(383, 15, "Proxy Guard Hound", "While in the active party, increases \ncritical damage by 30% for Avatar, \nHoly, Beast and Wilder allies.")}, // 147 Cu Chulainn
             { 148, new InnateSkill(383, 15, "Auspicious Beast", "While in the active party, raise allied \nAuspicious Beast's skill potentials \nto Qing Long's if they were lower.")}, // 148 Qing Long
             { 149, new InnateSkill(383, 15, "Auspicious Beast", "While in the active party, raise allied \nAuspicious Beast's skill potentials \nto Xuanwu's if they were lower.")}, // 149 Xuanwu
-            { 150, new InnateSkill(383, 15, "Barong", "")}, // 150 Barong
+            { 150, new InnateSkill(383, 03, "Vanquishing Bolts", "While in the active party, \nallied Elec attacks may crit.")}, // 150 Barong
             { 151, new InnateSkill(383, 15, "Faithful Companion", "After Makami strikes a weakness, \nthe next ally deals 20% more \ndamage if they attack.")}, // 151 Makami
             { 152, new InnateSkill(383, 04, "Force Enhancer", "While in the active party, \nraise allies' Force skill potential \nto Garuda's if it was lower.")}, // 152 Garuda
             { 153, new InnateSkill(383, 15, "Yatagarasu", "")}, // 153 Yatagarasu
@@ -183,7 +183,7 @@ namespace NocturneInsaniax
             { 165, new InnateSkill(383, 15, "Manikin", "")}, // 165 Manikin
             { 166, new InnateSkill(383, 15, "Manikin", "")}, // 166 Manikin
             { 167, new InnateSkill(353, 15, "Lucky Find", "Occasionally find items on the Vortex World Map while in the active party.")}, // 167 Pisaca
-            { 168, new InnateSkill(383, 15, "Kaiwan", "")}, // 168 Kaiwan
+            { 168, new InnateSkill(383, 07, "Dark Star", "While in the active party, \nallied Dark attacks may crit.")}, // 168 Kaiwan
             { 169, new InnateSkill(383, 15, "Four Oni", "Kin-Ki's charged/critical damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 169 Kin-Ki
             { 170, new InnateSkill(383, 15, "Four Oni", "Sui-Ki's charged/critical damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 170 Sui-Ki
             { 171, new InnateSkill(383, 15, "Four Oni", "Fuu-Ki's charged/critical damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 171 Fuu-Ki
@@ -277,7 +277,7 @@ namespace NocturneInsaniax
             { 259, new InnateSkill(383, 15, "Boss Noah 2", "")}, // 259 Boss Noah 2
             { 260, new InnateSkill(383, 15, "Forced Incubus", "")}, // 260 Forced Incubus
             { 261, new InnateSkill(383, 15, "Forced Koppa Tengu", "")}, // 261 Forced Koppa Tengu
-            { 262, new InnateSkill(383, 15, "Forced Kaiwan", "")}, // 262 Forced Kaiwan
+            { 262, new InnateSkill(383, 15, "Dark Star", "")}, // 262 Forced Kaiwan
             { 263, new InnateSkill(383, 15, "Boss Ose", "")}, // 263 Boss Ose
             { 264, new InnateSkill(383, 15, "Boss Kagutsuchi 2", "")}, // 264 Boss Kagutsuchi 2
             { 265, new InnateSkill(383, 15, "Ambush Mizuchi", "")}, // 265 Ambush Mizuchi
@@ -330,7 +330,7 @@ namespace NocturneInsaniax
             { 312, new InnateSkill(383, 01, "Fire Gestalt", "Berith gains Fire skill potential \nbased on the total potential of \nallies in the active party.")}, // 312 Boss Berith
             { 313, new InnateSkill(383, 15, "Boss Succubus", "")}, // 313 Boss Succubus
             { 314, new InnateSkill(383, 15, "Ambush High Pixie", "")}, // 314 Ambush High Pixie
-            { 315, new InnateSkill(383, 15, "Boss Kaiwan", "")}, // 315 Boss Kaiwan
+            { 315, new InnateSkill(383, 15, "Dark Star", "")}, // 315 Boss Kaiwan
             { 316, new InnateSkill(383, 15, "Forced Nekomata", "")}, // 316 Forced Nekomata
             { 317, new InnateSkill(383, 02, "Ice Gestalt", "Troll gains Ice skill potential \nbased on the total potential of \nallies in the active party.")}, // 317 Boss Troll
             { 318, new InnateSkill(383, 15, "Forced Will o' Wisp", "")}, // 318 Forced Will o' Wisp
@@ -462,6 +462,29 @@ namespace NocturneInsaniax
             { 5, new List<ushort>() }, // Almighty (Not Used)
             { 6, new List<ushort> { 35, 63 } }, // Light
             { 7, new List<ushort> { 132, 177 } } // Dark
+        };
+
+        private static Dictionary<sbyte, List<ushort>> melodyUsers = new Dictionary<sbyte, List<ushort>>
+        {
+            { 0, new List<ushort> { } }, // Phys
+            { 1, new List<ushort> { } }, // Fire
+            { 2, new List<ushort> { } }, // Ice
+            { 3, new List<ushort> { } }, // Elec
+            { 4, new List<ushort> { } }, // Force
+            { 5, new List<ushort>() }, // Almighty (Not Used)
+            { 6, new List<ushort> { } }, // Light
+            { 7, new List<ushort> { } } // Dark
+        };
+
+        private static Dictionary<sbyte, List<ushort>> critEnablerUsers = new Dictionary<sbyte, List<ushort>>
+        {
+            { 1, new List<ushort> { 44 } }, // Fire
+            { 2, new List<ushort> { 76 } }, // Ice
+            { 3, new List<ushort> { 150 } }, // Elec
+            { 4, new List<ushort> { 9 } }, // Force
+            { 5, new List<ushort> { 114 } }, // Almighty
+            { 6, new List<ushort> { 3 } }, // Light
+            { 7, new List<ushort> { 168, 262, 315 } } // Dark
         };
 
         private static Dictionary<ushort, List<int>> negoSkillScenarios = new Dictionary<ushort, List<int>>
