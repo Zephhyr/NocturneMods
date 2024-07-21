@@ -49,7 +49,7 @@ namespace NocturneInsaniax
             { 031, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Senri's critical damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 031 Senri
             { 032, new InnateSkill(383, 15, "Auspicious Beast", "While in the active party, raise allied \nAuspicious Beast's skill potentials \nto Zhuque's if they were lower.")}, // 032 Zhuque
             { 033, new InnateSkill(383, 15, "Shiisaa", "")}, // 033 Shiisaa
-            { 034, new InnateSkill(383, 15, "Xiezhai", "")}, // 034 Xiezhai
+            { 034, new InnateSkill(383, 15, "Helmsman", "When Xiezhai acts, the next ally \ngains 30% accuracy if they attack.")}, // 034 Xiezhai
             { 035, new InnateSkill(383, 06, "Light Enhancer", "While in the active party, \nraise allies' Light skill potential \nto Unicorns's if it was lower.")}, // 035 Unicorn
             { 036, new InnateSkill(383, 01, "Fire Enhancer", "While in the active party, \nraise allies' Fire skill potential \nto Flaemis' if it was lower.")}, // 036 Flaemis
             { 037, new InnateSkill(383, 02, "Ice Enhancer", "While in the active party, \nraise allies' Ice skill potential \nto Aquans' if it was lower.")}, // 037 Aquans
@@ -88,7 +88,7 @@ namespace NocturneInsaniax
             { 070, new InnateSkill(383, 15, "Kept Waiting", "Decarabia gains slight HP/MP \nrecovery after each action if \nForneus is also in the active party.")}, // 070 Decarabia
             { 071, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Ose's critical damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 071 Ose
             { 072, new InnateSkill(383, 01, "Fire Gestalt", "Berith gains Fire skill potential \nbased on the total potential of \nallies in the active party.")}, // 072 Berith
-            { 073, new InnateSkill(383, 15, "Eligor", "")}, // 073 Eligor
+            { 073, new InnateSkill(383, 15, "Helmsman", "When Xiezhai acts, the next ally \ngains 30% accuracy if they attack.")}, // 073 Eligor
             { 074, new InnateSkill(383, 15, "Best Friend", "Forneus' -nda effects reduce \nenemies' stats by one extra stage if \nDecarabia is also in the active party.")}, // 074 Forneus
             { 075, new InnateSkill(383, 02, "Ice Gestalt", "Yurlungur gains Ice skill potential \nbased on the total potential of \nallies in the active party.")}, // 075 Yurlungur
             { 076, new InnateSkill(383, 02, "Breath of Plenty", "While in the active party, \nallied Ice attacks may crit.")}, // 076 Quetzalcoatl
@@ -158,7 +158,7 @@ namespace NocturneInsaniax
             { 140, new InnateSkill(383, 15, "Raphael", "")}, // 140 Raphael
             { 141, new InnateSkill(383, 15, "Uriel", "")}, // 141 Uriel
             { 142, new InnateSkill(383, 15, "Ganesha", "")}, // 142 Ganesha
-            { 143, new InnateSkill(383, 15, "Valkyrie", "")}, // 143 Valkyrie
+            { 143, new InnateSkill(383, 15, "Helmsman", "When Xiezhai acts, the next ally \ngains 30% accuracy if they attack.")}, // 143 Valkyrie
             { 144, new InnateSkill(383, 15, "Arahabaki", "")}, // 144 Arahabaki
             { 145, new InnateSkill(383, 15, "Kurama Tengu", "")}, // 145 Kurama Tengu
             { 146, new InnateSkill(383, 15, "Ramayana", "Phys Gestalt & after \nHanuman heals a single ally, \ncure their ailments.")}, // 146 Hanuman
@@ -168,7 +168,7 @@ namespace NocturneInsaniax
             { 150, new InnateSkill(383, 03, "Vanquishing Bolts", "While in the active party, \nallied Elec attacks may crit.")}, // 150 Barong
             { 151, new InnateSkill(383, 15, "Faithful Companion", "After Makami strikes a weakness, \nthe next ally deals 20% more \ndamage if they attack.")}, // 151 Makami
             { 152, new InnateSkill(383, 04, "Force Enhancer", "While in the active party, \nraise allies' Force skill potential \nto Garuda's if it was lower.")}, // 152 Garuda
-            { 153, new InnateSkill(383, 15, "Yatagarasu", "")}, // 153 Yatagarasu
+            { 153, new InnateSkill(383, 15, "Helmsman", "When Xiezhai acts, the next ally \ngains 30% accuracy if they attack.")}, // 153 Yatagarasu
             { 154, new InnateSkill(383, 15, "Gurulu", "")}, // 154 Gurulu
             { 155, new InnateSkill(383, 15, "Milton", "Albion gains immunity to \nelements based on which \nZoas are in the active party.")}, // 155 Albion
             { 156, new InnateSkill(383, 15, "Manikin", "")}, // 156 Manikin
@@ -507,6 +507,7 @@ namespace NocturneInsaniax
         private static ushort[] proxyGuardHoundRaces = new ushort[] { 6, 14, 21, 28 };
         private static ushort[] proxyGuardHoundIds = new ushort[] { 56, 147 };
         private static ushort[] focusedAssaultIds = new ushort[] { 5, 67, 131 };
+        private static ushort[] helmsmanIds = new ushort[] { 34, 73, 143, 153 };
         private static ushort[] fourDevasIds = new ushort[] { 21, 23, 26, 27 };
         private static ushort[] fourOniIds = new ushort[] { 169, 170, 171, 172, 266, 267, 268, 269 };
         private static ushort[] fourHorsemenIds = new ushort[] { 195, 196, 197, 198 };
@@ -515,6 +516,7 @@ namespace NocturneInsaniax
 
         private static bool faithfulCompanionActive = false;
         private static bool faithfulCompanionActive2 = false;
+        private static bool helmsmanActive = false;
 
         [HarmonyPatch(typeof(cmpDrawStatus), nameof(cmpDrawStatus.cmpDrawSkill))]
         private class InnateSkillPatch1

@@ -1052,6 +1052,11 @@ namespace NocturneInsaniax
                         
                     } catch { }
 
+                    helmsmanActive = (helmsmanIds.Contains(actionProcessData.work.id) &&
+                        !(actionProcessData.work.nowcommand == 1 && pushedSkillList.Contains(actionProcessData.work.nowindex)) &&
+                        !(actionProcessData.work.nowcommand == 3 && actionProcessData.work.nowindex == 0))
+                        ? true : false;
+
                     if (!faithfulCompanionActive2)
                         faithfulCompanionActive = false;
                     faithfulCompanionActive2 = false;
@@ -1062,9 +1067,6 @@ namespace NocturneInsaniax
                         (actionProcessData.work.nowcommand == 5 && datNormalSkill.tbl[datItem.tbl[actionProcessData.work.nowindex].skillid].targetarea == 2 && datNormalSkill.tbl[datItem.tbl[actionProcessData.work.nowindex].skillid].targettype == 0)
                         ? actionProcessData.work.nowtform
                         : (short) -1;
-
-                    MelonLogger.Msg("previousUnitId: " + previousUnitId);
-                    MelonLogger.Msg("previousSingleTargetFormIndex: " + previousSingleTargetFormIndex);
                 }
             }
         }

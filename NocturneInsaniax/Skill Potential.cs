@@ -1202,7 +1202,7 @@ namespace NocturneInsaniax
                         else
                         {
                             __result = Convert.ToInt32(SkillPotentialUtility.ApplyDamageMultiplier(skillPotential, __result));
-                            if (faithfulCompanionActive)
+                            if (faithfulCompanionActive) // Faithful Companion
                                 __result = Convert.ToInt32(__result * 1.2);
                         }
                     }

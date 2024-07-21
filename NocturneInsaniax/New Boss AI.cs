@@ -67,6 +67,7 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref nbMainProcessData_t data)
             {
+                previousUnitId = 0;
                 faithfulCompanionActive = false;
                 faithfulCompanionActive2 = false;
 

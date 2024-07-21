@@ -547,6 +547,12 @@ namespace NocturneInsaniax
                         - ((targetLevel / 2) + (targetAgi * 2) + (targetLuk));
                     }
 
+                    // Helmsman
+                    if (previousUnitId != 0 && helmsmanActive && helmsmanIds.Contains(previousUnitId))
+                    {
+                        chance += 30;
+                    }
+
                     // Focused Assault
                     if (focusedAssaultIds.Contains(workFromFormindex1.id) &&
                         datNormalSkill.tbl[nskill].targetarea == 2 &&
