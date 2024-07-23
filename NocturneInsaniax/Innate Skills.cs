@@ -16,7 +16,7 @@ namespace NocturneInsaniax
         private static Dictionary<ushort, InnateSkill> demonInnateSkills = new Dictionary<ushort, InnateSkill>
         {
             { 000, new InnateSkill(383, 15, "", "")}, // 000
-            { 001, new InnateSkill(383, 15, "Vishnu", "")}, // 001 Vishnu
+            { 001, new InnateSkill(383, 15, "Tripura Samhara", "While in the active party, \nskill costs are reduced by 20% \nfor allies with a charge effect.")}, // 001 Vishnu
             { 002, new InnateSkill(383, 15, "Mitra", "")}, // 002 Mitra
             { 003, new InnateSkill(383, 06, "Blinding Radiance", "While in the active party, \nallied Light attacks may crit.")}, // 003 Amaterasu
             { 004, new InnateSkill(383, 14, "Runes of Wisdom", "When switching out, More than double \nthe damage of next the Strength-based \nattack for the switched ally.")}, // 004 Odin
@@ -27,7 +27,7 @@ namespace NocturneInsaniax
             { 009, new InnateSkill(383, 04, "Vina Raga", "While in the active party, \nallied Force attacks may crit.")}, // 009 Sarasvati
             { 010, new InnateSkill(383, 15, "Sati", "")}, // 010 Sati
             { 011, new InnateSkill(383, 14, "Curious Dance", "When switching out, all -kaja and \n-nda effects on Ame-no-Uzume will \nbe passed to the switched ally.")}, // 011 Ame-no-Uzume
-            { 012, new InnateSkill(383, 15, "Shiva", "")}, // 012 Shiva
+            { 012, new InnateSkill(383, 15, "Tripura Samhara", "While in the active party, \nskill costs are reduced by 20% \nfor allies with a charge effect.")}, // 012 Shiva
             { 013, new InnateSkill(383, 15, "Beidou Xingjun", "")}, // 013 Beidou Xingjun
             { 014, new InnateSkill(383, 15, "Qitian Dasheng", "")}, // 014 Qitian Dasheng
             { 015, new InnateSkill(419, 15, "Wine Party", "While in the active party, \nmay step in during negotiation to \nfix trouble with the power of liquor.")}, // 015 Dionysus
@@ -501,6 +501,7 @@ namespace NocturneInsaniax
             { 420, new List<int> { 0 } } // Flatter
         };
 
+        private static ushort[] tripuraSamharaIds = new ushort[] { 1, 12 };
         private static ushort[] pawToPawCombatIds = new ushort[] { 31, 69, 71, 86, 179, 180, 227, 263, 289, 290, 362 };
         private static ushort[] auspiciousBeastIds = new ushort[] { 30, 32, 148, 149 };
         private static ushort[] faithfulCompanionIds = new ushort[] { 81, 82, 85, 151 };

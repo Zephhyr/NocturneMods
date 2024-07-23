@@ -1059,6 +1059,23 @@ namespace NocturneInsaniax
                     {
                         datNormalSkill.tbl[nskill].cost = SkillPotentialUtility.ApplySkillPotentialCost(nskill, skillPotential); // Update the skill cost
                     }
+
+                    if (actionProcessData.partyindex <= 3 && (actionProcessData.party.count[15] != 0 || actionProcessData.party.count[20] != 0))
+                    {
+                        bool tripuraSamharaActive = false;
+
+                        foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
+                        {
+                            try
+                            {
+                                if (tripuraSamharaIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                    tripuraSamharaActive = true;
+                            }
+                            catch { }
+                        }
+
+                        if (tripuraSamharaActive) datNormalSkill.tbl[nskill].cost = Convert.ToUInt16(datNormalSkill.tbl[nskill].cost * 0.8);
+                    }
                 }
             }
             public static void Postfix(ref datUnitWork_t w, ref int nskill, ref int __result) // After getting the cost of a skill during battle
