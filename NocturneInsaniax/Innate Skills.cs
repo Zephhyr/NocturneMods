@@ -55,10 +55,10 @@ namespace NocturneInsaniax
             { 037, new InnateSkill(383, 02, "Ice Enhancer", "While in the active party, \nraise allies' Ice skill potential \nto Aquans' if it was lower.")}, // 037 Aquans
             { 038, new InnateSkill(383, 04, "Force Enhancer", "While in the active party, \nraise allies' Force skill potential \nto Aeros' if it was lower.")}, // 038 Aeros
             { 039, new InnateSkill(383, 03, "Elec Enhancer", "While in the active party, \nraise allies' Elec skill potential \nto Erthys' if it was lower.")}, // 039 Erthys
-            { 040, new InnateSkill(383, 15, "Saki Mitama", "")}, // 040 Saki Mitama
-            { 041, new InnateSkill(383, 15, "Kushi Mitama", "")}, // 041 Kushi Mitama
-            { 042, new InnateSkill(383, 15, "Nigi Mitama", "")}, // 042 Nigi Mitama
-            { 043, new InnateSkill(383, 15, "Ara Mitama", "")}, // 043 Ara Mitama
+            { 040, new InnateSkill(383, 15, "Enlightening Ritual", "")}, // 040 Saki Mitama
+            { 041, new InnateSkill(383, 15, "Enlightening Ritual", "")}, // 041 Kushi Mitama
+            { 042, new InnateSkill(383, 15, "Enlightening Ritual", "")}, // 042 Nigi Mitama
+            { 043, new InnateSkill(383, 15, "Enlightening Ritual", "When fused with another demon, \nallows the known skills of the result \ndemon to be overridden.")}, // 043 Ara Mitama
             { 044, new InnateSkill(383, 01, "Malevolent Flames", "While in the active party, \nallied Fire attacks may crit.")}, // 044 Efreet
             { 045, new InnateSkill(413, 15, "Silver Tongue", "While in the active party, \nmay step in during negotiation to \npersuade an indecisive demon.")}, // 045 Pulukishi
             { 046, new InnateSkill(383, 00, "Phys Gestalt", "Ongkhot gains Phys skill potential \nbased on the total potential of \nallies in the active party.")}, // 046 Ongkhot
