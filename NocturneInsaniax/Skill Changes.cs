@@ -102,6 +102,7 @@ namespace NocturneInsaniax
                     case 369: __result = "Spirit Well"; return false;
                     case 370: __result = "Qigong"; return false;
 
+                    case 406: __result = "Retributive Zeal"; return false;
                     case 407: __result = switchOutSkillName; return false;
                     case 408: __result = postSummonSkillName; return false;
                     case 416: __result = "Ramayana"; return false;
@@ -555,7 +556,7 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(147, 0);
                     //datCalc.datAddDevil(30, 0);
                     //datCalc.datAddDevil(111, 0);
-                    datCalc.datAddDevil(131, 0);
+                    datCalc.datAddDevil(140, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    //work.skill[0] = 192;
@@ -1088,6 +1089,44 @@ namespace NocturneInsaniax
             }
         }
 
+        [HarmonyPatch(typeof(nbActionProcess), nameof(nbActionProcess.SetDeadPacket))]
+        private class SetDeadPacketPatch
+        {
+            public static void Postfix(ref nbActionProcessData_t a, ref int formindex)
+            {
+                var work = nbMainProcess.nbGetUnitWorkFromFormindex(formindex);
+                var party = nbMainProcess.nbGetPartyFromFormindex(formindex);
+
+                if (retributiveZealRaces.Contains(datDevilFormat.tbl[work.id].race))
+                {
+                    if (party.partyindex <= 3)
+                    {
+                        foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3 && x.partyindex != party.partyindex))
+                        {
+                            try
+                            {
+                                if (retributiveZealIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                    nbMainProcess.nbPushAction(4, ally.partyindex, ally.partyindex, 406);
+                            }
+                            catch { }
+                        }
+                    }
+                    else
+                    {
+                        foreach (var enemy in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex > 3 && x.partyindex != party.partyindex))
+                        {
+                            try
+                            {
+                                if (retributiveZealIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
+                                    nbMainProcess.nbPushAction(4, enemy.partyindex, enemy.partyindex, 406);
+                            }
+                            catch { }
+                        }
+                    }
+                }
+            }
+        }
+
         private static nbParty_t[] GetCurrentSideParty(nbActionProcessData_t a)
         {
             if (a.partyindex <= 3)
@@ -1508,7 +1547,7 @@ namespace NocturneInsaniax
             Punishment(188);
             JudgementLight(189);
 
-            //FourDevas(408);
+            RetributiveZeal(406);
             Ramayana(416);
 
             NewBeastEye(422);
@@ -6522,7 +6561,7 @@ namespace NocturneInsaniax
             OverWriteSkillEffect(id, 219);
         }
 
-        private static void FourDevas(ushort id)
+        private static void RetributiveZeal(ushort id)
         {
             datSkill.tbl[id].flag = 0;
             datSkill.tbl[id].keisyoform = 1;
@@ -6543,8 +6582,8 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hitlevel = 255;
             datNormalSkill.tbl[id].hitprog = 0;
             datNormalSkill.tbl[id].hittype = 1;
-            datNormalSkill.tbl[id].hojopoint = 1;
-            datNormalSkill.tbl[id].hojotype = 341;
+            datNormalSkill.tbl[id].hojopoint = 6;
+            datNormalSkill.tbl[id].hojotype = 5;
             datNormalSkill.tbl[id].hpbase = 0;
             datNormalSkill.tbl[id].hpn = 50;
             datNormalSkill.tbl[id].hptype = 0;

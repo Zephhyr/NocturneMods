@@ -457,6 +457,20 @@ namespace NocturneInsaniax
                     else
                         nbHelpProcess.nbDispText("All stats increased!", string.Empty, 2, 45, 2315190144, false);
                 }
+                // Retributive Zeal
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 5 && actionProcessData.work.nowindex == 406)
+                {
+                    var limitReached = true;
+                    if (currentUnitBuffs[4] <= 2 || currentUnitBuffs[5] <= 2)
+                    {
+                        limitReached = false;
+                    }
+
+                    if (limitReached)
+                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    else
+                        nbHelpProcess.nbDispText("Physical/Magical Attack maximized!", string.Empty, 2, 45, 2315190144, false);
+                }
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 262144 && actionProcessData.work.nowindex == 408)
                 {
                     nbHelpProcess.nbDispText("Negated all -nda effects!", string.Empty, 2, 45, 2315190144, false);

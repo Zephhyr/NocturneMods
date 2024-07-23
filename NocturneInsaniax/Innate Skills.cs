@@ -153,10 +153,10 @@ namespace NocturneInsaniax
             { 135, new InnateSkill(383, 15, "Slime", "")}, // 135 Slime
             { 136, new InnateSkill(383, 15, "Mou-Ryo", "")}, // 136 Mou-Ryo
             { 137, new InnateSkill(383, 15, "Will o' Wisp", "")}, // 137 Will o' Wisp
-            { 138, new InnateSkill(383, 15, "Michael", "")}, // 138 Michael
-            { 139, new InnateSkill(383, 15, "Gabriel", "")}, // 139 Gabriel
-            { 140, new InnateSkill(383, 15, "Raphael", "")}, // 140 Raphael
-            { 141, new InnateSkill(383, 15, "Uriel", "")}, // 141 Uriel
+            { 138, new InnateSkill(383, 14, "Retributive Zeal", "When an allied Divine or Seraph \ndemon dies, Maximize Michael's \nPhysical/Magical Attack.")}, // 138 Michael
+            { 139, new InnateSkill(383, 14, "Retributive Zeal", "When an allied Divine or Seraph \ndemon dies, Maximize Gabriel's \nPhysical/Magical Attack.")}, // 139 Gabriel
+            { 140, new InnateSkill(383, 14, "Retributive Zeal", "When an allied Divine or Seraph \ndemon dies, Maximize Raphael's \nPhysical/Magical Attack.")}, // 140 Raphael
+            { 141, new InnateSkill(383, 14, "Retributive Zeal", "When an allied Divine or Seraph \ndemon dies, Maximize Uriel's \nPhysical/Magical Attack.")}, // 141 Uriel
             { 142, new InnateSkill(383, 15, "Ganesha", "")}, // 142 Ganesha
             { 143, new InnateSkill(383, 15, "Helmsman", "When Xiezhai acts, the next ally \ngains 30% accuracy if they attack.")}, // 143 Valkyrie
             { 144, new InnateSkill(383, 15, "Arahabaki", "")}, // 144 Arahabaki
@@ -299,9 +299,9 @@ namespace NocturneInsaniax
             { 281, new InnateSkill(383, 15, "Boss Luvah", "")}, // 281 Boss Luvah
             { 282, new InnateSkill(383, 15, "Boss Tharmus", "")}, // 282 Boss Tharmus
             { 283, new InnateSkill(383, 15, "Boss Futomimi", "")}, // 283 Boss Futomimi
-            { 284, new InnateSkill(383, 15, "Boss Gabriel", "")}, // 284 Boss Gabriel
-            { 285, new InnateSkill(383, 15, "Boss Raphael", "")}, // 285 Boss Raphael
-            { 286, new InnateSkill(383, 15, "Boss Uriel", "")}, // 286 Boss Uriel
+            { 284, new InnateSkill(383, 14, "Retributive Zeal", "")}, // 284 Boss Gabriel
+            { 285, new InnateSkill(383, 14, "Retributive Zeal", "")}, // 285 Boss Raphael
+            { 286, new InnateSkill(383, 14, "Retributive Zeal", "")}, // 286 Boss Uriel
             { 287, new InnateSkill(383, 15, "Boss Samael", "")}, // 287 Boss Samael
             { 288, new InnateSkill(383, 15, "Boss Baal Avatar", "")}, // 288 Boss Baal Avatar
             { 289, new InnateSkill(383, 15, "Boss Ose Hallel", "")}, // 289 Boss Ose Hallel
@@ -508,6 +508,8 @@ namespace NocturneInsaniax
         private static ushort[] proxyGuardHoundIds = new ushort[] { 56, 147 };
         private static ushort[] focusedAssaultIds = new ushort[] { 5, 67, 131 };
         private static ushort[] helmsmanIds = new ushort[] { 34, 73, 143, 153 };
+        private static ushort[] retributiveZealRaces = new ushort[] { 11, 24 };
+        private static ushort[] retributiveZealIds = new ushort[] { 138, 139, 140, 141, 284, 285, 286 };
         private static ushort[] fourDevasIds = new ushort[] { 21, 23, 26, 27 };
         private static ushort[] fourOniIds = new ushort[] { 169, 170, 171, 172, 266, 267, 268, 269 };
         private static ushort[] fourHorsemenIds = new ushort[] { 195, 196, 197, 198 };
