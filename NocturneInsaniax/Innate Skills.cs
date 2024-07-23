@@ -191,7 +191,7 @@ namespace NocturneInsaniax
             { 173, new InnateSkill(383, 15, "Clotho", "")}, // 173 Clotho
             { 174, new InnateSkill(383, 15, "Lachesis", "")}, // 174 Lachesis
             { 175, new InnateSkill(383, 15, "Atropos", "")}, // 175 Atropos
-            { 176, new InnateSkill(383, 15, "Loa", "")}, // 176 Loa
+            { 176, new InnateSkill(383, 15, "Taboo", "While in the active party, \ndouble the ailment rate for \nall allies and enemies.")}, // 176 Loa
             { 177, new InnateSkill(383, 07, "Dark Enhancer", "While in the active party, \nraise allies' Dark skill potential \nto Chatterskull's if it was lower.")}, // 177 Chatterskull
             { 178, new InnateSkill(383, 15, "Phantom", "")}, // 178 Phantom
             { 179, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Ose Hallel's critical damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 179 Ose Hallel

@@ -1282,6 +1282,18 @@ namespace NocturneInsaniax
                     // Thor's Odinson
                     if ((demonID == 22 || demonID == 302 || demonID == 337) && datSkill.tbl[nskill].skillattr == 3)
                         datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(datNormalSkill.tbl[nskill].badlevel * 1.5);
+
+                    // Loa's Taboo
+                    bool tabooActive = false;
+                    foreach (var party in nbMainProcess.nbGetMainProcessData().party)
+                    {
+                        try
+                        {
+                            if (nbMainProcess.nbGetUnitWorkFromFormindex(party.formindex).id == 176)
+                                tabooActive = true;
+                        } catch { }
+                    }
+                    if (tabooActive) datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(datNormalSkill.tbl[nskill].badlevel * 2);
                 }
             }
 
