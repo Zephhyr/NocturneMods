@@ -204,7 +204,7 @@ namespace NocturneInsaniax
 
                 for (byte i = 1; i<= 9; i++) 
                 {
-                    nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill0" + i + "/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().fontSize = 40;
+                    nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill0" + i + "/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().fontSize = 39;
                 }
             }
         }
@@ -345,8 +345,8 @@ namespace NocturneInsaniax
 
                 for (byte i = 1; i<= 8; i++) 
                 {
-                    cmpStatus._statusUIScr.transform.Find("sskill/sskill_obtained0" + i + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().fontSize = 40;
-                    cmpStatus._statusUIScr.transform.Find("sskill/sskill_await2_0" + i + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().fontSize = 40;
+                    cmpStatus._statusUIScr.transform.Find("sskill/sskill_obtained0" + i + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().fontSize = 39;
+                    cmpStatus._statusUIScr.transform.Find("sskill/sskill_await2_0" + i + "/TextTM").gameObject.GetComponent<TextMeshProUGUI>().fontSize = 39;
                 }
             }
         }

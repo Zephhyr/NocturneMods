@@ -6,6 +6,7 @@ using Il2Cpp;
 using Il2Cppnewdata_H;
 using Il2Cppfield_H;
 using Il2Cppbasic_H;
+using static Il2Cpp.SteamDlcFileUtil;
 
 namespace NocturneInsaniax
 {
@@ -510,7 +511,44 @@ namespace NocturneInsaniax
                     datUnitWork_t workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
                     datUnitWork_t workFromFormindex2 = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
 
-                    if (datNormalSkill.tbl[nskill].hitlevel == 255 ||
+                    // Scathach's Warrior Trainer
+                    if (workFromFormindex1.id == 8)
+                    {
+                        bool warriorTrainerActive = false;
+
+                        if (nbMainProcess.nbGetPartyFromFormindex(sformindex).partyindex <= 3)
+                        {
+                            foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
+                            {
+                                try
+                                {
+                                    if (proxyGuardHoundIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                        warriorTrainerActive = true;
+                                }
+                                catch { }
+                            }
+                        }
+                        else
+                        {
+                            foreach (var enemy in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex > 3))
+                            {
+                                try
+                                {
+                                    if (proxyGuardHoundIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
+                                        warriorTrainerActive = true;
+                                }
+                                catch { }
+                            }
+                        }
+
+                        if (warriorTrainerActive && SkillPotentialUtility.GetSkillPotential(nskill, currentDemonID) > 0)
+                        {
+                            __result = 0; // Hit
+                            return;
+                        }
+                    }
+                    // Guaranteed hit against enemies affected by certain status
+                    else if (datNormalSkill.tbl[nskill].hitlevel == 255 ||
                         workFromFormindex2.badstatus == 1 || // Shocked
                         workFromFormindex2.badstatus == 2 || // Frozen
                         workFromFormindex2.badstatus == 4 || // Asleep

@@ -23,7 +23,7 @@ namespace NocturneInsaniax
             { 005, new InnateSkill(383, 00, "Focused Assault", "Atavaka gains 20% accuracy and \ncritical chance when targetting the \nsame single foe as the previous ally.")}, // 005 Atavaka
             { 006, new InnateSkill(383, 14, "Eye of Horus", "When switching out, More than double \nthe damage of next the Magic-based \nattack for the switched ally.")}, // 006 Horus
             { 007, new InnateSkill(383, 15, "Lakshmi", "")}, // 007 Lakshmi
-            { 008, new InnateSkill(383, 15, "Scathach", "")}, // 008 Scathach
+            { 008, new InnateSkill(383, 15, "Warrior Trainer", "While Setanta or Cu Chulainn is in \nthe active party, Scathach's attacks \nwith positive potential will not miss.")}, // 008 Scathach
             { 009, new InnateSkill(383, 04, "Vina Raga", "While in the active party, \nallied Force attacks may crit.")}, // 009 Sarasvati
             { 010, new InnateSkill(383, 15, "Sati", "")}, // 010 Sati
             { 011, new InnateSkill(383, 14, "Curious Dance", "When switching out, all -kaja and \n-nda effects on Ame-no-Uzume will \nbe passed to the switched ally.")}, // 011 Ame-no-Uzume
