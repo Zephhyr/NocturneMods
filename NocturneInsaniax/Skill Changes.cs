@@ -296,7 +296,7 @@ namespace NocturneInsaniax
 
                     case 409: __result = "While in the active party, \nmay step in during negotiation and \nensure lesser demands."; return false; // Haggle
                     case 410: __result = "While in the active party, \nmay step in during negotiation and \nsoothe an enraged demon."; return false; // Arbitration
-                    case 411: __result = "While in the active party, \nmay step in during negotiation and \nprevent a demon from making off with payment."; return false; // Detain
+                    case 411: __result = "While in the active party, may step \nin during negotiation and prevent a \ndemon from making off with payment."; return false; // Detain
                     case 412: __result = "While in the active party, \nmay step in during negotiation to \nurge a demon of the same race."; return false; // Kinspeak
                     case 413: __result = "While in the active party, \nmay step in during negotiation to \npersuade an indecisive demon."; return false; // Silver Tongue
                     case 414: __result = "While in the active party, \nmay step in during negotiation to \n'convince' a lower level demon."; return false; // Intimidate
@@ -539,7 +539,7 @@ namespace NocturneInsaniax
                         fldMain.fldLightMaClearMsg();
 
                         dds3GlobalWork.DDS3_GBWK.Moon.MoveCnt = 0; // Beginning of a new phase
-                        evtMoon.evtSetAgeOfMoon(0); // Set Kagutsuchi's phase to full
+                        evtMoon.evtSetAgeOfMoon(0); // Set Kagutsuchi's phase to new
                     }
 
                     // Test - Add rigged demons to party
@@ -556,8 +556,7 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(147, 0);
                     //datCalc.datAddDevil(30, 0);
                     //datCalc.datAddDevil(111, 0);
-                    datCalc.datAddDevil(8, 0);
-                    datCalc.datAddDevil(56, 0);
+                    datCalc.datAddDevil(118, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    //work.skill[0] = 192;
@@ -782,6 +781,38 @@ namespace NocturneInsaniax
             {
                 var skillattr = datSkill.tbl[nskill].skillattr;
                 var work = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
+
+                // Element Melody
+                if (melodyUsers.ContainsKey(skillattr) && nbCalc.nbGetAisyo(nskill, dformindex, skillattr) >= 2147483778)
+                {
+                    bool elementMelodyActive = false;
+
+                    if (nbMainProcess.nbGetPartyFromFormindex(sformindex).partyindex <= 3)
+                    {
+                        foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
+                        {
+                            try
+                            {
+                                if (melodyUsers[skillattr].Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                    elementMelodyActive = true; break;
+                            }
+                            catch { }
+                        }
+                    }
+                    else
+                    {
+                        foreach (var enemy in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex > 3))
+                        {
+                            try
+                            {
+                                if (melodyUsers[skillattr].Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
+                                    elementMelodyActive = true; break;
+                            }
+                            catch { }
+                        }
+                    }
+                    if (elementMelodyActive) __result = __result * 1.1f;
+                }
 
                 switch (skillattr)
                 {

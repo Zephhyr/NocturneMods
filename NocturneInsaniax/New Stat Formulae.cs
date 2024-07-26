@@ -148,11 +148,37 @@ namespace NocturneInsaniax
         {
             public static bool Prefix(ref int sformindex, ref float pow, ref float __result)
             {
+                bool criticalMelodyActive = false;
                 byte pawToPawCount = 0;
                 bool pawToPawActive = false;
                 bool proxyGuardHoundActive = false;
                 byte fourOniCount = 0;
 
+                // Critical Melody
+                if (nbMainProcess.nbGetPartyFromFormindex(sformindex).partyindex <= 3)
+                {
+                    foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
+                    {
+                        try
+                        {
+                            if (criticalMelodyIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                criticalMelodyActive = true; break;
+                        }
+                        catch { }
+                    }
+                }
+                else
+                {
+                    foreach (var enemy in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex > 3))
+                    {
+                        try
+                        {
+                            if (criticalMelodyIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
+                                criticalMelodyActive = true; break;
+                        }
+                        catch { }
+                    }
+                }
                 // Paw-to-Paw Combat
                 if (pawToPawCombatIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id))
                 {
@@ -240,7 +266,7 @@ namespace NocturneInsaniax
                     }
                 }
 
-                __result = pow * (1 + 0.3f + (Convert.ToInt16(pawToPawActive) * 0.3f) + (Convert.ToInt16(proxyGuardHoundActive) * 0.3f) + (fourOniCount * 0.1f));
+                __result = pow * (1 + 0.3f + (Convert.ToInt16(criticalMelodyActive) * 0.1f) + (Convert.ToInt16(pawToPawActive) * 0.3f) + (Convert.ToInt16(proxyGuardHoundActive) * 0.3f) + (fourOniCount * 0.1f));
                 return false;
             }
         }
@@ -442,7 +468,7 @@ namespace NocturneInsaniax
 
                     // Crit enabling innates
                     sbyte skillAttr = datSkill.tbl[nskill].skillattr;
-                    if (critEnablerUsers.Keys.Contains(skillAttr))
+                    if (datNormalSkill.tbl[nskill].hptype != 3 && critEnablerUsers.Keys.Contains(skillAttr))
                     {
                         if (actionProcessData.partyindex <= 3)
                         {
