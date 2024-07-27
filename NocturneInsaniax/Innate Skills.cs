@@ -48,7 +48,7 @@ namespace NocturneInsaniax
             { 030, new InnateSkill(383, 15, "Auspicious Beast", "While in the active party, raise allied \nAuspicious Beast's skill potentials \nto Baihu's if they were lower.")}, // 030 Baihu
             { 031, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Senri's critical damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 031 Senri
             { 032, new InnateSkill(383, 15, "Auspicious Beast", "While in the active party, raise allied \nAuspicious Beast's skill potentials \nto Zhuque's if they were lower.")}, // 032 Zhuque
-            { 033, new InnateSkill(383, 15, "Shiisaa", "")}, // 033 Shiisaa
+            { 033, new InnateSkill(383, 14, "Divine Benevolence", "While in the active party, \nSupport skill costs are reduced \nby 20% for all allies.")}, // 033 Shiisaa
             { 034, new InnateSkill(383, 15, "Helmsman", "When Xiezhai acts, the next ally \ngains 30% accuracy if they attack.")}, // 034 Xiezhai
             { 035, new InnateSkill(383, 06, "Light Enhancer", "While in the active party, \nraise allies' Light skill potential \nto Unicorns's if it was lower.")}, // 035 Unicorn
             { 036, new InnateSkill(383, 01, "Fire Enhancer", "While in the active party, \nraise allies' Fire skill potential \nto Flaemis' if it was lower.")}, // 036 Flaemis
@@ -65,10 +65,10 @@ namespace NocturneInsaniax
             { 047, new InnateSkill(420, 15, "Flatter", "While in the active party, \nmay step in during negotiation to \nconvince a higher level demon.")}, // 047 Jinn
             { 048, new InnateSkill(383, 04, "Force Gestalt", "Karasu Tengu gains Force skill potential \nbased on the total potential of \nallies in the active party.")}, // 048 Karasu Tengu
             { 049, new InnateSkill(383, 15, "Planck of Norn", "When switching out, a Press Turn \nicon will not be consumed.")}, // 049 Dís
-            { 050, new InnateSkill(383, 15, "Isora", "")}, // 050 Isora
+            { 050, new InnateSkill(383, 13, "Restorative Melody", "While in the active party, \nHealing skill costs are reduced \nby 20% for all allies.")}, // 050 Isora
             { 051, new InnateSkill(415, 15, "Entice", "While in the active party, \nmay step in during negotiation to \ntempt a male demon.")}, // 051 Apsaras
             { 052, new InnateSkill(383, 04, "Force Gestalt", "Koppa Tengu gains Force skill potential \nbased on the total potential of \nallies in the active party.")}, // 052 Koppa Tengu
-            { 053, new InnateSkill(383, 15, "Titania", "")}, // 053 Titania
+            { 053, new InnateSkill(383, 13, "Restorative Melody", "While in the active party, \nHealing skill costs are reduced \nby 20% for all allies.")}, // 053 Titania
             { 054, new InnateSkill(383, 14, "Fairy King's Melody", "When summoned from the stock, \nnegate -nda effects on the party.")}, // 054 Oberon
             { 055, new InnateSkill(383, 02, "Ice Gestalt", "Troll gains Ice skill potential \nbased on the total potential of \nallies in the active party.")}, // 055 Troll
             { 056, new InnateSkill(383, 15, "Proxy Guard Hound", "While in the active party, increases \ncritical damage by 30% for Avatar, \nHoly, Beast and Wilder allies.")}, // 056 Setanta
@@ -157,7 +157,7 @@ namespace NocturneInsaniax
             { 139, new InnateSkill(383, 14, "Retributive Zeal", "When an allied Divine or Seraph \ndemon dies, Maximize Gabriel's \nPhysical/Magical Attack.")}, // 139 Gabriel
             { 140, new InnateSkill(383, 14, "Retributive Zeal", "When an allied Divine or Seraph \ndemon dies, Maximize Raphael's \nPhysical/Magical Attack.")}, // 140 Raphael
             { 141, new InnateSkill(383, 14, "Retributive Zeal", "When an allied Divine or Seraph \ndemon dies, Maximize Uriel's \nPhysical/Magical Attack.")}, // 141 Uriel
-            { 142, new InnateSkill(383, 15, "Ganesha", "")}, // 142 Ganesha
+            { 142, new InnateSkill(383, 14, "Divine Benevolence", "While in the active party, \nSupport skill costs are reduced \nby 20% for all allies.")}, // 142 Ganesha
             { 143, new InnateSkill(383, 15, "Helmsman", "When Xiezhai acts, the next ally \ngains 30% accuracy if they attack.")}, // 143 Valkyrie
             { 144, new InnateSkill(383, 15, "Arahabaki", "")}, // 144 Arahabaki
             { 145, new InnateSkill(383, 15, "Kurama Tengu", "")}, // 145 Kurama Tengu
@@ -502,6 +502,8 @@ namespace NocturneInsaniax
 
         private static ushort[] tripuraSamharaIds = new ushort[] { 1, 12 };
         private static ushort[] criticalMelodyIds = new ushort[] { 87, 100, 124, 125 };
+        private static ushort[] restorativeMelodyIds = new ushort[] { 50, 53 };
+        private static ushort[] divineBenevolenceIds = new ushort[] { 33, 142 };
         private static ushort[] pawToPawCombatIds = new ushort[] { 31, 69, 71, 86, 179, 180, 227, 263, 289, 290, 362 };
         private static ushort[] auspiciousBeastIds = new ushort[] { 30, 32, 148, 149 };
         private static ushort[] faithfulCompanionIds = new ushort[] { 81, 82, 85, 151 };

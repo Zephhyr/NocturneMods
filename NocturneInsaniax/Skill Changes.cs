@@ -238,7 +238,7 @@ namespace NocturneInsaniax
                     case 207: __result = "Medium Curse damage to all foes. \nMay inflict Mute."; return false; // Dismal Tune
                     case 208: __result = "Chance to reduce HP of all foes to 1."; return false; // Sol Niger
                     case 217: __result = "Massive Mind damage to all foes. \nMay inflict Panic."; return false; // Intoxicate
-                    case 224: __result = "More than doubles the damage of \n the next Strength-based attack."; return false; // Focus
+                    case 224: __result = "More than doubles the damage of \nthe next Strength-based attack."; return false; // Focus
                     case 242: __result = "High Almighty damage to all foes. \nMay inflict random ailments."; return false; // God's Curse
                     case 244: __result = "Medium Ice damage to all foes. \nLowers targets' Evasion/Hit Rate."; return false; // Icy Death
                     case 249: __result = "High Mind damage to random foes. \nMay inflict Panic."; return false; // Wild Dance
@@ -556,7 +556,7 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(147, 0);
                     //datCalc.datAddDevil(30, 0);
                     //datCalc.datAddDevil(111, 0);
-                    datCalc.datAddDevil(118, 0);
+                    datCalc.datAddDevil(33, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    //work.skill[0] = 192;
