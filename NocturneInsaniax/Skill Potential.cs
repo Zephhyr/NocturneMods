@@ -136,7 +136,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 4    , 4    , 4    , 4    , 0    , -4   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 113 Loki
             new sbyte[] {0    , 0    , -5   , 6    , 0    , 4    , 0    , 6    , 4    , 4    , 6    , 4    , 0    , 0    , 0    , 0 }, // 114 Lilith
             new sbyte[] {-5   , 0    , 6    , 0    , 0    , 4    , 0    , 0    , 0    , 0    , 6    , 4    , 0    , 0    , 4    , 0 }, // 115 Nyx
-            new sbyte[] {-4   , 4    , 4    , 4    , 4    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 3    , 0    , 0 }, // 116 Queen Mab
+            new sbyte[] {-4   , 4    , 4    , 4    , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 3    , 0 }, // 116 Queen Mab
             new sbyte[] {0    , -3   , 3    , 0    , 0    , 0    , -3   , 0    , 3    , 3    , 5    , 0    , 0    , 1    , 1    , 0 }, // 117 Succubus
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 5    , 5    , 5    , 0    , 0    , 0    , -2   , 0 }, // 118 Incubus
             new sbyte[] {3    , 0    , 3    , -3   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 119 Fomorian
@@ -560,7 +560,7 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+4: Magic  <material=\"MsgFont1\">-4: Light", // 113 Loki
             "  <material=\"MsgFont4\">+6: Elec/Mind/Dark • +4: Almighty/Curse/Nerve  <material=\"MsgFont1\">-5: Ice", // 114 Lilith
             "  <material=\"MsgFont4\">+6: Ice/Mind • +4: Almighty/Supp  <material=\"MsgFont1\">-5: Phys", // 115 Nyx
-            "  <material=\"MsgFont4\">+4: Magic • +3: Mind/Heal  <material=\"MsgFont1\">-4: Phys", // 116 Queen Mab
+            "  <material=\"MsgFont4\">+4: Magic • +3: Supp • +1: Heal  <material=\"MsgFont1\">-4: Phys", // 116 Queen Mab
             "  <material=\"MsgFont4\">+5: Mind • +3: Ice/Curse/Nerve • +1: Heal/Supp  <material=\"MsgFont1\">-3: Fire/Light", // 117 Succubus
             "  <material=\"MsgFont4\">+5: Ailments • +2: Dark  <material=\"MsgFont1\">-2: Supp", // 118 Incubus
             "  <material=\"MsgFont4\">+3: Phys/Ice  <material=\"MsgFont1\">-3: Elec", // 119 Fomorian
@@ -979,8 +979,6 @@ namespace NocturneInsaniax
 
                 if (actionProcessData != null)
                 {
-                    
-
                     if (actionProcessData.work.badstatus == 4 || // Asleep
                         actionProcessData.work.badstatus == 16 || // Bound
                         actionProcessData.work.badstatus == 32 || // Mute
@@ -990,8 +988,36 @@ namespace NocturneInsaniax
                         var luk = datCalc.datGetParam(actionProcessData.work, 5) + 20;
                         if (datCalc.datCheckSyojiSkill(actionProcessData.work, 360) != 0 || datCalc.datCheckSyojiSkill(actionProcessData.work, 366) != 0)
                             luk += 10;
-                        var rand = dds3KernelCore.dds3GetRandIntA(100);
 
+                        // Ward Off Evil
+                        bool wardOffEvilActive = false;
+                        if (actionProcessData.partyindex <= 3)
+                        {
+                            foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
+                            {
+                                try
+                                {
+                                    if (wardOffEvilIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                        wardOffEvilActive = true;
+                                }
+                                catch { }
+                            }
+                        }
+                        else
+                        {
+                            foreach (var enemy in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex > 3))
+                            {
+                                try
+                                {
+                                    if (wardOffEvilIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
+                                        wardOffEvilActive = true;
+                                }
+                                catch { }
+                            }
+                        }
+                        if (wardOffEvilActive) luk += 10;
+
+                        var rand = dds3KernelCore.dds3GetRandIntA(100);
                         if (rand < luk)
                         {
                             var form = actionProcessData.form;
@@ -1256,6 +1282,7 @@ namespace NocturneInsaniax
                         else
                         {
                             __result = Convert.ToInt32(SkillPotentialUtility.ApplyDamageMultiplier(skillPotential, __result));
+
                             if (faithfulCompanionActive) // Faithful Companion
                                 __result = Convert.ToInt32(__result * 1.2);
                         }
@@ -1319,6 +1346,34 @@ namespace NocturneInsaniax
                     // Thor's Odinson
                     if ((demonID == 22 || demonID == 302 || demonID == 337) && datSkill.tbl[nskill].skillattr == 3)
                         datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(datNormalSkill.tbl[nskill].badlevel * 1.5);
+
+                    // Contagious Curse
+                    bool contagiousCurseActive = false;
+                    if (actionProcessData.partyindex <= 3)
+                    {
+                        foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
+                        {
+                            try
+                            {
+                                if (contagiousCurseIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                    contagiousCurseActive = true;
+                            }
+                            catch { }
+                        }
+                    }
+                    else
+                    {
+                        foreach (var enemy in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex > 3))
+                        {
+                            try
+                            {
+                                if (contagiousCurseIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
+                                    contagiousCurseActive = true;
+                            }
+                            catch { }
+                        }
+                    }
+                    if (contagiousCurseActive) datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(datNormalSkill.tbl[nskill].badlevel * 1.2);
 
                     // Loa's Taboo
                     bool tabooActive = false;

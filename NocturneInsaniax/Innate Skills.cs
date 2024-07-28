@@ -18,14 +18,14 @@ namespace NocturneInsaniax
             { 000, new InnateSkill(383, 15, "", "")}, // 000
             { 001, new InnateSkill(383, 15, "Tripura Samhara", "While in the active party, \nskill costs are reduced by 20% \nfor allies with a charge effect.")}, // 001 Vishnu
             { 002, new InnateSkill(383, 15, "Mitra", "")}, // 002 Mitra
-            { 003, new InnateSkill(383, 06, "Blinding Radiance", "While in the active party, \nallied Light attacks may crit.")}, // 003 Amaterasu
+            { 003, new InnateSkill(383, 06, "Blinding Radiance", "While in the active party, allied \nLight attacks may critically strike.")}, // 003 Amaterasu
             { 004, new InnateSkill(383, 14, "Runes of Wisdom", "When switching out, More than double \nthe damage of next the Strength-based \nattack for the switched ally.")}, // 004 Odin
-            { 005, new InnateSkill(383, 00, "Focused Assault", "Atavaka gains 20% accuracy and \ncritical chance when targetting the \nsame single foe as the previous ally.")}, // 005 Atavaka
+            { 005, new InnateSkill(383, 15, "Focused Assault", "Atavaka gains 20% Hit Rate and \nCritical Chance when targetting the \nsame single foe as the previous ally.")}, // 005 Atavaka
             { 006, new InnateSkill(383, 14, "Eye of Horus", "When switching out, More than double \nthe damage of next the Magic-based \nattack for the switched ally.")}, // 006 Horus
             { 007, new InnateSkill(383, 15, "Lakshmi", "")}, // 007 Lakshmi
             { 008, new InnateSkill(383, 15, "Warrior Trainer", "While Setanta or Cu Chulainn is in \nthe active party, Scathach's attacks \nwith positive potential will not miss.")}, // 008 Scathach
-            { 009, new InnateSkill(383, 04, "Vina Raga", "While in the active party, \nallied Force attacks may crit.")}, // 009 Sarasvati
-            { 010, new InnateSkill(383, 15, "Sati", "")}, // 010 Sati
+            { 009, new InnateSkill(383, 04, "Vina Raga", "While in the active party, allied \nForce attacks may critically strike.")}, // 009 Sarasvati
+            { 010, new InnateSkill(383, 13, "Restorative Melody", "While in the active party, \nHealing skill costs are reduced \nby 20% for all allies.")}, // 010 Sati
             { 011, new InnateSkill(383, 14, "Curious Dance", "When switching out, all -kaja and \n-nda effects on Ame-no-Uzume will \nbe passed to the switched ally.")}, // 011 Ame-no-Uzume
             { 012, new InnateSkill(383, 15, "Tripura Samhara", "While in the active party, \nskill costs are reduced by 20% \nfor allies with a charge effect.")}, // 012 Shiva
             { 013, new InnateSkill(383, 15, "Beidou Xingjun", "")}, // 013 Beidou Xingjun
@@ -33,23 +33,23 @@ namespace NocturneInsaniax
             { 015, new InnateSkill(419, 15, "Wine Party", "While in the active party, \nmay step in during negotiation to \nfix trouble with the power of liquor.")}, // 015 Dionysus
             { 016, new InnateSkill(383, 00, "Phys Gestalt", "Kali gains Phys skill potential \nbased on the total potential of \nallies in the active party.")}, // 016 Kali
             { 017, new InnateSkill(383, 02, "Queen of Winter", "Ice Enhancer & Skadi's Ice \nattacks have an increased \nchance to inflict Freeze.")}, // 017 Skadi
-            { 018, new InnateSkill(383, 15, "Parvati", "")}, // 018 Parvati
+            { 018, new InnateSkill(383, 13, "Restorative Melody", "While in the active party, \nHealing skill costs are reduced \nby 20% for all allies.")}, // 018 Parvati
             { 019, new InnateSkill(383, 14, "Monstrous Offering", "When switching to a Fury demon \nall support effects on Kushinada-Hime \nwill be passed to the switched ally.")}, // 019 Kushinada
             { 020, new InnateSkill(418, 15, "Maiden Plea", "While in the active party, \nmay step in during negotiation and \npacify an enraged demon.")}, // 020 Kikuri-Hime
             { 021, new InnateSkill(383, 14, "Four Devas", "When summoned from the stock, \nraise all stats of all Four Devas \nin the active party by one rank.")}, // 021 Bishamonten
             { 022, new InnateSkill(383, 03, "Odinson", "Elec Enhancer & Thor's Elec \nattacks have an increased \nchance to inflict Shock.")}, // 022 Thor
             { 023, new InnateSkill(383, 14, "Four Devas", "When summoned from the stock, \nraise all stats of all Four Devas \nin the active party by one rank.")}, // 023 Jikokuten
             { 024, new InnateSkill(410, 15, "Arbitration", "While in the active party, \nmay step in during negotiation and \nsoothe an enraged demon.")}, // 024 Take-Mikazuchi
-            { 025, new InnateSkill(383, 15, "Okuninushi", "")}, // 025 Okuninushi
+            { 025, new InnateSkill(383, 13, "Ward Off Evil", "While in the active party, \nall allies have an increased \nchance to recover from ailments.")}, // 025 Okuninushi
             { 026, new InnateSkill(383, 14, "Four Devas", "When summoned from the stock, \nraise all stats of all Four Devas \nin the active party by one rank.")}, // 026 Koumokuten
             { 027, new InnateSkill(383, 14, "Four Devas", "When summoned from the stock, \nraise all stats of all Four Devas \nin the active party by one rank.")}, // 027 Zouchouten
             { 028, new InnateSkill(414, 15, "Intimidate", "While in the active party, \nmay step in during negotiation to \n'convince' a lower level demon.")}, // 028 Take-Minakata
             { 029, new InnateSkill(383, 15, "Chimera", "")}, // 029 Chimera
             { 030, new InnateSkill(383, 15, "Auspicious Beast", "While in the active party, raise allied \nAuspicious Beast's skill potentials \nto Baihu's if they were lower.")}, // 030 Baihu
-            { 031, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Senri's critical damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 031 Senri
+            { 031, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Senri's Critical Damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 031 Senri
             { 032, new InnateSkill(383, 15, "Auspicious Beast", "While in the active party, raise allied \nAuspicious Beast's skill potentials \nto Zhuque's if they were lower.")}, // 032 Zhuque
             { 033, new InnateSkill(383, 14, "Divine Benevolence", "While in the active party, \nSupport skill costs are reduced \nby 20% for all allies.")}, // 033 Shiisaa
-            { 034, new InnateSkill(383, 15, "Helmsman", "When Xiezhai acts, the next ally \ngains 30% accuracy if they attack.")}, // 034 Xiezhai
+            { 034, new InnateSkill(383, 15, "Helmsman", "When Xiezhai acts, the next ally \ngains 30% Hit Rate if they attack.")}, // 034 Xiezhai
             { 035, new InnateSkill(383, 06, "Light Enhancer", "While in the active party, \nraise allies' Light skill potential \nto Unicorns's if it was lower.")}, // 035 Unicorn
             { 036, new InnateSkill(383, 01, "Fire Enhancer", "While in the active party, \nraise allies' Fire skill potential \nto Flaemis' if it was lower.")}, // 036 Flaemis
             { 037, new InnateSkill(383, 02, "Ice Enhancer", "While in the active party, \nraise allies' Ice skill potential \nto Aquans' if it was lower.")}, // 037 Aquans
@@ -59,7 +59,7 @@ namespace NocturneInsaniax
             { 041, new InnateSkill(383, 15, "Enlightening Ritual", "When fused with another demon, \nallows the known skills of the result \ndemon to be overridden.")}, // 041 Kushi Mitama
             { 042, new InnateSkill(383, 15, "Enlightening Ritual", "When fused with another demon, \nallows the known skills of the result \ndemon to be overridden.")}, // 042 Nigi Mitama
             { 043, new InnateSkill(383, 15, "Enlightening Ritual", "When fused with another demon, \nallows the known skills of the result \ndemon to be overridden.")}, // 043 Ara Mitama
-            { 044, new InnateSkill(383, 01, "Malevolent Flames", "While in the active party, \nallied Fire attacks may crit.")}, // 044 Efreet
+            { 044, new InnateSkill(383, 01, "Malevolent Flames", "While in the active party, allied \nFire attacks may critically strike.")}, // 044 Efreet
             { 045, new InnateSkill(413, 15, "Silver Tongue", "While in the active party, \nmay step in during negotiation to \npersuade an indecisive demon.")}, // 045 Pulukishi
             { 046, new InnateSkill(383, 00, "Phys Gestalt", "Ongkhot gains Phys skill potential \nbased on the total potential of \nallies in the active party.")}, // 046 Ongkhot
             { 047, new InnateSkill(420, 15, "Flatter", "While in the active party, \nmay step in during negotiation to \nconvince a higher level demon.")}, // 047 Jinn
@@ -68,10 +68,10 @@ namespace NocturneInsaniax
             { 050, new InnateSkill(383, 13, "Restorative Melody", "While in the active party, \nHealing skill costs are reduced \nby 20% for all allies.")}, // 050 Isora
             { 051, new InnateSkill(415, 15, "Entice", "While in the active party, \nmay step in during negotiation to \ntempt a male demon.")}, // 051 Apsaras
             { 052, new InnateSkill(383, 04, "Force Gestalt", "Koppa Tengu gains Force skill potential \nbased on the total potential of \nallies in the active party.")}, // 052 Koppa Tengu
-            { 053, new InnateSkill(383, 13, "Restorative Melody", "While in the active party, \nHealing skill costs are reduced \nby 20% for all allies.")}, // 053 Titania
+            { 053, new InnateSkill(383, 15, "Titania", "")}, // 053 Titania
             { 054, new InnateSkill(383, 14, "Fairy King's Melody", "When summoned from the stock, \nnegate -nda effects on the party.")}, // 054 Oberon
             { 055, new InnateSkill(383, 02, "Ice Gestalt", "Troll gains Ice skill potential \nbased on the total potential of \nallies in the active party.")}, // 055 Troll
-            { 056, new InnateSkill(383, 15, "Proxy Guard Hound", "While in the active party, increases \ncritical damage by 30% for Avatar, \nHoly, Beast and Wilder allies.")}, // 056 Setanta
+            { 056, new InnateSkill(383, 15, "Proxy Guard Hound", "While in the active party, increases \nCritical Damage by 30% for Avatar, \nHoly, Beast and Wilder allies.")}, // 056 Setanta
             { 057, new InnateSkill(410, 15, "Arbitration", "While in the active party, \nmay step in during negotiation and \nsoothe an enraged demon.")}, // 057 Kelpie
             { 058, new InnateSkill(383, 01, "Fiery Melody", "While in the active party, \nallied Fire damage is increased \nby 10% when striking a weakness.")}, // 058 Jack-o'-Lantern
             { 059, new InnateSkill(353, 15, "Lucky Find", "Occasionally find items on the Vortex World Map while in the active party.")}, // 059 High Pixie
@@ -82,54 +82,54 @@ namespace NocturneInsaniax
             { 064, new InnateSkill(411, 15, "Detain", "While in the active party, \nmay step in during negotiation and \nprevent a demon from making off with payment.")}, // 064 Virtue
             { 065, new InnateSkill(383, 06, "Light Gestalt", "Power gains Light skill potential \nbased on the total potential of \nallies in the active party.")}, // 065 Power
             { 066, new InnateSkill(412, 15, "Kinspeak", "While in the active party, \nmay step in during negotiation to \nurge a demon of the same race.")}, // 066 Principality
-            { 067, new InnateSkill(383, 00, "Focused Assault", "Archangel gains 20% accuracy and \ncritical chance when targetting the \nsame single foe as the previous ally.")}, // 067 Archangel
+            { 067, new InnateSkill(383, 15, "Focused Assault", "Archangel gains 20% Hit Rate and \nCritical Chance when targetting the \nsame single foe as the previous ally.")}, // 067 Archangel
             { 068, new InnateSkill(411, 15, "Detain", "While in the active party, \nmay step in during negotiation and \nprevent a demon from making off with payment.")}, // 068 Angel
-            { 069, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Flauros' critical damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 069 Flauros
+            { 069, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Flauros' Critical Damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 069 Flauros
             { 070, new InnateSkill(383, 15, "Kept Waiting", "Decarabia gains slight HP/MP \nrecovery after each action if \nForneus is also in the active party.")}, // 070 Decarabia
-            { 071, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Ose's critical damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 071 Ose
+            { 071, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Ose's Critical Damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 071 Ose
             { 072, new InnateSkill(383, 01, "Fire Gestalt", "Berith gains Fire skill potential \nbased on the total potential of \nallies in the active party.")}, // 072 Berith
-            { 073, new InnateSkill(383, 15, "Helmsman", "When Eligor acts, the next ally \ngains 30% accuracy if they attack.")}, // 073 Eligor
+            { 073, new InnateSkill(383, 15, "Helmsman", "When Eligor acts, the next ally \ngains 30% Hit Rate if they attack.")}, // 073 Eligor
             { 074, new InnateSkill(383, 15, "Best Friend", "Forneus' -nda effects reduce \nenemies' stats by one extra stage if \nDecarabia is also in the active party.")}, // 074 Forneus
             { 075, new InnateSkill(383, 02, "Ice Gestalt", "Yurlungur gains Ice skill potential \nbased on the total potential of \nallies in the active party.")}, // 075 Yurlungur
-            { 076, new InnateSkill(383, 02, "Breath of Plenty", "While in the active party, \nallied Ice attacks may crit.")}, // 076 Quetzalcoatl
+            { 076, new InnateSkill(383, 02, "Breath of Plenty", "While in the active party, allied \nIce attacks may critically strike.")}, // 076 Quetzalcoatl
             { 077, new InnateSkill(383, 03, "Elec Gestalt", "Naga Raja gains Elec skill potential \nbased on the total potential of \nallies in the active party.")}, // 077 Naga Raja
             { 078, new InnateSkill(383, 02, "Frigid Melody", "While in the active party, \nallied Ice damage is increased \nby 10% when striking a weakness.")}, // 078 Mizuchi
             { 079, new InnateSkill(383, 03, "Elec Gestalt", "Naga gains Elec skill potential \nbased on the total potential of \nallies in the active party.")}, // 079 Naga
-            { 080, new InnateSkill(383, 15, "Nozuchi", "")}, // 080 Nozuchi
+            { 080, new InnateSkill(383, 15, "Magnified Malady", "While in the active party, all allies \ndeal 20% more damage against \nenemies with an ailment.")}, // 080 Nozuchi
             { 081, new InnateSkill(383, 15, "Faithful Companion", "After Cerberus strikes a weakness, \nthe next ally deals 20% more \ndamage if they attack.")}, // 081 Cerberus
             { 082, new InnateSkill(383, 15, "Faithful Companion", "After Orthrus strikes a weakness, \nthe next ally deals 20% more \ndamage if they attack.")}, // 082 Orthrus
-            { 083, new InnateSkill(383, 15, "Suparna", "")}, // 083 Suparna
+            { 083, new InnateSkill(383, 04, "Force Enhancer", "While in the active party, \nraise allies' Force skill potential \nto Garuda's if it was lower.")}, // 083 Suparna
             { 084, new InnateSkill(383, 04, "Gusting Melody", "While in the active party, \nallied Force damage is increased \nby 10% when striking a weakness.")}, // 084 Badb Catha
             { 085, new InnateSkill(383, 15, "Faithful Companion", "After Inugami strikes a weakness, \nthe next ally deals 20% more \ndamage if they attack.")}, // 085 Inugami
-            { 086, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Nekomata's critical damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 086 Nekomata
-            { 087, new InnateSkill(383, 15, "Critical Melody", "While in the active party, \nallied critical damage is \nincreased by 10%.")}, // 087 Gogmagog
+            { 086, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Nekomata's Critical Damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 086 Nekomata
+            { 087, new InnateSkill(383, 15, "Critical Melody", "While in the active party, \nallied Critical Damage is \nincreased by 10%.")}, // 087 Gogmagog
             { 088, new InnateSkill(383, 00, "Phys Enhancer", "While in the active party, \nraise allies' Phys skill potential \nto Titan's if it was lower.")}, // 088 Titan
             { 089, new InnateSkill(409, 15, "Haggle", "While in the active party, \nmay step in during negotiation and \nensure lesser demands.")}, // 089 Sarutahiko
-            { 090, new InnateSkill(383, 15, "Sudama", "")}, // 090 Sudama
+            { 090, new InnateSkill(412, 15, "Kinspeak", "While in the active party, \nmay step in during negotiation to \nurge a demon of the same race.")}, // 090 Sudama
             { 091, new InnateSkill(383, 01, "Fire Gestalt", "Hua Po gains Fire skill potential \nbased on the total potential of \nallies in the active party.")}, // 091 Hua Po
-            { 092, new InnateSkill(412, 15, "Kinspeak", "While in the active party, \nmay step in during negotiation to \nurge a demon of the same race.")}, // 092 Kodama
-            { 093, new InnateSkill(383, 15, "Shiki-Ouji", "")}, // 093 Shiki-Ouji
+            { 092, new InnateSkill(383, 04, "Force Gestalt", "Zhen gains Force skill potential \nbased on the total potential of \nallies in the active party.")}, // 092 Kodama
+            { 093, new InnateSkill(383, 13, "Ward Off Evil", "While in the active party, \nall allies have an increased \nchance to recover from ailments.")}, // 093 Shiki-Ouji
             { 094, new InnateSkill(409, 15, "Haggle", "While in the active party, \nmay step in during negotiation and \nensure lesser demands.")}, // 094 Oni
-            { 095, new InnateSkill(383, 15, "Yomotsu-Ikusa", "")}, // 095 Yomotsu-Ikusa
+            { 095, new InnateSkill(383, 15, "Focused Assault", "Archangel gains 20% Hit Rate and \nCritical Chance when targetting the \nsame single foe as the previous ally.")}, // 095 Yomotsu-Ikusa
             { 096, new InnateSkill(413, 15, "Silver Tongue", "While in the active party, \nmay step in during negotiation to \npersuade an indecisive demon.")}, // 096 Momunofu
             { 097, new InnateSkill(383, 03, "Elec Gestalt", "Shikigami gains Elec skill potential \nbased on the total potential of \nallies in the active party.")}, // 097 Shikigami
             { 098, new InnateSkill(383, 01, "Fire Gestalt", "Rangda gains Fire skill potential \nbased on the total potential of \nallies in the active party.")}, // 098 Rangda
             { 099, new InnateSkill(383, 15, "Dakini", "")}, // 099 Dakini
-            { 100, new InnateSkill(383, 15, "Critical Melody", "While in the active party, \nallied critical damage is \nincreased by 10%.")}, // 100 Yaksini
-            { 101, new InnateSkill(383, 15, "Yomotsu-Shikome", "")}, // 101 Yomotsu-Shikome
-            { 102, new InnateSkill(383, 15, "Taraka", "")}, // 102 Taraka
+            { 100, new InnateSkill(383, 15, "Critical Melody", "While in the active party, \nallied Critical Damage is \nincreased by 10%.")}, // 100 Yaksini
+            { 101, new InnateSkill(383, 15, "Deathly Affliction", "While in the active party, all allies \ngain 20% Hit Rate and Critical Chance \nagainst enemies with an ailment.")}, // 101 Yomotsu-Shikome
+            { 102, new InnateSkill(383, 15, "Contagious Curse", "While in the active party, \nallied Ailment Chance is \nincreased by 20%.")}, // 102 Taraka
             { 103, new InnateSkill(383, 02, "Ice Gestalt", "Datsue-Ba gains Ice skill potential \nbased on the total potential of \nallies in the active party.")}, // 103 Datsue-Ba
-            { 104, new InnateSkill(383, 15, "Mada", "")}, // 104 Mada
+            { 104, new InnateSkill(419, 15, "Wine Party", "While in the active party, \nmay step in during negotiation to \nfix trouble with the power of liquor.")}, // 104 Mada
             { 105, new InnateSkill(383, 15, "Girimekhala", "")}, // 105 Girimekhala
             { 106, new InnateSkill(353, 15, "Lucky Find", "Occasionally find items on the Vortex World Map while in the active party.")}, // 106 Taotie
-            { 107, new InnateSkill(383, 15, "Pazuzu", "")}, // 107 Pazuzu
+            { 107, new InnateSkill(383, 15, "Magnified Malady", "While in the active party, all allies \ndeal 20% more damage against \nenemies with an ailment.")}, // 107 Pazuzu
             { 108, new InnateSkill(383, 07, "Dark Gestalt", "Baphomet gains Dark skill potential \nbased on the total potential of \nallies in the active party.")}, // 108 Baphomet
             { 109, new InnateSkill(383, 15, "Mot", "")}, // 109 Mot
             { 110, new InnateSkill(383, 15, "Alciel", "")}, // 110 Alciel
             { 111, new InnateSkill(383, 01, "Laevateinn", "Fire Enhancer & Surt's normal \nattacks deal medium Fire damage.")}, // 111 Surt
             { 112, new InnateSkill(414, 15, "Intimidate", "While in the active party, \nmay step in during negotiation to \n'convince' a lower level demon.")}, // 112 Abaddon
             { 113, new InnateSkill(383, 15, "Loki", "")}, // 113 Loki
-            { 114, new InnateSkill(383, 05, "Forbidden Fruit", "While in the active party, \nallied Almighty attacks may crit.")}, // 114 Lilith
+            { 114, new InnateSkill(383, 05, "Forbidden Fruit", "While in the active party, allied \nAlmighty attacks may critically strike.")}, // 114 Lilith
             { 115, new InnateSkill(383, 15, "Nyx", "")}, // 115 Nyx - Elec Gestalt?
             { 116, new InnateSkill(383, 15, "Queen Mab", "")}, // 116 Queen Mab
             { 117, new InnateSkill(415, 15, "Entice", "While in the active party, \nmay step in during negotiation to \ntempt a male demon.")}, // 117 Succubus
@@ -139,36 +139,36 @@ namespace NocturneInsaniax
             { 121, new InnateSkill(383, 04, "Force Gestalt", "Hresvelgr gains Force skill potential \nbased on the total potential of \nallies in the active party.")}, // 121 Hresvelgr
             { 122, new InnateSkill(353, 15, "Lucky Find", "Occasionally find items on the Vortex World Map while in the active party.")}, // 122 Mothman
             { 123, new InnateSkill(383, 03, "Thunderous Melody", "While in the active party, \nallied Elec damage is increased \nby 10% when striking a weakness.")}, // 123 Raiju
-            { 124, new InnateSkill(383, 15, "Critical Melody", "While in the active party, \nallied critical damage is \nincreased by 10%.")}, // 124 Nue
-            { 125, new InnateSkill(383, 15, "Critical Melody", "While in the active party, \nallied critical damage is \nincreased by 10%.")}, // 125 Bicorn
-            { 126, new InnateSkill(383, 04, "Force Gestalt", "Zhen gains Force skill potential \nbased on the total potential of \nallies in the active party.")}, // 126 Zhen
+            { 124, new InnateSkill(383, 15, "Critical Melody", "While in the active party, \nallied Critical Damage is \nincreased by 10%.")}, // 124 Nue
+            { 125, new InnateSkill(383, 15, "Critical Melody", "While in the active party, \nallied Critical Damage is \nincreased by 10%.")}, // 125 Bicorn
+            { 126, new InnateSkill(383, 15, "Contagious Curse", "While in the active party, \nallied Ailment Chance is \nincreased by 20%.")}, // 126 Zhen
             { 127, new InnateSkill(383, 15, "Vetala", "")}, // 127 Vetala
             { 128, new InnateSkill(383, 15, "Legion", "")}, // 128 Legion
-            { 129, new InnateSkill(383, 15, "Yaka", "")}, // 129 Yaka
+            { 129, new InnateSkill(383, 15, "Deathly Affliction", "While in the active party, all allies \ngain 20% Hit Rate and Critical Chance \nagainst enemies with an ailment.")}, // 129 Yaka
             { 130, new InnateSkill(383, 00, "Phys Gestalt", "Choronzon gains Phys skill potential \nbased on the total potential of \nallies in the active party.")}, // 130 Choronzon
-            { 131, new InnateSkill(383, 00, "Focused Assault", "Preta gains 20% accuracy and \ncritical chance when targetting the \nsame single foe as the previous ally.")}, // 131 Preta
+            { 131, new InnateSkill(383, 15, "Focused Assault", "Preta gains 20% Hit Rate and \nCritical Chance when targetting the \nsame single foe as the previous ally.")}, // 131 Preta
             { 132, new InnateSkill(383, 07, "Dark Enhancer", "While in the active party, \nraise allies' Dark skill potential \nto Shadow's if it was lower.")}, // 132 Shadow
-            { 133, new InnateSkill(383, 15, "Black Ooze", "")}, // 133 Black Ooze
+            { 133, new InnateSkill(383, 15, "Contagious Curse", "While in the active party, \nallied Ailment Chance is \nincreased by 20%.")}, // 133 Black Ooze
             { 134, new InnateSkill(383, 15, "Blob", "")}, // 134 Blob
-            { 135, new InnateSkill(383, 15, "Slime", "")}, // 135 Slime
-            { 136, new InnateSkill(383, 15, "Mou-Ryo", "")}, // 136 Mou-Ryo
+            { 135, new InnateSkill(383, 15, "Deathly Affliction", "While in the active party, all allies \ngain 20% Hit Rate and Critical Chance \nagainst enemies with an ailment.")}, // 135 Slime
+            { 136, new InnateSkill(383, 15, "Magnified Malady", "While in the active party, all allies \ndeal 20% more damage against \nenemies with an ailment.")}, // 136 Mou-Ryo
             { 137, new InnateSkill(383, 15, "Will o' Wisp", "")}, // 137 Will o' Wisp
             { 138, new InnateSkill(383, 14, "Retributive Zeal", "When an allied Divine or Seraph \ndemon dies, Maximize Michael's \nPhysical/Magical Attack.")}, // 138 Michael
             { 139, new InnateSkill(383, 14, "Retributive Zeal", "When an allied Divine or Seraph \ndemon dies, Maximize Gabriel's \nPhysical/Magical Attack.")}, // 139 Gabriel
             { 140, new InnateSkill(383, 14, "Retributive Zeal", "When an allied Divine or Seraph \ndemon dies, Maximize Raphael's \nPhysical/Magical Attack.")}, // 140 Raphael
             { 141, new InnateSkill(383, 14, "Retributive Zeal", "When an allied Divine or Seraph \ndemon dies, Maximize Uriel's \nPhysical/Magical Attack.")}, // 141 Uriel
             { 142, new InnateSkill(383, 14, "Divine Benevolence", "While in the active party, \nSupport skill costs are reduced \nby 20% for all allies.")}, // 142 Ganesha
-            { 143, new InnateSkill(383, 15, "Helmsman", "When Xiezhai acts, the next ally \ngains 30% accuracy if they attack.")}, // 143 Valkyrie
+            { 143, new InnateSkill(383, 15, "Helmsman", "When Xiezhai acts, the next ally \ngains 30% Hit Rate if they attack.")}, // 143 Valkyrie
             { 144, new InnateSkill(383, 15, "Arahabaki", "")}, // 144 Arahabaki
             { 145, new InnateSkill(383, 15, "Kurama Tengu", "")}, // 145 Kurama Tengu
             { 146, new InnateSkill(383, 15, "Ramayana", "Phys Gestalt & after \nHanuman heals a single ally, \ncure their ailments.")}, // 146 Hanuman
-            { 147, new InnateSkill(383, 15, "Proxy Guard Hound", "While in the active party, increases \ncritical damage by 30% for Avatar, \nHoly, Beast and Wilder allies.")}, // 147 Cu Chulainn
+            { 147, new InnateSkill(383, 15, "Proxy Guard Hound", "While in the active party, increases \nCritical Damage by 30% for Avatar, \nHoly, Beast and Wilder allies.")}, // 147 Cu Chulainn
             { 148, new InnateSkill(383, 15, "Auspicious Beast", "While in the active party, raise allied \nAuspicious Beast's skill potentials \nto Qing Long's if they were lower.")}, // 148 Qing Long
             { 149, new InnateSkill(383, 15, "Auspicious Beast", "While in the active party, raise allied \nAuspicious Beast's skill potentials \nto Xuanwu's if they were lower.")}, // 149 Xuanwu
-            { 150, new InnateSkill(383, 03, "Vanquishing Bolts", "While in the active party, \nallied Elec attacks may crit.")}, // 150 Barong
+            { 150, new InnateSkill(383, 03, "Vanquishing Bolts", "While in the active party, allied \nElec attacks may critically strike.")}, // 150 Barong
             { 151, new InnateSkill(383, 15, "Faithful Companion", "After Makami strikes a weakness, \nthe next ally deals 20% more \ndamage if they attack.")}, // 151 Makami
             { 152, new InnateSkill(383, 04, "Force Enhancer", "While in the active party, \nraise allies' Force skill potential \nto Garuda's if it was lower.")}, // 152 Garuda
-            { 153, new InnateSkill(383, 15, "Helmsman", "When Xiezhai acts, the next ally \ngains 30% accuracy if they attack.")}, // 153 Yatagarasu
+            { 153, new InnateSkill(383, 15, "Helmsman", "When Xiezhai acts, the next ally \ngains 30% Hit Rate if they attack.")}, // 153 Yatagarasu
             { 154, new InnateSkill(383, 15, "Gurulu", "")}, // 154 Gurulu
             { 155, new InnateSkill(383, 15, "Milton", "Albion gains immunity to \nelements based on which \nZoas are in the active party.")}, // 155 Albion
             { 156, new InnateSkill(383, 15, "Manikin", "")}, // 156 Manikin
@@ -183,19 +183,19 @@ namespace NocturneInsaniax
             { 165, new InnateSkill(383, 15, "Manikin", "")}, // 165 Manikin
             { 166, new InnateSkill(383, 15, "Manikin", "")}, // 166 Manikin
             { 167, new InnateSkill(353, 15, "Lucky Find", "Occasionally find items on the Vortex World Map while in the active party.")}, // 167 Pisaca
-            { 168, new InnateSkill(383, 07, "Dark Star", "While in the active party, \nallied Dark attacks may crit.")}, // 168 Kaiwan
-            { 169, new InnateSkill(383, 15, "Four Oni", "Kin-Ki's charged/critical damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 169 Kin-Ki
-            { 170, new InnateSkill(383, 15, "Four Oni", "Sui-Ki's charged/critical damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 170 Sui-Ki
-            { 171, new InnateSkill(383, 15, "Four Oni", "Fuu-Ki's charged/critical damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 171 Fuu-Ki
-            { 172, new InnateSkill(383, 15, "Four Oni", "Ongyo-Ki's charged/critical damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 172 Ongyo-Ki
+            { 168, new InnateSkill(383, 07, "Dark Star", "While in the active party, allied \nDark attacks may critically strike.")}, // 168 Kaiwan
+            { 169, new InnateSkill(383, 15, "Four Oni", "Kin-Ki's Charged/Critical Damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 169 Kin-Ki
+            { 170, new InnateSkill(383, 15, "Four Oni", "Sui-Ki's Charged/Critical Damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 170 Sui-Ki
+            { 171, new InnateSkill(383, 15, "Four Oni", "Fuu-Ki's Charged/Critical Damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 171 Fuu-Ki
+            { 172, new InnateSkill(383, 15, "Four Oni", "Ongyo-Ki's Charged/Critical Damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 172 Ongyo-Ki
             { 173, new InnateSkill(383, 15, "Clotho", "")}, // 173 Clotho
             { 174, new InnateSkill(383, 15, "Lachesis", "")}, // 174 Lachesis
             { 175, new InnateSkill(383, 15, "Atropos", "")}, // 175 Atropos
             { 176, new InnateSkill(383, 15, "Taboo", "While in the active party, \ndouble the ailment rate for \nall allies and enemies.")}, // 176 Loa
             { 177, new InnateSkill(383, 07, "Dark Enhancer", "While in the active party, \nraise allies' Dark skill potential \nto Chatterskull's if it was lower.")}, // 177 Chatterskull
             { 178, new InnateSkill(383, 15, "Phantom", "")}, // 178 Phantom
-            { 179, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Ose Hallel's critical damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 179 Ose Hallel
-            { 180, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Flauros Hallel's critical damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 180 Flauros Hallel
+            { 179, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Ose Hallel's Critical Damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 179 Ose Hallel
+            { 180, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Flauros Hallel's Critical Damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 180 Flauros Hallel
             { 181, new InnateSkill(383, 15, "Urthona", "")}, // 181 Urthona
             { 182, new InnateSkill(383, 15, "Urizen", "")}, // 182 Urizen
             { 183, new InnateSkill(383, 15, "Luvah", "")}, // 183 Luvah
@@ -242,7 +242,7 @@ namespace NocturneInsaniax
             { 224, new InnateSkill(383, 06, "Blessed Melody", "While in the active party, \nallied Light damage is increased \nby 10% when striking a weakness.")}, // 224 Tam Lin
             { 225, new InnateSkill(383, 15, "Evil Mirror", "Doppelgänger mimics single-target \nskills used by the Demi-fiend \nwith reduced power.")}, // 225 Doppelganger
             { 226, new InnateSkill(383, 15, "Nightmare", "")}, // 226 Nightmare
-            { 227, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Gdon's critical damage increases \nby 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 227 Gdon
+            { 227, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Gdon's Critical Damage increases \nby 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 227 Gdon
             { 228, new InnateSkill(383, 15, "", "")}, // 228 
             { 229, new InnateSkill(383, 15, "", "")}, // 229 
             { 230, new InnateSkill(383, 15, "", "")}, // 230 
@@ -281,10 +281,10 @@ namespace NocturneInsaniax
             { 263, new InnateSkill(383, 15, "Boss Ose", "")}, // 263 Boss Ose
             { 264, new InnateSkill(383, 15, "Boss Kagutsuchi 2", "")}, // 264 Boss Kagutsuchi 2
             { 265, new InnateSkill(383, 15, "Ambush Mizuchi", "")}, // 265 Ambush Mizuchi
-            { 266, new InnateSkill(383, 15, "Four Oni", "Kin-Ki's charged/critical damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 169 Boss Kin-Ki
-            { 267, new InnateSkill(383, 15, "Four Oni", "Sui-Ki's charged/critical damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 170 Boss Sui-Ki
-            { 268, new InnateSkill(383, 15, "Four Oni", "Fuu-Ki's charged/critical damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 171 Boss Fuu-Ki
-            { 269, new InnateSkill(383, 15, "Four Oni", "Ongyo-Ki's charged/critical damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 172 Boss Ongyo-Ki
+            { 266, new InnateSkill(383, 15, "Four Oni", "Kin-Ki's charged/Critical Damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 169 Boss Kin-Ki
+            { 267, new InnateSkill(383, 15, "Four Oni", "Sui-Ki's charged/Critical Damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 170 Boss Sui-Ki
+            { 268, new InnateSkill(383, 15, "Four Oni", "Fuu-Ki's charged/Critical Damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 171 Boss Fuu-Ki
+            { 269, new InnateSkill(383, 15, "Four Oni", "Ongyo-Ki's charged/Critical Damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 172 Boss Ongyo-Ki
             { 270, new InnateSkill(383, 15, "Boss Clotho (Solo)", "")}, // 270 Boss Clotho (Solo)
             { 271, new InnateSkill(383, 15, "Boss Lachesis (Solo)", "")}, // 271 Boss Lachesis (Solo)
             { 272, new InnateSkill(383, 15, "Boss Atropos (Solo)", "")}, // 272 Boss Atropos (Solo)
@@ -437,7 +437,7 @@ namespace NocturneInsaniax
             { 01, new List<ushort> { 72, 91, 98 } }, // Fire
             { 02, new List<ushort> { 55, 75, 103 } }, // Ice
             { 03, new List<ushort> { 77, 79, 97 } }, // Elec
-            { 04, new List<ushort> { 48, 52, 121, 126 } }, // Force
+            { 04, new List<ushort> { 48, 52, 92, 121, } }, // Force
             { 05, new List<ushort>() }, // Almighty (Not Used)
             { 06, new List<ushort> { 65 } }, // Light
             { 07, new List<ushort> { 108 } } // Dark
@@ -458,7 +458,7 @@ namespace NocturneInsaniax
             { 1, new List<ushort> { 36, 111, 335 } }, // Fire
             { 2, new List<ushort> { 17, 37 } }, // Ice
             { 3, new List<ushort> { 22, 39, 302, 337 } }, // Elec
-            { 4, new List<ushort> { 38, 152 } }, // Force
+            { 4, new List<ushort> { 38, 83, 152 } }, // Force
             { 5, new List<ushort>() }, // Almighty (Not Used)
             { 6, new List<ushort> { 35, 63 } }, // Light
             { 7, new List<ushort> { 132, 177 } } // Dark
@@ -502,15 +502,19 @@ namespace NocturneInsaniax
 
         private static ushort[] tripuraSamharaIds = new ushort[] { 1, 12 };
         private static ushort[] criticalMelodyIds = new ushort[] { 87, 100, 124, 125 };
-        private static ushort[] restorativeMelodyIds = new ushort[] { 50, 53 };
+        private static ushort[] restorativeMelodyIds = new ushort[] { 10, 18, 50 };
         private static ushort[] divineBenevolenceIds = new ushort[] { 33, 142 };
         private static ushort[] pawToPawCombatIds = new ushort[] { 31, 69, 71, 86, 179, 180, 227, 263, 289, 290, 362 };
         private static ushort[] auspiciousBeastIds = new ushort[] { 30, 32, 148, 149 };
         private static ushort[] faithfulCompanionIds = new ushort[] { 81, 82, 85, 151 };
+        private static ushort[] focusedAssaultIds = new ushort[] { 5, 67, 95, 131 };
+        private static ushort[] helmsmanIds = new ushort[] { 34, 73, 143, 153 };
+        private static ushort[] deathlyAfflictionIds = new ushort[] { 101, 129, 135 };
+        private static ushort[] magnifiedMaladyIds = new ushort[] { 80, 107, 136 };
+        private static ushort[] contagiousCurseIds = new ushort[] { 126, 133 };
+        private static ushort[] wardOffEvilIds = new ushort[] { 25, 93 };
         private static ushort[] proxyGuardHoundRaces = new ushort[] { 6, 14, 21, 28 };
         private static ushort[] proxyGuardHoundIds = new ushort[] { 56, 147 };
-        private static ushort[] focusedAssaultIds = new ushort[] { 5, 67, 131 };
-        private static ushort[] helmsmanIds = new ushort[] { 34, 73, 143, 153 };
         private static ushort[] retributiveZealRaces = new ushort[] { 11, 24 };
         private static ushort[] retributiveZealIds = new ushort[] { 138, 139, 140, 141, 284, 285, 286 };
         private static ushort[] fourDevasIds = new ushort[] { 21, 23, 26, 27 };

@@ -556,7 +556,7 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(147, 0);
                     //datCalc.datAddDevil(30, 0);
                     //datCalc.datAddDevil(111, 0);
-                    datCalc.datAddDevil(33, 0);
+                    datCalc.datAddDevil(93, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    //work.skill[0] = 192;
@@ -780,7 +780,8 @@ namespace NocturneInsaniax
             public static void Postfix(ref int nskill, ref int sformindex, ref int dformindex, ref float __result)
             {
                 var skillattr = datSkill.tbl[nskill].skillattr;
-                var work = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
+                var workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
+                var workFromFormindex2 = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
 
                 // Element Melody
                 if (melodyUsers.ContainsKey(skillattr) && nbCalc.nbGetAisyo(nskill, dformindex, skillattr) >= 2147483778)
@@ -813,16 +814,47 @@ namespace NocturneInsaniax
                     }
                     if (elementMelodyActive) __result = __result * 1.1f;
                 }
+                // Magnified Malady
+                if (workFromFormindex2.badstatus != 0)
+                {
+                    bool magnifiedMaladyActive = false;
+
+                    if (nbMainProcess.nbGetPartyFromFormindex(sformindex).partyindex <= 3)
+                    {
+                        foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
+                        {
+                            try
+                            {
+                                if (magnifiedMaladyIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                    magnifiedMaladyActive = true; break;
+                            }
+                            catch { }
+                        }
+                    }
+                    else
+                    {
+                        foreach (var enemy in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex > 3))
+                        {
+                            try
+                            {
+                                if (magnifiedMaladyIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
+                                    magnifiedMaladyActive = true; break;
+                            }
+                            catch { }
+                        }
+                    }
+                    if (magnifiedMaladyActive) __result = __result * 1.2f;
+                }
 
                 switch (skillattr)
                 {
                     case 0:
                         {
-                            if (datCalc.datCheckSyojiSkill(work, 361) != 0)
+                            if (datCalc.datCheckSyojiSkill(workFromFormindex1, 361) != 0)
                             {
                                 __result = (__result / 1.5f) * 1.3f;
                             }
-                            else if (datCalc.datCheckSyojiSkill(work, 362) != 0)
+                            else if (datCalc.datCheckSyojiSkill(workFromFormindex1, 362) != 0)
                             {
                                 __result = __result * 1.3f;
                             }
@@ -830,11 +862,11 @@ namespace NocturneInsaniax
                         }
                     case 1:
                         {
-                            if (datCalc.datCheckSyojiSkill(work, 309) != 0 || datCalc.datCheckSyojiSkill(work, 361) != 0)
+                            if (datCalc.datCheckSyojiSkill(workFromFormindex1, 309) != 0 || datCalc.datCheckSyojiSkill(workFromFormindex1, 361) != 0)
                             {
                                 __result = (__result / 1.5f) * 1.3f;
                             }
-                            else if (datCalc.datCheckSyojiSkill(work, 363) != 0)
+                            else if (datCalc.datCheckSyojiSkill(workFromFormindex1, 363) != 0)
                             {
                                 __result = __result * 1.3f;
                             }
@@ -842,11 +874,11 @@ namespace NocturneInsaniax
                         }
                     case 2:
                         {
-                            if (datCalc.datCheckSyojiSkill(work, 310) != 0 || datCalc.datCheckSyojiSkill(work, 361) != 0)
+                            if (datCalc.datCheckSyojiSkill(workFromFormindex1, 310) != 0 || datCalc.datCheckSyojiSkill(workFromFormindex1, 361) != 0)
                             {
                                 __result = (__result / 1.5f) * 1.3f;
                             }
-                            else if (datCalc.datCheckSyojiSkill(work, 363) != 0)
+                            else if (datCalc.datCheckSyojiSkill(workFromFormindex1, 363) != 0)
                             {
                                 __result = __result * 1.3f;
                             }
@@ -854,11 +886,11 @@ namespace NocturneInsaniax
                         }
                     case 3:
                         {
-                            if (datCalc.datCheckSyojiSkill(work, 311) != 0 || datCalc.datCheckSyojiSkill(work, 361) != 0)
+                            if (datCalc.datCheckSyojiSkill(workFromFormindex1, 311) != 0 || datCalc.datCheckSyojiSkill(workFromFormindex1, 361) != 0)
                             {
                                 __result = (__result / 1.5f) * 1.3f;
                             }
-                            else if (datCalc.datCheckSyojiSkill(work, 363) != 0)
+                            else if (datCalc.datCheckSyojiSkill(workFromFormindex1, 363) != 0)
                             {
                                 __result = __result * 1.3f;
                             }
@@ -866,11 +898,11 @@ namespace NocturneInsaniax
                         }
                     case 4:
                         {
-                            if (datCalc.datCheckSyojiSkill(work, 312) != 0 || datCalc.datCheckSyojiSkill(work, 361) != 0)
+                            if (datCalc.datCheckSyojiSkill(workFromFormindex1, 312) != 0 || datCalc.datCheckSyojiSkill(workFromFormindex1, 361) != 0)
                             {
                                 __result = (__result / 1.5f) * 1.3f;
                             }
-                            else if (datCalc.datCheckSyojiSkill(work, 363) != 0)
+                            else if (datCalc.datCheckSyojiSkill(workFromFormindex1, 363) != 0)
                             {
                                 __result = __result * 1.3f;
                             }

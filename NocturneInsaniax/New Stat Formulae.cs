@@ -466,33 +466,68 @@ namespace NocturneInsaniax
                             critRate = 30;
                     }
 
-                    // Crit enabling innates
                     sbyte skillAttr = datSkill.tbl[nskill].skillattr;
-                    if (datNormalSkill.tbl[nskill].hptype != 3 && critEnablerUsers.Keys.Contains(skillAttr))
+                    if (datNormalSkill.tbl[nskill].hptype != 3)
                     {
-                        if (actionProcessData.partyindex <= 3)
+                        // Crit enabling innates
+                        if (critEnablerUsers.Keys.Contains(skillAttr))
                         {
-                            foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
+                            if (actionProcessData.partyindex <= 3)
                             {
-                                try
+                                foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
                                 {
-                                    if (critEnablerUsers[skillAttr].Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
-                                        critRate = Math.Max(critRate, (short) 10);
+                                    try
+                                    {
+                                        if (critEnablerUsers[skillAttr].Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                            critRate = Math.Max(critRate, (short)10);
+                                    }
+                                    catch { }
                                 }
-                                catch { }
+                            }
+                            else
+                            {
+                                foreach (var enemy in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex > 3))
+                                {
+                                    try
+                                    {
+                                        if (critEnablerUsers[skillAttr].Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
+                                            critRate = Math.Max(critRate, (short)10);
+                                    }
+                                    catch { }
+                                }
                             }
                         }
-                        else
+                        // Deathly Affliction
+                        if (workFromFormindex2.badstatus != 0 && critRate > 0)
                         {
-                            foreach (var enemy in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex > 3))
+                            bool deathlyAfflictionActive = false;
+
+                            if (actionProcessData.partyindex <= 3)
                             {
-                                try
+                                foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
                                 {
-                                    if (critEnablerUsers[skillAttr].Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
-                                        critRate = Math.Max(critRate, (short) 10);
+                                    try
+                                    {
+                                        if (deathlyAfflictionIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                            deathlyAfflictionActive = true;
+                                    }
+                                    catch { }
                                 }
-                                catch { }
                             }
+                            else
+                            {
+                                foreach (var enemy in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex > 3))
+                                {
+                                    try
+                                    {
+                                        if (deathlyAfflictionIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
+                                            deathlyAfflictionActive = true;
+                                    }
+                                    catch { }
+                                }
+                            }
+
+                            if (deathlyAfflictionActive) critRate += 20;
                         }
                     }
 
@@ -611,12 +646,43 @@ namespace NocturneInsaniax
                         - ((targetLevel / 2) + (targetAgi * 2) + (targetLuk));
                     }
 
+                    // Deathly Affliction
+                    if (workFromFormindex2.badstatus != 0)
+                    {
+                        bool deathlyAfflictionActive = false;
+
+                        if (actionProcessData.partyindex <= 3)
+                        {
+                            foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
+                            {
+                                try
+                                {
+                                    if (deathlyAfflictionIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                        deathlyAfflictionActive = true;
+                                }
+                                catch { }
+                            }
+                        }
+                        else
+                        {
+                            foreach (var enemy in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex > 3))
+                            {
+                                try
+                                {
+                                    if (deathlyAfflictionIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
+                                        deathlyAfflictionActive = true;
+                                }
+                                catch { }
+                            }
+                        }
+
+                        if (deathlyAfflictionActive) chance += 30;
+                    }
                     // Helmsman
                     if (previousUnitId != 0 && helmsmanActive && helmsmanIds.Contains(previousUnitId))
                     {
                         chance += 30;
                     }
-
                     // Focused Assault
                     if (focusedAssaultIds.Contains(workFromFormindex1.id) &&
                         datNormalSkill.tbl[nskill].targetarea == 2 &&
