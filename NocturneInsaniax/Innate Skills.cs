@@ -44,7 +44,7 @@ namespace NocturneInsaniax
             { 026, new InnateSkill(383, 14, "Four Devas", "When summoned from the stock, \nraise all stats of all Four Devas \nin the active party by one rank.")}, // 026 Koumokuten
             { 027, new InnateSkill(383, 14, "Four Devas", "When summoned from the stock, \nraise all stats of all Four Devas \nin the active party by one rank.")}, // 027 Zouchouten
             { 028, new InnateSkill(414, 15, "Intimidate", "While in the active party, \nmay step in during negotiation to \n'convince' a lower level demon.")}, // 028 Take-Minakata
-            { 029, new InnateSkill(383, 15, "Chimera", "")}, // 029 Chimera
+            { 029, new InnateSkill(383, 15, "Proxy Guard Hound", "While in the active party, increases \nCritical Damage by 30% for Avatar, \nHoly, Beast and Wilder allies.")}, // 029 Chimera
             { 030, new InnateSkill(383, 15, "Auspicious Beast", "While in the active party, raise allied \nAuspicious Beast's skill potentials \nto Baihu's if they were lower.")}, // 030 Baihu
             { 031, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Senri's Critical Damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 031 Senri
             { 032, new InnateSkill(383, 15, "Auspicious Beast", "While in the active party, raise allied \nAuspicious Beast's skill potentials \nto Zhuque's if they were lower.")}, // 032 Zhuque
@@ -114,7 +114,7 @@ namespace NocturneInsaniax
             { 096, new InnateSkill(413, 15, "Silver Tongue", "While in the active party, \nmay step in during negotiation to \npersuade an indecisive demon.")}, // 096 Momunofu
             { 097, new InnateSkill(383, 03, "Elec Gestalt", "Shikigami gains Elec skill potential \nbased on the total potential of \nallies in the active party.")}, // 097 Shikigami
             { 098, new InnateSkill(383, 01, "Fire Gestalt", "Rangda gains Fire skill potential \nbased on the total potential of \nallies in the active party.")}, // 098 Rangda
-            { 099, new InnateSkill(383, 15, "Dakini", "")}, // 099 Dakini
+            { 099, new InnateSkill(383, 00, "Phys Enhancer", "While in the active party, \nraise allies' Phys skill potential \nto Dakini's if it was lower.")}, // 099 Dakini
             { 100, new InnateSkill(383, 15, "Critical Melody", "While in the active party, \nallied Critical Damage is \nincreased by 10%.")}, // 100 Yaksini
             { 101, new InnateSkill(383, 15, "Deathly Affliction", "While in the active party, all allies \ngain 20% Hit Rate and Critical Chance \nagainst enemies with an ailment.")}, // 101 Yomotsu-Shikome
             { 102, new InnateSkill(383, 15, "Contagious Curse", "While in the active party, \nallied Ailment Chance is \nincreased by 20%.")}, // 102 Taraka
@@ -142,17 +142,17 @@ namespace NocturneInsaniax
             { 124, new InnateSkill(383, 15, "Critical Melody", "While in the active party, \nallied Critical Damage is \nincreased by 10%.")}, // 124 Nue
             { 125, new InnateSkill(383, 15, "Critical Melody", "While in the active party, \nallied Critical Damage is \nincreased by 10%.")}, // 125 Bicorn
             { 126, new InnateSkill(383, 15, "Contagious Curse", "While in the active party, \nallied Ailment Chance is \nincreased by 20%.")}, // 126 Zhen
-            { 127, new InnateSkill(383, 15, "Vetala", "")}, // 127 Vetala
-            { 128, new InnateSkill(383, 15, "Legion", "")}, // 128 Legion
+            { 127, new InnateSkill(383, 15, "Essence Thief", "Vetala's attacks which drain \nHP/MP restore 100% of the damage \ndealt.")}, // 127 Vetala
+            { 128, new InnateSkill(383, 15, "Deathly Affliction", "While in the active party, all allies \ngain 20% Hit Rate and Critical Chance \nagainst enemies with an ailment.")}, // 128 Legion
             { 129, new InnateSkill(383, 15, "Deathly Affliction", "While in the active party, all allies \ngain 20% Hit Rate and Critical Chance \nagainst enemies with an ailment.")}, // 129 Yaka
             { 130, new InnateSkill(383, 00, "Phys Gestalt", "Choronzon gains Phys skill potential \nbased on the total potential of \nallies in the active party.")}, // 130 Choronzon
             { 131, new InnateSkill(383, 15, "Focused Assault", "Preta gains 20% Hit Rate and \nCritical Chance when targetting the \nsame single foe as the previous ally.")}, // 131 Preta
             { 132, new InnateSkill(383, 07, "Dark Enhancer", "While in the active party, \nraise allies' Dark skill potential \nto Shadow's if it was lower.")}, // 132 Shadow
             { 133, new InnateSkill(383, 15, "Contagious Curse", "While in the active party, \nallied Ailment Chance is \nincreased by 20%.")}, // 133 Black Ooze
-            { 134, new InnateSkill(383, 15, "Blob", "")}, // 134 Blob
+            { 134, new InnateSkill(383, 15, "Essence Thief", "Blob's attacks which drain \nHP/MP restore 100% of the damage \ndealt.")}, // 134 Blob
             { 135, new InnateSkill(383, 15, "Deathly Affliction", "While in the active party, all allies \ngain 20% Hit Rate and Critical Chance \nagainst enemies with an ailment.")}, // 135 Slime
             { 136, new InnateSkill(383, 15, "Magnified Malady", "While in the active party, all allies \ndeal 20% more damage against \nenemies with an ailment.")}, // 136 Mou-Ryo
-            { 137, new InnateSkill(383, 15, "Will o' Wisp", "")}, // 137 Will o' Wisp
+            { 137, new InnateSkill(383, 15, "Essence Thief", "Will o' Wisp's attacks which drain \nHP/MP restore 100% of the damage \ndealt.")}, // 137 Will o' Wisp
             { 138, new InnateSkill(383, 14, "Retributive Zeal", "When an allied Divine or Seraph \ndemon dies, Maximize Michael's \nPhysical/Magical Attack.")}, // 138 Michael
             { 139, new InnateSkill(383, 14, "Retributive Zeal", "When an allied Divine or Seraph \ndemon dies, Maximize Gabriel's \nPhysical/Magical Attack.")}, // 139 Gabriel
             { 140, new InnateSkill(383, 14, "Retributive Zeal", "When an allied Divine or Seraph \ndemon dies, Maximize Raphael's \nPhysical/Magical Attack.")}, // 140 Raphael
@@ -454,7 +454,7 @@ namespace NocturneInsaniax
 
         private static Dictionary<sbyte, List<ushort>> enhancerUsers = new Dictionary<sbyte, List<ushort>>
         {
-            { 0, new List<ushort> { 88, 119 } }, // Phys
+            { 0, new List<ushort> { 88, 99, 119 } }, // Phys
             { 1, new List<ushort> { 36, 111, 335 } }, // Fire
             { 2, new List<ushort> { 17, 37 } }, // Ice
             { 3, new List<ushort> { 22, 39, 302, 337 } }, // Elec
@@ -509,12 +509,13 @@ namespace NocturneInsaniax
         private static ushort[] faithfulCompanionIds = new ushort[] { 81, 82, 85, 151 };
         private static ushort[] focusedAssaultIds = new ushort[] { 5, 67, 95, 131 };
         private static ushort[] helmsmanIds = new ushort[] { 34, 73, 143, 153 };
-        private static ushort[] deathlyAfflictionIds = new ushort[] { 101, 129, 135 };
+        private static ushort[] deathlyAfflictionIds = new ushort[] { 101, 128, 129, 135 };
         private static ushort[] magnifiedMaladyIds = new ushort[] { 80, 107, 136, 226 };
         private static ushort[] contagiousCurseIds = new ushort[] { 102, 126, 133 };
         private static ushort[] wardOffEvilIds = new ushort[] { 93, 145 };
+        private static ushort[] essenceThiefIds = new ushort[] { 127, 124, 137 };
         private static ushort[] proxyGuardHoundRaces = new ushort[] { 6, 14, 21, 28 };
-        private static ushort[] proxyGuardHoundIds = new ushort[] { 56, 147 };
+        private static ushort[] proxyGuardHoundIds = new ushort[] { 29, 56, 147 };
         private static ushort[] retributiveZealRaces = new ushort[] { 11, 24 };
         private static ushort[] retributiveZealIds = new ushort[] { 138, 139, 140, 141, 284, 285, 286 };
         private static ushort[] fourDevasIds = new ushort[] { 21, 23, 26, 27 };

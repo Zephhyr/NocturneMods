@@ -583,7 +583,7 @@ namespace NocturneInsaniax
                             {
                                 try
                                 {
-                                    if (proxyGuardHoundIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                    if (new ushort[] { 56, 147 }.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
                                         warriorTrainerActive = true;
                                 }
                                 catch { }

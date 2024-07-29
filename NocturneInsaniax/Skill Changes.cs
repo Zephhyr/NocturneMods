@@ -558,7 +558,7 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(147, 0);
                     //datCalc.datAddDevil(30, 0);
                     //datCalc.datAddDevil(111, 0);
-                    datCalc.datAddDevil(6, 0);
+                    datCalc.datAddDevil(137, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    //work.skill[0] = 192;
@@ -1199,6 +1199,26 @@ namespace NocturneInsaniax
                 }
             }
         }
+
+        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetHpDrainRitu))]
+        private class nbGetHpDrainRituPatch
+        {
+            public static void Postfix(ref int nskill, ref int sformindex, ref int dformindex, ref float __result)
+            {
+                // Essence Thief
+                if (!essenceThiefIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id)) __result *= 0.8f;
+            }
+        }
+        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetMpDrainRitu))]
+        private class nbGetMpDrainRituPatch
+        {
+            public static void Postfix(ref int nskill, ref int sformindex, ref int dformindex, ref float __result)
+            {
+                // Essence Thief
+                if (!essenceThiefIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id)) __result *= 0.8f;
+            }
+        }
+
 
         [HarmonyPatch(typeof(nbActionProcess), nameof(nbActionProcess.SetDeadPacket))]
         private class SetDeadPacketPatch
