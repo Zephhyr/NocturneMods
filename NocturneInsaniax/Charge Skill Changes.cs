@@ -187,6 +187,15 @@ namespace NocturneInsaniax
 
                     nbHelpProcess.nbDispText("Effects passed to " + devilName + "!", string.Empty, 2, 45, 2315190144, false);
                 }
+                // Affable Hospitality passing on effects
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 1 && hojopoint == 0 && actionProcessData.work.nowindex == 406)
+                {
+                    string devilName = nbMainProcess.nbGetUnitWorkFromFormindex(formindex).id != 0
+                        ? datDevilName.Get(nbMainProcess.nbGetUnitWorkFromFormindex(formindex).id)
+                        : frName.frGetCNameString(0);
+
+                    nbHelpProcess.nbDispText("Effects shared with " + devilName + "!", string.Empty, 2, 45, 2315190144, false);
+                }
                 // Doppelganger's Evil Mirror copying Focus
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 16777216 && hojopoint == 99 && (actionProcessData.work.nowindex == 407 || actionProcessData.work.nowindex == 417))
                 {
@@ -458,7 +467,7 @@ namespace NocturneInsaniax
                         nbHelpProcess.nbDispText("All stats increased!", string.Empty, 2, 45, 2315190144, false);
                 }
                 // Retributive Zeal
-                else if (actionProcessData.work.nowcommand == 1 && hojotype == 5 && actionProcessData.work.nowindex == 406)
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 5 && actionProcessData.work.nowindex == 405)
                 {
                     var limitReached = true;
                     if (currentUnitBuffs[4] <= 2 || currentUnitBuffs[5] <= 2)

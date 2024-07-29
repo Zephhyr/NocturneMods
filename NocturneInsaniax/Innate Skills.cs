@@ -34,13 +34,13 @@ namespace NocturneInsaniax
             { 016, new InnateSkill(383, 00, "Phys Gestalt", "Kali gains Phys skill potential \nbased on the total potential of \nallies in the active party.")}, // 016 Kali
             { 017, new InnateSkill(383, 02, "Queen of Winter", "Ice Enhancer & Skadi's Ice \nattacks have an increased \nchance to inflict Freeze.")}, // 017 Skadi
             { 018, new InnateSkill(383, 13, "Restorative Melody", "While in the active party, \nHealing skill costs are reduced \nby 20% for all allies.")}, // 018 Parvati
-            { 019, new InnateSkill(383, 14, "Monstrous Offering", "When switching to a Fury demon \nall support effects on Kushinada-Hime \nwill be passed to the switched ally.")}, // 019 Kushinada
+            { 019, new InnateSkill(383, 14, "Monstrous Offering", "When switching to a Fury demon \nall Support effects on Kushinada-Hime \nwill be passed to the switched ally.")}, // 019 Kushinada
             { 020, new InnateSkill(418, 15, "Maiden Plea", "While in the active party, \nmay step in during negotiation and \npacify an enraged demon.")}, // 020 Kikuri-Hime
             { 021, new InnateSkill(383, 14, "Four Devas", "When summoned from the stock, \nraise all stats of all Four Devas \nin the active party by one rank.")}, // 021 Bishamonten
             { 022, new InnateSkill(383, 03, "Odinson", "Elec Enhancer & Thor's Elec \nattacks have an increased \nchance to inflict Shock.")}, // 022 Thor
             { 023, new InnateSkill(383, 14, "Four Devas", "When summoned from the stock, \nraise all stats of all Four Devas \nin the active party by one rank.")}, // 023 Jikokuten
             { 024, new InnateSkill(410, 15, "Arbitration", "While in the active party, \nmay step in during negotiation and \nsoothe an enraged demon.")}, // 024 Take-Mikazuchi
-            { 025, new InnateSkill(383, 13, "Ward Off Evil", "While in the active party, \nall allies have an increased \nchance to recover from ailments.")}, // 025 Okuninushi
+            { 025, new InnateSkill(383, 15, "Okuninushi", "")}, // 025 Okuninushi
             { 026, new InnateSkill(383, 14, "Four Devas", "When summoned from the stock, \nraise all stats of all Four Devas \nin the active party by one rank.")}, // 026 Koumokuten
             { 027, new InnateSkill(383, 14, "Four Devas", "When summoned from the stock, \nraise all stats of all Four Devas \nin the active party by one rank.")}, // 027 Zouchouten
             { 028, new InnateSkill(414, 15, "Intimidate", "While in the active party, \nmay step in during negotiation to \n'convince' a lower level demon.")}, // 028 Take-Minakata
@@ -158,9 +158,9 @@ namespace NocturneInsaniax
             { 140, new InnateSkill(383, 14, "Retributive Zeal", "When an allied Divine or Seraph \ndemon dies, Maximize Raphael's \nPhysical/Magical Attack.")}, // 140 Raphael
             { 141, new InnateSkill(383, 14, "Retributive Zeal", "When an allied Divine or Seraph \ndemon dies, Maximize Uriel's \nPhysical/Magical Attack.")}, // 141 Uriel
             { 142, new InnateSkill(383, 14, "Divine Benevolence", "While in the active party, \nSupport skill costs are reduced \nby 20% for all allies.")}, // 142 Ganesha
-            { 143, new InnateSkill(383, 15, "Helmsman", "When Xiezhai acts, the next ally \ngains 30% Hit Rate if they attack.")}, // 143 Valkyrie
-            { 144, new InnateSkill(383, 15, "Arahabaki", "")}, // 144 Arahabaki
-            { 145, new InnateSkill(383, 15, "Kurama Tengu", "")}, // 145 Kurama Tengu
+            { 143, new InnateSkill(383, 15, "Helmsman", "When Valkyrie acts, the next ally \ngains 30% Hit Rate if they attack.")}, // 143 Valkyrie
+            { 144, new InnateSkill(383, 14, "Affable Hospitality", "When an ally is summoned from the \nstock, Arahabaki shares non-charge \nSupport effects with the switched ally.")}, // 144 Arahabaki
+            { 145, new InnateSkill(383, 13, "Ward Off Evil", "While in the active party, \nall allies have an increased \nchance to recover from ailments.")}, // 145 Kurama Tengu
             { 146, new InnateSkill(383, 15, "Ramayana", "Phys Gestalt & after \nHanuman heals a single ally, \ncure their ailments.")}, // 146 Hanuman
             { 147, new InnateSkill(383, 15, "Proxy Guard Hound", "While in the active party, increases \nCritical Damage by 30% for Avatar, \nHoly, Beast and Wilder allies.")}, // 147 Cu Chulainn
             { 148, new InnateSkill(383, 15, "Auspicious Beast", "While in the active party, raise allied \nAuspicious Beast's skill potentials \nto Qing Long's if they were lower.")}, // 148 Qing Long
@@ -168,7 +168,7 @@ namespace NocturneInsaniax
             { 150, new InnateSkill(383, 03, "Vanquishing Bolts", "While in the active party, allied \nElec attacks may critically strike.")}, // 150 Barong
             { 151, new InnateSkill(383, 15, "Faithful Companion", "After Makami strikes a weakness, \nthe next ally deals 20% more \ndamage if they attack.")}, // 151 Makami
             { 152, new InnateSkill(383, 04, "Force Enhancer", "While in the active party, \nraise allies' Force skill potential \nto Garuda's if it was lower.")}, // 152 Garuda
-            { 153, new InnateSkill(383, 15, "Helmsman", "When Xiezhai acts, the next ally \ngains 30% Hit Rate if they attack.")}, // 153 Yatagarasu
+            { 153, new InnateSkill(383, 15, "Helmsman", "When Yatagarasu acts, the next ally \ngains 30% Hit Rate if they attack.")}, // 153 Yatagarasu
             { 154, new InnateSkill(383, 15, "Gurulu", "")}, // 154 Gurulu
             { 155, new InnateSkill(383, 15, "Milton", "Albion gains immunity to \nelements based on which \nZoas are in the active party.")}, // 155 Albion
             { 156, new InnateSkill(383, 15, "Manikin", "")}, // 156 Manikin
@@ -210,17 +210,17 @@ namespace NocturneInsaniax
             { 192, new InnateSkill(383, 15, "Raidou/Dante", "")}, // 192 Raidou/Dante
             { 193, new InnateSkill(383, 15, "Metatron", "")}, // 193 Metatron
             { 194, new InnateSkill(383, 15, "Beelzebub (Fly)", "")}, // 194 Beelzebub (Fly)
-            { 195, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall support effects on Pale Rider \nwill be passed to the switched ally.")}, // 195 Pale Rider
-            { 196, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall support effects on White Rider \nwill be passed to the switched ally.")}, // 196 White Rider
-            { 197, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall support effects on Red Rider \nwill be passed to the switched ally.")}, // 197 Red Rider
-            { 198, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall support effects on Black Rider \nwill be passed to the switched ally.")}, // 198 Black Rider
+            { 195, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall Support effects on Pale Rider \nwill be passed to the switched ally.")}, // 195 Pale Rider
+            { 196, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall Support effects on White Rider \nwill be passed to the switched ally.")}, // 196 White Rider
+            { 197, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall Support effects on Red Rider \nwill be passed to the switched ally.")}, // 197 Red Rider
+            { 198, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall Support effects on Black Rider \nwill be passed to the switched ally.")}, // 198 Black Rider
             { 199, new InnateSkill(383, 15, "Matador", "")}, // 199 Matador
             { 200, new InnateSkill(383, 15, "Hell Biker", "")}, // 200 Hell Biker
             { 201, new InnateSkill(383, 15, "Daisoujou", "")}, // 201 Daisoujou
             { 202, new InnateSkill(383, 15, "Mother Harlot", "")}, // 202 Mother Harlot
             { 203, new InnateSkill(383, 15, "Trumpeter", "")}, // 203 Trumpeter
-            { 204, new InnateSkill(383, 15, "Futomimi", "")}, // 204 Futomimi
-            { 205, new InnateSkill(383, 15, "Sakahagi", "")}, // 205 Sakahagi
+            { 204, new InnateSkill(383, 15, "Underdog", "Futomimi's deals up to 30% more \ndamage based on his missing HP.")}, // 204 Futomimi
+            { 205, new InnateSkill(383, 15, "Desperate Power", "Sakahagi's deals up to 30% more \ndamage based on his missing MP.")}, // 205 Sakahagi
             { 206, new InnateSkill(383, 15, "Black Frost", "")}, // 206 Black Frost
             { 207, new InnateSkill(383, 15, "Beelzebub (Man)", "")}, // 207 Beelzebub (Man)
             { 208, new InnateSkill(383, 15, "", "")}, // 208 
@@ -241,7 +241,7 @@ namespace NocturneInsaniax
             { 223, new InnateSkill(383, 15, "", "")}, // 223 
             { 224, new InnateSkill(383, 06, "Blessed Melody", "While in the active party, \nallied Light damage is increased \nby 10% when striking a weakness.")}, // 224 Tam Lin
             { 225, new InnateSkill(383, 15, "Evil Mirror", "Doppelgänger mimics single-target \nskills used by the Demi-fiend \nwith reduced power.")}, // 225 Doppelganger
-            { 226, new InnateSkill(383, 15, "Nightmare", "")}, // 226 Nightmare
+            { 226, new InnateSkill(383, 15, "Magnified Malady", "While in the active party, all allies \ndeal 20% more damage against \nenemies with an ailment.")}, // 226 Nightmare
             { 227, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Gdon's Critical Damage increases \nby 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 227 Gdon
             { 228, new InnateSkill(383, 15, "", "")}, // 228 
             { 229, new InnateSkill(383, 15, "", "")}, // 229 
@@ -510,9 +510,9 @@ namespace NocturneInsaniax
         private static ushort[] focusedAssaultIds = new ushort[] { 5, 67, 95, 131 };
         private static ushort[] helmsmanIds = new ushort[] { 34, 73, 143, 153 };
         private static ushort[] deathlyAfflictionIds = new ushort[] { 101, 129, 135 };
-        private static ushort[] magnifiedMaladyIds = new ushort[] { 80, 107, 136 };
-        private static ushort[] contagiousCurseIds = new ushort[] { 126, 133 };
-        private static ushort[] wardOffEvilIds = new ushort[] { 25, 93 };
+        private static ushort[] magnifiedMaladyIds = new ushort[] { 80, 107, 136, 226 };
+        private static ushort[] contagiousCurseIds = new ushort[] { 102, 126, 133 };
+        private static ushort[] wardOffEvilIds = new ushort[] { 93, 145 };
         private static ushort[] proxyGuardHoundRaces = new ushort[] { 6, 14, 21, 28 };
         private static ushort[] proxyGuardHoundIds = new ushort[] { 56, 147 };
         private static ushort[] retributiveZealRaces = new ushort[] { 11, 24 };

@@ -30,6 +30,7 @@ namespace NocturneInsaniax
         public static nbActionProcessData_t? actionProcessData;
 
         public static string switchOutSkillName = "";
+        public static string switchOutSkillName2 = "";
         public static string postSummonSkillName = "";
 
         [HarmonyPatch(typeof(datSkillName), nameof(datSkillName.Get))]
@@ -102,7 +103,8 @@ namespace NocturneInsaniax
                     case 369: __result = "Spirit Well"; return false;
                     case 370: __result = "Qigong"; return false;
 
-                    case 406: __result = "Retributive Zeal"; return false;
+                    case 405: __result = "Retributive Zeal"; return false;
+                    case 406: __result = switchOutSkillName2; return false;
                     case 407: __result = switchOutSkillName; return false;
                     case 408: __result = postSummonSkillName; return false;
                     case 416: __result = "Ramayana"; return false;
@@ -556,7 +558,7 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(147, 0);
                     //datCalc.datAddDevil(30, 0);
                     //datCalc.datAddDevil(111, 0);
-                    datCalc.datAddDevil(93, 0);
+                    datCalc.datAddDevil(6, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    //work.skill[0] = 192;
@@ -845,6 +847,18 @@ namespace NocturneInsaniax
                     }
                     if (magnifiedMaladyActive) __result = __result * 1.2f;
                 }
+                // Underdog
+                if (workFromFormindex1.id == 204 || workFromFormindex1.id == 283)
+                {
+                    var missingHP = (workFromFormindex1.maxhp - workFromFormindex1.hp) / workFromFormindex1.maxhp;
+                    __result = __result * (1 + (missingHP * 0.3f));
+                }
+                // Desperate Power
+                if (workFromFormindex1.id == 205 || workFromFormindex1.id == 299)
+                {
+                    var missingMP = (workFromFormindex1.maxmp - workFromFormindex1.mp) / workFromFormindex1.maxmp;
+                    __result = __result * (1 + (missingMP * 0.3f));
+                }
 
                 switch (skillattr)
                 {
@@ -964,8 +978,6 @@ namespace NocturneInsaniax
                     MelonLogger.Msg("nowtform: " + actionProcessData.work.nowtform);
                     MelonLogger.Msg("type: " + actionProcessData.type);
                     MelonLogger.Msg("target: " + actionProcessData.target);
-                    //MelonLogger.Msg("id: " + nbMainProcess.nbGetUnitWorkFromFormindex(actionProcessData.work.nowtform).id);
-                    //MelonLogger.Msg("stockindex: " + dds3GlobalWork.DDS3_GBWK.unitwork[cmpDrawStock.GBWK.pStockInfo.LocalStock[0].StockIdx[actionProcessData.work.nowindex]].id);
                 } catch { }
 
                 if (phase == 7)
@@ -987,7 +999,42 @@ namespace NocturneInsaniax
                         // After Summon
                         if (actionProcessData.work.nowcommand == 6 || (actionProcessData.work.nowcommand == 1 && actionProcessData.work.nowindex == 223))
                         {
-                            if (actionProcessData.work.nowcommand == 6)
+                            // Arahabaki's Affable Hospitality
+                            if (activeUnitIds.Contains((ushort) 144))
+                            {
+                                bool affableHospitalityActive = false;
+                                var arahabakiParty = new nbParty_t();
+                                foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
+                                {
+                                    try
+                                    {
+                                        if (nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 144)
+                                        {
+                                            affableHospitalityActive = true;
+                                            arahabakiParty = nbMainProcess.nbGetPartyFromFormindex(ally.formindex);
+                                        }
+                                    }
+                                    catch { }
+                                }
+
+                                if (affableHospitalityActive)
+                                {
+                                    var incomingParty = nbMainProcess.nbGetPartyFromFormindex(actionProcessData.work.nowtform);
+                                    bool activate = false;
+                                    for (short i = 4; i <= 14; i++)
+                                    {
+                                        incomingParty.count[i] = Math.Max((short)0, arahabakiParty.count[i]);
+                                        if (arahabakiParty.count[i] != 0) activate = true;
+                                    }
+                                    if (activate)
+                                    {
+                                        switchOutSkillName2 = "Affable Hospitality";
+                                        SwitchOutSkillCopy2(67, 67, 0, false);
+                                        nbMainProcess.nbPushAction(4, arahabakiParty.partyindex, incomingParty.partyindex, 406);
+                                    }
+                                }
+                            }
+                            if (actionProcessData.work.id != 0 && actionProcessData.work.nowcommand == 6)
                             {
                                 // Odin's Runes of Wisdom
                                 if (actionProcessData.work.id == 4 || (actionProcessData.work.id == 0 && activeUnitIds[actionProcessData.work.nowtform] == 4))
@@ -1087,7 +1134,7 @@ namespace NocturneInsaniax
                                         if (fourDevasIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
                                         {
                                             postSummonSkillName = "Four Devas";
-                                            PostSummonSkillCopy(224, 64, 0);
+                                            PostSummonSkillCopy(459, 64, 0);
                                             nbMainProcess.nbPushAction(4, party.partyindex, ally.partyindex, 408);
                                         }
                                     } catch { }
@@ -1170,7 +1217,7 @@ namespace NocturneInsaniax
                             try
                             {
                                 if (retributiveZealIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
-                                    nbMainProcess.nbPushAction(4, ally.partyindex, ally.partyindex, 406);
+                                    nbMainProcess.nbPushAction(4, ally.partyindex, ally.partyindex, 405);
                             }
                             catch { }
                         }
@@ -1182,7 +1229,7 @@ namespace NocturneInsaniax
                             try
                             {
                                 if (retributiveZealIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
-                                    nbMainProcess.nbPushAction(4, enemy.partyindex, enemy.partyindex, 406);
+                                    nbMainProcess.nbPushAction(4, enemy.partyindex, enemy.partyindex, 405);
                             }
                             catch { }
                         }
@@ -1611,7 +1658,7 @@ namespace NocturneInsaniax
             Punishment(188);
             JudgementLight(189);
 
-            RetributiveZeal(406);
+            RetributiveZeal(405);
             Ramayana(416);
 
             NewBeastEye(422);
@@ -6670,6 +6717,53 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 64);
+        }
+
+        private static void SwitchOutSkillCopy2(ushort functionId, ushort effectId, byte targetType, bool applyBuff)
+        {
+            datSkill.tbl[406].flag = 0;
+            datSkill.tbl[406].keisyoform = 512;
+            datSkill.tbl[406].skillattr = datSkill.tbl[functionId].skillattr;
+            datSkill.tbl[406].index = 408;
+            datSkill.tbl[406].type = 0;
+
+            datNormalSkill.tbl[406].badlevel = datNormalSkill.tbl[functionId].badlevel;
+            datNormalSkill.tbl[406].badtype = datNormalSkill.tbl[functionId].badtype;
+            datNormalSkill.tbl[406].basstatus = datNormalSkill.tbl[functionId].basstatus;
+            datNormalSkill.tbl[406].cost = 0;
+            datNormalSkill.tbl[406].costbase = datNormalSkill.tbl[functionId].costbase;
+            datNormalSkill.tbl[406].costtype = datNormalSkill.tbl[functionId].costtype;
+            datNormalSkill.tbl[406].criticalpoint = datNormalSkill.tbl[functionId].criticalpoint;
+            datNormalSkill.tbl[406].deadtype = datNormalSkill.tbl[functionId].deadtype;
+            datNormalSkill.tbl[406].failpoint = datNormalSkill.tbl[functionId].failpoint;
+            datNormalSkill.tbl[406].flag = datNormalSkill.tbl[functionId].flag;
+            datNormalSkill.tbl[406].hitlevel = datNormalSkill.tbl[functionId].hitlevel;
+            datNormalSkill.tbl[406].hitprog = datNormalSkill.tbl[functionId].hitprog;
+            datNormalSkill.tbl[406].hittype = datNormalSkill.tbl[functionId].hittype;
+            datNormalSkill.tbl[406].hojopoint = applyBuff ? datNormalSkill.tbl[functionId].hojopoint : (sbyte)0;
+            datNormalSkill.tbl[406].hojotype = applyBuff ? datNormalSkill.tbl[functionId].hojotype : 1;
+            datNormalSkill.tbl[406].hpbase = datNormalSkill.tbl[functionId].hpbase;
+            datNormalSkill.tbl[406].hpn = datNormalSkill.tbl[functionId].hpn;
+            datNormalSkill.tbl[406].hptype = datNormalSkill.tbl[functionId].hptype;
+            datNormalSkill.tbl[406].koukatype = datNormalSkill.tbl[functionId].koukatype;
+            datNormalSkill.tbl[406].magicbase = datNormalSkill.tbl[functionId].magicbase;
+            datNormalSkill.tbl[406].magiclimit = datNormalSkill.tbl[functionId].magiclimit;
+            datNormalSkill.tbl[406].minus = datNormalSkill.tbl[functionId].minus;
+            datNormalSkill.tbl[406].mpbase = datNormalSkill.tbl[functionId].mpbase;
+            datNormalSkill.tbl[406].mpn = datNormalSkill.tbl[functionId].mpn;
+            datNormalSkill.tbl[406].mptype = datNormalSkill.tbl[functionId].mptype;
+            datNormalSkill.tbl[406].program = datNormalSkill.tbl[functionId].program;
+            datNormalSkill.tbl[406].targetarea = datNormalSkill.tbl[functionId].targetarea;
+            datNormalSkill.tbl[406].targetcntmax = datNormalSkill.tbl[functionId].targetcntmax;
+            datNormalSkill.tbl[406].targetcntmin = datNormalSkill.tbl[functionId].targetcntmin;
+            datNormalSkill.tbl[406].targetprog = datNormalSkill.tbl[functionId].targetprog;
+            datNormalSkill.tbl[406].targetrandom = datNormalSkill.tbl[functionId].targetrandom;
+            datNormalSkill.tbl[406].targetrule = datNormalSkill.tbl[functionId].targetrule;
+            datNormalSkill.tbl[406].targettype = targetType;
+            datNormalSkill.tbl[406].untargetbadstat = datNormalSkill.tbl[functionId].untargetbadstat;
+            datNormalSkill.tbl[406].use = 2;
+
+            OverWriteSkillEffect(406, effectId);
         }
 
         private static void SwitchOutSkillCopy(ushort functionId, ushort effectId, byte targetType, bool applyBuff)
