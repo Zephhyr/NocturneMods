@@ -103,6 +103,7 @@ namespace NocturneInsaniax
                     case 369: __result = "Spirit Well"; return false;
                     case 370: __result = "Qigong"; return false;
 
+                    case 403: __result = "Estocada"; return false;
                     case 404: __result = "Nation Founder"; return false;
                     case 405: __result = "Retributive Zeal"; return false;
                     case 406: __result = switchOutSkillName2; return false;
@@ -561,7 +562,7 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(147, 0);
                     //datCalc.datAddDevil(30, 0);
                     //datCalc.datAddDevil(111, 0);
-                    datCalc.datAddDevil(25, 0);
+                    datCalc.datAddDevil(199, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    //work.skill[0] = 192;
@@ -659,7 +660,7 @@ namespace NocturneInsaniax
                 if (nskill == 266)
                 {
                     var darkResistance = nbCalc.nbGetAisyo(nskill, dformindex, 7);
-                    if (darkResistance == 65536 || darkResistance == 131072 || nbMainProcess.nbGetPartyFromFormindex(dformindex).count[11] == 1)
+                    if (darkResistance == 65536 || darkResistance == 131072)
                         __result = 0;
                     return;
                 }
@@ -1007,17 +1008,17 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int phase)
             {
-                MelonLogger.Msg("--nbMainProcess.nbSetPhase--");
-                try
-                {
-                    MelonLogger.Msg("phase: " + phase);
-                    MelonLogger.Msg("nowcommand: " + actionProcessData.work.nowcommand);
-                    MelonLogger.Msg("nowindex: " + actionProcessData.work.nowindex);
-                    MelonLogger.Msg("partyindex: " + actionProcessData.partyindex);
-                    MelonLogger.Msg("nowtform: " + actionProcessData.work.nowtform);
-                    MelonLogger.Msg("type: " + actionProcessData.type);
-                    MelonLogger.Msg("target: " + actionProcessData.target);
-                } catch { }
+                //MelonLogger.Msg("--nbMainProcess.nbSetPhase--");
+                //try
+                //{
+                //    MelonLogger.Msg("phase: " + phase);
+                //    MelonLogger.Msg("nowcommand: " + actionProcessData.work.nowcommand);
+                //    MelonLogger.Msg("nowindex: " + actionProcessData.work.nowindex);
+                //    MelonLogger.Msg("partyindex: " + actionProcessData.partyindex);
+                //    MelonLogger.Msg("nowtform: " + actionProcessData.work.nowtform);
+                //    MelonLogger.Msg("type: " + actionProcessData.type);
+                //    MelonLogger.Msg("target: " + actionProcessData.target);
+                //} catch { }
 
                 if (phase == 7)
                 {
@@ -1717,6 +1718,7 @@ namespace NocturneInsaniax
             Punishment(188);
             JudgementLight(189);
 
+            Estocada(403);
             NationFounder(404);
             RetributiveZeal(405);
             Ramayana(416);
@@ -6730,6 +6732,55 @@ namespace NocturneInsaniax
             datSkill.tbl[id].type = 0;
 
             OverWriteSkillEffect(id, 219);
+        }
+
+        private static void Estocada(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 0;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 0;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 255;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 32;
+            datNormalSkill.tbl[id].hptype = 14;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 96);
+            datNormalSkillVisual.tbl[id].motion = 3;
+            datNormalSkillVisual.tbl[id].hatudo = datNormalSkillVisual.tbl[0].hatudo;
         }
 
         private static void NationFounder(ushort id)

@@ -214,7 +214,7 @@ namespace NocturneInsaniax
             { 196, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall Support effects on White Rider \nwill be passed to the switched ally.")}, // 196 White Rider
             { 197, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall Support effects on Red Rider \nwill be passed to the switched ally.")}, // 197 Red Rider
             { 198, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall Support effects on Black Rider \nwill be passed to the switched ally.")}, // 198 Black Rider
-            { 199, new InnateSkill(383, 15, "Matador", "")}, // 199 Matador
+            { 199, new InnateSkill(383, 00, "Estocada", "Matador may perform a weak \ncounterattack after dodging.")}, // 199 Matador
             { 200, new InnateSkill(383, 15, "Hell Biker", "")}, // 200 Hell Biker
             { 201, new InnateSkill(383, 15, "Daisoujou", "")}, // 201 Daisoujou
             { 202, new InnateSkill(383, 15, "Mother Harlot", "")}, // 202 Mother Harlot
@@ -360,11 +360,11 @@ namespace NocturneInsaniax
             { 342, new InnateSkill(383, 15, "Boss Metatron", "")}, // 342 Boss Metatron
             { 343, new InnateSkill(383, 15, "Boss Beelzebub", "")}, // 343 Boss Beelzebub
             { 344, new InnateSkill(383, 15, "Boss Lucifer", "")}, // 344 Boss Lucifer
-            { 345, new InnateSkill(383, 15, "Boss Pale Rider", "")}, // 345 Boss Pale Rider
-            { 346, new InnateSkill(383, 15, "Boss White Rider", "")}, // 346 Boss White Rider
-            { 347, new InnateSkill(383, 15, "Boss Red Rider", "")}, // 347 Boss Red Rider
-            { 348, new InnateSkill(383, 15, "Boss Black Rider", "")}, // 348 Boss Black Rider
-            { 349, new InnateSkill(383, 15, "Boss Matador", "")}, // 349 Boss Matador
+            { 345, new InnateSkill(383, 15, "Four Horsemen", "")}, // 345 Boss Pale Rider
+            { 346, new InnateSkill(383, 15, "Four Horsemen", "")}, // 346 Boss White Rider
+            { 347, new InnateSkill(383, 15, "Four Horsemen", "")}, // 347 Boss Red Rider
+            { 348, new InnateSkill(383, 15, "Four Horsemen", "")}, // 348 Boss Black Rider
+            { 349, new InnateSkill(383, 15, "Estocada", "")}, // 349 Boss Matador
             { 350, new InnateSkill(383, 15, "Boss Hell Biker", "")}, // 350 Boss Hell Biker
             { 351, new InnateSkill(383, 15, "Boss Daisoujou", "")}, // 351 Boss Daisoujou
             { 352, new InnateSkill(383, 15, "Boss Mother Harlot", "")}, // 352 Boss Mother Harlot

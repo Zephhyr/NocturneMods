@@ -595,7 +595,7 @@ namespace NocturneInsaniax
                             {
                                 try
                                 {
-                                    if (proxyGuardHoundIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
+                                    if (new ushort[] { 56, 147 }.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
                                         warriorTrainerActive = true;
                                 }
                                 catch { }
@@ -701,6 +701,10 @@ namespace NocturneInsaniax
                         chance /= 2;
                     var rand = dds3KernelCore.dds3GetRandIntA(100);
                     __result = rand < chance ? 0 : 4;
+
+                    // Matador's Estocada
+                    if (__result == 4 && (workFromFormindex2.id == 199 || workFromFormindex2.id == 349) && random.Next(2) == 0)
+                        nbMainProcess.nbPushAction(4, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, nbMainProcess.nbGetPartyFromFormindex(sformindex).partyindex, 403);
                 }
             }
         }
