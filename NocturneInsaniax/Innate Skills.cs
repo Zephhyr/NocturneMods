@@ -22,7 +22,7 @@ namespace NocturneInsaniax
             { 004, new InnateSkill(383, 14, "Runes of Wisdom", "When switching out, More than double \nthe damage of next the Strength-based \nattack for the switched ally.")}, // 004 Odin
             { 005, new InnateSkill(383, 15, "Focused Assault", "Atavaka gains 20% Hit Rate and \nCritical Chance when targetting the \nsame single foe as the previous ally.")}, // 005 Atavaka
             { 006, new InnateSkill(383, 14, "Eye of Horus", "When switching out, More than double \nthe damage of next the Magic-based \nattack for the switched ally.")}, // 006 Horus
-            { 007, new InnateSkill(383, 15, "Lakshmi", "")}, // 007 Lakshmi
+            { 007, new InnateSkill(383, 15, "Chanchala", "While in the active party, if an ally's \nMagical Attack is maximized, their \nMagic attacks may critically strike.")}, // 007 Lakshmi
             { 008, new InnateSkill(383, 15, "Warrior Trainer", "While Setanta or Cu Chulainn is in \nthe active party, Scathach's attacks \nwith positive potential will not miss.")}, // 008 Scathach
             { 009, new InnateSkill(383, 04, "Vina Raga", "While in the active party, allied \nForce attacks may critically strike.")}, // 009 Sarasvati
             { 010, new InnateSkill(383, 13, "Restorative Melody", "While in the active party, \nHealing skill costs are reduced \nby 20% for all allies.")}, // 010 Sati

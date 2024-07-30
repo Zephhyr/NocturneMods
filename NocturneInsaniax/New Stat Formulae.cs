@@ -479,7 +479,7 @@ namespace NocturneInsaniax
                                     try
                                     {
                                         if (critEnablerUsers[skillAttr].Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
-                                            critRate = Math.Max(critRate, (short)10);
+                                            critRate = Math.Max(critRate, (short) 10);
                                     }
                                     catch { }
                                 }
@@ -491,7 +491,35 @@ namespace NocturneInsaniax
                                     try
                                     {
                                         if (critEnablerUsers[skillAttr].Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
-                                            critRate = Math.Max(critRate, (short)10);
+                                            critRate = Math.Max(critRate, (short) 10);
+                                    }
+                                    catch { }
+                                }
+                            }
+                        }
+                        // Lakshmi's Chanchala
+                        if (skillAttr <= 4 && nbMainProcess.nbGetPartyFromFormindex(sformindex).count[5] >= 3)
+                        {
+                            if (actionProcessData.partyindex <= 3)
+                            {
+                                foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
+                                {
+                                    try
+                                    {
+                                        if (nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 7)
+                                            critRate = Math.Max(critRate, (short) 10);
+                                    }
+                                    catch { }
+                                }
+                            }
+                            else
+                            {
+                                foreach (var enemy in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex > 3))
+                                {
+                                    try
+                                    {
+                                        if (nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id == 7)
+                                            critRate = Math.Max(critRate, (short) 10);
                                     }
                                     catch { }
                                 }
