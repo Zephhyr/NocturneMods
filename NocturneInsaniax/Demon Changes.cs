@@ -1736,7 +1736,7 @@ namespace NocturneInsaniax
             // Skills
             tblSkill.fclSkillTbl[id].Event[0].Param = 110; // Chaos Blade
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[1].Param = 34; // Mamudo
+            tblSkill.fclSkillTbl[id].Event[1].Param = 37; // Diarama
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
             tblSkill.fclSkillTbl[id].Event[2].Param = 391; // Wooing
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;

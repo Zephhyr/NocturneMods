@@ -103,6 +103,7 @@ namespace NocturneInsaniax
                     case 369: __result = "Spirit Well"; return false;
                     case 370: __result = "Qigong"; return false;
 
+                    case 404: __result = "Nation Founder"; return false;
                     case 405: __result = "Retributive Zeal"; return false;
                     case 406: __result = switchOutSkillName2; return false;
                     case 407: __result = switchOutSkillName; return false;
@@ -287,7 +288,7 @@ namespace NocturneInsaniax
                     case 387: __result = "Invite a demon to join. \nEffective when speaker is female \nand target is male."; return false; // Seduce
                     case 388: __result = "Invite a demon to join. \nEffective when speaker is much higher \nlevel than target."; return false; // Brainwash
                     case 390: __result = "Invite a demon to join. \nEffective during new Kagutsuchi."; return false; // Dark Pledge
-                    case 391: __result = "Invite a demon to join. \nEffective when speaker is young male \nor old female and target \nis young female."; return false; // Wooing
+                    case 391: __result = "Invite a demon to join. Effective when \nspeaker is young male or old female \nand target is young female."; return false; // Wooing
                     case 392: __result = "Invite a demon to join. \nEffective when speaker is much lower \nlevel than target."; return false; // Beseech
                     case 393: __result = "Invite a demon to join in Odin's name. \nEffective when target is male."; return false; // Soul Recruit
                     case 394: __result = "Invite a demon to join using sex appeal. \nEffective when speaker is male \nand target is female."; return false; // Mischief
@@ -463,11 +464,13 @@ namespace NocturneInsaniax
                 }
 
                 // Hanuman's Ramayana
-                if (a.work.id == 146 && 
-                    (a.work.nowcommand == 1 && new ushort[] { 36, 37, 38 }.Contains(a.work.nowindex) || 
-                    a.work.nowcommand == 5 && new ushort[] { 1, 2, 3, 4, 9, 10 }.Contains(a.work.nowindex)))
-                    nbMainProcess.nbPushAction(4, a.partyindex, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, 416);
-
+                if (a.work.nowcommand == 1 && new ushort[] { 36, 37, 38, 457 }.Contains(a.work.nowindex) || 
+                    a.work.nowcommand == 5 && new ushort[] { 1, 2, 3, 4, 9, 10 }.Contains(a.work.nowindex))
+                {
+                    if (a.work.id == 25) nbMainProcess.nbPushAction(4, a.partyindex, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, 404);
+                    else if (a.work.id == 146) nbMainProcess.nbPushAction(4, a.partyindex, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, 416);
+                }
+                
                 // Doppelganger's Dark Mirror
                 if (a.work.id == 0 && a.work.nowcommand == 1 && !pushedSkillList.Contains(a.work.nowindex))
                 {
@@ -558,9 +561,7 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(147, 0);
                     //datCalc.datAddDevil(30, 0);
                     //datCalc.datAddDevil(111, 0);
-                    datCalc.datAddDevil(173, 0);
-                    datCalc.datAddDevil(174, 0);
-                    datCalc.datAddDevil(175, 0);
+                    datCalc.datAddDevil(25, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    //work.skill[0] = 192;
@@ -1716,6 +1717,7 @@ namespace NocturneInsaniax
             Punishment(188);
             JudgementLight(189);
 
+            NationFounder(404);
             RetributiveZeal(405);
             Ramayana(416);
 
@@ -6728,6 +6730,53 @@ namespace NocturneInsaniax
             datSkill.tbl[id].type = 0;
 
             OverWriteSkillEffect(id, 219);
+        }
+
+        private static void NationFounder(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 14;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 0;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 255;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 1;
+            datNormalSkill.tbl[id].hojotype = 341;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 50;
+            datNormalSkill.tbl[id].hptype = 0;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 9;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 67);
         }
 
         private static void RetributiveZeal(ushort id)

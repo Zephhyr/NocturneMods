@@ -485,8 +485,8 @@ namespace NocturneInsaniax
                     else
                         nbHelpProcess.nbDispText("All stats greatly increased!", string.Empty, 2, 45, 2315190144, false);
                 }
-                // Luster Candy
-                else if (actionProcessData.work.nowcommand == 1 && hojotype == 341 && (actionProcessData.work.nowindex == 459 || actionProcessData.work.nowindex == 408))
+                // Luster Candy/Four Devas/Nation Founder
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 341 && (actionProcessData.work.nowindex == 459 || actionProcessData.work.nowindex == 408 || actionProcessData.work.nowindex == 404))
                 {
                     var limitReached = true;
                     foreach (var unitBuffs in currentSideBuffs)
