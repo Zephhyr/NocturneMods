@@ -558,7 +558,9 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(147, 0);
                     //datCalc.datAddDevil(30, 0);
                     //datCalc.datAddDevil(111, 0);
-                    datCalc.datAddDevil(137, 0);
+                    datCalc.datAddDevil(173, 0);
+                    datCalc.datAddDevil(174, 0);
+                    datCalc.datAddDevil(175, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    //work.skill[0] = 192;
@@ -854,10 +856,46 @@ namespace NocturneInsaniax
                     __result = __result * (1 + (missingHP * 0.3f));
                 }
                 // Desperate Power
-                if (workFromFormindex1.id == 205 || workFromFormindex1.id == 299)
+                else if (workFromFormindex1.id == 205 || workFromFormindex1.id == 299)
                 {
                     var missingMP = (workFromFormindex1.maxmp - workFromFormindex1.mp) / workFromFormindex1.maxmp;
                     __result = __result * (1 + (missingMP * 0.3f));
+                }
+                // Moirae Cutter
+                else
+                {
+                    bool clothoPresent = false;
+                    bool lachesisPresent = false;
+                    bool atroposPresent = false;
+
+                    if (nbMainProcess.nbGetPartyFromFormindex(sformindex).partyindex <= 3)
+                    {
+                        foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
+                        {
+                            try
+                            {
+                                if (nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 173) clothoPresent = true;
+                                else if (nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 174) lachesisPresent = true;
+                                else if (nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 175) atroposPresent = true;
+                            }
+                            catch { }
+                        }
+                    }
+                    else
+                    {
+                        foreach (var enemy in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex > 3))
+                        {
+                            try
+                            {
+                                if (nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id == 326) clothoPresent = true;
+                                else if (nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id == 327) lachesisPresent = true;
+                                else if (nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id == 328) atroposPresent = true;
+                            }
+                            catch { }
+                        }
+                    }
+
+                    if (clothoPresent && lachesisPresent && atroposPresent) __result = __result * 1.1f;
                 }
 
                 switch (skillattr)

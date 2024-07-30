@@ -142,8 +142,46 @@ namespace NocturneInsaniax
                     {
                         hojopoint++;
                     }
-                }
-                catch { }
+                } catch { }
+                // Moirae Measurer
+                try
+                {
+                    if (new uint[] { 1, 5, 16, 64, 80, 272, 341 }.Contains(hojotype))
+                    {
+                        bool clothoPresent = false;
+                        bool lachesisPresent = false;
+                        bool atroposPresent = false;
+
+                        if (actionProcessData.partyindex <= 3)
+                        {
+                            foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
+                            {
+                                try
+                                {
+                                    if (nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 173) clothoPresent = true;
+                                    else if (nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 174) lachesisPresent = true;
+                                    else if (nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 175) atroposPresent = true;
+                                }
+                                catch { }
+                            }
+                        }
+                        else
+                        {
+                            foreach (var enemy in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex > 3))
+                            {
+                                try
+                                {
+                                    if (nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id == 326) clothoPresent = true;
+                                    else if (nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id == 327) lachesisPresent = true;
+                                    else if (nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id == 328) atroposPresent = true;
+                                }
+                                catch { }
+                            }
+                        }
+
+                        if (clothoPresent && lachesisPresent && atroposPresent) hojopoint++;
+                    }
+                } catch { }
 
                 currentUnitBuffs = nbMainProcess.nbGetPartyFromFormindex(formindex).count;
 

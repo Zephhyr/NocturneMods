@@ -1105,6 +1105,7 @@ namespace NocturneInsaniax
 
                             if (restorativeMelodyActive) datNormalSkill.tbl[nskill].cost = Convert.ToUInt16(datNormalSkill.tbl[nskill].cost * 0.8);
                         }
+                        // Divine Benevolence
                         else if (datSkill.tbl[nskill].skillattr == 14)
                         {
                             bool divineBenevolenceActive = false;
@@ -1138,6 +1139,39 @@ namespace NocturneInsaniax
 
                             if (tripuraSamharaActive) datNormalSkill.tbl[nskill].cost = Convert.ToUInt16(datNormalSkill.tbl[nskill].cost * 0.8);
                         }
+                        // Moirae Spinner
+                        bool clothoPresent = false;
+                        bool lachesisPresent = false;
+                        bool atroposPresent = false;
+                        
+                        if (actionProcessData.partyindex <= 3)
+                        {
+                            foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
+                            {
+                                try
+                                {
+                                    if (nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 173) clothoPresent = true;
+                                    else if (nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 174) lachesisPresent = true;
+                                    else if (nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 175) atroposPresent = true;
+                                }
+                                catch { }
+                            }
+                        }
+                        else
+                        {
+                            foreach (var enemy in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex > 3))
+                            {
+                                try
+                                {
+                                    if (nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id == 326) clothoPresent = true;
+                                    else if (nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id == 327) lachesisPresent = true;
+                                    else if (nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id == 328) atroposPresent = true;
+                                }
+                                catch { }
+                            }
+                        }
+                        
+                        if (clothoPresent && lachesisPresent && atroposPresent) datNormalSkill.tbl[nskill].cost = Convert.ToUInt16(datNormalSkill.tbl[nskill].cost * 0.8);
                     }
                 }
             }

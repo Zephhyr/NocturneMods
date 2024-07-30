@@ -77,7 +77,7 @@ namespace NocturneInsaniax
             { 059, new InnateSkill(353, 15, "Lucky Find", "Occasionally find items on the Vortex World Map while in the active party.")}, // 059 High Pixie
             { 060, new InnateSkill(383, 15, "Jack Frost", "")}, // 060 Jack Frost
             { 061, new InnateSkill(383, 15, "Pixie", "")}, // 061 Pixie
-            { 062, new InnateSkill(383, 15, "Throne", "")}, // 062 Throne
+            { 062, new InnateSkill(383, 06, "Light Gestalt", "Power gains Light skill potential \nbased on the total potential of \nallies in the active party.")}, // 062 Throne
             { 063, new InnateSkill(383, 06, "Light Enhancer", "While in the active party, \nraise allies' Light skill potential \nto Dominion's if it was lower.")}, // 063 Dominion
             { 064, new InnateSkill(411, 15, "Detain", "While in the active party, \nmay step in during negotiation and \nprevent a demon from making off with payment.")}, // 064 Virtue
             { 065, new InnateSkill(383, 06, "Light Gestalt", "Power gains Light skill potential \nbased on the total potential of \nallies in the active party.")}, // 065 Power
@@ -89,7 +89,7 @@ namespace NocturneInsaniax
             { 071, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Ose's Critical Damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 071 Ose
             { 072, new InnateSkill(383, 01, "Fire Gestalt", "Berith gains Fire skill potential \nbased on the total potential of \nallies in the active party.")}, // 072 Berith
             { 073, new InnateSkill(383, 15, "Helmsman", "When Eligor acts, the next ally \ngains 30% Hit Rate if they attack.")}, // 073 Eligor
-            { 074, new InnateSkill(383, 15, "Best Friend", "Forneus' -nda effects reduce \nenemies' stats by one extra stage if \nDecarabia is also in the active party.")}, // 074 Forneus
+            { 074, new InnateSkill(383, 15, "Best Friend", "Forneus' -nda effects reduce \nenemies' stats by one extra rank if \nDecarabia is also in the active party.")}, // 074 Forneus
             { 075, new InnateSkill(383, 02, "Ice Gestalt", "Yurlungur gains Ice skill potential \nbased on the total potential of \nallies in the active party.")}, // 075 Yurlungur
             { 076, new InnateSkill(383, 02, "Breath of Plenty", "While in the active party, allied \nIce attacks may critically strike.")}, // 076 Quetzalcoatl
             { 077, new InnateSkill(383, 03, "Elec Gestalt", "Naga Raja gains Elec skill potential \nbased on the total potential of \nallies in the active party.")}, // 077 Naga Raja
@@ -188,18 +188,18 @@ namespace NocturneInsaniax
             { 170, new InnateSkill(383, 15, "Four Oni", "Sui-Ki's Charged/Critical Damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 170 Sui-Ki
             { 171, new InnateSkill(383, 15, "Four Oni", "Fuu-Ki's Charged/Critical Damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 171 Fuu-Ki
             { 172, new InnateSkill(383, 15, "Four Oni", "Ongyo-Ki's Charged/Critical Damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 172 Ongyo-Ki
-            { 173, new InnateSkill(383, 15, "Clotho", "")}, // 173 Clotho
-            { 174, new InnateSkill(383, 15, "Lachesis", "")}, // 174 Lachesis
-            { 175, new InnateSkill(383, 15, "Atropos", "")}, // 175 Atropos
+            { 173, new InnateSkill(383, 15, "Moirae Spinner", "When all three Moirae are in \nthe active party, skill costs are \nreduced by 20% for all allies.")}, // 173 Clotho
+            { 174, new InnateSkill(383, 15, "Moirae Measurer", "When all three Moirae are in \nthe active party, allied -kaja effects \nincrease stats by one extra rank.")}, // 174 Lachesis
+            { 175, new InnateSkill(383, 15, "Moirae Cutter", "When all three Moirae are in \nthe active party, all allies' attacks \ndeal 10% more damage.")}, // 175 Atropos
             { 176, new InnateSkill(383, 15, "Taboo", "While in the active party, \ndouble the ailment rate for \nall allies and enemies.")}, // 176 Loa
             { 177, new InnateSkill(383, 07, "Dark Enhancer", "While in the active party, \nraise allies' Dark skill potential \nto Chatterskull's if it was lower.")}, // 177 Chatterskull
-            { 178, new InnateSkill(383, 15, "Phantom", "")}, // 178 Phantom
+            { 178, new InnateSkill(383, 15, "Contagious Curse", "While in the active party, \nallied Ailment Chance is \nincreased by 20%.")}, // 178 Phantom
             { 179, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Ose Hallel's Critical Damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 179 Ose Hallel
             { 180, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Flauros Hallel's Critical Damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 180 Flauros Hallel
-            { 181, new InnateSkill(383, 15, "Urthona", "")}, // 181 Urthona
-            { 182, new InnateSkill(383, 15, "Urizen", "")}, // 182 Urizen
-            { 183, new InnateSkill(383, 15, "Luvah", "")}, // 183 Luvah
-            { 184, new InnateSkill(383, 15, "Tharmus", "")}, // 184 Tharmus
+            { 181, new InnateSkill(383, 03, "Thunderous Melody", "While in the active party, \nallied Elec damage is increased \nby 10% when striking a weakness.")}, // 181 Urthona
+            { 182, new InnateSkill(383, 01, "Fiery Melody", "While in the active party, \nallied Fire damage is increased \nby 10% when striking a weakness.")}, // 182 Urizen
+            { 183, new InnateSkill(383, 04, "Gusting Melody", "While in the active party, \nallied Force damage is increased \nby 10% when striking a weakness.")}, // 183 Luvah
+            { 184, new InnateSkill(383, 02, "Frigid Melody", "While in the active party, \nallied Ice damage is increased \nby 10% when striking a weakness.")}, // 184 Tharmus
             { 185, new InnateSkill(383, 15, "Specter", "")}, // 185 Specter
             { 186, new InnateSkill(383, 15, "Mara", "")}, // 186 Mara
             { 187, new InnateSkill(383, 15, "", "")}, // 187 
@@ -285,9 +285,9 @@ namespace NocturneInsaniax
             { 267, new InnateSkill(383, 15, "Four Oni", "Sui-Ki's charged/Critical Damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 170 Boss Sui-Ki
             { 268, new InnateSkill(383, 15, "Four Oni", "Fuu-Ki's charged/Critical Damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 171 Boss Fuu-Ki
             { 269, new InnateSkill(383, 15, "Four Oni", "Ongyo-Ki's charged/Critical Damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 172 Boss Ongyo-Ki
-            { 270, new InnateSkill(383, 15, "Boss Clotho (Solo)", "")}, // 270 Boss Clotho (Solo)
-            { 271, new InnateSkill(383, 15, "Boss Lachesis (Solo)", "")}, // 271 Boss Lachesis (Solo)
-            { 272, new InnateSkill(383, 15, "Boss Atropos (Solo)", "")}, // 272 Boss Atropos (Solo)
+            { 270, new InnateSkill(383, 15, "Moirae Spinner", "")}, // 270 Boss Clotho (Solo)
+            { 271, new InnateSkill(383, 15, "Moirae Measurer", "")}, // 271 Boss Lachesis (Solo)
+            { 272, new InnateSkill(383, 15, "Moirae Cutter", "")}, // 272 Boss Atropos (Solo)
             { 273, new InnateSkill(383, 15, "Boss Specter 2", "")}, // 273 Boss Specter 2
             { 274, new InnateSkill(383, 15, "Boss Girimekhala", "")}, // 274 Boss Girimekhala
             { 275, new InnateSkill(383, 15, "Boss Specter 3", "")}, // 275 Boss Specter 3
@@ -341,9 +341,9 @@ namespace NocturneInsaniax
             { 323, new InnateSkill(383, 14, "Four Devas", "")}, // 323 Boss Jikokuten
             { 324, new InnateSkill(383, 14, "Four Devas", "")}, // 324 Boss Koumokuten
             { 325, new InnateSkill(383, 14, "Four Devas", "")}, // 325 Boss Zouchouten
-            { 326, new InnateSkill(383, 15, "Boss Clotho (Together)", "")}, // 326 Boss Clotho (Together)
-            { 327, new InnateSkill(383, 15, "Boss Lachesis (Together)", "")}, // 327 Boss Lachesis (Together)
-            { 328, new InnateSkill(383, 15, "Boss Atropos (Together)", "")}, // 328 Boss Atropos (Together)
+            { 326, new InnateSkill(383, 15, "Moirae Spinner", "")}, // 326 Boss Clotho (Together)
+            { 327, new InnateSkill(383, 15, "Moirae Measurer", "")}, // 327 Boss Lachesis (Together)
+            { 328, new InnateSkill(383, 15, "Moirae Cutter", "")}, // 328 Boss Atropos (Together)
             { 329, new InnateSkill(383, 15, "Boss Mitra", "")}, // 329 Boss Mitra
             { 330, new InnateSkill(383, 15, "", "")}, // 330 
             { 331, new InnateSkill(383, 15, "", "")}, // 331 
@@ -439,7 +439,7 @@ namespace NocturneInsaniax
             { 03, new List<ushort> { 77, 79, 97 } }, // Elec
             { 04, new List<ushort> { 48, 52, 92, 121, } }, // Force
             { 05, new List<ushort>() }, // Almighty (Not Used)
-            { 06, new List<ushort> { 65 } }, // Light
+            { 06, new List<ushort> { 62, 65 } }, // Light
             { 07, new List<ushort> { 108 } } // Dark
         };
 
@@ -466,10 +466,10 @@ namespace NocturneInsaniax
 
         private static Dictionary<sbyte, List<ushort>> melodyUsers = new Dictionary<sbyte, List<ushort>>
         {
-            { 1, new List<ushort> { 58 } }, // Fire
-            { 2, new List<ushort> { 78 } }, // Ice
-            { 3, new List<ushort> { 123 } }, // Elec
-            { 4, new List<ushort> { 84 } }, // Force
+            { 1, new List<ushort> { 58, 182 } }, // Fire
+            { 2, new List<ushort> { 78, 184 } }, // Ice
+            { 3, new List<ushort> { 123, 181 } }, // Elec
+            { 4, new List<ushort> { 84, 183 } }, // Force
             { 5, new List<ushort>() }, // Almighty (Not Used)
             { 6, new List<ushort> { 224 } }, // Light
             { 7, new List<ushort> { 118 } } // Dark
@@ -511,7 +511,7 @@ namespace NocturneInsaniax
         private static ushort[] helmsmanIds = new ushort[] { 34, 73, 143, 153 };
         private static ushort[] deathlyAfflictionIds = new ushort[] { 101, 128, 129, 135 };
         private static ushort[] magnifiedMaladyIds = new ushort[] { 80, 107, 136, 226 };
-        private static ushort[] contagiousCurseIds = new ushort[] { 102, 126, 133 };
+        private static ushort[] contagiousCurseIds = new ushort[] { 102, 126, 133, 178 };
         private static ushort[] wardOffEvilIds = new ushort[] { 93, 145 };
         private static ushort[] essenceThiefIds = new ushort[] { 127, 124, 137 };
         private static ushort[] proxyGuardHoundRaces = new ushort[] { 6, 14, 21, 28 };
