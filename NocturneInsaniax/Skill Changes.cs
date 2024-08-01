@@ -562,7 +562,7 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(147, 0);
                     //datCalc.datAddDevil(30, 0);
                     //datCalc.datAddDevil(111, 0);
-                    datCalc.datAddDevil(61, 0);
+                    datCalc.datAddDevil(105, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    //work.skill[0] = 192;
@@ -964,6 +964,10 @@ namespace NocturneInsaniax
                         }
                     default: break;
                 }
+
+                // Girimekhala's Behemothic Bounce
+                if (behemothicBounceIds.Contains(workFromFormindex2.id) && nbCalc.nbGetAisyo(nskill, dformindex, skillattr) == 131072)
+                    __result = __result * 3;
             }
         }
 

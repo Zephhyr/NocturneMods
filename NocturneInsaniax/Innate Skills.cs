@@ -75,8 +75,8 @@ namespace NocturneInsaniax
             { 057, new InnateSkill(410, 15, "Arbitration", "While in the active party, \nmay step in during negotiation and \nsoothe an enraged demon.")}, // 057 Kelpie
             { 058, new InnateSkill(383, 01, "Fiery Melody", "While in the active party, \nallied Fire damage is increased \nby 10% when striking a weakness.")}, // 058 Jack-o'-Lantern
             { 059, new InnateSkill(353, 15, "Lucky Find", "Occasionally find items on the Vortex World Map while in the active party.")}, // 059 High Pixie
-            { 060, new InnateSkill(383, 15, "Jack Frost", "")}, // 060 Jack Frost
-            { 061, new InnateSkill(383, 15, "Hidden Potential", "Under special circumstances \nPixie gains greatly improved \nskill potentials.")}, // 061 Pixie
+            { 060, new InnateSkill(383, 02, "Ice Enhancer", "While in the active party, \nraise allies' Ice skill potential \nto Jack Frost's if it was lower.")}, // 060 Jack Frost
+            { 061, new InnateSkill(383, 15, "Hidden Potential", "Under special circumstances, \nPixie gains greatly improved \nskill potentials.")}, // 061 Pixie
             { 062, new InnateSkill(383, 06, "Light Gestalt", "Power gains Light skill potential \nbased on the total potential of \nallies in the active party.")}, // 062 Throne
             { 063, new InnateSkill(383, 06, "Light Enhancer", "While in the active party, \nraise allies' Light skill potential \nto Dominion's if it was lower.")}, // 063 Dominion
             { 064, new InnateSkill(411, 15, "Detain", "While in the active party, \nmay step in during negotiation and \nprevent a demon from making off with payment.")}, // 064 Virtue
@@ -120,7 +120,7 @@ namespace NocturneInsaniax
             { 102, new InnateSkill(383, 15, "Contagious Curse", "While in the active party, \nallied Ailment Chance is \nincreased by 20%.")}, // 102 Taraka
             { 103, new InnateSkill(383, 02, "Ice Gestalt", "Datsue-Ba gains Ice skill potential \nbased on the total potential of \nallies in the active party.")}, // 103 Datsue-Ba
             { 104, new InnateSkill(419, 15, "Wine Party", "While in the active party, \nmay step in during negotiation to \nfix trouble with the power of liquor.")}, // 104 Mada
-            { 105, new InnateSkill(383, 15, "Girimekhala", "")}, // 105 Girimekhala
+            { 105, new InnateSkill(383, 15, "Behemothic Bounce", "Damage reflected by Girimekhala \nis tripled.")}, // 105 Girimekhala
             { 106, new InnateSkill(353, 15, "Lucky Find", "Occasionally find items on the Vortex World Map while in the active party.")}, // 106 Taotie
             { 107, new InnateSkill(383, 15, "Magnified Malady", "While in the active party, all allies \ndeal 20% more damage against \nenemies with an ailment.")}, // 107 Pazuzu
             { 108, new InnateSkill(383, 07, "Dark Gestalt", "Baphomet gains Dark skill potential \nbased on the total potential of \nallies in the active party.")}, // 108 Baphomet
@@ -289,7 +289,7 @@ namespace NocturneInsaniax
             { 271, new InnateSkill(383, 15, "Moirae Measurer", "")}, // 271 Boss Lachesis (Solo)
             { 272, new InnateSkill(383, 15, "Moirae Cutter", "")}, // 272 Boss Atropos (Solo)
             { 273, new InnateSkill(383, 15, "Boss Specter 2", "")}, // 273 Boss Specter 2
-            { 274, new InnateSkill(383, 15, "Boss Girimekhala", "")}, // 274 Boss Girimekhala
+            { 274, new InnateSkill(383, 15, "Behemothic Bounce", "")}, // 274 Boss Girimekhala
             { 275, new InnateSkill(383, 15, "Boss Specter 3", "")}, // 275 Boss Specter 3
             { 276, new InnateSkill(383, 15, "Boss Aciel", "")}, // 276 Boss Aciel
             { 277, new InnateSkill(383, 02, "Queen of Winter", "Ice Enhancer & Ice attacks \nhave an increased chance to \ninflict Freeze.")}, // 277 Boss Skadi
@@ -456,7 +456,7 @@ namespace NocturneInsaniax
         {
             { 0, new List<ushort> { 88, 99, 119 } }, // Phys
             { 1, new List<ushort> { 36, 111, 335 } }, // Fire
-            { 2, new List<ushort> { 17, 37 } }, // Ice
+            { 2, new List<ushort> { 17, 37, 60 } }, // Ice
             { 3, new List<ushort> { 22, 39, 302, 337 } }, // Elec
             { 4, new List<ushort> { 38, 83, 152 } }, // Force
             { 5, new List<ushort>() }, // Almighty (Not Used)
@@ -522,6 +522,7 @@ namespace NocturneInsaniax
         private static ushort[] contagiousCurseIds = new ushort[] { 102, 126, 133, 178 };
         private static ushort[] wardOffEvilIds = new ushort[] { 93, 145 };
         private static ushort[] essenceThiefIds = new ushort[] { 127, 124, 137 };
+        private static ushort[] behemothicBounceIds = new ushort[] { 105, 274 };
         private static ushort[] proxyGuardHoundRaces = new ushort[] { 6, 14, 21, 28 };
         private static ushort[] proxyGuardHoundIds = new ushort[] { 29, 56, 147 };
         private static ushort[] retributiveZealRaces = new ushort[] { 11, 24 };

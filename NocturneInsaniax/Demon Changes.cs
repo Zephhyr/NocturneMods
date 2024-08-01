@@ -762,6 +762,8 @@ namespace NocturneInsaniax
             BossLachesis1(271);
             BossAtropos1(272);
 
+            BossGirimekhala(274);
+
             BossSpecter1Merged1(294);
             BossSpecter1Merged2(295);
             BossSpecter1Merged3(296);
@@ -5459,7 +5461,15 @@ namespace NocturneInsaniax
         private static void Girimekhala(ushort id)
         {
             // Affinities
+            datAisyo.tbl[id][0] = 131072; // Phys
+            datAisyo.tbl[id][1] = 100; // Fire
+            datAisyo.tbl[id][2] = 100; // Ice
+            datAisyo.tbl[id][3] = 100; // Elec
+            datAisyo.tbl[id][4] = 100; // Force
             datAisyo.tbl[id][6] = 2147483778; // Light
+            datAisyo.tbl[id][7] = 65536; // Dark
+            datAisyo.tbl[id][8] = 100; // Curse
+            datAisyo.tbl[id][9] = 100; // Nerve
             datAisyo.tbl[id][10] = 2147483778; // Mind
 
             // Skills
@@ -10106,6 +10116,35 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].param[3] = 30;
             datDevilFormat.tbl[id].param[4] = 16;
             datDevilFormat.tbl[id].param[5] = 24;
+        }
+
+        private static void BossGirimekhala(ushort id)
+        {
+            // Affinities
+            datAisyo.tbl[id][0] = 131072; // Phys
+            datAisyo.tbl[id][1] = 100; // Fire
+            datAisyo.tbl[id][2] = 100; // Ice
+            datAisyo.tbl[id][3] = 100; // Elec
+            datAisyo.tbl[id][4] = 100; // Force
+            datAisyo.tbl[id][6] = 2147483778; // Light
+            datAisyo.tbl[id][7] = 65536; // Dark
+            datAisyo.tbl[id][8] = 100; // Curse
+            datAisyo.tbl[id][9] = 100; // Nerve
+            datAisyo.tbl[id][10] = 2147483778; // Mind
+
+            // Enemy Stats
+            //datDevilFormat.tbl[id].maxhp = 4000;
+            //datDevilFormat.tbl[id].hp = 4000;
+            //datDevilFormat.tbl[id].level = 67;
+            //datDevilFormat.tbl[id].flag = 803;
+            //datDevilFormat.tbl[id].param[0] = 30;
+            //datDevilFormat.tbl[id].param[2] = 24;
+            //datDevilFormat.tbl[id].param[3] = 30;
+            //datDevilFormat.tbl[id].param[4] = 16;
+            //datDevilFormat.tbl[id].param[5] = 24;
+
+            // Enemy Skills
+            //datDevilFormat.tbl[id].skill[0] = 342; // Repel Force
         }
 
         private static void BossClotho2(ushort id)
