@@ -237,7 +237,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 212 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 213 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 214 
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 215 
+            new sbyte[] {0    , 0    , 0    , 8    , 0    , 6    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 4    , 4    , 0 }, // 215 Uber Pixie
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 216 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 217 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 218 
@@ -659,7 +659,7 @@ namespace NocturneInsaniax
             "", // 212 
             "", // 213 
             "", // 214 
-            "", // 215 
+            "  <material=\"MsgFont4\">+8: Elec • +6: Almighty • +4: Heal/Supp<material=\"MsgFont1\">", // 215 Uber Pixie
             "", // 216 
             "", // 217 
             "", // 218 
@@ -939,7 +939,7 @@ namespace NocturneInsaniax
             "<material=\"MsgFont4\">+9: Phys/Magic/Almighty/Ailments • +5: Heal/Supp"  // Masakados
         };
 
-        static private ushort currentDemonID = 0; // Used to get the associated demon when displaying the potential of a skill
+        static private datUnitWork_t currentDemonWork = new datUnitWork_t(); // Used to get the associated demon when displaying the potential of a skill
 
         static private datNormalSkill_t tmp_datNormalSkill = new datNormalSkill_t(); // Used to temporarily store a skill before modifications
 
@@ -953,7 +953,7 @@ namespace NocturneInsaniax
         {
             public static void Prefix(datUnitWork_t pStock)
             {
-                currentDemonID = pStock.id; // Remember the current demon when displaying skills on the status screen
+                currentDemonWork = pStock; // Remember the current demon when displaying skills on the status screen
             }
         }
 
@@ -962,7 +962,7 @@ namespace NocturneInsaniax
         {
             public static void Prefix(datUnitWork_t pStock)
             {
-                currentDemonID = pStock.id; // Remember the current demon when displaying skills on the "Skill" submenu
+                currentDemonWork = pStock; // Remember the current demon when displaying skills on the "Skill" submenu
             }
         }
 
@@ -974,7 +974,7 @@ namespace NocturneInsaniax
                 if (data.activeunit >= 0)
                 {
                     var unitFormIndex = data.party[data.activeunit].formindex;
-                    currentDemonID = nbMainProcess.nbGetUnitWorkFromFormindex(unitFormIndex).id;
+                    currentDemonWork = nbMainProcess.nbGetUnitWorkFromFormindex(unitFormIndex);
                 }
 
                 if (actionProcessData != null)
@@ -1033,29 +1033,29 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int id, ref string __result)
             {
-                if (id == 422 && (currentDemonID == 200 || currentDemonID == 339 || currentDemonID == 340 || currentDemonID == 341 || currentDemonID == 350))
+                if (id == 422 && (currentDemonWork.id == 200 || currentDemonWork.id == 339 || currentDemonWork.id == 340 || currentDemonWork.id == 341 || currentDemonWork.id == 350))
                     __result = "Accelerate";
-                else if(id == 277 && (currentDemonID == 200))
+                else if(id == 277 && (currentDemonWork.id == 200))
                     __result = "Rev Up";
-                else if(id == 220 && (currentDemonID == 340))
+                else if(id == 220 && (currentDemonWork.id == 340))
                     __result = "Pursuit";
-                else if(id == 226 && (currentDemonID == 79))
+                else if(id == 226 && (currentDemonWork.id == 79))
                     __result = "Backup";
-                else if((id == 226 || id == 499) && (currentDemonID == 345))
+                else if((id == 226 || id == 499) && (currentDemonWork.id == 345))
                     __result = "Call Evil";
-                else if((id == 226 || id == 496) && (currentDemonID == 346))
+                else if((id == 226 || id == 496) && (currentDemonWork.id == 346))
                     __result = "Call Angel";
-                else if((id == 226 || id == 497) && (currentDemonID == 347))
+                else if((id == 226 || id == 497) && (currentDemonWork.id == 347))
                     __result = "Call Soldier";
-                else if((id == 226 || id == 498) && (currentDemonID == 348))
+                else if((id == 226 || id == 498) && (currentDemonWork.id == 348))
                     __result = "Call Souls";
-                else if(id == 252 && (currentDemonID == 321))
+                else if(id == 252 && (currentDemonWork.id == 321))
                     __result = "Cursed Emission";
                 else if (id < 288 || id > 421) // If it isn't a passive skill
                 {
                     sbyte skillPotential = 0;
                     if (id != 164 && id != 165 && id != 166 && id != 167)
-                        skillPotential = SkillPotentialUtility.GetSkillPotential(id, currentDemonID);
+                        skillPotential = SkillPotentialUtility.GetSkillPotential(id, currentDemonWork.id);
                     else
                         skillPotential = SkillPotentialUtility.GetSkillPotential(id, nbMainProcess.nbGetUnitWorkFromFormindex(nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].formindex).id);
 
@@ -1440,7 +1440,10 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int id, ref string __result)
             {
-                __result += potentialHelp[id];
+                if (id == 61 && currentDemonWork.level >= 80 && currentDemonWork.param[0] >= 30 && currentDemonWork.param[2] >= 30 && currentDemonWork.param[3] >= 30 && currentDemonWork.param[4] >= 30 && currentDemonWork.param[5] >= 30)
+                    __result += potentialHelp[215]; // Get Uber Pixie's potential help
+                else
+                    __result += potentialHelp[id];
             }
         }
 
@@ -1478,7 +1481,7 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref datUnitWork_t pUnitWork)
             {
-                currentDemonID = pUnitWork.id;
+                currentDemonWork = pUnitWork;
             }
         }
 
@@ -1521,11 +1524,13 @@ namespace NocturneInsaniax
                     sbyte skillPotential;
                     if (demonID == 0) // If the curent demon is Demi-fiend
                         skillPotential = magatamaPotentials[dds3GlobalWork.DDS3_GBWK.heartsequip][skillAttribute]; // Get the potential from the currently equipped Magatama
+                    else if (demonID == 61 && currentDemonWork.level >= 80 && currentDemonWork.param[0] >= 30 && currentDemonWork.param[2] >= 30 && currentDemonWork.param[3] >= 30 && currentDemonWork.param[4] >= 30 && currentDemonWork.param[5] >= 30)
+                        skillPotential = demonPotentials[215][skillAttribute]; // Get Uber Pixie's potential
                     else
                         skillPotential = demonPotentials[demonID][skillAttribute]; // Get the potential from the demon list
 
                     // AuspiciousBeast
-                    if (actionProcessData != null && auspiciousBeastIds.Contains(currentDemonID))
+                    if (actionProcessData != null && auspiciousBeastIds.Contains(currentDemonWork.id))
                     {
                         foreach (var auspiciousBeastUser in auspiciousBeastIds)
                         {
@@ -1559,7 +1564,7 @@ namespace NocturneInsaniax
                     if (actionProcessData != null && skillAttribute != 5 && skillAttribute <= 7)
                     { 
                         // Gestalts
-                        if (currentDemonID == 0 && skillAttribute <= 4 && dds3GlobalWork.DDS3_GBWK.heartsequip == gestaltMagatama[skillAttribute])
+                        if (currentDemonWork.id == 0 && skillAttribute <= 4 && dds3GlobalWork.DDS3_GBWK.heartsequip == gestaltMagatama[skillAttribute])
                         {
                             foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
                             {
@@ -1569,7 +1574,7 @@ namespace NocturneInsaniax
                                 } catch { }
                             }
                         }
-                        else if (gestaltUsers[skillAttribute].Contains(currentDemonID))
+                        else if (gestaltUsers[skillAttribute].Contains(currentDemonWork.id))
                         {
                             if (actionProcessData.partyindex <= 3)
                             {
@@ -1579,7 +1584,7 @@ namespace NocturneInsaniax
                                     {
                                         if (nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && ally.partyindex == 0)
                                             skillPotential += magatamaPotentials[dds3GlobalWork.DDS3_GBWK.heartsequip][skillAttribute];
-                                        else if (nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id != currentDemonID)
+                                        else if (nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id != currentDemonWork.id)
                                             skillPotential += demonPotentials[nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id][skillAttribute];
                                     } catch { }
                                 }
@@ -1590,8 +1595,8 @@ namespace NocturneInsaniax
                                 {
                                     try
                                     {
-                                        if (((nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id == currentDemonID && enemy.partyindex != actionProcessData.partyindex) ||
-                                        (nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id != currentDemonID && nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id != 0)) &&
+                                        if (((nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id == currentDemonWork.id && enemy.partyindex != actionProcessData.partyindex) ||
+                                        (nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id != currentDemonWork.id && nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id != 0)) &&
                                         nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).hp != 0)
                                             skillPotential += demonPotentials[nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id][skillAttribute];
                                     } catch { }

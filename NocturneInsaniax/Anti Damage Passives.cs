@@ -138,7 +138,35 @@ namespace NocturneInsaniax
                             }
                             break;
                         }
-                    default: break;
+                    default: break;  
+                }
+                // Albion's Milton
+                if ((work.id == 155 || work.id == 278) && attr>= 1 && attr <= 4 && __result != 65536 && __result != 131072 && __result != 262144)
+                {
+                    if (nbMainProcess.nbGetPartyFromFormindex(formindex).partyindex <= 3)
+                    {
+                        foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
+                        {
+                            try
+                            {
+                                if (miltonIds[attr].Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                    __result = 65536;
+                            }
+                            catch { }
+                        }
+                    }
+                    else
+                    {
+                        foreach (var enemy in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex > 3))
+                        {
+                            try
+                            {
+                                if (miltonIds[attr].Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
+                                    __result = 65536;
+                            }
+                            catch { }
+                        }
+                    }
                 }
             }
         }

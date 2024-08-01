@@ -76,7 +76,7 @@ namespace NocturneInsaniax
             { 058, new InnateSkill(383, 01, "Fiery Melody", "While in the active party, \nallied Fire damage is increased \nby 10% when striking a weakness.")}, // 058 Jack-o'-Lantern
             { 059, new InnateSkill(353, 15, "Lucky Find", "Occasionally find items on the Vortex World Map while in the active party.")}, // 059 High Pixie
             { 060, new InnateSkill(383, 15, "Jack Frost", "")}, // 060 Jack Frost
-            { 061, new InnateSkill(383, 15, "Pixie", "")}, // 061 Pixie
+            { 061, new InnateSkill(383, 15, "Hidden Potential", "Under special circumstances \nPixie gains greatly improved \nskill potentials.")}, // 061 Pixie
             { 062, new InnateSkill(383, 06, "Light Gestalt", "Power gains Light skill potential \nbased on the total potential of \nallies in the active party.")}, // 062 Throne
             { 063, new InnateSkill(383, 06, "Light Enhancer", "While in the active party, \nraise allies' Light skill potential \nto Dominion's if it was lower.")}, // 063 Dominion
             { 064, new InnateSkill(411, 15, "Detain", "While in the active party, \nmay step in during negotiation and \nprevent a demon from making off with payment.")}, // 064 Virtue
@@ -170,7 +170,7 @@ namespace NocturneInsaniax
             { 152, new InnateSkill(383, 04, "Force Enhancer", "While in the active party, \nraise allies' Force skill potential \nto Garuda's if it was lower.")}, // 152 Garuda
             { 153, new InnateSkill(383, 15, "Helmsman", "When Yatagarasu acts, the next ally \ngains 30% Hit Rate if they attack.")}, // 153 Yatagarasu
             { 154, new InnateSkill(383, 15, "Gurulu", "")}, // 154 Gurulu
-            { 155, new InnateSkill(383, 15, "Milton", "Albion gains immunity to \nelements based on which \nZoas are in the active party.")}, // 155 Albion
+            { 155, new InnateSkill(383, 15, "Milton", "Albion Nullifies damage from \nMagic attacks based on which Zoas \nare in the active party.")}, // 155 Albion
             { 156, new InnateSkill(383, 15, "Manikin", "")}, // 156 Manikin
             { 157, new InnateSkill(383, 15, "Manikin", "")}, // 157 Manikin
             { 158, new InnateSkill(383, 15, "Manikin", "")}, // 158 Manikin
@@ -219,8 +219,8 @@ namespace NocturneInsaniax
             { 201, new InnateSkill(383, 15, "Daisoujou", "")}, // 201 Daisoujou
             { 202, new InnateSkill(383, 15, "Mother Harlot", "")}, // 202 Mother Harlot
             { 203, new InnateSkill(383, 15, "Trumpeter", "")}, // 203 Trumpeter
-            { 204, new InnateSkill(383, 15, "Underdog", "Futomimi's deals up to 30% more \ndamage based on his missing HP.")}, // 204 Futomimi
-            { 205, new InnateSkill(383, 15, "Desperate Power", "Sakahagi's deals up to 30% more \ndamage based on his missing MP.")}, // 205 Sakahagi
+            { 204, new InnateSkill(383, 15, "Underdog", "Futomimi deals up to 30% more \ndamage based on his missing HP.")}, // 204 Futomimi
+            { 205, new InnateSkill(383, 15, "Desperate Power", "Sakahagi deals up to 30% more \ndamage based on his missing MP.")}, // 205 Sakahagi
             { 206, new InnateSkill(383, 15, "Black Frost", "")}, // 206 Black Frost
             { 207, new InnateSkill(383, 15, "Beelzebub (Man)", "")}, // 207 Beelzebub (Man)
             { 208, new InnateSkill(383, 15, "", "")}, // 208 
@@ -486,6 +486,14 @@ namespace NocturneInsaniax
             { 7, new List<ushort> { 168, 262, 315 } } // Dark
         };
 
+        private static Dictionary<int, List<ushort>> miltonIds = new Dictionary<int, List<ushort>>
+        {
+            { 1, new List<ushort> { 182, 280 } }, // Fire
+            { 2, new List<ushort> { 184, 282 } }, // Ice
+            { 3, new List<ushort> { 181, 279 } }, // Elec
+            { 4, new List<ushort> { 183, 281 } }, // Force
+        };
+
         private static Dictionary<ushort, List<int>> negoSkillScenarios = new Dictionary<ushort, List<int>>
         {
             { 409, new List<int> { 0 } }, // Haggle
@@ -597,9 +605,9 @@ namespace NocturneInsaniax
                 if (id == innateSkillId)
                 {
                     // If it's Demi-fiend's trait skill
-                    if (currentDemonID == 0)
+                    if (currentDemonWork.id == 0)
                     {
-                        if (demonInnateSkills[currentDemonID].skillId != 383)
+                        if (demonInnateSkills[currentDemonWork.id].skillId != 383)
                         {
                             __result = datSkillName.Get(magatamaInnateSkills[dds3GlobalWork.DDS3_GBWK.heartsequip].skillId);
                         }
@@ -612,13 +620,13 @@ namespace NocturneInsaniax
                     // If it's a demon's trait skill
                     else
                     {
-                        if (demonInnateSkills[currentDemonID].skillId != 383)
+                        if (demonInnateSkills[currentDemonWork.id].skillId != 383)
                         {
-                            __result = datSkillName.Get(demonInnateSkills[currentDemonID].skillId);
+                            __result = datSkillName.Get(demonInnateSkills[currentDemonWork.id].skillId);
                         }
                         else
                         {
-                            __result = demonInnateSkills[currentDemonID].skillName;
+                            __result = demonInnateSkills[currentDemonWork.id].skillName;
                         }
                     }
                 }
@@ -635,9 +643,9 @@ namespace NocturneInsaniax
                 if (id == innateSkillId)
                 {
                     // If it's Demi-fiend's trait skill
-                    if (currentDemonID == 0)
+                    if (currentDemonWork.id == 0)
                     {
-                        if (demonInnateSkills[currentDemonID].skillId != 383)
+                        if (demonInnateSkills[currentDemonWork.id].skillId != 383)
                         {
                             __result = datSkillHelp_msg.Get(magatamaInnateSkills[dds3GlobalWork.DDS3_GBWK.heartsequip].skillId);
                         }
@@ -650,13 +658,13 @@ namespace NocturneInsaniax
                     // If it's a demon's trait skill
                     else
                     {
-                        if (demonInnateSkills[currentDemonID].skillId != 383)
+                        if (demonInnateSkills[currentDemonWork.id].skillId != 383)
                         {
-                            __result = datSkillHelp_msg.Get(demonInnateSkills[currentDemonID].skillId);
+                            __result = datSkillHelp_msg.Get(demonInnateSkills[currentDemonWork.id].skillId);
                         }
                         else
                         {
-                            __result = demonInnateSkills[currentDemonID].skillHelp;
+                            __result = demonInnateSkills[currentDemonWork.id].skillHelp;
                         }
                     }
                 }
@@ -730,7 +738,7 @@ namespace NocturneInsaniax
                 // There is someone to analyze
                 if (nbPanelProcess.pNbPanelAnalyzeUnitWork != null)
                 {
-                    currentDemonID = nbPanelProcess.pNbPanelAnalyzeUnitWork.id; // Target's ID
+                    currentDemonWork = nbPanelProcess.pNbPanelAnalyzeUnitWork; // Target's ID
 
                     // Replace the 9th skill by the trait (overrides what the "Analyze bosses" mod does)
                     nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill09/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = EnableSkillColourOutlines.Value

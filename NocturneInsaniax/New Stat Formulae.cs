@@ -630,7 +630,7 @@ namespace NocturneInsaniax
                             }
                         }
 
-                        if (warriorTrainerActive && SkillPotentialUtility.GetSkillPotential(nskill, currentDemonID) > 0)
+                        if (warriorTrainerActive && SkillPotentialUtility.GetSkillPotential(nskill, currentDemonWork.id) > 0)
                         {
                             __result = 0; // Hit
                             return;

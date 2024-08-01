@@ -387,7 +387,7 @@ namespace NocturneInsaniax
             public static void Postfix(ref nbActionProcessData_t __result)
             {
                 actionProcessData = __result;
-                currentDemonID = actionProcessData.work.id;
+                currentDemonWork = actionProcessData.work;
             }
         }
 
@@ -562,7 +562,7 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(147, 0);
                     //datCalc.datAddDevil(30, 0);
                     //datCalc.datAddDevil(111, 0);
-                    datCalc.datAddDevil(7, 0);
+                    datCalc.datAddDevil(61, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    //work.skill[0] = 192;
@@ -998,8 +998,8 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int nskill, ref int __result)
             {
-                if (nskill == 167 && datDevilFormat.tbl[currentDemonID].attackattr != 0)
-                    __result = datDevilFormat.tbl[currentDemonID].attackattr;
+                if (nskill == 167 && datDevilFormat.tbl[currentDemonWork.id].attackattr != 0)
+                    __result = datDevilFormat.tbl[currentDemonWork.id].attackattr;
             }
         }
 

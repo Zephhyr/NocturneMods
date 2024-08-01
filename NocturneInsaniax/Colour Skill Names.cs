@@ -22,7 +22,7 @@ namespace NocturneInsaniax
                 {
                     if ((type_skill && (actionProcessData.work.nowcommand == 1 || actionProcessData.work.nowcommand == 5)) 
                         || (!type_skill && actionProcessData.work.nowcommand == 0 && actionProcessData.work.nowindex == 0 && 
-                           (text1 == "Attack" || text1 == "Attack All" || text1 == demonInnateSkills[currentDemonID].skillName)))
+                           (text1 == "Attack" || text1 == "Attack All" || text1 == demonInnateSkills[currentDemonWork.id].skillName)))
                     {
                         var commandId = actionProcessData.work.nowcommand; // 0 = normal, 1 = skill, 5 = item
                         Color attrColour;
@@ -30,7 +30,7 @@ namespace NocturneInsaniax
                         switch (commandId)
                         {
                             case 0:
-                                var attackAttr = datDevilFormat.Get(currentDemonID).attackattr;
+                                var attackAttr = datDevilFormat.Get(currentDemonWork.id).attackattr;
                                 attrColour = GetAttackAttrColour(attackAttr, 1);
                                 break;
                             case 1:
@@ -120,12 +120,12 @@ namespace NocturneInsaniax
                         nbMainProcess.GetBattleUI().transform.Find("bmenu/normal_command/bmenu_command/bmenu_command0" + (listidx + 1) + "/bmenu_text01TM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = false;
                     }
                 }
-                if (d == 32768 && datDevilFormat.Get(currentDemonID).attackattr != 0)
+                if (d == 32768 && datDevilFormat.Get(currentDemonWork.id).attackattr != 0)
                 {
                     Color attrColour = GetAttackAttrColour(datDevilFormat.Get(s.act.work.id).attackattr, 1);
                     VertexGradient attrGradient = GetSkillAttrGradient(attrColour, 1);
 
-                    nbMainProcess.GetBattleUI().transform.Find("bmenu/normal_command/bmenu_command/bmenu_command0" + (listidx + 1) + "/bmenu_text01TM").gameObject.GetComponent<TextMeshProUGUI>().text = "Attack (" + demonInnateSkills[currentDemonID].skillName + ")";
+                    nbMainProcess.GetBattleUI().transform.Find("bmenu/normal_command/bmenu_command/bmenu_command0" + (listidx + 1) + "/bmenu_text01TM").gameObject.GetComponent<TextMeshProUGUI>().text = "Attack (" + demonInnateSkills[currentDemonWork.id].skillName + ")";
                 }
             }
         }
@@ -611,9 +611,9 @@ namespace NocturneInsaniax
         {
             var skillAttr = (skillId >= 288 && skillId <= 421 && !EnableColourPassives.Value)
                 ? 15 : skillId == 383 
-                ? currentDemonID == 0 
+                ? currentDemonWork.id == 0 
                 ? magatamaInnateSkills[dds3GlobalWork.DDS3_GBWK.heartsequip].skillAttr
-                : demonInnateSkills[currentDemonID].skillAttr : datSkill.tbl[skillId].skillattr;
+                : demonInnateSkills[currentDemonWork.id].skillAttr : datSkill.tbl[skillId].skillattr;
                 
             switch (skillAttr)
             {
