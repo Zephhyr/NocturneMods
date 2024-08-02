@@ -586,6 +586,14 @@ namespace NocturneInsaniax
                     faithfulCompanionActive2 = true;
                 }
 
+                // Mitra's Righteous Vow
+                if ((__result == 1 || __result == 2) && (workFromFormindex2.id == 2 || workFromFormindex2.id == 329))
+                {
+                    postSummonSkillName = "Righteous Vow";
+                    PostSummonSkillCopy(459, 64, 0);
+                    nbMainProcess.nbPushAction(4, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, 408);
+                } 
+
                 return false;
             }
         }

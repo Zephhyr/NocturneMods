@@ -795,6 +795,8 @@ namespace NocturneInsaniax
             BossLachesis2(327);
             BossAtropos2(328);
 
+            BossMitra(329);
+
             BossDanteRaidou1(339);
             ChaseDanteRaidou(340);
             BossDanteRaidou2(341);
@@ -10235,6 +10237,35 @@ namespace NocturneInsaniax
 
             datDevilFormat.tbl[id].dropexp = 2500;
             datDevilFormat.tbl[id].dropmakka = 3000;
+        }
+
+        private static void BossMitra(ushort id)
+        {
+            // Affinities
+            datAisyo.tbl[id][0] = 131072; // Phys
+            datAisyo.tbl[id][1] = 50; // Fire
+            datAisyo.tbl[id][2] = 50; // Ice
+            datAisyo.tbl[id][3] = 100; // Elec
+            datAisyo.tbl[id][4] = 2147483778; // Force
+            datAisyo.tbl[id][6] = 65536; // Light
+            datAisyo.tbl[id][7] = 65536; // Dark
+            datAisyo.tbl[id][8] = 100; // Curse
+            datAisyo.tbl[id][9] = 100; // Nerve
+            datAisyo.tbl[id][10] = 100; // Mind
+
+            // Enemy Stats
+            //datDevilFormat.tbl[id].maxhp = 4000;
+            //datDevilFormat.tbl[id].hp = 4000;
+            //datDevilFormat.tbl[id].level = 67;
+            //datDevilFormat.tbl[id].flag = 547;
+            //datDevilFormat.tbl[id].param[0] = 30;
+            //datDevilFormat.tbl[id].param[2] = 20;
+            //datDevilFormat.tbl[id].param[3] = 30;
+            //datDevilFormat.tbl[id].param[4] = 12;
+            //datDevilFormat.tbl[id].param[5] = 20;
+
+            //datDevilFormat.tbl[id].dropexp = 2500;
+            //datDevilFormat.tbl[id].dropmakka = 3000;
         }
 
         private static void BossSpecter1Merged1(ushort id)
