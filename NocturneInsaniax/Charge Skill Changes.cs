@@ -102,14 +102,17 @@ namespace NocturneInsaniax
                 else if (chargeNowcommand == 5)
                     skillattr = datSkill.tbl[datItem.tbl[chargeNowindex].skillid].skillattr;
 
-                bool validskill = chargeNowindex <= 287 || chargeNowindex >= 422;
+                //bool validskill = chargeNowindex <= 287 || chargeNowindex >= 422;
                 bool chargedPhysical = datNormalSkill.tbl[chargeNowindex].koukatype == 0 && focusState == 1;
                 bool chargedMagical = datNormalSkill.tbl[chargeNowindex].koukatype == 1 && (datNormalSkill.tbl[chargeNowindex].hptype == 1 || datNormalSkill.tbl[chargeNowindex].hptype == 12) && concentrateState == 1;
 
-                if (skillattr >= 0 && skillattr <= 11 && validskill && (chargedPhysical || chargedMagical))
+                if (skillattr >= 0 && skillattr <= 11 && (chargedPhysical || chargedMagical))
                 {
-                    a.party.count[15] = 0;
-                    a.party.count[20] = 0;
+                    if (!(megalomaniaIds.Contains(a.work.id) && random.Next(10) == 0))
+                    {
+                        a.party.count[15] = 0;
+                        a.party.count[20] = 0;
+                    }
                 }
             }
         }

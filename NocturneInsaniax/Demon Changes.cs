@@ -1369,6 +1369,10 @@ namespace NocturneInsaniax
 
             // Skills
             tblSkill.fclSkillTbl[id].Event[1].Param = 362; // Phys Boost
+
+            //tblSkill.fclSkillTbl[id].Event[4].Param = 224; // Focus
+            //tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 0;
+            //tblSkill.fclSkillTbl[id].Event[4].Type = 1;
         }
 
         private static void Dionysus(ushort id)

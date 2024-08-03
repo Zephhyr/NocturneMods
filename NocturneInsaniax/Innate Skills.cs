@@ -29,7 +29,7 @@ namespace NocturneInsaniax
             { 011, new InnateSkill(383, 14, "Curious Dance", "When switching out, all -kaja and \n-nda effects on Ame-no-Uzume will \nbe passed to the switched ally.")}, // 011 Ame-no-Uzume
             { 012, new InnateSkill(383, 15, "Tripura Samhara", "While in the active party, \nskill costs are reduced by 20% \nfor allies with a charge effect.")}, // 012 Shiva
             { 013, new InnateSkill(383, 15, "Withheld Sentence", "While in the active party, \nallies cannot be instakilled.")}, // 013 Beidou Xingjun
-            { 014, new InnateSkill(383, 15, "Qitian Dasheng", "")}, // 014 Qitian Dasheng
+            { 014, new InnateSkill(383, 14, "Megalomania", "After Qitian Dasheng uses a \ncharge effect, he has a 10% \nchance to retain it.")}, // 014 Qitian Dasheng
             { 015, new InnateSkill(419, 15, "Wine Party", "While in the active party, \nmay step in during negotiation to \nfix trouble with the power of liquor.")}, // 015 Dionysus
             { 016, new InnateSkill(383, 00, "Phys Gestalt", "Kali gains Phys skill potential \nbased on the total potential of \nallies in the active party.")}, // 016 Kali
             { 017, new InnateSkill(383, 02, "Queen of Winter", "Ice Enhancer & Skadi's Ice \nattacks have an increased \nchance to inflict Freeze.")}, // 017 Skadi
@@ -124,7 +124,7 @@ namespace NocturneInsaniax
             { 106, new InnateSkill(353, 15, "Lucky Find", "Occasionally find items on the Vortex World Map while in the active party.")}, // 106 Taotie
             { 107, new InnateSkill(383, 15, "Magnified Malady", "While in the active party, all allies \ndeal 20% more damage against \nenemies with an ailment.")}, // 107 Pazuzu
             { 108, new InnateSkill(383, 07, "Dark Gestalt", "Baphomet gains Dark skill potential \nbased on the total potential of \nallies in the active party.")}, // 108 Baphomet
-            { 109, new InnateSkill(383, 15, "Mot", "")}, // 109 Mot
+            { 109, new InnateSkill(383, 14, "Megalomania", "After Mot uses a \ncharge effect, he has a 10% \nchance to retain it.")}, // 109 Mot
             { 110, new InnateSkill(383, 15, "Withheld Sentence", "While in the active party, \nallies cannot be instakilled.")}, // 110 Alciel
             { 111, new InnateSkill(383, 01, "Laevateinn", "Fire Enhancer & Surt's normal \nattacks deal medium Fire damage.")}, // 111 Surt
             { 112, new InnateSkill(414, 15, "Intimidate", "While in the active party, \nmay step in during negotiation to \n'convince' a lower level demon.")}, // 112 Abaddon
@@ -524,6 +524,7 @@ namespace NocturneInsaniax
         private static ushort[] essenceThiefIds = new ushort[] { 127, 124, 137 };
         private static ushort[] behemothicBounceIds = new ushort[] { 105, 274 };
         private static ushort[] withheldSentenceIds = new ushort[] { 13, 110 };
+        private static ushort[] megalomaniaIds = new ushort[] { 14, 109 };
         private static ushort[] proxyGuardHoundRaces = new ushort[] { 6, 14, 21, 28 };
         private static ushort[] proxyGuardHoundIds = new ushort[] { 29, 56, 147 };
         private static ushort[] retributiveZealRaces = new ushort[] { 11, 24 };
