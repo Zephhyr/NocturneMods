@@ -446,6 +446,8 @@ namespace NocturneInsaniax
 
                 if (isWeak)
                     __result = 2; // Weak hit
+                else if (aisyo == 131072)
+                    __result = 0; // Normal hit
                 else if ((workFromFormindex2.badstatus == 4 || workFromFormindex2.badstatus == 256 ||// If target is asleep or stunned
                     (datSkill.tbl[nskill].skillattr == 1 && workFromFormindex2.badstatus == 64) || // If attack is fire and target is poisoned
                     (datSkill.tbl[nskill].skillattr == 2 && workFromFormindex2.badstatus == 16) || // If attack is ice and target is bound

@@ -176,7 +176,7 @@ namespace NocturneInsaniax
             { 158, new InnateSkill(383, 15, "Manikin", "")}, // 158 Manikin
             { 159, new InnateSkill(383, 15, "Manikin", "")}, // 159 Manikin
             { 160, new InnateSkill(383, 15, "Manikin", "")}, // 160 Manikin
-            { 161, new InnateSkill(383, 15, "Samael", "")}, // 161 Samael
+            { 161, new InnateSkill(383, 15, "Undermine Divinity", "Samael's attacks against enemies \nwith an ailment gain Pierce.")}, // 161 Samael
             { 162, new InnateSkill(383, 15, "Manikin", "")}, // 162 Manikin
             { 163, new InnateSkill(383, 15, "Manikin", "")}, // 163 Manikin
             { 164, new InnateSkill(383, 15, "Manikin", "")}, // 164 Manikin
@@ -302,7 +302,7 @@ namespace NocturneInsaniax
             { 284, new InnateSkill(383, 14, "Retributive Zeal", "")}, // 284 Boss Gabriel
             { 285, new InnateSkill(383, 14, "Retributive Zeal", "")}, // 285 Boss Raphael
             { 286, new InnateSkill(383, 14, "Retributive Zeal", "")}, // 286 Boss Uriel
-            { 287, new InnateSkill(383, 15, "Boss Samael", "")}, // 287 Boss Samael
+            { 287, new InnateSkill(383, 15, "Undermine Divinity", "")}, // 287 Boss Samael
             { 288, new InnateSkill(383, 15, "Boss Baal Avatar", "")}, // 288 Boss Baal Avatar
             { 289, new InnateSkill(383, 15, "Boss Ose Hallel", "")}, // 289 Boss Ose Hallel
             { 290, new InnateSkill(383, 15, "Boss Flauros Hallel", "")}, // 290 Boss Flauros Hallel

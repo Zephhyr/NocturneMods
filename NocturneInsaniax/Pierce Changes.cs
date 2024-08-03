@@ -34,9 +34,13 @@ namespace NocturneInsaniax
                 bool hasPierce = datCalc.datCheckSyojiSkill(nbMainProcess.nbGetUnitWorkFromFormindex(nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].formindex), 357) == 1 ||
                     datCalc.datCheckSyojiSkill(nbMainProcess.nbGetUnitWorkFromFormindex(nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].formindex), 361) == 1;
                 
-                bool charged = (nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].count[15] > 0 && nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].count[20] > 0);
+                bool hasAnimus = nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].count[15] > 0 && nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].count[20] > 0;
 
-                if (nskill != -1 && attr >= 0 && attr <= 11 && datSkill.tbl[nskill].skillattr >= 0 && datSkill.tbl[nskill].skillattr <= 11 && (hasPierce || charged))
+                bool undermineDivinity = (nbMainProcess.nbGetUnitWorkFromFormindex(nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].formindex).id == 161 ||
+                    nbMainProcess.nbGetUnitWorkFromFormindex(nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].formindex).id == 287) &&
+                    nbMainProcess.nbGetUnitWorkFromFormindex(formindex).badstatus != 0;
+
+                if (nskill != -1 && attr >= 0 && attr <= 11 && datSkill.tbl[nskill].skillattr >= 0 && datSkill.tbl[nskill].skillattr <= 11 && (hasPierce || hasAnimus || undermineDivinity))
                 {
                     if (isResist)
                     {
