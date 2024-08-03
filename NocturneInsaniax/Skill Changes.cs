@@ -1166,6 +1166,50 @@ namespace NocturneInsaniax
                                         nbMainProcess.nbPushAction(4, incomingParty.partyindex, incomingParty.partyindex, 407);
                                     }
                                 }
+                                // Titania's Seelie Decree
+                                else if ((actionProcessData.work.id == 53 || (actionProcessData.work.id == 0 && activeUnitIds[actionProcessData.work.nowtform] == 53))
+                                    && datDevilFormat.tbl[nbMainProcess.nbGetUnitWorkFromFormindex(actionProcessData.work.nowtform).id].race == 10)
+                                {
+                                    var outgoingParty = activeUnitPartyCount[actionProcessData.work.nowtform];
+                                    var incomingParty = nbMainProcess.nbGetPartyFromFormindex(actionProcessData.work.nowtform);
+                                    bool activate = false;
+                                    for (short i = 4; i <= 20; i++)
+                                    {
+                                        if (!(i >= 16 && i <= 19))
+                                        {
+                                            incomingParty.count[i] = Math.Max((short)0, outgoingParty[i]);
+                                            if (incomingParty.count[i] != 0) activate = true;
+                                        }
+                                    }
+                                    if (activate)
+                                    {
+                                        switchOutSkillName = "Seelie Decree";
+                                        SwitchOutSkillCopy(67, 67, 0, false);
+                                        nbMainProcess.nbPushAction(4, incomingParty.partyindex, incomingParty.partyindex, 407);
+                                    }
+                                }
+                                // Queen Mab's Unseelie Decree
+                                else if ((actionProcessData.work.id == 116 || (actionProcessData.work.id == 0 && activeUnitIds[actionProcessData.work.nowtform] == 116))
+                                    && datDevilFormat.tbl[nbMainProcess.nbGetUnitWorkFromFormindex(actionProcessData.work.nowtform).id].race == 20)
+                                {
+                                    var outgoingParty = activeUnitPartyCount[actionProcessData.work.nowtform];
+                                    var incomingParty = nbMainProcess.nbGetPartyFromFormindex(actionProcessData.work.nowtform);
+                                    bool activate = false;
+                                    for (short i = 4; i <= 20; i++)
+                                    {
+                                        if (!(i >= 16 && i <= 19))
+                                        {
+                                            incomingParty.count[i] = Math.Max((short)0, outgoingParty[i]);
+                                            if (incomingParty.count[i] != 0) activate = true;
+                                        }
+                                    }
+                                    if (activate)
+                                    {
+                                        switchOutSkillName = "Unseelie Decree";
+                                        SwitchOutSkillCopy(67, 67, 0, false);
+                                        nbMainProcess.nbPushAction(4, incomingParty.partyindex, incomingParty.partyindex, 407);
+                                    }
+                                }
                                 // Four Horsemen
                                 else if ((fourHorsemenIds.Contains(actionProcessData.work.id) || (actionProcessData.work.id == 0 && fourHorsemenIds.Contains(activeUnitIds[actionProcessData.work.nowtform])))
                                     && fourHorsemenIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(actionProcessData.work.nowtform).id))

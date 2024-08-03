@@ -68,7 +68,7 @@ namespace NocturneInsaniax
             { 050, new InnateSkill(383, 13, "Restorative Melody", "While in the active party, \nHealing skill costs are reduced \nby 20% for all allies.")}, // 050 Isora
             { 051, new InnateSkill(415, 15, "Entice", "While in the active party, \nmay step in during negotiation to \ntempt a male demon.")}, // 051 Apsaras
             { 052, new InnateSkill(383, 04, "Force Gestalt", "Koppa Tengu gains Force skill potential \nbased on the total potential of \nallies in the active party.")}, // 052 Koppa Tengu
-            { 053, new InnateSkill(383, 15, "Titania", "")}, // 053 Titania
+            { 053, new InnateSkill(383, 14, "Seelie Decree", "When switching to a Fairy demon \nall Support effects on Titania \nwill be passed to the switched ally.")}, // 053 Titania
             { 054, new InnateSkill(383, 14, "Fairy King's Melody", "When summoned from the stock, \nnegate -nda effects on the party.")}, // 054 Oberon
             { 055, new InnateSkill(383, 02, "Ice Gestalt", "Troll gains Ice skill potential \nbased on the total potential of \nallies in the active party.")}, // 055 Troll
             { 056, new InnateSkill(383, 15, "Proxy Guard Hound", "While in the active party, increases \nCritical Damage by 30% for Avatar, \nHoly, Beast and Wilder allies.")}, // 056 Setanta
@@ -131,7 +131,7 @@ namespace NocturneInsaniax
             { 113, new InnateSkill(383, 15, "Loki", "")}, // 113 Loki
             { 114, new InnateSkill(383, 05, "Forbidden Fruit", "While in the active party, allied \nAlmighty attacks may critically strike.")}, // 114 Lilith
             { 115, new InnateSkill(383, 15, "Nyx", "")}, // 115 Nyx - Elec Gestalt?
-            { 116, new InnateSkill(383, 15, "Queen Mab", "")}, // 116 Queen Mab
+            { 116, new InnateSkill(383, 14, "Unseelie Decree", "When switching to a Night demon \nall Support effects on Queen Mab \nwill be passed to the switched ally.")}, // 116 Queen Mab
             { 117, new InnateSkill(415, 15, "Entice", "While in the active party, \nmay step in during negotiation to \ntempt a male demon.")}, // 117 Succubus
             { 118, new InnateSkill(383, 07, "Twilit Melody", "While in the active party, \nallied Dark damage is increased \nby 10% when striking a weakness.")}, // 118 Incubus
             { 119, new InnateSkill(383, 00, "Phys Enhancer", "While in the active party, \nraise allies' Phys skill potential \nto Fomorian's if it was lower.")}, // 119 Fomorian
@@ -169,19 +169,19 @@ namespace NocturneInsaniax
             { 151, new InnateSkill(383, 15, "Faithful Companion", "After Makami strikes a weakness, \nthe next ally deals 20% more \ndamage if they attack.")}, // 151 Makami
             { 152, new InnateSkill(383, 04, "Force Enhancer", "While in the active party, \nraise allies' Force skill potential \nto Garuda's if it was lower.")}, // 152 Garuda
             { 153, new InnateSkill(383, 15, "Helmsman", "When Yatagarasu acts, the next ally \ngains 30% Hit Rate if they attack.")}, // 153 Yatagarasu
-            { 154, new InnateSkill(383, 15, "Gurulu", "")}, // 154 Gurulu
+            { 154, new InnateSkill(383, 04, "Gusting Melody", "While in the active party, \nallied Force damage is increased \nby 10% when striking a weakness.")}, // 154 Gurulu
             { 155, new InnateSkill(383, 15, "Milton", "Albion Nullifies damage from \nMagic attacks based on which Zoas \nare in the active party.")}, // 155 Albion
-            { 156, new InnateSkill(383, 15, "Manikin", "")}, // 156 Manikin
-            { 157, new InnateSkill(383, 15, "Manikin", "")}, // 157 Manikin
-            { 158, new InnateSkill(383, 15, "Manikin", "")}, // 158 Manikin
-            { 159, new InnateSkill(383, 15, "Manikin", "")}, // 159 Manikin
-            { 160, new InnateSkill(383, 15, "Manikin", "")}, // 160 Manikin
+            { 156, new InnateSkill(383, 15, "No Innate Skill", "")}, // 156 Manikin
+            { 157, new InnateSkill(383, 15, "No Innate Skill", "")}, // 157 Manikin
+            { 158, new InnateSkill(383, 15, "No Innate Skill", "")}, // 158 Manikin
+            { 159, new InnateSkill(383, 15, "No Innate Skill", "")}, // 159 Manikin
+            { 160, new InnateSkill(383, 15, "No Innate Skill", "")}, // 160 Manikin
             { 161, new InnateSkill(383, 15, "Undermine Divinity", "Samael's attacks against enemies \nwith an ailment gain Pierce.")}, // 161 Samael
-            { 162, new InnateSkill(383, 15, "Manikin", "")}, // 162 Manikin
-            { 163, new InnateSkill(383, 15, "Manikin", "")}, // 163 Manikin
-            { 164, new InnateSkill(383, 15, "Manikin", "")}, // 164 Manikin
-            { 165, new InnateSkill(383, 15, "Manikin", "")}, // 165 Manikin
-            { 166, new InnateSkill(383, 15, "Manikin", "")}, // 166 Manikin
+            { 162, new InnateSkill(383, 15, "No Innate Skill", "")}, // 162 Manikin
+            { 163, new InnateSkill(383, 15, "No Innate Skill", "")}, // 163 Manikin
+            { 164, new InnateSkill(383, 15, "No Innate Skill", "")}, // 164 Manikin
+            { 165, new InnateSkill(383, 15, "No Innate Skill", "")}, // 165 Manikin
+            { 166, new InnateSkill(383, 15, "No Innate Skill", "")}, // 166 Manikin
             { 167, new InnateSkill(353, 15, "Lucky Find", "Occasionally find items on the Vortex World Map while in the active party.")}, // 167 Pisaca
             { 168, new InnateSkill(383, 07, "Dark Star", "While in the active party, allied \nDark attacks may critically strike.")}, // 168 Kaiwan
             { 169, new InnateSkill(383, 15, "Four Oni", "Kin-Ki's Charged/Critical Damage \nincreases by 10% for each \nFour Oni in the active party.")}, // 169 Kin-Ki
@@ -469,7 +469,7 @@ namespace NocturneInsaniax
             { 1, new List<ushort> { 58, 182 } }, // Fire
             { 2, new List<ushort> { 78, 184 } }, // Ice
             { 3, new List<ushort> { 123, 181 } }, // Elec
-            { 4, new List<ushort> { 84, 183 } }, // Force
+            { 4, new List<ushort> { 84, 154, 183 } }, // Force
             { 5, new List<ushort>() }, // Almighty (Not Used)
             { 6, new List<ushort> { 224 } }, // Light
             { 7, new List<ushort> { 118 } } // Dark
