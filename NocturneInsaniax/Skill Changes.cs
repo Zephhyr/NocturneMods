@@ -464,12 +464,12 @@ namespace NocturneInsaniax
                     nbMakePacket.nbMakeBadKaifukuPacket(frame, a.uniqueid, ref form);
                 }
 
-                // Hanuman's Ramayana
+                // Okuninushi's Nation Founder, Hanuman's Ramayana
                 if (a.work.nowcommand == 1 && new ushort[] { 36, 37, 38, 457 }.Contains(a.work.nowindex) || 
                     a.work.nowcommand == 5 && new ushort[] { 1, 2, 3, 4, 9, 10 }.Contains(a.work.nowindex))
                 {
                     if (a.work.id == 25) nbMainProcess.nbPushAction(4, a.partyindex, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, 404);
-                    else if (a.work.id == 146) nbMainProcess.nbPushAction(4, a.partyindex, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, 416);
+                    else if (a.work.id == 146 && nbMainProcess.nbGetUnitWorkFromFormindex(dformindex).badstatus != 0) nbMainProcess.nbPushAction(4, a.partyindex, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, 416);
                 }
                 
                 // Doppelganger's Dark Mirror
@@ -562,7 +562,8 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(147, 0);
                     //datCalc.datAddDevil(30, 0);
                     //datCalc.datAddDevil(111, 0);
-                    datCalc.datAddDevil(14, 0);
+                    //datCalc.datAddDevil(185, 0);
+                    datCalc.datAddDevil(201, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    //work.skill[0] = 192;
@@ -1106,6 +1107,32 @@ namespace NocturneInsaniax
                                         SwitchOutSkillCopy2(67, 67, 0, false);
                                         nbMainProcess.nbPushAction(4, arahabakiParty.partyindex, incomingParty.partyindex, 406);
                                     }
+                                }
+                            }
+                            // Daisoujou's Guiding Wisdom
+                            else if (activeUnitIds.Contains((ushort)201))
+                            {
+                                bool guidingWisdomActive = false;
+                                var daisoujouParty = new nbParty_t();
+                                foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
+                                {
+                                    try
+                                    {
+                                        if (nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 201)
+                                        {
+                                            guidingWisdomActive = true;
+                                            daisoujouParty = nbMainProcess.nbGetPartyFromFormindex(ally.formindex);
+                                        }
+                                    }
+                                    catch { }
+                                }
+
+                                if (guidingWisdomActive)
+                                {
+                                    switchOutSkillName2 = "Guiding Wisdom";
+                                    SwitchOutSkillCopy2(416, 416, 0, false);
+                                    var incomingParty = nbMainProcess.nbGetPartyFromFormindex(actionProcessData.work.nowtform);
+                                    nbMainProcess.nbPushAction(4, daisoujouParty.partyindex, incomingParty.partyindex, 406);
                                 }
                             }
                             if (actionProcessData.work.id != 0 && actionProcessData.work.nowcommand == 6)

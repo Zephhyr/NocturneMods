@@ -1529,7 +1529,7 @@ namespace NocturneInsaniax
                     else
                         skillPotential = demonPotentials[demonID][skillAttribute]; // Get the potential from the demon list
 
-                    // AuspiciousBeast
+                    // Auspicious Beast
                     if (actionProcessData != null && auspiciousBeastIds.Contains(currentDemonWork.id))
                     {
                         foreach (var auspiciousBeastUser in auspiciousBeastIds)

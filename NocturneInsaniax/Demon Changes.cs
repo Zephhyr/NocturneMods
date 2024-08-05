@@ -9158,20 +9158,20 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][9] = 65536;
             datAisyo.tbl[id][10] = 65536;
 
-            mdlFileDefTable.devilModelFileTable[id] = mdlFileDefTable.devilModelFileTable[257];
-            mdlFileDefTable.devilOnModelFileTable[id] = mdlFileDefTable.devilOnModelFileTable[257];
-            mdlFileDefTable.devilModelIndex[id] = mdlFileDefTable.devilModelIndex[257];
-            mdlFileDefTable.devilOnModelIndex[id] = mdlFileDefTable.devilOnModelIndex[257];
+            mdlFileDefTable.devilModelFileTable[id] = mdlFileDefTable.devilModelFileTable[294];
+            mdlFileDefTable.devilOnModelFileTable[id] = mdlFileDefTable.devilOnModelFileTable[294];
+            mdlFileDefTable.devilModelIndex[id] = mdlFileDefTable.devilModelIndex[294];
+            mdlFileDefTable.devilOnModelIndex[id] = mdlFileDefTable.devilOnModelIndex[294];
 
             mdlFileDefTable.devilModelIndex[id].major = 6;
-            mdlFileDefTable.devilModelIndex[id].minor = 257;
+            mdlFileDefTable.devilModelIndex[id].minor = 294;
             mdlFileDefTable.devilModelIndex[id].scale = 4096;
             mdlFileDefTable.devilModelIndex[id].radius = 1000;
 
-            datDevilVisual05.tbl_5_0A0_0BF[25] = CopyDevilVisual(datDevilVisual08.tbl_8_100_11F[1]);
-            datDevilVisual05.tbl_5_0A0_0BF[25].formscale = 0.8f;
+            datDevilVisual05.tbl_5_0A0_0BF[25] = CopyDevilVisual(datDevilVisual09.tbl_9_120_13F[6]);
+            datDevilVisual05.tbl_5_0A0_0BF[25].formscale = 1.6f;
 
-            datMotionSeTable.tbl[id] = 257;
+            datMotionSeTable.tbl[id] = 294;
 
             datDevilNegoFormat.tbl[id] = datDevilNegoFormat.tbl[178];
         }

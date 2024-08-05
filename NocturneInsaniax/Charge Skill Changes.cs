@@ -229,7 +229,7 @@ namespace NocturneInsaniax
                     nbHelpProcess.nbDispText("Effects passed to " + devilName + "!", string.Empty, 2, 45, 2315190144, false);
                 }
                 // Affable Hospitality passing on effects
-                else if (actionProcessData.work.nowcommand == 1 && hojotype == 1 && hojopoint == 0 && actionProcessData.work.nowindex == 406)
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 1 && hojopoint == 0 && actionProcessData.work.nowindex == 406 && actionProcessData.work.id != 201)
                 {
                     string devilName = nbMainProcess.nbGetUnitWorkFromFormindex(formindex).id != 0
                         ? datDevilName.Get(nbMainProcess.nbGetUnitWorkFromFormindex(formindex).id)

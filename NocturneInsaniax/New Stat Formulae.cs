@@ -471,6 +471,9 @@ namespace NocturneInsaniax
                     sbyte skillAttr = datSkill.tbl[nskill].skillattr;
                     if (datNormalSkill.tbl[nskill].hptype != 3)
                     {
+                        // Mara's Unlimited Desire
+                        if ((workFromFormindex1.id == 186 || workFromFormindex1.id == 321) && datNormalSkill.tbl[nskill].koukatype == 0 && nbMainProcess.nbGetPartyFromFormindex(sformindex).count[4] >= 3)
+                            critRate = 100;
                         // Crit enabling innates
                         if (critEnablerUsers.Keys.Contains(skillAttr))
                         {
@@ -500,7 +503,7 @@ namespace NocturneInsaniax
                             }
                         }
                         // Lakshmi's Chanchala
-                        if (skillAttr <= 4 && nbMainProcess.nbGetPartyFromFormindex(sformindex).count[5] >= 3)
+                        if (skillAttr >= 1 && skillAttr <= 4 && nbMainProcess.nbGetPartyFromFormindex(sformindex).count[5] >= 3)
                         {
                             if (actionProcessData.partyindex <= 3)
                             {
@@ -525,6 +528,19 @@ namespace NocturneInsaniax
                                     }
                                     catch { }
                                 }
+                            }
+                        }
+                        // Loki's Destabilize
+                        if (skillAttr >= 1 && skillAttr <= 4)
+                        {
+                            foreach (var ally in nbMainProcess.nbGetMainProcessData().party)
+                            {
+                                try
+                                {
+                                    if (nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 113)
+                                        critRate = Math.Max(critRate, (short)10);
+                                }
+                                catch { }
                             }
                         }
                         // Deathly Affliction
@@ -560,6 +576,9 @@ namespace NocturneInsaniax
                             if (deathlyAfflictionActive) critRate += 20;
                         }
                     }
+                    // Hell Biker's Speed Star
+                    if ((workFromFormindex1.id == 200 || workFromFormindex1.id == 350) && workFromFormindex1.param[4] > workFromFormindex2.param[4])
+                        critRate += 10;
 
                     // Focused Assault
                     if (focusedAssaultIds.Contains(workFromFormindex1.id) && 

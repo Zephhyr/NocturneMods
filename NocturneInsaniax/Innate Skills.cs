@@ -128,9 +128,9 @@ namespace NocturneInsaniax
             { 110, new InnateSkill(383, 15, "Withheld Sentence", "While in the active party, \nallies cannot be instakilled.")}, // 110 Alciel
             { 111, new InnateSkill(383, 01, "Laevateinn", "Fire Enhancer & Surt's normal \nattacks deal medium Fire damage.")}, // 111 Surt
             { 112, new InnateSkill(414, 15, "Intimidate", "While in the active party, \nmay step in during negotiation to \n'convince' a lower level demon.")}, // 112 Abaddon
-            { 113, new InnateSkill(383, 15, "Loki", "")}, // 113 Loki
+            { 113, new InnateSkill(383, 15, "Destabilize", "While in the active party, Magic \nattacks may critically strike \nfor all allies and enemies.")}, // 113 Loki
             { 114, new InnateSkill(383, 05, "Forbidden Fruit", "While in the active party, allied \nAlmighty attacks may critically strike.")}, // 114 Lilith
-            { 115, new InnateSkill(383, 15, "Nyx", "")}, // 115 Nyx - Elec Gestalt?
+            { 115, new InnateSkill(383, 14, "Megalomania", "After Mot uses a \ncharge effect, he has a 10% \nchance to retain it.")}, // 115 Nyx
             { 116, new InnateSkill(383, 14, "Unseelie Decree", "When switching to a Night demon \nall Support effects on Queen Mab \nwill be passed to the switched ally.")}, // 116 Queen Mab
             { 117, new InnateSkill(415, 15, "Entice", "While in the active party, \nmay step in during negotiation to \ntempt a male demon.")}, // 117 Succubus
             { 118, new InnateSkill(383, 07, "Twilit Melody", "While in the active party, \nallied Dark damage is increased \nby 10% when striking a weakness.")}, // 118 Incubus
@@ -201,7 +201,7 @@ namespace NocturneInsaniax
             { 183, new InnateSkill(383, 04, "Gusting Melody", "While in the active party, \nallied Force damage is increased \nby 10% when striking a weakness.")}, // 183 Luvah
             { 184, new InnateSkill(383, 02, "Frigid Melody", "While in the active party, \nallied Ice damage is increased \nby 10% when striking a weakness.")}, // 184 Tharmus
             { 185, new InnateSkill(383, 15, "Specter", "")}, // 185 Specter
-            { 186, new InnateSkill(383, 15, "Mara", "")}, // 186 Mara
+            { 186, new InnateSkill(383, 15, "Unlimited Desire", "If Mara's Physical Attack is \nmaximized, his Strength-based \nattacks always critically strike.")}, // 186 Mara
             { 187, new InnateSkill(383, 15, "", "")}, // 187 
             { 188, new InnateSkill(383, 15, "", "")}, // 188 
             { 189, new InnateSkill(383, 15, "", "")}, // 189 
@@ -215,8 +215,8 @@ namespace NocturneInsaniax
             { 197, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall Support effects on Red Rider \nwill be passed to the switched ally.")}, // 197 Red Rider
             { 198, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall Support effects on Black Rider \nwill be passed to the switched ally.")}, // 198 Black Rider
             { 199, new InnateSkill(383, 00, "Estocada", "Matador may perform a weak \ncounterattack after dodging.")}, // 199 Matador
-            { 200, new InnateSkill(383, 15, "Hell Biker", "")}, // 200 Hell Biker
-            { 201, new InnateSkill(383, 15, "Daisoujou", "")}, // 201 Daisoujou
+            { 200, new InnateSkill(383, 15, "Speed Star", "Hell Biker's attacks, including Magic, \ngain 10% critical chance against \ntargets with a lower Agility stat.")}, // 200 Hell Biker
+            { 201, new InnateSkill(383, 13, "Guiding Wisdom", "When an ally is summoned from the \nstock, cure their ailments.")}, // 201 Daisoujou
             { 202, new InnateSkill(383, 15, "Mother Harlot", "")}, // 202 Mother Harlot
             { 203, new InnateSkill(383, 15, "Trumpeter", "")}, // 203 Trumpeter
             { 204, new InnateSkill(383, 15, "Underdog", "Futomimi deals up to 30% more \ndamage based on his missing HP.")}, // 204 Futomimi
@@ -336,7 +336,7 @@ namespace NocturneInsaniax
             { 318, new InnateSkill(383, 15, "Forced Will o' Wisp", "")}, // 318 Forced Will o' Wisp
             { 319, new InnateSkill(383, 15, "Forced Preta", "")}, // 319 Forced Preta
             { 320, new InnateSkill(383, 14, "Four Devas", "")}, // 320 Boss Bishamonten 1
-            { 321, new InnateSkill(383, 15, "Boss Mara", "")}, // 321 Boss Mara
+            { 321, new InnateSkill(383, 15, "Unlimited Desire", "")}, // 321 Boss Mara
             { 322, new InnateSkill(383, 14, "Four Devas", "")}, // 322 Boss Bishamonten 2
             { 323, new InnateSkill(383, 14, "Four Devas", "")}, // 323 Boss Jikokuten
             { 324, new InnateSkill(383, 14, "Four Devas", "")}, // 324 Boss Koumokuten
@@ -365,7 +365,7 @@ namespace NocturneInsaniax
             { 347, new InnateSkill(383, 15, "Four Horsemen", "")}, // 347 Boss Red Rider
             { 348, new InnateSkill(383, 15, "Four Horsemen", "")}, // 348 Boss Black Rider
             { 349, new InnateSkill(383, 15, "Estocada", "")}, // 349 Boss Matador
-            { 350, new InnateSkill(383, 15, "Boss Hell Biker", "")}, // 350 Boss Hell Biker
+            { 350, new InnateSkill(383, 15, "Speed Star", "")}, // 350 Boss Hell Biker
             { 351, new InnateSkill(383, 15, "Boss Daisoujou", "")}, // 351 Boss Daisoujou
             { 352, new InnateSkill(383, 15, "Boss Mother Harlot", "")}, // 352 Boss Mother Harlot
             { 353, new InnateSkill(383, 15, "Boss Trumpeter", "")}, // 353 Boss Trumpeter
@@ -524,7 +524,7 @@ namespace NocturneInsaniax
         private static ushort[] essenceThiefIds = new ushort[] { 127, 124, 137 };
         private static ushort[] behemothicBounceIds = new ushort[] { 105, 274 };
         private static ushort[] withheldSentenceIds = new ushort[] { 13, 110 };
-        private static ushort[] megalomaniaIds = new ushort[] { 14, 109 };
+        private static ushort[] megalomaniaIds = new ushort[] { 14, 109, 115 };
         private static ushort[] proxyGuardHoundRaces = new ushort[] { 6, 14, 21, 28 };
         private static ushort[] proxyGuardHoundIds = new ushort[] { 29, 56, 147 };
         private static ushort[] retributiveZealRaces = new ushort[] { 11, 24 };
