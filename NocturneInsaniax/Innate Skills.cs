@@ -620,6 +620,19 @@ namespace NocturneInsaniax
                         }
                     }
 
+                    // If it's Raidou/Dante's trait skill
+                    else if (currentDemonWork.id == 192)
+                    {
+                        if (!EventBit.evtBitCheck(3712))
+                        {
+                            __result = datSkillName.Get(410); // Arbitration for Raidou
+                        }
+                        else
+                        {
+                            __result = datSkillName.Get(414); // Intimidate for Dante
+                        }
+                    }
+
                     // If it's a demon's trait skill
                     else
                     {
@@ -655,6 +668,19 @@ namespace NocturneInsaniax
                         else
                         {
                             __result = magatamaInnateSkills[dds3GlobalWork.DDS3_GBWK.heartsequip].skillHelp;
+                        }
+                    }
+
+                    // If it's Raidou/Dante's trait skill
+                    else if (currentDemonWork.id == 192)
+                    {
+                        if (!EventBit.evtBitCheck(3712))
+                        {
+                            __result = datSkillHelp_msg.Get(410); // Arbitration for Raidou
+                        }
+                        else
+                        {
+                            __result = datSkillHelp_msg.Get(414); // Intimidate for Dante
                         }
                     }
 
@@ -791,7 +817,7 @@ namespace NocturneInsaniax
                 for (int i = 1; i <= 3; i++)
                 {
                     var work = nbMainProcess.nbGetUnitWorkFromFormindex(party[i].formindex);
-                    if (demonInnateSkills[work.id].skillId >= 409 && demonInnateSkills[work.id].skillId <= 420)
+                    if (work.id == 192 || (demonInnateSkills[work.id].skillId >= 409 && demonInnateSkills[work.id].skillId <= 420))
                     {
                         __result += 1;
                         break;
@@ -818,9 +844,17 @@ namespace NocturneInsaniax
                 for (short i = 1; i <= 3; i++)
                 {
                     var work = nbMainProcess.nbGetUnitWorkFromFormindex(party[i].formindex);
-                    if (demonInnateSkills[work.id].skillId >= 409 && demonInnateSkills[work.id].skillId <= 420)
+                    if (work.id == 192 || (demonInnateSkills[work.id].skillId >= 409 && demonInnateSkills[work.id].skillId <= 420))
                     {
-                        if (negoSkillScenarios[demonInnateSkills[work.id].skillId].Contains(type))
+                        if (work.id == 192 && !EventBit.evtBitCheck(3712)) // Arbitration for Raidou
+                        {
+                            __result = Convert.ToUInt32(Convert.ToString(i, 2) + "0000000" + 410, 2);
+                        }
+                        else if (work.id == 192 && EventBit.evtBitCheck(3712)) // Intimidate for Dante
+                        {
+                            __result = Convert.ToUInt32(Convert.ToString(i, 2) + "0000000" + 414, 2);
+                        }
+                        else if (negoSkillScenarios[demonInnateSkills[work.id].skillId].Contains(type))
                             __result = Convert.ToUInt32(Convert.ToString(i, 2) + "0000000" + Convert.ToString(demonInnateSkills[work.id].skillId, 2), 2);
                         break;
                     }
