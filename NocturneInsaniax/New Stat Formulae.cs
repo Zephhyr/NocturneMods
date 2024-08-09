@@ -576,10 +576,12 @@ namespace NocturneInsaniax
                             if (deathlyAfflictionActive) critRate += 20;
                         }
                     }
+                    // Specter's Phantasmagoria
+                    if ((workFromFormindex1.id == 185) && workFromFormindex1.param[2] > workFromFormindex2.param[2])
+                        critRate += 10;
                     // Hell Biker's Speed Star
                     if ((workFromFormindex1.id == 200 || workFromFormindex1.id == 350) && workFromFormindex1.param[4] > workFromFormindex2.param[4])
                         critRate += 10;
-
                     // Focused Assault
                     if (focusedAssaultIds.Contains(workFromFormindex1.id) && 
                         datNormalSkill.tbl[nskill].targetarea == 2 && 
@@ -630,7 +632,7 @@ namespace NocturneInsaniax
                     datUnitWork_t workFromFormindex2 = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
 
                     // Scathach's Warrior Trainer
-                    if (workFromFormindex1.id == 8)
+                    if (workFromFormindex1.id == 8 && nskill != 0)
                     {
                         bool warriorTrainerActive = false;
 
@@ -664,6 +666,12 @@ namespace NocturneInsaniax
                             __result = 0; // Hit
                             return;
                         }
+                    }
+                    // Mother Harlot's Indlugence
+                    if ((workFromFormindex1.id == 202 || workFromFormindex1.id == 352) && workFromFormindex2.badstatus != 0 && nskill != 0 && SkillPotentialUtility.GetSkillPotential(nskill, currentDemonWork.id) > 0)
+                    {
+                        __result = 0; // Hit
+                        return;
                     }
                     // Guaranteed hit against enemies affected by certain status
                     else if (datNormalSkill.tbl[nskill].hitlevel == 255 ||

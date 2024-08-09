@@ -176,7 +176,7 @@ namespace NocturneInsaniax
             { 158, new InnateSkill(383, 15, "No Innate Skill", "")}, // 158 Manikin
             { 159, new InnateSkill(383, 15, "No Innate Skill", "")}, // 159 Manikin
             { 160, new InnateSkill(383, 15, "No Innate Skill", "")}, // 160 Manikin
-            { 161, new InnateSkill(383, 15, "Undermine Divinity", "Samael's attacks against enemies \nwith an ailment gain Pierce.")}, // 161 Samael
+            { 161, new InnateSkill(383, 15, "Undermine Divinity", "Samael's attacks against targets \nwith an ailment gain Pierce.")}, // 161 Samael
             { 162, new InnateSkill(383, 15, "No Innate Skill", "")}, // 162 Manikin
             { 163, new InnateSkill(383, 15, "No Innate Skill", "")}, // 163 Manikin
             { 164, new InnateSkill(383, 15, "No Innate Skill", "")}, // 164 Manikin
@@ -200,7 +200,7 @@ namespace NocturneInsaniax
             { 182, new InnateSkill(383, 01, "Fiery Melody", "While in the active party, \nallied Fire damage is increased \nby 10% when striking a weakness.")}, // 182 Urizen
             { 183, new InnateSkill(383, 04, "Gusting Melody", "While in the active party, \nallied Force damage is increased \nby 10% when striking a weakness.")}, // 183 Luvah
             { 184, new InnateSkill(383, 02, "Frigid Melody", "While in the active party, \nallied Ice damage is increased \nby 10% when striking a weakness.")}, // 184 Tharmus
-            { 185, new InnateSkill(383, 15, "Specter", "")}, // 185 Specter
+            { 185, new InnateSkill(383, 15, "Phantasmagoria", "Specter's attacks, including Magic, \ngain 10% critical chance against \ntargets with a lower Magic stat.")}, // 185 Specter
             { 186, new InnateSkill(383, 15, "Unlimited Desire", "If Mara's Physical Attack is \nmaximized, his Strength-based \nattacks always critically strike.")}, // 186 Mara
             { 187, new InnateSkill(383, 15, "", "")}, // 187 
             { 188, new InnateSkill(383, 15, "", "")}, // 188 
@@ -208,21 +208,21 @@ namespace NocturneInsaniax
             { 190, new InnateSkill(383, 15, "", "")}, // 190 
             { 191, new InnateSkill(383, 15, "", "")}, // 191 
             { 192, new InnateSkill(383, 15, "Raidou/Dante", "")}, // 192 Raidou/Dante
-            { 193, new InnateSkill(383, 15, "Metatron", "")}, // 193 Metatron
-            { 194, new InnateSkill(383, 15, "Beelzebub (Fly)", "")}, // 194 Beelzebub (Fly)
+            { 193, new InnateSkill(383, 05, "Almighty Gestalt", "Metatron gains Almighty skill potential \nbased on the total potential of \nallies in the active party.")}, // 193 Metatron
+            { 194, new InnateSkill(383, 05, "Almighty Enhancer", "While in the active party, \nraise allies' Almighty skill potential \nto Beelzebub's if it was lower.")}, // 194 Beelzebub (Fly)
             { 195, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall Support effects on Pale Rider \nwill be passed to the switched ally.")}, // 195 Pale Rider
             { 196, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall Support effects on White Rider \nwill be passed to the switched ally.")}, // 196 White Rider
             { 197, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall Support effects on Red Rider \nwill be passed to the switched ally.")}, // 197 Red Rider
             { 198, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall Support effects on Black Rider \nwill be passed to the switched ally.")}, // 198 Black Rider
             { 199, new InnateSkill(383, 00, "Estocada", "Matador may perform a weak \ncounterattack after dodging.")}, // 199 Matador
             { 200, new InnateSkill(383, 15, "Speed Star", "Hell Biker's attacks, including Magic, \ngain 10% critical chance against \ntargets with a lower Agility stat.")}, // 200 Hell Biker
-            { 201, new InnateSkill(383, 13, "Guiding Wisdom", "When an ally is summoned from the \nstock, cure their ailments.")}, // 201 Daisoujou
-            { 202, new InnateSkill(383, 15, "Mother Harlot", "")}, // 202 Mother Harlot
-            { 203, new InnateSkill(383, 15, "Trumpeter", "")}, // 203 Trumpeter
+            { 201, new InnateSkill(383, 13, "Guiding Wisdom", "While in the active party, \nwhen an ally is summoned from the \nstock, cure their ailments.")}, // 201 Daisoujou
+            { 202, new InnateSkill(383, 15, "Indulgence", "Mother Harlot's attacks with \npositive potential will not miss \nagainst targets with an ailment.")}, // 202 Mother Harlot
+            { 203, new InnateSkill(383, 15, "Final Countdown", "On every 8th turn Trumpeter takes, \nskills cost nothing for the turn.")}, // 203 Trumpeter
             { 204, new InnateSkill(383, 15, "Underdog", "Futomimi deals up to 30% more \ndamage based on his missing HP.")}, // 204 Futomimi
             { 205, new InnateSkill(383, 15, "Desperate Power", "Sakahagi deals up to 30% more \ndamage based on his missing MP.")}, // 205 Sakahagi
-            { 206, new InnateSkill(383, 15, "Black Frost", "")}, // 206 Black Frost
-            { 207, new InnateSkill(383, 15, "Beelzebub (Man)", "")}, // 207 Beelzebub (Man)
+            { 206, new InnateSkill(383, 02, "Cold World", "Black Frost's Ice attacks may \ninstakill instead of inflicting Freeze.")}, // 206 Black Frost
+            { 207, new InnateSkill(383, 05, "Almighty Enhancer", "While in the active party, \nraise allies' Almighty skill potential \nto Beelzebub's if it was lower.")}, // 207 Beelzebub (Man)
             { 208, new InnateSkill(383, 15, "", "")}, // 208 
             { 209, new InnateSkill(383, 15, "", "")}, // 209 
             { 210, new InnateSkill(383, 15, "", "")}, // 210 
@@ -433,23 +433,23 @@ namespace NocturneInsaniax
 
         private static Dictionary<sbyte, List<ushort>> gestaltUsers = new Dictionary<sbyte, List<ushort>>
         {
-            { 00, new List<ushort> { 16, 46, 130, 146 } }, // Phys
-            { 01, new List<ushort> { 72, 91, 98 } }, // Fire
-            { 02, new List<ushort> { 55, 75, 103 } }, // Ice
-            { 03, new List<ushort> { 77, 79, 97 } }, // Elec
-            { 04, new List<ushort> { 48, 52, 92, 121, } }, // Force
-            { 05, new List<ushort>() }, // Almighty (Not Used)
-            { 06, new List<ushort> { 62, 65 } }, // Light
-            { 07, new List<ushort> { 108 } } // Dark
+            { 0, new List<ushort> { 16, 46, 130, 146 } }, // Phys
+            { 1, new List<ushort> { 72, 91, 98 } }, // Fire
+            { 2, new List<ushort> { 55, 75, 103 } }, // Ice
+            { 3, new List<ushort> { 77, 79, 97 } }, // Elec
+            { 4, new List<ushort> { 48, 52, 92, 121, } }, // Force
+            { 5, new List<ushort> { 193 } }, // Almighty
+            { 6, new List<ushort> { 62, 65 } }, // Light
+            { 7, new List<ushort> { 108 } } // Dark
         };
 
         private static Dictionary<sbyte, byte> gestaltMagatama = new Dictionary<sbyte, byte>
         {
-            { 00, 7 }, // Phys
-            { 01, 5 }, // Fire
-            { 02, 2 }, // Ice
-            { 03, 8 }, // Elec
-            { 04, 6 }, // Force
+            { 0, 7 }, // Phys
+            { 1, 5 }, // Fire
+            { 2, 2 }, // Ice
+            { 3, 8 }, // Elec
+            { 4, 6 }, // Force
         };
 
         private static Dictionary<sbyte, List<ushort>> enhancerUsers = new Dictionary<sbyte, List<ushort>>
@@ -459,7 +459,7 @@ namespace NocturneInsaniax
             { 2, new List<ushort> { 17, 37, 60 } }, // Ice
             { 3, new List<ushort> { 22, 39, 302, 337 } }, // Elec
             { 4, new List<ushort> { 38, 83, 152 } }, // Force
-            { 5, new List<ushort>() }, // Almighty (Not Used)
+            { 5, new List<ushort> { 194, 207 } }, // Almighty
             { 6, new List<ushort> { 35, 63 } }, // Light
             { 7, new List<ushort> { 132, 177 } } // Dark
         };

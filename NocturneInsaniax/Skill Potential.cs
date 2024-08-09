@@ -1139,6 +1139,11 @@ namespace NocturneInsaniax
 
                             if (tripuraSamharaActive) datNormalSkill.tbl[nskill].cost = Convert.ToUInt16(datNormalSkill.tbl[nskill].cost * 0.8);
                         }
+                        // Trumpeter's Final Countdown
+                        if (actionProcessData.work.id == 203 && actionProcessData.party.count[17] % 8 == 0 )
+                        {
+                            datNormalSkill.tbl[nskill].cost = 0;
+                        }
                         // Moirae Spinner
                         bool clothoPresent = false;
                         bool lachesisPresent = false;
@@ -1374,12 +1379,16 @@ namespace NocturneInsaniax
                     datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(SkillPotentialUtility.ApplyAilmentMultiplier(skillPotential, luk, tmp_datNormalSkill.badlevel));
 
                     // Skadi's Queen of Winter
-                    if ((demonID == 17 || demonID == 277) && datSkill.tbl[nskill].skillattr == 2)
+                    if ((demonID == 17 || demonID == 277) && datSkill.tbl[nskill].skillattr == 2 && datNormalSkill.tbl[nskill].basstatus == 2)
                         datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(datNormalSkill.tbl[nskill].badlevel * 1.5);
 
                     // Thor's Odinson
-                    if ((demonID == 22 || demonID == 302 || demonID == 337) && datSkill.tbl[nskill].skillattr == 3)
+                    if ((demonID == 22 || demonID == 302 || demonID == 337) && datSkill.tbl[nskill].skillattr == 3 && datNormalSkill.tbl[nskill].basstatus == 1)
                         datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(datNormalSkill.tbl[nskill].badlevel * 1.5);
+
+                    // Black Frost's Cold World
+                    if ((demonID == 206 || demonID == 303) && nskill != 466 && datSkill.tbl[nskill].skillattr == 2 && datNormalSkill.tbl[nskill].basstatus == 2)
+                        datNormalSkill.tbl[nskill].basstatus = 2048;
 
                     // Contagious Curse
                     bool contagiousCurseActive = false;
@@ -1425,8 +1434,9 @@ namespace NocturneInsaniax
 
             public static void Postfix(ref int nskill) // After attempting to inflinct an ailment
             {
-                if ((nskill < 288 || nskill > 421) && datNormalSkill.tbl[nskill].badlevel != 255)
+                if (datNormalSkill.tbl[nskill].badlevel != 255)
                 {
+                    datNormalSkill.tbl[nskill].basstatus = tmp_datNormalSkill.basstatus; // Revert the ailment
                     datNormalSkill.tbl[nskill].badlevel = tmp_datNormalSkill.badlevel; // Revert the ailment rate
                 }
             }

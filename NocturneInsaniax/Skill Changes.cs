@@ -366,7 +366,7 @@ namespace NocturneInsaniax
                     case 463: __result = "Low Ice damage to one foe. \nLowers target's Defense."; return false; // Jack Bufu
                     case 464: __result = "Slight HP recovery \nfor the party. \n(Cannot be used outside of battle)"; return false; // Humble Blessing
                     case 465: __result = "Massive Physical damage to one foe. \nHigh critical rate."; return false; // Rend
-                    case 466: __result = "Massive Ice damage to one foe. \nLowers target's Defense."; return false; // Jack Bufudyne
+                    case 466: __result = "Massive Ice damage to one foe. \nLowers target's Defense. \nUnaffected by Cold World."; return false; // Jack Bufudyne
                     case 467: __result = "High Physical damage to all foes. \nLowers targets' Attack/Defense/Evasion/Hit Rate."; return false; // Divine Light
                     case 468: __result = "Massive Ice damage to all foes. \nLowers targets' Defense/Evasion."; return false; // Niflheim
                     case 469: __result = "High Strength-based Elec damage \nto one foe. \nDamage relative to HP."; return false; // Mjolnir
@@ -563,7 +563,7 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(30, 0);
                     //datCalc.datAddDevil(111, 0);
                     //datCalc.datAddDevil(185, 0);
-                    datCalc.datAddDevil(201, 0);
+                    datCalc.datAddDevil(206, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    //work.skill[0] = 192;
