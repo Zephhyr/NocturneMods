@@ -206,7 +206,7 @@ namespace NocturneInsaniax
                     //case 42: __result = "Donates MP to one ally."; return false; // Makatora
                     case 59: __result = "Low Nerve damage to one foe. \nMay inflict Bind."; return false; // Shibaboo
                     case 61: __result = "Low Mind damage to one foe. \nMay inflict Panic."; return false; // Pulinpa
-                    case 63: __result = "High Mind damage to all foes. \nMay inflict Panic."; return false; // Tentarafoo
+                    case 63: __result = "Medium Mind damage to all foes. \nMay inflict Panic."; return false; // Tentarafoo
                     case 64: __result = "Raises party's \nPhysical/Magical Attack."; return false; // Tarukaja
                     case 67: __result = "Raises party's \nMagical Attack/Hit Rate."; return false; // Makakaja
                     case 69: __result = "Repels Magical attacks \nfor one ally once \nnext turn."; return false; // Makarakarn
@@ -348,8 +348,8 @@ namespace NocturneInsaniax
                     case 445: __result = "Massive Force damage to all foes."; return false; // Vayavya
                     case 446: __result = "Dark: Chance to instakill one foe."; return false; // Damnation
                     case 447: __result = "Dark: Chance to instakill all foes."; return false; // Millennia Curse
-                    case 448: __result = "Medium Curse damage to random foes. \nMay inflict Poison."; return false; // Poison Volley
-                    case 449: __result = "High Curse damage to one foe. \nMay inflict Poison."; return false; // Poison Salvo
+                    case 448: __result = "Low Curse damage to random foes. \nMay inflict Poison."; return false; // Poison Volley
+                    case 449: __result = "Medium Curse damage to one foe. \nMay inflict Poison."; return false; // Poison Salvo
                     case 450: __result = "High Nerve damage to one foe. \nMay inflict Stun."; return false; // Neural Shock
                     case 451: __result = "High Nerve damage to all foes. \nMay inflict Stun."; return false; // Overload
                     case 452: __result = "High Mind damage to one foe. \nMay inflict Panic."; return false; // Pulinpaon
@@ -374,7 +374,7 @@ namespace NocturneInsaniax
                     case 471: __result = "Massive Strength-based Almighty damage \nto random foes."; return false; // Chaturbhuja
                     case 472: __result = "High Strength-based Force damage \nto one foe. \nDamage relative to HP."; return false; // Kusanagi
                     case 473: __result = "Medium Fire damage to one foe. \nLowers target's Physical/Magical Attack."; return false; // Jack Agilao
-                    case 474: __result = "High Strength-based Force damage \nto one foe. \nDamage relative to HP.  \nHigh critical rate."; return false; // Gae Bolg
+                    case 474: __result = "High Strength-based Force damage \nto one foe. Damage relative to HP. \nAlways critically strikes."; return false; // Gae Bolg
                     case 475: __result = "High Physical damage to one foe. \nDamage relative to HP.  \nIgnores target's -kaja effects"; return false; // Gungnir
                     default: return true;
                 }
@@ -1958,8 +1958,8 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 14;
             datNormalSkill.tbl[id].hpn = 48;
-            datNormalSkill.tbl[id].failpoint = 15;
-            datNormalSkill.tbl[id].criticalpoint = 30;
+            datNormalSkill.tbl[id].failpoint = 14;
+            datNormalSkill.tbl[id].criticalpoint = 28;
 
             tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 5;
         }
@@ -1986,8 +1986,8 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 30;
             datNormalSkill.tbl[id].hpn = 40;
-            datNormalSkill.tbl[id].failpoint = 20;
-            datNormalSkill.tbl[id].criticalpoint = 40;
+            datNormalSkill.tbl[id].failpoint = 18;
+            datNormalSkill.tbl[id].criticalpoint = 36;
         }
 
         private static void HeatWave(ushort id)
@@ -2000,7 +2000,7 @@ namespace NocturneInsaniax
 
         private static void Blight(ushort id)
         {
-            datNormalSkill.tbl[id].cost = 30;
+            datNormalSkill.tbl[id].cost = 24;
             datNormalSkill.tbl[id].hpn = 32;
             datNormalSkill.tbl[id].failpoint = 15;
             datNormalSkill.tbl[id].criticalpoint = 30;
@@ -2042,7 +2042,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hpn = 60;
             datNormalSkill.tbl[id].failpoint = 20;
             datNormalSkill.tbl[id].criticalpoint = 40;
-            datNormalSkill.tbl[id].badlevel = 36;
+            datNormalSkill.tbl[id].badlevel = 30;
         }
 
         private static void MightyGust(ushort id)
@@ -2084,36 +2084,44 @@ namespace NocturneInsaniax
         private static void NeedleRush(ushort id)
         {
             datNormalSkill.tbl[id].cost = 10;
-            datNormalSkill.tbl[id].hpn = 40;
+            datNormalSkill.tbl[id].hpn = 13;
             datNormalSkill.tbl[id].failpoint = 10;
             datNormalSkill.tbl[id].criticalpoint = 20;
+            datNormalSkill.tbl[id].targetcntmax = 4;
+            datNormalSkill.tbl[id].targetcntmin = 2;
         }
 
         private static void StunNeedle(ushort id)
         {
             datNormalSkill.tbl[id].cost = 12;
-            datNormalSkill.tbl[id].hpn = 38;
+            datNormalSkill.tbl[id].hpn = 12;
             datNormalSkill.tbl[id].failpoint = 10;
             datNormalSkill.tbl[id].criticalpoint = 18;
-            datNormalSkill.tbl[id].badlevel = 36;
+            datNormalSkill.tbl[id].badlevel = 18;
+            datNormalSkill.tbl[id].targetcntmax = 4;
+            datNormalSkill.tbl[id].targetcntmin = 2;
         }
 
         private static void VenomNeedle(ushort id)
         {
             datNormalSkill.tbl[id].cost = 12;
-            datNormalSkill.tbl[id].hpn = 38;
+            datNormalSkill.tbl[id].hpn = 12;
             datNormalSkill.tbl[id].failpoint = 10;
             datNormalSkill.tbl[id].criticalpoint = 18;
-            datNormalSkill.tbl[id].badlevel = 36;
+            datNormalSkill.tbl[id].badlevel = 18;
+            datNormalSkill.tbl[id].targetcntmax = 4;
+            datNormalSkill.tbl[id].targetcntmin = 2;
         }
 
         private static void AridNeedle(ushort id)
         {
             datNormalSkill.tbl[id].cost = 12;
-            datNormalSkill.tbl[id].hpn = 36;
+            datNormalSkill.tbl[id].hpn = 11;
             datNormalSkill.tbl[id].failpoint = 10;
             datNormalSkill.tbl[id].criticalpoint = 18;
-            datNormalSkill.tbl[id].badlevel = 30;
+            datNormalSkill.tbl[id].badlevel = 16;
+            datNormalSkill.tbl[id].targetcntmax = 4;
+            datNormalSkill.tbl[id].targetcntmin = 2;
         }
 
         private static void FeralBite(ushort id)
@@ -2130,7 +2138,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hpn = 42;
             datNormalSkill.tbl[id].failpoint = 12;
             datNormalSkill.tbl[id].criticalpoint = 22;
-            datNormalSkill.tbl[id].badlevel = 44;
+            datNormalSkill.tbl[id].badlevel = 22;
         }
 
         private static void CharmBite(ushort id)
@@ -2139,7 +2147,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hpn = 40;
             datNormalSkill.tbl[id].failpoint = 12;
             datNormalSkill.tbl[id].criticalpoint = 22;
-            datNormalSkill.tbl[id].badlevel = 40;
+            datNormalSkill.tbl[id].badlevel = 20;
         }
 
         private static void StoneBite(ushort id)
@@ -2148,7 +2156,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hpn = 40;
             datNormalSkill.tbl[id].failpoint = 12;
             datNormalSkill.tbl[id].criticalpoint = 22;
-            datNormalSkill.tbl[id].badlevel = 40;
+            datNormalSkill.tbl[id].badlevel = 20;
 
             tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 6;
         }
@@ -2159,7 +2167,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hpn = 42;
             datNormalSkill.tbl[id].failpoint = 12;
             datNormalSkill.tbl[id].criticalpoint = 22;
-            datNormalSkill.tbl[id].badlevel = 44;
+            datNormalSkill.tbl[id].badlevel = 22;
         }
 
         private static void HellFang(ushort id)
@@ -2186,7 +2194,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hpn = 42;
             datNormalSkill.tbl[id].failpoint = 12;
             datNormalSkill.tbl[id].criticalpoint = 22;
-            datNormalSkill.tbl[id].badlevel = 44;
+            datNormalSkill.tbl[id].badlevel = 22;
         }
 
         private static void StunClaw(ushort id)
@@ -2195,7 +2203,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hpn = 42;
             datNormalSkill.tbl[id].failpoint = 12;
             datNormalSkill.tbl[id].criticalpoint = 22;
-            datNormalSkill.tbl[id].badlevel = 44;
+            datNormalSkill.tbl[id].badlevel = 22;
         }
 
         private static void IronClaw(ushort id)
@@ -2621,9 +2629,9 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].cost = 17;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 1;
-            datNormalSkill.tbl[id].criticalpoint = 40;
+            datNormalSkill.tbl[id].criticalpoint = 34;
             datNormalSkill.tbl[id].deadtype = 0;
-            datNormalSkill.tbl[id].failpoint = 15;
+            datNormalSkill.tbl[id].failpoint = 14;
             datNormalSkill.tbl[id].flag = 0;
             datNormalSkill.tbl[id].hitlevel = 100;
             datNormalSkill.tbl[id].hitprog = 0;
@@ -2715,7 +2723,7 @@ namespace NocturneInsaniax
             datSkill.tbl[id].index = (short)id;
             datSkill.tbl[id].type = 0;
 
-            datNormalSkill.tbl[id].badlevel = 25;
+            datNormalSkill.tbl[id].badlevel = 24;
             datNormalSkill.tbl[id].badtype = 1;
             datNormalSkill.tbl[id].basstatus = 1024;
             datNormalSkill.tbl[id].cost = 34;
@@ -2821,9 +2829,9 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].cost = 35;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 1;
-            datNormalSkill.tbl[id].criticalpoint = 50;
+            datNormalSkill.tbl[id].criticalpoint = 40;
             datNormalSkill.tbl[id].deadtype = 0;
-            datNormalSkill.tbl[id].failpoint = 15;
+            datNormalSkill.tbl[id].failpoint = 14;
             datNormalSkill.tbl[id].flag = 0;
             datNormalSkill.tbl[id].hitlevel = 100;
             datNormalSkill.tbl[id].hitprog = 0;
@@ -2892,7 +2900,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].mptype = 0;
             datNormalSkill.tbl[id].program = 0;
             datNormalSkill.tbl[id].targetarea = 2;
-            datNormalSkill.tbl[id].targetcntmax = 5;
+            datNormalSkill.tbl[id].targetcntmax = 6;
             datNormalSkill.tbl[id].targetcntmin = 3;
             datNormalSkill.tbl[id].targetprog = 0;
             datNormalSkill.tbl[id].targetrandom = 1;
@@ -3858,7 +3866,7 @@ namespace NocturneInsaniax
             datSkill.tbl[id].index = (short)id;
             datSkill.tbl[id].type = 0;
 
-            datNormalSkill.tbl[id].badlevel = 72;
+            datNormalSkill.tbl[id].badlevel = 66;
             datNormalSkill.tbl[id].badtype = 1;
             datNormalSkill.tbl[id].basstatus = 1;
             datNormalSkill.tbl[id].cost = 8;
@@ -4140,7 +4148,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hpn = 45;
             datNormalSkill.tbl[id].magicbase = 24;
             datNormalSkill.tbl[id].magiclimit = 350;
-            datNormalSkill.tbl[id].badlevel = 20;
+            datNormalSkill.tbl[id].badlevel = 30;
         }
 
         private static void HitokotoStorm(ushort id)
@@ -4478,7 +4486,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].cost = 16;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 1;
-            datNormalSkill.tbl[id].criticalpoint = 40;
+            datNormalSkill.tbl[id].criticalpoint = 100;
             datNormalSkill.tbl[id].deadtype = 0;
             datNormalSkill.tbl[id].failpoint = 10;
             datNormalSkill.tbl[id].flag = 0;
@@ -4488,7 +4496,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 50;
+            datNormalSkill.tbl[id].hpn = 34;
             datNormalSkill.tbl[id].hptype = 6;
             datNormalSkill.tbl[id].koukatype = 0;
             datNormalSkill.tbl[id].magicbase = 20;
@@ -4820,7 +4828,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            OverWriteSkillEffect(id, 192);
+            OverWriteSkillEffect(id, 191);
             var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 9;
@@ -5360,7 +5368,7 @@ namespace NocturneInsaniax
             datSkill.tbl[id].index = (short)id;
             datSkill.tbl[id].type = 0;
 
-            datNormalSkill.tbl[id].badlevel = 30;
+            datNormalSkill.tbl[id].badlevel = 40;
             datNormalSkill.tbl[id].badtype = 1;
             datNormalSkill.tbl[id].basstatus = 64;
             datNormalSkill.tbl[id].cost = 24;
@@ -5376,11 +5384,11 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 24;
+            datNormalSkill.tbl[id].hpn = 18;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].koukatype = 1;
-            datNormalSkill.tbl[id].magicbase = 18;
-            datNormalSkill.tbl[id].magiclimit = 128;
+            datNormalSkill.tbl[id].magicbase = 12;
+            datNormalSkill.tbl[id].magiclimit = 54;
             datNormalSkill.tbl[id].minus = 100;
             datNormalSkill.tbl[id].mpbase = 0;
             datNormalSkill.tbl[id].mpn = 50;
@@ -5421,7 +5429,7 @@ namespace NocturneInsaniax
             datSkill.tbl[id].index = (short)id;
             datSkill.tbl[id].type = 0;
 
-            datNormalSkill.tbl[id].badlevel = 40;
+            datNormalSkill.tbl[id].badlevel = 70;
             datNormalSkill.tbl[id].badtype = 1;
             datNormalSkill.tbl[id].basstatus = 64;
             datNormalSkill.tbl[id].cost = 20;
@@ -5437,11 +5445,11 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 60;
+            datNormalSkill.tbl[id].hpn = 39;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].koukatype = 1;
-            datNormalSkill.tbl[id].magicbase = 24;
-            datNormalSkill.tbl[id].magiclimit = 432;
+            datNormalSkill.tbl[id].magicbase = 18;
+            datNormalSkill.tbl[id].magiclimit = 196;
             datNormalSkill.tbl[id].minus = 100;
             datNormalSkill.tbl[id].mpbase = 0;
             datNormalSkill.tbl[id].mpn = 50;
@@ -5499,7 +5507,7 @@ namespace NocturneInsaniax
             datSkill.tbl[id].index = (short)id;
             datSkill.tbl[id].type = 0;
 
-            datNormalSkill.tbl[id].badlevel = 30;
+            datNormalSkill.tbl[id].badlevel = 70;
             datNormalSkill.tbl[id].badtype = 1;
             datNormalSkill.tbl[id].basstatus = 256;
             datNormalSkill.tbl[id].cost = 20;
@@ -5515,11 +5523,11 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 51;
+            datNormalSkill.tbl[id].hpn = 39;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].koukatype = 1;
-            datNormalSkill.tbl[id].magicbase = 24;
-            datNormalSkill.tbl[id].magiclimit = 370;
+            datNormalSkill.tbl[id].magicbase = 18;
+            datNormalSkill.tbl[id].magiclimit = 196;
             datNormalSkill.tbl[id].minus = 100;
             datNormalSkill.tbl[id].mpbase = 0;
             datNormalSkill.tbl[id].mpn = 50;
@@ -5549,7 +5557,7 @@ namespace NocturneInsaniax
             datSkill.tbl[id].index = (short)id;
             datSkill.tbl[id].type = 0;
 
-            datNormalSkill.tbl[id].badlevel = 20;
+            datNormalSkill.tbl[id].badlevel = 50;
             datNormalSkill.tbl[id].badtype = 1;
             datNormalSkill.tbl[id].basstatus = 256;
             datNormalSkill.tbl[id].cost = 45;
@@ -5565,11 +5573,11 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 40;
+            datNormalSkill.tbl[id].hpn = 30;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].koukatype = 1;
-            datNormalSkill.tbl[id].magicbase = 24;
-            datNormalSkill.tbl[id].magiclimit = 296;
+            datNormalSkill.tbl[id].magicbase = 18;
+            datNormalSkill.tbl[id].magiclimit = 154;
             datNormalSkill.tbl[id].minus = 100;
             datNormalSkill.tbl[id].mpbase = 0;
             datNormalSkill.tbl[id].mpn = 50;
@@ -5617,10 +5625,10 @@ namespace NocturneInsaniax
         private static void Tentarafoo(ushort id)
         {
             datNormalSkill.tbl[id].cost = 45;
-            datNormalSkill.tbl[id].hpn = 40;
-            datNormalSkill.tbl[id].magicbase = 24;
-            datNormalSkill.tbl[id].magiclimit = 296;
-            datNormalSkill.tbl[id].badlevel = 25;
+            datNormalSkill.tbl[id].hpn = 30;
+            datNormalSkill.tbl[id].magicbase = 18;
+            datNormalSkill.tbl[id].magiclimit = 154;
+            datNormalSkill.tbl[id].badlevel = 30;
         }
 
         private static void Dormina(ushort id)
@@ -5697,7 +5705,7 @@ namespace NocturneInsaniax
             datSkill.tbl[id].index = (short) id;
             datSkill.tbl[id].type = 0;
 
-            datNormalSkill.tbl[id].badlevel = 40;
+            datNormalSkill.tbl[id].badlevel = 70;
             datNormalSkill.tbl[id].badtype = 1;
             datNormalSkill.tbl[id].basstatus = 8;
             datNormalSkill.tbl[id].cost = 20;
@@ -5713,11 +5721,11 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 51;
+            datNormalSkill.tbl[id].hpn = 39;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].koukatype = 1;
-            datNormalSkill.tbl[id].magicbase = 24;
-            datNormalSkill.tbl[id].magiclimit = 432;
+            datNormalSkill.tbl[id].magicbase = 18;
+            datNormalSkill.tbl[id].magiclimit = 196;
             datNormalSkill.tbl[id].minus = 100;
             datNormalSkill.tbl[id].mpbase = 0;
             datNormalSkill.tbl[id].mpn = 50;
