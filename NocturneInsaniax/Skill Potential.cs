@@ -1075,9 +1075,15 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref datUnitWork_t w, ref int nskill) // Before getting the cost of a skill during battle
             {
-                if (nskill < 288 || nskill > 421) // If it isn't a passive skill
+                if ((nskill < 288 || nskill > 421) && nskill != 265) // If it isn't a passive skill
                 {
                     tmp_datNormalSkill.cost = datNormalSkill.tbl[nskill].cost; // Memorize the original skill cost
+
+                    // Arms Master
+                    if (datCalc.datCheckSyojiSkill(actionProcessData.work, 371) != 0)
+                    {
+                        datNormalSkill.tbl[nskill].cost = Convert.ToUInt16(datNormalSkill.tbl[nskill].cost * 0.5);
+                    }
 
                     sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(nskill, w.id);
 
@@ -1199,11 +1205,17 @@ namespace NocturneInsaniax
                 bool numDraw = false;
                 uint ctype;
 
-                if (SkillID < 288 || SkillID > 421) // If it isn't a passive skill
+                if ((SkillID < 288 || SkillID > 421) && SkillID != 265) // If it isn't a passive skill
                 {
                     tmp_datNormalSkill.cost = datNormalSkill.tbl[SkillID].cost; // Memorize the original skill cost
 
                     sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(SkillID, pStock.id);
+
+                    // Arms Master
+                    if (datCalc.datCheckSyojiSkill(pStock, 371) != 0)
+                    {
+                        datNormalSkill.tbl[SkillID].cost = Convert.ToUInt16(datNormalSkill.tbl[SkillID].cost * 0.5);
+                    }
 
                     if (skillPotential != 0)
                     {

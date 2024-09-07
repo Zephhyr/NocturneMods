@@ -304,10 +304,14 @@ namespace NocturneInsaniax
                 datUnitWork_t workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
                 //datUnitWork_t workFromFormindex2 = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
 
-                var maxhp = (double) workFromFormindex1.maxhp;
-                var currenthp = (double) (int) (workFromFormindex1.hp + (datCalc.datGetSkillCost(workFromFormindex1, nskill) * maxhp / 100));
-                double hpPercentage = (currenthp / maxhp);
-                double hpModifier = 0.5 + (hpPercentage / 2);
+                double hpModifier = 1;
+                if (datCalc.datCheckSyojiSkill(actionProcessData.work, 371) == 0) // Arms Master
+                {
+                    var maxhp = (double)workFromFormindex1.maxhp;
+                    var currenthp = (double)(int)(workFromFormindex1.hp + (datCalc.datGetSkillCost(workFromFormindex1, nskill) * maxhp / 100));
+                    double hpPercentage = (currenthp / maxhp);
+                    hpModifier = 0.5 + (hpPercentage / 2);
+                }
 
                 //double atkPow = workFromFormindex1.maxhp * waza * 0.8 / 69.6;
                 double atkPow = ((workFromFormindex1.level + datCalc.datGetParam(workFromFormindex1, 0)) * waza / 15) * hpModifier;
@@ -446,7 +450,7 @@ namespace NocturneInsaniax
 
                 if (isWeak)
                     __result = 2; // Weak hit
-                else if (aisyo == 65536 || aisyo == 131072 || aisyo == 262144)
+                else if (aisyo == 65536 || aisyo == 131072 || aisyo == 262144 || datCalc.datCheckSyojiSkill(workFromFormindex1, 372) != 0) // If target is immune or has Firm Stance
                     __result = 0; // Normal hit
                 else if ((workFromFormindex2.badstatus == 4 || workFromFormindex2.badstatus == 256 ||// If target is asleep or stunned
                     (datSkill.tbl[nskill].skillattr == 1 && workFromFormindex2.badstatus == 64) || // If attack is fire and target is poisoned
@@ -673,14 +677,15 @@ namespace NocturneInsaniax
                         __result = 0; // Hit
                         return;
                     }
-                    // Guaranteed hit against enemies affected by certain status
+                    // Guaranteed hit against enemies affected by certain status or if the target has Firm Stance
                     else if (datNormalSkill.tbl[nskill].hitlevel == 255 ||
                         workFromFormindex2.badstatus == 1 || // Shocked
                         workFromFormindex2.badstatus == 2 || // Frozen
                         workFromFormindex2.badstatus == 4 || // Asleep
                         workFromFormindex2.badstatus == 16 || // Bound
                         workFromFormindex2.badstatus == 256 || // Stunned
-                        workFromFormindex2.badstatus == 1024) // Petrified
+                        workFromFormindex2.badstatus == 1024 || // Petrified
+                        datCalc.datCheckSyojiSkill(workFromFormindex1, 372) != 0)
                     {
                         __result = 0; // Hit
                         return;

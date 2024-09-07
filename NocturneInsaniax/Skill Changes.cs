@@ -94,14 +94,17 @@ namespace NocturneInsaniax
                     case 308: __result = "Double Attack"; return false;
                     case 360: __result = "Never Yield"; return false;      
                     case 362: __result = "Phys Boost"; return false;
-                    case 363: __result = "Magic Boost"; return false;
-                    case 364: __result = "Anti-Magic"; return false;
+                    case 363: __result = "Element Boost"; return false;
+                    case 364: __result = "Anti-Elements"; return false;
                     case 365: __result = "Anti-Ailments"; return false;
                     case 366: __result = "Abyssal Mask"; return false;
                     case 367: __result = "Knowledge of Tools"; return false;
                     case 368: __result = "Renewal"; return false;
                     case 369: __result = "Spirit Well"; return false;
                     case 370: __result = "Qigong"; return false;
+                    case 371: __result = "Arms Master"; return false;
+                    case 372: __result = "Firm Stance"; return false;
+                    case 373: __result = "Enduring Soul"; return false;
 
                     case 403: __result = "Estocada"; return false;
                     case 404: __result = "Nation Founder"; return false;
@@ -195,93 +198,225 @@ namespace NocturneInsaniax
                 switch (id)
                 {
                     // Vanilla Skills
-                    case 28: __result = "Low Light damage to one foe. \nMay instakill when weak to Light."; return false; // Hama
-                    case 29: __result = "High Light damage to one foe. \nMay instakill when weak to Light."; return false; // Hamaon
-                    case 30: __result = "Low Light damage to all foes. \nMay instakill when weak to Light."; return false; // Mahama
-                    case 31: __result = "High Light damage to all foes. \nMay instakill when weak to Light."; return false; // Mahamaon
-                    case 32: __result = "Low Dark damage to one foe. \nMay instakill when weak to Dark."; return false; // Mudo
-                    case 33: __result = "High Dark damage to one foe. \nMay instakill when weak to Dark."; return false; // Mudoon
-                    case 34: __result = "Low Dark damage to all foes. \nMay instakill when weak to Dark."; return false; // Mamudo
-                    case 35: __result = "High Dark damage to all foes. \nMay instakill when weak to Dark."; return false; // Mamudoon
+                    case 1: __result = "Low Fire damage to one foe. \nPow: 30, Acc: 100%"; return false; // Agi
+                    case 2: __result = "Medium Fire damage to one foe. \nPow: 45, Acc: 100%"; return false; // Agilao
+                    case 3: __result = "High Fire damage to one foe. \nPow: 60, Acc: 100%"; return false; // Agidyne
+                    case 4: __result = "Low Fire damage to all foes. \nPow: 24, Acc: 100%"; return false; // Maragi
+                    case 5: __result = "Medium Fire damage to all foes. \nPow: 36, Acc: 100%"; return false; // Maragion
+                    case 6: __result = "High Fire damage to all foes. \nPow: 48, Acc: 100%"; return false; // Maragidyne
+                    case 7: __result = "Low Ice damage to one foe. \nPow: 27, Acc: 100%, Freeze: 20%"; return false; // Bufu
+                    case 8: __result = "Medium Ice damage to one foe. \nPow: 39, Acc: 100%, Freeze: 25%"; return false; // Bufula
+                    case 9: __result = "High Ice damage to one foe. \nPow: 51, Acc: 100%, Freeze: 30%"; return false; // Bufudyne
+                    case 10: __result = "Low Ice damage to all foes. \nPow: 20, Acc: 100%, Freeze: 12%"; return false; // Mabufu
+                    case 11: __result = "Medium Ice damage to all foes. \nPow: 30, Acc: 100%, Freeze: 15%"; return false; // Mabufula
+                    case 12: __result = "High Ice damage to all foes. \nPow: 40, Acc: 100%, Freeze: 18%"; return false; // Mabufudyne
+                    case 13: __result = "Low Elec damage to one foe. \nPow: 27, Acc: 100%, Shock: 20%"; return false; // Zio
+                    case 14: __result = "Medium Elec damage to one foe. \nPow: 39, Acc: 100%, Shock: 25%"; return false; // Zionga
+                    case 15: __result = "High Elec damage to one foe. \nPow: 51, Acc: 100%, Shock: 30%"; return false; // Ziodyne
+                    case 16: __result = "Low Elec damage to all foes. \nPow: 20, Acc: 100%, Shock: 12%"; return false; // Mazio
+                    case 17: __result = "Medium Elec damage to all foes. \nPow: 30, Acc: 100%, Shock: 15%"; return false; // Mazionga
+                    case 18: __result = "High Elec damage to all foes. \nPow: 40, Acc: 100%, Shock: 18%"; return false; // Maziodyne
+                    case 19: __result = "Low Force damage to one foe. \nPow: 30, Acc: 100%"; return false; // Zan
+                    case 20: __result = "Medium Force damage to one foe. \nPow: 45, Acc: 100%"; return false; // Zanma
+                    case 21: __result = "High Force damage to one foe. \nPow: 60, Acc: 100%"; return false; // Zandyne
+                    case 22: __result = "Low Force damage to all foes. \nPow: 24, Acc: 100%"; return false; // Mazan
+                    case 23: __result = "Medium Force damage to all foes. \nPow: 36, Acc: 100%"; return false; // Mazanma
+                    case 24: __result = "High Force damage to all foes. \nPow: 48, Acc: 100%"; return false; // Mazandyne
+                    case 25: __result = "Medium Almighty damage to all foes. \nPow: 36, Acc: 100%"; return false; // Megido
+                    case 26: __result = "Med-High Almighty damage to all foes. \nPow: 42, Acc: 100%"; return false; // Megidola
+                    case 27: __result = "High Almighty damage to all foes. \nPow: 48, Acc: 100%"; return false; // Megidolaon
+                    case 28: __result = "Low Light damage to one foe. \nMay instakill when weak to Light. \nPow: 36, Acc: 100%, Fatal: 30%"; return false; // Hama
+                    case 29: __result = "Med-High Light damage to one foe. \nMay instakill when weak to Light. \nPow: 54, Acc: 100%, Fatal: 50%"; return false; // Hamaon
+                    case 30: __result = "Low Light damage to all foes. \nMay instakill when weak to Light. \nPow: 30, Acc: 100%, Fatal: 20%"; return false; // Mahama
+                    case 31: __result = "Med-High Light damage to all foes. \nMay instakill when weak to Light. \nPow: 42, Acc: 100%, Fatal: 30%"; return false; // Mahamaon
+                    case 32: __result = "Low Dark damage to one foe. \nMay instakill when weak to Dark. \nPow: 36, Acc: 100%, Fatal: 30%"; return false; // Mudo
+                    case 33: __result = "Med-High Dark damage to one foe. \nMay instakill when weak to Dark. \nPow: 54, Acc: 100%, Fatal: 50%"; return false; // Mudoon
+                    case 34: __result = "Low Dark damage to all foes. \nMay instakill when weak to Dark. \nPow: 30, Acc: 100%, Fatal: 20%"; return false; // Mamudo
+                    case 35: __result = "Med-High Dark damage to all foes. \nMay instakill when weak to Dark. \nPow: 42, Acc: 100%, Fatal: 30%"; return false; // Mamudoon
+                    case 36: __result = "Moderate HP recovery for one ally. \nPow: 10"; return false; // Dia
+                    case 37: __result = "Great HP recovery for one ally. \nPow: 20"; return false; // Diarama
+                    case 38: __result = "Full HP recovery for one ally."; return false; // Diarahan
+                    case 39: __result = "Moderate HP recovery for one ally. \nPow: 10"; return false; // Media
+                    case 40: __result = "Great HP recovery for one ally. \nPow: 20"; return false; // Mediarama
+                    case 41: __result = "Full HP recovery for one ally."; return false; // Mediarahan
                     //case 42: __result = "Donates MP to one ally."; return false; // Makatora
-                    case 59: __result = "Low Nerve damage to one foe. \nMay inflict Bind."; return false; // Shibaboo
-                    case 61: __result = "Low Mind damage to one foe. \nMay inflict Panic."; return false; // Pulinpa
-                    case 63: __result = "Medium Mind damage to all foes. \nMay inflict Panic."; return false; // Tentarafoo
-                    case 64: __result = "Raises party's \nPhysical/Magical Attack."; return false; // Tarukaja
-                    case 67: __result = "Raises party's \nMagical Attack/Hit Rate."; return false; // Makakaja
-                    case 69: __result = "Repels Magical attacks \nfor one ally once \nnext turn."; return false; // Makarakarn
-                    case 70: __result = "Repels Physical attacks \nfor one ally once \nnext turn."; return false; // Tetrakarn
-                    case 79: __result = "Medium Almighty damage to all foes. \nInstakills when poisoned."; return false; // Pestilence
-                    case 90: __result = "Low Curse damage to one foe. \nMay inflict Poison."; return false; // Poison Arrow
-                    case 101: __result = "Low Physical damage to all foes. \nDamage relative to HP."; return false; // Heat Wave
-                    case 102: __result = "Medium Physical damage to all foes. \nMay inflict Poison. \nDamage relative to HP."; return false; // Blight
-                    case 103: __result = "Medium Physical damage to one foe. \nDamage relative to HP."; return false; // Brutal Slash
-                    case 104: __result = "Massive Physical damage to all foes. \nDamage relative to HP."; return false; // Hassohappa
-                    case 105: __result = "Massive Physical damage to one foe. \nMay inflict Mute. \nDamage relative to HP."; return false; // Dark Sword
-                    case 106: __result = "Massive Physical damage to one foe. \nMay inflict Bind. \nDamage relative to HP."; return false; // Stasis Blade
-                    case 107: __result = "Low Physical damage to one foe. \nDamage relative to HP."; return false; // Mighty Gust
-                    case 108: __result = "High Physical damage to random foes. \nDamage relative to HP."; return false; // Deathbound
-                    case 109: __result = "High Physical damage to one foe. \nMay inflict Stun. \nDamage relative to HP."; return false; // Guillotine
-                    case 110: __result = "High Physical damage to random foes. \nMay inflict Panic. \nDamage relative to HP."; return false; // Deathbound
-                    case 127: __result = "High Light damage to all foes. \nMay inflict Mute."; return false; // Godly Light
-                    case 131: __result = "High Physical damage to all foes. \nHigh critical rate."; return false; // Deadly Fury
-                    case 133: __result = "Medium Physical damage to all foes. \nMay inflict Bind."; return false; // Javelin Rain
-                    case 136: __result = "High Physical damage to one foe."; return false; // Divine Shot
-                    case 143: __result = "High Physical damage to all foes. \nMay inflict Mute."; return false; // Xeros Beat
-                    case 144: __result = "High Physical damage to all foes."; return false; // Oni Kagura
-                    case 147: __result = "Massive Strength-based Almighty damage to one foe."; return false; // Freikugel
-                    case 181: __result = "Medium Ice damage to random foes."; return false; // Glacial Blast
-                    case 183: __result = "Medium Elec damage to random foes."; return false; // Bolt Storm
-                    case 185: __result = "Medium Force damage to random foes."; return false; // Tornado
-                    case 187: __result = "High Force damage to all foes. \nMay inflict Stun."; return false; // Wet Wind
-                    case 193: __result = "Medium Light damage to one foe."; return false; // Violet Flash
-                    case 194: __result = "Medium Light damage to all foes."; return false; // Starlight
-                    case 195: __result = "Massive Light damage to all foes."; return false; // Radiance
-                    case 199: __result = "Dark: Chance to reduce HP of one foe to 1."; return false; // Evil Gaze
-                    case 202: __result = "Lowers all foes' Defense. \nMay inflict Poison."; return false; // Toxic Spray
-                    case 207: __result = "Medium Curse damage to all foes. \nMay inflict Mute."; return false; // Dismal Tune
-                    case 208: __result = "Chance to reduce HP of all foes to 1."; return false; // Sol Niger
-                    case 217: __result = "Massive Mind damage to all foes. \nMay inflict Panic."; return false; // Intoxicate
-                    case 224: __result = "More than doubles the damage of \nthe next Strength-based attack."; return false; // Focus
-                    case 242: __result = "High Almighty damage to all foes. \nMay inflict random ailments."; return false; // God's Curse
-                    case 244: __result = "Medium Ice damage to all foes. \nLowers targets' Evasion/Hit Rate."; return false; // Icy Death
-                    case 249: __result = "High Mind damage to random foes. \nMay inflict Panic."; return false; // Wild Dance
-                    case 250: __result = "Drains HP/MP from one foe."; return false; // Domination
-                    case 259: __result = "Massive Almighty damage to all foes. \nInstakills when not immune to Dark."; return false; // Death Flies
-                    case 260: __result = "Massive Almighty damage to all foes. \nInstakills when not immune to Dark."; return false; // Death Flies
-                    case 261: __result = "High Curse damage to all foes. \nInflicts Mute. Low accuracy."; return false; // Soul Divide
-                    case 262: __result = "Low Physical damage to one foe. \nLowers target's Evasion/Defense."; return false; // Boogie-Woogie/E & I
-                    case 266: __result = "Medium Strength-based Almighty damage \nto one foe. \nMay instakill when not immune to Dark."; return false; // Tekisatsu/Stinger
-                    case 267: __result = "High Elec damage to all foes. \nLowers targets' Evasion/Hit Rate."; return false; // Mishaguji Raiden/Roundtrip
-                    case 268: __result = "High Force damage to all foes. \nLowers targets' Physical/Magical Attack."; return false; // Hitokoto Storm/Whirlwind
+                    case 43: __result = "Cures Bind/Sleep/Panic for one ally."; return false; // Patra
+                    case 44: __result = "Cures Bind/Sleep/Panic for all allies."; return false; // Me Patra
+                    case 45: __result = "Cures Mute for one ally."; return false; // Mutudi
+                    case 46: __result = "Cures Poison for one ally."; return false; // Posumudi
+                    case 47: __result = "Cures Stun for one ally."; return false; // Paraladi
+                    case 48: __result = "Cures Stone for one ally."; return false; // Petradi
+                    case 49: __result = "Revives one ally with slight HP."; return false; // Recarm
+                    case 50: __result = "Revives one ally to full HP."; return false; // Samarecarm
+                    case 51: __result = "Sacrifice self to fully recover allies' HP/MP."; return false; // Recarmdra
+                    case 52: __result = "Lowers all foes' \nPhysical/Magical Attack \nby one rank."; return false; // Tarunda
+                    case 53: __result = "Lowers all foes' Evasion/Hit Rate \nby one rank."; return false; // Sukunda
+                    case 54: __result = "Lowers all foes' Defense \nby one rank."; return false; // Rakunda
+                    case 55: __result = "50% Chance to inflict Mute \non one foe. (Curse-Type)"; return false; // Makajam
+                    case 56: __result = "25% Chance to inflict Mute \non all foes. (Curse-Type)"; return false; // Makajamon
+                    case 57: __result = "Negates -kaja effects on all foes."; return false; // Dekaja
+                    case 59: __result = "Low Nerve damage to one foe. \nPow: 30, Acc: 100%, Bind: 30%"; return false; // Shibaboo
+                    case 60: __result = "30% Chance to inflict Sleep \non all foes. (Mind-Type)"; return false; // Lullaby
+                    case 61: __result = "Low Mind damage to one foe. \nPow: 30, Acc: 100%, Panic: 30%"; return false; // Pulinpa
+                    case 62: __result = "50% Chance to inflict Charm \non one foe. (Mind-Type)"; return false; // Marin Karin
+                    case 63: __result = "Medium Mind damage to all foes. \nPow: 30, Acc: 100%, Panic: 40%"; return false; // Tentarafoo
+                    case 64: __result = "Raises all allies' \nPhysical/Magical Attack \nby one rank."; return false; // Tarukaja
+                    case 65: __result = "Raises all allies' Evasion/Hit Rate \nby one rank."; return false; // Sukukaja
+                    case 66: __result = "Raises all allies' Defense \nby one rank."; return false; // Rakukaja
+                    case 67: __result = "Raises all allies' \nMagical Attack/Hit Rate \nby one rank."; return false; // Makakaja
+                    case 68: __result = "Protects all allies from \none Light/Dark attack."; return false; // Tetraja
+                    case 69: __result = "Repels Magic-based attacks \nfor one ally once \nnext turn."; return false; // Makarakarn
+                    case 70: __result = "Repels Strength-based attacks \nfor one ally once \nnext turn."; return false; // Tetrakarn
+                    case 71: __result = "Displays an enemy's info."; return false; // Analyze
+                    case 72: __result = "Escape from most battles without fail."; return false; // Trafuri
+                    case 73: __result = "Reduces encounter rate \nof low-level demons \nuntil a new Kagutsuchi."; return false; // Trafuri
+                    case 74: __result = "Raises encounter rate \nuntil a new Kagutsuchi."; return false; // Riberama
+                    case 75: __result = "Negates floor damage \nuntil a new Kagutsuchi."; return false; // Liftoma
+                    case 76: __result = "Lights up dark areas \nuntil a new Kagutsuchi."; return false; // Lightoma
+                    case 77: __result = "Negates -nda effects on all allies."; return false; // Dekunda
+                    case 79: __result = "Medium Almighty damage to all foes. \nInstakills when poisoned. \nPow: 36, Acc: 100%, Fatal: 100%"; return false; // Pestilence
+                    case 90: __result = "Low Curse damage to one foe. \nPow: 30, Acc: 100%, Poison: 30%"; return false; // Poison Arrow
+                    case 96: __result = "Low Physical damage to one foe. \nPow: 42, Acc: 90%, Crit: 20%"; return false; // Lunge
+                    case 97: __result = "Medium Physical damage to one foe. \nPow: 48, Acc: 86%, Crit: 28%"; return false; // Hell Thrust
+                    case 98: __result = "Low Physical damage to random foes. \n 2-5 hits. Pow: 20, Acc: 94%, \nCrit: 12%"; return false; // Berserk
+                    case 99: __result = "Medium Physical damage to all foes. \nPow: 30, Acc: 85%, Crit: 25%"; return false; // Tempest
+                    case 100: __result = "High Physical damage to all foes. \nPow: 40, Acc: 82%, Crit: 36%"; return false; // Hades Blast
+                    case 101: __result = "Low Physical damage to all foes. \nHP-based. Max Pow: 24, Acc: 88%, \nCrit: 24%"; return false; // Heat Wave
+                    case 102: __result = "Medium Physical damage to all foes. \nHP-based. Max Pow: 32, Acc: 85%, \nCrit: 30%, Poison: 24%"; return false; // Blight
+                    case 103: __result = "Medium Physical damage to one foe. \nHP-based. Max Pow: 52, Acc: 88%, \nCrit: 24%"; return false; // Brutal Slash
+                    case 104: __result = "Mega Physical damage to all foes. \nHP-based. Max Pow: 48, Acc: 80%, \nCrit: 40%"; return false; // Hassohappa
+                    case 105: __result = "High Physical damage to one foe. \nHP-based. Max Pow: 60, Acc: 80%, \nCrit: 40%, Mute: 30%"; return false; // Dark Sword
+                    case 106: __result = "High Physical damage to one foe. \nHP-based. Max Pow: 60, Acc: 80%, \nCrit: 40%, Bind: 30%"; return false; // Stasis Blade
+                    case 107: __result = "Low Physical damage to one foe. \nHP-based. Max Pow: 48, Acc: 90%, \nCrit: 20%"; return false; // Mighty Gust
+                    case 108: __result = "High Physical damage to random foes. \n3-5 hits. HP-based. Max Pow: 40, \nAcc: 94%, Crit: 20%"; return false; // Deathbound
+                    case 109: __result = "High Physical damage to one foe. \nHP-based. Max Pow: 56, Acc: 85%, \nCrit: 30%, Stun: 30."; return false; // Guillotine
+                    case 110: __result = "High Physical damage to random foes. \n3-5 hits. HP-based. Max Pow: 30, \nAcc: 92%, Crit: 20%, Panic: 24%"; return false; // Chaos Blade
+                    case 111: __result = "Low Physical damage to one foe. \n2-4 hits. Pow: 13, Acc: 90%, \nCrit: 20%"; return false; // Needle Rush
+                    case 112: __result = "Low Physical damage to one foe. \n2-4 hits. Pow: 12, Acc: 90%, \nCrit: 18%, Stun: 18%"; return false; // Stun Needle
+                    case 113: __result = "Low Physical damage to one foe. \n2-4 hits. Pow: 12, Acc: 90%, \nCrit: 18%, Poison: 18%"; return false; // Venom Needle
+                    case 114: __result = "Low Physical damage to one foe. \n2-4 hits. Pow: 11, Acc: 90%, \nCrit: 18%, Stone: 16%"; return false; // Arid Needle
+                    case 115: __result = "Sacrifice self to deal Mega Str-based \nAlmighty damage to all foes. \nPow: 55, Acc: 90%, Crit: 20%"; return false; // Sacrifice
+                    case 116: __result = "Sacrifice self to deal Mega Str-based \nAlmighty damage to one foe. \nPow: 80, Acc: 90%, Crit: 20%"; return false; // Kamikaze
+                    case 117: __result = "Low Physical damage to one foe. \nPow: 44, Acc: 88%, Crit: 24%"; return false; // Feral Bite
+                    case 118: __result = "Low Physical damage to one foe. \nPow: 42, Acc: 88%, Crit: 22%, \nPoison: 22%"; return false; // Venom Bite
+                    case 119: __result = "Low Physical damage to one foe. \nPow: 42, Acc: 88%, Crit: 22%, \nCharm: 22%"; return false; // Charm Bite
+                    case 120: __result = "Low Physical damage to one foe. \nPow: 40, Acc: 88%, Crit: 22%, \nStone: 20%"; return false; // Stone Bite
+                    case 121: __result = "Low Physical damage to one foe. \nPow: 42, Acc: 88%, Crit: 22%, \nStun: 22%"; return false; // Stun Bite
+                    case 122: __result = "High Physical damage to one foe. \nPow: 56, Acc: 80%, Crit: 40%"; return false; // Hell Fang
+                    case 123: __result = "Low Physical damage to one foe. \nPow: 44, Acc: 88%, Crit: 24%"; return false; // Feral Claw
+                    case 124: __result = "Low Physical damage to one foe. \nPow: 42, Acc: 88%, Crit: 22%, \nPoison: 22%"; return false; // Venom Claw
+                    case 125: __result = "Low Physical damage to one foe. \nPow: 42, Acc: 88%, Crit: 22%, \nStun: 22%"; return false; // Stun Claw
+                    case 126: __result = "High Physical damage to one foe. \nPow: 56, Acc: 80%, Crit: 40%"; return false; // Iron Claw
+                    case 127: __result = "High Light damage to all foes. \nPow: 48, Acc: 100%, Mute: 30%"; return false; // Godly Light
+                    case 131: __result = "High Physical damage to all foes. \nPow: 44, Acc: 95%, Crit: 40%"; return false; // Deadly Fury
+                    case 133: __result = "Medium Physical damage to all foes. \nPow: 32, Acc: 95%, Crit: 24%, \nBind: 30%"; return false; // Javelin Rain
+                    case 136: __result = "Medium Mag-based Physical damage to \none foe. Pow: 34, Acc: 120%, \nCrit: 100%"; return false; // Divine Shot
+                    case 143: __result = "Medium Physical damage to all foes. \nPow: 36, Acc: 95%, Crit: 24%, \nMute: 30%"; return false; // Xeros Beat
+                    case 144: __result = "High Physical damage to all foes. \nPow: 42, Acc: 95%, Crit: 30%"; return false; // Oni Kagura
+                    case 147: __result = "Mega Str-based Almighty damage to \none foe. Pow: 66, Acc: 95%, Crit: 30%"; return false; // Freikugel
+                    case 152: __result = "Sacrifice self to deal Mega Str-based \nAlmighty damage to all foes and allies. \nPow: 60, Acc: 100%, Crit: 0%"; return false; // Last Resort
+                    case 155: __result = "Mega Physical damage to all foes. \nPow: 60, Acc: 200%, Crit: 0%, \nStun: 20%"; return false; // Earthquake
+                    case 160: __result = "Mega Physical damage to one foe. \nPow: 62, Acc: 95%, Crit: 30%"; return false; // Spiral Viper
+                    case 161: __result = "Mega Fire damage to one foe. \nPow: 80, Acc: 100%"; return false; // Magma Axis
+                    case 163: __result = "Mega Physical damage to all foes. \nPow: 52, Acc: 95%, Crit: 30%"; return false; // Gaea Rage
+                    case 176: __result = "Low Fire damage to random foes. \n3-5 hits. Pow: 20, Acc: 100%"; return false; // Fire Breath
+                    case 177: __result = "Medium Fire damage to random foes. \n3-6 hits. Pow: 30, Acc: 100%"; return false; // Hellfire
+                    case 178: __result = "High Fire damage to random foes. \n3-7 hits. Pow: 40, Acc: 100%"; return false; // Prominence
+                    case 179: __result = "Mega Fire damage to one foe. \nPow: 80, Acc: 100%"; return false; // Trisagion
+                    case 180: __result = "Low Ice damage to random foes. \n3-5 hits. Pow: 18, Acc: 100%, \nFreeze: 15%"; return false; // Ice Breath
+                    case 181: __result = "Medium Ice damage to random foes. \n3-6 hits. Pow: 24, Acc: 100%, \nFreeze: 18%"; return false; // Glacial Blast
+                    case 182: __result = "Low Elec damage to random foes. \n3-5 hits. Pow: 18, Acc: 100%, \nShock: 15%"; return false; // Shock
+                    case 183: __result = "Medium Elec damage to random foes. \n3-6 hits. Pow: 24, Acc: 100%, \nShock: 18%"; return false; // Bolt Storm
+                    case 184: __result = "Low Force damage to random foes. \n3-5 hits. Pow: 20, Acc: 100%"; return false; // Wing Buffet
+                    case 185: __result = "Medium Force damage to random foes. \n3-6 hits. Pow: 30, Acc: 100%"; return false; // Tornado
+                    case 186: __result = "Mega Force damage to one foe. \nPow: 80, Acc: 100%"; return false; // Wind Cutter
+                    case 187: __result = "High Force damage to all foes. \nPow: 45, Acc: 100%, Stun: 30%"; return false; // Wet Wind
+                    case 190: __result = "Drains HP from one foe. \nPow: 27, Acc: 100% (Almighty-Type)"; return false; // Deathtouch
+                    case 191: __result = "Drains MP from one foe. \nPow: 14, Acc: 100% (Almighty-Type)"; return false; // Mana Drain
+                    case 192: __result = "Drains HP/MP from one foe. \nPow: 27/14, Acc: 100% \n(Almighty-Type)"; return false; // Life Drain
+                    case 193: __result = "Medium Light damage to one foe. \nPow: 45, Acc: 100%"; return false; // Violet Flash
+                    case 194: __result = "Medium Light damage to all foes. \nPow: 36, Acc: 100%"; return false; // Starlight
+                    case 195: __result = "Mega Light damage to all foes. \nPow: 60, Acc: 100%"; return false; // Radiance
+                    case 196: __result = "60% Chance to instakill one foe. \n(Dark-Type)"; return false; // Hell Gaze
+                    case 197: __result = "60% Chance to inflict Stone \non one foe. (Dark-Type)"; return false; // Stone Gaze
+                    case 198: __result = "60% Chance to inflict Mute \non one foe. (Curse-Type)"; return false; // Mute Gaze
+                    case 199: __result = "60% Chance to reduce HP of one foe \nto 1. (Dark-Type)"; return false; // Evil Gaze
+                    case 202: __result = "Lowers all foes' Defense by one rank. \n30% Chance to inflict Poison. \n(Curse-Type)"; return false; // Toxic Spray
+                    case 203: __result = "Lowers all foes' \nPhysical/Magical Attack \nby two ranks."; return false; // War Cry
+                    case 204: __result = "Lowers all foes' Evasion/Hit Rate \nby two ranks."; return false; // Fog Breath
+                    case 205: __result = "Lowers Defense and raises \nPhysical Attack by two ranks \nfor all foes."; return false; // Taunt
+                    case 206: __result = "Lowers all stats by one rank \nfor all foes."; return false; // Debilitate
+                    case 207: __result = "Medium Curse damage to all foes. \nPow: 30, Acc: 100%, Mute: 40%"; return false; // Dismal Tune
+                    case 208: __result = "40% Chance to reduce HP of all foes \nto 1. (Almighty-Type)"; return false; // Sol Niger
+                    case 209: __result = "50% Chance to inflict Stun \non one foe. (Nerve-Type)"; return false; // Stun Gaze
+                    case 210: __result = "60% Chance to inflict Sleep \non one foe. (Mind-Type)"; return false; // Dormina
+                    case 211: __result = "30% Chance to inflict Bind \non all foes. (Nerve-Type)"; return false; // Binding Cry
+                    case 212: __result = "Instakill all foes afflicted \nwith Sleep."; return false; // Eternal Rest
+                    case 213: __result = "30% Chance to inflict Panic on \nall foes. (Mind-Type)"; return false; // Sonic Wave
+                    case 214: __result = "60% Chance to inflict Charm on \none foe. (Mind-Type)"; return false; // Sexy Gaze
+                    case 215: __result = "40% Chance to inflict Charm on \nall foes. (Mind-Type)"; return false; // Allure
+                    case 216: __result = "30% Chance to inflict Panic on \nall foes. (Mind-Type)"; return false; // Panic Voice
+                    case 217: __result = "Mega Mind damage to all foes. \nPow: 60, Acc: 100%, Panic: 40%"; return false; // Intoxicate
+                    case 218: __result = "Full HP recovery & cures all ailments \nfor all allies."; return false; // Prayer
+                    case 223: __result = "Summons a random ally \nfrom the stock."; return false; // Beckon Call
+                    case 224: __result = "Increases the damage of the user's \nnext Strength-based attack by 120%."; return false; // Focus
+                    case 235: __result = "Mega Almighty damage to random foes. \n4-8 hits. Pow: 40, Acc: 100%"; return false; // Fire of Sinai
+                    case 242: __result = "High Almighty damage to all foes. \nMay inflict random ailments. \nPow: 40, Acc: 100%, Random: 50%"; return false; // God's Curse
+                    case 244: __result = "Medium Ice damage to all foes. \nLowers targets' Evasion/Hit Rate. \nPow: 30, Acc: 100%, Freeze: 25%"; return false; // Icy Death
+                    case 249: __result = "High Mind damage to random foes. \n3-7 hits. Pow: 36, Acc: 100%, Panic: 40%"; return false; // Wild Dance
+                    case 250: __result = "Drains HP/MP from one foe. \nPow: 80/40, Acc: 100% \n(Almighty-Type)"; return false; // Domination
+                    case 257: __result = "Mega Almighty damage to random foes. \n4-8 hits. Pow: 40, Acc: 100%."; return false; // Fire of Sinai
+                    case 259: __result = "Massive Almighty damage to all foes. \nInstakills when not immune to Dark. \nPow: 60, Acc: 100%, Fatal: 100%"; return false; // Death Flies
+                    case 260: __result = "Massive Almighty damage to all foes. \nInstakills when not immune to Dark. \nPow: 60, Acc: 100%, Fatal: 100%"; return false; // Death Flies
+                    case 261: __result = "High Curse damage to all foes. \nPow: 48, Acc: 60%, Mute: 100%"; return false; // Soul Divide
+                    case 262: __result = "Low Physical damage to one foe. \nLowers target's Evasion/Defense. \nPow: 32, Acc: 120%, Crit: 18%"; return false; // Boogie-Woogie/E & I
+                    case 263: __result = "High Physical damage to one foe. \nPow: 48, Acc: 100%, Crit: 40%"; return false; // Enter Yoshitsune/Rebellion
+                    case 264: __result = "Medium Physical damage to all foes. \nPow: 30, Acc: 100%, Crit: 0%, \nPanic: 24%"; return false; // Mokoi Boomerang/Twosome Time
+                    case 265: __result = "Lowers Defense/raises Physical Attack \nby two ranks for all foes. \nSlight MP recovery for the user."; return false; // Provoke
+                    case 266: __result = "Medium Str-based Almighty damage \nto one foe. May instakill when not \nimmune to Dark. Pow: 42, Acc: 90%"; return false; // Tekisatsu/Stinger
+                    case 267: __result = "High Elec damage to all foes. \nLowers targets' Evasion/Hit Rate. \nPow: 40, Acc: 120%, Shock: 20%"; return false; // Mishaguji Raiden/Roundtrip
+                    case 268: __result = "High Force damage to all foes. \nLowers targets' Physical/Magical Attack. \nPow: 48, Acc: 120%"; return false; // Hitokoto Storm/Whirlwind
+                    case 275: __result = "Medium Physical damage to all foes. \nPow: 32, Acc: 100%, Crit: 5%"; return false; // Andalucia
                     case 276: __result = "Maximizes own Evasion/Hit Rate."; return false; // Red Capote
-                    case 278: __result = "Medium Mind damage to all foes. \nMay inflict random ailments."; return false; // Preach
-                    case 280: __result = "Medium Physical damage to random foes. \nMay inflict Panic."; return false; // Terrorblade
-                    case 281: __result = "Medium Physical damage to all foes."; return false; // Hell Spin
-                    case 282: __result = "Medium Force damage to all foes. \nNegates -kaja effects."; return false; // Hell Exhaust
-                    case 283: __result = "Medium Strength-based Fire damage \nto all foes."; return false; // Hell Burner
-                    case 284: __result = "Raises party's Physical Attack/Evasion/Hit Rate."; return false; // Hell Throttle
-                    case 285: __result = "Lowers all foes' Evasion/Hit Rate. \nMay inflict Panic."; return false; // Babylon Goblet
-                    case 286: __result = "High Almighty damage to all foes. \nHeals user's HP and may inflict Charm."; return false; // Death Lust
-                    case 287: __result = "Massive Light damage to one foe. \nInstakills when weak to Light."; return false; // God's Bow
+                    case 278: __result = "Medium Mind damage to all foes. \nMay inflict random ailments. \nPow: 30, Acc: 100%, Random: 40%"; return false; // Preach
+                    case 280: __result = "Medium Physical damage to \nrandom foes. Pow: 32, Acc: 96%, \nCrit: 10%, Panic: 40%"; return false; // Terrorblade
+                    case 281: __result = "Medium Physical damage to all foes. \nPow: 32, Acc: 94%, Crit: 12%"; return false; // Hell Spin
+                    case 282: __result = "Medium Force damage to all foes. \nNegates -kaja effects. \nPow: 30, Acc: 100%"; return false; // Hell Exhaust
+                    case 283: __result = "Medium Str-based Fire damage \nto all foes. Pow: 32, Acc: 88% \nCrit: 12%"; return false; // Hell Burner
+                    case 284: __result = "Raises all allies' \nPhysical Attack/Evasion/Hit Rate \nby one rank."; return false; // Hell Throttle
+                    case 285: __result = "Lowers all foes' Evasion/Hit Rate \nby one rank. 50% Chance to \ninflict Panic. (Almighty-Type)"; ; return false; // Babylon Goblet
+                    case 286: __result = "High Almighty damage to all foes. \nSlight HP recovery for the user. \nPow: 48, Acc: 100%, Charm: 30%"; return false; // Death Lust
+                    case 287: __result = "Mega Light damage to one foe. \nInstakills when weak to Light. \nPow: 80, Acc: 100%, Fatal: 100%"; return false; // God's Bow
                     
+                    case 290: __result = "Raises Maximum HP by 10%."; return false; // Life Bonus
+                    case 291: __result = "Raises Maximum HP by 20%."; return false; // Life Gain
+                    case 292: __result = "Raises Maximum HP by 30%."; return false; // Life Surge
+                    case 293: __result = "Raises Maximum MP by 10%."; return false; // Mana Bonus
+                    case 294: __result = "Raises Maximum MP by 20%."; return false; // Mana Gain
+                    case 295: __result = "Raises Maximum MP by 30%."; return false; // Mana Surge
                     case 296: __result = "Guarantees escape \nwhen possible."; return false; // Fast Retreat
                     case 298: __result = "Prevents being attacked \nfrom behind."; return false; // Mind's Eye
-                    case 299: __result = "Greatly raises critical \nhit rate of normal attacks."; return false; // Might
-                    case 300: __result = "Drastically raises critical \nhit rate of normal attacks \nduring full Kagutsuchi."; return false; // Bright Might
-                    case 301: __result = "Drastically raises critical \nhit rate of normal attacks \nduring new Kagutsuchi."; return false; // Dark Might
+                    case 299: __result = "Greatly raises Critical Rate \nof normal attacks."; return false; // Might
+                    case 300: __result = "Drastically raises Critical Rate of \nnormal attacks during full Kagutsuchi."; return false; // Bright Might
+                    case 301: __result = "Drastically raises Critical Rate of \nnormal attacks during new Kagutsuchi."; return false; // Dark Might
+                    case 302: __result = "Normal attacks will drain HP."; return false; // Drain Attack
+                    case 304: __result = "Normal attacks will \nhit all enemies."; return false; // Attack All
+                    case 305: __result = "May perform a weak counterattack \nwhen physically attacked. Pow: 32"; return false; // Counter
+                    case 306: __result = "May perform a medium counterattack \nwhen physically attacked. Pow: 48"; return false; // Retaliate
+                    case 307: __result = "May perform a strong counterattack \nwhen physically attacked. Pow: 56"; return false; // Avenge
                     case 309: __result = "Raises Fire attack damage by 30%."; return false; // Fire Boost
                     case 310: __result = "Raises Ice attack damage by 30%."; return false; // Ice Boost
                     case 311: __result = "Raises Elec attack damage by 30%."; return false; // Elec Boost
                     case 312: __result = "Raises Force attack damage by 30%."; return false; // Force Boost
-                    case 313: __result = "Protects against Physical attacks"; return false; // Anti-Phys
-                    case 314: __result = "Protects against Fire attacks"; return false; // Anti-Fire
-                    case 315: __result = "Protects against Ice attacks"; return false; // Anti-Ice
-                    case 316: __result = "Protects against Elec attacks"; return false; // Anti-Elec
-                    case 317: __result = "Protects against Force attacks"; return false; // Anti-Force
-                    case 354: __result = "Earn 100% EXP when \nnot participating in battle."; return false; // Watchful
+                    case 313: __result = "Protects against Physical attacks."; return false; // Anti-Phys
+                    case 314: __result = "Protects against Fire attacks."; return false; // Anti-Fire
+                    case 315: __result = "Protects against Ice attacks."; return false; // Anti-Ice
+                    case 316: __result = "Protects against Elec attacks."; return false; // Anti-Elec
+                    case 317: __result = "Protects against Force attacks."; return false; // Anti-Force
+                    case 345: __result = "Survive a fatal blow with 1 HP \nremaining once per battle."; return false; // Endure
+                    case 354: __result = "Earn 100% EXP when not \nparticipating in battle."; return false; // Watchful
                     case 357: __result = "Attacks ignore all resistances \nexcept Repel."; return false; // Pierce
-                    case 360: __result = "Protects against ailments and instakills \n& Survive a fatal blow with 1 HP \nremaining once per battle."; return false; // Raidou Endure/Never Yield
+                    case 360: __result = "Protects against ailments and instakills. \nSurvive a fatal blow with 1 HP \nremaining once per battle."; return false; // Raidou Endure/Never Yield
                     case 361: __result = "Pierce & raises damage of all attacks by 30%."; return false; // Raidou the Eternal/Son's Oath
 
                     case 385: __result = "Invite a demon to join. \nEffective when speaker is adult \nand target is female."; return false; // Scout
@@ -310,72 +445,75 @@ namespace NocturneInsaniax
                     case 420: __result = "While in the active party, \nmay step in during negotiation to \nconvince a higher level demon."; return false; // Flatter
 
                     // New Skills
-                    case 188: __result = "Light: Chance to instakill one foe."; return false; // Punishment
-                    case 189: __result = "Light: Chance to instakill all foes."; return false; // Judgement Light
+                    case 188: __result = "50% Chance to instakill one foe. \n(Light-Type)"; return false; // Punishment
+                    case 189: __result = "30% Chance to instakill all foes. \n(Light-Type)"; return false; // Judgement Light
 
-                    case 308: __result = "Attack again after a critical normal attack."; return false; // Double Attack 
+                    case 308: __result = "Attack again after a \ncritical normal attack."; return false; // Double Attack 
                     case 362: __result = "Raises Physical attack damage by 30%."; return false; // Phys Boost 
-                    case 363: __result = "Raises Magical attack damage by 30%. \n(Does not stack with similar effects)"; return false; // Magic Boost
-                    case 364: __result = "Protects against Magical attacks. \n(Does not stack with similar effects)"; return false; // Anti-Magic 
+                    case 363: __result = "Raises Element attack damage by 30%. \n(Does not stack with similar effects)"; return false; // Element Boost
+                    case 364: __result = "Protects against Element attacks. \n(Does not stack with similar effects)"; return false; // Anti-Elements
                     case 365: __result = "Protects against Ailment attacks. \n(Does not stack with similar effects)"; return false; // Anti-Ailments
-                    case 366: __result = "Protects against ailments and instakills."; return false; // Abyssal Mask
+                    case 366: __result = "Protects against ailments \nand instakills."; return false; // Abyssal Mask
                     case 367: __result = "Allows the use of items."; return false; // Knowledge of Tools
-                    case 368: __result = "Very slight HP recovery \nafter each action."; return false; // Renewal
-                    case 369: __result = "Very slight MP recovery \nafter each action."; return false; // Spirit Well
+                    case 368: __result = "Slight HP recovery \nafter each action."; return false; // Renewal
+                    case 369: __result = "Slight MP recovery \nafter each action."; return false; // Spirit Well
                     case 370: __result = "Slight HP/MP recovery \nafter each action. \n(Does not stack with similar effects)"; return false; // Qigong
+                    case 371: __result = "Reduce the base HP costs of skills \nby 50%. HP-based skills always deal \nmaximum damage."; return false; // Arms Master
+                    case 372: __result = "Protects against Critical hits \nbut prevents dodging attacks."; return false; // Firm Stance
+                    case 373: __result = "Survive a fatal blow then fully \nrecover HP once per battle. \n(Does not stack with similar effects)"; return false; // Enduring Soul
 
-                    case 424: __result = "More than doubles the damage of \nthe next Magic-based attack."; return false; // Concentrate
-                    case 425: __result = "More than doubles the damage of \nthe next attack and grants Pierce."; return false; // Impaler's Animus
-                    case 426: __result = "High Physical damage to all foes. \nMay inflict Charm."; return false; // Sakura Rage
-                    case 427: __result = "Low Physical damage to one foe. \nLowers target's Physical Attack."; return false; // Fang Breaker
-                    case 428: __result = "Low Physical damage to one foe. \nLowers target's Defense."; return false; // Defense Kuzushi
-                    case 429: __result = "Massive Physical damage to one foe."; return false; // Primal Force
-                    case 430: __result = "Low Physical damage to all foes. \nHigh critical rate."; return false; // Chi Blast
-                    case 431: __result = "High Physical damage to all foes. \nMay inflict Mute."; return false; // Revelation
-                    case 432: __result = "High Physical damage to all foes. \nMay inflict Stone."; return false; // Gate of Hell
-                    case 433: __result = "High Physical damage to one foe. \nHigh critical rate."; return false; // Akashic Arts
-                    case 434: __result = "High Physical damage to random foes. \nHigh critial rate."; return false; // Bloodbath
-                    case 435: __result = "Low Fire damage to all foes. \nLowers targets' Physical Attack."; return false; // Scald
-                    case 436: __result = "Massive Fire damage to all foes."; return false; // Ragnarok
-                    case 437: __result = "Low Ice damage to one foe. \nLowers target's Evasion/Hit Rate."; return false; // Refrigerate
-                    case 438: __result = "High Ice damage to random foes."; return false; // Cocytus
-                    case 439: __result = "Massive Ice damage to all foes."; return false; // Fimbulvetr
-                    case 440: __result = "Low Elec damage to one foe. \nHigh chance to inflict shock"; return false; // Jolt
-                    case 441: __result = "Massive Elec damage to one foe."; return false; // Thunder Gods
-                    case 442: __result = "Massive Elec damage to all foes."; return false; // Thunder Reign
-                    case 443: __result = "Low Force damage to all foes. \nLowers targets' Evasion."; return false; // Dervish
-                    case 444: __result = "High Force damage to random foes."; return false; // Heavenly Cyclone
-                    case 445: __result = "Massive Force damage to all foes."; return false; // Vayavya
-                    case 446: __result = "Dark: Chance to instakill one foe."; return false; // Damnation
-                    case 447: __result = "Dark: Chance to instakill all foes."; return false; // Millennia Curse
-                    case 448: __result = "Low Curse damage to random foes. \nMay inflict Poison."; return false; // Poison Volley
-                    case 449: __result = "Medium Curse damage to one foe. \nMay inflict Poison."; return false; // Poison Salvo
-                    case 450: __result = "High Nerve damage to one foe. \nMay inflict Stun."; return false; // Neural Shock
-                    case 451: __result = "High Nerve damage to all foes. \nMay inflict Stun."; return false; // Overload
-                    case 452: __result = "High Mind damage to one foe. \nMay inflict Panic."; return false; // Pulinpaon
-                    case 453: __result = "High Almighty damage to one foe. \nLowers target's Attack/Defense/Evasion/Hit Rate."; return false; // Antichthon
-                    case 454: __result = "Massive Almighty damage to one foe."; return false; // Last Word
-                    case 455: __result = "Drains HP/MP from one foe."; return false; // Soul Drain
-                    case 456: __result = "Cures all ailments for the party."; return false; // Amrita
-                    case 457: __result = "Moderate HP recovery and cures \nall ailments for one ally."; return false; // Diamrita
-                    case 458: __result = "Greatly raises own \nAttack/Defense/Evasion/Hit Rate."; return false; // Heat Riser
-                    case 459: __result = "Raises party's \nAttack/Defense/Evasion/Hit Rate."; return false; // Luster Candy
+                    case 424: __result = "Increases the damage of the user's \nnext Magic-based attack by 120%."; return false; // Concentrate
+                    case 425: __result = "Increases the damage of the user's \nnext attack by 120% and grants \nit Pierce."; return false; // Impaler's Animus
+                    case 426: __result = "High Physical damage to all foes. \nPow: 36, Acc: 90%, Crit: 20%, \nCharm: 20%"; return false; // Sakura Rage
+                    case 427: __result = "Low Physical damage to one foe. \nLowers target's Physical Attack. \nPow: 36, Acc: 90%, Crit: 10%"; return false; // Fang Breaker
+                    case 428: __result = "Low Physical damage to one foe. \nLowers target's Defense. \nPow: 32, Acc: 90%, Crit: 10%"; return false; // Defense Kuzushi
+                    case 429: __result = "Mega Physical damage to one foe. \nPow: 80, Acc: 94%, Crit: 0%"; return false; // Primal Force
+                    case 430: __result = "Low Physical damage to all foes. \nPow: 28, Acc: 86%, Crit: 34%"; return false; // Chi Blast
+                    case 431: __result = "High Physical damage to all foes. \nPow: 42, Acc: 90%, Crit: 30%, \nMute: 30%"; return false; // Revelation
+                    case 432: __result = "High Physical damage to all foes. \nPow: 42, Acc: 90%, Crit: 30%, \nStone: 24%"; return false; // Gate of Hell
+                    case 433: __result = "High Physical damage to one foe. \nPow: 54, Acc: 97%, Crit: 50%"; return false; // Akashic Arts
+                    case 434: __result = "High Physical damage to random foes. \n3-5 hits, Pow: 32, Acc: 86%, \nCrit: 40%"; return false; // Bloodbath
+                    case 435: __result = "Low Fire damage to all foes. \nLowers targets' Physical Attack. \nPow: 30, Acc: 100%"; return false; // Scald
+                    case 436: __result = "Mega Fire damage to all foes. \nPow: 60, Acc: 100%"; return false; // Ragnarok
+                    case 437: __result = "Low Ice damage to one foe. \nLowers target's Evasion/Hit Rate. \nPow: 32, Acc: 100%"; return false; // Refrigerate
+                    case 438: __result = "High Ice damage to random foes. \n3-7 hits, Pow: 40, Acc: 100%, \nFreeze: 30%"; return false; // Cocytus
+                    case 439: __result = "Mega Ice damage to all foes. \nPow: 50, Acc: 100%, Freeze: 22%"; return false; // Fimbulvetr
+                    case 440: __result = "Low Elec damage to one foe. \nPow: 32, Acc: 100%, Shock: 67%"; return false; // Jolt
+                    case 441: __result = "Mega Elec damage to one foe. \nPow: 70, Acc: 100%, Shock: 40%"; return false; // Thunder Gods
+                    case 442: __result = "Mega Elec damage to all foes. \nPow: 50, Acc: 100%, Shock: 22%"; return false; // Thunder Reign
+                    case 443: __result = "Low Force damage to all foes. \nLowers targets' Evasion. \nPow: 30, Acc: 100%"; return false; // Dervish
+                    case 444: __result = "High Force damage to random foes. \n3-7 hits, Pow: 40, Acc: 100%"; return false; // Heavenly Cyclone
+                    case 445: __result = "Mega Force damage to all foes. \nPow: 60, Acc: 100%"; return false; // Vayavya
+                    case 446: __result = "50% Chance to instakill one foe. \n(Dark-Type)"; return false; // Damnation
+                    case 447: __result = "30% Chance to instakill all foes. \n(Dark-Type)"; return false; // Millennia Curse
+                    case 448: __result = "Low Curse damage to random foes. \n3-6 hits, Pow: 18, Acc: 100%, \nPoison: 40%"; return false; // Poison Volley
+                    case 449: __result = "Medium Curse damage to one foe. \nPow: 39, Acc: 100%, Poison: 70%"; return false; // Poison Salvo
+                    case 450: __result = "Medium Nerve damage to one foe. \nPow: 39, Acc: 100%, Stun: 70%"; return false; // Neural Shock
+                    case 451: __result = "Medium Nerve damage to all foes. \nPow: 30, Acc: 100%, Stun: 50%"; return false; // Overload
+                    case 452: __result = "Medium Mind damage to one foe. \nPow: 39, Acc: 100%, Panic: 70%"; return false; // Pulinpaon
+                    case 453: __result = "High Almighty damage to one foe. \nLowers all stats for target. \nPow: 50, Acc: 100%"; return false; // Antichthon
+                    case 454: __result = "Mega Almighty damage to one foe. \nPow: 80, Acc: 100%"; return false; // Last Word
+                    case 455: __result = "Drains HP/MP from one foe. \nPow: 32/32, Acc: 100% \n(Almighty-Type)"; return false; // Soul Drain
+                    case 456: __result = "Cures all ailments for all allies."; return false; // Amrita
+                    case 457: __result = "Great HP recovery and cures \nall ailments for one ally. \nPow: 18"; return false; // Diamrita
+                    case 458: __result = "Raises all stats by two ranks \nfor the user."; return false; // Heat Riser
+                    case 459: __result = "Raises all stats by one rank \nfor all allies."; return false; // Luster Candy
                     case 460: __result = "Negates -kaja & -nda effects \non all foes & allies."; return false; // Silent Prayer
-                    case 461: __result = "Low Force damage to random foes."; return false; // Storm Gale
-                    case 462: __result = "High Strength-based Force damage \nto all foes."; return false; // Winged Fury
-                    case 463: __result = "Low Ice damage to one foe. \nLowers target's Defense."; return false; // Jack Bufu
-                    case 464: __result = "Slight HP recovery \nfor the party. \n(Cannot be used outside of battle)"; return false; // Humble Blessing
-                    case 465: __result = "Massive Physical damage to one foe. \nHigh critical rate."; return false; // Rend
-                    case 466: __result = "Massive Ice damage to one foe. \nLowers target's Defense. \nUnaffected by Cold World."; return false; // Jack Bufudyne
-                    case 467: __result = "High Physical damage to all foes. \nLowers targets' Attack/Defense/Evasion/Hit Rate."; return false; // Divine Light
-                    case 468: __result = "Massive Ice damage to all foes. \nLowers targets' Defense/Evasion."; return false; // Niflheim
-                    case 469: __result = "High Strength-based Elec damage \nto one foe. \nDamage relative to HP."; return false; // Mjolnir
-                    case 470: __result = "Massive Almighty damage to all foes. \nMinimizes targets' Defense."; return false; // Tandava
-                    case 471: __result = "Massive Strength-based Almighty damage \nto random foes."; return false; // Chaturbhuja
-                    case 472: __result = "High Strength-based Force damage \nto one foe. \nDamage relative to HP."; return false; // Kusanagi
-                    case 473: __result = "Medium Fire damage to one foe. \nLowers target's Physical/Magical Attack."; return false; // Jack Agilao
-                    case 474: __result = "High Strength-based Force damage \nto one foe. Damage relative to HP. \nAlways critically strikes."; return false; // Gae Bolg
-                    case 475: __result = "High Physical damage to one foe. \nDamage relative to HP.  \nIgnores target's -kaja effects"; return false; // Gungnir
+                    case 461: __result = "Low Force damage to random foes. \n3-5 hits. Pow: 20, Acc: 100%"; return false; // Storm Gale
+                    case 462: __result = "High Str-based Force damage to \nall foes. Pow: 36, Acc: 90%, \nCrit: 20%"; return false; // Winged Fury
+                    case 463: __result = "Low Ice damage to one foe. \nLowers target's Defense. \nPow: 27, Acc: 100%, Freeze: 20%"; return false; // Jack Bufu
+                    case 464: __result = "Moderate HP recovery \nfor all allies. Pow: 8 \n(Cannot be used outside of battle)"; return false; // Humble Blessing
+                    case 465: __result = "Mega Physical damage to one foe. \nPow: 60, Acc: 90%, Crit: 40%"; return false; // Rend
+                    case 466: __result = "Mega Ice damage to one foe. Lowers \ntarget's Defense. Ignores Cold World. \nPow: 27, Acc: 100%, Freeze: 20%"; return false; // Jack Bufudyne
+                    case 467: __result = "High Physical damage to all foes. \nLowers all stats all targets. \nPow: 48, Acc: 85%, Crit: 0%"; return false; // Divine Light
+                    case 468: __result = "Mega Ice damage to all foes. \nLowers targets' Defense/Evasion. \nPow: 60, Acc: 100%, Freeze: 25%"; return false; // Niflheim
+                    case 469: __result = "High Str-based Elec damage to one \nfoe. HP-based. Max Pow: 48, \nAcc: 90%, Crit: 20%, Shock: 20%"; return false; // Mjolnir
+                    case 470: __result = "Mega Almighty damage to all foes. \nMinimizes targets' Defense. \nPow: 60, Acc: 100%"; return false; // Tandava
+                    case 471: __result = "Mega Str-based Almighty damage to \nrandom foes. 5-7 hits. Pow: 20, \nAcc: 100%, Crit: 1%"; return false; // Chaturbhuja
+                    case 472: __result = "High Str-based Force damage to \none foe. HP-based. \nMax Pow: 52, Acc: 90%, Crit: 20%"; return false; // Kusanagi
+                    case 473: __result = "Medium Fire damage to one foe. \nLowers target's Phys/Mag Attack. \nPow: 45, Acc: 100%"; return false; // Jack Agilao
+                    case 474: __result = "High Str-based Force damage to \none foe. HP-based. \nMax Pow: 34, Acc: 100%, Crit: 100%"; return false; // Gae Bolg
+                    case 475: __result = "High Physical damage to one foe. \nIgnores target's -kaja effects. \nPow: 52, Acc: 90%, Crit: 20%"; return false; // Gungnir
                     default: return true;
                 }
             }
@@ -515,6 +653,8 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref nbActionProcessData_t a, ref int hp)
             {
+                actionProcessData = a;
+
                 if (a.work.badstatus == 64)
                 {
                     if (bossList.Contains(a.work.id))
@@ -563,7 +703,7 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(30, 0);
                     //datCalc.datAddDevil(111, 0);
                     //datCalc.datAddDevil(185, 0);
-                    datCalc.datAddDevil(192, 0);
+                    //datCalc.datAddDevil(199, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    //work.skill[0] = 192;
@@ -597,9 +737,10 @@ namespace NocturneInsaniax
                     //    work.skill[7] = 419;
                     //    work.skillcnt = 8;
                     //}
-                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 19)) // Kushinada
+                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 73)) // Eligor
                     //{
-                    //    work.skill[2] = 424;
+                    //    work.skill[6] = 372;
+                    //    work.skill[7] = 373;
                     //}
                     //}
                 }
@@ -1927,8 +2068,10 @@ namespace NocturneInsaniax
             AbyssalMask(78);
             KnowledgeOfTools(79);
             RenewalPassive(80);
-            QigongPassive(81);
-            LifeSpringPassive(82);
+            SpiritWellPassive(81);
+            QigongPassive(82);
+            ArmsMaster(83);
+            FirmStance(84);
 
             // Universal Changes
             foreach (var skill in datSkill.tbl)
@@ -2228,14 +2371,20 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hpn = 32;
             datNormalSkill.tbl[id].failpoint = 5;
             datNormalSkill.tbl[id].criticalpoint = 24;
+            datNormalSkill.tbl[id].badlevel = 30;
         }
 
         private static void DivineShot(ushort id)
         {
-            datNormalSkill.tbl[id].cost = 14;
-            datNormalSkill.tbl[id].hpn = 56;
-            datNormalSkill.tbl[id].failpoint = 5;
-            datNormalSkill.tbl[id].criticalpoint = 30;
+            datNormalSkill.tbl[id].cost = 18;
+            datNormalSkill.tbl[id].hpn = 34;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].magicbase = 16;
+            datNormalSkill.tbl[id].magiclimit = 32767;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].hitlevel = 120;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].criticalpoint = 100;
         }
 
         private static void XerosBeat(ushort id)
@@ -2244,6 +2393,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hpn = 36;
             datNormalSkill.tbl[id].failpoint = 5;
             datNormalSkill.tbl[id].criticalpoint = 24;
+            datNormalSkill.tbl[id].badlevel = 30;
         }
 
         private static void OniKagura(ushort id)
@@ -2330,7 +2480,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].cost = 12;
             datNormalSkill.tbl[id].hpn = 48;
             datNormalSkill.tbl[id].failpoint = 0;
-            datNormalSkill.tbl[id].criticalpoint = 36;
+            datNormalSkill.tbl[id].criticalpoint = 40;
         }
 
         private static void MokoiBoomerang(ushort id)
@@ -2347,7 +2497,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].cost = 10;
             datNormalSkill.tbl[id].hpn = 32;
             datNormalSkill.tbl[id].failpoint = 0;
-            datNormalSkill.tbl[id].criticalpoint = 4;
+            datNormalSkill.tbl[id].criticalpoint = 5;
         }
 
         private static void Terrorblade(ushort id)
@@ -2973,7 +3123,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].cost = 30;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 1;
-            datNormalSkill.tbl[id].criticalpoint = 10;
+            datNormalSkill.tbl[id].criticalpoint = 0;
             datNormalSkill.tbl[id].deadtype = 0;
             datNormalSkill.tbl[id].failpoint = 15;
             datNormalSkill.tbl[id].flag = 0;
@@ -3031,7 +3181,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
             datNormalSkill.tbl[id].hpn = 52;
-            datNormalSkill.tbl[id].hptype = 6;
+            datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].koukatype = 0;
             datNormalSkill.tbl[id].magicbase = 0;
             datNormalSkill.tbl[id].magiclimit = 0;
@@ -3852,7 +4002,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hpn = 40;
             datNormalSkill.tbl[id].magicbase = 24;
             datNormalSkill.tbl[id].magiclimit = 32767;
-            datNormalSkill.tbl[id].badlevel = 21;
+            datNormalSkill.tbl[id].badlevel = 20;
             datNormalSkill.tbl[id].hojopoint = 1;
             datNormalSkill.tbl[id].hojotype = 544;
             datNormalSkill.tbl[id].hitlevel = 120;
@@ -3866,7 +4016,7 @@ namespace NocturneInsaniax
             datSkill.tbl[id].index = (short)id;
             datSkill.tbl[id].type = 0;
 
-            datNormalSkill.tbl[id].badlevel = 66;
+            datNormalSkill.tbl[id].badlevel = 67;
             datNormalSkill.tbl[id].badtype = 1;
             datNormalSkill.tbl[id].basstatus = 1;
             datNormalSkill.tbl[id].cost = 8;
@@ -4017,7 +4167,7 @@ namespace NocturneInsaniax
             datSkill.tbl[id].index = (short)id;
             datSkill.tbl[id].type = 0;
 
-            datNormalSkill.tbl[id].badlevel = 30;
+            datNormalSkill.tbl[id].badlevel = 20;
             datNormalSkill.tbl[id].badtype = 1;
             datNormalSkill.tbl[id].basstatus = 1;
             datNormalSkill.tbl[id].cost = 16;
@@ -4033,7 +4183,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 50;
+            datNormalSkill.tbl[id].hpn = 48;
             datNormalSkill.tbl[id].hptype = 6;
             datNormalSkill.tbl[id].koukatype = 0;
             datNormalSkill.tbl[id].magicbase = 20;
@@ -4580,6 +4730,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].cost = 3;
             datNormalSkill.tbl[id].criticalpoint = 0;
             datNormalSkill.tbl[id].hpn = 14;
+            datNormalSkill.tbl[id].mpn = 14;
             datNormalSkill.tbl[id].magicbase = 12;
             datNormalSkill.tbl[id].magiclimit = 44;
         }
@@ -4657,7 +4808,7 @@ namespace NocturneInsaniax
         private static void BabylonGoblet(ushort id)
         {
             datSkill.tbl[id].skillattr = 5;
-            datNormalSkill.tbl[id].badlevel = 40;
+            datNormalSkill.tbl[id].badlevel = 50;
             datNormalSkill.tbl[id].basstatus = 8;
             datNormalSkill.tbl[id].cost = 25;
             datNormalSkill.tbl[id].costtype = 2;
@@ -4916,8 +5067,8 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].mptype = 0;
             datNormalSkill.tbl[id].program = 0;
             datNormalSkill.tbl[id].targetarea = 2;
-            datNormalSkill.tbl[id].targetcntmax = 15;
-            datNormalSkill.tbl[id].targetcntmin = 10;
+            datNormalSkill.tbl[id].targetcntmax = 7;
+            datNormalSkill.tbl[id].targetcntmin = 5;
             datNormalSkill.tbl[id].targetprog = 0;
             datNormalSkill.tbl[id].targetrandom = 1;
             datNormalSkill.tbl[id].targetrule = 0;
@@ -5282,6 +5433,7 @@ namespace NocturneInsaniax
         private static void Makajam(ushort id)
         {
             datNormalSkill.tbl[id].cost = 6;
+            datNormalSkill.tbl[id].badlevel = 50;
 
             tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 4;
         }
@@ -5289,6 +5441,7 @@ namespace NocturneInsaniax
         private static void Makajamon(ushort id)
         {
             datNormalSkill.tbl[id].cost = 18;
+            datNormalSkill.tbl[id].badlevel = 25;
         }
 
         private static void PoisonArrow(ushort id)
@@ -5317,7 +5470,7 @@ namespace NocturneInsaniax
         private static void MuteGaze(ushort id)
         {
             datNormalSkill.tbl[id].cost = 6;
-            datNormalSkill.tbl[id].badlevel = 50;
+            datNormalSkill.tbl[id].badlevel = 60;
         }
 
         private static void ToxicSpray(ushort id)
@@ -5346,7 +5499,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hpn = 30;
             datNormalSkill.tbl[id].magicbase = 18;
             datNormalSkill.tbl[id].magiclimit = 154;
-            datNormalSkill.tbl[id].badlevel = 20;
+            datNormalSkill.tbl[id].badlevel = 40;
         }
 
         private static void SoulDivide(ushort id)
@@ -5496,7 +5649,7 @@ namespace NocturneInsaniax
         private static void BindingCry(ushort id)
         {
             datNormalSkill.tbl[id].cost = 15;
-            datNormalSkill.tbl[id].badlevel = 20;
+            datNormalSkill.tbl[id].badlevel = 30;
         }
 
         private static void NeuralShock(ushort id)
@@ -5604,6 +5757,7 @@ namespace NocturneInsaniax
         private static void Lullaby(ushort id)
         {
             datNormalSkill.tbl[id].cost = 10;
+            datNormalSkill.tbl[id].badlevel = 30;
         }
 
         private static void Pulinpa(ushort id)
@@ -5628,7 +5782,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hpn = 30;
             datNormalSkill.tbl[id].magicbase = 18;
             datNormalSkill.tbl[id].magiclimit = 154;
-            datNormalSkill.tbl[id].badlevel = 30;
+            datNormalSkill.tbl[id].badlevel = 40;
         }
 
         private static void Dormina(ushort id)
@@ -5645,7 +5799,7 @@ namespace NocturneInsaniax
         private static void SonicWave(ushort id)
         {
             datNormalSkill.tbl[id].cost = 10;
-            datNormalSkill.tbl[id].badlevel = 20;
+            datNormalSkill.tbl[id].badlevel = 30;
         }
 
         private static void SexyGaze(ushort id)
@@ -5669,7 +5823,7 @@ namespace NocturneInsaniax
         private static void Intoxicate(ushort id)
         {
             datNormalSkill.tbl[id].cost = 60;
-            datNormalSkill.tbl[id].badlevel = 30;
+            datNormalSkill.tbl[id].badlevel = 40;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].hpn = 60;
             datNormalSkill.tbl[id].magicbase = 30;
@@ -5751,9 +5905,11 @@ namespace NocturneInsaniax
 
         private static void Sacrifice(ushort id)
         {
-            datNormalSkill.tbl[id].hpn = 56;
+            datNormalSkill.tbl[id].hpn = 55;
             datNormalSkill.tbl[id].failpoint = 10;
             datNormalSkill.tbl[id].criticalpoint = 20;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
         }
 
         private static void Kamikaze(ushort id)
@@ -6343,6 +6499,11 @@ namespace NocturneInsaniax
         {
             datSkill.tbl[id].skillattr = 14;
             datNormalSkill.tbl[id].cost = 10;
+        }
+
+        private static void Provoke(ushort id)
+        {
+            datNormalSkill.tbl[id].cost = 0;
         }
 
         private static void RaptorGuardian(ushort id)
@@ -8207,7 +8368,7 @@ namespace NocturneInsaniax
             skillLevel.Level = 3;
         }
 
-        private static void QigongPassive(ushort id)
+        private static void SpiritWellPassive(ushort id)
         {
             datSkill.tbl[369].keisyoform = 1;
 
@@ -8221,7 +8382,7 @@ namespace NocturneInsaniax
             skillLevel.Level = 3;
         }
 
-        private static void LifeSpringPassive(ushort id)
+        private static void QigongPassive(ushort id)
         {
             datSkill.tbl[370].keisyoform = 1;
 
@@ -8233,6 +8394,34 @@ namespace NocturneInsaniax
             var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = 370;
             skillLevel.Level = 7;
+        }
+
+        private static void ArmsMaster(ushort id)
+        {
+            datSkill.tbl[371].keisyoform = 1;
+
+            datSpecialSkill.tbl[id].a = 2;
+            datSpecialSkill.tbl[id].b = 1;
+            datSpecialSkill.tbl[id].m = 3;
+            datSpecialSkill.tbl[id].n = 4;
+
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
+            skillLevel.SkillID = 371;
+            skillLevel.Level = 7;
+        }
+
+        private static void FirmStance(ushort id)
+        {
+            datSkill.tbl[372].keisyoform = 1;
+
+            datSpecialSkill.tbl[id].a = 2;
+            datSpecialSkill.tbl[id].b = 1;
+            datSpecialSkill.tbl[id].m = 3;
+            datSpecialSkill.tbl[id].n = 4;
+
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
+            skillLevel.SkillID = 372;
+            skillLevel.Level = 6;
         }
     }
 }

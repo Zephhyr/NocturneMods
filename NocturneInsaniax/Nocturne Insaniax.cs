@@ -297,6 +297,7 @@ namespace NocturneInsaniax
                 // Music
                 Smg.Instance._TblAdd(Smg.eType.BGM, "B1600_B1601_BGM01", "B1600_B1601_BGM01_L_", 9134875, true);
                 Smg.Instance._TblAdd(Smg.eType.BGM, "B1700_B1701_BGM01", "B1700_B1701_BGM01_L_", 9134876, true);
+                Smg.Instance._TblAdd(Smg.eType.BGM, "B1800_B1801_BGM01", "B1800_B1801_BGM01_L_", 9134877, true);
 
 
                 //foreach (var sound in Smg.Instance._tableSe_MSE)
@@ -428,6 +429,10 @@ namespace NocturneInsaniax
                 bgm17Keys.Add("B1700_B1701_BGM01", new SndAssetBundleManager.SndData { key = "b_bgm17", path = 1, id = 0, name = "B1700_B1701_BGM01", diff = true });
                 SndAssetBundleManager.BGMBundleTable.Add("b_bgm17", bgm17Keys);
 
+                var bgm18Keys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
+                bgm18Keys.Add("B1800_B1801_BGM01", new SndAssetBundleManager.SndData { key = "b_bgm18", path = 1, id = 0, name = "B1800_B1801_BGM01", diff = true });
+                SndAssetBundleManager.BGMBundleTable.Add("b_bgm18", bgm18Keys);
+
                 //foreach (var dic in SndAssetBundleManager.SEBundleTable)
                 //{
                 //    MelonLogger.Msg(dic.key + ":");
@@ -468,6 +473,13 @@ namespace NocturneInsaniax
                         nbSound.bgmloadphase = 1;
                         nbSound.bgmdone = 0;
                         nbSound.bgmkey = 17;
+                        break;
+                    case 18: // Hunting - Betrayal
+                        nbSound.bgmno = "B1800_B1801_BGM01";
+                        nbSound.bgmsub = 0;
+                        nbSound.bgmloadphase = 1;
+                        nbSound.bgmdone = 0;
+                        nbSound.bgmkey = 18;
                         break;
                     default: break;
                 }
