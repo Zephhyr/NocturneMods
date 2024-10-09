@@ -704,6 +704,8 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(111, 0);
                     //datCalc.datAddDevil(185, 0);
                     //datCalc.datAddDevil(199, 0);
+                    datCalc.datAddDevil(148, 0);
+                    datCalc.datAddDevil(228, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    //work.skill[0] = 192;
@@ -822,7 +824,8 @@ namespace NocturneInsaniax
                         {
                             try
                             {
-                                if (withheldSentenceIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                if (withheldSentenceIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id) ||
+                                    (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 22))
                                     __result = 0;
                             }
                             catch { }
@@ -1003,7 +1006,8 @@ namespace NocturneInsaniax
                         {
                             try
                             {
-                                if (magnifiedMaladyIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                if (magnifiedMaladyIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id) ||
+                                    (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 15))
                                     magnifiedMaladyActive = true; break;
                             }
                             catch { }
@@ -2080,6 +2084,9 @@ namespace NocturneInsaniax
             foreach (var skill in negoSkillScenarios.Keys)
                 if (tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == skill).Any())
                     tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == skill).Level = 0;
+
+            if (tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 353).Any())
+                tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 353).Level = 0;
         }
 
         // Physical Skills

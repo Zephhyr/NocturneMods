@@ -43,6 +43,10 @@ namespace NocturneInsaniax
                             case "<AI_MSG_L0129><WAIT>": __result = "<SP6>Humanity will inevitably lose its way and long for salvation. Then... You can regret this decision...<WA>"; break;
                         }
                     }
+                    else if (nbMainProcess.nbGetMainProcessData().encno == 1267 && message == "<SPD 6><AI_MSG_L0029><WAIT>")
+                    {
+                        __result = "<SP6>Maga...tsuhi...<WA>";
+                    }
                 }
                 catch { }
             }

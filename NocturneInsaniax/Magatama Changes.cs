@@ -74,10 +74,10 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 10;
             tblHearts.fclHeartsTbl[id].Skill[5].ID = 305; // Counter
             tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 14;
-            tblHearts.fclHeartsTbl[id].Skill[6].ID = 301; // Dark Might
-            tblHearts.fclHeartsTbl[id].Skill[6].TargetLevel = 18;
-            tblHearts.fclHeartsTbl[id].Skill[7].ID = 425; // "Pierce"
-            tblHearts.fclHeartsTbl[id].Skill[7].TargetLevel = 19;
+            //tblHearts.fclHeartsTbl[id].Skill[6].ID = 301; // Dark Might
+            //tblHearts.fclHeartsTbl[id].Skill[6].TargetLevel = 18;
+            tblHearts.fclHeartsTbl[id].Skill[6].ID = 425; // "Pierce"
+            tblHearts.fclHeartsTbl[id].Skill[6].TargetLevel = 15;
         }
 
         private static void Wadatsumi(ushort id)

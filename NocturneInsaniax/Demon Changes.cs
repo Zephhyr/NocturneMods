@@ -300,6 +300,10 @@ namespace NocturneInsaniax
                         __result = "Gdon"; return false;
                     case "<AISYO_L0227>":
                         __result = "Drn: Fire • Str: Phys/Light/Mind • Weak: Ice/Curse"; return false;
+                    case "<DEVIL_L0228>":
+                        __result = "Vritra"; return false;
+                    case "<AISYO_L0228>":
+                        __result = "Drn: Fire • Str: Phys/Light/Mind • Weak: Ice/Curse"; return false;
                     case "<DEVIL_L0252>":
                         __result = "Dante"; return false;
                     case "<AISYO_L0252>":
@@ -360,6 +364,8 @@ namespace NocturneInsaniax
                         __result = "A malevolent spirit which inflicts bad dreams upon sleeping people. They are often depicted as ghostly black horses with manes of fire or smoke, fading away into the night."; break;
                     case "<COLLECTIONBOOK_L0227>":
                         __result = "The tiger mount of the goddess Durga, of Hindu mythology. Durga was born to defeat the Asura Mahisha, and Gdon was granted to her to help complete the task."; break;
+                    case "<COLLECTIONBOOK_L0228>":
+                        __result = "A large, violent serpent of Hindu lore whose name means \"enveloper.\" It blocked the rivers and caused severe droughts until it was defeated by Indra. Despite this, Vritra resurrected itself the following year, and the two have fought ever since."; break;
                     default: break;
                 }
             }
@@ -391,7 +397,7 @@ namespace NocturneInsaniax
                 else if (datDevilFormat.Get(normalResult).race == 10 && pSacrifice.id == 125)
                     __result = 224;
                 //else
-                //    __result = 225;
+                //    __result = 228;
             }
         }
 
@@ -749,6 +755,7 @@ namespace NocturneInsaniax
             Doppelganger(225);
             Nightmare(226);
             Gdon(227);
+            Vritra(228);
 
             DevilDante(252);
             Gamete(253);
@@ -830,8 +837,8 @@ namespace NocturneInsaniax
             BossFlauros(362);
 
             // Universal Animation Fixes
-            ApplyUniversalUnitVisualChange();
-            datDevilVisual07.tbl_7_0E0_0FF[30].motion[22].motion_no = 0;
+            //ApplyUniversalUnitVisualChange();
+            //datDevilVisual07.tbl_7_0E0_0FF[30].motion[22].motion_no = 0;
         }
 
         private static void Vishnu(ushort id)
@@ -9643,6 +9650,92 @@ namespace NocturneInsaniax
             datDevilNegoFormat.tbl[id] = datDevilNegoFormat.tbl[30];
         }
 
+        private static void Vritra(ushort id)
+        {
+            datDevilFormat.tbl[id].flag = 3;
+            datDevilFormat.tbl[id].race = 27;
+            datDevilFormat.tbl[id].level = 40;
+            datDevilFormat.tbl[id].aisyoid = (short)id;
+            datDevilFormat.tbl[id].param = new sbyte[] { 19, 0, 9, 13, 12, 11 };
+            datDevilFormat.tbl[id].keisyotype = 4;
+            datDevilFormat.tbl[id].keisyoform = 2235;
+
+            datDevilName.txt[id] = "ヴリトラ";
+
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 0, 1, 2, 1, 1 };
+
+            tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 5, TargetLevel = 0, Type = 1 }; // Maragion
+            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 121, TargetLevel = 0, Type = 1 }; // Stun Bite
+            tblSkill.fclSkillTbl[id].Event[2] = new fclSkillParam_t { Param = 290, TargetLevel = 0, Type = 1 }; // Life Bonus
+            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 300, TargetLevel = 41, Type = 1 }; // Bright Might
+            tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 3, TargetLevel = 42, Type = 1 }; // Agidyne
+            tblSkill.fclSkillTbl[id].Event[5] = new fclSkillParam_t { Param = 54, TargetLevel = 43, Type = 1 }; // Rakunda
+            tblSkill.fclSkillTbl[id].Event[6] = new fclSkillParam_t { Param = 308, TargetLevel = 44, Type = 1 }; // Double Attack
+
+            // Affinities
+            datAisyo.tbl[id][0] = 50; // Phys
+            datAisyo.tbl[id][1] = 262144; // Fire
+            datAisyo.tbl[id][2] = 2147483778; // Ice
+            datAisyo.tbl[id][3] = 100; // Elec
+            datAisyo.tbl[id][4] = 100; // Force
+            datAisyo.tbl[id][6] = 50; // Light
+            datAisyo.tbl[id][7] = 100; // Dark
+            datAisyo.tbl[id][8] = 2147483778; // Curse
+            datAisyo.tbl[id][9] = 100; // Nerve
+            datAisyo.tbl[id][10] = 50; // Mind
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 420;
+            datDevilFormat.tbl[id].maxhp = 420;
+            datDevilFormat.tbl[id].mp = 208;
+            datDevilFormat.tbl[id].maxmp = 208;
+
+            datDevilFormat.tbl[id].dropexp = 241;
+            datDevilFormat.tbl[id].dropmakka = 258;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 5; // Maragion
+            datDevilFormat.tbl[id].skill[1] = 121; // Stun Bite
+            datDevilFormat.tbl[id].skill[2] = 3; // Agidyne
+            datDevilFormat.tbl[id].skill[3] = 54; // Rakunda
+            datDevilFormat.tbl[id].skill[4] = 300; // Bright Might
+            datDevilFormat.tbl[id].skill[5] = 308; // Double Attack
+
+            // AI
+            datDevilAI.divTbls[1][99].aitable[0][0].skill = 32768;
+            datDevilAI.divTbls[1][99].aitable[0][0].ritu = 20;
+            datDevilAI.divTbls[1][99].aitable[0][1].skill = 5;
+            datDevilAI.divTbls[1][99].aitable[0][1].ritu = 35;
+            datDevilAI.divTbls[1][99].aitable[0][2].skill = 3;
+            datDevilAI.divTbls[1][99].aitable[0][2].ritu = 20;
+            datDevilAI.divTbls[1][99].aitable[0][3].skill = 121;
+            datDevilAI.divTbls[1][99].aitable[0][3].ritu = 20;
+            datDevilAI.divTbls[1][99].aitable[0][4].skill = 54;
+            datDevilAI.divTbls[1][99].aitable[0][4].ritu = 20;
+
+            mdlFileDefTable.devilModelFileTable[id].texFile = "";
+            mdlFileDefTable.devilModelFileTable[id].modelFile = "d0xe4.PB";
+            mdlFileDefTable.devilModelFileTable[id].motionFile = "";
+            mdlFileDefTable.devilModelFileTable[id].akey = "dvl0xe4";
+            mdlFileDefTable.devilModelFileTable[id].fname = "devil_0xe4";
+
+            mdlFileDefTable.devilOnModelFileTable[id].texFile = "";
+            mdlFileDefTable.devilOnModelFileTable[id].modelFile = "devil/on/0xe4_on.PB";
+            mdlFileDefTable.devilOnModelFileTable[id].motionFile = "";
+            mdlFileDefTable.devilOnModelFileTable[id].akey = "";
+            mdlFileDefTable.devilOnModelFileTable[id].fname = "";
+
+            mdlFileDefTable.devilModelIndex[id].major = 6;
+            mdlFileDefTable.devilModelIndex[id].minor = 228;
+            mdlFileDefTable.devilModelIndex[id].scale = 4096;
+            mdlFileDefTable.devilModelIndex[id].radius = 1000;
+
+            datDevilVisual07.tbl_7_0E0_0FF[4] = CopyDevilVisual(datDevilVisual04.tbl_4_080_09F[20]);
+            datDevilVisual07.tbl_7_0E0_0FF[4].formscale = 1f;
+
+            datDevilNegoFormat.tbl[id] = datDevilNegoFormat.tbl[30];
+        }
+
         private static void DevilDante(ushort id)
         {
             datDevilFormat.tbl[id].flag = 34;
@@ -9795,6 +9888,11 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].dropexp = 200;
             //datDevilFormat.tbl[id].dropmakka = 65000;
             //datDevilAI.divTbls[2][0].ailevel = 0;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 7; // Bufu
+            datDevilFormat.tbl[id].skill[1] = 10; // Mabufu
+            datDevilFormat.tbl[id].skill[2] = 244; // Icy Death
         }
 
         private static void BossSpecter1(ushort id)

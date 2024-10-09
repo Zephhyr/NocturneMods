@@ -298,6 +298,10 @@ namespace NocturneInsaniax
                 Smg.Instance._TblAdd(Smg.eType.BGM, "B1600_B1601_BGM01", "B1600_B1601_BGM01_L_", 9134875, true);
                 Smg.Instance._TblAdd(Smg.eType.BGM, "B1700_B1701_BGM01", "B1700_B1701_BGM01_L_", 9134876, true);
                 Smg.Instance._TblAdd(Smg.eType.BGM, "B1800_B1801_BGM01", "B1800_B1801_BGM01_L_", 9134877, true);
+                Smg.Instance._TblAdd(Smg.eType.BGM, "B1900_B1901_BGM01", "B1900_B1901_BGM01_L_", 9134878, true);
+                Smg.Instance._TblAdd(Smg.eType.BGM, "B2000_B2001_BGM01", "B2000_B2001_BGM01_L_", 9134879, true);
+                Smg.Instance._TblAdd(Smg.eType.BGM, "B2100_B2101_BGM01", "B2100_B2101_BGM01_L_", 9134880, true);
+                Smg.Instance._TblAdd(Smg.eType.BGM, "B2200_B2201_BGM01", "B2200_B2201_BGM01_L_", 9134881, true);
 
 
                 //foreach (var sound in Smg.Instance._tableSe_MSE)
@@ -433,6 +437,22 @@ namespace NocturneInsaniax
                 bgm18Keys.Add("B1800_B1801_BGM01", new SndAssetBundleManager.SndData { key = "b_bgm18", path = 1, id = 0, name = "B1800_B1801_BGM01", diff = true });
                 SndAssetBundleManager.BGMBundleTable.Add("b_bgm18", bgm18Keys);
 
+                var bgm19Keys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
+                bgm19Keys.Add("B1900_B1901_BGM01", new SndAssetBundleManager.SndData { key = "b_bgm19", path = 1, id = 0, name = "B1900_B1901_BGM01", diff = true });
+                SndAssetBundleManager.BGMBundleTable.Add("b_bgm19", bgm19Keys);
+
+                var bgm20Keys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
+                bgm20Keys.Add("B2000_B2001_BGM01", new SndAssetBundleManager.SndData { key = "b_bgm20", path = 1, id = 0, name = "B2000_B2001_BGM01", diff = true });
+                SndAssetBundleManager.BGMBundleTable.Add("b_bgm20", bgm20Keys);
+
+                var bgm21Keys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
+                bgm21Keys.Add("B2100_B2101_BGM01", new SndAssetBundleManager.SndData { key = "b_bgm21", path = 1, id = 0, name = "B12100_B2101_BGM01", diff = true });
+                SndAssetBundleManager.BGMBundleTable.Add("b_bgm21", bgm21Keys);
+
+                var bgm22Keys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
+                bgm22Keys.Add("B2200_B2201_BGM01", new SndAssetBundleManager.SndData { key = "b_bgm22", path = 1, id = 0, name = "B12200_B2201_BGM01", diff = true });
+                SndAssetBundleManager.BGMBundleTable.Add("b_bgm22", bgm22Keys);
+
                 //foreach (var dic in SndAssetBundleManager.SEBundleTable)
                 //{
                 //    MelonLogger.Msg(dic.key + ":");
@@ -458,6 +478,11 @@ namespace NocturneInsaniax
                     //if (encno == 1033)
                     //    __result = 17;
                 }
+                else if (__result == 21)
+                {
+                    if (!EventBit.evtBitCheck(3712))
+                        __result = 20;
+                }
                 switch (__result)
                 {
                     case 16:  // CLUB MILTON
@@ -480,6 +505,34 @@ namespace NocturneInsaniax
                         nbSound.bgmloadphase = 1;
                         nbSound.bgmdone = 0;
                         nbSound.bgmkey = 18;
+                        break;
+                    case 19: // Enemy of God
+                        nbSound.bgmno = "B1900_B1901_BGM01";
+                        nbSound.bgmsub = 0;
+                        nbSound.bgmloadphase = 1;
+                        nbSound.bgmdone = 0;
+                        nbSound.bgmkey = 19;
+                        break;
+                    case 20: // An Old Foe
+                        nbSound.bgmno = "B2000_B2001_BGM01";
+                        nbSound.bgmsub = 0;
+                        nbSound.bgmloadphase = 1;
+                        nbSound.bgmdone = 0;
+                        nbSound.bgmkey = 20;
+                        break;
+                    case 21: // Devils Never Cry
+                        nbSound.bgmno = "B2100_B2101_BGM01";
+                        nbSound.bgmsub = 0;
+                        nbSound.bgmloadphase = 1;
+                        nbSound.bgmdone = 0;
+                        nbSound.bgmkey = 21;
+                        break;
+                    case 22: // Rare Devil
+                        nbSound.bgmno = "B2200_B2201_BGM01";
+                        nbSound.bgmsub = 0;
+                        nbSound.bgmloadphase = 1;
+                        nbSound.bgmdone = 0;
+                        nbSound.bgmkey = 22;
                         break;
                     default: break;
                 }
@@ -525,16 +578,16 @@ namespace NocturneInsaniax
         //    }
         //}
 
-        //[HarmonyPatch(typeof(EventBit), nameof(EventBit.evtBitCheck))]
-        //private class evtBitCheckPatch
-        //{
-        //    public static void Postfix(ref int no, ref bool __result)
-        //    {
-        //        MelonLogger.Msg("--EventBit.evtBitCheck--");
-        //        if (no == 3712)
-        //            __result = false;
-        //    }
-        //}
+        [HarmonyPatch(typeof(EventBit), nameof(EventBit.evtBitCheck))]
+        private class evtBitCheckPatch
+        {
+            public static void Postfix(ref int no, ref bool __result)
+            {
+                //MelonLogger.Msg("--EventBit.evtBitCheck--");
+                if (no == 3712)
+                    __result = false;
+            }
+        }
 
         //[HarmonyPatch(typeof(mdlEffect), nameof(mdlEffect.mdlCreateEffect_P2A_D3P))]
         //private class mdlCreateEffectPatch

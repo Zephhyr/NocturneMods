@@ -487,7 +487,7 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+2: Heal/Supp  <material=\"MsgFont1\">-3: Phys", // 040 Saki Mitama
             "  <material=\"MsgFont4\">+2: Supp<material=\"MsgFont1\">", // 041 Kushi Mitama
             "  <material=\"MsgFont4\">+2: Supp<material=\"MsgFont1\">", // 042 Nigi Mitama
-            "  <material=\"MsgFont4\">+2: Phys/Supp  <material=\"MsgFont1\">-3: Magic", // 043 Ara Mitama
+            "  <material=\"MsgFont4\">+2: Phys/Supp  <material=\"MsgFont1\">-3: Elements", // 043 Ara Mitama
             "  <material=\"MsgFont4\">+6: Fire • +2: Supp  <material=\"MsgFont1\">-7: Ice", // 044 Efreet
             "  <material=\"MsgFont4\">+4: Phys/Force • +3: Ailments  <material=\"MsgFont1\">-6: Elec", // 045 Pulukishi
             "  <material=\"MsgFont4\">+4: Phys • +1: Supp  <material=\"MsgFont1\">-4: Ailments", // 046 Ongkhot
@@ -497,8 +497,8 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+3: Ice/Ailments • +1: Heal  <material=\"MsgFont1\">-4: Fire", // 050 Isora
             "  <material=\"MsgFont4\">+2: Elec/Mind • +1: Heal/Supp  <material=\"MsgFont1\">-3: Fire", // 051 Apsaras
             "  <material=\"MsgFont4\">+3: Force • +1: Supp  <material=\"MsgFont1\">-3: Elec/Curse", // 052 Koppa Tengu
-            "  <material=\"MsgFont4\">+4: Magic • +3: Heal • +1: Supp  <material=\"MsgFont1\">-4: Phys", // 053 Titania
-            "  <material=\"MsgFont4\">+3: Magic • +2: Heal/Supp  <material=\"MsgFont1\">-4: Dark/Almighty", // 054 Oberon
+            "  <material=\"MsgFont4\">+4: Elements • +3: Heal • +1: Supp  <material=\"MsgFont1\">-4: Phys", // 053 Titania
+            "  <material=\"MsgFont4\">+3: Elements • +2: Heal/Supp  <material=\"MsgFont1\">-4: Dark/Almighty", // 054 Oberon
             "  <material=\"MsgFont4\">+4: Phys/Ice • +1: Heal  <material=\"MsgFont1\">-3: Fire/Elec/Nerve/Mind", // 055 Troll
             "  <material=\"MsgFont4\">+4: Phys • +2: Force/Supp  <material=\"MsgFont1\">-3: Elec", // 056 Setanta
             "  <material=\"MsgFont4\">+3: Mind/Heal • +1: Supp  <material=\"MsgFont1\">-3: Force", // 057 Kelpie
@@ -538,7 +538,7 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+2: Fire • +1: Mind/Heal/Supp  <material=\"MsgFont1\">-3: Ice", // 091 Hua Po
             "  <material=\"MsgFont4\">+2: Force • +1: Heal  <material=\"MsgFont1\">-3: Fire", // 092 Kodama
             "  <material=\"MsgFont4\">+5: Light/Dark • +2: Ailments  <material=\"MsgFont1\">-7 Fire", // 093 Shiki-Ouji
-            "  <material=\"MsgFont4\">+4: Phys  <material=\"MsgFont1\">-2: Magic/Heal", // 094 Oni
+            "  <material=\"MsgFont4\">+4: Phys  <material=\"MsgFont1\">-2: Elements/Heal", // 094 Oni
             "  <material=\"MsgFont4\">+3: Phys/Dark/Curse  <material=\"MsgFont1\">-3: Light/Nerve/Mind/Supp", // 095 Yomotsu-Ikusa
             "  <material=\"MsgFont4\">+4: Phys  <material=\"MsgFont1\">-2: Heal • -5: Ailments", // 096 Momunofu
             "  <material=\"MsgFont4\">+2: Elec • +1: Supp  <material=\"MsgFont1\">-3: Fire", // 097 Shikigami
@@ -549,18 +549,18 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+3: Phys/Elec • +2: Nerve  <material=\"MsgFont1\">-2: Heal • -4: Ice", // 102 Taraka
             "  <material=\"MsgFont4\">+2: Ice/Ailments  <material=\"MsgFont1\">-3: Elec", // 103 Datsue-Ba
             "  <material=\"MsgFont4\">+5: Phys/Fire/Mind • +3: Heal/Supp  <material=\"MsgFont1\">-5: Ice/Almighty/Curse", // 104 Mada
-            "  <material=\"MsgFont4\">+5: Phys/Curse/Nerve • +2: Supp  <material=\"MsgFont1\">-3: Mind/Heal • -5: Magic/Light", // 105 Girimekhala
-            "  <material=\"MsgFont4\">+5: Phys/Almighty/Dark  <material=\"MsgFont1\">-4: Magic", // 106 Taotie
+            "  <material=\"MsgFont4\">+5: Phys/Curse/Nerve • +2: Supp  <material=\"MsgFont1\">-3: Mind/Heal • -5: Elements/Light", // 105 Girimekhala
+            "  <material=\"MsgFont4\">+5: Phys/Almighty/Dark  <material=\"MsgFont1\">-4: Elements", // 106 Taotie
             "  <material=\"MsgFont4\">+4: Force/Curse/Mind • +2: Dark/Heal  <material=\"MsgFont1\">-5: Ice", // 107 Pazuzu
             "  <material=\"MsgFont4\">+4: Dark/Curse/Mind • +2: Fire  <material=\"MsgFont1\">-4: Light", // 108 Baphomet
             "  <material=\"MsgFont4\">+6: Force/Dark/Almighty • +4: Fire  <material=\"MsgFont1\">-7: Elec", // 109 Mot
             "  <material=\"MsgFont4\">+6: Phys/Almighty • +4: Dark • +2: Supp  <material=\"MsgFont1\">-5: Light", // 110 Aciel
             "  <material=\"MsgFont4\">+7: Fire • +5: Phys  <material=\"MsgFont1\">-7: Ice", // 111 Surt
             "  <material=\"MsgFont4\">+4: Phys/Ice/Dark • +2: Supp  <material=\"MsgFont1\">-4: Elec/Light", // 112 Abaddon
-            "  <material=\"MsgFont4\">+4: Magic  <material=\"MsgFont1\">-4: Light", // 113 Loki
+            "  <material=\"MsgFont4\">+4: Elements  <material=\"MsgFont1\">-4: Light", // 113 Loki
             "  <material=\"MsgFont4\">+6: Elec/Mind/Dark • +4: Almighty/Curse/Nerve  <material=\"MsgFont1\">-5: Ice", // 114 Lilith
             "  <material=\"MsgFont4\">+6: Ice/Mind • +4: Almighty/Supp  <material=\"MsgFont1\">-5: Phys", // 115 Nyx
-            "  <material=\"MsgFont4\">+4: Magic • +3: Supp • +1: Heal  <material=\"MsgFont1\">-4: Phys", // 116 Queen Mab
+            "  <material=\"MsgFont4\">+4: Elements • +3: Supp • +1: Heal  <material=\"MsgFont1\">-4: Phys", // 116 Queen Mab
             "  <material=\"MsgFont4\">+5: Mind • +3: Ice/Curse/Nerve • +1: Heal/Supp  <material=\"MsgFont1\">-3: Fire/Light", // 117 Succubus
             "  <material=\"MsgFont4\">+5: Ailments • +2: Dark  <material=\"MsgFont1\">-2: Supp", // 118 Incubus
             "  <material=\"MsgFont4\">+3: Phys/Ice  <material=\"MsgFont1\">-3: Elec", // 119 Fomorian
@@ -575,20 +575,20 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+4: Dark/Mind • +1: Supp  <material=\"MsgFont1\">-2: Heal • -5: Light", // 128 Legion
             "  <material=\"MsgFont4\">+3: Phys/Dark • +1: Heal/Supp  <material=\"MsgFont1\">-3: Ice • -4: Light", // 129 Yaka
             "  <material=\"MsgFont4\">+2: Phys/Fire/Dark  <material=\"MsgFont1\">-2: Heal • -4: Force/Light", // 130 Choronzon
-            "  <material=\"MsgFont4\">+3: Dark/Curse • +1: Phys  <material=\"MsgFont1\">-1: Heal • -3: Magic/Light", // 131 Preta
+            "  <material=\"MsgFont4\">+3: Dark/Curse • +1: Phys  <material=\"MsgFont1\">-1: Heal • -3: Elements/Light", // 131 Preta
             "  <material=\"MsgFont4\">+5: Dark • +3: Elec/Almighty/Supp  <material=\"MsgFont1\">-3: Heal • -5: Force/Light", // 132 Shadow
             "  <material=\"MsgFont4\">+5: Ailments • +2: Phys/Almighty  <material=\"MsgFont1\">-2: Elec/Light • -3: Heal", // 133 Black Ooze
             "  <material=\"MsgFont4\">+4: Ailments • +1: Phys/Almighty  <material=\"MsgFont1\">-2: Fire/Ice • -3: Light/Heal", // 134 Blob
-            "  <material=\"MsgFont4\">+3: Ailments • +1: Phys  <material=\"MsgFont1\">-1: Heal/Supp • -3: Magic/Light", // 135 Slime
+            "  <material=\"MsgFont4\">+3: Ailments • +1: Phys  <material=\"MsgFont1\">-1: Heal/Supp • -3: Elements/Light", // 135 Slime
             "  <material=\"MsgFont4\">+3: Dark • +1: Fire/Ailments  <material=\"MsgFont1\">-1: Heal • -3: Light", // 136 Mou-Ryo
             "  <material=\"MsgFont4\">+1: Almighty/Ailments  <material=\"MsgFont1\">-3: Light/Heal", // 137 Will o' Wisp
-            "  <material=\"MsgFont4\">+6: Phys/Almighty • +4: Magic/Light  <material=\"MsgFont1\">-6: Ailments", // 138 Michael
+            "  <material=\"MsgFont4\">+6: Phys/Almighty • +4: Elements/Light  <material=\"MsgFont1\">-6: Ailments", // 138 Michael
             "  <material=\"MsgFont4\">+6: Ice/Light • +4: Heal/Supp  <material=\"MsgFont1\">-4: Ailments • -6: Elec", // 139 Gabriel
             "  <material=\"MsgFont4\">+6: Force/Light • +4: Phys/Heal  <material=\"MsgFont1\">-4: Ailments • -6: Fire", // 140 Raphael
             "  <material=\"MsgFont4\">+6: Fire/Light • +4: Phys/Elec  <material=\"MsgFont1\">-4: Ailments • -6: Ice", // 141 Uriel
             "  <material=\"MsgFont4\">+6: Phys • +4: Force/Supp  <material=\"MsgFont1\">-6: Elec", // 142 Ganesha
             "  <material=\"MsgFont4\">+4: Phys • +2: Fire/Supp  <material=\"MsgFont1\">-4: Mind", // 143 Valkyrie
-            "  <material=\"MsgFont4\">+3: Phys/Almighty/Supp  <material=\"MsgFont1\">-3: Magic", // 144 Arahabaki
+            "  <material=\"MsgFont4\">+3: Phys/Almighty/Supp  <material=\"MsgFont1\">-3: Elements", // 144 Arahabaki
             "  <material=\"MsgFont4\">+5: Force • +2: Phys/Light/Supp  <material=\"MsgFont1\">-5: Elec", // 145 Kurama Tengu
             "  <material=\"MsgFont4\">+5: Phys • +2: Supp  <material=\"MsgFont1\">-4: Dark/Ailments", // 146 Hanuman
             "  <material=\"MsgFont4\">+5: Phys/Force • +3: Supp  <material=\"MsgFont1\">-3: Elec", // 147 Cu Chulainn
@@ -599,7 +599,7 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+7: Force • +3: Phys/Light/Supp  <material=\"MsgFont1\">-6: Dark/Elec", // 152 Garuda
             "  <material=\"MsgFont4\">+5: Force/Light • +2: Heal/Supp  <material=\"MsgFont1\">-7: Ice/Dark", // 153 Yatagarasu
             "  <material=\"MsgFont4\">+7: Force • +3: Elec/Dark/Supp  <material=\"MsgFont1\">-6: Light", // 154 Gurulu
-            "  <material=\"MsgFont4\">+7: Phys • +3: Heal/Supp  <material=\"MsgFont1\">-4: Magic/Dark", // 155 Albion
+            "  <material=\"MsgFont4\">+7: Phys • +3: Heal/Supp  <material=\"MsgFont1\">-4: Elements/Dark", // 155 Albion
             "", // 156 Manikin
             "", // 157 Manikin
             "", // 158 Manikin
@@ -613,13 +613,13 @@ namespace NocturneInsaniax
             "", // 166 Manikin
             "  <material=\"MsgFont4\">+5: Ailments • +2: Elec/Dark/Supp  <material=\"MsgFont1\">-3: Fire/Light/Heal", // 167 Pisaca
             "  <material=\"MsgFont4\">+5: Dark • +2: Mind/Supp  <material=\"MsgFont1\">-7: Light", // 168 Kaiwan
-            "  <material=\"MsgFont4\">+6: Phys • +2: Supp  <material=\"MsgFont1\">-2: Magic/Heal", // 169 Kin-Ki
+            "  <material=\"MsgFont4\">+6: Phys • +2: Supp  <material=\"MsgFont1\">-2: Elements/Heal", // 169 Kin-Ki
             "  <material=\"MsgFont4\">+6: Ice • +2: Phys/Supp  <material=\"MsgFont1\">-2: Heal • -7: Fire", // 170 Sui-Ki
             "  <material=\"MsgFont4\">+6: Force • +2: Phys/Supp  <material=\"MsgFont1\">-2: Heal • -7: Elec", // 171 Fuu-Ki
             "  <material=\"MsgFont4\">+6: Phys/Dark • +3: Almighty/Ailments/Supp  <material=\"MsgFont1\">-2: Heal • -7: Light", // 172 Ongyo-Ki
             "  <material=\"MsgFont4\">+6: Light/Mind • +3: Almighty/Heal  <material=\"MsgFont1\">-5: Phys", // 173 Clotho
             "  <material=\"MsgFont4\">+6: Ailments • +4: Supp  <material=\"MsgFont1\">-5: Phys", // 174 Lachesis
-            "  <material=\"MsgFont4\">+6: Magic • +4: Almighty  <material=\"MsgFont1\">-5: Phys", // 175 Atropos
+            "  <material=\"MsgFont4\">+6: Elements • +4: Almighty  <material=\"MsgFont1\">-5: Phys", // 175 Atropos
             "  <material=\"MsgFont4\">+5: Dark/Ailments • +2: Supp  <material=\"MsgFont1\">-4: Light", // 176 Loa
             "  <material=\"MsgFont4\">+3: Phys/Dark/Ailments • +1: Supp  <material=\"MsgFont1\">-2: Heal • -4: Ice/Light", // 177 Chatterskull
             "  <material=\"MsgFont4\">+5: Elec • +2: Almighty/Supp  <material=\"MsgFont1\">-4: Force/Light/Heal", // 178 Phantom
@@ -647,7 +647,7 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+4: Fire/Force • +3: Phys/Supp  <material=\"MsgFont1\">-4: Ice/Light", // 200 Hell Biker
             "  <material=\"MsgFont4\">+4: Light/Dark/Mind • +2: Heal  <material=\"MsgFont1\">-4: Phys/Fire", // 201 Daisoujou
             "  <material=\"MsgFont4\">+5: Elec/Almighty • +3: Ailments/Supp  <material=\"MsgFont1\">-6: Ice/Force", // 202 Mother Harlot
-            "  <material=\"MsgFont4\">+7: Almighty • +5: Magic  <material=\"MsgFont1\">-7: Phys", // 203 Trumpeter
+            "  <material=\"MsgFont4\">+7: Almighty • +5: Elements  <material=\"MsgFont1\">-7: Phys", // 203 Trumpeter
             "", // 204 Futomimi
             "", // 205 Sakahagi
             "  <material=\"MsgFont4\">+6: Ice/Dark • +3: Supp  <material=\"MsgFont1\">-3: Heal • -7: Light", // 206 Black Frost
@@ -856,8 +856,8 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+5: Light • +3: Heal/Supp<material=\"MsgFont1\">", // 409 Geis
             "  <material=\"MsgFont4\">+5: Supp • +3: Almighty/Ailments<material=\"MsgFont1\">", // 410 Djed
             "  <material=\"MsgFont4\">+5: Supp • +3: Almighty/Ailments<material=\"MsgFont1\">", // 411 Djed
-            "  <material=\"MsgFont4\">+7: Ailments • +3: Phys/Magic<material=\"MsgFont1\">", // 412 Muspell
-            "  <material=\"MsgFont4\">+7: Ailments • +3: Phys/Magic<material=\"MsgFont1\">", // 413 Muspell
+            "  <material=\"MsgFont4\">+7: Ailments • +3: Phys/Elements<material=\"MsgFont1\">", // 412 Muspell
+            "  <material=\"MsgFont4\">+7: Ailments • +3: Phys/Elements<material=\"MsgFont1\">", // 413 Muspell
             "  <material=\"MsgFont4\">+7: Fire • +3: Dark<material=\"MsgFont1\">", // 414 Gehenna
             "  <material=\"MsgFont4\">+7: Fire • +3: Dark<material=\"MsgFont1\">", // 415 Gehenna
             "  <material=\"MsgFont4\">+7: Phys<material=\"MsgFont1\">", // 416 Kamurogi
@@ -874,10 +874,10 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+7: Light  • +4: Heal/Supp<material=\"MsgFont1\">", // 427 Sophia
             "  <material=\"MsgFont4\">+9: Phys<material=\"MsgFont1\">", // 428 Gaea
             "  <material=\"MsgFont4\">+9: Phys<material=\"MsgFont1\">", // 429 Gaea
-            "  <material=\"MsgFont4\">+7: Almighty • +5: Magic • +3: Supp<material=\"MsgFont1\">", // 430 Kailash
-            "  <material=\"MsgFont4\">+7: Almighty • +5: Magic • +3: Supp<material=\"MsgFont1\">", // 430 Kailash
-            "  <material=\"MsgFont4\">+9: Phys/Magic/Almighty/Ailments • +5: Heal/Supp<material=\"MsgFont1\">", // 432 Masakados
-            "  <material=\"MsgFont4\">+9: Phys/Magic/Almighty/Ailments • +5: Heal/Supp<material=\"MsgFont1\">", // 433 Masakados
+            "  <material=\"MsgFont4\">+7: Almighty • +5: Elements • +3: Supp<material=\"MsgFont1\">", // 430 Kailash
+            "  <material=\"MsgFont4\">+7: Almighty • +5: Elements • +3: Supp<material=\"MsgFont1\">", // 430 Kailash
+            "  <material=\"MsgFont4\">+9: Phys/Elements/Light/Dark/Almighty/Ailments • +5: Heal/Supp<material=\"MsgFont1\">", // 432 Masakados
+            "  <material=\"MsgFont4\">+9: Phys/Elements/Light/Dark/Almighty/Ailments • +5: Heal/Supp<material=\"MsgFont1\">", // 433 Masakados
             "", // 434 
             "", // 435 
             "", // 436 
@@ -916,7 +916,7 @@ namespace NocturneInsaniax
             "Imparts Support magic\r\n<material=\"MsgFont2\">Strong: Ailments\r\n" +
             "<material=\"MsgFont4\">+5: Supp • +3: Almighty/Ailments", // Djed
             "Imparts Ailment magic\r\n<material=\"MsgFont2\">Strong: Light/Dark\r\n" +
-            "<material=\"MsgFont4\">+7: Ailments • +3: Phys/Magic", // Muspell
+            "<material=\"MsgFont4\">+7: Ailments • +3: Phys/Elements", // Muspell
             "Imparts Fire magic\r\n<material=\"MsgFont2\">Drain: Fire<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ice\r\n" +
             "<material=\"MsgFont4\">+7: Fire • +3: Dark", // Gehenna
             "Imparts Physical skills\r\n<material=\"MsgFont2\">Strong: Phys<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: All types of magic\r\n" +
@@ -934,9 +934,9 @@ namespace NocturneInsaniax
             "Imparts Physical skills\r\n<material=\"MsgFont2\">Strong: Phys<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Force/Light/Dark\r\n" +
             "<material=\"MsgFont4\">+9: Phys", // Gaea
             "Imparts Almighty magic\r\nNormal resistance\r\n" +
-            "<material=\"MsgFont4\">+7: Almighty • +5: Magic • +3: Supp", // Kailash
-            "Magatama that holds ultimate power\r\n<material=\"MsgFont2\">Null: All except Almighty\r\n" +
-            "<material=\"MsgFont4\">+9: Phys/Magic/Almighty/Ailments • +5: Heal/Supp"  // Masakados
+            "<material=\"MsgFont4\">+7: Almighty • +5: Elements • +3: Supp", // Kailash
+            "Magatama that holds ultimate power\r\n<material=\"MsgFont2\">Str: All except Almighty\r\n" +
+            "<material=\"MsgFont4\">+9: Phys/Elements/Light/Dark/Almighty/Ailments • +5: Heal/Supp"  // Masakados
         };
 
         static private datUnitWork_t currentDemonWork = new datUnitWork_t(); // Used to get the associated demon when displaying the potential of a skill
@@ -997,7 +997,8 @@ namespace NocturneInsaniax
                             {
                                 try
                                 {
-                                    if (wardOffEvilIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                    if (wardOffEvilIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id) ||
+                                        (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 13))
                                         wardOffEvilActive = true;
                                 }
                                 catch { }
@@ -1103,7 +1104,8 @@ namespace NocturneInsaniax
                             {
                                 try
                                 {
-                                    if (restorativeMelodyIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                    if (restorativeMelodyIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id) ||
+                                        (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 3))
                                         restorativeMelodyActive = true;
                                 }
                                 catch { }
@@ -1120,7 +1122,8 @@ namespace NocturneInsaniax
                             {
                                 try
                                 {
-                                    if (divineBenevolenceIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                    if (divineBenevolenceIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id) ||
+                                        (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 4))
                                         divineBenevolenceActive = true;
                                 }
                                 catch { }
@@ -1436,7 +1439,7 @@ namespace NocturneInsaniax
                     {
                         try
                         {
-                            if (nbMainProcess.nbGetUnitWorkFromFormindex(party.formindex).id == 176)
+                            if (nbMainProcess.nbGetUnitWorkFromFormindex(party.formindex).id == 176 || nbMainProcess.nbGetUnitWorkFromFormindex(party.formindex).id == 358)
                                 tabooActive = true;
                         } catch { }
                     }
@@ -1592,7 +1595,7 @@ namespace NocturneInsaniax
                             {
                                 try
                                 {
-                                    skillPotential += demonPotentials[nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id][skillAttribute];
+                                    skillPotential += Math.Max((sbyte) 0, demonPotentials[nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id][skillAttribute]);
                                 } catch { }
                             }
                         }
@@ -1607,7 +1610,7 @@ namespace NocturneInsaniax
                                         if (nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && ally.partyindex == 0)
                                             skillPotential += magatamaPotentials[dds3GlobalWork.DDS3_GBWK.heartsequip][skillAttribute];
                                         else if (nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id != currentDemonWork.id)
-                                            skillPotential += demonPotentials[nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id][skillAttribute];
+                                            skillPotential += Math.Max((sbyte)0, demonPotentials[nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id][skillAttribute]);
                                     } catch { }
                                 }
                             }

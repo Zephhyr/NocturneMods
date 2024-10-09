@@ -161,7 +161,8 @@ namespace NocturneInsaniax
                     {
                         try
                         {
-                            if (criticalMelodyIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                            if (criticalMelodyIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id) ||
+                                (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 12))
                                 criticalMelodyActive = true; break;
                         }
                         catch { }
@@ -487,7 +488,8 @@ namespace NocturneInsaniax
                                 {
                                     try
                                     {
-                                        if (critEnablerUsers[skillAttr].Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                        if (critEnablerUsers[skillAttr].Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id) ||
+                                            (skillAttr == 1 && ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 16))
                                             critRate = Math.Max(critRate, (short) 10);
                                     }
                                     catch { }
@@ -534,14 +536,15 @@ namespace NocturneInsaniax
                                 }
                             }
                         }
-                        // Loki's Destabilize
+                        // Destabilize
                         if (skillAttr >= 1 && skillAttr <= 4)
                         {
-                            foreach (var ally in nbMainProcess.nbGetMainProcessData().party)
+                            foreach (var demon in nbMainProcess.nbGetMainProcessData().party)
                             {
                                 try
                                 {
-                                    if (nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 113)
+                                    if (nbMainProcess.nbGetUnitWorkFromFormindex(demon.formindex).id == 113
+                                        || (demon.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(demon.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 14))
                                         critRate = Math.Max(critRate, (short)10);
                                 }
                                 catch { }
@@ -581,13 +584,13 @@ namespace NocturneInsaniax
                         }
                     }
                     // Specter's Phantasmagoria
-                    if ((workFromFormindex1.id == 185) && workFromFormindex1.param[2] > workFromFormindex2.param[2])
+                    if (new ushort[] { 185, 257, 273, 275, 294, 295, 296 }.Contains(workFromFormindex1.id) && workFromFormindex1.param[2] > workFromFormindex2.param[2])
                         critRate += 10;
                     // Hell Biker's Speed Star
                     if ((workFromFormindex1.id == 200 || workFromFormindex1.id == 350) && workFromFormindex1.param[4] > workFromFormindex2.param[4])
                         critRate += 10;
                     // Focused Assault
-                    if (focusedAssaultIds.Contains(workFromFormindex1.id) && 
+                    if (((sformindex == 0 && workFromFormindex1.id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 1) || focusedAssaultIds.Contains(workFromFormindex1.id)) && 
                         datNormalSkill.tbl[nskill].targetarea == 2 && 
                         datNormalSkill.tbl[nskill].targettype == 0 &&
                         previousSingleTargetFormIndex == dformindex &&
@@ -754,7 +757,7 @@ namespace NocturneInsaniax
                         chance += 30;
                     }
                     // Focused Assault
-                    if (focusedAssaultIds.Contains(workFromFormindex1.id) &&
+                    if (((sformindex == 0 && workFromFormindex1.id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 1) || focusedAssaultIds.Contains(workFromFormindex1.id)) &&
                         datNormalSkill.tbl[nskill].targetarea == 2 &&
                         datNormalSkill.tbl[nskill].targettype == 0 &&
                         previousSingleTargetFormIndex == dformindex)

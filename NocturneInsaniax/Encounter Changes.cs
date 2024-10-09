@@ -613,6 +613,7 @@ namespace NocturneInsaniax
             datEncount.tbl[1035].devil[2] = 341;
             datEncount.tbl[1035].devil[3] = 0;
             datEncount.tbl[1035].devil[4] = 0;
+            datEncount.tbl[1035].btlsound = 21;
 
             // Boss Flauros
             datEncount.tbl[1277].devil[0] = 362;
@@ -628,6 +629,7 @@ namespace NocturneInsaniax
             // YHVH
             datEncount.tbl[1278].devil[0] = 254;
             datEncount.tbl[1278].backattack = -1;
+            datEncount.tbl[1278].btlsound = 19;
             datEncount.tbl[1278].flag = 11;
             datEncount.tbl[1278].formationtype = 13;
             datEncount.tbl[1278].areaid = 2;

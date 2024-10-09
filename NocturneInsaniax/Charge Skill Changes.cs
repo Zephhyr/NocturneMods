@@ -108,7 +108,8 @@ namespace NocturneInsaniax
 
                 if (skillattr >= 0 && skillattr <= 11 && (chargedPhysical || chargedMagical))
                 {
-                    if (!(megalomaniaIds.Contains(a.work.id) && random.Next(10) == 0))
+                    if (!((megalomaniaIds.Contains(a.work.id) || (a.work.id == 0 && a.form.formindex == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 23)) 
+                        && random.Next(10) == 0))
                     {
                         a.party.count[15] = 0;
                         a.party.count[20] = 0;
