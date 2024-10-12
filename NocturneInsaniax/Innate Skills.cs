@@ -243,7 +243,7 @@ namespace NocturneInsaniax
             { 225, new InnateSkill(383, 15, "Evil Mirror", "Doppelgänger mimics single-target \nskills used by the Demi-fiend \nwith reduced power.")}, // 225 Doppelganger
             { 226, new InnateSkill(383, 15, "Magnified Malady", "While in the active party, all allies \ndeal 20% more damage against \nenemies with an ailment.")}, // 226 Nightmare
             { 227, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Gdon's Critical Damage increases \nby 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 227 Gdon
-            { 228, new InnateSkill(383, 15, "", "")}, // 228 
+            { 228, new InnateSkill(383, 03, "Elec Enhancer", "While in the active party, \nraise allies' Elec skill potential \nto Erthys' if it was lower.")}, // 228 Vritra
             { 229, new InnateSkill(383, 15, "", "")}, // 229 
             { 230, new InnateSkill(383, 15, "", "")}, // 230 
             { 231, new InnateSkill(383, 15, "", "")}, // 231 
@@ -460,7 +460,7 @@ namespace NocturneInsaniax
             { 0, new List<ushort> { 88, 99, 119 } }, // Phys
             { 1, new List<ushort> { 36, 111, 335 } }, // Fire
             { 2, new List<ushort> { 17, 37, 60, 277 } }, // Ice
-            { 3, new List<ushort> { 22, 39, 302, 337 } }, // Elec
+            { 3, new List<ushort> { 22, 39, 228, 302, 337 } }, // Elec
             { 4, new List<ushort> { 38, 83, 152 } }, // Force
             { 5, new List<ushort> { 194, 207 } }, // Almighty
             { 6, new List<ushort> { 35, 63 } }, // Light

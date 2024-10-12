@@ -250,7 +250,7 @@ namespace NocturneInsaniax
             new sbyte[] {3    , 0    , 0    , 0    , 0    , 0    , -5   , 5    , 0    , 0    , 0    , 0    , 0    , -3   , 3    , 0 }, // 225 Doppelganger
             new sbyte[] {0    , 0    , 0    , 0    , 3    , 0    , -5   , 4    , 0    , 3    , 4    , 0    , 0    , 0    , 0    , 0 }, // 226 Nightmare
             new sbyte[] {3    , 5    , -4   , 0    , 0    , 0    , 3    , 0    , -4   , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 227 Gdon
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 228 
+            new sbyte[] {4    , 0    , 0    , 5    , -4   , 0    , 0    , 0    , 0    , 4    , 0    , 0    , 0    , 0    , 0    , 0 }, // 228 Vritra
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 229 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 230 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 231 
@@ -672,7 +672,7 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+5: Dark • +3: Phys/Supp  <material=\"MsgFont1\">-3: Heal • -5: Light", // 225 Doppelganger
             "  <material=\"MsgFont4\">+4: Dark/Mind • +3: Force/Nerve  <material=\"MsgFont1\">-5: Light", // 226 Nightmare
             "  <material=\"MsgFont4\">+5: Fire • +3: Phys/Light  <material=\"MsgFont1\">-4: Ice/Curse", // 227 Gdon
-            "", // 228 
+            "  <material=\"MsgFont4\">+5: Elec • +4: Phys/Nerve  <material=\"MsgFont1\">-4: Force", // 228 Vritra
             "", // 229 
             "", // 230 
             "", // 231 

@@ -166,7 +166,14 @@ namespace NocturneInsaniax
                         {
                             var gdonModel = cmpModel.cmpDevilObj;
                             gdonModel.transform.position = new Vector3(-0.36f, -0.64f, 0.6f);
-                            gdonModel.transform.eulerAngles = new Vector3(0, 1982f, 0);
+                            gdonModel.transform.eulerAngles = new Vector3(0, 198f, 0);
+                            break;
+                        }
+                    case "devil_0xe4":
+                        {
+                            var vritraModel = cmpModel.cmpDevilObj;
+                            vritraModel.transform.position = new Vector3(0.04f, -1.88f, -0.4f);
+                            vritraModel.transform.eulerAngles = new Vector3(270f, 178f, 0);
                             break;
                         }
                     default: break;
@@ -249,6 +256,12 @@ namespace NocturneInsaniax
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D227_MSEE3_04", "D227_MSEE3_04", 506527744, false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D227_MSEE3_05", "D227_MSEE3_05", 506593280, false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D227_MSEE3_23", "D227_MSEE3_23", 506658816, false);
+
+                // Vritra
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D228_MSEE4_03", "D228_MSEE4_03", 507510784, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D228_MSEE4_04", "D228_MSEE4_04", 507576320, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D228_MSEE4_08", "D228_MSEE4_08", 507641856, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D228_MSEE4_23", "D228_MSEE4_23", 507707392, false);
 
                 // Devil Dante
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D252M_MSEFC_03", "D252M_MSEFC_03", 532676608, false);
@@ -373,6 +386,13 @@ namespace NocturneInsaniax
                 gdonKeys.Add("D227_MSEE3_05", new SndAssetBundleManager.SndData { key = "dvl0xe3", path = 4, id = 0, name = "D227_MSEE3_05", diff = true });
                 gdonKeys.Add("D227_MSEE3_23", new SndAssetBundleManager.SndData { key = "dvl0xe3", path = 4, id = 0, name = "D227_MSEE3_23", diff = true });
                 SndAssetBundleManager.SEBundleTable.Add("dvl0xe3", gdonKeys);
+
+                var vritraKeys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
+                vritraKeys.Add("D228_MSEE4_03", new SndAssetBundleManager.SndData { key = "dvl0xe4", path = 4, id = 0, name = "D228_MSEE4_03", diff = true });
+                vritraKeys.Add("D228_MSEE4_04", new SndAssetBundleManager.SndData { key = "dvl0xe4", path = 4, id = 0, name = "D228_MSEE4_04", diff = true });
+                vritraKeys.Add("D228_MSEE4_08", new SndAssetBundleManager.SndData { key = "dvl0xe4", path = 4, id = 0, name = "D228_MSEE4_08", diff = true });
+                vritraKeys.Add("D228_MSEE4_23", new SndAssetBundleManager.SndData { key = "dvl0xe4", path = 4, id = 0, name = "D228_MSEE4_23", diff = true });
+                SndAssetBundleManager.SEBundleTable.Add("dvl0xe4", vritraKeys);
 
                 var devilDanteKeys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
                 devilDanteKeys.Add("D252M_MSEFC_03", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_03", diff = true });
@@ -545,12 +565,12 @@ namespace NocturneInsaniax
         //    public static void Postfix()
         //    {
         //        MelonLogger.Msg("--SndAssetBundleManager.LoadKeysMSE--");
-        //        MelonLogger.Msg("Baihu keys");
+        //        MelonLogger.Msg("Qing Long keys");
         //        for (int i = 0; i <= 25; i++)
-        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(30, i));
-        //        MelonLogger.Msg("Gdon keys");
+        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(148, i));
+        //        MelonLogger.Msg("Vritra keys");
         //        for (int i = 0; i <= 25; i++)
-        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(227, i));
+        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(228, i));
         //    }
         //}
 

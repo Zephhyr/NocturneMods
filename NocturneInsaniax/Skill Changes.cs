@@ -2083,10 +2083,10 @@ namespace NocturneInsaniax
 
             foreach (var skill in negoSkillScenarios.Keys)
                 if (tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == skill).Any())
-                    tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == skill).Level = 0;
+                    tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == skill).Level = 14;
 
             if (tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Where(x => x.SkillID == 353).Any())
-                tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 353).Level = 0;
+                tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 353).Level = 14;
         }
 
         // Physical Skills
