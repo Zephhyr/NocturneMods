@@ -388,10 +388,10 @@ namespace NocturneInsaniax
             new sbyte[] {4    , 0    , 0    , 0    , 0    , 0    , 4    , -6   , 0    , 0    , 0    , 0    , 0    , 1    , 1    , 0 }, // 360 Boss Power
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , -5   , 4    , 0    , 0    , 4    , 0    , 0    , -2   , 1    , 0 }, // 361 Boss Legion
             new sbyte[] {6    , 4    , 0    , 0    , 0    , 0    , 0    , 4    , -6   , -6   , -6   , 0    , 0    , 0    , 0    , 0 }, // 362 Boss Flauros
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 363 
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 364 
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 365 
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 366 
+            new sbyte[] {4    , 0    , 0    , 3    , 0    , 0    , 3    , -3   , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 363 Raidou Tam Lin
+            new sbyte[] {3    , 5    , -4   , 0    , 0    , 0    , 3    , 0    , -4   , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 364 Raidou Gdon
+            new sbyte[] {4    , 0    , 0    , 5    , -4   , 0    , 0    , 0    , 0    , 4    , 0    , 0    , 0    , 0    , 0    , 0 }, // 365 Raidou Vritra
+            new sbyte[] {0    , -5   , 4    , 0    , 0    , 0    , 1    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 366 Raidou Jack Frost
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 367 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 368 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 369 
@@ -807,10 +807,10 @@ namespace NocturneInsaniax
             "", // 360 Boss Power
             "", // 361 Boss Legion
             "", // 362 Boss Flauros
-            "", // 363 
-            "", // 364 
-            "", // 365 
-            "", // 366 
+            "", // 363 Raidou Tam Lin
+            "", // 364 Raidou Gdon
+            "", // 365 Raidou Vritra
+            "", // 366 Raidou Jack Frost
             "", // 367 
             "", // 368 
             "", // 369 
@@ -1052,6 +1052,8 @@ namespace NocturneInsaniax
                     __result = "Call Souls";
                 else if(id == 252 && (currentDemonWork.id == 321))
                     __result = "Cursed Emission";
+                else if (id == 252 && (currentDemonWork.id == 341))
+                    __result = "Multi-Summon";
                 else if (id < 288 || id > 421) // If it isn't a passive skill
                 {
                     sbyte skillPotential = 0;

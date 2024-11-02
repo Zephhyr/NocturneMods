@@ -235,6 +235,8 @@ namespace NocturneInsaniax
                 case 188: SecondKalpaEncounter3(); return 1270; // B3/B4 Rooms
                 //case 191: SecondKalpaEncounter4(); return 1270; // Cursed Corridor
 
+                //case 191: SecondKalpaEncounter4(); return 1270; // Cursed Corridor
+
                 default: return encno;
             }
         }

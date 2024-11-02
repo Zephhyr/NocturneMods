@@ -607,6 +607,7 @@ namespace NocturneInsaniax
                     __result = rand < critChance ? 1 : 0;
                 }
 
+                // Double Attack
                 if (__result == 1 && nskill == 0 && datCalc.datCheckSyojiSkill(workFromFormindex1, 300) != 0)
                     nbMainProcess.nbPushAction(4, sformindex, dformindex, 167);
 

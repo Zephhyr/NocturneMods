@@ -210,6 +210,10 @@ namespace NocturneInsaniax
                     case 359: BossVirtueAI(ref a, ref code, ref n); break;
                     case 361: BossLegionAI(ref a, ref code, ref n); break;
                     case 362: BossFlaurosAI(ref a, ref code, ref n); break;
+                    case 363: RaidouTamLinAI(ref a, ref code, ref n); break;
+                    case 364: RaidouGdonAI(ref a, ref code, ref n); break;
+                    case 365: RaidouVritraAI(ref a, ref code, ref n); break;
+                    case 366: RaidouJackFrostAI(ref a, ref code, ref n); break;
                     default: break;
                 }
                 MelonLogger.Msg("skill: " + a.work.nowindex);
@@ -2131,10 +2135,61 @@ namespace NocturneInsaniax
                 {
                     UseSummonSkill(ref a, 497, 252);
                 }
-                //else
-                //{
-
-                //}
+                else
+                {
+                    if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(252))
+                    {
+                        UseSummonSkill(ref a, 252, 363);
+                        actionTrackers.Add(364, new ActionTracker());
+                        actionTrackers.Add(365, new ActionTracker());
+                        actionTrackers.Add(366, new ActionTracker());
+                    }
+                    else if (nbMainProcess.nbGetMainProcessData().enemypcnt > 3)
+                    {
+                        int randomValue = random.Next(4);
+                        switch (randomValue)
+                        {
+                            case 0: UseNormalAttack(ref a); break;
+                            case 1: UseSkill(ref a, 262); break;
+                            case 2: UseSkill(ref a, 263); break;
+                            case 3: UseSkill(ref a, 264); break;
+                        }
+                    }
+                    else
+                    {
+                        if (EnemyPartyDebuffed(1) && random.Next(4) == 0)
+                        {
+                            UseSkill(ref a, 274);
+                        }
+                        else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(264) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(267) &&
+                                 !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(268) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(269))
+                        {
+                            int randomValue = random.Next(8);
+                            switch (randomValue)
+                            {
+                                case 0: UseNormalAttack(ref a); break;
+                                case 1: UseSkill(ref a, 262); break;
+                                case 2: UseSkill(ref a, 263); break;
+                                case 3: UseSkill(ref a, 264); break;
+                                case 4: UseSkill(ref a, 266); break;
+                                case 5: UseSkill(ref a, 267); break;
+                                case 6: UseSkill(ref a, 268); break;
+                                case 7: UseSkill(ref a, 269); break;
+                            }
+                        }
+                        else
+                        {
+                            int randomValue = random.Next(4);
+                            switch (randomValue)
+                            {
+                                case 0: UseNormalAttack(ref a); break;
+                                case 1: UseSkill(ref a, 262); break;
+                                case 2: UseSkill(ref a, 263); break;
+                                case 3: UseSkill(ref a, 266); break;
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -2174,6 +2229,50 @@ namespace NocturneInsaniax
                     case 2: UseSkill(ref a, 263); break;
                     case 3: UseSkill(ref a, 266); break;
                 }
+            }
+        }
+
+        private static void RaidouTamLinAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            int randomValue = random.Next(3);
+            switch (randomValue)
+            {
+                case 0: UseNormalAttack(ref a); break;
+                case 1: UseSkill(ref a, 103); break;
+                case 2: UseSkill(ref a, 64); break;
+            }
+        }
+
+        private static void RaidouGdonAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            int randomValue = random.Next(3);
+            switch (randomValue)
+            {
+                case 0: UseNormalAttack(ref a); break;
+                case 1: UseSkill(ref a, 5); break;
+                case 2: UseSkill(ref a, 121); break;
+            }
+        }
+
+        private static void RaidouVritraAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            int randomValue = random.Next(3);
+            switch (randomValue)
+            {
+                case 0: UseNormalAttack(ref a); break;
+                case 1: UseSkill(ref a, 177); break;
+                case 2: UseSkill(ref a, 121); break;
+            }
+        }
+
+        private static void RaidouJackFrostAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            int randomValue = random.Next(3);
+            switch (randomValue)
+            {
+                case 0: UseNormalAttack(ref a); break;
+                case 1: UseSkill(ref a, 463); break;
+                case 2: UseSkill(ref a, 11); break;
             }
         }
 

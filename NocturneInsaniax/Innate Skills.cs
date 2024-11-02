@@ -267,7 +267,7 @@ namespace NocturneInsaniax
             { 249, new InnateSkill(383, 15, "", "")}, // 249 
             { 250, new InnateSkill(383, 15, "", "")}, // 250 
             { 251, new InnateSkill(383, 15, "", "")}, // 251 
-            { 252, new InnateSkill(383, 15, "Devil Dante", "")}, // 252 Devil Dante
+            { 252, new InnateSkill(383, 15, "Devil Regeneration", "")}, // 252 Devil Dante
             { 253, new InnateSkill(383, 15, "No Innate Skill", "")}, // 253 Gamete
             { 254, new InnateSkill(383, 15, "YHVH", "")}, // 254 YHVH
             { 255, new InnateSkill(383, 15, "", "")}, // 255 
@@ -378,10 +378,10 @@ namespace NocturneInsaniax
             { 360, new InnateSkill(383, 15, "Light Gestalt", "")}, // 360 Boss Power
             { 361, new InnateSkill(383, 15, "Deathly Affliction", "")}, // 361 Boss Legion
             { 362, new InnateSkill(383, 15, "Paw-to-Paw Combat", "")}, // 362 Boss Flauros
-            { 363, new InnateSkill(383, 15, "", "")}, // 363 
-            { 364, new InnateSkill(383, 15, "", "")}, // 364 
-            { 365, new InnateSkill(383, 15, "", "")}, // 365 
-            { 366, new InnateSkill(383, 15, "", "")}, // 366 
+            { 363, new InnateSkill(383, 06, "Blessed Melody", "")}, // 363 Raidou Tam Lin
+            { 364, new InnateSkill(383, 15, "Paw-to-Paw Combat", "")}, // 364 Raidou Gdon
+            { 365, new InnateSkill(383, 03, "Elec Enhancer", "")}, // 365 Raidou Vritra
+            { 366, new InnateSkill(383, 02, "Ice Enhancer", "")}, // 366 Raidou Jack Frost
             { 367, new InnateSkill(383, 15, "", "")}, // 367 
             { 368, new InnateSkill(383, 15, "", "")}, // 368 
             { 369, new InnateSkill(383, 15, "", "")}, // 369 

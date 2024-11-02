@@ -44,6 +44,12 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref nbActionProcessData_t a, ref int nskill, ref int sformindex, ref int dformindex, ref int sframe)
             {
+                //MelonLogger.Msg("--nbActionProcess.SetPlayerSummonPacket--");
+                //MelonLogger.Msg("a.aisummonid: " + a.aisummonid);
+                if (a.aisummonid == 363) a.aisummonid = 364;
+                else if (a.aisummonid == 364) a.aisummonid = 365;
+                else if (a.aisummonid == 365) a.aisummonid = 366;
+
                 var party = a.data.party;
                 if (party.Where(p => p.formindex == -1).Any())
                 {

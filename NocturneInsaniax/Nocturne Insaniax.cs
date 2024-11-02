@@ -598,16 +598,16 @@ namespace NocturneInsaniax
         //    }
         //}
 
-        [HarmonyPatch(typeof(EventBit), nameof(EventBit.evtBitCheck))]
-        private class evtBitCheckPatch
-        {
-            public static void Postfix(ref int no, ref bool __result)
-            {
-                //MelonLogger.Msg("--EventBit.evtBitCheck--");
-                if (no == 3712)
-                    __result = false;
-            }
-        }
+        //[HarmonyPatch(typeof(EventBit), nameof(EventBit.evtBitCheck))]
+        //private class evtBitCheckPatch
+        //{
+        //    public static void Postfix(ref int no, ref bool __result)
+        //    {
+        //        //MelonLogger.Msg("--EventBit.evtBitCheck--");
+        //        if (no == 3712)
+        //            __result = false;
+        //    }
+        //}
 
         //[HarmonyPatch(typeof(mdlEffect), nameof(mdlEffect.mdlCreateEffect_P2A_D3P))]
         //private class mdlCreateEffectPatch

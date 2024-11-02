@@ -18,9 +18,9 @@ namespace NocturneInsaniax
     {
         public static ushort[] bossList = new ushort[] { 
             252, 254, 256, 257, 262, 263, 266, 267, 268, 269, 270, 271, 272, 294, 295, 296, 297, 300, 301, 302, 307, 308, 309, 312, 313, 
-            321, 326, 327, 328, 339, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 362
+            321, 326, 327, 328, 339, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 362, 363, 364, 365, 366
         };
-        public static ushort[] pushedSkillList = new ushort[] { 148, 149, 150, 151, 164, 165, 166, 167, 407, 408, 416, 417 };
+        public static ushort[] pushedSkillList = new ushort[] { 148, 149, 150, 151, 164, 165, 166, 167, 407, 408, 416, 417, 496 };
 
         public static ushort previousUnitId;
         public static short previousSingleTargetFormIndex = -1;
@@ -170,6 +170,7 @@ namespace NocturneInsaniax
                     case 474: __result = "Gae Bolg"; return false;
                     case 475: __result = "Gungnir"; return false;
 
+                    case 496: __result = "Devil Regeneration"; return false;
                     case 497: __result = "Devil Trigger"; return false;
                     case 498: __result = "Scorn"; return false;
                     case 499: __result = "Crush"; return false;
@@ -1449,6 +1450,8 @@ namespace NocturneInsaniax
                                     nbMainProcess.nbPushAction(4, actionProcessData.partyindex, actionProcessData.partyindex, 148);
                                 else if (datCalc.datCheckSyojiSkill(actionProcessData.work, 369) != 0)
                                     nbMainProcess.nbPushAction(4, actionProcessData.partyindex, actionProcessData.partyindex, 149);
+                                else if (actionProcessData.work.id == 252)
+                                    nbMainProcess.nbPushAction(4, actionProcessData.partyindex, actionProcessData.partyindex, 496);
                             }
                         }
                         
@@ -2038,6 +2041,7 @@ namespace NocturneInsaniax
             GaeBolg(474);
             Gungnir(475);
 
+            DevilRegeneration(496);
             DevilTrigger(497);
 
             // YHVH Skills
@@ -7442,6 +7446,55 @@ namespace NocturneInsaniax
             OverWriteSkillEffect(id, 226);
             datNormalSkillVisual.tbl[id].bedno = datNormalSkillVisual.tbl[15].bedno;
             datNormalSkillVisual.tbl[id].hatudo = datNormalSkillVisual.tbl[15].hatudo;
+        }
+
+        private static void DevilRegeneration(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = -1;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 0;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 255;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 50;
+            datNormalSkill.tbl[id].hpn = 0;
+            datNormalSkill.tbl[id].hptype = 11;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 9;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 1;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 81);
+            datNormalSkillVisual.tbl[id].motion = 0;
+            datNormalSkillVisual.tbl[id].hatudo = 0;
         }
 
         // YHVH Skills
