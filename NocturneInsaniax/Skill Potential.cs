@@ -1315,7 +1315,7 @@ namespace NocturneInsaniax
         [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetKoukaHp))] // After altering HP during battle
         private class SkillPotentialPatch9
         {
-            public static void Postfix(ref int nskill, ref int sformindex, ref int __result)
+            public static void Postfix(ref int nskill, ref int sformindex, ref int dformindex, ref int __result)
             {
                 if (__result != -1 && datNormalSkill.tbl[nskill].hptype != 3) // HP has been altered
                 {
@@ -1324,9 +1324,7 @@ namespace NocturneInsaniax
 
                     if (skillPotential != 0)
                     {
-                        bool healsHP = datNormalSkill.tbl[nskill].hptype == 2; // If the skill heals HP
-
-                        if (healsHP)
+                        if (datNormalSkill.tbl[nskill].hptype == 2) // If the skill heals HP
                         {
                             __result = Convert.ToInt32(SkillPotentialUtility.ApplyHealMultiplier(skillPotential, __result));
 
@@ -1335,12 +1333,16 @@ namespace NocturneInsaniax
                                 __result *= 2;
                             }
                         }
-                        else
+                        else if (datNormalSkill.tbl[nskill].hptype != 6 && datNormalSkill.tbl[nskill].hptype != 8)
                         {
                             __result = Convert.ToInt32(SkillPotentialUtility.ApplyDamageMultiplier(skillPotential, __result));
 
                             if (faithfulCompanionActive) // Faithful Companion
                                 __result = Convert.ToInt32(__result * 1.2);
+
+                            var targetVit = datCalc.datGetParam(nbMainProcess.nbGetUnitWorkFromFormindex(dformindex), 3);
+
+                            __result = Convert.ToInt32(__result / (1 + (targetVit/200)));
                         }
                     }
                 }
@@ -1540,7 +1542,7 @@ namespace NocturneInsaniax
                 sbyte skillAttribute = datSkill.tbl[skillID].skillattr; // Get the attribute of the skill
                 sbyte skillType = datSkill.tbl[skillID].type;
 
-                if (skillAttribute != -1 && skillType == 0) // Filters a lot of unused skills
+                if (skillAttribute != -1 && skillType == 0 && !pushedSkillList.Contains((ushort) skillID)) // Filters a lot of unused skills
                 {
                     /*byte skillBadType;
                     if (skillID < datNormalSkill.tbl.Length)

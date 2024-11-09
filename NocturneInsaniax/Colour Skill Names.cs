@@ -8,6 +8,7 @@ using Il2Cppfacility_H;
 using Il2Cppnewdata_H;
 using Il2Cppresult2_H;
 using Il2Cppnewbattle_H;
+using MelonLoader.TinyJSON;
 
 namespace NocturneInsaniax
 {

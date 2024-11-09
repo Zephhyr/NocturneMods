@@ -235,7 +235,17 @@ namespace NocturneInsaniax
                 case 188: SecondKalpaEncounter3(); return 1270; // B3/B4 Rooms
                 //case 191: SecondKalpaEncounter4(); return 1270; // Cursed Corridor
 
-                //case 191: SecondKalpaEncounter4(); return 1270; // Cursed Corridor
+                case 193: ThirdKalpaEncounter1(); return 1270; // Central Chamber
+                case 194: ThirdKalpaEncounter1(); return 1270; // B1 Corridor
+                case 195: ThirdKalpaEncounter1(); return 1270; // Strength Chamber
+                case 196: ThirdKalpaEncounter1(); return 1270; // B1 Corridor
+                case 197: ThirdKalpaEncounter1(); return 1270; // Magic Chamber
+                case 198: ThirdKalpaEncounter1(); return 1270; // B1 Corridor
+                case 199: ThirdKalpaEncounter1(); return 1270; // Luck Chamber
+                case 200: ThirdKalpaEncounter1(); return 1270; // B2 Corridor
+                case 201: ThirdKalpaEncounter1(); return 1270; // B1 Center
+                case 202: ThirdKalpaEncounter1(); return 1270; // B3/4 Corridor
+                case 203: ThirdKalpaEncounter1(); return 1270; // B3 Room
 
                 default: return encno;
             }
@@ -244,6 +254,8 @@ namespace NocturneInsaniax
         private static void ShinjukuMedicalCentreSlimeEncounter()
         {
             datEncount.tbl[1270].devil[0] = 135;
+            datEncount.tbl[1270].item = 6;
+            datEncount.tbl[1270].itemcnt = 1;
 
             datEncount.tbl[1271].devil[0] = 135;
             datEncount.tbl[1271].devil[1] = 135;
@@ -253,6 +265,8 @@ namespace NocturneInsaniax
         {
             datEncount.tbl[1270].devil[0] = 136;
             datEncount.tbl[1270].devil[1] = 136;
+            datEncount.tbl[1270].item = 6;
+            datEncount.tbl[1270].itemcnt = 1;
 
             datEncount.tbl[1271].devil[0] = 126;
             datEncount.tbl[1271].devil[1] = 126;
@@ -263,6 +277,8 @@ namespace NocturneInsaniax
         {
             datEncount.tbl[1270].devil[0] = 68;
             datEncount.tbl[1270].devil[1] = 68;
+            datEncount.tbl[1270].item = 9;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         private static void YoyogiParkHighPixieEncounter()
@@ -270,11 +286,15 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].devil[0] = 61;
             datEncount.tbl[1270].devil[1] = 59;
             datEncount.tbl[1270].devil[2] = 61;
+            datEncount.tbl[1270].item = 13;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         private static void ShibuyaChoronzonEncounter()
         {
             datEncount.tbl[1270].devil[0] = 130;
+            datEncount.tbl[1270].item = 29;
+            datEncount.tbl[1270].itemcnt = 1;
 
             datEncount.tbl[1271].devil[0] = 136;
             datEncount.tbl[1271].devil[1] = 130;
@@ -284,18 +304,24 @@ namespace NocturneInsaniax
         private static void AmalaNetworkAquansEncounter()
         {
             datEncount.tbl[1270].devil[0] = 37;
+            datEncount.tbl[1270].item = 102;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         private static void GinzaShiisaaEncounter()
         {
             datEncount.tbl[1270].devil[0] = 33;
             datEncount.tbl[1270].devil[1] = 33;
+            datEncount.tbl[1270].item = 111;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         private static void Overworld2ArchangelEncounter()
         {
             datEncount.tbl[1270].devil[0] = 67;
             datEncount.tbl[1270].devil[1] = 67;
+            datEncount.tbl[1270].item = 9;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         private static void HarumiWarehouseChatterskullEncounter()
@@ -303,12 +329,16 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].devil[0] = 177;
             datEncount.tbl[1270].devil[1] = 177;
             datEncount.tbl[1270].devil[2] = 177;
+            datEncount.tbl[1270].item = 32;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         private static void UnderpassAmeNoUzumeEncounter()
         {
             datEncount.tbl[1270].maxcall = 1;
             datEncount.tbl[1270].maxparty = 3;
+            datEncount.tbl[1270].item = 106;
+            datEncount.tbl[1270].itemcnt = 1;
 
             datEncount.tbl[1270].devil[0] = 90;
             datEncount.tbl[1270].devil[1] = 11;
@@ -320,12 +350,16 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].devil[0] = 50;
             datEncount.tbl[1270].devil[1] = 74;
             datEncount.tbl[1270].devil[2] = 50;
+            datEncount.tbl[1270].item = 110;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         private static void Overworld3UnicornEncounter()
         {
             datEncount.tbl[1270].maxcall = 8;
             datEncount.tbl[1270].maxparty = 3;
+            datEncount.tbl[1270].item = 4;
+            datEncount.tbl[1270].itemcnt = 1;
 
             datEncount.tbl[1270].devil[0] = 125;
             datEncount.tbl[1270].devil[1] = 35;
@@ -335,6 +369,8 @@ namespace NocturneInsaniax
         private static void IkebukuroTakeMinakataEncounter()
         {
             datEncount.tbl[1270].devil[0] = 28;
+            datEncount.tbl[1270].item = 50;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         private static void TestManikinEncounter()
@@ -351,6 +387,8 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].devil[0] = 124;
             datEncount.tbl[1270].devil[1] = 124;
             datEncount.tbl[1270].devil[2] = 124;
+            datEncount.tbl[1270].item = 108;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         private static void GinzaMakamiEncounter()
@@ -360,27 +398,37 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].devil[0] = 0;
             datEncount.tbl[1270].devil[1] = 151;
             datEncount.tbl[1270].devil[2] = 0;
+            datEncount.tbl[1270].item = 104;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         private static void AssemblyOfNihiloXuanwuKikuriHimeEncounter()
         {
             datEncount.tbl[1270].devil[0] = 149;
             datEncount.tbl[1270].devil[1] = 20;
+            datEncount.tbl[1270].item = 103;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         private static void KabukichoPrisonXiezhaiEncounter()
         {
             datEncount.tbl[1270].devil[0] = 34;
+            datEncount.tbl[1270].item = 49;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         private static void IkebukuroTunnelSarasvatiEncounter()
         {
             datEncount.tbl[1270].devil[0] = 9;
+            datEncount.tbl[1270].item = 51;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         private static void Overworld4ZhuqueEncounter()
         {
             datEncount.tbl[1270].devil[0] = 32;
+            datEncount.tbl[1270].item = 48;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         private static void AsakusaValkyrieEncounter()
@@ -390,6 +438,8 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].devil[0] = 0;
             datEncount.tbl[1270].devil[1] = 143;
             datEncount.tbl[1270].devil[2] = 0;
+            datEncount.tbl[1270].item = 100;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         private static void Overworld2VirtueEncounter()
@@ -399,6 +449,8 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].devil[0] = 64;
             datEncount.tbl[1270].devil[1] = 64;
             datEncount.tbl[1270].devil[2] = 64;
+            datEncount.tbl[1270].item = 4;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         private static void BackOfNihiloBerithEligorEncounterEncounter()
@@ -408,6 +460,8 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].devil[0] = 73;
             datEncount.tbl[1270].devil[1] = 72;
             datEncount.tbl[1270].devil[2] = 73;
+            datEncount.tbl[1270].item = 26;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         private static void Overworld5HorusEncounter()
@@ -417,6 +471,8 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].devil[0] = 0;
             datEncount.tbl[1270].devil[1] = 6;
             datEncount.tbl[1270].devil[2] = 0;
+            datEncount.tbl[1270].item = 25;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         private static void ObeliskKuramaTenguEncounter()
@@ -426,6 +482,15 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].devil[0] = 0;
             datEncount.tbl[1270].devil[1] = 145;
             datEncount.tbl[1270].devil[2] = 0;
+            datEncount.tbl[1270].item = 99;
+            datEncount.tbl[1270].itemcnt = 1;
+        }
+
+        private static void YoyogiParkCuChulainnEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 147;
+            datEncount.tbl[1270].item = 111;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         // Labyrinth of Amala
@@ -434,17 +499,23 @@ namespace NocturneInsaniax
         {
             datEncount.tbl[1270].devil[0] = 199;
             datEncount.tbl[1270].btlsound = 10;
+            datEncount.tbl[1270].item = 33;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         private static void FirstKalpaTamLinEncounter()
         {
             datEncount.tbl[1270].devil[0] = 224;
+            datEncount.tbl[1270].item = 25;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         private static void FirstKalpaXuanwuKikuriHimeEncounter()
         {
             datEncount.tbl[1270].devil[0] = 149;
             datEncount.tbl[1270].devil[1] = 20;
+            datEncount.tbl[1270].item = 103;
+            datEncount.tbl[1270].itemcnt = 1;
 
             datEncount.tbl[1271].devil[0] = 37;
             datEncount.tbl[1271].devil[1] = 37;
@@ -455,6 +526,8 @@ namespace NocturneInsaniax
         private static void FirstKalpaXiezhaiEncounter()
         {
             datEncount.tbl[1270].devil[0] = 34;
+            datEncount.tbl[1270].item = 49;
+            datEncount.tbl[1270].itemcnt = 1;
 
             datEncount.tbl[1271].devil[0] = 144;
             datEncount.tbl[1271].devil[1] = 144;
@@ -466,6 +539,8 @@ namespace NocturneInsaniax
         {
             datEncount.tbl[1270].devil[0] = 31;
             datEncount.tbl[1270].devil[1] = 31;
+            datEncount.tbl[1270].item = 51;
+            datEncount.tbl[1270].itemcnt = 1;
 
             datEncount.tbl[1271].maxcall = 8;
             datEncount.tbl[1271].maxparty = 3;
@@ -479,12 +554,16 @@ namespace NocturneInsaniax
         {
             datEncount.tbl[1270].devil[0] = 201;
             datEncount.tbl[1270].btlsound = 10;
+            datEncount.tbl[1270].item = 60;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         private static void SecondKalpaHellBikerEncounter()
         {
             datEncount.tbl[1270].devil[0] = 200;
             datEncount.tbl[1270].btlsound = 10;
+            datEncount.tbl[1270].item = 59;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         private static void SecondKalpaShadowEncounter()
@@ -492,17 +571,33 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].devil[0] = 132;
             datEncount.tbl[1270].devil[1] = 132;
             datEncount.tbl[1270].devil[2] = 132;
+            datEncount.tbl[1270].item = 32;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         private static void SecondKalpaShikiOujiEncounter()
         {
             datEncount.tbl[1270].devil[0] = 93;
+            datEncount.tbl[1270].item = 4;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         private static void SecondKalpaDoppelgangerEncounter()
         {
             datEncount.tbl[1270].devil[0] = 225;
             datEncount.tbl[1270].btlsound = 16;
+            datEncount.tbl[1270].item = 27;
+            datEncount.tbl[1270].itemcnt = 1;
+        }
+
+        private static void ThirdKalpaFourHorsemenEncounter()
+        {
+            datEncount.tbl[1270].maxcall = 3;
+            datEncount.tbl[1270].maxparty = 4;
+            datEncount.tbl[1270].devil[0] = 196;
+            datEncount.tbl[1270].btlsound = 10;
+            datEncount.tbl[1270].item = 10;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         private static void FirstKalpaEncounter1()
@@ -559,6 +654,14 @@ namespace NocturneInsaniax
                 SecondKalpaHellBikerEncounter();
             else
                 SecondKalpaDoppelgangerEncounter();
+        }
+
+        private static void ThirdKalpaEncounter1()
+        {
+            if (random.Next(4) == 0)
+                ThirdKalpaFourHorsemenEncounter();
+            else
+                YoyogiParkCuChulainnEncounter();
         }
 
         //------------------------------------------------------------

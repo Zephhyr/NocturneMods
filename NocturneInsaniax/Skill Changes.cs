@@ -523,10 +523,10 @@ namespace NocturneInsaniax
         [HarmonyPatch(typeof(nbActionProcess), nameof(nbActionProcess.InitActionProcessData))]
         private class ActionProcessDataPatch
         {
-            public static void Postfix(ref nbActionProcessData_t __result)
+            public static void Postfix(ref int type, ref int from, ref int to, ref int d, ref nbActionProcessData_t __result)
             {
                 actionProcessData = __result;
-                currentDemonWork = actionProcessData.work;
+                currentDemonWork = __result.work;
             }
         }
 
@@ -596,7 +596,7 @@ namespace NocturneInsaniax
                 actionProcessData = a;
 
                 datUnitWork_t target = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
-                if (((datNormalSkill.tbl[nskill].koukatype == 0 && (target.badstatus == 1 || target.badstatus == 2)) || target.badstatus == 256 )
+                if (((datNormalSkill.tbl[nskill].koukatype == 0 && (target.badstatus == 1 || target.badstatus == 2)))
                     && (datNormalSkill.tbl[nskill].hptype == 1 || datNormalSkill.tbl[nskill].hptype == 6 || datNormalSkill.tbl[nskill].hptype == 12 || datNormalSkill.tbl[nskill].hptype == 14))
                 {
                     var form = a.data.form[dformindex];
@@ -705,8 +705,6 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(111, 0);
                     //datCalc.datAddDevil(185, 0);
                     //datCalc.datAddDevil(199, 0);
-                    datCalc.datAddDevil(148, 0);
-                    datCalc.datAddDevil(228, 0);
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
                     //{
                     //    //work.skill[0] = 192;

@@ -25,10 +25,12 @@ namespace NocturneInsaniax
     internal partial class NocturneInsaniax : MelonMod
     {
         public static string configPath = "InsaniaxConfig.cfg";
-        public static MelonPreferences_Category ModGraphicsSettings;
+        public static MelonPreferences_Category InsaniaxSettings;
         public static MelonPreferences_Entry<bool> EnableSkillColourOutlines;
         public static MelonPreferences_Entry<bool> EnableSkillColourGradient;
         public static MelonPreferences_Entry<bool> EnableColourPassives;
+        public static MelonPreferences_Entry<bool> EnableModeOverride;
+        public static MelonPreferences_Entry<bool> ModeOverrideValue;
 
 
         public override void OnInitializeMelon()
@@ -62,22 +64,24 @@ namespace NocturneInsaniax
             ApplyEncounterChanges();
 
             // Apply Config
-            ModGraphicsSettings = MelonPreferences.CreateCategory("EXTRA GRAPHICS");
-            EnableSkillColourOutlines = ModGraphicsSettings.CreateEntry("EnableSkillColourOutlines", true);
-            EnableSkillColourGradient = ModGraphicsSettings.CreateEntry("EnableSkillColourGradient", true);
-            EnableColourPassives = ModGraphicsSettings.CreateEntry("EnableColourPassives", true);
+            InsaniaxSettings = MelonPreferences.CreateCategory("INSANIAX SETTINGS");
+            EnableSkillColourOutlines = InsaniaxSettings.CreateEntry("Enable Skill Colour Outlines", true);
+            EnableSkillColourGradient = InsaniaxSettings.CreateEntry("Enable Skill Colour Gradient", true);
+            EnableColourPassives = InsaniaxSettings.CreateEntry("Enable Colour Passives", true);
+            EnableModeOverride = InsaniaxSettings.CreateEntry("Enable Mode Override", false);
+            ModeOverrideValue = InsaniaxSettings.CreateEntry("Mode Override Value (false=Chronicle, true=Maniax)", false);
 
-            ModGraphicsSettings.SetFilePath(configPath, autoload: true, printmsg: false);
+            InsaniaxSettings.SetFilePath(configPath, autoload: true, printmsg: false);
 
             if (File.Exists(configPath))
             {
-                LoggerInstance.Msg("Mod config loaded.");
-                ModGraphicsSettings.LoadFromFile(false);
+                LoggerInstance.Msg("Insaniax mod config loaded.");
+                InsaniaxSettings.LoadFromFile(false);
             }
             else
             {
                 LoggerInstance.Msg("No config found - config created in root directory.");
-                ModGraphicsSettings.SaveToFile(false);
+                InsaniaxSettings.SaveToFile(false);
             }
         }
 
@@ -598,16 +602,16 @@ namespace NocturneInsaniax
         //    }
         //}
 
-        //[HarmonyPatch(typeof(EventBit), nameof(EventBit.evtBitCheck))]
-        //private class evtBitCheckPatch
-        //{
-        //    public static void Postfix(ref int no, ref bool __result)
-        //    {
-        //        //MelonLogger.Msg("--EventBit.evtBitCheck--");
-        //        if (no == 3712)
-        //            __result = false;
-        //    }
-        //}
+        [HarmonyPatch(typeof(EventBit), nameof(EventBit.evtBitCheck))]
+        private class evtBitCheckPatch
+        {
+            public static void Postfix(ref int no, ref bool __result)
+            {
+                //MelonLogger.Msg("--EventBit.evtBitCheck--");
+                if (EnableModeOverride.Value && no == 3712)
+                    __result = ModeOverrideValue.Value;
+            }
+        }
 
         //[HarmonyPatch(typeof(mdlEffect), nameof(mdlEffect.mdlCreateEffect_P2A_D3P))]
         //private class mdlCreateEffectPatch

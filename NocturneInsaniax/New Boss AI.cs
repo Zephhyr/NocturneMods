@@ -37,7 +37,7 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref nbActionProcessData_t a)
             {
-                if ((a.data.encno == 1270 || a.data.encno == 1271) && a.form.formindex >= 4)
+                if ((a.data.encno == 1270 || a.data.encno == 1271) && a.form.formindex >= 4 && !pushedSkillList.Contains((ushort)a.adata))
                     a.type = 0;
             }
         }
@@ -137,84 +137,93 @@ namespace NocturneInsaniax
                 MelonLogger.Msg("currentBattleActionCount:" + actionTrackers[a.work.id].currentBattleActionCount);
                 MelonLogger.Msg("currentTurnActionCount:" + actionTrackers[a.work.id].currentTurnActionCount);
                 MelonLogger.Msg("-Action Starts-");
-                switch (a.work.id)
+                if (!pushedSkillList.Contains(a.work.nowindex))
                 {
-                    case 6: HorusAI(ref a, ref code, ref n); break;
-                    case 9: SarasvatiAI(ref a, ref code, ref n); break;
-                    case 11: AmeNoUzumeAI(ref a, ref code, ref n); break;
-                    case 20: KikuriHimeAI(ref a, ref code, ref n); break;
-                    case 28: TakeMinakataAI(ref a, ref code, ref n); break;
-                    case 31: SenriAI(ref a, ref code, ref n); break;
-                    case 32: ZhuqueAI(ref a, ref code, ref n); break;
-                    case 33: ShiisaaAI(ref a, ref code, ref n); break;
-                    case 34: XiezhaiAI(ref a, ref code, ref n); break;
-                    case 35: UnicornAI(ref a, ref code, ref n); break;
-                    case 79: ForcedNagaAI(ref a, ref code, ref n); break;
-                    case 108: BaphometAI(ref a, ref code, ref n); break;
-                    case 124: NKENueAI(ref a, ref code, ref n); break;
-                    case 143: ValkyrieAI(ref a, ref code, ref n); break;
-                    case 145: KuramaTenguAI(ref a, ref code, ref n); break;
-                    case 149: XuanwuAI(ref a, ref code, ref n); break;
-                    case 151: MakamiAI(ref a, ref code, ref n); break;
-                    case 199: NKEMatadorAI(ref a, ref code, ref n); break;
-                    case 200: NKEHellBikerAI(ref a, ref code, ref n); break;
-                    case 201: NKEDaisoujouAI(ref a, ref code, ref n); break;
-                    case 224: TamLinAI(ref a, ref code, ref n); break;
-                    case 225: DoppelgangerAI(ref a, ref code, ref n); break;
+                    switch (a.work.id)
+                    {
+                        case 6: HorusAI(ref a, ref code, ref n); break;
+                        case 9: SarasvatiAI(ref a, ref code, ref n); break;
+                        case 11: AmeNoUzumeAI(ref a, ref code, ref n); break;
+                        case 20: KikuriHimeAI(ref a, ref code, ref n); break;
+                        case 28: TakeMinakataAI(ref a, ref code, ref n); break;
+                        case 31: SenriAI(ref a, ref code, ref n); break;
+                        case 32: ZhuqueAI(ref a, ref code, ref n); break;
+                        case 33: ShiisaaAI(ref a, ref code, ref n); break;
+                        case 34: XiezhaiAI(ref a, ref code, ref n); break;
+                        case 35: UnicornAI(ref a, ref code, ref n); break;
+                        case 79: ForcedNagaAI(ref a, ref code, ref n); break;
+                        case 108: BaphometAI(ref a, ref code, ref n); break;
+                        case 124: NKENueAI(ref a, ref code, ref n); break;
+                        case 143: ValkyrieAI(ref a, ref code, ref n); break;
+                        case 145: KuramaTenguAI(ref a, ref code, ref n); break;
+                        case 147: CuChulainnAI(ref a, ref code, ref n); break;
+                        case 149: XuanwuAI(ref a, ref code, ref n); break;
+                        case 151: MakamiAI(ref a, ref code, ref n); break;
+                        case 195: NKEPaleRiderAI(ref a, ref code, ref n); break;
+                        case 196: NKEWhiteRiderAI(ref a, ref code, ref n); break;
+                        case 197: NKERedRiderAI(ref a, ref code, ref n); break;
+                        case 198: NKEBlackRiderAI(ref a, ref code, ref n); break;
+                        case 199: NKEMatadorAI(ref a, ref code, ref n); break;
+                        case 200: NKEHellBikerAI(ref a, ref code, ref n); break;
+                        case 201: NKEDaisoujouAI(ref a, ref code, ref n); break;
+                        case 224: TamLinAI(ref a, ref code, ref n); break;
+                        case 225: DoppelgangerAI(ref a, ref code, ref n); break;
 
-                    case 252: BossDevilDanteAI(ref a, ref code, ref n); break;
-                    case 253: BossGameteAI(ref a, ref code, ref n); break;
-                    case 254: YHVHAI(ref a, ref code, ref n); break;
+                        case 252: BossDevilDanteAI(ref a, ref code, ref n); break;
+                        case 253: BossGameteAI(ref a, ref code, ref n); break;
+                        case 254: YHVHAI(ref a, ref code, ref n); break;
 
-                    case 256: BossForneusAI(ref a, ref code, ref n); break;
-                    case 261: ForcedKoppaTenguAI(ref a, ref code, ref n); break;
-                    case 262: ForcedKaiwanAI(ref a, ref code, ref n); break;
-                    case 263: BossOseAI(ref a, ref code, ref n); break;
-                    case 266: BossKinKiAI(ref a, ref code, ref n); break;
-                    case 267: BossSuiKiAI(ref a, ref code, ref n); break;
-                    case 268: BossFuuKiAI(ref a, ref code, ref n); break;
-                    case 269: BossOngyoKiAI(ref a, ref code, ref n); break;
-                    case 270: BossClotho1AI(ref a, ref code, ref n); break;
-                    case 271: BossLachesis1AI(ref a, ref code, ref n); break;
-                    case 272: BossAtropos1AI(ref a, ref code, ref n); break;
-                    case 294: BigSpecterAI(ref a, ref code, ref n); break;
-                    case 295: BigSpecterAI(ref a, ref code, ref n); break;
-                    case 296: BigSpecterAI(ref a, ref code, ref n); break;
-                    case 297: BossMizuchiAI(ref a, ref code, ref n); break;
-                    case 300: BossOrthrusAI(ref a, ref code, ref n); break;
-                    case 301: BossYaksiniAI(ref a, ref code, ref n); break;
-                    case 302: BossThor1AI(ref a, ref code, ref n); break;
-                    case 307: BossEligorAI(ref a, ref code, ref n, 129); break; // Summons Yaka
-                    case 308: BossEligorAI(ref a, ref code, ref n, 49); break; // Summons Dis
-                    case 309: BossEligorAI(ref a, ref code, ref n, 118); break; // Summons Incubus
-                    case 310: ForcedKelpieAI(ref a, ref code, ref n); break;
-                    case 311: ForcedKelpieAI(ref a, ref code, ref n); break;
-                    case 312: BossBerithAI(ref a, ref code, ref n); break;
-                    case 313: ForcedSuccubusAI(ref a, ref code, ref n); break;
-                    case 315: ForcedKaiwanAI(ref a, ref code, ref n); break;
-                    case 317: BossTrollAI(ref a, ref code, ref n); break;
-                    case 321: BossMaraAI(ref a, ref code, ref n); break;
-                    case 326: BossClotho2AI(ref a, ref code, ref n); break;
-                    case 327: BossLachesis2AI(ref a, ref code, ref n); break;
-                    case 328: BossAtropos2AI(ref a, ref code, ref n); break;
+                        case 256: BossForneusAI(ref a, ref code, ref n); break;
+                        case 261: ForcedKoppaTenguAI(ref a, ref code, ref n); break;
+                        case 262: ForcedKaiwanAI(ref a, ref code, ref n); break;
+                        case 263: BossOseAI(ref a, ref code, ref n); break;
+                        case 266: BossKinKiAI(ref a, ref code, ref n); break;
+                        case 267: BossSuiKiAI(ref a, ref code, ref n); break;
+                        case 268: BossFuuKiAI(ref a, ref code, ref n); break;
+                        case 269: BossOngyoKiAI(ref a, ref code, ref n); break;
+                        case 270: BossClotho1AI(ref a, ref code, ref n); break;
+                        case 271: BossLachesis1AI(ref a, ref code, ref n); break;
+                        case 272: BossAtropos1AI(ref a, ref code, ref n); break;
+                        case 294: BigSpecterAI(ref a, ref code, ref n); break;
+                        case 295: BigSpecterAI(ref a, ref code, ref n); break;
+                        case 296: BigSpecterAI(ref a, ref code, ref n); break;
+                        case 297: BossMizuchiAI(ref a, ref code, ref n); break;
+                        case 300: BossOrthrusAI(ref a, ref code, ref n); break;
+                        case 301: BossYaksiniAI(ref a, ref code, ref n); break;
+                        case 302: BossThor1AI(ref a, ref code, ref n); break;
+                        case 307: BossEligorAI(ref a, ref code, ref n, 129); break; // Summons Yaka
+                        case 308: BossEligorAI(ref a, ref code, ref n, 49); break; // Summons Dis
+                        case 309: BossEligorAI(ref a, ref code, ref n, 118); break; // Summons Incubus
+                        case 310: ForcedKelpieAI(ref a, ref code, ref n); break;
+                        case 311: ForcedKelpieAI(ref a, ref code, ref n); break;
+                        case 312: BossBerithAI(ref a, ref code, ref n); break;
+                        case 313: ForcedSuccubusAI(ref a, ref code, ref n); break;
+                        case 315: ForcedKaiwanAI(ref a, ref code, ref n); break;
+                        case 317: BossTrollAI(ref a, ref code, ref n); break;
+                        case 321: BossMaraAI(ref a, ref code, ref n); break;
+                        case 326: BossClotho2AI(ref a, ref code, ref n); break;
+                        case 327: BossLachesis2AI(ref a, ref code, ref n); break;
+                        case 328: BossAtropos2AI(ref a, ref code, ref n); break;
 
-                    case 339: BossDanteRaidou1AI(ref a, ref code, ref n); break;
-                    case 340: ChaseDanteRaidouAI(ref a, ref code, ref n); break;
-                    case 341: BossDanteRaidou2AI(ref a, ref code, ref n); break;
-                    case 346: BossWhiteRiderAI(ref a, ref code, ref n); break;
-                    case 347: BossRedRiderAI(ref a, ref code, ref n); break;
-                    case 348: BossBlackRiderAI(ref a, ref code, ref n); break;
-                    case 349: BossMatadorAI(ref a, ref code, ref n); break;
-                    case 350: BossHellBikerAI(ref a, ref code, ref n); break;
-                    case 351: BossDaisoujouAI(ref a, ref code, ref n); break;
-                    case 359: BossVirtueAI(ref a, ref code, ref n); break;
-                    case 361: BossLegionAI(ref a, ref code, ref n); break;
-                    case 362: BossFlaurosAI(ref a, ref code, ref n); break;
-                    case 363: RaidouTamLinAI(ref a, ref code, ref n); break;
-                    case 364: RaidouGdonAI(ref a, ref code, ref n); break;
-                    case 365: RaidouVritraAI(ref a, ref code, ref n); break;
-                    case 366: RaidouJackFrostAI(ref a, ref code, ref n); break;
-                    default: break;
+                        case 339: BossDanteRaidou1AI(ref a, ref code, ref n); break;
+                        case 340: ChaseDanteRaidouAI(ref a, ref code, ref n); break;
+                        case 341: BossDanteRaidou2AI(ref a, ref code, ref n); break;
+                        case 346: BossWhiteRiderAI(ref a, ref code, ref n); break;
+                        case 347: BossRedRiderAI(ref a, ref code, ref n); break;
+                        case 348: BossBlackRiderAI(ref a, ref code, ref n); break;
+                        case 349: BossMatadorAI(ref a, ref code, ref n); break;
+                        case 350: BossHellBikerAI(ref a, ref code, ref n); break;
+                        case 351: BossDaisoujouAI(ref a, ref code, ref n); break;
+                        case 359: BossVirtueAI(ref a, ref code, ref n); break;
+                        case 361: BossLegionAI(ref a, ref code, ref n); break;
+
+                        case 362: BossFlaurosAI(ref a, ref code, ref n); break;
+                        case 363: RaidouTamLinAI(ref a, ref code, ref n); break;
+                        case 364: RaidouGdonAI(ref a, ref code, ref n); break;
+                        case 365: RaidouVritraAI(ref a, ref code, ref n); break;
+                        case 366: RaidouJackFrostAI(ref a, ref code, ref n); break;
+                        default: break;
+                    }
                 }
                 MelonLogger.Msg("skill: " + a.work.nowindex);
             }
@@ -583,6 +592,30 @@ namespace NocturneInsaniax
             }
         }
 
+        private static void CuChulainnAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(277))
+            {
+                UseSkill(ref a, 277);
+            }
+            else
+            {
+                int randomValue = random.Next(9);
+                switch (randomValue)
+                {
+                    case 0: UseNormalAttack(ref a); break;
+                    case 1: UseSkill(ref a, 109); break;
+                    case 2: UseSkill(ref a, 109); break;
+                    case 3: UseSkill(ref a, 426); break;
+                    case 4: UseSkill(ref a, 426); break;
+                    case 5: UseSkill(ref a, 474); break;
+                    case 6: UseSkill(ref a, 474); break;
+                    case 7: UseSkill(ref a, 205); break;
+                    case 8: UseSkill(ref a, 65); break;
+                }
+            }
+        }
+
         private static void XuanwuAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
             int randomValue = random.Next(6);
@@ -637,6 +670,138 @@ namespace NocturneInsaniax
                     }
                 }
                 
+            }
+        }
+
+        private static void NKEPaleRiderAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(277) && nbMainProcess.nbGetMainProcessData().enemypcnt == 1)
+            {
+                UseSkill(ref a, 277);
+            }
+            int randomValue = random.Next(4);
+            switch (randomValue)
+            {
+                case 0: UseNormalAttack(ref a); break;
+                case 1: UseSkill(ref a, 79); break;
+                case 2: UseSkill(ref a, 102); break;
+                case 3: UseSkill(ref a, 451); break;
+            }
+        }
+
+        private static void NKEWhiteRiderAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(277))
+            {
+                UseSkill(ref a, 277);
+            }
+            else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(229))
+            {
+                UseSummonSkill(ref a, 229, 197); return;
+            }
+            else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(277) && nbMainProcess.nbGetMainProcessData().enemypcnt == 1)
+            {
+                UseSkill(ref a, 277);
+            }
+            else if (AllyPartyBuffed(1) && random.Next(3) == 0)
+            {
+                UseSkill(ref a, 57);
+            }
+            else
+            {
+                if (AllyPartyAllImmuneToAttr(287, 6))
+                {
+                    int randomValue = random.Next(2);
+                    switch (randomValue)
+                    {
+                        case 0: UseNormalAttack(ref a); break;
+                        case 1: UseSkill(ref a, 178); break;
+                    }
+                }
+                else
+                {
+                    int randomValue = random.Next(3);
+                    switch (randomValue)
+                    {
+                        case 0: UseNormalAttack(ref a); break;
+                        case 1: UseSkill(ref a, 178); break;
+                        case 2: UseSkill(ref a, 287); break;
+                    }
+                }
+            }
+        }
+
+        private static void NKERedRiderAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(229))
+            {
+                UseSummonSkill(ref a, 229, 198); return;
+            }
+            else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(277) && nbMainProcess.nbGetMainProcessData().enemypcnt == 1)
+            {
+                UseSkill(ref a, 277);
+            }
+            else if (EnemyPartyDebuffed(3) && random.Next(3) == 0)
+            {
+                UseSkill(ref a, 77);
+            }
+            else
+            {
+                if (AllyPartyTetrakarn())
+                {
+                    int randomValue = random.Next(2);
+                    switch (randomValue)
+                    {
+                        case 0: UseSkill(ref a, 183); break;
+                        case 1: UseSkill(ref a, 186); break;
+                    }
+                }
+                else if (AllyPartyMakarakarn())
+                {
+                    int randomValue = random.Next(2);
+                    switch (randomValue)
+                    {
+                        case 0: UseNormalAttack(ref a); break;
+                        case 1: UseSkill(ref a, 280); break;
+                    }
+                }
+                else
+                {
+                    int randomValue = random.Next(4);
+                    switch (randomValue)
+                    {
+                        case 0: UseNormalAttack(ref a); break;
+                        case 1: UseSkill(ref a, 280); break;
+                        case 2: UseSkill(ref a, 183); break;
+                        case 3: UseSkill(ref a, 186); break;
+                    }
+                }
+            }
+        }
+
+        private static void NKEBlackRiderAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(229))
+            {
+                UseSummonSkill(ref a, 229, 195); return;
+            }
+            else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(277) && nbMainProcess.nbGetMainProcessData().enemypcnt == 1)
+            {
+                UseSkill(ref a, 277);
+            }
+            else if (AllyPartyBuffed(1) && random.Next(3) == 0)
+            {
+                UseSkill(ref a, 57);
+            }
+            else
+            {
+                int randomValue = random.Next(3);
+                switch (randomValue)
+                {
+                    case 0: UseNormalAttack(ref a); break;
+                    case 1: UseSkill(ref a, 261); break;
+                    case 2: UseSkill(ref a, 181); break;
+                }
             }
         }
 
@@ -853,59 +1018,31 @@ namespace NocturneInsaniax
             {
                 UseSkill(ref a, 509); return;
             }
-            if (actionTrackers[a.work.id].currentBattleActionCount == 3)
+            else if (actionTrackers[a.work.id].currentBattleActionCount == 3)
             {
                 UseSkill(ref a, 498); return;
             }
-            else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(510))
-            {
-                UseSkill(ref a, 510); return;
-            }
-            else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(511))
-            {
-                UseSkill(ref a, 511); return;
-            }
-            else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(507))
-            {
-                UseSkill(ref a, 507); return;
-            }
-            else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(506))
-            {
-                UseSkill(ref a, 506);
-                SetTargetingRule(ref code, ref n, 10, n);
-                return;
-            }
-            else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(505))
-            {
-                UseSkill(ref a, 505); return;
-            }
-            else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(508))
-            {
-                UseSkill(ref a, 508); return;
-            }
-            else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(500))
-            {
-                UseSkill(ref a, 500); return;
-            }
-            else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(501))
-            {
-                UseSkill(ref a, 501); return;
-            }
-            else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(502))
-            {
-                UseSkill(ref a, 502); return;
-            }
-            else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(503))
-            {
-                UseSkill(ref a, 503); return;
-            }
-            else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(504))
-            {
-                UseSkill(ref a, 504); return;
-            }
             else
             {
-                UseSkill(ref a, 499); return;
+                int randomValue = random.Next(15);
+                switch (randomValue)
+                {
+                    case 0: UseNormalAttack(ref a); break;
+                    case 1: UseSkill(ref a, 498); break;
+                    case 2: UseSkill(ref a, 499); break;
+                    case 3: UseSkill(ref a, 500); break;
+                    case 4: UseSkill(ref a, 501); break;
+                    case 5: UseSkill(ref a, 502); break;
+                    case 6: UseSkill(ref a, 503); break;
+                    case 7: UseSkill(ref a, 504); break;
+                    case 8: UseSkill(ref a, 505); break;
+                    case 9: UseSkill(ref a, 506); break;
+                    case 10: UseSkill(ref a, 507); break;
+                    case 11: UseSkill(ref a, 508); break;
+                    case 12: UseSkill(ref a, 509); break;
+                    case 13: UseSkill(ref a, 510); break;
+                    case 14: UseSkill(ref a, 511); break;
+                }
             }
         }
 
@@ -2744,6 +2881,39 @@ namespace NocturneInsaniax
                     return true;
             }
             return false;
+        }
+
+        private static bool AllyPartyTetrakarn()
+        {
+            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3);
+            foreach (var unit in allyParty)
+            {
+                if (unit.count[14] >= 1)
+                    return true;
+            }
+            return false;
+        }
+
+        private static bool AllyPartyMakarakarn()
+        {
+            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3);
+            foreach (var unit in allyParty)
+            {
+                if (unit.count[13] >= 1)
+                    return true;
+            }
+            return false;
+        }
+
+        private static bool AllyPartyAllImmuneToAttr(int nskill, int attr)
+        {
+            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3);
+            foreach (var unit in allyParty)
+            {
+                if (!new uint[] { 65536, 131072, 262144 }.Contains(nbCalc.nbGetAisyo(nskill, unit.formindex, attr)))
+                    return false;
+            }
+            return true;
         }
     }
 

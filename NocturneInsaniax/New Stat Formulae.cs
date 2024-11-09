@@ -84,9 +84,9 @@ namespace NocturneInsaniax
                 var level = work.level;
                 var str = datCalc.datGetParam(work, 0);
                 if (work.id == 111 || work.id == 335)
-                    __result = Convert.ToInt32((level + str) * 48 / 15);
+                    __result = Convert.ToInt32((level + str * 2) * 45 / 20);
                 else
-                    __result = Convert.ToInt32((level + str) * 32 / 15);
+                    __result = Convert.ToInt32((level + str * 2) * 30 / 20);
                 return false;
             }
         }
@@ -282,7 +282,7 @@ namespace NocturneInsaniax
 
                 double atkPow = (nskill == 0 || nskill == 167) ?
                     datCalc.datGetNormalAtkPow(workFromFormindex1) :
-                    (workFromFormindex1.level + datCalc.datGetParam(workFromFormindex1, 0)) * waza / 15;
+                    (workFromFormindex1.level + datCalc.datGetParam(workFromFormindex1, 0) * 2) * waza / 20;
 
                 //double defPow = datCalc.datGetParam(workFromFormindex2, 3);
 
@@ -315,7 +315,7 @@ namespace NocturneInsaniax
                 }
 
                 //double atkPow = workFromFormindex1.maxhp * waza * 0.8 / 69.6;
-                double atkPow = ((workFromFormindex1.level + datCalc.datGetParam(workFromFormindex1, 0)) * waza / 15) * hpModifier;
+                double atkPow = ((workFromFormindex1.level + datCalc.datGetParam(workFromFormindex1, 0) * 2) * waza / 20) * hpModifier;
 
                 //double defPow = datCalc.datGetParam(workFromFormindex2, 3);
 
@@ -451,11 +451,12 @@ namespace NocturneInsaniax
 
                 if (isWeak)
                     __result = 2; // Weak hit
-                else if (aisyo == 65536 || aisyo == 131072 || aisyo == 262144 || datCalc.datCheckSyojiSkill(workFromFormindex1, 372) != 0) // If target is immune or has Firm Stance
+                else
                     __result = 0; // Normal hit
-                else if ((workFromFormindex2.badstatus == 4 || workFromFormindex2.badstatus == 256 ||// If target is asleep or stunned
+
+                if ((workFromFormindex2.badstatus == 4 || // If target is asleep
                     (datSkill.tbl[nskill].skillattr == 1 && workFromFormindex2.badstatus == 64) || // If attack is fire and target is poisoned
-                    (datSkill.tbl[nskill].skillattr == 2 && workFromFormindex2.badstatus == 16) || // If attack is ice and target is bound
+                    (datSkill.tbl[nskill].skillattr == 2 && workFromFormindex2.badstatus == 256) || // If attack is ice and target is stunned
                     (datSkill.tbl[nskill].skillattr == 3 && workFromFormindex2.badstatus == 32) || // If attack is elec and target is muted
                     (datSkill.tbl[nskill].skillattr == 4 && workFromFormindex2.badstatus == 8) || // If attack is force and target is panicked
                     (datNormalSkill.tbl[nskill].koukatype == 0 && (workFromFormindex2.badstatus == 1 || workFromFormindex2.badstatus == 2))) // If attack is physical and target is shocked or frozen
@@ -604,8 +605,11 @@ namespace NocturneInsaniax
                     var critChance = critRate * lukMultiplier;
 
                     var rand = dds3KernelCore.dds3GetRandIntA(100);
-                    __result = rand < critChance ? 1 : 0;
+                    __result = rand < critChance ? 1 : __result;
                 }
+
+                if (__result == 1 && (aisyo == 65536 || aisyo == 131072 || aisyo == 262144 || datCalc.datCheckSyojiSkill(workFromFormindex1, 372) != 0)) // If target is immune or has Firm Stance
+                    __result = 0; // Normal hit
 
                 // Double Attack
                 if (__result == 1 && nskill == 0 && datCalc.datCheckSyojiSkill(workFromFormindex1, 300) != 0)

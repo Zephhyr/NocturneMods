@@ -7582,6 +7582,27 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[10].Param = 304; // Attack All
             tblSkill.fclSkillTbl[id].Event[11].Param = 108; // Deathbound
             tblSkill.fclSkillTbl[id].Event[12].Param = 108; // Deathbound
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 2800;
+            datDevilFormat.tbl[id].maxhp = 2800;
+            datDevilFormat.tbl[id].mp = 700;
+            datDevilFormat.tbl[id].maxmp = 700;
+
+            datDevilFormat.tbl[id].dropexp = 2000;
+            datDevilFormat.tbl[id].dropmakka = 5000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 109; // Guillotine
+            datDevilFormat.tbl[id].skill[1] = 426; // Sakura Rage
+            datDevilFormat.tbl[id].skill[2] = 474; // Gae Bolg
+            datDevilFormat.tbl[id].skill[3] = 205; // Taunt
+            datDevilFormat.tbl[id].skill[4] = 65; // Sukukaja
+            datDevilFormat.tbl[id].skill[5] = 306; // Retaliate
+            datDevilFormat.tbl[id].skill[6] = 366; // Abyssal Mask
+
+            // AI
+            datDevilAI.divTbls[1][19].scriptid = 0;
         }
 
         private static void QingLong(ushort id)
@@ -8529,6 +8550,24 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[7].Param = 431; // Revelation
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 68;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 4000;
+            datDevilFormat.tbl[id].maxhp = 4000;
+            datDevilFormat.tbl[id].mp = 1000;
+            datDevilFormat.tbl[id].maxmp = 1000;
+
+            datDevilFormat.tbl[id].dropexp = 2000;
+            datDevilFormat.tbl[id].dropmakka = 4000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 79; // Pestilence
+            datDevilFormat.tbl[id].skill[1] = 102; // Blight
+            datDevilFormat.tbl[id].skill[2] = 451; // Overload
+            datDevilFormat.tbl[id].skill[3] = 229; // Laughter
+            datDevilFormat.tbl[id].skill[4] = 366; // Abyssal Mask
+
+            datDevilAI.divTbls[1][67].ailevel = 1;
         }
 
         private static void WhiteRider(ushort id)
@@ -8565,6 +8604,24 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[7].Param = 179; // Trisagion
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 57;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 4000;
+            datDevilFormat.tbl[id].maxhp = 4000;
+            datDevilFormat.tbl[id].mp = 1000;
+            datDevilFormat.tbl[id].maxmp = 1000;
+
+            datDevilFormat.tbl[id].dropexp = 2000;
+            datDevilFormat.tbl[id].dropmakka = 4000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 287; // God's Bow
+            datDevilFormat.tbl[id].skill[1] = 178; // Prominence
+            datDevilFormat.tbl[id].skill[2] = 57; // Dekaja
+            datDevilFormat.tbl[id].skill[3] = 229; // Laughter
+            datDevilFormat.tbl[id].skill[4] = 366; // Abyssal Mask
+
+            datDevilAI.divTbls[1][68].ailevel = 1;
         }
 
         private static void RedRider(ushort id)
@@ -8601,6 +8658,25 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[7].Param = 186; // Wind Cutter
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 60;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 4000;
+            datDevilFormat.tbl[id].maxhp = 4000;
+            datDevilFormat.tbl[id].mp = 1000;
+            datDevilFormat.tbl[id].maxmp = 1000;
+
+            datDevilFormat.tbl[id].dropexp = 2000;
+            datDevilFormat.tbl[id].dropmakka = 4000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 280; // Terrorblade
+            datDevilFormat.tbl[id].skill[1] = 183; // Bolt Storm
+            datDevilFormat.tbl[id].skill[2] = 186; // Wind Cutter
+            datDevilFormat.tbl[id].skill[3] = 77; // Dekunda
+            datDevilFormat.tbl[id].skill[4] = 229; // Laughter
+            datDevilFormat.tbl[id].skill[5] = 366; // Abyssal Mask
+
+            datDevilAI.divTbls[1][69].ailevel = 1;
         }
 
         private static void BlackRider(ushort id)
@@ -8637,6 +8713,24 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[7].Param = 439; // Fimbulvetr
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 66;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 4000;
+            datDevilFormat.tbl[id].maxhp = 4000;
+            datDevilFormat.tbl[id].mp = 1000;
+            datDevilFormat.tbl[id].maxmp = 1000;
+
+            datDevilFormat.tbl[id].dropexp = 2000;
+            datDevilFormat.tbl[id].dropmakka = 4000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 261; // Soul Divide
+            datDevilFormat.tbl[id].skill[1] = 181; // Glacial Blast
+            datDevilFormat.tbl[id].skill[2] = 57; // Dekaja
+            datDevilFormat.tbl[id].skill[3] = 229; // Laughter
+            datDevilFormat.tbl[id].skill[4] = 366; // Abyssal Mask
+
+            datDevilAI.divTbls[1][70].ailevel = 1;
         }
 
         private static void Matador(ushort id)
@@ -9812,7 +9906,14 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].dropmakka = 10000;
 
             // Enemy Skills
-            datDevilFormat.tbl[id].skill[0] = 360; // Never Yield
+            datDevilFormat.tbl[id].skill[0] = 262; // Boogie-Woogie/E&I
+            datDevilFormat.tbl[id].skill[1] = 263; // Enter Yoshitsune/Rebellion
+            datDevilFormat.tbl[id].skill[2] = 266; // Tekisatsu/Stinger
+            datDevilFormat.tbl[id].skill[3] = 274; // Raptor Guardian/Holy Star
+            datDevilFormat.tbl[id].skill[4] = 264; // Mokoi Boomerang/Twosome Time
+            datDevilFormat.tbl[id].skill[5] = 266; // Mishaguji Raiden/Roundtrip
+            datDevilFormat.tbl[id].skill[6] = 267; // Hitokoto Storm/Whirlwind
+            datDevilFormat.tbl[id].skill[7] = 360; // Never Yield
 
 
             mdlFileDefTable.devilModelFileTable[id].texFile = "";
@@ -9921,8 +10022,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 800;
             datDevilFormat.tbl[id].hp = 800;
-            datDevilFormat.tbl[id].param[0] = 7;
-            datDevilFormat.tbl[id].param[2] = 7;
+            datDevilFormat.tbl[id].param[0] = 6;
+            datDevilFormat.tbl[id].param[2] = 6;
 
             datDevilFormat.tbl[id].dropexp = 200;
             //datDevilFormat.tbl[id].dropmakka = 65000;
@@ -11094,7 +11195,7 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Stats
-            datDevilFormat.tbl[id].param[0] = 2;
+            datDevilFormat.tbl[id].param[0] = 1;
             datDevilFormat.tbl[id].param[2] = 3;
 
             // Display Skill
@@ -11119,8 +11220,8 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Enemy Stats
-            datDevilFormat.tbl[id].hp = 20;
-            datDevilFormat.tbl[id].maxhp = 20;
+            datDevilFormat.tbl[id].hp = 24;
+            datDevilFormat.tbl[id].maxhp = 24;
             datDevilFormat.tbl[id].mp = 32;
             datDevilFormat.tbl[id].maxmp = 32;
         }
@@ -11249,7 +11350,7 @@ namespace NocturneInsaniax
 
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 7500;
-            datDevilFormat.tbl[id].hp = 1500;
+            datDevilFormat.tbl[id].hp = 7500;
             datDevilFormat.tbl[id].level = 60;
             datDevilFormat.tbl[id].param[0] = 18;
             datDevilFormat.tbl[id].param[2] = 14;
@@ -11868,8 +11969,8 @@ namespace NocturneInsaniax
         {
             datDevilFormat.tbl[id].flag = 563;
             datDevilFormat.tbl[id].race = 36;
-            //datDevilFormat.tbl[id].level = 90;
-            datDevilFormat.tbl[id].level = 1;
+            datDevilFormat.tbl[id].level = 99;
+            //datDevilFormat.tbl[id].level = 1;
             datDevilFormat.tbl[id].aisyoid = (short)id;
             datDevilFormat.tbl[id].param = new sbyte[] { 40, 0, 40, 40, 40, 40 };
             //datDevilFormat.tbl[id].param = new sbyte[] { 1, 0, 1, 1, 1, 1 };
