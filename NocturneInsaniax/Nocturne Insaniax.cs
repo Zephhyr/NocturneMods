@@ -17,7 +17,7 @@ using System.Linq;
 using Il2Cppeffect_H;
 using Il2Cppmodel_H;
 
-[assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax", "0.8.0", "Zephhyr, Matthiew Purple")]
+[assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax", "0.9.0", "Zephhyr, Matthiew Purple, Bud, Margothic, Scribe, Snappy, Mason White")]
 [assembly: MelonGame("アトラス", "smt3hd")]
 
 namespace NocturneInsaniax

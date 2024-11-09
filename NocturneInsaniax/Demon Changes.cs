@@ -165,6 +165,8 @@ namespace NocturneInsaniax
                         __result = "Null: Dark • Str: Phys • Weak: Elements/Light"; return false;
                     case "<AISYO_L0136>": // Mou-Ryo
                         __result = "Null: Dark • Str: Fire • Weak: Light"; return false;
+                    case "<AISYO_L0137>": // Will O' Wisp
+                        __result = "Null: Dark • Str: Phys • Weak: Elements/Light"; return false;
                     case "<AISYO_L0138>": // Michael
                         __result = "Rpl: Light • Str: Phys/Elements"; return false;
                     case "<AISYO_L0139>": // Gabriel
@@ -398,6 +400,7 @@ namespace NocturneInsaniax
                     case 41: __result = "Skill"; return false;
                     case 42: __result = "Pyro"; return false;
                     case 43: __result = "Frost"; return false;
+                    case 44: __result = "Godly"; return false;
                     default: return true;
                 }
             }
@@ -11968,7 +11971,7 @@ namespace NocturneInsaniax
         private static void YHVH(ushort id)
         {
             datDevilFormat.tbl[id].flag = 563;
-            datDevilFormat.tbl[id].race = 36;
+            datDevilFormat.tbl[id].race = 44;
             datDevilFormat.tbl[id].level = 99;
             //datDevilFormat.tbl[id].level = 1;
             datDevilFormat.tbl[id].aisyoid = (short)id;

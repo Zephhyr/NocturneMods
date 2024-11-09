@@ -367,8 +367,8 @@ namespace NocturneInsaniax
                     case 249: __result = "High Mind damage to random foes. \n3-7 hits. Pow: 36, Acc: 100%, Panic: 40%"; return false; // Wild Dance
                     case 250: __result = "Drains HP/MP from one foe. \nPow: 80/40, Acc: 100% \n(Almighty-Type)"; return false; // Domination
                     case 257: __result = "Mega Almighty damage to random foes. \n4-8 hits. Pow: 40, Acc: 100%."; return false; // Fire of Sinai
-                    case 259: __result = "Massive Almighty damage to all foes. \nInstakills when not immune to Dark. \nPow: 60, Acc: 100%, Fatal: 100%"; return false; // Death Flies
-                    case 260: __result = "Massive Almighty damage to all foes. \nInstakills when not immune to Dark. \nPow: 60, Acc: 100%, Fatal: 100%"; return false; // Death Flies
+                    case 259: __result = "Mega Almighty damage to all foes. \nInstakills when not immune to Dark. \nPow: 60, Acc: 100%, Fatal: 100%"; return false; // Death Flies
+                    case 260: __result = "Mega Almighty damage to all foes. \nInstakills when not immune to Dark. \nPow: 60, Acc: 100%, Fatal: 100%"; return false; // Death Flies
                     case 261: __result = "High Curse damage to all foes. \nPow: 48, Acc: 60%, Mute: 100%"; return false; // Soul Divide
                     case 262: __result = "Low Physical damage to one foe. \nLowers target's Evasion/Defense. \nPow: 32, Acc: 120%, Crit: 18%"; return false; // Boogie-Woogie/E & I
                     case 263: __result = "High Physical damage to one foe. \nPow: 48, Acc: 100%, Crit: 40%"; return false; // Enter Yoshitsune/Rebellion
