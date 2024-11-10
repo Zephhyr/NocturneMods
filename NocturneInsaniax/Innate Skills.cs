@@ -518,7 +518,7 @@ namespace NocturneInsaniax
         private static ushort[] pawToPawCombatIds = new ushort[] { 31, 69, 71, 86, 179, 180, 227, 263, 289, 290, 316, 362 };
         private static ushort[] auspiciousBeastIds = new ushort[] { 30, 32, 148, 149 };
         private static ushort[] faithfulCompanionIds = new ushort[] { 81, 82, 85, 151, 300 };
-        private static ushort[] focusedAssaultIds = new ushort[] { 5, 67, 95, 131, 319 };
+        private static ushort[] focusedAssaultIds = new ushort[] { 5, 67, 95, 131 };
         private static ushort[] helmsmanIds = new ushort[] { 34, 73, 143, 153, 307, 308, 309 };
         private static ushort[] deathlyAfflictionIds = new ushort[] { 101, 128, 129, 135, 361 };
         private static ushort[] magnifiedMaladyIds = new ushort[] { 80, 107, 136, 226 };
