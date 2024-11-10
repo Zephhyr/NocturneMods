@@ -1083,7 +1083,7 @@ namespace NocturneInsaniax
                     tmp_datNormalSkill.cost = datNormalSkill.tbl[nskill].cost; // Memorize the original skill cost
 
                     // Arms Master
-                    if (datCalc.datCheckSyojiSkill(actionProcessData.work, 371) != 0)
+                    if (datCalc.datCheckSyojiSkill(w, 371) != 0)
                     {
                         datNormalSkill.tbl[nskill].cost = Convert.ToUInt16(datNormalSkill.tbl[nskill].cost * 0.5);
                     }
@@ -1095,7 +1095,7 @@ namespace NocturneInsaniax
                         datNormalSkill.tbl[nskill].cost = SkillPotentialUtility.ApplySkillPotentialCost(nskill, skillPotential); // Update the skill cost
                     }
 
-                    if (actionProcessData.partyindex <= 3)
+                    if (actionProcessData != null && actionProcessData.partyindex <= 3)
                     {
                         // Restorative Melody
                         if (datSkill.tbl[nskill].skillattr == 13)
