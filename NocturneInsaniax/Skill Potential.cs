@@ -1627,7 +1627,7 @@ namespace NocturneInsaniax
                                         if (((nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id == currentDemonWork.id && enemy.partyindex != actionProcessData.partyindex) ||
                                         (nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id != currentDemonWork.id && nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id != 0)) &&
                                         nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).hp != 0)
-                                            skillPotential += demonPotentials[nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id][skillAttribute];
+                                            skillPotential += Math.Max((sbyte)0, demonPotentials[nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id][skillAttribute]);
                                     } catch { }
                                 }
                             }

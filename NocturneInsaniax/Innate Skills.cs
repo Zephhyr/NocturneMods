@@ -440,7 +440,15 @@ namespace NocturneInsaniax
             { 4, new List<ushort> { 48, 52, 92, 121, 261 } }, // Force
             { 5, new List<ushort> { 193 } }, // Almighty
             { 6, new List<ushort> { 62, 65, 360 } }, // Light
-            { 7, new List<ushort> { 108 } } // Dark
+            { 7, new List<ushort> { 108 } }, // Dark
+            { 8, new List<ushort> { } }, // Curse (Not Used)
+            { 9, new List<ushort> { } }, // Nerve (Not Used)
+            { 10, new List<ushort> { } }, // Mind (Not Used)
+            { 11, new List<ushort> { } }, // Self-Destruct (Not Used)
+            { 12, new List<ushort> { } }, // NA
+            { 13, new List<ushort> { } }, // Heal (Not Used)
+            { 14, new List<ushort> { } }, // Support (Not Used)
+            { 15, new List<ushort> { } } // Util (Not Used)
         };
 
         private static Dictionary<sbyte, byte> gestaltMagatama = new Dictionary<sbyte, byte>
@@ -453,6 +461,14 @@ namespace NocturneInsaniax
             { 5, 00 }, // Almighty (Not Used)
             { 6, 11 }, // Light
             { 7, 09 }, // Dark
+            { 8, 00 }, // // Curse (Not Used)
+            { 9, 00 }, // // Nerve (Not Used)
+            { 10, 00 }, // Mind (Not Used)
+            { 11, 00 }, // Self-Destruct (Not Used)
+            { 12, 00 }, // NA
+            { 13, 00 }, // Heal (Not Used)
+            { 14, 00 }, // Support (Not Used)
+            { 15, 00 }, // Util (Not Used)
         };
 
         private static Dictionary<sbyte, List<ushort>> enhancerUsers = new Dictionary<sbyte, List<ushort>>
