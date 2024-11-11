@@ -1386,6 +1386,7 @@ namespace NocturneInsaniax
             {
                 if ((nskill < 288 || nskill > 421) && datNormalSkill.tbl[nskill].badlevel != 255) // If it isn't a passive skill
                 {
+                    tmp_datNormalSkill.basstatus = datNormalSkill.tbl[nskill].basstatus; // Memorize the original ailment 
                     tmp_datNormalSkill.badlevel = datNormalSkill.tbl[nskill].badlevel; // Memorize the original ailment rate
                     
                     var work = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
@@ -1451,8 +1452,141 @@ namespace NocturneInsaniax
                 }
             }
 
-            public static void Postfix(ref int nskill) // After attempting to inflinct an ailment
+            public static void Postfix(ref int nskill, int sformindex, int dformindex, float ai, int nvirtual, ref uint __result) // After attempting to inflinct an ailment
             {
+                // Get possible ailments and their elems
+                ushort basstatus = datNormalSkill.tbl[nskill].basstatus;
+                List<ushort> powers = new List<ushort>();
+                Dictionary<ushort, int> ailments = new Dictionary<ushort, int>();
+                while (basstatus > 0)
+                {
+                    powers.Add((ushort)(basstatus % 2));
+                    basstatus /= 2;
+                }
+                for (int i = 0; i < powers.Count; i++)
+                {
+                    if (powers[i] == 1)
+                    {
+                        int badStatusAttr = 0;
+                        var ailment = datCalc.datGetBadStatusAttr((int)Math.Pow(2, i));
+                        switch (ailment)
+                        {
+                            case 1: badStatusAttr = 3; break;
+                            case 2: badStatusAttr = 2; break;
+                            case 4: badStatusAttr = 10; break;
+                            case 8: badStatusAttr = 10; break;
+                            case 16: badStatusAttr = 9; break;
+                            case 32: badStatusAttr = 8; break;
+                            case 64: badStatusAttr = 8; break;
+                            case 128: badStatusAttr = 10; break;
+                            case 256: badStatusAttr = 9; break;
+                            case 512: badStatusAttr = 5; break;
+                            case 1024: badStatusAttr = 7; break;
+                            case 2048:
+                                {
+                                    if (datNormalSkill.tbl[nskill].basstatus == 2048 && datSkill.tbl[nskill].skillattr == 5)
+                                        badStatusAttr = 7;
+                                    else if (datNormalSkill.tbl[nskill].basstatus == 2048 && (datSkill.tbl[nskill].skillattr == 6 || datSkill.tbl[nskill].skillattr == 7))
+                                        badStatusAttr = datSkill.tbl[nskill].skillattr;
+                                    break;
+                                }
+                        }
+                        ailments.Add((ushort)Math.Pow(2, i), badStatusAttr);
+                    }
+                }
+
+                // Remove ailments the target is immune to
+                datUnitWork_t targetWork = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
+                foreach (var ailment in ailments)
+                {
+                    var aisyo = nbCalc.nbGetAisyo(nskill, dformindex, ailment.Value);
+                    if (new uint[] { 65536, 131072, 262144, 1048626, 1048676 }.Contains(aisyo))
+                        ailments.Remove(ailment.Key);
+                }
+
+                // Select a possible ailment
+                if (!ailments.Any())
+                    __result = 0;
+                else
+                {
+                    int randomValue = random.Next(ailments.Count);
+                    __result = ailments.Keys.ToArray()[randomValue];
+                }
+
+                // Roll the chance to inflict ailment
+                if (__result != 0)
+                {
+                    var rand = dds3KernelCore.dds3GetRandIntA(100);
+                    var aisyoRitu = nbCalc.nbGetAisyoRitu(nskill, sformindex, dformindex);
+                    __result = (rand * aisyoRitu) < datNormalSkill.tbl[nskill].badlevel ? __result : 0;
+                }
+
+                if (datSkill.tbl[nskill].skillattr == 6 || datSkill.tbl[nskill].skillattr == 7)
+                {
+                    int[] lightSkills = new int[] { 28, 29, 30, 31, 287 };
+                    int[] darkSkills = new int[] { 32, 33, 34, 35 };
+
+                    var lightResistance = Convert.ToString(nbCalc.nbGetAisyo(nskill, dformindex, 6), 2);
+                    var darkResistance = Convert.ToString(nbCalc.nbGetAisyo(nskill, dformindex, 7), 2);
+
+                    if ((lightSkills.Contains(nskill) && !(lightResistance.Length == 32 && lightResistance[lightResistance.Length - 32] == '1' && lightResistance[lightResistance.Length - 21] == '0')) ||
+                        (darkSkills.Contains(nskill) && !(darkResistance.Length == 32 && darkResistance[darkResistance.Length - 32] == '1' && darkResistance[darkResistance.Length - 21] == '0')))
+                    {
+                        __result = 0;
+                        return;
+                    }
+                }
+
+                if (nskill == 266)
+                {
+                    var darkResistance = nbCalc.nbGetAisyo(nskill, dformindex, 7);
+                    if (new uint[] { 65536, 131072, 262144 }.Contains(darkResistance))
+                        __result = 0;
+                    return;
+                }
+
+                var work = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
+                if (__result == 1 && datCalc.datCheckSyojiSkill(work, 366) != 0 && datNormalSkill.tbl[nskill].basstatus != 1 && datNormalSkill.tbl[nskill].basstatus != 2)
+                {
+                    int randomValue = random.Next(2);
+                    __result = randomValue == 0 ? 0 : __result;
+                }
+
+                // Withheld Sentence
+                if (datNormalSkill.tbl[nskill].basstatus == 2048)
+                {
+                    if (nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex <= 3)
+                    {
+                        foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
+                        {
+                            try
+                            {
+                                if (withheldSentenceIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id) ||
+                                    (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 22))
+                                    __result = 0;
+                            }
+                            catch { }
+                        }
+                    }
+                    else
+                    {
+                        foreach (var enemy in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex > 3))
+                        {
+                            try
+                            {
+                                if (withheldSentenceIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
+                                    __result = 0;
+                            }
+                            catch { }
+                        }
+                    }
+                }
+
+                // Boss Ailment immunities
+                if (bossList.Contains(work.id) && (datNormalSkill.tbl[nskill].basstatus == 8 || datNormalSkill.tbl[nskill].basstatus == 16 || datNormalSkill.tbl[nskill].basstatus == 32 || datNormalSkill.tbl[nskill].basstatus == 128 || datNormalSkill.tbl[nskill].basstatus == 1024 || datNormalSkill.tbl[nskill].basstatus == 2048))
+                {
+                    __result = 0;
+                }
                 if (datNormalSkill.tbl[nskill].badlevel != 255)
                 {
                     datNormalSkill.tbl[nskill].basstatus = tmp_datNormalSkill.basstatus; // Revert the ailment

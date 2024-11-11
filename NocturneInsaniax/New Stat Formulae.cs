@@ -608,7 +608,7 @@ namespace NocturneInsaniax
                     __result = rand < critChance ? 1 : __result;
                 }
 
-                if (__result == 1 && (aisyo == 65536 || aisyo == 131072 || aisyo == 262144 || datCalc.datCheckSyojiSkill(workFromFormindex1, 372) != 0)) // If target is immune or has Firm Stance
+                if (__result == 1 && (new uint[]{ 65536, 131072, 262144 }.Contains(aisyo) || datCalc.datCheckSyojiSkill(workFromFormindex1, 372) != 0)) // If target is immune or has Firm Stance
                     __result = 0; // Normal hit
 
                 // Double Attack

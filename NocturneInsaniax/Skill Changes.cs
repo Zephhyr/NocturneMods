@@ -530,6 +530,26 @@ namespace NocturneInsaniax
             }
         }
 
+        [HarmonyPatch(typeof(nbActionProcess), nameof(nbActionProcess.SetAction_COMM))]
+        private class SetAction_COMMPatch
+        {
+            public static void Prefix(ref nbActionProcessData_t a)
+            {
+                actionProcessData = a;
+                currentDemonWork = a.work;
+            }
+        }
+
+        [HarmonyPatch(typeof(nbActionProcess), nameof(nbActionProcess.CheckAction_COMM))]
+        private class CheckAction_COMMPatch
+        {
+            public static void Prefix(ref nbActionProcessData_t a)
+            {
+                actionProcessData = a;
+                currentDemonWork = a.work;
+            }
+        }
+
         [HarmonyPatch(typeof(nbMainProcess), nameof(nbMainProcess.nbSetEndPhase))]
         private class nbSetEndPhasePatch
         {
@@ -610,7 +630,7 @@ namespace NocturneInsaniax
                     if (a.work.id == 25) nbMainProcess.nbPushAction(4, a.partyindex, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, 404);
                     else if (a.work.id == 146 && nbMainProcess.nbGetUnitWorkFromFormindex(dformindex).badstatus != 0) nbMainProcess.nbPushAction(4, a.partyindex, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, 416);
                 }
-                
+
                 // Doppelganger's Dark Mirror
                 if (a.work.id == 0 && a.work.nowcommand == 1 && !pushedSkillList.Contains(a.work.nowindex))
                 {
@@ -775,80 +795,6 @@ namespace NocturneInsaniax
 
                         dds3GlobalWork.DDS3_GBWK.unitwork[0] = unit;
                     }
-                }
-            }
-        }
-
-        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetKoukaBadDamage))]
-        private class CheckStatusPatch
-        {
-            public static void Postfix(ref int nskill, int sformindex, int dformindex, float ai, int nvirtual, ref uint __result)
-            {
-                if (datSkill.tbl[nskill].skillattr == 6 || datSkill.tbl[nskill].skillattr == 7)
-                {
-                    int[] lightSkills = new int[] { 28, 29, 30, 31, 287 };
-                    int[] darkSkills = new int[] { 32, 33, 34, 35 };
-
-                    var lightResistance = Convert.ToString(nbCalc.nbGetAisyo(nskill, dformindex, 6), 2);
-                    var darkResistance = Convert.ToString(nbCalc.nbGetAisyo(nskill, dformindex, 7), 2);
-
-                    if ((lightSkills.Contains(nskill) && !(lightResistance.Length == 32 && lightResistance[lightResistance.Length - 32] == '1' && lightResistance[lightResistance.Length - 21] == '0')) ||
-                        (darkSkills.Contains(nskill) && !(darkResistance.Length == 32 && darkResistance[darkResistance.Length - 32] == '1' && darkResistance[darkResistance.Length - 21] == '0')))
-                    {
-                        __result = 0;
-                        return;
-                    }
-                }
-
-                if (nskill == 266)
-                {
-                    var darkResistance = nbCalc.nbGetAisyo(nskill, dformindex, 7);
-                    if (darkResistance == 65536 || darkResistance == 131072)
-                        __result = 0;
-                    return;
-                }
-
-                var work = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
-                if (__result == 1 && datCalc.datCheckSyojiSkill(work, 366) != 0 && datNormalSkill.tbl[nskill].basstatus != 1 && datNormalSkill.tbl[nskill].basstatus != 2)
-                {
-                    __result = (uint)random.Next(2);
-                }
-
-                // Withheld Sentence
-                if (datNormalSkill.tbl[nskill].basstatus == 2048)
-                {
-                    if (nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex <= 3)
-                    {
-                        foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
-                        {
-                            try
-                            {
-                                if (withheldSentenceIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id) ||
-                                    (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 22))
-                                    __result = 0;
-                            }
-                            catch { }
-                        }
-                    }
-                    else
-                    {
-                        foreach (var enemy in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex > 3))
-                        {
-                            try
-                            {
-                                if (withheldSentenceIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
-                                    __result = 0;
-                            }
-                            catch { }
-                        }
-                    }
-                }
-
-                // Boss Ailment immunities
-                if (bossList.Contains(work.id) && (datNormalSkill.tbl[nskill].basstatus == 8 || datNormalSkill.tbl[nskill].basstatus == 16 || datNormalSkill.tbl[nskill].basstatus == 32 || datNormalSkill.tbl[nskill].basstatus == 128 || datNormalSkill.tbl[nskill].basstatus == 1024 || datNormalSkill.tbl[nskill].basstatus == 2048))
-                {
-                    __result = 0;
-                    return;
                 }
             }
         }
@@ -1552,17 +1498,17 @@ namespace NocturneInsaniax
         private static nbParty_t[] GetCurrentSideParty(nbActionProcessData_t a)
         {
             if (a.partyindex <= 3)
-                return a.data.party.Where(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).hp > 0).ToArray();
+                return a.data.party.Where(x => x.partyindex <= 3 && x.flag != 0).ToArray();
             else
-                return a.data.party.Where(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).hp > 0).ToArray();
+                return a.data.party.Where(x => x.partyindex > 3 && x.flag != 0).ToArray();
         }
 
         private static nbParty_t[] GetOppositeSideParty(nbActionProcessData_t a)
         {
             if (a.partyindex <= 3)
-                return a.data.party.Where(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).hp > 0).ToArray();
+                return a.data.party.Where(x => x.partyindex > 3 && x.flag != 0).ToArray();
             else
-                return a.data.party.Where(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).hp > 0).ToArray();
+                return a.data.party.Where(x => x.partyindex <= 3 && x.flag != 0).ToArray();
         }
 
         //------------------------------------------------------------
@@ -4791,6 +4737,8 @@ namespace NocturneInsaniax
         private static void Tekisatsu(ushort id)
         {
             datNormalSkill.tbl[id].badtype = 1;
+            datNormalSkill.tbl[id].badlevel = 30;
+            datNormalSkill.tbl[id].basstatus = 2048;
             datNormalSkill.tbl[id].cost = 12;
             datNormalSkill.tbl[id].hpn = 42;
             datNormalSkill.tbl[id].failpoint = 10;
