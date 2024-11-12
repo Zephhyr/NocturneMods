@@ -4,6 +4,8 @@ using Il2Cppnewbattle_H;
 using System.Collections.Generic;
 using System.Linq;
 using Il2Cpp;
+using Newtonsoft.Json;
+using System;
 
 namespace NocturneInsaniax
 {
@@ -23,12 +25,9 @@ namespace NocturneInsaniax
                         if (party[i].statindex != 0)
                             partyIndices.Add(party[i].statindex);
 
-                    var stock = dds3GlobalWork.DDS3_GBWK.stocklist.Distinct();
-                    if (stock.Count() > (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id != 0 && x.hp > 0).Count() + 1))
-                        stock = stock.SkipLast(stock.Count() - (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id != 0 && x.hp > 0).Count() + 1));
-
+                    var stock = dds3GlobalWork.DDS3_GBWK.stocklist.Distinct().Where(x => x != 0 && dds3GlobalWork.DDS3_GBWK.unitwork[x].id != 0);
                     var stockIndices = new List<ushort>();
-                    foreach (var i in stock.Where(x => x != 0))
+                    foreach (var i in stock)
                         if (!partyIndices.Contains((short)i))
                             stockIndices.Add((ushort)i);
 

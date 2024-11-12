@@ -237,9 +237,9 @@ namespace NocturneInsaniax
                     case 36: __result = "Moderate HP recovery for one ally. \nPow: 10"; return false; // Dia
                     case 37: __result = "Great HP recovery for one ally. \nPow: 20"; return false; // Diarama
                     case 38: __result = "Full HP recovery for one ally."; return false; // Diarahan
-                    case 39: __result = "Moderate HP recovery for one ally. \nPow: 10"; return false; // Media
-                    case 40: __result = "Great HP recovery for one ally. \nPow: 20"; return false; // Mediarama
-                    case 41: __result = "Full HP recovery for one ally."; return false; // Mediarahan
+                    case 39: __result = "Moderate HP recovery for all allies. \nPow: 10"; return false; // Media
+                    case 40: __result = "Great HP recovery for all allies. \nPow: 20"; return false; // Mediarama
+                    case 41: __result = "Full HP recovery for all allies."; return false; // Mediarahan
                     //case 42: __result = "Donates MP to one ally."; return false; // Makatora
                     case 43: __result = "Cures Bind/Sleep/Panic for one ally."; return false; // Patra
                     case 44: __result = "Cures Bind/Sleep/Panic for all allies."; return false; // Me Patra
@@ -1737,6 +1737,8 @@ namespace NocturneInsaniax
             Dekunda(77);
 
             HourglassSkill(78);
+
+            ChakraDropSkill(82);
 
             Pestilence(79);
 
@@ -6775,6 +6777,14 @@ namespace NocturneInsaniax
         private static void Makatora(ushort id)
         {
             datSkill.tbl[id].skillattr = 15; // Utility skill
+        }
+
+        private static void ChakraDropSkill(ushort id)
+        {
+            datSkill.tbl[id].skillattr = 15; // Utility skill
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 5;
         }
 
         private static void HourglassSkill(ushort id)

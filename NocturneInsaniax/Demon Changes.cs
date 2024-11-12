@@ -21,6 +21,28 @@ namespace NocturneInsaniax
             {
                 switch (ID)
                 {
+                    // Skill Text
+                    case "<DATACTIONMISCHELP_L0001>": // Normal Attack
+                        __result = "Weak Physical damage to one foe. \nPow: 30, Acc: 96%, Crit: 4%"; return false;
+                    //case "<DATJYOKYOHELP_L0018>": // Rakunda
+                    //    __result = "<COLOR 4>\nDecreased enemy's Defense!"; return false;
+                    //case "<DATJYOKYOHELP_L0024>": // Tarukaja
+                    //    __result = "<COLOR 4>\nPhysical/Magical Attack increased!"; return false;
+                    //case "<DATJYOKYOHELP_L0025>": // Tarukaja
+                    //    __result = "<COLOR 4>\nPhysical/Magical Attack increased!"; return false;
+                    //case "<DATJYOKYOHELP_L0030>": // Makakaja
+                    //    __result = "<COLOR 4>\nMagical Attack/Hit Rate increased!"; return false;
+                    //case "<DATJYOKYOHELP_L0031>": // Makakaja
+                    //    __result = "<COLOR 4>\nMagical Attack/Hit Rate increased!"; return false;
+                    //case "<DATJYOKYOHELP_L0086>": // Debilitate
+                    //    __result = "<COLOR 4>\nAll stats decreased!"; return false;
+                    //case "<DATJYOKYOHELP_L0087>": // Debilitate
+                    //    __result = "<COLOR 4>\nAll stats decreased!"; return false;
+                    //case "<DATJYOKYOHELP_L0098>": // Red Capote
+                    //    __result = "<COLOR 4>\nEvasion/Hit Rate maximized!"; return false;
+                    //case "<DATJYOKYOHELP_L0099>": // Red Capote
+                    //    __result = "<COLOR 4>\nEvasion/Hit Rate maximized!"; return false;
+                    // Demon Text
                     case "<AISYO_L0002>": // Mitra
                         __result = "Rpl: Phys • Null: Light/Dark • Str: Fire/Ice • Weak: Force"; return false;
                     case "<AISYO_L0004>": // Odin

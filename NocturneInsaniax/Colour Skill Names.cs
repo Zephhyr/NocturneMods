@@ -69,8 +69,15 @@ namespace NocturneInsaniax
         [HarmonyPatch(typeof(nbCommSelProcess), nameof(nbCommSelProcess.DispComm1Comm))]
         private class DispComm1CommColourPatch
         {
+            public static void Prefix(ref nbCommSelProcessData_t s, ref ushort d, ref int ox, ref int oy, ref int oz, ref uint col, ref int listidx, ref int col2)
+            {
+                actionProcessData = s.act;
+            }
+
             public static void Postfix(ref nbCommSelProcessData_t s, ref ushort d, ref int ox, ref int oy, ref int oz, ref uint col, ref int listidx, ref int col2)
             {
+                actionProcessData = s.act;
+
                 if (EnableSkillColourOutlines.Value)
                 {
                     nbMainProcess.GetBattleUI().transform.Find("bmenu/normal_command/bmenu_command/bmenu_command0" + (listidx + 1) + "/bmenu_text01TM").gameObject.GetComponent<TextMeshProUGUI>().text
@@ -134,8 +141,14 @@ namespace NocturneInsaniax
         [HarmonyPatch(typeof(nbCommSelProcess), nameof(nbCommSelProcess.DispComm1Item))]
         private class DispComm1ItemColourPatch
         {
+            public static void Prefix(ref nbCommSelProcessData_t s, ref ushort d, ref int ox, ref int oy, ref int oz, ref uint col, ref int listidx, ref int col2)
+            {
+                actionProcessData = s.act;
+            }
             public static void Postfix(ref nbCommSelProcessData_t s, ref ushort d, ref int ox, ref int oy, ref int oz, ref uint col, ref int listidx, ref int col2)
             {
+                actionProcessData = s.act;
+
                 if (EnableSkillColourOutlines.Value)
                 {
                     var itemSkillId = datItem.tbl[d].skillid;
@@ -162,8 +175,15 @@ namespace NocturneInsaniax
         [HarmonyPatch(typeof(nbCommSelProcess), nameof(nbCommSelProcess.DispComm1Talk))]
         private class DispComm1TalkColourPatch
         {
+            public static void Prefix(ref nbCommSelProcessData_t s, ref ushort d, ref int ox, ref int oy, ref int oz, ref uint col, ref int listidx, ref int col2)
+            {
+                actionProcessData = s.act;
+            }
+
             public static void Postfix(ref nbCommSelProcessData_t s, ref ushort d, ref int ox, ref int oy, ref int oz, ref uint col, ref int listidx, ref int col2)
             {
+                actionProcessData = s.act;
+
                 if (EnableSkillColourOutlines.Value)
                 {
                     nbMainProcess.GetBattleUI().transform.Find("bmenu/normal_command/bmenu_command/bmenu_command0" + (listidx + 1) + "/bmenu_text01TM").gameObject.GetComponent<TextMeshProUGUI>().color = new Color(1, 1, 1, 1);

@@ -1078,7 +1078,7 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref datUnitWork_t w, ref int nskill) // Before getting the cost of a skill during battle
             {
-                if ((nskill < 288 || nskill > 421) && nskill != 265) // If it isn't a passive skill
+                if (datSkill.tbl[nskill].type == 0 && nskill != 265) // If it isn't a passive skill
                 {
                     tmp_datNormalSkill.cost = datNormalSkill.tbl[nskill].cost; // Memorize the original skill cost
 
@@ -1454,72 +1454,72 @@ namespace NocturneInsaniax
 
             public static void Postfix(ref int nskill, int sformindex, int dformindex, float ai, int nvirtual, ref uint __result) // After attempting to inflinct an ailment
             {
-                // Get possible ailments and their elems
-                ushort basstatus = datNormalSkill.tbl[nskill].basstatus;
-                List<ushort> powers = new List<ushort>();
-                Dictionary<ushort, int> ailments = new Dictionary<ushort, int>();
-                while (basstatus > 0)
-                {
-                    powers.Add((ushort)(basstatus % 2));
-                    basstatus /= 2;
-                }
-                for (int i = 0; i < powers.Count; i++)
-                {
-                    if (powers[i] == 1)
-                    {
-                        int badStatusAttr = 0;
-                        var ailment = datCalc.datGetBadStatusAttr((int)Math.Pow(2, i));
-                        switch (ailment)
-                        {
-                            case 1: badStatusAttr = 3; break;
-                            case 2: badStatusAttr = 2; break;
-                            case 4: badStatusAttr = 10; break;
-                            case 8: badStatusAttr = 10; break;
-                            case 16: badStatusAttr = 9; break;
-                            case 32: badStatusAttr = 8; break;
-                            case 64: badStatusAttr = 8; break;
-                            case 128: badStatusAttr = 10; break;
-                            case 256: badStatusAttr = 9; break;
-                            case 512: badStatusAttr = 5; break;
-                            case 1024: badStatusAttr = 7; break;
-                            case 2048:
-                                {
-                                    if (datNormalSkill.tbl[nskill].basstatus == 2048 && datSkill.tbl[nskill].skillattr == 5)
-                                        badStatusAttr = 7;
-                                    else if (datNormalSkill.tbl[nskill].basstatus == 2048 && (datSkill.tbl[nskill].skillattr == 6 || datSkill.tbl[nskill].skillattr == 7))
-                                        badStatusAttr = datSkill.tbl[nskill].skillattr;
-                                    break;
-                                }
-                        }
-                        ailments.Add((ushort)Math.Pow(2, i), badStatusAttr);
-                    }
-                }
+                //// Get possible ailments and their elems
+                //ushort basstatus = datNormalSkill.tbl[nskill].basstatus;
+                //List<ushort> powers = new List<ushort>();
+                //Dictionary<ushort, int> ailments = new Dictionary<ushort, int>();
+                //while (basstatus > 0)
+                //{
+                //    powers.Add((ushort)(basstatus % 2));
+                //    basstatus /= 2;
+                //}
+                //for (int i = 0; i < powers.Count; i++)
+                //{
+                //    if (powers[i] == 1)
+                //    {
+                //        int badStatusAttr = 0;
+                //        var ailment = datCalc.datGetBadStatusAttr((int)Math.Pow(2, i));
+                //        switch (ailment)
+                //        {
+                //            case 1: badStatusAttr = 3; break;
+                //            case 2: badStatusAttr = 2; break;
+                //            case 4: badStatusAttr = 10; break;
+                //            case 8: badStatusAttr = 10; break;
+                //            case 16: badStatusAttr = 9; break;
+                //            case 32: badStatusAttr = 8; break;
+                //            case 64: badStatusAttr = 8; break;
+                //            case 128: badStatusAttr = 10; break;
+                //            case 256: badStatusAttr = 9; break;
+                //            case 512: badStatusAttr = 5; break;
+                //            case 1024: badStatusAttr = 7; break;
+                //            case 2048:
+                //                {
+                //                    if (datNormalSkill.tbl[nskill].basstatus == 2048 && (datSkill.tbl[nskill].skillattr == 6))
+                //                        badStatusAttr = 6;
+                //                    else
+                //                        badStatusAttr = 7;
+                //                    break;
+                //                }
+                //        }
+                //        ailments.Add((ushort)Math.Pow(2, i), badStatusAttr);
+                //    }
+                //}
 
-                // Remove ailments the target is immune to
-                datUnitWork_t targetWork = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
-                foreach (var ailment in ailments)
-                {
-                    var aisyo = nbCalc.nbGetAisyo(nskill, dformindex, ailment.Value);
-                    if (new uint[] { 65536, 131072, 262144, 1048626, 1048676 }.Contains(aisyo))
-                        ailments.Remove(ailment.Key);
-                }
+                //// Remove ailments the target is immune to
+                //datUnitWork_t targetWork = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
+                //foreach (var ailment in ailments)
+                //{
+                //    var aisyo = nbCalc.nbGetAisyo(nskill, dformindex, ailment.Value);
+                //    if (new uint[] { 65536, 131072, 262144, 1048626, 1048676 }.Contains(aisyo))
+                //        ailments.Remove(ailment.Key);
+                //}
 
-                // Select a possible ailment
-                if (!ailments.Any())
-                    __result = 0;
-                else
-                {
-                    int randomValue = random.Next(ailments.Count);
-                    __result = ailments.Keys.ToArray()[randomValue];
-                }
+                //// Select a possible ailment
+                //if (!ailments.Any())
+                //    __result = 0;
+                //else
+                //{
+                //    int randomValue = random.Next(ailments.Count);
+                //    __result = ailments.Keys.ToArray()[randomValue];
+                //}
 
-                // Roll the chance to inflict ailment
-                if (__result != 0)
-                {
-                    var rand = dds3KernelCore.dds3GetRandIntA(100);
-                    var aisyoRitu = nbCalc.nbGetAisyoRitu(nskill, sformindex, dformindex);
-                    __result = (rand * aisyoRitu) < datNormalSkill.tbl[nskill].badlevel ? __result : 0;
-                }
+                //// Roll the chance to inflict ailment
+                //if (__result != 0)
+                //{
+                //    var rand = dds3KernelCore.dds3GetRandIntA(100);
+                //    var aisyoRitu = nbCalc.nbGetAisyoRitu(nskill, sformindex, dformindex);
+                //    __result = (rand * aisyoRitu) < datNormalSkill.tbl[nskill].badlevel ? __result : 0;
+                //}
 
                 if (datSkill.tbl[nskill].skillattr == 6 || datSkill.tbl[nskill].skillattr == 7)
                 {
