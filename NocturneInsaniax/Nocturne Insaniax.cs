@@ -959,5 +959,105 @@ namespace NocturneInsaniax
                 
             }
         }
+
+        // These patches seem to prevent a crash during the level up screen, I don't know why
+        [HarmonyPatch(typeof(rstinit), nameof(rstinit.rstChkLevelUpTarget))]
+        private class rstChkLevelUpTargetPatch
+        {
+            public static void Prefix(ref datUnitWork_t pStock)
+            {
+                //MelonLogger.Msg("--rstinit.rstChkLevelUpTarget--");
+                //MelonLogger.Msg("pStock.id: " + pStock.id);
+            }
+            public static void Postfix(ref datUnitWork_t pStock, ref int __result)
+            {
+                //MelonLogger.Msg("--rstinit.rstChkLevelUpTarget Post--");
+                //MelonLogger.Msg("pStock.id: " + pStock.id);
+                //MelonLogger.Msg("result: " + __result);
+            }
+        }
+
+        [HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstAddLevel))]
+        private class rstAddLevelPatch
+        {
+            public static void Prefix(ref int Val, ref datUnitWork_t pStock)
+            {
+                //MelonLogger.Msg("--rstcalc.rstAddLevel--");
+                //MelonLogger.Msg("Val: " + Val);
+                //MelonLogger.Msg("pStock.id: " + pStock.id);
+            }
+        }
+
+        [HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstSetLevelUpCount))]
+        private class rstSetLevelUpCountPatch
+        {
+            public static void Prefix(ref datUnitWork_t pStock)
+            {
+                //MelonLogger.Msg("--rstcalc.rstSetLevelUpCount--");
+                //MelonLogger.Msg("pStock.id: " + pStock.id);
+            }
+            public static void Postfix(ref datUnitWork_t pStock, ref sbyte __result)
+            {
+                //MelonLogger.Msg("--rstcalc.rstSetLevelUpCount Post--");
+                //MelonLogger.Msg("pStock.id: " + pStock.id);
+                //MelonLogger.Msg("result: " + __result);
+            }
+        }
+
+        [HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstCalcSeqDevilLevelUp))]
+        private class rstCalcSeqDevilLevelUpPatch
+        {
+            public static void Prefix()
+            {
+                //MelonLogger.Msg("--rstcalc.rstCalcSeqDevilLevelUp--");
+            }
+            public static void Postfix(ref int __result)
+            {
+                //MelonLogger.Msg("--rstcalc.rstCalcSeqDevilLevelUp Post--");
+                //MelonLogger.Msg("result: " + __result);
+            }
+        }
+
+        [HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstCalc))]
+        private class rstCalcPatch
+        {
+            public static void Prefix()
+            {
+                //MelonLogger.Msg("--rstcalc.rstCalc--");
+            }
+            public static void Postfix()
+            {
+                //MelonLogger.Msg("--rstcalc.rstCalc Post--");
+            }
+        }
+
+        [HarmonyPatch(typeof(fclMisc), nameof(fclMisc.fclSetMessageVar))]
+        private class fclSetMessageVarPatch
+        {
+            public static void Prefix(ref sbyte Index, ref string pStr)
+            {
+                //MelonLogger.Msg("--fclMisc.fclSetMessageVar--");
+                //MelonLogger.Msg("Index: " + Index);
+                //MelonLogger.Msg("pStr: " + pStr);
+            }
+        }
+        [HarmonyPatch(typeof(fclMisc), nameof(fclMisc.fclStartMessage))]
+        private class fclStartMessagePatch
+        {
+            public static void Prefix(ref int MsgNo)
+            {
+                //MelonLogger.Msg("--fclMisc.fclStartMessage--");
+                //MelonLogger.Msg("MsgNo: " + MsgNo);
+            }
+        }
+        [HarmonyPatch(typeof(fclMisc), nameof(fclMisc.fclStartSelMessage))]
+        private class fclStartSelMessagePatch
+        {
+            public static void Prefix(ref int SelMsgNo)
+            {
+                //MelonLogger.Msg("--fclMisc.fclStartSelMessage--");
+                //MelonLogger.Msg("SelMsgNo: " + SelMsgNo);
+            }
+        }
     }
 }

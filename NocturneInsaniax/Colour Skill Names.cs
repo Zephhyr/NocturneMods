@@ -28,24 +28,29 @@ namespace NocturneInsaniax
                         var commandId = actionProcessData.work.nowcommand; // 0 = normal, 1 = skill, 5 = item
                         Color attrColour;
 
-                        switch (commandId)
+                        if (text1 == "Endure")
+                            attrColour = GetAttackAttrColour(15, 1);
+                        else
                         {
-                            case 0:
-                                var attackAttr = datDevilFormat.Get(currentDemonWork.id).attackattr;
-                                attrColour = GetAttackAttrColour(attackAttr, 1);
-                                break;
-                            case 1:
-                                var skillId = actionProcessData.work.nowindex;
-                                attrColour = GetSkillAttrColour(skillId, 1);
-                                break;
-                            case 5:
-                                var itemId = actionProcessData.work.nowindex;
-                                var itemSkillId = datItem.tbl[itemId].skillid;
-                                attrColour = GetSkillAttrColour(itemSkillId, 1);
-                                break;
-                            default:
-                                attrColour = new Color(0.294f, 0.294f, 0.980f, 1);
-                                break;
+                            switch (commandId)
+                            {
+                                case 0:
+                                    var attackAttr = datDevilFormat.Get(currentDemonWork.id).attackattr;
+                                    attrColour = GetAttackAttrColour(attackAttr, 1);
+                                    break;
+                                case 1:
+                                    var skillId = actionProcessData.work.nowindex;
+                                    attrColour = GetSkillAttrColour(skillId, 1);
+                                    break;
+                                case 5:
+                                    var itemId = actionProcessData.work.nowindex;
+                                    var itemSkillId = datItem.tbl[itemId].skillid;
+                                    attrColour = GetSkillAttrColour(itemSkillId, 1);
+                                    break;
+                                default:
+                                    attrColour = new Color(0.294f, 0.294f, 0.980f, 1);
+                                    break;
+                            }
                         }
 
                         VertexGradient attrGradient = GetSkillAttrGradient(attrColour, 1);
@@ -292,7 +297,13 @@ namespace NocturneInsaniax
                         }
 
                         var itemSkillId = datItem.tbl[itemId].skillid;
-                        Color attrColour = GetSkillAttrColour(itemSkillId, 1);
+                        Color attrColour;
+
+                        if (itemSkillId == 0)
+                            attrColour = GetAttackAttrColour(15, 1);
+                        else
+                            attrColour = GetSkillAttrColour(itemSkillId, 1);
+
                         VertexGradient attrGradient = GetSkillAttrGradient(attrColour, 1);
 
                         if (idx == 0)
@@ -504,7 +515,7 @@ namespace NocturneInsaniax
                             }
                         }
 
-                        if (skillId != 0 && datNormalSkill.tbl[skillId].cost == 0)
+                        if (datSkill.tbl[skillId].type != 0)
                         {
                             cmpStatus._statusUIScr.transform.Find("skill_select/menu_skill/menu_skill_window/menuskill_top/num_skill/num/num_hp01").gameObject.active = false;
                             cmpStatus._statusUIScr.transform.Find("skill_select/menu_skill/menu_skill_window/menuskill_top/num_skill/num/num_hp02").gameObject.active = false;
@@ -531,7 +542,7 @@ namespace NocturneInsaniax
                             }
                         }
 
-                        if (skillId != 0 && datNormalSkill.tbl[skillId].cost == 0)
+                        if (datSkill.tbl[skillId].type != 0)
                         {
                             cmpStatus._statusUIScr.transform.Find("skill_select/menu_skill/menu_skill_window/menuskill_base0" + i + "/num_skill/num/num_hp01").gameObject.active = false;
                             cmpStatus._statusUIScr.transform.Find("skill_select/menu_skill/menu_skill_window/menuskill_base0" + i + "/num_skill/num/num_hp02").gameObject.active = false;
@@ -553,12 +564,27 @@ namespace NocturneInsaniax
                 if (EnableSkillColourOutlines.Value)
                 {
                     var itemSkillId = datItem.tbl[item].skillid;
-                    Color attrColour = col == 2
-                        ? GetSkillAttrColour(itemSkillId, 0.7f)
-                        : GetSkillAttrColour(itemSkillId, 1);
-                    VertexGradient attrGradient = col == 2
+                    Color attrColour;
+                    VertexGradient attrGradient;
+
+                    if (itemSkillId == 0)
+                    {
+                        attrColour = col == 2
+                            ? GetAttackAttrColour(15, 0.7f)
+                            : GetAttackAttrColour(15, 1);
+                        attrGradient = col == 2
                             ? GetSkillAttrGradient(attrColour, 0.7f)
                             : GetSkillAttrGradient(attrColour, 1);
+                    }
+                    else
+                    {
+                        attrColour = col == 2
+                            ? GetSkillAttrColour(itemSkillId, 0.7f)
+                            : GetSkillAttrColour(itemSkillId, 1);
+                        attrGradient = col == 2
+                            ? GetSkillAttrGradient(attrColour, 0.7f)
+                            : GetSkillAttrGradient(attrColour, 1);
+                    }
 
                     fclUI.GetGameObject("shoplist").transform.Find("shop_row/" + path + "/Text_nameTM").gameObject.GetComponent<TextMeshProUGUI>().text
                     = fclUI.GetGameObject("shoplist").transform.Find("shop_row/" + path + "/Text_nameTM").gameObject.GetComponent<TextMeshProUGUI>().text.Replace("<material=\"TMC00\">", "");
@@ -596,7 +622,13 @@ namespace NocturneInsaniax
                         }
 
                         var itemSkillId = datItem.tbl[itemId].skillid;
-                        Color attrColour = GetSkillAttrColour(itemSkillId, 1);
+                        Color attrColour;
+
+                        if (itemSkillId == 0)
+                            attrColour = GetAttackAttrColour(15, 1);
+                        else
+                            attrColour = GetSkillAttrColour(itemSkillId, 1);
+
                         VertexGradient attrGradient = GetSkillAttrGradient(attrColour, 1);
 
                         fclUI.GetGameObject("ragitemlist").transform.Find("ragitem_row/ragitem_row" + index + "/Text_nameTM").gameObject.GetComponent<TextMeshProUGUI>().text
@@ -630,30 +662,13 @@ namespace NocturneInsaniax
 
         public static Color GetSkillAttrColour(ushort skillId, float a)
         {
-            var skillAttr = (skillId >= 288 && skillId <= 421 && !EnableColourPassives.Value)
+            var skillAttr = (datSkill.tbl[skillId].type != 0 && !EnableColourPassives.Value)
                 ? 15 : skillId == 383 
                 ? currentDemonWork.id == 0 
                 ? magatamaInnateSkills[dds3GlobalWork.DDS3_GBWK.heartsequip].skillAttr
                 : demonInnateSkills[currentDemonWork.id].skillAttr : datSkill.tbl[skillId].skillattr;
-                
-            switch (skillAttr)
-            {
-                case 00: return new Color(0.788f, 0.000f, 0.000f, a); // Phys
-                case 01: return new Color(1.000f, 0.369f, 0.000f, a); // Fire
-                case 02: return new Color(0.239f, 0.560f, 1.000f, a); // Ice
-                case 03: return new Color(1.000f, 0.784f, 0.000f, a); // Elec
-                case 04: return new Color(0.055f, 0.702f, 0.000f, a); // Force
-                case 05: return new Color(0.220f, 0.220f, 0.220f, a); // Almighty
-                case 06: return new Color(0.851f, 0.800f, 0.500f, a); // Light
-                case 07: return new Color(0.212f, 0.000f, 0.671f, a); // Dark
-                case 08: return new Color(0.588f, 0.224f, 1.000f, a); // Curse
-                case 09: return new Color(0.651f, 0.412f, 0.000f, a); // Nerve
-                case 10: return new Color(0.788f, 0.200f, 0.839f, a); // Mind
-                case 11: return new Color(0.220f, 0.220f, 0.220f, a); // Self-Destruct
-                case 13: return new Color(0.851f, 0.447f, 0.682f, a); // Heal
-                case 14: return new Color(0.282f, 0.929f, 0.624f, a); // Support
-                default: return new Color(0.294f, 0.294f, 0.980f, a); // Default
-            }
+
+            return GetAttackAttrColour((sbyte) skillAttr, a);
         }
 
         public static Color GetAttackAttrColour(sbyte attackAttr, float a)

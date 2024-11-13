@@ -1,11 +1,7 @@
 ﻿using HarmonyLib;
 using MelonLoader;
 using Il2Cppnewbattle_H;
-using System.Collections.Generic;
-using System.Linq;
 using Il2Cpp;
-using Newtonsoft.Json;
-using System;
 
 namespace NocturneInsaniax
 {
@@ -16,6 +12,8 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref nbCommSelProcessData_t s, ref int type, ref int ox, ref int oy, ref int a)
             {
+                actionProcessData = s.act;
+
                 if (nbMainProcess.nbGetUnitWorkFromFormindex(s.my.formindex).id != 0)
                 {
                     // Self-Switch
@@ -89,7 +87,7 @@ namespace NocturneInsaniax
             {
                 actionProcessData = act;
 
-                if (partyindex != 0 && ctype == 0 && (crule == 12 || crule == 2) && carea == 1 && act.work.nowcommand == 6)
+                if (act.work.id != 0 && ctype == 0 && (crule == 12 || crule == 2) && carea == 1 && act.work.nowcommand == 6)
                     crule = 1;
             }
         }

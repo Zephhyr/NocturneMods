@@ -44,14 +44,5 @@ namespace NocturneInsaniax
                 }
             }
         }
-
-        [HarmonyPatch(typeof(datSkillHelp_msg), nameof(datSkillHelp_msg.Get))]
-        private class PartyExpPatch3
-        {
-            public static void Postfix(ref int id, ref string __result)
-            {
-                if (id == 354) __result = "Earn 100% EXP when \nnot participating in battle."; // Overwrites Watchful's skill description
-            }
-        }
     }
 }

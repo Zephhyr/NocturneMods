@@ -462,7 +462,7 @@ namespace NocturneInsaniax
                     (datNormalSkill.tbl[nskill].koukatype == 0 && (workFromFormindex2.badstatus == 1 || workFromFormindex2.badstatus == 2))) // If attack is physical and target is shocked or frozen
                     && (datNormalSkill.tbl[nskill].hptype == 1 || datNormalSkill.tbl[nskill].hptype == 6 || datNormalSkill.tbl[nskill].hptype == 12 || datNormalSkill.tbl[nskill].hptype == 14))
                     __result = 1; // Critical hit
-                else
+                else if (!(new uint[] { 65536, 131072, 262144 }.Contains(aisyo) || datCalc.datCheckSyojiSkill(workFromFormindex1, 372) != 0)) // If target isn't immune or doesn't have Firm Stance
                 {
                     var critRate = datNormalSkill.tbl[nskill].criticalpoint;
                     if (nskill == 0)
@@ -607,9 +607,6 @@ namespace NocturneInsaniax
                     var rand = dds3KernelCore.dds3GetRandIntA(100);
                     __result = rand < critChance ? 1 : __result;
                 }
-
-                if (__result == 1 && (new uint[]{ 65536, 131072, 262144 }.Contains(aisyo) || datCalc.datCheckSyojiSkill(workFromFormindex1, 372) != 0)) // If target is immune or has Firm Stance
-                    __result = 0; // Normal hit
 
                 // Double Attack
                 if (__result == 1 && nskill == 0 && datCalc.datCheckSyojiSkill(workFromFormindex1, 300) != 0)
@@ -776,7 +773,7 @@ namespace NocturneInsaniax
 
                     chance = chance * accuracyBuff * evasionBuff;
                     if (workFromFormindex1.badstatus == 256)
-                        chance /= 2;
+                        chance /= (float) 1.5;
                     var rand = dds3KernelCore.dds3GetRandIntA(100);
                     __result = rand < chance ? 0 : 4;
 

@@ -5062,8 +5062,8 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 49;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
 
-            // Skills
-            tblSkill.fclSkillTbl[id].Event[3].Param = 448; // Poison Volley
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[3] = 448; // Poison Volley
 
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 792;

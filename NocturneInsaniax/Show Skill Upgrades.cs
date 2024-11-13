@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using MelonLoader;
 using Il2Cpp;
+using Il2Cppnewdata_H;
 
 namespace NocturneInsaniax
 {

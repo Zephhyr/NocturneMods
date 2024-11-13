@@ -985,9 +985,9 @@ namespace NocturneInsaniax
                         actionProcessData.work.badstatus == 64 || // Poison
                         actionProcessData.work.badstatus == 256) // Stunned
                     {
-                        var luk = datCalc.datGetParam(actionProcessData.work, 5) + 20;
+                        var luk = datCalc.datGetParam(actionProcessData.work, 5) + 5;
                         if (datCalc.datCheckSyojiSkill(actionProcessData.work, 360) != 0 || datCalc.datCheckSyojiSkill(actionProcessData.work, 366) != 0)
-                            luk += 10;
+                            luk += 5;
 
                         // Ward Off Evil
                         bool wardOffEvilActive = false;
@@ -1036,21 +1036,21 @@ namespace NocturneInsaniax
             {
                 if (id == 422 && (currentDemonWork.id == 200 || currentDemonWork.id == 339 || currentDemonWork.id == 340 || currentDemonWork.id == 341 || currentDemonWork.id == 350))
                     __result = "Accelerate";
-                else if(id == 277 && (currentDemonWork.id == 200))
+                else if (id == 277 && (currentDemonWork.id == 200))
                     __result = "Rev Up";
-                else if(id == 220 && (currentDemonWork.id == 340))
+                else if (id == 220 && (currentDemonWork.id == 340))
                     __result = "Pursuit";
-                else if(id == 226 && (currentDemonWork.id == 79))
+                else if (id == 226 && (currentDemonWork.id == 79))
                     __result = "Backup";
-                else if((id == 226 || id == 499) && (currentDemonWork.id == 345))
+                else if ((id == 226 || id == 499) && (currentDemonWork.id == 345))
                     __result = "Call Evil";
-                else if((id == 226 || id == 496) && (currentDemonWork.id == 346))
+                else if ((id == 226 || id == 496) && (currentDemonWork.id == 346))
                     __result = "Call Angel";
-                else if((id == 226 || id == 497) && (currentDemonWork.id == 347))
+                else if ((id == 226 || id == 497) && (currentDemonWork.id == 347))
                     __result = "Call Soldier";
-                else if((id == 226 || id == 498) && (currentDemonWork.id == 348))
+                else if ((id == 226 || id == 498) && (currentDemonWork.id == 348))
                     __result = "Call Souls";
-                else if(id == 252 && (currentDemonWork.id == 321))
+                else if (id == 252 && (currentDemonWork.id == 321))
                     __result = "Cursed Emission";
                 else if (id == 252 && (currentDemonWork.id == 341))
                     __result = "Multi-Summon";

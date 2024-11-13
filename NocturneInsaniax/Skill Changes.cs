@@ -415,6 +415,8 @@ namespace NocturneInsaniax
                     case 316: __result = "Protects against Elec attacks."; return false; // Anti-Elec
                     case 317: __result = "Protects against Force attacks."; return false; // Anti-Force
                     case 345: __result = "Survive a fatal blow with 1 HP \nremaining once per battle."; return false; // Endure
+                    case 346: __result = "Great HP recovery after battle. \nMust be in the active party."; return false; // Life Aid
+                    case 347: __result = "Moderate MP recovery after battle. \nMust be in the active party."; return false; // Mana Aid
                     case 354: __result = "Earn 100% EXP when not \nparticipating in battle."; return false; // Watchful
                     case 357: __result = "Attacks ignore all resistances \nexcept Repel."; return false; // Pierce
                     case 360: __result = "Protects against ailments and instakills. \nSurvive a fatal blow with 1 HP \nremaining once per battle."; return false; // Raidou Endure/Never Yield
@@ -449,8 +451,8 @@ namespace NocturneInsaniax
                     case 188: __result = "50% Chance to instakill one foe. \n(Light-Type)"; return false; // Punishment
                     case 189: __result = "30% Chance to instakill all foes. \n(Light-Type)"; return false; // Judgement Light
 
-                    case 308: __result = "Attack again after a \ncritical normal attack."; return false; // Double Attack 
-                    case 362: __result = "Raises Physical attack damage by 30%."; return false; // Phys Boost 
+                    case 308: __result = "Attack again after a \ncritical normal attack."; return false; // Double Attack
+                    case 362: __result = "Raises Physical attack damage by 30%."; return false; // Phys Boost
                     case 363: __result = "Raises Element attack damage by 30%. \n(Does not stack with similar effects)"; return false; // Element Boost
                     case 364: __result = "Protects against Element attacks. \n(Does not stack with similar effects)"; return false; // Anti-Elements
                     case 365: __result = "Protects against Ailment attacks. \n(Does not stack with similar effects)"; return false; // Anti-Ailments
@@ -460,7 +462,7 @@ namespace NocturneInsaniax
                     case 369: __result = "Slight MP recovery \nafter each action."; return false; // Spirit Well
                     case 370: __result = "Slight HP/MP recovery \nafter each action. \n(Does not stack with similar effects)"; return false; // Qigong
                     case 371: __result = "Reduce the base HP costs of skills \nby 50%. HP-based skills always deal \nmaximum damage."; return false; // Arms Master
-                    case 372: __result = "Protects against Critical hits \nbut prevents dodging attacks."; return false; // Firm Stance
+                    case 372: __result = "Protects against random Critical hits \nbut prevents dodging attacks."; return false; // Firm Stance
                     case 373: __result = "Survive a fatal blow then fully \nrecover HP once per battle. \n(Does not stack with similar effects)"; return false; // Enduring Soul
 
                     case 424: __result = "Increases the damage of the user's \nnext Magic-based attack by 120%."; return false; // Concentrate
@@ -469,7 +471,7 @@ namespace NocturneInsaniax
                     case 427: __result = "Low Physical damage to one foe. \nLowers target's Physical Attack. \nPow: 36, Acc: 90%, Crit: 10%"; return false; // Fang Breaker
                     case 428: __result = "Low Physical damage to one foe. \nLowers target's Defense. \nPow: 32, Acc: 90%, Crit: 10%"; return false; // Defense Kuzushi
                     case 429: __result = "Mega Physical damage to one foe. \nPow: 80, Acc: 94%, Crit: 0%"; return false; // Primal Force
-                    case 430: __result = "Low Physical damage to all foes. \nPow: 28, Acc: 86%, Crit: 34%"; return false; // Chi Blast
+                    case 430: __result = "Low Physical damage to all foes. \nPow: 22, Acc: 86%, Crit: 34%"; return false; // Chi Blast
                     case 431: __result = "High Physical damage to all foes. \nPow: 42, Acc: 90%, Crit: 30%, \nMute: 30%"; return false; // Revelation
                     case 432: __result = "High Physical damage to all foes. \nPow: 42, Acc: 90%, Crit: 30%, \nStone: 24%"; return false; // Gate of Hell
                     case 433: __result = "High Physical damage to one foe. \nPow: 54, Acc: 97%, Crit: 50%"; return false; // Akashic Arts
@@ -758,10 +760,10 @@ namespace NocturneInsaniax
                     //    work.skill[7] = 419;
                     //    work.skillcnt = 8;
                     //}
-                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 73)) // Eligor
+                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 68)) // Angel
                     //{
-                    //    work.skill[6] = 372;
-                    //    work.skill[7] = 373;
+                    //    work.skillcnt = 8;
+                    //    work.skill[7] = 7;
                     //}
                     //}
                 }
@@ -1738,13 +1740,17 @@ namespace NocturneInsaniax
 
             HourglassSkill(78);
 
-            ChakraDropSkill(82);
-
             Pestilence(79);
+
+            LifeStoneSkill(81);
+            ChakraDropSkill(82);
+            DisCharmSkill(88);
 
             PoisonArrow(90);
 
             CursedGospelSkill(91);
+
+            MedicineSkill(94);
 
             Lunge(96);
             HellThrust(97);
@@ -2008,7 +2014,13 @@ namespace NocturneInsaniax
 
             // Passive Skills
             Might(11);
+            BrightMight(12);
+            DarkMight(13);
             DrainAttack(14);
+            AttackAll(16);
+            CounterPassive(17);
+            RetaliatePassive(18);
+            AvengePassive(19);
             DoubleAttackPassive(20);
             LifeAid(58);
             ManaAid(59);
@@ -2733,7 +2745,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].badlevel = 255;
             datNormalSkill.tbl[id].badtype = 0;
             datNormalSkill.tbl[id].basstatus = 0;
-            datNormalSkill.tbl[id].cost = 17;
+            datNormalSkill.tbl[id].cost = 16;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 1;
             datNormalSkill.tbl[id].criticalpoint = 34;
@@ -2746,7 +2758,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 28;
+            datNormalSkill.tbl[id].hpn = 22;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].koukatype = 0;
             datNormalSkill.tbl[id].magicbase = 0;
@@ -6779,6 +6791,21 @@ namespace NocturneInsaniax
             datSkill.tbl[id].skillattr = 15; // Utility skill
         }
 
+        private static void MedicineSkill(ushort id)
+        {
+            datSkill.tbl[id].skillattr = 13; // Healing skill
+        }
+
+        private static void LifeStoneSkill(ushort id)
+        {
+            datSkill.tbl[id].skillattr = 13; // Healing skill
+        }
+
+        private static void DisCharmSkill(ushort id)
+        {
+            datSkill.tbl[id].skillattr = 13; // Healing skill
+        }
+
         private static void ChakraDropSkill(ushort id)
         {
             datSkill.tbl[id].skillattr = 15; // Utility skill
@@ -8244,12 +8271,46 @@ namespace NocturneInsaniax
 
         private static void Might(ushort id)
         {
+            datSkill.tbl[299].skillattr = 0;
+
             datSpecialSkill.tbl[id].n = 750;
+        }
+
+        private static void BrightMight(ushort id)
+        {
+            datSkill.tbl[300].skillattr = 0;
+        }
+
+        private static void DarkMight(ushort id)
+        {
+            datSkill.tbl[301].skillattr = 0;
         }
 
         private static void DrainAttack(ushort id)
         {
+            datSkill.tbl[302].skillattr = 0;
+
             datSpecialSkill.tbl[id].n = 1;
+        }
+
+        private static void AttackAll(ushort id)
+        {
+            datSkill.tbl[304].skillattr = 0;
+        }
+
+        private static void CounterPassive(ushort id)
+        {
+            datSkill.tbl[305].skillattr = 0;
+        }
+
+        private static void RetaliatePassive(ushort id)
+        {
+            datSkill.tbl[306].skillattr = 0;
+        }
+
+        private static void AvengePassive(ushort id)
+        {
+            datSkill.tbl[307].skillattr = 0;
         }
 
         private static void LifeAid(ushort id)
@@ -8259,6 +8320,8 @@ namespace NocturneInsaniax
 
         private static void ManaAid(ushort id)
         {
+            datSkill.tbl[347].skillattr = 15;
+
             datSpecialSkill.tbl[id].n = 4;
         }
 
@@ -8269,6 +8332,8 @@ namespace NocturneInsaniax
 
         private static void ManaRefill(ushort id)
         {
+            datSkill.tbl[350].skillattr = 15;
+
             datSpecialSkill.tbl[id].n = 10;
         }
 
@@ -8289,6 +8354,7 @@ namespace NocturneInsaniax
         private static void PhysBoost(ushort id)
         {
             datSkill.tbl[362].keisyoform = 1;
+            datSkill.tbl[362].skillattr = 0;
 
             datSpecialSkill.tbl[id].a = 2;
             datSpecialSkill.tbl[id].b = 1;
@@ -8303,6 +8369,7 @@ namespace NocturneInsaniax
         private static void MagicBoost(ushort id)
         {
             datSkill.tbl[363].keisyoform = 1;
+            datSkill.tbl[363].skillattr = 15;
 
             datSpecialSkill.tbl[id].a = 2;
             datSpecialSkill.tbl[id].b = 1;
@@ -8317,6 +8384,7 @@ namespace NocturneInsaniax
         private static void AntiMagic(ushort id)
         {
             datSkill.tbl[364].keisyoform = 1;
+            datSkill.tbl[364].skillattr = 15;
 
             datSpecialSkill.tbl[id].a = 0;
             datSpecialSkill.tbl[id].b = 0;
@@ -8331,6 +8399,7 @@ namespace NocturneInsaniax
         private static void AntiAilments(ushort id)
         {
             datSkill.tbl[365].keisyoform = 1;
+            datSkill.tbl[365].skillattr = 15;
 
             datSpecialSkill.tbl[id].a = 0;
             datSpecialSkill.tbl[id].b = 0;
@@ -8345,6 +8414,7 @@ namespace NocturneInsaniax
         private static void AbyssalMask(ushort id)
         {
             datSkill.tbl[366].keisyoform = 1;
+            datSkill.tbl[366].skillattr = 15;
 
             datSpecialSkill.tbl[id].a = 2;
             datSpecialSkill.tbl[id].b = 1;
@@ -8359,6 +8429,7 @@ namespace NocturneInsaniax
         private static void KnowledgeOfTools(ushort id)
         {
             datSkill.tbl[367].keisyoform = 1;
+            datSkill.tbl[367].skillattr = 15;
 
             datSpecialSkill.tbl[id].a = 2;
             datSpecialSkill.tbl[id].b = 1;
@@ -8373,6 +8444,7 @@ namespace NocturneInsaniax
         private static void RenewalPassive(ushort id)
         {
             datSkill.tbl[368].keisyoform = 1;
+            datSkill.tbl[368].skillattr = 13;
 
             datSpecialSkill.tbl[id].a = 2;
             datSpecialSkill.tbl[id].b = 1;
@@ -8387,6 +8459,7 @@ namespace NocturneInsaniax
         private static void SpiritWellPassive(ushort id)
         {
             datSkill.tbl[369].keisyoform = 1;
+            datSkill.tbl[369].skillattr = 15;
 
             datSpecialSkill.tbl[id].a = 2;
             datSpecialSkill.tbl[id].b = 1;
@@ -8401,6 +8474,7 @@ namespace NocturneInsaniax
         private static void QigongPassive(ushort id)
         {
             datSkill.tbl[370].keisyoform = 1;
+            datSkill.tbl[370].skillattr = 15;
 
             datSpecialSkill.tbl[id].a = 2;
             datSpecialSkill.tbl[id].b = 1;
@@ -8415,6 +8489,7 @@ namespace NocturneInsaniax
         private static void ArmsMaster(ushort id)
         {
             datSkill.tbl[371].keisyoform = 1;
+            datSkill.tbl[371].skillattr = 0;
 
             datSpecialSkill.tbl[id].a = 2;
             datSpecialSkill.tbl[id].b = 1;
@@ -8429,6 +8504,7 @@ namespace NocturneInsaniax
         private static void FirmStance(ushort id)
         {
             datSkill.tbl[372].keisyoform = 1;
+            datSkill.tbl[372].skillattr = 15;
 
             datSpecialSkill.tbl[id].a = 2;
             datSpecialSkill.tbl[id].b = 1;
