@@ -245,7 +245,7 @@ namespace NocturneInsaniax
             {
                 UseSummonSkill(ref a, 226, (ushort) (64 + random.Next(2)));
             }
-            else if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.hp != 0).Any())
+            else if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.flag != 0).Any())
             {
                 int randomValue = random.Next(5);
                 switch (randomValue)
@@ -326,7 +326,7 @@ namespace NocturneInsaniax
             }
             else
             {
-                if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.hp != 0).Any())
+                if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.flag != 0).Any())
                 {
                     int randomValue = random.Next(4);
                     switch (randomValue)
@@ -469,7 +469,7 @@ namespace NocturneInsaniax
                 UseSummonSkill(ref a, 226, 125);
             else
             {
-                if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.hp != 0).Any())
+                if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.flag != 0).Any())
                 {
                     int randomValue = random.Next(5);
                     switch (randomValue)
@@ -532,7 +532,7 @@ namespace NocturneInsaniax
             {
                 UseSummonSkill(ref a, 226, 88);
             }
-            else if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.hp != 0).Any())
+            else if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.flag != 0).Any())
             {
                 int randomValue = random.Next(5);
                 switch (randomValue)
@@ -646,7 +646,7 @@ namespace NocturneInsaniax
             }
             else
             {
-                if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.hp != 0).Any())
+                if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.flag != 0).Any())
                 {
                     int randomValue = random.Next(5);
                     switch (randomValue)
@@ -975,7 +975,7 @@ namespace NocturneInsaniax
                 {
                     UseSkill(ref a, 57);
                 }
-                else if (a.work.mp >= 72 && nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.hp != 0).Any())
+                else if (a.work.mp >= 72 && nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.flag != 0).Any())
                 {
                     UseSkill(ref a, 41);
                 }
@@ -1748,7 +1748,7 @@ namespace NocturneInsaniax
 
         private static void ForcedKelpieAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
-            if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp).Any())
+            if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.flag != 0).Any())
             {
                 int randomValue = random.Next(10);
                 switch (randomValue)
@@ -1897,7 +1897,7 @@ namespace NocturneInsaniax
                 {
                     case 3:
                         {
-                            if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.hp != 0).Any())
+                            if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.flag != 0).Any())
                             {
                                 int randomValue = random.Next(9);
                                 switch (randomValue)
@@ -1935,7 +1935,7 @@ namespace NocturneInsaniax
                         {
                             if (EnemyPartyDebuffed(1) && (actionTrackers[a.work.id].currentBattleTurnCount % 4) == 0)
                                 UseSkill(ref a, 77);
-                            else if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.hp != 0).Any())
+                            else if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.flag != 0).Any())
                             {
                                 int randomValue = random.Next(9);
                                 switch (randomValue)
@@ -1973,7 +1973,7 @@ namespace NocturneInsaniax
                         {
                             if (EnemyPartyDebuffed(1) && (actionTrackers[a.work.id].currentBattleTurnCount % 3) == 0)
                                 UseSkill(ref a, 77);
-                            else if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.hp != 0).Any())
+                            else if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.flag != 0).Any())
                             {
                                 int randomValue = random.Next(9);
                                 switch (randomValue)
@@ -2821,7 +2821,7 @@ namespace NocturneInsaniax
 
         private static bool AllyPartyDebuffed(ushort threshold)
         {
-            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].hp != 0);
+            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].flag != 0);
             foreach (var unit in allyParty)
             {
                 for (int i = 4; i <= 8; i++)
@@ -2835,7 +2835,7 @@ namespace NocturneInsaniax
 
         private static bool EnemyPartyBuffed(ushort threshold)
         {
-            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex >= 4 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].hp != 0);
+            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex >= 4 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].flag != 0);
             foreach (var unit in allyParty)
             {
                 for (int i = 4; i <= 8; i++)
@@ -2849,7 +2849,7 @@ namespace NocturneInsaniax
 
         private static bool EnemyPartyBuffed(ushort threshold, int type)
         {
-            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex >= 4 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].hp != 0);
+            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex >= 4 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].flag != 0);
             foreach (var unit in allyParty)
             {
                 if (unit.count[type] >= threshold)
@@ -2860,7 +2860,7 @@ namespace NocturneInsaniax
 
         private static bool EnemyPartyDebuffed(ushort threshold)
         {
-            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex >= 4 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].hp != 0);
+            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex >= 4 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].flag != 0);
             foreach (var unit in allyParty)
             {
                 for (int i = 4; i <= 8; i++)
@@ -2877,7 +2877,7 @@ namespace NocturneInsaniax
             var allyParty = nbMainProcess.nbGetMainProcessData().form.Where(x => x.formindex <= 3);
             foreach (var unit in allyParty)
             {
-                if (nbMainProcess.nbGetUnitWorkFromFormindex(unit.formindex).badstatus == status && nbMainProcess.nbGetUnitWorkFromFormindex(unit.formindex).hp != 0)
+                if (nbMainProcess.nbGetUnitWorkFromFormindex(unit.formindex).badstatus == status && nbMainProcess.nbGetUnitWorkFromFormindex(unit.formindex).flag != 0)
                     return true;
             }
             return false;
