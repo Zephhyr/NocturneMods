@@ -95,7 +95,7 @@ namespace NocturneInsaniax
                             nbMainProcess.nbGetMainProcessData().press4_p += actionTrackers[unit.id].extraTurns;
                             nbMainProcess.nbGetMainProcessData().press4_ten += actionTrackers[unit.id].extraTurns;
                         }
-                        
+
                         if (unit.id == 297)
                         {
                             if (unit.hp <= 1200 || actionTrackers[unit.id].phase == 3)
@@ -243,9 +243,9 @@ namespace NocturneInsaniax
             else if (actionTrackers[a.work.id].currentBattleTurnCount != 1 &&
                 nbMainProcess.nbGetMainProcessData().enemypcnt == 1)
             {
-                UseSummonSkill(ref a, 226, (ushort) (64 + random.Next(2)));
+                UseSummonSkill(ref a, 226, (ushort)(64 + random.Next(2)));
             }
-            else if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.hp != 0).Any())
+            else if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.flag != 0).Any())
             {
                 int randomValue = random.Next(5);
                 switch (randomValue)
@@ -326,7 +326,7 @@ namespace NocturneInsaniax
             }
             else
             {
-                if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.hp != 0).Any())
+                if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.flag != 0).Any())
                 {
                     int randomValue = random.Next(4);
                     switch (randomValue)
@@ -469,7 +469,7 @@ namespace NocturneInsaniax
                 UseSummonSkill(ref a, 226, 125);
             else
             {
-                if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.hp != 0).Any())
+                if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.flag != 0).Any())
                 {
                     int randomValue = random.Next(5);
                     switch (randomValue)
@@ -518,7 +518,7 @@ namespace NocturneInsaniax
 
         private static void ValkyrieAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
-            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(277) && 
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(277) &&
                 nbMainProcess.nbGetMainProcessData().enemypcnt == 1)
             {
                 UseSkill(ref a, 277);
@@ -532,7 +532,7 @@ namespace NocturneInsaniax
             {
                 UseSummonSkill(ref a, 226, 88);
             }
-            else if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.hp != 0).Any())
+            else if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.flag != 0).Any())
             {
                 int randomValue = random.Next(5);
                 switch (randomValue)
@@ -646,7 +646,7 @@ namespace NocturneInsaniax
             }
             else
             {
-                if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.hp != 0).Any())
+                if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.flag != 0).Any())
                 {
                     int randomValue = random.Next(5);
                     switch (randomValue)
@@ -669,7 +669,7 @@ namespace NocturneInsaniax
                         case 3: UseSkill(ref a, 176); break;
                     }
                 }
-                
+
             }
         }
 
@@ -975,7 +975,7 @@ namespace NocturneInsaniax
                 {
                     UseSkill(ref a, 57);
                 }
-                else if (a.work.mp >= 72 && nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.hp != 0).Any())
+                else if (a.work.mp >= 72 && nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.flag != 0).Any())
                 {
                     UseSkill(ref a, 41);
                 }
@@ -1067,7 +1067,7 @@ namespace NocturneInsaniax
                 SetTargetingRule(ref code, ref n, 6, n);
                 return;
             }
-            
+
             if (actionTrackers[a.work.id].phase == 1)
             {
                 int randomValue = random.Next(2);
@@ -1136,7 +1136,7 @@ namespace NocturneInsaniax
             }
             else if (actionTrackers[a.work.id].currentBattleActionCount == 2)
             {
-                UseSkill(ref a, (ushort) (69 + random.Next(2))); return;
+                UseSkill(ref a, (ushort)(69 + random.Next(2))); return;
             }
             else if (actionTrackers[a.work.id].currentBattleActionCount == 3)
             {
@@ -1431,13 +1431,13 @@ namespace NocturneInsaniax
                 actionTrackers[a.work.id].phase = 2;
                 actionTrackers[a.work.id].skillsUsedThisBattle.Clear();
             }
-                
+
             if (currentHpPercent <= 20 && actionTrackers[a.work.id].phase == 2)
             {
                 actionTrackers[a.work.id].phase = 3;
                 actionTrackers[a.work.id].skillsUsedThisBattle.Clear();
             }
-                
+
 
             if (actionTrackers[a.work.id].phase == 1)
             {
@@ -1654,7 +1654,8 @@ namespace NocturneInsaniax
                 {
                     UseSkill(ref a, 16); return;
                 }
-                else {
+                else
+                {
                     int randomValue = random.Next(4);
                     switch (randomValue)
                     {
@@ -1748,7 +1749,7 @@ namespace NocturneInsaniax
 
         private static void ForcedKelpieAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
-            if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp).Any())
+            if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.flag != 0).Any())
             {
                 int randomValue = random.Next(10);
                 switch (randomValue)
@@ -1897,7 +1898,7 @@ namespace NocturneInsaniax
                 {
                     case 3:
                         {
-                            if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.hp != 0).Any())
+                            if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.flag != 0).Any())
                             {
                                 int randomValue = random.Next(9);
                                 switch (randomValue)
@@ -1935,7 +1936,7 @@ namespace NocturneInsaniax
                         {
                             if (EnemyPartyDebuffed(1) && (actionTrackers[a.work.id].currentBattleTurnCount % 4) == 0)
                                 UseSkill(ref a, 77);
-                            else if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.hp != 0).Any())
+                            else if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.flag != 0).Any())
                             {
                                 int randomValue = random.Next(9);
                                 switch (randomValue)
@@ -1973,7 +1974,7 @@ namespace NocturneInsaniax
                         {
                             if (EnemyPartyDebuffed(1) && (actionTrackers[a.work.id].currentBattleTurnCount % 3) == 0)
                                 UseSkill(ref a, 77);
-                            else if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.hp != 0).Any())
+                            else if (nbMainProcess.nbGetMainProcessData().enemyunit.Where(x => x.hp < x.maxhp && x.flag != 0).Any())
                             {
                                 int randomValue = random.Next(9);
                                 switch (randomValue)
@@ -2340,7 +2341,7 @@ namespace NocturneInsaniax
             {
                 UseSkill(ref a, 274);
             }
-            else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(264) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(267) && 
+            else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(264) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(267) &&
                      !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(268) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(269))
             {
                 int randomValue = random.Next(8);
@@ -2732,7 +2733,7 @@ namespace NocturneInsaniax
             a.aisummonid = devilId;
             if (!actionTrackers.ContainsKey(devilId))
                 actionTrackers.Add(devilId, new ActionTracker());
-            
+
             a.work.nowcommand = 1;
             a.work.nowindex = skillId;
 
@@ -2792,7 +2793,7 @@ namespace NocturneInsaniax
         {
             ushort maxhp = a.work.maxhp;
             ushort currenthp = a.work.hp;
-            return (ushort) ((currenthp*100)/maxhp);
+            return (ushort)((currenthp * 100) / maxhp);
         }
 
         private static bool EnemyFocused(ref nbActionProcessData_t a)
@@ -2821,7 +2822,7 @@ namespace NocturneInsaniax
 
         private static bool AllyPartyDebuffed(ushort threshold)
         {
-            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].hp != 0);
+            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].flag != 0);
             foreach (var unit in allyParty)
             {
                 for (int i = 4; i <= 8; i++)
@@ -2835,7 +2836,7 @@ namespace NocturneInsaniax
 
         private static bool EnemyPartyBuffed(ushort threshold)
         {
-            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex >= 4 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].hp != 0);
+            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex >= 4 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].flag != 0);
             foreach (var unit in allyParty)
             {
                 for (int i = 4; i <= 8; i++)
@@ -2849,7 +2850,7 @@ namespace NocturneInsaniax
 
         private static bool EnemyPartyBuffed(ushort threshold, int type)
         {
-            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex >= 4 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].hp != 0);
+            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex >= 4 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].flag != 0);
             foreach (var unit in allyParty)
             {
                 if (unit.count[type] >= threshold)
@@ -2860,7 +2861,7 @@ namespace NocturneInsaniax
 
         private static bool EnemyPartyDebuffed(ushort threshold)
         {
-            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex >= 4 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].hp != 0);
+            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex >= 4 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].flag != 0);
             foreach (var unit in allyParty)
             {
                 for (int i = 4; i <= 8; i++)
@@ -2877,7 +2878,7 @@ namespace NocturneInsaniax
             var allyParty = nbMainProcess.nbGetMainProcessData().form.Where(x => x.formindex <= 3);
             foreach (var unit in allyParty)
             {
-                if (nbMainProcess.nbGetUnitWorkFromFormindex(unit.formindex).badstatus == status && nbMainProcess.nbGetUnitWorkFromFormindex(unit.formindex).hp != 0)
+                if (nbMainProcess.nbGetUnitWorkFromFormindex(unit.formindex).badstatus == status && nbMainProcess.nbGetUnitWorkFromFormindex(unit.formindex).flag != 0)
                     return true;
             }
             return false;
@@ -2927,7 +2928,7 @@ namespace NocturneInsaniax
         public short scriptVar1;
         public List<ushort> skillsUsedThisBattle;
         public List<ushort> skillsUsedThisTurn;
-        
+
 
         public ActionTracker()
         {

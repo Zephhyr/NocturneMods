@@ -86,8 +86,8 @@ namespace NocturneInsaniax
                     case 60: __result = "Increases the damage of the user's \nnext Magic-based attack by 120%."; return false; // Concentrate Rock
                     case 62: __result = "Demi-fiend earns enough \nEXP to level up but \nloses one level."; return false; // Cursed Gospel
                     case 63: __result = "Grants four flashing turn icons. \n(Limit: 1)"; return false; // Impel Stone
-                    case 76: __result = "Healing-type Magatama"; return false; // Geis
-                    case 86: __result = "Physical-type Magatama"; return false; // Gaea
+                    case 76: __result = "Healing-type Magatama."; return false; // Geis
+                    case 86: __result = "Physical-type Magatama."; return false; // Gaea
                     case 107: __result = "A beautiful gemstone \nthat symbolizes \nearth."; return false; // Malachite
                     default: return true;
                 }
