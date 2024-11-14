@@ -715,7 +715,7 @@ namespace NocturneInsaniax
                     //dds3GlobalWork.DDS3_GBWK.maka = 0;
 
                     //var output = Newtonsoft.Json.JsonConvert.SerializeObject(mdlManager.mdlResrcMajorList);
-                    //MelonLogger.Msg(output);
+                    ////MelonLogger.Msg(output);
 
                     //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 149).Count() == 0)
                     //{
@@ -1135,16 +1135,16 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int phase)
             {
-                //MelonLogger.Msg("--nbMainProcess.nbSetPhase--");
+                ////MelonLogger.Msg("--nbMainProcess.nbSetPhase--");
                 //try
                 //{
-                //    MelonLogger.Msg("phase: " + phase);
-                //    MelonLogger.Msg("nowcommand: " + actionProcessData.work.nowcommand);
-                //    MelonLogger.Msg("nowindex: " + actionProcessData.work.nowindex);
-                //    MelonLogger.Msg("partyindex: " + actionProcessData.partyindex);
-                //    MelonLogger.Msg("nowtform: " + actionProcessData.work.nowtform);
-                //    MelonLogger.Msg("type: " + actionProcessData.type);
-                //    MelonLogger.Msg("target: " + actionProcessData.target);
+                //    //MelonLogger.Msg("phase: " + phase);
+                //    //MelonLogger.Msg("nowcommand: " + actionProcessData.work.nowcommand);
+                //    //MelonLogger.Msg("nowindex: " + actionProcessData.work.nowindex);
+                //    //MelonLogger.Msg("partyindex: " + actionProcessData.partyindex);
+                //    //MelonLogger.Msg("nowtform: " + actionProcessData.work.nowtform);
+                //    //MelonLogger.Msg("type: " + actionProcessData.type);
+                //    //MelonLogger.Msg("target: " + actionProcessData.target);
                 //} catch { }
 
                 if (phase == 7)

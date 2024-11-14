@@ -394,8 +394,8 @@ namespace NocturneInsaniax
             public static bool Prefix(ref nbMainProcessData_t data, ref int __result)
             {
                 // Test
-                __result = 1;
-                return false;
+                //__result = 1;
+                //return false;
 
                 var encounter = datEncount.Get(data.encno);
                 if ((encounter.flag >> 5 & 1) != 0 || datCalc.datCheckSkillInParty(296) != 0)
