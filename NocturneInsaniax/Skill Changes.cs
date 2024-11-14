@@ -8340,6 +8340,8 @@ namespace NocturneInsaniax
         private static void DoubleAttackPassive(ushort id)
         {
             datSkill.tbl[308].keisyoform = 1;
+            datSkill.tbl[308].skillattr = 0;
+            datSkill.tbl[308].type = 1;
 
             datSpecialSkill.tbl[id].a = 2;
             datSpecialSkill.tbl[id].b = 1;
@@ -8355,6 +8357,7 @@ namespace NocturneInsaniax
         {
             datSkill.tbl[362].keisyoform = 1;
             datSkill.tbl[362].skillattr = 0;
+            datSkill.tbl[362].type = 1;
 
             datSpecialSkill.tbl[id].a = 2;
             datSpecialSkill.tbl[id].b = 1;
@@ -8370,6 +8373,7 @@ namespace NocturneInsaniax
         {
             datSkill.tbl[363].keisyoform = 1;
             datSkill.tbl[363].skillattr = 15;
+            datSkill.tbl[363].type = 1;
 
             datSpecialSkill.tbl[id].a = 2;
             datSpecialSkill.tbl[id].b = 1;
@@ -8385,6 +8389,7 @@ namespace NocturneInsaniax
         {
             datSkill.tbl[364].keisyoform = 1;
             datSkill.tbl[364].skillattr = 15;
+            datSkill.tbl[364].type = 1;
 
             datSpecialSkill.tbl[id].a = 0;
             datSpecialSkill.tbl[id].b = 0;
@@ -8400,6 +8405,7 @@ namespace NocturneInsaniax
         {
             datSkill.tbl[365].keisyoform = 1;
             datSkill.tbl[365].skillattr = 15;
+            datSkill.tbl[365].type = 1;
 
             datSpecialSkill.tbl[id].a = 0;
             datSpecialSkill.tbl[id].b = 0;
@@ -8415,6 +8421,7 @@ namespace NocturneInsaniax
         {
             datSkill.tbl[366].keisyoform = 1;
             datSkill.tbl[366].skillattr = 15;
+            datSkill.tbl[366].type = 1;
 
             datSpecialSkill.tbl[id].a = 2;
             datSpecialSkill.tbl[id].b = 1;
@@ -8430,6 +8437,7 @@ namespace NocturneInsaniax
         {
             datSkill.tbl[367].keisyoform = 1;
             datSkill.tbl[367].skillattr = 15;
+            datSkill.tbl[367].type = 1;
 
             datSpecialSkill.tbl[id].a = 2;
             datSpecialSkill.tbl[id].b = 1;
@@ -8445,6 +8453,7 @@ namespace NocturneInsaniax
         {
             datSkill.tbl[368].keisyoform = 1;
             datSkill.tbl[368].skillattr = 13;
+            datSkill.tbl[368].type = 1;
 
             datSpecialSkill.tbl[id].a = 2;
             datSpecialSkill.tbl[id].b = 1;
@@ -8460,6 +8469,7 @@ namespace NocturneInsaniax
         {
             datSkill.tbl[369].keisyoform = 1;
             datSkill.tbl[369].skillattr = 15;
+            datSkill.tbl[369].type = 1;
 
             datSpecialSkill.tbl[id].a = 2;
             datSpecialSkill.tbl[id].b = 1;
@@ -8475,6 +8485,7 @@ namespace NocturneInsaniax
         {
             datSkill.tbl[370].keisyoform = 1;
             datSkill.tbl[370].skillattr = 15;
+            datSkill.tbl[370].type = 1;
 
             datSpecialSkill.tbl[id].a = 2;
             datSpecialSkill.tbl[id].b = 1;
@@ -8490,6 +8501,7 @@ namespace NocturneInsaniax
         {
             datSkill.tbl[371].keisyoform = 1;
             datSkill.tbl[371].skillattr = 0;
+            datSkill.tbl[371].type = 1;
 
             datSpecialSkill.tbl[id].a = 2;
             datSpecialSkill.tbl[id].b = 1;
@@ -8505,6 +8517,7 @@ namespace NocturneInsaniax
         {
             datSkill.tbl[372].keisyoform = 1;
             datSkill.tbl[372].skillattr = 15;
+            datSkill.tbl[372].type = 1;
 
             datSpecialSkill.tbl[id].a = 2;
             datSpecialSkill.tbl[id].b = 1;

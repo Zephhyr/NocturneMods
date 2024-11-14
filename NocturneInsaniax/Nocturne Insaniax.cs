@@ -87,6 +87,30 @@ namespace NocturneInsaniax
 
         public override void OnLateUpdate()
         {
+            if (cmpInitDH._DHeartsUIScr != null && cmpInitDH._DHeartsUIScr.gameObject.active)
+            {
+                for (int i = 1; i <= 24; i++)
+                {
+                    string heartIndex = i.ToString();
+                    if (heartIndex.Length == 1) heartIndex = "0" + heartIndex;
+
+                    //GameObject magPedOff = cmpInitDH._DHeartsUIScr.gameObject.transform.Find("magatama/magatamaset" + heartIndex + "/magpedestal/magpedestal_off").gameObject;
+                    GameObject magPedOn = cmpInitDH._DHeartsUIScr.gameObject.transform.Find("magatama/magatamaset" + heartIndex + "/magpedestal/magpedestal_on").gameObject;
+                    GameObject magPedBlue = cmpInitDH._DHeartsUIScr.gameObject.transform.Find("magatama/magatamaset" + heartIndex + "/magpedestal/magpedestal_blue").gameObject;
+
+                    if (heartMastered[i] && magPedOn.active && !magPedBlue.active)
+                    {
+                        magPedOn.active = false;
+                        magPedBlue.active = true;
+                    }
+                    else if (!heartMastered[i] && !magPedOn.active && magPedBlue.active)
+                    {
+                        magPedOn.active = true;
+                        magPedBlue.active = false;
+                    }
+                }
+            }
+
             if (cmpModel.cmpDevilObj != null)
             {
                 var modelName = cmpModel.cmpDevilObj.name;

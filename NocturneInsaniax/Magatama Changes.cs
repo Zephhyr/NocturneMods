@@ -642,7 +642,7 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Skill[5].ID = 38; // Diarahan
             tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 56;
             tblHearts.fclHeartsTbl[id].Skill[6].ID = 350; // Mana Refill
-            tblHearts.fclHeartsTbl[id].Skill[6].TargetLevel = 50;
+            tblHearts.fclHeartsTbl[id].Skill[6].TargetLevel = 60;
         }
 
         private static void Djed(ushort id)
@@ -789,7 +789,7 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 33;
             tblHearts.fclHeartsTbl[id].Skill[1].ID = 446; // Damnation
             tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 36;
-            tblHearts.fclHeartsTbl[id].Skill[2].ID = 324; // Null Force
+            tblHearts.fclHeartsTbl[id].Skill[2].ID = 324; // Null Fire
             tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 42;
             tblHearts.fclHeartsTbl[id].Skill[3].ID = 178; // Prominence
             tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 50;
