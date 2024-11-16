@@ -724,6 +724,7 @@ namespace NocturneInsaniax
             datEncount.tbl[1277].devil[0] = 362;
             datEncount.tbl[1277].backattack = -1;
             datEncount.tbl[1277].btlsound = 5;
+            datEncount.tbl[1277].esc = 1;
             datEncount.tbl[1277].flag = 13;
             datEncount.tbl[1277].formationtype = 0;
             datEncount.tbl[1277].areaid = 6;
@@ -735,6 +736,7 @@ namespace NocturneInsaniax
             datEncount.tbl[1278].devil[0] = 254;
             datEncount.tbl[1278].backattack = -1;
             datEncount.tbl[1278].btlsound = 19;
+            datEncount.tbl[1278].esc = 1;
             datEncount.tbl[1278].flag = 11;
             datEncount.tbl[1278].formationtype = 13;
             datEncount.tbl[1278].areaid = 2;

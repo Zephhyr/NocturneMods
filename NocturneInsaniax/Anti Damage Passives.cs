@@ -34,7 +34,7 @@ namespace NocturneInsaniax
 
                 bool isWeak = resistance[0] == '1';
 
-                switch(attr)
+                switch (attr)
                 {
                     case 0:
                         {
@@ -50,7 +50,7 @@ namespace NocturneInsaniax
                             {
                                 if (__result == 150 || __result == 130)
                                     __result = 100;
-                                __result -= Convert.ToUInt32(__result / 2);
+                                if (__result <= 150) __result -= Convert.ToUInt32(__result / 2);
                             }
                             break;
                         }
@@ -62,7 +62,7 @@ namespace NocturneInsaniax
                             {
                                 if (__result == 150 || __result == 130)
                                     __result = 100;
-                                __result -= Convert.ToUInt32(__result / 2);
+                                if (__result <= 150) __result -= Convert.ToUInt32(__result / 2);
                             }
                             break;
                         }
@@ -74,7 +74,7 @@ namespace NocturneInsaniax
                             {
                                 if (__result == 150 || __result == 130)
                                     __result = 100;
-                                __result -= Convert.ToUInt32(__result / 2);
+                                if (__result <= 150) __result -= Convert.ToUInt32(__result / 2);
                             }
                             break;
                         }
@@ -86,7 +86,7 @@ namespace NocturneInsaniax
                             {
                                 if (__result == 150 || __result == 130)
                                     __result = 100;
-                                __result -= Convert.ToUInt32(__result / 2);
+                                if (__result <= 150) __result -= Convert.ToUInt32(__result / 2);
                             }
                             break;
                         }
@@ -110,7 +110,7 @@ namespace NocturneInsaniax
                             {
                                 if (__result == 150 || __result == 130)
                                     __result = 100;
-                                __result -= Convert.ToUInt32(__result / 2);
+                                if (__result <= 150) __result -= Convert.ToUInt32(__result / 2);
                             }
                             break;
                         }
@@ -122,7 +122,7 @@ namespace NocturneInsaniax
                             {
                                 if (__result == 150 || __result == 130)
                                     __result = 100;
-                                __result -= Convert.ToUInt32(__result / 2);
+                                if (__result <= 150) __result -= Convert.ToUInt32(__result / 2);
                             }
                             break;
                         }
@@ -134,7 +134,7 @@ namespace NocturneInsaniax
                             {
                                 if (__result == 150 || __result == 130)
                                     __result = 100;
-                                __result -= Convert.ToUInt32(__result / 2);
+                                if (__result <= 150) __result -= Convert.ToUInt32(__result / 2);
                             }
                             break;
                         }
