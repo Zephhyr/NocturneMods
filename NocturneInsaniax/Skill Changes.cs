@@ -6084,7 +6084,7 @@ namespace NocturneInsaniax
         {
             datSkill.tbl[id].flag = 0;
             datSkill.tbl[id].keisyoform = 1;
-            datSkill.tbl[id].skillattr = -1;
+            datSkill.tbl[id].skillattr = 13;
             datSkill.tbl[id].index = (short)id;
             datSkill.tbl[id].type = 0;
 
@@ -6133,7 +6133,7 @@ namespace NocturneInsaniax
         {
             datSkill.tbl[id].flag = 0;
             datSkill.tbl[id].keisyoform = 1;
-            datSkill.tbl[id].skillattr = -1;
+            datSkill.tbl[id].skillattr = 15;
             datSkill.tbl[id].index = (short)id;
             datSkill.tbl[id].type = 0;
 
@@ -6182,7 +6182,7 @@ namespace NocturneInsaniax
         {
             datSkill.tbl[id].flag = 0;
             datSkill.tbl[id].keisyoform = 1;
-            datSkill.tbl[id].skillattr = -1;
+            datSkill.tbl[id].skillattr = 15;
             datSkill.tbl[id].index = (short)id;
             datSkill.tbl[id].type = 0;
 
@@ -6231,7 +6231,7 @@ namespace NocturneInsaniax
         {
             datSkill.tbl[id].flag = 0;
             datSkill.tbl[id].keisyoform = 1;
-            datSkill.tbl[id].skillattr = -1;
+            datSkill.tbl[id].skillattr = 15;
             datSkill.tbl[id].index = (short)id;
             datSkill.tbl[id].type = 0;
 
@@ -7157,8 +7157,8 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[406].badtype = datNormalSkill.tbl[functionId].badtype;
             datNormalSkill.tbl[406].basstatus = datNormalSkill.tbl[functionId].basstatus;
             datNormalSkill.tbl[406].cost = 0;
-            datNormalSkill.tbl[406].costbase = datNormalSkill.tbl[functionId].costbase;
-            datNormalSkill.tbl[406].costtype = datNormalSkill.tbl[functionId].costtype;
+            datNormalSkill.tbl[406].costbase = 0;
+            datNormalSkill.tbl[406].costtype = 2;
             datNormalSkill.tbl[406].criticalpoint = datNormalSkill.tbl[functionId].criticalpoint;
             datNormalSkill.tbl[406].deadtype = datNormalSkill.tbl[functionId].deadtype;
             datNormalSkill.tbl[406].failpoint = datNormalSkill.tbl[functionId].failpoint;
@@ -7204,8 +7204,8 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[407].badtype = datNormalSkill.tbl[functionId].badtype;
             datNormalSkill.tbl[407].basstatus = datNormalSkill.tbl[functionId].basstatus;
             datNormalSkill.tbl[407].cost = 0;
-            datNormalSkill.tbl[407].costbase = datNormalSkill.tbl[functionId].costbase;
-            datNormalSkill.tbl[407].costtype = datNormalSkill.tbl[functionId].costtype;
+            datNormalSkill.tbl[407].costbase = 0;
+            datNormalSkill.tbl[407].costtype = 2;
             datNormalSkill.tbl[407].criticalpoint = datNormalSkill.tbl[functionId].criticalpoint;
             datNormalSkill.tbl[407].deadtype = datNormalSkill.tbl[functionId].deadtype;
             datNormalSkill.tbl[407].failpoint = datNormalSkill.tbl[functionId].failpoint;
@@ -7253,8 +7253,8 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[408].badtype = datNormalSkill.tbl[functionId].badtype;
             datNormalSkill.tbl[408].basstatus = datNormalSkill.tbl[functionId].basstatus;
             datNormalSkill.tbl[408].cost = 0;
-            datNormalSkill.tbl[408].costbase = datNormalSkill.tbl[functionId].costbase;
-            datNormalSkill.tbl[408].costtype = datNormalSkill.tbl[functionId].costtype;
+            datNormalSkill.tbl[408].costbase = 0;
+            datNormalSkill.tbl[408].costtype = 2;
             datNormalSkill.tbl[408].criticalpoint = datNormalSkill.tbl[functionId].criticalpoint;
             datNormalSkill.tbl[408].deadtype = datNormalSkill.tbl[functionId].deadtype;
             datNormalSkill.tbl[408].failpoint = datNormalSkill.tbl[functionId].failpoint;

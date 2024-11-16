@@ -33,23 +33,37 @@ namespace NocturneInsaniax
                     for (ushort i = 0; i < stockIndices.Count; i++)
                         stockCommands[i] = stockIndices[i];
 
+                    var stockDisableCommands = new sbyte[288];
+                    foreach (var i in stock)
+                    {
+                        if (dds3GlobalWork.DDS3_GBWK.unitwork[i].hp == 0) stockDisableCommands[Array.IndexOf(stockCommands, (ushort)i)] = 4;
+                    }
+
                     s.commlist[3] = stockCommands;
+                    s.commdisable[3] = stockDisableCommands;
                     s.commcnt[3] = stockIndices.Count;
 
                     // Use Items
-                    if (datCalc.datCheckSyojiSkill(nbMainProcess.nbGetUnitWorkFromFormindex(s.my.formindex), 367) != 0)
+                    //if (datCalc.datCheckSyojiSkill(nbMainProcess.nbGetUnitWorkFromFormindex(s.my.formindex), 367) != 0)
+                    if (true)
                     {
                         var items = dds3GlobalWork.DDS3_GBWK.item;
                         var itemIndices = new List<ushort>();
-                        for (ushort i = 0; i <= 56; i++)
-                            if (items[i] != 0 && datItem.tbl[i].use >= 2 && datItem.tbl[i].skillid != 72)
+                        for (ushort i = 0; i <= 63; i++)
+                            if (items[i] != 0 && datItem.tbl[i].use >= 2)
                                 itemIndices.Add(i);
 
                         var itemCommands = new ushort[288];
                         for (ushort i = 0; i < itemIndices.Count; i++)
                             itemCommands[i] = itemIndices[i];
 
+                        var itemDisableCommands = new sbyte[288];
+                        if (datEncount.tbl[s.act.data.encno].esc == 1 && itemCommands.Contains((ushort)56))
+                            itemDisableCommands[Array.IndexOf(itemCommands, (ushort)56)] = 1;
+
+
                         s.commlist[2] = itemCommands;
+                        s.commdisable[2] = itemDisableCommands;
                         s.commcnt[2] = itemIndices.Count;
                     }
 

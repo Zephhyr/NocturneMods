@@ -34,7 +34,7 @@ namespace NocturneInsaniax
 
                 bool isWeak = resistance[0] == '1';
 
-                switch(attr)
+                switch (attr)
                 {
                     case 0:
                         {
@@ -50,7 +50,7 @@ namespace NocturneInsaniax
                             {
                                 if (__result == 150 || __result == 130)
                                     __result = 100;
-                                __result -= Convert.ToUInt32(__result / 2);
+                                if (__result <= 150) __result -= Convert.ToUInt32(__result / 2);
                             }
                             break;
                         }
@@ -62,7 +62,7 @@ namespace NocturneInsaniax
                             {
                                 if (__result == 150 || __result == 130)
                                     __result = 100;
-                                __result -= Convert.ToUInt32(__result / 2);
+                                if (__result <= 150) __result -= Convert.ToUInt32(__result / 2);
                             }
                             break;
                         }
@@ -74,7 +74,7 @@ namespace NocturneInsaniax
                             {
                                 if (__result == 150 || __result == 130)
                                     __result = 100;
-                                __result -= Convert.ToUInt32(__result / 2);
+                                if (__result <= 150) __result -= Convert.ToUInt32(__result / 2);
                             }
                             break;
                         }
@@ -86,7 +86,7 @@ namespace NocturneInsaniax
                             {
                                 if (__result == 150 || __result == 130)
                                     __result = 100;
-                                __result -= Convert.ToUInt32(__result / 2);
+                                if (__result <= 150) __result -= Convert.ToUInt32(__result / 2);
                             }
                             break;
                         }
@@ -110,7 +110,7 @@ namespace NocturneInsaniax
                             {
                                 if (__result == 150 || __result == 130)
                                     __result = 100;
-                                __result -= Convert.ToUInt32(__result / 2);
+                                if (__result <= 150) __result -= Convert.ToUInt32(__result / 2);
                             }
                             break;
                         }
@@ -122,7 +122,7 @@ namespace NocturneInsaniax
                             {
                                 if (__result == 150 || __result == 130)
                                     __result = 100;
-                                __result -= Convert.ToUInt32(__result / 2);
+                                if (__result <= 150) __result -= Convert.ToUInt32(__result / 2);
                             }
                             break;
                         }
@@ -134,14 +134,14 @@ namespace NocturneInsaniax
                             {
                                 if (__result == 150 || __result == 130)
                                     __result = 100;
-                                __result -= Convert.ToUInt32(__result / 2);
+                                if (__result <= 150) __result -= Convert.ToUInt32(__result / 2);
                             }
                             break;
                         }
-                    default: break;  
+                    default: break;
                 }
                 // Albion's Milton
-                if ((work.id == 155 || work.id == 278) && attr>= 1 && attr <= 4 && __result != 65536 && __result != 131072 && __result != 262144)
+                if ((work.id == 155 || work.id == 278) && attr >= 1 && attr <= 4 && __result != 65536 && __result != 131072 && __result != 262144)
                 {
                     if (nbMainProcess.nbGetPartyFromFormindex(formindex).partyindex <= 3)
                     {
