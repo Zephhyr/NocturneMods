@@ -44,8 +44,8 @@ namespace NocturneInsaniax
                     s.commcnt[3] = stockIndices.Count;
 
                     // Use Items
-                    //if (datCalc.datCheckSyojiSkill(nbMainProcess.nbGetUnitWorkFromFormindex(s.my.formindex), 367) != 0)
-                    if (true)
+                    if (datCalc.datCheckSyojiSkill(nbMainProcess.nbGetUnitWorkFromFormindex(s.my.formindex), 367) != 0)
+                    //if (true)
                     {
                         var items = dds3GlobalWork.DDS3_GBWK.item;
                         var itemIndices = new List<ushort>();
