@@ -89,16 +89,16 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref fclEncyc.readmainwork_tag pwork, ref int __result)
             {
-                MelonLogger.Msg("--fclEncyc.PrepSummon--");
+                //MelonLogger.Msg("--fclEncyc.PrepSummon--");
                 currentRecord = pwork.recindex;
             }
 
             public static void Postfix(ref fclEncyc.readmainwork_tag pwork, ref int __result)
             {
-                MelonLogger.Msg("--fclEncyc.PrepSummon--");
+                //MelonLogger.Msg("--fclEncyc.PrepSummon--");
                 var pelem = dds3GlobalWork.DDS3_GBWK.encyc_record.pelem[pwork.recindex];
-                MelonLogger.Msg("pwork.recindex: " + pwork.recindex);
-                MelonLogger.Msg("pelem.id: " + pelem.id);
+                //MelonLogger.Msg("pwork.recindex: " + pwork.recindex);
+                //MelonLogger.Msg("pelem.id: " + pelem.id);
 
                 pwork.mak = (int)(pwork.mak * GetDiscountFactor(datDevilFormat.tbl[pelem.id].race));
                 if (__result == 0 && dds3GlobalWork.DDS3_GBWK.maka >= pwork.mak && datCalc.datCheckStockFull() == 0 && datCalc.datSearchDevilStock(pelem.id) == -1 && pwork.flags == 80)
@@ -112,9 +112,9 @@ namespace NocturneInsaniax
                     __result = 0;
                 }
 
-                MelonLogger.Msg("pwork.mak: " + pwork.mak);
-                MelonLogger.Msg("pwork.flags: " + pwork.flags);
-                MelonLogger.Msg("result: " + __result);
+                //MelonLogger.Msg("pwork.mak: " + pwork.mak);
+                //MelonLogger.Msg("pwork.flags: " + pwork.flags);
+                //MelonLogger.Msg("result: " + __result);
             }
         }
 
@@ -123,22 +123,22 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref byte[] pScriptData, ref int StartNo, ref dds3ProcessID_t pPID, ref dds3ProcessID_t __result)
             {
-                MelonLogger.Msg("--fclMisc.fclScriptStart Prefix--");
-                MelonLogger.Msg("currentRecord: " + currentRecord);
+                //MelonLogger.Msg("--fclMisc.fclScriptStart Prefix--");
+                //MelonLogger.Msg("currentRecord: " + currentRecord);
                 var pelem = dds3GlobalWork.DDS3_GBWK.encyc_record.pelem[currentRecord];
                 var statTotal = fclEncyc.GetDevilParam(pelem, 0) + fclEncyc.GetDevilParam(pelem, 2) + fclEncyc.GetDevilParam(pelem, 3) + fclEncyc.GetDevilParam(pelem, 4) + fclEncyc.GetDevilParam(pelem, 5);
                 var price = (((statTotal * statTotal) / 20) * 100);
                 price = (int)(price * GetDiscountFactor(datDevilFormat.tbl[pelem.id].race));
-                MelonLogger.Msg("pelem.id: " + pelem.id);
-                MelonLogger.Msg("price: " + price);
-                MelonLogger.Msg("datCheckStockFull: " + datCalc.datCheckStockFull());
-                MelonLogger.Msg("datSearchDevilStock: " + datCalc.datSearchDevilStock(pelem.id));
+                //MelonLogger.Msg("pelem.id: " + pelem.id);
+                //MelonLogger.Msg("price: " + price);
+                //MelonLogger.Msg("datCheckStockFull: " + datCalc.datCheckStockFull());
+                //MelonLogger.Msg("datSearchDevilStock: " + datCalc.datSearchDevilStock(pelem.id));
 
                 if (StartNo == 18 && dds3GlobalWork.DDS3_GBWK.maka >= price && datCalc.datCheckStockFull() == 0 && datCalc.datSearchDevilStock(pelem.id) == -1)
                     StartNo = 17;
                 else if (StartNo == 17 && dds3GlobalWork.DDS3_GBWK.maka < price && datCalc.datCheckStockFull() == 0 && datCalc.datSearchDevilStock(pelem.id) == -1)
                     StartNo = 18;
-                MelonLogger.Msg("StartNo: " + StartNo);
+                //MelonLogger.Msg("StartNo: " + StartNo);
             }
         }
     }
