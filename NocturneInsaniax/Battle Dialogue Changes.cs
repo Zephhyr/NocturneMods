@@ -1,16 +1,6 @@
 ﻿using HarmonyLib;
 using MelonLoader;
 using Il2Cpp;
-using Il2Cppkernel_H;
-using UnityEngine;
-using System.Runtime.CompilerServices;
-using Il2CppTMPro;
-using Il2Cppinterface_H;
-using System.Text;
-using Newtonsoft.Json;
-using System.Xml.Linq;
-using Il2CppSystem.Runtime.Remoting.Messaging;
-using UnityEngine.Events;
 
 namespace NocturneInsaniax
 {
@@ -21,6 +11,7 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref string message, ref frMsgInfo_t mi, ref List<int> index, ref string __result)
             {
+                //MelonLogger.Msg("--frFont.frReplaceLocalizeText--");
                 try
                 {
                     if (nbMainProcess.nbGetMainProcessData().encno == 1278)
@@ -43,10 +34,6 @@ namespace NocturneInsaniax
                             case "<AI_MSG_L0129><WAIT>": __result = "<SP6>Humanity will inevitably lose its way and long for salvation. Then... You can regret this decision...<WA>"; break;
                         }
                     }
-                    else if (nbMainProcess.nbGetMainProcessData().encno == 1267 && message == "<SPD 6><AI_MSG_L0029><WAIT>")
-                    {
-                        __result = "<SP6>Maga...tsuhi...<WA>";
-                    }
                 }
                 catch { }
             }
@@ -57,6 +44,7 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref instanceMes_tag pinst, ref int mode)
             {
+                //MelonLogger.Msg("--itfMesManager.ReadytoMessage--");
                 try
                 {
                     if (nbMainProcess.nbGetMainProcessData().encno == 1278)

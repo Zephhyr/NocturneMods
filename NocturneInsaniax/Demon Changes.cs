@@ -9439,7 +9439,7 @@ namespace NocturneInsaniax
             mdlFileDefTable.devilModelFileTable[id] = mdlFileDefTable.devilModelFileTable[321];
             mdlFileDefTable.devilOnModelFileTable[id] = mdlFileDefTable.devilOnModelFileTable[321];
             mdlFileDefTable.devilModelIndex[id] = mdlFileDefTable.devilModelIndex[321];
-            mdlFileDefTable.devilOnModelIndex[id] = mdlFileDefTable.devilOnModelIndex[321];
+            //mdlFileDefTable.devilOnModelIndex[id] = mdlFileDefTable.devilOnModelIndex[321];
 
             mdlFileDefTable.devilModelIndex[id].major = 6;
             mdlFileDefTable.devilModelIndex[id].minor = 321;

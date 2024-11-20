@@ -878,7 +878,8 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref int side, ref int stockno, ref int formindex)
             {
-                if (nbMainProcess.nbGetMainProcessData().enemyunit[0].nowindex == 497)
+                // Dismiss Dante when summoning Devil Dante
+                if (formindex == 6 && nbMainProcess.nbGetMainProcessData().enemyunit[0].nowindex == 497)
                 {
                     nbUnitProcess.nbReturnUnit(4, 0, 0);
                     nbMakePacket.nbAddNewPressPacket(0, 0, -10, -10);

@@ -137,6 +137,7 @@ namespace NocturneInsaniax
                 MelonLogger.Msg("currentBattleActionCount:" + actionTrackers[a.work.id].currentBattleActionCount);
                 MelonLogger.Msg("currentTurnActionCount:" + actionTrackers[a.work.id].currentTurnActionCount);
                 MelonLogger.Msg("-Action Starts-");
+                SetTargetingRule(ref code, ref n, 0, 0);
                 if (!pushedSkillList.Contains(a.work.nowindex))
                 {
                     switch (a.work.id)
@@ -2936,11 +2937,15 @@ namespace NocturneInsaniax
         private static bool AllyPartyStatus(ushort status)
         {
             var allyParty = nbMainProcess.nbGetMainProcessData().form.Where(x => x.formindex <= 3);
-            foreach (var unit in allyParty)
+            try
             {
-                if (nbMainProcess.nbGetUnitWorkFromFormindex(unit.formindex).badstatus == status && nbMainProcess.nbGetUnitWorkFromFormindex(unit.formindex).flag != 0)
-                    return true;
-            }
+                foreach (var unit in allyParty)
+                {
+                    MelonLogger.Msg(unit.formindex);
+                    if (nbMainProcess.nbGetUnitWorkFromFormindex(unit.formindex).badstatus == status && nbMainProcess.nbGetUnitWorkFromFormindex(unit.formindex).flag != 0)
+                        return true;
+                }
+            } catch { }
             return false;
         }
 
