@@ -506,6 +506,20 @@ namespace NocturneInsaniax
             // Dekunda Rock Item Box in Obelisk Treasure Room
             fldGlobal.fldHitData._fldItemBoxTbl[131]._ItemID = 10;
 
+            // Cursed Gospel Item Box in Amala Network 2
+            fldGlobal.fldHitData._fldItemBoxTbl[138]._ItemID = 62;
+
+            // Soma Droplet Item Box in Amala Network 2
+            fldGlobal.fldHitData._fldItemBoxTbl[139]._ItemID = 10;
+
+            // Bead Item Box in Amala Network 2
+            fldGlobal.fldHitData._fldItemBoxTbl[140]._ItemID = 4;
+
+            // Bead Item Box in Amala Network 2
+            fldGlobal.fldHitData._fldItemBoxTbl[142]._ItemID = 7;
+
+            // Macca Box in Asakusa
+            fldGlobal.fldHitData._fldItemBoxTbl[111]._Param = 20000;
 
 
             // Great Chakra Item Box in First Kalpa

@@ -28,7 +28,7 @@ namespace NocturneInsaniax
                         var commandId = actionProcessData.work.nowcommand; // 0 = normal, 1 = skill, 5 = item
                         Color attrColour;
 
-                        if (text1 == "Endure")
+                        if (text1 == "Endure" || text1 == "Never Yield")
                             attrColour = GetAttackAttrColour(15, 1);
                         else
                         {

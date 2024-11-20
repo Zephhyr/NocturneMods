@@ -68,35 +68,35 @@ namespace NocturneInsaniax
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill03/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(244);
                             break;
                         case 0257: //Specter1 (Not merged)
-                            affinitiesText = "Null: Dark • Str: Magic";
+                            affinitiesText = "Null: Dark • Str: Elements";
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill01/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(1);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(190);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill03/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(232);
                             break;
                         case 0273: //Specter2
-                            affinitiesText = "Null: Magic/Light/Dark/Nerve/Mind";
-                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill01/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(191);
-                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(25);
+                            affinitiesText = "Null: Elements/Dark";
+                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill01/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(25);
+                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(191);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill03/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(77);
                             break;
                         case 0275: //Specter3
-                            affinitiesText = "Rpl: Magic • Null: Light/Dark/Nerve/Mind";
+                            affinitiesText = "Rpl: Elements • Null: Light/Dark/Nerve/Mind";
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill01/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(226);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(152);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill03/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(57);
                             break;
                         case 0294: //Specter4 (6 merged)
-                            affinitiesText = "Null: Dark • Str: Magic";
+                            affinitiesText = "Null: Dark • Str: Elements";
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill01/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(153);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(1);
                             break;
                         case 0295: //Specter5 (4 or 5 merged)
-                            affinitiesText = "Null: Dark • Str: Magic";
+                            affinitiesText = "Null: Dark • Str: Elements";
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill01/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(153);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(1);
                             break;
                         case 0296: //Specter6 (2 or 3 merged)
-                            affinitiesText = "Null: Dark • Str: Magic";
+                            affinitiesText = "Null: Dark • Str: Elements";
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill01/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(153);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(1);
                             break;
@@ -443,13 +443,13 @@ namespace NocturneInsaniax
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill04/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(96);
                             break;
                         case 0284: //Gabriel
-                            affinitiesText = "Rpl: Light/Dark • Null: Ailments • Str: Magic";
+                            affinitiesText = "Rpl: Light/Dark • Null: Ailments • Str: Elements";
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill01/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(195);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(18);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill03/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(189);
                             break;
                         case 0285: //Raphael
-                            affinitiesText = "Rpl: Light/Dark • Null: Ailments • Str: Magic";
+                            affinitiesText = "Rpl: Light/Dark • Null: Ailments • Str: Elements";
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill01/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(219);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(106);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill03/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(70);
@@ -457,7 +457,7 @@ namespace NocturneInsaniax
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill05/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(38);
                             break;
                         case 0286: //Uriel
-                            affinitiesText = "Rpl: Light/Dark • Null: Ailments • Str: Magic";
+                            affinitiesText = "Rpl: Light/Dark • Null: Ailments • Str: Elements";
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill01/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(178);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(38);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill03/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(26);
@@ -856,22 +856,24 @@ namespace NocturneInsaniax
                         case 0345: //Pale Rider
                             affinitiesText = datAisyoName.Get(195);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill01/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(79);
-                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(12);
-                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill03/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(212);
-                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill04/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(102);
-                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill05/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(220);
-                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill06/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(499);
+                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(63);
+                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill03/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(102);
+                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill04/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(212);
+                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill05/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(451);
+                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill06/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(220);
+                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill07/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(226);
+                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill08/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(366);
                             break;
                         case 0358: //Loa (Pale Rider)
-                            affinitiesText = "Null: Dark/Curse/Nerve • Str: Mind • Weak: Light";
+                            affinitiesText = datAisyoName.Get(176);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill01/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(34);
-                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(68);
+                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(35);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill03/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(60);
-                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill04/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(118);
-                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill05/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(197);
-                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill06/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(152);
-                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill07/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(35);
-                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill08/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(206);
+                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill04/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(448);
+                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill05/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(68);
+                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill06/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(206);
+                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill07/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(152);
+                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill08/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(366);
                             break;
                         case 0352: //Mother Harlot
                             affinitiesText = datAisyoName.Get(202);
@@ -978,7 +980,7 @@ namespace NocturneInsaniax
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill08/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(269);
                             break;
                         default:
-                            if (new int[]{ 713, 1035, 1270, 1271, 1277, 1278 }.Contains(actionProcessData.data.encno))
+                            if (new int[]{ 713, 1035, 1277, 1278 }.Contains(actionProcessData.data.encno))
                             {
                                 // Remove HP and MP info
                                 AnalyzeBossesUtility.DisplayHPMP(false);
@@ -986,7 +988,17 @@ namespace NocturneInsaniax
                                 return;
                             }
                             else
+                            {
+                                if (datDevilFormat.tbl[nbPanelProcess.pNbPanelAnalyzeUnitWork.id].maxhp > 999)
+                                {
+                                    AnalyzeBossesUtility.DisplayHP(false);
+                                }
+                                if (datDevilFormat.tbl[nbPanelProcess.pNbPanelAnalyzeUnitWork.id].maxmp > 999)
+                                {
+                                    AnalyzeBossesUtility.DisplayMP(false);
+                                }
                                 return; // Not do anything special if the target isn't a boss
+                            }
                     }
                     nbMainProcess.GetBattleUI(5).transform.Find("banalyze_attribute/banalyze_attribute_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = affinitiesText; // Apply the affinities' text
 
@@ -1011,6 +1023,28 @@ namespace NocturneInsaniax
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hpfull02").gameObject.SetActive(state);
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hpfull03").gameObject.SetActive(state);
 
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/banalyze_slash").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mp01").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mp02").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mp03").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mpfull01").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mpfull02").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mpfull03").gameObject.SetActive(state);
+            }
+
+            public static void DisplayHP(bool state)
+            {
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/banalyze_slash").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hp01").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hp02").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hp03").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hpfull01").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hpfull02").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hpfull03").gameObject.SetActive(state);
+            }
+
+            public static void DisplayMP(bool state)
+            {
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/banalyze_slash").gameObject.SetActive(state);
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mp01").gameObject.SetActive(state);
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mp02").gameObject.SetActive(state);

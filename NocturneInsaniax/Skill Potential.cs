@@ -102,7 +102,7 @@ namespace NocturneInsaniax
             new sbyte[] {2    , 0    , 0    , -4   , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 080 Nozuchi
             new sbyte[] {6    , 6    , -7   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -3   , 2    , 0 }, // 081 Cerberus
             new sbyte[] {4    , 4    , -6   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -2   , 1    , 0 }, // 082 Orthrus
-            new sbyte[] {2    , 0    , 0    , -6   , 6    , 0    , 0    , -6   , 0    , 0    , 0    , 0    , 0    , 2    , 2    , 0 }, // 083 Suparna
+            new sbyte[] {2    , 0    , 0    , -6   , 5    , 0    , 0    , -6   , 0    , 0    , 0    , 0    , 0    , 2    , 2    , 0 }, // 083 Suparna
             new sbyte[] {3    , 0    , 0    , -4   , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 084 Badb Catha
             new sbyte[] {0    , 3    , 0    , 0    , -4   , 0    , 0    , 0    , 2    , 0    , 2    , 0    , 0    , 1    , 1    , 0 }, // 085 Inugami
             new sbyte[] {3    , 0    , -4   , 0    , 2    , 0    , 0    , 0    , 3    , 3    , 3    , 0    , 0    , 0    , 0    , 0 }, // 086 Nekomata
@@ -296,7 +296,7 @@ namespace NocturneInsaniax
             new sbyte[] {-5   , 0    , 0    , 0    , 0    , 3    , 6    , 0    , 0    , 0    , 6    , 3    , 0    , 3    , 0    , 0 }, // 270 Boss Clotho (Solo)
             new sbyte[] {-5   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 6    , 6    , 6    , 0    , 0    , 0    , 4    , 0 }, // 271 Boss Lachesis (Solo)
             new sbyte[] {-5   , 6    , 6    , 6    , 6    , 4    , 0    , 0    , 0    , 0    , 0    , 4    , 0    , 0    , 0    , 0 }, // 272 Boss Atropos (Solo)
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 273 Boss Specter 2
+            new sbyte[] {0    , 3    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0 }, // 273 Boss Specter 2
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 274 Boss Girimekhala
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 275 Boss Specter 3
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 276 Boss Aciel
@@ -1259,8 +1259,20 @@ namespace NocturneInsaniax
             }
         }
 
-        [HarmonyPatch(typeof(cmpCalc), nameof(cmpCalc.cmpUseSkill))]
+        [HarmonyPatch(typeof(cmpMisc), nameof(cmpMisc.cmpChkSkillCost))]
         private class SkillPotentialPatch7
+        {
+            public static void Postfix(ref ushort SkillID, ref datUnitWork_t pStock, ref sbyte __result)
+            {
+                sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(SkillID, pStock.id);
+                ushort skillCost = SkillPotentialUtility.ApplySkillPotentialCost(SkillID, skillPotential);
+
+                __result = skillCost <= pStock.mp ? (sbyte) 1 : (sbyte) 0;
+            }
+        }
+
+        [HarmonyPatch(typeof(cmpCalc), nameof(cmpCalc.cmpUseSkill))]
+        private class SkillPotentialPatch8
         {
             public static void Prefix() // Before using a skill from the Command Menu
             {
@@ -1293,7 +1305,7 @@ namespace NocturneInsaniax
          * ADJUST HEAL WITH POTENTIAL (OUTSIDE OF BATTLE)
          *********************************************************************************************/
         [HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetSkillKouka))] // After using a Heal skill from the Command Menu
-        private class SkillPotentialPatch8
+        private class SkillPotentialPatch9
         {
             public static void Postfix(ref int nskill, ref int type, ref datUnitWork_t s, ref int __result)
             {
@@ -1313,7 +1325,7 @@ namespace NocturneInsaniax
          * ADJUST DAMAGE/HEAL WITH POTENTIAL (DURING BATTLE)
          *********************************************************************************************/
         [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetKoukaHp))] // After altering HP during battle
-        private class SkillPotentialPatch9
+        private class SkillPotentialPatch10
         {
             public static void Postfix(ref int nskill, ref int sformindex, ref int dformindex, ref int __result)
             {
@@ -1333,7 +1345,7 @@ namespace NocturneInsaniax
                                 __result *= 2;
                             }
                         }
-                        else if (datNormalSkill.tbl[nskill].hptype != 6 && datNormalSkill.tbl[nskill].hptype != 8)
+                        else if (datNormalSkill.tbl[nskill].hptype != 6 && datNormalSkill.tbl[nskill].hptype != 8 && datNormalSkill.tbl[nskill].hptype != 11)
                         {
                             __result = Convert.ToInt32(SkillPotentialUtility.ApplyDamageMultiplier(skillPotential, __result));
 
@@ -1350,7 +1362,7 @@ namespace NocturneInsaniax
         }
 
         [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetKoukaMp))]
-        private class SkillPotentialPatch10
+        private class SkillPotentialPatch11
         {
             public static void Postfix(ref int nskill, ref int sformindex, ref int __result)
             {
@@ -1380,7 +1392,7 @@ namespace NocturneInsaniax
          * ADJUST AILMENT RATE WITH POTENTIAL
          *********************************************************************************************/
         [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetKoukaBadDamage))] 
-        private class SkillPotentialPatch11
+        private class SkillPotentialPatch12
         {
             public static void Prefix(ref int nskill, ref int sformindex) // Before attempting to inflinct an ailment
             {
@@ -1599,7 +1611,7 @@ namespace NocturneInsaniax
          * APPEND POTENTIAL TEXT TO AFFINITY TEXT
          *********************************************************************************************/
         [HarmonyPatch(typeof(datAisyoName), nameof(datAisyoName.Get))]
-        private class SkillPotentialPatch12
+        private class SkillPotentialPatch13
         {
             public static void Postfix(ref int id, ref string __result)
             {
@@ -1614,7 +1626,7 @@ namespace NocturneInsaniax
          * REPLACE MAGATAMA HELP TEXT
          *********************************************************************************************/
         [HarmonyPatch(typeof(datHeartsHelp_msg), nameof(datHeartsHelp_msg.Get))]
-        private class SkillPotentialPatch13
+        private class SkillPotentialPatch14
         {
             public static bool Prefix(ref int id, ref string __result)
             {
@@ -1627,7 +1639,7 @@ namespace NocturneInsaniax
          * EXTEND AFFINITY TEXT RECTANGLE IN STATUS SCREEN
          *********************************************************************************************/
         [HarmonyPatch(typeof(cmpDrawStatus), nameof(cmpDrawStatus.cmpDrawAisyoHelp))]
-        private class SkillPotentialPatch14
+        private class SkillPotentialPatch15
         {
             public static void Postfix()
             {
@@ -1640,7 +1652,7 @@ namespace NocturneInsaniax
          * DISPLAY CORRECT POTENTIAL VALUES IN ANALYZE PANEL
          *********************************************************************************************/
         [HarmonyPatch(typeof(nbPanelProcess), nameof(nbPanelProcess.nbPanelAnalyzeDraw))]
-        private class SkillPotentialPatch15
+        private class SkillPotentialPatch16
         {
             public static void Prefix(ref datUnitWork_t pUnitWork)
             {
@@ -1652,7 +1664,7 @@ namespace NocturneInsaniax
          * REMOVE POTENTIAL TEXT FROM ATTRIBUTES IN ANALYZE PANEL
          *********************************************************************************************/
         [HarmonyPatch(typeof(nbPanelProcess), nameof(nbPanelProcess.nbPanelAnalyzeRun))]
-        private class SkillPotentialPatch16
+        private class SkillPotentialPatch17
         {
             public static void Postfix()
             {

@@ -838,6 +838,8 @@ namespace NocturneInsaniax
             BossLachesis1(271);
             BossAtropos1(272);
 
+            BossSpecter2(273);
+
             BossGirimekhala(274);
 
             BossSpecter1Merged1(294);
@@ -879,6 +881,7 @@ namespace NocturneInsaniax
 
             BossBeelzebubFly(343);
 
+            BossPaleRider(345);
             BossWhiteRider(346);
             BossRedRider(347);
             BossBlackRider(348);
@@ -886,6 +889,7 @@ namespace NocturneInsaniax
             BossHellBiker(350);
             BossDaisoujou(351);
 
+            BossLoa(358);
             BossVirtue(359);
             BossPower(360);
             BossLegion(361);
@@ -2246,6 +2250,9 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][9] = 100; // Nerve
             datAisyo.tbl[id][10] = 65536; // Mind
 
+            // Skills
+            tblSkill.fclSkillTbl[id].Event[1].Param = 30; // Mahama
+
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 720;
             datDevilFormat.tbl[id].maxhp = 720;
@@ -2256,7 +2263,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].dropmakka = 600;
 
             // Enemy Skills
-            datDevilFormat.tbl[id].skill[0] = 10; // Mabufu
+            datDevilFormat.tbl[id].skill[0] = 30; // Mahama
             datDevilFormat.tbl[id].skill[1] = 39; // Media
             datDevilFormat.tbl[id].skill[2] = 37; // Diarama
             datDevilFormat.tbl[id].skill[3] = 66; // Rakukaja
@@ -5134,8 +5141,8 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Enemy Stats
-            datDevilFormat.tbl[id].hp = 48;
-            datDevilFormat.tbl[id].maxhp = 48;
+            datDevilFormat.tbl[id].hp = 42;
+            datDevilFormat.tbl[id].maxhp = 42;
             datDevilFormat.tbl[id].mp = 36;
             datDevilFormat.tbl[id].maxmp = 36;
 
@@ -8587,10 +8594,11 @@ namespace NocturneInsaniax
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 79; // Pestilence
-            datDevilFormat.tbl[id].skill[1] = 102; // Blight
-            datDevilFormat.tbl[id].skill[2] = 451; // Overload
-            datDevilFormat.tbl[id].skill[3] = 229; // Laughter
-            datDevilFormat.tbl[id].skill[4] = 366; // Abyssal Mask
+            datDevilFormat.tbl[id].skill[1] = 63; // Tentarafoo
+            datDevilFormat.tbl[id].skill[3] = 102; // Blight
+            datDevilFormat.tbl[id].skill[4] = 451; // Overload
+            datDevilFormat.tbl[id].skill[5] = 229; // Laughter
+            datDevilFormat.tbl[id].skill[6] = 366; // Abyssal Mask
 
             datDevilAI.divTbls[1][67].ailevel = 1;
         }
@@ -10265,8 +10273,8 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Enemy Stats
-            datDevilFormat.tbl[id].hp = 6000;
-            datDevilFormat.tbl[id].maxhp = 6000;
+            datDevilFormat.tbl[id].hp = 4000;
+            datDevilFormat.tbl[id].maxhp = 4000;
             datDevilFormat.tbl[id].level = 45;
             datDevilFormat.tbl[id].flag = 547;
 
@@ -10536,6 +10544,34 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].skill[5] = 17; // Mazionga
             datDevilFormat.tbl[id].skill[6] = 20; // Zanma
             datDevilFormat.tbl[id].skill[7] = 23; // Mazanma
+        }
+
+        private static void BossSpecter2(ushort id)
+        {
+            // Affinities
+            datAisyo.tbl[id][0] = 100; // Phys
+            datAisyo.tbl[id][1] = 65536; // Fire
+            datAisyo.tbl[id][2] = 65536; // Ice
+            datAisyo.tbl[id][3] = 65536; // Elec
+            datAisyo.tbl[id][4] = 65536; // Force
+            datAisyo.tbl[id][6] = 100; // Light
+            datAisyo.tbl[id][7] = 65536; // Dark
+            datAisyo.tbl[id][8] = 100; // Curse
+            datAisyo.tbl[id][9] = 100; // Nerve
+            datAisyo.tbl[id][10] = 100; // Mind
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].maxhp = 2400;
+            datDevilFormat.tbl[id].hp = 2400;
+            datDevilFormat.tbl[id].maxmp = 300;
+            datDevilFormat.tbl[id].mp = 24;
+
+            datDevilFormat.tbl[id].dropexp = 1000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 25; // Megido
+            datDevilFormat.tbl[id].skill[1] = 191; // Mana Drain
+            datDevilFormat.tbl[id].skill[2] = 77; // Dekunda
         }
 
         private static void BossGirimekhala(ushort id)
@@ -11412,6 +11448,39 @@ namespace NocturneInsaniax
             //datDevilVisual10.tbl_10_140_15F[23].formscale = 0.1f;
         }
 
+        private static void BossPaleRider(ushort id)
+        {
+            // Affinities
+            datAisyo.tbl[id][0] = 100; // Phys
+            datAisyo.tbl[id][1] = 100; // Fire
+            datAisyo.tbl[id][2] = 50; // Ice
+            datAisyo.tbl[id][3] = 100; // Elec
+            datAisyo.tbl[id][4] = 131072; // Force
+            datAisyo.tbl[id][6] = 50; // Light
+            datAisyo.tbl[id][7] = 131072; // Dark
+            datAisyo.tbl[id][8] = 65536; // Curse
+            datAisyo.tbl[id][9] = 65536; // Nerve
+            datAisyo.tbl[id][10] = 65536; // Mind
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].maxhp = 9000;
+            datDevilFormat.tbl[id].hp = 9000;
+            datDevilFormat.tbl[id].flag = 34;
+
+            datDevilFormat.tbl[id].dropexp = 7000;
+            datDevilFormat.tbl[id].dropmakka = 5000;
+
+            // Display Skill
+            datDevilFormat.tbl[id].skill[0] = 79;
+            datDevilFormat.tbl[id].skill[1] = 63;
+            datDevilFormat.tbl[id].skill[2] = 102;
+            datDevilFormat.tbl[id].skill[3] = 212;
+            datDevilFormat.tbl[id].skill[4] = 451;
+            datDevilFormat.tbl[id].skill[5] = 220;
+            datDevilFormat.tbl[id].skill[6] = 226;
+            datDevilFormat.tbl[id].skill[7] = 366;
+        }
+
         private static void BossWhiteRider(ushort id)
         {
             // Affinities
@@ -11441,7 +11510,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].skill[1] = 178;
             datDevilFormat.tbl[id].skill[2] = 57;
             datDevilFormat.tbl[id].skill[3] = 220;
-            datDevilFormat.tbl[id].skill[4] = 496;
+            datDevilFormat.tbl[id].skill[4] = 226;
             datDevilFormat.tbl[id].skill[5] = 366;
         }
 
@@ -11475,7 +11544,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].skill[2] = 183;
             datDevilFormat.tbl[id].skill[3] = 77;
             datDevilFormat.tbl[id].skill[4] = 220;
-            datDevilFormat.tbl[id].skill[5] = 497;
+            datDevilFormat.tbl[id].skill[5] = 226;
             datDevilFormat.tbl[id].skill[6] = 366;
         }
 
@@ -11508,7 +11577,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].skill[2] = 26;
             datDevilFormat.tbl[id].skill[3] = 57;
             datDevilFormat.tbl[id].skill[4] = 220;
-            datDevilFormat.tbl[id].skill[5] = 498;
+            datDevilFormat.tbl[id].skill[5] = 226;
             datDevilFormat.tbl[id].skill[6] = 366;
         }
 
@@ -11603,6 +11672,41 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].skill[4] = 67;
             datDevilFormat.tbl[id].skill[5] = 424;
             datDevilFormat.tbl[id].skill[6] = 57;
+            datDevilFormat.tbl[id].skill[7] = 366;
+        }
+
+        private static void BossLoa(ushort id)
+        {
+            // Affinities
+            datAisyo.tbl[id][0] = 100; // Phys
+            datAisyo.tbl[id][1] = 100; // Fire
+            datAisyo.tbl[id][2] = 100; // Ice
+            datAisyo.tbl[id][3] = 100; // Elec
+            datAisyo.tbl[id][4] = 100; // Force
+            datAisyo.tbl[id][6] = 2147483778; // Light
+            datAisyo.tbl[id][7] = 65536; // Dark
+            datAisyo.tbl[id][8] = 65536; // Curse
+            datAisyo.tbl[id][9] = 65536; // Nerve
+            datAisyo.tbl[id][10] = 100; // Mind
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 1200;
+            datDevilFormat.tbl[id].maxhp = 1200;
+            datDevilFormat.tbl[id].mp = 300;
+            datDevilFormat.tbl[id].maxmp = 300;
+            datDevilFormat.tbl[id].param[0] = 8;
+
+            datDevilFormat.tbl[id].dropexp = 0;
+            datDevilFormat.tbl[id].dropmakka = 0;
+
+            // Display Skill
+            datDevilFormat.tbl[id].skill[0] = 34;
+            datDevilFormat.tbl[id].skill[1] = 35;
+            datDevilFormat.tbl[id].skill[2] = 60;
+            datDevilFormat.tbl[id].skill[3] = 448;
+            datDevilFormat.tbl[id].skill[4] = 68;
+            datDevilFormat.tbl[id].skill[5] = 206;
+            datDevilFormat.tbl[id].skill[6] = 152;
             datDevilFormat.tbl[id].skill[7] = 366;
         }
 

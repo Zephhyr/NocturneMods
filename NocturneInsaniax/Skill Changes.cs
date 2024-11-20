@@ -17,7 +17,7 @@ namespace NocturneInsaniax
     internal partial class NocturneInsaniax : MelonMod
     {
         public static ushort[] bossList = new ushort[] { 
-            252, 254, 256, 257, 262, 263, 266, 267, 268, 269, 270, 271, 272, 294, 295, 296, 297, 300, 301, 302, 307, 308, 309, 312, 313, 
+            252, 254, 256, 257, 262, 263, 266, 267, 268, 269, 270, 271, 272, 273, 294, 295, 296, 297, 300, 301, 302, 307, 308, 309, 312, 313, 
             321, 326, 327, 328, 339, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 362, 363, 364, 365, 366
         };
         public static ushort[] pushedSkillList = new ushort[] { 148, 149, 150, 151, 164, 165, 166, 167, 407, 408, 416, 417, 496 };
@@ -290,7 +290,7 @@ namespace NocturneInsaniax
                     case 106: __result = "High Physical damage to one foe. \nHP-based. Max Pow: 60, Acc: 80%, \nCrit: 40%, Bind: 30%"; return false; // Stasis Blade
                     case 107: __result = "Low Physical damage to one foe. \nHP-based. Max Pow: 48, Acc: 90%, \nCrit: 20%"; return false; // Mighty Gust
                     case 108: __result = "High Physical damage to random foes. \n3-5 hits. HP-based. Max Pow: 40, \nAcc: 94%, Crit: 20%"; return false; // Deathbound
-                    case 109: __result = "High Physical damage to one foe. \nHP-based. Max Pow: 56, Acc: 85%, \nCrit: 30%, Stun: 30."; return false; // Guillotine
+                    case 109: __result = "High Physical damage to one foe. \nHP-based. Max Pow: 56, Acc: 85%, \nCrit: 30%, Stun: 30%"; return false; // Guillotine
                     case 110: __result = "High Physical damage to random foes. \n3-5 hits. HP-based. Max Pow: 30, \nAcc: 92%, Crit: 20%, Panic: 24%"; return false; // Chaos Blade
                     case 111: __result = "Low Physical damage to one foe. \n2-4 hits. Pow: 13, Acc: 90%, \nCrit: 20%"; return false; // Needle Rush
                     case 112: __result = "Low Physical damage to one foe. \n2-4 hits. Pow: 12, Acc: 90%, \nCrit: 18%, Stun: 18%"; return false; // Stun Needle
@@ -332,9 +332,9 @@ namespace NocturneInsaniax
                     case 185: __result = "Medium Force damage to random foes. \n3-6 hits. Pow: 30, Acc: 100%"; return false; // Tornado
                     case 186: __result = "Mega Force damage to one foe. \nPow: 80, Acc: 100%"; return false; // Wind Cutter
                     case 187: __result = "High Force damage to all foes. \nPow: 45, Acc: 100%, Stun: 30%"; return false; // Wet Wind
-                    case 190: __result = "Drains HP from one foe. \nPow: 27, Acc: 100% (Almighty-Type)"; return false; // Deathtouch
-                    case 191: __result = "Drains MP from one foe. \nPow: 14, Acc: 100% (Almighty-Type)"; return false; // Mana Drain
-                    case 192: __result = "Drains HP/MP from one foe. \nPow: 27/14, Acc: 100% \n(Almighty-Type)"; return false; // Life Drain
+                    case 190: __result = "Drains HP from one foe. \nPow: 25, Acc: 100% (Almighty-Type)"; return false; // Deathtouch
+                    case 191: __result = "Drains MP from one foe. \nPow: 15, Acc: 100% (Almighty-Type)"; return false; // Mana Drain
+                    case 192: __result = "Drains HP/MP from one foe. \nPow: 25/15, Acc: 100% \n(Almighty-Type)"; return false; // Life Drain
                     case 193: __result = "Medium Light damage to one foe. \nPow: 45, Acc: 100%"; return false; // Violet Flash
                     case 194: __result = "Medium Light damage to all foes. \nPow: 36, Acc: 100%"; return false; // Starlight
                     case 195: __result = "Mega Light damage to all foes. \nPow: 60, Acc: 100%"; return false; // Radiance
@@ -380,10 +380,11 @@ namespace NocturneInsaniax
                     case 275: __result = "Medium Physical damage to all foes. \nPow: 32, Acc: 100%, Crit: 5%"; return false; // Andalucia
                     case 276: __result = "Maximizes own Evasion/Hit Rate."; return false; // Red Capote
                     case 278: __result = "Medium Mind damage to all foes. \nMay inflict random ailments. \nPow: 30, Acc: 100%, Random: 40%"; return false; // Preach
+                    case 279: __result = "Drains HP/MP from one foe. \nPow: 35/20, Acc: 100% \n(Almighty-Type)"; return false; // Meditation
                     case 280: __result = "Medium Physical damage to \nrandom foes. Pow: 32, Acc: 96%, \nCrit: 10%, Panic: 40%"; return false; // Terrorblade
                     case 281: __result = "Medium Physical damage to all foes. \nPow: 32, Acc: 94%, Crit: 12%"; return false; // Hell Spin
                     case 282: __result = "Medium Force damage to all foes. \nNegates -kaja effects. \nPow: 30, Acc: 100%"; return false; // Hell Exhaust
-                    case 283: __result = "Medium Str-based Fire damage \nto all foes. Pow: 32, Acc: 88% \nCrit: 12%"; return false; // Hell Burner
+                    case 283: __result = "Medium Str-based Fire damage \nto all foes. Pow: 32, Acc: 88%, \nCrit: 12%"; return false; // Hell Burner
                     case 284: __result = "Raises all allies' \nPhysical Attack/Evasion/Hit Rate \nby one rank."; return false; // Hell Throttle
                     case 285: __result = "Lowers all foes' Evasion/Hit Rate \nby one rank. 50% Chance to \ninflict Panic. (Almighty-Type)"; ; return false; // Babylon Goblet
                     case 286: __result = "High Almighty damage to all foes. \nSlight HP recovery for the user. \nPow: 48, Acc: 100%, Charm: 30%"; return false; // Death Lust
@@ -741,18 +742,14 @@ namespace NocturneInsaniax
                     //}
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 167)) // Pisaca
                     //{
-                    //    work.skill[1] = 206;
-                    //    work.skill[2] = 459;
-                    //    work.skill[3] = 40;
+                    //    work.skill[3] = 331;
                     //    work.skill[4] = 456;
-                    //    work.skill[5] = 14;
-                    //    work.skill[6] = 311;
-                    //    work.skill[7] = 292;
                     //    work.skillcnt = 8;
                     //}
-                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 149)) // Xuanwu
+                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 73)) // Eligor
                     //{
-                    //    work.skill[2] = 203;
+                    //    work.skill[2] = 330;
+                    //    work.skill[3] = 331;
                     //    work.skillcnt = 8;
                     //}
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 144)) // Arahabaki
@@ -761,11 +758,6 @@ namespace NocturneInsaniax
                     //    work.skill[7] = 365;
                     //    //work.skill[7] = 419;
                     //    //work.skillcnt = 8;
-                    //}
-                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 68)) // Angel
-                    //{
-                    //    work.skillcnt = 8;
-                    //    work.skill[7] = 7;
                     //}
                     //}
                 }
@@ -4689,7 +4681,7 @@ namespace NocturneInsaniax
         private static void Deathtouch(ushort id)
         {
             datNormalSkill.tbl[id].cost = 6;
-            datNormalSkill.tbl[id].hpn = 27;
+            datNormalSkill.tbl[id].hpn = 25;
             datNormalSkill.tbl[id].magicbase = 12;
             datNormalSkill.tbl[id].magiclimit = 74;
 
@@ -4700,8 +4692,8 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 3;
             datNormalSkill.tbl[id].criticalpoint = 0;
-            datNormalSkill.tbl[id].hpn = 14;
-            datNormalSkill.tbl[id].mpn = 14;
+            datNormalSkill.tbl[id].hpn = 15;
+            datNormalSkill.tbl[id].mpn = 15;
             datNormalSkill.tbl[id].magicbase = 12;
             datNormalSkill.tbl[id].magiclimit = 44;
         }
@@ -4709,8 +4701,8 @@ namespace NocturneInsaniax
         private static void LifeDrain(ushort id)
         {
             datNormalSkill.tbl[id].cost = 6;
-            datNormalSkill.tbl[id].hpn = 27;
-            datNormalSkill.tbl[id].mpn = 14;
+            datNormalSkill.tbl[id].hpn = 25;
+            datNormalSkill.tbl[id].mpn = 15;
             datNormalSkill.tbl[id].magicbase = 12;
             datNormalSkill.tbl[id].magiclimit = 74;
         }
@@ -4772,7 +4764,7 @@ namespace NocturneInsaniax
         private static void Meditation(ushort id)
         {
             datNormalSkill.tbl[id].cost = 12;
-            datNormalSkill.tbl[id].hpn = 36;
+            datNormalSkill.tbl[id].hpn = 35;
             datNormalSkill.tbl[id].mpn = 20;
             datNormalSkill.tbl[id].magicbase = 18;
             datNormalSkill.tbl[id].magiclimit = 182;

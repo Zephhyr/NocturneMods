@@ -475,7 +475,7 @@ namespace NocturneInsaniax
                     }
 
                     sbyte skillAttr = datSkill.tbl[nskill].skillattr;
-                    if (datNormalSkill.tbl[nskill].hptype != 3)
+                    if (!new ushort[] { 0, 2, 3, 11 }.Contains(datNormalSkill.tbl[nskill].hptype))
                     {
                         // Mara's Unlimited Desire
                         if ((workFromFormindex1.id == 186 || workFromFormindex1.id == 321) && datNormalSkill.tbl[nskill].koukatype == 0 && nbMainProcess.nbGetPartyFromFormindex(sformindex).count[4] >= 3)
