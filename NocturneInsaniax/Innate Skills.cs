@@ -19,10 +19,10 @@ namespace NocturneInsaniax
             { 001, new InnateSkill(383, 15, "Tripura Samhara", "While in the active party, \nskill costs are reduced by 20% \nfor allies with a charge effect.")}, // 001 Vishnu
             { 002, new InnateSkill(383, 14, "Righteous Vow", "After Mitra survives a critical or \nweakness hit, raise all of his stats \nby one rank.")}, // 002 Mitra
             { 003, new InnateSkill(383, 06, "Blinding Radiance", "While in the active party, allies' \nLight attacks may Critically Strike.")}, // 003 Amaterasu
-            { 004, new InnateSkill(383, 14, "Runes of Wisdom", "When switching out, More than double \nthe damage of next the Strength-based \nattack for the switched ally.")}, // 004 Odin
+            { 004, new InnateSkill(383, 14, "Runes of Wisdom", "When switching out, Increase the damage \nof next the Strength-based attack \nby 120% for the switched ally.")}, // 004 Odin
             { 005, new InnateSkill(383, 15, "Focused Assault", "Atavaka gains 20% Hit Rate and \nCritical Rate when targetting the \nsame single foe as the previous ally.")}, // 005 Atavaka
-            { 006, new InnateSkill(383, 14, "Eye of Horus", "When switching out, More than double \nthe damage of next the Magic-based \nattack for the switched ally.")}, // 006 Horus
-            { 007, new InnateSkill(383, 15, "Chanchala", "While in the active party, if an ally's \nMagical Attack is maximized, their \nMagic attacks may Critically Strike.")}, // 007 Lakshmi
+            { 006, new InnateSkill(383, 14, "Eye of Horus", "When switching out, Increase the damage \nof next the Magic-based attack \nby 120% for the switched ally.")}, // 006 Horus
+            { 007, new InnateSkill(383, 15, "Chanchala", "While in the active party, if an ally's \nMagical Attack is maximized, their \nElement attacks may Critically Strike.")}, // 007 Lakshmi
             { 008, new InnateSkill(383, 15, "Warrior Trainer", "While Setanta or Cu Chulainn is in \nthe active party, Scathach's attacks \nwith positive potential will not miss.")}, // 008 Scathach
             { 009, new InnateSkill(383, 04, "Vina Raga", "While in the active party, allies' \nForce attacks may Critically Strike.")}, // 009 Sarasvati
             { 010, new InnateSkill(383, 13, "Restorative Melody", "While in the active party, \nHealing skill costs are reduced \nby 20% for all allies.")}, // 010 Sati
@@ -243,7 +243,7 @@ namespace NocturneInsaniax
             { 225, new InnateSkill(383, 15, "Evil Mirror", "Doppelgänger mimics single-target \nskills used by the Demi-fiend \nwith reduced power.")}, // 225 Doppelganger
             { 226, new InnateSkill(383, 15, "Magnified Malady", "While in the active party, all allies \ndeal 20% more damage against \nenemies with an ailment.")}, // 226 Nightmare
             { 227, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Gdon's Critical Damage increases \nby 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 227 Gdon
-            { 228, new InnateSkill(383, 03, "Elec Enhancer", "While in the active party, \nraise allies' Elec skill potential \nto Erthys' if it was lower.")}, // 228 Vritra
+            { 228, new InnateSkill(383, 03, "Elec Enhancer", "While in the active party, \nraise allies' Elec skill potential \nto Vritra's if it was lower.")}, // 228 Vritra
             { 229, new InnateSkill(383, 15, "", "")}, // 229 
             { 230, new InnateSkill(383, 15, "", "")}, // 230 
             { 231, new InnateSkill(383, 15, "", "")}, // 231 

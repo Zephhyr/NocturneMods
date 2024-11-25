@@ -1911,7 +1911,7 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][6] = 65536; // Light
             datAisyo.tbl[id][7] = 100; // Dark
             datAisyo.tbl[id][8] = 65536; // Curse
-            datAisyo.tbl[id][9] = 2147483778; // Nerve
+            datAisyo.tbl[id][9] = 65536; // Nerve
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Skills
