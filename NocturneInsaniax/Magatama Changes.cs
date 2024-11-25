@@ -7,13 +7,90 @@ using Il2Cppresult2_H;
 using Il2Cppnewbattle_H;
 using Il2Cppeffect_H;
 using UnityEngine;
+using Newtonsoft.Json;
+using Il2CppSystem.Runtime.Remoting.Messaging;
 
 namespace NocturneInsaniax
 {
     internal partial class NocturneInsaniax : MelonMod
     {
+        [HarmonyPatch(typeof(datHeartsName), nameof(datHeartsName.Get))]
+        private class HeartsNamePatch
+        {
+            public static bool Prefix(ref int id, ref string __result)
+            {
+                switch (id)
+                {
+                    case 01: __result = "Marogareh"; return false;
+                    case 02: __result = "Wadatsumi"; return false;
+                    case 03: __result = "Ankh"; return false;
+                    case 04: __result = "Iyomante"; return false;
+                    case 05: __result = "Shiranui"; return false;
+                    case 06: __result = "Hifumi"; return false;
+                    case 07: __result = "Kamudo"; return false;
+                    case 08: __result = "Narukami"; return false;
+                    case 09: __result = "Anathema"; return false;
+                    case 10: __result = "Miasma"; return false;
+                    case 11: __result = "Nirvana"; return false;
+                    case 12: __result = "Murakumo"; return false;
+                    case 13: __result = "Geis"; return false;
+                    case 14: __result = "Djed"; return false;
+                    case 15: __result = "Muspell"; return false;
+                    case 16: __result = "Gehenna"; return false;
+                    case 17: __result = "Kamurogi"; return false;
+                    case 18: __result = "Satan"; return false;
+                    case 19: __result = "Adama"; return false;
+                    case 20: __result = "Vimana"; return false;
+                    case 21: __result = "Gundari"; return false;
+                    case 22: __result = "Sophia"; return false;
+                    case 23: __result = "Gaea"; return false;
+                    case 24: __result = "Kailash"; return false;
+                    case 25: __result = "Masakados"; return false;
+                    default: return true;
+                }
+            }
+        }
+
+        [HarmonyPatch(typeof(frFont), nameof(frFont.frReplaceLocalizeText))]
+        private class MagatamaGetMessagePatch
+        {
+            public static void Postfix(ref string message, ref frMsgInfo_t mi, ref List<int> index, ref string __result)
+            {
+                switch (message)
+                {
+                    case "<SPD 7><F015_L0190><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(2) + "<CO0>. <WA>"; break; // After Forneus
+                    case "<SPD 7><F016_L0067><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(3) + "<CO0>. <WA>"; break; // After Leaving Pixe in Yoyogi
+                    case "<SPD 7><F024_L0222><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(8) + "<CO0>. <WA>"; break; // After Thor
+                    case "<SPD 7><F020_L0134><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(9) + "<CO0>. <WA>"; break; // After Ose
+                    case "<SPD 7><F025_L0209><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(10) + "<CO0>. <WA>"; break; // After Mizuchi
+                    case "<SPD 7><F027_L0021><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(13) + "<CO0>. <WA>"; break; // After Puzzle Boy
+                    case "<SPD 7><F031_L0067><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(14) + "<CO0>. <WA>"; break; // After Moirae Sisters
+                    case "<SPD 7><F017_L0046><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(15) + "<CO0>. <WA>"; break; // After Mara
+                    case "<SPD 7><F025_L0260><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(18) + "<CO0>. <WA>"; break; // After Black Frost
+                    case "<SPD 7><F034_L0013><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(19) + "<CO0>. <WA>"; break; // After Albion
+                    case "<SPD 7><F039_L0037><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(21) + "<CO0>. <WA>"; break; // After Bishamonten
+                }
+            }
+        }
+
+        [HarmonyPatch(typeof(cmpDrawDH), nameof(cmpDrawDH.cmpDrawHeartsBase))]
+        private class cmpDrawHeartsBasePatch
+        {
+            public static void Prefix()
+            {
+                //foreach (var icon in cmpDrawDH.GBWK.HeartsIcon)
+                //{
+                //    icon.IconColor = 2;
+                //}
+                //MelonLogger.Msg(JsonConvert.SerializeObject(cmpDrawDH.GBWK.HeartsIcon));
+            }
+        }
+
         private static void ApplyMagatamaChanges()
         {
+            //foreach (var heart in tblHearts.fclHeartsTbl)
+            //    heart.Flag = 4;
+
             Marogareh(1);
             Wadatsumi(2);
             Ankh(3);

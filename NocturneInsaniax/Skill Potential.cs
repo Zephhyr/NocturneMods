@@ -10,6 +10,7 @@ using System;
 using Il2CppTMPro;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using Newtonsoft.Json;
 
 namespace NocturneInsaniax
 {
@@ -1736,7 +1737,7 @@ namespace NocturneInsaniax
                         }
                     }
                     // Element Gestalts and Enhancers
-                    if (actionProcessData != null && skillAttribute != 5 && skillAttribute <= 7)
+                    if (actionProcessData != null && skillAttribute <= 7)
                     { 
                         // Gestalts
                         if (currentDemonWork.id == 0 && skillAttribute <= 4 && dds3GlobalWork.DDS3_GBWK.heartsequip == gestaltMagatama[skillAttribute])

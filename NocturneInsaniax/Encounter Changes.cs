@@ -17,12 +17,12 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref nbMainProcessData_t data, ref int __result)
             {
-                if (data.encno == 1270 && !datEncount.tbl[1271].devil.All(x => x == 0))
+                if (data.encno == 1270 && datEncount.tbl[1271].devil.Any(x => x != 0))
                 {
                     nbMisc.nbSetRenzokuEncount(1271);
                     __result = 1;
                 }
-                else if (data.encno == 1270 && datEncount.tbl[1271].devil.All(x => x == 0))
+                else if (data.encno == 1270 && !datEncount.tbl[1271].devil.Any(x => x != 0))
                 {
                     __result = 0;
                 }
@@ -402,7 +402,7 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].devil[0] = 0;
             datEncount.tbl[1270].devil[1] = 151;
             datEncount.tbl[1270].devil[2] = 0;
-            datEncount.tbl[1270].item = 104;
+            datEncount.tbl[1270].item = 111;
             datEncount.tbl[1270].itemcnt = 1;
         }
 

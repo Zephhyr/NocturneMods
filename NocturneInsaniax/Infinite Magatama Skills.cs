@@ -54,6 +54,58 @@ namespace NocturneInsaniax
             }
         }
 
+        [HarmonyPatch(typeof(rstCalcCore), nameof(rstCalcCore.cmbGetMasterHeartsNums))]
+        private class InfiniteMagatamaSkillsPatch3
+        {
+            public static void Postfix(ref sbyte __result)
+            {
+                sbyte mastered = 0;
+
+                for (int i = 1; i <= 25; i++)
+                {
+                    int consumedSkillsLength = InfiniteMagatamaSkillsUtility.GetConsummedSkillsLength(i); // Get the progression of learned skills from this magatama
+                    int MagatamaSkillsLength = InfiniteMagatamaSkillsUtility.GetMagatamaSkillsLength(i); // Get the number of learnable skills from this magatama
+                    if (consumedSkillsLength == MagatamaSkillsLength) mastered++;
+                }
+
+                __result = mastered;
+            }
+        }
+
+        [HarmonyPatch(typeof(rstCalcCore), nameof(rstCalcCore.cmbChkMasterHeartsStatNums))]
+        private class InfiniteMagatamaSkillsPatch4
+        {
+            public static void Postfix(ref byte pNums, ref byte __result)
+            {
+                byte neutralMastered = 0;
+                byte lightMastered = 0;
+                byte darkMastered = 0;
+
+                for (int i = 1; i <= 25; i++)
+                {
+                    int consumedSkillsLength = InfiniteMagatamaSkillsUtility.GetConsummedSkillsLength(i); // Get the progression of learned skills from this magatama
+                    int MagatamaSkillsLength = InfiniteMagatamaSkillsUtility.GetMagatamaSkillsLength(i); // Get the number of learnable skills from this magatama
+
+                    if (consumedSkillsLength == MagatamaSkillsLength)
+                    {
+                        byte alignment = tblHearts.fclHeartsTbl[i].Flag;
+                        switch (alignment)
+                        {
+                            case 0: neutralMastered++; break;
+                            case 1: lightMastered++; break;
+                            case 4: darkMastered++; break;
+                        }
+                    }
+                }
+
+                if (rstCalcCore.cmbGetMasterHeartsNums() == 0) __result = 0; // Neutral
+                else if (neutralMastered > (lightMastered + darkMastered)) __result = 0; // Neutral
+                else if (lightMastered == darkMastered) __result = 0; // Neutral
+                else if (lightMastered > darkMastered) __result = 1; // Light
+                else if (lightMastered < darkMastered) __result = 4; // Dark
+            }
+        }
+
         private class InfiniteMagatamaSkillsUtility
         {
             // Returns the progression of learned skills from this magatama

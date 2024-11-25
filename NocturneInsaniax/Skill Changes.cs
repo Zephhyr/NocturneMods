@@ -16,9 +16,9 @@ namespace NocturneInsaniax
 {
     internal partial class NocturneInsaniax : MelonMod
     {
-        public static ushort[] bossList = new ushort[] { 
-            252, 254, 256, 257, 262, 263, 266, 267, 268, 269, 270, 271, 272, 273, 294, 295, 296, 297, 300, 301, 302, 307, 308, 309, 312, 313, 
-            321, 326, 327, 328, 339, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 362, 363, 364, 365, 366
+        public static ushort[] bossList = new ushort[] {
+            252, 254, 256, 257, 262, 263, 266, 267, 268, 269, 270, 271, 272, 273, 294, 295, 296, 297, 300, 301, 302, 307, 308, 309, 312, 313,
+            321, 326, 327, 328, 339, 340, 341, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 362, 363, 364, 365, 366
         };
         public static ushort[] pushedSkillList = new ushort[] { 148, 149, 150, 151, 164, 165, 166, 167, 407, 408, 416, 417, 496 };
 
@@ -918,7 +918,9 @@ namespace NocturneInsaniax
                             try
                             {
                                 if (melodyUsers[skillattr].Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                {
                                     elementMelodyActive = true; break;
+                                }
                             }
                             catch { }
                         }
@@ -930,7 +932,9 @@ namespace NocturneInsaniax
                             try
                             {
                                 if (melodyUsers[skillattr].Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
+                                {
                                     elementMelodyActive = true; break;
+                                }
                             }
                             catch { }
                         }
@@ -950,7 +954,9 @@ namespace NocturneInsaniax
                             {
                                 if (magnifiedMaladyIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id) ||
                                     (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 15))
+                                {
                                     magnifiedMaladyActive = true; break;
+                                }
                             }
                             catch { }
                         }
@@ -962,7 +968,9 @@ namespace NocturneInsaniax
                             try
                             {
                                 if (magnifiedMaladyIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
+                                {
                                     magnifiedMaladyActive = true; break;
+                                }
                             }
                             catch { }
                         }

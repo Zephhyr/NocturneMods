@@ -27,7 +27,7 @@ namespace NocturneInsaniax
                             case "<SPD 6><AI_MSG_L0124><WAIT>": __result = "<SP6>How will you repent for a sin this grave? Do you think yourself capable of carrying that cross?<WA>"; break;
                             case "<AI_MSG_L0125><WAIT>": __result = "<SP6>Praise my name, before it is too late! Praise my glory!<WA>"; break;
                             // YHVH Death Dialogue
-                            case "<SPD 6><AI_MSG_L0040><WAIT>": __result = "<SP6>How could a mere human surpass gods and destory even me, your Creator?<WA>"; break;
+                            case "<SPD 6><AI_MSG_L0040><WAIT>": __result = "<SP6>How could a mere human surpass gods and destroy even me, your Creator?<WA>"; break;
                             case "<SPD 6><AI_MSG_L0126><WAIT>": __result = "<SP6>No, this is not the end. You've only led yourself further astray.<WA>"; break;
                             case "<SPD 6><AI_MSG_L0127><WAIT>": __result = "<SP6>Humans are weak. You cannot live without my law, my order. You need something to believe in.<WA>"; break;
                             case "<SPD 6><AI_MSG_L0128><WAIT>": __result = "<SP6>But now you've debased my truths, and so I shall slip from the minds of humans.<WA>"; break;

@@ -2443,7 +2443,7 @@ namespace NocturneInsaniax
             else if (a.work.nowindex == 226)
             {
                 if (!actionTrackers.ContainsKey(358))
-                    actionTrackers.Add(361, new ActionTracker());
+                    actionTrackers.Add(358, new ActionTracker());
             }
             else if (a.work.nowindex == 12 || a.work.nowindex == 102)
             {
