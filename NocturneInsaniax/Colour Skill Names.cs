@@ -515,7 +515,7 @@ namespace NocturneInsaniax
                             }
                         }
 
-                        if (datSkill.tbl[skillId].type != 0)
+                        if (datSkill.tbl[skillId].type != 0 || datNormalSkill.tbl[skillId].cost == 0)
                         {
                             cmpStatus._statusUIScr.transform.Find("skill_select/menu_skill/menu_skill_window/menuskill_top/num_skill/num/num_hp01").gameObject.active = false;
                             cmpStatus._statusUIScr.transform.Find("skill_select/menu_skill/menu_skill_window/menuskill_top/num_skill/num/num_hp02").gameObject.active = false;
@@ -542,7 +542,7 @@ namespace NocturneInsaniax
                             }
                         }
 
-                        if (datSkill.tbl[skillId].type != 0)
+                        if (datSkill.tbl[skillId].type != 0 || datNormalSkill.tbl[skillId].cost == 0)
                         {
                             cmpStatus._statusUIScr.transform.Find("skill_select/menu_skill/menu_skill_window/menuskill_base0" + i + "/num_skill/num/num_hp01").gameObject.active = false;
                             cmpStatus._statusUIScr.transform.Find("skill_select/menu_skill/menu_skill_window/menuskill_base0" + i + "/num_skill/num/num_hp02").gameObject.active = false;

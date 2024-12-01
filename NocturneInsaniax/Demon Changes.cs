@@ -483,31 +483,31 @@ namespace NocturneInsaniax
         {
             for (byte i = 0; i <= 31; i++)
             {
-                datDevilVisual00.tbl_0_000_01F[i].motion[0].actframe = 12;
-                datDevilVisual01.tbl_1_020_03F[i].motion[0].actframe = 12;
-                datDevilVisual02.tbl_2_040_05F[i].motion[0].actframe = 12;
-                datDevilVisual03.tbl_3_060_07F[i].motion[0].actframe = 12;
-                datDevilVisual04.tbl_4_080_09F[i].motion[0].actframe = 12;
-                datDevilVisual05.tbl_5_0A0_0BF[i].motion[0].actframe = 12;
-                datDevilVisual06.tbl_6_0C0_0DF[i].motion[0].actframe = 12;
-                datDevilVisual07.tbl_7_0E0_0FF[i].motion[0].actframe = 12;
-                datDevilVisual08.tbl_8_100_11F[i].motion[0].actframe = 12;
-                datDevilVisual09.tbl_9_120_13F[i].motion[0].actframe = 12;
+                datDevilVisual00.tbl_0_000_01F[i].motion[0].actframe  = 12;
+                datDevilVisual01.tbl_1_020_03F[i].motion[0].actframe  = 12;
+                datDevilVisual02.tbl_2_040_05F[i].motion[0].actframe  = 12;
+                datDevilVisual03.tbl_3_060_07F[i].motion[0].actframe  = 12;
+                datDevilVisual04.tbl_4_080_09F[i].motion[0].actframe  = 12;
+                datDevilVisual05.tbl_5_0A0_0BF[i].motion[0].actframe  = 12;
+                datDevilVisual06.tbl_6_0C0_0DF[i].motion[0].actframe  = 12;
+                datDevilVisual07.tbl_7_0E0_0FF[i].motion[0].actframe  = 12;
+                datDevilVisual08.tbl_8_100_11F[i].motion[0].actframe  = 12;
+                datDevilVisual09.tbl_9_120_13F[i].motion[0].actframe  = 12;
                 datDevilVisual10.tbl_10_140_15F[i].motion[0].actframe = 12;
                 datDevilVisual11.tbl_11_160_17F[i].motion[0].actframe = 12;
 
-                datDevilVisual00.tbl_0_000_01F[i].motion[22].motion_no = 2;
-                datDevilVisual01.tbl_1_020_03F[i].motion[22].motion_no = 2;
-                datDevilVisual02.tbl_2_040_05F[i].motion[22].motion_no = 2;
-                datDevilVisual03.tbl_3_060_07F[i].motion[22].motion_no = 2;
-                datDevilVisual04.tbl_4_080_09F[i].motion[22].motion_no = 2;
-                datDevilVisual05.tbl_5_0A0_0BF[i].motion[22].motion_no = 2;
-                datDevilVisual06.tbl_6_0C0_0DF[i].motion[22].motion_no = 2;
-                datDevilVisual07.tbl_7_0E0_0FF[i].motion[22].motion_no = 2;
-                datDevilVisual08.tbl_8_100_11F[i].motion[22].motion_no = 2;
-                datDevilVisual09.tbl_9_120_13F[i].motion[22].motion_no = 2;
-                datDevilVisual10.tbl_10_140_15F[i].motion[22].motion_no = 2;
-                datDevilVisual11.tbl_11_160_17F[i].motion[22].motion_no = 2;
+                if (datDevilVisual00.tbl_0_000_01F[i].motion[22].motion_no == 0) datDevilVisual00.tbl_0_000_01F[i].motion[22].motion_no  = 2;
+                if (datDevilVisual01.tbl_1_020_03F[i].motion[22].motion_no == 0) datDevilVisual01.tbl_1_020_03F[i].motion[22].motion_no  = 2;
+                if (datDevilVisual02.tbl_2_040_05F[i].motion[22].motion_no == 0) datDevilVisual02.tbl_2_040_05F[i].motion[22].motion_no  = 2;
+                if (datDevilVisual03.tbl_3_060_07F[i].motion[22].motion_no == 0) datDevilVisual03.tbl_3_060_07F[i].motion[22].motion_no  = 2;
+                if (datDevilVisual04.tbl_4_080_09F[i].motion[22].motion_no == 0) datDevilVisual04.tbl_4_080_09F[i].motion[22].motion_no  = 2;
+                if (datDevilVisual05.tbl_5_0A0_0BF[i].motion[22].motion_no == 0) datDevilVisual05.tbl_5_0A0_0BF[i].motion[22].motion_no  = 2;
+                if (datDevilVisual06.tbl_6_0C0_0DF[i].motion[22].motion_no == 0) datDevilVisual06.tbl_6_0C0_0DF[i].motion[22].motion_no  = 2;
+                if (datDevilVisual07.tbl_7_0E0_0FF[i].motion[22].motion_no == 0) datDevilVisual07.tbl_7_0E0_0FF[i].motion[22].motion_no  = 2;
+                if (datDevilVisual08.tbl_8_100_11F[i].motion[22].motion_no == 0) datDevilVisual08.tbl_8_100_11F[i].motion[22].motion_no  = 2;
+                if (datDevilVisual09.tbl_9_120_13F[i].motion[22].motion_no == 0) datDevilVisual09.tbl_9_120_13F[i].motion[22].motion_no  = 2;
+                if (datDevilVisual10.tbl_10_140_15F[i].motion[22].motion_no == 0) datDevilVisual10.tbl_10_140_15F[i].motion[22].motion_no = 2;
+                if (datDevilVisual11.tbl_11_160_17F[i].motion[22].motion_no == 0) datDevilVisual11.tbl_11_160_17F[i].motion[22].motion_no = 2;
             }
         }
 
@@ -568,6 +568,8 @@ namespace NocturneInsaniax
             }
 
             // Demons
+            DemiFiend(0);
+
             Vishnu(1);
             Mitra(2);
             Amaterasu(3);
@@ -902,8 +904,13 @@ namespace NocturneInsaniax
             RaidouJackFrost(366);
 
             // Universal Animation Fixes
-            //ApplyUniversalUnitVisualChange();
-            //datDevilVisual07.tbl_7_0E0_0FF[30].motion[22].motion_no = 0;
+            ApplyUniversalUnitVisualChange();
+            datDevilVisual07.tbl_7_0E0_0FF[30].motion[22].motion_no = 0;
+        }
+
+        private static void DemiFiend(ushort id)
+        {
+            datHuman.datHumanVisual[0].motion[11].motion_no = 4;
         }
 
         private static void Vishnu(ushort id)

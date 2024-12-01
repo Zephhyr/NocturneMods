@@ -129,15 +129,15 @@ namespace NocturneInsaniax
             }
         }
 
-        [HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetLevelForDraw))]
-        private class GetLevelForDrawPatch
-        {
-            public static bool Prefix(ref datUnitWork_t work, ref int __result)
-            {
-                __result = work.level;
-                return false;
-            }
-        }
+        //[HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetLevelForDraw))]
+        //private class GetLevelForDrawPatch
+        //{
+        //    public static bool Prefix(ref datUnitWork_t work, ref int __result)
+        //    {
+        //        __result = work.level;
+        //        return false;
+        //    }
+        //}
 
         #endregion datCalc
 
@@ -330,6 +330,37 @@ namespace NocturneInsaniax
                 return false;
             }
         }
+
+        //[HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetMagicAttack))]
+        //private class MagicAttackPatch
+        //{
+        //    //public static bool Prefix(ref int nskill, ref int sformindex, ref int dformindex, ref int waza, ref int __result)
+        //    //{
+        //    //    return false;
+        //    //}
+
+        //    public static void Postfix(ref int nskill, ref int sformindex, ref int dformindex, ref int waza, ref int __result)
+        //    {
+        //        MelonLogger.Msg("--nbCalc.nbGetMagicAttack--");
+        //        MelonLogger.Msg("nskill: " + nskill);
+        //        MelonLogger.Msg("sformindex: " + sformindex);
+        //        MelonLogger.Msg("dformindex: " + dformindex);
+        //        MelonLogger.Msg("waza: " + waza);
+        //        MelonLogger.Msg("result: " + __result);
+
+        //        datUnitWork_t workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
+        //        //datUnitWork_t workFromFormindex2 = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
+
+        //        var level = workFromFormindex1.level;
+        //        var mag = datCalc.datGetParam(workFromFormindex1, 2);
+        //        var tier = datNormalSkill.tbl[nskill].magicbase;
+        //        var scaling = datNormalSkill.tbl[nskill].magiclimit;
+
+        //        var newResult = Convert.ToInt32(0.5 + waza + (scaling/100) * ((1.7 + 0.7*tier) * (level-1) + 1.45 * tier * (mag - 1)));
+        //        MelonLogger.Msg("newResult: " + newResult);
+
+        //    }
+        //}
 
         [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbCheckSensei))]
         private class CheckSenseiPatch

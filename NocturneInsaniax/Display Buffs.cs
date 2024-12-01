@@ -77,6 +77,7 @@ namespace NocturneInsaniax
             {
                 List<string> buffs_strings = new List<string>();
 
+                // Stat buffs
                 for (int i = 4; i <= 8; i++)
                 {
                     string buff = "";
@@ -92,12 +93,22 @@ namespace NocturneInsaniax
                     buffs_strings.Add(buff);
                 }
 
-                if (party.count[15] > 0 && party.count[20] == 0)
+                // Charge buffs
+                if (party.count[15] > 0 && party.count[20] > 0)
+                    buffs_strings.Add("3");
+                else if (party.count[15] > 0 && party.count[20] == 0)
                     buffs_strings.Add("1");
                 else if (party.count[15] == 0 && party.count[20] > 0)
                     buffs_strings.Add("2");
-                else if (party.count[15] > 0 && party.count[20] > 0)
+                else buffs_strings.Add("0");
+
+                // Tetrakarn/Makarakarn
+                if (party.count[13] > 0 && party.count[14] > 0)
                     buffs_strings.Add("3");
+                else if (party.count[13] > 0 && party.count[14] == 0)
+                    buffs_strings.Add("1");
+                else if (party.count[13] == 0 && party.count[14] > 0)
+                    buffs_strings.Add("2");
                 else buffs_strings.Add("0");
 
                 return buffs_strings;
@@ -157,19 +168,42 @@ namespace NocturneInsaniax
                     case "1":
                         {
                             if (result != "\n ") result += "  ";
-                            result += "<material=\"MsgFont3\">Focus";
+                            result += "<material=\"MsgFont3\">Focus<material=\"MsgFont0\">";
                             break;
                         }
                     case "2":
                         {
                             if (result != "\n ") result += "  ";
-                            result += "<material=\"MsgFont3\">Concentrate";
+                            result += "<material=\"MsgFont3\">Concentrate<material=\"MsgFont0\">";
                             break;
                         }
                     case "3":
                         {
                             if (result != "\n ") result += "  ";
-                            result += "<material=\"MsgFont3\">Animus";
+                            result += "<material=\"MsgFont3\">Animus<material=\"MsgFont0\">";
+                            break;
+                        }
+                    default: break;
+                }
+
+                switch (buffs_strings[6])
+                {
+                    case "1":
+                        {
+                            if (result != "\n ") result += "  ";
+                            result += "<material=\"MsgFont2\">Makarakarn<material=\"MsgFont0\">";
+                            break;
+                        }
+                    case "2":
+                        {
+                            if (result != "\n ") result += "  ";
+                            result += "<material=\"MsgFont2\">Tetrakarn<material=\"MsgFont0\">";
+                            break;
+                        }
+                    case "3":
+                        {
+                            if (result != "\n ") result += "  ";
+                            result += "<material=\"MsgFont2\">Tetra/Makarakarn<material=\"MsgFont0\">";
                             break;
                         }
                     default: break;
@@ -188,6 +222,8 @@ namespace NocturneInsaniax
                         return true;
                     }
                 }
+                if (party.count[13] == 1 || party.count[14] == 1)
+                    return true;
                 try
                 {
                     if (party.count[15] == 1 || party.count[20] == 1)
