@@ -81,7 +81,7 @@ namespace NocturneInsaniax
             { 063, new InnateSkill(383, 06, "Light Enhancer", "While in the active party, \nraise allies' Light skill potential \nto Dominion's if it was lower.")}, // 063 Dominion
             { 064, new InnateSkill(411, 15, "Detain", "While in the active party, \nmay step in during negotiation and \nprevent a demon from making off with payment.")}, // 064 Virtue
             { 065, new InnateSkill(383, 06, "Light Gestalt", "Power gains Light skill potential \nbased on the total positive potential \nof allies in the active party.")}, // 065 Power
-            { 066, new InnateSkill(412, 15, "Kinspeak", "While in the active party, \nmay step in during negotiation to \nurge a demon of the same race.")}, // 066 Principality
+            { 066, new InnateSkill(383, 12, "Shot Enhancer", "While in the active party, \nraise allies' Shot skill potential \nto Principality's if it was lower.")}, // 066 Principality
             { 067, new InnateSkill(383, 15, "Focused Assault", "Archangel gains 20% Hit Rate and \nCritical Rate when targetting the \nsame single foe as the previous ally.")}, // 067 Archangel
             { 068, new InnateSkill(411, 15, "Detain", "While in the active party, \nmay step in during negotiation and \nprevent a demon from making off with payment.")}, // 068 Angel
             { 069, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Flauros' Critical Damage \nincreases by 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 069 Flauros
@@ -105,18 +105,18 @@ namespace NocturneInsaniax
             { 087, new InnateSkill(383, 15, "Critical Melody", "While in the active party, \nallies' Critical Damage is \nincreased by 10%.")}, // 087 Gogmagog
             { 088, new InnateSkill(383, 00, "Phys Enhancer", "While in the active party, \nraise allies' Phys skill potential \nto Titan's if it was lower.")}, // 088 Titan
             { 089, new InnateSkill(409, 15, "Haggle", "While in the active party, \nmay step in during negotiation and \nensure lesser demands.")}, // 089 Sarutahiko
-            { 090, new InnateSkill(412, 15, "Kinspeak", "While in the active party, \nmay step in during negotiation to \nurge a demon of the same race.")}, // 090 Sudama
+            { 090, new InnateSkill(383, 12, "Shot Gestalt", "Sudama gains Shot skill potential \nbased on the total positive potential \nof allies in the active party.")}, // 090 Sudama
             { 091, new InnateSkill(383, 01, "Fire Gestalt", "Hua Po gains Fire skill potential \nbased on the total positive potential \nof allies in the active party.")}, // 091 Hua Po
             { 092, new InnateSkill(383, 04, "Force Gestalt", "Kodama gains Force skill potential \nbased on the total positive potential \nof allies in the active party.")}, // 092 Kodama
             { 093, new InnateSkill(383, 13, "Ward Off Evil", "While in the active party, \nall allies have an increased \nchance to recover from ailments.")}, // 093 Shiki-Ouji
             { 094, new InnateSkill(409, 15, "Haggle", "While in the active party, \nmay step in during negotiation and \nensure lesser demands.")}, // 094 Oni
-            { 095, new InnateSkill(383, 15, "Focused Assault", "Archangel gains 20% Hit Rate and \nCritical Rate when targetting the \nsame single foe as the previous ally.")}, // 095 Yomotsu-Ikusa
+            { 095, new InnateSkill(383, 12, "Shot Enhancer", "While in the active party, \nraise allies' Shot skill potential \nto Yomotsu-Ikusa's if it was lower.")}, // 095 Yomotsu-Ikusa
             { 096, new InnateSkill(413, 15, "Silver Tongue", "While in the active party, \nmay step in during negotiation to \npersuade an indecisive demon.")}, // 096 Momunofu
             { 097, new InnateSkill(383, 03, "Elec Gestalt", "Shikigami gains Elec skill potential \nbased on the total positive potential \nof allies in the active party.")}, // 097 Shikigami
             { 098, new InnateSkill(383, 01, "Fire Gestalt", "Rangda gains Fire skill potential \nbased on the total positive potential \nof allies in the active party.")}, // 098 Rangda
             { 099, new InnateSkill(383, 00, "Phys Enhancer", "While in the active party, \nraise allies' Phys skill potential \nto Dakini's if it was lower.")}, // 099 Dakini
             { 100, new InnateSkill(383, 15, "Critical Melody", "While in the active party, \nallies' Critical Damage is \nincreased by 10%.")}, // 100 Yaksini
-            { 101, new InnateSkill(383, 15, "Deathly Affliction", "While in the active party, all allies \ngain 20% Hit Rate and Critical Rate \nagainst enemies with an ailment.")}, // 101 Yomotsu-Shikome
+            { 101, new InnateSkill(383, 12, "Shot Gestalt", "Yomotsu-Shikome gains Shot skill potential \nbased on the total positive potential \nof allies in the active party.")}, // 101 Yomotsu-Shikome
             { 102, new InnateSkill(383, 15, "Contagious Curse", "While in the active party, \nallies' Ailment Rate is \nincreased by 20%.")}, // 102 Taraka
             { 103, new InnateSkill(383, 02, "Ice Gestalt", "Datsue-Ba gains Ice skill potential \nbased on the total positive potential \nof allies in the active party.")}, // 103 Datsue-Ba
             { 104, new InnateSkill(419, 15, "Wine Party", "While in the active party, \nmay step in during negotiation to \nfix trouble with the power of liquor.")}, // 104 Mada
@@ -214,7 +214,7 @@ namespace NocturneInsaniax
             { 196, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall Support effects on White Rider \nwill be passed to the switched ally.")}, // 196 White Rider
             { 197, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall Support effects on Red Rider \nwill be passed to the switched ally.")}, // 197 Red Rider
             { 198, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall Support effects on Black Rider \nwill be passed to the switched ally.")}, // 198 Black Rider
-            { 199, new InnateSkill(383, 00, "Estocada", "Matador may perform a weak \ncounterattack after dodging. Pow: 32")}, // 199 Matador
+            { 199, new InnateSkill(383, 00, "Estocada", "Matador may perform a weak \ncounterattack after dodging or nullifying \nan attack. Pow: 32")}, // 199 Matador
             { 200, new InnateSkill(383, 15, "Speed Star", "Hell Biker's attacks, including Magic, \ngain 10% Critical Rate against \ntargets with a lower Agility stat.")}, // 200 Hell Biker
             { 201, new InnateSkill(383, 13, "Guiding Wisdom", "While in the active party, \nwhen an ally is summoned from the \nstock, cure their ailments.")}, // 201 Daisoujou
             { 202, new InnateSkill(383, 15, "Indulgence", "Mother Harlot's attacks with \npositive potential will not miss \nagainst targets with an ailment.")}, // 202 Mother Harlot
@@ -433,19 +433,19 @@ namespace NocturneInsaniax
 
         private static Dictionary<sbyte, List<ushort>> gestaltUsers = new Dictionary<sbyte, List<ushort>>
         {
-            { 0, new List<ushort> { 16, 46, 130, 146 } }, // Phys
-            { 1, new List<ushort> { 72, 91, 98 } }, // Fire
-            { 2, new List<ushort> { 55, 75, 103 } }, // Ice
-            { 3, new List<ushort> { 77, 79, 97 } }, // Elec
-            { 4, new List<ushort> { 48, 52, 92, 121, 261 } }, // Force
-            { 5, new List<ushort> { 193 } }, // Almighty
-            { 6, new List<ushort> { 62, 65, 360 } }, // Light
-            { 7, new List<ushort> { 108 } }, // Dark
-            { 8, new List<ushort> { } }, // Curse (Not Used)
-            { 9, new List<ushort> { } }, // Nerve (Not Used)
+            { 00, new List<ushort> { 16, 46, 130, 146 } }, // Phys
+            { 01, new List<ushort> { 72, 91, 98 } }, // Fire
+            { 02, new List<ushort> { 55, 75, 103 } }, // Ice
+            { 03, new List<ushort> { 77, 79, 97 } }, // Elec
+            { 04, new List<ushort> { 48, 52, 92, 121, 261 } }, // Force
+            { 05, new List<ushort> { 193 } }, // Almighty
+            { 06, new List<ushort> { 62, 65, 360 } }, // Light
+            { 07, new List<ushort> { 108 } }, // Dark
+            { 08, new List<ushort> { } }, // Curse (Not Used)
+            { 09, new List<ushort> { } }, // Nerve (Not Used)
             { 10, new List<ushort> { } }, // Mind (Not Used)
             { 11, new List<ushort> { } }, // Self-Destruct (Not Used)
-            { 12, new List<ushort> { } }, // NA
+            { 12, new List<ushort> { 90, 101 } }, // Shot
             { 13, new List<ushort> { } }, // Heal (Not Used)
             { 14, new List<ushort> { } }, // Support (Not Used)
             { 15, new List<ushort> { } } // Util (Not Used)
@@ -453,19 +453,19 @@ namespace NocturneInsaniax
 
         private static Dictionary<sbyte, byte> gestaltMagatama = new Dictionary<sbyte, byte>
         {
-            { 0, 07 }, // Phys
-            { 1, 05 }, // Fire
-            { 2, 02 }, // Ice
-            { 3, 08 }, // Elec
-            { 4, 06 }, // Force
-            { 5, 00 }, // Almighty (Not Used)
-            { 6, 11 }, // Light
-            { 7, 09 }, // Dark
-            { 8, 00 }, // // Curse (Not Used)
-            { 9, 00 }, // // Nerve (Not Used)
+            { 00, 07 }, // Phys
+            { 01, 05 }, // Fire
+            { 02, 02 }, // Ice
+            { 03, 08 }, // Elec
+            { 04, 06 }, // Force
+            { 05, 00 }, // Almighty (Not Used)
+            { 06, 11 }, // Light
+            { 07, 09 }, // Dark
+            { 08, 00 }, // // Curse (Not Used)
+            { 09, 00 }, // // Nerve (Not Used)
             { 10, 00 }, // Mind (Not Used)
             { 11, 00 }, // Self-Destruct (Not Used)
-            { 12, 00 }, // NA
+            { 12, 00 }, // Shot
             { 13, 00 }, // Heal (Not Used)
             { 14, 00 }, // Support (Not Used)
             { 15, 00 }, // Util (Not Used)
@@ -473,14 +473,19 @@ namespace NocturneInsaniax
 
         private static Dictionary<sbyte, List<ushort>> enhancerUsers = new Dictionary<sbyte, List<ushort>>
         {
-            { 0, new List<ushort> { 88, 99, 119 } }, // Phys
-            { 1, new List<ushort> { 36, 111, 335 } }, // Fire
-            { 2, new List<ushort> { 17, 37, 60, 277 } }, // Ice
-            { 3, new List<ushort> { 22, 39, 228, 302, 337 } }, // Elec
-            { 4, new List<ushort> { 38, 83, 152 } }, // Force
-            { 5, new List<ushort> { 194, 207 } }, // Almighty
-            { 6, new List<ushort> { 35, 63 } }, // Light
-            { 7, new List<ushort> { 132, 177 } } // Dark
+            { 00, new List<ushort> { 88, 99, 119 } }, // Phys
+            { 01, new List<ushort> { 36, 111, 335 } }, // Fire
+            { 02, new List<ushort> { 17, 37, 60, 277 } }, // Ice
+            { 03, new List<ushort> { 22, 39, 228, 302, 337 } }, // Elec
+            { 04, new List<ushort> { 38, 83, 152 } }, // Force
+            { 05, new List<ushort> { 194, 207 } }, // Almighty
+            { 06, new List<ushort> { 35, 63 } }, // Light
+            { 07, new List<ushort> { 132, 177 } }, // Dark
+            { 08, new List<ushort> {  } }, // Curse (Not Used)
+            { 09, new List<ushort> {  } }, // Nerve (Not Used)
+            { 10, new List<ushort> {  } }, // Mind (Not Used)
+            { 11, new List<ushort> {  } }, // Self-Destruct (Not Used)
+            { 12, new List<ushort> { 66, 95 } } // Shot
         };
 
         private static Dictionary<sbyte, List<ushort>> melodyUsers = new Dictionary<sbyte, List<ushort>>
@@ -534,9 +539,9 @@ namespace NocturneInsaniax
         private static ushort[] pawToPawCombatIds = new ushort[] { 31, 69, 71, 86, 179, 180, 227, 263, 289, 290, 316, 362 };
         private static ushort[] auspiciousBeastIds = new ushort[] { 30, 32, 148, 149 };
         private static ushort[] faithfulCompanionIds = new ushort[] { 81, 82, 85, 151, 300 };
-        private static ushort[] focusedAssaultIds = new ushort[] { 5, 67, 95, 131 };
+        private static ushort[] focusedAssaultIds = new ushort[] { 5, 67, 131 };
         private static ushort[] helmsmanIds = new ushort[] { 34, 73, 143, 153, 307, 308, 309 };
-        private static ushort[] deathlyAfflictionIds = new ushort[] { 101, 128, 129, 135, 361 };
+        private static ushort[] deathlyAfflictionIds = new ushort[] { 128, 129, 135, 361 };
         private static ushort[] magnifiedMaladyIds = new ushort[] { 80, 107, 136, 226 };
         private static ushort[] contagiousCurseIds = new ushort[] { 102, 126, 133, 178 };
         private static ushort[] wardOffEvilIds = new ushort[] { 93, 145 };

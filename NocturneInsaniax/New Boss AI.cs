@@ -728,6 +728,7 @@ namespace NocturneInsaniax
                     {
                         case 0: UseNormalAttack(ref a); break;
                         case 1: UseSkill(ref a, 178); break;
+                        case 2: UseSkill(ref a, 135); break;
                     }
                 }
                 else
@@ -737,7 +738,8 @@ namespace NocturneInsaniax
                     {
                         case 0: UseNormalAttack(ref a); break;
                         case 1: UseSkill(ref a, 178); break;
-                        case 2: UseSkill(ref a, 287); break;
+                        case 2: UseSkill(ref a, 135); break;
+                        case 3: UseSkill(ref a, 287); break;
                     }
                 }
             }

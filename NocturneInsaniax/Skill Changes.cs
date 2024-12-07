@@ -20,7 +20,7 @@ namespace NocturneInsaniax
             252, 254, 256, 257, 262, 263, 266, 267, 268, 269, 270, 271, 272, 273, 294, 295, 296, 297, 300, 301, 302, 307, 308, 309, 312, 313,
             321, 326, 327, 328, 339, 340, 341, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 362, 363, 364, 365, 366
         };
-        public static ushort[] pushedSkillList = new ushort[] { 148, 149, 150, 151, 164, 165, 166, 167, 407, 408, 416, 417, 496 };
+        public static ushort[] pushedSkillList = new ushort[] { 148, 149, 150, 151, 164, 165, 166, 167, 403, 407, 408, 416, 417, 496 };
 
         public static ushort previousUnitId;
         public static short previousSingleTargetFormIndex = -1;
@@ -83,6 +83,12 @@ namespace NocturneInsaniax
                         // Root of Evil = "In the beginning, there was darkness"
 
                     // New Skills
+                    case 128: __result = "Rapid Needle"; return false;
+                    case 129: __result = "Tathlum Shot"; return false;
+                    case 130: __result = "Blast Arrow"; return false;
+                    case 134: __result = "Grand Tack"; return false;
+                    case 135: __result = "Heaven's Bow"; return false;
+                    case 141: __result = "Riot Gun"; return false;
                     case 148: __result = "Renewal"; return false;
                     case 149: __result = "Spirit Well"; return false;
                     case 150: __result = "Qigong"; return false;
@@ -104,7 +110,11 @@ namespace NocturneInsaniax
                     case 370: __result = "Qigong"; return false;
                     case 371: __result = "Arms Master"; return false;
                     case 372: __result = "Firm Stance"; return false;
-                    case 373: __result = "Enduring Soul"; return false;
+                    case 373: __result = "Shot Boost"; return false;
+                    case 374: __result = "Anti-Shot"; return false;
+                    case 375: __result = "Null: Shot"; return false;
+                    case 376: __result = "Shot Drain"; return false;
+                    case 377: __result = "Shot Repel"; return false;
 
                     case 403: __result = "Estocada"; return false;
                     case 404: __result = "Nation Founder"; return false;
@@ -292,10 +302,10 @@ namespace NocturneInsaniax
                     case 108: __result = "High Physical damage to random foes. \n3-5 hits. HP-based. Max Pow: 40, \nAcc: 94%, Crit: 20%"; return false; // Deathbound
                     case 109: __result = "High Physical damage to one foe. \nHP-based. Max Pow: 56, Acc: 85%, \nCrit: 30%, Stun: 30%"; return false; // Guillotine
                     case 110: __result = "High Physical damage to random foes. \n3-5 hits. HP-based. Max Pow: 30, \nAcc: 92%, Crit: 20%, Panic: 24%"; return false; // Chaos Blade
-                    case 111: __result = "Low Physical damage to one foe. \n2-4 hits. Pow: 13, Acc: 90%, \nCrit: 20%"; return false; // Needle Rush
-                    case 112: __result = "Low Physical damage to one foe. \n2-4 hits. Pow: 12, Acc: 90%, \nCrit: 18%, Stun: 18%"; return false; // Stun Needle
-                    case 113: __result = "Low Physical damage to one foe. \n2-4 hits. Pow: 12, Acc: 90%, \nCrit: 18%, Poison: 18%"; return false; // Venom Needle
-                    case 114: __result = "Low Physical damage to one foe. \n2-4 hits. Pow: 11, Acc: 90%, \nCrit: 18%, Stone: 16%"; return false; // Arid Needle
+                    case 111: __result = "Low Shot damage to one foe. \n2-4 hits. Pow: 13, Acc: 90%, \nCrit: 20%"; return false; // Needle Rush
+                    case 112: __result = "Low Shot damage to one foe. \n2-4 hits. Pow: 12, Acc: 90%, \nCrit: 18%, Stun: 18%"; return false; // Stun Needle
+                    case 113: __result = "Low Shot damage to one foe. \n2-4 hits. Pow: 12, Acc: 90%, \nCrit: 18%, Poison: 18%"; return false; // Venom Needle
+                    case 114: __result = "Low Shot damage to one foe. \n2-4 hits. Pow: 11, Acc: 90%, \nCrit: 18%, Stone: 16%"; return false; // Arid Needle
                     case 115: __result = "Sacrifice self to deal Mega Str-based \nAlmighty damage to all foes. \nPow: 55, Acc: 90%, Crit: 20%"; return false; // Sacrifice
                     case 116: __result = "Sacrifice self to deal Mega Str-based \nAlmighty damage to one foe. \nPow: 80, Acc: 90%, Crit: 20%"; return false; // Kamikaze
                     case 117: __result = "Low Physical damage to one foe. \nPow: 44, Acc: 88%, Crit: 24%"; return false; // Feral Bite
@@ -310,14 +320,14 @@ namespace NocturneInsaniax
                     case 126: __result = "High Physical damage to one foe. \nPow: 56, Acc: 80%, Crit: 40%"; return false; // Iron Claw
                     case 127: __result = "High Light damage to all foes. \nPow: 48, Acc: 100%, Mute: 30%"; return false; // Godly Light
                     case 131: __result = "High Physical damage to all foes. \nPow: 44, Acc: 95%, Crit: 40%"; return false; // Deadly Fury
-                    case 133: __result = "Medium Physical damage to all foes. \nPow: 32, Acc: 95%, Crit: 24%, \nBind: 30%"; return false; // Javelin Rain
+                    case 133: __result = "Medium Shot damage to all foes. \nPow: 32, Acc: 95%, Crit: 24%, \nBind: 30%"; return false; // Javelin Rain
                     case 136: __result = "Medium Mag-based Physical damage to \none foe. Pow: 34, Acc: 120%, \nCrit: 100%"; return false; // Divine Shot
                     case 143: __result = "Medium Physical damage to all foes. \nPow: 36, Acc: 95%, Crit: 24%, \nMute: 30%"; return false; // Xeros Beat
                     case 144: __result = "High Physical damage to all foes. \nPow: 42, Acc: 95%, Crit: 30%"; return false; // Oni Kagura
                     case 147: __result = "Mega Str-based Almighty damage to \none foe. Pow: 66, Acc: 95%, Crit: 30%"; return false; // Freikugel
                     case 152: __result = "Sacrifice self to deal Mega Str-based \nAlmighty damage to all foes and allies. \nPow: 60, Acc: 100%, Crit: 0%"; return false; // Last Resort
                     case 155: __result = "Mega Physical damage to all foes. \nPow: 60, Acc: 200%, Crit: 0%, \nStun: 20%"; return false; // Earthquake
-                    case 160: __result = "Mega Physical damage to one foe. \nPow: 62, Acc: 95%, Crit: 30%"; return false; // Spiral Viper
+                    case 160: __result = "Mega Shot damage to one foe. \nPow: 62, Acc: 95%, Crit: 30%"; return false; // Spiral Viper
                     case 161: __result = "Mega Fire damage to one foe. \nPow: 80, Acc: 100%"; return false; // Magma Axis
                     case 163: __result = "Mega Physical damage to all foes. \nPow: 52, Acc: 95%, Crit: 30%"; return false; // Gaea Rage
                     case 176: __result = "Low Fire damage to random foes. \n3-5 hits. Pow: 20, Acc: 100%"; return false; // Fire Breath
@@ -342,7 +352,7 @@ namespace NocturneInsaniax
                     case 197: __result = "60% Chance to inflict Stone \non one foe. (Dark-Type)"; return false; // Stone Gaze
                     case 198: __result = "60% Chance to inflict Mute \non one foe. (Curse-Type)"; return false; // Mute Gaze
                     case 199: __result = "60% Chance to reduce HP of one foe \nto 1. (Dark-Type)"; return false; // Evil Gaze
-                    case 202: __result = "Lowers all foes' Defense by one rank. \n30% Chance to inflict Poison. \n(Curse-Type)"; return false; // Toxic Spray
+                    case 202: __result = "50% Chance to inflict Poison on \nall foes. Lowers Defense by one rank. \n(Curse-Type)"; return false; // Toxic Spray
                     case 203: __result = "Lowers all foes' \nPhysical/Magical Attack \nby two ranks."; return false; // War Cry
                     case 204: __result = "Lowers all foes' Evasion/Hit Rate \nby two ranks."; return false; // Fog Breath
                     case 205: __result = "Lowers Defense and raises \nPhysical Attack by two ranks \nfor all foes."; return false; // Taunt
@@ -370,9 +380,9 @@ namespace NocturneInsaniax
                     case 259: __result = "Mega Almighty damage to all foes. \nInstakills when not immune to Dark. \nPow: 60, Acc: 100%, Fatal: 100%"; return false; // Death Flies
                     case 260: __result = "Mega Almighty damage to all foes. \nInstakills when not immune to Dark. \nPow: 60, Acc: 100%, Fatal: 100%"; return false; // Death Flies
                     case 261: __result = "High Curse damage to all foes. \nPow: 48, Acc: 60%, Mute: 100%"; return false; // Soul Divide
-                    case 262: __result = "Low Physical damage to one foe. \nLowers target's Evasion/Defense. \nPow: 32, Acc: 120%, Crit: 18%"; return false; // Boogie-Woogie/E & I
+                    case 262: __result = "Low Shot damage to one foe. \nLowers target's Evasion/Defense. \nPow: 32, Acc: 120%, Crit: 18%"; return false; // Boogie-Woogie/E & I
                     case 263: __result = "High Physical damage to one foe. \nPow: 48, Acc: 100%, Crit: 40%"; return false; // Enter Yoshitsune/Rebellion
-                    case 264: __result = "Medium Physical damage to all foes. \nPow: 30, Acc: 100%, Crit: 0%, \nPanic: 24%"; return false; // Mokoi Boomerang/Twosome Time
+                    case 264: __result = "Medium Shot damage to all foes. \nPow: 30, Acc: 100%, Crit: 0%, \nPanic: 24%"; return false; // Mokoi Boomerang/Twosome Time
                     case 265: __result = "Lowers Defense/raises Physical Attack \nby two ranks for all foes. \nSlight MP recovery for the user."; return false; // Provoke
                     case 266: __result = "Medium Str-based Almighty damage \nto one foe. May instakill when not \nimmune to Dark. Pow: 42, Acc: 90%"; return false; // Tekisatsu/Stinger
                     case 267: __result = "High Elec damage to all foes. \nLowers targets' Evasion/Hit Rate. \nPow: 40, Acc: 120%, Shock: 20%"; return false; // Mishaguji Raiden/Roundtrip
@@ -449,6 +459,12 @@ namespace NocturneInsaniax
                     case 420: __result = "While in the active party, \nmay step in during negotiation to \nconvince a higher level demon."; return false; // Flatter
 
                     // New Skills
+                    case 128: __result = "Low Shot damage to random foes. \n2-5 hits. Pow: 22, Acc: 90%, \nCrit: 18%"; return false; // Rapid Needle
+                    case 129: __result = "Medium Shot damage to one foe. \nPow: 44, Acc: 84%, Crit: 30%"; return false; // Tathlum Shot
+                    case 130: __result = "Medium Shot damage to all foes. \nPow: 28, Acc: 82%, Crit: 28%"; return false; // Blast Arrow
+                    case 134: __result = "High Shot damage to one foe. \nPow: 52, Acc: 80%, Crit: 40%"; return false; // Grand Tack
+                    case 135: __result = "High Shot damage to all foes. \nPow: 36, Acc: 84%, Crit: 30%"; return false; // Heaven's Bow
+                    case 141: __result = "Mega Shot damage to one foe. \nPow: 60, Acc: 90%, Crit: 30%"; return false; // Riot Gun
                     case 188: __result = "50% Chance to instakill one foe. \n(Light-Type)"; return false; // Punishment
                     case 189: __result = "30% Chance to instakill all foes. \n(Light-Type)"; return false; // Judgement Light
 
@@ -464,7 +480,13 @@ namespace NocturneInsaniax
                     case 370: __result = "Slight HP/MP recovery \nafter each action. \n(Does not stack with similar effects)"; return false; // Qigong
                     case 371: __result = "Reduce the base HP costs of skills \nby 50%. HP-based skills always deal \nmaximum damage."; return false; // Arms Master
                     case 372: __result = "Protects against random Critical hits \nbut prevents dodging attacks."; return false; // Firm Stance
-                    case 373: __result = "Survive a fatal blow then fully \nrecover HP once per battle. \n(Does not stack with similar effects)"; return false; // Enduring Soul
+                    case 373: __result = "Raises Shot attack damage by 30%."; return false; // Shot Boost
+                    case 374: __result = "Protects against Shot attacks."; return false; // Anti-Shot
+                    case 375: __result = "Nullifies Shot attacks."; return false; // Null: Shot
+                    case 376: __result = "Absorbs Shot attacks replenishing HP."; return false; // Shot Drain
+                    case 377: __result = "Repels Shot attacks."; return false; // Shot Repel
+
+                    //case 373: __result = "Survive a fatal blow then fully \nrecover HP once per battle. \n(Does not stack with similar effects)"; return false; // Enduring Soul
 
                     case 424: __result = "Increases the damage of the user's \nnext Magic-based attack by 120%."; return false; // Concentrate
                     case 425: __result = "Increases the damage of the user's \nnext attack by 120% and grants \nit Pierce."; return false; // Impaler's Animus
@@ -1088,6 +1110,14 @@ namespace NocturneInsaniax
                             }
                             break;
                         }
+                    case 12:
+                        {
+                            if (datCalc.datCheckSyojiSkill(workFromFormindex1, 373) != 0)
+                            {
+                                __result = __result * 1.3f;
+                            }
+                            break;
+                        }
                     default: break;
                 }
 
@@ -1448,7 +1478,7 @@ namespace NocturneInsaniax
             public static void Postfix(ref int nskill, ref int sformindex, ref int dformindex, ref float __result)
             {
                 // Essence Thief
-                if (!essenceThiefIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id)) __result *= 0.8f;
+                if (!essenceThiefIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id)) __result *= 0.5f;
             }
         }
         [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetMpDrainRitu))]
@@ -1457,7 +1487,7 @@ namespace NocturneInsaniax
             public static void Postfix(ref int nskill, ref int sformindex, ref int dformindex, ref float __result)
             {
                 // Essence Thief
-                if (!essenceThiefIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id)) __result *= 0.8f;
+                if (!essenceThiefIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id)) __result *= 0.5f;
             }
         }
 
@@ -1794,10 +1824,17 @@ namespace NocturneInsaniax
 
             GodlyLight(127);
 
-            NeedleOrbSkill(128);
+            RapidNeedle(128);
+            TathlumShot(129);
+            BlastArrow(130);
 
             DeadlyFury(131);
             JavelinRain(133);
+
+            GrandTack(134);
+            HeavensBow(135);
+            RiotGun(141);
+
             DivineShot(136);
             XerosBeat(143);
             OniKagura(144);
@@ -2041,6 +2078,17 @@ namespace NocturneInsaniax
             QigongPassive(82);
             ArmsMaster(83);
             FirmStance(84);
+            ShotBoost(85);
+            AntiShot(86);
+            NullShot(87);
+            ShotDrain(88);
+            ShotRepel(89);
+
+            // Talk Skills
+            TalkSkillChanges();
+
+            // Skill Upgrade Changes
+            SkillUpgradeChanges();
 
             // Universal Changes
             foreach (var skill in datSkill.tbl)
@@ -2196,49 +2244,6 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].badlevel = 24;
         }
 
-        private static void NeedleRush(ushort id)
-        {
-            datNormalSkill.tbl[id].cost = 10;
-            datNormalSkill.tbl[id].hpn = 13;
-            datNormalSkill.tbl[id].failpoint = 10;
-            datNormalSkill.tbl[id].criticalpoint = 20;
-            datNormalSkill.tbl[id].targetcntmax = 4;
-            datNormalSkill.tbl[id].targetcntmin = 2;
-        }
-
-        private static void StunNeedle(ushort id)
-        {
-            datNormalSkill.tbl[id].cost = 12;
-            datNormalSkill.tbl[id].hpn = 12;
-            datNormalSkill.tbl[id].failpoint = 10;
-            datNormalSkill.tbl[id].criticalpoint = 18;
-            datNormalSkill.tbl[id].badlevel = 18;
-            datNormalSkill.tbl[id].targetcntmax = 4;
-            datNormalSkill.tbl[id].targetcntmin = 2;
-        }
-
-        private static void VenomNeedle(ushort id)
-        {
-            datNormalSkill.tbl[id].cost = 12;
-            datNormalSkill.tbl[id].hpn = 12;
-            datNormalSkill.tbl[id].failpoint = 10;
-            datNormalSkill.tbl[id].criticalpoint = 18;
-            datNormalSkill.tbl[id].badlevel = 18;
-            datNormalSkill.tbl[id].targetcntmax = 4;
-            datNormalSkill.tbl[id].targetcntmin = 2;
-        }
-
-        private static void AridNeedle(ushort id)
-        {
-            datNormalSkill.tbl[id].cost = 12;
-            datNormalSkill.tbl[id].hpn = 11;
-            datNormalSkill.tbl[id].failpoint = 10;
-            datNormalSkill.tbl[id].criticalpoint = 18;
-            datNormalSkill.tbl[id].badlevel = 16;
-            datNormalSkill.tbl[id].targetcntmax = 4;
-            datNormalSkill.tbl[id].targetcntmin = 2;
-        }
-
         private static void FeralBite(ushort id)
         {
             datNormalSkill.tbl[id].cost = 10;
@@ -2337,28 +2342,6 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].criticalpoint = 40;
         }
 
-        private static void JavelinRain(ushort id)
-        {
-            datNormalSkill.tbl[id].cost = 20;
-            datNormalSkill.tbl[id].hpn = 32;
-            datNormalSkill.tbl[id].failpoint = 5;
-            datNormalSkill.tbl[id].criticalpoint = 24;
-            datNormalSkill.tbl[id].badlevel = 30;
-        }
-
-        private static void DivineShot(ushort id)
-        {
-            datNormalSkill.tbl[id].cost = 18;
-            datNormalSkill.tbl[id].hpn = 34;
-            datNormalSkill.tbl[id].hptype = 1;
-            datNormalSkill.tbl[id].magicbase = 16;
-            datNormalSkill.tbl[id].magiclimit = 32767;
-            datNormalSkill.tbl[id].koukatype = 1;
-            datNormalSkill.tbl[id].hitlevel = 120;
-            datNormalSkill.tbl[id].failpoint = 0;
-            datNormalSkill.tbl[id].criticalpoint = 100;
-        }
-
         private static void XerosBeat(ushort id)
         {
             datNormalSkill.tbl[id].cost = 24;
@@ -2395,14 +2378,6 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].badlevel = 20;
             datNormalSkill.tbl[id].badtype = 1;
             datNormalSkill.tbl[id].basstatus = 256;
-        }
-
-        private static void SpiralViper(ushort id)
-        {
-            datNormalSkill.tbl[id].cost = 16;
-            datNormalSkill.tbl[id].hpn = 62;
-            datNormalSkill.tbl[id].failpoint = 5;
-            datNormalSkill.tbl[id].criticalpoint = 30;
         }
 
         private static void GaeaRage(ushort id)
@@ -2987,53 +2962,6 @@ namespace NocturneInsaniax
             skillLevel.Level = 10;
         }
 
-        private static void NeedleOrbSkill(ushort id)
-        {
-            datSkill.tbl[id].flag = 0;
-            datSkill.tbl[id].keisyoform = 128;
-            datSkill.tbl[id].skillattr = 0;
-            datSkill.tbl[id].index = (short)id;
-            datSkill.tbl[id].type = 0;
-
-            datNormalSkill.tbl[id].badlevel = 255;
-            datNormalSkill.tbl[id].badtype = 0;
-            datNormalSkill.tbl[id].basstatus = 0;
-            datNormalSkill.tbl[id].cost = 1;
-            datNormalSkill.tbl[id].costbase = 0;
-            datNormalSkill.tbl[id].costtype = 1;
-            datNormalSkill.tbl[id].criticalpoint = 18;
-            datNormalSkill.tbl[id].deadtype = 0;
-            datNormalSkill.tbl[id].failpoint = 10;
-            datNormalSkill.tbl[id].flag = 0;
-            datNormalSkill.tbl[id].hitlevel = 100;
-            datNormalSkill.tbl[id].hitprog = 0;
-            datNormalSkill.tbl[id].hittype = 1;
-            datNormalSkill.tbl[id].hojopoint = 99;
-            datNormalSkill.tbl[id].hojotype = 0;
-            datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 24;
-            datNormalSkill.tbl[id].hptype = 1;
-            datNormalSkill.tbl[id].koukatype = 0;
-            datNormalSkill.tbl[id].magicbase = 0;
-            datNormalSkill.tbl[id].magiclimit = 0;
-            datNormalSkill.tbl[id].minus = 100;
-            datNormalSkill.tbl[id].mpbase = 0;
-            datNormalSkill.tbl[id].mpn = 50;
-            datNormalSkill.tbl[id].mptype = 0;
-            datNormalSkill.tbl[id].program = 0;
-            datNormalSkill.tbl[id].targetarea = 2;
-            datNormalSkill.tbl[id].targetcntmax = 6;
-            datNormalSkill.tbl[id].targetcntmin = 3;
-            datNormalSkill.tbl[id].targetprog = 0;
-            datNormalSkill.tbl[id].targetrandom = 1;
-            datNormalSkill.tbl[id].targetrule = 0;
-            datNormalSkill.tbl[id].targettype = 1;
-            datNormalSkill.tbl[id].untargetbadstat = 0;
-            datNormalSkill.tbl[id].use = 2;
-
-            OverWriteSkillEffect(id, 111);
-        }
-
         private static void Rend(ushort id)
         {
             datSkill.tbl[id].flag = 0;
@@ -3173,6 +3101,436 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 107);
+        }
+
+        // Shot Skills
+
+        private static void NeedleRush(ushort id)
+        {
+            datSkill.tbl[id].skillattr = 12;
+
+            datNormalSkill.tbl[id].cost = 10;
+            datNormalSkill.tbl[id].hpn = 13;
+            datNormalSkill.tbl[id].failpoint = 10;
+            datNormalSkill.tbl[id].criticalpoint = 20;
+            datNormalSkill.tbl[id].targetcntmax = 4;
+            datNormalSkill.tbl[id].targetcntmin = 2;
+        }
+
+        private static void StunNeedle(ushort id)
+        {
+            datSkill.tbl[id].skillattr = 12;
+
+            datNormalSkill.tbl[id].cost = 12;
+            datNormalSkill.tbl[id].hpn = 12;
+            datNormalSkill.tbl[id].failpoint = 10;
+            datNormalSkill.tbl[id].criticalpoint = 18;
+            datNormalSkill.tbl[id].badlevel = 18;
+            datNormalSkill.tbl[id].targetcntmax = 4;
+            datNormalSkill.tbl[id].targetcntmin = 2;
+        }
+
+        private static void VenomNeedle(ushort id)
+        {
+            datSkill.tbl[id].skillattr = 12;
+
+            datNormalSkill.tbl[id].cost = 12;
+            datNormalSkill.tbl[id].hpn = 12;
+            datNormalSkill.tbl[id].failpoint = 10;
+            datNormalSkill.tbl[id].criticalpoint = 18;
+            datNormalSkill.tbl[id].badlevel = 18;
+            datNormalSkill.tbl[id].targetcntmax = 4;
+            datNormalSkill.tbl[id].targetcntmin = 2;
+        }
+
+        private static void AridNeedle(ushort id)
+        {
+            datSkill.tbl[id].skillattr = 12;
+
+            datNormalSkill.tbl[id].cost = 12;
+            datNormalSkill.tbl[id].hpn = 11;
+            datNormalSkill.tbl[id].failpoint = 10;
+            datNormalSkill.tbl[id].criticalpoint = 18;
+            datNormalSkill.tbl[id].badlevel = 16;
+            datNormalSkill.tbl[id].targetcntmax = 4;
+            datNormalSkill.tbl[id].targetcntmin = 2;
+        }
+
+        private static void RapidNeedle(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 128;
+            datSkill.tbl[id].skillattr = 12;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 18;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 1;
+            datNormalSkill.tbl[id].criticalpoint = 18;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 10;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 22;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 5;
+            datNormalSkill.tbl[id].targetcntmin = 2;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 1;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 111);
+        }
+
+        private static void TathlumShot(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 128;
+            datSkill.tbl[id].skillattr = 12;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 14;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 1;
+            datNormalSkill.tbl[id].criticalpoint = 30;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 16;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 44;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 111, 97);
+            datNormalSkillVisual.tbl[id].bedno = datNormalSkillVisual.tbl[96].bedno;
+            datNormalSkillVisual.tbl[id].hatudo = datNormalSkillVisual.tbl[96].hatudo;
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
+            skillLevel.SkillID = id;
+            skillLevel.Level = 5;
+        }
+
+        private static void BlastArrow(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 128;
+            datSkill.tbl[id].skillattr = 12;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 26;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 1;
+            datNormalSkill.tbl[id].criticalpoint = 28;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 18;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 28;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 111, 99);
+            datNormalSkillVisual.tbl[id].bedno = datNormalSkillVisual.tbl[96].bedno;
+            datNormalSkillVisual.tbl[id].hatudo = datNormalSkillVisual.tbl[96].hatudo;
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
+            skillLevel.SkillID = id;
+            skillLevel.Level = 8;
+        }
+
+        private static void GrandTack(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 128;
+            datSkill.tbl[id].skillattr = 12;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 18;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 1;
+            datNormalSkill.tbl[id].criticalpoint = 40;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 20;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 52;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 111, 110);
+            datNormalSkillVisual.tbl[id].bedno = datNormalSkillVisual.tbl[96].bedno;
+            datNormalSkillVisual.tbl[id].hatudo = datNormalSkillVisual.tbl[96].hatudo;
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
+            skillLevel.SkillID = id;
+            skillLevel.Level = 7;
+
+            nbCamera_SkillPtrTable.tbl[id] = new nbCameraSkillPtr_t
+            {
+                ptr_shot_1 = nbCamera_SkillPtrTable.tbl[111].ptr_shot_1,
+                ptr_shot_23 = nbCamera_SkillPtrTable.tbl[111].ptr_shot_23,
+                ptr_angleH = nbCamera_SkillPtrTable.tbl[111].ptr_angleH,
+                ptr_angleW = nbCamera_SkillPtrTable.tbl[111].ptr_angleW,
+                ptr_H = nbCamera_SkillPtrTable.tbl[111].ptr_H,
+                ptr_W = nbCamera_SkillPtrTable.tbl[111].ptr_W,
+                anim = nbCamera_SkillPtrTable.tbl[111].anim
+            };
+        }
+
+        private static void HeavensBow(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 128;
+            datSkill.tbl[id].skillattr = 12;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 32;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 1;
+            datNormalSkill.tbl[id].criticalpoint = 30;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 16;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 36;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 111, 110);
+            datNormalSkillVisual.tbl[id].bedno = datNormalSkillVisual.tbl[96].bedno;
+            datNormalSkillVisual.tbl[id].hatudo = datNormalSkillVisual.tbl[96].hatudo;
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
+            skillLevel.SkillID = id;
+            skillLevel.Level = 10;
+
+            nbCamera_SkillPtrTable.tbl[id] = new nbCameraSkillPtr_t
+            {
+                ptr_shot_1 = nbCamera_SkillPtrTable.tbl[111].ptr_shot_1,
+                ptr_shot_23 = nbCamera_SkillPtrTable.tbl[111].ptr_shot_23,
+                ptr_angleH = nbCamera_SkillPtrTable.tbl[111].ptr_angleH,
+                ptr_angleW = nbCamera_SkillPtrTable.tbl[111].ptr_angleW,
+                ptr_H = nbCamera_SkillPtrTable.tbl[111].ptr_H,
+                ptr_W = nbCamera_SkillPtrTable.tbl[111].ptr_W,
+                anim = nbCamera_SkillPtrTable.tbl[111].anim
+            };
+        }
+
+        private static void RiotGun(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 128;
+            datSkill.tbl[id].skillattr = 12;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 24;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 1;
+            datNormalSkill.tbl[id].criticalpoint = 30;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 10;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 60;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 111, 171);
+            datNormalSkillVisual.tbl[id].bedno = datNormalSkillVisual.tbl[96].bedno;
+            datNormalSkillVisual.tbl[id].hatudo = datNormalSkillVisual.tbl[96].hatudo;
+            nbActionProcess.sobedtbl[id].se0_str = nbActionProcess.sobedtbl[110].se0_str;
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
+            skillLevel.SkillID = id;
+            skillLevel.Level = 11;
+
+            nbCamera_SkillPtrTable.tbl[id] = new nbCameraSkillPtr_t
+            {
+                ptr_shot_1 = nbCamera_SkillPtrTable.tbl[111].ptr_shot_1,
+                ptr_shot_23 = nbCamera_SkillPtrTable.tbl[111].ptr_shot_23,
+                ptr_angleH = nbCamera_SkillPtrTable.tbl[111].ptr_angleH,
+                ptr_angleW = nbCamera_SkillPtrTable.tbl[111].ptr_angleW,
+                ptr_H = nbCamera_SkillPtrTable.tbl[111].ptr_H,
+                ptr_W = nbCamera_SkillPtrTable.tbl[111].ptr_W,
+                anim = nbCamera_SkillPtrTable.tbl[111].anim
+            };
+        }
+
+        private static void JavelinRain(ushort id)
+        {
+            datSkill.tbl[id].skillattr = 12;
+
+            datNormalSkill.tbl[id].cost = 20;
+            datNormalSkill.tbl[id].hpn = 32;
+            datNormalSkill.tbl[id].failpoint = 5;
+            datNormalSkill.tbl[id].criticalpoint = 24;
+            datNormalSkill.tbl[id].badlevel = 30;
+        }
+
+        private static void DivineShot(ushort id)
+        {
+            datSkill.tbl[id].skillattr = 12;
+
+            datNormalSkill.tbl[id].cost = 18;
+            datNormalSkill.tbl[id].hpn = 34;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].magicbase = 16;
+            datNormalSkill.tbl[id].magiclimit = 32767;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].hitlevel = 120;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].criticalpoint = 100;
+        }
+
+        private static void SpiralViper(ushort id)
+        {
+            datSkill.tbl[id].skillattr = 12;
+
+            datNormalSkill.tbl[id].cost = 16;
+            datNormalSkill.tbl[id].hpn = 62;
+            datNormalSkill.tbl[id].failpoint = 5;
+            datNormalSkill.tbl[id].criticalpoint = 30;
         }
 
         // Fire Skills
@@ -3473,7 +3831,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hpn = 27;
             datNormalSkill.tbl[id].magicbase = 12;
             datNormalSkill.tbl[id].magiclimit = 74;
-            datNormalSkill.tbl[id].badlevel = 20;
+            datNormalSkill.tbl[id].badlevel = 100;//20;
         }
 
         private static void Bufula(ushort id)
@@ -5449,12 +5807,12 @@ namespace NocturneInsaniax
 
         private static void ToxicSpray(ushort id)
         {
-            datNormalSkill.tbl[id].badlevel = 30;
+            datNormalSkill.tbl[id].badlevel = 255;
             datNormalSkill.tbl[id].badtype = 1;
             datNormalSkill.tbl[id].basstatus = 64;
             datNormalSkill.tbl[id].cost = 20;
             datNormalSkill.tbl[id].costtype = 2;
-            datNormalSkill.tbl[id].hitlevel = 255;
+            datNormalSkill.tbl[id].hitlevel = 50;
             datNormalSkill.tbl[id].hojopoint = 1;
             datNormalSkill.tbl[id].hojotype = 128;
             datNormalSkill.tbl[id].hpn = 50;
@@ -8530,6 +8888,139 @@ namespace NocturneInsaniax
             var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = 372;
             skillLevel.Level = 6;
+        }
+
+        private static void ShotBoost(ushort id)
+        {
+            datSkill.tbl[373].keisyoform = 1;
+            datSkill.tbl[373].skillattr = 12;
+            datSkill.tbl[373].type = 1;
+
+            datSpecialSkill.tbl[id].a = 2;
+            datSpecialSkill.tbl[id].b = 1;
+            datSpecialSkill.tbl[id].m = 3;
+            datSpecialSkill.tbl[id].n = 4;
+
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
+            skillLevel.SkillID = 373;
+            skillLevel.Level = 8;
+        }
+
+        private static void AntiShot(ushort id)
+        {
+            datSkill.tbl[374].keisyoform = 1;
+            datSkill.tbl[374].skillattr = 12;
+            datSkill.tbl[374].type = 1;
+
+            datSpecialSkill.tbl[id].a = 0;
+            datSpecialSkill.tbl[id].b = 0;
+            datSpecialSkill.tbl[id].m = 0;
+            datSpecialSkill.tbl[id].n = 0;
+
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
+            skillLevel.SkillID = 374;
+            skillLevel.Level = 5;
+        }
+
+        private static void NullShot(ushort id)
+        {
+            datSkill.tbl[375].keisyoform = 1;
+            datSkill.tbl[375].skillattr = 12;
+            datSkill.tbl[375].type = 1;
+
+            datSpecialSkill.tbl[id].a = 0;
+            datSpecialSkill.tbl[id].b = 0;
+            datSpecialSkill.tbl[id].m = 0;
+            datSpecialSkill.tbl[id].n = 0;
+
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
+            skillLevel.SkillID = 375;
+            skillLevel.Level = 10;
+        }
+
+        private static void ShotDrain(ushort id)
+        {
+            datSkill.tbl[376].keisyoform = 1;
+            datSkill.tbl[376].skillattr = 12;
+            datSkill.tbl[376].type = 1;
+
+            datSpecialSkill.tbl[id].a = 0;
+            datSpecialSkill.tbl[id].b = 0;
+            datSpecialSkill.tbl[id].m = 0;
+            datSpecialSkill.tbl[id].n = 0;
+
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
+            skillLevel.SkillID = 376;
+            skillLevel.Level = 11;
+        }
+
+        private static void ShotRepel(ushort id)
+        {
+            datSkill.tbl[377].keisyoform = 1;
+            datSkill.tbl[377].skillattr = 12;
+            datSkill.tbl[377].type = 1;
+
+            datSpecialSkill.tbl[id].a = 0;
+            datSpecialSkill.tbl[id].b = 0;
+            datSpecialSkill.tbl[id].m = 0;
+            datSpecialSkill.tbl[id].n = 0;
+
+            var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
+            skillLevel.SkillID = 377;
+            skillLevel.Level = 12;
+        }
+
+        // Talk Skills
+
+        private static void TalkSkillChanges()
+        {
+            datSkill.tbl[355].skillattr = 15; // Charisma
+            datSkill.tbl[384].skillattr = 15; // Talk
+            datSkill.tbl[385].skillattr = 15; // Scout
+            datSkill.tbl[386].skillattr = 15; // Kidnap
+            datSkill.tbl[387].skillattr = 15; // Seduce
+            datSkill.tbl[388].skillattr = 15; // Brainwash
+            datSkill.tbl[389].skillattr = 15;
+            datSkill.tbl[390].skillattr = 15; // Dark Pledge
+            datSkill.tbl[391].skillattr = 15; // Wooing
+            datSkill.tbl[392].skillattr = 15; // Beseech
+            datSkill.tbl[393].skillattr = 15; // Soul Recruit
+            datSkill.tbl[394].skillattr = 15; // Mischief
+            datSkill.tbl[395].skillattr = 15; // Death Pact
+            datSkill.tbl[396].skillattr = 15; // Plead
+            datSkill.tbl[397].skillattr = 15; // Begging
+            datSkill.tbl[398].skillattr = 15; // Threaten
+            datSkill.tbl[399].skillattr = 15; // Stone Hunt
+            datSkill.tbl[400].skillattr = 15; // Trade
+            datSkill.tbl[401].skillattr = 15; // Loan
+            datSkill.tbl[402].skillattr = 15;
+            datSkill.tbl[409].skillattr = 15; // Haggle
+            datSkill.tbl[410].skillattr = 15; // Arbitration
+            datSkill.tbl[411].skillattr = 15; // Detain
+            datSkill.tbl[412].skillattr = 15; // Kinspeak
+            datSkill.tbl[413].skillattr = 15; // Silver Tongue
+            datSkill.tbl[414].skillattr = 15; // Intimidate
+            datSkill.tbl[415].skillattr = 15; // Entice
+            datSkill.tbl[418].skillattr = 15; // Maiden Plea
+            datSkill.tbl[419].skillattr = 15; // Wine Party
+            datSkill.tbl[420].skillattr = 15; // Flatter
+            datSkill.tbl[421].skillattr = 15; // Jive Talk
+        }
+
+        // Skill Upgrade Changes
+
+        private static void SkillUpgradeChanges()
+        {
+            Il2CppInterop.Runtime.InteropTypes.Arrays.Il2CppReferenceArray<Il2CppInterop.Runtime.InteropTypes.Arrays.Il2CppStructArray<ushort>> newSkillPowerUpTbl = 
+                new Il2CppInterop.Runtime.InteropTypes.Arrays.Il2CppReferenceArray<Il2CppInterop.Runtime.InteropTypes.Arrays.Il2CppStructArray<ushort>>(57);
+
+            for (int i = 0; i <= 54; i++)
+                newSkillPowerUpTbl[i] = tblSkillPowerUp.fclSkillPowerUpTbl[i];
+
+            newSkillPowerUpTbl[55] = new ushort[2] { 374, 375 };
+            newSkillPowerUpTbl[56] = new ushort[2] { 375, 376 };
+
+            tblSkillPowerUp.fclSkillPowerUpTbl = newSkillPowerUpTbl;
         }
     }
 }

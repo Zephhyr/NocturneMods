@@ -68,7 +68,7 @@ namespace NocturneInsaniax
                     case 26: __result = "Low Dark damage to all foes. \nMay instakill when weak to Dark. \nPow: 30, Acc: 100%, Fatal: 20%"; return false; // Mamudo Rock
                     case 27: __result = "Medium Almighty damage to all foes. \nPow: 36, Acc: 100%"; return false; // Megido Rock
                     case 28: __result = "Med-High Almighty damage to all foes. \nPow: 42, Acc: 100%"; return false; // Megidola Rock
-                    case 29: __result = "Low Physical damage to random foes. \n3-6 hits. Pow: 24, Acc: 90%, \nCrit: 18%"; return false; // Needle Orb
+                    case 29: __result = "Low Shot damage to random foes. \n2-5 hits. Pow: 22, Acc: 90%, \nCrit: 18%"; return false; // Needle Orb
                     case 31: __result = "50% Chance to inflict Mute \non one foe. (Curse-Type)"; return false; // Makajam Rock
                     case 32: __result = "60% Chance to inflict Stone \non one foe. (Dark-Type)"; return false; // Medusa Eye
                     case 33: __result = "Negates -nda effects on all allies."; return false; // Dekunda Rock
@@ -546,7 +546,7 @@ namespace NocturneInsaniax
             fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemID = 0;
             fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemNum = 0;
             fldGlobal.fldHitData._fldItemBoxTbl[351]._Trap = 1;
-            fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 1278; //1035;
+            fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 307; //1278; //1035;
 
             //fldGlobal.fldHitData._fldItemBoxTbl.Add(new fldTakaraTbl_t { _ItemID = 47, _ItemNum = 5 });
         }

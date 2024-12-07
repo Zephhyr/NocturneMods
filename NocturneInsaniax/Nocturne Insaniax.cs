@@ -587,6 +587,17 @@ namespace NocturneInsaniax
             }
         }
 
+        [HarmonyPatch(typeof(EventBit), nameof(EventBit.evtBitCheck))]
+        private class evtBitCheckPatch
+        {
+            public static void Postfix(ref int no, ref bool __result)
+            {
+                //MelonLogger.Msg("--EventBit.evtBitCheck--");
+                if (EnableModeOverride.Value && no == 3712)
+                    __result = ModeOverrideValue.Value;
+            }
+        }
+
         //[HarmonyPatch(typeof(SndAssetBundleManager), nameof(SndAssetBundleManager.LoadKeysMSE))]
         //private class LoadKeysMSEPatch
         //{
@@ -625,17 +636,6 @@ namespace NocturneInsaniax
         //        MelonLogger.Msg("result: " + __result);
         //    }
         //}
-
-        [HarmonyPatch(typeof(EventBit), nameof(EventBit.evtBitCheck))]
-        private class evtBitCheckPatch
-        {
-            public static void Postfix(ref int no, ref bool __result)
-            {
-                //MelonLogger.Msg("--EventBit.evtBitCheck--");
-                if (EnableModeOverride.Value && no == 3712)
-                    __result = ModeOverrideValue.Value;
-            }
-        }
 
         //[HarmonyPatch(typeof(mdlEffect), nameof(mdlEffect.mdlCreateEffect_P2A_D3P))]
         //private class mdlCreateEffectPatch

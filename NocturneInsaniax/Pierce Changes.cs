@@ -14,6 +14,39 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref uint __result, ref int attr, ref int formindex, ref int nskill)
             {
+                if (attr == 12) // Shot
+                {
+                    var work = nbMainProcess.nbGetUnitWorkFromFormindex(formindex);
+                    var aisyo = datAisyo.Get(work.id, attr, work.flag);
+                    __result = aisyo;
+
+                    var aisyoString = Convert.ToString(aisyo, 2);
+                    while (aisyoString.Length < 19)
+                        aisyoString = "0" + aisyoString;
+
+                    var aisyoSubstring = aisyoString.Substring(aisyoString.Length - 10).TrimStart('0');
+
+                    uint aisyoRatio = 100;
+                    if (string.IsNullOrEmpty(aisyoSubstring))
+                        aisyoRatio = 0;
+                    else
+                        aisyoRatio = Convert.ToUInt32(aisyoSubstring, 2);
+
+                    if (datCalc.datCheckSyojiSkill(work, 377) != 0)
+                        __result = 131072 + aisyoRatio;
+                    else if (datCalc.datCheckSyojiSkill(work, 376) != 0 && __result != 131072)
+                        __result = 262144;
+                    else if (datCalc.datCheckSyojiSkill(work, 375) != 0 && __result <= 65536)
+                        __result = 65536;
+                    else if (datCalc.datCheckSyojiSkill(work, 374) != 0 && __result == 50)
+                        __result = 25;
+                    else if (datCalc.datCheckSyojiSkill(work, 374) != 0)
+                        __result = 50;
+
+                    if (work.badstatus == 2 && (__result == 65536 || __result == 131072 || __result == 262144))
+                        __result = 100;
+                }
+
                 var resistance = Convert.ToString(__result, 2);
                 while (resistance.Length < 19)
                     resistance = "0" + resistance;
@@ -40,7 +73,7 @@ namespace NocturneInsaniax
                     nbMainProcess.nbGetUnitWorkFromFormindex(nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].formindex).id == 287) &&
                     nbMainProcess.nbGetUnitWorkFromFormindex(formindex).badstatus != 0;
 
-                if (nskill != -1 && attr >= 0 && attr <= 11 && datSkill.tbl[nskill].skillattr >= 0 && datSkill.tbl[nskill].skillattr <= 11 && (hasPierce || hasAnimus || undermineDivinity))
+                if (nskill != -1 && attr >= 0 && attr <= 12 && datSkill.tbl[nskill].skillattr >= 0 && datSkill.tbl[nskill].skillattr <= 12 && (hasPierce || hasAnimus || undermineDivinity))
                 {
                     if (isResist)
                     {

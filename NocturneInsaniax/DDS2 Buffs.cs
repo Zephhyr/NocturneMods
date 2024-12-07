@@ -23,7 +23,17 @@ namespace NocturneInsaniax
                 double newEffect = 1;
                 if (stacks > 0)
                 {
-                    if (type == 6 || type == 7)
+                    if (type == 6)
+                    {
+                        switch (stacks)
+                        {
+                            case 1: newEffect = 1 / 1.25; break;
+                            case 2: newEffect = 1 / 1.40; break;
+                            case 3: newEffect = 1 / 1.45; break;
+                            case 4: newEffect = 1 / 1.45; break;
+                        }
+                    }
+                    else if (type == 7)
                     {
                         switch (stacks)
                         {
@@ -31,6 +41,16 @@ namespace NocturneInsaniax
                             case 2: newEffect = 1 / 1.5; break;
                             case 3: newEffect = 1 / 1.6; break;
                             case 4: newEffect = 1 / 1.6; break;
+                        }
+                    }
+                    else if (type == 8)
+                    {
+                        switch (stacks)
+                        {
+                            case 1: newEffect = 1.25; break;
+                            case 2: newEffect = 1.40; break;
+                            case 3: newEffect = 1.45; break;
+                            case 4: newEffect = 1.45; break;
                         }
                     }
                     else
@@ -46,7 +66,17 @@ namespace NocturneInsaniax
                 }
                 else if (stacks < 0)
                 {
-                    if (type == 6 || type == 7)
+                    if (type == 6)
+                    {
+                        switch (stacks)
+                        {
+                            case -1: newEffect = 1.25; break;
+                            case -2: newEffect = 1.40; break;
+                            case -3: newEffect = 1.45; break;
+                            case -4: newEffect = 1.45; break;
+                        }
+                    }
+                    else if (type == 7)
                     {
                         switch (stacks)
                         {
@@ -54,6 +84,16 @@ namespace NocturneInsaniax
                             case -2: newEffect = 1.5; break;
                             case -3: newEffect = 1.6; break;
                             case -4: newEffect = 1.6; break;
+                        }
+                    }
+                    else if (type == 8)
+                    {
+                        switch (stacks)
+                        {
+                            case -1: newEffect = 1 / 1.25; break;
+                            case -2: newEffect = 1 / 1.40; break;
+                            case -3: newEffect = 1 / 1.45; break;
+                            case -4: newEffect = 1 / 1.45; break;
                         }
                     }
                     else

@@ -687,6 +687,7 @@ namespace NocturneInsaniax
                 case 09: return new Color(0.651f, 0.412f, 0.000f, a); // Nerve
                 case 10: return new Color(0.788f, 0.200f, 0.839f, a); // Mind
                 case 11: return new Color(0.220f, 0.220f, 0.220f, a); // Self-Destruct
+                case 12: return new Color(0.494f, 0.459f, 0.388f, a); // Shot
                 case 13: return new Color(0.851f, 0.447f, 0.682f, a); // Heal
                 case 14: return new Color(0.282f, 0.929f, 0.624f, a); // Support
                 default: return new Color(0.294f, 0.294f, 0.980f, a); // Default

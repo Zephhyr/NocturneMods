@@ -68,30 +68,33 @@ namespace NocturneInsaniax
                     }
 
 
-                    // Test - Add all skills
-                    //var skillCommands = new ushort[288];
-                    //for (ushort i = 0; i < 288; i++)
-                    //    skillCommands[i] = i;
-                    //skillCommands[0] = s.commlist[0][0];
-                    ////skillCommands[1] = 475;
-                    ////skillCommands[2] = 469;
-                    ////skillCommands[3] = 443;
+                    //Test - Add all skills
+                    var skillCommands = new ushort[288];
+                    for (ushort i = 0; i < 288; i++)
+                        skillCommands[i] = i;
+                    skillCommands[0] = s.commlist[0][0];
+                    skillCommands[1] = 130;
+                    skillCommands[2] = 134;
+                    skillCommands[3] = 141;
 
-                    //s.commlist[0] = skillCommands;
-                    //s.commcnt[0] = 288;
+                    s.commlist[0] = skillCommands;
+                    s.commcnt[0] = 288;
                 }
                 //else
-                //{
-                //    // Test - Add all skills
-                //    var skillCommands = new ushort[288];
-                //    for (ushort i = 0; i < 288; i++)
-                //        skillCommands[i] = i;
-                //    skillCommands[0] = s.commlist[0][0];
-                //    skillCommands[1] = 425;
+                {
+                    // Test - Add all skills
+                    var skillCommands = new ushort[288];
+                    for (ushort i = 0; i < 288; i++)
+                        skillCommands[i] = i;
+                    skillCommands[0] = s.commlist[0][0];
+                    skillCommands[1] = 130;
+                    skillCommands[2] = 134;
+                    skillCommands[3] = 135;
+                    skillCommands[3] = 141;
 
-                //    s.commlist[0] = skillCommands;
-                //    s.commcnt[0] = 288;
-                //}
+                    s.commlist[0] = skillCommands;
+                    s.commcnt[0] = 288;
+                }
             }
         }
 

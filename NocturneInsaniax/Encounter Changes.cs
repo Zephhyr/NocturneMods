@@ -56,8 +56,8 @@ namespace NocturneInsaniax
                 //    encno = 1278;
                 //    return;
                 //}
-                if (true)
-                //if (evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0 && random.Next(2) == 0)
+                //if (true)
+                if (evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0 && random.Next(2) == 0)
                 {
                     encno = NewKagutsuchiEncounter(encno, encpackno);
                 }

@@ -353,10 +353,12 @@ namespace NocturneInsaniax
 
         //        var level = workFromFormindex1.level;
         //        var mag = datCalc.datGetParam(workFromFormindex1, 2);
-        //        var tier = datNormalSkill.tbl[nskill].magicbase;
-        //        var scaling = datNormalSkill.tbl[nskill].magiclimit;
+        //        var mbase = datNormalSkill.tbl[nskill].magicbase;
+        //        var tier = datNormalSkill.tbl[nskill].magiclimit;
+        //        var scaling = waza;
 
-        //        var newResult = Convert.ToInt32(0.5 + waza + (scaling/100) * ((1.7 + 0.7*tier) * (level-1) + 1.45 * tier * (mag - 1)));
+        //        var newResult = Convert.ToInt32(0.5 + mbase + ((scaling / 100) * ((1.7 + 0.7 * tier) * (level - 1) + (1.45 * tier * (mag - 1)))));
+        //        __result = newResult;
         //        MelonLogger.Msg("newResult: " + newResult);
 
         //    }
@@ -384,7 +386,7 @@ namespace NocturneInsaniax
                     var agi = datCalc.datGetParam(work, 4);
                     var luk = datCalc.datGetParam(work, 5);
 
-                    double chance = (72 + (level * 2) + (agi * 4) + (luk * 3)) - ((lvAvg * 2) + (avgAgi * 4) + (avgLuk * 3));
+                    double chance = Math.Max(90, (72 + (level * 2) + (agi * 4) + (luk * 3)) - ((lvAvg * 2) + (avgAgi * 4) + (avgLuk * 3)));
                     var rand = dds3KernelCore.dds3GetRandIntA(128);
                     __result = rand < chance ? 0 : 1;
                 }
@@ -619,7 +621,7 @@ namespace NocturneInsaniax
                     if (new ushort[] { 185, 257, 273, 275, 294, 295, 296 }.Contains(workFromFormindex1.id) && workFromFormindex1.param[2] > workFromFormindex2.param[2])
                         critRate += 10;
                     // Hell Biker's Speed Star
-                    if ((workFromFormindex1.id == 200 || workFromFormindex1.id == 350) && workFromFormindex1.param[4] > workFromFormindex2.param[4])
+                    if ((workFromFormindex1.id == 200 || workFromFormindex1.id == 350) && workFromFormindex1.param[4] > workFromFormindex2.param[4] && datSkill.tbl[nskill].skillattr <= 12)
                         critRate += 10;
                     // Focused Assault
                     if (((sformindex == 0 && workFromFormindex1.id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 1) || focusedAssaultIds.Contains(workFromFormindex1.id)) && 
@@ -739,8 +741,10 @@ namespace NocturneInsaniax
 
                     if (datNormalSkill.tbl[nskill].koukatype == 0)
                     {
+                        var userStr = datCalc.datGetParam(workFromFormindex1, 0);
+
                         chance = (datNormalSkill.tbl[nskill].hitlevel - datNormalSkill.tbl[nskill].failpoint)
-                        + ((userLevel / 2) + (userAgi * 2) + (userLuk))
+                        + ((userLevel / 2) + (userStr/2) + (userAgi * 2) + (userLuk))
                         - ((targetLevel / 2) + (targetAgi * 2) + (targetLuk));
                     }
                     else if (datNormalSkill.tbl[nskill].koukatype == 1)
@@ -809,7 +813,7 @@ namespace NocturneInsaniax
                     __result = rand < chance ? 0 : 4;
 
                     // Matador's Estocada
-                    if (__result == 4 && (workFromFormindex2.id == 199 || workFromFormindex2.id == 349) && random.Next(2) == 0)
+                    if (__result != 0 && (workFromFormindex2.id == 199 || workFromFormindex2.id == 349) && random.Next(2) == 0)
                         nbMainProcess.nbPushAction(4, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, nbMainProcess.nbGetPartyFromFormindex(sformindex).partyindex, 403);
                 }
             }
