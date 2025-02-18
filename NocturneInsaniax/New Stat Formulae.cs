@@ -331,38 +331,28 @@ namespace NocturneInsaniax
             }
         }
 
-        //[HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetMagicAttack))]
-        //private class MagicAttackPatch
-        //{
-        //    //public static bool Prefix(ref int nskill, ref int sformindex, ref int dformindex, ref int waza, ref int __result)
-        //    //{
-        //    //    return false;
-        //    //}
+        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetMagicAttack))]
+        private class MagicAttackPatch
+        {
+            public static bool Prefix(ref int nskill, ref int sformindex, ref int dformindex, ref int waza, ref int __result)
+            {
+                datUnitWork_t workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
+                //datUnitWork_t workFromFormindex2 = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
 
-        //    public static void Postfix(ref int nskill, ref int sformindex, ref int dformindex, ref int waza, ref int __result)
-        //    {
-        //        MelonLogger.Msg("--nbCalc.nbGetMagicAttack--");
-        //        MelonLogger.Msg("nskill: " + nskill);
-        //        MelonLogger.Msg("sformindex: " + sformindex);
-        //        MelonLogger.Msg("dformindex: " + dformindex);
-        //        MelonLogger.Msg("waza: " + waza);
-        //        MelonLogger.Msg("result: " + __result);
+                double atkPow = (workFromFormindex1.level + datCalc.datGetParam(workFromFormindex1, 2) * 2) * waza / 20;
 
-        //        datUnitWork_t workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
-        //        //datUnitWork_t workFromFormindex2 = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
+                //double defPow = datCalc.datGetParam(workFromFormindex2, 3);
 
-        //        var level = workFromFormindex1.level;
-        //        var mag = datCalc.datGetParam(workFromFormindex1, 2);
-        //        var mbase = datNormalSkill.tbl[nskill].magicbase;
-        //        var tier = datNormalSkill.tbl[nskill].magiclimit;
-        //        var scaling = waza;
+                var atkBuff = nbCalc.nbGetHojoRitu(sformindex, 5);
+                var defBuff = nbCalc.nbGetHojoRitu(dformindex, 7);
 
-        //        var newResult = Convert.ToInt32(0.5 + mbase + ((scaling / 100) * ((1.7 + 0.7 * tier) * (level - 1) + (1.45 * tier * (mag - 1)))));
-        //        __result = newResult;
-        //        MelonLogger.Msg("newResult: " + newResult);
+                atkPow *= atkBuff * defBuff;
+                //defPow /= atkBuff * defBuff;
 
-        //    }
-        //}
+                __result = Convert.ToInt32(atkPow);
+                return false;
+            }
+        }
 
         [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbCheckSensei))]
         private class CheckSenseiPatch
@@ -386,7 +376,7 @@ namespace NocturneInsaniax
                     var agi = datCalc.datGetParam(work, 4);
                     var luk = datCalc.datGetParam(work, 5);
 
-                    double chance = Math.Max(90, (72 + (level * 2) + (agi * 4) + (luk * 3)) - ((lvAvg * 2) + (avgAgi * 4) + (avgLuk * 3)));
+                    double chance = Math.Min(90, (72 + (level * 2) + (agi * 4) + (luk * 3)) - ((lvAvg * 2) + (avgAgi * 4) + (avgLuk * 3)));
                     var rand = dds3KernelCore.dds3GetRandIntA(128);
                     __result = rand < chance ? 0 : 1;
                 }
@@ -426,9 +416,11 @@ namespace NocturneInsaniax
         {
             public static bool Prefix(ref nbMainProcessData_t data, ref int __result)
             {
-                // Test
-                __result = 1;
-                return false;
+                if (GuaranteeEscape.Value == true)
+                {
+                    __result = 1;
+                    return false;
+                }
 
                 var encounter = datEncount.Get(data.encno);
                 if ((encounter.flag >> 5 & 1) != 0 || datCalc.datCheckSkillInParty(296) != 0)
@@ -523,7 +515,9 @@ namespace NocturneInsaniax
                                     try
                                     {
                                         if (critEnablerUsers[skillAttr].Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id) ||
-                                            (skillAttr == 1 && ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 16))
+                                            (skillAttr == 1 && ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 15) ||
+                                            (skillAttr == 3 && ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 22) ||
+                                            (skillAttr == 5 && ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 16))
                                             critRate = Math.Max(critRate, (short) 10);
                                     }
                                     catch { }
@@ -642,7 +636,7 @@ namespace NocturneInsaniax
                 }
 
                 // Double Attack
-                if (__result == 1 && nskill == 0 && datCalc.datCheckSyojiSkill(workFromFormindex1, 300) != 0)
+                if (__result == 1 && nskill == 0 && datCalc.datCheckSyojiSkill(workFromFormindex1, 308) != 0)
                     nbMainProcess.nbPushAction(4, sformindex, dformindex, 167);
 
                 if (__result == 2 && faithfulCompanionIds.Contains(workFromFormindex1.id))
@@ -830,7 +824,11 @@ namespace NocturneInsaniax
                 tmp_dropPoint = datDevilFormat.tbl[w.id].droppoint;
 
                 for (int i = 0; i < datDevilFormat.tbl[w.id].droppoint.Length; i++)
+                {
                     datDevilFormat.tbl[w.id].droppoint[i] = Convert.ToByte(datDevilFormat.tbl[w.id].droppoint[i] * lukMultiplier);
+                    if (datCalc.datCheckSyojiSkill(nbMainProcess.nbGetUnitWorkFromFormindex(0), 378) != 0 && datDevilFormat.tbl[w.id].dropitem[i] >= 96) // Kintsugi
+                        datDevilFormat.tbl[w.id].droppoint[i] *= 3;
+                }
             }
 
             public static void Postfix(ref datUnitWork_t w)

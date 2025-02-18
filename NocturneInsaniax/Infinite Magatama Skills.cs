@@ -43,6 +43,12 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref byte HeartsID, ref sbyte __result)
             {
+                //MelonLogger.Msg("--rstCalcCore.cmbChkHeartsMaster--");
+                //MelonLogger.Msg("HeartsID: " + HeartsID);
+                //MelonLogger.Msg("result: " + __result);
+                //MelonLogger.Msg("magatama skills: " + InfiniteMagatamaSkillsUtility.GetMagatamaSkillsLength(HeartsID));
+                //MelonLogger.Msg("consumed skills: " + InfiniteMagatamaSkillsUtility.GetConsummedSkillsLength(HeartsID));
+
                 int consumedSkillsLength = InfiniteMagatamaSkillsUtility.GetConsummedSkillsLength(HeartsID); // Get the progression of learned skills from this magatama
                 int MagatamaSkillsLength = InfiniteMagatamaSkillsUtility.GetMagatamaSkillsLength(HeartsID); // Get the number of learnable skills from this magatama
 
@@ -84,9 +90,9 @@ namespace NocturneInsaniax
                 for (int i = 1; i <= 25; i++)
                 {
                     int consumedSkillsLength = InfiniteMagatamaSkillsUtility.GetConsummedSkillsLength(i); // Get the progression of learned skills from this magatama
-                    int MagatamaSkillsLength = InfiniteMagatamaSkillsUtility.GetMagatamaSkillsLength(i); // Get the number of learnable skills from this magatama
+                    int magatamaSkillsLength = InfiniteMagatamaSkillsUtility.GetMagatamaSkillsLength(i); // Get the number of learnable skills from this magatama
 
-                    if (consumedSkillsLength == MagatamaSkillsLength)
+                    if (consumedSkillsLength == magatamaSkillsLength)
                     {
                         byte alignment = tblHearts.fclHeartsTbl[i].Flag;
                         switch (alignment)

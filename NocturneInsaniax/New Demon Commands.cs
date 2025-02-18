@@ -2,6 +2,7 @@
 using MelonLoader;
 using Il2Cppnewbattle_H;
 using Il2Cpp;
+using Newtonsoft.Json;
 
 namespace NocturneInsaniax
 {
@@ -43,6 +44,14 @@ namespace NocturneInsaniax
                     s.commdisable[3] = stockDisableCommands;
                     s.commcnt[3] = stockIndices.Count;
 
+                    // Prevent Talking in NKEs
+                    if (s.act.data.encno == 1270 || s.act.data.encno == 1271)
+                    {
+                        for (int i = 0; i < s.commlist[1].Length; i++)
+                            if (s.commlist[1][i] > 0)
+                                s.commdisable[1][i] = 1;
+                    }
+
                     // Use Items
                     if (datCalc.datCheckSyojiSkill(nbMainProcess.nbGetUnitWorkFromFormindex(s.my.formindex), 367) != 0)
                     //if (true)
@@ -61,6 +70,12 @@ namespace NocturneInsaniax
                         if (datEncount.tbl[s.act.data.encno].esc == 1 && itemCommands.Contains((ushort)56))
                             itemDisableCommands[Array.IndexOf(itemCommands, (ushort)56)] = 1;
 
+                        // Toggle item use in battle
+                        if (ToggleItemUseInBattle.Value == false)
+                        {
+                            for (int i = 0; i < itemDisableCommands.Length; i++)
+                                itemDisableCommands[i] = 1;
+                        }
 
                         s.commlist[2] = itemCommands;
                         s.commdisable[2] = itemDisableCommands;
@@ -69,31 +84,49 @@ namespace NocturneInsaniax
 
 
                     //Test - Add all skills
-                    var skillCommands = new ushort[288];
-                    for (ushort i = 0; i < 288; i++)
-                        skillCommands[i] = i;
-                    skillCommands[0] = s.commlist[0][0];
-                    skillCommands[1] = 130;
-                    skillCommands[2] = 134;
-                    skillCommands[3] = 141;
+                    //var skillCommands = new ushort[288];
+                    //for (ushort i = 0; i < 288; i++)
+                    //    skillCommands[i] = i;
+                    //skillCommands[0] = s.commlist[0][0];
+                    //skillCommands[1] = 130;
+                    //skillCommands[2] = 134;
+                    //skillCommands[3] = 141;
 
-                    s.commlist[0] = skillCommands;
-                    s.commcnt[0] = 288;
+                    //s.commlist[0] = skillCommands;
+                    //s.commcnt[0] = 288;
                 }
-                //else
+                else
                 {
-                    // Test - Add all skills
-                    var skillCommands = new ushort[288];
-                    for (ushort i = 0; i < 288; i++)
-                        skillCommands[i] = i;
-                    skillCommands[0] = s.commlist[0][0];
-                    skillCommands[1] = 130;
-                    skillCommands[2] = 134;
-                    skillCommands[3] = 135;
-                    skillCommands[3] = 141;
+                    // Prevent Talking in NKEs
+                    if (s.act.data.encno == 1270 || s.act.data.encno == 1271) 
+                    {
+                        for (int i = 0; i < s.commlist[1].Length; i++)
+                            if (s.commlist[1][i] > 0)
+                                s.commdisable[1][i] = 1;
+                    }
 
-                    s.commlist[0] = skillCommands;
-                    s.commcnt[0] = 288;
+                    // Toggle item use in battle
+                    if (ToggleItemUseInBattle.Value == false)
+                    {
+                        var itemDisableCommands = new sbyte[288];
+
+                        for (int i = 0; i < itemDisableCommands.Length; i++)
+                            itemDisableCommands[i] = 1;
+
+                        s.commdisable[2] = itemDisableCommands;
+                    }
+
+                    // Test - Add all skills
+                    //var skillCommands = new ushort[288];
+                    //for (ushort i = 0; i < 288; i++)
+                    //    skillCommands[i] = i;
+                    //skillCommands[0] = s.commlist[0][0];
+                    //skillCommands[1] = 425;
+                    ////skillCommands[2] = 477;
+                    ////skillCommands[3] = 478;
+
+                    //s.commlist[0] = skillCommands;
+                    //s.commcnt[0] = 288;
                 }
             }
         }

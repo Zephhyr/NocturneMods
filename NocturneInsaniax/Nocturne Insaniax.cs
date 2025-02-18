@@ -17,7 +17,7 @@ using System.Linq;
 using Il2Cppeffect_H;
 using Il2Cppmodel_H;
 
-[assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax", "0.9.1", "Zephhyr, Matthiew Purple, Bud, Margothic, Scribe, Snappy, Mason White")]
+[assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax", "0.9.2", "Zephhyr, Matthiew Purple, Bud, Margothic, Scribe, Snappy, Mason White")]
 [assembly: MelonGame("アトラス", "smt3hd")]
 
 namespace NocturneInsaniax
@@ -31,6 +31,12 @@ namespace NocturneInsaniax
         public static MelonPreferences_Entry<bool> EnableColourPassives;
         public static MelonPreferences_Entry<bool> EnableModeOverride;
         public static MelonPreferences_Entry<bool> ModeOverrideValue;
+        public static MelonPreferences_Entry<bool> ToggleExpOnRandomEncounters;
+        public static MelonPreferences_Entry<bool> ToggleItemUseInBattle;
+        public static MelonPreferences_Entry<double> EncounterMaccaMultiplier;
+        public static MelonPreferences_Entry<bool> GuaranteeEscape;
+        public static MelonPreferences_Entry<bool> GuaranteeNKEs;
+        public static MelonPreferences_Entry<bool> GuaranteeFiendNKEs;
 
 
         public override void OnInitializeMelon()
@@ -70,6 +76,12 @@ namespace NocturneInsaniax
             EnableColourPassives = InsaniaxSettings.CreateEntry("Enable Colour Passives", true);
             EnableModeOverride = InsaniaxSettings.CreateEntry("Enable Mode Override", false);
             ModeOverrideValue = InsaniaxSettings.CreateEntry("Mode Override Value (false=Chronicle, true=Maniax)", false);
+            ToggleExpOnRandomEncounters = InsaniaxSettings.CreateEntry("Toggle Random Encounter EXP", true);
+            ToggleItemUseInBattle = InsaniaxSettings.CreateEntry("Toggle Item Use In Battle", true);
+            EncounterMaccaMultiplier = InsaniaxSettings.CreateEntry("Encounter Macca Multiplier", 1.0);
+            GuaranteeEscape = InsaniaxSettings.CreateEntry("Guarantee Escape", false);
+            GuaranteeNKEs = InsaniaxSettings.CreateEntry("Guarantee New Kagutsuchi Encounters", false);
+            GuaranteeFiendNKEs = InsaniaxSettings.CreateEntry("Guarantee Fiend NKEs In Labyrinth", false);
 
             InsaniaxSettings.SetFilePath(configPath, autoload: true, printmsg: false);
 
@@ -204,6 +216,13 @@ namespace NocturneInsaniax
                             vritraModel.transform.eulerAngles = new Vector3(270f, 178f, 0);
                             break;
                         }
+                    case "devil_0xe5":
+                        {
+                            var demeehoModel = cmpModel.cmpDevilObj;
+                            demeehoModel.transform.position = new Vector3(0f, -0.4f, -0.4f);
+                            demeehoModel.transform.eulerAngles = new Vector3(0f, 184f, 0);
+                            break;
+                        }
                     default: break;
                 }
             }
@@ -290,6 +309,22 @@ namespace NocturneInsaniax
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D228_MSEE4_04", "D228_MSEE4_04", 507576320, false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D228_MSEE4_08", "D228_MSEE4_08", 507641856, false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D228_MSEE4_23", "D228_MSEE4_23", 507707392, false);
+
+                // Demeeho
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D229_MSEE5_03", "D229_MSEE5_03", 508559360, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D229_MSEE5_04", "D229_MSEE5_04", 508624896, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D229_MSEE5_06", "D229_MSEE5_06", 508690432, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D229_MSEE5_08", "D229_MSEE5_08", 508755968, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D229_MSEE5_14", "D229_MSEE5_14", 265027584, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D229_MSEE5_15", "D229_MSEE5_15", 265027585, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D229_MSEE5_23", "D229_MSEE5_23", 508821504, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D229_MSEE5_03_E", "D229_MSEE5_03_E", (331350032 + 177209344), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D229_MSEE5_04_E", "D229_MSEE5_04_E", (331415568 + 177209344), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D229_MSEE5_06_E", "D229_MSEE5_06_E", (331481104 + 177209344), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D229_MSEE5_08_E", "D229_MSEE5_08_E", (331546640 + 177209344), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D229_MSEE5_14_E", "D229_MSEE5_14_E", (87818256 + 177209344), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D229_MSEE5_15_E", "D229_MSEE5_15_E", (87818257 + 177209344), false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D229_MSEE5_23_E", "D229_MSEE5_23_E", (331612176 + 177209344), false);
 
                 // Devil Dante
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D252M_MSEFC_03", "D252M_MSEFC_03", 532676608, false);
@@ -421,6 +456,23 @@ namespace NocturneInsaniax
                 vritraKeys.Add("D228_MSEE4_08", new SndAssetBundleManager.SndData { key = "dvl0xe4", path = 4, id = 0, name = "D228_MSEE4_08", diff = true });
                 vritraKeys.Add("D228_MSEE4_23", new SndAssetBundleManager.SndData { key = "dvl0xe4", path = 4, id = 0, name = "D228_MSEE4_23", diff = true });
                 SndAssetBundleManager.SEBundleTable.Add("dvl0xe4", vritraKeys);
+
+                var demeehoKeys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
+                demeehoKeys.Add("D229_MSEE5_03", new SndAssetBundleManager.SndData { key = "dvl0xe5", path = 4, id = 0, name = "D229_MSEE5_03", diff = true });
+                demeehoKeys.Add("D229_MSEE5_04", new SndAssetBundleManager.SndData { key = "dvl0xe5", path = 4, id = 0, name = "D229_MSEE5_04", diff = true });
+                demeehoKeys.Add("D229_MSEE5_06", new SndAssetBundleManager.SndData { key = "dvl0xe5", path = 4, id = 0, name = "D229_MSEE5_06", diff = true });
+                demeehoKeys.Add("D229_MSEE5_08", new SndAssetBundleManager.SndData { key = "dvl0xe5", path = 4, id = 0, name = "D229_MSEE5_08", diff = true });
+                demeehoKeys.Add("D229_MSEE5_14", new SndAssetBundleManager.SndData { key = "dvl0xe5", path = 4, id = 0, name = "D229_MSEE5_14", diff = true });
+                demeehoKeys.Add("D229_MSEE5_15", new SndAssetBundleManager.SndData { key = "dvl0xe5", path = 4, id = 0, name = "D229_MSEE5_15", diff = true });
+                demeehoKeys.Add("D229_MSEE5_23", new SndAssetBundleManager.SndData { key = "dvl0xe5", path = 4, id = 0, name = "D229_MSEE5_23", diff = true });
+                demeehoKeys.Add("D229_MSEE5_03_E", new SndAssetBundleManager.SndData { key = "dvl0xe5", path = 4, id = 0, name = "D229_MSEE5_03_E", diff = true });
+                demeehoKeys.Add("D229_MSEE5_04_E", new SndAssetBundleManager.SndData { key = "dvl0xe5", path = 4, id = 0, name = "D229_MSEE5_04_E", diff = true });
+                demeehoKeys.Add("D229_MSEE5_06_E", new SndAssetBundleManager.SndData { key = "dvl0xe5", path = 4, id = 0, name = "D229_MSEE5_06_E", diff = true });
+                demeehoKeys.Add("D229_MSEE5_08_E", new SndAssetBundleManager.SndData { key = "dvl0xe5", path = 4, id = 0, name = "D229_MSEE5_08_E", diff = true });
+                demeehoKeys.Add("D229_MSEE5_14_E", new SndAssetBundleManager.SndData { key = "dvl0xe5", path = 4, id = 0, name = "D229_MSEE5_14_E", diff = true });
+                demeehoKeys.Add("D229_MSEE5_15_E", new SndAssetBundleManager.SndData { key = "dvl0xe5", path = 4, id = 0, name = "D229_MSEE5_15_E", diff = true });
+                demeehoKeys.Add("D229_MSEE5_23_E", new SndAssetBundleManager.SndData { key = "dvl0xe5", path = 4, id = 0, name = "D229_MSEE5_23_E", diff = true });
+                SndAssetBundleManager.SEBundleTable.Add("dvl0xe5", demeehoKeys);
 
                 var devilDanteKeys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
                 devilDanteKeys.Add("D252M_MSEFC_03", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_03", diff = true });
@@ -595,6 +647,13 @@ namespace NocturneInsaniax
                 //MelonLogger.Msg("--EventBit.evtBitCheck--");
                 if (EnableModeOverride.Value && no == 3712)
                     __result = ModeOverrideValue.Value;
+                // Checks the flag responsible for unlocking Pierce
+                else if (no == 2241)
+                {
+                    //if (!__result) __result = true; // Artificially makes it obtainable
+                    //else tblHearts.fclHeartsTbl[1].Skill[6].TargetLevel = 15; // If unlocked normally, you can get it early
+                    if (__result) tblHearts.fclHeartsTbl[1].Skill[6].TargetLevel = 15; // If unlocked normally, you can get it
+                }
             }
         }
 
@@ -604,12 +663,12 @@ namespace NocturneInsaniax
         //    public static void Postfix()
         //    {
         //        MelonLogger.Msg("--SndAssetBundleManager.LoadKeysMSE--");
-        //        MelonLogger.Msg("Qing Long keys");
+        //        MelonLogger.Msg("Jack Frost keys");
         //        for (int i = 0; i <= 25; i++)
-        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(148, i));
-        //        MelonLogger.Msg("Vritra keys");
+        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(60, i));
+        //        MelonLogger.Msg("Demee-Ho keys");
         //        for (int i = 0; i <= 25; i++)
-        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(228, i));
+        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(229, i));
         //    }
         //}
 
@@ -981,6 +1040,27 @@ namespace NocturneInsaniax
                     fld_Npc.fldItemBoxAdd(351, -403.64f, -20f, 3146.21f, new Vector4(0, 0, 0, 1)); // Add Item Box in Asakusa
                 }
                 
+            }
+        }
+
+        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetKakutokuExp))]
+        private class nbGetKakutokuExpPatch
+        {
+            public static void Postfix(ref nbMainProcessData_t data, ref int __result)
+            {
+                // Toggle EXP on random encounters
+                if (ToggleExpOnRandomEncounters.Value == false && datEncount.tbl[data.encno].esc != 1)
+                __result = 0;
+            }
+        }
+
+        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetKakutokuMaka))]
+        private class nbGetKakutokuMakaPatch
+        {
+            public static void Postfix(ref nbMainProcessData_t data, ref int __result)
+            {
+                // Macca multiplier
+                __result = Convert.ToInt32(__result * EncounterMaccaMultiplier.Value);
             }
         }
 

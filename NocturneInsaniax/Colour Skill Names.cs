@@ -468,7 +468,7 @@ namespace NocturneInsaniax
                             ushort skillId = 0;
                             for (ushort j = 1; j <= 512; j++)
                             {
-                                if (j != 164 && j != 165 && j != 166 && j != 167)
+                                if (j != 148 && j != 164 && j != 165 && j != 166 && j != 167)
                                 {
                                     var skillName = datSkillName.Get(j);
                                     if (skillName == text)

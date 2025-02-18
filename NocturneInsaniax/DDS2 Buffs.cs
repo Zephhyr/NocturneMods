@@ -138,7 +138,10 @@ namespace NocturneInsaniax
                     }
                 }
 
-                if ((type == 4 && count[15] > 0) || (type == 5 && count[20] > 0))
+                if (((type == 4 && count[15] > 0) || (type == 5 && count[20] > 0)) && 
+                    ((currentDemonWork.nowcommand == 0 && currentDemonWork.nowindex == 0) ||
+                    (currentDemonWork.nowcommand == 1 && (datNormalSkill.tbl[currentDemonWork.nowindex].hptype != 2 || datNormalSkill.tbl[currentDemonWork.nowindex].hptype != 11)) ||
+                    (currentDemonWork.nowcommand == 5 && (datNormalSkill.tbl[datItem.tbl[currentDemonWork.nowindex].skillid].hptype != 2 || datNormalSkill.tbl[datItem.tbl[currentDemonWork.nowindex].skillid].hptype != 11))))
                     newEffect *= (2.2 + (fourOniCount * 0.1));
 
                 __result = (float) newEffect;

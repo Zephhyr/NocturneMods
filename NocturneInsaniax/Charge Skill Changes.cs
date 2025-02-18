@@ -78,9 +78,13 @@ namespace NocturneInsaniax
                 }
                 catch { }
 
-                if ((chargeNowindex <= 287 || chargeNowindex >= 424) && type == 15 && (chargeNowcommand == 6 || datNormalSkill.tbl[chargeNowindex].koukatype == 0))
+                if (type == 15 && (chargeNowcommand == 6 || 
+                    ((chargeNowcommand == 0 || chargeNowcommand == 1) && datNormalSkill.tbl[chargeNowindex].koukatype == 0)) ||
+                    (chargeNowcommand == 5 && datNormalSkill.tbl[datItem.tbl[chargeNowindex].skillid].koukatype == 0))
                     point = focusState;
-                else if ((chargeNowindex <= 287 || chargeNowindex >= 424) && type == 20 && (chargeNowcommand == 6 || datNormalSkill.tbl[chargeNowindex].koukatype == 1))
+                else if (type == 20 && (chargeNowcommand == 6 || 
+                    ((chargeNowcommand == 0 || chargeNowcommand == 1) && datNormalSkill.tbl[chargeNowindex].koukatype == 1)) ||
+                    (chargeNowcommand == 5 && datNormalSkill.tbl[datItem.tbl[chargeNowindex].skillid].koukatype == 1))
                     point = concentrateState;
             }
         }
@@ -112,10 +116,10 @@ namespace NocturneInsaniax
                 bool chargedPhysical = datNormalSkill.tbl[chargeNowindex].koukatype == 0 && focusState == 1;
                 bool chargedMagical = datNormalSkill.tbl[chargeNowindex].koukatype == 1 && (datNormalSkill.tbl[chargeNowindex].hptype == 1 || datNormalSkill.tbl[chargeNowindex].hptype == 12) && concentrateState == 1;
 
-                if (skillattr >= 0 && skillattr <= 11 && (chargedPhysical || chargedMagical))
+                if (skillattr >= 0 && skillattr <= 12 && (chargedPhysical || chargedMagical))
                 {
                     if (!((megalomaniaIds.Contains(a.work.id) || (a.work.id == 0 && a.form.formindex == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 23)) 
-                        && random.Next(10) == 0))
+                        && random.Next(30) == 0))
                     {
                         a.party.count[15] = 0;
                         a.party.count[20] = 0;
@@ -543,6 +547,10 @@ namespace NocturneInsaniax
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 263168 && actionProcessData.work.nowindex == 460)
                 {
                     nbHelpProcess.nbDispText("All -kaja & -nda effects negated!", string.Empty, 2, 45, 2315190144, false);
+                }
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 262144 && actionProcessData.work.nowindex == 479)
+                {
+                    nbHelpProcess.nbDispText("All -nda effects negated!", string.Empty, 2, 45, 2315190144, false);
                 }
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 263168 && actionProcessData.work.nowindex == 511)
                 {

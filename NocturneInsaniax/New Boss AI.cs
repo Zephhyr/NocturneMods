@@ -1882,6 +1882,7 @@ namespace NocturneInsaniax
                 if (!EnemyPartyBuffed(2, 5))
                 {
                     UseSkill(ref a, 458);
+                    SetTargetingRule(ref code, ref n, 3, 321);
                 }
                 else if (!EnemyFocused(ref a))
                 {
@@ -2541,6 +2542,13 @@ namespace NocturneInsaniax
                 UseSkill(ref a, 276);
             else if (a.work.nowindex == 22)
                 UseSkill(ref a, 443);
+            else if (a.work.nowindex == 275)
+            {
+                if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(275))
+                    UseSkill(ref a, 275);
+                else
+                    UseNormalAttack(ref a);
+            }
         }
 
         private static void BossHellBikerAI(ref nbActionProcessData_t a, ref int code, ref int n)

@@ -34,6 +34,31 @@ namespace NocturneInsaniax
                     case 60: __result = "Concentrate Rock"; return false;
                     case 62: __result = "Cursed Gospel"; return false;
                     case 63: __result = "Impel Stone"; return false;
+                    case 64: __result = "Marogareh"; return false;
+                    case 65: __result = "Wadatsumi"; return false;
+                    case 66: __result = "Ankh"; return false;
+                    case 67: __result = "Iyomante"; return false;
+                    case 68: __result = "Shiranui"; return false;
+                    case 69: __result = "Hifumi"; return false;
+                    case 70: __result = "Kamurogi"; return false;
+                    case 71: __result = "Kamudo"; return false;
+                    case 72: __result = "Anathema"; return false;
+                    case 73: __result = "Miasma"; return false;
+                    case 74: __result = "Nirvana"; return false;
+                    case 75: __result = "Vimana"; return false;
+                    case 76: __result = "Geis"; return false;
+                    case 77: __result = "Djed"; return false;
+                    case 78: __result = "Muspell"; return false;
+                    case 79: __result = "Satan"; return false;
+                    case 80: __result = "Adama"; return false;
+                    case 81: __result = "Gehenna"; return false;
+                    case 82: __result = "Sophia"; return false;
+                    case 83: __result = "Murakumo"; return false;
+                    case 84: __result = "Gundari"; return false;
+                    case 85: __result = "Narukami"; return false;
+                    case 86: __result = "Gaea"; return false;
+                    case 87: __result = "Kailash"; return false;
+                    case 88: __result = "Masakados"; return false;
                     case 107: __result = "Malachite"; return false;
                     default: return true;
                 }
@@ -75,7 +100,7 @@ namespace NocturneInsaniax
                     case 34: __result = "Repels Magical attacks \nfor one ally once \nnext turn."; return false; // Magic Mirror
                     case 35: __result = "Repels Physical attacks \nfor one ally once \nnext turn."; return false; // Attack Mirror
                     case 36: __result = "Negates -kaja effects on all foes."; return false; // Dekaja Rock
-                    case 37: __result = "Protects all allies from \none Light/Dark attack."; return false; // Tetraja Rock
+                    case 37: __result = "Negates one Light/Dark attack \nfor all allies."; return false; // Tetraja Rock
                     case 47: __result = "Displays an enemy's info."; return false; // Spyglass
                     case 48: __result = "Medium Fire damage to one foe. \nPow: 45, Acc: 100%"; return false; // Agilao Rock
                     case 49: __result = "Medium Ice damage to one foe. \nPow: 39, Acc: 100%, Freeze: 25%"; return false; // Bufula Rock
@@ -86,7 +111,7 @@ namespace NocturneInsaniax
                     case 60: __result = "Increases the damage of the user's \nnext Magic-based attack by 120%."; return false; // Concentrate Rock
                     case 62: __result = "Demi-fiend earns enough \nEXP to level up but \nloses one level."; return false; // Cursed Gospel
                     case 63: __result = "Grants four flashing turn icons. \n(Limit: 1)"; return false; // Impel Stone
-                    case 76: __result = "Healing-type Magatama."; return false; // Geis
+                    case 76: __result = "Ice-type Magatama."; return false; // Geis
                     case 86: __result = "Physical-type Magatama."; return false; // Gaea
                     case 107: __result = "A beautiful gemstone \nthat symbolizes \nearth."; return false; // Malachite
                     default: return true;
@@ -172,6 +197,7 @@ namespace NocturneInsaniax
             CursedGospelItem(62);
             ImpelStoneItem(63);
 
+            VimanaItem(75);
             GeisItem(76);
         }
 
@@ -283,9 +309,14 @@ namespace NocturneInsaniax
             datItem.tbl[id].use = 2;
         }
 
-        private static void GeisItem(ushort id)
+        private static void VimanaItem(ushort id)
         {
             datItem.tbl[id].price = 20000;
+        }
+
+        private static void GeisItem(ushort id)
+        {
+            datItem.tbl[id].price = 30000;
         }
 
         //------------------------------------------------------------
@@ -316,8 +347,8 @@ namespace NocturneInsaniax
             fclJunkShopTable.fclShopItemPackTbl[id].ItemList[8].ID = 55; // Light Ball
             fclJunkShopTable.fclShopItemPackTbl[id].ItemList[9].ID = 54; // Float Ball
             fclJunkShopTable.fclShopItemPackTbl[id].ItemList[10].ID = 74; // Nirvana
-            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[11].ID = 76; // Geis
-            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[12].ID = 79; // Gehenna
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[11].ID = 75; // Vimana
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[12].ID = 0;
         }
 
         private static void RagShop()
@@ -533,6 +564,9 @@ namespace NocturneInsaniax
 
             // Great Chakra Item Box in Second Kalpa
             fldGlobal.fldHitData._fldItemBoxTbl[276]._ItemID = 8;
+
+            // Satan Magatama Box behind Ongyo-Ki
+            fldGlobal.fldHitData._fldItemBoxTbl[104]._ItemID = 16;
 
             // Boss Flauros Box
             fldGlobal.fldHitData._fldItemBoxTbl[350]._Type = 2;

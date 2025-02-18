@@ -43,7 +43,7 @@ namespace NocturneInsaniax
                     else if (datCalc.datCheckSyojiSkill(work, 374) != 0)
                         __result = 50;
 
-                    if (work.badstatus == 2 && (__result == 65536 || __result == 131072 || __result == 262144))
+                    if (work.badstatus == 2 && (__result == 65536 || __result == 131072 || __result == 262144 || __result < 100))
                         __result = 100;
                 }
 
@@ -73,7 +73,8 @@ namespace NocturneInsaniax
                     nbMainProcess.nbGetUnitWorkFromFormindex(nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].formindex).id == 287) &&
                     nbMainProcess.nbGetUnitWorkFromFormindex(formindex).badstatus != 0;
 
-                if (nskill != -1 && attr >= 0 && attr <= 12 && datSkill.tbl[nskill].skillattr >= 0 && datSkill.tbl[nskill].skillattr <= 12 && (hasPierce || hasAnimus || undermineDivinity))
+                if (nskill != -1 && attr >= 0 && attr <= 12 && datSkill.tbl[nskill].skillattr >= 0 && datSkill.tbl[nskill].skillattr <= 12 && 
+                    (hasPierce || (hasAnimus && (nskill == 0 || !(datNormalSkill.tbl[nskill].badtype != 0 && datNormalSkill.tbl[nskill].hptype == 0))) || undermineDivinity))
                 {
                     if (isResist)
                     {

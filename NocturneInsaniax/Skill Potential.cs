@@ -11,6 +11,8 @@ using Il2CppTMPro;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using Newtonsoft.Json;
+using static Il2Cpp.SteamDlcFileUtil;
+using MelonLoader.TinyJSON;
 
 namespace NocturneInsaniax
 {
@@ -50,7 +52,7 @@ namespace NocturneInsaniax
             new sbyte[] {2    , -3   , 0    , 4    , 0    , 0    , 0    , 0    , 0    , -1   , -1   , 0    , 0    , 0    , 0    , 0 }, // 028 Take-Minakata
             new sbyte[] {5    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -6   , 0    , 0    , 0    , -2   , 2    , 0 }, // 029 Chimera
             new sbyte[] {3    , -6   , 3    , 5    , -3   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 030 Baihu
-            new sbyte[] {0    , -3   , 0    , 0    , 4    , 0    , 0    , -3   , 0    , 0    , 0    , 0    , 0    , 2    , 2    , 0 }, // 031 Senri
+            new sbyte[] {0    , 0    , 0    , -3   , 4    , 0    , 0    , -3   , 0    , 0    , 0    , 0    , 0    , 2    , 2    , 0 }, // 031 Senri
             new sbyte[] {0    , 5    , -6   , 2    , 0    , 0    , 0    , 0    , 1    , 1    , 1    , 0    , -3   , 0    , 1    , 0 }, // 032 Zhuque
             new sbyte[] {1    , -3   , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 033 Shiisaa
             new sbyte[] {4    , 0    , 4    , 0    , -5   , 0    , 0    , 0    , 0    , -5   , -5   , 0    , 0    , 2    , 0    , 0 }, // 034 Xiezhai
@@ -99,7 +101,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 5    , -6   , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 076 Quetzalcoatl
             new sbyte[] {4    , -5   , 2    , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 077 Naga Raja
             new sbyte[] {0    , -5   , 4    , 0    , 0    , 0    , 0    , 0    , -5   , 0    , 4    , 0    , 0    , 0    , 2    , 0 }, // 078 Mizuchi
-            new sbyte[] {3    , 0    , 0    , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 079 Naga
+            new sbyte[] {3    , -3   , 0    , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 079 Naga
             new sbyte[] {2    , 0    , 0    , -4   , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 080 Nozuchi
             new sbyte[] {6    , 6    , -7   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -3   , 2    , 0 }, // 081 Cerberus
             new sbyte[] {4    , 4    , -6   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -2   , 1    , 0 }, // 082 Orthrus
@@ -252,7 +254,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 3    , 0    , -5   , 4    , 0    , 3    , 4    , 0    , 0    , 0    , 0    , 0 }, // 226 Nightmare
             new sbyte[] {3    , 5    , -4   , 0    , 0    , 0    , 3    , 0    , -4   , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 227 Gdon
             new sbyte[] {4    , 0    , 0    , 5    , -4   , 0    , 0    , 0    , 0    , 4    , 0    , 0    , 0    , 0    , 0    , 0 }, // 228 Vritra
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 229 
+            new sbyte[] {5    , 0    , 6    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , -5   , 0    , 3    , 0 }, // 229 Demee-Ho
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 230 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 231 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 232 
@@ -416,31 +418,31 @@ namespace NocturneInsaniax
         {
             //          {Phys , Fire , Ice  , Elec , Force, Alm  , Light, Dark , Curse, Nerve, Mind , SD   , Shot , Heal , Supp , Util}
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 00
-            new sbyte[] {1    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 01 Marogareh
-            new sbyte[] {0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 02 Wadatsumi
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 1    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0 }, // 03 Ankh
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0    , 0    , 0    , 3    , 0 }, // 04 Iyomante
-            new sbyte[] {0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 05 Shiranui
-            new sbyte[] {0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 06 Hifumi
-            new sbyte[] {3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 07 Kamudo
-            new sbyte[] {2    , 0    , 0    , 4    , 0    , 0    , 0    , 0    , 0    , 2    , 0    , 0    , 0    , 0    , 0    , 0 }, // 08 Narukami
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 5    , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 09 Anathema
-            new sbyte[] {0    , 0    , 6    , 0    , 0    , 0    , 0    , 0    , 3    , 3    , 3    , 0    , 0    , 0    , 0    , 0 }, // 10 Miasma
-            new sbyte[] {3    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 11 Nirvana
-            new sbyte[] {5    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 2    , 2    , 2    , 0    , 0    , 0    , 0    , 0 }, // 12 Murakumo
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 3    , 0 }, // 13 Geis
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 3    , 3    , 3    , 0    , 0    , 0    , 5    , 0 }, // 14 Djed
-            new sbyte[] {3    , 3    , 3    , 3    , 3    , 0    , 0    , 0    , 7    , 7    , 7    , 0    , 0    , 0    , 0    , 0 }, // 15 Muspell
-            new sbyte[] {0    , 7    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 16 Gehenna
-            new sbyte[] {7    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 17 Kamurogi
-            new sbyte[] {2    , 0    , 0    , 0    , 0    , 0    , 0    , 8    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 18 Satan
-            new sbyte[] {0    , 0    , 0    , 9    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 19 Adama
-            new sbyte[] {6    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0 }, // 20 Vimana
-            new sbyte[] {4    , 0    , 0    , 0    , 8    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 21 Gundari
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 7    , 0    , 0    , 0    , 0    , 0    , 0    , 4    , 4    , 0 }, // 22 Sophia
-            new sbyte[] {9    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 23 Gaea
-            new sbyte[] {0    , 5    , 5    , 5    , 5    , 7    , 0    , 0    , 0    , 0    , 0    , 7    , 0    , 0    , 3    , 0 }, // 24 Kailash
-            new sbyte[] {9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 0    , 5    , 5    , 0 }  // 25 Masakados
+            new sbyte[] {1    , 0    , 0    , 0    , 0    , 1    , 0    , 0    , 0    , 0    , 0    , 1    , 0    , 0    , 0    , 0 }, // 01 Marogareh  (Marogareh)
+            new sbyte[] {0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 02 Wadatsumi  (Wadatsumi)
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0    , 0 }, // 03 Ankh       (Ankh)
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 04 Iyomante   (Iyomante)
+            new sbyte[] {0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 05 Shiranui   (Shiranui)
+            new sbyte[] {0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 06 Hifumi     (Hifumi)
+            new sbyte[] {3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 07 Kamurogi   (Kamudo)
+            new sbyte[] {0    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 08 Kamudo     (Narukami)
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 09 Anathema   (Anathema)
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 3    , 3    , 0    , 0    , 0    , 0    , 0 }, // 10 Miasma     (Miasma)
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 11 Nirvana    (Nirvana)
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 0 }, // 12 Vimana     (Murakumo)
+            new sbyte[] {0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 13 Geis       (Geis)
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0 }, // 14 Djed       (Djed)
+            new sbyte[] {0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 15 Muspell    (Muspell)
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0 }, // 16 Satan      (Gehenna)
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 5    , 5    , 5    , 0    , 0    , 0    , 0    , 0 }, // 17 Adama      (Kamurogi)
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 18 Gehenna    (Satan)
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0 }, // 19 Sophia     (Adama)
+            new sbyte[] {0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 20 Murakumo   (Vimana)
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 21 Gundari    (Gundari)
+            new sbyte[] {0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 22 Narukami   (Sophia)
+            new sbyte[] {5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0 }, // 23 Gaea       (Gaea)
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0 }, // 24 Kailash    (Kailash)
+            new sbyte[] {7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 3    , 3    , 0 }  // 25 Masakados
         }; // Array of all Magatamas' skill potential
 
         private static string[] potentialHelp = new string[]
@@ -674,7 +676,7 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+4: Dark/Mind • +3: Force/Nerve  <material=\"MsgFont1\">-5: Light", // 226 Nightmare
             "  <material=\"MsgFont4\">+5: Fire • +3: Phys/Light  <material=\"MsgFont1\">-4: Ice/Curse", // 227 Gdon
             "  <material=\"MsgFont4\">+5: Elec • +4: Phys/Nerve  <material=\"MsgFont1\">-4: Force", // 228 Vritra
-            "", // 229 
+            "  <material=\"MsgFont4\">+6: Ice • +5: Phys/Dark • +3: Supp  <material=\"MsgFont1\">-5: Shot", // 229 Demee-Ho
             "", // 230 
             "", // 231 
             "", // 232 
@@ -829,56 +831,56 @@ namespace NocturneInsaniax
             "", // 381 
             "", // 382 
             "", // 383 
-            "  <material=\"MsgFont4\">+1: Phys<material=\"MsgFont1\">", // 384 Marogareh
-            "  <material=\"MsgFont4\">+1: Phys<material=\"MsgFont1\">", // 385 Marogareh
-            "  <material=\"MsgFont4\">+3: Ice • +1: Supp<material=\"MsgFont1\">", // 386 Wadatsumi
-            "  <material=\"MsgFont4\">+3: Ice • +1: Supp<material=\"MsgFont1\">", // 387 Wadatsumi
-            "  <material=\"MsgFont4\">+3: Heal • +1: Light<material=\"MsgFont1\">", // 388 Ankh
-            "  <material=\"MsgFont4\">+3: Heal • +1: Light<material=\"MsgFont1\">", // 389 Ankh
-            "  <material=\"MsgFont4\">+3: Supp • +1: Mind<material=\"MsgFont1\">", // 390 Iyomante
-            "  <material=\"MsgFont4\">+3: Supp • +1: Mind<material=\"MsgFont1\">", // 391 Iyomante
-            "  <material=\"MsgFont4\">+3: Fire • +1: Supp<material=\"MsgFont1\">", // 392 Shiranui
-            "  <material=\"MsgFont4\">+3: Fire • +1: Supp<material=\"MsgFont1\">", // 393 Shiranui
-            "  <material=\"MsgFont4\">+3: Force • +1: Supp<material=\"MsgFont1\">", // 394 Hifumi
-            "  <material=\"MsgFont4\">+3: Force • +1: Supp<material=\"MsgFont1\">", // 395 Hifumi
-            "  <material=\"MsgFont4\">+3: Phys • +1: Supp<material=\"MsgFont1\">", // 396 Kamudo
-            "  <material=\"MsgFont4\">+3: Phys • +1: Supp<material=\"MsgFont1\">", // 397 Kamudo
-            "  <material=\"MsgFont4\">+4: Elec • +2: Phys/Nerve<material=\"MsgFont1\">", // 398 Narukami
-            "  <material=\"MsgFont4\">+4: Elec • +2: Phys/Nerve<material=\"MsgFont1\">", // 399 Narukami
-            "  <material=\"MsgFont4\">+5: Dark • +2: Curse<material=\"MsgFont1\">", // 400 Anathema
-            "  <material=\"MsgFont4\">+5: Dark • +2: Curse<material=\"MsgFont1\">", // 401 Anathema
-            "  <material=\"MsgFont4\">+6: Ice • +3: Ailments<material=\"MsgFont1\">", // 402 Miasma
-            "  <material=\"MsgFont4\">+6: Ice • +3: Ailments<material=\"MsgFont1\">", // 403 Miasma
-            "  <material=\"MsgFont4\">+5: Light • +3: Phys<material=\"MsgFont1\">", // 404 Nirvana
-            "  <material=\"MsgFont4\">+5: Light • +3: Phys<material=\"MsgFont1\">", // 405 Nirvana
-            "  <material=\"MsgFont4\">+5: Phys/Force • +2: Ailments<material=\"MsgFont1\">", // 406 Murakumo
-            "  <material=\"MsgFont4\">+5: Phys/Force • +2: Ailments<material=\"MsgFont1\">", // 407 Murakumo
-            "  <material=\"MsgFont4\">+5: Light • +3: Heal/Supp<material=\"MsgFont1\">", // 408 Geis
-            "  <material=\"MsgFont4\">+5: Light • +3: Heal/Supp<material=\"MsgFont1\">", // 409 Geis
-            "  <material=\"MsgFont4\">+5: Supp • +3: Almighty/Ailments<material=\"MsgFont1\">", // 410 Djed
-            "  <material=\"MsgFont4\">+5: Supp • +3: Almighty/Ailments<material=\"MsgFont1\">", // 411 Djed
-            "  <material=\"MsgFont4\">+7: Ailments • +3: Phys/Elements<material=\"MsgFont1\">", // 412 Muspell
-            "  <material=\"MsgFont4\">+7: Ailments • +3: Phys/Elements<material=\"MsgFont1\">", // 413 Muspell
-            "  <material=\"MsgFont4\">+7: Fire • +3: Dark<material=\"MsgFont1\">", // 414 Gehenna
-            "  <material=\"MsgFont4\">+7: Fire • +3: Dark<material=\"MsgFont1\">", // 415 Gehenna
-            "  <material=\"MsgFont4\">+7: Phys<material=\"MsgFont1\">", // 416 Kamurogi
-            "  <material=\"MsgFont4\">+7: Phys<material=\"MsgFont1\">", // 417 Kamurogi
-            "  <material=\"MsgFont4\">+8: Dark • +2: Phys/Supp<material=\"MsgFont1\">", // 418 Satan
-            "  <material=\"MsgFont4\">+8: Dark • +2: Phys/Supp<material=\"MsgFont1\">", // 419 Satan
-            "  <material=\"MsgFont4\">+9: Elec<material=\"MsgFont1\">", // 420 Adama
-            "  <material=\"MsgFont4\">+9: Elec<material=\"MsgFont1\">", // 421 Adama
-            "  <material=\"MsgFont4\">+6: Phys • +3: Supp<material=\"MsgFont1\">", // 422 Vimana
-            "  <material=\"MsgFont4\">+6: Phys • +3: Supp<material=\"MsgFont1\">", // 423 Vimana
-            "  <material=\"MsgFont4\">+8: Force • +4: Phys<material=\"MsgFont1\">", // 424 Gundari
-            "  <material=\"MsgFont4\">+8: Force • +4: Phys<material=\"MsgFont1\">", // 425 Gundari
-            "  <material=\"MsgFont4\">+7: Light  • +4: Heal/Supp<material=\"MsgFont1\">", // 426 Sophia
-            "  <material=\"MsgFont4\">+7: Light  • +4: Heal/Supp<material=\"MsgFont1\">", // 427 Sophia
-            "  <material=\"MsgFont4\">+9: Phys<material=\"MsgFont1\">", // 428 Gaea
-            "  <material=\"MsgFont4\">+9: Phys<material=\"MsgFont1\">", // 429 Gaea
-            "  <material=\"MsgFont4\">+7: Almighty • +5: Elements • +3: Supp<material=\"MsgFont1\">", // 430 Kailash
-            "  <material=\"MsgFont4\">+7: Almighty • +5: Elements • +3: Supp<material=\"MsgFont1\">", // 430 Kailash
-            "  <material=\"MsgFont4\">+9: Phys/Elements/Light/Dark/Almighty/Ailments • +5: Heal/Supp<material=\"MsgFont1\">", // 432 Masakados
-            "  <material=\"MsgFont4\">+9: Phys/Elements/Light/Dark/Almighty/Ailments • +5: Heal/Supp<material=\"MsgFont1\">", // 433 Masakados
+            "", // 384 Marogareh
+            "", // 385 Marogareh
+            "", // 386 Wadatsumi
+            "", // 387 Wadatsumi
+            "", // 388 Ankh
+            "", // 389 Ankh
+            "", // 390 Iyomante
+            "", // 391 Iyomante
+            "", // 392 Shiranui
+            "", // 393 Shiranui
+            "", // 394 Hifumi
+            "", // 395 Hifumi
+            "", // 396 Kamurogi
+            "", // 397 Kamurogi
+            "", // 398 Kamudo
+            "", // 399 Kamudo
+            "", // 400 Anathema
+            "", // 401 Anathema
+            "", // 402 Miasma
+            "", // 403 Miasma
+            "", // 404 Nirvana
+            "", // 405 Nirvana
+            "", // 406 Vimana
+            "", // 407 Vimana
+            "", // 408 Geis
+            "", // 409 Geis
+            "", // 410 Djed
+            "", // 411 Djed
+            "", // 412 Muspell
+            "", // 413 Muspell
+            "", // 414 Satan
+            "", // 415 Satan
+            "", // 416 Adama
+            "", // 417 Adama
+            "", // 418 Gehenna
+            "", // 419 Gehenna
+            "", // 420 Sophia
+            "", // 421 Sophia
+            "", // 422 Murakumo
+            "", // 423 Murakumo
+            "", // 424 Gundari
+            "", // 425 Gundari
+            "", // 426 Narukami
+            "", // 427 Narukami
+            "", // 428 Gaea
+            "", // 429 Gaea
+            "", // 430 Kailash
+            "", // 430 Kailash
+            "", // 432 Masakados
+            "", // 433 Masakados
             "", // 434 
             "", // 435 
             "", // 436 
@@ -888,56 +890,81 @@ namespace NocturneInsaniax
         private static string[] magatamaHelp = new string[]
         {
             "",
-            "Imparts Physical skills\r\nNormal resistance\r\n" +
-            "<material=\"MsgFont4\">+1: Phys", // Marogareh
-            "Imparts Ice magic\r\n<material=\"MsgFont2\">Null: Ice<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Elec\r\n" +
-            "<material=\"MsgFont4\">+3: Ice • +1: Supp", // Wadatsumi
-            "Imparts Healing magic\r\n<material=\"MsgFont2\">Null: Light<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Dark\r\n" +
-            "<material=\"MsgFont4\">+3: Heal • +1: Light", // Ankh
-            "Imparts Support magic\r\n<material=\"MsgFont2\">Null: Mind\r\n" +
-            "<material=\"MsgFont4\">+3: Supp • +1: Mind", // Iyomante
-            "Imparts Fire magic\r\n<material=\"MsgFont2\">Null: Fire<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Force\r\n" +
-            "<material=\"MsgFont4\">+3: Fire • +1: Supp", // Shiranui
-            "Imparts Force magic\r\n<material=\"MsgFont2\">Null: Force<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire\r\n" +
-            "<material=\"MsgFont4\">+3: Force • +1: Supp", // Hifumi
-            "Imparts Physical skills\r\n<material=\"MsgFont2\">Strong: Phys<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ailments\r\n" +
-            "<material=\"MsgFont4\">+3: Phys • +1: Supp", // Kamudo
-            "Imparts Electricity magic\r\n<material=\"MsgFont2\">Null: Elec<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ice\r\n" +
-            "<material=\"MsgFont4\">+4: Elec • +2: Phys/Nerve", // Narukami
-            "Imparts Dark magic\r\n<material=\"MsgFont2\">Null: Dark<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Light\r\n" +
-            "<material=\"MsgFont4\">+5: Dark • +2: Curse", // Anathema
-            "Imparts Ailment and Ice magic\r\n<material=\"MsgFont2\">Null: Ice<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire\r\n" +
-            "<material=\"MsgFont4\">+6: Ice • +3: Ailments", // Miasma
-            "Imparts Light magic\r\n<material=\"MsgFont2\">Null: Light<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Dark\r\n" +
-            "<material=\"MsgFont4\">+5: Light • +3: Phys", // Nirvana
-            "Imparts Ailment-nullifying skills\r\n<material=\"MsgFont2\">Strong: Phys<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire/Ice\r\n" +
-            "<material=\"MsgFont4\">+5: Phys/Force • +2: Ailments", // Murakumo
-            "Imparts Healing magic\r\n<material=\"MsgFont2\">Null: Light\r\n" +
-            "<material=\"MsgFont4\">+5: Light • +3: Heal/Supp", // Geis
-            "Imparts Support magic\r\n<material=\"MsgFont2\">Strong: Ailments\r\n" +
-            "<material=\"MsgFont4\">+5: Supp • +3: Almighty/Ailments", // Djed
-            "Imparts Ailment magic\r\n<material=\"MsgFont2\">Strong: Light/Dark\r\n" +
-            "<material=\"MsgFont4\">+7: Ailments • +3: Phys/Elements", // Muspell
-            "Imparts Fire magic\r\n<material=\"MsgFont2\">Drain: Fire<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ice\r\n" +
-            "<material=\"MsgFont4\">+7: Fire • +3: Dark", // Gehenna
-            "Imparts Physical skills\r\n<material=\"MsgFont2\">Strong: Phys<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: All types of magic\r\n" +
-            "<material=\"MsgFont4\">+7: Phys", // Kamurogi
-            "Imparts Special skills\r\n<material=\"MsgFont2\">Null: Dark<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Light\r\n" +
-            "<material=\"MsgFont4\">+8: Dark • +2: Phys/Supp", // Satan
-            "Imparts Electricity magic\r\n<material=\"MsgFont2\">Repel: Elec<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Force\r\n" +
-            "<material=\"MsgFont4\">+9: Elec", // Adama
-            "Imparts Physical skills\r\n<material=\"MsgFont2\">Null: Nerve\r\n" +
-            "<material=\"MsgFont4\">+6: Phys • +3: Supp", // Vimana
-            "Imparts Force magic\r\n<material=\"MsgFont2\">Drain: Force<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Elec\r\n" +
-            "<material=\"MsgFont4\">+8: Force • +4: Phys", // Gundari
-            "Imparts Healing magic\r\n<material=\"MsgFont2\">Null: Light\r\n" +
-            "<material=\"MsgFont4\">+7: Light  • +4: Heal/Supp", // Sophia
-            "Imparts Physical skills\r\n<material=\"MsgFont2\">Strong: Phys<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Force/Light/Dark\r\n" +
-            "<material=\"MsgFont4\">+9: Phys", // Gaea
-            "Imparts Almighty magic\r\nNormal resistance\r\n" +
-            "<material=\"MsgFont4\">+7: Almighty • +5: Elements • +3: Supp", // Kailash
-            "Magatama that holds ultimate power\r\n<material=\"MsgFont2\">Str: All except Almighty\r\n" +
-            "<material=\"MsgFont4\">+9: Phys/Elements/Light/Dark/Almighty/Ailments • +5: Heal/Supp"  // Masakados
+            "Imparts basic skills\r\n" +
+            "Normal resistance\r\n" +
+            "<material=\"MsgFont4\">+1: Phys/Almighty", // Marogareh
+            "Imparts Ice magic and potential\r\n" +
+            "<material=\"MsgFont2\">Null: Ice<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Elec\r\n" +
+            "<material=\"MsgFont4\">+3: Ice", // Wadatsumi
+            "Imparts Healing magic and potential\r\n" +
+            "<material=\"MsgFont2\">Null: Light<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Dark\r\n" +
+            "<material=\"MsgFont4\">+2: Heal", // Ankh
+            "Imparts Support magic and potential\r\n" +
+            "<material=\"MsgFont2\">Null: Mind\r\n" +
+            "<material=\"MsgFont4\">+2: Supp", // Iyomante
+            "Imparts Fire magic and potential\r\n" +
+            "<material=\"MsgFont2\">Null: Fire<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Force\r\n" +
+            "<material=\"MsgFont4\">+3: Fire", // Shiranui
+            "Imparts Force magic and potential\r\n" +
+            "<material=\"MsgFont2\">Null: Force<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire\r\n" +
+            "<material=\"MsgFont4\">+3: Force", // Hifumi
+            "Imparts Physical skills and potential\r\n" +
+            "<material=\"MsgFont2\">Strong: Phys/Shot<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ailments\r\n" +
+            "<material=\"MsgFont4\">+3: Phys", // Kamurogi
+            "Imparts Electricity magic and potential\r\n" +
+            "<material=\"MsgFont2\">Null: Elec<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ice\r\n" +
+            "<material=\"MsgFont4\">+3: Elec", // Kamudo
+            "Imparts Dark magic and potential\r\n" +
+            "<material=\"MsgFont2\">Null: Dark<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Light\r\n" +
+            "<material=\"MsgFont4\">+3: Dark", // Anathema
+            "Imparts Ailment magic and potential\r\n" +
+            "<material=\"MsgFont2\">Strong: Ailments<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Shot\r\n" +
+            "<material=\"MsgFont4\">+3: Ailments", // Miasma
+            "Imparts Light magic and potential\r\n" +
+            "<material=\"MsgFont2\">Null: Light<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Dark\r\n" +
+            "<material=\"MsgFont4\">+3: Light", // Nirvana
+            "Imparts Shot skills and potential\r\n" +
+            "<material=\"MsgFont2\">Strong: Phys/Shot<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire/Ice\r\n" +
+            "<material=\"MsgFont4\">+3: Shot", // Vimana
+            "Imparts Ice magic and potential\r\n" +
+            "<material=\"MsgFont2\">Drain: Ice  <material=\"MsgFont1\">Weak: Fire\r\n" +
+            "<material=\"MsgFont4\">+5: Ice", // Geis
+            "Imparts Support magic and potential\r\n" +
+            "<material=\"MsgFont2\">Null: Curse\r\n" +
+            "<material=\"MsgFont4\">+3: Supp", // Djed
+            "Imparts Fire magic and potential\r\n" +
+            "<material=\"MsgFont2\">Drain: Fire<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ice\r\n" +
+            "<material=\"MsgFont4\">+5: Fire", // Muspell
+            "Imparts Almighty magic and potential\r\n" +
+            "<material=\"MsgFont2\">Null: Dark\r\n" +
+            "<material=\"MsgFont4\">+3: Almighty", // Satan
+            "Imparts Ailment magic and potential\r\n" +
+            "<material=\"MsgFont2\">Strong: Ailments<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Light/Dark\r\n" +
+            "<material=\"MsgFont4\">+5: Ailments", // Adama
+            "Imparts Dark magic and potential\r\n" +
+            "<material=\"MsgFont2\">Repel: Dark\r\n" +
+            "<material=\"MsgFont4\">+5: Dark", // Gehenna
+            "Imparts Healing magic and potential\r\n" +
+            "<material=\"MsgFont2\">Null: Nerve\r\n" +
+            "<material=\"MsgFont4\">+3: Heal", // Sophia
+            "Imparts Force magic and potential\r\n" +
+            "<material=\"MsgFont2\">Repel: Force<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Elec\r\n" +
+            "<material=\"MsgFont4\">+5: Force", // Murakumo
+            "Imparts Light magic and potential\r\n" +
+            "<material=\"MsgFont2\">Repel: Light\r\n" +
+            "<material=\"MsgFont4\">+5: Light", // Gundari
+            "Imparts Electricity magic and potential\r\n" +
+            "<material=\"MsgFont2\">Repel: Elec<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Force\r\n" +
+            "<material=\"MsgFont4\">+5: Elec", // Narukami
+            "Imparts Physical/Shot skills and potential\r\n" +
+            "<material=\"MsgFont2\">Strong: Phys/Shot<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Elec/Force\r\n" +
+            "<material=\"MsgFont4\">+5: Phys/Shot", // Gaea
+            "Imparts Almighty magic and potential\r\n" +
+            "<material=\"MsgFont2\">Strong: Light/Dark\r\n" +
+            "<material=\"MsgFont4\">+5: Almighty", // Kailash
+            "Magatama that holds ultimate power\r\n" +
+            "<material=\"MsgFont2\">Strong: All except Almighty\r\n" +
+            "<material=\"MsgFont4\">+7: All • +3: Heal/Supp"  // Masakados
         };
 
         static private datUnitWork_t currentDemonWork = new datUnitWork_t(); // Used to get the associated demon when displaying the potential of a skill
@@ -998,8 +1025,7 @@ namespace NocturneInsaniax
                             {
                                 try
                                 {
-                                    if (wardOffEvilIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id) ||
-                                        (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 13))
+                                    if (wardOffEvilIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
                                         wardOffEvilActive = true;
                                 }
                                 catch { }
@@ -1020,7 +1046,8 @@ namespace NocturneInsaniax
                         if (wardOffEvilActive) luk += 10;
 
                         var rand = dds3KernelCore.dds3GetRandIntA(100);
-                        if (rand < luk)
+                        if (rand < luk ||
+                            (bossList.Contains(actionProcessData.work.id) && (actionProcessData.work.badstatus == 4 || actionProcessData.work.badstatus == 8 || actionProcessData.work.badstatus == 16 || actionProcessData.work.badstatus == 32 || actionProcessData.work.badstatus == 128)))
                         {
                             var form = actionProcessData.form;
                             nbMakePacket.nbMakeBadKaifukuPacket(0, 0, ref form);
@@ -1143,7 +1170,8 @@ namespace NocturneInsaniax
                             {
                                 try
                                 {
-                                    if (tripuraSamharaIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                    if (tripuraSamharaIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id) ||
+                                        (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 24))
                                         tripuraSamharaActive = true;
                                 }
                                 catch { }
@@ -1409,6 +1437,13 @@ namespace NocturneInsaniax
 
                     sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(nskill, demonID);
 
+                    // Orochi's Bane
+                    if (demonID == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 20 && datSkill.tbl[nskill].skillattr == 4)
+                    {
+                        datNormalSkill.tbl[nskill].basstatus = 64;
+                        datNormalSkill.tbl[nskill].badlevel = 30;
+                    }
+
                     datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(SkillPotentialUtility.ApplyAilmentMultiplier(skillPotential, luk, tmp_datNormalSkill.badlevel));
 
                     // Skadi's Queen of Winter
@@ -1431,7 +1466,8 @@ namespace NocturneInsaniax
                         {
                             try
                             {
-                                if (contagiousCurseIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                if (contagiousCurseIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id) ||
+                                    (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 10))
                                     contagiousCurseActive = true;
                             }
                             catch { }
@@ -1565,9 +1601,17 @@ namespace NocturneInsaniax
                     __result = randomValue == 0 ? 0 : __result;
                 }
 
-                // Withheld Sentence
+                // Instakill restrictions
                 if (datNormalSkill.tbl[nskill].basstatus == 2048)
                 {
+                    // Demi-fiend natural resistance
+                    if (work.id == 0)
+                    {
+                        int randomValue = random.Next(2);
+                        __result = randomValue == 0 ? 0 : __result;
+                    }
+
+                    // Withheld Sentence
                     if (nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex <= 3)
                     {
                         foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
@@ -1575,7 +1619,7 @@ namespace NocturneInsaniax
                             try
                             {
                                 if (withheldSentenceIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id) ||
-                                    (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 22))
+                                    (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 19))
                                     __result = 0;
                             }
                             catch { }
@@ -1595,11 +1639,17 @@ namespace NocturneInsaniax
                     }
                 }
 
-                // Boss Ailment immunities
-                if (bossList.Contains(work.id) && (datNormalSkill.tbl[nskill].basstatus == 8 || datNormalSkill.tbl[nskill].basstatus == 16 || datNormalSkill.tbl[nskill].basstatus == 32 || datNormalSkill.tbl[nskill].basstatus == 128 || datNormalSkill.tbl[nskill].basstatus == 1024 || datNormalSkill.tbl[nskill].basstatus == 2048))
+                // Boss Ailment resistance
+                if (bossList.Contains(work.id) && (datNormalSkill.tbl[nskill].basstatus == 8 || datNormalSkill.tbl[nskill].basstatus == 16 || datNormalSkill.tbl[nskill].basstatus == 32 || datNormalSkill.tbl[nskill].basstatus == 128 || datNormalSkill.tbl[nskill].basstatus == 1024 || datNormalSkill.tbl[nskill].basstatus == 140 || datNormalSkill.tbl[nskill].basstatus == 412))
+                {
+                    int randomValue = random.Next(2);
+                    __result = randomValue == 0 ? 0 : __result;
+                }
+                else if (bossList.Contains(work.id) && datNormalSkill.tbl[nskill].basstatus == 2048)
                 {
                     __result = 0;
                 }
+
                 if (datNormalSkill.tbl[nskill].badlevel != 255)
                 {
                     datNormalSkill.tbl[nskill].basstatus = tmp_datNormalSkill.basstatus; // Revert the ailment
@@ -1618,6 +1668,10 @@ namespace NocturneInsaniax
             {
                 if (id == 61 && currentDemonWork.level >= 80 && currentDemonWork.param[0] >= 30 && currentDemonWork.param[2] >= 30 && currentDemonWork.param[3] >= 30 && currentDemonWork.param[4] >= 30 && currentDemonWork.param[5] >= 30)
                     __result += potentialHelp[215]; // Get Uber Pixie's potential help
+                else if (id >= 384 && id <= 433)
+                {
+                    __result += SkillPotentialUtility.GetDemiFiendSkillPotentialHelp();
+                }
                 else
                     __result += potentialHelp[id];
             }
@@ -1632,6 +1686,36 @@ namespace NocturneInsaniax
             public static bool Prefix(ref int id, ref string __result)
             {
                 __result = magatamaHelp[id];
+
+                int consumedSkillsLength = InfiniteMagatamaSkillsUtility.GetConsummedSkillsLength(id); // Get the progression of learned skills from this magatama
+                int magatamaSkillsLength = InfiniteMagatamaSkillsUtility.GetMagatamaSkillsLength(id); // Get the number of learnable skills from this magatama
+
+                bool hasAllSkills = true;
+                var demiFiendWork = dds3GlobalWork.DDS3_GBWK.unitwork.FirstOrDefault(x => x.id == 0);
+                foreach (var skill in tblHearts.fclHeartsTbl[id].Skill)
+                {
+                    if (!demiFiendWork.skill.Contains(skill.ID))
+                        hasAllSkills = false;
+                }
+
+                if (consumedSkillsLength < magatamaSkillsLength)
+                {
+                    var nextSkillName = datSkillName.Get(tblHearts.fclHeartsTbl[id].Skill[consumedSkillsLength].ID);
+                    if (nextSkillName.Contains("1") || nextSkillName.Contains("2") || nextSkillName.Contains("3") || nextSkillName.Contains("4") || nextSkillName.Contains("5") || nextSkillName.Contains("6") || nextSkillName.Contains("7") || nextSkillName.Contains("8") || nextSkillName.Contains("9"))
+                        nextSkillName = nextSkillName.Remove(nextSkillName.LastIndexOf(" "));
+                    if (nextSkillName == "Impaler's Animus" && tblHearts.fclHeartsTbl[id].Skill[consumedSkillsLength].TargetLevel == 255)
+                        nextSkillName = "？";
+                    __result += "  <material=\"MsgFont3\">Next Skill: " + nextSkillName;
+                    
+                    var nextSkillLevel = tblHearts.fclHeartsTbl[id].Skill[consumedSkillsLength].TargetLevel;
+                    if (nextSkillLevel > demiFiendWork.level && tblHearts.fclHeartsTbl[id].Skill[consumedSkillsLength].TargetLevel != 255)
+                        __result += " (Level " + nextSkillLevel + ")";
+                }
+                else if (tierOneElemMagatama.Contains((byte) id))
+                {
+                    __result = __result.Replace("+3", "+4");
+                }
+
                 return false;
             }
         }
@@ -1699,7 +1783,7 @@ namespace NocturneInsaniax
 
                     sbyte skillPotential;
                     if (demonID == 0) // If the curent demon is Demi-fiend
-                        skillPotential = magatamaPotentials[dds3GlobalWork.DDS3_GBWK.heartsequip][skillAttribute]; // Get the potential from the currently equipped Magatama
+                        skillPotential = GetDemiFiendSkillPotential(skillAttribute);
                     else if (demonID == 61 && currentDemonWork.level >= 80 && currentDemonWork.param[0] >= 30 && currentDemonWork.param[2] >= 30 && currentDemonWork.param[3] >= 30 && currentDemonWork.param[4] >= 30 && currentDemonWork.param[5] >= 30)
                         skillPotential = demonPotentials[215][skillAttribute]; // Get Uber Pixie's potential
                     else
@@ -1740,7 +1824,7 @@ namespace NocturneInsaniax
                     if (actionProcessData != null && skillAttribute <= 7)
                     { 
                         // Gestalts
-                        if (currentDemonWork.id == 0 && skillAttribute <= 4 && dds3GlobalWork.DDS3_GBWK.heartsequip == gestaltMagatama[skillAttribute])
+                        if (currentDemonWork.id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == gestaltMagatama[skillAttribute])
                         {
                             foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
                             {
@@ -1811,6 +1895,246 @@ namespace NocturneInsaniax
                 }
 
                 return 0;
+            }
+
+            public static sbyte GetDemiFiendSkillPotential(sbyte skillAttribute)
+            {
+                sbyte skillPotential;
+
+                sbyte inherentMagatamaPotential = magatamaPotentials[dds3GlobalWork.DDS3_GBWK.heartsequip][skillAttribute]; // Get the potential from the currently equipped Magatama
+                if (tierOneElemMagatama.Contains(dds3GlobalWork.DDS3_GBWK.heartsequip) && magatamaPotentialAffinities[dds3GlobalWork.DDS3_GBWK.heartsequip].Contains(skillAttribute) && heartMastered[dds3GlobalWork.DDS3_GBWK.heartsequip])
+                    inherentMagatamaPotential = 4;
+
+                sbyte bonusMagatamaPotential = 0;
+                int bonusMagatamaPoints = 0;
+                List<int> magatamaIds = new List<int>();
+                for (int i = 1; i < magatamaPotentialAffinities.Length; i++)
+                {
+                    if (magatamaPotentialAffinities[i].Contains(skillAttribute))
+                        magatamaIds.Add(i);
+                }
+                foreach (int id in magatamaIds)
+                {
+                    if (id != dds3GlobalWork.DDS3_GBWK.heartsequip)
+                        bonusMagatamaPoints += InfiniteMagatamaSkillsUtility.GetConsummedSkillsLength(id) * magatamaPotentialPoints[id];
+                }
+                if (dds3GlobalWork.DDS3_GBWK.hearts.Contains(25))
+                    bonusMagatamaPoints += magatamaPotentialPoints[25];
+
+                if (skillAttribute <= 12)
+                {
+                    for (int i = 1; i < magatamaPotentialElemThresholds.Length; i++)
+                    {
+                        if (bonusMagatamaPoints >= magatamaPotentialElemThresholds[i])
+                            bonusMagatamaPotential++;
+                    }
+                }
+                else if (skillAttribute <= 14)
+                {
+                    for (int i = 1; i < magatamaPotentialSuppThresholds.Length; i++)
+                    {
+                        if (bonusMagatamaPoints >= magatamaPotentialSuppThresholds[i])
+                            bonusMagatamaPotential++;
+                    }
+                }
+
+                skillPotential = Convert.ToSByte(inherentMagatamaPotential + bonusMagatamaPotential);
+
+                switch (skillAttribute)
+                {
+                    case 0: // Phys
+                        {
+                            if (dds3GlobalWork.DDS3_GBWK.heartsequip == 7 && !dds3GlobalWork.DDS3_GBWK.hearts.Contains(25)) 
+                                skillPotential = Math.Min((sbyte)7, skillPotential);
+                            else 
+                                skillPotential = Math.Min((sbyte)9, skillPotential);
+                            break;
+                        }
+                    case 1: // Fire
+                        {
+                            if (dds3GlobalWork.DDS3_GBWK.heartsequip == 5 && !dds3GlobalWork.DDS3_GBWK.hearts.Contains(25)) 
+                                skillPotential = Math.Min((sbyte)7, skillPotential);
+                            else 
+                                skillPotential = Math.Min((sbyte)9, skillPotential);
+                            break;
+                        }
+                    case 2: // Ice
+                        {
+                            if (dds3GlobalWork.DDS3_GBWK.heartsequip == 2 && !dds3GlobalWork.DDS3_GBWK.hearts.Contains(25)) 
+                                skillPotential = Math.Min((sbyte)7, skillPotential);
+                            else 
+                                skillPotential = Math.Min((sbyte)9, skillPotential);
+                            break;
+                        }
+                    case 3: // Elec
+                        {
+                            if (dds3GlobalWork.DDS3_GBWK.heartsequip == 8 && !dds3GlobalWork.DDS3_GBWK.hearts.Contains(25)) 
+                                skillPotential = Math.Min((sbyte)7, skillPotential);
+                            else 
+                                skillPotential = Math.Min((sbyte)9, skillPotential);
+                            break;
+                        }
+                    case 4: // Force
+                        {
+                            if (dds3GlobalWork.DDS3_GBWK.heartsequip == 6 && !dds3GlobalWork.DDS3_GBWK.hearts.Contains(25)) 
+                                skillPotential = Math.Min((sbyte)7, skillPotential);
+                            else 
+                                skillPotential = Math.Min((sbyte)9, skillPotential);
+                            break;
+                        }
+                    case 6: // Light
+                        {
+                            if (dds3GlobalWork.DDS3_GBWK.heartsequip == 11 && !dds3GlobalWork.DDS3_GBWK.hearts.Contains(25)) 
+                                skillPotential = Math.Min((sbyte)7, skillPotential);
+                            else 
+                                skillPotential = Math.Min((sbyte)9, skillPotential);
+                            break;
+                        }
+                    case 7: // Dark
+                        {
+                            if (dds3GlobalWork.DDS3_GBWK.heartsequip == 9 && !dds3GlobalWork.DDS3_GBWK.hearts.Contains(25)) 
+                                skillPotential = Math.Min((sbyte)7, skillPotential);
+                            else 
+                                skillPotential = Math.Min((sbyte)9, skillPotential);
+                            break;
+                        }
+                    case 8: // Curse
+                        {
+                            if (dds3GlobalWork.DDS3_GBWK.heartsequip == 10 && !dds3GlobalWork.DDS3_GBWK.hearts.Contains(25))
+                                skillPotential = Math.Min((sbyte)7, skillPotential);
+                            else
+                                skillPotential = Math.Min((sbyte)9, skillPotential);
+                            break;
+                        }
+                    case 9: // Nerve
+                        {
+                            if (dds3GlobalWork.DDS3_GBWK.heartsequip == 10 && !dds3GlobalWork.DDS3_GBWK.hearts.Contains(25))
+                                skillPotential = Math.Min((sbyte)7, skillPotential);
+                            else
+                                skillPotential = Math.Min((sbyte)9, skillPotential);
+                            break;
+                        }
+                    case 10: // Mind
+                        {
+                            if (dds3GlobalWork.DDS3_GBWK.heartsequip == 10 && !dds3GlobalWork.DDS3_GBWK.hearts.Contains(25))
+                                skillPotential = Math.Min((sbyte)7, skillPotential);
+                            else
+                                skillPotential = Math.Min((sbyte)9, skillPotential);
+                            break;
+                        }
+                    case 12: // Shot
+                        {
+                            if (dds3GlobalWork.DDS3_GBWK.heartsequip == 12 && !dds3GlobalWork.DDS3_GBWK.hearts.Contains(25)) 
+                                skillPotential = Math.Min((sbyte)7, skillPotential);
+                            else 
+                                skillPotential = Math.Min((sbyte)9, skillPotential);
+                            break;
+                        }
+                    case 13: // Heal
+                        {
+                            if (dds3GlobalWork.DDS3_GBWK.heartsequip == 3 && !dds3GlobalWork.DDS3_GBWK.hearts.Contains(25)) 
+                                skillPotential = Math.Min((sbyte)4, skillPotential);
+                            else 
+                                skillPotential = Math.Min((sbyte)5, skillPotential);
+                            break;
+                        }
+                    case 14: // Support
+                        {
+                            if (dds3GlobalWork.DDS3_GBWK.heartsequip == 4 && !dds3GlobalWork.DDS3_GBWK.hearts.Contains(25)) 
+                                skillPotential = Math.Min((sbyte)4, skillPotential);
+                            else 
+                                skillPotential = Math.Min((sbyte)5, skillPotential);
+                            break;
+                        }
+                    default:
+                        {
+                            skillPotential = Math.Min((sbyte)9, skillPotential);
+                            break;
+                        }
+                }
+
+                return skillPotential;
+            }
+
+            public static string GetDemiFiendSkillPotentialHelp()
+            {
+                sbyte[] potential = new sbyte[15];
+                string[] elem = new string[]
+                {
+                    "Phys",
+                    "Fire",
+                    "Ice",
+                    "Elec",
+                    "Force",
+                    "Almighty",
+                    "Light",
+                    "Dark",
+                    "Curse",
+                    "Mind",
+                    "Nerve",
+                    "",
+                    "Shot",
+                    "Heal",
+                    "Supp"
+                };
+
+                for (sbyte i = 0; i <= 14; i++)
+                {
+                    if (i != 11)
+                        potential[i] = GetDemiFiendSkillPotential(i);
+                }
+
+                var attackPotential = potential.ToList();
+                attackPotential.RemoveAt(14);
+                attackPotential.RemoveAt(13);
+                bool shotOverlap = false;
+                if (attackPotential[12] != 0 && attackPotential.Where(x => x == attackPotential[12]).Skip(1).Any())
+                {
+                    shotOverlap = true;
+                }
+
+                string helpString = "  <material=\"MsgFont4\">";
+
+                while (!potential.All(x => x == 0))
+                {
+                    var maxPotential = potential.Max();
+                    var maxPotentialIndex = potential.ToList().IndexOf(maxPotential);
+
+                    helpString += "+" + maxPotential + ": " + elem[maxPotentialIndex];
+
+                    potential[maxPotentialIndex] = 0;
+
+                    while (potential.Any(x => x == maxPotential))
+                    {
+                        maxPotentialIndex = potential.ToList().IndexOf(maxPotential);
+                        helpString += "/" + elem[maxPotentialIndex];
+
+                        potential[maxPotentialIndex] = 0;
+                    }
+
+                    helpString += " • ";
+                }
+
+                helpString = helpString.Remove(helpString.LastIndexOf(" • "));
+
+                if (shotOverlap && !helpString.Contains("Phys/Shot"))
+                {
+                    helpString = helpString.Replace("/Shot", "");
+                    var shotPotentialIndex = attackPotential.IndexOf(attackPotential[12]);
+                    helpString = helpString.Replace(elem[shotPotentialIndex], "Shot/" + elem[shotPotentialIndex]);
+
+                    if (helpString.Contains("Shot/Phys"))
+                        helpString = helpString.Replace("Shot/Phys", "Phys/Shot");
+                }
+
+                if (helpString.Contains("Fire/Ice/Elec/Force"))
+                    helpString = helpString.Replace("Fire/Ice/Elec/Force", "Elements");
+                if (helpString.Contains("Curse/Mind/Nerve"))
+                    helpString = helpString.Replace("Curse/Mind/Nerve", "Ailments");
+
+                helpString += "<material=\"MsgFont1\">";
+
+                return helpString;
             }
 
             public static ushort ApplySkillPotentialCost(int skillID, sbyte skillPotential)
