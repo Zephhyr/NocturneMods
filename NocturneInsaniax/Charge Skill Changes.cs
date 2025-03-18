@@ -27,13 +27,16 @@ namespace NocturneInsaniax
                 try
                 {
                     nbParty_t party = nbMainProcess.nbGetPartyFromFormindex(formindex);
-                    var oldcount = party.count;
-                    var newcount = new short[21];
-                    for (int i = 0; i < oldcount.Length; i++)
+                    if (party.count.Length == 20)
                     {
-                        newcount[i] = oldcount[i];
+                        var oldcount = party.count;
+                        var newcount = new short[21];
+                        for (int i = 0; i < oldcount.Length; i++)
+                        {
+                            newcount[i] = oldcount[i];
+                        }
+                        party.count = newcount;
                     }
-                    party.count = newcount;
                 }
                 catch { }
             }
@@ -75,16 +78,15 @@ namespace NocturneInsaniax
                         newcount[i] = oldcount[i];
                     }
                     party.count = newcount;
-                }
-                catch { }
+                } catch { }
 
                 if (type == 15 && (chargeNowcommand == 6 || 
-                    ((chargeNowcommand == 0 || chargeNowcommand == 1) && datNormalSkill.tbl[chargeNowindex].koukatype == 0)) ||
-                    (chargeNowcommand == 5 && datNormalSkill.tbl[datItem.tbl[chargeNowindex].skillid].koukatype == 0))
+                    ((chargeNowcommand == 0 || chargeNowcommand == 1) && datNormalSkill.tbl[chargeNowindex].koukatype == 0 && new ushort[] { 1, 6, 12, 14 }.Contains(datNormalSkill.tbl[chargeNowindex].hptype))) ||
+                    (chargeNowcommand == 5 && datNormalSkill.tbl[datItem.tbl[chargeNowindex].skillid].koukatype == 0 && new ushort[] { 1, 6, 12, 14 }.Contains(datNormalSkill.tbl[datItem.tbl[chargeNowindex].skillid].hptype)))
                     point = focusState;
                 else if (type == 20 && (chargeNowcommand == 6 || 
-                    ((chargeNowcommand == 0 || chargeNowcommand == 1) && datNormalSkill.tbl[chargeNowindex].koukatype == 1)) ||
-                    (chargeNowcommand == 5 && datNormalSkill.tbl[datItem.tbl[chargeNowindex].skillid].koukatype == 1))
+                    ((chargeNowcommand == 0 || chargeNowcommand == 1) && datNormalSkill.tbl[chargeNowindex].koukatype == 1 && new ushort[] { 1, 6, 12, 14 }.Contains(datNormalSkill.tbl[chargeNowindex].hptype))) ||
+                    (chargeNowcommand == 5 && datNormalSkill.tbl[datItem.tbl[chargeNowindex].skillid].koukatype == 1 && new ushort[] { 1, 6, 12, 14 }.Contains(datNormalSkill.tbl[datItem.tbl[chargeNowindex].skillid].hptype)))
                     point = concentrateState;
             }
         }
@@ -107,14 +109,22 @@ namespace NocturneInsaniax
                 actionProcessData = a;
 
                 sbyte skillattr = -1;
-                if (chargeNowcommand == 0 || chargeNowcommand == 1)
-                    skillattr = datSkill.tbl[chargeNowindex].skillattr;
-                else if (chargeNowcommand == 5)
-                    skillattr = datSkill.tbl[datItem.tbl[chargeNowindex].skillid].skillattr;
-
                 //bool validskill = chargeNowindex <= 287 || chargeNowindex >= 422;
-                bool chargedPhysical = datNormalSkill.tbl[chargeNowindex].koukatype == 0 && focusState == 1;
-                bool chargedMagical = datNormalSkill.tbl[chargeNowindex].koukatype == 1 && (datNormalSkill.tbl[chargeNowindex].hptype == 1 || datNormalSkill.tbl[chargeNowindex].hptype == 12) && concentrateState == 1;
+                bool chargedPhysical = false;
+                bool chargedMagical = false;
+
+                if (chargeNowcommand == 0 || chargeNowcommand == 1)
+                {
+                    skillattr = datSkill.tbl[chargeNowindex].skillattr;
+                    chargedPhysical = datNormalSkill.tbl[chargeNowindex].koukatype == 0 && focusState == 1;
+                    chargedMagical = datNormalSkill.tbl[chargeNowindex].koukatype == 1 && (datNormalSkill.tbl[chargeNowindex].hptype == 1 || datNormalSkill.tbl[chargeNowindex].hptype == 12) && concentrateState == 1;
+                }
+                else if (chargeNowcommand == 5)
+                {
+                    skillattr = datSkill.tbl[datItem.tbl[chargeNowindex].skillid].skillattr;
+                    chargedPhysical = datNormalSkill.tbl[datItem.tbl[chargeNowindex].skillid].koukatype == 0 && focusState == 1;
+                    chargedMagical = datNormalSkill.tbl[datItem.tbl[chargeNowindex].skillid].koukatype == 1 && (datNormalSkill.tbl[datItem.tbl[chargeNowindex].skillid].hptype == 1 || datNormalSkill.tbl[datItem.tbl[chargeNowindex].skillid].hptype == 12) && concentrateState == 1;
+                }
 
                 if (skillattr >= 0 && skillattr <= 12 && (chargedPhysical || chargedMagical))
                 {

@@ -45,7 +45,7 @@ namespace NocturneInsaniax
                     s.commcnt[3] = stockIndices.Count;
 
                     // Prevent Talking in NKEs
-                    if (s.act.data.encno == 1270 || s.act.data.encno == 1271)
+                    if (s.act.data.encno == 1270 || s.act.data.encno == 1271 || s.act.data.encno == 1272)
                     {
                         for (int i = 0; i < s.commlist[1].Length; i++)
                             if (s.commlist[1][i] > 0)
@@ -98,7 +98,7 @@ namespace NocturneInsaniax
                 else
                 {
                     // Prevent Talking in NKEs
-                    if (s.act.data.encno == 1270 || s.act.data.encno == 1271) 
+                    if (s.act.data.encno == 1270 || s.act.data.encno == 1271 || s.act.data.encno == 1272) 
                     {
                         for (int i = 0; i < s.commlist[1].Length; i++)
                             if (s.commlist[1][i] > 0)
@@ -116,12 +116,12 @@ namespace NocturneInsaniax
                         s.commdisable[2] = itemDisableCommands;
                     }
 
-                    // Test - Add all skills
+                    //Test - Add all skills
                     //var skillCommands = new ushort[288];
                     //for (ushort i = 0; i < 288; i++)
                     //    skillCommands[i] = i;
                     //skillCommands[0] = s.commlist[0][0];
-                    //skillCommands[1] = 425;
+                    //skillCommands[1] = 214;
                     ////skillCommands[2] = 477;
                     ////skillCommands[3] = 478;
 

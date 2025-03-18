@@ -21,10 +21,14 @@ namespace NocturneInsaniax
                 if (nbMainProcess.nbGetUnitWorkFromFormindex(target_formindex) == null) return; // If the target died since last time, return
 
                 string demonname = datDevilName.Get(nbMainProcess.nbGetUnitWorkFromFormindex(target_formindex).id); // Gets the demon's name
+                ushort demonlevel = nbMainProcess.nbGetUnitWorkFromFormindex(target_formindex).level; // Gets the demon's name
 
                 // If displayng the name of the single target
                 if ((target_formindex == 0 && text2 == nickname) || (target_formindex != 0 && text2 == demonname))
                 {
+                    if (EnableEnemyLevelDisplay.Value)
+                        text2 += "  Lv" + demonlevel;
+
                     // Gets the type with the buffs info
                     nbParty_t party_member = nbMainProcess.nbGetPartyFromFormindex(target_formindex);
 

@@ -210,10 +210,10 @@ namespace NocturneInsaniax
             { 192, new InnateSkill(383, 15, "Raidou/Dante", "")}, // 192 Raidou/Dante
             { 193, new InnateSkill(383, 05, "Almighty Gestalt", "Metatron gains Almighty skill potential \nbased on the total positive potential \nof allies in the active party.")}, // 193 Metatron
             { 194, new InnateSkill(383, 05, "Almighty Enhancer", "While in the active party, \nraise allies' Almighty skill potential \nto Beelzebub's if it was lower.")}, // 194 Beelzebub (Fly)
-            { 195, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall Support effects on Pale Rider \nwill be passed to the switched ally.")}, // 195 Pale Rider
-            { 196, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall Support effects on White Rider \nwill be passed to the switched ally.")}, // 196 White Rider
-            { 197, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall Support effects on Red Rider \nwill be passed to the switched ally.")}, // 197 Red Rider
-            { 198, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen \nall Support effects on Black Rider \nwill be passed to the switched ally.")}, // 198 Black Rider
+            { 195, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen, \nall Support effects on Pale Rider \nwill be passed to the switched ally.")}, // 195 Pale Rider
+            { 196, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen, \nall Support effects on White Rider \nwill be passed to the switched ally.")}, // 196 White Rider
+            { 197, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen, \nall Support effects on Red Rider \nwill be passed to the switched ally.")}, // 197 Red Rider
+            { 198, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen, \nall Support effects on Black Rider \nwill be passed to the switched ally.")}, // 198 Black Rider
             { 199, new InnateSkill(383, 00, "Estocada", "Matador may perform a weak \ncounterattack after dodging or nullifying \nan attack. Pow: 32")}, // 199 Matador
             { 200, new InnateSkill(383, 15, "Speed Star", "Hell Biker's attacks, including Magic, \ngain 10% Critical Rate against \ntargets with a lower Agility stat.")}, // 200 Hell Biker
             { 201, new InnateSkill(383, 13, "Guiding Wisdom", "While in the active party, \nwhen an ally is summoned from the \nstock, cure their ailments.")}, // 201 Daisoujou
@@ -266,7 +266,7 @@ namespace NocturneInsaniax
             { 248, new InnateSkill(383, 15, "", "")}, // 248 
             { 249, new InnateSkill(383, 15, "", "")}, // 249 
             { 250, new InnateSkill(383, 15, "", "")}, // 250 
-            { 251, new InnateSkill(383, 15, "", "")}, // 251 
+            { 251, new InnateSkill(383, 02, "Ice Enhancer", "")}, // 251 
             { 252, new InnateSkill(383, 15, "Devil Regeneration", "")}, // 252 Devil Dante
             { 253, new InnateSkill(383, 15, "No Innate Skill", "")}, // 253 Gamete
             { 254, new InnateSkill(383, 15, "YHVH", "")}, // 254 YHVH

@@ -1,6 +1,8 @@
 ﻿using HarmonyLib;
 using MelonLoader;
 using Il2Cpp;
+using MelonLoader.TinyJSON;
+using Newtonsoft.Json;
 
 namespace NocturneInsaniax
 {
@@ -34,6 +36,31 @@ namespace NocturneInsaniax
                             case "<AI_MSG_L0129><WAIT>": __result = "<SP6>Humanity will inevitably lose its way and long for salvation. Then... You can regret this decision...<WA>"; break;
                         }
                     }
+                    if (nbMainProcess.nbGetMainProcessData().encno == 307)
+                    {
+                        switch (message)
+                        {
+                            // Girimekhala Dialogue 1
+                            case "<SPD 6><AI_MSG_L0120><WAIT>": __result = "<SP6>KILL YOU! *trumpet*<WA>"; break;
+                            // Girimekhala Dialogue 2
+                            case "<SPD 6><AI_MSG_L0121><WAIT>": __result = "<SP6>Guh... ugh... ughhh...<WA>"; break;
+                            case "<AI_MSG_L0122><WAIT>": __result = "<SP6>...I am... Girimekhala... I... will kill... you...<WA>"; break;
+                            // Girimekhala Death Dialogue
+                            case "<SPD 6><AI_MSG_L0040><WAIT>": __result = "<SP6>...Kill... you...<WA>"; break;
+                        }
+                    }
+                    if (nbMainProcess.nbGetMainProcessData().encno == 1272)
+                    {
+                        switch (message)
+                        {
+                            // Jack Frost Dialogue
+                            case "<SPD 6><AI_MSG_L0138><WAIT>": __result = "<SP6>Hee, why are you standing on your hee-ho toes?<WA>"; break;
+                            case "<SPD 6><AI_MSG_L0126><WAIT>": __result = "<SP6>Oh, I see-ho. You think I'm just a plain old Frost!<WA>"; break;
+                            case "<SPD 6><AI_MSG_L0127><WAIT>": __result = "<SP6>Isn't that right!? Yeah, I'm talking to you, hee-ho!<WA>"; break;
+                            case "<SPD 6><AI_MSG_L0128><WAIT>": __result = "<SP6>I'm Jack... Jack Frost the Magnificent!<WA>"; break;
+                            case "<AI_MSG_L0129><WAIT>": __result = "<SP6>I'll teach you a lesson you'll never forget! Heeeeeeeeeeho!!!!!<WA>"; break;
+                        }
+                    }
                 }
                 catch { }
             }
@@ -45,6 +72,7 @@ namespace NocturneInsaniax
             public static void Prefix(ref instanceMes_tag pinst, ref int mode)
             {
                 //MelonLogger.Msg("--itfMesManager.ReadytoMessage--");
+                
                 try
                 {
                     if (nbMainProcess.nbGetMainProcessData().encno == 1278)
@@ -68,6 +96,16 @@ namespace NocturneInsaniax
                             pinst.message.maxpage = 5;
                             pinst.message.pbinheader.page = 5;
                             pinst.message.pbinheader.addr = new uint[] { 3780, 8924, 8988, 9056, 9080 };
+                            pinst.message.pbinheader.len = new int[] { 24, 24, 24, 24, 20 };
+                        }
+                    }
+                    else if(nbMainProcess.nbGetMainProcessData().encno == 1272)
+                    {
+                        if (pinst.message.pbinheader.addr.Contains(9652))
+                        {
+                            pinst.message.maxpage = 5;
+                            pinst.message.pbinheader.page = 5;
+                            pinst.message.pbinheader.addr = new uint[] { 9652, 8924, 8988, 9056, 9080 };
                             pinst.message.pbinheader.len = new int[] { 24, 24, 24, 24, 20 };
                         }
                     }

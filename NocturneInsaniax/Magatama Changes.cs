@@ -138,7 +138,7 @@ namespace NocturneInsaniax
                     case "<SPD 7><F027_L0021><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(13) + "<CO0>. <WA>"; break; // After Puzzle Boy
                     case "<SPD 7><F031_L0067><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(14) + "<CO0>. <WA>"; break; // After Moirae Sisters
                     case "<SPD 7><F017_L0046><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(15) + "<CO0>. <WA>"; break; // After Mara
-                    case "<SPD 7><F025_L0260><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(18) + "<CO0>. <WA>"; break; // After Black Frost
+                    case "<F025_L0260><WAIT>": __result = "> You obtained the Magatama <CO2>" + datHeartsName.Get(18) + "<CO0>. <WA>"; break; // After Black Frost
                     case "<SPD 7><F034_L0013><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(19) + "<CO0>. <WA>"; break; // After Albion
                     case "<SPD 7><F039_L0037><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(21) + "<CO0>. <WA>"; break; // After Bishamonten
                 }
@@ -1556,16 +1556,16 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Flag = 0; // Neutral
 
             // Stats
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 4; // Strength
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 4; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 6; // Strength
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 6; // Strength
             tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 10; // Magic
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 10; // Magic
             tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 8; // Vitality
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 8; // Vitality
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 1; // Agility
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 1; // Agility
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 5; // Luck
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 5; // Luck
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 4; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 4; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 6; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 6; // Luck
 
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 27; // Megidolaon

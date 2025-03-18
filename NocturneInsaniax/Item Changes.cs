@@ -112,6 +112,9 @@ namespace NocturneInsaniax
                     case 62: __result = "Demi-fiend earns enough \nEXP to level up but \nloses one level."; return false; // Cursed Gospel
                     case 63: __result = "Grants four flashing turn icons. \n(Limit: 1)"; return false; // Impel Stone
                     case 76: __result = "Ice-type Magatama."; return false; // Geis
+                    case 80: __result = "Ailment-type Magatama. \n"; return false; // Adama
+                    case 83: __result = "Force-type Magatama. \n"; return false; // Murakumo
+                    case 85: __result = "Elec-type Magatama. \n"; return false; // Narukami
                     case 86: __result = "Physical-type Magatama."; return false; // Gaea
                     case 107: __result = "A beautiful gemstone \nthat symbolizes \nearth."; return false; // Malachite
                     default: return true;
@@ -199,6 +202,9 @@ namespace NocturneInsaniax
 
             VimanaItem(75);
             GeisItem(76);
+            AdamaItem(80);
+            MurakumoItem(83);
+            NarukamiItem(85);
         }
 
         private static void ChakraElixir(ushort id)
@@ -319,12 +325,28 @@ namespace NocturneInsaniax
             datItem.tbl[id].price = 30000;
         }
 
+        private static void AdamaItem(ushort id)
+        {
+            datItem.tbl[id].price = 40000;
+        }
+
+        private static void MurakumoItem(ushort id)
+        {
+            datItem.tbl[id].price = 80000;
+        }
+
+        private static void NarukamiItem(ushort id)
+        {
+            datItem.tbl[id].price = 100000;
+        }
+
         //------------------------------------------------------------
 
         private static void ApplyShopChanges()
         {
             ShibuyaShop(1);
             AsakusaShop(4);
+            CollectorShop(5);
             RagShop();
         }
 
@@ -349,6 +371,14 @@ namespace NocturneInsaniax
             fclJunkShopTable.fclShopItemPackTbl[id].ItemList[10].ID = 74; // Nirvana
             fclJunkShopTable.fclShopItemPackTbl[id].ItemList[11].ID = 75; // Vimana
             fclJunkShopTable.fclShopItemPackTbl[id].ItemList[12].ID = 0;
+        }
+
+        private static void CollectorShop(ushort id)
+        {
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[5].ID = 76; // Geis
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[6].ID = 80; // Adama
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[7].ID = 83; // Murakumo
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[8].ID = 85; // Narukami
         }
 
         private static void RagShop()
@@ -552,6 +582,14 @@ namespace NocturneInsaniax
             // Macca Box in Asakusa
             fldGlobal.fldHitData._fldItemBoxTbl[111]._Param = 20000;
 
+            // Bead Box in Asakusa Tunnel
+            fldGlobal.fldHitData._fldItemBoxTbl[147]._ItemID = 4;
+
+            // Macca Box in Asakusa Tunnel
+            fldGlobal.fldHitData._fldItemBoxTbl[146]._Param = 10000;
+
+            // Life Stone Item Box in Yoyogi Park
+            fldGlobal.fldHitData._fldItemBoxTbl[165]._ItemNum = 5;
 
             // Great Chakra Item Box in First Kalpa
             fldGlobal.fldHitData._fldItemBoxTbl[256]._ItemID = 8;

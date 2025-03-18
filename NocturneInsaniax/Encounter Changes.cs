@@ -115,7 +115,7 @@ namespace NocturneInsaniax
                 case 122: ShinjukuMedicalCentreSlimeEncounter(); return 1270;
                 case 123: ShinjukuMedicalCentreSlimeEncounter(); return 1270;
 
-                case 7: Overworld1MouRyoZhenEncounter(); return 1270;
+                case 7: Overworld1AngelEncounter(); return 1270;
                 case 12: Overworld1AngelEncounter(); return 1270;
 
                 case 8: YoyogiParkHighPixieEncounter(); return 1270;
@@ -216,6 +216,39 @@ namespace NocturneInsaniax
                 case 77: AmalaNetworkShadowEncounter(); return 1270;
                 case 78: AmalaNetworkShadowEncounter(); return 1270;
                 case 79: AmalaNetworkShadowEncounter(); return 1270;
+
+                case 85: AsakusaTunnelOkuninushiEncounter(); return 1270;
+                case 86: AsakusaTunnelOkuninushiEncounter(); return 1270;
+                case 87: AsakusaTunnelOkuninushiEncounter(); return 1270;
+
+                case 88: YoyogiParkHighPixieEncounter(); return 1270;
+                case 89: YoyogiParkCuChulainnEncounter(); return 1270;
+                case 90: YoyogiParkCuChulainnEncounter(); return 1270;
+                case 91: YoyogiParkCuChulainnEncounter(); return 1270;
+                case 92: YoyogiParkCuChulainnEncounter(); return 1270;
+
+                case 151: IkebukuroHanumanEncounter(); return 1270;
+                case 152: IkebukuroHanumanEncounter(); return 1270;
+                case 153: IkebukuroHanumanEncounter(); return 1270;
+                case 154: IkebukuroHanumanEncounter(); return 1270;
+
+                case 134: MantraHeadquartersThroneEncounter(); return 1270;
+                case 135: MantraHeadquartersThroneEncounter(); return 1270;
+                case 136: MantraHeadquartersThroneEncounter(); return 1270;
+                case 137: MantraHeadquartersThroneEncounter(); return 1270;
+                case 138: MantraHeadquartersThroneEncounter(); return 1270;
+                case 139: MantraHeadquartersThroneEncounter(); return 1270;
+                case 140: MantraHeadquartersThroneEncounter(); return 1270;
+
+                case 141: KabukichoPrisonJackFrostEncounter(); return 1272;
+                case 142: KabukichoPrisonJackFrostEncounter(); return 1272;
+                case 143: KabukichoPrisonJackFrostEncounter(); return 1272;
+                case 144: KabukichoPrisonJackFrostEncounter(); return 1272;
+                case 145: KabukichoPrisonJackFrostEncounter(); return 1272;
+                case 146: KabukichoPrisonJackFrostEncounter(); return 1272;
+                case 147: KabukichoPrisonJackFrostEncounter(); return 1272;
+                case 148: KabukichoPrisonJackFrostEncounter(); return 1272;
+                case 149: KabukichoPrisonJackFrostEncounter(); return 1272;
 
                 // Labyrinth of Amala
 
@@ -500,11 +533,41 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].itemcnt = 1;
         }
 
+        private static void AsakusaTunnelOkuninushiEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 25;
+            datEncount.tbl[1270].item = 4;
+            datEncount.tbl[1270].itemcnt = 1;
+        }
+
         private static void YoyogiParkCuChulainnEncounter()
         {
             datEncount.tbl[1270].devil[0] = 147;
             datEncount.tbl[1270].item = 111;
             datEncount.tbl[1270].itemcnt = 1;
+        }
+
+        private static void IkebukuroHanumanEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 146;
+            datEncount.tbl[1270].item = 104;
+            datEncount.tbl[1270].itemcnt = 1;
+        }
+
+        private static void MantraHeadquartersThroneEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 62;
+            datEncount.tbl[1270].devil[1] = 62;
+            datEncount.tbl[1270].item = 105;
+            datEncount.tbl[1270].itemcnt = 1;
+        }
+
+        private static void KabukichoPrisonJackFrostEncounter()
+        {
+            datEncount.tbl[1272].devil[0] = 251;
+            datEncount.tbl[1272].btlsound = 22;
+            datEncount.tbl[1272].item = 107;
+            datEncount.tbl[1272].itemcnt = 1;
         }
 
         // Labyrinth of Amala
@@ -695,6 +758,7 @@ namespace NocturneInsaniax
             datEncount.tbl[266].maxparty = 7; // Boss Specter 2
             datEncount.tbl[266].devil[2] = 0;
             datEncount.tbl[266].devil[3] = 273;
+            datEncount.tbl[329].flag = 11; // Boss Sakahagi
 
             datEncount.tbl[144].maxparty = 6; // Forced Incubus + Koppa Tengu
             datEncount.tbl[144].maxcall = 0;

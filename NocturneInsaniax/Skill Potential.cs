@@ -27,7 +27,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 6    , -4   , -4   , 0    , 0    , 6    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 2    , 0 }, // 003 Amaterasu
             new sbyte[] {4    , 0    , 2    , 6    , -7   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 004 Odin
             new sbyte[] {5    , 0    , 0    , 0    , 0    , 0    , 3    , 3    , -4   , 0    , -4   , 0    , 0    , 0    , 0    , 0 }, // 005 Atavaka
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 2    , 4    , -4   , 0    , 0    , 0    , 0    , -4   , 2    , 2    , 0 }, // 006 Horus
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 2    , 4    , -4   , 0    , 0    , 0    , 2    , -4   , 2    , 2    , 0 }, // 006 Horus
             new sbyte[] {-5   , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 3    , 0 }, // 007 Lakshmi
             new sbyte[] {3    , 0    , 0    , -5   , 6    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 3    , 3    , 0    , 0 }, // 008 Scathach
             new sbyte[] {0    , -4   , 0    , 0    , 4    , 0    , 0    , 0    , 2    , 2    , 2    , 0    , 0    , 0    , 2    , 0 }, // 009 Sarasvati
@@ -37,14 +37,14 @@ namespace NocturneInsaniax
             new sbyte[] {4    , 0    , 0    , 0    , 0    , 0    , 5    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , -3   , 0 }, // 013 Beidou Xingjun
             new sbyte[] {7    , 0    , 0    , 0    , 0    , 0    , 0    , -5   , 0    , 0    , 0    , 0    , 0    , -3   , 2    , 0 }, // 014 Qitian Dasheng
             new sbyte[] {3    , 3    , -4   , 0    , 0    , 3    , 0    , 0    , 4    , 0    , 4    , 3    , 0    , 0    , 0    , 0 }, // 015 Dionysus
-            new sbyte[] {6    , 6    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -5   , 0    , -3   , 0 }, // 016 Kali
+            new sbyte[] {6    , 6    , -5   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -5   , 0    , -3   , 0 }, // 016 Kali
             new sbyte[] {5    , 0    , 7    , -7   , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 2    , 0    , 0 }, // 017 Skadi
             new sbyte[] {0    , 4    , -5   , 0    , 0    , 3    , 6    , -5   , 0    , 0    , 0    , 3    , 0    , 4    , 3    , 0 }, // 018 Parvati
             new sbyte[] {-3   , 0    , 0    , 0    , 0    , 0    , 4    , -5   , 0    , 0    , 0    , 0    , 0    , 4    , 2    , 0 }, // 019 Kushinada
             new sbyte[] {-3   , -5   , 0    , 0    , 0    , 0    , 2    , 0    , 0    , 0    , 2    , 0    , 0    , 3    , 2    , 0 }, // 020 Kikuri-Hime
             new sbyte[] {6    , 6    , -4   , 0    , 0    , 6    , 3    , 0    , 0    , 0    , 0    , 6    , 0    , 0    , 3    , 0 }, // 021 Bishamonten
             new sbyte[] {5    , 0    , 0    , 7    , -7   , 0    , 0    , 0    , -3   , -3   , -3   , 0    , 0    , 0    , 2    , 0 }, // 022 Thor
-            new sbyte[] {4    , -5   , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0 }, // 023 Jikokuten
+            new sbyte[] {4    , -4   , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0 }, // 023 Jikokuten
             new sbyte[] {5    , 0    , 0    , 5    , -5   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 024 Take-Mikazuchi
             new sbyte[] {3    , 3    , -5   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0 }, // 025 Okuninushi
             new sbyte[] {4    , 0    , 0    , -4   , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0 }, // 026 Koumokuten
@@ -76,7 +76,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , -3   , 0    , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0    , 0    , 1    , 1    , 0 }, // 051 Apsaras
             new sbyte[] {0    , 0    , 0    , -3   , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -4   , 0    , 1    , 0 }, // 052 Koppa Tengu
             new sbyte[] {-4   , 4    , 4    , 4    , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -4   , 3    , 1    , 0 }, // 053 Titania
-            new sbyte[] {0    , 3    , 3    , 3    , 3    , -4   , 0    , -4   , 0    , 0    , 0    , 0    , 0    , 2    , 2    , 0 }, // 054 Oberon
+            new sbyte[] {0    , 3    , 3    , 3    , 3    , -4   , 0    , -4   , 0    , 0    , 0    , -4   , 0    , 2    , 2    , 0 }, // 054 Oberon
             new sbyte[] {4    , -4   , 4    , -4   , 0    , 0    , 0    , 0    , 0    , -4   , -4   , 0    , 0    , 1    , 0    , 0 }, // 055 Troll
             new sbyte[] {4    , 0    , 0    , -3   , 2    , 0    , 0    , 0    , -2   , -2   , -2   , 0    , 2    , 0    , 2    , 0 }, // 056 Setanta
             new sbyte[] {0    , 0    , 0    , 0    , -3   , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 3    , 1    , 0 }, // 057 Kelpie
@@ -113,7 +113,7 @@ namespace NocturneInsaniax
             new sbyte[] {5    , 0    , 0    , -4   , 0    , 0    , 0    , 0    , -4   , 0    , -4   , 0    , 0    , 0    , 0    , 0 }, // 088 Titan
             new sbyte[] {3    , 0    , 0    , 0    , 0    , 0    , 2    , 0    , -4   , -4   , -4   , 0    , 0    , 0    , 2    , 0 }, // 089 Sarutahiko
             new sbyte[] {0    , -3   , -2   , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0    , 2    , 0 }, // 090 Sudama
-            new sbyte[] {0    , 2    , -3   , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0    , 0    , 0    , 1    , 1    , 0 }, // 091 Hua Po
+            new sbyte[] {0    , 2    , -3   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0    , 0    , 1    , 1    , 0 }, // 091 Hua Po
             new sbyte[] {0    , -3   , 0    , 0    , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0    , 0 }, // 092 Kodama
             new sbyte[] {0    , -7   , 0    , 0    , 0    , 0    , 5    , 5    , 2    , 2    , 2    , 0    , 5    , 0    , 0    , 0 }, // 093 Shiki-Ouji
             new sbyte[] {4    , -2   , -2   , -2   , -2   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -2   , 0    , 0 }, // 094 Oni
@@ -122,7 +122,7 @@ namespace NocturneInsaniax
             new sbyte[] {4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -5   , -5   , -5   , 0    , 0    , -2   , 0    , 0 }, // 096 Momunofu
             new sbyte[] {0    , -3   , 0    , 2    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 097 Shikigami
             new sbyte[] {4    , 6    , 0    , -5   , 6    , 0    , -3   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 098 Rangda
-            new sbyte[] {5    , 4    , -5   , 0    , 0    , 0    , 0    , 0    , 2    , 2    , 2    , 0    , 0    , -2   , 0    , 0 }, // 099 Dakini
+            new sbyte[] {5    , 4    , -5   , 0    , 0    , 0    , 0    , 0    , 2    , 2    , 2    , 0    , -2   , 0    , 0    , 0 }, // 099 Dakini
             new sbyte[] {2    , 0    , 0    , -4   , 2    , 0    , 0    , 0    , 4    , 4    , 4    , 0    , 0    , 0    , 0    , 0 }, // 100 Yaksini
             new sbyte[] {0    , -4   , 0    , 0    , 3    , 0    , -4   , 3    , 3    , 3    , 3    , 0    , 4    , 0    , 0    , 0 }, // 101 Yomotsu-Shikome
             new sbyte[] {3    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 2    , 0    , 0    , -4   , -2   , 0    , 0 }, // 102 Taraka
@@ -178,7 +178,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 2    , 0    , 0    , 0    , -3   , 2    , 0    , -3   , -3   , -3   , -3   , 0    , 3    , 2    , 0 }, // 151 Makami
             new sbyte[] {3    , 0    , 0    , -6   , 7    , 0    , 3    , -6   , 0    , 0    , 0    , 0    , -4   , 0    , 3    , 0 }, // 152 Garuda
             new sbyte[] {0    , 0    , -7   , 0    , 5    , 0    , 5    , -7   , 0    , 0    , 0    , 0    , 0    , 2    , 2    , 0 }, // 153 Yatagarasu
-            new sbyte[] {3    , 0    , 0    , 3    , 7    , 0    , -6   , 3    , 0    , 0    , 0    , 0    , -4   , 0    , 3    , 0 }, // 154 Gurulu
+            new sbyte[] {0    , 0    , 0    , 3    , 7    , 0    , -6   , 3    , 0    , 0    , 0    , 0    , -4   , 0    , 3    , 0 }, // 154 Gurulu
             new sbyte[] {7    , -4   , -4   , -4   , -4   , 0    , 0    , -4   , 0    , 0    , 0    , 0    , 0    , 3    , 3    , 0 }, // 155 Albion
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 156 Manikin
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 157 Manikin
@@ -191,7 +191,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 164 Manikin
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 165 Manikin
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 166 Manikin
-            new sbyte[] {2    , -3   , 0    , 2    , 0    , 0    , -3   , 2    , 5    , 5    , 5    , 0    , 0    , -3   , 2    , 0 }, // 167 Pisaca
+            new sbyte[] {0    , -3   , 0    , 2    , 0    , 0    , -3   , 2    , 5    , 5    , 5    , 0    , 0    , -3   , 2    , 0 }, // 167 Pisaca
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , -7   , 5    , 0    , 0    , 2    , 0    , 0    , 0    , 2    , 0 }, // 168 Kaiwan
             new sbyte[] {6    , -2   , -2   , -2   , -2   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -2   , 2    , 0 }, // 169 Kin-Ki
             new sbyte[] {2    , -7   , 6    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -2   , 2    , 0 }, // 170 Sui-Ki
@@ -221,16 +221,16 @@ namespace NocturneInsaniax
             new sbyte[] {7    , 7    , -7   , 0    , 0    , 7    , 7    , -7   , 0    , 0    , 0    , 7    , 0    , -4   , 4    , 0 }, // 193 Metatron
             new sbyte[] {0    , -7   , 0    , 7    , 7    , 7    , -7   , 7    , 0    , 0    , 0    , 7    , 4    , -4   , 4    , 0 }, // 194 Beelzebub (Fly)
             new sbyte[] {4    , -5   , 0    , -5   , 0    , 4    , 0    , 0    , 7    , 7    , 7    , 4    , 0    , 0    , 2    , 0 }, // 195 Pale Rider
-            new sbyte[] {0    , 5    , 0    , -5   , 0    , 0    , 6    , -5   , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0 }, // 196 White Rider
+            new sbyte[] {0    , 4    , 0    , -5   , 0    , 0    , 6    , -5   , 0    , 0    , 0    , 0    , 6    , 0    , 3    , 0 }, // 196 White Rider
             new sbyte[] {6    , -5   , -5   , 4    , 6    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0 }, // 197 Red Rider
-            new sbyte[] {0    , 0    , 6    , -5   , -5   , 4    , 0    , 6    , 0    , 0    , 0    , 5    , 0    , 0    , 3    , 0 }, // 198 Black Rider
+            new sbyte[] {0    , 0    , 6    , -5   , -5   , 4    , 0    , 6    , 0    , 0    , 0    , 4    , 0    , 0    , 3    , 0 }, // 198 Black Rider
             new sbyte[] {4    , 0    , -4   , -4   , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 199 Matador
             new sbyte[] {3    , 4    , -4   , 0    , 4    , 0    , -4   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0 }, // 200 Hell Biker
             new sbyte[] {-4   , -4   , 0    , 0    , 0    , 0    , 4    , 4    , 0    , 0    , 4    , 0    , 0    , 2    , 0    , 0 }, // 201 Daisoujou
-            new sbyte[] {0    , 0    , -6   , 6    , -6   , 6    , 0    , 0    , 3    , 3    , 3    , 5    , 0    , 0    , 3    , 0 }, // 202 Mother Harlot
+            new sbyte[] {0    , 0    , -6   , 6    , -6   , 6    , 0    , 0    , 3    , 3    , 3    , 6    , 0    , 0    , 3    , 0 }, // 202 Mother Harlot
             new sbyte[] {-7   , 5    , 5    , 5    , 5    , 7    , 0    , 0    , 0    , 0    , 0    , 7    , -7   , 0    , 0    , 0 }, // 203 Trumpeter
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 204 Futomimi
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 205 Sakahagi
+            new sbyte[] {4    , 5    , 5    , 5    , 5    , 5    , 0    , 4    , 0    , 0    , 0    , 5    , 0    , -3   , 0    , 0 }, // 205 Sakahagi
             new sbyte[] {0    , 0    , 6    , 0    , 0    , 0    , -7   , 6    , 0    , 0    , 0    , 0    , 0    , -3   , 3    , 0 }, // 206 Black Frost
             new sbyte[] {0    , -7   , 0    , 6    , 6    , 3    , -7   , 6    , 0    , 0    , 0    , 3    , 3    , -4   , 3    , 0 }, // 207 Beelzebub (Man)
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 208 
@@ -277,7 +277,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 248 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 249 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 250 
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 251 
+            new sbyte[] {0    , -5   , 4    , 0    , 0    , 0    , 1    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 251 NKE Jack Frost
             new sbyte[] {7    , 0    , 0    , 7    , 7    , 5    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 5    , 0 }, // 252 Devil Dante
             new sbyte[] {3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 1    , 0 }, // 253 Gamete
             new sbyte[] {9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 0    , 5    , 5    , 0 }, // 254 YHVH
@@ -300,7 +300,7 @@ namespace NocturneInsaniax
             new sbyte[] {-5   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 6    , 6    , 6    , 0    , 0    , 0    , 4    , 0 }, // 271 Boss Lachesis (Solo)
             new sbyte[] {-5   , 6    , 6    , 6    , 6    , 4    , 0    , 0    , 0    , 0    , 0    , 4    , 0    , 0    , 0    , 0 }, // 272 Boss Atropos (Solo)
             new sbyte[] {0    , 3    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0 }, // 273 Boss Specter 2
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 274 Boss Girimekhala
+            new sbyte[] {5    , -5   , -5   , -5   , -5   , 0    , -5   , 0    , 5    , 5    , -3   , 0    , 0    , -3   , 2    , 0 }, // 274 Boss Girimekhala
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 275 Boss Specter 3
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 276 Boss Aciel
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 277 Boss Skadi
@@ -326,11 +326,11 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 296 Boss Specter 1 (Merged 2-3)
             new sbyte[] {0    , -5   , 4    , 0    , 0    , 0    , 0    , 0    , -5   , 0    , 4    , 0    , 0    , 0    , 2    , 0 }, // 297 Boss Mizuchi
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 298 
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 299 Boss Sakahagi
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0 }, // 299 Boss Sakahagi
             new sbyte[] {4    , 4    , -6   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -2   , 1    , 0 }, // 300 Boss Orthrus
             new sbyte[] {2    , 0    , 0    , -4   , 2    , 0    , 0    , 0    , 4    , 4    , 4    , 0    , 0    , 0    , 0    , 0 }, // 301 Boss Yaksini
             new sbyte[] {5    , 0    , 0    , 5    , -7   , 0    , 0    , 0    , -3   , -3   , -3   , 0    , 0    , 0    , 2    , 0 }, // 302 Boss Thor
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 303 Boss Black Frost
+            new sbyte[] {0    , 0    , 6    , 0    , 0    , 0    , -7   , 6    , 0    , 0    , 0    , 0    , 0    , -3   , 3    , 0 }, // 303 Boss Black Frost
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 304 Ambush Karasu Tengu
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 305 Ambush Karasu Tengu
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 306 Ambush Karasu Tengu
@@ -374,13 +374,13 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 343 Boss Beelzebub
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 344 Boss Lucifer
             new sbyte[] {4    , -5   , 0    , -5   , 0    , 4    , 0    , 0    , 7    , 7    , 7    , 4    , 0    , 0    , 2    , 0 }, // 345 Boss Pale Rider
-            new sbyte[] {0    , 5    , 0    , -5   , 0    , 0    , 6    , -5   , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0 }, // 346 Boss White Rider
+            new sbyte[] {0    , 4    , 0    , -5   , 0    , 0    , 6    , -5   , 0    , 0    , 0    , 0    , 6    , 0    , 3    , 0 }, // 346 Boss White Rider
             new sbyte[] {6    , -5   , -5   , 4    , 6    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0 }, // 347 Boss Red Rider
-            new sbyte[] {0    , 0    , 6    , -5   , -5   , 4    , 0    , 6    , 0    , 0    , 0    , 5    , 0    , 0    , 3    , 0 }, // 348 Boss Black Rider
+            new sbyte[] {0    , 0    , 6    , -5   , -5   , 4    , 0    , 6    , 0    , 0    , 0    , 4    , 0    , 0    , 3    , 0 }, // 348 Boss Black Rider
             new sbyte[] {4    , 0    , -4   , -4   , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 349 Boss Matador
             new sbyte[] {3    , 4    , -4   , 0    , 4    , 0    , -4   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0 }, // 350 Boss Hell Biker
             new sbyte[] {-4   , -4   , 0    , 0    , 0    , 0    , 4    , 4    , 0    , 0    , 4    , 0    , 0    , 2    , 0    , 0 }, // 351 Boss Daisoujou
-            new sbyte[] {0    , 0    , -6   , 6    , -6   , 6    , 0    , 0    , 3    , 3    , 3    , 5    , 0    , 0    , 3    , 0 }, // 352 Boss Mother Harlot
+            new sbyte[] {0    , 0    , -6   , 6    , -6   , 6    , 0    , 0    , 3    , 3    , 3    , 6    , 0    , 0    , 3    , 0 }, // 352 Boss Mother Harlot
             new sbyte[] {-7   , 5    , 5    , 5    , 5    , 7    , 0    , 0    , 0    , 0    , 0    , 7    , -7   , 0    , 0    , 0 }, // 353 Boss Trumpeter
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 354 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 355 
@@ -455,7 +455,7 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+5: Phys • +3: Light/Dark  <material=\"MsgFont1\">-4: Curse/Mind", // 005 Atavaka
             "  <material=\"MsgFont4\">+4: Light • +2: Almighty/Heal/Supp  <material=\"MsgFont1\">-4: Shot/Dark", // 006 Horus
             "  <material=\"MsgFont4\">+5: Light • +3: Heal/Supp  <material=\"MsgFont1\">-5: Phys", // 007 Lakshmi
-            "  <material=\"MsgFont4\">+6: Force • +3: Phys/Shot/Heal  <material=\"MsgFont1\">-5: Elec", // 008 Scathach
+            "  <material=\"MsgFont4\">+6: Force • +3: Phys/Shot/Curse/Heal  <material=\"MsgFont1\">-5: Elec", // 008 Scathach
             "  <material=\"MsgFont4\">+4: Force • +2: Ailments/Supp  <material=\"MsgFont1\">-4: Fire", // 009 Sarasvati
             "  <material=\"MsgFont4\">+5: Fire • +3: Almighty/Mind/Heal  <material=\"MsgFont1\">-5: Ice/Dark/Curse", // 010 Sati
             "  <material=\"MsgFont4\">+2: Force/Light/Heal/Supp  <material=\"MsgFont1\">-3: Phys/Elec", // 011 Ame-no-Uzume
@@ -502,7 +502,7 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+3: Force • +1: Supp  <material=\"MsgFont1\">-3: Elec • -4: Shot", // 052 Koppa Tengu
             "  <material=\"MsgFont4\">+4: Elements • +3: Heal • +1: Supp  <material=\"MsgFont1\">-4: Phys/Shot", // 053 Titania
             "  <material=\"MsgFont4\">+3: Elements • +2: Heal/Supp  <material=\"MsgFont1\">-4: Dark/Almighty", // 054 Oberon
-            "  <material=\"MsgFont4\">+4: Phys/Ice • +1: Heal  <material=\"MsgFont1\">-3: Fire/Elec/Nerve/Mind", // 055 Troll
+            "  <material=\"MsgFont4\">+4: Phys/Ice • +1: Heal  <material=\"MsgFont1\">-4: Fire/Elec/Nerve/Mind", // 055 Troll
             "  <material=\"MsgFont4\">+4: Phys • +2: Shot/Force/Supp  <material=\"MsgFont1\">-2: Ailments • -3: Elec", // 056 Setanta
             "  <material=\"MsgFont4\">+3: Mind/Heal • +1: Supp  <material=\"MsgFont1\">-3: Force", // 057 Kelpie
             "  <material=\"MsgFont4\">+5: Fire • +1: Supp  <material=\"MsgFont1\">-1: Light • -5: Ice", // 058 Jack-o'-Lantern
@@ -570,7 +570,7 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+3: Mind • +2: Elec  <material=\"MsgFont1\">-3: Ice", // 120 Lilim
             "  <material=\"MsgFont4\">+6: Ice/Force • +4: Phys/Curse  <material=\"MsgFont1\">-2: Elec/Supp • -4: Shot • -6: Fire", // 121 Hresvelgr
             "  <material=\"MsgFont4\">+5: Ailments • +3: Fire • +1: Supp  <material=\"MsgFont1\">-3: Shot/Elec", // 122 Mothman
-            "  <material=\"MsgFont4\">+3: Phys/Elec  <material=\"MsgFont1\">-2: Heal • -3: Force", // 123 Raiju
+            "  <material=\"MsgFont4\">+3: Phys/Elec  <material=\"MsgFont1\">-2: Heal • -4: Force", // 123 Raiju
             "  <material=\"MsgFont4\">+4: Ice • +2: Phys  <material=\"MsgFont1\">-4: Fire", // 124 Nue
             "  <material=\"MsgFont4\">+2: Phys/Dark/Ailments  <material=\"MsgFont1\">-1: Heal • -3: Elec/Light", // 125 Bicorn
             "  <material=\"MsgFont4\">+2: Force/Curse/Nerve • +1: Phys  <material=\"MsgFont1\">-3: Shot/Fire", // 126 Zhen
@@ -652,7 +652,7 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+6: Elec/Almighty • +3: Ailments/Supp  <material=\"MsgFont1\">-6: Ice/Force", // 202 Mother Harlot
             "  <material=\"MsgFont4\">+7: Almighty • +5: Elements  <material=\"MsgFont1\">-7: Phys/Shot", // 203 Trumpeter
             "", // 204 Futomimi
-            "", // 205 Sakahagi
+            "  <material=\"MsgFont4\">+5: Elements/Almighty • +4: Phys/Dark  <material=\"MsgFont1\">-3: Heal", // 205 Sakahagi
             "  <material=\"MsgFont4\">+6: Ice/Dark • +3: Supp  <material=\"MsgFont1\">-3: Heal • -7: Light", // 206 Black Frost
             "  <material=\"MsgFont4\">+6: Elec/Force/Dark • +3: Shot/Almighty/Supp  <material=\"MsgFont1\">-4: Heal • -7: Fire/Light", // 207 Beelzebub (Man)
             "", // 208 
@@ -1046,12 +1046,16 @@ namespace NocturneInsaniax
                         if (wardOffEvilActive) luk += 10;
 
                         var rand = dds3KernelCore.dds3GetRandIntA(100);
-                        if (rand < luk ||
-                            (bossList.Contains(actionProcessData.work.id) && (actionProcessData.work.badstatus == 4 || actionProcessData.work.badstatus == 8 || actionProcessData.work.badstatus == 16 || actionProcessData.work.badstatus == 32 || actionProcessData.work.badstatus == 128)))
-                        {
+                        if (rand < luk)
+                            {
                             var form = actionProcessData.form;
                             nbMakePacket.nbMakeBadKaifukuPacket(0, 0, ref form);
                         }
+                    }
+                    if (bossList.Contains(actionProcessData.work.id) && (actionProcessData.work.badstatus == 4 || actionProcessData.work.badstatus == 8 || actionProcessData.work.badstatus == 16 || actionProcessData.work.badstatus == 32 || actionProcessData.work.badstatus == 128))
+                        {
+                        var form = actionProcessData.form;
+                        nbMakePacket.nbMakeBadKaifukuPacket(0, 0, ref form);
                     }
                 }
             }
@@ -1062,7 +1066,35 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int id, ref string __result)
             {
-                if (id == 422 && (currentDemonWork.id == 200 || currentDemonWork.id == 339 || currentDemonWork.id == 340 || currentDemonWork.id == 341 || currentDemonWork.id == 350))
+                if (currentDemonWork.id == 299)
+                {
+                    switch (id)
+                    {
+                        case 2: __result = "Agilao Rock"; break;
+                        case 4: __result = "Maragi Rock"; break;
+                        case 8: __result = "Bufula Rock"; break;
+                        case 10: __result = "Mabufu Rock"; break;
+                        case 14: __result = "Zionga Rock"; break;
+                        case 16: __result = "Mazio Rock"; break;
+                        case 20: __result = "Zanma Rock"; break;
+                        case 22: __result = "Mazan Rock"; break;
+                        case 27: __result = "Megidolaon +5"; break;
+                        case 30: __result = "Mahama Rock"; break;
+                        case 34: __result = "Mamudo Rock"; break;
+                        case 55: __result = "Makajam Rock"; break;
+                        case 57: __result = "Dekaja Rock"; break;
+                        case 69: __result = "Magic Mirror"; break;
+                        case 70: __result = "Attack Mirror"; break;
+                        case 77: __result = "Dekunda Rock"; break;
+                        case 81: __result = "Life Stone"; break;
+                        case 82: __result = "Chakra Drop"; break;
+                        case 128: __result = "Needle Orb"; break;
+                        case 220: __result = "Impel Stone"; break;
+                        case 224: __result = "Focus Rock"; break;
+                        case 424: __result = "Concentrate Rock"; break;
+                    }
+                }
+                else if (id == 422 && (currentDemonWork.id == 200 || currentDemonWork.id == 339 || currentDemonWork.id == 340 || currentDemonWork.id == 341 || currentDemonWork.id == 350))
                     __result = "Accelerate";
                 else if (id == 277 && (currentDemonWork.id == 200))
                     __result = "Rev Up";
@@ -1110,6 +1142,12 @@ namespace NocturneInsaniax
                 {
                     tmp_datNormalSkill.cost = datNormalSkill.tbl[nskill].cost; // Memorize the original skill cost
 
+                    if (w.id == 299 && nskill != 27)
+                    {
+                        datNormalSkill.tbl[nskill].cost = 0;
+                        return;
+                    }
+
                     // Arms Master
                     if (datCalc.datCheckSyojiSkill(w, 371) != 0)
                     {
@@ -1118,7 +1156,7 @@ namespace NocturneInsaniax
 
                     sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(nskill, w.id);
 
-                    if (skillPotential != 0)
+                    if (skillPotential != 0 && datNormalSkill.tbl[nskill].cost != 0)
                     {
                         datNormalSkill.tbl[nskill].cost = SkillPotentialUtility.ApplySkillPotentialCost(nskill, skillPotential); // Update the skill cost
                     }
@@ -1251,7 +1289,7 @@ namespace NocturneInsaniax
                         datNormalSkill.tbl[SkillID].cost = Convert.ToUInt16(datNormalSkill.tbl[SkillID].cost * 0.5);
                     }
 
-                    if (skillPotential != 0)
+                    if (skillPotential != 0 && datNormalSkill.tbl[SkillID].cost != 0)
                     {
                         datNormalSkill.tbl[SkillID].cost = SkillPotentialUtility.ApplySkillPotentialCost(SkillID, skillPotential); // Update the skill cost
                     }
@@ -1294,7 +1332,7 @@ namespace NocturneInsaniax
             public static void Postfix(ref ushort SkillID, ref datUnitWork_t pStock, ref sbyte __result)
             {
                 sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(SkillID, pStock.id);
-                ushort skillCost = SkillPotentialUtility.ApplySkillPotentialCost(SkillID, skillPotential);
+                ushort skillCost = datNormalSkill.tbl[SkillID].cost == 0 ? (ushort) 0 : SkillPotentialUtility.ApplySkillPotentialCost(SkillID, skillPotential);
 
                 __result = skillCost <= pStock.mp ? (sbyte) 1 : (sbyte) 0;
             }
@@ -1313,7 +1351,7 @@ namespace NocturneInsaniax
                     tmp_datNormalSkill.cost = datNormalSkill.tbl[nskill].cost; // Memorize the original skill cost
                     sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(nskill, work.id);
 
-                    if (skillPotential != 0)
+                    if (skillPotential != 0 && datNormalSkill.tbl[nskill].cost != 0)
                     {
                         datNormalSkill.tbl[nskill].cost = SkillPotentialUtility.ApplySkillPotentialCost(nskill, skillPotential); // Update the skill cost
                     }
@@ -1371,7 +1409,10 @@ namespace NocturneInsaniax
 
                             if (bossList.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id))
                             {
-                                __result *= 2;
+                                if (nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id != 299)
+                                    __result = Convert.ToInt32(__result / 3);
+                                else
+                                    __result *= 2;
                             }
                         }
                         else if (datNormalSkill.tbl[nskill].hptype != 6 && datNormalSkill.tbl[nskill].hptype != 8 && datNormalSkill.tbl[nskill].hptype != 11)
@@ -1429,7 +1470,7 @@ namespace NocturneInsaniax
                 {
                     tmp_datNormalSkill.basstatus = datNormalSkill.tbl[nskill].basstatus; // Memorize the original ailment 
                     tmp_datNormalSkill.badlevel = datNormalSkill.tbl[nskill].badlevel; // Memorize the original ailment rate
-                    
+
                     var work = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
                     var luk = datCalc.datGetParam(work, 5);
 
@@ -1444,19 +1485,23 @@ namespace NocturneInsaniax
                         datNormalSkill.tbl[nskill].badlevel = 30;
                     }
 
-                    datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(SkillPotentialUtility.ApplyAilmentMultiplier(skillPotential, luk, tmp_datNormalSkill.badlevel));
+                    datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(Math.Min(254, SkillPotentialUtility.ApplyAilmentMultiplier(skillPotential, luk, tmp_datNormalSkill.badlevel)));
 
                     // Skadi's Queen of Winter
                     if ((demonID == 17 || demonID == 277) && datSkill.tbl[nskill].skillattr == 2 && datNormalSkill.tbl[nskill].basstatus == 2)
-                        datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(datNormalSkill.tbl[nskill].badlevel * 1.5);
+                        datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(Math.Min(254, datNormalSkill.tbl[nskill].badlevel * 1.5));
 
                     // Thor's Odinson
                     if ((demonID == 22 || demonID == 302 || demonID == 337) && datSkill.tbl[nskill].skillattr == 3 && datNormalSkill.tbl[nskill].basstatus == 1)
-                        datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(datNormalSkill.tbl[nskill].badlevel * 1.5);
+                        datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(Math.Min(254, datNormalSkill.tbl[nskill].badlevel * 1.5));
 
                     // Black Frost's Cold World
                     if ((demonID == 206 || demonID == 303) && nskill != 466 && datSkill.tbl[nskill].skillattr == 2 && datNormalSkill.tbl[nskill].basstatus == 2)
                         datNormalSkill.tbl[nskill].basstatus = 2048;
+
+                    // NKE Jack Frost
+                    if ((demonID == 251) && nskill == 466)
+                        datNormalSkill.tbl[nskill].badlevel = 200;
 
                     // Contagious Curse
                     bool contagiousCurseActive = false;
@@ -1485,7 +1530,7 @@ namespace NocturneInsaniax
                             catch { }
                         }
                     }
-                    if (contagiousCurseActive) datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(datNormalSkill.tbl[nskill].badlevel * 1.2);
+                    if (contagiousCurseActive) datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(Math.Min(254, datNormalSkill.tbl[nskill].badlevel * 1.2));
 
                     // Loa's Taboo
                     bool tabooActive = false;
@@ -1497,7 +1542,7 @@ namespace NocturneInsaniax
                                 tabooActive = true;
                         } catch { }
                     }
-                    if (tabooActive) datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(datNormalSkill.tbl[nskill].badlevel * 2);
+                    if (tabooActive) datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(Math.Min(254, datNormalSkill.tbl[nskill].badlevel * 2));
                 }
             }
 
@@ -1582,16 +1627,16 @@ namespace NocturneInsaniax
                         (darkSkills.Contains(nskill) && !(darkResistance.Length == 32 && darkResistance[darkResistance.Length - 32] == '1' && darkResistance[darkResistance.Length - 21] == '0')))
                     {
                         __result = 0;
-                        return;
                     }
                 }
 
-                if (nskill == 266)
+                if (nskill == 266 || (datSkill.tbl[nskill].skillattr == 2 && datNormalSkill.tbl[nskill].basstatus == 2048))
                 {
                     var darkResistance = nbCalc.nbGetAisyo(nskill, dformindex, 7);
-                    if (new uint[] { 65536, 131072, 262144 }.Contains(darkResistance))
+                    if (new uint[] { 65536, 131072, 262144 }.Contains(darkResistance)
+                        || datCalc.datCheckSyojiSkill(nbMainProcess.nbGetUnitWorkFromFormindex(dformindex), 329) != 0
+                        || datCalc.datCheckSyojiSkill(nbMainProcess.nbGetUnitWorkFromFormindex(dformindex), 366) != 0)
                         __result = 0;
-                    return;
                 }
 
                 var work = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
@@ -2140,7 +2185,7 @@ namespace NocturneInsaniax
             public static ushort ApplySkillPotentialCost(int skillID, sbyte skillPotential)
             {
                 float multiplier = 1;
-                bool IsAttackingType = datSkill.tbl[skillID].skillattr < 12;
+                bool IsAttackingType = datSkill.tbl[skillID].skillattr <= 12;
 
                 switch (skillPotential)
                 {

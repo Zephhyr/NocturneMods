@@ -363,7 +363,7 @@ namespace NocturneInsaniax
 
                 if (flag == 13 || flag == 8)
                     __result = 0;
-                else if (flag == 11 || data.encno == 1270)
+                else if (flag == 11 || flag == 29 || data.encno == 1270 || data.encno == 1272)
                     __result = 1;
                 else
                 {

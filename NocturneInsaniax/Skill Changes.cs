@@ -11,14 +11,13 @@ using Il2Cppmodel_H;
 using System.Xml;
 using Newtonsoft.Json;
 using System.Linq;
-using static UnityEngine.UI.CanvasScaler;
 
 namespace NocturneInsaniax
 {
     internal partial class NocturneInsaniax : MelonMod
     {
         public static ushort[] bossList = new ushort[] {
-            252, 254, 256, 257, 262, 263, 266, 267, 268, 269, 270, 271, 272, 273, 294, 295, 296, 297, 300, 301, 302, 307, 308, 309, 312, 313,
+            251, 252, 254, 256, 257, 262, 263, 266, 267, 268, 269, 270, 271, 272, 273, 274, 294, 295, 296, 297, 299, 300, 301, 302, 307, 308, 309, 312, 313,
             321, 326, 327, 328, 339, 340, 341, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 362, 363, 364, 365, 366
         };
         public static ushort[] pushedSkillList = new ushort[] { 148, 149, 150, 151, 164, 165, 166, 167, 403, 407, 408, 416, 417, 496 };
@@ -754,14 +753,6 @@ namespace NocturneInsaniax
                     //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 149).Count() == 0)
                     //{
                     //datCalc.datAddDevil(57, 0);
-                    //datCalc.datAddDevil(226, 0);
-                    //datCalc.datAddDevil(4, 0);
-                    //datCalc.datAddDevil(147, 0);
-                    //datCalc.datAddDevil(30, 0);
-                    //datCalc.datAddDevil(111, 0);
-                    //datCalc.datAddDevil(185, 0);
-                    //datCalc.datAddDevil(199, 0);
-                    //datCalc.datAddDevil(229, 0);
                     foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 0)) // Demi-fiend
                     {
                         //work.skill[0] = 197;
@@ -794,10 +785,32 @@ namespace NocturneInsaniax
                     //}
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 144)) // Arahabaki
                     //{
-                    //    work.skill[6] = 331;
-                    //    work.skill[7] = 365;
-                    //    //work.skill[7] = 419;
-                    //    //work.skillcnt = 8;
+                    //    work.skill[3] = 335;
+                    //    work.skillcnt = 8;
+                    //}
+                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 77)) // Naga Raja
+                    //{
+                    //    work.skill[0] = 15;
+                    //    work.skill[1] = 311;
+                    //    work.skill[2] = 329;
+                    //    work.skill[3] = 66;
+                    //    work.skill[4] = 65;
+                    //    work.skill[5] = 459;
+                    //    work.skill[6] = 456;
+                    //    work.skill[7] = 40;
+                    //    work.skillcnt = 8;
+                    //}
+                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 6)) // Horus
+                    //{
+                    //    work.skill[0] = 15;
+                    //    work.skill[1] = 311;
+                    //    work.skill[2] = 329;
+                    //    work.skill[3] = 66;
+                    //    work.skill[4] = 65;
+                    //    work.skill[5] = 459;
+                    //    work.skill[6] = 456;
+                    //    work.skill[7] = 40;
+                    //    work.skillcnt = 8;
                     //}
                     //}
                 }
@@ -1186,7 +1199,6 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int phase)
             {
-                //MelonLogger.Msg("--nbMainProcess.nbSetPhase--");
                 //try
                 //{
                 //    MelonLogger.Msg("phase: " + phase);
@@ -3439,13 +3451,13 @@ namespace NocturneInsaniax
 
             nbCamera_SkillPtrTable.tbl[id] = new nbCameraSkillPtr_t
             {
-                ptr_shot_1 = nbCamera_SkillPtrTable.tbl[111].ptr_shot_1,
-                ptr_shot_23 = nbCamera_SkillPtrTable.tbl[111].ptr_shot_23,
-                ptr_angleH = nbCamera_SkillPtrTable.tbl[111].ptr_angleH,
-                ptr_angleW = nbCamera_SkillPtrTable.tbl[111].ptr_angleW,
-                ptr_H = nbCamera_SkillPtrTable.tbl[111].ptr_H,
-                ptr_W = nbCamera_SkillPtrTable.tbl[111].ptr_W,
-                anim = nbCamera_SkillPtrTable.tbl[111].anim
+                ptr_shot_1 = nbCamera_SkillPtrTable.tbl[98].ptr_shot_1,
+                ptr_shot_23 = nbCamera_SkillPtrTable.tbl[98].ptr_shot_23,
+                ptr_angleH = nbCamera_SkillPtrTable.tbl[98].ptr_angleH,
+                ptr_angleW = nbCamera_SkillPtrTable.tbl[98].ptr_angleW,
+                ptr_H = nbCamera_SkillPtrTable.tbl[98].ptr_H,
+                ptr_W = nbCamera_SkillPtrTable.tbl[98].ptr_W,
+                anim = nbCamera_SkillPtrTable.tbl[98].anim
             };
         }
 
@@ -7504,7 +7516,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].badlevel = 255;
             datNormalSkill.tbl[id].badtype = 0;
             datNormalSkill.tbl[id].basstatus = 0;
-            datNormalSkill.tbl[id].cost = 1;
+            datNormalSkill.tbl[id].cost = 0;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 2;
             datNormalSkill.tbl[id].criticalpoint = 0;
@@ -7551,7 +7563,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].badlevel = 255;
             datNormalSkill.tbl[id].badtype = 0;
             datNormalSkill.tbl[id].basstatus = 0;
-            datNormalSkill.tbl[id].cost = 1;
+            datNormalSkill.tbl[id].cost = 0;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 2;
             datNormalSkill.tbl[id].criticalpoint = 0;

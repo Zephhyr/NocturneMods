@@ -29,6 +29,7 @@ namespace NocturneInsaniax
         public static MelonPreferences_Entry<bool> EnableSkillColourOutlines;
         public static MelonPreferences_Entry<bool> EnableSkillColourGradient;
         public static MelonPreferences_Entry<bool> EnableColourPassives;
+        public static MelonPreferences_Entry<bool> EnableEnemyLevelDisplay;
         public static MelonPreferences_Entry<bool> EnableModeOverride;
         public static MelonPreferences_Entry<bool> ModeOverrideValue;
         public static MelonPreferences_Entry<bool> ToggleExpOnRandomEncounters;
@@ -74,6 +75,7 @@ namespace NocturneInsaniax
             EnableSkillColourOutlines = InsaniaxSettings.CreateEntry("Enable Skill Colour Outlines", true);
             EnableSkillColourGradient = InsaniaxSettings.CreateEntry("Enable Skill Colour Gradient", true);
             EnableColourPassives = InsaniaxSettings.CreateEntry("Enable Colour Passives", true);
+            EnableEnemyLevelDisplay = InsaniaxSettings.CreateEntry("Enable Enemy Level Display", true);
             EnableModeOverride = InsaniaxSettings.CreateEntry("Enable Mode Override", false);
             ModeOverrideValue = InsaniaxSettings.CreateEntry("Mode Override Value (false=Chronicle, true=Maniax)", false);
             ToggleExpOnRandomEncounters = InsaniaxSettings.CreateEntry("Toggle Random Encounter EXP", true);
