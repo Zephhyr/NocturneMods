@@ -204,12 +204,12 @@ namespace NocturneInsaniax
             new sbyte[] {3    , 0    , -4   , 0    , 0    , 0    , -4   , 3    , 3    , 3    , 3    , 0    , 0    , -2   , 1    , 0 }, // 177 Chatterskull
             new sbyte[] {0    , 0    , 0    , 5    , -4   , 2    , -4   , 0    , 0    , 0    , 0    , 2    , 0    , -4   , 2    , 0 }, // 178 Phantom
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 179 Ose Hallel
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 180 Flaurose Hallel
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 180 Flauros Hallel
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 181 Urthona
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 182 Urizen
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 183 Luvah
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 184 Tharmus
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 185 Specter
+            new sbyte[] {5    , 4    , -4   , -4   , 0    , 4    , -4   , 0    , 3    , 3    , 3    , 4    , 0    , 0    , 3    , 0 }, // 185 Specter
             new sbyte[] {5    , 3    , -6   , 0    , 0    , 0    , 0    , 0    , 3    , 3    , 3    , 0    , 0    , 0    , 0    , 0 }, // 186 Mara
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 187 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 188 
@@ -283,7 +283,7 @@ namespace NocturneInsaniax
             new sbyte[] {9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 0    , 5    , 5    , 0 }, // 254 YHVH
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 255 
             new sbyte[] {0    , 0    , 4    , -5   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 256 Boss Forneus
-            new sbyte[] {0    , 3    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0 }, // 257 Boss Specter 1 (Mini)
+            new sbyte[] {0    , 3    , 0    , 0    , 0    , 1    , 0    , 0    , 0    , 0    , 0    , 1    , 0    , -2   , 1    , 0 }, // 257 Boss Specter 1 (Mini)
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 258 Boss Ahriman 2
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 259 Boss Noah 2
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 5    , 5    , 5    , 0    , 0    , 0    , -2   , 0 }, // 260 Forced Incubus
@@ -299,9 +299,9 @@ namespace NocturneInsaniax
             new sbyte[] {-5   , 0    , 0    , 0    , 0    , 3    , 6    , 0    , 0    , 0    , 6    , 3    , 0    , 3    , 0    , 0 }, // 270 Boss Clotho (Solo)
             new sbyte[] {-5   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 6    , 6    , 6    , 0    , 0    , 0    , 4    , 0 }, // 271 Boss Lachesis (Solo)
             new sbyte[] {-5   , 6    , 6    , 6    , 6    , 4    , 0    , 0    , 0    , 0    , 0    , 4    , 0    , 0    , 0    , 0 }, // 272 Boss Atropos (Solo)
-            new sbyte[] {0    , 3    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 0 }, // 273 Boss Specter 2
+            new sbyte[] {0    , 3    , 0    , 0    , 0    , 1    , 0    , 0    , 0    , 0    , 0    , 1    , 0    , 0    , 1    , 0 }, // 273 Boss Specter 2
             new sbyte[] {5    , -5   , -5   , -5   , -5   , 0    , -5   , 0    , 5    , 5    , -3   , 0    , 0    , -3   , 2    , 0 }, // 274 Boss Girimekhala
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 275 Boss Specter 3
+            new sbyte[] {0    , 3    , 0    , 0    , 0    , 1    , 0    , 0    , 0    , 0    , 0    , 1    , 0    , 0    , 1    , 0 }, // 275 Boss Specter 3
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 276 Boss Aciel
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 277 Boss Skadi
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 278 Boss Albion
@@ -321,9 +321,9 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 291 Boss Ahriman 1
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 292 Boss Noah 1
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 293 Boss Kagutsuchi 1
-            new sbyte[] {0    , 6    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 294 Boss Specter 1 (Merged 6)
-            new sbyte[] {0    , 5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 295 Boss Specter 1 (Merged 4-5)
-            new sbyte[] {0    , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 296 Boss Specter 1 (Merged 2-3)
+            new sbyte[] {5    , 4    , -4   , -4   , 0    , 4    , -4   , 0    , 3    , 3    , 3    , 4    , 0    , 0    , 3    , 0 }, // 294 Boss Specter 1 (Merged 6)
+            new sbyte[] {5    , 4    , -4   , -4   , 0    , 4    , -4   , 0    , 3    , 3    , 3    , 4    , 0    , 0    , 3    , 0 }, // 295 Boss Specter 1 (Merged 4-5)
+            new sbyte[] {5    , 4    , -4   , -4   , 0    , 4    , -4   , 0    , 3    , 3    , 3    , 4    , 0    , 0    , 3    , 0 }, // 296 Boss Specter 1 (Merged 2-3)
             new sbyte[] {0    , -5   , 4    , 0    , 0    , 0    , 0    , 0    , -5   , 0    , 4    , 0    , 0    , 0    , 2    , 0 }, // 297 Boss Mizuchi
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 298 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0 }, // 299 Boss Sakahagi
@@ -632,7 +632,7 @@ namespace NocturneInsaniax
             "", // 182 Urizen
             "", // 183 Luvah
             "", // 184 Tharmus
-            "", // 185 Specter
+            "  <material=\"MsgFont4\">+5: Phys • +4: Fire/Almighty • +3: Ailments/Supp  <material=\"MsgFont1\">-4: Ice/Elec/Light", // 185 Specter
             "  <material=\"MsgFont4\">+5: Phys • +3: Fire/Ailments  <material=\"MsgFont1\">-6: Ice", // 186 Mara
             "", // 187 
             "", // 188 
@@ -1102,6 +1102,8 @@ namespace NocturneInsaniax
                     __result = "Pursuit";
                 else if (id == 226 && (currentDemonWork.id == 79))
                     __result = "Backup";
+                else if (id == 152 && (currentDemonWork.id == 275))
+                    __result = "Foul Explosion";
                 else if ((id == 226 || id == 499) && (currentDemonWork.id == 345))
                     __result = "Call Evil";
                 else if ((id == 226 || id == 496) && (currentDemonWork.id == 346))
@@ -1748,12 +1750,12 @@ namespace NocturneInsaniax
                     var nextSkillName = datSkillName.Get(tblHearts.fclHeartsTbl[id].Skill[consumedSkillsLength].ID);
                     if (nextSkillName.Contains("1") || nextSkillName.Contains("2") || nextSkillName.Contains("3") || nextSkillName.Contains("4") || nextSkillName.Contains("5") || nextSkillName.Contains("6") || nextSkillName.Contains("7") || nextSkillName.Contains("8") || nextSkillName.Contains("9"))
                         nextSkillName = nextSkillName.Remove(nextSkillName.LastIndexOf(" "));
-                    if (nextSkillName == "Impaler's Animus" && tblHearts.fclHeartsTbl[id].Skill[consumedSkillsLength].TargetLevel == 255)
+                    if (nextSkillName == "Impaler's Animus" && tblHearts.fclHeartsTbl[id].Skill[consumedSkillsLength].TargetLevel == 200)
                         nextSkillName = "？";
-                    __result += "  <material=\"MsgFont3\">Next Skill: " + nextSkillName;
+                    __result += "  <material=\"MsgFont3\">Next Skill - " + nextSkillName;
                     
                     var nextSkillLevel = tblHearts.fclHeartsTbl[id].Skill[consumedSkillsLength].TargetLevel;
-                    if (nextSkillLevel > demiFiendWork.level && tblHearts.fclHeartsTbl[id].Skill[consumedSkillsLength].TargetLevel != 255)
+                    if (nextSkillLevel > demiFiendWork.level && tblHearts.fclHeartsTbl[id].Skill[consumedSkillsLength].TargetLevel != 200)
                         __result += " (Level " + nextSkillLevel + ")";
                 }
                 else if (tierOneElemMagatama.Contains((byte) id))
@@ -1888,7 +1890,7 @@ namespace NocturneInsaniax
                                     try
                                     {
                                         if (nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && ally.partyindex == 0)
-                                            skillPotential += magatamaPotentials[dds3GlobalWork.DDS3_GBWK.heartsequip][skillAttribute];
+                                            skillPotential += GetDemiFiendSkillPotential(skillAttribute);
                                         else if (nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id != currentDemonWork.id)
                                             skillPotential += Math.Max((sbyte)0, demonPotentials[nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id][skillAttribute]);
                                     } catch { }

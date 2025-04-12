@@ -36,9 +36,27 @@ namespace NocturneInsaniax
         [HarmonyPatch(typeof(nbMisc), nameof(nbMisc.nbSetRenzokuEncount))]
         private class nbSetRenzokuEncountPatch
         {
-            public static void Postfix(ref int enc)
+            public static void Prefix(ref int enc)
             {
-                MelonLogger.Msg("-nbMisc.nbSetRenzokuEncount-");
+                //MelonLogger.Msg("-nbMisc.nbSetRenzokuEncount-");
+                //MelonLogger.Msg("enc: " + enc);
+            }
+        }
+
+        [HarmonyPatch(typeof(nbE901), nameof(nbE901.Daisupe))]
+        private class DaisupePatch
+        {
+            public static void Prefix(ref nbEventProcessData_t ed)
+            {
+                int specters = 0;
+                foreach (var unit in nbMainProcess.nbGetMainProcessData().enemyunit)
+                {
+                    if (unit.id == 257 && unit.hp != 0) specters++;
+                }
+
+                if (specters >= 5) { nbE901.encno = 272; nbE901.dvlno = 294; }
+                else if (specters >= 3) { nbE901.encno = 273; nbE901.dvlno = 295; }
+                else if (specters >= 2) { nbE901.encno = 274; nbE901.dvlno = 296; }
             }
         }
 
@@ -56,7 +74,13 @@ namespace NocturneInsaniax
                 //    encno = 1278;
                 //    return;
                 //}
-                if (GuaranteeNKEs.Value == true || (evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0 && random.Next(2) == 0))
+                if (encno == 20)
+                    encno = 266;
+                else if (encno == 266)
+                    encno = 267;
+                else if (encno == 267)
+                    encno = 20;
+                else if (GuaranteeNKEs.Value == true || (evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0 && random.Next(2) == 0))
                 {
                     encno = NewKagutsuchiEncounter(encno, encpackno);
                 }
@@ -564,9 +588,18 @@ namespace NocturneInsaniax
 
         private static void KabukichoPrisonJackFrostEncounter()
         {
+            datEncount.tbl[1272].backattack = -1;
+            datEncount.tbl[1272].esc = 0;
+            datEncount.tbl[1272].flag = 0;
+            datEncount.tbl[1272].formationtype = 0;
+            datEncount.tbl[1272].maxcall = 0;
+            datEncount.tbl[1272].maxparty = 0;
+            datEncount.tbl[1272].stageid = 0;
+            datEncount.tbl[1272].devil = new ushort[11];
+
             datEncount.tbl[1272].devil[0] = 251;
             datEncount.tbl[1272].btlsound = 22;
-            datEncount.tbl[1272].item = 107;
+            datEncount.tbl[1272].item = 96;
             datEncount.tbl[1272].itemcnt = 1;
         }
 
@@ -749,15 +782,26 @@ namespace NocturneInsaniax
             datEncount.tbl[1269].flag = 13; // Forced Kodama + Will o' Wisp in Unknown Realm
             datEncount.tbl[1269].devil[1] = 318;
             datEncount.tbl[14].flag = 11; // Boss Forneus
-            datEncount.tbl[20].maxparty = 7; // Boss Specter 1
+
+            datEncount.tbl[266].maxparty = 7; // Boss Specter 1 (2)
+            datEncount.tbl[266].devil[2] = 0;
+            datEncount.tbl[266].devil[3] = 273;
+
+            datEncount.tbl[267].maxparty = 7; // Boss Specter 2 (3)
+            datEncount.tbl[267].devil[2] = 0;
+            datEncount.tbl[267].devil[3] = 275;
+
+            datEncount.tbl[20].maxparty = 6; // Boss Specter 3 (1)
+            datEncount.tbl[20].devil[2] = 257;
+            datEncount.tbl[20].devil[3] = 0;
+
             datEncount.tbl[85].flag = 11; // Boss Thor 1
+            
             datEncount.tbl[268].flag = 11; // Boss Clotho
             datEncount.tbl[269].flag = 11; // Boss Lachesis
             datEncount.tbl[270].flag = 11; // Boss Atropos
             datEncount.tbl[271].flag = 11; // Boss Moirae Sisters
-            datEncount.tbl[266].maxparty = 7; // Boss Specter 2
-            datEncount.tbl[266].devil[2] = 0;
-            datEncount.tbl[266].devil[3] = 273;
+
             datEncount.tbl[329].flag = 11; // Boss Sakahagi
 
             datEncount.tbl[144].maxparty = 6; // Forced Incubus + Koppa Tengu

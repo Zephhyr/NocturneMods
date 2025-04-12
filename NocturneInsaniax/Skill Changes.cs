@@ -17,7 +17,7 @@ namespace NocturneInsaniax
     internal partial class NocturneInsaniax : MelonMod
     {
         public static ushort[] bossList = new ushort[] {
-            251, 252, 254, 256, 257, 262, 263, 266, 267, 268, 269, 270, 271, 272, 273, 274, 294, 295, 296, 297, 299, 300, 301, 302, 307, 308, 309, 312, 313,
+            251, 252, 254, 256, 257, 262, 263, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 294, 295, 296, 297, 299, 300, 301, 302, 303, 307, 308, 309, 312, 313,
             321, 326, 327, 328, 339, 340, 341, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 362, 363, 364, 365, 366
         };
         public static ushort[] pushedSkillList = new ushort[] { 148, 149, 150, 151, 164, 165, 166, 167, 403, 407, 408, 416, 417, 496 };
@@ -331,6 +331,7 @@ namespace NocturneInsaniax
                     case 144: __result = "High Physical damage to all foes. \nPow: 42, Acc: 95%, Crit: 30%"; return false; // Oni Kagura
                     case 147: __result = "Mega Str-based Almighty damage to \none foe. Pow: 66, Acc: 95%, Crit: 30%"; return false; // Freikugel
                     case 152: __result = "Sacrifice self to deal Mega Str-based \nAlmighty damage to all foes and allies. \nPow: 60, Acc: 100%, Crit: 0%"; return false; // Last Resort
+                    case 153: __result = "High Mag-based Physical damage to \nall foes. Pow: 40, Acc: 98%, \nCrit: 20%"; return false; // Foul Havoc
                     case 155: __result = "Mega Physical damage to all foes. \nPow: 60, Acc: 200%, Crit: 0%, \nStun: 20%"; return false; // Earthquake
                     case 160: __result = "Mega Shot damage to one foe. \nPow: 62, Acc: 95%, Crit: 30%"; return false; // Spiral Viper
                     case 161: __result = "Mega Fire damage to one foe. \nPow: 80, Acc: 100%"; return false; // Magma Axis
@@ -756,7 +757,7 @@ namespace NocturneInsaniax
                     foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 0)) // Demi-fiend
                     {
                         //work.skill[0] = 197;
-                        //work.skill[1] = 111;
+                        //work.skill[1] = 144;
                         //work.exp = rstCalcCore.GetNextExpDisp(work, 0) - 1;
                     }
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
@@ -783,35 +784,35 @@ namespace NocturneInsaniax
                     //    work.skill[3] = 331;
                     //    work.skillcnt = 8;
                     //}
-                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 144)) // Arahabaki
-                    //{
-                    //    work.skill[3] = 335;
-                    //    work.skillcnt = 8;
-                    //}
-                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 77)) // Naga Raja
-                    //{
-                    //    work.skill[0] = 15;
-                    //    work.skill[1] = 311;
-                    //    work.skill[2] = 329;
-                    //    work.skill[3] = 66;
-                    //    work.skill[4] = 65;
-                    //    work.skill[5] = 459;
-                    //    work.skill[6] = 456;
-                    //    work.skill[7] = 40;
-                    //    work.skillcnt = 8;
-                    //}
-                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 6)) // Horus
-                    //{
-                    //    work.skill[0] = 15;
-                    //    work.skill[1] = 311;
-                    //    work.skill[2] = 329;
-                    //    work.skill[3] = 66;
-                    //    work.skill[4] = 65;
-                    //    work.skill[5] = 459;
-                    //    work.skill[6] = 456;
-                    //    work.skill[7] = 40;
-                    //    work.skillcnt = 8;
-                    //}
+                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 144)) // Arahabaki
+                    {
+                        work.skill[3] = 334;
+                        //work.skillcnt = 8;
+                    }
+                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 77)) // Naga Raja
+                    {
+                        //work.skill[0] = 15;
+                        //work.skill[1] = 311;
+                        work.skill[2] = 334;
+                        work.skill[3] = 77;
+                        work.skill[4] = 205;
+                        //work.skill[5] = 459;
+                        //work.skill[6] = 456;
+                        //work.skill[7] = 40;
+                        //work.skillcnt = 8;
+                    }
+                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 6)) // Horus
+                    {
+                        //work.skill[0] = 15;
+                        work.skill[1] = 334;
+                        work.skill[2] = 57;
+                        work.skill[3] = 205;
+                        work.skill[4] = 64;
+                        //work.skill[5] = 459;
+                        //work.skill[6] = 456;
+                        //work.skill[7] = 40;
+                        //work.skillcnt = 8;
+                    }
                     //}
                 }
                 // If using a cursed gospel
@@ -935,6 +936,12 @@ namespace NocturneInsaniax
                 if (formindex == 6 && nbMainProcess.nbGetMainProcessData().enemyunit[0].nowindex == 497)
                 {
                     nbUnitProcess.nbReturnUnit(4, 0, 0);
+                    nbMakePacket.nbAddNewPressPacket(0, 0, -10, -10);
+                }
+                // Remove additional turns after Foul Gathering
+                else if ((nbMainProcess.nbGetMainProcessData().enemyunit[0].id == 257 || nbMainProcess.nbGetMainProcessData().enemyunit[0].id == 273 || nbMainProcess.nbGetMainProcessData().enemyunit[0].id == 275)
+                    && nbMainProcess.nbGetMainProcessData().enemyunit[0].nowindex == 252)
+                {
                     nbMakePacket.nbAddNewPressPacket(0, 0, -10, -10);
                 }
             }
@@ -1199,9 +1206,11 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int phase)
             {
+                //MelonLogger.Msg("--nbMainProcess.nbSetPhase--");
                 //try
                 //{
                 //    MelonLogger.Msg("phase: " + phase);
+                //    MelonLogger.Msg("demon: " + datDevilName.Get(actionProcessData.work.id));
                 //    MelonLogger.Msg("nowcommand: " + actionProcessData.work.nowcommand);
                 //    MelonLogger.Msg("nowindex: " + actionProcessData.work.nowindex);
                 //    MelonLogger.Msg("partyindex: " + actionProcessData.partyindex);
@@ -1227,6 +1236,11 @@ namespace NocturneInsaniax
                 {
                     try
                     {
+                        //if (actionProcessData.work.id == 257 && (actionProcessData.work.nowcommand == 1 && actionProcessData.work.nowindex == 66))
+                        //{
+                        //    actionProcessData.work.badstatus = 2048;
+                        //}
+
                         // After Summon
                         if (actionProcessData.work.nowcommand == 6 || (actionProcessData.work.nowcommand == 1 && actionProcessData.work.nowindex == 223))
                         {
@@ -1428,18 +1442,23 @@ namespace NocturneInsaniax
                             if (fourDevasIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(actionProcessData.work.nowtform).id))
                             {
                                 var party = nbMainProcess.nbGetPartyFromFormindex(actionProcessData.work.nowtform);
-                                foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
-                                {
-                                    try
-                                    {
-                                        if (fourDevasIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
-                                        {
-                                            postSummonSkillName = "Four Devas";
-                                            PostSummonSkillCopy(459, 64, 0);
-                                            nbMainProcess.nbPushAction(4, party.partyindex, ally.partyindex, 408);
-                                        }
-                                    } catch { }
-                                }
+                                postSummonSkillName = "Four Devas";
+                                PostSummonSkillCopy(459, 64, 1);
+                                nbMainProcess.nbPushAction(4, party.partyindex, party.partyindex, 408);
+
+                                //var party = nbMainProcess.nbGetPartyFromFormindex(actionProcessData.work.nowtform);
+                                //foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
+                                //{
+                                //    try
+                                //    {
+                                //        if (fourDevasIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
+                                //        {
+                                //            postSummonSkillName = "Four Devas";
+                                //            PostSummonSkillCopy(459, 64, 0);
+                                //            nbMainProcess.nbPushAction(4, party.partyindex, ally.partyindex, 408);
+                                //        }
+                                //    } catch { }
+                                //}
                             }
                         }
                         // After any other action: Renewal, Spirit Well, Qigong
@@ -1491,13 +1510,42 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref nbActionProcessData_t a)
             {
-                if (a.work.nowcommand == 1 && a.work.nowindex == 408)
+                // Set Oberon's Fairy King's Melody to target the whole party
+                if (a.work.id == 54 & a.work.nowcommand == 1 && a.work.nowindex == 408)
                 {
+                    uint newSelect = 0;
+                    for (int i = 0; i <= 3; i++)
+                    {
+                        try
+                        {
+                            var work = nbMainProcess.nbGetUnitWorkFromFormindex(i);
+                            if (work.id != -1)
+                                newSelect += Convert.ToUInt32(Math.Pow(2, i));
+                        }
+                        catch { }
+                    }
                     if (datNormalSkill.tbl[408].targettype == 1)
                     {
-                        a.type = 0;
-                        a.target = 0;
-                        a.select = 15;
+                        a.select = newSelect;
+                    }
+                }
+                // Set Four Devas to target all Four Devas targets
+                if (fourDevasIds.Contains(a.work.id) & a.work.nowcommand == 1 && a.work.nowindex == 408)
+                {
+                    uint newSelect = 0;
+                    for (int i = 0; i <= 3; i++)
+                    {
+                        try
+                        {
+                            var work = nbMainProcess.nbGetUnitWorkFromFormindex(i);
+                            if (fourDevasIds.Contains(work.id))
+                                newSelect += Convert.ToUInt32(Math.Pow(2, i));
+                        }
+                        catch { }
+                    }
+                    if (datNormalSkill.tbl[408].targettype == 1)
+                    {
+                        a.select = newSelect;
                     }
                 }
             }
@@ -2398,8 +2446,13 @@ namespace NocturneInsaniax
 
         private static void FoulHavoc(ushort id)
         {
-            datNormalSkill.tbl[id].cost = 12;
-            datNormalSkill.tbl[id].hpn = 24;
+            datNormalSkill.tbl[id].cost = 18;
+            datNormalSkill.tbl[id].hpn = 40;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].magicbase = 16;
+            datNormalSkill.tbl[id].magiclimit = 32767;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].hitlevel = 100;
             datNormalSkill.tbl[id].failpoint = 2;
             datNormalSkill.tbl[id].criticalpoint = 20;
         }

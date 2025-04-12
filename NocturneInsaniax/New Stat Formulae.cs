@@ -612,7 +612,7 @@ namespace NocturneInsaniax
                         }
                     }
                     // Specter's Phantasmagoria
-                    if (new ushort[] { 185, 257, 273, 275, 294, 295, 296 }.Contains(workFromFormindex1.id) && workFromFormindex1.param[2] > workFromFormindex2.param[2])
+                    if (new ushort[] { 185, 257, 273, 275, 294, 295, 296 }.Contains(workFromFormindex1.id) && workFromFormindex1.param[2] > workFromFormindex2.param[2] && datSkill.tbl[nskill].skillattr <= 12)
                         critRate += 10;
                     // Hell Biker's Speed Star
                     if ((workFromFormindex1.id == 200 || workFromFormindex1.id == 350) && workFromFormindex1.param[4] > workFromFormindex2.param[4] && datSkill.tbl[nskill].skillattr <= 12)

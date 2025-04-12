@@ -655,6 +655,7 @@ namespace NocturneInsaniax
                     //if (!__result) __result = true; // Artificially makes it obtainable
                     //else tblHearts.fclHeartsTbl[1].Skill[6].TargetLevel = 15; // If unlocked normally, you can get it early
                     if (__result) tblHearts.fclHeartsTbl[1].Skill[6].TargetLevel = 15; // If unlocked normally, you can get it
+                    else tblHearts.fclHeartsTbl[1].Skill[6].TargetLevel = 200; // Otherwise, you can't
                 }
             }
         }

@@ -268,7 +268,7 @@ namespace NocturneInsaniax
             { 250, new InnateSkill(383, 15, "", "")}, // 250 
             { 251, new InnateSkill(383, 02, "Ice Enhancer", "")}, // 251 
             { 252, new InnateSkill(383, 15, "Devil Regeneration", "")}, // 252 Devil Dante
-            { 253, new InnateSkill(383, 15, "No Innate Skill", "")}, // 253 Gamete
+            { 253, new InnateSkill(383, 15, "Withheld Sentence", "")}, // 253 Gamete
             { 254, new InnateSkill(383, 15, "YHVH", "")}, // 254 YHVH
             { 255, new InnateSkill(383, 15, "", "")}, // 255 
             { 256, new InnateSkill(383, 15, "Best Friend", "")}, // 256 Boss Forneus
@@ -547,7 +547,7 @@ namespace NocturneInsaniax
         private static ushort[] wardOffEvilIds = new ushort[] { 93, 145 };
         private static ushort[] essenceThiefIds = new ushort[] { 127, 124, 137 };
         private static ushort[] behemothicBounceIds = new ushort[] { 105, 274 };
-        private static ushort[] withheldSentenceIds = new ushort[] { 13, 110 };
+        private static ushort[] withheldSentenceIds = new ushort[] { 13, 110, 253 };
         private static ushort[] megalomaniaIds = new ushort[] { 14, 109, 115, 334 };
         private static ushort[] proxyGuardHoundRaces = new ushort[] { 6, 14, 21, 28 };
         private static ushort[] proxyGuardHoundIds = new ushort[] { 29, 56, 147 };
