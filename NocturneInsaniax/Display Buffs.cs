@@ -27,7 +27,7 @@ namespace NocturneInsaniax
                 if ((target_formindex == 0 && text2 == nickname) || (target_formindex != 0 && text2 == demonname))
                 {
                     if (EnableEnemyLevelDisplay.Value)
-                        text2 += "  Lv" + demonlevel;
+                        text2 += "   Lv" + demonlevel;
 
                     // Gets the type with the buffs info
                     nbParty_t party_member = nbMainProcess.nbGetPartyFromFormindex(target_formindex);

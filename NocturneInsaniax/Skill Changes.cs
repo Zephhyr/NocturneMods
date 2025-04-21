@@ -17,8 +17,8 @@ namespace NocturneInsaniax
     internal partial class NocturneInsaniax : MelonMod
     {
         public static ushort[] bossList = new ushort[] {
-            251, 252, 254, 256, 257, 262, 263, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 294, 295, 296, 297, 299, 300, 301, 302, 303, 307, 308, 309, 312, 313,
-            321, 326, 327, 328, 339, 340, 341, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 362, 363, 364, 365, 366
+            251, 252, 254, 256, 257, 262, 263, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 294, 295, 296, 297, 299, 300, 301, 302, 303,
+            304, 305, 306, 307, 308, 309, 312, 313, 321, 326, 327, 328, 339, 340, 341, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 362, 363, 364, 365, 366
         };
         public static ushort[] pushedSkillList = new ushort[] { 148, 149, 150, 151, 164, 165, 166, 167, 403, 407, 408, 416, 417, 496 };
 
@@ -331,7 +331,7 @@ namespace NocturneInsaniax
                     case 144: __result = "High Physical damage to all foes. \nPow: 42, Acc: 95%, Crit: 30%"; return false; // Oni Kagura
                     case 147: __result = "Mega Str-based Almighty damage to \none foe. Pow: 66, Acc: 95%, Crit: 30%"; return false; // Freikugel
                     case 152: __result = "Sacrifice self to deal Mega Str-based \nAlmighty damage to all foes and allies. \nPow: 60, Acc: 100%, Crit: 0%"; return false; // Last Resort
-                    case 153: __result = "High Mag-based Physical damage to \nall foes. Pow: 40, Acc: 98%, \nCrit: 20%"; return false; // Foul Havoc
+                    case 153: __result = "High Physical damage to all foes. \nPow: 40, Acc: 98%, Crit: 20%"; return false; // Foul Havoc
                     case 155: __result = "Mega Physical damage to all foes. \nPow: 60, Acc: 200%, Crit: 0%, \nStun: 20%"; return false; // Earthquake
                     case 160: __result = "Mega Shot damage to one foe. \nPow: 62, Acc: 95%, Crit: 30%"; return false; // Spiral Viper
                     case 161: __result = "Mega Fire damage to one foe. \nPow: 80, Acc: 100%"; return false; // Magma Axis
@@ -751,51 +751,31 @@ namespace NocturneInsaniax
                     //var output = Newtonsoft.Json.JsonConvert.SerializeObject(mdlManager.mdlResrcMajorList);
                     //MelonLogger.Msg(output);
 
-                    //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 149).Count() == 0)
+                    //datCalc.datAddDevil(196, 0);
+                    //datCalc.datAddDevil(197, 0);
+
+                    //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 56).Count() == 0)
                     //{
-                    //datCalc.datAddDevil(57, 0);
+                        //datCalc.datAddDevil(56, 0);
+                    //}
                     foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 0)) // Demi-fiend
                     {
                         //work.skill[0] = 197;
                         //work.skill[1] = 144;
                         //work.exp = rstCalcCore.GetNextExpDisp(work, 0) - 1;
                     }
-                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 226)) // Nightmare
-                    //{
-                    //    //work.skill[0] = 192;
-                    //    //work.skill[1] = 313;
-                    //    //work.skill[2] = 459;
-                    //    //work.skill[3] = 40;
-                    //    //work.skill[4] = 456;
-                    //    //work.skill[5] = 20;
-                    //    //work.skill[6] = 312;
-                    //    //work.skill[7] = 292;
-                    //    //work.skillcnt = 8;
-                    //}
-                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 167)) // Pisaca
-                    //{
-                    //    work.skill[3] = 331;
-                    //    work.skill[4] = 456;
-                    //    work.skillcnt = 8;
-                    //}
-                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 73)) // Eligor
-                    //{
-                    //    work.skill[2] = 330;
-                    //    work.skill[3] = 331;
-                    //    work.skillcnt = 8;
-                    //}
                     foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 144)) // Arahabaki
                     {
-                        work.skill[3] = 334;
+                        //work.skill[3] = 335;
                         //work.skillcnt = 8;
                     }
                     foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 77)) // Naga Raja
                     {
                         //work.skill[0] = 15;
                         //work.skill[1] = 311;
-                        work.skill[2] = 334;
-                        work.skill[3] = 77;
-                        work.skill[4] = 205;
+                        //work.skill[2] = 335;
+                        //work.skill[3] = 77;
+                        //work.skill[4] = 205;
                         //work.skill[5] = 459;
                         //work.skill[6] = 456;
                         //work.skill[7] = 40;
@@ -804,10 +784,10 @@ namespace NocturneInsaniax
                     foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 6)) // Horus
                     {
                         //work.skill[0] = 15;
-                        work.skill[1] = 334;
-                        work.skill[2] = 57;
-                        work.skill[3] = 205;
-                        work.skill[4] = 64;
+                        //work.skill[1] = 335;
+                        //work.skill[2] = 459;
+                        //work.skill[3] = 205;
+                        //work.skill[4] = 65;
                         //work.skill[5] = 459;
                         //work.skill[6] = 456;
                         //work.skill[7] = 40;
@@ -858,7 +838,7 @@ namespace NocturneInsaniax
                 {
                     switch (actionProcessData.work.nowindex)
                     {
-                        case 54:
+                        case 54: // Rakunda
                             {
                                 type = 0;
                                 var limitReached = true;
@@ -870,7 +850,7 @@ namespace NocturneInsaniax
                                 text1 = limitReached ? "Limit reached!" : "Decreased enemy's Defense!"; 
                                 break; 
                             }
-                        case 64: 
+                        case 64: // Tarukaja
                             { 
                                 type = 0;
                                 var limitReached = true;
@@ -882,7 +862,7 @@ namespace NocturneInsaniax
                                 text1 = limitReached ? "Limit reached!" : "Physical/Magical Attack increased!"; 
                                 break; 
                             }
-                        case 67: 
+                        case 67: // Makakaja
                             { 
                                 type = 0;
                                 var limitReached = true;
@@ -894,13 +874,13 @@ namespace NocturneInsaniax
                                 text1 = limitReached ? "Limit reached!" : "Magical Attack/Hit Rate increased!"; 
                                 break; 
                             }
-                        case 206:
+                        case 206: // Debilitate
                             {
                                 if (text1 == "Decreased all stats performance!")
                                     text1 = "All stats decreased!";
                                 break;
                             }
-                        case 276: 
+                        case 276: // Red Capoted
                             { 
                                 type = 0;
                                 var limitReached = true;
@@ -2451,7 +2431,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].magicbase = 16;
             datNormalSkill.tbl[id].magiclimit = 32767;
-            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].koukatype = 0;
             datNormalSkill.tbl[id].hitlevel = 100;
             datNormalSkill.tbl[id].failpoint = 2;
             datNormalSkill.tbl[id].criticalpoint = 20;

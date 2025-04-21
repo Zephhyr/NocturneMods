@@ -23,6 +23,7 @@ namespace NocturneInsaniax
                     case 29: __result = "Needle Orb"; return false;
                     case 32: __result = "Medusa Eye"; return false;
                     case 33: __result = "Dekunda Rock"; return false;
+                    case 44: __result = "Graven Image"; return false;
                     case 46: __result = "Eternal Spyglass"; return false;
                     case 47: __result = "Spyglass"; return false;
                     case 48: __result = "Agilao Rock"; return false;
@@ -101,6 +102,7 @@ namespace NocturneInsaniax
                     case 35: __result = "Repels Physical attacks \nfor one ally once \nnext turn."; return false; // Attack Mirror
                     case 36: __result = "Negates -kaja effects on all foes."; return false; // Dekaja Rock
                     case 37: __result = "Negates one Light/Dark attack \nfor all allies."; return false; // Tetraja Rock
+                    case 44: __result = "Great HP recovery for one ally. \nReusable."; return false; // Graven Image
                     case 47: __result = "Displays an enemy's info."; return false; // Spyglass
                     case 48: __result = "Medium Fire damage to one foe. \nPow: 45, Acc: 100%"; return false; // Agilao Rock
                     case 49: __result = "Medium Ice damage to one foe. \nPow: 39, Acc: 100%, Freeze: 25%"; return false; // Bufula Rock
@@ -189,6 +191,7 @@ namespace NocturneInsaniax
             NeedleOrbItem(29);
             MedusaEye(32);
             DekundaRock(33);
+            GravenImage(44);
             Spyglass(47);
             AgilaoRock(48);
             BufulaRock(49);
@@ -234,6 +237,11 @@ namespace NocturneInsaniax
             datItem.tbl[id].price = 400;
             datItem.tbl[id].skillid = 77;
             datItem.tbl[id].use = 2;
+        }
+
+        private static void GravenImage(ushort id)
+        {
+            datItem.tbl[id].skillid = 37;
         }
 
         private static void Spyglass(ushort id)
@@ -591,6 +599,9 @@ namespace NocturneInsaniax
             // Life Stone Item Box in Yoyogi Park
             fldGlobal.fldHitData._fldItemBoxTbl[165]._ItemNum = 5;
 
+            // Macca Box in Overworld 6
+            fldGlobal.fldHitData._fldItemBoxTbl[14]._Param = 10000;
+
             // Great Chakra Item Box in First Kalpa
             fldGlobal.fldHitData._fldItemBoxTbl[256]._ItemID = 8;
 
@@ -606,6 +617,13 @@ namespace NocturneInsaniax
             // Satan Magatama Box behind Ongyo-Ki
             fldGlobal.fldHitData._fldItemBoxTbl[104]._ItemID = 16;
 
+            // Boss Cerberus Box
+            fldGlobal.fldHitData._fldItemBoxTbl[349]._Type = 2;
+            fldGlobal.fldHitData._fldItemBoxTbl[349]._ItemID = 0;
+            fldGlobal.fldHitData._fldItemBoxTbl[349]._ItemNum = 0;
+            fldGlobal.fldHitData._fldItemBoxTbl[349]._Trap = 1;
+            fldGlobal.fldHitData._fldItemBoxTbl[349]._Param = 1276;
+
             // Boss Flauros Box
             fldGlobal.fldHitData._fldItemBoxTbl[350]._Type = 2;
             fldGlobal.fldHitData._fldItemBoxTbl[350]._ItemID = 0;
@@ -618,7 +636,7 @@ namespace NocturneInsaniax
             fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemID = 0;
             fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemNum = 0;
             fldGlobal.fldHitData._fldItemBoxTbl[351]._Trap = 1;
-            fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 267; //1278; //1035;
+            fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 272; //1278; //1035;
 
             //fldGlobal.fldHitData._fldItemBoxTbl.Add(new fldTakaraTbl_t { _ItemID = 47, _ItemNum = 5 });
         }

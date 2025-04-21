@@ -78,7 +78,9 @@ namespace NocturneInsaniax
                             case "<SPD 6><AI_MSG_L0009><WAIT>": __result = "<SP6>NoW mE bIggEr ThAn YoOoOoOoU! NoW yOu DiIiIiIiIiIiE!<WA>"; break;
                             case "<SPD 6><AI_MSG_L0010><WAIT>": __result = "<SP6>M-Me NoT bIg EnOUgh! Me StIll KiLL YoOoOoOoU!<WA>"; break;
                             case "<SPD 6><AI_MSG_L0011><WAIT>": __result = "<SP6>...I WeAk! YoUr FaULt! Me StIll KiLL YoOoOoOoU!<WA>"; break;
-                            case "<SPD 6><AI_MSG_L0012><WAIT>": __result = "<SP6>Me BiG... bUt StIll Too WeAk...<WA>"; break;
+                            case "<SPD 6><AI_MSG_L0012><WAIT>": __result = "<SP6>Me BiG... wHy Me StIll Too WeAk...<WA>"; break;
+                            // Albion Dialogue
+                            case "<SPD 6><AI_MSG_L0061><WAIT>": __result = "<SP6>LINE-UP-THE-FLEET! TIME-FOR-SOME-HEAT! WITH-MY-BOYS-ON-THE-STREET! I-CANNOT-BE-BEAT!<WA>"; break;
                         }
                     }
                 }

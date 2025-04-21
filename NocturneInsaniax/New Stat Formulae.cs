@@ -484,7 +484,7 @@ namespace NocturneInsaniax
                     (datSkill.tbl[nskill].skillattr == 2 && workFromFormindex2.badstatus == 256) || // If attack is ice and target is stunned
                     (datSkill.tbl[nskill].skillattr == 3 && workFromFormindex2.badstatus == 32) || // If attack is elec and target is muted
                     (datSkill.tbl[nskill].skillattr == 4 && workFromFormindex2.badstatus == 8) || // If attack is force and target is panicked
-                    (datNormalSkill.tbl[nskill].koukatype == 0 && (workFromFormindex2.badstatus == 1 || workFromFormindex2.badstatus == 2))) // If attack is physical and target is shocked or frozen
+                    (datNormalSkill.tbl[nskill].koukatype == 0 && (workFromFormindex2.badstatus == 1 || workFromFormindex2.badstatus == 2))) // If attack is str-based and target is shocked or frozen
                     && (datNormalSkill.tbl[nskill].hptype == 1 || datNormalSkill.tbl[nskill].hptype == 6 || datNormalSkill.tbl[nskill].hptype == 12 || datNormalSkill.tbl[nskill].hptype == 14))
                     __result = 1; // Critical hit
                 else if (!(new uint[] { 65536, 131072, 262144 }.Contains(aisyo) || datCalc.datCheckSyojiSkill(workFromFormindex1, 372) != 0)) // If target isn't immune or doesn't have Firm Stance
@@ -662,11 +662,11 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int nskill, ref int sformindex, ref int dformindex, ref int __result)
             {
+                datUnitWork_t workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
+                datUnitWork_t workFromFormindex2 = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
+
                 if (__result == 0 || __result == 4) // Hit or Miss
                 {
-                    datUnitWork_t workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
-                    datUnitWork_t workFromFormindex2 = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
-
                     // Scathach's Warrior Trainer
                     if (workFromFormindex1.id == 8 && nskill != 0)
                     {
@@ -805,11 +805,11 @@ namespace NocturneInsaniax
                         chance /= (float) 1.5;
                     var rand = dds3KernelCore.dds3GetRandIntA(100);
                     __result = rand < chance ? 0 : 4;
-
-                    // Matador's Estocada
-                    if (__result != 0 && (workFromFormindex2.id == 199 || workFromFormindex2.id == 349) && random.Next(2) == 0)
-                        nbMainProcess.nbPushAction(4, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, nbMainProcess.nbGetPartyFromFormindex(sformindex).partyindex, 403);
                 }
+
+                // Matador's Estocada
+                if (__result != 0 && (workFromFormindex2.id == 199 || workFromFormindex2.id == 349) && random.Next(2) == 0)
+                    nbMainProcess.nbPushAction(4, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, nbMainProcess.nbGetPartyFromFormindex(sformindex).partyindex, 403);
             }
         }
 

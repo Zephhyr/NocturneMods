@@ -1037,12 +1037,16 @@ namespace NocturneInsaniax
                     // 0 45 0
                     fld_Npc.fldItemBoxAdd(350, 194.22f, 0f, -267.64f, new Vector4(0, 45, 0, 1)); // Add Item Box in Nihilo Core
                 }
+                if (pFileName == "dds3data/fld/f/f034/f034_001") // Amala Temple Entrance
+                {
+                    // 19.5531 0 51.822
+                    fld_Npc.fldItemBoxAdd(349, 1955.31f, 0f, 5182.2f, new Vector4(0, 90, 0, 1)); // Add Item Box in Asakusa
+                }
                 if (pFileName == "dds3data/fld/f/f027/f027_001") // Asakusa 1
                 {
                     // 4.0364 0.2 31.4621
                     fld_Npc.fldItemBoxAdd(351, -403.64f, -20f, 3146.21f, new Vector4(0, 0, 0, 1)); // Add Item Box in Asakusa
                 }
-                
             }
         }
 

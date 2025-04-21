@@ -294,10 +294,10 @@ namespace NocturneInsaniax
             { 276, new InnateSkill(383, 15, "Withheld Sentence", "")}, // 276 Boss Alciel
             { 277, new InnateSkill(383, 02, "Queen of Winter", "")}, // 277 Boss Skadi
             { 278, new InnateSkill(383, 15, "Milton", "")}, // 278 Boss Albion
-            { 279, new InnateSkill(383, 15, "Thunderous Melody", "")}, // 279 Boss Urthona
-            { 280, new InnateSkill(383, 15, "Fiery Melody", "")}, // 280 Boss Urizen
-            { 281, new InnateSkill(383, 15, "Gusting Melody", "")}, // 281 Boss Luvah
-            { 282, new InnateSkill(383, 15, "Frigid Melody", "")}, // 282 Boss Tharmus
+            { 279, new InnateSkill(383, 3, "Thunderous Melody", "")}, // 279 Boss Urthona
+            { 280, new InnateSkill(383, 1, "Fiery Melody", "")}, // 280 Boss Urizen
+            { 281, new InnateSkill(383, 4, "Gusting Melody", "")}, // 281 Boss Luvah
+            { 282, new InnateSkill(383, 2, "Frigid Melody", "")}, // 282 Boss Tharmus
             { 283, new InnateSkill(383, 15, "Underdog", "")}, // 283 Boss Futomimi
             { 284, new InnateSkill(383, 14, "Retributive Zeal", "")}, // 284 Boss Gabriel
             { 285, new InnateSkill(383, 14, "Retributive Zeal", "")}, // 285 Boss Raphael
@@ -318,10 +318,10 @@ namespace NocturneInsaniax
             { 300, new InnateSkill(383, 15, "Faithful Companion", "")}, // 300 Boss Orthrus
             { 301, new InnateSkill(383, 15, "Critical Melody", "")}, // 301 Boss Yaksini
             { 302, new InnateSkill(383, 03, "Odinson", "")}, // 302 Boss Thor
-            { 303, new InnateSkill(383, 15, "Boss Black Frost", "")}, // 303 Boss Black Frost
-            { 304, new InnateSkill(383, 15, "Ambush Karasu Tengu", "")}, // 304 Ambush Karasu Tengu
-            { 305, new InnateSkill(383, 15, "Ambush Karasu Tengu", "")}, // 305 Ambush Karasu Tengu
-            { 306, new InnateSkill(383, 15, "Ambush Karasu Tengu", "")}, // 306 Ambush Karasu Tengu
+            { 303, new InnateSkill(383, 15, "Cold World", "")}, // 303 Boss Black Frost
+            { 304, new InnateSkill(383, 15, "Faithful Companion", "")}, // 304 Boss Cerberus R
+            { 305, new InnateSkill(383, 15, "Faithful Companion", "")}, // 305 Boss Cerberus C
+            { 306, new InnateSkill(383, 15, "Faithful Companion", "")}, // 306 Boss Cerberus L
             { 307, new InnateSkill(383, 15, "Helmsman", "")}, // 307 Boss Eligor
             { 308, new InnateSkill(383, 15, "Helmsman", "")}, // 308 Boss Eligor
             { 309, new InnateSkill(383, 15, "Helmsman", "")}, // 309 Boss Eligor
@@ -538,7 +538,7 @@ namespace NocturneInsaniax
         private static ushort[] divineBenevolenceIds = new ushort[] { 33, 142 };
         private static ushort[] pawToPawCombatIds = new ushort[] { 31, 69, 71, 86, 179, 180, 227, 263, 289, 290, 316, 362 };
         private static ushort[] auspiciousBeastIds = new ushort[] { 30, 32, 148, 149 };
-        private static ushort[] faithfulCompanionIds = new ushort[] { 81, 82, 85, 151, 300 };
+        private static ushort[] faithfulCompanionIds = new ushort[] { 81, 82, 85, 151, 300, 304, 305, 306 };
         private static ushort[] focusedAssaultIds = new ushort[] { 5, 67, 131 };
         private static ushort[] helmsmanIds = new ushort[] { 34, 73, 143, 153, 307, 308, 309 };
         private static ushort[] deathlyAfflictionIds = new ushort[] { 128, 129, 135, 361 };

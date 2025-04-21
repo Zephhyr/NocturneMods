@@ -274,6 +274,20 @@ namespace NocturneInsaniax
                 case 148: KabukichoPrisonJackFrostEncounter(); return 1272;
                 case 149: KabukichoPrisonJackFrostEncounter(); return 1272;
 
+                case 124: Overworld6BaihuEncounter(); return 1270;
+                case 94: Overworld6BaihuEncounter(); return 1270;
+
+                case 95: WhiteTempleLakshmiEncounter(); return 1270;
+                case 96: WhiteTempleLakshmiEncounter(); return 1270;
+
+                case 97: RedTempleKushinadaHimeEncounter(); return 1270;
+                case 99: RedTempleKushinadaHimeEncounter(); return 1270;
+
+                case 101: BlackTempleQingLongEncounter(); return 1270;
+                case 102: BlackTempleQingLongEncounter(); return 1270;
+
+                case 155: RedTempleKushinadaHimeEncounter(); return 1270;
+
                 // Labyrinth of Amala
 
                 case 173: FirstKalpaEncounter1(); return 1270; // First rooms
@@ -317,18 +331,6 @@ namespace NocturneInsaniax
 
             datEncount.tbl[1271].devil[0] = 135;
             datEncount.tbl[1271].devil[1] = 135;
-            datEncount.tbl[1271].item = 6;
-            datEncount.tbl[1271].itemcnt = 1;
-        }
-
-        private static void Overworld1MouRyoZhenEncounter()
-        {
-            datEncount.tbl[1270].devil[0] = 136;
-            datEncount.tbl[1270].devil[1] = 136;
-
-            datEncount.tbl[1271].devil[0] = 126;
-            datEncount.tbl[1271].devil[1] = 126;
-            datEncount.tbl[1271].devil[2] = 126;
             datEncount.tbl[1271].item = 6;
             datEncount.tbl[1271].itemcnt = 1;
         }
@@ -603,6 +605,51 @@ namespace NocturneInsaniax
             datEncount.tbl[1272].itemcnt = 1;
         }
 
+        private static void Overworld6BaihuEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 30;
+            datEncount.tbl[1270].item = 59;
+            datEncount.tbl[1270].itemcnt = 1;
+        }
+
+        private static void WhiteTempleLakshmiEncounter()
+        {
+            datEncount.tbl[1270].maxcall = 4;
+            datEncount.tbl[1270].maxparty = 3;
+            datEncount.tbl[1270].item = 4;
+            datEncount.tbl[1270].itemcnt = 1;
+
+            datEncount.tbl[1270].devil[0] = 46;
+            datEncount.tbl[1270].devil[1] = 7;
+            datEncount.tbl[1270].devil[2] = 46;
+        }
+
+        private static void RedTempleKushinadaHimeEncounter()
+        {
+            datEncount.tbl[1270].maxcall = 4;
+            datEncount.tbl[1270].maxparty = 3;
+            datEncount.tbl[1270].item = 4;
+            datEncount.tbl[1270].itemcnt = 1;
+
+            datEncount.tbl[1270].devil[0] = 100;
+            datEncount.tbl[1270].devil[1] = 19;
+            datEncount.tbl[1270].devil[2] = 99;
+        }
+
+        private static void BlackTempleQingLongEncounter()
+        {
+            datEncount.tbl[1270].maxcall = 4;
+            datEncount.tbl[1270].maxparty = 5;
+            datEncount.tbl[1270].item = 4;
+            datEncount.tbl[1270].itemcnt = 1;
+
+            datEncount.tbl[1270].devil[0] = 40;
+            datEncount.tbl[1270].devil[1] = 41;
+            datEncount.tbl[1270].devil[2] = 148;
+            datEncount.tbl[1270].devil[3] = 42;
+            datEncount.tbl[1270].devil[4] = 43;
+        }
+
         // Labyrinth of Amala
 
         private static void FirstKalpaMatadorEncounter()
@@ -804,6 +851,9 @@ namespace NocturneInsaniax
 
             datEncount.tbl[329].flag = 11; // Boss Sakahagi
 
+            datEncount.tbl[327].flag = 11; // Boss Aciel
+            datEncount.tbl[328].flag = 11; // Boss Skadi
+
             datEncount.tbl[144].maxparty = 6; // Forced Incubus + Koppa Tengu
             datEncount.tbl[144].maxcall = 0;
             datEncount.tbl[144].devil[0] = 0;
@@ -844,6 +894,20 @@ namespace NocturneInsaniax
             datEncount.tbl[1035].devil[3] = 0;
             datEncount.tbl[1035].devil[4] = 0;
             datEncount.tbl[1035].btlsound = 21;
+
+            // Boss Triple Cerberus
+            datEncount.tbl[1276].devil[0] = 304;
+            datEncount.tbl[1276].devil[1] = 305;
+            datEncount.tbl[1276].devil[2] = 306;
+            datEncount.tbl[1276].backattack = -1;
+            datEncount.tbl[1276].btlsound = 18;
+            datEncount.tbl[1276].esc = 1;
+            datEncount.tbl[1276].flag = 13;
+            datEncount.tbl[1276].formationtype = 0;
+            datEncount.tbl[1276].areaid = 5;
+            datEncount.tbl[1276].stageid = 234;
+            datEncount.tbl[1276].maxcall = 0;
+            datEncount.tbl[1276].maxparty = 0;
 
             // Boss Flauros
             datEncount.tbl[1277].devil[0] = 362;
