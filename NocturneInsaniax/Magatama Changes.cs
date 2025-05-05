@@ -72,7 +72,7 @@ namespace NocturneInsaniax
             2, // 13 Geis       (Geis)
             1, // 14 Djed       (Djed)
             2, // 15 Muspell    (Muspell)
-            2, // 16 Satan      (Gehenna)
+            1, // 16 Satan      (Gehenna)
             2, // 17 Adama      (Kamurogi)
             2, // 18 Gehenna    (Satan)
             1, // 19 Sophia     (Adama)
@@ -824,7 +824,7 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 193; // Violet Flash
             tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 30;
             tblHearts.fclHeartsTbl[id].Skill[1].ID = 68; // Tetraja
-            tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 68;
+            tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 34;
             tblHearts.fclHeartsTbl[id].Skill[2].ID = 188; // Punishment
             tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 37;
             tblHearts.fclHeartsTbl[id].Skill[3].ID = 136; // Divine Shot
@@ -832,9 +832,9 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Skill[4].ID = 194; // Starlight
             tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 46;
             tblHearts.fclHeartsTbl[id].Skill[5].ID = 49; // Recarm
-            tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 51;
+            tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 49;
             tblHearts.fclHeartsTbl[id].Skill[6].ID = 318; // Anti-Light
-            tblHearts.fclHeartsTbl[id].Skill[6].TargetLevel = 51;
+            tblHearts.fclHeartsTbl[id].Skill[6].TargetLevel = 52;
         }
 
         private static void Vimana(ushort id)

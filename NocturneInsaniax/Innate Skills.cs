@@ -313,7 +313,7 @@ namespace NocturneInsaniax
             { 295, new InnateSkill(383, 15, "Phantasmagoria", "")}, // 295 Boss Specter 1 (Merged 4-5)
             { 296, new InnateSkill(383, 15, "Phantasmagoria", "")}, // 296 Boss Specter 1 (Merged 2-3)
             { 297, new InnateSkill(383, 15, "Frigid Melody", "")}, // 297 Boss Mizuchi
-            { 298, new InnateSkill(383, 15, "", "")}, // 298 
+            { 298, new InnateSkill(383, 14, "Retributive Zeal", "")}, // 298 Boss Michael
             { 299, new InnateSkill(383, 15, "Desperate Power", "")}, // 299 Boss Sakahagi
             { 300, new InnateSkill(383, 15, "Faithful Companion", "")}, // 300 Boss Orthrus
             { 301, new InnateSkill(383, 15, "Critical Melody", "")}, // 301 Boss Yaksini

@@ -808,7 +808,7 @@ namespace NocturneInsaniax
                 }
 
                 // Matador's Estocada
-                if (__result != 0 && (workFromFormindex2.id == 199 || workFromFormindex2.id == 349) && random.Next(2) == 0)
+                if (__result != 0 && __result <= 4 && (workFromFormindex2.id == 199 || workFromFormindex2.id == 349) && random.Next(2) == 0)
                     nbMainProcess.nbPushAction(4, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, nbMainProcess.nbGetPartyFromFormindex(sformindex).partyindex, 403);
             }
         }

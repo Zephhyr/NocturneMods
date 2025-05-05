@@ -161,7 +161,7 @@ namespace NocturneInsaniax
             new sbyte[] {1    , -3   , -3   , -3   , -3   , 0    , -3   , 0    , 3    , 3    , 3    , 0    , 0    , -1   , -1   , 0 }, // 135 Slime
             new sbyte[] {0    , 1    , 0    , 0    , 0    , 0    , -3   , 3    , 1    , 1    , 1    , 0    , 0    , -1   , 0    , 0 }, // 136 Mou-Ryo
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 1    , -3   , 0    , 1    , 1    , 1    , 1    , 1    , -3   , 0    , 0 }, // 137 Will o' Wisp
-            new sbyte[] {6    , 4    , 4    , 4    , 4    , 6    , 4    , 0    , -6   , -6   , -6   , 6    , 0    , 0    , 0    , 0 }, // 138 Michael
+            new sbyte[] {6    , 0    , 0    , 0    , 0    , 6    , 4    , 0    , -6   , -6   , -6   , 6    , 4    , 0    , 0    , 0 }, // 138 Michael
             new sbyte[] {0    , 0    , 6    , -6   , 0    , 0    , 6    , 0    , -4   , -4   , -4   , 0    , 0    , 4    , 4    , 0 }, // 139 Gabriel
             new sbyte[] {4    , -6   , 0    , 0    , 6    , 0    , 6    , 0    , -4   , -4   , -4   , 0    , 0    , 4    , 0    , 0 }, // 140 Raphael
             new sbyte[] {4    , 6    , -6   , 4    , 0    , 0    , 6    , 0    , -4   , -4   , -4   , 0    , 0    , 0    , 0    , 0 }, // 141 Uriel
@@ -229,7 +229,7 @@ namespace NocturneInsaniax
             new sbyte[] {-4   , -4   , 0    , 0    , 0    , 0    , 4    , 4    , 0    , 0    , 4    , 0    , 0    , 2    , 0    , 0 }, // 201 Daisoujou
             new sbyte[] {0    , 0    , -6   , 6    , -6   , 6    , 0    , 0    , 3    , 3    , 3    , 6    , 0    , 0    , 3    , 0 }, // 202 Mother Harlot
             new sbyte[] {-7   , 5    , 5    , 5    , 5    , 7    , 0    , 0    , 0    , 0    , 0    , 7    , -7   , 0    , 0    , 0 }, // 203 Trumpeter
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 204 Futomimi
+            new sbyte[] {5    , 0    , 0    , 0    , 0    , 5    , 4    , 0    , -3   , -3   , -3   , 5    , 0    , 0    , 4    , 0 }, // 204 Futomimi
             new sbyte[] {4    , 5    , 5    , 5    , 5    , 5    , 0    , 4    , 0    , 0    , 0    , 5    , 0    , -3   , 0    , 0 }, // 205 Sakahagi
             new sbyte[] {0    , 0    , 6    , 0    , 0    , 0    , -7   , 6    , 0    , 0    , 0    , 0    , 0    , -3   , 3    , 0 }, // 206 Black Frost
             new sbyte[] {0    , -7   , 0    , 6    , 6    , 3    , -7   , 6    , 0    , 0    , 0    , 3    , 3    , -4   , 3    , 0 }, // 207 Beelzebub (Man)
@@ -309,10 +309,10 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 4    , -3   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 280 Boss Urizen
             new sbyte[] {0    , 0    , 0    , -3   , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 281 Boss Luvah
             new sbyte[] {0    , -3   , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 282 Boss Tharmus
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 283 Boss Futomimi
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 284 Boss Gabriel
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 285 Boss Raphael
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 286 Boss Uriel
+            new sbyte[] {5    , 0    , 0    , 0    , 0    , 5    , 4    , 0    , -3   , -3   , -3   , 5    , 0    , 0    , 4    , 0 }, // 283 Boss Futomimi
+            new sbyte[] {0    , 0    , 6    , -6   , 0    , 0    , 6    , 0    , -4   , -4   , -4   , 0    , 0    , 4    , 4    , 0 }, // 284 Boss Gabriel
+            new sbyte[] {4    , -6   , 0    , 0    , 6    , 0    , 6    , 0    , -4   , -4   , -4   , 0    , 0    , 4    , 0    , 0 }, // 285 Boss Raphael
+            new sbyte[] {4    , 6    , -6   , 4    , 0    , 0    , 6    , 0    , -4   , -4   , -4   , 0    , 0    , 0    , 0    , 0 }, // 286 Boss Uriel
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 287 Boss Samael
             //          {Phys , Fire , Ice  , Elec , Force, Alm  , Light, Dark , Curse, Nerve, Mind , SD   , Shot , Heal , Supp , Util}
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 288 Boss Baal Avatar
@@ -325,7 +325,7 @@ namespace NocturneInsaniax
             new sbyte[] {5    , 4    , -4   , -4   , 0    , 4    , -4   , 0    , 3    , 3    , 3    , 4    , 0    , 0    , 3    , 0 }, // 295 Boss Specter 1 (Merged 4-5)
             new sbyte[] {5    , 4    , -4   , -4   , 0    , 4    , -4   , 0    , 3    , 3    , 3    , 4    , 0    , 0    , 3    , 0 }, // 296 Boss Specter 1 (Merged 2-3)
             new sbyte[] {0    , -5   , 4    , 0    , 0    , 0    , 0    , 0    , -5   , 0    , 4    , 0    , 0    , 0    , 2    , 0 }, // 297 Boss Mizuchi
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 298 
+            new sbyte[] {6    , 0    , 0    , 0    , 0    , 6    , 4    , 0    , -6   , -6   , -6   , 6    , 4    , 0    , 0    , 0 }, // 298 Boss Michael
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0 }, // 299 Boss Sakahagi
             new sbyte[] {4    , 4    , -6   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -2   , 1    , 0 }, // 300 Boss Orthrus
             new sbyte[] {2    , 0    , 0    , -4   , 2    , 0    , 0    , 0    , 4    , 4    , 4    , 0    , 0    , 0    , 0    , 0 }, // 301 Boss Yaksini
@@ -585,7 +585,7 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+3: Ailments • +1: Phys  <material=\"MsgFont1\">-1: Heal/Supp • -3: Elements/Light", // 135 Slime
             "  <material=\"MsgFont4\">+3: Dark • +1: Fire/Ailments  <material=\"MsgFont1\">-1: Heal • -3: Light", // 136 Mou-Ryo
             "  <material=\"MsgFont4\">+1: Shot/Almighty/Ailments  <material=\"MsgFont1\">-3: Light/Heal", // 137 Will o' Wisp
-            "  <material=\"MsgFont4\">+6: Phys/Almighty • +4: Elements/Light  <material=\"MsgFont1\">-6: Ailments", // 138 Michael
+            "  <material=\"MsgFont4\">+6: Phys/Almighty • +4: Shot/Light  <material=\"MsgFont1\">-6: Ailments", // 138 Michael
             "  <material=\"MsgFont4\">+6: Ice/Light • +4: Heal/Supp  <material=\"MsgFont1\">-4: Ailments • -6: Elec", // 139 Gabriel
             "  <material=\"MsgFont4\">+6: Force/Light • +4: Phys/Heal  <material=\"MsgFont1\">-4: Ailments • -6: Fire", // 140 Raphael
             "  <material=\"MsgFont4\">+6: Fire/Light • +4: Phys/Elec  <material=\"MsgFont1\">-4: Ailments • -6: Ice", // 141 Uriel
@@ -651,7 +651,7 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+4: Light/Dark/Mind • +2: Heal  <material=\"MsgFont1\">-4: Phys/Fire", // 201 Daisoujou
             "  <material=\"MsgFont4\">+6: Elec/Almighty • +3: Ailments/Supp  <material=\"MsgFont1\">-6: Ice/Force", // 202 Mother Harlot
             "  <material=\"MsgFont4\">+7: Almighty • +5: Elements  <material=\"MsgFont1\">-7: Phys/Shot", // 203 Trumpeter
-            "", // 204 Futomimi
+            "  <material=\"MsgFont4\">+5: Phys/Almighty • +4: Light/Supp  <material=\"MsgFont1\">-3: Ailments", // 204 Futomimi
             "  <material=\"MsgFont4\">+5: Elements/Almighty • +4: Phys/Dark  <material=\"MsgFont1\">-3: Heal", // 205 Sakahagi
             "  <material=\"MsgFont4\">+6: Ice/Dark • +3: Supp  <material=\"MsgFont1\">-3: Heal • -7: Light", // 206 Black Frost
             "  <material=\"MsgFont4\">+6: Elec/Force/Dark • +3: Shot/Almighty/Supp  <material=\"MsgFont1\">-4: Heal • -7: Fire/Light", // 207 Beelzebub (Man)
@@ -745,15 +745,15 @@ namespace NocturneInsaniax
             "", // 295 Boss Specter 1 (Merged 4-5)
             "", // 296 Boss Specter 1 (Merged 2-3)
             "", // 297 Boss Mizuchi
-            "", // 298 
+            "", // 298 Boss Michael
             "", // 299 Boss Sakahagi
             "", // 300 Boss Orthrus
             "", // 301 Boss Yaksini
             "", // 302 Boss Thor
             "", // 303 Boss Black Frost
-            "", // 304 Ambush Karasu Tengu
-            "", // 305 Ambush Karasu Tengu
-            "", // 306 Ambush Karasu Tengu
+            "", // 304 Boss Cerberus R
+            "", // 305 Boss Cerberus C
+            "", // 306 Boss Cerberus L
             "", // 307 Boss Eligor
             "", // 308 Boss Eligor
             "", // 309 Boss Eligor
@@ -1066,7 +1066,7 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int id, ref string __result)
             {
-                if (currentDemonWork.id == 299)
+                if (currentDemonWork.id == 162 || currentDemonWork.id == 163 || currentDemonWork.id == 164 || currentDemonWork.id == 165 || currentDemonWork.id == 166 || currentDemonWork.id == 299)
                 {
                     switch (id)
                     {
@@ -1112,6 +1112,8 @@ namespace NocturneInsaniax
                     __result = "Call Soldier";
                 else if ((id == 226 || id == 498) && (currentDemonWork.id == 348))
                     __result = "Call Souls";
+                else if (id == 252 && (currentDemonWork.id == 283))
+                    __result = "Last Stand";
                 else if (id == 252 && (currentDemonWork.id == 321))
                     __result = "Cursed Emission";
                 else if (id == 252 && (currentDemonWork.id == 341))

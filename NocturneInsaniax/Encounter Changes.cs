@@ -17,7 +17,12 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref nbMainProcessData_t data, ref int __result)
             {
-                if (data.encno == 1270 && datEncount.tbl[1271].devil.Any(x => x != 0))
+                if (data.encno == 673)
+                {
+                    nbMisc.nbSetRenzokuEncount(301);
+                    __result = 1;
+                }
+                else if (data.encno == 1270 && datEncount.tbl[1271].devil.Any(x => x != 0))
                 {
                     nbMisc.nbSetRenzokuEncount(1271);
                     __result = 1;
@@ -287,6 +292,9 @@ namespace NocturneInsaniax
                 case 102: BlackTempleQingLongEncounter(); return 1270;
 
                 case 155: RedTempleKushinadaHimeEncounter(); return 1270;
+
+                case 107: MifunashiroDionysusEncounter(); return 1270;
+                case 108: MifunashiroDionysusEncounter(); return 1270;
 
                 // Labyrinth of Amala
 
@@ -650,6 +658,13 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].devil[4] = 43;
         }
 
+        private static void MifunashiroDionysusEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 15;
+            datEncount.tbl[1270].item = 100;
+            datEncount.tbl[1270].itemcnt = 1;
+        }
+
         // Labyrinth of Amala
 
         private static void FirstKalpaMatadorEncounter()
@@ -884,6 +899,13 @@ namespace NocturneInsaniax
             datEncount.tbl[653].devil[1] = 226;
             datEncount.tbl[653].devil[2] = 226;
 
+            datEncount.tbl[674].maxparty = 5; // Boss Futomimi
+            datEncount.tbl[674].devil[0] = 0;
+            datEncount.tbl[674].devil[1] = 0;
+            datEncount.tbl[674].devil[2] = 283;
+            datEncount.tbl[674].devil[3] = 0;
+            datEncount.tbl[674].devil[4] = 0;
+
             datEncount.tbl[1033].flag = 11; // Dante/Raidou 1
 
             datEncount.tbl[1035].maxcall = 4; // Dante/Raidou 2
@@ -894,6 +916,20 @@ namespace NocturneInsaniax
             datEncount.tbl[1035].devil[3] = 0;
             datEncount.tbl[1035].devil[4] = 0;
             datEncount.tbl[1035].btlsound = 21;
+
+            // Boss Michael
+            datEncount.tbl[301].devil[0] = 298;
+            datEncount.tbl[301].devil[1] = 0;
+            datEncount.tbl[301].devil[2] = 0;
+            datEncount.tbl[301].backattack = -1;
+            datEncount.tbl[301].btlsound = 18;
+            datEncount.tbl[301].esc = 1;
+            datEncount.tbl[301].flag = 13;
+            datEncount.tbl[301].formationtype = 0;
+            datEncount.tbl[301].areaid = 3;
+            datEncount.tbl[301].stageid = 235;
+            datEncount.tbl[301].maxcall = 0;
+            datEncount.tbl[301].maxparty = 0;
 
             // Boss Triple Cerberus
             datEncount.tbl[1276].devil[0] = 304;

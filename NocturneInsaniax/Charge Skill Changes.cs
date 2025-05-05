@@ -49,7 +49,12 @@ namespace NocturneInsaniax
             {
                 //MelonLogger.Msg("--nbActionProcess.SetPlayerSummonPacket--");
                 //MelonLogger.Msg("a.aisummonid: " + a.aisummonid);
-                if (a.aisummonid == 363) a.aisummonid = 364;
+                if (a.aisummonid == 162) a.aisummonid = 163;
+                else if (a.aisummonid == 163) a.aisummonid = 164;
+                else if (a.aisummonid == 164) a.aisummonid = 165;
+                else if (a.aisummonid == 165) a.aisummonid = 166;
+                else if (a.aisummonid == 166) a.aisummonid = 162;
+                else if (a.aisummonid == 363) a.aisummonid = 364;
                 else if (a.aisummonid == 364) a.aisummonid = 365;
                 else if (a.aisummonid == 365) a.aisummonid = 366;
 
