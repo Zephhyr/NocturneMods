@@ -347,9 +347,9 @@ namespace NocturneInsaniax
             new sbyte[] {4    , -4   , 4    , -4   , 0    , 0    , 0    , 0    , 0    , -4   , -4   , 0    , 0    , 1    , 0    , 0 }, // 317 Boss Troll
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 1    , -3   , 0    , 1    , 1    , 1    , 1    , 0    , -3   , 0    , 0 }, // 318 Forced Will o' Wisp
             new sbyte[] {1    , -3   , -3   , -3   , -3   , 0    , -3   , 3    , 3    , 0    , 0    , 0    , 0    , -1   , 0    , 0 }, // 319 Forced Preta
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 320 Boss Bishamonten 1
+            new sbyte[] {6    , 6    , -4   , 0    , 0    , 6    , 3    , 0    , 0    , 0    , 0    , 6    , 0    , 0    , 3    , 0 }, // 320 Boss Bishamonten 1
             new sbyte[] {5    , 3    , -6   , 0    , 0    , 0    , 0    , 0    , 3    , 3    , 3    , 0    , 0    , 0    , 0    , 0 }, // 321 Boss Mara
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 322 Boss Bishamonten 2
+            new sbyte[] {6    , 6    , -4   , 0    , 0    , 6    , 3    , 0    , 0    , 0    , 0    , 6    , 0    , 0    , 3    , 0 }, // 322 Boss Bishamonten 2
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 323 Boss Jikokuten
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 324 Boss Koumokuten
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 325 Boss Zouchouten
@@ -371,7 +371,7 @@ namespace NocturneInsaniax
             new sbyte[] {6    , 0    , 0    , 6    , 6    , 4    , 0    , 0    , 0    , 0    , 0    , 4    , 0    , 0    , 4    , 0 }, // 340 Chase Raidou/Dante
             new sbyte[] {6    , 0    , 0    , 6    , 6    , 4    , 0    , 0    , 0    , 0    , 0    , 4    , 0    , 0    , 4    , 0 }, // 341 Boss Raidou/Dante 2
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 342 Boss Metatron
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 343 Boss Beelzebub
+            new sbyte[] {0    , -7   , 0    , 7    , 7    , 7    , -7   , 7    , 0    , 0    , 0    , 7    , 4    , -4   , 4    , 0 }, // 343 Boss Beelzebub
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 344 Boss Lucifer
             new sbyte[] {4    , -5   , 0    , -5   , 0    , 4    , 0    , 0    , 7    , 7    , 7    , 4    , 0    , 0    , 2    , 0 }, // 345 Boss Pale Rider
             new sbyte[] {0    , 4    , 0    , -5   , 0    , 0    , 6    , -5   , 0    , 0    , 0    , 0    , 6    , 0    , 3    , 0 }, // 346 Boss White Rider
@@ -1118,6 +1118,10 @@ namespace NocturneInsaniax
                     __result = "Cursed Emission";
                 else if (id == 252 && (currentDemonWork.id == 341))
                     __result = "Multi-Summon";
+                else if (id == 226 && (currentDemonWork.id == 343))
+                    __result = "Summon Fly";
+                else if (id == 252 && (currentDemonWork.id == 343))
+                    __result = "Summon Flies";
                 else if (id < 288 || id > 421) // If it isn't a passive skill
                 {
                     sbyte skillPotential = 0;
@@ -1430,7 +1434,7 @@ namespace NocturneInsaniax
 
                             var targetVit = datCalc.datGetParam(nbMainProcess.nbGetUnitWorkFromFormindex(dformindex), 3);
 
-                            __result = Convert.ToInt32(__result / (1 + (targetVit/200)));
+                            __result = Convert.ToInt32(__result / (1 + (targetVit/160)));
                         }
                     }
                 }
@@ -1646,14 +1650,15 @@ namespace NocturneInsaniax
                 }
 
                 var work = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
-                if (__result == 1 && datCalc.datCheckSyojiSkill(work, 366) != 0 && datNormalSkill.tbl[nskill].basstatus != 1 && datNormalSkill.tbl[nskill].basstatus != 2)
+                if (__result == 1 && datCalc.datCheckSyojiSkill(work, 366) != 0 && datNormalSkill.tbl[nskill].basstatus != 1 && datNormalSkill.tbl[nskill].basstatus != 2
+                    && (nskill != 79 && nskill != 159 && nskill != 243 && nskill != 259 && nskill != 260 && nskill != 287))
                 {
                     int randomValue = random.Next(2);
                     __result = randomValue == 0 ? 0 : __result;
                 }
 
                 // Instakill restrictions
-                if (datNormalSkill.tbl[nskill].basstatus == 2048)
+                if (datNormalSkill.tbl[nskill].basstatus == 2048 && nskill != 159 && nskill != 243)
                 {
                     // Demi-fiend natural resistance
                     if (work.id == 0)
@@ -1872,7 +1877,7 @@ namespace NocturneInsaniax
                         }
                     }
                     // Element Gestalts and Enhancers
-                    if (actionProcessData != null && skillAttribute <= 7)
+                    if (actionProcessData != null && skillAttribute <= 12)
                     { 
                         // Gestalts
                         if (currentDemonWork.id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == gestaltMagatama[skillAttribute])

@@ -28,7 +28,7 @@ namespace NocturneInsaniax
             { 010, new InnateSkill(383, 13, "Restorative Melody", "While in the active party, \nHealing skill costs are reduced \nby 20% for all allies.")}, // 010 Sati
             { 011, new InnateSkill(383, 14, "Curious Dance", "When switching out, all -kaja and \n-nda effects on Ame-no-Uzume will \nbe passed to the switched ally.")}, // 011 Ame-no-Uzume
             { 012, new InnateSkill(383, 15, "Tripura Samhara", "While in the active party, \nskill costs are reduced by 20% \nfor allies with a charge effect.")}, // 012 Shiva
-            { 013, new InnateSkill(383, 15, "Withheld Sentence", "While in the active party, \nallies cannot be instakilled.")}, // 013 Beidou Xingjun
+            { 013, new InnateSkill(383, 15, "Withheld Sentence", "While in the active party, \nallies are immune to random \ninstakills.")}, // 013 Beidou Xingjun
             { 014, new InnateSkill(383, 14, "Megalomania", "After Qitian Dasheng uses a \ncharge effect, he has a 30% \nchance to retain it.")}, // 014 Qitian Dasheng
             { 015, new InnateSkill(419, 15, "Wine Party", "While in the active party, \nmay step in during negotiation to \nfix trouble with the power of liquor.")}, // 015 Dionysus
             { 016, new InnateSkill(383, 00, "Phys Gestalt", "Kali gains Phys skill potential \nbased on the total positive potential \nof allies in the active party.")}, // 016 Kali
@@ -125,7 +125,7 @@ namespace NocturneInsaniax
             { 107, new InnateSkill(383, 15, "Magnified Malady", "While in the active party, all allies \ndeal 20% more damage against \nenemies with an ailment.")}, // 107 Pazuzu
             { 108, new InnateSkill(383, 07, "Dark Gestalt", "Baphomet gains Dark skill potential \nbased on the total positive potential \nof allies in the active party.")}, // 108 Baphomet
             { 109, new InnateSkill(383, 14, "Megalomania", "After Mot uses a \ncharge effect, he has a 30% \nchance to retain it.")}, // 109 Mot
-            { 110, new InnateSkill(383, 15, "Withheld Sentence", "While in the active party, \nallies cannot be instakilled.")}, // 110 Alciel
+            { 110, new InnateSkill(383, 15, "Withheld Sentence", "While in the active party, \nallies are immune to random \ninstakills.")}, // 110 Alciel
             { 111, new InnateSkill(383, 01, "Laevateinn", "Fire Enhancer & Surt's normal \nattacks deal medium Fire damage.")}, // 111 Surt
             { 112, new InnateSkill(414, 15, "Intimidate", "While in the active party, \nmay step in during negotiation to \n'convince' a lower level demon.")}, // 112 Abaddon
             { 113, new InnateSkill(383, 15, "Destabilize", "While in the active party, Element \nattacks may Critically Strike \nfor all allies and enemies.")}, // 113 Loki
@@ -357,21 +357,21 @@ namespace NocturneInsaniax
             { 339, new InnateSkill(383, 15, "Boss Raidou/Dante 1", "")}, // 339 Boss Raidou/Dante 1
             { 340, new InnateSkill(383, 15, "Chase Raidou/Dante", "")}, // 340 Chase Raidou/Dante
             { 341, new InnateSkill(383, 15, "Boss Raidou/Dante 2", "")}, // 341 Boss Raidou/Dante 2
-            { 342, new InnateSkill(383, 15, "Almighty Gestalt", "")}, // 342 Boss Metatron
-            { 343, new InnateSkill(383, 15, "Almighty Enhancer", "")}, // 343 Boss Beelzebub
+            { 342, new InnateSkill(383, 05, "Almighty Gestalt", "")}, // 342 Boss Metatron
+            { 343, new InnateSkill(383, 05, "Almighty Enhancer", "")}, // 343 Boss Beelzebub
             { 344, new InnateSkill(383, 15, "Boss Lucifer", "")}, // 344 Boss Lucifer
             { 345, new InnateSkill(383, 15, "Four Horsemen", "")}, // 345 Boss Pale Rider
             { 346, new InnateSkill(383, 15, "Four Horsemen", "")}, // 346 Boss White Rider
             { 347, new InnateSkill(383, 15, "Four Horsemen", "")}, // 347 Boss Red Rider
             { 348, new InnateSkill(383, 15, "Four Horsemen", "")}, // 348 Boss Black Rider
-            { 349, new InnateSkill(383, 15, "Estocada", "")}, // 349 Boss Matador
+            { 349, new InnateSkill(383, 00, "Estocada", "")}, // 349 Boss Matador
             { 350, new InnateSkill(383, 15, "Speed Star", "")}, // 350 Boss Hell Biker
-            { 351, new InnateSkill(383, 15, "Guiding Wisdom", "")}, // 351 Boss Daisoujou
+            { 351, new InnateSkill(383, 13, "Guiding Wisdom", "")}, // 351 Boss Daisoujou
             { 352, new InnateSkill(383, 15, "Indulgence", "")}, // 352 Boss Mother Harlot
             { 353, new InnateSkill(383, 15, "Final Countdown", "")}, // 353 Boss Trumpeter
             { 354, new InnateSkill(383, 15, "", "")}, // 354 
             { 355, new InnateSkill(383, 15, "", "")}, // 355 
-            { 356, new InnateSkill(383, 15, "", "")}, // 356 
+            { 356, new InnateSkill(383, 15, "No Innate Skill", "")}, // 356 Nasu Fly
             { 357, new InnateSkill(383, 15, "", "")}, // 357 
             { 358, new InnateSkill(383, 15, "Taboo", "")}, // 358 Boss Loa
             { 359, new InnateSkill(383, 15, "Detain", "")}, // 359 Boss Virtue
@@ -422,7 +422,7 @@ namespace NocturneInsaniax
             { 16, new InnateSkill(383, 05, "Forbidden Fruit", "Allies' Almighty attacks \nmay Critically Strike.")}, // 16 Satan
             { 17, new InnateSkill(383, 15, "Magnified Malady", "All allies deal 20% more damage \nagainst enemies with an ailment.")}, // 17 Adama
             { 18, new InnateSkill(383, 15, "Gehenna", "")}, // 18 Gehenna
-            { 19, new InnateSkill(383, 15, "Withheld Sentence", "Allies cannot be instakilled.")}, // 19 Sophia
+            { 19, new InnateSkill(383, 15, "Withheld Sentence", "Allies are immune to \nrandom instakills.")}, // 19 Sophia
             { 20, new InnateSkill(383, 15, "Orochi's Bane", "Your Force attacks may \ninflict poison.")}, // 20 Murakumo
             { 21, new InnateSkill(383, 15, "Gundari", "")}, // 21 Gundari
             { 22, new InnateSkill(383, 03, "Vanquishing Bolts", "All allies' Elec attacks \nmay Critically Strike.")}, // 22 Narukami
@@ -444,7 +444,7 @@ namespace NocturneInsaniax
             { 08, new List<ushort> { } }, // Curse (Not Used)
             { 09, new List<ushort> { } }, // Nerve (Not Used)
             { 10, new List<ushort> { } }, // Mind (Not Used)
-            { 11, new List<ushort> { } }, // Self-Destruct (Not Used)
+            { 11, new List<ushort> { 193 } }, // Self-Destruct (Not Used)
             { 12, new List<ushort> { 90, 101 } }, // Shot
             { 13, new List<ushort> { } }, // Heal (Not Used)
             { 14, new List<ushort> { } }, // Support (Not Used)
@@ -468,7 +468,7 @@ namespace NocturneInsaniax
             { 12, 12 }, // Shot
             { 13, 00 }, // Heal (Not Used)
             { 14, 00 }, // Support (Not Used)
-            { 15, 00 }, // Util (Not Used)
+            { 15, 00 }  // Util (Not Used)
         };
 
         private static Dictionary<sbyte, List<ushort>> enhancerUsers = new Dictionary<sbyte, List<ushort>>
@@ -478,14 +478,17 @@ namespace NocturneInsaniax
             { 02, new List<ushort> { 17, 37, 60, 277 } }, // Ice
             { 03, new List<ushort> { 22, 39, 228, 302, 337 } }, // Elec
             { 04, new List<ushort> { 38, 83, 152 } }, // Force
-            { 05, new List<ushort> { 194, 207 } }, // Almighty
+            { 05, new List<ushort> { 194, 207, 343 } }, // Almighty
             { 06, new List<ushort> { 35, 63 } }, // Light
             { 07, new List<ushort> { 132, 177 } }, // Dark
             { 08, new List<ushort> {  } }, // Curse (Not Used)
             { 09, new List<ushort> {  } }, // Nerve (Not Used)
             { 10, new List<ushort> {  } }, // Mind (Not Used)
-            { 11, new List<ushort> {  } }, // Self-Destruct (Not Used)
-            { 12, new List<ushort> { 66, 95 } } // Shot
+            { 11, new List<ushort> { 194, 207, 343 } }, // Self-Destruct (Not Used)
+            { 12, new List<ushort> { 66, 95 } }, // Shot
+            { 13, new List<ushort> {  } }, // Heal (Not Used)
+            { 14, new List<ushort> {  } }, // Support (Not Used)
+            { 15, new List<ushort> {  } }  // Util (Not Used)
         };
 
         private static Dictionary<sbyte, List<ushort>> melodyUsers = new Dictionary<sbyte, List<ushort>>

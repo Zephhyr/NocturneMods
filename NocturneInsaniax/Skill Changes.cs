@@ -18,8 +18,8 @@ namespace NocturneInsaniax
     {
         public static ushort[] bossList = new ushort[] {
             162, 163, 164, 165, 166, 251, 252, 254, 256, 257, 262, 263, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286,
-            294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 312, 313, 321, 326, 327, 328, 339, 340, 341, 343, 344, 345, 346, 347, 348, 349, 350,
-            351, 352, 353, 362, 363, 364, 365, 366
+            294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 312, 313, 320, 321, 322, 323, 324, 325, 326, 327, 328, 339, 340, 341, 343, 344, 345,
+            346, 347, 348, 349, 350, 351, 352, 353, 362, 363, 364, 365, 366
         };
         public static ushort[] pushedSkillList = new ushort[] { 148, 149, 150, 151, 164, 165, 166, 167, 403, 407, 408, 416, 417, 496 };
 
@@ -291,7 +291,7 @@ namespace NocturneInsaniax
                     case 75: __result = "Negates floor damage \nuntil a new Kagutsuchi."; return false; // Liftoma
                     case 76: __result = "Lights up dark areas \nuntil a new Kagutsuchi."; return false; // Lightoma
                     case 77: __result = "Negates -nda effects on all allies."; return false; // Dekunda
-                    case 79: __result = "Medium Almighty damage to all foes. \nInstakills when poisoned. \nPow: 36, Acc: 100%, Fatal: 100%"; return false; // Pestilence
+                    case 79: __result = "Medium Almighty damage to all foes. \nMay instakill when poisoned. \nPow: 36, Acc: 100%, Fatal: 90%"; return false; // Pestilence
                     case 90: __result = "Low Curse damage to one foe. \nPow: 30, Acc: 100%, Poison: 30%"; return false; // Poison Arrow
                     case 96: __result = "Low Physical damage to one foe. \nPow: 42, Acc: 90%, Crit: 20%"; return false; // Lunge
                     case 97: __result = "Medium Physical damage to one foe. \nPow: 48, Acc: 86%, Crit: 28%"; return false; // Hell Thrust
@@ -384,8 +384,8 @@ namespace NocturneInsaniax
                     case 249: __result = "High Mind damage to random foes. \n3-7 hits. Pow: 36, Acc: 100%, Panic: 40%"; return false; // Wild Dance
                     case 250: __result = "Drains HP/MP from one foe. \nPow: 80/40, Acc: 100% \n(Almighty-Type)"; return false; // Domination
                     case 257: __result = "Mega Almighty damage to random foes. \n4-8 hits. Pow: 40, Acc: 100%."; return false; // Fire of Sinai
-                    case 259: __result = "Mega Almighty damage to all foes. \nInstakills when not immune to Dark. \nPow: 60, Acc: 100%, Fatal: 100%"; return false; // Death Flies
-                    case 260: __result = "Mega Almighty damage to all foes. \nInstakills when not immune to Dark. \nPow: 60, Acc: 100%, Fatal: 100%"; return false; // Death Flies
+                    case 259: __result = "Mega Almighty damage to all foes. \nMay instakills when not immune to Dark. \nPow: 60, Acc: 100%, Fatal: 90%"; return false; // Death Flies
+                    case 260: __result = "Mega Almighty damage to all foes. \nMay instakills when not immune to Dark. \nPow: 60, Acc: 100%, Fatal: 90%"; return false; // Death Flies
                     case 261: __result = "High Curse damage to all foes. \nPow: 48, Acc: 60%, Mute: 100%"; return false; // Soul Divide
                     case 262: __result = "Low Shot damage to one foe. \nLowers target's Evasion/Defense. \nPow: 32, Acc: 120%, Crit: 18%"; return false; // Boogie-Woogie/E & I
                     case 263: __result = "High Physical damage to one foe. \nPow: 48, Acc: 100%, Crit: 40%"; return false; // Enter Yoshitsune/Rebellion
@@ -405,7 +405,7 @@ namespace NocturneInsaniax
                     case 284: __result = "Raises all allies' \nPhysical Attack/Evasion/Hit Rate \nby one rank."; return false; // Hell Throttle
                     case 285: __result = "Lowers all foes' Evasion/Hit Rate \nby one rank. 50% Chance to \ninflict Panic. (Almighty-Type)"; ; return false; // Babylon Goblet
                     case 286: __result = "High Almighty damage to all foes. \nSlight HP recovery for the user. \nPow: 48, Acc: 100%, Charm: 30%"; return false; // Death Lust
-                    case 287: __result = "Mega Light damage to one foe. \nInstakills when weak to Light. \nPow: 80, Acc: 100%, Fatal: 100%"; return false; // God's Bow
+                    case 287: __result = "Mega Light damage to one foe. \nMay instakill when weak to Light. \nPow: 80, Acc: 100%, Fatal: 90%"; return false; // God's Bow
                     
                     case 290: __result = "Raises Maximum HP by 10%."; return false; // Life Bonus
                     case 291: __result = "Raises Maximum HP by 20%."; return false; // Life Gain
@@ -729,13 +729,38 @@ namespace NocturneInsaniax
                 // If using an hourglass
                 if (nskill == 78)
                 {
-                    if (evtMoon.evtGetAgeOfMoon16() < 8)
+                    int currentPhase = evtMoon.evtGetAgeOfMoon16();
+                    if (currentPhase < 8)
                     {
+                        // Advance Shige's Excavation
+                        if (EventBit.evtBitCheck(1282) && !EventBit.evtBitCheck(1286))
+                        {
+                            dds3GlobalWork.DDS3_GBWK.fldSave.AnahoriCnt += (8 - currentPhase);
+                            if (dds3GlobalWork.DDS3_GBWK.fldSave.AnahoriCnt >= 48 && !EventBit.evtBitCheck(1285))
+                                EventBit.evtBitOn(1285);
+                            if (dds3GlobalWork.DDS3_GBWK.fldSave.AnahoriCnt >= 112 && EventBit.evtBitCheck(1284))
+                                EventBit.evtBitOn(1286);
+                            else if (dds3GlobalWork.DDS3_GBWK.fldSave.AnahoriCnt >= 160 && !EventBit.evtBitCheck(1284))
+                                EventBit.evtBitOn(1286);
+                        }
+
                         dds3GlobalWork.DDS3_GBWK.Moon.MoveCnt = 0; // Beginning of a new phase
                         evtMoon.evtSetAgeOfMoon(8); // Set Kagutsuchi's phase to full
                     }
-                    else if (evtMoon.evtGetAgeOfMoon16() < 16)
+                    else if (currentPhase < 16)
                     {
+                        // Advance Shige's Excavation
+                        if (EventBit.evtBitCheck(1282) && !EventBit.evtBitCheck(1286))
+                        {
+                            dds3GlobalWork.DDS3_GBWK.fldSave.AnahoriCnt += (16 - currentPhase);
+                            if (dds3GlobalWork.DDS3_GBWK.fldSave.AnahoriCnt >= 48 && !EventBit.evtBitCheck(1285))
+                                EventBit.evtBitOn(1285);
+                            if (dds3GlobalWork.DDS3_GBWK.fldSave.AnahoriCnt >= 112 && EventBit.evtBitCheck(1284))
+                                EventBit.evtBitOn(1286);
+                            else if (dds3GlobalWork.DDS3_GBWK.fldSave.AnahoriCnt >= 160 && !EventBit.evtBitCheck(1284))
+                                EventBit.evtBitOn(1286);
+                        }
+
                         // Clear all effects that last "until a new kagutsuchi"
                         fldMain.fldEsutoMaClearMsg();
                         fldMain.fldRiberaMaClearMsg();
@@ -752,57 +777,61 @@ namespace NocturneInsaniax
                     //var output = Newtonsoft.Json.JsonConvert.SerializeObject(mdlManager.mdlResrcMajorList);
                     //MelonLogger.Msg(output);
 
-                    //datCalc.datAddDevil(146, 0);
+                    //datCalc.datAddMaka(1000000);
+                    //datCalc.datAddDevil(29, 0);
+                    //datCalc.datAddDevil(62, 0);
 
                     //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 56).Count() == 0)
                     //{
-                        //datCalc.datAddDevil(56, 0);
+                    //datCalc.datAddDevil(56, 0);
                     //}
                     foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 0)) // Demi-fiend
                     {
-                        //work.skill[0] = 197;
-                        //work.skill[1] = 131;
+                        //work.skill[4] = 291;
                         //work.exp = rstCalcCore.GetNextExpDisp(work, 0) - 1;
                     }
                     foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 144)) // Arahabaki
                     {
-                        work.skill[3] = 334;
+                        //work.skill[3] = 334;
                         //work.skillcnt = 8;
                     }
-                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 77)) // Naga Raja
+                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 93)) // Shiki-Ouji
                     {
-                        //work.skill[0] = 15;
-                        //work.skill[1] = 311;
-                        //work.skill[2] = 335;
-                        //work.skill[3] = 77;
-                        //work.skill[4] = 205;
-                        //work.skill[5] = 459;
-                        //work.skill[6] = 456;
-                        //work.skill[7] = 40;
+                        //work.maxhp = 630;
+                        //work.skill[0] = 291; // Life Gain
+                        //work.skill[1] = 292; // Life Surge
+                        //work.skill[2] = 206; // Debilitate
+                        //work.skill[3] = 459; // Luster Candy
+                        //work.skill[4] = 29; // Hamaon
+                        //work.skill[5] = 134; // Heaven's Bow
+                        //work.skill[6] = 370; // Qigong
+                        //work.skill[7] = 373; // Shot Boost
                         //work.skillcnt = 8;
                     }
-                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 6)) // Horus
+                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 83)) // Suparna
                     {
-                        //work.skill[0] = 15;
-                        //work.skill[1] = 335;
-                        //work.skill[2] = 459;
-                        //work.skill[3] = 205;
-                        //work.skill[4] = 65;
-                        //work.skill[5] = 459;
-                        //work.skill[6] = 456;
-                        //work.skill[7] = 40;
+                        //work.maxhp = 612;
+                        //work.skill[0] = 291; // Life Gain
+                        //work.skill[1] = 292; // Life Surge
+                        //work.skill[2] = 206; // Debilitate
+                        //work.skill[3] = 459; // Luster Candy
+                        //work.skill[4] = 40; // Mediarama
+                        //work.skill[5] = 3; // Agidyne
+                        //work.skill[6] = 370; // Qigong
+                        //work.skill[7] = 309; // Fire Boost
                         //work.skillcnt = 8;
                     }
-                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 146)) // Hanuman
+                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 44)) // Efreet
                     {
-                        //work.skill[0] = 105;
-                        //work.skill[1] = 337;
-                        //work.skill[2] = 459;
-                        //work.skill[3] = 206;
-                        //work.skill[4] = 224;
-                        //work.skill[5] = 362;
-                        //work.skill[6] = 38;
-                        //work.skill[7] = 40;
+                        //work.maxhp = 603;
+                        //work.skill[0] = 291; // Life Gain
+                        //work.skill[1] = 292; // Life Surge
+                        //work.skill[2] = 206; // Debilitate
+                        //work.skill[3] = 459; // Luster Candy
+                        //work.skill[4] = 336; // Elec Drain
+                        //work.skill[5] = 178; // Prominence
+                        //work.skill[6] = 370; // Qigong
+                        //work.skill[7] = 309; // Fire Boost
                         //work.skillcnt = 8;
                     }
                     //}
@@ -1502,6 +1531,9 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref nbActionProcessData_t a)
             {
+                //MelonLogger.Msg("--nbActionProcess.SetAction_SKILL--");
+                //MelonLogger.Msg("select: " + a.select);
+
                 // Set Oberon's Fairy King's Melody to target the whole party
                 if (a.work.id == 54 & a.work.nowcommand == 1 && a.work.nowindex == 408)
                 {
@@ -2000,7 +2032,8 @@ namespace NocturneInsaniax
 
             FireOfSinai(257);
 
-            DeathFlies(259);
+            BeelzebubAttack(258);
+            BossDeathFlies(259);
             DeathFlies(260);
             SoulDivide(261);
 
@@ -5133,6 +5166,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hpn = 36;
             datNormalSkill.tbl[id].magicbase = 18;
             datNormalSkill.tbl[id].magiclimit = 182;
+            datNormalSkill.tbl[id].badlevel = 90;
         }
 
         private static void Freikugel(ushort id)
@@ -5199,12 +5233,23 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].magiclimit = 32767;
         }
 
+        private static void BossDeathFlies(ushort id)
+        {
+            datNormalSkill.tbl[id].cost = 75;
+            datNormalSkill.tbl[id].hpn = 60;
+            datNormalSkill.tbl[id].hitlevel = 120;
+            datNormalSkill.tbl[id].magicbase = 30;
+            datNormalSkill.tbl[id].magiclimit = 32767;
+            datNormalSkill.tbl[id].badlevel = 90;
+        }
+
         private static void DeathFlies(ushort id)
         {
             datNormalSkill.tbl[id].cost = 75;
             datNormalSkill.tbl[id].hpn = 60;
             datNormalSkill.tbl[id].magicbase = 30;
             datNormalSkill.tbl[id].magiclimit = 32767;
+            datNormalSkill.tbl[id].badlevel = 90;
         }
 
         private static void Tekisatsu(ushort id)
@@ -5586,6 +5631,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].magicbase = 30;
             datNormalSkill.tbl[id].magiclimit = 32767;
+            datNormalSkill.tbl[id].badlevel = 90;
         }
 
         private static void Punishment(ushort id)
@@ -7549,6 +7595,12 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hpn = 80;
             datNormalSkill.tbl[id].magicbase = 30;
             datNormalSkill.tbl[id].magiclimit = 32767;
+        }
+
+        private static void BeelzebubAttack(ushort id)
+        {
+            datNormalSkill.tbl[id].hpn = 30;
+            datNormalSkill.tbl[id].criticalpoint = 30;
         }
 
         private static void NewBeastEye(ushort id)

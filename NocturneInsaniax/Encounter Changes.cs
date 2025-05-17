@@ -7,6 +7,8 @@ using Il2Cppresult2_H;
 using Il2Cppnewbattle_H;
 using Il2Cppeffect_H;
 using UnityEngine;
+using Il2Cppkernel_H;
+using MelonLoader.CoreClrUtils;
 
 namespace NocturneInsaniax
 {
@@ -53,6 +55,7 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref nbEventProcessData_t ed)
             {
+                // Alter Big Specter thresholds
                 int specters = 0;
                 foreach (var unit in nbMainProcess.nbGetMainProcessData().enemyunit)
                 {
@@ -62,6 +65,29 @@ namespace NocturneInsaniax
                 if (specters >= 5) { nbE901.encno = 272; nbE901.dvlno = 294; }
                 else if (specters >= 3) { nbE901.encno = 273; nbE901.dvlno = 295; }
                 else if (specters >= 2) { nbE901.encno = 274; nbE901.dvlno = 296; }
+            }
+        }
+
+        [HarmonyPatch(typeof(nbEventProcess), nameof(nbEventProcess.nbGetEventForm))]
+        private class nbGetEventFormPatch
+        {
+            public static void Postfix(ref nbFormation_t __result)
+            {
+                // Change target of Beelzebub's death event
+                if (nbMainProcess.nbGetMainProcessData().encno == 450)
+                {
+                    foreach (var form in nbMainProcess.nbGetMainProcessData().form)
+                    {
+                        try
+                        {
+                            if (nbMainProcess.nbGetUnitWorkFromFormindex(form.formindex).id == 343)
+                            {
+                                __result = form;
+                                return;
+                            }
+                        } catch { }
+                    }
+                }
             }
         }
 
@@ -292,9 +318,13 @@ namespace NocturneInsaniax
                 case 102: BlackTempleQingLongEncounter(); return 1270;
 
                 case 155: RedTempleKushinadaHimeEncounter(); return 1270;
+                case 156: RedTempleKushinadaHimeEncounter(); return 1270;
 
                 case 107: MifunashiroDionysusEncounter(); return 1270;
                 case 108: MifunashiroDionysusEncounter(); return 1270;
+                
+                // case 111: YurakuchoTunnelParvatiEncounter(); return 1270;
+                // case 112: YurakuchoTunnelParvatiEncounter(); return 1270;
 
                 // Labyrinth of Amala
 
@@ -916,6 +946,13 @@ namespace NocturneInsaniax
             datEncount.tbl[1035].devil[3] = 0;
             datEncount.tbl[1035].devil[4] = 0;
             datEncount.tbl[1035].btlsound = 21;
+
+            datEncount.tbl[450].flag = 11; // Boss Beelzebub
+            datEncount.tbl[450].formationtype = 4;
+            datEncount.tbl[450].maxparty = 3;
+            datEncount.tbl[450].devil[0] = 0;// 356;
+            datEncount.tbl[450].devil[1] = 343;
+            datEncount.tbl[450].devil[2] = 0;// 356;
 
             // Boss Michael
             datEncount.tbl[301].devil[0] = 298;

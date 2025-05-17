@@ -59,7 +59,7 @@ namespace NocturneInsaniax
             //var output = JsonConvert.SerializeObject(fclJunkShopTable.fclShopItemBoxTbl);
             //MelonLogger.Msg(output);
 
-            //var output = JsonConvert.SerializeObject(datNegoSkill.tbl);
+            //var output = JsonConvert.SerializeObject(nbEventProcess.nbEtbl);
             //MelonLogger.Msg(output);
 
             // Apply Changes
@@ -1070,6 +1070,22 @@ namespace NocturneInsaniax
                 __result = Convert.ToInt32(__result * EncounterMaccaMultiplier.Value);
             }
         }
+
+        //[HarmonyPatch(typeof(fldProcess), nameof(fldProcess.ProcSequence))]
+        //private class fldProcessProcSequencePatch
+        //{
+        //    public static void Prefix()
+        //    {
+        //        MelonLogger.Msg("--fldProcess.ProcSequence--");
+        //        MelonLogger.Msg("encounttbl: " + fldProcess.fldBattleData.encounttbl);
+        //        MelonLogger.Msg("encountpack: " + fldProcess.fldBattleData.encountpack);
+        //        MelonLogger.Msg("Shige has demon: " + EventBit.evtBitCheck(1282));
+        //        MelonLogger.Msg("Shige demon is strong: " + EventBit.evtBitCheck(1284));
+        //        MelonLogger.Msg("Shige first stage: " + EventBit.evtBitCheck(1285));
+        //        MelonLogger.Msg("Shige last stage: " + EventBit.evtBitCheck(1286));
+        //        MelonLogger.Msg("AnahoriCnt: " + dds3GlobalWork.DDS3_GBWK.fldSave.AnahoriCnt);
+        //    }
+        //}
 
         // These patches seem to prevent a crash during the level up screen, I don't know why
         [HarmonyPatch(typeof(rstinit), nameof(rstinit.rstChkLevelUpTarget))]
