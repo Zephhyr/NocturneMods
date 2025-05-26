@@ -18,8 +18,8 @@ namespace NocturneInsaniax
     {
         public static ushort[] bossList = new ushort[] {
             162, 163, 164, 165, 166, 251, 252, 254, 256, 257, 262, 263, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286,
-            294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 312, 313, 320, 321, 322, 323, 324, 325, 326, 327, 328, 339, 340, 341, 343, 344, 345,
-            346, 347, 348, 349, 350, 351, 352, 353, 362, 363, 364, 365, 366
+            294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 312, 313, 320, 321, 322, 323, 324, 325, 326, 327, 328, 339, 340, 341, 342, 343, 344,
+            345, 346, 347, 348, 349, 350, 351, 352, 353, 362, 363, 364, 365, 366
         };
         public static ushort[] pushedSkillList = new ushort[] { 148, 149, 150, 151, 164, 165, 166, 167, 403, 407, 408, 416, 417, 496 };
 
@@ -116,7 +116,7 @@ namespace NocturneInsaniax
                     case 375: __result = "Null: Shot"; return false;
                     case 376: __result = "Shot Drain"; return false;
                     case 377: __result = "Shot Repel"; return false;
-                    case 378: __result = "Kintsugi"; return false;
+                    case 378: __result = "Solitary Drift"; return false;
 
                     case 403: __result = "Estocada"; return false;
                     case 404: __result = "Nation Founder"; return false;
@@ -185,6 +185,8 @@ namespace NocturneInsaniax
                     case 477: __result = "Makai Thunder"; return false;
                     case 478: __result = "Oblivion"; return false;
                     case 479: __result = "Liberation"; return false;
+                    case 480: __result = "Acrobat Kick"; return false;
+                    case 481: __result = "Oni-Jackura"; return false;
 
                     case 496: __result = "Devil Regeneration"; return false;
                     case 497: __result = "Devil Trigger"; return false;
@@ -325,7 +327,7 @@ namespace NocturneInsaniax
                     case 125: __result = "Low Physical damage to one foe. \nPow: 42, Acc: 88%, Crit: 22%, \nStun: 22%"; return false; // Stun Claw
                     case 126: __result = "High Physical damage to one foe. \nPow: 56, Acc: 80%, Crit: 40%"; return false; // Iron Claw
                     case 127: __result = "High Light damage to all foes. \nPow: 48, Acc: 100%, Mute: 30%"; return false; // Godly Light
-                    case 131: __result = "High Physical damage to one foe. \nPow: 52, Acc: 95%, Crit: 50%"; return false; // Deadly Fury
+                    case 131: __result = "High Physical damage to one foe. \nPow: 54, Acc: 95%, Crit: 50%"; return false; // Deadly Fury
                     case 133: __result = "Medium Shot damage to all foes. \nPow: 32, Acc: 95%, Crit: 24%, \nBind: 30%"; return false; // Javelin Rain
                     case 136: __result = "Medium Mag-based Shot damage to \none foe. Pow: 34, Acc: 120%, \nCrit: 100%"; return false; // Divine Shot
                     case 143: __result = "High Physical damage to all foes. \nPow: 36, Acc: 95%, Crit: 24%, \nMute: 30%"; return false; // Xeros Beat
@@ -378,7 +380,7 @@ namespace NocturneInsaniax
                     case 218: __result = "Full HP recovery & cures all ailments \nfor all allies."; return false; // Prayer
                     case 223: __result = "Summons a random ally \nfrom the stock."; return false; // Beckon Call
                     case 224: __result = "Increases the damage of the user's \nnext Strength-based attack by 120%."; return false; // Focus
-                    case 235: __result = "Mega Almighty damage to random foes. \n4-8 hits. Pow: 40, Acc: 100%"; return false; // Fire of Sinai
+                    case 235: __result = "Mega Almighty damage to random foes. \n4-8 hits. Pow: 36, Acc: 100%"; return false; // Fire of Sinai
                     case 242: __result = "High Almighty damage to all foes. \nMay inflict random ailments. \nPow: 40, Acc: 100%, Random: 50%"; return false; // God's Curse
                     case 244: __result = "Medium Ice damage to all foes. \nLowers targets' Evasion/Hit Rate. \nPow: 30, Acc: 100%, Freeze: 25%"; return false; // Icy Death
                     case 249: __result = "High Mind damage to random foes. \n3-7 hits. Pow: 36, Acc: 100%, Panic: 40%"; return false; // Wild Dance
@@ -492,7 +494,7 @@ namespace NocturneInsaniax
                     case 375: __result = "Nullifies Shot attacks."; return false; // Null: Shot
                     case 376: __result = "Absorbs Shot attacks, \nreplenishing HP."; return false; // Shot Drain
                     case 377: __result = "Repels Shot attacks."; return false; // Shot Repel
-                    case 378: __result = "Greatly increases the chance of \nfinding gems after battle."; return false; // Kintsugi
+                    case 378: __result = "While alone, gain a flashing \nturn icon at the start of each turn."; return false; // Solitary Drift
 
                     //case 373: __result = "Survive a fatal blow then fully \nrecover HP once per battle. \n(Does not stack with similar effects)"; return false; // Enduring Soul
 
@@ -552,6 +554,8 @@ namespace NocturneInsaniax
                     case 477: __result = "Medium Dark damage to one foe. \nPow: 45, Acc: 100%, Bind: 20%"; return false; // Makai Thunder
                     case 478: __result = "Mega Dark damage to all foes. \nPow: 60, Acc: 100%"; return false; // Oblivion
                     case 479: __result = "Full HP recovery, Negates \n-nda effects and cures \nall ailments for one ally."; return false; // Liberation
+                    case 480: __result = "Medium Phys damage to one foe. \nPow: 34, Acc: 120%, Crit: 100%"; return false; // Acrobat Kick
+                    case 481: __result = "High Physical damage to all foes. \nPow: 42, Acc: 90%, Crit: 30%, \nMute: 30%"; return false; // Oni-Jackura
                     default: return true;
                 }
             }
@@ -778,8 +782,9 @@ namespace NocturneInsaniax
                     //MelonLogger.Msg(output);
 
                     //datCalc.datAddMaka(1000000);
-                    //datCalc.datAddDevil(29, 0);
-                    //datCalc.datAddDevil(62, 0);
+                    //datCalc.datAddDevil(202, 0);
+                    //datCalc.datAddDevil(23, 0);
+                    //datCalc.datAddDevil(7, 0);
 
                     //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 56).Count() == 0)
                     //{
@@ -787,7 +792,7 @@ namespace NocturneInsaniax
                     //}
                     foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 0)) // Demi-fiend
                     {
-                        //work.skill[4] = 291;
+                        //work.skill[7] = 378;
                         //work.exp = rstCalcCore.GetNextExpDisp(work, 0) - 1;
                     }
                     foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 144)) // Arahabaki
@@ -795,43 +800,43 @@ namespace NocturneInsaniax
                         //work.skill[3] = 334;
                         //work.skillcnt = 8;
                     }
-                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 93)) // Shiki-Ouji
+                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 7)) // Lakshmi
                     {
-                        //work.maxhp = 630;
+                        //work.maxhp = 621;
                         //work.skill[0] = 291; // Life Gain
                         //work.skill[1] = 292; // Life Surge
                         //work.skill[2] = 206; // Debilitate
                         //work.skill[3] = 459; // Luster Candy
-                        //work.skill[4] = 29; // Hamaon
-                        //work.skill[5] = 134; // Heaven's Bow
+                        //work.skill[4] = 218; // Prayer
+                        //work.skill[5] = 9; // Bufudyne
                         //work.skill[6] = 370; // Qigong
-                        //work.skill[7] = 373; // Shot Boost
+                        //work.skill[7] = 310; // Ice Boost
                         //work.skillcnt = 8;
                     }
-                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 83)) // Suparna
+                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 23)) // Jikokuten
                     {
-                        //work.maxhp = 612;
+                        //work.maxhp = 639;
                         //work.skill[0] = 291; // Life Gain
                         //work.skill[1] = 292; // Life Surge
                         //work.skill[2] = 206; // Debilitate
                         //work.skill[3] = 459; // Luster Candy
-                        //work.skill[4] = 40; // Mediarama
-                        //work.skill[5] = 3; // Agidyne
+                        //work.skill[4] = 334; // Fire Drain
+                        //work.skill[5] = 9; // Bufudyne
                         //work.skill[6] = 370; // Qigong
-                        //work.skill[7] = 309; // Fire Boost
+                        //work.skill[7] = 310; // Ice Boost
                         //work.skillcnt = 8;
                     }
-                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 44)) // Efreet
+                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 14)) // Qitian Dasheng
                     {
-                        //work.maxhp = 603;
+                        //work.maxhp = 648;
                         //work.skill[0] = 291; // Life Gain
                         //work.skill[1] = 292; // Life Surge
                         //work.skill[2] = 206; // Debilitate
                         //work.skill[3] = 459; // Luster Candy
-                        //work.skill[4] = 336; // Elec Drain
-                        //work.skill[5] = 178; // Prominence
+                        //work.skill[4] = 424; // Concentrate
+                        //work.skill[5] = 9; // Bufudyne
                         //work.skill[6] = 370; // Qigong
-                        //work.skill[7] = 309; // Fire Boost
+                        //work.skill[7] = 310; // Ice Boost
                         //work.skillcnt = 8;
                     }
                     //}
@@ -2018,7 +2023,7 @@ namespace NocturneInsaniax
             BeckonCall(223);
             Focus(224);
 
-            FireOfSinai(235);
+            BossFireOfSinai(235);
             VastLight(241);
             GodsCurse(242);
             IcyDeath(244);
@@ -2140,6 +2145,8 @@ namespace NocturneInsaniax
             MakaiThunder(477);
             Oblivion(478);
             Liberation(479);
+            AcrobatKick(480);
+            OniJackura(481);
 
             DevilRegeneration(496);
             DevilTrigger(497);
@@ -2191,7 +2198,7 @@ namespace NocturneInsaniax
             NullShot(87);
             ShotDrain(88);
             ShotRepel(89);
-            Kintsugi(90);
+            SolitaryDrift(90);
 
             // Talk Skills
             TalkSkillChanges();
@@ -2446,7 +2453,7 @@ namespace NocturneInsaniax
         private static void DeadlyFury(ushort id)
         {
             datNormalSkill.tbl[id].cost = 18;
-            datNormalSkill.tbl[id].hpn = 52;
+            datNormalSkill.tbl[id].hpn = 54;
             datNormalSkill.tbl[id].failpoint = 5;
             datNormalSkill.tbl[id].criticalpoint = 50;
             datNormalSkill.tbl[id].targettype = 0;
@@ -3198,6 +3205,54 @@ namespace NocturneInsaniax
             OverWriteSkillEffect(id, 107);
         }
 
+        private static void AcrobatKick(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 32;
+            datSkill.tbl[id].skillattr = 0;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 20;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 1;
+            datNormalSkill.tbl[id].criticalpoint = 100;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 120;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 34;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 97);
+            datNormalSkillVisual.tbl[id].motion = 9;
+        }
+
         // Shot Skills
 
         private static void NeedleRush(ushort id)
@@ -3717,6 +3772,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 20;
             datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
             datNormalSkill.tbl[id].hpn = 80;
             datNormalSkill.tbl[id].magicbase = 30;
             datNormalSkill.tbl[id].magiclimit = 32767;
@@ -3952,6 +4008,53 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].use = 2;
 
             OverWriteSkillEffect(id, 2);
+        }
+
+        private static void OniJackura(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 512;
+            datSkill.tbl[id].skillattr = 0;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 30;
+            datNormalSkill.tbl[id].badtype = 1;
+            datNormalSkill.tbl[id].basstatus = 2;
+            datNormalSkill.tbl[id].cost = 28;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 1;
+            datNormalSkill.tbl[id].criticalpoint = 30;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 10;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 42;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 180, 143);
         }
 
         // Ice Skills
@@ -5211,6 +5314,17 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].cost = 40;
             datNormalSkill.tbl[id].hitlevel = 40;
             datNormalSkill.tbl[id].flag = 1;
+        }
+
+        private static void BossFireOfSinai(ushort id)
+        {
+            datNormalSkill.tbl[id].cost = 72;
+            datNormalSkill.tbl[id].hpn = 36;
+            datNormalSkill.tbl[id].hitlevel = 120;
+            datNormalSkill.tbl[id].magicbase = 30;
+            datNormalSkill.tbl[id].magiclimit = 32767;
+            datNormalSkill.tbl[id].targetcntmax = 8;
+            datNormalSkill.tbl[id].targetcntmin = 4;
         }
 
         private static void FireOfSinai(ushort id)
@@ -9315,7 +9429,7 @@ namespace NocturneInsaniax
             skillLevel.Level = 12;
         }
 
-        private static void Kintsugi(ushort id)
+        private static void SolitaryDrift(ushort id)
         {
             datSkill.tbl[378].keisyoform = 1;
             datSkill.tbl[378].skillattr = 15;

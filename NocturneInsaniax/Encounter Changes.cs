@@ -317,7 +317,8 @@ namespace NocturneInsaniax
                 case 101: BlackTempleQingLongEncounter(); return 1270;
                 case 102: BlackTempleQingLongEncounter(); return 1270;
 
-                case 155: RedTempleKushinadaHimeEncounter(); return 1270;
+                //case 155: RedTempleKushinadaHimeEncounter(); return 1270;
+                case 155: FourthKalpaTrumpeterEncounter(); return 1270;
                 case 156: RedTempleKushinadaHimeEncounter(); return 1270;
 
                 case 107: MifunashiroDionysusEncounter(); return 1270;
@@ -792,6 +793,13 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].itemcnt = 1;
         }
 
+        private static void ThirdKalpaVritraEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 228;
+            datEncount.tbl[1270].item = 100;
+            datEncount.tbl[1270].itemcnt = 1;
+        }
+
         private static void ThirdKalpaFourHorsemenEncounter()
         {
             datEncount.tbl[1270].maxcall = 3;
@@ -799,6 +807,42 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].devil[0] = 196;
             datEncount.tbl[1270].btlsound = 10;
             datEncount.tbl[1270].item = 10;
+            datEncount.tbl[1270].itemcnt = 1;
+        }
+
+        private static void FourthKalpaQitianDashengEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 14;
+            datEncount.tbl[1270].item = 14;
+            datEncount.tbl[1270].itemcnt = 1;
+        }
+
+        private static void FourthKalpaDemeeHoEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 229;
+            datEncount.tbl[1270].item = 96;
+            datEncount.tbl[1270].itemcnt = 1;
+        }
+
+        private static void FourthKalpaMotherHarlotEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 202;
+            datEncount.tbl[1270].btlsound = 10;
+            datEncount.tbl[1270].item = 35;
+            datEncount.tbl[1270].itemcnt = 1;
+        }
+
+        private static void FourthKalpaTrumpeterEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 203;
+            datEncount.tbl[1270].devil[1] = 203;
+            datEncount.tbl[1270].devil[2] = 203;
+            datEncount.tbl[1270].devil[3] = 203;
+            datEncount.tbl[1270].devil[4] = 203;
+            datEncount.tbl[1270].devil[5] = 203;
+            datEncount.tbl[1270].devil[6] = 203;
+            datEncount.tbl[1270].btlsound = 10;
+            datEncount.tbl[1270].item = 34;
             datEncount.tbl[1270].itemcnt = 1;
         }
 
@@ -863,7 +907,7 @@ namespace NocturneInsaniax
             if (GuaranteeFiendNKEs.Value == true || random.Next(3) == 0)
                 ThirdKalpaFourHorsemenEncounter();
             else
-                YoyogiParkCuChulainnEncounter();
+                ThirdKalpaVritraEncounter();
         }
 
         //------------------------------------------------------------

@@ -244,7 +244,7 @@ namespace NocturneInsaniax
             { 226, new InnateSkill(383, 15, "Magnified Malady", "While in the active party, all allies \ndeal 20% more damage against \nenemies with an ailment.")}, // 226 Nightmare
             { 227, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Gdon's Critical Damage increases \nby 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 227 Gdon
             { 228, new InnateSkill(383, 03, "Elec Enhancer", "While in the active party, \nraise allies' Elec skill potential \nto Vritra's if it was lower.")}, // 228 Vritra
-            { 229, new InnateSkill(383, 15, "Demee-Ho", "")}, // 229 Demee-Ho
+            { 229, new InnateSkill(383, 15, "Magatama Mimicry", "Demee-Ho gains skill potential \ndependant on which Magatama is \ncurrently ingested.")}, // 229 Demee-Ho
             { 230, new InnateSkill(383, 15, "", "")}, // 230 
             { 231, new InnateSkill(383, 15, "", "")}, // 231 
             { 232, new InnateSkill(383, 15, "", "")}, // 232 
@@ -415,7 +415,7 @@ namespace NocturneInsaniax
             { 09, new InnateSkill(383, 07, "Dark Gestalt", "Gain Dark skill potential \nbased on the total positive potential \nof allies in the active party.")}, // 09 Anathema
             { 10, new InnateSkill(383, 15, "Contagious Curse", "Allies' Ailment Rate is \nincreased by 20%.")}, // 10 Miasma
             { 11, new InnateSkill(383, 06, "Light Gestalt", "Gain Light skill potential \nbased on the total positive potential \nof allies in the active party.")}, // 11 Nirvana
-            { 12, new InnateSkill(383, 15, "Shot Gestalt", "Gain Shot skill potential \nbased on the total positive potential \nof allies in the active party.")}, // 12 Vimana
+            { 12, new InnateSkill(383, 12, "Shot Gestalt", "Gain Shot skill potential \nbased on the total positive potential \nof allies in the active party.")}, // 12 Vimana
             { 13, new InnateSkill(383, 15, "Geis", "")}, // 13 Geis
             { 14, new InnateSkill(383, 15, "Destabilize", "Element attacks may Critically Strike \nfor all allies and enemies.")}, // 14 Djed
             { 15, new InnateSkill(383, 01, "Malevolent Flames", "All allies' Fire attacks \nmay Critically Strike.")}, // 15 Muspell
@@ -423,7 +423,7 @@ namespace NocturneInsaniax
             { 17, new InnateSkill(383, 15, "Magnified Malady", "All allies deal 20% more damage \nagainst enemies with an ailment.")}, // 17 Adama
             { 18, new InnateSkill(383, 15, "Gehenna", "")}, // 18 Gehenna
             { 19, new InnateSkill(383, 15, "Withheld Sentence", "Allies are immune to \nrandom instakills.")}, // 19 Sophia
-            { 20, new InnateSkill(383, 15, "Orochi's Bane", "Your Force attacks may \ninflict poison.")}, // 20 Murakumo
+            { 20, new InnateSkill(383, 04, "Orochi's Bane", "Your Force attacks may \ninflict poison.")}, // 20 Murakumo
             { 21, new InnateSkill(383, 15, "Gundari", "")}, // 21 Gundari
             { 22, new InnateSkill(383, 03, "Vanquishing Bolts", "All allies' Elec attacks \nmay Critically Strike.")}, // 22 Narukami
             { 23, new InnateSkill(383, 14, "Megalomania", "After using a charge effect, \ngain a 30% chance to retain it.")}, // 23 Gaea

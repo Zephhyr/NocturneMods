@@ -303,7 +303,7 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 19;
             tblHearts.fclHeartsTbl[id].Skill[4].ID = 310; // Ice Boost
             tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 21;
-            tblHearts.fclHeartsTbl[id].Skill[5].ID = 378; // Kintsugi
+            tblHearts.fclHeartsTbl[id].Skill[5].ID = 378; // Solitary Drift
             tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 23;
             tblHearts.fclHeartsTbl[id].Skill[6].ID = 315; // Anti-Ice
             tblHearts.fclHeartsTbl[id].Skill[6].TargetLevel = 25;
@@ -593,7 +593,7 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 24;
             tblHearts.fclHeartsTbl[id].Skill[3].ID = 368; // Renewal
             tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 27;
-            tblHearts.fclHeartsTbl[id].Skill[4].ID = 131; // Deadly Fury
+            tblHearts.fclHeartsTbl[id].Skill[4].ID = 480; // Acrobat Kick
             tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 35;
             tblHearts.fclHeartsTbl[id].Skill[5].ID = 362; // Phys Boost
             tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 40;
@@ -1120,10 +1120,10 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 44;
             tblHearts.fclHeartsTbl[id].Skill[4].ID = 69; // Makarakarn
             tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 46;
-            tblHearts.fclHeartsTbl[id].Skill[5].ID = 26; // Megidola
-            tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 62;
+            tblHearts.fclHeartsTbl[id].Skill[5].ID = 131; // Deadly Fury
+            tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 52;
             tblHearts.fclHeartsTbl[id].Skill[6].ID = 363; // Element Boost
-            tblHearts.fclHeartsTbl[id].Skill[6].TargetLevel = 70;
+            tblHearts.fclHeartsTbl[id].Skill[6].TargetLevel = 60;
         }
 
         private static void Adama(ushort id)
@@ -1401,7 +1401,7 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 52;
             tblHearts.fclHeartsTbl[id].Skill[1].ID = 295; // Mana Surge
             tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 58;
-            tblHearts.fclHeartsTbl[id].Skill[2].ID = 106; // Stasis Blade
+            tblHearts.fclHeartsTbl[id].Skill[2].ID = 26; // Megidola
             tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 62;
             tblHearts.fclHeartsTbl[id].Skill[3].ID = 476; // Smite
             tblHearts.fclHeartsTbl[id].Skill[3].TargetLevel = 64;

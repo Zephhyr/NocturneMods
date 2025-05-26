@@ -2,7 +2,6 @@
 using HarmonyLib;
 using Il2Cpp;
 using Il2Cppnewbattle_H;
-using static Il2Cpp.SteamDlcFileUtil;
 
 namespace NocturneInsaniax
 {

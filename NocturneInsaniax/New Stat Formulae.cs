@@ -826,8 +826,6 @@ namespace NocturneInsaniax
                 for (int i = 0; i < datDevilFormat.tbl[w.id].droppoint.Length; i++)
                 {
                     datDevilFormat.tbl[w.id].droppoint[i] = Convert.ToByte(datDevilFormat.tbl[w.id].droppoint[i] * lukMultiplier);
-                    if (datCalc.datCheckSyojiSkill(nbMainProcess.nbGetUnitWorkFromFormindex(0), 378) != 0 && datDevilFormat.tbl[w.id].dropitem[i] >= 96) // Kintsugi
-                        datDevilFormat.tbl[w.id].droppoint[i] *= 3;
                 }
             }
 

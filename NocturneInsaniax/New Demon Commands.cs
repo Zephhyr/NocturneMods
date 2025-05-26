@@ -88,9 +88,9 @@ namespace NocturneInsaniax
                     //for (ushort i = 0; i < 288; i++)
                     //    skillCommands[i] = i;
                     //skillCommands[0] = s.commlist[0][0];
-                    //skillCommands[1] = 130;
-                    //skillCommands[2] = 134;
-                    //skillCommands[3] = 141;
+                    //skillCommands[1] = 481;
+                    ////skillCommands[2] = 134;
+                    ////skillCommands[3] = 141;
 
                     //s.commlist[0] = skillCommands;
                     //s.commcnt[0] = 288;
@@ -121,7 +121,7 @@ namespace NocturneInsaniax
                     //for (ushort i = 0; i < 288; i++)
                     //    skillCommands[i] = i;
                     //skillCommands[0] = s.commlist[0][0];
-                    //skillCommands[1] = 214;
+                    //skillCommands[1] = 480;
                     ////skillCommands[2] = 477;
                     ////skillCommands[3] = 478;
 

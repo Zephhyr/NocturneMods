@@ -19,6 +19,12 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref nbActionProcessData_t a, ref int koukatype, ref int nskill, ref int sformindex, ref int dformindex, ref int cnt, ref int frame, ref float koukaritu)
             {
+                // Cap random-target skills at 2 hits per target
+                if (datNormalSkill.tbl[nskill].targetrandom == 1)
+                {
+                    if (cnt > 2) cnt = 2;
+                }
+
                 enemyUnits = dds3GlobalWork.DDS3_GBWK.unitwork;
                 if (datNormalSkill.tbl[nskill].targetarea != 1)
                 {

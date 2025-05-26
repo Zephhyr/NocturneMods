@@ -13,6 +13,7 @@ using System.Xml;
 using MelonLoader.TinyJSON;
 using System.Collections.Immutable;
 using static UnityEngine.UI.CanvasScaler;
+using System.Runtime.Intrinsics.X86;
 
 namespace NocturneInsaniax
 {
@@ -139,11 +140,11 @@ namespace NocturneInsaniax
                         actionCounter.skillsUsedThisTurn.Clear();
                     }
 
-                    // Reset Barriers
                     for (int i = 4; i <= 13; i++)
                     {
                         try
                         {
+                            // Reset Barriers
                             nbMainProcess.nbGetPartyFromFormindex(i).count[13] = 0;
                             nbMainProcess.nbGetPartyFromFormindex(i).count[14] = 0;
                         } catch { }
@@ -153,11 +154,16 @@ namespace NocturneInsaniax
                 }
                 else if (activeUnit <= 3)
                 {
-                    // Reset Barriers
+
                     for (int i = 0; i <= 3; i++)
                     {
                         try
                         {
+                            // Solitary Drift
+                            if (data.playerpcnt == 1 && datCalc.datCheckSyojiSkill(nbMainProcess.nbGetUnitWorkFromFormindex(i), 378) != 0)
+                                data.press4_ten += 1;
+
+                            // Reset Barriers
                             nbMainProcess.nbGetPartyFromFormindex(i).count[13] = 0;
                             nbMainProcess.nbGetPartyFromFormindex(i).count[14] = 0;
                         } catch { }
@@ -223,6 +229,7 @@ namespace NocturneInsaniax
                         case 7: LakshmiAI(ref a, ref code, ref n); break;
                         case 9: SarasvatiAI(ref a, ref code, ref n); break;
                         case 11: AmeNoUzumeAI(ref a, ref code, ref n); break;
+                        case 14: QitianDashengAI(ref a, ref code, ref n); break;
                         case 15: DionysusAI(ref a, ref code, ref n); break;
                         case 19: KushinadaHimeAI(ref a, ref code, ref n); break;
                         case 20: KikuriHimeAI(ref a, ref code, ref n); break;
@@ -257,8 +264,12 @@ namespace NocturneInsaniax
                         case 199: NKEMatadorAI(ref a, ref code, ref n); break;
                         case 200: NKEHellBikerAI(ref a, ref code, ref n); break;
                         case 201: NKEDaisoujouAI(ref a, ref code, ref n); break;
+                        case 202: NKEMotherHarlotAI(ref a, ref code, ref n); break;
+                        case 203: NKETrumpeterAI(ref a, ref code, ref n); break;
                         case 224: TamLinAI(ref a, ref code, ref n); break;
                         case 225: DoppelgangerAI(ref a, ref code, ref n); break;
+                        case 228: VritraAI(ref a, ref code, ref n); break;
+                        case 229: DemeeHoAI(ref a, ref code, ref n); break;
 
                         case 251: NKEJackFrostAI(ref a, ref code, ref n); break;
                         case 252: BossDevilDanteAI(ref a, ref code, ref n); break;
@@ -320,6 +331,7 @@ namespace NocturneInsaniax
                         case 339: BossDanteRaidou1AI(ref a, ref code, ref n); break;
                         case 340: ChaseDanteRaidouAI(ref a, ref code, ref n); break;
                         case 341: BossDanteRaidou2AI(ref a, ref code, ref n); break;
+                        case 342: BossMetatronAI(ref a, ref code, ref n); break;
                         case 343: BossBeelzebubFlyAI(ref a, ref code, ref n); break;
                         case 345: BossPaleRiderAI(ref a, ref code, ref n); break;
                         case 346: BossWhiteRiderAI(ref a, ref code, ref n); break;
@@ -467,6 +479,38 @@ namespace NocturneInsaniax
                     case 2: UseSkill(ref a, 22); break;
                     case 3: UseSkill(ref a, 28); break;
                     case 4: UseSkill(ref a, 28); break;
+                }
+            }
+        }
+
+        private static void QitianDashengAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(220))
+            {
+                UseSkill(ref a, 220);
+            }
+            else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(64) && !EnemyPartyBuffed(2, 5) && a.work.mp > 0)
+            {
+                UseSkill(ref a, 64);
+            }
+            else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(65) && !EnemyPartyBuffed(2, 8) && a.work.mp > 0)
+            {
+                UseSkill(ref a, 65);
+            }
+            else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(66) && !EnemyPartyBuffed(2, 7) && a.work.mp > 0)
+            {
+                UseSkill(ref a, 66);
+            }
+            else
+            {
+                int randomValue = random.Next(5);
+                switch (randomValue)
+                {
+                    case 0: UseNormalAttack(ref a); break;
+                    case 1: UseSkill(ref a, 103); break;
+                    case 2: UseSkill(ref a, 103); break;
+                    case 3: UseSkill(ref a, 104); break;
+                    case 5: UseSkill(ref a, 104); break;
                 }
             }
         }
@@ -1188,12 +1232,13 @@ namespace NocturneInsaniax
                 }
                 else
                 {
-                    int randomValue = random.Next(3);
+                    int randomValue = random.Next(4);
                     switch (randomValue)
                     {
                         case 0: UseNormalAttack(ref a); break;
                         case 1: UseSkill(ref a, 443); break;
                         case 2: UseSkill(ref a, 275); break;
+                        case 3: UseSkill(ref a, 224); break;
                     }
                 }
             }
@@ -1270,6 +1315,90 @@ namespace NocturneInsaniax
             }
         }
 
+        private static void NKEMotherHarlotAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(277))
+            {
+                UseSkill(ref a, 277); return;
+            }
+            else if (actionTrackers[a.work.id].currentBattleActionCount == 2)
+            {
+                UseSkill(ref a, 18); return;
+            }
+            else if (EnemyPartyDebuffed(1) && random.Next(3) == 0)
+            {
+                UseSkill(ref a, 77);
+            }
+            else
+            {
+                if (EnemyFocused(ref a))
+                {
+                    int randomValue = random.Next(6);
+                    switch (randomValue)
+                    {
+                        case 0: UseNormalAttack(ref a); break;
+                        case 1: UseSkill(ref a, 285); break;
+                        case 2: UseSkill(ref a, 286); break;
+                        case 3: UseSkill(ref a, 18); break;
+                        case 4: UseSkill(ref a, 183); break;
+                        case 5: UseSkill(ref a, 205); break;
+                    }
+                }
+                else
+                {
+                    int randomValue = random.Next(8);
+                    switch (randomValue)
+                    {
+                        case 0: UseNormalAttack(ref a); break;
+                        case 1: UseSkill(ref a, 285); break;
+                        case 2: UseSkill(ref a, 286); break;
+                        case 3: UseSkill(ref a, 18); break;
+                        case 4: UseSkill(ref a, 183); break;
+                        case 5: UseSkill(ref a, 205); break;
+                        case 6: UseSkill(ref a, 224); break;
+                        case 7: UseSkill(ref a, 224); break;
+                    }
+                }
+            }
+        }
+
+        private static void NKETrumpeterAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if ((actionTrackers[a.work.id].currentBattleActionCount % 8) == 0)
+            {
+                UseSkill(ref a, 158); return;
+            }
+            else if (AllyPartyBuffed(1) && (actionTrackers[a.work.id].currentBattleActionCount % 4) == 0)
+            {
+                UseSkill(ref a, 57); return;
+            }
+            else if (a.data.enemypcnt >= 3 && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(69))
+            {
+                UseSkill(ref a, 69); return;
+            }
+            else if (a.data.enemypcnt >= 3 && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(70))
+            {
+                UseSkill(ref a, 70); return;
+            }
+            else if (actionTrackers[a.work.id].currentBattleTurnCount == 1)
+            {
+                UseNormalAttack(ref a); return;
+            }
+            else
+            {
+                int randomValue = random.Next(6);
+                switch (randomValue)
+                {
+                    case 0: UseNormalAttack(ref a); break;
+                    case 1: UseNormalAttack(ref a); break;
+                    case 2: UseSkill(ref a, 6); break;
+                    case 3: UseSkill(ref a, 12); break;
+                    case 4: UseSkill(ref a, 18); break;
+                    case 5: UseSkill(ref a, 24); break;
+                }
+            }
+        }
+
         private static void TamLinAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
             if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(219))
@@ -1307,6 +1436,50 @@ namespace NocturneInsaniax
                     case 2: UseNormalAttack(ref a); break;
                     case 3: UseSkill(ref a, 63); break;
                     case 4: UseSkill(ref a, 196); break;
+                }
+            }
+        }
+
+        private static void VritraAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(277))
+            {
+                UseSkill(ref a, 277);
+            }
+            else
+            {
+                int randomValue = random.Next(5);
+                switch (randomValue)
+                {
+                    case 0: UseSkill(ref a, 121); break;
+                    case 1: UseSkill(ref a, 183); break;
+                    case 2: UseSkill(ref a, 15); break;
+                    case 3: UseSkill(ref a, 451); break;
+                    case 4: UseSkill(ref a, 54); break;
+                }
+            }
+        }
+
+        private static void DemeeHoAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(277))
+            {
+                UseSkill(ref a, 277);
+            }
+            else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(459) && !EnemyPartyBuffed(2) && a.work.mp > 0)
+            {
+                UseSkill(ref a, 459);
+            }
+            else
+            {
+                int randomValue = random.Next(5);
+                switch (randomValue)
+                {
+                    case 0: UseNormalAttack(ref a); break;
+                    case 1: UseSkill(ref a, 126); break;
+                    case 2: UseSkill(ref a, 481); break;
+                    case 3: UseSkill(ref a, 12); break;
+                    case 4: UseSkill(ref a, 35); break;
                 }
             }
         }
@@ -3723,6 +3896,143 @@ namespace NocturneInsaniax
             }
         }
 
+        private static void BossMetatronAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            ushort currentHpPercent = BossCurrentHpPercent(ref a);
+            MelonLogger.Msg("Metatron HP%: " + currentHpPercent);
+            MelonLogger.Msg("Metatron HP: " + a.work.hp);
+
+            if (currentHpPercent <= 75 && actionTrackers[a.work.id].phase == 1)
+                actionTrackers[a.work.id].phase = 2;
+            if (currentHpPercent <= 40 && actionTrackers[a.work.id].phase == 2)
+                actionTrackers[a.work.id].phase = 3;
+
+            if (actionTrackers[a.work.id].phase == 1)
+            {
+                if (actionTrackers[a.work.id].extraTurns < 1)
+                {
+                    UseSkill(ref a, 422); return;
+                }
+                else if (actionTrackers[a.work.id].currentBattleTurnCount == 1)
+                {
+                    UseSkill(ref a, 31);
+                }
+                else if (actionTrackers[a.work.id].currentTurnActionCount == 1 && random.Next(2) == 0)
+                {
+                    if (AllyPartyBuffed(1) && random.Next(2) == 0)
+                    {
+                        UseSkill(ref a, 57); return;
+                    }
+                    else if (EnemyPartyDebuffed(1))
+                    {
+                        UseSkill(ref a, 77); return;
+                    }
+                }
+                else if (actionTrackers[a.work.id].skillsUsedThisTurn.Contains(6) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(31) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(431) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(27))
+                {
+                    UseNormalAttack(ref a);
+                }
+                else
+                {
+                    int randomValue = random.Next(8);
+                    switch (randomValue)
+                    {
+                        case 0: UseNormalAttack(ref a); break;
+                        case 1: UseSkill(ref a, 6); break;
+                        case 2: UseSkill(ref a, 6); break;
+                        case 3: UseSkill(ref a, 31); break;
+                        case 4: UseSkill(ref a, 31); break;
+                        case 5: UseSkill(ref a, 431); break;
+                        case 6: UseSkill(ref a, 431); break;
+                        case 7: UseSkill(ref a, 27); break;
+                    }
+                }
+            }
+            else if (actionTrackers[a.work.id].phase == 2)
+            {
+                if (actionTrackers[a.work.id].extraTurns < 2)
+                {
+                    UseSkill(ref a, 422); return;
+                }
+                if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(458) ||
+                    !EnemyPartyBuffed(3) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(458) && random.Next(3) != 0)
+                {
+                    UseSkill(ref a, 458);
+                }
+                else if (actionTrackers[a.work.id].skillsUsedThisTurn.Contains(6) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(31) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(431) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(27))
+                {
+                    UseNormalAttack(ref a);
+                }
+                else
+                {
+                    int randomValue = random.Next(10);
+                    switch (randomValue)
+                    {
+                        case 0: UseNormalAttack(ref a); break;
+                        case 1: UseSkill(ref a, 6); break;
+                        case 2: UseSkill(ref a, 6); break;
+                        case 3: UseSkill(ref a, 31); break;
+                        case 4: UseSkill(ref a, 31); break;
+                        case 5: UseSkill(ref a, 431); break;
+                        case 6: UseSkill(ref a, 431); break;
+                        case 7: UseSkill(ref a, 27); break;
+                        case 8: UseSkill(ref a, 27); break;
+                        case 9: UseSkill(ref a, 27); break;
+                    }
+                }
+            }
+            else if (actionTrackers[a.work.id].phase == 3)
+            {
+                if (actionTrackers[a.work.id].extraTurns < 2)
+                {
+                    UseSkill(ref a, 422); return;
+                }
+                else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(235))
+                {
+                    UseSkill(ref a, 235);
+                }
+                else if (a.data.playerpcnt > 1 && (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(424) || 
+                    (actionTrackers[a.work.id].currentTurnActionCount >= 2 && !EnemyConcentrated(ref a) && random.Next(2) == 0)))
+                {
+                    UseSkill(ref a, 424);
+                }
+                else if (actionTrackers[a.work.id].currentTurnActionCount >= 2 && !EnemyPartyBuffed(3) && 
+                    !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(458) && random.Next(2) == 0)
+                {
+                    UseSkill(ref a, 458);
+                }
+                else if (actionTrackers[a.work.id].skillsUsedThisTurn.Contains(6) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(31) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(431) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(27) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(235))
+                {
+                    UseNormalAttack(ref a);
+                }
+                else
+                {
+                    int randomValue = random.Next(8);
+                    switch (randomValue)
+                    {
+                        case 0: UseSkill(ref a, 6); break;
+                        case 1: UseSkill(ref a, 31); break;
+                        case 2: UseSkill(ref a, 431); break;
+                        case 3: UseSkill(ref a, 27); break;
+                        case 4: UseSkill(ref a, 235); break;
+                        case 5: UseSkill(ref a, 235); break;
+                        case 6: UseSkill(ref a, 235); break;
+                        case 7: UseSkill(ref a, 235); break;
+                    }
+                }
+            }
+        }
+
         private static void BossBeelzebubFlyAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
             ushort currentHpPercent = BossCurrentHpPercent(ref a);
@@ -3788,13 +4098,13 @@ namespace NocturneInsaniax
                     UseSkill(ref a, 57);
                 }
                 else if (actionTrackers[a.work.id].phase == 2 && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(226) && 
-                    actionTrackers[a.work.id].currentBattleActionCount >= 1 && a.data.press4_p == 1 && a.data.press4_ten <= 2
+                    actionTrackers[a.work.id].currentTurnActionCount >= 2 && a.data.press4_p == 1 && a.data.press4_ten <= 2
                     && random.Next(3) != 0)
                 {
                     UseSummonSkill(ref a, 226, 356);
                 }
                 else if (actionTrackers[a.work.id].phase == 3 && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(252) &&
-                    actionTrackers[a.work.id].currentBattleActionCount >= 1 && a.data.press4_p <= 2 && a.data.press4_ten <= 2
+                    actionTrackers[a.work.id].currentTurnActionCount >= 2 && a.data.press4_p <= 2 && a.data.press4_ten <= 2
                      && random.Next(3) != 0)
                 {
                     UseSummonSkill(ref a, 252, 356);

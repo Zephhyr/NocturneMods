@@ -370,7 +370,7 @@ namespace NocturneInsaniax
             new sbyte[] {5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0 }, // 339 Boss Raidou/Dante 1
             new sbyte[] {6    , 0    , 0    , 6    , 6    , 4    , 0    , 0    , 0    , 0    , 0    , 4    , 0    , 0    , 4    , 0 }, // 340 Chase Raidou/Dante
             new sbyte[] {6    , 0    , 0    , 6    , 6    , 4    , 0    , 0    , 0    , 0    , 0    , 4    , 0    , 0    , 4    , 0 }, // 341 Boss Raidou/Dante 2
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 342 Boss Metatron
+            new sbyte[] {7    , 7    , -7   , 0    , 0    , 7    , 7    , -7   , 0    , 0    , 0    , 7    , 0    , -4   , 4    , 0 }, // 342 Boss Metatron
             new sbyte[] {0    , -7   , 0    , 7    , 7    , 7    , -7   , 7    , 0    , 0    , 0    , 7    , 4    , -4   , 4    , 0 }, // 343 Boss Beelzebub
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 344 Boss Lucifer
             new sbyte[] {4    , -5   , 0    , -5   , 0    , 4    , 0    , 0    , 7    , 7    , 7    , 4    , 0    , 0    , 2    , 0 }, // 345 Boss Pale Rider
@@ -1844,6 +1844,13 @@ namespace NocturneInsaniax
                         skillPotential = demonPotentials[215][skillAttribute]; // Get Uber Pixie's potential
                     else
                         skillPotential = demonPotentials[demonID][skillAttribute]; // Get the potential from the demon list
+
+                    // Demee-Ho's Magatama Mimicry
+                    if (demonID == 229)
+                    {
+                        skillPotential += magatamaPotentials[dds3GlobalWork.DDS3_GBWK.heartsequip][skillAttribute];
+                        if (skillAttribute == 14 && skillPotential >= 5) skillPotential = 5;
+                    }
 
                     // Auspicious Beast
                     if (actionProcessData != null && auspiciousBeastIds.Contains(currentDemonWork.id))
