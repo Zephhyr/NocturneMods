@@ -11,6 +11,7 @@ using Il2Cppmodel_H;
 using System.Xml;
 using Newtonsoft.Json;
 using System.Linq;
+using static UnityEngine.GraphicsBuffer;
 
 namespace NocturneInsaniax
 {
@@ -22,6 +23,8 @@ namespace NocturneInsaniax
             345, 346, 347, 348, 349, 350, 351, 352, 353, 362, 363, 364, 365, 366
         };
         public static ushort[] pushedSkillList = new ushort[] { 148, 149, 150, 151, 164, 165, 166, 167, 403, 407, 408, 416, 417, 496 };
+
+        public static List<nbActionProcess.SOBED> newSobed = new List<nbActionProcess.SOBED>();
 
         public static ushort previousUnitId;
         public static short previousSingleTargetFormIndex = -1;
@@ -183,7 +186,7 @@ namespace NocturneInsaniax
                     case 475: __result = "Gungnir"; return false;
                     case 476: __result = "Smite"; return false;
                     case 477: __result = "Makai Thunder"; return false;
-                    case 478: __result = "Oblivion"; return false;
+                    case 478: __result = "Scintilla"; return false;
                     case 479: __result = "Liberation"; return false;
                     case 480: __result = "Acrobat Kick"; return false;
                     case 481: __result = "Oni-Jackura"; return false;
@@ -552,7 +555,7 @@ namespace NocturneInsaniax
                     case 475: __result = "High Physical damage to one foe. \nIgnores target's -kaja effects. \nPow: 52, Acc: 90%, Crit: 20%"; return false; // Gungnir
                     case 476: __result = "Mega Light damage to one foe. \nPow: 80, Acc: 100%"; return false; // Smite
                     case 477: __result = "Medium Dark damage to one foe. \nPow: 45, Acc: 100%, Bind: 20%"; return false; // Makai Thunder
-                    case 478: __result = "Mega Dark damage to all foes. \nPow: 60, Acc: 100%"; return false; // Oblivion
+                    case 478: __result = "Mega Dark damage to all foes. \nPow: 60, Acc: 100%"; return false; // Scintilla
                     case 479: __result = "Full HP recovery, Negates \n-nda effects and cures \nall ailments for one ally."; return false; // Liberation
                     case 480: __result = "Medium Phys damage to one foe. \nPow: 34, Acc: 120%, Crit: 100%"; return false; // Acrobat Kick
                     case 481: __result = "High Physical damage to all foes. \nPow: 42, Acc: 90%, Crit: 30%, \nMute: 30%"; return false; // Oni-Jackura
@@ -782,9 +785,11 @@ namespace NocturneInsaniax
                     //MelonLogger.Msg(output);
 
                     //datCalc.datAddMaka(1000000);
-                    //datCalc.datAddDevil(202, 0);
+                    //datCalc.datAddItem(38, 70);
+                    //datCalc.datAddDevil(225, 0);
                     //datCalc.datAddDevil(23, 0);
                     //datCalc.datAddDevil(7, 0);
+                    //datCalc.datAddDevil(192, 0);
 
                     //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 56).Count() == 0)
                     //{
@@ -880,64 +885,67 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref string text1, ref string text2, ref int type, int max, uint col)
             {
-                if (type == 1 && actionProcessData.work.nowcommand == 1)
+                try
                 {
-                    switch (actionProcessData.work.nowindex)
+                    if (type == 1 && actionProcessData.work.nowcommand == 1)
                     {
-                        case 54: // Rakunda
-                            {
-                                type = 0;
-                                var limitReached = true;
-                                foreach (var unitBuffs in currentSideBuffs)
+                        switch (actionProcessData.work.nowindex)
+                        {
+                            case 54: // Rakunda
                                 {
-                                    if (unitBuffs[7] >= -2)
-                                        limitReached = false;
+                                    type = 0;
+                                    var limitReached = true;
+                                    foreach (var unitBuffs in currentSideBuffs)
+                                    {
+                                        if (unitBuffs[7] >= -2)
+                                            limitReached = false;
+                                    }
+                                    text1 = limitReached ? "Limit reached!" : "Decreased enemy's Defense!";
+                                    break;
                                 }
-                                text1 = limitReached ? "Limit reached!" : "Decreased enemy's Defense!"; 
-                                break; 
-                            }
-                        case 64: // Tarukaja
-                            { 
-                                type = 0;
-                                var limitReached = true;
-                                foreach (var unitBuffs in currentSideBuffs)
+                            case 64: // Tarukaja
                                 {
-                                    if (unitBuffs[4] <= 2 || unitBuffs[5] <= 2)
-                                        limitReached = false;
+                                    type = 0;
+                                    var limitReached = true;
+                                    foreach (var unitBuffs in currentSideBuffs)
+                                    {
+                                        if (unitBuffs[4] <= 2 || unitBuffs[5] <= 2)
+                                            limitReached = false;
+                                    }
+                                    text1 = limitReached ? "Limit reached!" : "Physical/Magical Attack increased!";
+                                    break;
                                 }
-                                text1 = limitReached ? "Limit reached!" : "Physical/Magical Attack increased!"; 
-                                break; 
-                            }
-                        case 67: // Makakaja
-                            { 
-                                type = 0;
-                                var limitReached = true;
-                                foreach (var unitBuffs in currentSideBuffs)
+                            case 67: // Makakaja
                                 {
-                                    if (unitBuffs[5] <= 2 || unitBuffs[8] <= 2)
-                                        limitReached = false;
+                                    type = 0;
+                                    var limitReached = true;
+                                    foreach (var unitBuffs in currentSideBuffs)
+                                    {
+                                        if (unitBuffs[5] <= 2 || unitBuffs[8] <= 2)
+                                            limitReached = false;
+                                    }
+                                    text1 = limitReached ? "Limit reached!" : "Magical Attack/Hit Rate increased!";
+                                    break;
                                 }
-                                text1 = limitReached ? "Limit reached!" : "Magical Attack/Hit Rate increased!"; 
-                                break; 
-                            }
-                        case 206: // Debilitate
-                            {
-                                if (text1 == "Decreased all stats performance!")
-                                    text1 = "All stats decreased!";
-                                break;
-                            }
-                        case 276: // Red Capoted
-                            { 
-                                type = 0;
-                                var limitReached = true;
-                                if (currentUnitBuffs[6] <= 2 || currentUnitBuffs[8] <= 2)
-                                    limitReached = false;
-                                text1 = limitReached ? "Limit reached!" : "Evasion/Hit Rate maximized!"; 
-                                break; 
-                            }
-                        default: break;
+                            case 206: // Debilitate
+                                {
+                                    if (text1 == "Decreased all stats performance!")
+                                        text1 = "All stats decreased!";
+                                    break;
+                                }
+                            case 276: // Red Capote
+                                {
+                                    type = 0;
+                                    var limitReached = true;
+                                    if (currentUnitBuffs[6] <= 2 || currentUnitBuffs[8] <= 2)
+                                        limitReached = false;
+                                    text1 = limitReached ? "Limit reached!" : "Evasion/Hit Rate maximized!";
+                                    break;
+                                }
+                            default: break;
+                        }
                     }
-                }
+                } catch { }
             }
         }
 
@@ -3726,6 +3734,19 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hpn = 30;
             datNormalSkill.tbl[id].magicbase = 12;
             datNormalSkill.tbl[id].magiclimit = 80;
+
+            //int newSobedIndex = 18;
+            //nbActionProcess.sobedtbl[id] = new nbActionProcess.SOBED
+            //{
+            //    keyname = newSobed[newSobedIndex].keyname,
+            //    bed_fname = newSobed[newSobedIndex].bed_fname,
+            //    se0_str = newSobed[newSobedIndex].se0_str,
+            //    se1_str = newSobed[newSobedIndex].se1_str,
+            //    tga_fname = newSobed[newSobedIndex].tga_fname,
+            //    pbdata = newSobed[newSobedIndex].pbdata
+            //};
+
+            //MelonLogger.Msg(JsonConvert.SerializeObject(nbActionProcess.sobedtbl[id]));
         }
 
         private static void Agilao(ushort id)

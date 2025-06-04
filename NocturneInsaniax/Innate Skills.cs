@@ -265,7 +265,7 @@ namespace NocturneInsaniax
             { 247, new InnateSkill(383, 15, "", "")}, // 247 
             { 248, new InnateSkill(383, 15, "", "")}, // 248 
             { 249, new InnateSkill(383, 15, "", "")}, // 249 
-            { 250, new InnateSkill(383, 15, "", "")}, // 250 
+            { 250, new InnateSkill(383, 15, "Hidden Potential", "")}, // 250 
             { 251, new InnateSkill(383, 02, "Ice Enhancer", "")}, // 251 
             { 252, new InnateSkill(383, 15, "Devil Regeneration", "")}, // 252 Devil Dante
             { 253, new InnateSkill(383, 15, "Withheld Sentence", "")}, // 253 Gamete

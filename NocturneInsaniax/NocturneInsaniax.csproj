@@ -4,6 +4,13 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <RootNamespace>NocturneInsaniax</RootNamespace>
+    <IsPackable>false</IsPackable>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <AssemblyName>NocturneInsaniax</AssemblyName>
+    <LangVersion>10</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,23 +27,32 @@
     <Reference Include="Iced">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\smt3hd\MelonLoader\net6\Iced.dll</HintPath>
     </Reference>
-    <Reference Include="Il2CppInterop.Common">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\smt3hd\MelonLoader\net6\Il2CppInterop.Common.dll</HintPath>
+    <Reference Include="Il2CppBacktrace.Unity">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\smt3hd\MelonLoader\Il2CppAssemblies\Il2CppBacktrace.Unity.dll</HintPath>
     </Reference>
-    <Reference Include="Il2CppInterop.HarmonySupport">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\smt3hd\MelonLoader\net6\Il2CppInterop.HarmonySupport.dll</HintPath>
+    <Reference Include="Il2CppI18N.CJK">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\smt3hd\MelonLoader\Il2CppAssemblies\Il2CppI18N.CJK.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppI18N">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\smt3hd\MelonLoader\Il2CppAssemblies\Il2CppI18N.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\smt3hd\MelonLoader\Il2CppAssemblies\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Core">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\smt3hd\MelonLoader\Il2CppAssemblies\Il2CppSystem.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\smt3hd\MelonLoader\Il2CppAssemblies\Il2CppSystem.dll</HintPath>
     </Reference>
     <Reference Include="Il2CppInterop.Runtime">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\smt3hd\MelonLoader\net6\Il2CppInterop.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Il2Cppmscorlib">
-      <HintPath>..\Il2Cppmscorlib.dll</HintPath>
+    <Reference Include="Il2CppInterop.Common">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\smt3hd\MelonLoader\net6\Il2CppInterop.Common.dll</HintPath>
     </Reference>
     <Reference Include="MelonLoader">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\smt3hd\MelonLoader\net6\MelonLoader.dll</HintPath>
-    </Reference>
-    <Reference Include="UnhollowerBaseLib">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\smt3hd\MelonLoader\Il2CppAssemblies\UnhollowerBaseLib.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>..\Unity.TextMeshPro.dll</HintPath>
@@ -63,5 +79,6 @@
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\smt3hd\MelonLoader\Il2CppAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
+
 
 </Project>

@@ -16,62 +16,72 @@ namespace NocturneInsaniax
 
         #region datCalc
 
-        [HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetBaseMaxHp))]
-        private class BaseMaxHpPatch
-        {
-            public static bool Prefix(ref datUnitWork_t work, ref int __result)
-            {
-                var level = work.level;
-                var vit = datCalc.datGetParam(work, 3);
-                __result = (level + vit) * 6;
-                return false;
-            }
-        }
+        //[HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetBaseMaxHp))]
+        //private class BaseMaxHpPatch
+        //{
+        //    public static bool Prefix(ref datUnitWork_t work, ref int __result)
+        //    {
+        //        var level = work.level;
+        //        var vit = datCalc.datGetParam(work, 3);
+        //        __result = (level + vit) * 6;
+        //        return false;
+        //    }
+        //}
 
-        [HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetMaxHp))]
-        private class MaxHpPatch
-        {
-            public static bool Prefix(ref datUnitWork_t work, ref uint __result)
-            {
-                var baseHp = datCalc.datGetBaseMaxHp(work);
-                var boost = 1.0;
-                if (datCalc.datCheckSyojiSkill(work, 290) == 1)
-                    boost += 0.1;
-                if (datCalc.datCheckSyojiSkill(work, 291) == 1)
-                    boost += 0.2;
-                if (datCalc.datCheckSyojiSkill(work, 292) == 1)
-                    boost += 0.3;
-                __result = Math.Min(Convert.ToUInt32(baseHp * boost), 999);
-                return false;
-            }
-        }
+        //[HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetMaxHp))]
+        //private class MaxHpPatch
+        //{
+        //    public static bool Prefix(ref datUnitWork_t work, ref uint __result)
+        //    {
+        //        var baseHp = datCalc.datGetBaseMaxHp(work);
+        //        var boost = 1.0;
+        //        if (datCalc.datCheckSyojiSkill(work, 290) == 1)
+        //            boost += 0.1;
+        //        if (datCalc.datCheckSyojiSkill(work, 291) == 1)
+        //            boost += 0.2;
+        //        if (datCalc.datCheckSyojiSkill(work, 292) == 1)
+        //            boost += 0.3;
+        //        __result = Math.Min(Convert.ToUInt32(baseHp * boost), 999);
+        //        return false;
+        //    }
+        //}
 
-        [HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetBaseMaxMp))]
-        private class BaseMaxMpPatch
-        {
-            public static bool Prefix(ref datUnitWork_t work, ref int __result)
-            {
-                var level = work.level;
-                var mag = datCalc.datGetParam(work, 2);
-                __result = (level + mag) * 4;
-                return false;
-            }
-        }
+        //[HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetBaseMaxMp))]
+        //private class BaseMaxMpPatch
+        //{
+        //    public static bool Prefix(ref datUnitWork_t work, ref int __result)
+        //    {
+        //        var level = work.level;
+        //        var mag = datCalc.datGetParam(work, 2);
+        //        __result = (level + mag) * 4;
+        //        return false;
+        //    }
+        //}
 
-        [HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetMaxMp))]
-        private class MaxMpPatch
+        //[HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetMaxMp))]
+        //private class MaxMpPatch
+        //{
+        //    public static bool Prefix(ref datUnitWork_t work, ref uint __result)
+        //    {
+        //        var baseMp = datCalc.datGetBaseMaxMp(work);
+        //        var boost = 1.0;
+        //        if (datCalc.datCheckSyojiSkill(work, 293) == 1)
+        //            boost += 0.1;
+        //        if (datCalc.datCheckSyojiSkill(work, 294) == 1)
+        //            boost += 0.2;
+        //        if (datCalc.datCheckSyojiSkill(work, 295) == 1)
+        //            boost += 0.3;
+        //        __result = Math.Min(Convert.ToUInt32(baseMp * boost), 999);
+        //        return false;
+        //    }
+        //}
+
+        [HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetParam))]
+        private class datGetParamPatch
         {
-            public static bool Prefix(ref datUnitWork_t work, ref uint __result)
+            public static bool Prefix(ref datUnitWork_t work, ref int paratype, ref int __result)
             {
-                var baseMp = datCalc.datGetBaseMaxMp(work);
-                var boost = 1.0;
-                if (datCalc.datCheckSyojiSkill(work, 293) == 1)
-                    boost += 0.1;
-                if (datCalc.datCheckSyojiSkill(work, 294) == 1)
-                    boost += 0.2;
-                if (datCalc.datCheckSyojiSkill(work, 295) == 1)
-                    boost += 0.3;
-                __result = Math.Min(Convert.ToUInt32(baseMp * boost), 999);
+                __result = datCalc.datGetBaseParam(work, paratype);
                 return false;
             }
         }

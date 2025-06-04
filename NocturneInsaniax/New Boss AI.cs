@@ -266,11 +266,13 @@ namespace NocturneInsaniax
                         case 201: NKEDaisoujouAI(ref a, ref code, ref n); break;
                         case 202: NKEMotherHarlotAI(ref a, ref code, ref n); break;
                         case 203: NKETrumpeterAI(ref a, ref code, ref n); break;
+                        case 207: NKEBeelzebubManAI(ref a, ref code, ref n); break;
                         case 224: TamLinAI(ref a, ref code, ref n); break;
                         case 225: DoppelgangerAI(ref a, ref code, ref n); break;
                         case 228: VritraAI(ref a, ref code, ref n); break;
                         case 229: DemeeHoAI(ref a, ref code, ref n); break;
 
+                        case 250: NKEPixieAI(ref a, ref code, ref n); break;
                         case 251: NKEJackFrostAI(ref a, ref code, ref n); break;
                         case 252: BossDevilDanteAI(ref a, ref code, ref n); break;
                         case 253: BossGameteAI(ref a, ref code, ref n); break;
@@ -1399,6 +1401,29 @@ namespace NocturneInsaniax
             }
         }
 
+        private static void NKEBeelzebubManAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(219))
+            {
+                UseSkill(ref a, 219);
+            }
+            else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77) && EnemyPartyDebuffed(1))
+            {
+                UseSkill(ref a, 77);
+            }
+            else
+            {
+                int randomValue = random.Next(4);
+                switch (randomValue)
+                {
+                    case 0: UseSkill(ref a, 429); break;
+                    case 1: UseSkill(ref a, 18); break;
+                    case 2: UseSkill(ref a, 24); break;
+                    case 3: UseSkill(ref a, 27); break;
+                }
+            }
+        }
+
         private static void TamLinAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
             if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(219))
@@ -1480,6 +1505,31 @@ namespace NocturneInsaniax
                     case 2: UseSkill(ref a, 481); break;
                     case 3: UseSkill(ref a, 12); break;
                     case 4: UseSkill(ref a, 35); break;
+                }
+            }
+        }
+
+        private static void NKEPixieAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(219))
+            {
+                UseSkill(ref a, 219);
+            }
+            else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77) && EnemyPartyDebuffed(1))
+            {
+                UseSkill(ref a, 77);
+            }
+            else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(459) && !EnemyPartyBuffed(2) && a.work.mp > 0 && random.Next(2) == 0)
+            {
+                UseSkill(ref a, 459);
+            }
+            else
+            {
+                int randomValue = random.Next(2);
+                switch (randomValue)
+                {
+                    case 0: UseSkill(ref a, 441); break;
+                    case 1: UseSkill(ref a, 27); break;
                 }
             }
         }

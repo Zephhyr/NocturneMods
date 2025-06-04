@@ -614,6 +614,9 @@ namespace NocturneInsaniax
             // Great Chakra Item Box in Second Kalpa
             fldGlobal.fldHitData._fldItemBoxTbl[276]._ItemID = 8;
 
+            // Macca Item Box in Fourth Kalpa
+            fldGlobal.fldHitData._fldItemBoxTbl[325]._Param = 666666;
+
             // Satan Magatama Box behind Ongyo-Ki
             fldGlobal.fldHitData._fldItemBoxTbl[104]._ItemID = 16;
 

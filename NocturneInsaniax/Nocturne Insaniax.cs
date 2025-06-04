@@ -62,6 +62,63 @@ namespace NocturneInsaniax
             //var output = JsonConvert.SerializeObject(nbEventProcess.nbEtbl);
             //MelonLogger.Msg(output);
 
+            //var output = JsonConvert.SerializeObject(tblSkill.fclSkillTbl);
+            //MelonLogger.Msg(output);
+
+            //var output = JsonConvert.SerializeObject(nbActionProcess.sobedtbl);
+            //MelonLogger.Msg(output);
+
+            // Load New Sobeds
+            //AssetBundle sobedData = AssetBundle.LoadFromFile(AppContext.BaseDirectory + BundlePath + "sobed_dds2");
+            //AssetBundle.DontDestroyOnLoad(sobedData);
+            //for (int i = 0; i < sobedData.AllAssetNames().Length; i++)
+            //{
+            //    UnityEngine.Object sobed = sobedData.LoadAsset(sobedData.AllAssetNames()[i]);
+
+            //    if (sobed.TryCast<TextAsset>() == false)
+            //    { continue; }
+            //    TextAsset sobedTextData = sobed.Cast<TextAsset>();
+            //    TextAsset.DontDestroyOnLoad(sobedTextData);
+            //    nbActionProcess.SOBED s = new();
+            //    string FileName = sobedData.AllAssetNames()[i].Replace("assets/assetbundle/dds3data/sobed_dds2/", "");
+            //    s.bed_fname = sobedData.AllAssetNames()[i].Replace("assets/assetbundle/dds3data/sobed_dds2/", "");
+            //    s.keyname = sobedData.AllAssetNames()[i].Replace("assets/assetbundle/dds3data/sobed_dds2/", "").Replace(".bed.bytes", "");
+            //    s.tga_fname = new string[] { };
+            //    s.pbdata = new nbActionProcess.SOBED_PB[] { new() };
+            //    int j = 0;
+            //    while (true)
+            //    {
+            //        UnityEngine.Object o = sobedData.LoadAsset(FileName + "." + j + ".tmx.tga");
+            //        if (o == null)
+            //        { break; }
+            //        Texture2D t = o.Cast<Texture2D>();
+            //        Texture2D.DontDestroyOnLoad(t);
+            //        s.tga_fname = s.tga_fname.Append("tga/" + FileName + "." + j + ".tmx.tga").ToArray();
+            //        j++;
+            //    }
+            //    newSobed.Add(s);
+            //    //nbActionProcess.sobedtbl = nbActionProcess.sobedtbl.Append(s).ToArray();
+            //}
+            //for (int i = 0; i < newSobed.Count; i++)
+            //{
+            //    MelonLogger.Msg("- Index " + i + " of newSobed -");
+            //    MelonLogger.Msg("bed_fname: " + newSobed[i].bed_fname);
+            //    MelonLogger.Msg("keyname: " + newSobed[i].keyname);
+            //    MelonLogger.Msg("se0_str: " + newSobed[i].se0_str);
+            //    MelonLogger.Msg("se1_str: " + newSobed[i].se1_str);
+            //    for (int j = 0; j < newSobed[i].tga_fname.Length; j++)
+            //    {
+            //        MelonLogger.Msg("- Texture " + j + " found -");
+            //        MelonLogger.Msg("tga_fname: " + newSobed[i].tga_fname[j]);
+            //    }
+            //    for (int j = 0; j < newSobed[i].pbdata.Length; j++)
+            //    {
+            //        MelonLogger.Msg("- SOBED_PB Data " + j + " found -");
+            //        MelonLogger.Msg("prefab_name: " + newSobed[i].pbdata[j].prefab_name);
+            //        MelonLogger.Msg("type: " + newSobed[i].pbdata[j].type);
+            //    }
+            //}
+
             // Apply Changes
             ApplySkillChanges();
             ApplyItemChanges();
@@ -1071,21 +1128,16 @@ namespace NocturneInsaniax
             }
         }
 
-        //[HarmonyPatch(typeof(fldProcess), nameof(fldProcess.ProcSequence))]
-        //private class fldProcessProcSequencePatch
-        //{
-        //    public static void Prefix()
-        //    {
-        //        MelonLogger.Msg("--fldProcess.ProcSequence--");
-        //        MelonLogger.Msg("encounttbl: " + fldProcess.fldBattleData.encounttbl);
-        //        MelonLogger.Msg("encountpack: " + fldProcess.fldBattleData.encountpack);
-        //        MelonLogger.Msg("Shige has demon: " + EventBit.evtBitCheck(1282));
-        //        MelonLogger.Msg("Shige demon is strong: " + EventBit.evtBitCheck(1284));
-        //        MelonLogger.Msg("Shige first stage: " + EventBit.evtBitCheck(1285));
-        //        MelonLogger.Msg("Shige last stage: " + EventBit.evtBitCheck(1286));
-        //        MelonLogger.Msg("AnahoriCnt: " + dds3GlobalWork.DDS3_GBWK.fldSave.AnahoriCnt);
-        //    }
-        //}
+        [HarmonyPatch(typeof(fldProcess), nameof(fldProcess.ProcSequence))]
+        private class fldProcessProcSequencePatch
+        {
+            public static void Prefix()
+            {
+                MelonLogger.Msg("--fldProcess.ProcSequence--");
+                MelonLogger.Msg("encounttbl: " + fldProcess.fldBattleData.encounttbl);
+                MelonLogger.Msg("encountpack: " + fldProcess.fldBattleData.encountpack);
+            }
+        }
 
         // These patches seem to prevent a crash during the level up screen, I don't know why
         [HarmonyPatch(typeof(rstinit), nameof(rstinit.rstChkLevelUpTarget))]

@@ -318,7 +318,7 @@ namespace NocturneInsaniax
                 case 102: BlackTempleQingLongEncounter(); return 1270;
 
                 //case 155: RedTempleKushinadaHimeEncounter(); return 1270;
-                case 155: FourthKalpaTrumpeterEncounter(); return 1270;
+                case 155: FifthKalpaBeelzebubManEncounter(); return 1270;
                 case 156: RedTempleKushinadaHimeEncounter(); return 1270;
 
                 case 107: MifunashiroDionysusEncounter(); return 1270;
@@ -347,6 +347,7 @@ namespace NocturneInsaniax
                 case 187: SecondKalpaEncounter3(); return 1270; // B3/B4 Hallways
                 case 188: SecondKalpaEncounter3(); return 1270; // B3/B4 Rooms
                 //case 191: SecondKalpaEncounter4(); return 1270; // Cursed Corridor
+                //case 192: SecondKalpaEncounter4(); return 1270; // Cursed Corridor After Beelzebub
 
                 case 193: ThirdKalpaEncounter1(); return 1270; // Central Chamber
                 case 194: ThirdKalpaEncounter1(); return 1270; // B1 Corridor
@@ -359,6 +360,18 @@ namespace NocturneInsaniax
                 case 201: ThirdKalpaEncounter1(); return 1270; // B1 Center
                 case 202: ThirdKalpaEncounter1(); return 1270; // B3/4 Corridor
                 case 203: ThirdKalpaEncounter1(); return 1270; // B3 Room
+
+                case 204: FourthKalpaEncounter1(); return 1270; // 1F Entrance
+                case 205: FourthKalpaEncounter2(); return 1270; // B1 Hell's Hall
+                case 206: FourthKalpaEncounter1(); return 1270; // 1F Lobby/B1 12 Metres of Eternity
+                case 207: FourthKalpaEncounter1(); return 1270; // 1F Rooms
+                case 208: FourthKalpaEncounter1(); return 1270; // B1 Road to Hell
+                case 209: FourthKalpaEncounter2(); return 1270; // B1 Hell's Vault
+                case 210: FourthKalpaEncounter2(); return 1270; // B1 Hell's Vault
+                case 211: FourthKalpaEncounter2(); return 1270; // B1 Hell's Maze
+                case 212: FourthKalpaEncounter1(); return 1270; // B2 Corridor
+
+                //case 213: FifthKalpaEncounter1(); return 1270; // 1F Entrance Corridor
 
                 default: return encno;
             }
@@ -846,6 +859,20 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].itemcnt = 1;
         }
 
+        private static void FifthKalpaBeelzebubManEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 207;
+            datEncount.tbl[1270].item = 28;
+            datEncount.tbl[1270].itemcnt = 1;
+        }
+
+        private static void FifthKalpaPixieEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 250;
+            datEncount.tbl[1270].item = 10;
+            datEncount.tbl[1270].itemcnt = 1;
+        }
+
         private static void FirstKalpaEncounter1()
         {
             if (GuaranteeFiendNKEs.Value == true || random.Next(3) == 0)
@@ -908,6 +935,22 @@ namespace NocturneInsaniax
                 ThirdKalpaFourHorsemenEncounter();
             else
                 ThirdKalpaVritraEncounter();
+        }
+
+        private static void FourthKalpaEncounter1()
+        {
+            if (GuaranteeFiendNKEs.Value == true || random.Next(3) == 0)
+                FourthKalpaMotherHarlotEncounter();
+            else
+                FourthKalpaQitianDashengEncounter();
+        }
+
+        private static void FourthKalpaEncounter2()
+        {
+            if (GuaranteeFiendNKEs.Value == true || random.Next(3) == 0)
+                FourthKalpaTrumpeterEncounter();
+            else
+                FourthKalpaDemeeHoEncounter();
         }
 
         //------------------------------------------------------------
