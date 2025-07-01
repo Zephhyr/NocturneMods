@@ -33,7 +33,7 @@ namespace NocturneInsaniax
                 {
                     __result = 0;
                 }
-                else if (data.encno == 1271)
+                else if (data.encno == 1271 || data.encno == 1272 || data.encno == 1273)
                 {
                     __result = 0;
                 }
@@ -317,15 +317,24 @@ namespace NocturneInsaniax
                 case 101: BlackTempleQingLongEncounter(); return 1270;
                 case 102: BlackTempleQingLongEncounter(); return 1270;
 
-                //case 155: RedTempleKushinadaHimeEncounter(); return 1270;
-                case 155: FifthKalpaBeelzebubManEncounter(); return 1270;
+                case 155: RedTempleKushinadaHimeEncounter(); return 1270;
                 case 156: RedTempleKushinadaHimeEncounter(); return 1270;
 
                 case 107: MifunashiroDionysusEncounter(); return 1270;
                 case 108: MifunashiroDionysusEncounter(); return 1270;
                 
-                // case 111: YurakuchoTunnelParvatiEncounter(); return 1270;
-                // case 112: YurakuchoTunnelParvatiEncounter(); return 1270;
+                case 111: YurakuchoTunnelParvatiEncounter(); return 1270;
+                case 112: YurakuchoTunnelParvatiEncounter(); return 1270;
+                case 113: YurakuchoTunnelParvatiEncounter(); return 1270;
+                case 114: YurakuchoTunnelParvatiEncounter(); return 1270;
+                case 115: YurakuchoTunnelParvatiEncounter(); return 1270;
+
+                case 103: return DietBuildingEncounter();
+                case 104: return DietBuildingEncounter();
+                case 105: return DietBuildingEncounter();
+                case 106: return DietBuildingEncounter();
+                case 109: return DietBuildingEncounter();
+                case 110: return DietBuildingEncounter();
 
                 // Labyrinth of Amala
 
@@ -371,7 +380,10 @@ namespace NocturneInsaniax
                 case 211: FourthKalpaEncounter2(); return 1270; // B1 Hell's Maze
                 case 212: FourthKalpaEncounter1(); return 1270; // B2 Corridor
 
-                //case 213: FifthKalpaEncounter1(); return 1270; // 1F Entrance Corridor
+                case 213: FifthKalpaBeelzebubManEncounter(); return 1270; // 1F Entrance Corridor
+                case 214: FifthKalpaBeelzebubManEncounter(); return 1270; // B1
+                case 215: FifthKalpaBeelzebubManEncounter(); return 1270; // B2-B4
+                case 216: FifthKalpaPixieEncounter(); return 1270; // B5
 
                 default: return encno;
             }
@@ -709,6 +721,53 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].itemcnt = 1;
         }
 
+        private static void YurakuchoTunnelParvatiEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 18;
+            datEncount.tbl[1270].item = 99;
+            datEncount.tbl[1270].itemcnt = 1;
+        }
+
+        private static void DietBuildingGaneshaEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 45;
+            datEncount.tbl[1270].devil[1] = 142;
+            datEncount.tbl[1270].devil[2] = 45;
+            datEncount.tbl[1270].item = 99;
+            datEncount.tbl[1270].itemcnt = 1;
+        }
+
+        private static void DietBuildingSargeEncounter()
+        {
+            datEncount.tbl[1273].backattack = -1;
+            datEncount.tbl[1273].esc = 0;
+            datEncount.tbl[1273].flag = 0;
+            datEncount.tbl[1273].formationtype = 0;
+            datEncount.tbl[1273].maxcall = 0;
+            datEncount.tbl[1273].maxparty = 0;
+            datEncount.tbl[1273].stageid = 0;
+            datEncount.tbl[1273].devil = new ushort[11];
+
+            datEncount.tbl[1273].devil[0] = 249;
+            datEncount.tbl[1273].btlsound = 22;
+            datEncount.tbl[1273].item = 35;
+            datEncount.tbl[1273].itemcnt = 1;
+        }
+
+        private static int DietBuildingEncounter()
+        {
+            if (random.Next(3) == 0)
+            {
+                DietBuildingSargeEncounter();
+                return 1273;
+            }
+            else
+            {
+                DietBuildingGaneshaEncounter();
+                return 1270;
+            }
+        }
+
         // Labyrinth of Amala
 
         private static void FirstKalpaMatadorEncounter()
@@ -1023,6 +1082,15 @@ namespace NocturneInsaniax
             datEncount.tbl[674].devil[3] = 0;
             datEncount.tbl[674].devil[4] = 0;
 
+            datEncount.tbl[985].maxparty = 3; // Boss Mada
+            datEncount.tbl[985].devil[0] = 0;
+            datEncount.tbl[985].devil[1] = 333;
+            datEncount.tbl[985].devil[2] = 0;
+
+            datEncount.tbl[986].flag = 11; // Boss Mot
+            datEncount.tbl[970].flag = 11; // Boss Mitra
+            datEncount.tbl[672].flag = 11; // Boss Samael
+
             datEncount.tbl[1033].flag = 11; // Dante/Raidou 1
 
             datEncount.tbl[1035].maxcall = 4; // Dante/Raidou 2
@@ -1054,6 +1122,18 @@ namespace NocturneInsaniax
             datEncount.tbl[301].stageid = 235;
             datEncount.tbl[301].maxcall = 0;
             datEncount.tbl[301].maxparty = 0;
+
+            // Classic Mot
+            datEncount.tbl[1275].devil[0] = 334;
+            datEncount.tbl[1275].backattack = -1;
+            datEncount.tbl[1275].btlsound = 6;
+            datEncount.tbl[1275].esc = 1;
+            datEncount.tbl[1275].flag = 13;
+            datEncount.tbl[1275].formationtype = 0;
+            datEncount.tbl[1275].areaid = 1;
+            datEncount.tbl[1275].stageid = 233;
+            datEncount.tbl[1275].maxcall = 0;
+            datEncount.tbl[1275].maxparty = 0;
 
             // Boss Triple Cerberus
             datEncount.tbl[1276].devil[0] = 304;

@@ -602,6 +602,9 @@ namespace NocturneInsaniax
             // Macca Box in Overworld 6
             fldGlobal.fldHitData._fldItemBoxTbl[14]._Param = 10000;
 
+            // Macca Box in Diet Building
+            fldGlobal.fldHitData._fldItemBoxTbl[200]._Param = 30000;
+
             // Great Chakra Item Box in First Kalpa
             fldGlobal.fldHitData._fldItemBoxTbl[256]._ItemID = 8;
 
@@ -619,6 +622,18 @@ namespace NocturneInsaniax
 
             // Satan Magatama Box behind Ongyo-Ki
             fldGlobal.fldHitData._fldItemBoxTbl[104]._ItemID = 16;
+
+            // Kailash Magatama Box behind Mitra
+            fldGlobal.fldHitData._fldItemBoxTbl[337]._Type = 2;
+            fldGlobal.fldHitData._fldItemBoxTbl[337]._ItemID = 24;
+            fldGlobal.fldHitData._fldItemBoxTbl[337]._ItemNum = 1;
+
+            // Boss Cerberus Box
+            fldGlobal.fldHitData._fldItemBoxTbl[348]._Type = 2;
+            fldGlobal.fldHitData._fldItemBoxTbl[348]._ItemID = 0;
+            fldGlobal.fldHitData._fldItemBoxTbl[348]._ItemNum = 0;
+            fldGlobal.fldHitData._fldItemBoxTbl[348]._Trap = 1;
+            fldGlobal.fldHitData._fldItemBoxTbl[348]._Param = 1275;
 
             // Boss Cerberus Box
             fldGlobal.fldHitData._fldItemBoxTbl[349]._Type = 2;
@@ -639,7 +654,7 @@ namespace NocturneInsaniax
             fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemID = 0;
             fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemNum = 0;
             fldGlobal.fldHitData._fldItemBoxTbl[351]._Trap = 1;
-            fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 449; //1278; //1035;
+            fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 672; //1278; //1035;
 
             //fldGlobal.fldHitData._fldItemBoxTbl.Add(new fldTakaraTbl_t { _ItemID = 47, _ItemNum = 5 });
         }

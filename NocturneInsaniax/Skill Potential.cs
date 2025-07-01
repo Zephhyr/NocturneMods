@@ -274,8 +274,8 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 245 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 246 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 247 
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 248 
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 249 
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 248
+            new sbyte[] {5    , -5   , -5   , -5   , -5   , 5    , -5   , 5    , 5    , 5    , -3   , 5    , 0    , -3   , 2    , 0 }, // 249 Sarge Girimekhala
             new sbyte[] {0    , 0    , 0    , 8    , 0    , 6    , 0    , 0    , 0    , 0    , 0    , 6    , 0    , 4    , 4    , 0 }, // 250 NKE Pixie
             new sbyte[] {0    , -5   , 4    , 0    , 0    , 0    , 1    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 251 NKE Jack Frost
             new sbyte[] {7    , 0    , 0    , 7    , 7    , 5    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 5    , 0 }, // 252 Devil Dante
@@ -313,7 +313,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 6    , -6   , 0    , 0    , 6    , 0    , -4   , -4   , -4   , 0    , 0    , 4    , 4    , 0 }, // 284 Boss Gabriel
             new sbyte[] {4    , -6   , 0    , 0    , 6    , 0    , 6    , 0    , -4   , -4   , -4   , 0    , 0    , 4    , 0    , 0 }, // 285 Boss Raphael
             new sbyte[] {4    , 6    , -6   , 4    , 0    , 0    , 6    , 0    , -4   , -4   , -4   , 0    , 0    , 0    , 0    , 0 }, // 286 Boss Uriel
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 287 Boss Samael
+            new sbyte[] {0    , 4    , 0    , -5   , 0    , 6    , -5   , 6    , 4    , 4    , 4    , 6    , 0    , 2    , 2    , 0 }, // 287 Boss Samael
             //          {Phys , Fire , Ice  , Elec , Force, Alm  , Light, Dark , Curse, Nerve, Mind , SD   , Shot , Heal , Supp , Util}
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 288 Boss Baal Avatar
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 289 Boss Ose Hallel
@@ -356,13 +356,13 @@ namespace NocturneInsaniax
             new sbyte[] {-5   , 0    , 0    , 0    , 0    , 3    , 6    , 0    , 0    , 0    , 6    , 3    , 0    , 3    , 0    , 0 }, // 326 Boss Clotho (Together)
             new sbyte[] {-5   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 6    , 6    , 6    , 0    , 0    , 0    , 4    , 0 }, // 327 Boss Lachesis (Together)
             new sbyte[] {-5   , 6    , 6    , 6    , 6    , 4    , 0    , 0    , 0    , 0    , 0    , 4    , 0    , 0    , 0    , 0 }, // 328 Boss Atropos (Together)
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 329 Boss Mitra
+            new sbyte[] {0    , 0    , 0    , 0    , -6   , 3    , 6    , 6    , 0    , 0    , 0    , 3    , 0    , 3    , 0    , 0 }, // 329 Boss Mitra
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 330 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 331 
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 332 
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 333 Boss Mada
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 334 Boss Mot
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 335 Boss Surt
+            new sbyte[] {0    , 0    , -5   , 0    , 4    , 0    , 0    , 2    , 4    , 0    , 4    , 0    , 0    , 2    , 0    , 0 }, // 332 Boss Pazuzu
+            new sbyte[] {5    , 5    , -5   , 0    , 0    , -5   , 0    , 0    , -5   , 0    , 5    , -5   , 0    , 3    , 3    , 0 }, // 333 Boss Mada
+            new sbyte[] {0    , 4    , 0    , -7   , 6    , 6    , 0    , 6    , 0    , 0    , 0    , 6    , 0    , 0    , 0    , 0 }, // 334 Boss Mot
+            new sbyte[] {5    , 7    , -7   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 335 Boss Surt
             //          {Phys , Fire , Ice  , Elec , Force, Alm  , Light, Dark , Curse, Nerve, Mind , SD   , Shot , Heal , Supp , Util}
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 336 Ambush Jack-o'-Lantern
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 337 Boss Thor 2
@@ -1710,6 +1710,13 @@ namespace NocturneInsaniax
                 {
                     datNormalSkill.tbl[nskill].basstatus = tmp_datNormalSkill.basstatus; // Revert the ailment
                     datNormalSkill.tbl[nskill].badlevel = tmp_datNormalSkill.badlevel; // Revert the ailment rate
+                }
+
+                // Mitra's Verdict
+                if (nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id == 329 && nbMainProcess.nbGetUnitWorkFromFormindex(dformindex).id == 0 && nskill == 495)
+                {
+                    nbMainProcess.nbGetUnitWorkFromFormindex(dformindex).badstatus = 32768;
+                    nbHelpProcess.nbDispText(frName.frGetCNameString(0) + " is cursed!", string.Empty, 2, 45, 2315190144, false);
                 }
             }
         }

@@ -64,6 +64,20 @@ namespace NocturneInsaniax
                             case "<SPD 6><AI_MSG_L0121><WAIT>": __result = "<SP6>Heeeee-ya ho!<WA>"; break;
                         }
                     }
+                    else if (nbMainProcess.nbGetMainProcessData().encno == 1273)
+                    {
+                        switch (message)
+                        {
+                            // Sarge Girimekhala Dialogue 1
+                            case "<SPD 6><AI_MSG_L0120><WAIT>": __result = "<SP6>It's my duty to kill all demons without the balls to survive!<WA>"; break;
+                            case "<SPD 6><AI_MSG_L0121><WAIT>": __result = "<SP6>When I get through with you, you'll be sipping Magatsuhi through a straw!<WA>"; break;
+                            case "<AI_MSG_L0122><WAIT>": __result = "<SP6>Got that, you worthless piece of shit!?<WA>"; break;
+                            // Sarge Girimekhala Dialogue 2
+                            case "<SPD 6><AI_MSG_L0123><WAIT>": __result = "<SP6>You call that a battle stance!? My grandmother looks more menacing than that!<WA>"; break;
+                            case "<SPD 6><AI_MSG_L0124><WAIT>": __result = "<SP6>Don't you have a Reason? My Reason is kicking your ass!<WA>"; break;
+                            case "<AI_MSG_L0125><WAIT>": __result = "<SP6>Got that, you worthless piece of shit!?<WA>"; break;
+                        }
+                    }
                     else
                     {
                         switch (message)
@@ -136,6 +150,23 @@ namespace NocturneInsaniax
                             pinst.message.pbinheader.page = 1;
                             pinst.message.pbinheader.addr = new uint[] { 8688 };
                             pinst.message.pbinheader.len = new int[] { 24 };
+                        }
+                    }
+                    else if (nbMainProcess.nbGetMainProcessData().encno == 1273)
+                    {
+                        if (pinst.message.pbinheader.addr.Contains(8620))
+                        {
+                            pinst.message.maxpage = 3;
+                            pinst.message.pbinheader.page = 3;
+                            pinst.message.pbinheader.addr = new uint[] { 8620, 8688, 8712 };
+                            pinst.message.pbinheader.len = new int[] { 24, 24, 20 };
+                        }
+                        else if (pinst.message.pbinheader.addr.Contains(8688))
+                        {
+                            pinst.message.maxpage = 3;
+                            pinst.message.pbinheader.page = 3;
+                            pinst.message.pbinheader.addr = new uint[] { 8772, 8840, 8864 };
+                            pinst.message.pbinheader.len = new int[] { 24, 24, 20 };
                         }
                     }
                 }

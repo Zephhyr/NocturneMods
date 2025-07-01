@@ -263,10 +263,10 @@ namespace NocturneInsaniax
             { 245, new InnateSkill(383, 15, "", "")}, // 245 
             { 246, new InnateSkill(383, 15, "", "")}, // 246 
             { 247, new InnateSkill(383, 15, "", "")}, // 247 
-            { 248, new InnateSkill(383, 15, "", "")}, // 248 
-            { 249, new InnateSkill(383, 15, "", "")}, // 249 
-            { 250, new InnateSkill(383, 15, "Hidden Potential", "")}, // 250 
-            { 251, new InnateSkill(383, 02, "Ice Enhancer", "")}, // 251 
+            { 248, new InnateSkill(383, 15, "", "")},
+            { 249, new InnateSkill(383, 15, "Behemothic Bounce", "")}, // 249 Sarge Girimekhala
+            { 250, new InnateSkill(383, 15, "Hidden Potential", "")}, // 250 NKE Pixie
+            { 251, new InnateSkill(383, 02, "Ice Enhancer", "")}, // 251 NKE Jack Frost
             { 252, new InnateSkill(383, 15, "Devil Regeneration", "")}, // 252 Devil Dante
             { 253, new InnateSkill(383, 15, "Withheld Sentence", "")}, // 253 Gamete
             { 254, new InnateSkill(383, 15, "YHVH", "")}, // 254 YHVH
@@ -294,10 +294,10 @@ namespace NocturneInsaniax
             { 276, new InnateSkill(383, 15, "Withheld Sentence", "")}, // 276 Boss Alciel
             { 277, new InnateSkill(383, 02, "Queen of Winter", "")}, // 277 Boss Skadi
             { 278, new InnateSkill(383, 15, "Milton", "")}, // 278 Boss Albion
-            { 279, new InnateSkill(383, 3, "Thunderous Melody", "")}, // 279 Boss Urthona
-            { 280, new InnateSkill(383, 1, "Fiery Melody", "")}, // 280 Boss Urizen
-            { 281, new InnateSkill(383, 4, "Gusting Melody", "")}, // 281 Boss Luvah
-            { 282, new InnateSkill(383, 2, "Frigid Melody", "")}, // 282 Boss Tharmus
+            { 279, new InnateSkill(383, 03, "Thunderous Melody", "")}, // 279 Boss Urthona
+            { 280, new InnateSkill(383, 01, "Fiery Melody", "")}, // 280 Boss Urizen
+            { 281, new InnateSkill(383, 04, "Gusting Melody", "")}, // 281 Boss Luvah
+            { 282, new InnateSkill(383, 02, "Frigid Melody", "")}, // 282 Boss Tharmus
             { 283, new InnateSkill(383, 15, "Underdog", "")}, // 283 Boss Futomimi
             { 284, new InnateSkill(383, 14, "Retributive Zeal", "")}, // 284 Boss Gabriel
             { 285, new InnateSkill(383, 14, "Retributive Zeal", "")}, // 285 Boss Raphael
@@ -549,7 +549,7 @@ namespace NocturneInsaniax
         private static ushort[] contagiousCurseIds = new ushort[] { 102, 126, 133, 178 };
         private static ushort[] wardOffEvilIds = new ushort[] { 93, 145 };
         private static ushort[] essenceThiefIds = new ushort[] { 127, 124, 137 };
-        private static ushort[] behemothicBounceIds = new ushort[] { 105, 274 };
+        private static ushort[] behemothicBounceIds = new ushort[] { 105, 249, 274 };
         private static ushort[] withheldSentenceIds = new ushort[] { 13, 110, 253 };
         private static ushort[] megalomaniaIds = new ushort[] { 14, 109, 115, 334 };
         private static ushort[] proxyGuardHoundRaces = new ushort[] { 6, 14, 21, 28 };

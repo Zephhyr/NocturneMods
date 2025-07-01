@@ -1097,12 +1097,24 @@ namespace NocturneInsaniax
                 if (pFileName == "dds3data/fld/f/f034/f034_001") // Amala Temple Entrance
                 {
                     // 19.5531 0 51.822
-                    fld_Npc.fldItemBoxAdd(349, 1955.31f, 0f, 5182.2f, new Vector4(0, 90, 0, 1)); // Add Item Box in Asakusa
+                    fld_Npc.fldItemBoxAdd(349, 1955.31f, 0f, 5182.2f, new Vector4(0, 90, 0, 1)); // Add Item Box in Amala Temple Entrance
                 }
                 if (pFileName == "dds3data/fld/f/f027/f027_001") // Asakusa 1
                 {
                     // 4.0364 0.2 31.4621
                     fld_Npc.fldItemBoxAdd(351, -403.64f, -20f, 3146.21f, new Vector4(0, 0, 0, 1)); // Add Item Box in Asakusa
+                }
+                if (pFileName == "dds3data/fld/f/f033/f033_028") // Diet Building After Mot
+                {
+                    // -2.2584 0 -4.307
+                    fld_Npc.fldItemBoxAdd(348, -225.84f, 0f, -430.70f, new Vector4(0, 0, 0, 1)); // Add Item Box in Diet Building after Mot
+                }
+                if (pFileName == "dds3data/fld/f/f033/f033_029") // Diet Building After Mitra
+                {
+                    // 13.7302 1.2692 -12.8815
+                    // fld_Npc.fldItemBoxAdd(337, 1373.02f, -126.92f, -1288.15f, new Vector4(0, 0, 0, 1)); // Add Item Box in Diet Building after Mitra
+                    // 15.2281 0 -24.3815
+                    fld_Npc.fldItemBoxAdd(337, 1522.81f, 0f, -2438.15f, new Vector4(0, 0, 0, 1)); // Add Item Box in Diet Building after Mitra
                 }
             }
         }

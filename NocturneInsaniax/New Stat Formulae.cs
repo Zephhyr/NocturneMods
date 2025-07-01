@@ -373,7 +373,7 @@ namespace NocturneInsaniax
 
                 if (flag == 13 || flag == 8)
                     __result = 0;
-                else if (flag == 11 || flag == 29 || data.encno == 1270 || data.encno == 1272)
+                else if (flag == 11 || flag == 29 || data.encno == 1270 || data.encno == 1272 || data.encno == 1273)
                     __result = 1;
                 else
                 {
@@ -674,6 +674,9 @@ namespace NocturneInsaniax
             {
                 datUnitWork_t workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
                 datUnitWork_t workFromFormindex2 = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
+
+                if (nskill == 495)
+                    __result = 0;
 
                 if (__result == 0 || __result == 4) // Hit or Miss
                 {

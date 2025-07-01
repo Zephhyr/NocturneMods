@@ -18,9 +18,9 @@ namespace NocturneInsaniax
     internal partial class NocturneInsaniax : MelonMod
     {
         public static ushort[] bossList = new ushort[] {
-            162, 163, 164, 165, 166, 251, 252, 254, 256, 257, 262, 263, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286,
-            294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 312, 313, 320, 321, 322, 323, 324, 325, 326, 327, 328, 339, 340, 341, 342, 343, 344,
-            345, 346, 347, 348, 349, 350, 351, 352, 353, 362, 363, 364, 365, 366
+            162, 163, 164, 165, 166, 248, 251, 252, 254, 256, 257, 262, 263, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285,
+            286, 287, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 312, 313, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 333, 334, 335,
+            339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 362, 363, 364, 365, 366
         };
         public static ushort[] pushedSkillList = new ushort[] { 148, 149, 150, 151, 164, 165, 166, 167, 403, 407, 408, 416, 417, 496 };
 
@@ -191,6 +191,7 @@ namespace NocturneInsaniax
                     case 480: __result = "Acrobat Kick"; return false;
                     case 481: __result = "Oni-Jackura"; return false;
 
+                    case 495: __result = "Verdict"; return false;
                     case 496: __result = "Devil Regeneration"; return false;
                     case 497: __result = "Devil Trigger"; return false;
                     case 498: __result = "Scorn"; return false;
@@ -393,8 +394,8 @@ namespace NocturneInsaniax
                     case 260: __result = "Mega Almighty damage to all foes. \nMay instakills when not immune to Dark. \nPow: 60, Acc: 100%, Fatal: 90%"; return false; // Death Flies
                     case 261: __result = "High Curse damage to all foes. \nPow: 48, Acc: 60%, Mute: 100%"; return false; // Soul Divide
                     case 262: __result = "Low Shot damage to one foe. \nLowers target's Evasion/Defense. \nPow: 32, Acc: 120%, Crit: 18%"; return false; // Boogie-Woogie/E & I
-                    case 263: __result = "High Physical damage to one foe. \nPow: 48, Acc: 100%, Crit: 40%"; return false; // Enter Yoshitsune/Rebellion
-                    case 264: __result = "Medium Shot damage to all foes. \nPow: 30, Acc: 100%, Crit: 0%, \nPanic: 24%"; return false; // Mokoi Boomerang/Twosome Time
+                    case 263: __result = "High Physical damage to one foe. \nPow: 48, Acc: 200%, Crit: 40%"; return false; // Enter Yoshitsune/Rebellion
+                    case 264: __result = "Medium Shot damage to all foes. \nPow: 30, Acc: 200%, Crit: 0%, \nPanic: 24%"; return false; // Mokoi Boomerang/Twosome Time
                     case 265: __result = "Lowers Defense/raises Physical Attack \nby two ranks for all foes. \nSlight MP recovery for the user."; return false; // Provoke
                     case 266: __result = "Medium Str-based Almighty damage \nto one foe. May instakill when not \nimmune to Dark. Pow: 42, Acc: 90%"; return false; // Tekisatsu/Stinger
                     case 267: __result = "High Elec damage to all foes. \nLowers targets' Evasion/Hit Rate. \nPow: 40, Acc: 120%, Shock: 20%"; return false; // Mishaguji Raiden/Roundtrip
@@ -403,7 +404,7 @@ namespace NocturneInsaniax
                     case 276: __result = "Maximizes own Evasion/Hit Rate."; return false; // Red Capote
                     case 278: __result = "Medium Mind damage to all foes. \nMay inflict random ailments. \nPow: 30, Acc: 100%, Random: 40%"; return false; // Preach
                     case 279: __result = "Drains HP/MP from one foe. \nPow: 35/20, Acc: 100% \n(Almighty-Type)"; return false; // Meditation
-                    case 280: __result = "Medium Physical damage to \nrandom foes. Pow: 32, Acc: 96%, \nCrit: 10%, Panic: 40%"; return false; // Terrorblade
+                    case 280: __result = "Medium Physical damage to random foes. \n3-6 hits. Pow: 32, Acc: 96%, \nCrit: 10%, Panic: 40%"; return false; // Terrorblade
                     case 281: __result = "Medium Physical damage to all foes. \nPow: 32, Acc: 94%, Crit: 12%"; return false; // Hell Spin
                     case 282: __result = "Medium Force damage to all foes. \nNegates -kaja effects. \nPow: 30, Acc: 100%"; return false; // Hell Exhaust
                     case 283: __result = "Medium Str-based Fire damage \nto all foes. Pow: 32, Acc: 88%, \nCrit: 12%"; return false; // Hell Burner
@@ -551,13 +552,13 @@ namespace NocturneInsaniax
                     case 471: __result = "Mega Str-based Almighty damage to \nrandom foes. 5-7 hits. Pow: 20, \nAcc: 100%, Crit: 1%"; return false; // Chaturbhuja
                     case 472: __result = "High Str-based Force damage to \none foe. HP-based. \nMax Pow: 54, Acc: 90%, Crit: 24%"; return false; // Kusanagi
                     case 473: __result = "Medium Fire damage to one foe. \nLowers target's Phys/Mag Attack. \nPow: 45, Acc: 100%"; return false; // Jack Agilao
-                    case 474: __result = "High Str-based Force damage to \none foe. HP-based. \nMax Pow: 34, Acc: 100%, Crit: 100%"; return false; // Gae Bolg
+                    case 474: __result = "Medium Str-based Force damage to \none foe. HP-based. \nMax Pow: 34, Acc: 120%, Crit: 100%"; return false; // Gae Bolg
                     case 475: __result = "High Physical damage to one foe. \nIgnores target's -kaja effects. \nPow: 52, Acc: 90%, Crit: 20%"; return false; // Gungnir
                     case 476: __result = "Mega Light damage to one foe. \nPow: 80, Acc: 100%"; return false; // Smite
                     case 477: __result = "Medium Dark damage to one foe. \nPow: 45, Acc: 100%, Bind: 20%"; return false; // Makai Thunder
                     case 478: __result = "Mega Dark damage to all foes. \nPow: 60, Acc: 100%"; return false; // Scintilla
                     case 479: __result = "Full HP recovery, Negates \n-nda effects and cures \nall ailments for one ally."; return false; // Liberation
-                    case 480: __result = "Medium Phys damage to one foe. \nPow: 34, Acc: 120%, Crit: 100%"; return false; // Acrobat Kick
+                    case 480: __result = "Medium Physical damage to one foe. \nPow: 34, Acc: 120%, Crit: 100%"; return false; // Acrobat Kick
                     case 481: __result = "High Physical damage to all foes. \nPow: 42, Acc: 90%, Crit: 30%, \nMute: 30%"; return false; // Oni-Jackura
                     default: return true;
                 }
@@ -789,7 +790,7 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(225, 0);
                     //datCalc.datAddDevil(23, 0);
                     //datCalc.datAddDevil(7, 0);
-                    //datCalc.datAddDevil(192, 0);
+                    //datCalc.datAddDevil(104, 0);
 
                     //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 56).Count() == 0)
                     //{
@@ -797,7 +798,8 @@ namespace NocturneInsaniax
                     //}
                     foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 0)) // Demi-fiend
                     {
-                        //work.skill[7] = 378;
+                        //work.skill[0] = 226;
+                        //work.badstatus = 32768;
                         //work.exp = rstCalcCore.GetNextExpDisp(work, 0) - 1;
                     }
                     foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 144)) // Arahabaki
@@ -813,9 +815,9 @@ namespace NocturneInsaniax
                         //work.skill[2] = 206; // Debilitate
                         //work.skill[3] = 459; // Luster Candy
                         //work.skill[4] = 218; // Prayer
-                        //work.skill[5] = 9; // Bufudyne
+                        //work.skill[5] = 15; // Ziodyne
                         //work.skill[6] = 370; // Qigong
-                        //work.skill[7] = 310; // Ice Boost
+                        //work.skill[7] = 311; // Elec Boost
                         //work.skillcnt = 8;
                     }
                     foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 23)) // Jikokuten
@@ -826,9 +828,9 @@ namespace NocturneInsaniax
                         //work.skill[2] = 206; // Debilitate
                         //work.skill[3] = 459; // Luster Candy
                         //work.skill[4] = 334; // Fire Drain
-                        //work.skill[5] = 9; // Bufudyne
+                        //work.skill[5] = 15; // Ziodyne
                         //work.skill[6] = 370; // Qigong
-                        //work.skill[7] = 310; // Ice Boost
+                        //work.skill[7] = 311; // Elec Boost
                         //work.skillcnt = 8;
                     }
                     foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 14)) // Qitian Dasheng
@@ -839,9 +841,9 @@ namespace NocturneInsaniax
                         //work.skill[2] = 206; // Debilitate
                         //work.skill[3] = 459; // Luster Candy
                         //work.skill[4] = 424; // Concentrate
-                        //work.skill[5] = 9; // Bufudyne
+                        //work.skill[5] = 15; // Ziodyne
                         //work.skill[6] = 370; // Qigong
-                        //work.skill[7] = 310; // Ice Boost
+                        //work.skill[7] = 311; // Elec Boost
                         //work.skillcnt = 8;
                     }
                     //}
@@ -2156,6 +2158,7 @@ namespace NocturneInsaniax
             AcrobatKick(480);
             OniJackura(481);
 
+            Verdict(495);
             DevilRegeneration(496);
             DevilTrigger(497);
 
@@ -2508,6 +2511,8 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].badlevel = 20;
             datNormalSkill.tbl[id].badtype = 1;
             datNormalSkill.tbl[id].basstatus = 256;
+
+            datNormalSkillVisual.tbl[id].motion = 4;
         }
 
         private static void GaeaRage(ushort id)
@@ -2563,6 +2568,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hpn = 32;
             datNormalSkill.tbl[id].failpoint = 4;
             datNormalSkill.tbl[id].criticalpoint = 10;
+            datNormalSkill.tbl[id].targetcntmax = 6;
         }
 
         private static void HellSpin(ushort id)
@@ -5223,9 +5229,9 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].costtype = 1;
             datNormalSkill.tbl[id].criticalpoint = 100;
             datNormalSkill.tbl[id].deadtype = 0;
-            datNormalSkill.tbl[id].failpoint = 10;
+            datNormalSkill.tbl[id].failpoint = 0;
             datNormalSkill.tbl[id].flag = 0;
-            datNormalSkill.tbl[id].hitlevel = 100;
+            datNormalSkill.tbl[id].hitlevel = 120;
             datNormalSkill.tbl[id].hitprog = 0;
             datNormalSkill.tbl[id].hittype = 1;
             datNormalSkill.tbl[id].hojopoint = 99;
@@ -5539,10 +5545,24 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].untargetbadstat = 0;
             datNormalSkill.tbl[id].use = 2;
 
-            OverWriteSkillEffect(id, 202, 160);
+            OverWriteSkillEffect(id, 111, 171);
+            datNormalSkillVisual.tbl[id].bedno = datNormalSkillVisual.tbl[96].bedno;
+            datNormalSkillVisual.tbl[id].hatudo = datNormalSkillVisual.tbl[96].hatudo;
+            nbActionProcess.sobedtbl[id].se0_str = nbActionProcess.sobedtbl[110].se0_str;
             var skillLevel = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == 0);
             skillLevel.SkillID = id;
             skillLevel.Level = 14;
+
+            nbCamera_SkillPtrTable.tbl[id] = new nbCameraSkillPtr_t
+            {
+                ptr_shot_1 = nbCamera_SkillPtrTable.tbl[111].ptr_shot_1,
+                ptr_shot_23 = nbCamera_SkillPtrTable.tbl[111].ptr_shot_23,
+                ptr_angleH = nbCamera_SkillPtrTable.tbl[111].ptr_angleH,
+                ptr_angleW = nbCamera_SkillPtrTable.tbl[111].ptr_angleW,
+                ptr_H = nbCamera_SkillPtrTable.tbl[111].ptr_H,
+                ptr_W = nbCamera_SkillPtrTable.tbl[111].ptr_W,
+                anim = nbCamera_SkillPtrTable.tbl[111].anim
+            };
         }
 
         private static void SoulDrain(ushort id)
@@ -8221,6 +8241,53 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[417].use = 2;
 
             OverWriteSkillEffect(417, id);
+        }
+
+        private static void Verdict(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 5;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 1;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 0;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 255;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 50;
+            datNormalSkill.tbl[id].hptype = 0;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 196);
         }
 
         private static void DevilTrigger(ushort id)

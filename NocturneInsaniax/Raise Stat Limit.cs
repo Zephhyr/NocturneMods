@@ -13,7 +13,7 @@ namespace NocturneInsaniax
 {
     internal partial class NocturneInsaniax : MelonMod
     {
-        private const int MAXSTATS = 99;
+        private const int MAXSTATS = 40;
         private const int MAXHPMP = 9999;
         private const int POINTS_PER_LEVEL = 1;
         private const string BundlePath = "smt3hd_Data/StreamingAssets/PC/";
@@ -299,7 +299,7 @@ namespace NocturneInsaniax
                             bool chk = g2.GetComponent<CounterCtr>().image[j].gameObject.active;
                             g2.GetComponent<CounterCtr>().image[j].gameObject.active = true;
                             g2.GetComponent<CounterCtr>().image[j].transform.localPosition = new Vector3(118 - j * 25, 31, -4);
-                            g2.GetComponent<CounterCtr>().image[j].transform.localScale = new Vector3(g2.GetComponent<CounterCtr>().image[j].transform.localScale.x * 0.85f, g2.GetComponent<CounterCtr>().image[j].transform.localScale.y, g2.GetComponent<CounterCtr>().image[j].transform.localScale.z);
+                            g2.GetComponent<CounterCtr>().image[j].transform.localScale = new Vector3(g2.GetComponent<CounterCtr>().image[j].transform.localScale.x * 0.90f, g2.GetComponent<CounterCtr>().image[j].transform.localScale.y * 0.90f, g2.GetComponent<CounterCtr>().image[j].transform.localScale.z);
                             g2.GetComponent<CounterCtr>().image[j].gameObject.active = chk;
                         }
                         GameObject.DontDestroyOnLoad(g);
@@ -340,7 +340,7 @@ namespace NocturneInsaniax
                                 bool chk = g2.GetComponent<CounterCtrBattle>().image[j].gameObject.active;
                                 g2.GetComponent<CounterCtrBattle>().image[j].gameObject.active = true;
                                 g2.GetComponent<CounterCtrBattle>().image[j].transform.localPosition = new Vector3(119 - j * 25, 0, -4);
-                                g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale = new Vector3(g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale.x * 0.85f, g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale.y, g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale.z);
+                                g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale = new Vector3(g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale.x * 0.90f, g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale.y * 0.90f, g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale.z);
                                 g2.GetComponent<CounterCtrBattle>().image[j].gameObject.active = chk;
                             }
                             GameObject.DontDestroyOnLoad(g);
@@ -368,7 +368,7 @@ namespace NocturneInsaniax
                                 bool chk = g2.GetComponent<CounterCtrBattle>().image[j].gameObject.active;
                                 g2.GetComponent<CounterCtrBattle>().image[j].gameObject.active = true;
                                 g2.GetComponent<CounterCtrBattle>().image[j].transform.localPosition = new Vector3(119 - j * 25, 0, -4);
-                                g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale = new Vector3(g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale.x * 0.85f, g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale.y, g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale.z);
+                                g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale = new Vector3(g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale.x * 0.90f, g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale.y * 0.90f, g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale.z);
                                 g2.GetComponent<CounterCtrBattle>().image[j].gameObject.active = chk;
                             }
                             GameObject.DontDestroyOnLoad(g);
@@ -387,33 +387,35 @@ namespace NocturneInsaniax
                 if (unit != null)
                 {
                     int[] AnalyzeStats = new int[] { unit.hp, unit.maxhp, unit.mp, unit.maxmp };
-                    for (int k = 0; k < 2; k++)
+                    string[] images = { "num_hp01", "num_hpfull01", "num_mp01", "num_mpfull01", };
+                    for (int i = 0; i < 4; i++)
                     {
-                        GameObject g2 = GameObject.Find(AnalyzeBarValues[k]);
-                        for (int i = 0; i < 2; i++)
+                        GameObject g2 = GameObject.Find(AnalyzeBarValues[i / 2] + "/" + images[i]);
+                        if (g2 == null)
+                        { continue; }
+                        if (g2.GetComponent<CounterCtr>() == null)
+                        { continue; }
+                        if (g2.GetComponent<CounterCtr>().image.Length < 5)
                         {
-                            if (g2.GetComponentsInChildren<CounterCtr>()[i].image.Length < 5)
+                            for (int j = g2.GetComponent<CounterCtr>().image.Length; j < 5; j++)
                             {
-                                for (int j = g2.GetComponentsInChildren<CounterCtr>()[i].image.Length; j < 5; j++)
-                                {
-                                    GameObject g = GameObject.Instantiate(g2.GetComponentsInChildren<CounterCtr>()[i].image[1].gameObject);
-                                    g.transform.parent = g2.transform;
-                                    g.transform.position = g2.GetComponentsInChildren<CounterCtr>()[i].transform.position;
-                                    g.transform.localPosition = g2.GetComponentsInChildren<CounterCtr>()[i].transform.localPosition;
-                                    g2.GetComponentsInChildren<CounterCtr>()[i].image = g2.GetComponentsInChildren<CounterCtr>()[i].image.Append<Image>(g.GetComponent<Image>()).ToArray<Image>();
-                                    GameObject.DontDestroyOnLoad(g);
-                                }
-                                for (int j = 0; j < g2.GetComponentsInChildren<CounterCtr>()[i].image.Length; j++)
-                                {
-                                    bool chk = g2.GetComponentsInChildren<CounterCtr>()[i].image[j].gameObject.active;
-                                    g2.GetComponentsInChildren<CounterCtr>()[i].image[j].gameObject.active = true;
-                                    g2.GetComponentsInChildren<CounterCtr>()[i].image[j].transform.localPosition = new Vector3(i * 130 + 86 - j * 20 + 5, 32, -8);
-                                    g2.GetComponentsInChildren<CounterCtr>()[i].image[j].transform.localScale = new Vector3(g2.GetComponentsInChildren<CounterCtr>()[i].image[j].transform.localScale.x * 0.80f, g2.GetComponentsInChildren<CounterCtr>()[0].image[j].transform.localScale.y, g2.GetComponentsInChildren<CounterCtr>()[i].image[j].transform.localScale.z);
-                                    g2.GetComponentsInChildren<CounterCtr>()[i].image[j].gameObject.active = chk;
-                                }
+                                GameObject g = GameObject.Instantiate(g2);
+                                GameObject.Destroy(g.GetComponent<CounterCtr>());
+                                g.name = images[i].Replace("1", "") + (i + 1);
+                                g.transform.parent = g2.transform.parent;
+                                g.transform.position = g2.GetComponent<CounterCtr>().transform.position;
+                                g.transform.localPosition = g2.GetComponent<CounterCtr>().transform.localPosition;
+                                g.transform.localScale = g2.GetComponent<CounterCtr>().transform.localScale;
+                                g2.GetComponent<CounterCtr>().image = g2.GetComponent<CounterCtr>().image.Append<Image>(g.GetComponent<Image>()).ToArray<Image>();
+                                GameObject.DontDestroyOnLoad(g);
                             }
-                            g2.GetComponentsInChildren<CounterCtr>()[i].Set(AnalyzeStats[i + k * 2], Color.white, 0);
+                            for (int j = 0; j < g2.GetComponent<CounterCtr>().image.Length; j++)
+                            {
+                                g2.GetComponent<CounterCtr>().image[j].transform.localPosition = new Vector3((i % 2) * 130 + 86 - j * 20 + 5, 32, -8);
+                                g2.GetComponent<CounterCtr>().image[j].transform.localScale = new Vector3(0.8f, 0.90f, 1);
+                            }
                         }
+                        g2.GetComponent<CounterCtr>().Set(AnalyzeStats[i], Color.white, 0);
                     }
                 }
             }
@@ -597,7 +599,7 @@ namespace NocturneInsaniax
                             bool chk = g2.GetComponent<CounterCtr>().image[j].gameObject.active;
                             g2.GetComponent<CounterCtr>().image[j].gameObject.active = true;
                             g2.GetComponent<CounterCtr>().image[j].transform.localPosition = new Vector3(60 - j * 25, 0, -4);
-                            g2.GetComponent<CounterCtr>().image[j].transform.localScale = new Vector3(g2.GetComponent<CounterCtr>().image[j].transform.localScale.x * 0.85f, g2.GetComponent<CounterCtr>().image[j].transform.localScale.y, g2.GetComponent<CounterCtr>().image[j].transform.localScale.z);
+                            g2.GetComponent<CounterCtr>().image[j].transform.localScale = new Vector3(g2.GetComponent<CounterCtr>().image[j].transform.localScale.x * 0.90f, g2.GetComponent<CounterCtr>().image[j].transform.localScale.y * 0.90f, g2.GetComponent<CounterCtr>().image[j].transform.localScale.z);
                             g2.GetComponent<CounterCtr>().image[j].gameObject.active = chk;
                         }
                         GameObject.DontDestroyOnLoad(g);
@@ -620,7 +622,7 @@ namespace NocturneInsaniax
                             bool chk = g2.GetComponent<CounterCtr>().image[j].gameObject.active;
                             g2.GetComponent<CounterCtr>().image[j].gameObject.active = true;
                             g2.GetComponent<CounterCtr>().image[j].transform.localPosition = new Vector3(30 - j * 25 + 5, 0, -4);
-                            g2.GetComponent<CounterCtr>().image[j].transform.localScale = new Vector3(g2.GetComponent<CounterCtr>().image[j].transform.localScale.x * 0.85f, g2.GetComponent<CounterCtr>().image[j].transform.localScale.y, g2.GetComponent<CounterCtr>().image[j].transform.localScale.z);
+                            g2.GetComponent<CounterCtr>().image[j].transform.localScale = new Vector3(g2.GetComponent<CounterCtr>().image[j].transform.localScale.x * 0.90f, g2.GetComponent<CounterCtr>().image[j].transform.localScale.y * 0.90f, g2.GetComponent<CounterCtr>().image[j].transform.localScale.z);
                             g2.GetComponent<CounterCtr>().image[j].gameObject.active = chk;
                         }
                         GameObject.DontDestroyOnLoad(g);

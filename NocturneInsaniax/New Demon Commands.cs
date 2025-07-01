@@ -45,7 +45,7 @@ namespace NocturneInsaniax
                     s.commcnt[3] = stockIndices.Count;
 
                     // Prevent Talking in NKEs
-                    if (s.act.data.encno == 1270 || s.act.data.encno == 1271 || s.act.data.encno == 1272)
+                    if (s.act.data.encno == 1270 || s.act.data.encno == 1271 || s.act.data.encno == 1272 || s.act.data.encno == 1273)
                     {
                         for (int i = 0; i < s.commlist[1].Length; i++)
                             if (s.commlist[1][i] > 0)
@@ -98,7 +98,7 @@ namespace NocturneInsaniax
                 else
                 {
                     // Prevent Talking in NKEs
-                    if (s.act.data.encno == 1270 || s.act.data.encno == 1271 || s.act.data.encno == 1272) 
+                    if (s.act.data.encno == 1270 || s.act.data.encno == 1271 || s.act.data.encno == 1272 || s.act.data.encno == 1273) 
                     {
                         for (int i = 0; i < s.commlist[1].Length; i++)
                             if (s.commlist[1][i] > 0)
