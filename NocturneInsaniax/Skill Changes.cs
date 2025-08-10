@@ -390,8 +390,8 @@ namespace NocturneInsaniax
                     case 249: __result = "High Mind damage to random foes. \n3-7 hits. Pow: 36, Acc: 100%, Panic: 40%"; return false; // Wild Dance
                     case 250: __result = "Drains HP/MP from one foe. \nPow: 80/40, Acc: 100% \n(Almighty-Type)"; return false; // Domination
                     case 257: __result = "Mega Almighty damage to random foes. \n4-8 hits. Pow: 40, Acc: 100%."; return false; // Fire of Sinai
-                    case 259: __result = "Mega Almighty damage to all foes. \nMay instakills when not immune to Dark. \nPow: 60, Acc: 100%, Fatal: 90%"; return false; // Death Flies
-                    case 260: __result = "Mega Almighty damage to all foes. \nMay instakills when not immune to Dark. \nPow: 60, Acc: 100%, Fatal: 90%"; return false; // Death Flies
+                    case 259: __result = "Mega Almighty damage to all foes. \nMay instakill when not immune to Dark. \nPow: 60, Acc: 100%, Fatal: 90%"; return false; // Death Flies
+                    case 260: __result = "Mega Almighty damage to all foes. \nMay instakill when not immune to Dark. \nPow: 60, Acc: 100%, Fatal: 90%"; return false; // Death Flies
                     case 261: __result = "High Curse damage to all foes. \nPow: 48, Acc: 60%, Mute: 100%"; return false; // Soul Divide
                     case 262: __result = "Low Shot damage to one foe. \nLowers target's Evasion/Defense. \nPow: 32, Acc: 120%, Crit: 18%"; return false; // Boogie-Woogie/E & I
                     case 263: __result = "High Physical damage to one foe. \nPow: 48, Acc: 200%, Crit: 40%"; return false; // Enter Yoshitsune/Rebellion
@@ -1196,7 +1196,7 @@ namespace NocturneInsaniax
                 }
 
                 // Girimekhala's Behemothic Bounce
-                if (behemothicBounceIds.Contains(workFromFormindex2.id) && nbCalc.nbGetAisyo(nskill, dformindex, skillattr) == 131072)
+                if (behemothicBounceIds.Contains(workFromFormindex2.id) && workFromFormindex2.badstatus != 2 && nbCalc.nbGetAisyo(nskill, dformindex, skillattr) == 131072)
                     __result = __result * 3;
             }
         }
@@ -1499,7 +1499,9 @@ namespace NocturneInsaniax
                         }
                         // After any other action: Renewal, Spirit Well, Qigong
                         else if ((!(actionProcessData.work.nowcommand == 1 && pushedSkillList.Contains(actionProcessData.work.nowindex)) &&
-                            !(actionProcessData.work.nowcommand == 3 && actionProcessData.work.nowindex == 0)) && actionProcessData.work.badstatus != 32)
+                            !(actionProcessData.work.nowcommand == 3 && actionProcessData.work.nowindex == 0) && 
+                            !(actionProcessData.work.nowcommand == 7 && actionProcessData.work.nowindex == 0))
+                            && actionProcessData.work.badstatus != 32)
                         {
                             if (datCalc.datCheckSyojiSkill(actionProcessData.work, 370) != 0 ||
                                 (actionProcessData.work.id == 70 && // Decarabia's Kept Waiting
@@ -8252,7 +8254,7 @@ namespace NocturneInsaniax
             datSkill.tbl[id].type = 0;
 
             datNormalSkill.tbl[id].badlevel = 255;
-            datNormalSkill.tbl[id].badtype = 1;
+            datNormalSkill.tbl[id].badtype = 0;
             datNormalSkill.tbl[id].basstatus = 0;
             datNormalSkill.tbl[id].cost = 0;
             datNormalSkill.tbl[id].costbase = 0;
@@ -8270,12 +8272,12 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hpn = 50;
             datNormalSkill.tbl[id].hptype = 0;
             datNormalSkill.tbl[id].koukatype = 1;
-            datNormalSkill.tbl[id].magicbase = 0;
-            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].magicbase = 1;
+            datNormalSkill.tbl[id].magiclimit = 1;
             datNormalSkill.tbl[id].minus = 100;
             datNormalSkill.tbl[id].mpbase = 0;
-            datNormalSkill.tbl[id].mpn = 50;
-            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].mpn = 100;
+            datNormalSkill.tbl[id].mptype = 8;
             datNormalSkill.tbl[id].program = 0;
             datNormalSkill.tbl[id].targetarea = 2;
             datNormalSkill.tbl[id].targetcntmax = 1;

@@ -336,6 +336,10 @@ namespace NocturneInsaniax
                 case 109: return DietBuildingEncounter();
                 case 110: return DietBuildingEncounter();
 
+                //case 126: BandouShrineVishnuEncounter(); return 1270;
+                
+                case 131: BandouShrineVishnuEncounter(); return 1270;
+
                 // Labyrinth of Amala
 
                 case 173: FirstKalpaEncounter1(); return 1270; // First rooms
@@ -724,7 +728,7 @@ namespace NocturneInsaniax
         private static void YurakuchoTunnelParvatiEncounter()
         {
             datEncount.tbl[1270].devil[0] = 18;
-            datEncount.tbl[1270].item = 99;
+            datEncount.tbl[1270].item = 96;
             datEncount.tbl[1270].itemcnt = 1;
         }
 
@@ -733,7 +737,7 @@ namespace NocturneInsaniax
             datEncount.tbl[1270].devil[0] = 45;
             datEncount.tbl[1270].devil[1] = 142;
             datEncount.tbl[1270].devil[2] = 45;
-            datEncount.tbl[1270].item = 99;
+            datEncount.tbl[1270].item = 101;
             datEncount.tbl[1270].itemcnt = 1;
         }
 
@@ -766,6 +770,13 @@ namespace NocturneInsaniax
                 DietBuildingGaneshaEncounter();
                 return 1270;
             }
+        }
+
+        private static void BandouShrineVishnuEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 1;
+            datEncount.tbl[1270].item = 99;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         // Labyrinth of Amala
@@ -1067,6 +1078,10 @@ namespace NocturneInsaniax
             datEncount.tbl[713].devil[0] = 0;
             datEncount.tbl[713].devil[1] = 0;
             datEncount.tbl[713].devil[2] = 321;
+
+            datEncount.tbl[806].flag = 11; // Boss Jikokuten
+            datEncount.tbl[956].flag = 11; // Boss Koumokuten
+            datEncount.tbl[957].flag = 11; // Boss Zouchouten
 
             datEncount.tbl[990].devil[0] = 225; // Ambush Cube Doppelganger
             datEncount.tbl[990].btlsound = 16;

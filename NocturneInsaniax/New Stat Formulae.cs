@@ -675,8 +675,17 @@ namespace NocturneInsaniax
                 datUnitWork_t workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
                 datUnitWork_t workFromFormindex2 = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
 
-                if (nskill == 495)
-                    __result = 0;
+                // Mitra's Verdict
+                try
+                {
+                    if (nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id == 329 && nbMainProcess.nbGetUnitWorkFromFormindex(dformindex).id == 0 && nskill == 495)
+                    {
+                        nbMainProcess.nbGetUnitWorkFromFormindex(dformindex).badstatus = 32768;
+                        nbHelpProcess.nbDispText(frName.frGetCNameString(0) + " is cursed!", string.Empty, 2, 45, 2315190144, false);
+                        __result = 0;
+                    }
+                } catch { }
+                
 
                 if (__result == 0 || __result == 4) // Hit or Miss
                 {

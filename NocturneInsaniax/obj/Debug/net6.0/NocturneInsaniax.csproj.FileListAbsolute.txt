@@ -60,8 +60,8 @@ D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\NocturneInsaniax\obj
 D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\NocturneInsaniax\obj\Debug\net6.0\NocturneInsaniax.AssemblyInfo.cs
 D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\NocturneInsaniax\obj\Debug\net6.0\NocturneInsaniax.csproj.CoreCompileInputs.cache
 D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\NocturneInsaniax\obj\Debug\net6.0\NocturneInsaniax.sourcelink.json
-D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\NocturneInsaniax\obj\Debug\net6.0\NocturneInsaniax.csproj.CopyComplete
 D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\NocturneInsaniax\obj\Debug\net6.0\NocturneInsaniax.dll
 D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\NocturneInsaniax\obj\Debug\net6.0\refint\NocturneInsaniax.dll
 D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\NocturneInsaniax\obj\Debug\net6.0\NocturneInsaniax.pdb
 D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\NocturneInsaniax\obj\Debug\net6.0\ref\NocturneInsaniax.dll
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\NocturneInsaniax\obj\Debug\net6.0\Nocturne.E951CDD1.Up2Date
