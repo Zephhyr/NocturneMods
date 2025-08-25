@@ -664,7 +664,7 @@ namespace NocturneInsaniax
                 datUnitWork_t target = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
 
                 // Remove Freeze and Shock after guaranteed critical strike
-                if ((datNormalSkill.tbl[nskill].koukatype == 0 || (dds3GlobalWork.DDS3_GBWK.heartsequip == 13 && sformindex <= 3 && (datSkill.tbl[nskill].skillattr == 3 || datSkill.tbl[nskill].skillattr == 4))) && (target.badstatus == 1 || target.badstatus == 2)
+                if ((datNormalSkill.tbl[nskill].koukatype == 0 || (dds3GlobalWork.DDS3_GBWK.heartsequip == 13 && sformindex <= 3 && (datSkill.tbl[nskill].skillattr == 3 || datSkill.tbl[nskill].skillattr == 4) && target.badstatus == 2)) && (target.badstatus == 1 || target.badstatus == 2)
                     && (datNormalSkill.tbl[nskill].hptype == 1 || datNormalSkill.tbl[nskill].hptype == 6 || datNormalSkill.tbl[nskill].hptype == 12 || datNormalSkill.tbl[nskill].hptype == 14))
                 {
                     var form = a.data.form[dformindex];

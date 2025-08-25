@@ -1,12 +1,13 @@
 ﻿using HarmonyLib;
-using MelonLoader;
-using Il2Cppnewbattle_H;
-using System.Collections.Generic;
 using Il2Cpp;
-using Il2Cppnewdata_H;
-using Il2Cppfield_H;
 using Il2Cppbasic_H;
+using Il2Cppfield_H;
+using Il2Cppnewbattle_H;
+using Il2Cppnewdata_H;
+using MelonLoader;
+using System.Collections.Generic;
 using static Il2Cpp.SteamDlcFileUtil;
+using static UnityEngine.GraphicsBuffer;
 
 namespace NocturneInsaniax
 {
@@ -506,7 +507,7 @@ namespace NocturneInsaniax
                     (datSkill.tbl[nskill].skillattr == 2 && workFromFormindex2.badstatus == 256) || // If attack is ice and target is stunned
                     (datSkill.tbl[nskill].skillattr == 3 && workFromFormindex2.badstatus == 32) || // If attack is elec and target is muted
                     (datSkill.tbl[nskill].skillattr == 4 && workFromFormindex2.badstatus == 8) || // If attack is force and target is panicked
-                    ((datNormalSkill.tbl[nskill].koukatype == 0 || (dds3GlobalWork.DDS3_GBWK.heartsequip == 13 && sformindex <= 3 && (datSkill.tbl[nskill].skillattr == 3 || datSkill.tbl[nskill].skillattr == 4))) && 
+                    ((datNormalSkill.tbl[nskill].koukatype == 0 || (dds3GlobalWork.DDS3_GBWK.heartsequip == 13 && sformindex <= 3 && (datSkill.tbl[nskill].skillattr == 3 || datSkill.tbl[nskill].skillattr == 4) && target.badstatus == 2)) && 
                     (workFromFormindex2.badstatus == 1 || workFromFormindex2.badstatus == 2))) // If attack is str-based or Storm Shatter is active and target is shocked or frozen
                     && (datNormalSkill.tbl[nskill].hptype == 1 || datNormalSkill.tbl[nskill].hptype == 6 || datNormalSkill.tbl[nskill].hptype == 12 || datNormalSkill.tbl[nskill].hptype == 14))
                     __result = 1; // Critical hit
