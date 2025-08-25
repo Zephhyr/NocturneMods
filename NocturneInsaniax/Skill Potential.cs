@@ -939,7 +939,7 @@ namespace NocturneInsaniax
             "<material=\"MsgFont2\">Null: Dark\r\n" +
             "<material=\"MsgFont4\">+3: Almighty", // Satan
             "Imparts Ailment magic and potential\r\n" +
-            "<material=\"MsgFont2\">Strong: Ailments<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Light/Dark\r\n" +
+            "<material=\"MsgFont2\">Null: Ailments<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Light/Dark\r\n" +
             "<material=\"MsgFont4\">+5: Ailments", // Adama
             "Imparts Dark magic and potential\r\n" +
             "<material=\"MsgFont2\">Repel: Dark\r\n" +

@@ -19,9 +19,9 @@ namespace NocturneInsaniax
             { 001, new InnateSkill(383, 15, "Tripura Samhara", "While in the active party, \nskill costs are reduced by 20% \nfor allies with a charge effect.")}, // 001 Vishnu
             { 002, new InnateSkill(383, 14, "Righteous Vow", "After Mitra survives a critical or \nweakness hit, raise all of his stats \nby one rank.")}, // 002 Mitra
             { 003, new InnateSkill(383, 06, "Blinding Radiance", "While in the active party, all allies' \nLight attacks may Critically Strike.")}, // 003 Amaterasu
-            { 004, new InnateSkill(383, 14, "Runes of Wisdom", "When switching out, Increase the damage \nof next the Strength-based attack \nby 120% for the switched ally.")}, // 004 Odin
+            { 004, new InnateSkill(383, 14, "Runes of Wisdom", "When switching out, increase the damage \nof next the Strength-based attack \nused by the switched ally by 120%.")}, // 004 Odin
             { 005, new InnateSkill(383, 15, "Focused Assault", "Atavaka gains 20% Hit Rate and \nCritical Rate when targetting the \nsame single foe as the previous ally.")}, // 005 Atavaka
-            { 006, new InnateSkill(383, 14, "Eye of Horus", "When switching out, Increase the damage \nof next the Magic-based attack \nby 120% for the switched ally.")}, // 006 Horus
+            { 006, new InnateSkill(383, 14, "Eye of Horus", "When switching out, increase the damage \nof next the Magic-based attack \nused by the switched ally by 120%.")}, // 006 Horus
             { 007, new InnateSkill(383, 15, "Chanchala", "While in the active party, if an ally's \nMagical Attack is maximized, their \nElement attacks may Critically Strike.")}, // 007 Lakshmi
             { 008, new InnateSkill(383, 15, "Warrior Trainer", "While Setanta or Cu Chulainn is in \nthe active party, Scathach's attacks \nwith positive potential will not miss.")}, // 008 Scathach
             { 009, new InnateSkill(383, 04, "Vina Raga", "While in the active party, all allies' \nForce attacks may Critically Strike.")}, // 009 Sarasvati
@@ -306,7 +306,7 @@ namespace NocturneInsaniax
             { 288, new InnateSkill(383, 15, "Boss Baal Avatar", "")}, // 288 Boss Baal Avatar
             { 289, new InnateSkill(383, 15, "Paw-to-Paw Combat", "")}, // 289 Boss Ose Hallel
             { 290, new InnateSkill(383, 15, "Paw-to-Paw Combat", "")}, // 290 Boss Flauros Hallel
-            { 291, new InnateSkill(383, 15, "Boss Ahriman 1", "")}, // 291 Boss Ahriman 1
+            { 291, new InnateSkill(383, 05, "Hell's Forfeit", "")}, // 291 Boss Ahriman 1
             { 292, new InnateSkill(383, 15, "Boss Noah 1", "")}, // 292 Boss Noah 1
             { 293, new InnateSkill(383, 15, "Boss Kagutsuchi 1", "")}, // 293 Boss Kagutsuchi 1
             { 294, new InnateSkill(383, 15, "Phantasmagoria", "")}, // 294 Boss Specter 1 (Merged 6)
@@ -416,19 +416,19 @@ namespace NocturneInsaniax
             { 10, new InnateSkill(383, 15, "Contagious Curse", "Allies' Ailment Rate is \nincreased by 20%.")}, // 10 Miasma
             { 11, new InnateSkill(383, 06, "Light Gestalt", "Gain Light skill potential \nbased on the total positive potential \nof allies in the active party.")}, // 11 Nirvana
             { 12, new InnateSkill(383, 12, "Shot Gestalt", "Gain Shot skill potential \nbased on the total positive potential \nof allies in the active party.")}, // 12 Vimana
-            { 13, new InnateSkill(383, 15, "Geis", "")}, // 13 Geis
+            { 13, new InnateSkill(383, 02, "Storm Shatter", "Allied Elec and Force attacks \nwill Critically Strike against frozen \nenemies.")}, // 13 Geis
             { 14, new InnateSkill(383, 15, "Destabilize", "Element attacks may Critically Strike \nfor all allies and enemies.")}, // 14 Djed
             { 15, new InnateSkill(383, 01, "Malevolent Flames", "All allies' Fire attacks \nmay Critically Strike.")}, // 15 Muspell
             { 16, new InnateSkill(383, 05, "Forbidden Fruit", "Allies' Almighty attacks \nmay Critically Strike.")}, // 16 Satan
             { 17, new InnateSkill(383, 15, "Magnified Malady", "All allies deal 20% more damage \nagainst enemies with an ailment.")}, // 17 Adama
-            { 18, new InnateSkill(383, 15, "Gehenna", "")}, // 18 Gehenna
+            { 18, new InnateSkill(383, 07, "Dark Opus", "If the entire active party has natural \npositive Dark potential, gain an extra \nturn icon at the start of each turn.")}, // 18 Gehenna
             { 19, new InnateSkill(383, 15, "Withheld Sentence", "Allies are immune to \nrandom instakills.")}, // 19 Sophia
             { 20, new InnateSkill(383, 04, "Orochi's Bane", "Your Force attacks may \ninflict poison.")}, // 20 Murakumo
-            { 21, new InnateSkill(383, 15, "Gundari", "")}, // 21 Gundari
+            { 21, new InnateSkill(383, 06, "Light Opus", "If the entire active party has natural \npositive Light potential, gain an extra \nturn icon at the start of each turn.")}, // 21 Gundari
             { 22, new InnateSkill(383, 03, "Vanquishing Bolts", "All allies' Elec attacks \nmay Critically Strike.")}, // 22 Narukami
             { 23, new InnateSkill(383, 14, "Megalomania", "After using a charge effect, \ngain a 30% chance to retain it.")}, // 23 Gaea
             { 24, new InnateSkill(383, 15, "Tripura Samhara", "Skill costs are reduced by 20% \nfor allies with a charge effect.")}, // 24 Kailash
-            { 25, new InnateSkill(383, 15, "Masakados", "")} // 25 Masakados
+            { 25, new InnateSkill(383, 15, "Ruler's Virtuosity", "Gain 5% increased Critical Damage \nfor each unique effect active on you.")} // 25 Masakados
         };
 
         private static Dictionary<sbyte, List<ushort>> gestaltUsers = new Dictionary<sbyte, List<ushort>>

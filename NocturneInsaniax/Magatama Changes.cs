@@ -1136,9 +1136,9 @@ namespace NocturneInsaniax
             datAisyo.tbl[416][4] = 100; // Force
             datAisyo.tbl[416][6] = 2147483778; // Light
             datAisyo.tbl[416][7] = 2147483778; // Dark
-            datAisyo.tbl[416][8] = 50; // Curse
-            datAisyo.tbl[416][9] = 50; // Nerve
-            datAisyo.tbl[416][10] = 50; // Mind
+            datAisyo.tbl[416][8] = 65536; // Curse
+            datAisyo.tbl[416][9] = 65536; // Nerve
+            datAisyo.tbl[416][10] = 65536; // Mind
             datAisyo.tbl[416][12] = 100; // Shot
 
             datAisyo.tbl[417][0] = 100; // Phys
@@ -1148,9 +1148,9 @@ namespace NocturneInsaniax
             datAisyo.tbl[417][4] = 100; // Force
             datAisyo.tbl[417][6] = 2147483778; // Light
             datAisyo.tbl[417][7] = 2147483778; // Dark
-            datAisyo.tbl[417][8] = 50; // Curse
-            datAisyo.tbl[417][9] = 50; // Nerve
-            datAisyo.tbl[417][10] = 50; // Mind
+            datAisyo.tbl[417][8] = 65536; // Curse
+            datAisyo.tbl[417][9] = 5655360; // Nerve
+            datAisyo.tbl[417][10] = 65536; // Mind
             datAisyo.tbl[417][12] = 100; // Shot
 
             // Alignment

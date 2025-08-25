@@ -1,17 +1,17 @@
 ﻿using HarmonyLib;
-using MelonLoader;
 using Il2Cpp;
+using Il2Cppeffect_H;
 using Il2Cppfacility_H;
+using Il2Cppnewbattle_H;
 using Il2Cppnewdata_H;
 using Il2Cppresult2_H;
-using Il2Cppnewbattle_H;
-using Il2Cppeffect_H;
-using UnityEngine;
+using MelonLoader;
+using MelonLoader.TinyJSON;
 using Newtonsoft.Json;
+using System.Collections.Immutable;
 using System.ComponentModel.Design;
 using System.Xml;
-using MelonLoader.TinyJSON;
-using System.Collections.Immutable;
+using UnityEngine;
 
 namespace NocturneInsaniax
 {
@@ -152,13 +152,54 @@ namespace NocturneInsaniax
                 }
                 else if (activeUnit <= 3)
                 {
+                    // Dark Opus
+                    if (dds3GlobalWork.DDS3_GBWK.heartsequip == 18)
+                    {
+                        bool darkOpusActive = true;
+                        for (int i = 0; i <= 3; i++)
+                        {
+                            try
+                            {
+                                if (!(nbMainProcess.nbGetUnitWorkFromFormindex(i).id == 0 || demonPotentials[nbMainProcess.nbGetUnitWorkFromFormindex(i).id][7] > 0))
+                                    darkOpusActive = false;
+                            }
+                            catch { }
+                        }
+
+                        if (darkOpusActive)
+                        {
+                            data.press4_p += 1;
+                            data.press4_ten += 1;
+                        }
+                    }
+
+                    // Light Opus
+                    if (dds3GlobalWork.DDS3_GBWK.heartsequip == 21)
+                    {
+                        bool lightOpusActive = true;
+                        for (int i = 0; i <= 3; i++)
+                        {
+                            try
+                            {
+                                if (!(nbMainProcess.nbGetUnitWorkFromFormindex(i).id == 0 || demonPotentials[nbMainProcess.nbGetUnitWorkFromFormindex(i).id][6] > 0))
+                                    lightOpusActive = false;
+                            }
+                            catch { }
+                        }
+
+                        if (lightOpusActive)
+                        {
+                            data.press4_p += 1;
+                            data.press4_ten += 1;
+                        }
+                    }
 
                     for (int i = 0; i <= 3; i++)
                     {
                         try
                         {
                             // Solitary Drift
-                            if (data.playerpcnt == 1 && datCalc.datCheckSyojiSkill(nbMainProcess.nbGetUnitWorkFromFormindex(i), 378) != 0)
+                            if (data.press4_p == 1 && data.press4_ten == 1 && data.playerpcnt == 1 && datCalc.datCheckSyojiSkill(nbMainProcess.nbGetUnitWorkFromFormindex(i), 378) != 0)
                                 data.press4_ten += 1;
 
                             // Reset Barriers

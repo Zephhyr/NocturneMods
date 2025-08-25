@@ -552,9 +552,9 @@ namespace NocturneInsaniax
                     case "<AISYO_L0415>": // Satan
                         __result = "Null: Dark"; return false;
                     case "<AISYO_L0416>": // Adama
-                        __result = "Str: Ailments • Weak: Light/Dark"; return false;
+                        __result = "Null: Ailments • Weak: Light/Dark"; return false;
                     case "<AISYO_L0417>": // Adama
-                        __result = "Str: Ailments • Weak: Light/Dark"; return false;
+                        __result = "Null: Ailments • Weak: Light/Dark"; return false;
                     case "<AISYO_L0418>": // Gehenna
                         __result = "Rpl: Dark"; return false;
                     case "<AISYO_L0419>": // Gehenna
@@ -1276,8 +1276,8 @@ namespace NocturneInsaniax
             YHVH(254);
 
             // Set all HP to 1
-            foreach (var devil in datDevilFormat.tbl)
-                devil.hp = 1;
+            //foreach (var devil in datDevilFormat.tbl)
+            //    devil.hp = 1;
         }
 
         private static void DemiFiend(ushort id)

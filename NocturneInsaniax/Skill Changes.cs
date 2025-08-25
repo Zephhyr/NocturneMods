@@ -77,6 +77,7 @@ namespace NocturneInsaniax
                     case 210: __result = "Dormina"; return false;
                     case 219: __result = "Rage"; return false;
                     case 220: __result = "Psycho Rage"; return false;
+                    case 243: __result = "Hell's Forfeit"; return false;
                     case 252: __result = "Foul Gathering"; return false;
                     case 285: __result = "Babylon Goblet"; return false;
                     case 286: __result = "Death Lust"; return false;
@@ -498,7 +499,7 @@ namespace NocturneInsaniax
                     case 375: __result = "Nullifies Shot attacks."; return false; // Null: Shot
                     case 376: __result = "Absorbs Shot attacks, \nreplenishing HP."; return false; // Shot Drain
                     case 377: __result = "Repels Shot attacks."; return false; // Shot Repel
-                    case 378: __result = "While alone, gain a flashing \nturn icon at the start of each turn."; return false; // Solitary Drift
+                    case 378: __result = "While alone, gain a flashing \nturn icon at the start of each turn. \n(Does not stack with similar effects)"; return false; // Solitary Drift
 
                     //case 373: __result = "Survive a fatal blow then fully \nrecover HP once per battle. \n(Does not stack with similar effects)"; return false; // Enduring Soul
 
@@ -661,7 +662,9 @@ namespace NocturneInsaniax
                 actionProcessData = a;
 
                 datUnitWork_t target = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
-                if (((datNormalSkill.tbl[nskill].koukatype == 0 && (target.badstatus == 1 || target.badstatus == 2)))
+
+                // Remove Freeze and Shock after guaranteed critical strike
+                if ((datNormalSkill.tbl[nskill].koukatype == 0 || (dds3GlobalWork.DDS3_GBWK.heartsequip == 13 && sformindex <= 3 && (datSkill.tbl[nskill].skillattr == 3 || datSkill.tbl[nskill].skillattr == 4))) && (target.badstatus == 1 || target.badstatus == 2)
                     && (datNormalSkill.tbl[nskill].hptype == 1 || datNormalSkill.tbl[nskill].hptype == 6 || datNormalSkill.tbl[nskill].hptype == 12 || datNormalSkill.tbl[nskill].hptype == 14))
                 {
                     var form = a.data.form[dformindex];

@@ -163,6 +163,7 @@ namespace NocturneInsaniax
                 bool pawToPawActive = false;
                 bool proxyGuardHoundActive = false;
                 byte fourOniCount = 0;
+                byte rulersVirtuosityCount = 0;
 
                 // Critical Melody
                 if (nbMainProcess.nbGetPartyFromFormindex(sformindex).partyindex <= 3)
@@ -276,8 +277,19 @@ namespace NocturneInsaniax
                         }
                     }
                 }
+                // Ruler's Virtuosity
+                else if (nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 25)
+                {
+                    try
+                    {
+                        foreach (var buff in new byte[] { 4, 5, 6, 7, 8, 11, 12, 13, 14, 15, 20 })
+                            if (nbMainProcess.nbGetPartyFromFormindex(sformindex).count[buff] != 0)
+                                rulersVirtuosityCount++;
+                    }
+                    catch { }
+                }
 
-                __result = pow * (1 + 0.3f + (Convert.ToInt16(criticalMelodyActive) * 0.1f) + (Convert.ToInt16(pawToPawActive) * 0.3f) + (Convert.ToInt16(proxyGuardHoundActive) * 0.3f) + (fourOniCount * 0.1f));
+                __result = pow * (1 + 0.3f + (Convert.ToInt16(criticalMelodyActive) * 0.1f) + (Convert.ToInt16(pawToPawActive) * 0.3f) + (Convert.ToInt16(proxyGuardHoundActive) * 0.3f) + (fourOniCount * 0.1f) + (rulersVirtuosityCount * 0.05f));
                 return false;
             }
         }
@@ -494,7 +506,8 @@ namespace NocturneInsaniax
                     (datSkill.tbl[nskill].skillattr == 2 && workFromFormindex2.badstatus == 256) || // If attack is ice and target is stunned
                     (datSkill.tbl[nskill].skillattr == 3 && workFromFormindex2.badstatus == 32) || // If attack is elec and target is muted
                     (datSkill.tbl[nskill].skillattr == 4 && workFromFormindex2.badstatus == 8) || // If attack is force and target is panicked
-                    (datNormalSkill.tbl[nskill].koukatype == 0 && (workFromFormindex2.badstatus == 1 || workFromFormindex2.badstatus == 2))) // If attack is str-based and target is shocked or frozen
+                    ((datNormalSkill.tbl[nskill].koukatype == 0 || (dds3GlobalWork.DDS3_GBWK.heartsequip == 13 && sformindex <= 3 && (datSkill.tbl[nskill].skillattr == 3 || datSkill.tbl[nskill].skillattr == 4))) && 
+                    (workFromFormindex2.badstatus == 1 || workFromFormindex2.badstatus == 2))) // If attack is str-based or Storm Shatter is active and target is shocked or frozen
                     && (datNormalSkill.tbl[nskill].hptype == 1 || datNormalSkill.tbl[nskill].hptype == 6 || datNormalSkill.tbl[nskill].hptype == 12 || datNormalSkill.tbl[nskill].hptype == 14))
                     __result = 1; // Critical hit
                 else if (!(new uint[] { 65536, 131072, 262144 }.Contains(aisyo) || datCalc.datCheckSyojiSkill(workFromFormindex1, 372) != 0)) // If target isn't immune or doesn't have Firm Stance
