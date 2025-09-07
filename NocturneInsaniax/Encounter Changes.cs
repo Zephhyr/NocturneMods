@@ -1106,6 +1106,9 @@ namespace NocturneInsaniax
             datEncount.tbl[970].flag = 11; // Boss Mitra
             datEncount.tbl[672].flag = 11; // Boss Samael
 
+            datEncount.tbl[472].flag = 11; // Boss Noah
+            datEncount.tbl[993].flag = 11; // Boss Noah
+
             datEncount.tbl[1033].flag = 11; // Dante/Raidou 1
 
             datEncount.tbl[1035].maxcall = 4; // Dante/Raidou 2

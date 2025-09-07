@@ -284,8 +284,8 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 255 
             new sbyte[] {0    , 0    , 4    , -5   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 0 }, // 256 Boss Forneus
             new sbyte[] {0    , 3    , 0    , 0    , 0    , 1    , 0    , 0    , 0    , 0    , 0    , 1    , 0    , -2   , 1    , 0 }, // 257 Boss Specter 1 (Mini)
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 258 Boss Ahriman 2
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 259 Boss Noah 2
+            new sbyte[] {7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 3    , 3    , 0 }, // 258 Boss Ahriman 2
+            new sbyte[] {7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 3    , 3    , 0 }, // 259 Boss Noah 2
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 2    , 5    , 5    , 5    , 0    , 0    , 0    , -2   , 0 }, // 260 Forced Incubus
             new sbyte[] {0    , 0    , 0    , -3   , 3    , 0    , 0    , 0    , -3   , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 261 Forced Koppa Tengu
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , -7   , 5    , 0    , 0    , 2    , 0    , 0    , 0    , 2    , 0 }, // 262 Forced Kaiwan
@@ -318,8 +318,8 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 288 Boss Baal Avatar
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 289 Boss Ose Hallel
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 290 Boss Flauros Hallel
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 291 Boss Ahriman 1
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 292 Boss Noah 1
+            new sbyte[] {5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 3    , 3    , 0 }, // 291 Boss Ahriman 1
+            new sbyte[] {5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 3    , 3    , 0 }, // 292 Boss Noah 1
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 293 Boss Kagutsuchi 1
             new sbyte[] {5    , 4    , -4   , -4   , 0    , 4    , -4   , 0    , 3    , 3    , 3    , 4    , 0    , 0    , 3    , 0 }, // 294 Boss Specter 1 (Merged 6)
             new sbyte[] {5    , 4    , -4   , -4   , 0    , 4    , -4   , 0    , 3    , 3    , 3    , 4    , 0    , 0    , 3    , 0 }, // 295 Boss Specter 1 (Merged 4-5)
@@ -1104,6 +1104,10 @@ namespace NocturneInsaniax
                     __result = "Backup";
                 else if (id == 152 && (currentDemonWork.id == 275))
                     __result = "Foul Explosion";
+                else if (id == 142 && (currentDemonWork.id == 258))
+                    __result = "Silencing Bellow";
+                else if (id == 243 && (currentDemonWork.id == 291))
+                    __result = "Hell's Forfeit";
                 else if ((id == 226 || id == 499) && (currentDemonWork.id == 345))
                     __result = "Call Evil";
                 else if ((id == 226 || id == 496) && (currentDemonWork.id == 346))
@@ -1407,6 +1411,7 @@ namespace NocturneInsaniax
                 if (__result != -1 && datNormalSkill.tbl[nskill].hptype != 3) // HP has been altered
                 {
                     ushort demonID = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id; // Get the demon's ID
+                    ushort targetID = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex).id; // Get the demon's ID
                     sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(nskill, demonID);
 
                     if (skillPotential != 0)
@@ -1415,14 +1420,15 @@ namespace NocturneInsaniax
                         {
                             __result = Convert.ToInt32(SkillPotentialUtility.ApplyHealMultiplier(skillPotential, __result));
 
-                            if (bossList.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id))
+                            // Increase Boss Healing
+                            if (bossList.Contains(demonID) && bossList.Contains(targetID))
                             {
-                                if (demonID == 299)
+                                if (targetID == 299)
                                     __result = Convert.ToInt32(__result / 3);
-                                else if (demonID == 306)
-                                    __result *= 5;
+                                else if (targetID == 306)
+                                    __result = Convert.ToInt32(__result * 5);
                                 else
-                                    __result *= 2;
+                                    __result = Convert.ToInt32(__result * 2);
                             }
                         }
                         else if (datNormalSkill.tbl[nskill].hptype != 6 && datNormalSkill.tbl[nskill].hptype != 8 && datNormalSkill.tbl[nskill].hptype != 11)
@@ -1431,6 +1437,15 @@ namespace NocturneInsaniax
 
                             if (faithfulCompanionActive) // Faithful Companion
                                 __result = Convert.ToInt32(__result * 1.2);
+
+                            if ((targetID == 259 || targetID == 292)) // Noah's Aurora
+                            {
+                                var noahParty = nbMainProcess.nbGetPartyFromFormindex(4);
+                                var noah1Affinity = noahParty.count[19];
+
+                                if (noah1Affinity != 0 && (datSkill.tbl[nskill].skillattr == 5 || datSkill.tbl[nskill].skillattr == 11))
+                                    __result = Convert.ToInt32(__result / 10);
+                            }
 
                             var targetVit = datCalc.datGetParam(nbMainProcess.nbGetUnitWorkFromFormindex(dformindex), 3);
 

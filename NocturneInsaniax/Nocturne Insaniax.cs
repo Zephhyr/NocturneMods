@@ -703,17 +703,21 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int no, ref bool __result)
             {
-                //MelonLogger.Msg("--EventBit.evtBitCheck--");
-                if (EnableModeOverride.Value && no == 3712)
-                    __result = ModeOverrideValue.Value;
-                // Checks the flag responsible for unlocking Pierce
-                else if (no == 2241)
+                try
                 {
-                    //if (!__result) __result = true; // Artificially makes it obtainable
-                    //else tblHearts.fclHeartsTbl[1].Skill[6].TargetLevel = 15; // If unlocked normally, you can get it early
-                    if (__result) tblHearts.fclHeartsTbl[1].Skill[6].TargetLevel = 15; // If unlocked normally, you can get it
-                    else tblHearts.fclHeartsTbl[1].Skill[6].TargetLevel = 200; // Otherwise, you can't
+                    //MelonLogger.Msg("--EventBit.evtBitCheck--");
+                    if (EnableModeOverride.Value && no == 3712)
+                        __result = ModeOverrideValue.Value;
+                    // Checks the flag responsible for unlocking Pierce
+                    else if (no == 2241)
+                    {
+                        //if (!__result) __result = true; // Artificially makes it obtainable
+                        //else tblHearts.fclHeartsTbl[1].Skill[6].TargetLevel = 15; // If unlocked normally, you can get it early
+                        if (__result) tblHearts.fclHeartsTbl[1].Skill[6].TargetLevel = 15; // If unlocked normally, you can get it
+                        else tblHearts.fclHeartsTbl[1].Skill[6].TargetLevel = 200; // Otherwise, you can't
+                    }
                 }
+                catch { }
             }
         }
 

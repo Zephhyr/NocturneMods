@@ -18,6 +18,7 @@ namespace NocturneInsaniax
     internal partial class NocturneInsaniax : MelonMod
     {
         private static System.Random random = new System.Random();
+        private static short auroraValue = 0;
         private static Dictionary<int, ActionTracker> actionTrackers = new Dictionary<int, ActionTracker>();
         private static Dictionary<int, List<ushort>> immunityPassives = new Dictionary<int, List<ushort>>
         {
@@ -44,6 +45,7 @@ namespace NocturneInsaniax
         {
             public static void Postfix()
             {
+                auroraValue = 0;
                 actionTrackers.Clear();
                 foreach (var party in nbMainProcess.nbGetMainProcessData().party)
                     party.count = new short[21];
@@ -101,8 +103,10 @@ namespace NocturneInsaniax
                         if (!actionTrackers.ContainsKey(unit.id))
                         {
                             actionTrackers.Add(unit.id, new ActionTracker());
-                            if (unit.id == 252 || unit.id == 254)
+                            if (unit.id == 252 || unit.id == 254 || unit.id == 258 || unit.id == 259)
                                 actionTrackers[unit.id].extraTurns = 1;
+                            if (unit.id == 259)
+                                nbMainProcess.nbGetPartyFromFormindex(4).count[19] = auroraValue;
                         }
 
                         if (unit.hp == 0 && !data.enemyunit.Where(x => x.id == unit.id && x.hp != 0).Any())
@@ -241,6 +245,15 @@ namespace NocturneInsaniax
             }
         }
 
+        [HarmonyPatch(typeof(nbActionProcess), nameof(nbActionProcess.SetAuroraPacket))]
+        private class SetAuroraPacketPatch
+        {
+            public static void Postfix(ref nbActionProcessData_t a, ref int dformindex, ref int sframe)
+            {
+                auroraValue = nbMainProcess.nbGetPartyFromFormindex(4).count[19];
+            }
+        }
+
 
         [HarmonyPatch(typeof(nbAi), nameof(nbAi.nbSetAiTarget))]
         private class AiPatch
@@ -323,6 +336,8 @@ namespace NocturneInsaniax
 
                         case 256: BossForneusAI(ref a, ref code, ref n); break;
                         case 257: BossSpecter1AI(ref a, ref code, ref n); break;
+                        case 258: BossAhriman2AI(ref a, ref code, ref n); break;
+                        case 259: BossNoah2AI(ref a, ref code, ref n); break;
                         case 261: ForcedKoppaTenguAI(ref a, ref code, ref n); break;
                         case 262: ForcedKaiwanAI(ref a, ref code, ref n); break;
                         case 263: BossOseAI(ref a, ref code, ref n); break;
@@ -346,6 +361,8 @@ namespace NocturneInsaniax
                         case 285: BossRaphaelAI(ref a, ref code, ref n); break;
                         case 286: BossUrielAI(ref a, ref code, ref n); break;
                         case 287: BossSamaelAI(ref a, ref code, ref n); break;
+                        case 291: BossAhriman1AI(ref a, ref code, ref n); break;
+                        case 292: BossNoah1AI(ref a, ref code, ref n); break;
                         case 294: BigSpecterAI(ref a, ref code, ref n); break;
                         case 295: BigSpecterAI(ref a, ref code, ref n); break;
                         case 296: BigSpecterAI(ref a, ref code, ref n); break;
@@ -421,6 +438,21 @@ namespace NocturneInsaniax
                 a.data.enemypcnt == 1)
             {
                 UseSkill(ref a, 220);
+            }
+            else if (actionTrackers[a.work.id].skillsUsedThisTurn.Contains(100) || 
+                actionTrackers[a.work.id].skillsUsedThisTurn.Contains(195) || 
+                actionTrackers[a.work.id].skillsUsedThisTurn.Contains(471))
+            {
+                int randomValue = random.Next(6);
+                switch (randomValue)
+                {
+                    case 0: UseNormalAttack(ref a); break;
+                    case 1: UseSkill(ref a, 141); break;
+                    case 2: UseSkill(ref a, 141); break;
+                    case 3: UseSkill(ref a, 196); break;
+                    case 4: UseSkill(ref a, 454); break;
+                    case 5: UseSkill(ref a, 454); break;
+                }
             }
             else
             {
@@ -2477,6 +2509,227 @@ namespace NocturneInsaniax
                 UseSkill(ref a, 57);
             else if (a.work.nowindex == 57 && actionTrackers[a.work.id].skillsUsedThisTurn.Contains(57))
                 UseSkill(ref a, 432);
+        }
+
+        private static void BossAhriman2AI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            ushort currentHpPercent = BossCurrentHpPercent(ref a);
+            MelonLogger.Msg("Ahriman HP%: " + currentHpPercent);
+            MelonLogger.Msg("Ahriman HP: " + a.work.hp);
+
+            if (currentHpPercent <= 75 && actionTrackers[a.work.id].phase == 1)
+                actionTrackers[a.work.id].phase = 2;
+            if (currentHpPercent <= 50 && actionTrackers[a.work.id].phase == 2)
+                actionTrackers[a.work.id].phase = 3;
+            if (currentHpPercent <= 25 && actionTrackers[a.work.id].phase == 4)
+                actionTrackers[a.work.id].phase = 4;
+
+
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(460) && EnemyPartyDebuffed(1) &&
+                (a.data.playerpcnt == 1 && (actionTrackers[a.work.id].currentBattleTurnCount % 4) == 0) || (a.data.playerpcnt > 1 && (actionTrackers[a.work.id].currentBattleTurnCount % 3) == 0) &&
+                actionTrackers[a.work.id].currentTurnActionCount >= 2 && a.data.press4_p <= 1 && a.data.press4_ten <= 1
+                && random.Next(3) != 0)
+            {
+                UseSkill(ref a, 460);
+            }
+            else if (actionTrackers[a.work.id].currentBattleTurnCount == 1 ||
+                actionTrackers[a.work.id].skillsUsedThisTurn.Contains(27) ||
+                actionTrackers[a.work.id].skillsUsedThisTurn.Contains(168) ||
+                actionTrackers[a.work.id].skillsUsedThisTurn.Contains(253))
+            {
+                UseSkill(ref a, 174);
+            }
+            else
+            {
+                switch (actionTrackers[a.work.id].phase)
+                {
+                    case 1:
+                        {
+                            int randomValue = random.Next(12);
+                            switch (randomValue)
+                            {
+                                case 0: UseSkill(ref a, 174); break;
+                                case 1: UseSkill(ref a, 174); break;
+                                case 2: UseSkill(ref a, 174); break;
+                                case 3: UseSkill(ref a, 174); break;
+                                case 4: UseSkill(ref a, 168); break;
+                                case 5: UseSkill(ref a, 168); break;
+                                case 6: UseSkill(ref a, 168); break;
+                                case 7: UseSkill(ref a, 168); break;
+                                case 8: UseSkill(ref a, 27); break;
+                                case 9: UseSkill(ref a, 27); break;
+                                case 10: UseSkill(ref a, 27); break;
+                                case 11: UseSkill(ref a, 27); break;
+                            }
+                            break;
+                        }
+                    case 2:
+                        {
+                            int randomValue = random.Next(12);
+                            switch (randomValue)
+                            {
+                                case 0: UseSkill(ref a, 174); break;
+                                case 1: UseSkill(ref a, 174); break;
+                                case 2: UseSkill(ref a, 174); break;
+                                case 3: UseSkill(ref a, 168); break;
+                                case 4: UseSkill(ref a, 168); break;
+                                case 5: UseSkill(ref a, 168); break;
+                                case 6: UseSkill(ref a, 168); break;
+                                case 7: UseSkill(ref a, 27); break;
+                                case 8: UseSkill(ref a, 27); break;
+                                case 9: UseSkill(ref a, 27); break;
+                                case 10: UseSkill(ref a, 253); break;
+                                case 11: UseSkill(ref a, 253); break;
+                            }
+                            break;
+                        }
+                    case 3:
+                        {
+                            int randomValue = random.Next(12);
+                            switch (randomValue)
+                            {
+                                case 0: UseSkill(ref a, 174); break;
+                                case 1: UseSkill(ref a, 174); break;
+                                case 2: UseSkill(ref a, 174); break;
+                                case 3: UseSkill(ref a, 168); break;
+                                case 4: UseSkill(ref a, 168); break;
+                                case 5: UseSkill(ref a, 168); break;
+                                case 6: UseSkill(ref a, 168); break;
+                                case 7: UseSkill(ref a, 27); break;
+                                case 8: UseSkill(ref a, 27); break;
+                                case 9: UseSkill(ref a, 253); break;
+                                case 10: UseSkill(ref a, 253); break;
+                                case 11: UseSkill(ref a, 253); break;
+                            }
+                            break;
+                        }
+                    case 4:
+                        {
+                            int randomValue = random.Next(12);
+                            switch (randomValue)
+                            {
+                                case 0: UseSkill(ref a, 174); break;
+                                case 1: UseSkill(ref a, 174); break;
+                                case 2: UseSkill(ref a, 168); break;
+                                case 3: UseSkill(ref a, 168); break;
+                                case 4: UseSkill(ref a, 168); break;
+                                case 5: UseSkill(ref a, 168); break;
+                                case 6: UseSkill(ref a, 253); break;
+                                case 7: UseSkill(ref a, 253); break;
+                                case 8: UseSkill(ref a, 253); break;
+                                case 9: UseSkill(ref a, 253); break;
+                                case 10: UseSkill(ref a, 253); break;
+                                case 11: UseSkill(ref a, 253); break;
+                            }
+                            break;
+                        }
+                }
+            }
+        }
+
+        private static void BossAhriman1AI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            ushort currentHpPercent = BossCurrentHpPercent(ref a);
+            MelonLogger.Msg("Ahriman HP%: " + currentHpPercent);
+            MelonLogger.Msg("Ahriman HP: " + a.work.hp);
+
+            if (a.work.nowindex == 171)
+                UseSkill(ref a, 141);
+        }
+
+        private static void BossNoah2AI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            ushort currentHpPercent = BossCurrentHpPercent(ref a);
+            MelonLogger.Msg("Noah HP%: " + currentHpPercent);
+            MelonLogger.Msg("Noah HP: " + a.work.hp);
+
+            if (currentHpPercent <= 50 && actionTrackers[a.work.id].phase == 1)
+                actionTrackers[a.work.id].phase = 2;
+
+            if (actionTrackers[a.work.id].currentTurnActionCount == 1 && (actionTrackers[a.work.id].currentBattleTurnCount % 2) == 0 &&
+                (AllyPartyBuffed(1) || EnemyPartyDebuffed(1)))
+            {
+                if (AllyPartyBuffed(1) && random.Next(2) == 0)
+                {
+                    UseSkill(ref a, 57); return;
+                }
+                else if (EnemyPartyDebuffed(1))
+                {
+                    UseSkill(ref a, 77); return;
+                }
+            }
+            else if (a.work.nowindex == 57 || a.work.nowindex == 77 || a.work.nowindex == 234 ||
+                (a.work.nowindex == 6 && actionTrackers[a.work.id].skillsUsedThisTurn.Contains(6)) ||
+                (a.work.nowindex == 12 && actionTrackers[a.work.id].skillsUsedThisTurn.Contains(12)) ||
+                (a.work.nowindex == 18 && actionTrackers[a.work.id].skillsUsedThisTurn.Contains(18)) ||
+                (a.work.nowindex == 24 && actionTrackers[a.work.id].skillsUsedThisTurn.Contains(24)) ||
+                (a.work.nowindex == 250 && actionTrackers[a.work.id].skillsUsedThisTurn.Contains(250)))
+                UseSkill(ref a, 170);
+            else if (a.work.nowindex == 170 && actionTrackers[a.work.id].phase == 2 
+                && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(250) && random.Next(3) == 0)
+                UseSkill(ref a, 250);
+            else if (a.work.nowindex == 6)
+                UseSkill(ref a, 6);
+            else if (a.work.nowindex == 12)
+                UseSkill(ref a, 12);
+            else if (a.work.nowindex == 18)
+                UseSkill(ref a, 18);
+            else if (a.work.nowindex == 24)
+                UseSkill(ref a, 24);
+            else if (a.work.nowindex == 250)
+                UseSkill(ref a, 250);
+        }
+
+        private static void BossNoah1AI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            ushort currentHpPercent = BossCurrentHpPercent(ref a);
+            MelonLogger.Msg("Noah HP%: " + currentHpPercent);
+            MelonLogger.Msg("Noah HP: " + a.work.hp);
+
+            switch (auroraValue)
+            {
+                case 0: UseSkill(ref a, 169); break;
+                case 248:
+                    {
+                        int randomValue = random.Next(2);
+                        switch (randomValue)
+                        {
+                            case 0: UseSkill(ref a, 169); break;
+                            case 1: UseSkill(ref a, 3); break;
+                        }
+                        break;
+                    }
+                case 249:
+                    {
+                        int randomValue = random.Next(2);
+                        switch (randomValue)
+                        {
+                            case 0: UseSkill(ref a, 169); break;
+                            case 1: UseSkill(ref a, 9); break;
+                        }
+                        break;
+                    }
+                case 250:
+                    {
+                        int randomValue = random.Next(2);
+                        switch (randomValue)
+                        {
+                            case 0: UseSkill(ref a, 169); break;
+                            case 1: UseSkill(ref a, 15); break;
+                        }
+                        break;
+                    }
+                case 251:
+                    {
+                        int randomValue = random.Next(2);
+                        switch (randomValue)
+                        {
+                            case 0: UseSkill(ref a, 169); break;
+                            case 1: UseSkill(ref a, 21); break;
+                        }
+                        break;
+                    }
+            }
         }
 
         private static void BigSpecterAI(ref nbActionProcessData_t a, ref int code, ref int n)

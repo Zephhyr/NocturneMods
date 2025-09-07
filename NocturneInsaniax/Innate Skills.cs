@@ -273,8 +273,8 @@ namespace NocturneInsaniax
             { 255, new InnateSkill(383, 15, "", "")}, // 255 
             { 256, new InnateSkill(383, 15, "Best Friend", "")}, // 256 Boss Forneus
             { 257, new InnateSkill(383, 15, "Phantasmagoria", "")}, // 257 Boss Specter 1 (Mini)
-            { 258, new InnateSkill(383, 15, "Boss Ahriman 2", "")}, // 258 Boss Ahriman 2
-            { 259, new InnateSkill(383, 15, "Boss Noah 2", "")}, // 259 Boss Noah 2
+            { 258, new InnateSkill(383, 05, "Silencing Bellow", "")}, // 258 Boss Ahriman 2
+            { 259, new InnateSkill(383, 15, "Aurora", "")}, // 259 Boss Noah 2
             { 260, new InnateSkill(383, 15, "Twilit Melody", "")}, // 260 Forced Incubus
             { 261, new InnateSkill(383, 15, "Force Gestalt", "")}, // 261 Forced Koppa Tengu
             { 262, new InnateSkill(383, 15, "Dark Star", "")}, // 262 Forced Kaiwan
@@ -307,7 +307,7 @@ namespace NocturneInsaniax
             { 289, new InnateSkill(383, 15, "Paw-to-Paw Combat", "")}, // 289 Boss Ose Hallel
             { 290, new InnateSkill(383, 15, "Paw-to-Paw Combat", "")}, // 290 Boss Flauros Hallel
             { 291, new InnateSkill(383, 05, "Hell's Forfeit", "")}, // 291 Boss Ahriman 1
-            { 292, new InnateSkill(383, 15, "Boss Noah 1", "")}, // 292 Boss Noah 1
+            { 292, new InnateSkill(383, 15, "Aurora", "")}, // 292 Boss Noah 1
             { 293, new InnateSkill(383, 15, "Boss Kagutsuchi 1", "")}, // 293 Boss Kagutsuchi 1
             { 294, new InnateSkill(383, 15, "Phantasmagoria", "")}, // 294 Boss Specter 1 (Merged 6)
             { 295, new InnateSkill(383, 15, "Phantasmagoria", "")}, // 295 Boss Specter 1 (Merged 4-5)

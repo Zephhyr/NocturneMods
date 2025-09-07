@@ -567,6 +567,10 @@ namespace NocturneInsaniax
                 {
                     nbHelpProcess.nbDispText("All -nda effects negated!", string.Empty, 2, 45, 2315190144, false);
                 }
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 1024 && actionProcessData.work.nowindex == 142)
+                {
+                    nbHelpProcess.nbDispText("All -kaja effects negated!", string.Empty, 2, 45, 2315190144, false);
+                }
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 263168 && actionProcessData.work.nowindex == 511)
                 {
                     foreach (var unit in nbMainProcess.nbGetMainProcessData().party)
