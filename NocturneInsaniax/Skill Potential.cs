@@ -203,8 +203,8 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , -4   , 5    , 5    , 5    , 5    , 0    , 0    , 0    , 2    , 0 }, // 176 Loa
             new sbyte[] {3    , 0    , -4   , 0    , 0    , 0    , -4   , 3    , 3    , 3    , 3    , 0    , 0    , -2   , 1    , 0 }, // 177 Chatterskull
             new sbyte[] {0    , 0    , 0    , 5    , -4   , 2    , -4   , 0    , 0    , 0    , 0    , 2    , 0    , -4   , 2    , 0 }, // 178 Phantom
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 179 Ose Hallel
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 180 Flauros Hallel
+            new sbyte[] {6    , 0    , 4    , 0    , 0    , 0    , 0    , -5   , 0    , 0    , 0    , 0    , 0    , 0    , 4    , 0 }, // 179 Ose Hallel
+            new sbyte[] {6    , 4    , 0    , 0    , 0    , 0    , 0    , -5   , 0    , 0    , 0    , 0    , 0    , 0    , 4    , 0 }, // 180 Flauros Hallel
             new sbyte[] {0    , 0    , 0    , 4    , -3   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0    , 0 }, // 181 Urthona
             new sbyte[] {0    , 4    , -3   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0    , 0 }, // 182 Urizen
             new sbyte[] {0    , 0    , 0    , -3   , 4    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 1    , 0    , 0 }, // 183 Luvah
@@ -315,9 +315,9 @@ namespace NocturneInsaniax
             new sbyte[] {4    , 6    , -6   , 4    , 0    , 0    , 6    , 0    , -4   , -4   , -4   , 0    , 0    , 0    , 0    , 0 }, // 286 Boss Uriel
             new sbyte[] {0    , 4    , 0    , -5   , 0    , 6    , -5   , 6    , 4    , 4    , 4    , 6    , 0    , 2    , 2    , 0 }, // 287 Boss Samael
             //          {Phys , Fire , Ice  , Elec , Force, Alm  , Light, Dark , Curse, Nerve, Mind , SD   , Shot , Heal , Supp , Util}
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 288 Boss Baal Avatar
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 289 Boss Ose Hallel
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 290 Boss Flauros Hallel
+            new sbyte[] {6    , 6    , 6    , 6    , 6    , 6    , 6    , 6    , 6    , 6    , 6    , 6    , 6    , 4    , 4    , 0 }, // 288 Boss Baal Avatar
+            new sbyte[] {6    , 0    , 4    , 0    , 0    , 0    , 0    , -5   , 0    , 0    , 0    , 0    , 0    , 0    , 4    , 0 }, // 289 Boss Ose Hallel
+            new sbyte[] {6    , 4    , 0    , 0    , 0    , 0    , 0    , -5   , 0    , 0    , 0    , 0    , 0    , 0    , 4    , 0 }, // 290 Boss Flauros Hallel
             new sbyte[] {5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 3    , 3    , 0 }, // 291 Boss Ahriman 1
             new sbyte[] {5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 3    , 3    , 0 }, // 292 Boss Noah 1
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 293 Boss Kagutsuchi 1
@@ -365,7 +365,7 @@ namespace NocturneInsaniax
             new sbyte[] {5    , 7    , -7   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 335 Boss Surt
             //          {Phys , Fire , Ice  , Elec , Force, Alm  , Light, Dark , Curse, Nerve, Mind , SD   , Shot , Heal , Supp , Util}
             new sbyte[] {0    , 0    , -5   , 0    , 4    , 0    , 0    , 2    , 4    , 0    , 4    , 0    , 0    , 2    , 0    , 0 }, // 336 Boss Pazuzu
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 337 Boss Thor 2
+            new sbyte[] {5    , 0    , 0    , 7    , -7   , 0    , 0    , 0    , -3   , -3   , -3   , 0    , 0    , 0    , 2    , 0 }, // 337 Boss Thor 2
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 338 
             new sbyte[] {5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0 }, // 339 Boss Raidou/Dante 1
             new sbyte[] {6    , 0    , 0    , 6    , 6    , 4    , 0    , 0    , 0    , 0    , 0    , 4    , 0    , 0    , 4    , 0 }, // 340 Chase Raidou/Dante
@@ -626,8 +626,8 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+5: Dark/Ailments • +2: Supp  <material=\"MsgFont1\">-4: Light", // 176 Loa
             "  <material=\"MsgFont4\">+3: Phys/Dark/Ailments • +1: Supp  <material=\"MsgFont1\">-2: Heal • -4: Ice/Light", // 177 Chatterskull
             "  <material=\"MsgFont4\">+5: Elec • +2: Almighty/Supp  <material=\"MsgFont1\">-4: Force/Light/Heal", // 178 Phantom
-            "", // 179 Ose Hallel
-            "", // 180 Flauros Hallel
+            "  <material=\"MsgFont4\">+6: Phys • +4: Ice/Supp  <material=\"MsgFont1\">-5: Dark", // 179 Ose Hallel
+            "  <material=\"MsgFont4\">+6: Phys • +4: Fire/Supp  <material=\"MsgFont1\">-5: Dark", // 180 Flauros Hallel
             "  <material=\"MsgFont4\">+4: Elec • +1: Heal  <material=\"MsgFont1\">-3: Force", // 181 Urthona
             "  <material=\"MsgFont4\">+4: Fire • +1: Heal  <material=\"MsgFont1\">-3: Ice", // 182 Urizen
             "  <material=\"MsgFont4\">+4: Force • +1: Heal  <material=\"MsgFont1\">-3: Elec", // 183 Luvah
@@ -1419,38 +1419,48 @@ namespace NocturneInsaniax
                         if (datNormalSkill.tbl[nskill].hptype == 2) // If the skill heals HP
                         {
                             __result = Convert.ToInt32(SkillPotentialUtility.ApplyHealMultiplier(skillPotential, __result));
-
-                            // Increase Boss Healing
-                            if (bossList.Contains(demonID) && bossList.Contains(targetID))
-                            {
-                                if (targetID == 299)
-                                    __result = Convert.ToInt32(__result / 3);
-                                else if (targetID == 306)
-                                    __result = Convert.ToInt32(__result * 5);
-                                else
-                                    __result = Convert.ToInt32(__result * 2);
-                            }
                         }
                         else if (datNormalSkill.tbl[nskill].hptype != 6 && datNormalSkill.tbl[nskill].hptype != 8 && datNormalSkill.tbl[nskill].hptype != 11)
                         {
                             __result = Convert.ToInt32(SkillPotentialUtility.ApplyDamageMultiplier(skillPotential, __result));
-
-                            if (faithfulCompanionActive) // Faithful Companion
-                                __result = Convert.ToInt32(__result * 1.2);
-
-                            if ((targetID == 259 || targetID == 292)) // Noah's Aurora
-                            {
-                                var noahParty = nbMainProcess.nbGetPartyFromFormindex(4);
-                                var noah1Affinity = noahParty.count[19];
-
-                                if (noah1Affinity != 0 && (datSkill.tbl[nskill].skillattr == 5 || datSkill.tbl[nskill].skillattr == 11))
-                                    __result = Convert.ToInt32(__result / 10);
-                            }
-
-                            var targetVit = datCalc.datGetParam(nbMainProcess.nbGetUnitWorkFromFormindex(dformindex), 3);
-
-                            __result = Convert.ToInt32(__result / (1 + (targetVit/160)));
                         }
+                    }
+
+                    if (datNormalSkill.tbl[nskill].hptype == 2) // If the skill heals HP
+                    {
+                        // Increase Boss Healing
+                        if (bossList.Contains(demonID) && bossList.Contains(targetID))
+                        {
+                            if (targetID == 299)
+                                __result = Convert.ToInt32(__result / 3);
+                            else if (targetID == 306)
+                                __result = Convert.ToInt32(__result * 4);
+                            else
+                                __result = Convert.ToInt32(__result * 2);
+                        }
+                    }
+                    else if (datNormalSkill.tbl[nskill].hptype != 6 && datNormalSkill.tbl[nskill].hptype != 8 && datNormalSkill.tbl[nskill].hptype != 11)
+                    {
+                        if (faithfulCompanionActive) // Faithful Companion
+                            __result = Convert.ToInt32(__result * 1.2);
+
+                        if ((targetID == 259 || targetID == 292)) // Noah's Aurora
+                        {
+                            var noahParty = nbMainProcess.nbGetPartyFromFormindex(4);
+                            var noahAffinity = noahParty.count[19];
+
+                            if (noahAffinity != 0 && (datSkill.tbl[nskill].skillattr == 5 || datSkill.tbl[nskill].skillattr == 11))
+                                __result = Convert.ToInt32(__result / 10);
+                        }
+
+                        if (nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).badstatus == 512 && datNormalSkill.tbl[nskill].koukatype == 0)
+                            __result = Convert.ToInt32((__result * 5) + random.Next(5));
+                        else if (nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).badstatus == 512 && datNormalSkill.tbl[nskill].koukatype == 1)
+                            __result = Convert.ToInt32(__result / 2);
+
+                        var targetVit = datCalc.datGetParam(nbMainProcess.nbGetUnitWorkFromFormindex(dformindex), 3);
+
+                        __result = Convert.ToInt32(__result / (1 + (targetVit / 160)));
                     }
                 }
             }
@@ -1510,7 +1520,9 @@ namespace NocturneInsaniax
                         datNormalSkill.tbl[nskill].badlevel = 30;
                     }
 
-                    datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(Math.Min(254, SkillPotentialUtility.ApplyAilmentMultiplier(skillPotential, luk, tmp_datNormalSkill.badlevel)));
+                    bool skillIsAttack = (datNormalSkill.tbl[nskill].hptype == 1 || datNormalSkill.tbl[nskill].hptype == 6 || datNormalSkill.tbl[nskill].hptype == 12 || datNormalSkill.tbl[nskill].hptype == 14);
+
+                    datNormalSkill.tbl[nskill].badlevel = Convert.ToByte(Math.Min(254, SkillPotentialUtility.ApplyAilmentMultiplier(skillPotential, skillIsAttack, luk, tmp_datNormalSkill.badlevel)));
 
                     // Skadi's Queen of Winter
                     if ((demonID == 17 || demonID == 277) && datSkill.tbl[nskill].skillattr == 2 && datNormalSkill.tbl[nskill].basstatus == 2)
@@ -2222,6 +2234,21 @@ namespace NocturneInsaniax
 
                 switch (skillPotential)
                 {
+                    case 30:
+                        multiplier = 1 / 2.0f;
+                        break;
+                    case 29:
+                        multiplier = 1 / 2.0f;
+                        break;
+                    case 28:
+                        multiplier = 1 / 1.975f;
+                        break;
+                    case 27:
+                        multiplier = 1 / 1.95f;
+                        break;
+                    case 26:
+                        multiplier = 1 / 1.925f;
+                        break;
                     case 25:
                         multiplier = 1 / 1.9f;
                         break;
@@ -2340,7 +2367,7 @@ namespace NocturneInsaniax
                         multiplier = 1.5f;
                         break;
                     case 4:
-                        multiplier = 1.25f;
+                        multiplier = 1.35f;
                         break;
                     case 3:
                         multiplier = 1.25f;
@@ -2378,6 +2405,21 @@ namespace NocturneInsaniax
 
                 switch (skillPotential)
                 {
+                    case 30:
+                        multiplier = 2.0f;
+                        break;
+                    case 29:
+                        multiplier = 2.0f;
+                        break;
+                    case 28:
+                        multiplier = 1.975f;
+                        break;
+                    case 27:
+                        multiplier = 1.95f;
+                        break;
+                    case 26:
+                        multiplier = 1.925f;
+                        break;
                     case 25:
                         multiplier = 1.9f;
                         break;
@@ -2403,7 +2445,7 @@ namespace NocturneInsaniax
                         multiplier = 1.725f;
                         break;
                     case 17:
-                        multiplier = 1.70f;
+                        multiplier = 1.7f;
                         break;
                     case 16:
                         multiplier = 1.675f;
@@ -2427,19 +2469,19 @@ namespace NocturneInsaniax
                         multiplier = 1.525f;
                         break;
                     case 9:
-                        multiplier = 1.50f;
+                        multiplier = 1.5f;
                         break;
                     case 8:
                         multiplier = 1.45f;
                         break;
                     case 7:
-                        multiplier = 1.40f;
+                        multiplier = 1.4f;
                         break;
                     case 6:
                         multiplier = 1.35f;
                         break;
                     case 5:
-                        multiplier = 1.30f;
+                        multiplier = 1.3f;
                         break;
                     case 4:
                         multiplier = 1.25f;
@@ -2485,87 +2527,102 @@ namespace NocturneInsaniax
                 return damage * multiplier;
             }
 
-            public static float ApplyAilmentMultiplier(sbyte skillPotential, int luk, float ailmentRate)
+            public static float ApplyAilmentMultiplier(sbyte skillPotential, bool skillIsAttack, int luk, float ailmentRate)
             {
                 //MelonLogger.Msg("INFLINCTING AILMENT!");
                 float multiplier = 1;
 
                 switch (skillPotential)
                 {
+                    case 30:
+                        multiplier = skillIsAttack ? 1.6f : 2.0f;
+                        break;
+                    case 29:
+                        multiplier = skillIsAttack ? 1.6f : 2.0f;
+                        break;
+                    case 28:
+                        multiplier = skillIsAttack ? 1.585f : 1.975f;
+                        break;
+                    case 27:
+                        multiplier = skillIsAttack ? 1.57f : 1.95f;
+                        break;
+                    case 26:
+                        multiplier = skillIsAttack ? 1.555f : 1.925f;
+                        break;
                     case 25:
-                        multiplier = 1.9f;
+                        multiplier = skillIsAttack ? 1.54f : 1.9f;
                         break;
                     case 24:
-                        multiplier = 1.875f;
+                        multiplier = skillIsAttack ? 1.525f : 1.875f;
                         break;
                     case 23:
-                        multiplier = 1.85f;
+                        multiplier = skillIsAttack ? 1.51f : 1.85f;
                         break;
                     case 22:
-                        multiplier = 1.825f;
+                        multiplier = skillIsAttack ? 1.495f : 1.825f;
                         break;
                     case 21:
-                        multiplier = 1.8f;
+                        multiplier = skillIsAttack ? 1.48f : 1.8f;
                         break;
                     case 20:
-                        multiplier = 1.775f;
+                        multiplier = skillIsAttack ? 1.465f : 1.775f;
                         break;
                     case 19:
-                        multiplier = 1.75f;
+                        multiplier = skillIsAttack ? 1.45f : 1.75f;
                         break;
                     case 18:
-                        multiplier = 1.725f;
+                        multiplier = skillIsAttack ? 1.435f : 1.725f;
                         break;
                     case 17:
-                        multiplier = 1.70f;
+                        multiplier = skillIsAttack ? 1.42f : 1.70f;
                         break;
                     case 16:
-                        multiplier = 1.675f;
+                        multiplier = skillIsAttack ? 1.405f : 1.675f;
                         break;
                     case 15:
-                        multiplier = 1.65f;
+                        multiplier = skillIsAttack ? 1.39f : 1.65f;
                         break;
                     case 14:
-                        multiplier = 1.625f;
+                        multiplier = skillIsAttack ? 1.375f : 1.625f;
                         break;
                     case 13:
-                        multiplier = 1.6f;
+                        multiplier = skillIsAttack ? 1.36f : 1.6f;
                         break;
                     case 12:
-                        multiplier = 1.575f;
+                        multiplier = skillIsAttack ? 1.345f : 1.575f;
                         break;
                     case 11:
-                        multiplier = 1.55f;
+                        multiplier = skillIsAttack ? 1.33f : 1.55f;
                         break;
                     case 10:
-                        multiplier = 1.525f;
+                        multiplier = skillIsAttack ? 1.315f : 1.525f;
                         break;
                     case 9:
-                        multiplier = 1.5f;
+                        multiplier = skillIsAttack ? 1.3f : 1.5f;
                         break;
                     case 8:
-                        multiplier = 1.45f;
+                        multiplier = skillIsAttack ? 1.27f : 1.45f;
                         break;
                     case 7:
-                        multiplier = 1.40f;
+                        multiplier = skillIsAttack ? 1.24f : 1.4f;
                         break;
                     case 6:
-                        multiplier = 1.35f;
+                        multiplier = skillIsAttack ? 1.21f : 1.35f;
                         break;
                     case 5:
-                        multiplier = 1.30f;
+                        multiplier = skillIsAttack ? 1.18f : 1.3f;
                         break;
                     case 4:
-                        multiplier = 1.25f;
+                        multiplier = skillIsAttack ? 1.15f : 1.25f;
                         break;
                     case 3:
-                        multiplier = 1.2f;
+                        multiplier = skillIsAttack ? 1.12f : 1.2f;
                         break;
                     case 2:
-                        multiplier = 1.15f;
+                        multiplier = skillIsAttack ? 1.09f : 1.15f;
                         break;
                     case 1:
-                        multiplier = 1.1f;
+                        multiplier = skillIsAttack ? 1.06f : 1.1f;
                         break;
                     case -1:
                         multiplier = 1 / 1.1f;

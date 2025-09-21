@@ -1108,6 +1108,8 @@ namespace NocturneInsaniax
 
             datEncount.tbl[472].flag = 11; // Boss Noah
             datEncount.tbl[993].flag = 11; // Boss Noah
+            datEncount.tbl[1008].flag = 11; // Boss Thor 2
+            datEncount.tbl[333].flag = 11; // Boss Baal Avatar
 
             datEncount.tbl[1033].flag = 11; // Dante/Raidou 1
 

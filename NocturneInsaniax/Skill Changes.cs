@@ -18,13 +18,13 @@ namespace NocturneInsaniax
     internal partial class NocturneInsaniax : MelonMod
     {
         public static ushort[] bossList = new ushort[] {
-            162, 163, 164, 165, 166, 248, 251, 252, 254, 256, 257, 258, 259, 262, 263, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283,
-            284, 285, 286, 287, 291, 292, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 312, 313, 320, 321, 322, 323, 324, 325, 326, 327, 328,
-            329, 333, 334, 335, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 362, 363, 364, 365, 366
+            162, 163, 164, 165, 166, 248, 251, 252, 254, 256, 257, 258, 259, 262, 263, 264, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282,
+            283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 312, 313, 320, 321, 322, 323,
+            324, 325, 326, 327, 328, 329, 333, 334, 335, 337, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 362, 363, 364, 365, 366
         };
-        public static ushort[] pushedSkillList = new ushort[] { 148, 149, 150, 151, 164, 165, 166, 167, 403, 407, 408, 416, 417, 496 };
+        public static ushort[] pushedSkillList = new ushort[] { 142, 148, 149, 150, 151, 164, 165, 166, 167, 234, 403, 407, 408, 416, 417, 496 };
 
-        public static List<nbActionProcess.SOBED> newSobed = new List<nbActionProcess.SOBED>();
+        //public static List<nbActionProcess.SOBED> newSobed = new List<nbActionProcess.SOBED>();
 
         public static ushort previousUnitId;
         public static short previousSingleTargetFormIndex = -1;
@@ -75,6 +75,7 @@ namespace NocturneInsaniax
                     case 169: __result = "Scorn"; return false;
                     case 170: __result = "Scorn"; return false;
                     case 174: __result = "Crush"; return false;
+                    case 175: __result = "Repulse"; return false;
                     case 179: __result = "Trisagion"; return false;
                     case 202: __result = "Toxic Spray"; return false;
                     case 210: __result = "Dormina"; return false;
@@ -878,32 +879,44 @@ namespace NocturneInsaniax
                 // If using a cursed gospel
                 if (nskill == 91)
                 {
-                    datUnitWork_t unit = dds3GlobalWork.DDS3_GBWK.unitwork[0];
-                    if (unit.level > 1)
+
+                    // Grab Demi-Fiend and check his Level.
+                    // If it's 1 or lower, return and run the original function.
+                    datUnitWork_t work = dds3GlobalWork.DDS3_GBWK.unitwork[0];
+
+                    if (work.level > 1)
                     {
-                        unit.level--;
-                        unit.exp = rstCalcCore.GetNextExpDisp(unit, 0) - 1;
+                        // Lower Level by 1.
+                        work.level--;
 
-                        bool hasLostStat = false;
-                        List<short> statList = new List<short> { 0, 2, 3, 4, 5 };
+                        // Set EXP needed to exactly 1 before the next level.
+                        work.exp = rstCalcCore.GetNextExpDisp(work, 0) - 1;
 
-                        while (!hasLostStat)
+                        // Create a list of Stat IDs, then remove 1 if EnableIntStat is false.
+                        List<int> statlist = new List<int> { 0, 1, 2, 3, 4, 5 };
+                        if (!EnableIntStat)
+                        { statlist.Remove(1); }
+
+                        // Iterate through Stats and reduce them at random a number of times equal to the current Stat points per level.
+                        // If EnableStatScaling is false, it's just 1 point.
+                        int changes = 1 * (EnableStatScaling ? POINTS_PER_LEVEL : 1);
+                        System.Random rng = new();
+                        while (changes > 0 && statlist.Count > 0)
                         {
-                            short stat = statList[random.Next(statList.Count)];
+                            // Randomize the Stat ID.
+                            int statID = statlist[rng.Next(statlist.Count)];
 
-                            // If the BASE stat is higher than 1 (total stat minus magatama stat)
-                            if (unit.param[stat] - tblHearts.fclHeartsTbl[dds3GlobalWork.DDS3_GBWK.heartsequip].GrowParamTbl[stat] > 1)
+                            // If the Base Stat is over 1, decrement it and the change count.
+                            if (work.param[statID] - tblHearts.fclHeartsTbl[dds3GlobalWork.DDS3_GBWK.heartsequip].GrowParamTbl[statID] > 1)
                             {
-                                unit.param[stat]--;
-                                hasLostStat = true;
+                                work.param[statID]--;
+                                changes--;
                             }
+
+                            // Remove anything that can't be reduced from being potentially chosen again.
                             else
-                            {
-                                statList.Remove(stat);
-                            }
+                            { statlist.Remove(statID); }
                         }
-
-                        dds3GlobalWork.DDS3_GBWK.unitwork[0] = unit;
                     }
                 }
             }
@@ -7738,7 +7751,8 @@ namespace NocturneInsaniax
         private static void BaelsBane(ushort id)
         {
             datSkill.tbl[id].skillattr = 5; // Almighty
-            datNormalSkill.tbl[id].badlevel = 100;
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].hitlevel = 255;
         }
 
         private static void VastLight(ushort id)

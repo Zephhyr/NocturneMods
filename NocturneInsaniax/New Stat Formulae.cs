@@ -497,7 +497,7 @@ namespace NocturneInsaniax
                     resistance = "0" + resistance;
                 bool isWeak = resistance[0] == '1';
 
-                if (isWeak)
+                if (isWeak || (workFromFormindex1.id == 288 && workFromFormindex2.badstatus == 512))
                     __result = 2; // Weak hit
                 else
                     __result = 0; // Normal hit

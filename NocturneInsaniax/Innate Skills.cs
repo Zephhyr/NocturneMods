@@ -303,7 +303,7 @@ namespace NocturneInsaniax
             { 285, new InnateSkill(383, 14, "Retributive Zeal", "")}, // 285 Boss Raphael
             { 286, new InnateSkill(383, 14, "Retributive Zeal", "")}, // 286 Boss Uriel
             { 287, new InnateSkill(383, 15, "Undermine Divinity", "")}, // 287 Boss Samael
-            { 288, new InnateSkill(383, 15, "Boss Baal Avatar", "")}, // 288 Boss Baal Avatar
+            { 288, new InnateSkill(383, 15, "Condemn Weakness", "")}, // 288 Boss Baal Avatar
             { 289, new InnateSkill(383, 15, "Paw-to-Paw Combat", "")}, // 289 Boss Ose Hallel
             { 290, new InnateSkill(383, 15, "Paw-to-Paw Combat", "")}, // 290 Boss Flauros Hallel
             { 291, new InnateSkill(383, 05, "Hell's Forfeit", "")}, // 291 Boss Ahriman 1

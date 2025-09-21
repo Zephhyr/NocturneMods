@@ -23,6 +23,7 @@ namespace NocturneInsaniax
                     case 29: __result = "Needle Orb"; return false;
                     case 32: __result = "Medusa Eye"; return false;
                     case 33: __result = "Dekunda Rock"; return false;
+                    case 39: __result = "Intelligence Incense"; return false;
                     case 44: __result = "Graven Image"; return false;
                     case 46: __result = "Eternal Spyglass"; return false;
                     case 47: __result = "Spyglass"; return false;
@@ -102,6 +103,7 @@ namespace NocturneInsaniax
                     case 35: __result = "Repels Physical attacks \nfor one ally once \nnext turn."; return false; // Attack Mirror
                     case 36: __result = "Negates -kaja effects on all foes."; return false; // Dekaja Rock
                     case 37: __result = "Negates one Light/Dark attack \nfor all allies."; return false; // Tetraja Rock
+                    case 39: __result = "Raises Intelligence by 1 \nand full HP recovery \nfor one ally."; return false; // Intelligence Incense
                     case 44: __result = "Great HP recovery for one ally. \nReusable."; return false; // Graven Image
                     case 47: __result = "Displays an enemy's info."; return false; // Spyglass
                     case 48: __result = "Medium Fire damage to one foe. \nPow: 45, Acc: 100%"; return false; // Agilao Rock
@@ -182,6 +184,32 @@ namespace NocturneInsaniax
                         __result = 1;
                 }
             }
+
+            [HarmonyPatch(typeof(cmpMisc), nameof(cmpMisc.cmpUseItemKou))]
+            private class PatchIncense
+            {
+                private static bool Prefix(ushort ItemID, datUnitWork_t pStock)
+                {
+                    // Checks the currently used item's ID and make sure it's the Stat Incense items.
+                    if (ItemID > 0x25 && ItemID < 0x2c)
+                    {
+                        // Set the Stat ID relative to the current Incense.
+                        int statID = ItemID - 0x26;
+
+                        // Increases the target's stat if it isn't above the maximum, then recalculates HP/MP and heals them.
+                        if (datCalc.datGetBaseParam(pStock, statID) < MAXSTATS)
+                        {
+                            pStock.param[statID]++;
+                            pStock.maxhp = (ushort)datCalc.datGetMaxHp(pStock);
+                            pStock.maxmp = (ushort)datCalc.datGetMaxMp(pStock);
+                            pStock.hp = pStock.maxhp;
+                            pStock.mp = pStock.mp > pStock.maxmp ? pStock.maxmp : pStock.mp;
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+            }
         }
         //------------------------------------------------------------
 
@@ -191,6 +219,7 @@ namespace NocturneInsaniax
             NeedleOrbItem(29);
             MedusaEye(32);
             DekundaRock(33);
+            IntelligenceIncense(39);
             GravenImage(44);
             Spyglass(47);
             AgilaoRock(48);
@@ -237,6 +266,14 @@ namespace NocturneInsaniax
             datItem.tbl[id].price = 400;
             datItem.tbl[id].skillid = 77;
             datItem.tbl[id].use = 2;
+        }
+
+        private static void IntelligenceIncense(ushort id)
+        {
+            datItem.tbl[id].flag = 4;
+            datItem.tbl[id].price = 2000;
+            datItem.tbl[id].skillid = 0;
+            datItem.tbl[id].use = 1;
         }
 
         private static void GravenImage(ushort id)
@@ -654,8 +691,10 @@ namespace NocturneInsaniax
             fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemID = 0;
             fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemNum = 0;
             fldGlobal.fldHitData._fldItemBoxTbl[351]._Trap = 1;
-            fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 472; //1278;
             //fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 334; //1278;
+            //fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 472; //1278;
+            //fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 1008; //1278;
+            fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 333; //1278;
 
             //fldGlobal.fldHitData._fldItemBoxTbl.Add(new fldTakaraTbl_t { _ItemID = 47, _ItemNum = 5 });
         }

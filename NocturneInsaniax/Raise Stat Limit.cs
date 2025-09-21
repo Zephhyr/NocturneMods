@@ -18,21 +18,25 @@ namespace NocturneInsaniax
         private const int MAXSTATS = 40;
         private const int MAXHPMP = 9999;
         private const int POINTS_PER_LEVEL = 1;
+        private const float STATS_SCALING = 2f;
         private const bool EnableIntStat = false;
         private const bool EnableStatScaling = false;
 
         // Stat Bar manipulation variables
         private const string BundlePath = "smt3hd_Data/StreamingAssets/PC/";
-        private const float BAR_SCALE_X = (float)(40f / MAXSTATS * 0.9f);
-        private const float BAR_SEGMENT_X = 20f * (float)(40f / MAXSTATS) * 0.9f;
+        private const float BAR_SCALE_X = (float)(40f / MAXSTATS) * 0.885f;
+        private const float BAR_SEGMENT_X = 14f;
         private static uint[] pCol = (uint[])Array.CreateInstance(typeof(uint), 4);
         private static AssetBundle barData = null;
         private static string[] paramNames = { "Str", "Int", "Mag", "Vit", "Agi", "Luc" };
+        private static int[] LevelUpPoints = { 0, 0, 0, 0, 0, 0 };
         private const string barSpriteName = "sstatusbar_base";
         private static string[] StatusBarValues = { "shpnum_current", "shpnum_full", "smpnum_current", "smpnum_full" };
         private static string[] StockBarValues = { "barhp", "barmp" };
         private static string[] AnalyzeBarValues = { "banalyze_hp_known", "banalyze_mp_known" };
         private static string[] PartyBarValues = { "barhp", "barmp" };
+
+        // Menu manipulation variables
         private static bool SettingAsignParam;
 
         [HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstChkParamLimitAll))]
@@ -55,11 +59,95 @@ namespace NocturneInsaniax
                     // If you got to this point, your stats are completely maxed out.
                     // Additionally, if this is true, recalculate your HP/MP.
                     if (paramSet)
-                    { rstcalc.rstSetMaxHpMp(0, ref pStock); }
+                    {
+                        pStock.maxhp = (ushort)datCalc.datGetMaxHp(pStock);
+                        pStock.maxmp = (ushort)datCalc.datGetMaxMp(pStock);
+
+                        // Make sure both HP/MP don't overshoot.
+                        pStock.hp = pStock.hp > pStock.maxhp ? pStock.maxhp : pStock.hp;
+                        pStock.mp = pStock.mp > pStock.maxmp ? pStock.maxmp : pStock.mp;
+                    }
 
                     // Make sure to return 1 to tell the game your stats are capped.
                     __result = 1;
                 }
+                return false;
+            }
+        }
+
+        [HarmonyPatch(typeof(datCalc), nameof(datCalc.datCheckSkillTakaraSagasi))]
+        private class PatchLuckyFind
+        {
+            private static bool Prefix(out int __result)
+            {
+                __result = 0;
+
+                // Loop through all of your Demons to search for any that have Lucky Find.
+                for (int i = 0; i < dds3GlobalWork.DDS3_GBWK.unitwork.Length; i++)
+                {
+                    // Grab the work demon.
+                    datUnitWork_t work = dds3GlobalWork.DDS3_GBWK.unitwork[i];
+
+                    // Flag Check of some sort.
+                    if ((~work.flag & 3) == 0)
+                    {
+                        // Grab the Demon's Luck.
+                        int luck = EnableStatScaling ? (int)((float)datCalc.datGetParam(work, 5) / STATS_SCALING) : datCalc.datGetParam(work, 5);
+
+                        // If the Demon has Lucky Find as a Skill.
+                        if (datCalc.datCheckSyojiSkill(work, 0x161) != 0)
+                        {
+                            // A random integer check to see if the Demon's ID is returned.
+                            uint randomChance = dds3KernelCore.dds3GetRandIntA(0x20);
+                            if (randomChance <= (luck << 7) / 100)
+                            { __result = work.id; return false; }
+                        }
+                    }
+                }
+
+                return false;
+            }
+        }
+
+        [HarmonyPatch(typeof(scrParameterCommand), nameof(scrParameterCommand.prm_PLAYER_GET_PARAM))]
+        private class PatchCommandPlayerGetParam
+        {
+            // This gets called from the Stat Doors in the Labyrinth of Amala.
+            // Specifically, the Third Kalpa Player Stat Doors.
+            private static bool Prefix(out int __result)
+            {
+                // Get Player's Param ID.
+                int value = ScrTraceCode.scrGetIntPara(0);
+
+                // Get the Parameter's actual raw value.
+                value = datCalc.datGetPlayerParam(value);
+
+                // Scale properly, then return.
+                value = EnableStatScaling ? (int)Math.Floor((float)value / (Math.Ceiling((float)MAXSTATS / 40f) / STATS_SCALING)) : value;
+                ScrTraceCode.scrSetIntReturnValue(value);
+                __result = 1;
+                return false;
+            }
+        }
+
+        [HarmonyPatch(typeof(scrParameterCommand), nameof(scrParameterCommand.prm_NAKAMA_GET_PARAM))]
+        private class PatchCommandAllyGetParam
+        {
+            // This gets called from the Stat Doors in the Labyrinth of Amala.
+            // Specifically, the Fifth Kalpha Demon Stat Doors.
+            private static bool Prefix(out int __result)
+            {
+                // Get Demon ID and Param ID.
+                int id = ScrTraceCode.scrGetIntPara(0);
+                int param = ScrTraceCode.scrGetIntPara(1);
+
+                // Grab the Parameter's actual raw value.
+                param = datCalc.datGetNakamaParam(id, param);
+
+                // Scale it properly, then return.
+                param = EnableStatScaling ? (int)Math.Floor((float)param / (Math.Ceiling((float)MAXSTATS / 40f) / STATS_SCALING)) : param;
+                ScrTraceCode.scrSetIntReturnValue(param);
+                __result = 1;
                 return false;
             }
         }
@@ -73,19 +161,16 @@ namespace NocturneInsaniax
                 // Yes, this means if you *somehow* have Demi-Fiend more than once, it'll add the stat to each of them.
                 foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 0))
                 {
-                    // Setting a reference variable for rstcalc.rstSetMaxHpMp because otherwise it won't work.
-                    datUnitWork_t pStock = work;
-
                     // Adds to then clamps whatever stat you're adding to.
                     // Note that "add" can be negative.
-                    pStock.param[id] += (sbyte)add;
-                    if (datCalc.datGetPlayerParam(id) >= MAXSTATS)
-                    { pStock.param[id] = MAXSTATS; }
-                    if (datCalc.datGetPlayerParam(id) < 1)
-                    { pStock.param[id] = 1; }
+                    int heartParam = rstCalcCore.cmbGetHeartsParam((sbyte)dds3GlobalWork.DDS3_GBWK.heartsequip, (sbyte)id);
+                    work.param[id] = (sbyte)Math.Clamp(work.param[id] + add, 0, MAXSTATS + heartParam);
 
-                    // Recalculate HP/MP.
-                    cmpMisc.cmpSetMaxHPMP(pStock);
+                    // Adjust Max HP/MP and fully heal.
+                    work.maxhp = (ushort)datCalc.datGetMaxHp(work);
+                    work.maxhp = (ushort)datCalc.datGetMaxHp(work);
+                    work.hp = work.hp > work.maxhp ? work.maxhp : work.hp;
+                    work.mp = work.mp > work.maxmp ? work.maxmp : work.mp;
                 }
                 return false;
             }
@@ -97,50 +182,21 @@ namespace NocturneInsaniax
             private static bool Prefix(ref int __result, datUnitWork_t work, int paratype)
             {
                 // Just returns the parameter of the given type.
-                __result = GetParam(work, paratype);
+                int heartParam = work.id == 0 ? rstCalcCore.cmbGetHeartsParam((sbyte)dds3GlobalWork.DDS3_GBWK.heartsequip, (sbyte)paratype) : 0;
+                __result = Math.Clamp(work.param[paratype] - heartParam + work.levelupparam[paratype], 0, MAXSTATS); ;
                 return false;
-            }
-            public static int GetParam(datUnitWork_t work, int paratype)
-            {
-                // Pulls the parameter for the other function and clamps it between 0 and the new maximum.
-                int result = work.param[paratype];
-                result = Math.Clamp(result, 1, MAXSTATS);
-                return result;
             }
         }
 
         [HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetParam))]
         private class PatchGetParam
         {
-            private static bool Prefix(ref int __result, datUnitWork_t work, int paratype)
+            private static bool Prefix(out int __result, datUnitWork_t work, int paratype)
             {
                 // Returns the base stat of the given parameter.
-                __result = datCalc.datGetBaseParam(work, paratype) + work.mitamaparam[paratype] + work.levelupparam[paratype];
+                int heartParam = work.id == 0 ? rstCalcCore.cmbGetHeartsParam((sbyte)dds3GlobalWork.DDS3_GBWK.heartsequip, (sbyte)paratype) : 0;
+                __result = Math.Clamp(datCalc.datGetBaseParam(work, paratype) + heartParam + work.mitamaparam[paratype], 0, MAXSTATS + heartParam + work.mitamaparam[paratype]);
                 return false;
-            }
-        }
-
-        [HarmonyPatch(typeof(cmpMisc), nameof(cmpMisc.cmpUseItemKou))]
-        private class PatchIncense
-        {
-            private static bool Prefix(ushort ItemID, datUnitWork_t pStock)
-            {
-                // Checks the currently used item's ID and make sure it's the Stat Incense items.
-                if (ItemID > 0x25 && ItemID < 0x2c)
-                {
-                    // Set the Stat ID relative to the current Incense.
-                    int statID = ItemID - 0x26;
-
-                    // Increases the target's stat if it isn't above the maximum, then recalculates HP/MP and heals them.
-                    if (rstCalcCore.cmbGetParamBase(ref pStock, statID) < MAXSTATS)
-                    {
-                        pStock.param[statID]++;
-                        rstcalc.rstSetMaxHpMp(0, ref pStock);
-                        pStock.hp = pStock.maxhp;
-                        return false;
-                    }
-                }
-                return true;
             }
         }
 
@@ -150,17 +206,17 @@ namespace NocturneInsaniax
             public static int GetBaseMaxHP(datUnitWork_t work)
             {
                 // Calculate the unit's actual Base Max HP value.
-                int result = (datCalc.datGetBaseParam(work, 3) + work.levelupparam[3] + work.level) * 6;
+                int result = (Math.Clamp(datCalc.datGetParam(work, 3), 0, MAXSTATS) + work.level) * 6;
 
                 // If enabled, scale differently.
                 if (EnableStatScaling)
-                    { result = (int)(((float)(datCalc.datGetBaseParam(work, 3) + (float)work.levelupparam[3]) / (float)POINTS_PER_LEVEL + (float)work.level) * 6f); }
+                { result = (int)((float)(Math.Clamp(datCalc.datGetParam(work, 3), 0, MAXSTATS) / (float)STATS_SCALING + (float)work.level) * 6f); }
 
                 // Return the result.
                 return result;
             }
 
-            private static bool Prefix(ref int __result, datUnitWork_t work)
+            private static bool Prefix(out int __result, datUnitWork_t work)
             {
                 // Return the above function's value.
                 __result = GetBaseMaxHP(work);
@@ -174,17 +230,17 @@ namespace NocturneInsaniax
             public static int GetBaseMaxMP(datUnitWork_t work)
             {
                 // Calculate the unit's actual Base Max MP value.
-                int result = (datCalc.datGetBaseParam(work, 2) + work.levelupparam[2] + work.level) * 4;
+                int result = (Math.Clamp(datCalc.datGetParam(work, 2), 0, MAXSTATS) + work.level) * 4;
 
                 // If enabled, scale differently.
                 if (EnableStatScaling)
-                { result = (int)(((float)(datCalc.datGetBaseParam(work, 2) + (float)work.levelupparam[2]) / (float)POINTS_PER_LEVEL + (float)work.level) * 4f); }
+                { result = (int)(((float)Math.Clamp(datCalc.datGetParam(work, 2), 0, MAXSTATS) / (float)STATS_SCALING + (float)work.level) * 4f); }
 
                 // Return the result.
                 return result;
             }
 
-            private static bool Prefix(ref int __result, datUnitWork_t work)
+            private static bool Prefix(out int __result, datUnitWork_t work)
             {
                 // Similar to the HP function, just return the above function's result.
                 __result = GetBaseMaxMP(work);
@@ -211,7 +267,7 @@ namespace NocturneInsaniax
                 return result;
             }
 
-            private static bool Prefix(ref uint __result, datUnitWork_t work)
+            private static bool Prefix(out uint __result, datUnitWork_t work)
             {
                 // Again, return the above function's result.
                 __result = GetMaxHP(work);
@@ -239,7 +295,7 @@ namespace NocturneInsaniax
                 // Return.
                 return result;
             }
-            private static bool Prefix(ref uint __result, datUnitWork_t work)
+            private static bool Prefix(out uint __result, datUnitWork_t work)
             {
                 // Grab and return.
                 __result = GetMaxMP(work);
@@ -256,12 +312,9 @@ namespace NocturneInsaniax
                 pStock.maxhp = (ushort)datCalc.datGetMaxHp(pStock);
                 pStock.maxmp = (ushort)datCalc.datGetMaxMp(pStock);
 
-                // If Mode is 0 and their EvoFlag is not zero, fully heal them.
-                if (Mode == 0 && rstinit.GBWK.EvoFlag != 0)
-                {
-                    pStock.hp = pStock.maxhp;
-                    pStock.mp = pStock.maxmp;
-                }
+                // Make sure both HP/MP don't overshoot.
+                pStock.hp = pStock.hp > pStock.maxhp ? pStock.maxhp : pStock.hp;
+                pStock.mp = pStock.mp > pStock.maxmp ? pStock.maxmp : pStock.mp;
             }
         }
 
@@ -276,7 +329,7 @@ namespace NocturneInsaniax
                 // Change the list's values to true if that Stat is capped.
                 for (int i = 0; i < paramChecks.Length; i++)
                 {
-                    if (pStock.param[i] + pStock.levelupparam[i] >= MAXSTATS)
+                    if (datCalc.datGetBaseParam(pStock, i) >= MAXSTATS)
                     { paramChecks[i] = true; }
                 }
 
@@ -301,11 +354,12 @@ namespace NocturneInsaniax
                     { break; }
 
                     // Grab a particular Stat ID.
-                    int ctr = (int)(fclMisc.FCL_RAND() % paramChecks.Length);
-
-                    // If over zero and Int is disabled, make sure to skip Int.
-                    if (ctr > 0 && !EnableIntStat)
-                    { ctr++; }
+                    // Note this will loop forever if the number's out of range.
+                    // Additionally, if it selects Int while Int is disabled, it'll loop again to try and unselect it.
+                    int ctr = -1;
+                    do
+                    { ctr = (int)(fclMisc.FCL_RAND() % paramChecks.Length); }
+                    while (ctr < 0 || ctr > 6 || ctr == 1 && !EnableIntStat);
 
                     // If it's capped, continue and do it again.
                     if (paramChecks[ctr] == true)
@@ -319,10 +373,6 @@ namespace NocturneInsaniax
                     // If Mode is zero, increment the LevelUp Stat.
                     if (Mode == 0)
                     { pStock.levelupparam[ctr]++; }
-
-                    // If the Stat is somehow zero, return 0x7f.
-                    if (pStock.param[ctr] + pStock.levelupparam[ctr] <= 0)
-                    { return 0x7f; }
 
                     // Return the Stat ID.
                     return (sbyte)ctr;
@@ -353,19 +403,18 @@ namespace NocturneInsaniax
                 // Grab the current Stock demon.
                 datUnitWork_t pStock = rstinit.GBWK.pCurrentStock;
 
-                // Iterate a loop through LevelUp Stats, clear them, then check for if the stat's capped already and set a boolean.
+                // Iterate a loop through Stats and checks for if the stat's capped already and set a boolean.
                 int i = 0;
-                for (i = 0; i < pStock.levelupparam.Length; i++)
+                for (i = 0; i < pStock.param.Length; i++)
                 {
                     if (i == 1 && !EnableIntStat)
                     { continue; }
-                    pStock.levelupparam[i] = 0;
-                    if (pStock.param[i] + pStock.levelupparam[i] >= MAXSTATS)
+                    if (datCalc.datGetBaseParam(pStock, i) >= MAXSTATS)
                     { paramChecks[i] = true; }
                 }
 
                 // Iterate and set the demon's new LevelUp Stats.
-                i = 0;
+                i = rstinit.GBWK.AsignParam * (EnableStatScaling ? POINTS_PER_LEVEL : 1);
                 do
                 {
                     // If your stats are completely capped out.
@@ -385,37 +434,53 @@ namespace NocturneInsaniax
                         paramChecks[5] == true)
                     { break; }
 
-                    // If you end up going over the Stat points per level, break.
-                    if (rstinit.GBWK.AsignParam * POINTS_PER_LEVEL <= i)
+                    // If you end up finishing the full distribution of stats, break the loop.
+                    if (i <= 0)
                     { break; }
 
                     // Add a random stat to the demon.
-                    int paramID = rstCalcCore.cmbAddLevelUpParamEx(ref pStock, 0);
+                    int paramID = rstCalcCore.cmbAddLevelUpParamEx(ref pStock, 1);
 
-                    // If the Stat's ID is over 5 or somehow hit -1, return.
-                    if (paramID == 6 || paramID == -1 || paramChecks[paramID] == true)
+                    // If the Stat's ID is over 5 or somehow goes under 0, continue.
+                    if (paramID > 5 || paramID < 0)
                     { continue; }
 
+                    // If the Stat's ID is already full, continue and remove the point distributed.
+                    if (paramChecks[paramID] == true)
+                    { continue; }
+
+                    // Add to the demon's stats.
+                    pStock.levelupparam[paramID] += 1;
+
                     // Set a boolean to true if the stat becomed capped out.
-                    if (pStock.param[paramID] + pStock.levelupparam[paramID] >= MAXSTATS)
+                    // Also forcibly set the stat to its new cap.
+                    if (datCalc.datGetBaseParam(pStock, paramID) >= MAXSTATS)
                     { paramChecks[paramID] = true; }
 
                     // Increment.
-                    i++;
+                    i--;
                 }
                 while (true);
 
+                // Recalculate Max HP/MP.
+                pStock.maxhp = (ushort)datCalc.datGetMaxHp(pStock);
+                pStock.maxmp = (ushort)datCalc.datGetMaxMp(pStock);
                 return false;
             }
         }
 
-        [HarmonyPatch(typeof(rstCalcCore), nameof(rstCalcCore.cmbChkDevilEvo))]
+        [HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstCalcEvo))]
         private class PatchCheckDemonEvo
         {
-            private static void Postfix(datUnitWork_t pStock)
+            private static void Postfix()
             {
+                // Grab current Stock Demon.
+                datUnitWork_t pStock = rstinit.GBWK.pCurrentStock;
+
+                // Iterate through the Demon's LevelUp Stats
                 for (int i = 0; i < pStock.levelupparam.Length; i++)
                 {
+                    // Forcibly set them to their Base Stats then clear them.
                     pStock.param[i] += pStock.levelupparam[i];
                     pStock.levelupparam[i] = 0;
                 }
@@ -427,10 +492,9 @@ namespace NocturneInsaniax
         {
             private static bool Prefix(datUnitWork_t pStock, Il2CppReferenceArray<Il2Cppresult2_H.fclSkillParam_t> pEvent, sbyte EvtBufFlag, datUnitWork_t pEvoDevil)
             {
-                // If the event's Buffer Flag(?) and length of the event are both zero, return.
-                // Additionally, return if the event's length is under 2 at any point.
-                if ((EvtBufFlag == 0 && pEvent.Length == 0) || pEvent.Length < 2)
-                { return false; }
+                // If the event's Buffer Flag(?) is zero or the length of the event is under 2, return.
+                if (EvtBufFlag == 0 || pEvent.Length < 2)
+                { return true; }
 
                 // Grab an Event index.
                 fclSkillParam_t EventParam = pEvent[1];
@@ -440,32 +504,17 @@ namespace NocturneInsaniax
                 if (EventParam.Type != 5)
                 { EventParam = pEvent[0]; }
 
-                // Probably the demon ID your demon evolves into.
-                int DemonID = 0;
+                // Grab what's probably the demon ID your demon evolves into.
+                int DemonID = EventParam.Param;
 
-                // Loop through stock and count how many demons there are?
-                int demoncount = 0;
-                for (int i = 0; i < dds3GlobalWork.DDS3_GBWK.unitwork.Length; i++)
-                {
-                    if ((dds3GlobalWork.DDS3_GBWK.unitwork[i].flag & 5) == 1)
-                    { demoncount++; }
-                }
-
-                // Grab the Demon's ID from the event.
-                DemonID = EventParam.Param;
-
-                // If the demon count is too high, reset the Demon ID to 0.
-                if (demoncount >= rstCalcCore.cmbChkStockDarkDevilNums(dds3GlobalWork.DDS3_GBWK.unitwork, 0x10))
-                { DemonID = 0; }
-
-                // If the Evo Demon exists.
-                if (pEvoDevil != null)
+                // If the Evo Demon exists and the current DemonID is over zero.
+                if (pEvoDevil != null && DemonID > 0)
                 {
                     // Copy the Demon into your Stock.
                     fclCombineCalcCore.cmbCopyDefaultDevilToStock((ushort)DemonID, pEvoDevil);
 
-                    // If your current demon is a higher level.
-                    if (pStock.level > pEvoDevil.level)
+                    // If the new demon is a higher level.
+                    if (pStock.level < pEvoDevil.level)
                     {
                         // Recalculate the new demon's Experience.
                         pEvoDevil.exp = rstCalcCore.cmbCalcLevelUpExp(ref pEvoDevil, pStock.level);
@@ -481,18 +530,18 @@ namespace NocturneInsaniax
                             if (paramID > -1 && paramID < 6)
                             {
                                 // If under the cap, increase the stat.
-                                if (datCalc.datGetParam(pEvoDevil, paramID) < MAXSTATS)
+                                if (datCalc.datGetBaseParam(pEvoDevil, paramID) < MAXSTATS)
                                 { pEvoDevil.param[paramID]++; }
                             }
 
                             // Otherwise, break loop.
                             else
-                            { break; }
+                            { continue; }
 
                             // Increment.
                             i++;
                         }
-                        while (i < (pStock.level - pEvoDevil.level) * (EnableStatScaling ? POINTS_PER_LEVEL : 1));
+                        while (i < Math.Abs(pStock.level - pEvoDevil.level) * (EnableStatScaling ? POINTS_PER_LEVEL : 1));
                     }
                 }
 
@@ -544,7 +593,7 @@ namespace NocturneInsaniax
 
                             // Set the position and scale to new values. These are very precise.
                             g2.GetComponent<CounterCtr>().image[j].transform.localPosition = new Vector3(118 - j * 25, 31, -4);
-                            g2.GetComponent<CounterCtr>().image[j].transform.localScale = new Vector3(g2.GetComponent<CounterCtr>().image[j].transform.localScale.x * 0.90f, g2.GetComponent<CounterCtr>().image[j].transform.localScale.y * 0.90f, g2.GetComponent<CounterCtr>().image[j].transform.localScale.z);
+                            g2.GetComponent<CounterCtr>().image[j].transform.localScale = new Vector3(g2.GetComponent<CounterCtr>().image[j].transform.localScale.x * 0.85f, g2.GetComponent<CounterCtr>().image[j].transform.localScale.y * 0.85f, g2.GetComponent<CounterCtr>().image[j].transform.localScale.z);
 
                             // Deactivate the object if it wasn't active.
                             g2.GetComponent<CounterCtr>().image[j].gameObject.active = chk;
@@ -617,7 +666,7 @@ namespace NocturneInsaniax
 
                                 // Set new position and scale. Again, very precise.
                                 g2.GetComponent<CounterCtrBattle>().image[j].transform.localPosition = new Vector3(119 - j * 25, 0, -4);
-                                g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale = new Vector3(g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale.x * 0.90f, g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale.y * 0.90f, g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale.z);
+                                g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale = new Vector3(g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale.x * 0.85f, g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale.y * 0.85f, g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale.z);
 
                                 // Set active state back.
                                 g2.GetComponent<CounterCtrBattle>().image[j].gameObject.active = chk;
@@ -673,7 +722,7 @@ namespace NocturneInsaniax
 
                                 // Change the image's position and scale. You get the point by now. This happens a lot.
                                 g2.GetComponent<CounterCtrBattle>().image[j].transform.localPosition = new Vector3(119 - j * 25, 0, -4);
-                                g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale = new Vector3(g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale.x * 0.90f, g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale.y * 0.90f, g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale.z);
+                                g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale = new Vector3(g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale.x * 0.85f, g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale.y * 0.85f, g2.GetComponent<CounterCtrBattle>().image[j].transform.localScale.z);
 
                                 // Set active to previous value.
                                 g2.GetComponent<CounterCtrBattle>().image[j].gameObject.active = chk;
@@ -755,7 +804,7 @@ namespace NocturneInsaniax
                             {
                                 // Set position and scale accordingly.
                                 g2.GetComponent<CounterCtr>().image[j].transform.localPosition = new Vector3((i % 2) * 130 + 86 - j * 20 + 5, 32, -8);
-                                g2.GetComponent<CounterCtr>().image[j].transform.localScale = new Vector3(0.8f, 0.9f, 1);
+                                g2.GetComponent<CounterCtr>().image[j].transform.localScale = new Vector3(0.8f, 1, 1);
                             }
                         }
 
@@ -811,9 +860,13 @@ namespace NocturneInsaniax
                 // Distribute the Player's level up points to proper points.
                 for (int i = 0; i < pStock.levelupparam.Length; i++)
                 {
-                    pStock.param[i] += pStock.levelupparam[i];
+                    pStock.param[i] += (sbyte)pStock.levelupparam[i];
                     pStock.levelupparam[i] = 0;
                 }
+
+                // Recalculate HP/MP
+                pStock.maxhp = (ushort)datCalc.datGetMaxHp(pStock);
+                pStock.maxmp = (ushort)datCalc.datGetMaxMp(pStock);
 
                 // Return that you said yes.
                 return 1;
@@ -856,23 +909,26 @@ namespace NocturneInsaniax
 
                 // If you're not assigning your Stats, reset them once and start assigning them.
                 if (SettingAsignParam == false)
-                { SettingAsignParam = true; }
+                {
+                    rstupdate.rstResetAsignParam();
+                    SettingAsignParam = true;
+                }
 
                 // If your stats are capped, immediately skip the entire process.
-                if (EnableIntStat && pStock.param[0] + pStock.levelupparam[0] >= MAXSTATS &&
-                    pStock.param[1] + pStock.levelupparam[1] >= MAXSTATS &&
-                    pStock.param[2] + pStock.levelupparam[2] >= MAXSTATS &&
-                    pStock.param[3] + pStock.levelupparam[3] >= MAXSTATS &&
-                    pStock.param[4] + pStock.levelupparam[4] >= MAXSTATS &&
-                    pStock.param[5] + pStock.levelupparam[5] >= MAXSTATS)
+                if (EnableIntStat && datCalc.datGetBaseParam(pStock, 0) >= MAXSTATS &&
+                    datCalc.datGetBaseParam(pStock, 1) >= MAXSTATS &&
+                    datCalc.datGetBaseParam(pStock, 2) >= MAXSTATS &&
+                    datCalc.datGetBaseParam(pStock, 3) >= MAXSTATS &&
+                    datCalc.datGetBaseParam(pStock, 4) >= MAXSTATS &&
+                    datCalc.datGetBaseParam(pStock, 5) >= MAXSTATS)
                 { YesResponse(); return false; }
 
                 // Same thing as above, but without Int.
-                else if (pStock.param[0] + pStock.levelupparam[0] >= MAXSTATS &&
-                    pStock.param[2] + pStock.levelupparam[2] >= MAXSTATS &&
-                    pStock.param[3] + pStock.levelupparam[3] >= MAXSTATS &&
-                    pStock.param[4] + pStock.levelupparam[4] >= MAXSTATS &&
-                    pStock.param[5] + pStock.levelupparam[5] >= MAXSTATS)
+                else if (datCalc.datGetBaseParam(pStock, 0) >= MAXSTATS &&
+                    datCalc.datGetBaseParam(pStock, 2) >= MAXSTATS &&
+                    datCalc.datGetBaseParam(pStock, 3) >= MAXSTATS &&
+                    datCalc.datGetBaseParam(pStock, 4) >= MAXSTATS &&
+                    datCalc.datGetBaseParam(pStock, 5) >= MAXSTATS)
                 { YesResponse(); return false; }
 
                 // If the status object is null, immediately skip the entire process.
@@ -926,7 +982,10 @@ namespace NocturneInsaniax
 
                     // If the cursor index is under the maximum, decrement it and play a sound.
                     if (cursorIndex < rstinit.GBWK.ParamCursor.CursorPos.ListNums)
-                    { cmpMisc.cmpMoveCursor(rstinit.GBWK.ParamCursor, -1); cmpMisc.cmpPlaySE(1 & 0xFFFF); }
+                    {
+                        cmpMisc.cmpMoveCursor(rstinit.GBWK.ParamCursor, -1);
+                        cmpMisc.cmpPlaySE(16 & 0xFFFF);
+                    }
 
                     // Otherwise just play a sound.
                     // This part never happens since the menu loops.
@@ -942,7 +1001,10 @@ namespace NocturneInsaniax
 
                     // If under the cap, increment and play a sound.
                     if (cursorIndex < rstinit.GBWK.ParamCursor.CursorPos.ListNums)
-                    { cmpMisc.cmpMoveCursor(rstinit.GBWK.ParamCursor, 1); cmpMisc.cmpPlaySE(1 & 0xFFFF); }
+                    {
+                        cmpMisc.cmpMoveCursor(rstinit.GBWK.ParamCursor, 1);
+                        cmpMisc.cmpPlaySE(16 & 0xFFFF);
+                    }
 
                     // Otherwise just play a sound.
                     // Again, never happens.
@@ -959,10 +1021,12 @@ namespace NocturneInsaniax
                 }
 
                 // If you press the OK button.
-                if (dds3PadManager.DDS3_PADCHECK_PRESS(Il2Cpplibsdf_H.SDF_PADMAP.OK) && dds3PadManager.DDS3_PADCHECK_REP(Il2Cpplibsdf_H.SDF_PADMAP.OK) == true)
+                // This can also be done with Right on the DPad, so I had to add that back in.
+                if ((dds3PadManager.DDS3_PADCHECK_PRESS(Il2Cpplibsdf_H.SDF_PADMAP.OK) && dds3PadManager.DDS3_PADCHECK_REP(Il2Cpplibsdf_H.SDF_PADMAP.OK) == true)
+                    || (dds3PadManager.DDS3_PADCHECK_PRESS(Il2Cpplibsdf_H.SDF_PADMAP.R) && dds3PadManager.DDS3_PADCHECK_REP(Il2Cpplibsdf_H.SDF_PADMAP.R) == true))
                 {
                     // If your Stat plus the LevelUp stats exceed or go up to the maximum, then play a sound and skip the rest of the function.
-                    if (pStock.param[cursorParam] + pStock.levelupparam[cursorParam] >= MAXSTATS)
+                    if (datCalc.datGetBaseParam(pStock, 0) >= MAXSTATS)
                     { cmpMisc.cmpPlaySE(2 & 0xFFFF); return false; }
 
                     // If you still have points to assign, assing one.
@@ -986,11 +1050,12 @@ namespace NocturneInsaniax
                 }
 
                 // If you press the Y/Triangle button.
-                // This functionality is new.
-                if (dds3PadManager.DDS3_PADCHECK_PRESS(Il2Cpplibsdf_H.SDF_PADMAP.OPT1) && dds3PadManager.DDS3_PADCHECK_REP(Il2Cpplibsdf_H.SDF_PADMAP.OPT1) == true)
+                // This apparently can be done with DPad Left as well, so I had to readd that in.
+                if ((dds3PadManager.DDS3_PADCHECK_PRESS(Il2Cpplibsdf_H.SDF_PADMAP.OPT1) && dds3PadManager.DDS3_PADCHECK_REP(Il2Cpplibsdf_H.SDF_PADMAP.OPT1) == true)
+                    || (dds3PadManager.DDS3_PADCHECK_PRESS(Il2Cpplibsdf_H.SDF_PADMAP.L) && dds3PadManager.DDS3_PADCHECK_REP(Il2Cpplibsdf_H.SDF_PADMAP.L) == true))
                 {
                     // If this stat has no points assigned to it, play a sound and skip.
-                    if (rstinit.GBWK.ParamOfs[cursorParam] < 1)
+                    if (pStock.levelupparam[cursorParam] < 1)
                     { cmpMisc.cmpPlaySE(2 & 0xFFFF); return false; }
 
                     // Otherwise, remove unassign a point to redistribute and play a sound.
@@ -1003,7 +1068,107 @@ namespace NocturneInsaniax
                 }
 
                 // Recalculate HP/MP.
-                rstcalc.rstSetMaxHpMp(0, ref pStock);
+                pStock.maxhp = (ushort)datCalc.datGetMaxHp(pStock);
+                pStock.maxmp = (ushort)datCalc.datGetMaxMp(pStock);
+                return false;
+            }
+        }
+
+        [HarmonyPatch(typeof(rstupdate), nameof(rstupdate.rstUpdateSeqHeartsEvent))]
+        private class PatchUpdateSeqMagatamaEvent
+        {
+            private static void Postfix()
+            {
+                // Grab the current Demon (should be the Demifiend).
+                datUnitWork_t pStock = rstinit.GBWK.pCurrentStock;
+
+                // Distributes Levelup points added by the Magatama (hopefully).
+                for (int i = 0; i < pStock.param.Length; i++)
+                {
+                    pStock.param[i] += pStock.levelupparam[i];
+                    pStock.levelupparam[i] = 0;
+                }
+
+                // Recalculate HP/MP.
+                pStock.maxhp = (ushort)datCalc.datGetMaxHp(pStock);
+                pStock.maxmp = (ushort)datCalc.datGetMaxMp(pStock);
+            }
+        }
+
+        [HarmonyPatch(typeof(rstupdate), nameof(rstupdate.rstStandbyHeartsAddPoint))]
+        private class PatchMagatamaAddPoint
+        {
+            private static bool Prefix()
+            {
+                // Grab the current Demon (should be the Demifiend).
+                datUnitWork_t pStock = rstinit.GBWK.pCurrentStock;
+
+                // This is a list of Stats it needs to check.
+                bool[] paramChecks = { false, false, false, false, false, false };
+
+                // Iterate a loop through Stats and checks for if the stat's capped already and set a boolean.
+                for (int i = 0; i < pStock.param.Length; i++)
+                {
+                    if (i == 1 && !EnableIntStat)
+                    { continue; }
+                    if (datCalc.datGetBaseParam(pStock, i) >= MAXSTATS)
+                    { paramChecks[i] = true; }
+                }
+
+                // Loop until you find a stat to increase.
+                int param = -1;
+                do
+                {
+                    // If your stats are completely capped out, break.
+                    if (EnableIntStat &&
+                        paramChecks[0] == true &&
+                        paramChecks[1] == true &&
+                        paramChecks[2] == true &&
+                        paramChecks[3] == true &&
+                        paramChecks[4] == true &&
+                        paramChecks[5] == true)
+                    { break; }
+                    if (!EnableIntStat &&
+                        paramChecks[0] == true &&
+                        paramChecks[2] == true &&
+                        paramChecks[3] == true &&
+                        paramChecks[4] == true &&
+                        paramChecks[5] == true)
+                    { break; }
+
+                    // Grab a stat at random to add to.
+                    param = rstCalcCore.cmbAddLevelUpParamEx(ref pStock, 1);
+
+                    // If a stat couldn't be found, break.
+                    if (param > 5 || param < 0)
+                    { break; }
+
+                    // if it's capped, search again.
+                    if (datCalc.datGetBaseParam(pStock, param) >= MAXSTATS)
+                    { paramChecks[param] = true; continue; }
+
+                    // Increase their LevelUp points.
+                    pStock.levelupparam[param]++;
+                    break;
+                }
+                while (param < 0 || param > 5);
+
+                // Recalculate HP/MP.
+                pStock.maxhp = (ushort)datCalc.datGetMaxHp(pStock);
+                pStock.maxmp = (ushort)datCalc.datGetMaxMp(pStock);
+
+                return false;
+            }
+        }
+
+        [HarmonyPatch(typeof(cmpMisc), nameof(cmpMisc.cmpGetParamName))]
+        private class PatchGetParamName
+        {
+            private static bool Prefix(out string __result, sbyte Index)
+            {
+                // Grab the Stat's Name from a clamped index.
+                Index = (sbyte)Math.Clamp((int)Index, 0, 5);
+                __result = paramNames[Index];
                 return false;
             }
         }
@@ -1273,7 +1438,7 @@ namespace NocturneInsaniax
 
                             // Set new pos and scale/
                             g2.GetComponent<CounterCtr>().image[j].transform.localPosition = new Vector3(60 - j * 25, 0, -4);
-                            g2.GetComponent<CounterCtr>().image[j].transform.localScale = new Vector3(g2.GetComponent<CounterCtr>().image[j].transform.localScale.x * 0.90f, g2.GetComponent<CounterCtr>().image[j].transform.localScale.y * 0.85f, g2.GetComponent<CounterCtr>().image[j].transform.localScale.z);
+                            g2.GetComponent<CounterCtr>().image[j].transform.localScale = new Vector3(g2.GetComponent<CounterCtr>().image[j].transform.localScale.x * 0.85f, g2.GetComponent<CounterCtr>().image[j].transform.localScale.y * 0.85f, g2.GetComponent<CounterCtr>().image[j].transform.localScale.z);
 
                             // Reset active state.
                             g2.GetComponent<CounterCtr>().image[j].gameObject.active = chk;
@@ -1328,7 +1493,7 @@ namespace NocturneInsaniax
 
                             // Set pos and scale.
                             g2.GetComponent<CounterCtr>().image[j].transform.localPosition = new Vector3(30 - j * 25 + 5, 0, -4);
-                            g2.GetComponent<CounterCtr>().image[j].transform.localScale = new Vector3(g2.GetComponent<CounterCtr>().image[j].transform.localScale.x * 0.90f, g2.GetComponent<CounterCtr>().image[j].transform.localScale.y, g2.GetComponent<CounterCtr>().image[j].transform.localScale.z);
+                            g2.GetComponent<CounterCtr>().image[j].transform.localScale = new Vector3(g2.GetComponent<CounterCtr>().image[j].transform.localScale.x * 0.85f, g2.GetComponent<CounterCtr>().image[j].transform.localScale.y, g2.GetComponent<CounterCtr>().image[j].transform.localScale.z);
 
                             // Reset active.
                             g2.GetComponent<CounterCtr>().image[j].gameObject.active = chk;
@@ -1340,7 +1505,7 @@ namespace NocturneInsaniax
                     int stat = (i > 0 && !EnableIntStat) ? i + 1 : i;
 
                     // Set default LevelUp stat value equal to both your Level Up and Mitama Bonuses.
-                    int levelstat = pStock.levelupparam[stat] + pStock.mitamaparam[stat];
+                    int levelstat = LevelUpPoints[stat] + pStock.levelupparam[stat] + pStock.mitamaparam[stat];
 
                     // Set Stat value and color.
                     g2.GetComponent<CounterCtr>().Set(pStock.param[stat] + levelstat, Color.white, 0);
@@ -1372,6 +1537,394 @@ namespace NocturneInsaniax
             }
         }
 
+        [HarmonyPatch(typeof(cmpDrawDH), nameof(cmpDrawDH.cmpDrawHeartsInfo))]
+        private class PatchDrawMagatamaInfo
+        {
+            private static bool Prefix(cmpHeartsInfo_t pHeartsInfo, sbyte HeartsID)
+            {
+                // If you're not using the Int stat, just skip this entire function.
+                if (!EnableIntStat)
+                { return true; }
+
+                // This is for the various loops used within this function.
+                int i = 0;
+
+                // Grab the parent object of the entire Magatama Status menu.
+                GameObject g = GameObject.Find("magUI(Clone)/magstatus");
+                GameObject g2;
+                GameObject g3;
+
+                // If null, return.
+                if (g == null)
+                { return false; }
+
+                // If it's inactive, return.
+                if (g.activeSelf == false)
+                { return false; }
+
+                // If there's no 6th base.
+                if (!GameObject.Find("magUI(Clone)/magstatus/magstatus_base06"))
+                {
+                    // Find the first one.
+                    GameObject orig = GameObject.Find("magUI(Clone)/magstatus/magstatus_base01");
+
+                    // Copy it.
+                    g2 = GameObject.Instantiate(orig);
+
+                    // MAKE SURE it stays put.
+                    GameObject.DontDestroyOnLoad(g2);
+
+                    // Rename it.
+                    g2.name = "magstatus_base06";
+
+                    // Set its parent to the whole menu.
+                    g2.transform.parent = g.transform;
+
+                    // Adjust position and scale.
+                    g2.transform.position = orig.transform.position;
+                    g2.transform.localScale = orig.transform.localScale;
+
+                    // Make sure its local position compared to the parent is correct, since it's gonna get multiplied a bit.
+                    g2.transform.localPosition = new(orig.transform.localPosition.x, orig.transform.localPosition.y - 56 * 5, orig.transform.localPosition.z);
+
+                    // Increment through all of the base bars.
+                    for (i = 0; i < 6; i++)
+                    {
+                        // Grab the base bar
+                        g3 = GameObject.Find("magUI(Clone)/magstatus/magstatus_base0" + (i + 1));
+
+                        // If it doesn't exist, continue;
+                        if (g3 == null)
+                        { continue; }
+
+                        // Grab position and scale.
+                        Vector3 newScale = g3.transform.localScale;
+                        Vector3 newPos = g3.transform.localPosition;
+
+                        // Multiply position and scale.
+                        newPos.x *= 1;
+                        newPos.y *= 0.825f;
+                        newPos.x *= 1;
+                        newScale.x *= 0.825f;
+                        newScale.y *= 0.825f;
+                        newScale.z *= 1;
+
+                        // Set new position and scale.
+                        g3.transform.localScale = newScale;
+                        g3.transform.localPosition = newPos;
+                    }
+                }
+
+                // If there's no 6th item.
+                if (!GameObject.Find("magUI(Clone)/magstatus/magstatus_item06"))
+                {
+                    // Grab the first one.
+                    GameObject orig = GameObject.Find("magUI(Clone)/magstatus/magstatus_item01");
+
+                    // Copy it.
+                    g2 = GameObject.Instantiate(orig);
+
+                    // MAKE SURE it stays put.
+                    GameObject.DontDestroyOnLoad(g2.gameObject);
+
+                    // Rename it.
+                    g2.name = "magstatus_item06";
+
+                    // Set parent.
+                    g2.transform.parent = g.transform;
+
+                    // Set position and scale.
+                    g2.transform.position = orig.transform.position;
+                    g2.transform.localScale = orig.transform.localScale;
+
+                    // Make sure it's in the right spot before scaling.
+                    g2.transform.localPosition = new(orig.transform.localPosition.x, orig.transform.localPosition.y - 56 * 5, orig.transform.localPosition.z);
+
+                    // Iterate through each item.
+                    for (i = 0; i < 6; i++)
+                    {
+                        // Grab item.
+                        g3 = GameObject.Find("magUI(Clone)/magstatus/magstatus_item0" + (i + 1));
+
+                        // If null, continue.
+                        if (g3 == null)
+                        { continue; }
+
+                        // Grab position and scale.
+                        Vector3 newScale = g3.transform.localScale;
+                        Vector3 newPos = g3.transform.localPosition;
+
+                        // Multiply them.
+                        newPos.x *= 1;
+                        newPos.y *= 0.825f;
+                        newPos.x *= 1;
+                        newScale.x *= 0.825f;
+                        newScale.y *= 0.825f;
+                        newScale.z *= 1;
+
+                        // Set them to new values.
+                        g3.transform.localScale = newScale;
+                        g3.transform.localPosition = newPos;
+                    }
+                }
+
+                // Draw some various things to the screen.
+                fclDraw.fclDrawParts(0, 0x28 + i * 0xd0, 0, new(4), 0xb, 0, cmpInitDH.GBWK.TexHandle, etcSprTbl.cmpSprTblArry, 0x47);
+                fclDraw.fclDrawParts(0, 0x28 + i * 0xd0, 0, new(4), 0xb, 1, cmpInitDH.GBWK.TexHandle, etcSprTbl.cmpSprTblArry, 0x47);
+
+                // Grab a color.
+                uint color = fclMisc.fclGetBlendColor(0x80808080, 0x40404080, (uint)pHeartsInfo.Timer);
+
+                // Set a list to that color.
+                uint[] colorptr = { color, color, color, color };
+
+                // Check if you have this particular Magatama.
+                sbyte hasHeart = cmpInitDH.cmpChkHaveHearts(HeartsID);
+
+                // Iterate until i is 6.
+                i = 0;
+                do
+                {
+                    // Unknown value.
+                    int unk = 0;
+
+                    // If i goes over the list of Stat Names, break.
+                    if (paramNames.Length < i)
+                    { break; }
+
+                    // Grab Magatama Status Item object.
+                    g = GameObject.Find("magUI(Clone)/magstatus/magstatus_item0" + (i + 1));
+
+                    // If null, increment and continue.
+                    if (g == null)
+                    { i++; continue; }
+
+                    // Set up the previous object.
+                    cmpUpdate.cmpSetupObject(g, hasHeart == 1 ? true : false);
+
+                    // Grab the text object from the previous object.
+                    g2 = GameObject.Find("magUI(Clone)/magstatus/" + g.name + "/TextTM");
+
+                    // If null, increment and continue.
+                    if (g2 == null)
+                    { i++; continue; }
+
+                    // Set the text object's text.
+                    g2.GetComponentInChildren<TMP_Text>().SetText(Localize.GetLocalizeText(cmpMisc.cmpGetParamName((sbyte)i)));
+
+                    // Draw more parts to the screen.
+                    fclDraw.fclDrawParts(0, 0x28 + i * 0xd0, 0, colorptr, 0xb, 3, cmpInitDH.GBWK.TexHandle, etcSprTbl.cmpSprTblArry, 0x47);
+                    fclDraw.fclDrawParts(0, 0x28 + i * 0xd0, 0, colorptr, 0xb, (ushort)(i + 4), cmpInitDH.GBWK.TexHandle, etcSprTbl.cmpSprTblArry, 0x47);
+
+                    // Set up the text object.
+                    cmpUpdate.cmpSetupObject(g2, true);
+
+                    // Grab the numerical text object.
+                    g2 = GameObject.Find("magUI(Clone)/magstatus/" + g.name + "/magtex");
+
+                    // If null, increment and continue.
+                    if (g2 == null)
+                    { i++; continue; }
+
+                    // Grab the Magatama Stat with ID i.
+                    int heartParam = hasHeart == 1 ? rstCalcCore.cmbGetHeartsParam(HeartsID, (sbyte)i) : 0;
+
+                    // If it's 0, set the unknown value to 11.
+                    if (heartParam == 0)
+                    { unk = 0xb; }
+
+                    // Otherwise set it to 9.
+                    // If you somehow get the Stat to be negative, set it to 10 instead.
+                    else
+                    {
+                        unk = 9;
+                        if (heartParam < 1)
+                        { unk = 10; }
+                    }
+
+                    // More draw calls.
+                    fclDraw.fclDrawParts(0, 0x28 + i * 0xd0, 0, colorptr, 0xb, (ushort)unk, cmpInitDH.GBWK.TexHandle, etcSprTbl.cmpSprTblArry, 0x47);
+
+                    // Set up the numerical text object.
+                    cmpUpdate.cmpSetupObject(g2, true);
+
+                    // Grab the number object
+                    g2 = GameObject.Find("magUI(Clone)/magstatus/" + g.name + "/magtex/num_mag");
+
+                    // If the object's Counter is null, return.
+                    if (g2.GetComponent<CounterCtr>() == null)
+                    { i++; continue; }
+
+                    // Generate a color and set the Counter's value and color.
+                    Color rgb = cmpInit.GetToRGBA(hasHeart != 0 ? heartParam > 0 ? 0xFFFFFFFF : heartParam < 0 ? 0xFF8080FF : 0x80808080 : 0x80808080);
+                    g2.GetComponent<CounterCtr>().Set(heartParam, rgb);
+
+                    // Set up the number object.
+                    cmpUpdate.cmpSetupObject(g2, hasHeart == 1 ? true : false);
+                    i++;
+                }
+                while (i < 6);
+
+                // Draw the Magatama Help panel
+                cmpDrawDH.cmpDrawHeartsHelpPanel(pHeartsInfo.Timer);
+
+                // If the Magatama object is visible, draw its name.
+                if (hasHeart == 1)
+                { cmpDrawDH.cmpDrawHeartsName(0, 0, 0, pHeartsInfo.Timer, (sbyte)(HeartsID)); }
+                else
+                { cmpDrawDH.cmpDrawHeartsName(0, 0, 0, pHeartsInfo.Timer, -1); }
+
+                // Grab the Magamama Menu object.
+                g = cmpInitDH.DHeartsObj;
+
+                // Set it up and draw a gradient of some sort.
+                cmpUpdate.cmpSetupObject(g, true);
+                cmpDrawDH.cmpDrawDisactiveGrad(pHeartsInfo.Timer);
+                return false;
+            }
+        }
+
+        [HarmonyPatch(typeof(fclRecoverDraw), nameof(fclRecoverDraw.rcvDrawStockWindowList))]
+        private class PatchRecoverReviveDraw
+        {
+            private static bool Prefix(GameObject obj, uint Col, sbyte localstockidx, bool curidx)
+            {
+                // String List of GameObject Names.
+                string[] objList = { "_current", "_full" };
+
+                // Grab the parent object of the entire Recovery menu.
+                GameObject g = GameObject.Find("recovUI/rcvlist");
+                GameObject g2;
+                GameObject g3;
+                GameObject g4;
+
+                // If the Recovery UI doesn't exist.
+                if (g == null)
+                { return true; }
+
+                // If the Recovery UI isn't active.
+                if (!g.activeSelf)
+                { return true; }
+
+                // Iterate between all 9 visible rows in the Recover List.
+                for (int i = 0; i < 9; i++)
+                {
+                    // Grab the Row.
+                    g2 = GameObject.Find("recovUI/rcvlist/rcv_row/rcv_row0" + (i + 1));
+
+                    if (g2 == null)
+                    { return true; }
+
+                    if (!g2.activeSelf)
+                    { return true; }
+
+                    // This is gonna be a bit jank, basically gotta iterate through a couple of partial object names.
+                    for (int j = 0; j < objList.Length; j++)
+                    {
+                        // Grab one of the HP Bar GameObjects.
+                        g3 = GameObject.Find("recovUI/rcvlist/rcv_row/rcv_row0" + (i + 1) + "/rcvhpbar/rcvhpnum" + objList[j]);
+
+                        // If there's less than 4 Digits, add another one.
+                        if (g3.GetComponent<CounterCtr>().image.Length < 4)
+                        {
+                            // Create a duplicate of the first number in the list.
+                            g4 = GameObject.Instantiate(g3.GetComponent<CounterCtr>().image[0].gameObject);
+                            GameObject.DontDestroyOnLoad(g4);
+
+                            // Rename it.
+                            g4.name = "num_hp04";
+
+                            // Parent it.
+                            g4.transform.parent = g3.transform;
+
+                            // Set up original local Position and Scale.
+                            g4.transform.localPosition.Set(g3.transform.localPosition.x - 30, g3.transform.localPosition.y, g3.transform.localPosition.z);
+                            g4.transform.localScale = g3.GetComponent<CounterCtr>().image[0].transform.localScale;
+
+                            // Add it to the CounterCtr's image list.
+                            g3.GetComponent<CounterCtr>().image = g3.GetComponent<CounterCtr>().image.Append<Image>(g4.GetComponent<Image>()).ToArray<Image>();
+
+                            // Iterate through the objects and reposition/rescale them.
+                            for (int k = 0; k < g3.GetComponent<CounterCtr>().image.Length; k++)
+                            {
+                                // Grab the game object.
+                                g4 = g3.GetComponent<CounterCtr>().image[k].gameObject;
+
+                                // Grab position and scale.
+                                Vector3 newPos = g4.transform.localPosition;
+                                Vector3 newScale = g4.transform.localScale;
+
+                                // Change position and scale.
+                                newPos.x += 15;
+                                newPos.x *= 0.825f;
+                                newPos.y *= 0.825f;
+                                newPos.z *= 1;
+                                newScale.x *= 0.825f;
+                                newScale.y *= 0.825f;
+                                newScale.z *= 1;
+
+                                g4.transform.localPosition = newPos;
+                                g4.transform.localScale = newScale;
+                            }
+                        }
+                    }
+
+                    // This is gonna be a bit jank, basically gotta iterate through a couple of partial object names.
+                    for (int j = 0; j < objList.Length; j++)
+                    {
+                        // Grab one of the HP Bar GameObjects.
+                        g3 = GameObject.Find("recovUI/rcvlist/rcv_row/rcv_row0" + (i + 1) + "/rcvmpbar/rcvmpnum" + objList[j]);
+
+                        // If there's less than 4 Digits, add another one.
+                        if (g3.GetComponent<CounterCtr>().image.Length < 4)
+                        {
+                            // Create a duplicate of the first number in the list.
+                            g4 = GameObject.Instantiate(g3.GetComponent<CounterCtr>().image[0].gameObject);
+                            GameObject.DontDestroyOnLoad(g4);
+
+                            // Rename it.
+                            g4.name = "num_mp04";
+
+                            // Parent it.
+                            g4.transform.parent = g3.transform;
+
+                            // Set up original local Position and Scale.
+                            g4.transform.localPosition.Set(g3.transform.localPosition.x - 30, g3.transform.localPosition.y, g3.transform.localPosition.z);
+                            g4.transform.localScale = g3.GetComponent<CounterCtr>().image[0].transform.localScale;
+
+                            // Add it to the CounterCtr's image list.
+                            g3.GetComponent<CounterCtr>().image = g3.GetComponent<CounterCtr>().image.Append<Image>(g4.GetComponent<Image>()).ToArray<Image>();
+
+                            // Iterate through the objects and reposition/rescale them.
+                            for (int k = 0; k < g3.GetComponent<CounterCtr>().image.Length; k++)
+                            {
+                                // Grab the game object.
+                                g4 = g3.GetComponent<CounterCtr>().image[k].gameObject;
+
+                                // Grab position and scale.
+                                Vector3 newPos = g4.transform.localPosition;
+                                Vector3 newScale = g4.transform.localScale;
+
+                                // Change position and scale.
+                                newPos.x += 15;
+                                newPos.x *= 0.825f;
+                                newPos.y *= 0.825f;
+                                newPos.z *= 1;
+                                newScale.x *= 0.825f;
+                                newScale.y *= 0.825f;
+                                newScale.z *= 1;
+
+                                g4.transform.localPosition = newPos;
+                                g4.transform.localScale = newScale;
+                            }
+                        }
+                    }
+                }
+
+                return true;
+            }
+        }
+
         [HarmonyPatch(typeof(cmpDrawStatus), nameof(cmpDrawStatus.cmpDrawParamGauge))]
         private class PatchDrawParamGauge
         {
@@ -1385,6 +1938,16 @@ namespace NocturneInsaniax
                 ReworkParamGauge(pBaseCol, StepY, Pos, ParamOfs, FlashMode, pStock, stsObj);
                 return false;
             }
+            private static void Postfix(int X, int Y, uint[] pBaseCol, int StepY, sbyte Pos, sbyte ParamOfs, sbyte FlashMode, datUnitWork_t pStock, GameObject stsObj)
+            {
+                // If no demon or status object, return.
+                if (pStock == null || stsObj == null)
+                { return; }
+                // Rework the Stat Bar.
+                ReworkParamGauge(pBaseCol, StepY, Pos, ParamOfs, FlashMode, pStock, stsObj);
+                return;
+            }
+
             public static void ReworkParamGauge(uint[] pBaseCol, int StepY, sbyte Pos, sbyte ParamOfs, sbyte FlashMode, datUnitWork_t pStock, GameObject stsObj)
             {
                 // If the Status Bar UI count is wrong, return.
@@ -1512,7 +2075,7 @@ namespace NocturneInsaniax
                 int levelupValue = pStock.levelupparam[ParamOfs];
 
                 // Set up the values into a list.
-                int[] values = new int[] { paramValue - heartValue, levelupValue, mitamaValue, heartValue };
+                int[] values = new int[] { Math.Max(paramValue - heartValue, 0), levelupValue, mitamaValue, heartValue };
 
                 // Iterate through the Animator list to set the correct scale and position.
                 float posOffset = 0;
@@ -1522,9 +2085,13 @@ namespace NocturneInsaniax
                     Vector3 barScale = stsObj.GetComponentsInChildren<sstatusbarUI>()[stat].gameObject.GetComponentsInChildren<Animator>()[len].gameObject.transform.localScale;
                     Vector3 barPos = stsObj.GetComponentsInChildren<sstatusbarUI>()[stat].gameObject.GetComponentsInChildren<Animator>()[len].gameObject.transform.localPosition;
 
+                    // Adjust the next value to be shorter if this exceeds the maximum.
+                    if (posOffset + values[len] > MAXSTATS)
+                    { values[len] = (int)Math.Clamp(values[len], 0f, Math.Max(MAXSTATS - posOffset, 0f)); }
+
                     // Adjust.
                     barScale.x = BAR_SCALE_X * values[len];
-                    barPos.x = 274 + BAR_SEGMENT_X * posOffset;
+                    barPos.x = 274 + BAR_SEGMENT_X * 1.45f * BAR_SCALE_X * posOffset;
                     barPos.y = -16f;
 
                     // Iterate from the value list.

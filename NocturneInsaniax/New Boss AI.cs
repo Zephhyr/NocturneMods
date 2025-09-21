@@ -361,6 +361,9 @@ namespace NocturneInsaniax
                         case 285: BossRaphaelAI(ref a, ref code, ref n); break;
                         case 286: BossUrielAI(ref a, ref code, ref n); break;
                         case 287: BossSamaelAI(ref a, ref code, ref n); break;
+                        case 288: BossBaalAvatarAI(ref a, ref code, ref n); break;
+                        case 289: BossOseHallelAI(ref a, ref code, ref n); break;
+                        case 290: BossFlaurosHallelAI(ref a, ref code, ref n); break;
                         case 291: BossAhriman1AI(ref a, ref code, ref n); break;
                         case 292: BossNoah1AI(ref a, ref code, ref n); break;
                         case 294: BigSpecterAI(ref a, ref code, ref n); break;
@@ -399,6 +402,7 @@ namespace NocturneInsaniax
                         case 334: BossMotAI(ref a, ref code, ref n); break;
                         case 335: BossSurtAI(ref a, ref code, ref n); break;
                         case 336: BossPazuzuAI(ref a, ref code, ref n); break;
+                        case 337: BossThor2AI(ref a, ref code, ref n); break;
 
                         case 339: BossDanteRaidou1AI(ref a, ref code, ref n); break;
                         case 340: ChaseDanteRaidouAI(ref a, ref code, ref n); break;
@@ -2511,6 +2515,174 @@ namespace NocturneInsaniax
                 UseSkill(ref a, 432);
         }
 
+        private static void BossBaalAvatarAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            ushort currentHpPercent = BossCurrentHpPercent(ref a);
+            MelonLogger.Msg("Baal Avatar HP%: " + currentHpPercent);
+            MelonLogger.Msg("Baal Avatar HP: " + a.work.hp);
+
+            if (currentHpPercent <= 50 && actionTrackers[a.work.id].phase == 1)
+            {
+                actionTrackers[a.work.id].phase = 2;
+                actionTrackers[a.work.id].skillsUsedThisBattle.Clear();
+            }
+                
+
+            if (actionTrackers[a.work.id].currentBattleActionCount == 1 && a.data.playerpcnt == 4)
+                UseSkill(ref a, 277);
+            else if (AllyPartyStatus(0))
+                UseSkill(ref a, 201);
+            else
+            {
+                if (actionTrackers[a.work.id].phase == 1)
+                {
+                    if (a.data.press4_ten > a.data.press4_p && random.Next(2) == 0 && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(459) && !EnemyPartyBuffed(3))
+                        UseSkill(ref a, 459);
+                    else if (actionTrackers[a.work.id].currentBattleTurnCount != 1 && !actionTrackers[a.work.id].skillsUsedThisBattle.Contains(476))
+                        UseSkill(ref a, 476);
+                    else if (actionTrackers[a.work.id].skillsUsedThisTurn.Contains(195) ||
+                        actionTrackers[a.work.id].skillsUsedThisTurn.Contains(444))
+                    {
+                        int randomValue = random.Next(2);
+                        switch (randomValue)
+                        {
+                            case 0: UseSkill(ref a, 175); break;
+                            case 1: UseSkill(ref a, 476); break;
+                        }
+                    }
+                    else
+                    {
+                        int randomValue = random.Next(4);
+                        switch (randomValue)
+                        {
+                            case 0: UseSkill(ref a, 175); break;
+                            case 1: UseSkill(ref a, 444); break;
+                            case 2: UseSkill(ref a, 195); break;
+                            case 3: UseSkill(ref a, 476); break;
+                        }
+                    }
+                }
+                else if (actionTrackers[a.work.id].phase == 2)
+                {
+                    if (a.data.enemypcnt > 1)
+                    {
+                        if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(459) ||
+                            (a.data.press4_ten > a.data.press4_p && random.Next(2) == 0 && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(459) && !EnemyPartyBuffed(3)))
+                            UseSkill(ref a, 459);
+                        else if (actionTrackers[a.work.id].skillsUsedThisTurn.Contains(195) ||
+                            actionTrackers[a.work.id].skillsUsedThisTurn.Contains(444))
+                        {
+                            int randomValue = random.Next(2);
+                            switch (randomValue)
+                            {
+                                case 0: UseSkill(ref a, 175); break;
+                                case 1: UseSkill(ref a, 476); break;
+                            }
+                        }
+                        else
+                        {
+                            int randomValue = random.Next(4);
+                            switch (randomValue)
+                            {
+                                case 0: UseSkill(ref a, 175); break;
+                                case 1: UseSkill(ref a, 444); break;
+                                case 2: UseSkill(ref a, 195); break;
+                                case 3: UseSkill(ref a, 476); break;
+                            }
+                        }
+
+                        if ((a.work.nowindex == 175 && AllyPartyAllImmuneToAttr(175, 0)) ||
+                            (a.work.nowindex == 444 && AllyPartyAllImmuneToAttr(444, 4)) ||
+                            ((a.work.nowindex == 195 || a.work.nowindex == 476) && AllyPartyAllImmuneToAttr(195, 6)))
+                            UseSkill(ref a, 453);
+                    }
+                    else
+                    {
+                        if (a.data.press4_ten > a.data.press4_p && random.Next(2) == 0 && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(458) && !EnemyPartyBuffed(3))
+                            UseSkill(ref a, 458);
+                        else if (actionTrackers[a.work.id].skillsUsedThisTurn.Contains(195) ||
+                            actionTrackers[a.work.id].skillsUsedThisTurn.Contains(444))
+                        {
+                            int randomValue = random.Next(2);
+                            switch (randomValue)
+                            {
+                                case 0: UseSkill(ref a, 175); break;
+                                case 2: UseSkill(ref a, 476); break;
+                            }
+                        }
+                        else
+                        {
+                            int randomValue = random.Next(4);
+                            switch (randomValue)
+                            {
+                                case 0: UseSkill(ref a, 175); break;
+                                case 2: UseSkill(ref a, 444); break;
+                                case 3: UseSkill(ref a, 195); break;
+                                case 4: UseSkill(ref a, 476); break;
+                            }
+                        }
+
+                        if ((a.work.nowindex == 175 && AllyPartyAllImmuneToAttr(175, 0)) ||
+                            (a.work.nowindex == 444 && AllyPartyAllImmuneToAttr(444, 4)) ||
+                            ((a.work.nowindex == 195 || a.work.nowindex == 476) && AllyPartyAllImmuneToAttr(195, 6)))
+                            UseSkill(ref a, 453);
+                    }
+                }
+            }
+        }
+
+        private static void BossOseHallelAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            ushort currentHpPercent = BossCurrentHpPercent(ref a);
+            MelonLogger.Msg("Ose Hallel HP%: " + currentHpPercent);
+            MelonLogger.Msg("Ose Hallel HP: " + a.work.hp);
+
+            if (a.data.enemyunit.Where(x => x.id == 288 && x.hp <= x.maxhp / 2 && x.flag != 0).Any())
+            {
+                UseSkill(ref a, 38); 
+                SetTargetingRule(ref code, ref n, 3, 288);
+            }
+            else if (EnemyPartyDebuffed(1) && random.Next(3) == 0)
+                UseSkill(ref a, 77);
+            else
+            {
+                int randomValue = random.Next(4);
+                switch (randomValue)
+                {
+                    case 0: UseSkill(ref a, 53); break;
+                    case 1: UseSkill(ref a, 69); break;
+                    case 2: UseSkill(ref a, 110); break;
+                    case 3: UseSkill(ref a, 12); break;
+                }
+            }
+        }
+
+        private static void BossFlaurosHallelAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            ushort currentHpPercent = BossCurrentHpPercent(ref a);
+            MelonLogger.Msg("Flauros Hallel HP%: " + currentHpPercent);
+            MelonLogger.Msg("Flauros Hallel HP: " + a.work.hp);
+
+            if (a.data.enemyunit.Where(x => x.id == 288 && x.hp <= x.maxhp / 2 && x.flag != 0).Any())
+            {
+                UseSkill(ref a, 38);
+                SetTargetingRule(ref code, ref n, 3, 288);
+            }
+            else if (AllyPartyBuffed(1) && random.Next(3) == 0)
+                UseSkill(ref a, 57);
+            else
+            {
+                int randomValue = random.Next(4);
+                switch (randomValue)
+                {
+                    case 0: UseSkill(ref a, 52); break;
+                    case 1: UseSkill(ref a, 70); break;
+                    case 2: UseSkill(ref a, 104); break;
+                    case 3: UseSkill(ref a, 6); break;
+                }
+            }
+        }
+
         private static void BossAhriman2AI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
             ushort currentHpPercent = BossCurrentHpPercent(ref a);
@@ -2658,7 +2830,7 @@ namespace NocturneInsaniax
                     UseSkill(ref a, 77); return;
                 }
             }
-            else if (a.work.nowindex == 57 || a.work.nowindex == 77 || a.work.nowindex == 234 ||
+            else if (a.work.nowindex == 57 || a.work.nowindex == 77 || (a.work.nowindex == 234 && random.Next(2) == 0 && actionTrackers[a.work.id].currentBattleTurnCount != 1) ||
                 (a.work.nowindex == 6 && actionTrackers[a.work.id].skillsUsedThisTurn.Contains(6)) ||
                 (a.work.nowindex == 12 && actionTrackers[a.work.id].skillsUsedThisTurn.Contains(12)) ||
                 (a.work.nowindex == 18 && actionTrackers[a.work.id].skillsUsedThisTurn.Contains(18)) ||
@@ -3154,11 +3326,7 @@ namespace NocturneInsaniax
                 {
                     UseSkill(ref a, 457); return;
                 }
-                else if (EnemyPartyDebuffed(2) && random.Next(4) == 0)
-                {
-                    UseSkill(ref a, 77);
-                }
-                else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77) && AllyPartyBuffed(2) && random.Next(4) == 0)
+                else if (AllyPartyBuffed(1) && random.Next(2) == 0)
                 {
                     UseSkill(ref a, 57);
                 }
@@ -4447,6 +4615,37 @@ namespace NocturneInsaniax
                     case 4: UseSkill(ref a, 196); break;
                 }
             }
+        }
+
+        private static void BossThor2AI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            ushort currentHpPercent = BossCurrentHpPercent(ref a);
+            MelonLogger.Msg("Boss HP%: " + currentHpPercent);
+            MelonLogger.Msg("Boss HP: " + a.work.hp);
+
+            if (currentHpPercent <= 60 && actionTrackers[a.work.id].phase == 1)
+                actionTrackers[a.work.id].phase = 2;
+            else if (currentHpPercent <= 20 && actionTrackers[a.work.id].phase == 2)
+                actionTrackers[a.work.id].phase = 3;
+
+            if (actionTrackers[a.work.id].extraTurns < 1)
+                UseSkill(ref a, 423);
+            else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(442))
+                UseSkill(ref a, 442);
+            else if (a.work.badstatus != 0)
+                UseSkill(ref a, 457);
+            else if (a.work.nowindex == 220)
+                UseSkill(ref a, 219);
+            else if (a.work.nowindex == 97)
+                UseSkill(ref a, 429);
+            else if (a.work.nowindex == 109)
+                UseSkill(ref a, 100);
+            else if (a.work.nowindex == 15)
+                UseSkill(ref a, 469);
+            else if (a.work.nowindex == 18 || a.work.nowindex == 183)
+                UseSkill(ref a, 442);
+            else if (a.work.nowindex == 64 || a.work.nowindex == 67)
+                UseSkill(ref a, 459);
         }
 
         private static void BossMotAI(ref nbActionProcessData_t a, ref int code, ref int n)
