@@ -19,55 +19,58 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref string text1, ref string text2, ref int type, ref int max, ref uint col, ref bool type_skill)
             {
-                if (EnableSkillColourOutlines.Value)
+                try
                 {
-                    if ((type_skill && (actionProcessData.work.nowcommand == 1 || actionProcessData.work.nowcommand == 5)) 
-                        || (!type_skill && actionProcessData.work.nowcommand == 0 && actionProcessData.work.nowindex == 0 && 
-                           (text1 == "Attack" || text1 == "Attack All" || text1 == demonInnateSkills[currentDemonWork.id].skillName)))
+                    if (EnableSkillColourOutlines.Value)
                     {
-                        var commandId = actionProcessData.work.nowcommand; // 0 = normal, 1 = skill, 5 = item
-                        Color attrColour;
-
-                        if (text1 == "Endure" || text1 == "Never Yield")
-                            attrColour = GetAttackAttrColour(15, 1);
-                        else
+                        if ((type_skill && (actionProcessData.work.nowcommand == 1 || actionProcessData.work.nowcommand == 5))
+                            || (!type_skill && actionProcessData.work.nowcommand == 0 && actionProcessData.work.nowindex == 0 &&
+                               (text1 == "Attack" || text1 == "Attack All" || text1 == demonInnateSkills[currentDemonWork.id].skillName)))
                         {
-                            switch (commandId)
+                            var commandId = actionProcessData.work.nowcommand; // 0 = normal, 1 = skill, 5 = item
+                            Color attrColour;
+
+                            if (text1 == "Endure" || text1 == "Never Yield")
+                                attrColour = GetAttackAttrColour(15, 1);
+                            else
                             {
-                                case 0:
-                                    var attackAttr = datDevilFormat.Get(currentDemonWork.id).attackattr;
-                                    attrColour = GetAttackAttrColour(attackAttr, 1);
-                                    break;
-                                case 1:
-                                    var skillId = actionProcessData.work.nowindex;
-                                    attrColour = GetSkillAttrColour(skillId, 1);
-                                    break;
-                                case 5:
-                                    var itemId = actionProcessData.work.nowindex;
-                                    var itemSkillId = datItem.tbl[itemId].skillid;
-                                    attrColour = GetSkillAttrColour(itemSkillId, 1);
-                                    break;
-                                default:
-                                    attrColour = new Color(0.294f, 0.294f, 0.980f, 1);
-                                    break;
+                                switch (commandId)
+                                {
+                                    case 0:
+                                        var attackAttr = datDevilFormat.Get(currentDemonWork.id).attackattr;
+                                        attrColour = GetAttackAttrColour(attackAttr, 1);
+                                        break;
+                                    case 1:
+                                        var skillId = actionProcessData.work.nowindex;
+                                        attrColour = GetSkillAttrColour(skillId, 1);
+                                        break;
+                                    case 5:
+                                        var itemId = actionProcessData.work.nowindex;
+                                        var itemSkillId = datItem.tbl[itemId].skillid;
+                                        attrColour = GetSkillAttrColour(itemSkillId, 1);
+                                        break;
+                                    default:
+                                        attrColour = new Color(0.294f, 0.294f, 0.980f, 1);
+                                        break;
+                                }
+                            }
+
+                            VertexGradient attrGradient = GetSkillAttrGradient(attrColour, 1);
+
+                            nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = attrColour;
+                            if (EnableSkillColourGradient.Value)
+                            {
+                                nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = true;
+                                nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().colorGradient = attrGradient;
                             }
                         }
-
-                        VertexGradient attrGradient = GetSkillAttrGradient(attrColour, 1);
-                        
-                        nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = attrColour;
-                        if (EnableSkillColourGradient.Value)
+                        else
                         {
-                            nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = true;
-                            nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().colorGradient = attrGradient;
+                            nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = new Color(0.294f, 0.294f, 0.980f, 1);
+                            nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = false;
                         }
                     }
-                    else
-                    {
-                        nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = new Color(0.294f, 0.294f, 0.980f, 1);
-                        nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = false;
-                    }
-                }
+                } catch { }
             }
         }
 

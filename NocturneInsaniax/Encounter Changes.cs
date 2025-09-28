@@ -336,8 +336,21 @@ namespace NocturneInsaniax
                 case 109: return DietBuildingEncounter();
                 case 110: return DietBuildingEncounter();
 
-                //case 126: BandouShrineVishnuEncounter(); return 1270;
-                
+                case 126: Overworld5GarudaEncounter(); return 1270;
+
+                case 163: DietBuildingEncounter(); return 1270; // Obelisk upper entrance
+
+                case 116: TowerOfKagutsuchiThreeOniEncounter(); return 1270;
+                case 117: TowerOfKagutsuchiThreeOniEncounter(); return 1270;
+                case 118: TowerOfKagutsuchiThreeOniEncounter(); return 1270;
+                case 119: TowerOfKagutsuchiThreeOniEncounter(); return 1270;
+
+                case 164: TowerOfKagutsuchiThreeArchangelsEncounter(); return 1270;
+                case 165: TowerOfKagutsuchiThreeArchangelsEncounter(); return 1270;
+
+                case 120: TowerOfKagutsuchiShivaEncounter(); return 1270;
+                case 121: TowerOfKagutsuchiShivaEncounter(); return 1270;
+
                 case 131: BandouShrineVishnuEncounter(); return 1270;
 
                 // Labyrinth of Amala
@@ -770,6 +783,45 @@ namespace NocturneInsaniax
                 DietBuildingGaneshaEncounter();
                 return 1270;
             }
+        }
+
+        private static void Overworld5GarudaEncounter()
+        {
+            datEncount.tbl[1270].maxcall = 3;
+            datEncount.tbl[1270].maxparty = 2;
+            datEncount.tbl[1270].item = 102;
+            datEncount.tbl[1270].itemcnt = 1;
+
+            datEncount.tbl[1270].devil[0] = 152;
+        }
+
+        private static void TowerOfKagutsuchiThreeOniEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 169;
+            datEncount.tbl[1270].devil[1] = 170;
+            datEncount.tbl[1270].devil[2] = 171;
+
+            datEncount.tbl[1271].devil[0] = 172;
+            datEncount.tbl[1271].item = 106;
+            datEncount.tbl[1271].itemcnt = 1;
+        }
+
+        private static void TowerOfKagutsuchiThreeArchangelsEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 140;
+            datEncount.tbl[1270].devil[1] = 139;
+            datEncount.tbl[1270].devil[2] = 141;
+
+            datEncount.tbl[1271].devil[0] = 138;
+            datEncount.tbl[1271].item = 103;
+            datEncount.tbl[1271].itemcnt = 1;
+        }
+
+        private static void TowerOfKagutsuchiShivaEncounter()
+        {
+            datEncount.tbl[1270].devil[0] = 12;
+            datEncount.tbl[1270].item = 98;
+            datEncount.tbl[1270].itemcnt = 1;
         }
 
         private static void BandouShrineVishnuEncounter()

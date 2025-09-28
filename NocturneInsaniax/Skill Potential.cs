@@ -1453,9 +1453,14 @@ namespace NocturneInsaniax
                                 __result = Convert.ToInt32(__result / 10);
                         }
 
-                        if (nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).badstatus == 512 && datNormalSkill.tbl[nskill].koukatype == 0)
+                        // Fly status
+                        if (nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).badstatus == 512 && 
+                            datNormalSkill.tbl[nskill].koukatype == 0 && 
+                            datNormalSkill.tbl[nskill].hptype != 2)
                             __result = Convert.ToInt32((__result * 5) + random.Next(5));
-                        else if (nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).badstatus == 512 && datNormalSkill.tbl[nskill].koukatype == 1)
+                        else if (nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).badstatus == 512 && 
+                            datNormalSkill.tbl[nskill].koukatype == 1 && 
+                            datNormalSkill.tbl[nskill].hptype != 2)
                             __result = Convert.ToInt32(__result / 2);
 
                         var targetVit = datCalc.datGetParam(nbMainProcess.nbGetUnitWorkFromFormindex(dformindex), 3);
@@ -1488,6 +1493,17 @@ namespace NocturneInsaniax
                         {
                             __result = Convert.ToInt32(SkillPotentialUtility.ApplyDamageMultiplier(skillPotential, __result));
                         }
+                    }
+
+                    if (datNormalSkill.tbl[nskill].hptype != 2) // If the skill doesn't heal MP
+                    {
+                        // Fly status
+                        if (nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).badstatus == 512 &&
+                            datNormalSkill.tbl[nskill].koukatype == 0)
+                            __result = Convert.ToInt32((__result * 5) + random.Next(5));
+                        else if (nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).badstatus == 512 &&
+                            datNormalSkill.tbl[nskill].koukatype == 1)
+                            __result = Convert.ToInt32(__result / 2);
                     }
                 }
             }

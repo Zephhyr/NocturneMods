@@ -113,13 +113,33 @@ namespace NocturneInsaniax
                     case 57: __result = "Passes the time \nuntil the next new \nor full Kagutsuchi."; return false; // Hourglass
                     case 59: __result = "Increases the damage of the user's \nnext Strength-based attack by 120%."; return false; // Focus Rock
                     case 60: __result = "Increases the damage of the user's \nnext Magic-based attack by 120%."; return false; // Concentrate Rock
-                    case 62: __result = "Demi-fiend earns enough \nEXP to level up but \nloses one level."; return false; // Cursed Gospel
+                    case 62: __result = "Grants " + frName.frGetCNameString(0) + " enough \nEXP to level up but reduces \nlevel by one."; return false; // Cursed Gospel
                     case 63: __result = "Grants four flashing turn icons. \n(Limit: 1)"; return false; // Impel Stone
-                    case 76: __result = "Ice-type Magatama."; return false; // Geis
-                    case 80: __result = "Ailment-type Magatama. \n"; return false; // Adama
-                    case 83: __result = "Force-type Magatama. \n"; return false; // Murakumo
-                    case 85: __result = "Elec-type Magatama. \n"; return false; // Narukami
-                    case 86: __result = "Physical-type Magatama."; return false; // Gaea
+                    case 64: __result = "Neutral Magatama \nImparts basic skills \nNormal resistance"; return false; // Marogareh
+                    case 65: __result = "Ice-type Magatama \nImparts Ice magic and potential \n<material=\"MsgFont2\">Null: Ice<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Elec"; return false; // Wadatsumi
+                    case 66: __result = "Healing-type Magatama \nImparts Healing magic and potential \n<material=\"MsgFont2\">Null: Light<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Dark"; return false; // Ankh
+                    case 67: __result = "Support-type Magatama \nImparts Support magic and potential \n<material=\"MsgFont2\">Null: Mind"; return false; // Iyomante
+                    case 68: __result = "Fire-type Magatama \nImparts Fire magic and potential \n<material=\"MsgFont2\">Null: Fire<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Force"; return false; // Shiranui
+                    case 69: __result = "Force-type Magatama \nImparts Force magic and potential \n<material=\"MsgFont2\">Null: Force<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire"; return false; // Hifumi
+                    case 70: __result = "Physical-type Magatama \nImparts Physical skills and potential \n<material=\"MsgFont2\">Strong: Phys/Shot<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ailments"; return false; // Kamurogi
+                    case 71: __result = "Electricity-type Magatama \nImparts Electricity magic and potential \n<material=\"MsgFont2\">Null: Elec<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ice"; return false; // Kamudo
+                    case 72: __result = "Dark-type Magatama \nImparts Dark magic and potential \n<material=\"MsgFont2\">Null: Dark<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Light"; return false; // Anathema
+                    case 73: __result = "Ailment-type Magatama \nImparts Ailment magic and potential \n<material=\"MsgFont2\">Strong: Ailments<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Shot"; return false; // Miasma
+                    case 74: __result = "Light-type Magatama \nImparts Light magic and potential \n<material=\"MsgFont2\">Null: Light<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Dark"; return false; // Nirvana
+                    case 75: __result = "Shot-type Magatama \nImparts Shot skills and potential \n<material=\"MsgFont2\">Strong: Phys/Shot<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire/Ice"; return false; // Vimana
+                    case 76: __result = "Ice-type Magatama \nImparts Ice magic and potential \n<material=\"MsgFont2\">Drain: Ice<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire"; return false; // Geis
+                    case 77: __result = "Support-type Magatama \nImparts Support magic and potential \n<material=\"MsgFont2\">Null: Curse"; return false; // Djed
+                    case 78: __result = "Fire-type Magatama \nImparts Fire magic and potential \n<material=\"MsgFont2\">Drain: Fire<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ice"; return false; // Muspell
+                    case 79: __result = "Almighty-type Magatama \nImparts Almighty magic and potential \n<material=\"MsgFont2\">Null: Dark"; return false; // Satan
+                    case 80: __result = "Ailment-type Magatama. \nImparts Ailment magic and potential \n<material=\"MsgFont2\">Null: Ailments<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Light/Dark"; return false; // Adama
+                    case 81: __result = "Dark-type Magatama. \nImparts Dark magic and potential \n<material=\"MsgFont2\">Repel: Dark"; return false; // Gehenna
+                    case 82: __result = "Healing-type Magatama. \nImparts Healing magic and potential \n<material=\"MsgFont2\">Null: Nerve"; return false; // Sophia
+                    case 83: __result = "Force-type Magatama. \nImparts Force magic and potential \n<material=\"MsgFont2\">Repel: Force<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Elec"; return false; // Murakumo
+                    case 84: __result = "Light-type Magatama. \nImparts Light magic and potential \n<material=\"MsgFont2\">Repel: Light"; return false; // Gundari
+                    case 85: __result = "Elec-type Magatama. \nImparts Electricity magic and potential \n<material=\"MsgFont2\">Repel: Elec<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Force"; return false; // Narukami
+                    case 86: __result = "Physical/Shot-type Magatama. \nImparts Physical/Shot skills and potential \n<material=\"MsgFont2\">Strong: Phys/Shot<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Elec/Force"; return false; // Gaea
+                    case 87: __result = "Almighty-type Magatama. \nImparts Almighty magic and potential \n<material=\"MsgFont2\">Strong: Light/Dark"; return false; // Kailash
+                    case 88: __result = "Magatama that holds ultimate power \n<material=\"MsgFont2\">Strong: All except Almighty"; return false; // Masakados
                     case 107: __result = "A beautiful gemstone \nthat symbolizes \nearth."; return false; // Malachite
                     default: return true;
                 }
@@ -241,7 +261,7 @@ namespace NocturneInsaniax
 
         private static void ChakraElixir(ushort id)
         {
-            datItem.tbl[id].skillid = 82;
+            datItem.tbl[id].skillid = 93;
         }
 
         private static void NeedleOrbItem(ushort id)
@@ -347,7 +367,7 @@ namespace NocturneInsaniax
         private static void CursedGospelItem(ushort id)
         {
             datItem.tbl[id].flag = 4;
-            datItem.tbl[id].price = 100;
+            datItem.tbl[id].price = 5000;
             datItem.tbl[id].skillid = 91;
             datItem.tbl[id].use = 1;
         }
@@ -392,6 +412,7 @@ namespace NocturneInsaniax
             ShibuyaShop(1);
             AsakusaShop(4);
             CollectorShop(5);
+            TowerOfKagutsuchiShop(6);
             RagShop();
         }
 
@@ -424,6 +445,31 @@ namespace NocturneInsaniax
             fclJunkShopTable.fclShopItemPackTbl[id].ItemList[6].ID = 80; // Adama
             fclJunkShopTable.fclShopItemPackTbl[id].ItemList[7].ID = 83; // Murakumo
             fclJunkShopTable.fclShopItemPackTbl[id].ItemList[8].ID = 85; // Narukami
+        }
+
+        private static void TowerOfKagutsuchiShop(ushort id)
+        {
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[0].ID = 2; // Medicine
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[1].ID = 13; // Revival Bead
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[2].ID = 16; // Dis-Poison
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[3].ID = 17; // Dis-Stun
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[4].ID = 18; // Dis-Charm
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[5].ID = 20; // Dis-Stone
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[6].ID = 19; // Dis-Mute
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[7].ID = 15; // Sacred Water
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[8].ID = 6; // Chakra Drop
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[9].ID = 55; // Light Ball
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[10].ID = 54; // Float Ball
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[11].ID = 29; // Needle Orb
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[12].ID = 48; // Agilao Rock
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[13].ID = 49; // Bufula Rock
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[14].ID = 50; // Zionga Rock
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[15].ID = 51; // Zanma Rock
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[16].ID = 25; // Mahama Rock
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[17].ID = 26; // Mamudo Rock
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[18].ID = 31; // Makajam Rock
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[19].ID = 30; // Wagtail Plume
+            fclJunkShopTable.fclShopItemPackTbl[id].ItemList[20].ID = 62; // Cursed Gospel
         }
 
         private static void RagShop()
@@ -499,6 +545,31 @@ namespace NocturneInsaniax
             fclRagShopTable.fclRagItemTbl[21].Rate[1].Nums = 3;
             fclRagShopTable.fclRagItemTbl[21].Rate[2].ItemID = 107;
             fclRagShopTable.fclRagItemTbl[21].Rate[2].Nums = 1;
+        }
+
+        [HarmonyPatch(typeof(frFont), nameof(frFont.frReplaceLocalizeText))]
+        private class ShopMessagePatch
+        {
+            public static void Postfix(ref string message, ref frMsgInfo_t mi, ref List<int> index, ref string __result)
+            {
+                try
+                {
+                    switch (message)
+                    {
+                        // ToK Shop Dialogue
+                        case "<SPD 7><FONT 1><SHOP_MES_DATA_L0034><WAIT>": __result = "<SP7><FO1>Hey, I found this huge stash of weird books...<WA>"; break;
+                        case "<SHOP_MES_DATA_L0035><WAIT>": __result = "I don't suppose you want to buy some, do you?<WA>"; break;
+                        case "<SHOP_MES_DATA_L0036><WAIT>": __result = "Come to think of it, isn't this area kind of dangerous to have a shop?<WA>"; break;
+                        case "<SHOP_MES_DATA_L0037><WAIT>": __result = "On the other hand, it does have the best view in town!<WA>"; break;
+
+                        case "<SPD 7><FONT 1><SHOP_MES_DATA_L0038><WAIT>": __result = "<SP7><FO1>Magatama? I don't have any of those.<WA>"; break;
+                        case "<SHOP_MES_DATA_L0039><WAIT>": __result = "My friend said he saw one in the Diet Building.<WA>"; break;
+                        case "<SHOP_MES_DATA_L0040><WAIT>": __result = "I don't know why he was snooping around there, its dangerous.<WA>"; break;
+                        case "<SHOP_MES_DATA_L0041><WAIT>": __result = "I heard there's some drill sergeant wannabe on patrol...<WA>"; break;
+                    }
+                }
+                catch { }
+            }
         }
 
         //------------------------------------------------------------
@@ -665,7 +736,7 @@ namespace NocturneInsaniax
             fldGlobal.fldHitData._fldItemBoxTbl[337]._ItemID = 24;
             fldGlobal.fldHitData._fldItemBoxTbl[337]._ItemNum = 1;
 
-            // Boss Cerberus Box
+            // Classic Mot Box
             fldGlobal.fldHitData._fldItemBoxTbl[348]._Type = 2;
             fldGlobal.fldHitData._fldItemBoxTbl[348]._ItemID = 0;
             fldGlobal.fldHitData._fldItemBoxTbl[348]._ItemNum = 0;

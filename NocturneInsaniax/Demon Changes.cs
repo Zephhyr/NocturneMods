@@ -1312,9 +1312,12 @@ namespace NocturneInsaniax
             datAisyo.tbl[247][11] = 130; // Self-destruct
             datAisyo.tbl[247][12] = 130; // Shot
 
-            // Set all HP to 1
-            //foreach (var devil in datDevilFormat.tbl)
-            //    devil.hp = 1;
+            // Set all HP to 2
+            foreach (var devil in datDevilFormat.tbl)
+            {
+                devil.maxhp = 2;
+                devil.hp = 2;
+            }
         }
 
         private static void DemiFiend(ushort id)
@@ -1350,8 +1353,8 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
 
             // Enemy Stats
-            datDevilFormat.tbl[id].hp = 10000;
-            datDevilFormat.tbl[id].maxhp = 10000;
+            datDevilFormat.tbl[id].hp = 12000;
+            datDevilFormat.tbl[id].maxhp = 12000;
             datDevilFormat.tbl[id].mp = 3000;
             datDevilFormat.tbl[id].maxmp = 3000;
 
@@ -1893,6 +1896,23 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[4].Param = 348; // Victory Cry
             tblSkill.fclSkillTbl[id].Event[5].Param = 470; // Tandava
             tblSkill.fclSkillTbl[id].Event[6].Param = 333; // Phys Drain
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 12000;
+            datDevilFormat.tbl[id].maxhp = 12000;
+            datDevilFormat.tbl[id].mp = 3000;
+            datDevilFormat.tbl[id].maxmp = 3000;
+
+            datDevilFormat.tbl[id].dropexp = 4000;
+            datDevilFormat.tbl[id].dropmakka = 8000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 104; // Hassohappa
+            datDevilFormat.tbl[id].skill[1] = 179; // Trisagion
+            datDevilFormat.tbl[id].skill[2] = 442; // Thunder Reign
+            datDevilFormat.tbl[id].skill[3] = 453; // Antichthon
+            datDevilFormat.tbl[id].skill[4] = 470; // Tandava
+            datDevilFormat.tbl[id].skill[5] = 366; // Abyssal Mask
         }
 
         private static void BeidouXingjun(ushort id)
@@ -8111,6 +8131,25 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[7].Param = 27; // Megidolaon
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 95;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 9000;
+            datDevilFormat.tbl[id].maxhp = 9000;
+            datDevilFormat.tbl[id].mp = 1200;
+            datDevilFormat.tbl[id].maxmp = 1200;
+
+            datDevilFormat.tbl[id].dropexp = 2500;
+            datDevilFormat.tbl[id].dropmakka = 6000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 108; // Deathbound
+            datDevilFormat.tbl[id].skill[1] = 467; // Divine Light
+            datDevilFormat.tbl[id].skill[2] = 141; // Riot Gun
+            datDevilFormat.tbl[id].skill[3] = 27; // Megidolaon
+            datDevilFormat.tbl[id].skill[4] = 459; // Luster Candy
+            datDevilFormat.tbl[id].skill[5] = 345; // Endure
+            datDevilFormat.tbl[id].skill[6] = 371; // Arms Master
+            datDevilFormat.tbl[id].skill[7] = 366; // Abyssal Mask
         }
 
         private static void Gabriel(ushort id)
@@ -8134,6 +8173,24 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[4].Param = 459; // Luster Candy
             tblSkill.fclSkillTbl[id].Event[5].Param = 195; // Radiance
             tblSkill.fclSkillTbl[id].Event[6].Param = 363; // Element Boost
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 6000;
+            datDevilFormat.tbl[id].maxhp = 6000;
+            datDevilFormat.tbl[id].mp = 900;
+            datDevilFormat.tbl[id].maxmp = 900;
+
+            datDevilFormat.tbl[id].dropexp = 500;
+            datDevilFormat.tbl[id].dropmakka = 2000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 426; // Sakura Rage
+            datDevilFormat.tbl[id].skill[1] = 439; // Fimbulvetr
+            datDevilFormat.tbl[id].skill[2] = 195; // Radiance
+            datDevilFormat.tbl[id].skill[3] = 459; // Luster Candy
+            datDevilFormat.tbl[id].skill[4] = 424; // Concentrate
+            datDevilFormat.tbl[id].skill[5] = 363; // Element Boost
+            datDevilFormat.tbl[id].skill[6] = 366; // Abyssal Mask
         }
 
         private static void Raphael(ushort id)
@@ -8160,6 +8217,24 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[7].Param = 189; // Judgement Light
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 89;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 6000;
+            datDevilFormat.tbl[id].maxhp = 6000;
+            datDevilFormat.tbl[id].mp = 900;
+            datDevilFormat.tbl[id].maxmp = 900;
+
+            datDevilFormat.tbl[id].dropexp = 500;
+            datDevilFormat.tbl[id].dropmakka = 2000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 106; // Stasis Blade
+            datDevilFormat.tbl[id].skill[1] = 135; // Heaven's Bow
+            datDevilFormat.tbl[id].skill[2] = 462; // Winged Fury
+            datDevilFormat.tbl[id].skill[3] = 31; // Mahamaon
+            datDevilFormat.tbl[id].skill[4] = 189; // Judgement Light
+            datDevilFormat.tbl[id].skill[5] = 218; // Prayer
+            datDevilFormat.tbl[id].skill[6] = 366; // Abyssal Mask
         }
 
         private static void Uriel(ushort id)
@@ -8184,6 +8259,24 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[4].Param = 458; // Heat Riser
             tblSkill.fclSkillTbl[id].Event[4].TargetLevel = 78;
             tblSkill.fclSkillTbl[id].Event[4].Type = 6;
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 6000;
+            datDevilFormat.tbl[id].maxhp = 6000;
+            datDevilFormat.tbl[id].mp = 900;
+            datDevilFormat.tbl[id].maxmp = 900;
+
+            datDevilFormat.tbl[id].dropexp = 500;
+            datDevilFormat.tbl[id].dropmakka = 2000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 431; // Revelation
+            datDevilFormat.tbl[id].skill[1] = 178; // Prominence
+            datDevilFormat.tbl[id].skill[2] = 179; // Trisagion
+            datDevilFormat.tbl[id].skill[3] = 26; // Megidola
+            datDevilFormat.tbl[id].skill[4] = 476; // Smite
+            datDevilFormat.tbl[id].skill[5] = 206; // Heat Riser
+            datDevilFormat.tbl[id].skill[6] = 366; // Abyssal Mask
         }
 
         private static void Ganesha(ushort id)
@@ -8537,7 +8630,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].dropmakka = 1000;
 
             // Enemy Skills
-            datDevilFormat.tbl[id].skill[0] = 204; // Fog Breath
+            datDevilFormat.tbl[id].skill[0] = 
             datDevilFormat.tbl[id].skill[1] = 176; // Fire Breath
             datDevilFormat.tbl[id].skill[2] = 39; // Media
             datDevilFormat.tbl[id].skill[3] = 37; // Diarama
@@ -8562,6 +8655,25 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[1].Param = 186; // Wind Cutter
             tblSkill.fclSkillTbl[id].Event[2].Param = 345; // Endure
             tblSkill.fclSkillTbl[id].Event[3].Param = 126; // Iron Claw
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 4500;
+            datDevilFormat.tbl[id].maxhp = 4500;
+            datDevilFormat.tbl[id].mp = 840;
+            datDevilFormat.tbl[id].maxmp = 840;
+
+            datDevilFormat.tbl[id].dropexp = 1000;
+            datDevilFormat.tbl[id].dropmakka = 4800;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 126; // Iron Claw
+            datDevilFormat.tbl[id].skill[1] = 186; // Wind Cutter
+            datDevilFormat.tbl[id].skill[2] = 462; // Winged Fury
+            datDevilFormat.tbl[id].skill[3] = 31; // Mahamaon
+            datDevilFormat.tbl[id].skill[4] = 65; // Sukukaja
+            datDevilFormat.tbl[id].skill[5] = 204; // Fog Breath
+            datDevilFormat.tbl[id].skill[6] = 345; // Endure
+            datDevilFormat.tbl[id].skill[7] = 366; // Abyssal Mask
         }
 
         private static void Yatagarasu(ushort id)
@@ -9098,6 +9210,25 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[7].Param = 433; // Akashic Arts
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 64;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 6000;
+            datDevilFormat.tbl[id].maxhp = 6000;
+            datDevilFormat.tbl[id].mp = 900;
+            datDevilFormat.tbl[id].maxmp = 900;
+
+            datDevilFormat.tbl[id].dropexp = 500;
+            datDevilFormat.tbl[id].dropmakka = 2000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 98; // Berserk
+            datDevilFormat.tbl[id].skill[1] = 99; // Tempest
+            datDevilFormat.tbl[id].skill[2] = 433; // Akashic Arts
+            datDevilFormat.tbl[id].skill[3] = 434; // Bloodbath
+            datDevilFormat.tbl[id].skill[4] = 66; // Rakukaja
+            datDevilFormat.tbl[id].skill[5] = 205; // Taunt
+            datDevilFormat.tbl[id].skill[6] = 224; // Focus
+            datDevilFormat.tbl[id].skill[7] = 366; // Abyssal Mask
         }
 
         private static void SuiKi(ushort id)
@@ -9116,6 +9247,24 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[7].Param = 385; // Scout
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 67;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 6000;
+            datDevilFormat.tbl[id].maxhp = 6000;
+            datDevilFormat.tbl[id].mp = 900;
+            datDevilFormat.tbl[id].maxmp = 900;
+
+            datDevilFormat.tbl[id].dropexp = 500;
+            datDevilFormat.tbl[id].dropmakka = 2000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 426; // Sakura Rage
+            datDevilFormat.tbl[id].skill[1] = 9; // Bufudyne
+            datDevilFormat.tbl[id].skill[2] = 181; // Glacial Blast
+            datDevilFormat.tbl[id].skill[3] = 199; // Evil Gaze
+            datDevilFormat.tbl[id].skill[4] = 57; // Dekaja
+            datDevilFormat.tbl[id].skill[5] = 310; // Ice Boost
+            datDevilFormat.tbl[id].skill[6] = 366; // Abyssal Mask
         }
 
         private static void FuuKi(ushort id)
@@ -9132,6 +9281,25 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[7].Param = 429; // Primal Force
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 71;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 6000;
+            datDevilFormat.tbl[id].maxhp = 6000;
+            datDevilFormat.tbl[id].mp = 900;
+            datDevilFormat.tbl[id].maxmp = 900;
+
+            datDevilFormat.tbl[id].dropexp = 500;
+            datDevilFormat.tbl[id].dropmakka = 2000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 110; // Chaos Blade
+            datDevilFormat.tbl[id].skill[1] = 429; // Primal Force
+            datDevilFormat.tbl[id].skill[2] = 21; // Zandyne
+            datDevilFormat.tbl[id].skill[3] = 24; // Mazandyne
+            datDevilFormat.tbl[id].skill[4] = 216; // Panic Voice
+            datDevilFormat.tbl[id].skill[5] = 204; // Fog Breath
+            datDevilFormat.tbl[id].skill[6] = 371; // Arms Master
+            datDevilFormat.tbl[id].skill[7] = 366; // Abyssal Mask
         }
 
         private static void OngyoKi(ushort id)
@@ -9153,6 +9321,25 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[5].Param = 348; // Victory Cry
             tblSkill.fclSkillTbl[id].Event[6].Param = 458; // Heat Riser
             tblSkill.fclSkillTbl[id].Event[7].Param = 478; // Scintilla
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 9000;
+            datDevilFormat.tbl[id].maxhp = 9000;
+            datDevilFormat.tbl[id].mp = 1200;
+            datDevilFormat.tbl[id].maxmp = 1200;
+
+            datDevilFormat.tbl[id].dropexp = 2500;
+            datDevilFormat.tbl[id].dropmakka = 6000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 105; // Dark Sword
+            datDevilFormat.tbl[id].skill[1] = 432; // Gate of Hell
+            datDevilFormat.tbl[id].skill[2] = 26; // Megidola
+            datDevilFormat.tbl[id].skill[3] = 33; // Mudoon
+            datDevilFormat.tbl[id].skill[4] = 478; // Scintilla
+            datDevilFormat.tbl[id].skill[5] = 458; // Heat Riser
+            datDevilFormat.tbl[id].skill[6] = 362; // Phys Boost
+            datDevilFormat.tbl[id].skill[7] = 366; // Abyssal Mask
         }
 
         private static void Clotho(ushort id)

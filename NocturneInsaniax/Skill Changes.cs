@@ -787,6 +787,43 @@ namespace NocturneInsaniax
                         evtMoon.evtSetAgeOfMoon(0); // Set Kagutsuchi's phase to new
                     }
 
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_CLEAR_NORMAL());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_CLEAR_HARD());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_END_SIJIMA());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_END_MUSUBI());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_END_YOSUGA());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_END_GOOD());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_END_BAD());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_END_ALL());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_MAP_ALL());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_USE_TERMINAL1());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_USE_TERMINAL50());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_PLACE_VLTX());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_BATTLE_WIN());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_BATTLE_WEAK100());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_BATTLE_D999());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_BATTLE_BAD_ALL());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_GAMEOVER());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_COM_SUCCESS());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_COM_NAKAMA3());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_AKUMA_GATTAI());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_AKUMA_GATTAI50());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_AKUMA_BOOK_ALL());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_MAGA_GET1());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_MAGA_GETALL());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_MAGA_MASTER());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_MAGA_MASTER_ALL());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_CHR_LVUP());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_CHR_PARAM_MAX_ALL());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_CHR_PARAM_MAX_NAKAMA());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_GIFT100());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_NAKAMA_CHANGE_LVUP());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_NAKAMA_MUTATION_LVUP());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_NAME_ALL());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_DRINK_ALL());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_PB_CLEAR());
+                    //Achievement.Unlock(Achievement.achievementTbl.MAIN_PB_CLEAR_ALL());
+
                     // Test - Add rigged demons to party
                     //dds3GlobalWork.DDS3_GBWK.maka = 0;
 
