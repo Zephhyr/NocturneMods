@@ -72,8 +72,10 @@ namespace NocturneInsaniax
                     case 113: __result = "Venom Needle"; return false;
                     case 133: __result = "Javelin Rain"; return false;
                     case 143: __result = "Xeros Beat"; return false;
-                    case 169: __result = "Scorn"; return false;
-                    case 170: __result = "Scorn"; return false;
+                    case 169: __result = "Decimate"; return false;
+                    case 170: __result = "Decimate"; return false;
+                    case 172: __result = "Sear"; return false;
+                    case 173: __result = "Sear"; return false;
                     case 174: __result = "Crush"; return false;
                     case 175: __result = "Repulse"; return false;
                     case 179: __result = "Trisagion"; return false;
@@ -83,6 +85,7 @@ namespace NocturneInsaniax
                     case 220: __result = "Psycho Rage"; return false;
                     case 243: __result = "Hell's Forfeit"; return false;
                     case 252: __result = "Foul Gathering"; return false;
+                    case 254: __result = "Omnipotence"; return false;
                     case 285: __result = "Babylon Goblet"; return false;
                     case 286: __result = "Death Lust"; return false;
                     case 413: __result = "Silver Tongue"; return false;
@@ -1349,11 +1352,6 @@ namespace NocturneInsaniax
                 {
                     try
                     {
-                        //if (actionProcessData.work.id == 257 && (actionProcessData.work.nowcommand == 1 && actionProcessData.work.nowindex == 66))
-                        //{
-                        //    actionProcessData.work.badstatus = 2048;
-                        //}
-
                         // After Summon
                         if (actionProcessData.work.nowcommand == 6 || (actionProcessData.work.nowcommand == 1 && actionProcessData.work.nowindex == 223))
                         {
@@ -1598,7 +1596,34 @@ namespace NocturneInsaniax
                                     nbMainProcess.nbPushAction(4, actionProcessData.partyindex, actionProcessData.partyindex, 496);
                             }
                         }
-                        
+
+                        if (actionProcessData.work.nowcommand == 1 && actionProcessData.work.nowindex == 221)
+                        {
+                            foreach (var party in actionProcessData.data.party)
+                            {
+                                for (int i = 4; i <= 8; i++)
+                                {
+                                    if (party.count[i] != 0)
+                                        party.count[i] = 0;
+                                }
+
+                                nbHelpProcess.nbDispText("All -kaja & -nda effects negated!", string.Empty, 2, 45, 2315190144, false);
+                            }
+                        }
+
+                        if (actionProcessData.work.nowcommand == 1 && actionProcessData.work.nowindex == 241)
+                        {
+                            foreach (var party in actionProcessData.data.party.Where(x => x.formindex <= 3))
+                            {
+                                for (int i = 4; i <= 8; i++)
+                                {
+                                    if (party.count[i] > 0)
+                                        party.count[i] = 0;
+                                }
+
+                                nbHelpProcess.nbDispText("All -kaja effects negated!", string.Empty, 2, 45, 2315190144, false);
+                            }
+                        }
                     } catch { }
 
                     helmsmanActive = (helmsmanIds.Contains(actionProcessData.work.id) &&
@@ -1980,6 +2005,8 @@ namespace NocturneInsaniax
 
             CursedGospelSkill(91);
 
+            BeadOfLifeSkill(92);
+
             MedicineSkill(94);
 
             Lunge(96);
@@ -2059,6 +2086,8 @@ namespace NocturneInsaniax
             DoubleAttack(167);
 
             Tentacle(168);
+            Sear1(172);
+            Sear2(173);
             AhrimanCrush(174);
 
             FireBreath(176);
@@ -2114,6 +2143,8 @@ namespace NocturneInsaniax
             Rage(219);
             PsychoRage(220);
 
+            InfiniteLight(221);
+
             BeckonCall(223);
             Focus(224);
 
@@ -2128,6 +2159,8 @@ namespace NocturneInsaniax
 
             FoulGathering(252);
             Apocalypse(253);
+
+            Omnipotence(254);
 
             FireOfSinai(257);
 
@@ -3259,7 +3292,7 @@ namespace NocturneInsaniax
         private static void Gungnir(ushort id)
         {
             datSkill.tbl[id].flag = 0;
-            datSkill.tbl[id].keisyoform = 16;
+            datSkill.tbl[id].keisyoform = 512;
             datSkill.tbl[id].skillattr = 0;
             datSkill.tbl[id].index = (short)id;
             datSkill.tbl[id].type = 0;
@@ -7745,6 +7778,11 @@ namespace NocturneInsaniax
             datSkill.tbl[id].skillattr = 13; // Healing skill
         }
 
+        private static void BeadOfLifeSkill(ushort id)
+        {
+            datSkill.tbl[id].skillattr = 13; // Healing skill
+        }
+
         private static void ChakraDropSkill(ushort id)
         {
             datSkill.tbl[id].skillattr = 15; // Utility skill
@@ -7792,11 +7830,31 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hitlevel = 255;
         }
 
+        private static void Sear1(ushort id)
+        {
+            datNormalSkill.tbl[id].hpn = 42;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+        }
+
+        private static void Sear2(ushort id)
+        {
+            datNormalSkill.tbl[id].hpn = 48;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+        }
+
         private static void VastLight(ushort id)
         {
-            datNormalSkill.tbl[id].hpn = 80;
+            datNormalSkill.tbl[id].hpn = 90;
             datNormalSkill.tbl[id].magicbase = 30;
             datNormalSkill.tbl[id].magiclimit = 32767;
+        }
+
+        private static void InfiniteLight(ushort id)
+        {
+            datNormalSkill.tbl[id].hpn = 120;
+            datNormalSkill.tbl[id].magicbase = 30;
+            datNormalSkill.tbl[id].magiclimit = 32767;
+            datNormalSkill.tbl[id].targetarea = 11;
         }
 
         private static void Mirage(ushort id)
@@ -7898,6 +7956,47 @@ namespace NocturneInsaniax
 
             OverWriteSkillEffectDante(id, 137, 3);
             datNormalSkillVisual.tbl[id].motion = 4;
+        }
+
+        private static void Omnipotence(ushort id)
+        {
+            datSkill.tbl[id].skillattr = 14;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 0;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 255;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 3;
+            datNormalSkill.tbl[id].hojotype = 341;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 50;
+            datNormalSkill.tbl[id].hptype = 0;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 5;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
         }
 
         private static void BeelzebubAttack(ushort id)

@@ -290,7 +290,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , -3   , 3    , 0    , 0    , 0    , -3   , 0    , 0    , 0    , 0    , 0    , 1    , 0 }, // 261 Forced Koppa Tengu
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , -7   , 5    , 0    , 0    , 2    , 0    , 0    , 0    , 2    , 0 }, // 262 Forced Kaiwan
             new sbyte[] {5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -4   , -4   , -4   , 0    , 0    , 0    , 3    , 0 }, // 263 Boss Ose
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 264 Boss Kagutsuchi 2
+            new sbyte[] {9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 5    , 5    , 0 }, // 264 Boss Kagutsuchi 2
             new sbyte[] {0    , -5   , 4    , 0    , 0    , 0    , 0    , 0    , -5   , 0    , 4    , 0    , 0    , 0    , 2    , 0 }, // 265 Ambush Mizuchi
             new sbyte[] {6    , -2   , -2   , -2   , -2   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -2   , 2    , 0 }, // 266 Boss Kin-Ki
             new sbyte[] {2    , -7   , 6    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , -2   , 2    , 0 }, // 267 Boss Sui-Ki
@@ -320,7 +320,7 @@ namespace NocturneInsaniax
             new sbyte[] {6    , 4    , 0    , 0    , 0    , 0    , 0    , -5   , 0    , 0    , 0    , 0    , 0    , 0    , 4    , 0 }, // 290 Boss Flauros Hallel
             new sbyte[] {5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 3    , 3    , 0 }, // 291 Boss Ahriman 1
             new sbyte[] {5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 5    , 3    , 3    , 0 }, // 292 Boss Noah 1
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 293 Boss Kagutsuchi 1
+            new sbyte[] {6    , 6    , 6    , 6    , 6    , 6    , 6    , 6    , 6    , 6    , 6    , 6    , 6    , 4    , 4    , 0 }, // 293 Boss Kagutsuchi 1
             new sbyte[] {5    , 4    , -4   , -4   , 0    , 4    , -4   , 0    , 3    , 3    , 3    , 4    , 0    , 0    , 3    , 0 }, // 294 Boss Specter 1 (Merged 6)
             new sbyte[] {5    , 4    , -4   , -4   , 0    , 4    , -4   , 0    , 3    , 3    , 3    , 4    , 0    , 0    , 3    , 0 }, // 295 Boss Specter 1 (Merged 4-5)
             new sbyte[] {5    , 4    , -4   , -4   , 0    , 4    , -4   , 0    , 3    , 3    , 3    , 4    , 0    , 0    , 3    , 0 }, // 296 Boss Specter 1 (Merged 2-3)
@@ -1495,7 +1495,7 @@ namespace NocturneInsaniax
                         }
                     }
 
-                    if (datNormalSkill.tbl[nskill].hptype != 2) // If the skill doesn't heal MP
+                    if (datNormalSkill.tbl[nskill].mptype != 2) // If the skill doesn't heal MP
                     {
                         // Fly status
                         if (nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).badstatus == 512 &&
@@ -1693,7 +1693,7 @@ namespace NocturneInsaniax
                 }
 
                 var work = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
-                if (__result == 1 && datCalc.datCheckSyojiSkill(work, 366) != 0 && datNormalSkill.tbl[nskill].basstatus != 1 && datNormalSkill.tbl[nskill].basstatus != 2
+                if (__result == 1 && datCalc.datCheckSyojiSkill(work, 366) != 0
                     && (nskill != 79 && nskill != 159 && nskill != 243 && nskill != 259 && nskill != 260 && nskill != 287))
                 {
                     int randomValue = random.Next(2);

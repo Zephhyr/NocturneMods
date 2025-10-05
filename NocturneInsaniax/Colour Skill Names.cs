@@ -64,6 +64,15 @@ namespace NocturneInsaniax
                                 nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().colorGradient = attrGradient;
                             }
                         }
+                        else if (text1 == "Condemn Weakness")
+                        {
+                            nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = GetAttackAttrColour(15, 1);
+                            if (EnableSkillColourGradient.Value)
+                            {
+                                nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = true;
+                                nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().colorGradient = GetSkillAttrGradient(GetAttackAttrColour(15, 1), 1);
+                            }
+                        }
                         else
                         {
                             nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = new Color(0.294f, 0.294f, 0.980f, 1);

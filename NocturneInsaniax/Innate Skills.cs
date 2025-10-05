@@ -18,7 +18,7 @@ namespace NocturneInsaniax
             { 000, new InnateSkill(383, 15, "", "")}, // 000
             { 001, new InnateSkill(383, 15, "Tripura Samhara", "While in the active party, \nskill costs are reduced by 20% \nfor allies with a charge effect.")}, // 001 Vishnu
             { 002, new InnateSkill(383, 14, "Righteous Vow", "After Mitra survives a critical or \nweakness hit, raise all of his stats \nby one rank.")}, // 002 Mitra
-            { 003, new InnateSkill(383, 06, "Blinding Radiance", "While in the active party, all allies' \nLight attacks may Critically Strike.")}, // 003 Amaterasu
+            { 003, new InnateSkill(383, 06, "Searing Brilliance", "While in the active party, all allies' \nLight attacks may Critically Strike.")}, // 003 Amaterasu
             { 004, new InnateSkill(383, 14, "Runes of Wisdom", "When switching out, increase the damage \nof next the Strength-based attack \nused by the switched ally by 120%.")}, // 004 Odin
             { 005, new InnateSkill(383, 15, "Focused Assault", "Atavaka gains 20% Hit Rate and \nCritical Rate when targetting the \nsame single foe as the previous ally.")}, // 005 Atavaka
             { 006, new InnateSkill(383, 14, "Eye of Horus", "When switching out, increase the damage \nof next the Magic-based attack \nused by the switched ally by 120%.")}, // 006 Horus
@@ -279,7 +279,7 @@ namespace NocturneInsaniax
             { 261, new InnateSkill(383, 15, "Force Gestalt", "")}, // 261 Forced Koppa Tengu
             { 262, new InnateSkill(383, 15, "Dark Star", "")}, // 262 Forced Kaiwan
             { 263, new InnateSkill(383, 15, "Paw-to-Paw Combat", "")}, // 263 Boss Ose
-            { 264, new InnateSkill(383, 15, "Boss Kagutsuchi 2", "")}, // 264 Boss Kagutsuchi 2
+            { 264, new InnateSkill(383, 15, "Eternal Light", "")}, // 264 Boss Kagutsuchi 2
             { 265, new InnateSkill(383, 15, "Frigid Melody", "")}, // 265 Ambush Mizuchi
             { 266, new InnateSkill(383, 15, "Four Oni", "")}, // 169 Boss Kin-Ki
             { 267, new InnateSkill(383, 15, "Four Oni", "")}, // 170 Boss Sui-Ki
@@ -308,7 +308,7 @@ namespace NocturneInsaniax
             { 290, new InnateSkill(383, 15, "Paw-to-Paw Combat", "")}, // 290 Boss Flauros Hallel
             { 291, new InnateSkill(383, 05, "Hell's Forfeit", "")}, // 291 Boss Ahriman 1
             { 292, new InnateSkill(383, 15, "Aurora", "")}, // 292 Boss Noah 1
-            { 293, new InnateSkill(383, 15, "Boss Kagutsuchi 1", "")}, // 293 Boss Kagutsuchi 1
+            { 293, new InnateSkill(383, 15, "Pulsating Light", "")}, // 293 Boss Kagutsuchi 1
             { 294, new InnateSkill(383, 15, "Phantasmagoria", "")}, // 294 Boss Specter 1 (Merged 6)
             { 295, new InnateSkill(383, 15, "Phantasmagoria", "")}, // 295 Boss Specter 1 (Merged 4-5)
             { 296, new InnateSkill(383, 15, "Phantasmagoria", "")}, // 296 Boss Specter 1 (Merged 2-3)

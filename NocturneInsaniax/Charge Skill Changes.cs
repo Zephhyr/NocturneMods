@@ -514,6 +514,22 @@ namespace NocturneInsaniax
                     else
                         nbHelpProcess.nbDispText("All stats greatly increased!", string.Empty, 2, 45, 2315190144, false);
                 }
+                // Omnipotence
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 341 && (actionProcessData.work.nowindex == 254))
+                {
+                    var limitReached = true;
+                    for (int i = 4; i <= 8; i++)
+                    {
+                        if (currentUnitBuffs[i] <= 2)
+                            limitReached = false;
+                        break;
+                    }
+
+                    if (limitReached)
+                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    else
+                        nbHelpProcess.nbDispText("All stats drastically increased!", string.Empty, 2, 45, 2315190144, false);
+                }
                 // Luster Candy/Four Devas/Nation Founder
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 341 && (actionProcessData.work.nowindex == 459 || actionProcessData.work.nowindex == 408 || actionProcessData.work.nowindex == 404))
                 {

@@ -762,10 +762,7 @@ namespace NocturneInsaniax
             fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemID = 0;
             fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemNum = 0;
             fldGlobal.fldHitData._fldItemBoxTbl[351]._Trap = 1;
-            //fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 334; //1278;
-            //fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 472; //1278;
-            //fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 1008; //1278;
-            fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 333; //1278;
+            fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 473; //1278;
 
             //fldGlobal.fldHitData._fldItemBoxTbl.Add(new fldTakaraTbl_t { _ItemID = 47, _ItemNum = 5 });
         }

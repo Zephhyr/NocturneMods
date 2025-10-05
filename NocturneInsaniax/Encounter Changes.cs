@@ -116,6 +116,15 @@ namespace NocturneInsaniax
                     encno = NewKagutsuchiEncounter(encno, encpackno);
                 }
             }
+
+            public static void Postfix(ref int encpackno, ref int packno, ref int packindex, ref int encno, ref int stagemajor, ref int stageminor)
+            {
+                if (encno == 1278)
+                {
+                    evtMoon.evtDeadMoonInit();
+                    evtMoon.evtSetAgeOfMoon(1);
+                }
+            }
         }
 
         //[HarmonyPatch(typeof(nbNegoProcess), nameof(nbNegoProcess.nbInitNegoProcess))]
