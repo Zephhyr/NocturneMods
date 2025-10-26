@@ -1190,6 +1190,8 @@ namespace NocturneInsaniax
             datEncount.tbl[450].devil[1] = 343;
             datEncount.tbl[450].devil[2] = 0;// 356;
 
+            datEncount.tbl[451].flag = 11; // Boss Lucifer
+
             // Boss Michael
             datEncount.tbl[301].devil[0] = 298;
             datEncount.tbl[301].devil[1] = 0;

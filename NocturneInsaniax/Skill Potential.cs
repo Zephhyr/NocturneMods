@@ -372,7 +372,7 @@ namespace NocturneInsaniax
             new sbyte[] {6    , 0    , 0    , 6    , 6    , 4    , 0    , 0    , 0    , 0    , 0    , 4    , 0    , 0    , 4    , 0 }, // 341 Boss Raidou/Dante 2
             new sbyte[] {7    , 7    , -7   , 0    , 0    , 7    , 7    , -7   , 0    , 0    , 0    , 7    , 0    , -4   , 4    , 0 }, // 342 Boss Metatron
             new sbyte[] {0    , -7   , 0    , 7    , 7    , 7    , -7   , 7    , 0    , 0    , 0    , 7    , 4    , -4   , 4    , 0 }, // 343 Boss Beelzebub
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 344 Boss Lucifer
+            new sbyte[] {9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 5    , 5    , 0 }, // 344 Boss Lucifer
             new sbyte[] {4    , -5   , 0    , -5   , 0    , 4    , 0    , 0    , 7    , 7    , 7    , 4    , 0    , 0    , 2    , 0 }, // 345 Boss Pale Rider
             new sbyte[] {0    , 4    , 0    , -5   , 0    , 0    , 6    , -5   , 0    , 0    , 0    , 0    , 6    , 0    , 3    , 0 }, // 346 Boss White Rider
             new sbyte[] {6    , -5   , -5   , 4    , 6    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0 }, // 347 Boss Red Rider
@@ -1408,7 +1408,7 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int nskill, ref int sformindex, ref int dformindex, ref int __result)
             {
-                if (__result != -1 && datNormalSkill.tbl[nskill].hptype != 3) // HP has been altered
+                if (__result != -1 && datNormalSkill.tbl[nskill].hptype != 3 && datNormalSkill.tbl[nskill].hptype != 8) // HP has been altered
                 {
                     ushort demonID = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id; // Get the demon's ID
                     ushort targetID = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex).id; // Get the demon's ID
@@ -1462,6 +1462,11 @@ namespace NocturneInsaniax
                             datNormalSkill.tbl[nskill].koukatype == 1 && 
                             datNormalSkill.tbl[nskill].hptype != 2)
                             __result = Convert.ToInt32(__result / 2);
+
+                        if (targetID == 344) // Lucifer
+                        {
+                            __result = Convert.ToInt32(__result/ (5/3));
+                        }
 
                         var targetVit = datCalc.datGetParam(nbMainProcess.nbGetUnitWorkFromFormindex(dformindex), 3);
 

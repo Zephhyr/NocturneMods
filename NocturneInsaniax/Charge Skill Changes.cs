@@ -302,8 +302,8 @@ namespace NocturneInsaniax
                     else
                         nbHelpProcess.nbDispText("Decreased Physical Attack!", string.Empty, 2, 45, 2315190144, false);
                 }
-                // Hitokoto Storm/Whirlwind
-                else if (actionProcessData.work.nowcommand == 1 && hojotype == 10 && actionProcessData.work.nowindex == 268)
+                // Hitokoto Storm/Whirlwind, Phlegathon
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 10 && (actionProcessData.work.nowindex == 268 || actionProcessData.work.nowindex == 491))
                 {
                     var limitReached = true;
                     foreach (var unitBuffs in currentSideBuffs)
@@ -587,14 +587,16 @@ namespace NocturneInsaniax
                 {
                     nbHelpProcess.nbDispText("All -kaja effects negated!", string.Empty, 2, 45, 2315190144, false);
                 }
-                else if (actionProcessData.work.nowcommand == 1 && hojotype == 263168 && actionProcessData.work.nowindex == 511)
+                else if (actionProcessData.work.nowcommand == 1 && hojotype == 263168 && (actionProcessData.work.nowindex == 272 || actionProcessData.work.nowindex == 511))
                 {
                     foreach (var unit in nbMainProcess.nbGetMainProcessData().party)
                     {
                         for (int i = 4; i <= 15; i++)
                             unit.count[i] = 0;
+                        unit.count[20] = 0;
                     }
-                    nbHelpProcess.nbDispText("All effects negated!", string.Empty, 2, 45, 2315190144, false);
+                    if (actionProcessData.work.nowindex == 511)
+                        nbHelpProcess.nbDispText("All effects negated!", string.Empty, 2, 45, 2315190144, false);
                 }
             }
         }

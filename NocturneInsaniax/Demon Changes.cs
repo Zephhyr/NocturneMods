@@ -479,6 +479,8 @@ namespace NocturneInsaniax
                         __result = "Pazuzu"; return false;
                     case "<AISYO_L0336>":
                         __result = "Null: Dark • Str: Shot/Force/Mind • Weak: Ice"; return false;
+                    case "<AISYO_L0344>":
+                        __result = "Drn: Dark • Str: All Other"; return false;
                     case "<DEVIL_L0356>":
                         __result = "Nasu"; return false;
                     case "<AISYO_L0356>":
@@ -1271,6 +1273,7 @@ namespace NocturneInsaniax
 
             BossMetatron(342);
             BossBeelzebubFly(343);
+            BossLucifer(344);
 
             BossPaleRider(345);
             BossWhiteRider(346);
@@ -13392,8 +13395,6 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].skill[5] = 173; // Sear
             datDevilFormat.tbl[id].skill[6] = 221; // Infinite Light
             datDevilFormat.tbl[id].skill[7] = 372; // Firm Stance
-
-            datDevilAI.divTbls[2][8].ailevel = 1;
         }
 
         private static void BossKagutsuchi1(ushort id)
@@ -14595,6 +14596,52 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].skill[5] = 77;
             datDevilFormat.tbl[id].skill[6] = 299;
             datDevilFormat.tbl[id].skill[7] = 328;
+        }
+
+        private static void BossLucifer(ushort id)
+        {
+            // Affinities
+            datAisyo.tbl[id][0] = 50; // Phys
+            datAisyo.tbl[id][1] = 50; // Fire
+            datAisyo.tbl[id][2] = 50; // Ice
+            datAisyo.tbl[id][3] = 50; // Elec
+            datAisyo.tbl[id][4] = 50; // Force
+            datAisyo.tbl[id][5] = 50; // Almighty
+            datAisyo.tbl[id][6] = 50; // Light
+            datAisyo.tbl[id][7] = 262144; // Dark
+            datAisyo.tbl[id][8] = 1048626; // Curse
+            datAisyo.tbl[id][9] = 1048626; // Nerve
+            datAisyo.tbl[id][10] = 1048626; // Mind
+            datAisyo.tbl[id][11] = 50; // Self-Destruct
+            datAisyo.tbl[id][12] = 50; // Shot
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].maxhp = 60000;
+            datDevilFormat.tbl[id].hp = 60000;
+            datDevilFormat.tbl[id].maxmp = 60000;
+            datDevilFormat.tbl[id].mp = 60000;
+            datDevilFormat.tbl[id].level = 99;
+            datDevilFormat.tbl[id].flag = 162;
+            datDevilFormat.tbl[id].param[0] = 40;
+            datDevilFormat.tbl[id].param[2] = 40;
+            datDevilFormat.tbl[id].param[3] = 40;
+            datDevilFormat.tbl[id].param[4] = 40;
+            datDevilFormat.tbl[id].param[5] = 40;
+
+            datDevilFormat.tbl[id].dropexp = 0;
+            datDevilFormat.tbl[id].dropmakka = 0;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 100; // Hades Blast
+            datDevilFormat.tbl[id].skill[1] = 135; // Heaven's Bow
+            datDevilFormat.tbl[id].skill[2] = 491; // Phlegethon
+            datDevilFormat.tbl[id].skill[3] = 492; // Judecca Tomb
+            datDevilFormat.tbl[id].skill[4] = 493; // Weeping Heaven
+            datDevilFormat.tbl[id].skill[5] = 494; // Carnal Winds
+            datDevilFormat.tbl[id].skill[6] = 270; // Dark Matter
+            datDevilFormat.tbl[id].skill[7] = 271; // Evil Gleam
+
+            datDevilAI.divTbls[2][88].deadeventno = 10;
         }
 
         private static void BossPaleRider(ushort id)

@@ -359,7 +359,7 @@ namespace NocturneInsaniax
             { 341, new InnateSkill(383, 15, "Boss Raidou/Dante 2", "")}, // 341 Boss Raidou/Dante 2
             { 342, new InnateSkill(383, 05, "Almighty Gestalt", "")}, // 342 Boss Metatron
             { 343, new InnateSkill(383, 05, "Almighty Enhancer", "")}, // 343 Boss Beelzebub
-            { 344, new InnateSkill(383, 15, "Boss Lucifer", "")}, // 344 Boss Lucifer
+            { 344, new InnateSkill(383, 15, "Dawn of Demise", "")}, // 344 Boss Lucifer
             { 345, new InnateSkill(383, 15, "Four Horsemen", "")}, // 345 Boss Pale Rider
             { 346, new InnateSkill(383, 15, "Four Horsemen", "")}, // 346 Boss White Rider
             { 347, new InnateSkill(383, 15, "Four Horsemen", "")}, // 347 Boss Red Rider
@@ -421,10 +421,10 @@ namespace NocturneInsaniax
             { 15, new InnateSkill(383, 01, "Malevolent Flames", "All allies' Fire attacks \nmay Critically Strike.")}, // 15 Muspell
             { 16, new InnateSkill(383, 05, "Forbidden Fruit", "Allies' Almighty attacks \nmay Critically Strike.")}, // 16 Satan
             { 17, new InnateSkill(383, 15, "Magnified Malady", "All allies deal 20% more damage \nagainst enemies with an ailment.")}, // 17 Adama
-            { 18, new InnateSkill(383, 07, "Dark Opus", "If the entire active party has natural \npositive Dark potential, gain an extra \nturn icon at the start of each turn.")}, // 18 Gehenna
+            { 18, new InnateSkill(383, 07, "Dark Opus", "If the entire active party has natural \npositive Dark potential, gain a flashing \nturn icon at the start of each turn.")}, // 18 Gehenna
             { 19, new InnateSkill(383, 15, "Withheld Sentence", "Allies are immune to \nrandom instakills.")}, // 19 Sophia
             { 20, new InnateSkill(383, 04, "Orochi's Bane", "Your Force attacks may \ninflict poison.")}, // 20 Murakumo
-            { 21, new InnateSkill(383, 06, "Light Opus", "If the entire active party has natural \npositive Light potential, gain an extra \nturn icon at the start of each turn.")}, // 21 Gundari
+            { 21, new InnateSkill(383, 06, "Light Opus", "If the entire active party has natural \npositive Light potential, gain a flashing \nturn icon at the start of each turn.")}, // 21 Gundari
             { 22, new InnateSkill(383, 03, "Vanquishing Bolts", "All allies' Elec attacks \nmay Critically Strike.")}, // 22 Narukami
             { 23, new InnateSkill(383, 14, "Megalomania", "After using a charge effect, \ngain a 30% chance to retain it.")}, // 23 Gaea
             { 24, new InnateSkill(383, 15, "Tripura Samhara", "Skill costs are reduced by 20% \nfor allies with a charge effect.")}, // 24 Kailash

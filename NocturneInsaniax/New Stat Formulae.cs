@@ -488,13 +488,6 @@ namespace NocturneInsaniax
         {
             public static bool Prefix(ref nbActionProcessData_t ad, ref int nskill, ref int sformindex, ref int dformindex, ref int __result)
             {
-                // Kagutsuchi's Sear cannot crit
-                if (nskill == 172 || nskill == 172)
-                {
-                    __result = 0;
-                    return false;
-                }
-
                 datUnitWork_t workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
                 datUnitWork_t workFromFormindex2 = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
 
@@ -504,7 +497,30 @@ namespace NocturneInsaniax
                     resistance = "0" + resistance;
                 bool isWeak = resistance[0] == '1';
 
-                if (isWeak)
+                bool hasResistOrImmunityPassive = false;
+                if (datSkill.tbl[nskill].skillattr >= 0)
+                {
+                    foreach (var passive in resistPassives[datSkill.tbl[nskill].skillattr])
+                    {
+                        if (hasResistOrImmunityPassive)
+                            break;
+                        if (datCalc.datCheckSyojiSkill(workFromFormindex2, passive) != 0)
+                            hasResistOrImmunityPassive = true;
+                    }
+                    foreach (var passive in immunityPassives[datSkill.tbl[nskill].skillattr])
+                    {
+                        if (hasResistOrImmunityPassive)
+                            break;
+                        if (datCalc.datCheckSyojiSkill(workFromFormindex2, passive) != 0)
+                            hasResistOrImmunityPassive = true;
+                    }
+                }
+
+                if (isWeak && !hasResistOrImmunityPassive &&
+                    !(datNormalSkill.tbl[nskill].koukatype == 0 && nbMainProcess.nbGetPartyFromFormindex(dformindex).count[14] != 0) &&
+                    !(datNormalSkill.tbl[nskill].koukatype == 1 && nbMainProcess.nbGetPartyFromFormindex(dformindex).count[13] != 0) &&
+                    !(datSkill.tbl[nskill].skillattr == 6 && nbMainProcess.nbGetPartyFromFormindex(dformindex).count[12] != 0) &&
+                    !(datSkill.tbl[nskill].skillattr == 7 && nbMainProcess.nbGetPartyFromFormindex(dformindex).count[11] != 0))
                     __result = 2; // Weak hit
                 else
                     __result = 0; // Normal hit
@@ -520,6 +536,13 @@ namespace NocturneInsaniax
                     __result = 1; // Critical hit
                 else if (!(new uint[] { 65536, 131072, 262144 }.Contains(aisyo) || datCalc.datCheckSyojiSkill(workFromFormindex2, 372) != 0)) // If target isn't immune or doesn't have Firm Stance
                 {
+                    // Kagutsuchi's Sear cannot randomly crit
+                    if (nskill == 172 || nskill == 172)
+                    {
+                        __result = 0;
+                        return false;
+                    }
+
                     var critRate = datNormalSkill.tbl[nskill].criticalpoint;
                     if (nskill == 0)
                     {
@@ -676,6 +699,13 @@ namespace NocturneInsaniax
                     faithfulCompanionActive2 = true;
                 }
 
+                // Baal Avatar's Condemn Weakness
+                if (__result == 0 && workFromFormindex1.id == 288 && workFromFormindex2.badstatus == 512)
+                {
+                    __result = 2;
+                    nbHelpProcess.nbDispText("Condemn Weakness", string.Empty, 2, 45, 2315190144, false);
+                }
+
                 // Mitra's Righteous Vow
                 if ((__result == 1 || __result == 2) && (workFromFormindex2.id == 2 || workFromFormindex2.id == 329) &&
                     !((datSkill.tbl[nskill].skillattr == 6 && nbMainProcess.nbGetPartyFromFormindex(dformindex).count[12] != 0) || (datSkill.tbl[nskill].skillattr == 7 && nbMainProcess.nbGetPartyFromFormindex(dformindex).count[11] != 0)))
@@ -683,13 +713,6 @@ namespace NocturneInsaniax
                     postSummonSkillName = "Righteous Vow";
                     PostSummonSkillCopy(459, 64, 0);
                     nbMainProcess.nbPushAction(4, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, 408);
-                }
-
-                // Baal Avatar's Condemn Weakness
-                if (__result == 0 && workFromFormindex1.id == 288 && workFromFormindex2.badstatus == 512)
-                {
-                    __result = 2;
-                    nbHelpProcess.nbDispText("Condemn Weakness", string.Empty, 2, 45, 2315190144, false);
                 }
 
                 return false;
@@ -708,6 +731,12 @@ namespace NocturneInsaniax
                 if (nskill == 221 && workFromFormindex1.id == 264 && workFromFormindex2.id == 264)
                 {
                     __result = 2;
+                }
+
+                // Lucifer's Dawn of Demise
+                if (workFromFormindex1.id == 344 && (__result == 1 || __result == 2))
+                {
+                    __result = 3;
                 }
 
                 // Mitra's Verdict
