@@ -1,16 +1,16 @@
 ﻿using HarmonyLib;
-using MelonLoader;
 using Il2Cpp;
+using Il2Cppeffect_H;
 using Il2Cppfacility_H;
+using Il2Cppmodel_H;
+using Il2Cppnewbattle_H;
 using Il2Cppnewdata_H;
 using Il2Cppresult2_H;
-using Il2Cppnewbattle_H;
-using Il2Cppeffect_H;
-using UnityEngine;
-using Il2Cppmodel_H;
-using System.Xml;
+using MelonLoader;
 using Newtonsoft.Json;
 using System.Linq;
+using System.Xml;
+using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
 namespace NocturneInsaniax
@@ -844,6 +844,7 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(23, 0);
                     //datCalc.datAddDevil(7, 0);
                     //datCalc.datAddDevil(104, 0);
+                    //datCalc.datAddDevil(230, 0);
 
                     //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 56).Count() == 0)
                     //{

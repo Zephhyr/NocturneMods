@@ -237,6 +237,7 @@ namespace NocturneInsaniax
                 case 42: AssemblyOfNihiloXuanwuKikuriHimeEncounter(); return 1270;
                 case 43: AssemblyOfNihiloXuanwuKikuriHimeEncounter(); return 1270;
                 case 44: AssemblyOfNihiloXuanwuKikuriHimeEncounter(); return 1270;
+                case 47: AssemblyOfNihiloXuanwuKikuriHimeEncounter(); return 1270;
                 case 82: AssemblyOfNihiloXuanwuKikuriHimeEncounter(); return 1270;
 
                 case 52: KabukichoPrisonXiezhaiEncounter(); return 1270;
@@ -260,9 +261,12 @@ namespace NocturneInsaniax
                 case 66: Overworld4ZhuqueEncounter(); return 1270;
 
                 case 68: AsakusaValkyrieEncounter(); return 1270;
+                case 69: AsakusaValkyrieEncounter(); return 1270;
+                case 70: AsakusaValkyrieEncounter(); return 1270;
 
                 case 21: Overworld2VirtueEncounter(); return 1270;
 
+                case 45: BackOfNihiloBerithEligorEncounterEncounter(); return 1270;
                 case 46: BackOfNihiloBerithEligorEncounterEncounter(); return 1270;
 
                 case 71: Overworld5HorusEncounter(); return 1270;
@@ -285,7 +289,7 @@ namespace NocturneInsaniax
                 case 86: AsakusaTunnelOkuninushiEncounter(); return 1270;
                 case 87: AsakusaTunnelOkuninushiEncounter(); return 1270;
 
-                case 88: YoyogiParkHighPixieEncounter(); return 1270;
+                case 88: YoyogiParkCuChulainnEncounter(); return 1270;
                 case 89: YoyogiParkCuChulainnEncounter(); return 1270;
                 case 90: YoyogiParkCuChulainnEncounter(); return 1270;
                 case 91: YoyogiParkCuChulainnEncounter(); return 1270;
@@ -364,6 +368,7 @@ namespace NocturneInsaniax
 
                 // Labyrinth of Amala
 
+                case 172: FirstKalpaEncounter1(); return 1270;
                 case 173: FirstKalpaEncounter1(); return 1270; // First rooms
                 case 174: FirstKalpaEncounter2(); return 1270; // Hallways
                 case 175: FirstKalpaEncounter1(); return 1270; // First side-rooms
@@ -381,6 +386,8 @@ namespace NocturneInsaniax
                 case 186: SecondKalpaEncounter2(); return 1270; // B2 Rooms
                 case 187: SecondKalpaEncounter3(); return 1270; // B3/B4 Hallways
                 case 188: SecondKalpaEncounter3(); return 1270; // B3/B4 Rooms
+                case 189: SecondKalpaEncounter3(); return 1270; // B3/B4 Rooms
+                case 190: SecondKalpaEncounter3(); return 1270; // B3/B4 Rooms
                 //case 191: SecondKalpaEncounter4(); return 1270; // Cursed Corridor
                 //case 192: SecondKalpaEncounter4(); return 1270; // Cursed Corridor After Beelzebub
 
@@ -1088,6 +1095,427 @@ namespace NocturneInsaniax
 
         private static void ApplyEncounterChanges()
         {
+
+            // Encounter Pack Changes
+            datEncountPack.divTbls[0][5].enctable[0].ritu[9].encountid = 643;
+
+            datEncountPack.divTbls[0][11].enctable[0].ritu[0].encountid = 643;
+            
+            datEncountPack.divTbls[0][29].enctable[0].ritu[0].ritu = 100;
+            datEncountPack.divTbls[0][29].enctable[0].ritu[1].ritu = 400;
+            datEncountPack.divTbls[0][29].enctable[0].ritu[2].ritu = 300;
+            datEncountPack.divTbls[0][29].enctable[0].ritu[3].ritu = 200;
+
+            datEncountPack.divTbls[0][29].enctable[1].ritu[0].ritu = 200;
+            datEncountPack.divTbls[0][29].enctable[1].ritu[1].ritu = 400;
+            datEncountPack.divTbls[0][29].enctable[1].ritu[2].ritu = 400;
+
+            datEncountPack.divTbls[0][38].enctable[0].ritu[0].encountid = 67;
+            datEncountPack.divTbls[0][38].enctable[0].ritu[7].encountid = 160;
+
+            datEncountPack.divTbls[0][39].enctable[0].ritu[7].encountid = 173;
+
+            datEncountPack.divTbls[0][40].enctable[0].ritu[5].encountid = 173;
+            datEncountPack.divTbls[0][40].enctable[0].ritu[8].encountid = 286;
+
+            datEncountPack.divTbls[0][41].enctable[0].ritu[7].encountid = 173;
+
+            datEncountPack.divTbls[0][42].enctable[0].ritu[5].encountid = 173;
+            datEncountPack.divTbls[0][42].enctable[0].ritu[8].encountid = 286;
+
+            datEncountPack.divTbls[0][44].enctable[0].ritu[0].encountid = 173;
+            datEncountPack.divTbls[0][44].enctable[0].ritu[4].encountid = 286;
+
+            datEncountPack.divTbls[0][47].enctable[0].ritu[0].encountid = 173;
+            datEncountPack.divTbls[0][47].enctable[0].ritu[4].encountid = 286;
+
+            datEncountPack.divTbls[0][52].enctable[1].ritu[4].encountid = 182;
+
+            datEncountPack.divTbls[0][53].enctable[1].ritu[4].encountid = 182;
+            
+            datEncountPack.divTbls[0][54].enctable[0].ritu[4].encountid = 182;
+            datEncountPack.divTbls[0][54].enctable[0].ritu[8].encountid = 184;
+            datEncountPack.divTbls[0][54].enctable[1].ritu[3].encountid = 184;
+
+            datEncountPack.divTbls[0][55].enctable[0].ritu[3].encountid = 184;
+
+            datEncountPack.divTbls[0][56].enctable[0].ritu[2].encountid = 182;
+            datEncountPack.divTbls[0][56].enctable[0].ritu[4].encountid = 184;
+
+            datEncountPack.divTbls[0][57].enctable[0].ritu[0].encountid = 182;
+
+            datEncountPack.divTbls[0][58].enctable[0].ritu[1].encountid = 182;
+            datEncountPack.divTbls[0][58].enctable[0].ritu[3].encountid = 184;
+            datEncountPack.divTbls[0][58].enctable[0].ritu[6].encountid = 180;
+            datEncountPack.divTbls[0][58].enctable[1].ritu[1].encountid = 184;
+            datEncountPack.divTbls[0][58].enctable[1].ritu[4].encountid = 180;
+
+            datEncountPack.divTbls[0][59].enctable[1].ritu[0].encountid = 182;
+            datEncountPack.divTbls[0][59].enctable[1].ritu[2].encountid = 180;
+
+            datEncountPack.divTbls[0][60].enctable[0].ritu[1].encountid = 182;
+            datEncountPack.divTbls[0][60].enctable[0].ritu[3].encountid = 184;
+            datEncountPack.divTbls[0][60].enctable[0].ritu[6].encountid = 180;
+            datEncountPack.divTbls[0][60].enctable[1].ritu[1].encountid = 184;
+            datEncountPack.divTbls[0][60].enctable[1].ritu[4].encountid = 180;
+
+            datEncountPack.divTbls[0][61].enctable[0].ritu[0].encountid = 182;
+
+            datEncountPack.divTbls[1][0].enctable[0].ritu[4].encountid = 306;
+
+            datEncountPack.divTbls[1][1].enctable[0].ritu[3].encountid = 201;
+            datEncountPack.divTbls[1][1].enctable[0].ritu[5].encountid = 306;
+
+            datEncountPack.divTbls[1][8].enctable[0].ritu[0].encountid = 71;
+            datEncountPack.divTbls[1][8].enctable[0].ritu[2].encountid = 210;
+
+            datEncountPack.divTbls[1][9].enctable[0].ritu[6].encountid = 238;
+
+            datEncountPack.divTbls[1][10].enctable[0].ritu[1].encountid = 728;
+            datEncountPack.divTbls[1][10].enctable[1].ritu[6].encountid = 245;
+
+            datEncountPack.divTbls[1][13].enctable[0].ritu[1].encountid = 54;
+            datEncountPack.divTbls[1][13].enctable[1].ritu[2].encountid = 54;
+
+            datEncountPack.divTbls[1][19].enctable[0].ritu[3].encountid = 201;
+
+            datEncountPack.divTbls[1][21].enctable[0].ritu[1].encountid = 183;
+            datEncountPack.divTbls[1][21].enctable[0].ritu[4].encountid = 337;
+            datEncountPack.divTbls[1][21].enctable[0].ritu[7].encountid = 120;
+            datEncountPack.divTbls[1][21].enctable[1].ritu[1].encountid = 183;
+            datEncountPack.divTbls[1][21].enctable[1].ritu[4].encountid = 337;
+            datEncountPack.divTbls[1][21].enctable[1].ritu[7].encountid = 120;
+
+            datEncountPack.divTbls[1][22].enctable[0].ritu[0].encountid = 743;
+            datEncountPack.divTbls[1][22].enctable[0].ritu[5].encountid = 338;
+            datEncountPack.divTbls[1][22].enctable[1].ritu[5].encountid = 337;
+            datEncountPack.divTbls[1][22].enctable[1].ritu[11].encountid = 211;
+
+            datEncountPack.divTbls[1][23].enctable[0].ritu[0].encountid = 743;
+            datEncountPack.divTbls[1][23].enctable[0].ritu[5].encountid = 338;
+            datEncountPack.divTbls[1][23].enctable[0].ritu[8].encountid = 121;
+
+            datEncountPack.divTbls[1][32].enctable[1].ritu[2].encountid = 349;
+
+            datEncountPack.divTbls[1][33].enctable[1].ritu[2].encountid = 349;
+
+            datEncountPack.divTbls[1][35].enctable[1].ritu[2].encountid = 349;
+
+            datEncountPack.divTbls[1][53].enctable[0].ritu[7].encountid = 495;
+
+            datEncountPack.divTbls[2][13].enctable[1].ritu[4].encountid = 182;
+
+            datEncountPack.divTbls[2][14].enctable[1].ritu[4].encountid = 183;
+
+            datEncountPack.divTbls[2][15].enctable[0].ritu[4].encountid = 183;
+            datEncountPack.divTbls[2][15].enctable[0].ritu[8].encountid = 185;
+            datEncountPack.divTbls[2][15].enctable[1].ritu[3].encountid = 185;
+
+            datEncountPack.divTbls[2][16].enctable[0].ritu[3].encountid = 185;
+
+            datEncountPack.divTbls[2][17].enctable[0].ritu[2].encountid = 183;
+            datEncountPack.divTbls[2][17].enctable[0].ritu[4].encountid = 185;
+            datEncountPack.divTbls[2][17].enctable[0].ritu[7].encountid = 180;
+            datEncountPack.divTbls[2][17].enctable[1].ritu[4].encountid = 180;
+
+            datEncountPack.divTbls[2][18].enctable[0].ritu[0].encountid = 182;
+            datEncountPack.divTbls[2][18].enctable[1].ritu[2].encountid = 181;
+
+            datEncountPack.divTbls[2][19].enctable[0].ritu[1].encountid = 182;
+            datEncountPack.divTbls[2][19].enctable[0].ritu[3].encountid = 185;
+            datEncountPack.divTbls[2][19].enctable[0].ritu[6].encountid = 180;
+            datEncountPack.divTbls[2][19].enctable[1].ritu[1].encountid = 185;
+            datEncountPack.divTbls[2][19].enctable[1].ritu[4].encountid = 181;
+
+            datEncountPack.divTbls[2][20].enctable[1].ritu[0].encountid = 183;
+            datEncountPack.divTbls[2][20].enctable[1].ritu[2].encountid = 181;
+
+            datEncountPack.divTbls[2][21].enctable[0].ritu[1].encountid = 182;
+            datEncountPack.divTbls[2][21].enctable[0].ritu[3].encountid = 184;
+            datEncountPack.divTbls[2][21].enctable[0].ritu[6].encountid = 180;
+            datEncountPack.divTbls[2][21].enctable[1].ritu[1].encountid = 185;
+            datEncountPack.divTbls[2][21].enctable[1].ritu[4].encountid = 181;
+
+            datEncountPack.divTbls[2][22].enctable[0].ritu[0].encountid = 183;
+            datEncountPack.divTbls[2][22].enctable[0].ritu[2].encountid = 181;
+
+            datEncountPack.divTbls[2][26].enctable[1].ritu[2].encountid = 13;
+
+            datEncountPack.divTbls[2][38].enctable[0].ritu[0].encountid = 71;
+            datEncountPack.divTbls[2][38].enctable[0].ritu[2].encountid = 210;
+
+            datEncountPack.divTbls[2][48].enctable[0].ritu[0].encountid = 100;
+            datEncountPack.divTbls[2][48].enctable[0].ritu[1].encountid = 100;
+            datEncountPack.divTbls[2][48].enctable[0].ritu[2].encountid = 100;
+            datEncountPack.divTbls[2][48].enctable[0].ritu[3].encountid = 100;
+            datEncountPack.divTbls[2][48].enctable[0].ritu[4].encountid = 100;
+            datEncountPack.divTbls[2][48].enctable[0].ritu[5].encountid = 100;
+            datEncountPack.divTbls[2][48].enctable[0].ritu[6].encountid = 79;
+            datEncountPack.divTbls[2][48].enctable[0].ritu[7].encountid = 79;
+            datEncountPack.divTbls[2][48].enctable[0].ritu[8].encountid = 79;
+            datEncountPack.divTbls[2][48].enctable[0].ritu[9].encountid = 79;
+            datEncountPack.divTbls[2][48].enctable[0].ritu[10].encountid = 79;
+            datEncountPack.divTbls[2][48].enctable[0].ritu[11].encountid = 5;
+            datEncountPack.divTbls[2][48].enctable[1].ritu[0].encountid = 100;
+            datEncountPack.divTbls[2][48].enctable[1].ritu[1].encountid = 100;
+            datEncountPack.divTbls[2][48].enctable[1].ritu[2].encountid = 100;
+            datEncountPack.divTbls[2][48].enctable[1].ritu[3].encountid = 100;
+            datEncountPack.divTbls[2][48].enctable[1].ritu[4].encountid = 100;
+            datEncountPack.divTbls[2][48].enctable[1].ritu[5].encountid = 100;
+            datEncountPack.divTbls[2][48].enctable[1].ritu[6].encountid = 79;
+            datEncountPack.divTbls[2][48].enctable[1].ritu[7].encountid = 79;
+            datEncountPack.divTbls[2][48].enctable[1].ritu[8].encountid = 79;
+            datEncountPack.divTbls[2][48].enctable[1].ritu[9].encountid = 79;
+            datEncountPack.divTbls[2][48].enctable[1].ritu[10].encountid = 79;
+            datEncountPack.divTbls[2][48].enctable[1].ritu[11].encountid = 5;
+
+            datEncountPack.divTbls[2][49].enctable[0].ritu[0].encountid = 100;
+            datEncountPack.divTbls[2][49].enctable[0].ritu[1].encountid = 100;
+            datEncountPack.divTbls[2][49].enctable[0].ritu[2].encountid = 100;
+            datEncountPack.divTbls[2][49].enctable[0].ritu[3].encountid = 100;
+            datEncountPack.divTbls[2][49].enctable[0].ritu[4].encountid = 100;
+            datEncountPack.divTbls[2][49].enctable[0].ritu[5].encountid = 100;
+            datEncountPack.divTbls[2][49].enctable[0].ritu[6].encountid = 79;
+            datEncountPack.divTbls[2][49].enctable[0].ritu[7].encountid = 79;
+            datEncountPack.divTbls[2][49].enctable[0].ritu[8].encountid = 79;
+            datEncountPack.divTbls[2][49].enctable[0].ritu[9].encountid = 79;
+            datEncountPack.divTbls[2][49].enctable[0].ritu[10].encountid = 79;
+            datEncountPack.divTbls[2][49].enctable[0].ritu[11].encountid = 5;
+            datEncountPack.divTbls[2][49].enctable[1].ritu[0].encountid = 100;
+            datEncountPack.divTbls[2][49].enctable[1].ritu[1].encountid = 100;
+            datEncountPack.divTbls[2][49].enctable[1].ritu[2].encountid = 100;
+            datEncountPack.divTbls[2][49].enctable[1].ritu[3].encountid = 100;
+            datEncountPack.divTbls[2][49].enctable[1].ritu[4].encountid = 100;
+            datEncountPack.divTbls[2][49].enctable[1].ritu[5].encountid = 100;
+            datEncountPack.divTbls[2][49].enctable[1].ritu[6].encountid = 79;
+            datEncountPack.divTbls[2][49].enctable[1].ritu[7].encountid = 79;
+            datEncountPack.divTbls[2][49].enctable[1].ritu[8].encountid = 79;
+            datEncountPack.divTbls[2][49].enctable[1].ritu[9].encountid = 79;
+            datEncountPack.divTbls[2][49].enctable[1].ritu[10].encountid = 79;
+            datEncountPack.divTbls[2][49].enctable[1].ritu[11].encountid = 5;
+
+            datEncountPack.divTbls[2][50].enctable[0].ritu[0].encountid = 100;
+            datEncountPack.divTbls[2][50].enctable[0].ritu[1].encountid = 100;
+            datEncountPack.divTbls[2][50].enctable[0].ritu[2].encountid = 100;
+            datEncountPack.divTbls[2][50].enctable[0].ritu[3].encountid = 100;
+            datEncountPack.divTbls[2][50].enctable[0].ritu[4].encountid = 100;
+            datEncountPack.divTbls[2][50].enctable[0].ritu[5].encountid = 100;
+            datEncountPack.divTbls[2][50].enctable[0].ritu[6].encountid = 79;
+            datEncountPack.divTbls[2][50].enctable[0].ritu[7].encountid = 79;
+            datEncountPack.divTbls[2][50].enctable[0].ritu[8].encountid = 79;
+            datEncountPack.divTbls[2][50].enctable[0].ritu[9].encountid = 79;
+            datEncountPack.divTbls[2][50].enctable[0].ritu[10].encountid = 79;
+            datEncountPack.divTbls[2][50].enctable[0].ritu[11].encountid = 5;
+            datEncountPack.divTbls[2][50].enctable[1].ritu[0].encountid = 100;
+            datEncountPack.divTbls[2][50].enctable[1].ritu[1].encountid = 100;
+            datEncountPack.divTbls[2][50].enctable[1].ritu[2].encountid = 100;
+            datEncountPack.divTbls[2][50].enctable[1].ritu[3].encountid = 100;
+            datEncountPack.divTbls[2][50].enctable[1].ritu[4].encountid = 100;
+            datEncountPack.divTbls[2][50].enctable[1].ritu[5].encountid = 100;
+            datEncountPack.divTbls[2][50].enctable[1].ritu[6].encountid = 79;
+            datEncountPack.divTbls[2][50].enctable[1].ritu[7].encountid = 79;
+            datEncountPack.divTbls[2][50].enctable[1].ritu[8].encountid = 79;
+            datEncountPack.divTbls[2][50].enctable[1].ritu[9].encountid = 79;
+            datEncountPack.divTbls[2][50].enctable[1].ritu[10].encountid = 79;
+            datEncountPack.divTbls[2][50].enctable[1].ritu[11].encountid = 5;
+
+            datEncountPack.divTbls[2][57].enctable[1].ritu[8].encountid = 339;
+
+            datEncountPack.divTbls[2][58].enctable[1].ritu[8].encountid = 339;
+
+            datEncountPack.divTbls[2][58].enctable[1].ritu[8].encountid = 339;
+
+            datEncountPack.divTbls[2][59].enctable[0].ritu[0].encountid = 100;
+            datEncountPack.divTbls[2][59].enctable[0].ritu[1].encountid = 100;
+            datEncountPack.divTbls[2][59].enctable[0].ritu[2].encountid = 100;
+            datEncountPack.divTbls[2][59].enctable[0].ritu[3].encountid = 100;
+            datEncountPack.divTbls[2][59].enctable[0].ritu[4].encountid = 100;
+            datEncountPack.divTbls[2][59].enctable[0].ritu[5].encountid = 100;
+            datEncountPack.divTbls[2][59].enctable[0].ritu[6].encountid = 79;
+            datEncountPack.divTbls[2][59].enctable[0].ritu[7].encountid = 79;
+            datEncountPack.divTbls[2][59].enctable[0].ritu[8].encountid = 79;
+            datEncountPack.divTbls[2][59].enctable[0].ritu[9].encountid = 79;
+            datEncountPack.divTbls[2][59].enctable[0].ritu[10].encountid = 79;
+            datEncountPack.divTbls[2][59].enctable[0].ritu[11].encountid = 5;
+            datEncountPack.divTbls[2][59].enctable[1].ritu[0].encountid = 100;
+            datEncountPack.divTbls[2][59].enctable[1].ritu[1].encountid = 100;
+            datEncountPack.divTbls[2][59].enctable[1].ritu[2].encountid = 100;
+            datEncountPack.divTbls[2][59].enctable[1].ritu[3].encountid = 100;
+            datEncountPack.divTbls[2][59].enctable[1].ritu[4].encountid = 100;
+            datEncountPack.divTbls[2][59].enctable[1].ritu[5].encountid = 100;
+            datEncountPack.divTbls[2][59].enctable[1].ritu[6].encountid = 79;
+            datEncountPack.divTbls[2][59].enctable[1].ritu[7].encountid = 79;
+            datEncountPack.divTbls[2][59].enctable[1].ritu[8].encountid = 79;
+            datEncountPack.divTbls[2][59].enctable[1].ritu[9].encountid = 79;
+            datEncountPack.divTbls[2][59].enctable[1].ritu[10].encountid = 79;
+            datEncountPack.divTbls[2][59].enctable[1].ritu[11].encountid = 5;
+
+            datEncountPack.divTbls[2][60].enctable[0].ritu[0].encountid = 100;
+            datEncountPack.divTbls[2][60].enctable[0].ritu[1].encountid = 100;
+            datEncountPack.divTbls[2][60].enctable[0].ritu[2].encountid = 100;
+            datEncountPack.divTbls[2][60].enctable[0].ritu[3].encountid = 100;
+            datEncountPack.divTbls[2][60].enctable[0].ritu[4].encountid = 100;
+            datEncountPack.divTbls[2][60].enctable[0].ritu[5].encountid = 100;
+            datEncountPack.divTbls[2][60].enctable[0].ritu[6].encountid = 79;
+            datEncountPack.divTbls[2][60].enctable[0].ritu[7].encountid = 79;
+            datEncountPack.divTbls[2][60].enctable[0].ritu[8].encountid = 79;
+            datEncountPack.divTbls[2][60].enctable[0].ritu[9].encountid = 79;
+            datEncountPack.divTbls[2][60].enctable[0].ritu[10].encountid = 79;
+            datEncountPack.divTbls[2][60].enctable[0].ritu[11].encountid = 5;
+            datEncountPack.divTbls[2][60].enctable[1].ritu[0].encountid = 100;
+            datEncountPack.divTbls[2][60].enctable[1].ritu[1].encountid = 100;
+            datEncountPack.divTbls[2][60].enctable[1].ritu[2].encountid = 100;
+            datEncountPack.divTbls[2][60].enctable[1].ritu[3].encountid = 100;
+            datEncountPack.divTbls[2][60].enctable[1].ritu[4].encountid = 100;
+            datEncountPack.divTbls[2][60].enctable[1].ritu[5].encountid = 100;
+            datEncountPack.divTbls[2][60].enctable[1].ritu[6].encountid = 79;
+            datEncountPack.divTbls[2][60].enctable[1].ritu[7].encountid = 79;
+            datEncountPack.divTbls[2][60].enctable[1].ritu[8].encountid = 79;
+            datEncountPack.divTbls[2][60].enctable[1].ritu[9].encountid = 79;
+            datEncountPack.divTbls[2][60].enctable[1].ritu[10].encountid = 79;
+            datEncountPack.divTbls[2][60].enctable[1].ritu[11].encountid = 5;
+
+            datEncountPack.divTbls[2][61].enctable[0].ritu[0].encountid = 100;
+            datEncountPack.divTbls[2][61].enctable[0].ritu[1].encountid = 100;
+            datEncountPack.divTbls[2][61].enctable[0].ritu[2].encountid = 100;
+            datEncountPack.divTbls[2][61].enctable[0].ritu[3].encountid = 100;
+            datEncountPack.divTbls[2][61].enctable[0].ritu[4].encountid = 100;
+            datEncountPack.divTbls[2][61].enctable[0].ritu[5].encountid = 100;
+            datEncountPack.divTbls[2][61].enctable[0].ritu[6].encountid = 79;
+            datEncountPack.divTbls[2][61].enctable[0].ritu[7].encountid = 79;
+            datEncountPack.divTbls[2][61].enctable[0].ritu[8].encountid = 79;
+            datEncountPack.divTbls[2][61].enctable[0].ritu[9].encountid = 79;
+            datEncountPack.divTbls[2][61].enctable[0].ritu[10].encountid = 79;
+            datEncountPack.divTbls[2][61].enctable[0].ritu[11].encountid = 5;
+            datEncountPack.divTbls[2][61].enctable[1].ritu[0].encountid = 100;
+            datEncountPack.divTbls[2][61].enctable[1].ritu[1].encountid = 100;
+            datEncountPack.divTbls[2][61].enctable[1].ritu[2].encountid = 100;
+            datEncountPack.divTbls[2][61].enctable[1].ritu[3].encountid = 100;
+            datEncountPack.divTbls[2][61].enctable[1].ritu[4].encountid = 100;
+            datEncountPack.divTbls[2][61].enctable[1].ritu[5].encountid = 100;
+            datEncountPack.divTbls[2][61].enctable[1].ritu[6].encountid = 79;
+            datEncountPack.divTbls[2][61].enctable[1].ritu[7].encountid = 79;
+            datEncountPack.divTbls[2][61].enctable[1].ritu[8].encountid = 79;
+            datEncountPack.divTbls[2][61].enctable[1].ritu[9].encountid = 79;
+            datEncountPack.divTbls[2][61].enctable[1].ritu[10].encountid = 79;
+            datEncountPack.divTbls[2][61].enctable[1].ritu[11].encountid = 5;
+
+            datEncountPack.divTbls[2][62].enctable[0].ritu[0].encountid = 100;
+            datEncountPack.divTbls[2][62].enctable[0].ritu[1].encountid = 100;
+            datEncountPack.divTbls[2][62].enctable[0].ritu[2].encountid = 100;
+            datEncountPack.divTbls[2][62].enctable[0].ritu[3].encountid = 100;
+            datEncountPack.divTbls[2][62].enctable[0].ritu[4].encountid = 100;
+            datEncountPack.divTbls[2][62].enctable[0].ritu[5].encountid = 100;
+            datEncountPack.divTbls[2][62].enctable[0].ritu[6].encountid = 79;
+            datEncountPack.divTbls[2][62].enctable[0].ritu[7].encountid = 79;
+            datEncountPack.divTbls[2][62].enctable[0].ritu[8].encountid = 79;
+            datEncountPack.divTbls[2][62].enctable[0].ritu[9].encountid = 79;
+            datEncountPack.divTbls[2][62].enctable[0].ritu[10].encountid = 79;
+            datEncountPack.divTbls[2][62].enctable[0].ritu[11].encountid = 5;
+            datEncountPack.divTbls[2][62].enctable[1].ritu[0].encountid = 100;
+            datEncountPack.divTbls[2][62].enctable[1].ritu[1].encountid = 100;
+            datEncountPack.divTbls[2][62].enctable[1].ritu[2].encountid = 100;
+            datEncountPack.divTbls[2][62].enctable[1].ritu[3].encountid = 100;
+            datEncountPack.divTbls[2][62].enctable[1].ritu[4].encountid = 100;
+            datEncountPack.divTbls[2][62].enctable[1].ritu[5].encountid = 100;
+            datEncountPack.divTbls[2][62].enctable[1].ritu[6].encountid = 79;
+            datEncountPack.divTbls[2][62].enctable[1].ritu[7].encountid = 79;
+            datEncountPack.divTbls[2][62].enctable[1].ritu[8].encountid = 79;
+            datEncountPack.divTbls[2][62].enctable[1].ritu[9].encountid = 79;
+            datEncountPack.divTbls[2][62].enctable[1].ritu[10].encountid = 79;
+            datEncountPack.divTbls[2][62].enctable[1].ritu[11].encountid = 5;
+
+            // Normal Encounters
+            // Yoyogi Park Pixie Encounters
+            datEncount.tbl[27].devil[0] = 61;
+            datEncount.tbl[27].devil[1] = 61;
+
+            datEncount.tbl[8].devil[0] = 61;
+            datEncount.tbl[8].devil[1] = 61;
+            datEncount.tbl[8].devil[2] = 61;
+
+            datEncount.tbl[31].devil[0] = 61;
+            datEncount.tbl[31].devil[1] = 61;
+            datEncount.tbl[31].devil[2] = 61;
+            datEncount.tbl[31].devil[3] = 61;
+
+            // Amala Network Choronzon Encounters
+            datEncount.tbl[652].devil[0] = 130;
+            datEncount.tbl[652].devil[1] = 130;
+            datEncount.tbl[652].devil[2] = 0;
+
+            // Ginza 1 Encounters
+            datEncount.tbl[62].devil[0] = 131;
+            datEncount.tbl[62].devil[1] = 131;
+            datEncount.tbl[62].devil[2] = 129;
+            datEncount.tbl[62].devil[3] = 131;
+            datEncount.tbl[62].devil[4] = 131;
+
+            datEncount.tbl[667].devil[0] = 131;
+            datEncount.tbl[667].devil[1] = 129;
+            datEncount.tbl[667].devil[2] = 131;
+            datEncount.tbl[667].devil[3] = 129;
+            datEncount.tbl[667].devil[4] = 131;
+
+            datEncount.tbl[661].devil[0] = 120;
+            datEncount.tbl[661].devil[1] = 120;
+
+            datEncount.tbl[139].devil[0] = 120;
+            datEncount.tbl[139].devil[1] = 120;
+            datEncount.tbl[139].devil[2] = 120;
+            datEncount.tbl[139].devil[3] = 0;
+
+            datEncount.tbl[665].devil[0] = 68;
+            datEncount.tbl[665].devil[1] = 68;
+
+            datEncount.tbl[63].devil[0] = 68;
+            datEncount.tbl[63].devil[1] = 68;
+            datEncount.tbl[63].devil[2] = 68;
+
+            datEncount.tbl[64].devil[0] = 68;
+            datEncount.tbl[64].devil[1] = 68;
+            datEncount.tbl[64].devil[2] = 68;
+            datEncount.tbl[64].devil[3] = 68;
+
+            // Great Underpass of Ginza Encounters
+            datEncount.tbl[82].devil[0] = 68;
+            datEncount.tbl[82].devil[1] = 68;
+
+            datEncount.tbl[78].devil[0] = 68;
+            datEncount.tbl[78].devil[1] = 68;
+            datEncount.tbl[78].devil[2] = 68;
+
+            datEncount.tbl[79].devil[0] = 68;
+            datEncount.tbl[79].devil[1] = 68;
+            datEncount.tbl[79].devil[2] = 68;
+            datEncount.tbl[79].devil[3] = 68;
+
+            // Ikebukuro 1 Encounters
+            datEncount.tbl[15].devil[0] = 125;
+            datEncount.tbl[15].devil[1] = 125;
+
+            // Bandou Shrine Encounters
+            datEncount.tbl[963].devil[0] = 153;
+            datEncount.tbl[963].devil[1] = 153;
+            datEncount.tbl[963].devil[2] = 153;
+
+            datEncount.tbl[972].devil[0] = 8;
+            datEncount.tbl[972].devil[1] = 3;
+            datEncount.tbl[972].devil[2] = 153;
+
+            datEncount.tbl[973].devil[0] = 8;
+            datEncount.tbl[973].devil[1] = 3;
+            datEncount.tbl[973].devil[2] = 29;
+
+            datEncount.tbl[980].devil[0] = 16;
+            datEncount.tbl[980].devil[1] = 3;
+            datEncount.tbl[980].devil[2] = 0;
+
+            datEncount.tbl[981].devil[0] = 3;
+            datEncount.tbl[981].devil[1] = 16;
+            datEncount.tbl[981].devil[2] = 0;
+
+            // Forced Encounters
             datEncount.tbl[1267].devil[0] = 97; // Forced Shikigami in Unknown Realm
             datEncount.tbl[1269].flag = 13; // Forced Kodama + Will o' Wisp in Unknown Realm
             datEncount.tbl[1269].devil[1] = 318;

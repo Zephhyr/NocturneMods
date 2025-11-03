@@ -533,6 +533,14 @@ namespace NocturneInsaniax
                 demeehoKeys.Add("D229_MSEE5_23_E", new SndAssetBundleManager.SndData { key = "dvl0xe5", path = 4, id = 0, name = "D229_MSEE5_23_E", diff = true });
                 SndAssetBundleManager.SEBundleTable.Add("dvl0xe5", demeehoKeys);
 
+                var sethKeys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
+                sethKeys.Add("D230_MSEE6_03", new SndAssetBundleManager.SndData { key = "dvl0xe6", path = 4, id = 0, name = "D230_MSEE6_03", diff = true });
+                sethKeys.Add("D230_MSEE6_04", new SndAssetBundleManager.SndData { key = "dvl0xe6", path = 4, id = 0, name = "D230_MSEE6_04", diff = true });
+                sethKeys.Add("D230_MSEE6_05", new SndAssetBundleManager.SndData { key = "dvl0xe6", path = 4, id = 0, name = "D230_MSEE6_05", diff = true });
+                sethKeys.Add("D230_MSEE6_08", new SndAssetBundleManager.SndData { key = "dvl0xe6", path = 4, id = 0, name = "D230_MSEE6_08", diff = true });
+                sethKeys.Add("D230_MSEE6_23", new SndAssetBundleManager.SndData { key = "dvl0xe6", path = 4, id = 0, name = "D230_MSEE6_23", diff = true });
+                SndAssetBundleManager.SEBundleTable.Add("dvl0xe6", sethKeys);
+
                 var devilDanteKeys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
                 devilDanteKeys.Add("D252M_MSEFC_03", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_03", diff = true });
                 devilDanteKeys.Add("D252M_MSEFC_04", new SndAssetBundleManager.SndData { key = "dvl0xfcd", path = 4, id = 0, name = "D252M_MSEFC_04", diff = true });

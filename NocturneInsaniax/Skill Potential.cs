@@ -1452,6 +1452,11 @@ namespace NocturneInsaniax
                             if (noahAffinity != 0 && (datSkill.tbl[nskill].skillattr == 5 || datSkill.tbl[nskill].skillattr == 11))
                                 __result = Convert.ToInt32(__result / 10);
                         }
+                        
+                        if (targetID == 344) // Lucifer
+                        {
+                            __result = Convert.ToInt32(__result * 0.6);
+                        }
 
                         // Fly status
                         if (nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).badstatus == 512 && 
@@ -1462,11 +1467,6 @@ namespace NocturneInsaniax
                             datNormalSkill.tbl[nskill].koukatype == 1 && 
                             datNormalSkill.tbl[nskill].hptype != 2)
                             __result = Convert.ToInt32(__result / 2);
-
-                        if (targetID == 344) // Lucifer
-                        {
-                            __result = Convert.ToInt32(__result/ (5/3));
-                        }
 
                         var targetVit = datCalc.datGetParam(nbMainProcess.nbGetUnitWorkFromFormindex(dformindex), 3);
 
