@@ -463,7 +463,7 @@ namespace NocturneInsaniax
                     case 385: __result = "Invite a demon to join. \nEffective when speaker is adult \nand target is female."; return false; // Scout
                     case 386: __result = "Invite a demon to join. \nEffective when speaker is older \nthan target."; return false; // Kidnap
                     case 387: __result = "Invite a demon to join. \nEffective when speaker is female \nand target is male."; return false; // Seduce
-                    case 388: __result = "Invite a demon to join. \nEffective when speaker is much higher \nlevel than target."; return false; // Brainwash
+                    case 388: __result = "Invite a demon to join. \nEffective when speaker is much \nhigher level than target."; return false; // Brainwash
                     case 390: __result = "Invite a demon to join. \nEffective during new Kagutsuchi."; return false; // Dark Pledge
                     case 391: __result = "Invite a demon to join. Effective when \nspeaker is young male or old female \nand target is young female."; return false; // Wooing
                     case 392: __result = "Invite a demon to join. \nEffective when speaker is much lower \nlevel than target."; return false; // Beseech
@@ -854,86 +854,19 @@ namespace NocturneInsaniax
                     {
                         //work.skill[0] = 226;
                         //work.badstatus = 32768;
+                        //work.level = 95;
                         //work.exp = rstCalcCore.GetNextExpDisp(work, 0) - 1;
                     }
-                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 144)) // Arahabaki
-                    {
-                        //work.skill[3] = 334;
-                        //work.skillcnt = 8;
-                    }
-                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 7)) // Lakshmi
-                    {
-                        //work.maxhp = 621;
-                        //work.skill[0] = 291; // Life Gain
-                        //work.skill[1] = 292; // Life Surge
-                        //work.skill[2] = 206; // Debilitate
-                        //work.skill[3] = 459; // Luster Candy
-                        //work.skill[4] = 218; // Prayer
-                        //work.skill[5] = 15; // Ziodyne
-                        //work.skill[6] = 370; // Qigong
-                        //work.skill[7] = 311; // Elec Boost
-                        //work.skillcnt = 8;
-                    }
-                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 23)) // Jikokuten
-                    {
-                        //work.maxhp = 639;
-                        //work.skill[0] = 291; // Life Gain
-                        //work.skill[1] = 292; // Life Surge
-                        //work.skill[2] = 206; // Debilitate
-                        //work.skill[3] = 459; // Luster Candy
-                        //work.skill[4] = 334; // Fire Drain
-                        //work.skill[5] = 15; // Ziodyne
-                        //work.skill[6] = 370; // Qigong
-                        //work.skill[7] = 311; // Elec Boost
-                        //work.skillcnt = 8;
-                    }
-                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 14)) // Qitian Dasheng
-                    {
-                        //work.maxhp = 648;
-                        //work.skill[0] = 291; // Life Gain
-                        //work.skill[1] = 292; // Life Surge
-                        //work.skill[2] = 206; // Debilitate
-                        //work.skill[3] = 459; // Luster Candy
-                        //work.skill[4] = 424; // Concentrate
-                        //work.skill[5] = 15; // Ziodyne
-                        //work.skill[6] = 370; // Qigong
-                        //work.skill[7] = 311; // Elec Boost
-                        //work.skillcnt = 8;
-                    }
-                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 61)) // Pixie
-                    {
-                        //work.maxhp = 881;
-                        //work.skill[0] = 292; // Life Surge
-                        //work.skill[1] = 370; // Qigong
-                        //work.skillcnt = 8;
-                    }
-                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 206)) // Black Frost
-                    {
-                        //work.maxhp = 729;
-                        //work.skill[0] = 291; // Life Gain
-                        //work.skill[1] = 292; // Life Surge
-                        //work.skill[2] = 206; // Debilitate
-                        //work.skill[3] = 459; // Luster Candy
-                        //work.skill[4] = 365; // Anti-Ailments
-                        //work.skill[5] = 466; // Jack Bufudyne
-                        //work.skill[6] = 370; // Qigong
-                        //work.skill[7] = 310; // Ice Boost
-                        //work.skillcnt = 8;
-                    }
-                    foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 152)) // Garuda
-                    {
-                        //work.maxhp = 729;
-                        //work.param[4] = 36;
-                        //work.skill[0] = 291; // Life Gain
-                        //work.skill[1] = 292; // Life Surge
-                        //work.skill[2] = 206; // Debilitate
-                        //work.skill[3] = 459; // Luster Candy
-                        //work.skill[4] = 218; // Prayer
-                        //work.skill[5] = 326; // Null Elec
-                        //work.skill[6] = 370; // Qigong
-                        //work.skill[7] = 50; // Samarecarm
-                        //work.skillcnt = 8;
-                    }
+                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 61)) // Pixie
+                    //{
+                    //    work.exp = rstCalcCore.GetNextExpDisp(work, 0) - 1;
+                    //}
+                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 59)) // High Pixie
+                    //{
+                    //    work.level = 15;
+                    //    work.exp = rstCalcCore.GetNextExpDisp(work, 0) - 1;
+                    //}
+                    //}
                     //}
                 }
                 // If using a cursed gospel

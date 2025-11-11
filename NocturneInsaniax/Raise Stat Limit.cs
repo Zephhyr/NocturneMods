@@ -1,14 +1,16 @@
-﻿using MelonLoader;
-using HarmonyLib;
+﻿using HarmonyLib;
 using Il2Cpp;
-using Il2Cppnewdata_H;
-using UnityEngine;
-using Il2CppInterop.Runtime.InteropTypes.Arrays;
-using Il2CppTMPro;
-using UnityEngine.UI;
 using Il2Cppcamp_H;
+using Il2CppInterop.Runtime.InteropTypes.Arrays;
 using Il2Cppnewbattle_H;
+using Il2Cppnewdata_H;
 using Il2Cppresult2_H;
+using Il2CppTMPro;
+using MelonLoader;
+using Newtonsoft.Json;
+using UnityEngine;
+using UnityEngine.UI;
+using static Il2Cpp.scrollbarUI;
 
 namespace NocturneInsaniax
 {
@@ -490,7 +492,7 @@ namespace NocturneInsaniax
         [HarmonyPatch(typeof(rstCalcCore), nameof(rstCalcCore.cmbCalcEvoEvent))]
         private class PatchCalcEvoEvent
         {
-            private static bool Prefix(datUnitWork_t pStock, Il2CppReferenceArray<Il2Cppresult2_H.fclSkillParam_t> pEvent, sbyte EvtBufFlag, datUnitWork_t pEvoDevil)
+            private static bool Prefix(datUnitWork_t pStock, Il2CppReferenceArray<fclSkillParam_t> pEvent, sbyte EvtBufFlag, datUnitWork_t pEvoDevil)
             {
                 // If the event's Buffer Flag(?) is zero or the length of the event is under 2, return.
                 if (EvtBufFlag == 0 || pEvent.Length < 2)
@@ -514,7 +516,7 @@ namespace NocturneInsaniax
                     fclCombineCalcCore.cmbCopyDefaultDevilToStock((ushort)DemonID, pEvoDevil);
 
                     // If the new demon is a higher level.
-                    if (pStock.level < pEvoDevil.level)
+                    if (pStock.level > pEvoDevil.level)
                     {
                         // Recalculate the new demon's Experience.
                         pEvoDevil.exp = rstCalcCore.cmbCalcLevelUpExp(ref pEvoDevil, pStock.level);
@@ -542,6 +544,13 @@ namespace NocturneInsaniax
                             i++;
                         }
                         while (i < Math.Abs(pStock.level - pEvoDevil.level) * (EnableStatScaling ? POINTS_PER_LEVEL : 1));
+
+                        // Forcibly set the new Demon's level to what it should be so that it doesn't trigger Level Ups.
+                        pEvoDevil.level = pStock.level;
+
+                        // Flag Nonsense that's included normally.
+                        // Fixes their Skills from being removed from their Level Up Skill List.
+                        pEvoDevil.flag |= 0x200;
                     }
                 }
 

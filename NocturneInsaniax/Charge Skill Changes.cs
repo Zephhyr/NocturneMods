@@ -218,13 +218,23 @@ namespace NocturneInsaniax
                 {
                     currentSideBuffs = new short[nbMainProcess.nbGetMainProcessData().playerpcnt][];
                     for (int i = 0; i < nbMainProcess.nbGetMainProcessData().playerpcnt; i++)
-                        currentSideBuffs[i] = nbMainProcess.nbGetMainProcessData().party[nbMainProcess.nbGetMainProcessData().form[i].partyindex].count;
+                    {
+                        try
+                        {
+                            currentSideBuffs[i] = nbMainProcess.nbGetMainProcessData().party[nbMainProcess.nbGetMainProcessData().form[i].partyindex].count;
+                        } catch { }
+                    }
                 }
                 else
                 {
                     currentSideBuffs = new short[nbMainProcess.nbGetMainProcessData().enemypcnt][];
                     for (int i = 4; i < (4 + nbMainProcess.nbGetMainProcessData().enemypcnt) && nbMainProcess.nbGetMainProcessData().enemyunit[i - 4].hp > 0 && nbMainProcess.nbGetMainProcessData().enemyunit[i - 4].badstatus != 2048; i++)
-                        currentSideBuffs[i - 4] =  nbMainProcess.nbGetMainProcessData().party[nbMainProcess.nbGetMainProcessData().form[i].partyindex].count;
+                    {
+                        try
+                        {
+                            currentSideBuffs[i - 4] = nbMainProcess.nbGetMainProcessData().party[nbMainProcess.nbGetMainProcessData().form[i].partyindex].count;
+                        } catch { }
+                    }
                 }
             }
 
