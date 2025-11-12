@@ -839,7 +839,7 @@ namespace NocturneInsaniax
                     //MelonLogger.Msg(output);
 
                     //datCalc.datAddMaka(1000000);
-                    //datCalc.datAddItem(38, 70);
+                    //datCalc.datAddItem(96, 70);
                     //datCalc.datAddDevil(225, 0);
                     //datCalc.datAddDevil(23, 0);
                     //datCalc.datAddDevil(7, 0);

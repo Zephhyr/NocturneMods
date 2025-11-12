@@ -545,6 +545,502 @@ namespace NocturneInsaniax
             fclRagShopTable.fclRagItemTbl[21].Rate[1].Nums = 3;
             fclRagShopTable.fclRagItemTbl[21].Rate[2].ItemID = 107;
             fclRagShopTable.fclRagItemTbl[21].Rate[2].Nums = 1;
+
+            // Flaemis
+            fclRagShopTable.fclRagSeireiTbl[1].Param.MaxHP = 156;
+            fclRagShopTable.fclRagSeireiTbl[1].Param.MaxMP = 128;
+            fclRagShopTable.fclRagSeireiTbl[1].Param.Param[0] = 10;
+            fclRagShopTable.fclRagSeireiTbl[1].Param.Param[2] = 12;
+            fclRagShopTable.fclRagSeireiTbl[1].Param.Param[3] = 6;
+            fclRagShopTable.fclRagSeireiTbl[1].Param.Param[4] = 6;
+            fclRagShopTable.fclRagSeireiTbl[1].Param.Param[5] = 7;
+            fclRagShopTable.fclRagSeireiTbl[1].Param.Skill[0] = 4;
+            fclRagShopTable.fclRagSeireiTbl[1].Param.Skill[1] = 300;
+            fclRagShopTable.fclRagSeireiTbl[1].Param.Skill[2] = 67;
+
+            fclRagShopTable.fclRagSeireiTbl[2].Param.MaxHP = 162;
+            fclRagShopTable.fclRagSeireiTbl[2].Param.MaxMP = 136;
+            fclRagShopTable.fclRagSeireiTbl[2].Param.Param[0] = 10;
+            fclRagShopTable.fclRagSeireiTbl[2].Param.Param[2] = 13;
+            fclRagShopTable.fclRagSeireiTbl[2].Param.Param[3] = 6;
+            fclRagShopTable.fclRagSeireiTbl[2].Param.Param[4] = 6;
+            fclRagShopTable.fclRagSeireiTbl[2].Param.Param[5] = 7;
+            fclRagShopTable.fclRagSeireiTbl[2].Param.Skill[0] = 4;
+            fclRagShopTable.fclRagSeireiTbl[2].Param.Skill[1] = 300;
+            fclRagShopTable.fclRagSeireiTbl[2].Param.Skill[2] = 67;
+            fclRagShopTable.fclRagSeireiTbl[2].Param.Skill[3] = 39;
+
+            fclRagShopTable.fclRagSeireiTbl[3].Param.MaxHP = 168;
+            fclRagShopTable.fclRagSeireiTbl[3].Param.MaxMP = 140;
+            fclRagShopTable.fclRagSeireiTbl[3].Param.Param[0] = 11;
+            fclRagShopTable.fclRagSeireiTbl[3].Param.Param[2] = 13;
+            fclRagShopTable.fclRagSeireiTbl[3].Param.Param[3] = 6;
+            fclRagShopTable.fclRagSeireiTbl[3].Param.Param[4] = 6;
+            fclRagShopTable.fclRagSeireiTbl[3].Param.Param[5] = 7;
+            fclRagShopTable.fclRagSeireiTbl[3].Param.Skill[0] = 4;
+            fclRagShopTable.fclRagSeireiTbl[3].Param.Skill[1] = 300;
+            fclRagShopTable.fclRagSeireiTbl[3].Param.Skill[2] = 67;
+            fclRagShopTable.fclRagSeireiTbl[3].Param.Skill[3] = 39;
+            fclRagShopTable.fclRagSeireiTbl[3].Param.Skill[4] = 332;
+
+            fclRagShopTable.fclRagSeireiTbl[4].Param.MaxHP = 162;
+            fclRagShopTable.fclRagSeireiTbl[4].Param.MaxMP = 132;
+            fclRagShopTable.fclRagSeireiTbl[4].Param.Param[0] = 11;
+            fclRagShopTable.fclRagSeireiTbl[4].Param.Param[2] = 12;
+            fclRagShopTable.fclRagSeireiTbl[4].Param.Param[3] = 6;
+            fclRagShopTable.fclRagSeireiTbl[4].Param.Param[4] = 6;
+            fclRagShopTable.fclRagSeireiTbl[4].Param.Param[5] = 7;
+            fclRagShopTable.fclRagSeireiTbl[4].Param.Skill[0] = 4;
+            fclRagShopTable.fclRagSeireiTbl[4].Param.Skill[1] = 300;
+            fclRagShopTable.fclRagSeireiTbl[4].Param.Skill[2] = 369;
+            fclRagShopTable.fclRagSeireiTbl[4].Param.Skill[3] = 39;
+
+            fclRagShopTable.fclRagSeireiTbl[5].Param.MaxHP = 168;
+            fclRagShopTable.fclRagSeireiTbl[5].Param.MaxMP = 136;
+            fclRagShopTable.fclRagSeireiTbl[5].Param.Param[0] = 11;
+            fclRagShopTable.fclRagSeireiTbl[5].Param.Param[2] = 12;
+            fclRagShopTable.fclRagSeireiTbl[5].Param.Param[3] = 6;
+            fclRagShopTable.fclRagSeireiTbl[5].Param.Param[4] = 6;
+            fclRagShopTable.fclRagSeireiTbl[5].Param.Param[5] = 8;
+            fclRagShopTable.fclRagSeireiTbl[5].Param.Skill[0] = 4;
+            fclRagShopTable.fclRagSeireiTbl[5].Param.Skill[1] = 300;
+            fclRagShopTable.fclRagSeireiTbl[5].Param.Skill[2] = 369;
+            fclRagShopTable.fclRagSeireiTbl[5].Param.Skill[3] = 39;
+            fclRagShopTable.fclRagSeireiTbl[5].Param.Skill[4] = 332;
+
+            // Aquans
+            fclRagShopTable.fclRagSeireiTbl[6].Param.MaxHP = 126;
+            fclRagShopTable.fclRagSeireiTbl[6].Param.MaxMP = 100;
+            fclRagShopTable.fclRagSeireiTbl[6].Param.Param[0] = 6;
+            fclRagShopTable.fclRagSeireiTbl[6].Param.Param[2] = 10;
+            fclRagShopTable.fclRagSeireiTbl[6].Param.Param[3] = 6;
+            fclRagShopTable.fclRagSeireiTbl[6].Param.Param[4] = 6;
+            fclRagShopTable.fclRagSeireiTbl[6].Param.Param[5] = 8;
+            fclRagShopTable.fclRagSeireiTbl[6].Param.Skill[0] = 65;
+            fclRagShopTable.fclRagSeireiTbl[6].Param.Skill[1] = 318;
+            fclRagShopTable.fclRagSeireiTbl[6].Param.Skill[2] = 10;
+
+            fclRagShopTable.fclRagSeireiTbl[7].Param.MaxHP = 132;
+            fclRagShopTable.fclRagSeireiTbl[7].Param.MaxMP = 104;
+            fclRagShopTable.fclRagSeireiTbl[7].Param.Param[0] = 6;
+            fclRagShopTable.fclRagSeireiTbl[7].Param.Param[2] = 10;
+            fclRagShopTable.fclRagSeireiTbl[7].Param.Param[3] = 6;
+            fclRagShopTable.fclRagSeireiTbl[7].Param.Param[4] = 6;
+            fclRagShopTable.fclRagSeireiTbl[7].Param.Param[5] = 9;
+            fclRagShopTable.fclRagSeireiTbl[7].Param.Skill[0] = 65;
+            fclRagShopTable.fclRagSeireiTbl[7].Param.Skill[1] = 318;
+            fclRagShopTable.fclRagSeireiTbl[7].Param.Skill[2] = 10;
+            fclRagShopTable.fclRagSeireiTbl[7].Param.Skill[3] = 321;
+
+            fclRagShopTable.fclRagSeireiTbl[8].Param.MaxHP = 152;
+            fclRagShopTable.fclRagSeireiTbl[8].Param.MaxMP = 112;
+            fclRagShopTable.fclRagSeireiTbl[8].Param.Param[0] = 6;
+            fclRagShopTable.fclRagSeireiTbl[8].Param.Param[2] = 11;
+            fclRagShopTable.fclRagSeireiTbl[8].Param.Param[3] = 6;
+            fclRagShopTable.fclRagSeireiTbl[8].Param.Param[4] = 6;
+            fclRagShopTable.fclRagSeireiTbl[8].Param.Param[5] = 9;
+            fclRagShopTable.fclRagSeireiTbl[8].Param.Skill[0] = 65;
+            fclRagShopTable.fclRagSeireiTbl[8].Param.Skill[1] = 318;
+            fclRagShopTable.fclRagSeireiTbl[8].Param.Skill[2] = 10;
+            fclRagShopTable.fclRagSeireiTbl[8].Param.Skill[3] = 321;
+            fclRagShopTable.fclRagSeireiTbl[8].Param.Skill[4] = 290;
+
+            fclRagShopTable.fclRagSeireiTbl[9].Param.MaxHP = 132;
+            fclRagShopTable.fclRagSeireiTbl[9].Param.MaxMP = 108;
+            fclRagShopTable.fclRagSeireiTbl[9].Param.Param[0] = 6;
+            fclRagShopTable.fclRagSeireiTbl[9].Param.Param[2] = 11;
+            fclRagShopTable.fclRagSeireiTbl[9].Param.Param[3] = 6;
+            fclRagShopTable.fclRagSeireiTbl[9].Param.Param[4] = 6;
+            fclRagShopTable.fclRagSeireiTbl[9].Param.Param[5] = 9;
+            fclRagShopTable.fclRagSeireiTbl[9].Param.Skill[0] = 65;
+            fclRagShopTable.fclRagSeireiTbl[9].Param.Skill[1] = 318;
+            fclRagShopTable.fclRagSeireiTbl[9].Param.Skill[2] = 325;
+            fclRagShopTable.fclRagSeireiTbl[9].Param.Skill[3] = 321;
+
+            fclRagShopTable.fclRagSeireiTbl[10].Param.MaxHP = 152;
+            fclRagShopTable.fclRagSeireiTbl[10].Param.MaxMP = 112;
+            fclRagShopTable.fclRagSeireiTbl[10].Param.Param[0] = 6;
+            fclRagShopTable.fclRagSeireiTbl[10].Param.Param[2] = 11;
+            fclRagShopTable.fclRagSeireiTbl[10].Param.Param[3] = 6;
+            fclRagShopTable.fclRagSeireiTbl[10].Param.Param[4] = 6;
+            fclRagShopTable.fclRagSeireiTbl[10].Param.Param[5] = 9;
+            fclRagShopTable.fclRagSeireiTbl[10].Param.Skill[0] = 65;
+            fclRagShopTable.fclRagSeireiTbl[10].Param.Skill[1] = 318;
+            fclRagShopTable.fclRagSeireiTbl[10].Param.Skill[2] = 331;
+            fclRagShopTable.fclRagSeireiTbl[10].Param.Skill[3] = 332;
+            fclRagShopTable.fclRagSeireiTbl[10].Param.Skill[4] = 290;
+
+            // Aeros
+            fclRagShopTable.fclRagSeireiTbl[11].Param.MaxHP = 102;
+            fclRagShopTable.fclRagSeireiTbl[11].Param.MaxMP = 76;
+            fclRagShopTable.fclRagSeireiTbl[11].Param.Param[0] = 5;
+            fclRagShopTable.fclRagSeireiTbl[11].Param.Param[2] = 8;
+            fclRagShopTable.fclRagSeireiTbl[11].Param.Param[3] = 6;
+            fclRagShopTable.fclRagSeireiTbl[11].Param.Param[4] = 8;
+            fclRagShopTable.fclRagSeireiTbl[11].Param.Param[5] = 5;
+            fclRagShopTable.fclRagSeireiTbl[11].Param.Skill[0] = 36;
+            fclRagShopTable.fclRagSeireiTbl[11].Param.Skill[1] = 19;
+            fclRagShopTable.fclRagSeireiTbl[11].Param.Skill[2] = 64;
+
+            fclRagShopTable.fclRagSeireiTbl[12].Param.MaxHP = 108;
+            fclRagShopTable.fclRagSeireiTbl[12].Param.MaxMP = 80;
+            fclRagShopTable.fclRagSeireiTbl[12].Param.Param[0] = 5;
+            fclRagShopTable.fclRagSeireiTbl[12].Param.Param[2] = 8;
+            fclRagShopTable.fclRagSeireiTbl[12].Param.Param[3] = 6;
+            fclRagShopTable.fclRagSeireiTbl[12].Param.Param[4] = 9;
+            fclRagShopTable.fclRagSeireiTbl[12].Param.Param[5] = 5;
+            fclRagShopTable.fclRagSeireiTbl[12].Param.Skill[0] = 36;
+            fclRagShopTable.fclRagSeireiTbl[12].Param.Skill[1] = 19;
+            fclRagShopTable.fclRagSeireiTbl[12].Param.Skill[2] = 64;
+            fclRagShopTable.fclRagSeireiTbl[12].Param.Skill[3] = 59;
+
+            fclRagShopTable.fclRagSeireiTbl[13].Param.MaxHP = 114;
+            fclRagShopTable.fclRagSeireiTbl[13].Param.MaxMP = 88;
+            fclRagShopTable.fclRagSeireiTbl[13].Param.Param[0] = 5;
+            fclRagShopTable.fclRagSeireiTbl[13].Param.Param[2] = 9;
+            fclRagShopTable.fclRagSeireiTbl[13].Param.Param[3] = 6;
+            fclRagShopTable.fclRagSeireiTbl[13].Param.Param[4] = 9;
+            fclRagShopTable.fclRagSeireiTbl[13].Param.Param[5] = 5;
+            fclRagShopTable.fclRagSeireiTbl[13].Param.Skill[0] = 36;
+            fclRagShopTable.fclRagSeireiTbl[13].Param.Skill[1] = 19;
+            fclRagShopTable.fclRagSeireiTbl[13].Param.Skill[2] = 64;
+            fclRagShopTable.fclRagSeireiTbl[13].Param.Skill[3] = 59;
+            fclRagShopTable.fclRagSeireiTbl[13].Param.Skill[4] = 62;
+
+            fclRagShopTable.fclRagSeireiTbl[14].Param.MaxHP = 108;
+            fclRagShopTable.fclRagSeireiTbl[14].Param.MaxMP = 80;
+            fclRagShopTable.fclRagSeireiTbl[14].Param.Param[0] = 6;
+            fclRagShopTable.fclRagSeireiTbl[14].Param.Param[2] = 8;
+            fclRagShopTable.fclRagSeireiTbl[14].Param.Param[3] = 6;
+            fclRagShopTable.fclRagSeireiTbl[14].Param.Param[4] = 8;
+            fclRagShopTable.fclRagSeireiTbl[14].Param.Param[5] = 5;
+            fclRagShopTable.fclRagSeireiTbl[14].Param.Skill[0] = 36;
+            fclRagShopTable.fclRagSeireiTbl[14].Param.Skill[1] = 19;
+            fclRagShopTable.fclRagSeireiTbl[14].Param.Skill[2] = 373;
+            fclRagShopTable.fclRagSeireiTbl[14].Param.Skill[3] = 59;
+
+            fclRagShopTable.fclRagSeireiTbl[15].Param.MaxHP = 114;
+            fclRagShopTable.fclRagSeireiTbl[15].Param.MaxMP = 84;
+            fclRagShopTable.fclRagSeireiTbl[15].Param.Param[0] = 6;
+            fclRagShopTable.fclRagSeireiTbl[15].Param.Param[2] = 8;
+            fclRagShopTable.fclRagSeireiTbl[15].Param.Param[3] = 6;
+            fclRagShopTable.fclRagSeireiTbl[15].Param.Param[4] = 8;
+            fclRagShopTable.fclRagSeireiTbl[15].Param.Param[5] = 6;
+            fclRagShopTable.fclRagSeireiTbl[15].Param.Skill[0] = 36;
+            fclRagShopTable.fclRagSeireiTbl[15].Param.Skill[1] = 19;
+            fclRagShopTable.fclRagSeireiTbl[15].Param.Skill[2] = 373;
+            fclRagShopTable.fclRagSeireiTbl[15].Param.Skill[3] = 59;
+            fclRagShopTable.fclRagSeireiTbl[15].Param.Skill[4] = 62;
+
+            // Erthys
+            fclRagShopTable.fclRagSeireiTbl[16].Param.MaxHP = 90;
+            fclRagShopTable.fclRagSeireiTbl[16].Param.MaxMP = 48;
+            fclRagShopTable.fclRagSeireiTbl[16].Param.Param[0] = 6;
+            fclRagShopTable.fclRagSeireiTbl[16].Param.Param[2] = 5;
+            fclRagShopTable.fclRagSeireiTbl[16].Param.Param[3] = 8;
+            fclRagShopTable.fclRagSeireiTbl[16].Param.Param[4] = 4;
+            fclRagShopTable.fclRagSeireiTbl[16].Param.Param[5] = 5;
+            fclRagShopTable.fclRagSeireiTbl[16].Param.Skill[0] = 13;
+            fclRagShopTable.fclRagSeireiTbl[16].Param.Skill[1] = 43;
+            fclRagShopTable.fclRagSeireiTbl[16].Param.Skill[2] = 66;
+
+            fclRagShopTable.fclRagSeireiTbl[17].Param.MaxHP = 102;
+            fclRagShopTable.fclRagSeireiTbl[17].Param.MaxMP = 52;
+            fclRagShopTable.fclRagSeireiTbl[17].Param.Param[0] = 6;
+            fclRagShopTable.fclRagSeireiTbl[17].Param.Param[2] = 5;
+            fclRagShopTable.fclRagSeireiTbl[17].Param.Param[3] = 9;
+            fclRagShopTable.fclRagSeireiTbl[17].Param.Param[4] = 4;
+            fclRagShopTable.fclRagSeireiTbl[17].Param.Param[5] = 5;
+            fclRagShopTable.fclRagSeireiTbl[17].Param.Skill[0] = 13;
+            fclRagShopTable.fclRagSeireiTbl[17].Param.Skill[1] = 43;
+            fclRagShopTable.fclRagSeireiTbl[17].Param.Skill[2] = 66;
+            fclRagShopTable.fclRagSeireiTbl[17].Param.Skill[3] = 112;
+
+            fclRagShopTable.fclRagSeireiTbl[18].Param.MaxHP = 114;
+            fclRagShopTable.fclRagSeireiTbl[18].Param.MaxMP = 56;
+            fclRagShopTable.fclRagSeireiTbl[18].Param.Param[0] = 6;
+            fclRagShopTable.fclRagSeireiTbl[18].Param.Param[2] = 5;
+            fclRagShopTable.fclRagSeireiTbl[18].Param.Param[3] = 10;
+            fclRagShopTable.fclRagSeireiTbl[18].Param.Param[4] = 4;
+            fclRagShopTable.fclRagSeireiTbl[18].Param.Param[5] = 5;
+            fclRagShopTable.fclRagSeireiTbl[18].Param.Skill[0] = 13;
+            fclRagShopTable.fclRagSeireiTbl[18].Param.Skill[1] = 43;
+            fclRagShopTable.fclRagSeireiTbl[18].Param.Skill[2] = 66;
+            fclRagShopTable.fclRagSeireiTbl[18].Param.Skill[3] = 112;
+            fclRagShopTable.fclRagSeireiTbl[18].Param.Skill[4] = 320;
+
+            fclRagShopTable.fclRagSeireiTbl[19].Param.MaxHP = 102;
+            fclRagShopTable.fclRagSeireiTbl[19].Param.MaxMP = 52;
+            fclRagShopTable.fclRagSeireiTbl[19].Param.Param[0] = 6;
+            fclRagShopTable.fclRagSeireiTbl[19].Param.Param[2] = 5;
+            fclRagShopTable.fclRagSeireiTbl[19].Param.Param[3] = 9;
+            fclRagShopTable.fclRagSeireiTbl[19].Param.Param[4] = 4;
+            fclRagShopTable.fclRagSeireiTbl[19].Param.Param[5] = 5;
+            fclRagShopTable.fclRagSeireiTbl[19].Param.Skill[0] = 13;
+            fclRagShopTable.fclRagSeireiTbl[19].Param.Skill[1] = 368;
+            fclRagShopTable.fclRagSeireiTbl[19].Param.Skill[2] = 66;
+            fclRagShopTable.fclRagSeireiTbl[19].Param.Skill[3] = 112;
+
+            fclRagShopTable.fclRagSeireiTbl[20].Param.MaxHP = 114;
+            fclRagShopTable.fclRagSeireiTbl[20].Param.MaxMP = 56;
+            fclRagShopTable.fclRagSeireiTbl[20].Param.Param[0] = 6;
+            fclRagShopTable.fclRagSeireiTbl[20].Param.Param[2] = 5;
+            fclRagShopTable.fclRagSeireiTbl[20].Param.Param[3] = 10;
+            fclRagShopTable.fclRagSeireiTbl[20].Param.Param[4] = 4;
+            fclRagShopTable.fclRagSeireiTbl[20].Param.Param[5] = 5;
+            fclRagShopTable.fclRagSeireiTbl[20].Param.Skill[0] = 13;
+            fclRagShopTable.fclRagSeireiTbl[20].Param.Skill[1] = 368;
+            fclRagShopTable.fclRagSeireiTbl[20].Param.Skill[2] = 66;
+            fclRagShopTable.fclRagSeireiTbl[20].Param.Skill[3] = 112;
+            fclRagShopTable.fclRagSeireiTbl[20].Param.Skill[4] = 320;
+
+            // Saki Mitama
+            fclRagShopTable.fclRagMitamaTbl[1].Param.MaxHP = 306;
+            fclRagShopTable.fclRagMitamaTbl[1].Param.MaxMP = 180;
+            fclRagShopTable.fclRagMitamaTbl[1].Param.Param[0] = 10;
+            fclRagShopTable.fclRagMitamaTbl[1].Param.Param[2] = 10;
+            fclRagShopTable.fclRagMitamaTbl[1].Param.Param[3] = 16;
+            fclRagShopTable.fclRagMitamaTbl[1].Param.Param[4] = 10;
+            fclRagShopTable.fclRagMitamaTbl[1].Param.Param[5] = 16;
+            fclRagShopTable.fclRagMitamaTbl[1].Param.Skill[0] = 60;
+            fclRagShopTable.fclRagMitamaTbl[1].Param.Skill[1] = 400;
+            fclRagShopTable.fclRagMitamaTbl[1].Param.Skill[2] = 71;
+
+            fclRagShopTable.fclRagMitamaTbl[2].Param.MaxHP = 318;
+            fclRagShopTable.fclRagMitamaTbl[2].Param.MaxMP = 184;
+            fclRagShopTable.fclRagMitamaTbl[2].Param.Param[0] = 10;
+            fclRagShopTable.fclRagMitamaTbl[2].Param.Param[2] = 10;
+            fclRagShopTable.fclRagMitamaTbl[2].Param.Param[3] = 17;
+            fclRagShopTable.fclRagMitamaTbl[2].Param.Param[4] = 10;
+            fclRagShopTable.fclRagMitamaTbl[2].Param.Param[5] = 16;
+            fclRagShopTable.fclRagMitamaTbl[2].Param.Skill[0] = 60;
+            fclRagShopTable.fclRagMitamaTbl[2].Param.Skill[1] = 400;
+            fclRagShopTable.fclRagMitamaTbl[2].Param.Skill[2] = 71;
+            fclRagShopTable.fclRagMitamaTbl[2].Param.Skill[3] = 23;
+
+            fclRagShopTable.fclRagMitamaTbl[3].Param.MaxHP = 324;
+            fclRagShopTable.fclRagMitamaTbl[3].Param.MaxMP = 188;
+            fclRagShopTable.fclRagMitamaTbl[3].Param.Param[0] = 10;
+            fclRagShopTable.fclRagMitamaTbl[3].Param.Param[2] = 10;
+            fclRagShopTable.fclRagMitamaTbl[3].Param.Param[3] = 17;
+            fclRagShopTable.fclRagMitamaTbl[3].Param.Param[4] = 10;
+            fclRagShopTable.fclRagMitamaTbl[3].Param.Param[5] = 17;
+            fclRagShopTable.fclRagMitamaTbl[3].Param.Skill[0] = 60;
+            fclRagShopTable.fclRagMitamaTbl[3].Param.Skill[1] = 400;
+            fclRagShopTable.fclRagMitamaTbl[3].Param.Skill[2] = 71;
+            fclRagShopTable.fclRagMitamaTbl[3].Param.Skill[3] = 23;
+            fclRagShopTable.fclRagMitamaTbl[3].Param.Skill[4] = 40;
+
+            fclRagShopTable.fclRagMitamaTbl[4].Param.MaxHP = 312;
+            fclRagShopTable.fclRagMitamaTbl[4].Param.MaxMP = 184;
+            fclRagShopTable.fclRagMitamaTbl[4].Param.Param[0] = 10;
+            fclRagShopTable.fclRagMitamaTbl[4].Param.Param[2] = 10;
+            fclRagShopTable.fclRagMitamaTbl[4].Param.Param[3] = 16;
+            fclRagShopTable.fclRagMitamaTbl[4].Param.Param[4] = 10;
+            fclRagShopTable.fclRagMitamaTbl[4].Param.Param[5] = 17;
+            fclRagShopTable.fclRagMitamaTbl[4].Param.Skill[0] = 60;
+            fclRagShopTable.fclRagMitamaTbl[4].Param.Skill[1] = 363;
+            fclRagShopTable.fclRagMitamaTbl[4].Param.Skill[2] = 71;
+            fclRagShopTable.fclRagMitamaTbl[4].Param.Skill[3] = 23;
+
+            fclRagShopTable.fclRagMitamaTbl[5].Param.MaxHP = 324;
+            fclRagShopTable.fclRagMitamaTbl[5].Param.MaxMP = 184;
+            fclRagShopTable.fclRagMitamaTbl[5].Param.Param[0] = 10;
+            fclRagShopTable.fclRagMitamaTbl[5].Param.Param[2] = 10;
+            fclRagShopTable.fclRagMitamaTbl[5].Param.Param[3] = 17;
+            fclRagShopTable.fclRagMitamaTbl[5].Param.Param[4] = 10;
+            fclRagShopTable.fclRagMitamaTbl[5].Param.Param[5] = 17;
+            fclRagShopTable.fclRagMitamaTbl[5].Param.Skill[0] = 60;
+            fclRagShopTable.fclRagMitamaTbl[5].Param.Skill[1] = 363;
+            fclRagShopTable.fclRagMitamaTbl[5].Param.Skill[2] = 71;
+            fclRagShopTable.fclRagMitamaTbl[5].Param.Skill[3] = 23;
+            fclRagShopTable.fclRagMitamaTbl[5].Param.Skill[4] = 40;
+
+            // Kushi Mitama
+            fclRagShopTable.fclRagMitamaTbl[6].Param.MaxHP = 282;
+            fclRagShopTable.fclRagMitamaTbl[6].Param.MaxMP = 168;
+            fclRagShopTable.fclRagMitamaTbl[6].Param.Param[0] = 10;
+            fclRagShopTable.fclRagMitamaTbl[6].Param.Param[2] = 10;
+            fclRagShopTable.fclRagMitamaTbl[6].Param.Param[3] = 15;
+            fclRagShopTable.fclRagMitamaTbl[6].Param.Param[4] = 14;
+            fclRagShopTable.fclRagMitamaTbl[6].Param.Param[5] = 10;
+            fclRagShopTable.fclRagMitamaTbl[6].Param.Skill[0] = 65;
+            fclRagShopTable.fclRagMitamaTbl[6].Param.Skill[1] = 57;
+            fclRagShopTable.fclRagMitamaTbl[6].Param.Skill[2] = 71;
+
+            fclRagShopTable.fclRagMitamaTbl[7].Param.MaxHP = 294;
+            fclRagShopTable.fclRagMitamaTbl[7].Param.MaxMP = 172;
+            fclRagShopTable.fclRagMitamaTbl[7].Param.Param[0] = 10;
+            fclRagShopTable.fclRagMitamaTbl[7].Param.Param[2] = 10;
+            fclRagShopTable.fclRagMitamaTbl[7].Param.Param[3] = 16;
+            fclRagShopTable.fclRagMitamaTbl[7].Param.Param[4] = 14;
+            fclRagShopTable.fclRagMitamaTbl[7].Param.Param[5] = 10;
+            fclRagShopTable.fclRagMitamaTbl[7].Param.Skill[0] = 65;
+            fclRagShopTable.fclRagMitamaTbl[7].Param.Skill[1] = 57;
+            fclRagShopTable.fclRagMitamaTbl[7].Param.Skill[2] = 71;
+            fclRagShopTable.fclRagMitamaTbl[7].Param.Skill[3] = 317;
+
+            fclRagShopTable.fclRagMitamaTbl[8].Param.MaxHP = 300;
+            fclRagShopTable.fclRagMitamaTbl[8].Param.MaxMP = 176;
+            fclRagShopTable.fclRagMitamaTbl[8].Param.Param[0] = 10;
+            fclRagShopTable.fclRagMitamaTbl[8].Param.Param[2] = 10;
+            fclRagShopTable.fclRagMitamaTbl[8].Param.Param[3] = 16;
+            fclRagShopTable.fclRagMitamaTbl[8].Param.Param[4] = 15;
+            fclRagShopTable.fclRagMitamaTbl[8].Param.Param[5] = 10;
+            fclRagShopTable.fclRagMitamaTbl[8].Param.Skill[0] = 65;
+            fclRagShopTable.fclRagMitamaTbl[8].Param.Skill[1] = 57;
+            fclRagShopTable.fclRagMitamaTbl[8].Param.Skill[2] = 71;
+            fclRagShopTable.fclRagMitamaTbl[8].Param.Skill[3] = 317;
+            fclRagShopTable.fclRagMitamaTbl[8].Param.Skill[4] = 315;
+
+            fclRagShopTable.fclRagMitamaTbl[9].Param.MaxHP = 288;
+            fclRagShopTable.fclRagMitamaTbl[9].Param.MaxMP = 172;
+            fclRagShopTable.fclRagMitamaTbl[9].Param.Param[0] = 10;
+            fclRagShopTable.fclRagMitamaTbl[9].Param.Param[2] = 10;
+            fclRagShopTable.fclRagMitamaTbl[9].Param.Param[3] = 15;
+            fclRagShopTable.fclRagMitamaTbl[9].Param.Param[4] = 15;
+            fclRagShopTable.fclRagMitamaTbl[9].Param.Param[5] = 10;
+            fclRagShopTable.fclRagMitamaTbl[9].Param.Skill[0] = 65;
+            fclRagShopTable.fclRagMitamaTbl[9].Param.Skill[1] = 57;
+            fclRagShopTable.fclRagMitamaTbl[9].Param.Skill[2] = 365;
+            fclRagShopTable.fclRagMitamaTbl[9].Param.Skill[3] = 317;
+
+            fclRagShopTable.fclRagMitamaTbl[10].Param.MaxHP = 300;
+            fclRagShopTable.fclRagMitamaTbl[10].Param.MaxMP = 176;
+            fclRagShopTable.fclRagMitamaTbl[10].Param.Param[0] = 10;
+            fclRagShopTable.fclRagMitamaTbl[10].Param.Param[2] = 10;
+            fclRagShopTable.fclRagMitamaTbl[10].Param.Param[3] = 16;
+            fclRagShopTable.fclRagMitamaTbl[10].Param.Param[4] = 15;
+            fclRagShopTable.fclRagMitamaTbl[10].Param.Param[5] = 10;
+            fclRagShopTable.fclRagMitamaTbl[10].Param.Skill[0] = 65;
+            fclRagShopTable.fclRagMitamaTbl[10].Param.Skill[1] = 57;
+            fclRagShopTable.fclRagMitamaTbl[10].Param.Skill[2] = 365;
+            fclRagShopTable.fclRagMitamaTbl[10].Param.Skill[3] = 317;
+            fclRagShopTable.fclRagMitamaTbl[10].Param.Skill[4] = 315;
+
+            // Nigi Mitama
+            fclRagShopTable.fclRagMitamaTbl[11].Param.MaxHP = 234;
+            fclRagShopTable.fclRagMitamaTbl[11].Param.MaxMP = 168;
+            fclRagShopTable.fclRagMitamaTbl[11].Param.Param[0] = 10;
+            fclRagShopTable.fclRagMitamaTbl[11].Param.Param[2] = 13;
+            fclRagShopTable.fclRagMitamaTbl[11].Param.Param[3] = 10;
+            fclRagShopTable.fclRagMitamaTbl[11].Param.Param[4] = 10;
+            fclRagShopTable.fclRagMitamaTbl[11].Param.Param[5] = 13;
+            fclRagShopTable.fclRagMitamaTbl[11].Param.Skill[0] = 54;
+            fclRagShopTable.fclRagMitamaTbl[11].Param.Skill[1] = 369;
+            fclRagShopTable.fclRagMitamaTbl[11].Param.Skill[2] = 71;
+
+            fclRagShopTable.fclRagMitamaTbl[12].Param.MaxHP = 240;
+            fclRagShopTable.fclRagMitamaTbl[12].Param.MaxMP = 176;
+            fclRagShopTable.fclRagMitamaTbl[12].Param.Param[0] = 10;
+            fclRagShopTable.fclRagMitamaTbl[12].Param.Param[2] = 14;
+            fclRagShopTable.fclRagMitamaTbl[12].Param.Param[3] = 10;
+            fclRagShopTable.fclRagMitamaTbl[12].Param.Param[4] = 10;
+            fclRagShopTable.fclRagMitamaTbl[12].Param.Param[5] = 13;
+            fclRagShopTable.fclRagMitamaTbl[12].Param.Skill[0] = 54;
+            fclRagShopTable.fclRagMitamaTbl[12].Param.Skill[1] = 369;
+            fclRagShopTable.fclRagMitamaTbl[12].Param.Skill[2] = 71;
+            fclRagShopTable.fclRagMitamaTbl[12].Param.Skill[3] = 309;
+
+            fclRagShopTable.fclRagMitamaTbl[13].Param.MaxHP = 246;
+            fclRagShopTable.fclRagMitamaTbl[13].Param.MaxMP = 180;
+            fclRagShopTable.fclRagMitamaTbl[13].Param.Param[0] = 10;
+            fclRagShopTable.fclRagMitamaTbl[13].Param.Param[2] = 14;
+            fclRagShopTable.fclRagMitamaTbl[13].Param.Param[3] = 10;
+            fclRagShopTable.fclRagMitamaTbl[13].Param.Param[4] = 10;
+            fclRagShopTable.fclRagMitamaTbl[13].Param.Param[5] = 14;
+            fclRagShopTable.fclRagMitamaTbl[13].Param.Skill[0] = 54;
+            fclRagShopTable.fclRagMitamaTbl[13].Param.Skill[1] = 369;
+            fclRagShopTable.fclRagMitamaTbl[13].Param.Skill[2] = 71;
+            fclRagShopTable.fclRagMitamaTbl[13].Param.Skill[3] = 309;
+            fclRagShopTable.fclRagMitamaTbl[13].Param.Skill[4] = 311;
+
+            fclRagShopTable.fclRagMitamaTbl[14].Param.MaxHP = 240;
+            fclRagShopTable.fclRagMitamaTbl[14].Param.MaxMP = 172;
+            fclRagShopTable.fclRagMitamaTbl[14].Param.Param[0] = 10;
+            fclRagShopTable.fclRagMitamaTbl[14].Param.Param[2] = 13;
+            fclRagShopTable.fclRagMitamaTbl[14].Param.Param[3] = 10;
+            fclRagShopTable.fclRagMitamaTbl[14].Param.Param[4] = 10;
+            fclRagShopTable.fclRagMitamaTbl[14].Param.Param[5] = 14;
+            fclRagShopTable.fclRagMitamaTbl[14].Param.Skill[0] = 54;
+            fclRagShopTable.fclRagMitamaTbl[14].Param.Skill[1] = 369;
+            fclRagShopTable.fclRagMitamaTbl[14].Param.Skill[2] = 364;
+            fclRagShopTable.fclRagMitamaTbl[14].Param.Skill[3] = 309;
+
+            fclRagShopTable.fclRagMitamaTbl[15].Param.MaxHP = 246;
+            fclRagShopTable.fclRagMitamaTbl[15].Param.MaxMP = 180;
+            fclRagShopTable.fclRagMitamaTbl[15].Param.Param[0] = 10;
+            fclRagShopTable.fclRagMitamaTbl[15].Param.Param[2] = 14;
+            fclRagShopTable.fclRagMitamaTbl[15].Param.Param[3] = 10;
+            fclRagShopTable.fclRagMitamaTbl[15].Param.Param[4] = 10;
+            fclRagShopTable.fclRagMitamaTbl[15].Param.Param[5] = 14;
+            fclRagShopTable.fclRagMitamaTbl[15].Param.Skill[0] = 54;
+            fclRagShopTable.fclRagMitamaTbl[15].Param.Skill[1] = 369;
+            fclRagShopTable.fclRagMitamaTbl[15].Param.Skill[2] = 364;
+            fclRagShopTable.fclRagMitamaTbl[15].Param.Skill[3] = 309;
+            fclRagShopTable.fclRagMitamaTbl[15].Param.Skill[4] = 311;
+
+            // Ara Mitama
+            fclRagShopTable.fclRagMitamaTbl[16].Param.MaxHP = 210;
+            fclRagShopTable.fclRagMitamaTbl[16].Param.MaxMP = 140;
+            fclRagShopTable.fclRagMitamaTbl[16].Param.Param[0] = 11;
+            fclRagShopTable.fclRagMitamaTbl[16].Param.Param[2] = 10;
+            fclRagShopTable.fclRagMitamaTbl[16].Param.Param[3] = 10;
+            fclRagShopTable.fclRagMitamaTbl[16].Param.Param[4] = 11;
+            fclRagShopTable.fclRagMitamaTbl[16].Param.Param[5] = 10;
+            fclRagShopTable.fclRagMitamaTbl[16].Param.Skill[0] = 64;
+            fclRagShopTable.fclRagMitamaTbl[16].Param.Skill[1] = 300;
+            fclRagShopTable.fclRagMitamaTbl[16].Param.Skill[2] = 71;
+
+            fclRagShopTable.fclRagMitamaTbl[17].Param.MaxHP = 216;
+            fclRagShopTable.fclRagMitamaTbl[17].Param.MaxMP = 144;
+            fclRagShopTable.fclRagMitamaTbl[17].Param.Param[0] = 11;
+            fclRagShopTable.fclRagMitamaTbl[17].Param.Param[2] = 10;
+            fclRagShopTable.fclRagMitamaTbl[17].Param.Param[3] = 10;
+            fclRagShopTable.fclRagMitamaTbl[17].Param.Param[4] = 12;
+            fclRagShopTable.fclRagMitamaTbl[17].Param.Param[5] = 10;
+            fclRagShopTable.fclRagMitamaTbl[17].Param.Skill[0] = 64;
+            fclRagShopTable.fclRagMitamaTbl[17].Param.Skill[1] = 300;
+            fclRagShopTable.fclRagMitamaTbl[17].Param.Skill[2] = 71;
+            fclRagShopTable.fclRagMitamaTbl[17].Param.Skill[3] = 346;
+
+            fclRagShopTable.fclRagMitamaTbl[18].Param.MaxHP = 222;
+            fclRagShopTable.fclRagMitamaTbl[18].Param.MaxMP = 148;
+            fclRagShopTable.fclRagMitamaTbl[18].Param.Param[0] = 12;
+            fclRagShopTable.fclRagMitamaTbl[18].Param.Param[2] = 10;
+            fclRagShopTable.fclRagMitamaTbl[18].Param.Param[3] = 10;
+            fclRagShopTable.fclRagMitamaTbl[18].Param.Param[4] = 12;
+            fclRagShopTable.fclRagMitamaTbl[18].Param.Param[5] = 10;
+            fclRagShopTable.fclRagMitamaTbl[18].Param.Skill[0] = 64;
+            fclRagShopTable.fclRagMitamaTbl[18].Param.Skill[1] = 300;
+            fclRagShopTable.fclRagMitamaTbl[18].Param.Skill[2] = 71;
+            fclRagShopTable.fclRagMitamaTbl[18].Param.Skill[3] = 346;
+            fclRagShopTable.fclRagMitamaTbl[18].Param.Skill[4] = 349;
+
+            fclRagShopTable.fclRagMitamaTbl[19].Param.MaxHP = 216;
+            fclRagShopTable.fclRagMitamaTbl[19].Param.MaxMP = 144;
+            fclRagShopTable.fclRagMitamaTbl[19].Param.Param[0] = 12;
+            fclRagShopTable.fclRagMitamaTbl[19].Param.Param[2] = 10;
+            fclRagShopTable.fclRagMitamaTbl[19].Param.Param[3] = 10;
+            fclRagShopTable.fclRagMitamaTbl[19].Param.Param[4] = 11;
+            fclRagShopTable.fclRagMitamaTbl[19].Param.Param[5] = 10;
+            fclRagShopTable.fclRagMitamaTbl[19].Param.Skill[0] = 64;
+            fclRagShopTable.fclRagMitamaTbl[19].Param.Skill[1] = 367;
+            fclRagShopTable.fclRagMitamaTbl[19].Param.Skill[2] = 71;
+            fclRagShopTable.fclRagMitamaTbl[19].Param.Skill[3] = 346;
+
+            fclRagShopTable.fclRagMitamaTbl[20].Param.MaxHP = 222;
+            fclRagShopTable.fclRagMitamaTbl[20].Param.MaxMP = 148;
+            fclRagShopTable.fclRagMitamaTbl[20].Param.Param[0] = 12;
+            fclRagShopTable.fclRagMitamaTbl[20].Param.Param[2] = 10;
+            fclRagShopTable.fclRagMitamaTbl[20].Param.Param[3] = 10;
+            fclRagShopTable.fclRagMitamaTbl[20].Param.Param[4] = 12;
+            fclRagShopTable.fclRagMitamaTbl[20].Param.Param[5] = 10;
+            fclRagShopTable.fclRagMitamaTbl[20].Param.Skill[0] = 64;
+            fclRagShopTable.fclRagMitamaTbl[20].Param.Skill[1] = 367;
+            fclRagShopTable.fclRagMitamaTbl[20].Param.Skill[2] = 71;
+            fclRagShopTable.fclRagMitamaTbl[20].Param.Skill[3] = 346;
+            fclRagShopTable.fclRagMitamaTbl[20].Param.Skill[4] = 349;
         }
 
         [HarmonyPatch(typeof(frFont), nameof(frFont.frReplaceLocalizeText))]
