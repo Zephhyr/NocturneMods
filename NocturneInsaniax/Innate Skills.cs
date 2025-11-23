@@ -245,7 +245,7 @@ namespace NocturneInsaniax
             { 227, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Gdon's Critical Damage increases \nby 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 227 Gdon
             { 228, new InnateSkill(383, 03, "Elec Enhancer", "While in the active party, \nraise allies' Elec skill potential \nto Vritra's if it was lower.")}, // 228 Vritra
             { 229, new InnateSkill(383, 15, "Magatama Mimicry", "Demee-Ho gains skill potential \ndependant on which Magatama is \ncurrently ingested.")}, // 229 Demee-Ho
-            { 230, new InnateSkill(383, 15, "", "")}, // 230 
+            { 230, new InnateSkill(383, 15, "Covetous Fury", "Seth's attacks, including Magic, \ngain 10% Critical Rate against \ntargets with any greater stat.")}, // 230 Seth
             { 231, new InnateSkill(383, 15, "", "")}, // 231 
             { 232, new InnateSkill(383, 15, "", "")}, // 232 
             { 233, new InnateSkill(383, 15, "", "")}, // 233 
@@ -263,7 +263,7 @@ namespace NocturneInsaniax
             { 245, new InnateSkill(383, 15, "", "")}, // 245 
             { 246, new InnateSkill(383, 15, "", "")}, // 246 
             { 247, new InnateSkill(383, 15, "", "")}, // 247 
-            { 248, new InnateSkill(383, 15, "", "")},
+            { 248, new InnateSkill(383, 15, "Covetous Fury", "")}, // Boss Seth
             { 249, new InnateSkill(383, 15, "Behemothic Bounce", "")}, // 249 Sarge Girimekhala
             { 250, new InnateSkill(383, 15, "Hidden Potential", "")}, // 250 NKE Pixie
             { 251, new InnateSkill(383, 02, "Ice Enhancer", "")}, // 251 NKE Jack Frost

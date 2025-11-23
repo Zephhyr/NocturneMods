@@ -1634,6 +1634,23 @@ namespace NocturneInsaniax
             datEncount.tbl[301].maxcall = 0;
             datEncount.tbl[301].maxparty = 0;
 
+            // Boss Seth
+            datEncount.tbl[989].devil[0] = 248;
+            datEncount.tbl[989].devil[1] = 0;
+            datEncount.tbl[989].devil[2] = 0;
+            datEncount.tbl[989].devil[3] = 0;
+            datEncount.tbl[989].devil[4] = 0;
+            datEncount.tbl[989].devil[5] = 0;
+            datEncount.tbl[989].backattack = -1;
+            datEncount.tbl[989].btlsound = 18;
+            datEncount.tbl[989].esc = 1;
+            datEncount.tbl[989].flag = 13;
+            datEncount.tbl[989].formationtype = 0;
+            datEncount.tbl[989].areaid = 1;
+            datEncount.tbl[989].stageid = 232;
+            datEncount.tbl[989].maxcall = 0;
+            datEncount.tbl[989].maxparty = 0;
+
             // Classic Mot
             datEncount.tbl[1275].devil[0] = 334;
             datEncount.tbl[1275].backattack = -1;

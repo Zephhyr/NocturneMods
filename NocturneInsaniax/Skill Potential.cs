@@ -255,7 +255,7 @@ namespace NocturneInsaniax
             new sbyte[] {3    , 5    , -4   , 0    , 0    , 0    , 3    , 0    , -4   , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 227 Gdon
             new sbyte[] {4    , 0    , 0    , 5    , -4   , 0    , 0    , 0    , 0    , 4    , 0    , 0    , 0    , 0    , 0    , 0 }, // 228 Vritra
             new sbyte[] {5    , 0    , 6    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 0    , 0    , -5   , 0    , 3    , 0 }, // 229 Demee-Ho
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 230 
+            new sbyte[] {5    , 0    , -7   , 5    , 5    , 5    , -7   , 7    , 3    , 3    , 3    , 5    , 7    , -4   , 0    , 0 }, // 230 Seth
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 231 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 232 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 233 
@@ -274,7 +274,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 245 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 246 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 247 
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 248
+            new sbyte[] {5    , 0    , -7   , 5    , 5    , 5    , -7   , 7    , 3    , 3    , 3    , 5    , 7    , -4   , 0    , 0 }, // 248 Boss Seth
             new sbyte[] {5    , -5   , -5   , -5   , -5   , 5    , -5   , 5    , 5    , 5    , -3   , 5    , 0    , -3   , 2    , 0 }, // 249 Sarge Girimekhala
             new sbyte[] {0    , 0    , 0    , 8    , 0    , 6    , 0    , 0    , 0    , 0    , 0    , 6    , 0    , 4    , 4    , 0 }, // 250 NKE Pixie
             new sbyte[] {0    , -5   , 4    , 0    , 0    , 0    , 1    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 251 NKE Jack Frost
@@ -677,7 +677,7 @@ namespace NocturneInsaniax
             "  <material=\"MsgFont4\">+5: Fire • +3: Phys/Light  <material=\"MsgFont1\">-4: Ice/Curse", // 227 Gdon
             "  <material=\"MsgFont4\">+5: Elec • +4: Phys/Nerve  <material=\"MsgFont1\">-4: Force", // 228 Vritra
             "  <material=\"MsgFont4\">+6: Ice • +5: Phys/Dark • +3: Supp  <material=\"MsgFont1\">-5: Shot", // 229 Demee-Ho
-            "", // 230 
+            "  <material=\"MsgFont4\">+7: Dark/Shot • +5: Phys/Elec/Force/Almighty • +3: Ailments  <material=\"MsgFont1\">-4: Heal • -7: Ice/Light", // 230 Seth
             "", // 231 
             "", // 232 
             "", // 233 
@@ -1698,7 +1698,7 @@ namespace NocturneInsaniax
                 }
 
                 var work = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
-                if (__result == 1 && datCalc.datCheckSyojiSkill(work, 366) != 0
+                if (__result != 0 && datCalc.datCheckSyojiSkill(work, 366) != 0
                     && (nskill != 79 && nskill != 159 && nskill != 243 && nskill != 259 && nskill != 260 && nskill != 287))
                 {
                     int randomValue = random.Next(2);
@@ -1742,6 +1742,10 @@ namespace NocturneInsaniax
                         }
                     }
                 }
+
+                // Abyssal Mask
+                if (__result != 0 && datNormalSkill.tbl[nskill].basstatus != 512 && datNormalSkill.tbl[nskill].basstatus != 2048 && datCalc.datCheckSyojiSkill(work, 366) != 0 && random.Next(2) != 0)
+                    __result = 0;
 
                 // Boss Ailment resistance
                 if (bossList.Contains(work.id) && (datNormalSkill.tbl[nskill].basstatus == 8 || datNormalSkill.tbl[nskill].basstatus == 16 || datNormalSkill.tbl[nskill].basstatus == 32 || datNormalSkill.tbl[nskill].basstatus == 128 || datNormalSkill.tbl[nskill].basstatus == 1024 || datNormalSkill.tbl[nskill].basstatus == 140 || datNormalSkill.tbl[nskill].basstatus == 412))

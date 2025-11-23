@@ -362,6 +362,9 @@ namespace NocturneInsaniax
                 datUnitWork_t workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
                 //datUnitWork_t workFromFormindex2 = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
 
+                if (nskill == 490)
+                    waza = waza * Math.Min(4, (workFromFormindex1.maxhp / workFromFormindex1.hp));
+
                 double atkPow = (workFromFormindex1.level + datCalc.datGetParam(workFromFormindex1, 2) * 2) * waza / 20;
 
                 //double defPow = datCalc.datGetParam(workFromFormindex2, 3);
@@ -666,11 +669,26 @@ namespace NocturneInsaniax
                         }
                     }
                     // Specter's Phantasmagoria
-                    if (new ushort[] { 185, 257, 273, 275, 294, 295, 296 }.Contains(workFromFormindex1.id) && workFromFormindex1.param[2] > workFromFormindex2.param[2] && datSkill.tbl[nskill].skillattr <= 12)
+                    if (new ushort[] { 185, 257, 273, 275, 294, 295, 296 }.Contains(workFromFormindex1.id) &&
+                        datSkill.tbl[nskill].skillattr <= 12 && 
+                        (workFromFormindex1.param[2] + workFromFormindex1.mitamaparam[2]) > (workFromFormindex2.param[2] + workFromFormindex2.mitamaparam[2]))
                         critRate += 10;
                     // Hell Biker's Speed Star
-                    if ((workFromFormindex1.id == 200 || workFromFormindex1.id == 350) && workFromFormindex1.param[4] > workFromFormindex2.param[4] && datSkill.tbl[nskill].skillattr <= 12)
+                    if ((workFromFormindex1.id == 200 || workFromFormindex1.id == 350) &&
+                        datSkill.tbl[nskill].skillattr <= 12 && 
+                        (workFromFormindex1.param[4] + workFromFormindex1.mitamaparam[4]) > (workFromFormindex2.param[4] + workFromFormindex2.mitamaparam[4]))
                         critRate += 10;
+                    // Seth's Covetous Fury
+                    if ((workFromFormindex1.id == 230 || workFromFormindex1.id == 248) && datSkill.tbl[nskill].skillattr <= 12)
+                    {
+                        var covetousFuryActive = false;
+
+                        for (int i = 0; i<= 5; i++)
+                            if ((workFromFormindex1.param[i] + workFromFormindex1.mitamaparam[i]) < (workFromFormindex2.param[i] + workFromFormindex2.mitamaparam[i]))
+                                covetousFuryActive = true;
+
+                        if (covetousFuryActive) critRate += 10;
+                    }
                     // Focused Assault
                     if (((sformindex == 0 && workFromFormindex1.id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 1) || focusedAssaultIds.Contains(workFromFormindex1.id)) && 
                         datNormalSkill.tbl[nskill].targetarea == 2 && 

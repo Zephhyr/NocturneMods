@@ -393,6 +393,7 @@ namespace NocturneInsaniax
                         case 228: VritraAI(ref a, ref code, ref n); break;
                         case 229: DemeeHoAI(ref a, ref code, ref n); break;
 
+                        case 248: BossSethAI(ref a, ref code, ref n); break;
                         case 249: SargeGirimekhalaAI(ref a, ref code, ref n); break;
                         case 250: NKEPixieAI(ref a, ref code, ref n); break;
                         case 251: NKEJackFrostAI(ref a, ref code, ref n); break;
@@ -1924,6 +1925,170 @@ namespace NocturneInsaniax
             }
         }
 
+        private static void BossSethAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            ushort currentHpPercent = BossCurrentHpPercent(ref a);
+            MelonLogger.Msg("Seth HP%: " + currentHpPercent);
+            MelonLogger.Msg("Seth HP: " + a.work.hp);
+
+            if (currentHpPercent <= 70 && actionTrackers[a.work.id].phase == 1)
+                actionTrackers[a.work.id].phase = 2;
+            else if (currentHpPercent <= 40 && actionTrackers[a.work.id].phase == 2)
+                actionTrackers[a.work.id].phase = 3;
+
+            if (actionTrackers[a.work.id].phase == 1)
+            {
+                if (actionTrackers[a.work.id].extraTurns < 1)
+                    UseSkill(ref a, 423);
+                else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(490) &&
+                    (actionTrackers[a.work.id].currentBattleTurnCount == 1 || (actionTrackers[a.work.id].currentBattleTurnCount - 1) % 3 == 0))
+                    UseSkill(ref a, 490);
+                else if (actionTrackers[a.work.id].skillsUsedThisTurn.Contains(432) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(27) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(442) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(462) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(63) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(207) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(451) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(478) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(490))
+                {
+                    int randomValue = random.Next(4);
+                    switch (randomValue)
+                    {
+                        case 0: UseSkill(ref a, 122); break;
+                        case 1: UseSkill(ref a, 141); break;
+                        case 2: UseSkill(ref a, 489); break;
+                        case 3: UseSkill(ref a, 489); break;
+                    }
+                }
+                else
+                {
+                    int randomValue = random.Next(12);
+                    switch (randomValue)
+                    {
+                        case 0: UseSkill(ref a, 432); break;
+                        case 1: UseSkill(ref a, 27); break;
+                        case 2: UseSkill(ref a, 442); break;
+                        case 3: UseSkill(ref a, 462); break;
+                        case 4: UseSkill(ref a, 63); break;
+                        case 5: UseSkill(ref a, 207); break;
+                        case 6: UseSkill(ref a, 451); break;
+                        case 7: UseSkill(ref a, 478); break;
+                        case 8: UseSkill(ref a, 122); break;
+                        case 9: UseSkill(ref a, 141); break;
+                        case 10: UseSkill(ref a, 489); break;
+                        case 11: UseSkill(ref a, 489); break;
+                    }
+                }
+            }
+            else if (actionTrackers[a.work.id].phase == 2)
+            {
+                if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(490) &&
+                    (actionTrackers[a.work.id].currentBattleTurnCount - 1) % 3 == 0)
+                    UseSkill(ref a, 490);
+                else if (random.Next(4) == 0 &&
+                    !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(57) &&
+                    !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77))
+                {
+                    if (AllyPartyBuffed(1) && random.Next(2) == 0)
+                    {
+                        UseSkill(ref a, 57); return;
+                    }
+                    else if (EnemyPartyDebuffed(1))
+                    {
+                        UseSkill(ref a, 77); return;
+                    }
+                }
+                else if (actionTrackers[a.work.id].skillsUsedThisTurn.Contains(432) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(27) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(442) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(462) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(63) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(207) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(451) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(490))
+                {
+                    int randomValue = random.Next(4);
+                    switch (randomValue)
+                    {
+                        case 0: UseSkill(ref a, 122); break;
+                        case 1: UseSkill(ref a, 141); break;
+                        case 2: UseSkill(ref a, 489); break;
+                        case 3: UseSkill(ref a, 489); break;
+                    }
+                }
+                else
+                {
+                    int randomValue = random.Next(12);
+                    switch (randomValue)
+                    {
+                        case 0: UseSkill(ref a, 432); break;
+                        case 1: UseSkill(ref a, 27); break;
+                        case 2: UseSkill(ref a, 442); break;
+                        case 3: UseSkill(ref a, 462); break;
+                        case 4: UseSkill(ref a, 63); break;
+                        case 5: UseSkill(ref a, 207); break;
+                        case 6: UseSkill(ref a, 451); break;
+                        case 7: UseSkill(ref a, 478); break;
+                        case 8: UseSkill(ref a, 122); break;
+                        case 9: UseSkill(ref a, 141); break;
+                        case 10: UseSkill(ref a, 489); break;
+                        case 11: UseSkill(ref a, 489); break;
+                    }
+                }
+            }
+            else if (actionTrackers[a.work.id].phase == 3)
+            {
+                if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(490) &&
+                    (actionTrackers[a.work.id].currentBattleTurnCount - 1) % 3 == 0)
+                    UseSkill(ref a, 490);
+                else if (random.Next(4) == 0 &&
+                    !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(57) &&
+                    !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77))
+                {
+                    if (AllyPartyBuffed(1) && random.Next(2) == 0)
+                    {
+                        UseSkill(ref a, 57); return;
+                    }
+                    else if (EnemyPartyDebuffed(1))
+                    {
+                        UseSkill(ref a, 77); return;
+                    }
+                }
+                else if (!AllyPartyDebuffed(3) && random.Next(3 + (Convert.ToInt32(actionTrackers[a.work.id].skillsUsedThisTurn.Contains(206)) * 3)) == 0)
+                    UseSkill(ref a, 206);
+                else if (actionTrackers[a.work.id].skillsUsedThisTurn.Contains(432) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(27) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(442) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(462) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(63) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(207) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(451) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(490))
+                {
+                    UseSkill(ref a, 489);
+                }
+                else
+                {
+                    int randomValue = random.Next(10);
+                    switch (randomValue)
+                    {
+                        case 0: UseSkill(ref a, 432); break;
+                        case 1: UseSkill(ref a, 27); break;
+                        case 2: UseSkill(ref a, 442); break;
+                        case 3: UseSkill(ref a, 462); break;
+                        case 4: UseSkill(ref a, 63); break;
+                        case 5: UseSkill(ref a, 207); break;
+                        case 6: UseSkill(ref a, 451); break;
+                        case 7: UseSkill(ref a, 478); break;
+                        case 8: UseSkill(ref a, 489); break;
+                        case 9: UseSkill(ref a, 489); break;
+                    }
+                }
+            }
+        }
+
         private static void SargeGirimekhalaAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
             if (actionTrackers[a.work.id].extraTurns < 1)
@@ -1931,7 +2096,7 @@ namespace NocturneInsaniax
             else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(27))
                 UseSkill(ref a, 27);
             else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77) && EnemyPartyDebuffed(1))
-            UseSkill(ref a, 77);
+                UseSkill(ref a, 77);
             else
             {
                 int randomValue = random.Next(2);

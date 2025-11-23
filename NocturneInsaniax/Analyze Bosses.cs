@@ -1031,17 +1031,25 @@ namespace NocturneInsaniax
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hp01").gameObject.SetActive(state);
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hp02").gameObject.SetActive(state);
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hp03").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hp04").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hp05").gameObject.SetActive(state);
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hpfull01").gameObject.SetActive(state);
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hpfull02").gameObject.SetActive(state);
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hpfull03").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hpfull04").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hpfull05").gameObject.SetActive(state);
 
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/banalyze_slash").gameObject.SetActive(state);
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mp01").gameObject.SetActive(state);
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mp02").gameObject.SetActive(state);
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mp03").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mp04").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mp05").gameObject.SetActive(state);
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mpfull01").gameObject.SetActive(state);
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mpfull02").gameObject.SetActive(state);
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mpfull03").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mpfull04").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mpfull05").gameObject.SetActive(state);
             }
 
             public static void DisplayHP(bool state)
@@ -1050,9 +1058,13 @@ namespace NocturneInsaniax
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hp01").gameObject.SetActive(state);
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hp02").gameObject.SetActive(state);
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hp03").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hp04").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hp05").gameObject.SetActive(state);
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hpfull01").gameObject.SetActive(state);
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hpfull02").gameObject.SetActive(state);
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hpfull03").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hpfull04").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_hp/banalyze_hp_known/num_hpfull05").gameObject.SetActive(state);
             }
 
             public static void DisplayMP(bool state)
@@ -1061,9 +1073,13 @@ namespace NocturneInsaniax
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mp01").gameObject.SetActive(state);
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mp02").gameObject.SetActive(state);
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mp03").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mp04").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mp05").gameObject.SetActive(state);
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mpfull01").gameObject.SetActive(state);
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mpfull02").gameObject.SetActive(state);
                 nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mpfull03").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mpfull04").gameObject.SetActive(state);
+                nbMainProcess.GetBattleUI(5).transform.Find("banalyze_mp/banalyze_mp_known/num_mpfull05").gameObject.SetActive(state);
             }
         }
     }

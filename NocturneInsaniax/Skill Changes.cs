@@ -18,9 +18,9 @@ namespace NocturneInsaniax
     internal partial class NocturneInsaniax : MelonMod
     {
         public static ushort[] bossList = new ushort[] {
-            162, 163, 164, 165, 166, 248, 251, 252, 254, 256, 257, 258, 259, 262, 263, 264, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282,
-            283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 312, 313, 320, 321, 322, 323,
-            324, 325, 326, 327, 328, 329, 333, 334, 335, 337, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 362, 363, 364, 365, 366
+            162, 163, 164, 165, 166, 248, 249, 251, 252, 254, 256, 257, 258, 259, 262, 263, 264, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281,
+            282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 312, 313, 320, 321, 322,
+            323, 324, 325, 326, 327, 328, 329, 333, 334, 335, 337, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 362, 363, 364, 365, 366
         };
         public static ushort[] pushedSkillList = new ushort[] { 142, 148, 149, 150, 151, 164, 165, 166, 167, 234, 403, 407, 408, 416, 417, 496 };
 
@@ -201,6 +201,8 @@ namespace NocturneInsaniax
                     case 480: __result = "Acrobat Kick"; return false;
                     case 481: __result = "Oni-Jackura"; return false;
 
+                    case 489: __result = "Pain"; return false;
+                    case 490: __result = "Spiteful Force"; return false;
                     case 491: __result = "Phlegethon"; return false;
                     case 492: __result = "Judecca Tomb"; return false;
                     case 493: __result = "Weeping Heaven"; return false;
@@ -844,7 +846,7 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(23, 0);
                     //datCalc.datAddDevil(7, 0);
                     //datCalc.datAddDevil(104, 0);
-                    //datCalc.datAddDevil(230, 0);
+                    datCalc.datAddDevil(230, 0);
 
                     //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 56).Count() == 0)
                     //{
@@ -2250,6 +2252,9 @@ namespace NocturneInsaniax
             AcrobatKick(480);
             OniJackura(481);
 
+            Pain(489);
+            SpitefulForce(490);
+
             // Lucifer Skills
             Phlegethon(491);
             JudeccaTomb(492);
@@ -2288,8 +2293,9 @@ namespace NocturneInsaniax
             DoubleAttackPassive(20);
             LifeAid(58);
             ManaAid(59);
-            LifeRefill(60);
-            ManaRefill(61);
+            VictoryCry(60);
+            LifeRefill(61);
+            ManaRefill(62);
 
             PhysBoost(74);
             MagicBoost(75);
@@ -8616,6 +8622,102 @@ namespace NocturneInsaniax
             datNormalSkillVisual.tbl[id].hatudo = 0;
         }
 
+        private static void Pain(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 16;
+            datSkill.tbl[id].skillattr = 5;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 0;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 1;
+            datNormalSkill.tbl[id].criticalpoint = 33;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 150;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 48;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 0;
+            datNormalSkill.tbl[id].magicbase = 0;
+            datNormalSkill.tbl[id].magiclimit = 0;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 0;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 27, 107);
+            datNormalSkillVisual.tbl[id].motion = 8;
+        }
+
+        private static void SpitefulForce(ushort id)
+        {
+            datSkill.tbl[id].flag = 0;
+            datSkill.tbl[id].keisyoform = 1;
+            datSkill.tbl[id].skillattr = 5;
+            datSkill.tbl[id].index = (short)id;
+            datSkill.tbl[id].type = 0;
+
+            datNormalSkill.tbl[id].badlevel = 255;
+            datNormalSkill.tbl[id].badtype = 0;
+            datNormalSkill.tbl[id].basstatus = 0;
+            datNormalSkill.tbl[id].cost = 0;
+            datNormalSkill.tbl[id].costbase = 0;
+            datNormalSkill.tbl[id].costtype = 2;
+            datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].deadtype = 0;
+            datNormalSkill.tbl[id].failpoint = 0;
+            datNormalSkill.tbl[id].flag = 0;
+            datNormalSkill.tbl[id].hitlevel = 255;
+            datNormalSkill.tbl[id].hitprog = 0;
+            datNormalSkill.tbl[id].hittype = 1;
+            datNormalSkill.tbl[id].hojopoint = 99;
+            datNormalSkill.tbl[id].hojotype = 0;
+            datNormalSkill.tbl[id].hpbase = 0;
+            datNormalSkill.tbl[id].hpn = 20;
+            datNormalSkill.tbl[id].hptype = 1;
+            datNormalSkill.tbl[id].koukatype = 1;
+            datNormalSkill.tbl[id].magicbase = 30;
+            datNormalSkill.tbl[id].magiclimit = 32767;
+            datNormalSkill.tbl[id].minus = 100;
+            datNormalSkill.tbl[id].mpbase = 0;
+            datNormalSkill.tbl[id].mpn = 50;
+            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].program = 0;
+            datNormalSkill.tbl[id].targetarea = 2;
+            datNormalSkill.tbl[id].targetcntmax = 1;
+            datNormalSkill.tbl[id].targetcntmin = 1;
+            datNormalSkill.tbl[id].targetprog = 0;
+            datNormalSkill.tbl[id].targetrandom = 0;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
+            datNormalSkill.tbl[id].untargetbadstat = 0;
+            datNormalSkill.tbl[id].use = 2;
+
+            OverWriteSkillEffect(id, 152);
+            datNormalSkillVisual.tbl[id].motion = 13;
+        }
+
         // Lucifer Skills
 
         private static void DarkMatter(ushort id)
@@ -8720,7 +8822,7 @@ namespace NocturneInsaniax
             datSkill.tbl[id].index = (short)id;
             datSkill.tbl[id].type = 0;
 
-            datNormalSkill.tbl[id].badlevel = 22;
+            datNormalSkill.tbl[id].badlevel = 27;
             datNormalSkill.tbl[id].badtype = 1;
             datNormalSkill.tbl[id].basstatus = 1025;
             datNormalSkill.tbl[id].cost = 0;
@@ -8767,7 +8869,7 @@ namespace NocturneInsaniax
             datSkill.tbl[id].index = (short)id;
             datSkill.tbl[id].type = 0;
 
-            datNormalSkill.tbl[id].badlevel = 22;
+            datNormalSkill.tbl[id].badlevel = 27;
             datNormalSkill.tbl[id].badtype = 1;
             datNormalSkill.tbl[id].basstatus = 258;
             datNormalSkill.tbl[id].cost = 0;
@@ -8814,7 +8916,7 @@ namespace NocturneInsaniax
             datSkill.tbl[id].index = (short)id;
             datSkill.tbl[id].type = 0;
 
-            datNormalSkill.tbl[id].badlevel = 22;
+            datNormalSkill.tbl[id].badlevel = 27;
             datNormalSkill.tbl[id].badtype = 1;
             datNormalSkill.tbl[id].basstatus = 128;
             datNormalSkill.tbl[id].cost = 0;
@@ -9696,6 +9798,11 @@ namespace NocturneInsaniax
             datSkill.tbl[347].skillattr = 15;
 
             datSpecialSkill.tbl[id].n = 4;
+        }
+
+        private static void VictoryCry(ushort id)
+        {
+            datSkill.tbl[348].skillattr = 15;
         }
 
         private static void LifeRefill(ushort id)

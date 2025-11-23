@@ -282,6 +282,13 @@ namespace NocturneInsaniax
                             demeehoModel.transform.eulerAngles = new Vector3(0f, 184f, 0);
                             break;
                         }
+                    case "devil_0xe6":
+                        {
+                            var sethModel = cmpModel.cmpDevilObj;
+                            sethModel.transform.position = new Vector3(0.04f, -1.3f, -0.4f);
+                            sethModel.transform.eulerAngles = new Vector3(0f, 210f, 0);
+                            break;
+                        }
                     default: break;
                 }
             }
@@ -384,6 +391,14 @@ namespace NocturneInsaniax
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D229_MSEE5_14_E", "D229_MSEE5_14_E", (87818256 + 177209344), false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D229_MSEE5_15_E", "D229_MSEE5_15_E", (87818257 + 177209344), false);
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D229_MSEE5_23_E", "D229_MSEE5_23_E", (331612176 + 177209344), false);
+
+                // Seth
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D230_MSEA1_03", "D230_MSEA1_03", 509607936, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D230_MSEA1_04", "D230_MSEA1_04", 509673472, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D230_MSEA1_05", "D230_MSEA1_05", 509739008, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D230_MSEA1_06", "D230_MSEA1_06", 509804544, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D230_MSEA1_08", "D230_MSEA1_08", 509870080, false);
+                Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D230_MSEA1_23", "D230_MSEA1_23", 509935616, false);
 
                 // Devil Dante
                 Smg.Instance._TblAdd(Smg.eType.SE_MSE, "D252M_MSEFC_03", "D252M_MSEFC_03", 532676608, false);
@@ -534,11 +549,12 @@ namespace NocturneInsaniax
                 SndAssetBundleManager.SEBundleTable.Add("dvl0xe5", demeehoKeys);
 
                 var sethKeys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
-                sethKeys.Add("D230_MSEE6_03", new SndAssetBundleManager.SndData { key = "dvl0xe6", path = 4, id = 0, name = "D230_MSEE6_03", diff = true });
-                sethKeys.Add("D230_MSEE6_04", new SndAssetBundleManager.SndData { key = "dvl0xe6", path = 4, id = 0, name = "D230_MSEE6_04", diff = true });
-                sethKeys.Add("D230_MSEE6_05", new SndAssetBundleManager.SndData { key = "dvl0xe6", path = 4, id = 0, name = "D230_MSEE6_05", diff = true });
-                sethKeys.Add("D230_MSEE6_08", new SndAssetBundleManager.SndData { key = "dvl0xe6", path = 4, id = 0, name = "D230_MSEE6_08", diff = true });
-                sethKeys.Add("D230_MSEE6_23", new SndAssetBundleManager.SndData { key = "dvl0xe6", path = 4, id = 0, name = "D230_MSEE6_23", diff = true });
+                sethKeys.Add("D230_MSEA1_03", new SndAssetBundleManager.SndData { key = "dvl0xe6", path = 4, id = 0, name = "D230_MSEA1_03", diff = true });
+                sethKeys.Add("D230_MSEA1_04", new SndAssetBundleManager.SndData { key = "dvl0xe6", path = 4, id = 0, name = "D230_MSEA1_04", diff = true });
+                sethKeys.Add("D230_MSEA1_05", new SndAssetBundleManager.SndData { key = "dvl0xe6", path = 4, id = 0, name = "D230_MSEA1_05", diff = true });
+                sethKeys.Add("D230_MSEA1_06", new SndAssetBundleManager.SndData { key = "dvl0xe6", path = 4, id = 0, name = "D230_MSEA1_06", diff = true });
+                sethKeys.Add("D230_MSEA1_08", new SndAssetBundleManager.SndData { key = "dvl0xe6", path = 4, id = 0, name = "D230_MSEA1_08", diff = true });
+                sethKeys.Add("D230_MSEA1_23", new SndAssetBundleManager.SndData { key = "dvl0xe6", path = 4, id = 0, name = "D230_MSEA1_23", diff = true });
                 SndAssetBundleManager.SEBundleTable.Add("dvl0xe6", sethKeys);
 
                 var devilDanteKeys = new Il2CppSystem.Collections.Generic.Dictionary<string, SndAssetBundleManager.SndData>();
@@ -729,18 +745,40 @@ namespace NocturneInsaniax
             }
         }
 
+        [HarmonyPatch(typeof(SoundManager), nameof(SoundManager.p2sdPlaySE_Dead))]
+        private class p2sdPlaySE_DeadPatch
+        {
+            public static void Postfix(int devil_id)
+            {
+                MelonLogger.Msg("--SoundManager.p2sdPlaySE_Dead--");
+                MelonLogger.Msg("devil_id: " + devil_id);
+                if (devil_id == 230 || devil_id == 248)
+                    SoundManager.PlaySE("D230_MSEA1_23");
+            }
+        }
+
+        //[HarmonyPatch(typeof(SoundManager), nameof(SoundManager.PlaySE))]
+        //private class PlaySEPatch
+        //{
+        //    public static void Postfix(string name)
+        //    {
+        //        MelonLogger.Msg("--SoundManager.PlaySE--");
+        //        MelonLogger.Msg("name: " + name);
+        //    }
+        //}
+
         //[HarmonyPatch(typeof(SndAssetBundleManager), nameof(SndAssetBundleManager.LoadKeysMSE))]
         //private class LoadKeysMSEPatch
         //{
         //    public static void Postfix()
         //    {
         //        MelonLogger.Msg("--SndAssetBundleManager.LoadKeysMSE--");
-        //        MelonLogger.Msg("Jack Frost keys");
+        //        MelonLogger.Msg("Samael keys");
         //        for (int i = 0; i <= 25; i++)
-        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(60, i));
-        //        MelonLogger.Msg("Demee-Ho keys");
+        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(161, i));
+        //        MelonLogger.Msg("Seth keys");
         //        for (int i = 0; i <= 25; i++)
-        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(229, i));
+        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(230, i));
         //    }
         //}
 

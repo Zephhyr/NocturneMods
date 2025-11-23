@@ -82,13 +82,29 @@ namespace NocturneInsaniax
                         s.commcnt[2] = itemIndices.Count;
                     }
 
+                    if (nbMainProcess.nbGetUnitWorkFromFormindex(s.my.formindex).id == 230)
+                    {
+                        //Test - Add all skills
+                        var skillCommands = new ushort[288];
+                        for (ushort i = 0; i < 288; i++)
+                            skillCommands[i] = i;
+                        skillCommands[0] = s.commlist[0][0];
+                        skillCommands[1] = 1;
+                        skillCommands[2] = 96;
+                        skillCommands[3] = 117;
+                        skillCommands[4] = 184;
+                        skillCommands[5] = 176;
+                        skillCommands[6] = 209;
 
-                    //Test - Add all skills
+                        s.commlist[0] = skillCommands;
+                        s.commcnt[0] = 288;
+                    }
+                    ////Test - Add all skills
                     //var skillCommands = new ushort[288];
                     //for (ushort i = 0; i < 288; i++)
                     //    skillCommands[i] = i;
                     //skillCommands[0] = s.commlist[0][0];
-                    //skillCommands[1] = 161;
+                    ////skillCommands[1] = 161;
                     ////skillCommands[2] = 134;
                     ////skillCommands[3] = 141;
 
