@@ -11758,7 +11758,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 48;
             datDevilFormat.tbl[id].level = 88;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 32, 0, 36, 30, 24, 24 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 32, 0, 36, 36, 32, 32 };
             datDevilFormat.tbl[id].keisyotype = 9;
             datDevilFormat.tbl[id].keisyoform = 191;
 

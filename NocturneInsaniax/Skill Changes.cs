@@ -8694,7 +8694,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 20;
+            datNormalSkill.tbl[id].hpn = 25;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].koukatype = 1;
             datNormalSkill.tbl[id].magicbase = 30;
