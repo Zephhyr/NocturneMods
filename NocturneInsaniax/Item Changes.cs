@@ -1232,6 +1232,20 @@ namespace NocturneInsaniax
             fldGlobal.fldHitData._fldItemBoxTbl[337]._ItemID = 24;
             fldGlobal.fldHitData._fldItemBoxTbl[337]._ItemNum = 1;
 
+            // Boss Seth Box
+            fldGlobal.fldHitData._fldItemBoxTbl[75]._Type = 2;
+            fldGlobal.fldHitData._fldItemBoxTbl[75]._ItemID = 0;
+            fldGlobal.fldHitData._fldItemBoxTbl[75]._ItemNum = 0;
+            fldGlobal.fldHitData._fldItemBoxTbl[75]._Trap = 1;
+            fldGlobal.fldHitData._fldItemBoxTbl[75]._Param = 989;
+
+            // Triple Reason Box
+            fldGlobal.fldHitData._fldItemBoxTbl[347]._Type = 2;
+            fldGlobal.fldHitData._fldItemBoxTbl[347]._ItemID = 0;
+            fldGlobal.fldHitData._fldItemBoxTbl[347]._ItemNum = 0;
+            fldGlobal.fldHitData._fldItemBoxTbl[347]._Trap = 1;
+            fldGlobal.fldHitData._fldItemBoxTbl[347]._Param = 1274;
+
             // Classic Mot Box
             fldGlobal.fldHitData._fldItemBoxTbl[348]._Type = 2;
             fldGlobal.fldHitData._fldItemBoxTbl[348]._ItemID = 0;
@@ -1258,8 +1272,7 @@ namespace NocturneInsaniax
             fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemID = 0;
             fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemNum = 0;
             fldGlobal.fldHitData._fldItemBoxTbl[351]._Trap = 1;
-            //fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 451; //1278;
-            fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 989;
+            fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 1278;
 
             //fldGlobal.fldHitData._fldItemBoxTbl.Add(new fldTakaraTbl_t { _ItemID = 47, _ItemNum = 5 });
         }

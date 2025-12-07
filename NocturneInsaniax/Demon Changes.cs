@@ -414,6 +414,18 @@ namespace NocturneInsaniax
                         __result = "Seth"; return false;
                     case "<AISYO_L0230>":
                         __result = "Rpl: Dark • Null: Elec/Force • Str: Fire/Ailments • Weak: Ice/Shot"; return false;
+                    case "<DEVIL_L0244>":
+                        __result = "Ahriman"; return false;
+                    case "<AISYO_L0244>":
+                        __result = "Rpl: Dark"; return false;
+                    case "<DEVIL_L0245>":
+                        __result = "Baal Avatar"; return false;
+                    case "<AISYO_L0245>":
+                        __result = "Rpl: Light"; return false;
+                    case "<DEVIL_L0246>":
+                        __result = "Noah"; return false;
+                    case "<AISYO_L0246>":
+                        __result = "Null: Light/Dark • Weak: Elements"; return false;
                     case "<DEVIL_L0248>":
                         __result = "Seth"; return false;
                     case "<AISYO_L0248>":
@@ -1163,6 +1175,8 @@ namespace NocturneInsaniax
             Demeeho(229);
             Seth(230);
 
+            TripleReasonAhriman(244);
+            TripleReasonBaalAvatar(245);
             TripleReasonNoah(246);
 
             BossSeth(248);
@@ -11686,13 +11700,143 @@ namespace NocturneInsaniax
             datDevilNegoFormat.tbl[id] = datDevilNegoFormat.tbl[161];
         }
 
+        private static void TripleReasonAhriman(int id)
+        {
+            datDevilFormat.tbl[id].race = 19;
+            datDevilFormat.tbl[id].aisyoid = (short)id;
+            datDevilFormat.tbl[id].keisyotype = -1;
+            datDevilFormat.tbl[id].keisyoform = 1;
+
+            datDevilName.txt[id] = datDevilName.txt[258];
+
+            // Affinities
+            datAisyo.tbl[id][0] = 100; // Phys
+            datAisyo.tbl[id][1] = 100; // Fire
+            datAisyo.tbl[id][2] = 100; // Ice
+            datAisyo.tbl[id][3] = 100; // Elec
+            datAisyo.tbl[id][4] = 100; // Force
+            datAisyo.tbl[id][6] = 100; // Light
+            datAisyo.tbl[id][7] = 131072; // Dark
+            datAisyo.tbl[id][8] = 1048676; // Curse
+            datAisyo.tbl[id][9] = 1048676; // Nerve
+            datAisyo.tbl[id][10] = 1048676; // Mind
+            datAisyo.tbl[id][12] = 100; // Shot
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].maxhp = 42000;
+            datDevilFormat.tbl[id].hp = 42000;
+            datDevilFormat.tbl[id].maxmp = 60000;
+            datDevilFormat.tbl[id].mp = 60000;
+            datDevilFormat.tbl[id].level = 90;
+            datDevilFormat.tbl[id].flag = 563;
+            datDevilFormat.tbl[id].param[0] = 24;
+            datDevilFormat.tbl[id].param[2] = 24;
+            datDevilFormat.tbl[id].param[3] = 40;
+            datDevilFormat.tbl[id].param[4] = 26;
+            datDevilFormat.tbl[id].param[5] = 26;
+
+            datDevilFormat.tbl[id].dropexp = 20000;
+            datDevilFormat.tbl[id].dropmakka = 30000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 174; // Crush
+            datDevilFormat.tbl[id].skill[1] = 168; // Tentacle
+            datDevilFormat.tbl[id].skill[2] = 27; // Megidolaon
+            datDevilFormat.tbl[id].skill[3] = 253; // Apocalypse
+            datDevilFormat.tbl[id].skill[4] = 460; // Silent Prayer
+
+            datDevilAI.divTbls[2][2].ailevel = 1;
+
+            mdlFileDefTable.devilModelFileTable[id] = mdlFileDefTable.devilModelFileTable[258];
+            mdlFileDefTable.devilOnModelFileTable[id] = mdlFileDefTable.devilOnModelFileTable[258];
+            mdlFileDefTable.devilModelIndex[id] = mdlFileDefTable.devilModelIndex[258];
+            mdlFileDefTable.devilOnModelIndex[id] = mdlFileDefTable.devilOnModelIndex[258];
+
+            mdlFileDefTable.devilModelIndex[id].major = 6;
+            mdlFileDefTable.devilModelIndex[id].minor = 258;
+            mdlFileDefTable.devilModelIndex[id].scale = 4096;
+            mdlFileDefTable.devilModelIndex[id].radius = 1000;
+
+            datDevilVisual07.tbl_7_0E0_0FF[20] = CopyDevilVisual(datDevilVisual08.tbl_8_100_11F[2]);
+            datDevilVisual07.tbl_7_0E0_0FF[20].formscale = 0.6f;
+
+            datMotionSeTable.tbl[id] = 258;
+
+            //datDevilNegoFormat.tbl[id] = datDevilNegoFormat.tbl[258];
+        }
+
+        private static void TripleReasonBaalAvatar(int id)
+        {
+            datDevilFormat.tbl[id].race = 1;
+            datDevilFormat.tbl[id].aisyoid = (short)id;
+            datDevilFormat.tbl[id].keisyotype = -1;
+            datDevilFormat.tbl[id].keisyoform = 1;
+
+            datDevilName.txt[id] = datDevilName.txt[288];
+
+            // Affinities
+            datAisyo.tbl[id][0] = 100; // Phys
+            datAisyo.tbl[id][1] = 100; // Fire
+            datAisyo.tbl[id][2] = 100; // Ice
+            datAisyo.tbl[id][3] = 100; // Elec
+            datAisyo.tbl[id][4] = 100; // Force
+            datAisyo.tbl[id][6] = 131072; // Light
+            datAisyo.tbl[id][7] = 100; // Dark
+            datAisyo.tbl[id][8] = 1048676; // Curse
+            datAisyo.tbl[id][9] = 1048676; // Nerve
+            datAisyo.tbl[id][10] = 1048676; // Mind
+            datAisyo.tbl[id][12] = 100; // Shot
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].maxhp = 40000;
+            datDevilFormat.tbl[id].hp = 40000;
+            datDevilFormat.tbl[id].maxmp = 60000;
+            datDevilFormat.tbl[id].mp = 60000;
+            datDevilFormat.tbl[id].level = 90;
+            datDevilFormat.tbl[id].flag = 563;
+            datDevilFormat.tbl[id].param[0] = 20;
+            datDevilFormat.tbl[id].param[2] = 20;
+            datDevilFormat.tbl[id].param[3] = 30;
+            datDevilFormat.tbl[id].param[4] = 28;
+            datDevilFormat.tbl[id].param[5] = 28;
+
+            datDevilFormat.tbl[id].dropexp = 20000;
+            datDevilFormat.tbl[id].dropmakka = 30000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 175; // Repulse
+            datDevilFormat.tbl[id].skill[1] = 444; // Heavenly Cyclone
+            datDevilFormat.tbl[id].skill[2] = 476; // Smite
+            datDevilFormat.tbl[id].skill[3] = 195; // Radiance
+            datDevilFormat.tbl[id].skill[4] = 453; // Antichthon
+            datDevilFormat.tbl[id].skill[5] = 459; // Luster Candy
+            datDevilFormat.tbl[id].skill[6] = 458; // Heat Riser
+            datDevilFormat.tbl[id].skill[7] = 201; // Bael's Bane 
+
+            datDevilAI.divTbls[2][32].ailevel = 1;
+
+            mdlFileDefTable.devilModelFileTable[id] = mdlFileDefTable.devilModelFileTable[288];
+            mdlFileDefTable.devilOnModelFileTable[id] = mdlFileDefTable.devilOnModelFileTable[288];
+            mdlFileDefTable.devilModelIndex[id] = mdlFileDefTable.devilModelIndex[288];
+            mdlFileDefTable.devilOnModelIndex[id] = mdlFileDefTable.devilOnModelIndex[288];
+
+            mdlFileDefTable.devilModelIndex[id].major = 6;
+            mdlFileDefTable.devilModelIndex[id].minor = 288;
+            mdlFileDefTable.devilModelIndex[id].scale = 4096;
+            mdlFileDefTable.devilModelIndex[id].radius = 1000;
+
+            datDevilVisual07.tbl_7_0E0_0FF[21] = CopyDevilVisual(datDevilVisual09.tbl_9_120_13F[0]);
+            datDevilVisual07.tbl_7_0E0_0FF[21].formscale = 1f;
+
+            datMotionSeTable.tbl[id] = 288;
+
+            //datDevilNegoFormat.tbl[id] = datDevilNegoFormat.tbl[288];
+        }
+
         private static void TripleReasonNoah(int id)
         {
-            datDevilFormat.tbl[id].flag = 563;
             datDevilFormat.tbl[id].race = 18;
-            datDevilFormat.tbl[id].level = 90;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 20, 0, 40, 30, 26, 26 };
             datDevilFormat.tbl[id].keisyotype = -1;
             datDevilFormat.tbl[id].keisyoform = 1;
 
@@ -11718,11 +11862,28 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].hp = 30000;
             datDevilFormat.tbl[id].maxmp = 60000;
             datDevilFormat.tbl[id].mp = 60000;
+            datDevilFormat.tbl[id].level = 90;
+            datDevilFormat.tbl[id].flag = 563;
+            datDevilFormat.tbl[id].param[0] = 20;
+            datDevilFormat.tbl[id].param[2] = 40;
+            datDevilFormat.tbl[id].param[3] = 30;
+            datDevilFormat.tbl[id].param[4] = 26;
+            datDevilFormat.tbl[id].param[5] = 26;
 
-            datDevilFormat.tbl[id].dropexp = 0;
-            datDevilFormat.tbl[id].dropmakka = 60000;
+            datDevilFormat.tbl[id].dropexp = 20000;
+            datDevilFormat.tbl[id].dropmakka = 30000;
 
-            datDevilAI.divTbls[1][118].scriptid = 0;
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 6; // Maragidyne
+            datDevilFormat.tbl[id].skill[1] = 12; // Mabufudyne
+            datDevilFormat.tbl[id].skill[2] = 18; // Maziodyne
+            datDevilFormat.tbl[id].skill[3] = 24; // Mazandyne
+            datDevilFormat.tbl[id].skill[4] = 250; // Domination
+            datDevilFormat.tbl[id].skill[5] = 57; // Dekaja
+            datDevilFormat.tbl[id].skill[6] = 77; // Dekunda
+            datDevilFormat.tbl[id].skill[7] = 366; // Abyssal Mask
+
+            datDevilAI.divTbls[2][3].ailevel = 1;
 
             // Display Skill
             datDevilFormat.tbl[id].skill[0] = 6; // Maragidyne
@@ -11745,7 +11906,7 @@ namespace NocturneInsaniax
             mdlFileDefTable.devilModelIndex[id].radius = 1000;
 
             datDevilVisual07.tbl_7_0E0_0FF[22] = CopyDevilVisual(datDevilVisual08.tbl_8_100_11F[3]);
-            //datDevilVisual07.tbl_7_0E0_0FF[22].formscale = 1.8f;
+            datDevilVisual07.tbl_7_0E0_0FF[22].formscale = 0.6f;
 
             datMotionSeTable.tbl[id] = 259;
 
@@ -11790,7 +11951,7 @@ namespace NocturneInsaniax
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 122; // Hell Fang
-            datDevilFormat.tbl[id].skill[0] = 141; // Riot Gun
+            datDevilFormat.tbl[id].skill[1] = 141; // Riot Gun
             datDevilFormat.tbl[id].skill[2] = 478; // Scintilla
             datDevilFormat.tbl[id].skill[3] = 489; // Pain
             datDevilFormat.tbl[id].skill[4] = 490; // Spiteful Force

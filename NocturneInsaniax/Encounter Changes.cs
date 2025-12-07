@@ -1651,6 +1651,21 @@ namespace NocturneInsaniax
             datEncount.tbl[989].maxcall = 0;
             datEncount.tbl[989].maxparty = 0;
 
+            // Boss Triple Reason
+            datEncount.tbl[1274].devil[0] = 246;
+            datEncount.tbl[1274].devil[1] = 245;
+            datEncount.tbl[1274].devil[2] = 244;
+            datEncount.tbl[1274].backattack = -1;
+            datEncount.tbl[1274].btlsound = 9;
+            datEncount.tbl[1274].esc = 1;
+            datEncount.tbl[1274].flag = 13;
+            datEncount.tbl[1274].formationtype = 0;
+            datEncount.tbl[1274].areaid = 1;
+            datEncount.tbl[1274].stageid = 240;
+            datEncount.tbl[1274].maxcall = 0;
+            datEncount.tbl[1274].maxparty = 0;
+
+
             // Classic Mot
             datEncount.tbl[1275].devil[0] = 334;
             datEncount.tbl[1275].backattack = -1;

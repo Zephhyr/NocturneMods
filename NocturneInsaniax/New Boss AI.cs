@@ -393,6 +393,9 @@ namespace NocturneInsaniax
                         case 228: VritraAI(ref a, ref code, ref n); break;
                         case 229: DemeeHoAI(ref a, ref code, ref n); break;
 
+                        case 244: TripleReasonAhrimanAI(ref a, ref code, ref n); break;
+                        case 245: TripleReasonBaalAvatarAI(ref a, ref code, ref n); break;
+                        case 246: TripleReasonNoahAI(ref a, ref code, ref n); break;
                         case 248: BossSethAI(ref a, ref code, ref n); break;
                         case 249: SargeGirimekhalaAI(ref a, ref code, ref n); break;
                         case 250: NKEPixieAI(ref a, ref code, ref n); break;
@@ -1923,6 +1926,197 @@ namespace NocturneInsaniax
                     case 4: UseSkill(ref a, 35); break;
                 }
             }
+        }
+
+        private static void TripleReasonAhrimanAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            ushort currentHpPercent = BossCurrentHpPercent(ref a);
+            MelonLogger.Msg("Ahriman HP%: " + currentHpPercent);
+            MelonLogger.Msg("Ahriman HP: " + a.work.hp);
+
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(460) && EnemyPartyDebuffed(1) &&
+                (a.data.playerpcnt == 1 && (actionTrackers[a.work.id].currentBattleTurnCount % 4) == 0) || (a.data.playerpcnt > 1 && (actionTrackers[a.work.id].currentBattleTurnCount % 3) == 0) &&
+                actionTrackers[a.work.id].currentTurnActionCount >= 2 && a.data.press4_p <= 1 && a.data.press4_ten <= 1
+                && random.Next(4) != 0)
+            {
+                UseSkill(ref a, 460);
+            }
+            else if (actionTrackers[a.work.id].currentBattleTurnCount == 1 ||
+                actionTrackers[a.work.id].skillsUsedThisTurn.Contains(27) ||
+                actionTrackers[a.work.id].skillsUsedThisTurn.Contains(168) ||
+                actionTrackers[a.work.id].skillsUsedThisTurn.Contains(253))
+            {
+                UseSkill(ref a, 174);
+            }
+            else
+            {
+                int randomValue = random.Next(12);
+                switch (randomValue)
+                {
+                    case 0: UseSkill(ref a, 174); break;
+                    case 1: UseSkill(ref a, 174); break;
+                    case 2: UseSkill(ref a, 174); break;
+                    case 3: UseSkill(ref a, 168); break;
+                    case 4: UseSkill(ref a, 168); break;
+                    case 5: UseSkill(ref a, 168); break;
+                    case 6: UseSkill(ref a, 168); break;
+                    case 7: UseSkill(ref a, 27); break;
+                    case 8: UseSkill(ref a, 27); break;
+                    case 9: UseSkill(ref a, 253); break;
+                    case 10: UseSkill(ref a, 253); break;
+                    case 11: UseSkill(ref a, 253); break;
+                }
+            }
+        }
+
+        private static void TripleReasonBaalAvatarAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            ushort currentHpPercent = BossCurrentHpPercent(ref a);
+            MelonLogger.Msg("Baal Avatar HP%: " + currentHpPercent);
+            MelonLogger.Msg("Baal Avatar HP: " + a.work.hp);
+
+            if (a.data.enemypcnt > 1)
+            {
+                if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(459) ||
+                    (a.data.press4_ten > a.data.press4_p && random.Next(2) == 0 && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(459) && !EnemyPartyBuffed(3)))
+                    UseSkill(ref a, 459);
+                else if (actionTrackers[a.work.id].skillsUsedThisTurn.Contains(195) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(444))
+                {
+                    int randomValue = random.Next(2);
+                    switch (randomValue)
+                    {
+                        case 0: UseSkill(ref a, 175); break;
+                        case 1: UseSkill(ref a, 476); SetTargetingRule(ref code, ref n, 10, n); break;
+                    }
+                }
+                else
+                {
+                    int randomValue = random.Next(4);
+                    switch (randomValue)
+                    {
+                        case 0: UseSkill(ref a, 175); break;
+                        case 1: UseSkill(ref a, 444); break;
+                        case 2: UseSkill(ref a, 195); break;
+                        case 3: UseSkill(ref a, 476); SetTargetingRule(ref code, ref n, 10, n); break;
+                    }
+                }
+
+                if ((a.work.nowindex == 175 && AllyPartyAllImmuneToAttr(175, 0)) ||
+                    (a.work.nowindex == 444 && AllyPartyAllImmuneToAttr(444, 4)) ||
+                    ((a.work.nowindex == 195 || a.work.nowindex == 476) && AllyPartyAllImmuneToAttr(195, 6)))
+                    UseSkill(ref a, 453);
+            }
+            else
+            {
+                if (a.data.press4_ten > a.data.press4_p && random.Next(2) == 0 && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(458) && !EnemyPartyBuffed(3))
+                    UseSkill(ref a, 458);
+                else if (actionTrackers[a.work.id].skillsUsedThisTurn.Contains(195) ||
+                    actionTrackers[a.work.id].skillsUsedThisTurn.Contains(444))
+                {
+                    int randomValue = random.Next(2);
+                    switch (randomValue)
+                    {
+                        case 0: UseSkill(ref a, 175); break;
+                        case 2: UseSkill(ref a, 476); SetTargetingRule(ref code, ref n, 10, n); break;
+                    }
+                }
+                else
+                {
+                    int randomValue = random.Next(4);
+                    switch (randomValue)
+                    {
+                        case 0: UseSkill(ref a, 175); break;
+                        case 2: UseSkill(ref a, 444); break;
+                        case 3: UseSkill(ref a, 195); break;
+                        case 4: UseSkill(ref a, 476); SetTargetingRule(ref code, ref n, 10, n); break;
+                    }
+                }
+
+                if ((a.work.nowindex == 175 && AllyPartyAllImmuneToAttr(175, 0)) ||
+                    (a.work.nowindex == 444 && AllyPartyAllImmuneToAttr(444, 4)) ||
+                    ((a.work.nowindex == 195 || a.work.nowindex == 476) && AllyPartyAllImmuneToAttr(195, 6)))
+                    UseSkill(ref a, 453);
+            }
+        }
+        
+        private static void TripleReasonNoahAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            ushort currentHpPercent = BossCurrentHpPercent(ref a);
+            MelonLogger.Msg("Noah HP%: " + currentHpPercent);
+            MelonLogger.Msg("Noah HP: " + a.work.hp);
+
+            if (actionTrackers[a.work.id].currentTurnActionCount == 1 && (actionTrackers[a.work.id].currentBattleTurnCount % 2) == 0 &&
+                (AllyPartyBuffed(1) || EnemyPartyDebuffed(1)))
+            {
+                if (AllyPartyBuffed(1) && random.Next(2) == 0)
+                {
+                    UseSkill(ref a, 57); return;
+                }
+                else if (EnemyPartyDebuffed(1))
+                {
+                    UseSkill(ref a, 77); return;
+                }
+            }
+            else if (a.work.nowindex == 170 && actionTrackers[a.work.id].phase == 2
+                && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(250) && random.Next(3) == 0)
+                UseSkill(ref a, 250);
+            else
+                switch (auroraValue)
+                {
+                    case 0: UseSkill(ref a, 170); break;
+                    case 248:
+                        {
+                            int randomValue = random.Next(4);
+                            switch (randomValue)
+                            {
+                                case 0: UseSkill(ref a, 170); break;
+                                case 1: UseSkill(ref a, 6); break;
+                                case 2: UseSkill(ref a, 6); break;
+                                case 3: UseSkill(ref a, 234); break;
+                            }
+                            break;
+                        }
+                    case 249:
+                        {
+                            int randomValue = random.Next(4);
+                            switch (randomValue)
+                            {
+                                case 0: UseSkill(ref a, 170); break;
+                                case 1: UseSkill(ref a, 12); break;
+                                case 2: UseSkill(ref a, 12); break;
+                                case 3: UseSkill(ref a, 234); break;
+                            }
+                            break;
+                        }
+                    case 250:
+                        {
+                            int randomValue = random.Next(4);
+                            switch (randomValue)
+                            {
+                                case 0: UseSkill(ref a, 170); break;
+                                case 1: UseSkill(ref a, 18); break;
+                                case 2: UseSkill(ref a, 18); break;
+                                case 3: UseSkill(ref a, 234); break;
+                            }
+                            break;
+                        }
+                    case 251:
+                        {
+                            int randomValue = random.Next(4);
+                            switch (randomValue)
+                            {
+                                case 0: UseSkill(ref a, 170); break;
+                                case 1: UseSkill(ref a, 24); break;
+                                case 2: UseSkill(ref a, 24); break;
+                                case 3: UseSkill(ref a, 234); break;
+                            }
+                            break;
+                        }
+                }
+
+            if ((a.work.nowcommand == 0 && a.work.nowindex == 0) || (a.work.nowcommand == 1 && a.work.nowindex == 2))
+                UseSkill(ref a, 170);
         }
 
         private static void BossSethAI(ref nbActionProcessData_t a, ref int code, ref int n)

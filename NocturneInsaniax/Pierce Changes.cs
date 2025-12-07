@@ -17,8 +17,8 @@ namespace NocturneInsaniax
             {
                 var work = nbMainProcess.nbGetUnitWorkFromFormindex(formindex);
 
-                // Noah
-                if (work.id == 259 || work.id == 292)
+                // Noah's Aurora
+                if (work.id == 246 || work.id == 259 || work.id == 292)
                 {
                     var party = nbMainProcess.nbGetPartyFromFormindex(formindex);
 

@@ -259,9 +259,9 @@ namespace NocturneInsaniax
             { 241, new InnateSkill(383, 15, "", "")}, // 241 
             { 242, new InnateSkill(383, 15, "", "")}, // 242 
             { 243, new InnateSkill(383, 15, "", "")}, // 243 
-            { 244, new InnateSkill(383, 15, "", "")}, // 244 
-            { 245, new InnateSkill(383, 15, "", "")}, // 245 
-            { 246, new InnateSkill(383, 15, "", "")}, // 246 
+            { 244, new InnateSkill(383, 15, "Silencing Bellow", "")}, // 244 Triple Reason Ahriman
+            { 245, new InnateSkill(383, 15, "Condemn Weakness", "")}, // 245 Triple Reason Baal Avatar
+            { 246, new InnateSkill(383, 15, "Aurora", "")}, // 246 Triple Reason Noah
             { 247, new InnateSkill(383, 15, "", "")}, // 247 
             { 248, new InnateSkill(383, 15, "Covetous Fury", "")}, // Boss Seth
             { 249, new InnateSkill(383, 15, "Behemothic Bounce", "")}, // 249 Sarge Girimekhala
@@ -269,7 +269,7 @@ namespace NocturneInsaniax
             { 251, new InnateSkill(383, 02, "Ice Enhancer", "")}, // 251 NKE Jack Frost
             { 252, new InnateSkill(383, 15, "Devil Regeneration", "")}, // 252 Devil Dante
             { 253, new InnateSkill(383, 15, "Withheld Sentence", "")}, // 253 Gamete
-            { 254, new InnateSkill(383, 15, "YHVH", "")}, // 254 YHVH
+            { 254, new InnateSkill(383, 15, "Shalt Not Resist", "")}, // 254 YHVH
             { 255, new InnateSkill(383, 15, "", "")}, // 255 
             { 256, new InnateSkill(383, 15, "Best Friend", "")}, // 256 Boss Forneus
             { 257, new InnateSkill(383, 15, "Phantasmagoria", "")}, // 257 Boss Specter 1 (Mini)

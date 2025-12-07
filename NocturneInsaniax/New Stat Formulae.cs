@@ -916,11 +916,11 @@ namespace NocturneInsaniax
                     nbMainProcess.nbPushAction(4, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, nbMainProcess.nbGetPartyFromFormindex(sformindex).partyindex, 403);
 
                 // Ahriman's Silencing Bellow
-                if (__result == 0 && (workFromFormindex2.id == 258) && random.Next(2) == 0)
+                if (__result == 0 && (workFromFormindex2.id == 244 || workFromFormindex2.id == 258) && random.Next(2) == 0)
                     nbMainProcess.nbPushAction(4, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, nbMainProcess.nbGetPartyFromFormindex(sformindex).partyindex, 142);
 
                 // Noah's Aurora
-                if (__result == 0 && (workFromFormindex2.id == 259 || workFromFormindex2.id == 292) && random.Next(4) != 0)
+                if (__result == 0 && (workFromFormindex2.id == 246 || workFromFormindex2.id == 259 || workFromFormindex2.id == 292) && random.Next(4) != 0)
                     nbMainProcess.nbPushAction(4, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, 234);
             }
         }

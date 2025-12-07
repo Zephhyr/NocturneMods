@@ -270,9 +270,9 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 241 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 242 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 243 
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 244 
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 245 
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 246 
+            new sbyte[] {7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 3    , 3    , 0 }, // 244 Triple Reason Ahriman
+            new sbyte[] {6    , 6    , 6    , 6    , 6    , 6    , 6    , 6    , 6    , 6    , 6    , 6    , 6    , 4    , 4    , 0 }, // 245 Triple Reason Baal Avatar
+            new sbyte[] {7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 3    , 3    , 0 }, // 246 Triple Reason Noah
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 247 
             new sbyte[] {5    , 0    , -7   , 5    , 5    , 5    , -7   , 7    , 3    , 3    , 3    , 5    , 7    , -4   , 0    , 0 }, // 248 Boss Seth
             new sbyte[] {5    , -5   , -5   , -5   , -5   , 5    , -5   , 5    , 5    , 5    , -3   , 5    , 0    , -3   , 2    , 0 }, // 249 Sarge Girimekhala
@@ -1444,7 +1444,7 @@ namespace NocturneInsaniax
                         if (faithfulCompanionActive) // Faithful Companion
                             __result = Convert.ToInt32(__result * 1.2);
 
-                        if ((targetID == 259 || targetID == 292)) // Noah's Aurora
+                        if (targetID == 246 || targetID == 259 || targetID == 292) // Noah's Aurora
                         {
                             var noahParty = nbMainProcess.nbGetPartyFromFormindex(4);
                             var noahAffinity = noahParty.count[19];

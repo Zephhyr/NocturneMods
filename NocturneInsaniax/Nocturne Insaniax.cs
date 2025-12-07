@@ -1166,6 +1166,11 @@ namespace NocturneInsaniax
                     // 15.2281 0 -24.3815
                     fld_Npc.fldItemBoxAdd(337, 1522.81f, 0f, -2438.15f, new Vector4(0, 0, 0, 1)); // Add Item Box in Diet Building after Mitra
                 }
+                if (pFileName == "dds3data/fld/f/f037/f037_027") // Top of ToK
+                {
+                    // -35.1795 0.4451 -32.5578
+                    fld_Npc.fldItemBoxAdd(347, -3517.95f, -44.51f, -3255.78f, new Vector4(0, 0, 0, 1)); // Add Item Box in Diet Building after Mitra
+                }
             }
         }
 
