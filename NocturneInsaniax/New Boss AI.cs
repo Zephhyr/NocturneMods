@@ -2410,39 +2410,331 @@ namespace NocturneInsaniax
 
         private static void YHVHAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
+            ushort currentHpPercent = BossCurrentHpPercent(ref a);
+            MelonLogger.Msg("YHVH HP%: " + currentHpPercent);
+            MelonLogger.Msg("YHVH HP: " + a.work.hp);
+
+            if (currentHpPercent <= 90 && actionTrackers[a.work.id].phase == 1)
+                actionTrackers[a.work.id].phase = 2;
+            else if (currentHpPercent <= 50 && actionTrackers[a.work.id].phase == 2)
+                actionTrackers[a.work.id].phase = 3;
+
             if (actionTrackers[a.work.id].currentBattleActionCount == 1)
             {
-                UseSkill(ref a, 498); return;
+                UseSkill(ref a, 498); return; // Scorn
             }
             else if (actionTrackers[a.work.id].currentBattleActionCount == 2)
             {
-                UseSkill(ref a, 509); return;
+                UseSkill(ref a, 509); return; // Infinite Power
             }
             else if (actionTrackers[a.work.id].currentBattleActionCount == 3)
             {
-                UseSkill(ref a, 498); return;
+                UseSkill(ref a, 498); return; // Scorn
             }
             else
             {
-                int randomValue = random.Next(15);
-                switch (randomValue)
+                switch (actionTrackers[a.work.id].phase)
                 {
-                    case 0: UseNormalAttack(ref a); break;
-                    case 1: UseSkill(ref a, 498); break;
-                    case 2: UseSkill(ref a, 499); break;
-                    case 3: UseSkill(ref a, 500); break;
-                    case 4: UseSkill(ref a, 501); break;
-                    case 5: UseSkill(ref a, 502); break;
-                    case 6: UseSkill(ref a, 503); break;
-                    case 7: UseSkill(ref a, 504); break;
-                    case 8: UseSkill(ref a, 505); break;
-                    case 9: UseSkill(ref a, 506); break;
-                    case 10: UseSkill(ref a, 507); break;
-                    case 11: UseSkill(ref a, 508); break;
-                    case 12: UseSkill(ref a, 509); break;
-                    case 13: UseSkill(ref a, 510); break;
-                    case 14: UseSkill(ref a, 511); break;
+                    case 1:
+                        {
+                            if (actionTrackers[a.work.id].currentBattleActionCount % 3 == 0)
+                            {
+                                UseSkill(ref a, 498); return; // Scorn
+                            }
+                            else if (actionTrackers[a.work.id].currentTurnActionCount == 1 && random.Next(5) == 0)
+                            {
+                                UseSkill(ref a, 511); return; // Divine Harmony
+                            }
+                            else if (actionTrackers[a.work.id].currentBattleTurnCount != 2 && a.data.press4_ten == 1 && a.data.press4_p <= 1)
+                            {
+                                int randomValue = random.Next(4);
+                                switch (randomValue)
+                                {
+                                    case 0: UseSkill(ref a, 509); return; // Infinite Power
+                                    case 1: UseSkill(ref a, 510); return; // Unending Curse
+                                    default: break;
+                                }
+                            }
+
+                            int randomValue2 = random.Next(10);
+                            switch (randomValue2)
+                            {
+                                case 0: UseSkill(ref a, 499); break; // Crush
+                                case 1: UseSkill(ref a, 499); break; // Crush
+                                case 2: UseSkill(ref a, 499); break; // Crush
+                                case 3:
+                                    {
+                                        if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(500))
+                                            UseSkill(ref a, 500); // Rampage
+                                        else
+                                            UseSkill(ref a, 499); // Crush
+                                    }
+                                    break;
+                                case 4:
+                                    {
+                                        if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(500))
+                                            UseSkill(ref a, 500); // Rampage
+                                        else
+                                            UseSkill(ref a, 499); // Crush
+                                    }
+                                    break;
+                                case 5:
+                                    {
+                                        if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(500))
+                                            UseSkill(ref a, 500); // Rampage
+                                        else
+                                            UseSkill(ref a, 499); // Crush
+                                    }
+                                    break;
+                                case 6:
+                                    {
+                                        if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(501) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(502) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(503) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(504) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(508))
+                                            UseSkill(ref a, 508); // Supernova
+                                        else
+                                            UseSkill(ref a, 499); // Crush
+                                    }
+                                    break;
+                                case 7:
+                                    {
+                                        if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(501) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(502) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(503) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(504) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(508))
+                                            UseSkill(ref a, 508); // Supernova
+                                        else
+                                            UseSkill(ref a, 499); // Crush
+                                    }
+                                    break;
+                                case 8:
+                                    {
+                                        if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(505) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(506))
+                                            UseSkill(ref a, 505); // Planned Chaos
+                                        else
+                                            UseSkill(ref a, 499); // Crush
+                                    }
+                                    break;
+                                case 9:
+                                    {
+                                        if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(505) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(506) && a.data.playerpcnt > 1)
+                                        {
+                                            UseSkill(ref a, 506); // Mouth of God
+                                            SetTargetingRule(ref code, ref n, 10, n);
+                                        }
+                                        else
+                                            UseSkill(ref a, 499); // Crush
+                                    }
+                                    break;
+                            }
+
+                            break;
+                        }
+                    case 2:
+                        {
+                            if (actionTrackers[a.work.id].currentTurnActionCount == 1 && random.Next(5) == 0)
+                            {
+                                UseSkill(ref a, 511); return; // Divine Harmony
+                            }
+                            else if (actionTrackers[a.work.id].currentBattleTurnCount != 2 && a.data.press4_ten == 1 && a.data.press4_p <= 1)
+                            {
+                                int randomValue = random.Next(4);
+                                switch (randomValue)
+                                {
+                                    case 0: UseSkill(ref a, 509); return; // Infinite Power
+                                    case 1: UseSkill(ref a, 510); return; // Unending Curse
+                                    default: break;
+                                }
+                            }
+
+                            int randomValue2 = random.Next(10);
+                            switch (randomValue2)
+                            {
+                                case 0: UseSkill(ref a, 499); break; // Crush
+                                case 1: UseSkill(ref a, 499); break; // Crush
+                                case 2:
+                                    {
+                                        if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(500))
+                                            UseSkill(ref a, 500); // Rampage
+                                        else
+                                            UseSkill(ref a, 499); // Crush
+                                    }
+                                    break;
+                                case 3:
+                                    {
+                                        if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(500))
+                                            UseSkill(ref a, 500); // Rampage
+                                        else
+                                            UseSkill(ref a, 499); // Crush
+                                    }
+                                    break;
+                                case 4:
+                                    {
+                                        if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(501) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(502) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(503) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(504) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(508))
+                                            YHVHElement(ref a); // X of God
+                                        else
+                                            UseSkill(ref a, 499); // Crush
+                                    }
+                                    break;
+                                case 5:
+                                    {
+                                        if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(501) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(502) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(503) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(504) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(508))
+                                            YHVHElement(ref a); // X of God
+                                        else
+                                            UseSkill(ref a, 499); // Crush
+                                    }
+                                    break;
+                                case 6:
+                                    {
+                                        if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(501) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(502) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(503) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(504) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(508))
+                                            UseSkill(ref a, 508); // Supernova
+                                        else
+                                            UseSkill(ref a, 499); // Crush
+                                    }
+                                    break;
+                                case 7:
+                                    {
+                                        if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(501) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(502) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(503) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(504) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(508))
+                                            UseSkill(ref a, 508); // Supernova
+                                        else
+                                            UseSkill(ref a, 499); // Crush
+                                    }
+                                    break;
+                                case 8:
+                                    {
+                                        if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(505) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(506))
+                                            UseSkill(ref a, 505); // Planned Chaos
+                                        else
+                                            UseSkill(ref a, 499); // Crush
+                                    }
+                                    break;
+                                case 9:
+                                    {
+                                        if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(505) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(506) && a.data.playerpcnt > 1)
+                                        {
+                                            UseSkill(ref a, 506); // Mouth of God
+                                            SetTargetingRule(ref code, ref n, 10, n);
+                                        }
+                                        else
+                                            UseSkill(ref a, 499); // Crush
+                                    }
+                                    break;
+                            }
+
+                            break;
+                        }
+                    case 3:
+                        {
+                            if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(507))
+                            {
+                                UseSkill(ref a, 507); return; // Black Hole
+                            }
+                            else if (actionTrackers[a.work.id].currentTurnActionCount == 1 && random.Next(5) == 0)
+                            {
+                                UseSkill(ref a, 511); return; // Divine Harmony
+                            }
+                            else if (actionTrackers[a.work.id].currentBattleTurnCount != 2 && a.data.press4_ten == 1 && a.data.press4_p <= 1)
+                            {
+                                int randomValue = random.Next(4);
+                                switch (randomValue)
+                                {
+                                    case 0: UseSkill(ref a, 509); return; // Infinite Power
+                                    case 1: UseSkill(ref a, 510); return; // Unending Curse
+                                    default: break;
+                                }
+                            }
+
+                            int randomValue2 = random.Next(10);
+                            switch (randomValue2)
+                            {
+                                case 0: UseSkill(ref a, 499); break; // Crush
+                                case 1:
+                                    {
+                                        if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(500))
+                                            UseSkill(ref a, 500); // Rampage
+                                        else
+                                            UseSkill(ref a, 499); // Crush
+                                    }
+                                    break;
+                                case 2:
+                                    {
+                                        if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(507))
+                                            UseSkill(ref a, 507); // Black Hole
+                                        else
+                                            UseSkill(ref a, 499); // Crush
+                                    }
+                                    break;
+                                case 3:
+                                    {
+                                        if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(500))
+                                            UseSkill(ref a, 500); // Rampage
+                                        else
+                                            UseSkill(ref a, 499); // Crush
+                                    }
+                                    break;
+                                case 4:
+                                    {
+                                        if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(501) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(502) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(503) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(504) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(508))
+                                            YHVHElement(ref a); // X of God
+                                        else
+                                            UseSkill(ref a, 499); // Crush
+                                    }
+                                    break;
+                                case 5:
+                                    {
+                                        if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(501) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(502) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(503) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(504) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(508))
+                                            YHVHElement(ref a); // X of God
+                                        else
+                                            UseSkill(ref a, 499); // Crush
+                                    }
+                                    break;
+                                case 6:
+                                    {
+                                        if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(501) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(502) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(503) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(504) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(508))
+                                            UseSkill(ref a, 508); // Supernova
+                                        else
+                                            UseSkill(ref a, 499); // Crush
+                                    }
+                                    break;
+                                case 7:
+                                    {
+                                        if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(501) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(502) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(503) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(504) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(508))
+                                            UseSkill(ref a, 508); // Supernova
+                                        else
+                                            UseSkill(ref a, 499); // Crush
+                                    }
+                                    break;
+                                case 8:
+                                    {
+                                        if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(505) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(506))
+                                            UseSkill(ref a, 505); // Planned Chaos
+                                        else
+                                            UseSkill(ref a, 499); // Crush
+                                    }
+                                    break;
+                                case 9:
+                                    {
+                                        if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(505) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(506) && a.data.playerpcnt > 1)
+                                        {
+                                            UseSkill(ref a, 506); // Mouth of God
+                                            SetTargetingRule(ref code, ref n, 10, n);
+                                        }
+                                        else
+                                            UseSkill(ref a, 499); // Crush
+                                    }
+                                    break;
+                            }
+
+                            break;
+                        }
                 }
+            }
+        }
+
+        private static void YHVHElement(ref nbActionProcessData_t a)
+        {
+            int randomValue = random.Next(4);
+            switch (randomValue)
+            {
+                case 0: UseSkill(ref a, 501); break;
+                case 1: UseSkill(ref a, 502); break;
+                case 2: UseSkill(ref a, 503); break;
+                case 3: UseSkill(ref a, 504); break;
             }
         }
 

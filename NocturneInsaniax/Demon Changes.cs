@@ -712,8 +712,8 @@ namespace NocturneInsaniax
                     __result = 186;
                 else if (datDevilFormat.Get(normalResult).race == 10 && pSacrifice.id == 125)
                     __result = 224;
-                //else
-                //    __result = 228;
+                else if(datDevilFormat.Get(normalResult).race == 13 && pSacrifice.id == 24)
+                    __result = 228;
             }
         }
 
@@ -10758,9 +10758,9 @@ namespace NocturneInsaniax
         {
             datDevilFormat.tbl[id].flag = 3;
             datDevilFormat.tbl[id].race = 32;
-            datDevilFormat.tbl[id].level = 30;
+            datDevilFormat.tbl[id].level = 41;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 20, 0, 10, 20, 8, 11 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 19, 0, 12, 17, 11, 14 };
             datDevilFormat.tbl[id].keisyotype = 4;
             datDevilFormat.tbl[id].keisyoform = 2177;
 
@@ -10768,12 +10768,12 @@ namespace NocturneInsaniax
 
             tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 0, 1, 2, 1, 1 };
 
-            tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 14, TargetLevel = 0, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 49, TargetLevel = 0, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[2] = new fclSkillParam_t { Param = 17, TargetLevel = 31, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 305, TargetLevel = 32, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 311, TargetLevel = 33, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[5] = new fclSkillParam_t { Param = 15, TargetLevel = 34, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 15, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 67, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[2] = new fclSkillParam_t { Param = 18, TargetLevel = 42, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 327, TargetLevel = 43, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 311, TargetLevel = 44, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[5] = new fclSkillParam_t { Param = 50, TargetLevel = 45, Type = 1 };
 
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
@@ -10808,10 +10808,10 @@ namespace NocturneInsaniax
         private static void Urizen(int id)
         {
             datDevilFormat.tbl[id].flag = 3;
-            datDevilFormat.tbl[id].race = 32;
+            datDevilFormat.tbl[id].race = 49;
             datDevilFormat.tbl[id].level = 30;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 20, 0, 10, 20, 8, 11 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 21, 0, 14, 16, 11, 18 };
             datDevilFormat.tbl[id].keisyotype = 4;
             datDevilFormat.tbl[id].keisyoform = 2177;
 
@@ -10819,12 +10819,12 @@ namespace NocturneInsaniax
 
             tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 0, 1, 2, 1, 1 };
 
-            tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 2, TargetLevel = 0, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 49, TargetLevel = 0, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[2] = new fclSkillParam_t { Param = 5, TargetLevel = 31, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 305, TargetLevel = 32, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 309, TargetLevel = 33, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[5] = new fclSkillParam_t { Param = 3, TargetLevel = 34, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 3, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 64, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[2] = new fclSkillParam_t { Param = 6, TargetLevel = 50, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 325, TargetLevel = 51, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 309, TargetLevel = 52, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[5] = new fclSkillParam_t { Param = 50, TargetLevel = 53, Type = 1 };
 
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
@@ -10860,9 +10860,9 @@ namespace NocturneInsaniax
         {
             datDevilFormat.tbl[id].flag = 3;
             datDevilFormat.tbl[id].race = 32;
-            datDevilFormat.tbl[id].level = 30;
+            datDevilFormat.tbl[id].level = 43;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 20, 0, 10, 20, 8, 11 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 19, 0, 13, 16, 12, 15 };
             datDevilFormat.tbl[id].keisyotype = 4;
             datDevilFormat.tbl[id].keisyoform = 2177;
 
@@ -10870,12 +10870,12 @@ namespace NocturneInsaniax
 
             tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 0, 1, 2, 1, 1 };
 
-            tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 20, TargetLevel = 0, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 49, TargetLevel = 0, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[2] = new fclSkillParam_t { Param = 23, TargetLevel = 31, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 305, TargetLevel = 32, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 312, TargetLevel = 33, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[5] = new fclSkillParam_t { Param = 21, TargetLevel = 34, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 21, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 66, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[2] = new fclSkillParam_t { Param = 24, TargetLevel = 44, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 326, TargetLevel = 45, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 312, TargetLevel = 46, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[5] = new fclSkillParam_t { Param = 50, TargetLevel = 47, Type = 1 };
 
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
@@ -10911,9 +10911,9 @@ namespace NocturneInsaniax
         {
             datDevilFormat.tbl[id].flag = 3;
             datDevilFormat.tbl[id].race = 32;
-            datDevilFormat.tbl[id].level = 30;
+            datDevilFormat.tbl[id].level = 46;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 20, 0, 10, 20, 8, 11 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 20, 0, 13, 17, 11, 17 };
             datDevilFormat.tbl[id].keisyotype = 4;
             datDevilFormat.tbl[id].keisyoform = 2177;
 
@@ -10921,12 +10921,12 @@ namespace NocturneInsaniax
 
             tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 0, 1, 2, 1, 1 };
 
-            tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 8, TargetLevel = 0, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 49, TargetLevel = 0, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[2] = new fclSkillParam_t { Param = 11, TargetLevel = 31, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 305, TargetLevel = 32, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 310, TargetLevel = 33, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[5] = new fclSkillParam_t { Param = 9, TargetLevel = 34, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 9, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 65, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[2] = new fclSkillParam_t { Param = 12, TargetLevel = 47, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 324, TargetLevel = 48, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 310, TargetLevel = 49, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[5] = new fclSkillParam_t { Param = 50, TargetLevel = 50, Type = 1 };
 
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
@@ -11015,22 +11015,23 @@ namespace NocturneInsaniax
         {
             datDevilFormat.tbl[id].flag = 3;
             datDevilFormat.tbl[id].race = 19;
-            datDevilFormat.tbl[id].level = 85;
+            datDevilFormat.tbl[id].level = 62;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 30, 0, 40, 25, 14, 15 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 23, 0, 14, 18, 11, 17 };
             datDevilFormat.tbl[id].keisyotype = 6;
             datDevilFormat.tbl[id].keisyoform = 187;
 
             datDevilName.txt[id] = "マーラ";
 
-            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 0, 4, 2, 1, 1 };
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 0, 1, 2, 1, 1 };
 
-            tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 62, TargetLevel = 0, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 56, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 130, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 224, TargetLevel = 0, Type = 1 };
             tblSkill.fclSkillTbl[id].Event[2] = new fclSkillParam_t { Param = 97, TargetLevel = 0, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 24, TargetLevel = 86, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 207, TargetLevel = 87, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[5] = new fclSkillParam_t { Param = 100, TargetLevel = 88, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 6, TargetLevel = 63, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 373, TargetLevel = 64, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[5] = new fclSkillParam_t { Param = 372, TargetLevel = 65, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[6] = new fclSkillParam_t { Param = 100, TargetLevel = 66, Type = 1 };
 
             // Add Shot Drain, Shot Boost
 
@@ -11045,6 +11046,7 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][8] = 65536; // Curse
             datAisyo.tbl[id][9] = 100; // Nerve
             datAisyo.tbl[id][10] = 65536; // Mind
+            datAisyo.tbl[id][12] = 262144; // Shot
 
             mdlFileDefTable.devilModelFileTable[id] = mdlFileDefTable.devilModelFileTable[321];
             mdlFileDefTable.devilOnModelFileTable[id] = mdlFileDefTable.devilOnModelFileTable[321];
@@ -14881,7 +14883,7 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 3000;
             datDevilFormat.tbl[id].hp = 1;
-            datDevilFormat.tbl[id].level = 61;
+            datDevilFormat.tbl[id].level = 62;
             datDevilFormat.tbl[id].flag = 34;
             datDevilFormat.tbl[id].param[0] = 30;
             datDevilFormat.tbl[id].param[2] = 20;
@@ -16650,17 +16652,19 @@ namespace NocturneInsaniax
             datDevilName.txt[id] = "ヤハウェ";
 
             // Affinities
-            datAisyo.tbl[id][0] = 50; // Phys
-            datAisyo.tbl[id][1] = 50; // Fire
-            datAisyo.tbl[id][2] = 50; // Ice
-            datAisyo.tbl[id][3] = 50; // Elec
-            datAisyo.tbl[id][4] = 50; // Force
-            datAisyo.tbl[id][6] = 50; // Light
-            datAisyo.tbl[id][7] = 50; // Dark
-            datAisyo.tbl[id][8] = 50; // Curse
-            datAisyo.tbl[id][9] = 50; // Nerve
-            datAisyo.tbl[id][10] = 50; // Mind
-            datAisyo.tbl[id][12] = 50; // Shot
+            datAisyo.tbl[id][0] = 1048626; // Phys
+            datAisyo.tbl[id][1] = 1048626; // Fire
+            datAisyo.tbl[id][2] = 1048626; // Ice
+            datAisyo.tbl[id][3] = 1048626; // Elec
+            datAisyo.tbl[id][4] = 1048626; // Force
+            datAisyo.tbl[id][5] = 1048626; // Almighty
+            datAisyo.tbl[id][6] = 1048626; // Light
+            datAisyo.tbl[id][7] = 1048626; // Dark
+            datAisyo.tbl[id][8] = 1048626; // Curse
+            datAisyo.tbl[id][9] = 1048626; // Nerve
+            datAisyo.tbl[id][10] = 1048626; // Mind
+            datAisyo.tbl[id][11] = 1048626; // Self-Desturct
+            datAisyo.tbl[id][12] = 1048626; // Shot
 
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 60000;
@@ -16668,8 +16672,18 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 60000;
             datDevilFormat.tbl[id].maxmp = 60000;
 
-            datDevilFormat.tbl[id].dropexp = 0;
-            datDevilFormat.tbl[id].dropmakka = 0;
+            datDevilFormat.tbl[id].dropexp = 60000;
+            datDevilFormat.tbl[id].dropmakka = 60000;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 499; // Crush
+            datDevilFormat.tbl[id].skill[1] = 500; // Rampage
+            datDevilFormat.tbl[id].skill[2] = 505; // Planned Chaos
+            datDevilFormat.tbl[id].skill[3] = 506; // Mouth of God
+            datDevilFormat.tbl[id].skill[4] = 507; // Black Hole
+            datDevilFormat.tbl[id].skill[5] = 508; // Supernova
+            datDevilFormat.tbl[id].skill[6] = 509; // Infinite Power
+            datDevilFormat.tbl[id].skill[7] = 510; // Unending Curse
 
             mdlFileDefTable.devilModelFileTable[id].texFile = "";
             mdlFileDefTable.devilModelFileTable[id].modelFile = "d0xfe.PB";

@@ -53,7 +53,8 @@ namespace NocturneInsaniax
                     }
 
                     // Use Items
-                    if (datCalc.datCheckSyojiSkill(nbMainProcess.nbGetUnitWorkFromFormindex(s.my.formindex), 367) != 0)
+                    if (datCalc.datCheckSyojiSkill(nbMainProcess.nbGetUnitWorkFromFormindex(s.my.formindex), 367) != 0 || 
+                        nbMainProcess.nbGetUnitWorkFromFormindex(s.my.formindex).id == 192)
                     //if (true)
                     {
                         var items = dds3GlobalWork.DDS3_GBWK.item;

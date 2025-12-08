@@ -109,6 +109,15 @@ namespace NocturneInsaniax
             }
         }
 
+        [HarmonyPatch(typeof(fclEncyc), nameof(fclEncyc.GetNakamaMax))]
+        private class GetNakamaMaxPatch
+        {
+            public static void Postfix(ref int __result)
+            {
+                __result = 200;
+            }
+        }
+
         [HarmonyPatch(typeof(frFont), nameof(frFont.frReplaceLocalizeText))]
         private class CompendiumMessagePatch
         {

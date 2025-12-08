@@ -1452,7 +1452,12 @@ namespace NocturneInsaniax
                             if (noahAffinity != 0 && (datSkill.tbl[nskill].skillattr == 5 || datSkill.tbl[nskill].skillattr == 11))
                                 __result = Convert.ToInt32(__result / 10);
                         }
-                        
+
+                        if (targetID == 254) // YHVH
+                        {
+                            __result = Convert.ToInt32(__result * 0.5);
+                        }
+
                         if (targetID == 344) // Lucifer
                         {
                             __result = Convert.ToInt32(__result * 0.6);

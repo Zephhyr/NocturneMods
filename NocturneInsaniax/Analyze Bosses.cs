@@ -996,12 +996,19 @@ namespace NocturneInsaniax
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill08/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(269);
                             break;
                         default:
-                            if (new int[]{ 301, 713, 989, 1035, 1274, 1275, 1276, 1277, 1278 }.Contains(actionProcessData.data.encno))
+                            if (new int[]{ 301, 713, 989, 1035, 1274, 1275, 1276, 1277 }.Contains(actionProcessData.data.encno))
                             {
                                 // Remove HP and MP info
                                 AnalyzeBossesUtility.DisplayHPMP(true);
                                 AnalyzeBossesUtility.DisplayMP(false);
                                 isHPMPOn = true;
+                                return;
+                            }
+                            else if (actionProcessData.data.encno == 1278)
+                            {
+                                // Remove HP and MP info
+                                AnalyzeBossesUtility.DisplayHPMP(false);
+                                isHPMPOn = false;
                                 return;
                             }
                             else
