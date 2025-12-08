@@ -49,6 +49,12 @@ namespace NocturneInsaniax
                         __result = 100;
                 }
 
+                MelonLogger.Msg("--nbCalc.nbGetAisyo--");
+                MelonLogger.Msg("nskill: " + nskill);
+                MelonLogger.Msg("attr: " + attr);
+                MelonLogger.Msg("formindex: " + formindex);
+                MelonLogger.Msg("result: " + __result);
+
                 if (work.id == 246 || work.id == 259 || work.id == 292)
                 {
                     var party = nbMainProcess.nbGetPartyFromFormindex(formindex);
@@ -93,18 +99,18 @@ namespace NocturneInsaniax
                     nbMainProcess.nbGetUnitWorkFromFormindex(nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].formindex).id == 287) &&
                     nbMainProcess.nbGetUnitWorkFromFormindex(formindex).badstatus != 0;
 
-                if (nskill != -1 && attr >= 0 && attr <= 12 && datSkill.tbl[nskill].skillattr >= 0 && datSkill.tbl[nskill].skillattr <= 12 &&
+                if (nskill != -1 && attr >= 0 && attr <= 12 && datSkill.tbl[nskill].skillattr >= 0 && datSkill.tbl[nskill].skillattr <= 12 && datSkill.tbl[nskill].skillattr == attr &&
                     (hasPierce || (hasAnimus && (nskill == 0 || !(datNormalSkill.tbl[nskill].badtype != 0 && datNormalSkill.tbl[nskill].hptype == 0))) || undermineDivinity
                     || new int[] { 501, 502, 503, 504 }.Contains(nskill)))
                 {
-                    if (isResist)
-                    {
-                        __result = __result - ratio + 100;
-                        nbMainProcess.nbGetMainProcessData().d31_kantuu = 1; // Displays the "Pierced!" message
-                    }
                     if (isNull || isDrain || (isRepel && new int[] { 501, 502, 503, 504 }.Contains(nskill)))
                     {
                         __result = 100;
+                        nbMainProcess.nbGetMainProcessData().d31_kantuu = 1; // Displays the "Pierced!" message
+                    }
+                    if (isResist)
+                    {
+                        __result = __result - ratio + 100;
                         nbMainProcess.nbGetMainProcessData().d31_kantuu = 1; // Displays the "Pierced!" message
                     }
                 }

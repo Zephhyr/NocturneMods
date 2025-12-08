@@ -1268,6 +1268,18 @@ namespace NocturneInsaniax
             fldGlobal.fldHitData._fldItemBoxTbl[350]._Param = 1277;
 
             // YHVH Box
+            fldGlobal.fldHitData._fldItemBoxTbl[327]._Type = 2;
+            fldGlobal.fldHitData._fldItemBoxTbl[327]._ItemID = 0;
+            fldGlobal.fldHitData._fldItemBoxTbl[327]._ItemNum = 0;
+            fldGlobal.fldHitData._fldItemBoxTbl[327]._Trap = 1;
+            fldGlobal.fldHitData._fldItemBoxTbl[327]._Param = 1278;
+
+            // YHVH Box
+            //fldGlobal.fldHitData._fldItemBoxTbl[351]._Type = 3;
+            //fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemID = 0;
+            //fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemNum = 1;
+            //fldGlobal.fldHitData._fldItemBoxTbl[351]._Trap = 0;
+            //fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 10000;
             fldGlobal.fldHitData._fldItemBoxTbl[351]._Type = 2;
             fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemID = 0;
             fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemNum = 0;
