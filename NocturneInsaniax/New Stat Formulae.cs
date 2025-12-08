@@ -742,6 +742,10 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int nskill, ref int sformindex, ref int dformindex, ref int __result)
             {
+                //if (nskill == 255)
+                if (__result == 6)
+                    return;
+
                 datUnitWork_t workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
                 datUnitWork_t workFromFormindex2 = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
 

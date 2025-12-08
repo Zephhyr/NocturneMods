@@ -2372,7 +2372,7 @@ namespace NocturneInsaniax
 
         private static void Tempest(ushort id)
         {
-            datNormalSkill.tbl[id].cost = 24;
+            datNormalSkill.tbl[id].cost = 26;
             datNormalSkill.tbl[id].hpn = 30;
             datNormalSkill.tbl[id].failpoint = 15;
             datNormalSkill.tbl[id].criticalpoint = 25;
@@ -2380,7 +2380,7 @@ namespace NocturneInsaniax
 
         private static void HadesBlast(ushort id)
         {
-            datNormalSkill.tbl[id].cost = 30;
+            datNormalSkill.tbl[id].cost = 36;
             datNormalSkill.tbl[id].hpn = 40;
             datNormalSkill.tbl[id].failpoint = 18;
             datNormalSkill.tbl[id].criticalpoint = 36;
@@ -2396,7 +2396,7 @@ namespace NocturneInsaniax
 
         private static void Blight(ushort id)
         {
-            datNormalSkill.tbl[id].cost = 24;
+            datNormalSkill.tbl[id].cost = 26;
             datNormalSkill.tbl[id].hpn = 32;
             datNormalSkill.tbl[id].failpoint = 15;
             datNormalSkill.tbl[id].criticalpoint = 30;
@@ -2407,7 +2407,7 @@ namespace NocturneInsaniax
 
         private static void BrutalSlash(ushort id)
         {
-            datNormalSkill.tbl[id].cost = 16;
+            datNormalSkill.tbl[id].cost = 18;
             datNormalSkill.tbl[id].hpn = 52;
             datNormalSkill.tbl[id].failpoint = 12;
             datNormalSkill.tbl[id].criticalpoint = 24;
@@ -2415,7 +2415,7 @@ namespace NocturneInsaniax
 
         private static void Hassohappa(ushort id)
         {
-            datNormalSkill.tbl[id].cost = 35;
+            datNormalSkill.tbl[id].cost = 46;
             datNormalSkill.tbl[id].hpn = 48;
             datNormalSkill.tbl[id].failpoint = 20;
             datNormalSkill.tbl[id].criticalpoint = 40;
@@ -2423,7 +2423,7 @@ namespace NocturneInsaniax
 
         private static void DarkSword(ushort id)
         {
-            datNormalSkill.tbl[id].cost = 22;
+            datNormalSkill.tbl[id].cost = 28;
             datNormalSkill.tbl[id].hpn = 60;
             datNormalSkill.tbl[id].failpoint = 20;
             datNormalSkill.tbl[id].criticalpoint = 40;
@@ -2434,7 +2434,7 @@ namespace NocturneInsaniax
 
         private static void StasisBlade(ushort id)
         {
-            datNormalSkill.tbl[id].cost = 22;
+            datNormalSkill.tbl[id].cost = 28;
             datNormalSkill.tbl[id].hpn = 60;
             datNormalSkill.tbl[id].failpoint = 20;
             datNormalSkill.tbl[id].criticalpoint = 40;
@@ -2453,7 +2453,7 @@ namespace NocturneInsaniax
 
         private static void Deathbound(ushort id)
         {
-            datNormalSkill.tbl[id].cost = 24;
+            datNormalSkill.tbl[id].cost = 31;
             datNormalSkill.tbl[id].hpn = 40;
             datNormalSkill.tbl[id].failpoint = 6;
             datNormalSkill.tbl[id].criticalpoint = 20;
@@ -2461,7 +2461,7 @@ namespace NocturneInsaniax
 
         private static void Guillotine(ushort id)
         {
-            datNormalSkill.tbl[id].cost = 18;
+            datNormalSkill.tbl[id].cost = 21;
             datNormalSkill.tbl[id].hpn = 56;
             datNormalSkill.tbl[id].failpoint = 15;
             datNormalSkill.tbl[id].criticalpoint = 30;
@@ -2470,7 +2470,7 @@ namespace NocturneInsaniax
 
         private static void ChaosBlade(ushort id)
         {
-            datNormalSkill.tbl[id].cost = 32;
+            datNormalSkill.tbl[id].cost = 36;
             datNormalSkill.tbl[id].hpn = 30;
             datNormalSkill.tbl[id].failpoint = 8;
             datNormalSkill.tbl[id].criticalpoint = 20;
@@ -2525,7 +2525,7 @@ namespace NocturneInsaniax
 
         private static void HellFang(ushort id)
         {
-            datNormalSkill.tbl[id].cost = 16;
+            datNormalSkill.tbl[id].cost = 20;
             datNormalSkill.tbl[id].hpn = 56;
             datNormalSkill.tbl[id].failpoint = 20;
             datNormalSkill.tbl[id].criticalpoint = 40;
@@ -2569,7 +2569,7 @@ namespace NocturneInsaniax
 
         private static void DeadlyFury(ushort id)
         {
-            datNormalSkill.tbl[id].cost = 18;
+            datNormalSkill.tbl[id].cost = 20;
             datNormalSkill.tbl[id].hpn = 54;
             datNormalSkill.tbl[id].failpoint = 5;
             datNormalSkill.tbl[id].criticalpoint = 50;
@@ -2578,7 +2578,7 @@ namespace NocturneInsaniax
 
         private static void XerosBeat(ushort id)
         {
-            datNormalSkill.tbl[id].cost = 24;
+            datNormalSkill.tbl[id].cost = 26;
             datNormalSkill.tbl[id].hpn = 36;
             datNormalSkill.tbl[id].failpoint = 5;
             datNormalSkill.tbl[id].criticalpoint = 24;
@@ -2587,7 +2587,7 @@ namespace NocturneInsaniax
 
         private static void OniKagura(ushort id)
         {
-            datNormalSkill.tbl[id].cost = 28;
+            datNormalSkill.tbl[id].cost = 30;
             datNormalSkill.tbl[id].hpn = 42;
             datNormalSkill.tbl[id].failpoint = 5;
             datNormalSkill.tbl[id].criticalpoint = 30;
@@ -2609,7 +2609,7 @@ namespace NocturneInsaniax
         private static void Earthquake(ushort id)
         {
             datSkill.tbl[id].keisyoform = 128;
-            datNormalSkill.tbl[id].cost = 40;
+            datNormalSkill.tbl[id].cost = 44;
             datNormalSkill.tbl[id].hpn = 60;
             datNormalSkill.tbl[id].hitlevel = 200;
             datNormalSkill.tbl[id].failpoint = 0;
@@ -2623,7 +2623,7 @@ namespace NocturneInsaniax
 
         private static void GaeaRage(ushort id)
         {
-            datNormalSkill.tbl[id].cost = 40;
+            datNormalSkill.tbl[id].cost = 44;
             datNormalSkill.tbl[id].hpn = 52;
             datNormalSkill.tbl[id].failpoint = 5;
             datNormalSkill.tbl[id].criticalpoint = 30;
@@ -2745,7 +2745,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].badlevel = 20;
             datNormalSkill.tbl[id].badtype = 1;
             datNormalSkill.tbl[id].basstatus = 128;
-            datNormalSkill.tbl[id].cost = 32;
+            datNormalSkill.tbl[id].cost = 36;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 1;
             datNormalSkill.tbl[id].criticalpoint = 20;
@@ -2795,7 +2795,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].badlevel = 255;
             datNormalSkill.tbl[id].badtype = 0;
             datNormalSkill.tbl[id].basstatus = 0;
-            datNormalSkill.tbl[id].cost = 16;
+            datNormalSkill.tbl[id].cost = 18;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 1;
             datNormalSkill.tbl[id].criticalpoint = 10;
@@ -2845,7 +2845,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].badlevel = 255;
             datNormalSkill.tbl[id].badtype = 0;
             datNormalSkill.tbl[id].basstatus = 0;
-            datNormalSkill.tbl[id].cost = 16;
+            datNormalSkill.tbl[id].cost = 18;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 1;
             datNormalSkill.tbl[id].criticalpoint = 10;
@@ -2895,7 +2895,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].badlevel = 255;
             datNormalSkill.tbl[id].badtype = 0;
             datNormalSkill.tbl[id].basstatus = 0;
-            datNormalSkill.tbl[id].cost = 18;
+            datNormalSkill.tbl[id].cost = 24;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 1;
             datNormalSkill.tbl[id].criticalpoint = 0;
@@ -2995,7 +2995,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].badlevel = 30;
             datNormalSkill.tbl[id].badtype = 1;
             datNormalSkill.tbl[id].basstatus = 32;
-            datNormalSkill.tbl[id].cost = 34;
+            datNormalSkill.tbl[id].cost = 38;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 1;
             datNormalSkill.tbl[id].criticalpoint = 30;
@@ -3045,7 +3045,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].badlevel = 24;
             datNormalSkill.tbl[id].badtype = 1;
             datNormalSkill.tbl[id].basstatus = 1024;
-            datNormalSkill.tbl[id].cost = 34;
+            datNormalSkill.tbl[id].cost = 38;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 1;
             datNormalSkill.tbl[id].criticalpoint = 30;
@@ -3095,7 +3095,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].badlevel = 255;
             datNormalSkill.tbl[id].badtype = 0;
             datNormalSkill.tbl[id].basstatus = 0;
-            datNormalSkill.tbl[id].cost = 20;
+            datNormalSkill.tbl[id].cost = 24;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 1;
             datNormalSkill.tbl[id].criticalpoint = 50;
@@ -3145,7 +3145,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].badlevel = 255;
             datNormalSkill.tbl[id].badtype = 0;
             datNormalSkill.tbl[id].basstatus = 0;
-            datNormalSkill.tbl[id].cost = 35;
+            datNormalSkill.tbl[id].cost = 38;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 1;
             datNormalSkill.tbl[id].criticalpoint = 40;
@@ -3242,7 +3242,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].badlevel = 255;
             datNormalSkill.tbl[id].badtype = 0;
             datNormalSkill.tbl[id].basstatus = 0;
-            datNormalSkill.tbl[id].cost = 30;
+            datNormalSkill.tbl[id].cost = 40;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 1;
             datNormalSkill.tbl[id].criticalpoint = 0;
@@ -3495,7 +3495,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].badlevel = 255;
             datNormalSkill.tbl[id].badtype = 0;
             datNormalSkill.tbl[id].basstatus = 0;
-            datNormalSkill.tbl[id].cost = 14;
+            datNormalSkill.tbl[id].cost = 16;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 1;
             datNormalSkill.tbl[id].criticalpoint = 30;
@@ -3547,7 +3547,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].badlevel = 255;
             datNormalSkill.tbl[id].badtype = 0;
             datNormalSkill.tbl[id].basstatus = 0;
-            datNormalSkill.tbl[id].cost = 26;
+            datNormalSkill.tbl[id].cost = 28;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 1;
             datNormalSkill.tbl[id].criticalpoint = 28;
@@ -3599,7 +3599,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].badlevel = 255;
             datNormalSkill.tbl[id].badtype = 0;
             datNormalSkill.tbl[id].basstatus = 0;
-            datNormalSkill.tbl[id].cost = 18;
+            datNormalSkill.tbl[id].cost = 22;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 1;
             datNormalSkill.tbl[id].criticalpoint = 40;
@@ -3662,7 +3662,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].badlevel = 255;
             datNormalSkill.tbl[id].badtype = 0;
             datNormalSkill.tbl[id].basstatus = 0;
-            datNormalSkill.tbl[id].cost = 32;
+            datNormalSkill.tbl[id].cost = 36;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 1;
             datNormalSkill.tbl[id].criticalpoint = 30;
@@ -3725,7 +3725,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].badlevel = 255;
             datNormalSkill.tbl[id].badtype = 0;
             datNormalSkill.tbl[id].basstatus = 0;
-            datNormalSkill.tbl[id].cost = 24;
+            datNormalSkill.tbl[id].cost = 28;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 1;
             datNormalSkill.tbl[id].criticalpoint = 30;
@@ -3793,7 +3793,7 @@ namespace NocturneInsaniax
         {
             datSkill.tbl[id].skillattr = 12;
 
-            datNormalSkill.tbl[id].cost = 18;
+            datNormalSkill.tbl[id].cost = 20;
             datNormalSkill.tbl[id].hpn = 34;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].magicbase = 16;
@@ -3808,7 +3808,7 @@ namespace NocturneInsaniax
         {
             datSkill.tbl[id].skillattr = 12;
 
-            datNormalSkill.tbl[id].cost = 16;
+            datNormalSkill.tbl[id].cost = 22;
             datNormalSkill.tbl[id].hpn = 62;
             datNormalSkill.tbl[id].failpoint = 5;
             datNormalSkill.tbl[id].criticalpoint = 30;
