@@ -416,7 +416,7 @@ namespace NocturneInsaniax
                     case 266: __result = "Medium Str-based Almighty damage \nto one foe. May instakill when not \nimmune to Dark. Pow: 42, Acc: 90%"; return false; // Tekisatsu/Stinger
                     case 267: __result = "High Elec damage to all foes. \nLowers targets' Evasion/Hit Rate. \nPow: 40, Acc: 120%, Shock: 20%"; return false; // Mishaguji Raiden/Roundtrip
                     case 268: __result = "High Force damage to all foes. \nLowers targets' Physical/Magical Attack. \nPow: 48, Acc: 120%"; return false; // Hitokoto Storm/Whirlwind
-                    case 269: __result = "High Almihgty damage to all foes. \nPow: 48, Acc: 200%"; return false; // Jiraiya Dance/Showtime
+                    case 269: __result = "High Almighty damage to all foes. \nPow: 48, Acc: 200%"; return false; // Jiraiya Dance/Showtime
                     case 275: __result = "Medium Physical damage to all foes. \nPow: 32, Acc: 100%, Crit: 5%"; return false; // Andalucia
                     case 276: __result = "Maximizes own Evasion/Hit Rate."; return false; // Red Capote
                     case 278: __result = "Medium Mind damage to all foes. \nMay inflict random ailments. \nPow: 30, Acc: 100%, Random: 40%"; return false; // Preach
@@ -913,6 +913,15 @@ namespace NocturneInsaniax
                             else
                             { statlist.Remove(statID); }
                         }
+
+                        // Fix HP/MP calculations.
+                        work.maxhp = (ushort)datCalc.datGetMaxHp(work);
+                        work.maxmp = (ushort)datCalc.datGetMaxMp(work);
+                        work.hp = (ushort)Math.Clamp(work.hp, 0u, work.maxhp);
+                        work.mp = (ushort)Math.Clamp(work.mp, 0u, work.maxmp);
+
+                        // Set Demi-Fiend's object to the changed unit.
+                        dds3GlobalWork.DDS3_GBWK.unitwork[0] = work;
                     }
                 }
             }
@@ -2525,7 +2534,7 @@ namespace NocturneInsaniax
 
         private static void HellFang(ushort id)
         {
-            datNormalSkill.tbl[id].cost = 20;
+            datNormalSkill.tbl[id].cost = 18;
             datNormalSkill.tbl[id].hpn = 56;
             datNormalSkill.tbl[id].failpoint = 20;
             datNormalSkill.tbl[id].criticalpoint = 40;
@@ -2561,7 +2570,7 @@ namespace NocturneInsaniax
 
         private static void IronClaw(ushort id)
         {
-            datNormalSkill.tbl[id].cost = 16;
+            datNormalSkill.tbl[id].cost = 20;
             datNormalSkill.tbl[id].hpn = 56;
             datNormalSkill.tbl[id].failpoint = 20;
             datNormalSkill.tbl[id].criticalpoint = 40;

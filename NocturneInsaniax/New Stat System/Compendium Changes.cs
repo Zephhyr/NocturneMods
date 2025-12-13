@@ -20,34 +20,21 @@ namespace NocturneInsaniax
         public const float limitDiscount = 50f; // What the discount scales towards the closer you get to 100% compendium completion
         public const float finalDiscount = 50f; // Discount once the compendium is completed
 
-        public static float GetDiscountFactor(float limitDiscount = 50f, float finalDiscount = 80f)
+        private static void ApplyMitamaFusionChanges()
         {
-            int compendiumProgress = fclEncyc.fclEncycGetRatio2();
-            float discountFactor;
-
-            if (compendiumProgress < 100)
+            // If enabled, alter the Mitama fusion bonuses.
+            if (EnableIntStat)
             {
-                discountFactor = 1 - (compendiumProgress * limitDiscount) / (100f * 100f);
+                // Mitama Bonuses
+                fclCombineTable.fclSpiritParamUpTbl[3].ParamType = fclCombineTable.fclSpiritParamUpTbl[3].ParamType.Append<ushort>(2).ToArray(); // Saki  -> Int
+                fclCombineTable.fclSpiritParamUpTbl[3].ParamType = fclCombineTable.fclSpiritParamUpTbl[3].ParamType.Append<ushort>(3).ToArray(); // Saki  -> Mag
+                fclCombineTable.fclSpiritParamUpTbl[2].ParamType = fclCombineTable.fclSpiritParamUpTbl[2].ParamType.Append<ushort>(1).ToArray(); // Musi  -> Str
+                fclCombineTable.fclSpiritParamUpTbl[2].ParamType = fclCombineTable.fclSpiritParamUpTbl[2].ParamType.Append<ushort>(2).ToArray(); // Musi  -> Int
+                fclCombineTable.fclSpiritParamUpTbl[1].ParamType = fclCombineTable.fclSpiritParamUpTbl[1].ParamType.Append<ushort>(3).ToArray(); // Nigi  -> Mag
+                fclCombineTable.fclSpiritParamUpTbl[1].ParamType = fclCombineTable.fclSpiritParamUpTbl[1].ParamType.Append<ushort>(5).ToArray(); // Nigi  -> Agi
+                fclCombineTable.fclSpiritParamUpTbl[0].ParamType = fclCombineTable.fclSpiritParamUpTbl[0].ParamType.Append<ushort>(3).ToArray(); // Ara   -> Mag
+                fclCombineTable.fclSpiritParamUpTbl[0].ParamType = fclCombineTable.fclSpiritParamUpTbl[0].ParamType.Append<ushort>(4).ToArray(); // Ara   -> Vit
             }
-            else
-            {
-                discountFactor = 1 - (compendiumProgress * finalDiscount) / (100f * 100f);
-                discountFactor *= 2;
-            }
-
-            return discountFactor;
-        }
-
-        public static float GetDiscountFactor(int race, float limitDiscount = 50f, float finalDiscount = 80f)
-        {
-            float discountFactor = GetDiscountFactor();
-
-            if (race == 7)
-                discountFactor *= 2f;
-            else if (race == 8)
-                discountFactor *= 2.5f;
-
-            return discountFactor;
         }
 
         private class CompendiumPriceHelper
@@ -109,6 +96,36 @@ namespace NocturneInsaniax
             }
         }
 
+        public static float GetDiscountFactor(float limitDiscount = 50f, float finalDiscount = 80f)
+        {
+            int compendiumProgress = fclEncyc.fclEncycGetRatio2();
+            float discountFactor;
+
+            if (compendiumProgress < 100)
+            {
+                discountFactor = 1 - (compendiumProgress * limitDiscount) / (100f * 100f);
+            }
+            else
+            {
+                discountFactor = 1 - (compendiumProgress * finalDiscount) / (100f * 100f);
+                discountFactor *= 2;
+            }
+
+            return discountFactor;
+        }
+
+        public static float GetDiscountFactor(int race, float limitDiscount = 50f, float finalDiscount = 80f)
+        {
+            float discountFactor = GetDiscountFactor();
+
+            if (race == 7)
+                discountFactor *= 2f;
+            else if (race == 8)
+                discountFactor *= 2.5f;
+
+            return discountFactor;
+        }
+
         [HarmonyPatch(typeof(fclEncyc), nameof(fclEncyc.GetNakamaMax))]
         private class GetNakamaMaxPatch
         {
@@ -119,24 +136,22 @@ namespace NocturneInsaniax
         }
 
         [HarmonyPatch(typeof(frFont), nameof(frFont.frReplaceLocalizeText))]
-        private class CompendiumMessagePatch
+        private class PatchCompendiumConfirmText
         {
-            public static void Postfix(ref string message, ref frMsgInfo_t mi, ref List<int> index, ref string __result)
+            public static void Postfix(ref string __result)
             {
-                var pelem = dds3GlobalWork.DDS3_GBWK.encyc_record.pelem[currentRecord];
+                // Grab the current record unit and set its price for this particular menu segment.
+                fclencyceelem_t pelem = dds3GlobalWork.DDS3_GBWK.encyc_record.pelem[currentRecord];
+                int macca = CompendiumPriceHelper.GetPrice(pelem);
 
+                // Replace Mido's text to display the correct price when enough macca
                 if (__result.Contains("<SP7><FO1>It will cost <CO4>") && __result.Contains("Are you okay with that?"))
-                {
-                    var macca = int.Parse(string.Concat(__result.Replace("<SP7><FO1>It will cost <CO4>", string.Empty).Where(char.IsNumber)));
-                    macca = (int)(macca * GetDiscountFactor(datDevilFormat.tbl[pelem.id].race));
-                    __result = "<SP7><FO1>It will cost <CO4>" + macca + " Macca. <CO0>Are you okay with that?";
-                }
+                { __result = "<SP7><FO1>It will cost <CO4>" + macca + " Macca. <CO0>Are you okay with that?"; }
+
+                // Replace Mido's text to display the correct price when not enough macca
                 else if (__result.Contains("<SP7><FO1>It will cost <CO4>") && __result.Contains("But it seems you don't have enough."))
-                {
-                    var macca = int.Parse(string.Concat(__result.Replace("<SP7><FO1>It will cost <CO4>", string.Empty).Where(char.IsNumber)));
-                    macca = (int)(macca * GetDiscountFactor(datDevilFormat.tbl[pelem.id].race));
-                    __result = "<SP7><FO1>It will cost <CO4>" + macca + " Macca... <CO0>But it seems you don't have enough.";
-                }
+                { __result = "<SP7><FO1>It will cost <CO4>" + macca + " Macca... <CO0>But it seems you don't have enough."; }
+
                 else if (__result.Contains("Naturally, the stronger the demon, the more it will cost."))
                     __result += " The cost will be discounted based on how many demons you have registered.";
             }
@@ -325,25 +340,6 @@ namespace NocturneInsaniax
                 ShowFusionStats = false;
                 __result = pelem.param[type] + pelem.levelupparam[type] + pelem.mitamaparam[type] < MAXSTATS ? pelem.param[type] + pelem.levelupparam[type] + pelem.mitamaparam[type] : MAXSTATS;
                 return false;
-            }
-        }
-
-        [HarmonyPatch(typeof(frFont), nameof(frFont.frReplaceLocalizeText))]
-        private class PatchCompendiumConfirmText
-        {
-            public static void Postfix(ref string __result)
-            {
-                // Grab the current record unit and set its price for this particular menu segment.
-                fclencyceelem_t pelem = dds3GlobalWork.DDS3_GBWK.encyc_record.pelem[currentRecord];
-                int macca = CompendiumPriceHelper.GetPrice(pelem);
-
-                // Replace Mido's text to display the correct price when enough macca
-                if (__result.Contains("<SP7><FO1>It will cost <CO4>") && __result.Contains("Are you okay with that?"))
-                { __result = "<SP7><FO1>It will cost <CO4>" + macca + " Macca. <CO0>Are you okay with that?"; }
-
-                // Replace Mido's text to display the correct price when not enough macca
-                else if (__result.Contains("<SP7><FO1>It will cost <CO4>") && __result.Contains("But it seems you don't have enough."))
-                { __result = "<SP7><FO1>It will cost <CO4>" + macca + " Macca... <CO0>But it seems you don't have enough."; }
             }
         }
 

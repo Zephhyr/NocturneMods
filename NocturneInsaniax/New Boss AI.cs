@@ -2049,11 +2049,19 @@ namespace NocturneInsaniax
             if (actionTrackers[a.work.id].currentTurnActionCount == 1 && (actionTrackers[a.work.id].currentBattleTurnCount % 2) == 0 &&
                 (AllyPartyBuffed(1) || EnemyPartyDebuffed(1)))
             {
-                if (AllyPartyBuffed(1) && random.Next(2) == 0)
+                if (AllyPartyBuffed(1) && !EnemyPartyDebuffed(1))
                 {
                     UseSkill(ref a, 57); return;
                 }
-                else if (EnemyPartyDebuffed(1))
+                else if (!AllyPartyBuffed(1) && EnemyPartyDebuffed(1))
+                {
+                    UseSkill(ref a, 77); return;
+                }
+                else if (random.Next(2) == 0)
+                {
+                    UseSkill(ref a, 57); return;
+                }
+                else
                 {
                     UseSkill(ref a, 77); return;
                 }
@@ -3714,16 +3722,24 @@ namespace NocturneInsaniax
             if (actionTrackers[a.work.id].currentTurnActionCount == 1 && (actionTrackers[a.work.id].currentBattleTurnCount % 2) == 0 &&
                 (AllyPartyBuffed(1) || EnemyPartyDebuffed(1)))
             {
-                if (AllyPartyBuffed(1) && random.Next(2) == 0)
+                if (AllyPartyBuffed(1) && !EnemyPartyDebuffed(1))
                 {
                     UseSkill(ref a, 57); return;
                 }
-                else if (EnemyPartyDebuffed(1))
+                else if (!AllyPartyBuffed(1) && EnemyPartyDebuffed(1))
+                {
+                    UseSkill(ref a, 77); return;
+                }
+                else if (random.Next(2) == 0)
+                {
+                    UseSkill(ref a, 57); return;
+                }
+                else
                 {
                     UseSkill(ref a, 77); return;
                 }
             }
-            else if (a.work.nowindex == 57 || a.work.nowindex == 77 || (a.work.nowindex == 234 && random.Next(2) == 0 && actionTrackers[a.work.id].currentBattleTurnCount != 1) ||
+            else if (a.work.nowindex == 57 || a.work.nowindex == 77 || (a.work.nowindex == 234 && random.Next(3) != 0 && actionTrackers[a.work.id].currentBattleTurnCount != 1) ||
                 (a.work.nowindex == 6 && actionTrackers[a.work.id].skillsUsedThisTurn.Contains(6)) ||
                 (a.work.nowindex == 12 && actionTrackers[a.work.id].skillsUsedThisTurn.Contains(12)) ||
                 (a.work.nowindex == 18 && actionTrackers[a.work.id].skillsUsedThisTurn.Contains(18)) ||

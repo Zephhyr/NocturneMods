@@ -1473,9 +1473,13 @@ namespace NocturneInsaniax
                             datNormalSkill.tbl[nskill].hptype != 2)
                             __result = Convert.ToInt32(__result / 2);
 
+                        var targetInt = datCalc.datGetParam(nbMainProcess.nbGetUnitWorkFromFormindex(dformindex), 1);
                         var targetVit = datCalc.datGetParam(nbMainProcess.nbGetUnitWorkFromFormindex(dformindex), 3);
 
-                        __result = Convert.ToInt32(__result / (1 + (targetVit / 160)));
+                        if (datNormalSkill.tbl[nskill].koukatype == 1)
+                            __result = Convert.ToInt32(__result / (1 + (targetInt / 160)));
+                        if (datNormalSkill.tbl[nskill].koukatype == 0)
+                            __result = Convert.ToInt32(__result / (1 + (targetVit / 160)));
                     }
                 }
             }

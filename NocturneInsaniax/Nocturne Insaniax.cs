@@ -122,9 +122,11 @@ namespace NocturneInsaniax
             // Apply Changes
             ApplySkillChanges();
             ApplyItemChanges();
+            ApplyIncenseChanges();
             ApplyShopChanges();
             ApplyMagatamaChanges();
             ApplyDemonChanges();
+            ApplyMitamaFusionChanges();
             ApplyEncounterChanges();
 
             // Apply Config

@@ -7,22 +7,20 @@ using Il2Cppnewdata_H;
 using Il2Cppresult2_H;
 using Il2CppTMPro;
 using MelonLoader;
-using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.UI;
-using static Il2Cpp.scrollbarUI;
 
 namespace NocturneInsaniax
 {
     internal partial class NocturneInsaniax : MelonMod
     {
         // Stat manipulation variables
-        private const int MAXSTATS = 40;
+        private const int MAXSTATS = 99;
         private const int MAXHPMP = 9999;
-        private const int POINTS_PER_LEVEL = 1;
-        private const float STATS_SCALING = 2f;
-        private const bool EnableIntStat = false;
-        private const bool EnableStatScaling = false;
+        private const int POINTS_PER_LEVEL = 3;
+        private const float STATS_SCALING = 2.5f;
+        private const bool EnableIntStat = true;
+        private const bool EnableStatScaling = true;
 
         // Stat Bar manipulation variables
         private const string BundlePath = "smt3hd_Data/StreamingAssets/PC/";

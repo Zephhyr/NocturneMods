@@ -929,27 +929,27 @@ namespace NocturneInsaniax
             }
         }
 
-        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetExpMakaItem))]
-        private class GetExpMakaItemPatch
-        {
-            public static void Prefix(ref datUnitWork_t w)
-            {
-                var luk = datCalc.datGetParam(nbMainProcess.nbGetUnitWorkFromFormindex(0), 5);
-                var lukMultiplier = 1 + ((float)luk / 100);
+        //[HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetExpMakaItem))]
+        //private class GetExpMakaItemPatch
+        //{
+        //    public static void Prefix(ref datUnitWork_t w)
+        //    {
+        //        var luk = datCalc.datGetParam(nbMainProcess.nbGetUnitWorkFromFormindex(0), 5);
+        //        var lukMultiplier = 1 + ((float)luk / 100);
 
-                tmp_dropPoint = datDevilFormat.tbl[w.id].droppoint;
+        //        tmp_dropPoint = datDevilFormat.tbl[w.id].droppoint;
 
-                for (int i = 0; i < datDevilFormat.tbl[w.id].droppoint.Length; i++)
-                {
-                    datDevilFormat.tbl[w.id].droppoint[i] = Convert.ToByte(datDevilFormat.tbl[w.id].droppoint[i] * lukMultiplier);
-                }
-            }
+        //        for (int i = 0; i < datDevilFormat.tbl[w.id].droppoint.Length; i++)
+        //        {
+        //            datDevilFormat.tbl[w.id].droppoint[i] = Convert.ToByte(datDevilFormat.tbl[w.id].droppoint[i] * lukMultiplier);
+        //        }
+        //    }
 
-            public static void Postfix(ref datUnitWork_t w)
-            {
-                datDevilFormat.tbl[w.id].droppoint = tmp_dropPoint;
-            }
-        }
+        //    public static void Postfix(ref datUnitWork_t w)
+        //    {
+        //        datDevilFormat.tbl[w.id].droppoint = tmp_dropPoint;
+        //    }
+        //}
 
         #endregion nbCalc
     }
