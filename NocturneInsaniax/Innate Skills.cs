@@ -21,7 +21,7 @@ namespace NocturneInsaniax
             { 003, new InnateSkill(383, 06, "Searing Brilliance", "While in the active party, all allies' \nLight attacks may Critically Strike.")}, // 003 Amaterasu
             { 004, new InnateSkill(383, 14, "Runes of Wisdom", "When switching out, increase the damage \nof the next Strength-based attack \nused by the switched ally by 120%.")}, // 004 Odin
             { 005, new InnateSkill(383, 15, "Focused Assault", "Atavaka gains 20% Hit Rate and \nCritical Rate when targetting the \nsame single foe as the previous ally.")}, // 005 Atavaka
-            { 006, new InnateSkill(383, 14, "Eye of Horus", "When switching out, increase the damage \nof the nextMagic-based attack \nused by the switched ally by 120%.")}, // 006 Horus
+            { 006, new InnateSkill(383, 14, "Eye of Horus", "When switching out, increase the damage \nof the next Magic-based attack \nused by the switched ally by 120%.")}, // 006 Horus
             { 007, new InnateSkill(383, 15, "Chanchala", "While in the active party, if an ally's \nMagical Attack is maximized, their \nElement attacks may Critically Strike.")}, // 007 Lakshmi
             { 008, new InnateSkill(383, 15, "Warrior Trainer", "While Setanta or Cu Chulainn is in \nthe active party, Scathach's attacks \nwith positive potential will not miss.")}, // 008 Scathach
             { 009, new InnateSkill(383, 04, "Vina Raga", "While in the active party, all allies' \nForce attacks may Critically Strike.")}, // 009 Sarasvati
@@ -648,7 +648,7 @@ namespace NocturneInsaniax
                     }
 
                     // If it's Raidou/Dante's trait skill
-                    else if (new ushort[] { 192, 339, 340, 341 }.Contains(currentDemonWork.id))
+                    else if (new ushort[] { 191, 192, 339, 340, 341 }.Contains(currentDemonWork.id))
                     {
                         if (!EventBit.evtBitCheck(3712))
                         {
@@ -699,7 +699,7 @@ namespace NocturneInsaniax
                     }
 
                     // If it's Raidou/Dante's trait skill
-                    else if (new ushort[] { 192, 339, 340, 341 }.Contains(currentDemonWork.id))
+                    else if (new ushort[] { 191, 192, 339, 340, 341 }.Contains(currentDemonWork.id))
                     {
                         if (!EventBit.evtBitCheck(3712))
                         {

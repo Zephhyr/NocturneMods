@@ -848,6 +848,7 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(7, 0);
                     //datCalc.datAddDevil(104, 0);
                     //datCalc.datAddDevil(230, 0);
+                    datCalc.datAddDevil(1, 0);
 
                     //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 56).Count() == 0)
                     //{

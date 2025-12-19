@@ -103,7 +103,12 @@ namespace NocturneInsaniax
                     case 35: __result = "Repels Physical attacks \nfor one ally once \nnext turn."; return false; // Attack Mirror
                     case 36: __result = "Negates -kaja effects on all foes."; return false; // Dekaja Rock
                     case 37: __result = "Negates one Light/Dark attack \nfor all allies."; return false; // Tetraja Rock
-                    case 39: __result = "Raises Intelligence by 1 \nand full HP recovery \nfor one ally."; return false; // Intelligence Incense
+                    case 38: __result = "Raises Strength by 2 \nand full HP recovery \nfor one ally."; return false; // Strength Incense
+                    case 39: __result = "Raises Intelligence by 2 \nand full HP recovery \nfor one ally."; return false; // Intelligence Incense
+                    case 40: __result = "Raises Magic by 2 \nand full HP recovery \nfor one ally."; return false; // Magic Incense
+                    case 41: __result = "Raises Vitality by 2 \nand full HP recovery \nfor one ally."; return false; // Vitality Incense
+                    case 42: __result = "Raises Agility by 2 \nand full HP recovery \nfor one ally."; return false; // Agility Incense
+                    case 43: __result = "Raises Luck by 2 \nand full HP recovery \nfor one ally."; return false; // Luck Incense
                     case 44: __result = "Great HP recovery for one ally. \nReusable."; return false; // Graven Image
                     case 47: __result = "Displays an enemy's info."; return false; // Spyglass
                     case 48: __result = "Medium Fire damage to one foe. \nPow: 45, Acc: 100%"; return false; // Agilao Rock
@@ -219,7 +224,7 @@ namespace NocturneInsaniax
                         // Increases the target's stat if it isn't above the maximum, then recalculates HP/MP and heals them.
                         if (datCalc.datGetBaseParam(pStock, statID) < MAXSTATS)
                         {
-                            pStock.param[statID]++;
+                            pStock.param[statID] = (sbyte)Math.Min(pStock.param[statID] + 2, MAXSTATS);
                             pStock.maxhp = (ushort)datCalc.datGetMaxHp(pStock);
                             pStock.maxmp = (ushort)datCalc.datGetMaxMp(pStock);
                             pStock.hp = pStock.maxhp;

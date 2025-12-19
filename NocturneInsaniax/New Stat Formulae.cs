@@ -17,66 +17,6 @@ namespace NocturneInsaniax
 
         #region datCalc
 
-        //[HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetBaseMaxHp))]
-        //private class BaseMaxHpPatch
-        //{
-        //    public static bool Prefix(ref datUnitWork_t work, ref int __result)
-        //    {
-        //        var level = work.level;
-        //        var vit = datCalc.datGetParam(work, 3);
-        //        __result = (level + vit) * 6;
-        //        return false;
-        //    }
-        //}
-
-        //[HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetMaxHp))]
-        //private class MaxHpPatch
-        //{
-        //    public static bool Prefix(ref datUnitWork_t work, ref uint __result)
-        //    {
-        //        var baseHp = datCalc.datGetBaseMaxHp(work);
-        //        var boost = 1.0;
-        //        if (datCalc.datCheckSyojiSkill(work, 290) == 1)
-        //            boost += 0.1;
-        //        if (datCalc.datCheckSyojiSkill(work, 291) == 1)
-        //            boost += 0.2;
-        //        if (datCalc.datCheckSyojiSkill(work, 292) == 1)
-        //            boost += 0.3;
-        //        __result = Math.Min(Convert.ToUInt32(baseHp * boost), 999);
-        //        return false;
-        //    }
-        //}
-
-        //[HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetBaseMaxMp))]
-        //private class BaseMaxMpPatch
-        //{
-        //    public static bool Prefix(ref datUnitWork_t work, ref int __result)
-        //    {
-        //        var level = work.level;
-        //        var mag = datCalc.datGetParam(work, 2);
-        //        __result = (level + mag) * 4;
-        //        return false;
-        //    }
-        //}
-
-        //[HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetMaxMp))]
-        //private class MaxMpPatch
-        //{
-        //    public static bool Prefix(ref datUnitWork_t work, ref uint __result)
-        //    {
-        //        var baseMp = datCalc.datGetBaseMaxMp(work);
-        //        var boost = 1.0;
-        //        if (datCalc.datCheckSyojiSkill(work, 293) == 1)
-        //            boost += 0.1;
-        //        if (datCalc.datCheckSyojiSkill(work, 294) == 1)
-        //            boost += 0.2;
-        //        if (datCalc.datCheckSyojiSkill(work, 295) == 1)
-        //            boost += 0.3;
-        //        __result = Math.Min(Convert.ToUInt32(baseMp * boost), 999);
-        //        return false;
-        //    }
-        //}
-
         [HarmonyPatch(typeof(datCalc), nameof(datCalc.datGetParam))]
         private class datGetParamPatch
         {
@@ -95,9 +35,9 @@ namespace NocturneInsaniax
                 var level = work.level;
                 var str = datCalc.datGetParam(work, 0);
                 if (work.id == 111 || work.id == 335)
-                    __result = Convert.ToInt32((level + str * 2) * 45 / 20);
+                    __result = Convert.ToInt32((level + (str * 4/5)) * 45 / 20);
                 else
-                    __result = Convert.ToInt32((level + str * 2) * 30 / 20);
+                    __result = Convert.ToInt32((level + (str * 4/5)) * 30 / 20);
                 return false;
             }
         }
@@ -108,10 +48,10 @@ namespace NocturneInsaniax
             public static bool Prefix(ref datUnitWork_t work, ref int __result)
             {
                 var level = work.level;
-                var mag = datCalc.datGetParam(work, 2);
+                var intStat = datCalc.datGetParam(work, 1);
                 var agi = datCalc.datGetParam(work, 4);
                 var luk = datCalc.datGetParam(work, 5);
-                __result = level + mag + (agi * 2) + luk;
+                __result = level + Convert.ToInt32((intStat + (agi * 2) + luk) * 2/5);
                 return false;
             }
         }
@@ -135,7 +75,7 @@ namespace NocturneInsaniax
                 var level = work.level;
                 var agi = datCalc.datGetParam(work, 4);
                 var luk = datCalc.datGetParam(work, 5);
-                __result = level + (agi * 2) + luk;
+                __result = level + Convert.ToInt32(((agi * 2) + luk) * 2/5);
                 return false;
             }
         }
@@ -305,7 +245,7 @@ namespace NocturneInsaniax
 
                 double atkPow = (nskill == 0 || nskill == 167) ?
                     datCalc.datGetNormalAtkPow(workFromFormindex1) :
-                    (workFromFormindex1.level + datCalc.datGetParam(workFromFormindex1, 0) * 2) * waza / 20;
+                    (workFromFormindex1.level + datCalc.datGetParam(workFromFormindex1, 0) * (4/5)) * waza / 20;
 
                 //double defPow = datCalc.datGetParam(workFromFormindex2, 3);
 
@@ -338,7 +278,7 @@ namespace NocturneInsaniax
                 }
 
                 //double atkPow = workFromFormindex1.maxhp * waza * 0.8 / 69.6;
-                double atkPow = ((workFromFormindex1.level + datCalc.datGetParam(workFromFormindex1, 0) * 2) * waza / 20) * hpModifier;
+                double atkPow = ((workFromFormindex1.level + datCalc.datGetParam(workFromFormindex1, 0) * (4 / 5)) * waza / 20) * hpModifier;
 
                 //double defPow = datCalc.datGetParam(workFromFormindex2, 3);
 
@@ -365,7 +305,7 @@ namespace NocturneInsaniax
                 if (nskill == 490)
                     waza = waza * Math.Min(4, (workFromFormindex1.maxhp / workFromFormindex1.hp));
 
-                double atkPow = (workFromFormindex1.level + datCalc.datGetParam(workFromFormindex1, 2) * 2) * waza / 20;
+                double atkPow = (workFromFormindex1.level + datCalc.datGetParam(workFromFormindex1, 1) * (4 / 5)) * waza / 20;
 
                 //double defPow = datCalc.datGetParam(workFromFormindex2, 3);
 
@@ -402,7 +342,7 @@ namespace NocturneInsaniax
                     var agi = datCalc.datGetParam(work, 4);
                     var luk = datCalc.datGetParam(work, 5);
 
-                    double chance = Math.Min(90, (72 + (level * 2) + (agi * 4) + (luk * 3)) - ((lvAvg * 2) + (avgAgi * 4) + (avgLuk * 3)));
+                    double chance = Math.Min(90, (72 + (level * 2) + ((agi * 4) + (luk * 3) * 2/5)) - ((lvAvg * 2) + ((avgAgi * 4) + (avgLuk * 3) * 2/5)));
                     var rand = dds3KernelCore.dds3GetRandIntA(128);
                     __result = rand < chance ? 0 : 1;
                 }
@@ -429,7 +369,7 @@ namespace NocturneInsaniax
                 var agi = datCalc.datGetParam(work, 4);
                 var luk = datCalc.datGetParam(work, 5);
 
-                double chance = 12 * (lvAvg + avgAgi + (avgLuk * 2)) / (level + agi + (luk * 2));
+                double chance = 12 * (lvAvg + (avgAgi + (avgLuk * 2) * 2/5)) / (level + (agi + (luk * 2)) * 2/5);
                 var rand = dds3KernelCore.dds3GetRandIntA(128);
                 __result = rand > chance ? 0 : 1 + datEncount.Get(data.encno).backattack;
 
@@ -846,16 +786,16 @@ namespace NocturneInsaniax
                         var userStr = datCalc.datGetParam(workFromFormindex1, 0);
 
                         chance = (datNormalSkill.tbl[nskill].hitlevel - datNormalSkill.tbl[nskill].failpoint)
-                        + ((userLevel / 2) + (userStr/2) + (userAgi * 2) + (userLuk))
-                        - ((targetLevel / 2) + (targetAgi * 2) + (targetLuk));
+                        + ((userLevel / 2) + ((userStr/2) + (userAgi * 2) + userLuk) * 2/5)
+                        - ((targetLevel / 2) + ((targetAgi * 2) + targetLuk) * 2/5);
                     }
                     else if (datNormalSkill.tbl[nskill].koukatype == 1)
                     {
-                        var userMag = datCalc.datGetParam(workFromFormindex1, 2);
+                        var userInt = datCalc.datGetParam(workFromFormindex1, 1);
 
                         chance = datNormalSkill.tbl[nskill].hitlevel
-                        + ((userLevel / 2) + (userMag) + (userAgi * 2) + (userLuk))
-                        - ((targetLevel / 2) + (targetAgi * 2) + (targetLuk));
+                        + ((userLevel / 2) + (userInt + (userAgi * 2) + userLuk) * 2/5)
+                        - ((targetLevel / 2) + ((targetAgi * 2) + targetLuk) * 2/5);
                     }
 
                     // Deathly Affliction

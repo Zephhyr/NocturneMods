@@ -666,6 +666,8 @@ namespace NocturneInsaniax
                         __result = "A large, violent serpent of Hindu lore whose name means \"enveloper.\" It blocked the rivers and caused severe droughts until it was defeated by Indra. Despite this, Vritra resurrected itself the following year, and the two have fought ever since."; break;
                     case "<COLLECTIONBOOK_L0229>":
                         __result = "A Jack Frost who looks oddly familiar. Obsessed with the prophecy of the Demi-fiend, he trained his body and donned matching clothes and tattoos to be like his hero."; break;
+                    case "<COLLECTIONBOOK_L0230>":
+                        __result = "The Egyptian god of the desert, chaos and evil. He murdered his brother Osiris and tried to become chief god, but was castrated by Osiris' son, Horus."; break;
                     default: break;
                 }
             }
@@ -906,6 +908,10 @@ namespace NocturneInsaniax
                 newAisyo[15] = 100; // Utility
                 datAisyo.tbl[i] = newAisyo;
             }
+
+            // Alter Macca Drops
+            for (int i = 0; i <= 230; i++)
+                datDevilFormat.tbl[i].dropmakka = (ushort) (15 + 2 * datDevilFormat.tbl[i].level + 0.2 * (datDevilFormat.tbl[i].level ^ 2));
 
             // Demons
             DemiFiend(0);
@@ -1358,6 +1364,13 @@ namespace NocturneInsaniax
 
         private static void DemiFiend(ushort id)
         {
+            for (int i = 0; i < datHuman.datHumanUnitWork.param.Length; i++)
+            { datHuman.datHumanUnitWork.param[i] = 5; }
+            datHuman.datHumanUnitWork.maxhp = (ushort)((datHuman.datHumanUnitWork.param[3] * 3) + (datHuman.datHumanUnitWork.level * 6));
+            datHuman.datHumanUnitWork.hp = datHuman.datHumanUnitWork.maxhp;
+            datHuman.datHumanUnitWork.maxmp = (ushort)((datHuman.datHumanUnitWork.param[2] * 2) + (datHuman.datHumanUnitWork.level * 4));
+            datHuman.datHumanUnitWork.mp = datHuman.datHumanUnitWork.maxmp;
+
             datHuman.datHumanVisual[0].motion[0].actframe = 12;
             datHuman.datHumanVisual[0].motion[9].motion_no = 17;
             datHuman.datHumanVisual[0].motion[9].movetype = 2;
@@ -1367,6 +1380,15 @@ namespace NocturneInsaniax
 
         private static void Vishnu(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 67; // Strength
+            datDevilFormat.tbl[id].param[1] = 66; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 88; // Magic
+            datDevilFormat.tbl[id].param[3] = 63; // Vitality
+            datDevilFormat.tbl[id].param[4] = 50; // Agility
+            datDevilFormat.tbl[id].param[5] = 65; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 3, 4, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
@@ -1409,6 +1431,15 @@ namespace NocturneInsaniax
 
         private static void Mitra(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 67; // Strength
+            datDevilFormat.tbl[id].param[1] = 62; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 57; // Magic
+            datDevilFormat.tbl[id].param[3] = 68; // Vitality
+            datDevilFormat.tbl[id].param[4] = 40; // Agility
+            datDevilFormat.tbl[id].param[5] = 45; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 3, 3, 2, 1, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 131072; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
@@ -1432,14 +1463,24 @@ namespace NocturneInsaniax
 
         private static void Amaterasu(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 46; // Strength
+            datDevilFormat.tbl[id].param[1] = 45; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 58; // Magic
+            datDevilFormat.tbl[id].param[3] = 43; // Vitality
+            datDevilFormat.tbl[id].param[4] = 40; // Agility
+            datDevilFormat.tbl[id].param[5] = 41; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 2, 3, 3, 2, 2 };
+
+
             // Skills
             tblSkill.fclSkillTbl[id].Event[3].Param = 459; // Luster Candy
 
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 2100;
             datDevilFormat.tbl[id].maxhp = 2100;
-            datDevilFormat.tbl[id].mp = 316;
-            datDevilFormat.tbl[id].maxmp = 316;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[2] = 459; // Luster Candy
@@ -1479,6 +1520,15 @@ namespace NocturneInsaniax
 
         private static void Odin(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 60; // Strength
+            datDevilFormat.tbl[id].param[1] = 63; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 46; // Magic
+            datDevilFormat.tbl[id].param[3] = 46; // Vitality
+            datDevilFormat.tbl[id].param[4] = 43; // Agility
+            datDevilFormat.tbl[id].param[5] = 42; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 2, 4, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -1514,8 +1564,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 2400;
             datDevilFormat.tbl[id].maxhp = 2400;
-            datDevilFormat.tbl[id].mp = 360;
-            datDevilFormat.tbl[id].maxmp = 360;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[1] = 475; // Gungnir
@@ -1553,6 +1603,15 @@ namespace NocturneInsaniax
 
         private static void Atavaka(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 59; // Strength
+            datDevilFormat.tbl[id].param[1] = 36; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 42; // Magic
+            datDevilFormat.tbl[id].param[3] = 51; // Vitality
+            datDevilFormat.tbl[id].param[4] = 25; // Agility
+            datDevilFormat.tbl[id].param[5] = 34; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 2, 2, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -1589,8 +1648,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 1800;
             datDevilFormat.tbl[id].maxhp = 1800;
-            datDevilFormat.tbl[id].mp = 244;
-            datDevilFormat.tbl[id].maxmp = 244;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[1] = 450; // Neural Shock
@@ -1626,6 +1685,15 @@ namespace NocturneInsaniax
 
         private static void Horus(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 30; // Strength
+            datDevilFormat.tbl[id].param[1] = 36; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 40; // Magic
+            datDevilFormat.tbl[id].param[3] = 35; // Vitality
+            datDevilFormat.tbl[id].param[4] = 53; // Agility
+            datDevilFormat.tbl[id].param[5] = 25; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 2, 2, 2, 4, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -1677,6 +1745,15 @@ namespace NocturneInsaniax
 
         private static void Lakshmi(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 35; // Strength
+            datDevilFormat.tbl[id].param[1] = 41; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 60; // Magic
+            datDevilFormat.tbl[id].param[3] = 37; // Vitality
+            datDevilFormat.tbl[id].param[4] = 33; // Agility
+            datDevilFormat.tbl[id].param[5] = 40; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 3, 4, 2, 2, 3 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -1726,6 +1803,15 @@ namespace NocturneInsaniax
 
         private static void Scathach(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 52; // Strength
+            datDevilFormat.tbl[id].param[1] = 48; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 65; // Magic
+            datDevilFormat.tbl[id].param[3] = 43; // Vitality
+            datDevilFormat.tbl[id].param[4] = 45; // Agility
+            datDevilFormat.tbl[id].param[5] = 38; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 4, 2, 2, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -1774,6 +1860,15 @@ namespace NocturneInsaniax
 
         private static void Sarasvati(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 21; // Strength
+            datDevilFormat.tbl[id].param[1] = 36; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 41; // Magic
+            datDevilFormat.tbl[id].param[3] = 26; // Vitality
+            datDevilFormat.tbl[id].param[4] = 21; // Agility
+            datDevilFormat.tbl[id].param[5] = 29; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 3, 4, 2, 2, 3 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -1822,6 +1917,15 @@ namespace NocturneInsaniax
 
         private static void Sati(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 27; // Strength
+            datDevilFormat.tbl[id].param[1] = 43; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 48; // Magic
+            datDevilFormat.tbl[id].param[3] = 33; // Vitality
+            datDevilFormat.tbl[id].param[4] = 36; // Agility
+            datDevilFormat.tbl[id].param[5] = 41; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 3, 4, 1, 2, 3 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 262144; // Fire
@@ -1841,8 +1945,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 1500;
             datDevilFormat.tbl[id].maxhp = 1500;
-            datDevilFormat.tbl[id].mp = 272;
-            datDevilFormat.tbl[id].maxmp = 272;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // AI
             datDevilAI.divTbls[0][10].aitable[0][0].skill = 215;
@@ -1871,6 +1975,15 @@ namespace NocturneInsaniax
 
         private static void AmeNoUzume(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 14; // Strength
+            datDevilFormat.tbl[id].param[1] = 26; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 29; // Magic
+            datDevilFormat.tbl[id].param[3] = 20; // Vitality
+            datDevilFormat.tbl[id].param[4] = 19; // Agility
+            datDevilFormat.tbl[id].param[5] = 30; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 2, 3, 2, 2, 4 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -1921,6 +2034,15 @@ namespace NocturneInsaniax
 
         private static void Shiva(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 80; // Strength
+            datDevilFormat.tbl[id].param[1] = 59; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 65; // Magic
+            datDevilFormat.tbl[id].param[3] = 88; // Vitality
+            datDevilFormat.tbl[id].param[4] = 65; // Agility
+            datDevilFormat.tbl[id].param[5] = 39; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 2, 2, 3, 2, 3 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
@@ -1963,6 +2085,15 @@ namespace NocturneInsaniax
 
         private static void BeidouXingjun(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 56; // Strength
+            datDevilFormat.tbl[id].param[1] = 57; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 57; // Magic
+            datDevilFormat.tbl[id].param[3] = 56; // Vitality
+            datDevilFormat.tbl[id].param[4] = 32; // Agility
+            datDevilFormat.tbl[id].param[5] = 30; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 3, 3, 2, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -1985,8 +2116,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 2334;
             datDevilFormat.tbl[id].maxhp = 2334;
-            datDevilFormat.tbl[id].mp = 340;
-            datDevilFormat.tbl[id].maxmp = 340;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[4] = 432; // Gate of Hell
@@ -2017,6 +2148,15 @@ namespace NocturneInsaniax
 
         private static void QitianDasheng(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 55; // Strength
+            datDevilFormat.tbl[id].param[1] = 43; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 32; // Magic
+            datDevilFormat.tbl[id].param[3] = 47; // Vitality
+            datDevilFormat.tbl[id].param[4] = 50; // Agility
+            datDevilFormat.tbl[id].param[5] = 40; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 2, 2, 2, 3, 2 };
+
             // Affinities
             datAisyo.tbl[id][1] = 100; // Ice
             datAisyo.tbl[id][2] = 100; // Elec
@@ -2049,6 +2189,15 @@ namespace NocturneInsaniax
 
         private static void Dionysus(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 40; // Strength
+            datDevilFormat.tbl[id].param[1] = 38; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 50; // Magic
+            datDevilFormat.tbl[id].param[3] = 38; // Vitality
+            datDevilFormat.tbl[id].param[4] = 33; // Agility
+            datDevilFormat.tbl[id].param[5] = 38; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 3, 4, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 65536; // Fire
@@ -2083,6 +2232,15 @@ namespace NocturneInsaniax
 
         private static void Kali(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 63; // Strength
+            datDevilFormat.tbl[id].param[1] = 48; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 47; // Magic
+            datDevilFormat.tbl[id].param[3] = 58; // Vitality
+            datDevilFormat.tbl[id].param[4] = 48; // Agility
+            datDevilFormat.tbl[id].param[5] = 33; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 2, 2, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 65536; // Phys
             datAisyo.tbl[id][1] = 65536; // Fire
@@ -2119,8 +2277,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 2580;
             datDevilFormat.tbl[id].maxhp = 2580;
-            datDevilFormat.tbl[id].mp = 344;
-            datDevilFormat.tbl[id].maxmp = 344;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[3] = 6; // Maragidyne
@@ -2160,6 +2318,15 @@ namespace NocturneInsaniax
 
         private static void Skadi(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 58; // Strength
+            datDevilFormat.tbl[id].param[1] = 72; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 54; // Magic
+            datDevilFormat.tbl[id].param[3] = 52; // Vitality
+            datDevilFormat.tbl[id].param[4] = 45; // Agility
+            datDevilFormat.tbl[id].param[5] = 37; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 4, 2, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -2191,6 +2358,15 @@ namespace NocturneInsaniax
 
         private static void Parvati(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 37; // Strength
+            datDevilFormat.tbl[id].param[1] = 45; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 58; // Magic
+            datDevilFormat.tbl[id].param[3] = 37; // Vitality
+            datDevilFormat.tbl[id].param[4] = 40; // Agility
+            datDevilFormat.tbl[id].param[5] = 50; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 2, 4, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 262144; // Fire
@@ -2230,6 +2406,15 @@ namespace NocturneInsaniax
 
         private static void KushinadaHime(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 29; // Strength
+            datDevilFormat.tbl[id].param[1] = 39; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 47; // Magic
+            datDevilFormat.tbl[id].param[3] = 34; // Vitality
+            datDevilFormat.tbl[id].param[4] = 26; // Agility
+            datDevilFormat.tbl[id].param[5] = 44; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 2, 4, 1, 2, 4 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -2277,6 +2462,15 @@ namespace NocturneInsaniax
 
         private static void KikuriHime(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 24; // Strength
+            datDevilFormat.tbl[id].param[1] = 34; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 39; // Magic
+            datDevilFormat.tbl[id].param[3] = 26; // Vitality
+            datDevilFormat.tbl[id].param[4] = 19; // Agility
+            datDevilFormat.tbl[id].param[5] = 26; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 3, 3, 2, 1, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -2324,6 +2518,15 @@ namespace NocturneInsaniax
 
         private static void Bishamonten(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 63; // Strength
+            datDevilFormat.tbl[id].param[1] = 44; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 47; // Magic
+            datDevilFormat.tbl[id].param[3] = 63; // Vitality
+            datDevilFormat.tbl[id].param[4] = 45; // Agility
+            datDevilFormat.tbl[id].param[5] = 38; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 2, 2, 4, 2, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 131072; // Fire
@@ -2358,6 +2561,15 @@ namespace NocturneInsaniax
 
         private static void Thor(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 70; // Strength
+            datDevilFormat.tbl[id].param[1] = 42; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 50; // Magic
+            datDevilFormat.tbl[id].param[3] = 65; // Vitality
+            datDevilFormat.tbl[id].param[4] = 40; // Agility
+            datDevilFormat.tbl[id].param[5] = 42; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 2, 2, 3, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -2392,6 +2604,15 @@ namespace NocturneInsaniax
 
         private static void Jikokuten(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 53; // Strength
+            datDevilFormat.tbl[id].param[1] = 40; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 40; // Magic
+            datDevilFormat.tbl[id].param[3] = 48; // Vitality
+            datDevilFormat.tbl[id].param[4] = 27; // Agility
+            datDevilFormat.tbl[id].param[5] = 29; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 2, 2, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -2426,6 +2647,15 @@ namespace NocturneInsaniax
 
         private static void TakeMikazuchi(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 48; // Strength
+            datDevilFormat.tbl[id].param[1] = 35; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 36; // Magic
+            datDevilFormat.tbl[id].param[3] = 42; // Vitality
+            datDevilFormat.tbl[id].param[4] = 28; // Agility
+            datDevilFormat.tbl[id].param[5] = 27; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 3, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -2461,6 +2691,15 @@ namespace NocturneInsaniax
 
         private static void Okuninushi(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 39; // Strength
+            datDevilFormat.tbl[id].param[1] = 39; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 39; // Magic
+            datDevilFormat.tbl[id].param[3] = 32; // Vitality
+            datDevilFormat.tbl[id].param[4] = 26; // Agility
+            datDevilFormat.tbl[id].param[5] = 24; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 4, 4, 2, 2, 1 };
+
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 2600;
             datDevilFormat.tbl[id].maxhp = 2600;
@@ -2500,6 +2739,15 @@ namespace NocturneInsaniax
 
         private static void Koumokuten(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 40; // Strength
+            datDevilFormat.tbl[id].param[1] = 27; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 30; // Magic
+            datDevilFormat.tbl[id].param[3] = 34; // Vitality
+            datDevilFormat.tbl[id].param[4] = 27; // Agility
+            datDevilFormat.tbl[id].param[5] = 22; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 2, 2, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -2535,6 +2783,15 @@ namespace NocturneInsaniax
 
         private static void Zouchouten(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 38; // Strength
+            datDevilFormat.tbl[id].param[1] = 25; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 26; // Magic
+            datDevilFormat.tbl[id].param[3] = 30; // Vitality
+            datDevilFormat.tbl[id].param[4] = 18; // Agility
+            datDevilFormat.tbl[id].param[5] = 25; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 2, 2, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -2569,6 +2826,15 @@ namespace NocturneInsaniax
 
         private static void TakeMinakata(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 28; // Strength
+            datDevilFormat.tbl[id].param[1] = 22; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 20; // Magic
+            datDevilFormat.tbl[id].param[3] = 28; // Vitality
+            datDevilFormat.tbl[id].param[4] = 22; // Agility
+            datDevilFormat.tbl[id].param[5] = 12; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 2, 2, 3, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -2607,6 +2873,15 @@ namespace NocturneInsaniax
 
         private static void Chimera(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 58; // Strength
+            datDevilFormat.tbl[id].param[1] = 32; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 40; // Magic
+            datDevilFormat.tbl[id].param[3] = 40; // Vitality
+            datDevilFormat.tbl[id].param[4] = 42; // Agility
+            datDevilFormat.tbl[id].param[5] = 25; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 2, 2, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 262144; // Fire
@@ -2641,6 +2916,15 @@ namespace NocturneInsaniax
 
         private static void Baihu(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 51; // Strength
+            datDevilFormat.tbl[id].param[1] = 23; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 26; // Magic
+            datDevilFormat.tbl[id].param[3] = 37; // Vitality
+            datDevilFormat.tbl[id].param[4] = 42; // Agility
+            datDevilFormat.tbl[id].param[5] = 24; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 2, 2, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -2694,6 +2978,15 @@ namespace NocturneInsaniax
 
         private static void Senri(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 21; // Strength
+            datDevilFormat.tbl[id].param[1] = 31; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 32; // Magic
+            datDevilFormat.tbl[id].param[3] = 20; // Vitality
+            datDevilFormat.tbl[id].param[4] = 29; // Agility
+            datDevilFormat.tbl[id].param[5] = 22; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 4, 4, 2, 3, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -2719,8 +3012,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 420;
             datDevilFormat.tbl[id].maxhp = 420;
-            datDevilFormat.tbl[id].mp = 164;
-            datDevilFormat.tbl[id].maxmp = 164;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             datDevilFormat.tbl[id].dropexp = 200;
             datDevilFormat.tbl[id].dropmakka = 1000;
@@ -2737,6 +3030,15 @@ namespace NocturneInsaniax
 
         private static void Zhuque(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 26; // Strength
+            datDevilFormat.tbl[id].param[1] = 25; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 29; // Magic
+            datDevilFormat.tbl[id].param[3] = 25; // Vitality
+            datDevilFormat.tbl[id].param[4] = 43; // Agility
+            datDevilFormat.tbl[id].param[5] = 32; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 3, 3, 2, 3, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 262144; // Fire
@@ -2788,6 +3090,15 @@ namespace NocturneInsaniax
 
         private static void Shiisaa(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 23; // Strength
+            datDevilFormat.tbl[id].param[1] = 17; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 15; // Magic
+            datDevilFormat.tbl[id].param[3] = 18; // Vitality
+            datDevilFormat.tbl[id].param[4] = 23; // Agility
+            datDevilFormat.tbl[id].param[5] = 15; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 1, 1, 1, 4, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -2822,8 +3133,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 180;
             datDevilFormat.tbl[id].maxhp = 180;
-            datDevilFormat.tbl[id].mp = 76;
-            datDevilFormat.tbl[id].maxmp = 76;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             datDevilFormat.tbl[id].dropexp = 40;
             datDevilFormat.tbl[id].dropmakka = 200;
@@ -2839,6 +3150,15 @@ namespace NocturneInsaniax
 
         private static void Xiezhai(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 33; // Strength
+            datDevilFormat.tbl[id].param[1] = 31; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 30; // Magic
+            datDevilFormat.tbl[id].param[3] = 22; // Vitality
+            datDevilFormat.tbl[id].param[4] = 21; // Agility
+            datDevilFormat.tbl[id].param[5] = 17; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 2, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -2891,6 +3211,15 @@ namespace NocturneInsaniax
 
         private static void Unicorn(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 22; // Strength
+            datDevilFormat.tbl[id].param[1] = 24; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 30; // Magic
+            datDevilFormat.tbl[id].param[3] = 25; // Vitality
+            datDevilFormat.tbl[id].param[4] = 17; // Agility
+            datDevilFormat.tbl[id].param[5] = 18; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 3, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -2928,6 +3257,15 @@ namespace NocturneInsaniax
 
         private static void Flaemis(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 23; // Strength
+            datDevilFormat.tbl[id].param[1] = 30; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 29; // Magic
+            datDevilFormat.tbl[id].param[3] = 15; // Vitality
+            datDevilFormat.tbl[id].param[4] = 14; // Agility
+            datDevilFormat.tbl[id].param[5] = 17; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 4, 4, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 262144; // Fire
@@ -2960,8 +3298,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 294;
             datDevilFormat.tbl[id].maxhp = 294;
-            datDevilFormat.tbl[id].mp = 128;
-            datDevilFormat.tbl[id].maxmp = 128;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[3] = 2;
@@ -2987,6 +3325,15 @@ namespace NocturneInsaniax
 
         private static void Aquans(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 15; // Strength
+            datDevilFormat.tbl[id].param[1] = 19; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 25; // Magic
+            datDevilFormat.tbl[id].param[3] = 15; // Vitality
+            datDevilFormat.tbl[id].param[4] = 15; // Agility
+            datDevilFormat.tbl[id].param[5] = 19; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 4, 4, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -3019,12 +3366,21 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 204;
             datDevilFormat.tbl[id].maxhp = 204;
-            datDevilFormat.tbl[id].mp = 100;
-            datDevilFormat.tbl[id].maxmp = 100;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
         }
 
         private static void Aeros(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 12; // Strength
+            datDevilFormat.tbl[id].param[1] = 20; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 19; // Magic
+            datDevilFormat.tbl[id].param[3] = 15; // Vitality
+            datDevilFormat.tbl[id].param[4] = 19; // Agility
+            datDevilFormat.tbl[id].param[5] = 12; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 3, 3, 2, 3, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -3057,8 +3413,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 102;
             datDevilFormat.tbl[id].maxhp = 102;
-            datDevilFormat.tbl[id].mp = 76;
-            datDevilFormat.tbl[id].maxmp = 76;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 62;
@@ -3093,6 +3449,15 @@ namespace NocturneInsaniax
 
         private static void Erthys(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 15; // Strength
+            datDevilFormat.tbl[id].param[1] = 15; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 12; // Magic
+            datDevilFormat.tbl[id].param[3] = 20; // Vitality
+            datDevilFormat.tbl[id].param[4] = 10; // Agility
+            datDevilFormat.tbl[id].param[5] = 12; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 1, 4, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -3125,8 +3490,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 90;
             datDevilFormat.tbl[id].maxhp = 90;
-            datDevilFormat.tbl[id].mp = 48;
-            datDevilFormat.tbl[id].maxmp = 48;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[3] = 112;
@@ -3142,6 +3507,15 @@ namespace NocturneInsaniax
 
         private static void SakiMitama(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 20; // Strength
+            datDevilFormat.tbl[id].param[1] = 20; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 42; // Magic
+            datDevilFormat.tbl[id].param[3] = 42; // Vitality
+            datDevilFormat.tbl[id].param[4] = 20; // Agility
+            datDevilFormat.tbl[id].param[5] = 42; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 1, 1, 1, 1, 8 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -3157,13 +3531,6 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].mp = 10000;
             datDevilFormat.tbl[id].maxmp = 10000;
-
-            // Stats
-            datDevilFormat.tbl[id].param[0] = 10; // Strength
-            datDevilFormat.tbl[id].param[2] = 10; // Magic
-            datDevilFormat.tbl[id].param[3] = 16; // Vitality
-            datDevilFormat.tbl[id].param[4] = 10; // Agility
-            datDevilFormat.tbl[id].param[5] = 16; // Luck
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[4] = 364; // Anti-Elements
@@ -3171,6 +3538,15 @@ namespace NocturneInsaniax
 
         private static void KushiMitama(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 39; // Strength
+            datDevilFormat.tbl[id].param[1] = 20; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 20; // Magic
+            datDevilFormat.tbl[id].param[3] = 39; // Vitality
+            datDevilFormat.tbl[id].param[4] = 39; // Agility
+            datDevilFormat.tbl[id].param[5] = 20; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 2, 2, 3, 3, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -3186,13 +3562,6 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].mp = 10000;
             datDevilFormat.tbl[id].maxmp = 10000;
-
-            // Stats
-            datDevilFormat.tbl[id].param[0] = 10; // Strength
-            datDevilFormat.tbl[id].param[2] = 10; // Magic
-            datDevilFormat.tbl[id].param[3] = 15; // Vitality
-            datDevilFormat.tbl[id].param[4] = 14; // Agility
-            datDevilFormat.tbl[id].param[5] = 10; // Luck
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[1] = 364; // Anti-Elements
@@ -3200,6 +3569,15 @@ namespace NocturneInsaniax
 
         private static void NigiMitama(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 20; // Strength
+            datDevilFormat.tbl[id].param[1] = 36; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 36; // Magic
+            datDevilFormat.tbl[id].param[3] = 20; // Vitality
+            datDevilFormat.tbl[id].param[4] = 20; // Agility
+            datDevilFormat.tbl[id].param[5] = 36; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 6, 6, 1, 2, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -3215,13 +3593,6 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].mp = 10000;
             datDevilFormat.tbl[id].maxmp = 10000;
-
-            // Stats
-            datDevilFormat.tbl[id].param[0] = 10; // Strength
-            datDevilFormat.tbl[id].param[2] = 13; // Magic
-            datDevilFormat.tbl[id].param[3] = 10; // Vitality
-            datDevilFormat.tbl[id].param[4] = 10; // Agility
-            datDevilFormat.tbl[id].param[5] = 13; // Luck
 
             // Skills
             tblSkill.fclSkillTbl[id].Event[1].Param = 369; // Spirit Well
@@ -3232,6 +3603,15 @@ namespace NocturneInsaniax
 
         private static void AraMitama(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 32; // Strength
+            datDevilFormat.tbl[id].param[1] = 32; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 20; // Magic
+            datDevilFormat.tbl[id].param[3] = 20; // Vitality
+            datDevilFormat.tbl[id].param[4] = 32; // Agility
+            datDevilFormat.tbl[id].param[5] = 20; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 5, 4, 1, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -3248,13 +3628,6 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 10000;
             datDevilFormat.tbl[id].maxmp = 10000;
 
-            // Stats
-            datDevilFormat.tbl[id].param[0] = 11; // Strength
-            datDevilFormat.tbl[id].param[2] = 10; // Magic
-            datDevilFormat.tbl[id].param[3] = 10; // Vitality
-            datDevilFormat.tbl[id].param[4] = 11; // Agility
-            datDevilFormat.tbl[id].param[5] = 10; // Luck
-
             // Skills
             tblSkill.fclSkillTbl[id].Event[6].Param = 129; // Tathlum Shot
 
@@ -3264,6 +3637,15 @@ namespace NocturneInsaniax
 
         private static void Efreet(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 38; // Strength
+            datDevilFormat.tbl[id].param[1] = 51; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 49; // Magic
+            datDevilFormat.tbl[id].param[3] = 36; // Vitality
+            datDevilFormat.tbl[id].param[4] = 34; // Agility
+            datDevilFormat.tbl[id].param[5] = 21; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 4, 4, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 262144; // Fire
@@ -3292,8 +3674,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 780;
             datDevilFormat.tbl[id].maxhp = 780;
-            datDevilFormat.tbl[id].mp = 300;
-            datDevilFormat.tbl[id].maxmp = 300;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // AI
             datDevilAI.divTbls[0][44].aitable[0][0].skill = 32768;
@@ -3324,6 +3706,15 @@ namespace NocturneInsaniax
 
         private static void Pulukishi(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 47; // Strength
+            datDevilFormat.tbl[id].param[1] = 36; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 37; // Magic
+            datDevilFormat.tbl[id].param[3] = 42; // Vitality
+            datDevilFormat.tbl[id].param[4] = 24; // Agility
+            datDevilFormat.tbl[id].param[5] = 30; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 2, 2, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -3340,8 +3731,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 1041;
             datDevilFormat.tbl[id].maxhp = 1041;
-            datDevilFormat.tbl[id].mp = 252;
-            datDevilFormat.tbl[id].maxmp = 252;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // AI
             datDevilAI.divTbls[0][45].aitable[0][0].skill = 32768;
@@ -3368,6 +3759,15 @@ namespace NocturneInsaniax
 
         private static void Ongkhot(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 36; // Strength
+            datDevilFormat.tbl[id].param[1] = 24; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 24; // Magic
+            datDevilFormat.tbl[id].param[3] = 29; // Vitality
+            datDevilFormat.tbl[id].param[4] = 39; // Agility
+            datDevilFormat.tbl[id].param[5] = 31; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 1, 1, 1, 5, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -3384,8 +3784,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 504;
             datDevilFormat.tbl[id].maxhp = 504;
-            datDevilFormat.tbl[id].mp = 184;
-            datDevilFormat.tbl[id].maxmp = 184;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // AI
             datDevilAI.divTbls[0][46].aitable[0][0].skill = 32768;
@@ -3404,6 +3804,15 @@ namespace NocturneInsaniax
 
         private static void Jinn(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 35; // Strength
+            datDevilFormat.tbl[id].param[1] = 39; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 43; // Magic
+            datDevilFormat.tbl[id].param[3] = 32; // Vitality
+            datDevilFormat.tbl[id].param[4] = 35; // Agility
+            datDevilFormat.tbl[id].param[5] = 20; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 4, 4, 2, 2, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -3425,8 +3834,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 606;
             datDevilFormat.tbl[id].maxhp = 606;
-            datDevilFormat.tbl[id].mp = 252;
-            datDevilFormat.tbl[id].maxmp = 252;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[5] = 457; // Diamrita
@@ -3459,6 +3868,15 @@ namespace NocturneInsaniax
 
         private static void KarasuTengu(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 31; // Strength
+            datDevilFormat.tbl[id].param[1] = 29; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 28; // Magic
+            datDevilFormat.tbl[id].param[3] = 27; // Vitality
+            datDevilFormat.tbl[id].param[4] = 25; // Agility
+            datDevilFormat.tbl[id].param[5] = 16; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 3, 3, 2, 4, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
@@ -3480,8 +3898,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 420;
             datDevilFormat.tbl[id].maxhp = 420;
-            datDevilFormat.tbl[id].mp = 156;
-            datDevilFormat.tbl[id].maxmp = 156;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 461; // Storm Gale
@@ -3512,6 +3930,15 @@ namespace NocturneInsaniax
 
         private static void Dis(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 24; // Strength
+            datDevilFormat.tbl[id].param[1] = 31; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 32; // Magic
+            datDevilFormat.tbl[id].param[3] = 24; // Vitality
+            datDevilFormat.tbl[id].param[4] = 17; // Agility
+            datDevilFormat.tbl[id].param[5] = 15; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 4, 4, 2, 3, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 262144; // Fire
@@ -3531,8 +3958,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 300;
             datDevilFormat.tbl[id].maxhp = 300;
-            datDevilFormat.tbl[id].mp = 148;
-            datDevilFormat.tbl[id].maxmp = 148;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // AI
             datDevilAI.divTbls[0][49].aitable[0][0].skill = 32768;
@@ -3566,6 +3993,15 @@ namespace NocturneInsaniax
 
         private static void Isora(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 22; // Strength
+            datDevilFormat.tbl[id].param[1] = 19; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 21; // Magic
+            datDevilFormat.tbl[id].param[3] = 19; // Vitality
+            datDevilFormat.tbl[id].param[4] = 14; // Agility
+            datDevilFormat.tbl[id].param[5] = 8; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 3, 4, 2, 1, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -3598,8 +4034,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 160;
             datDevilFormat.tbl[id].maxhp = 160;
-            datDevilFormat.tbl[id].mp = 88;
-            datDevilFormat.tbl[id].maxmp = 88;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 180;
@@ -3620,6 +4056,15 @@ namespace NocturneInsaniax
 
         private static void Apsaras(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 15; // Strength
+            datDevilFormat.tbl[id].param[1] = 16; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 15; // Magic
+            datDevilFormat.tbl[id].param[3] = 14; // Vitality
+            datDevilFormat.tbl[id].param[4] = 12; // Agility
+            datDevilFormat.tbl[id].param[5] = 12; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 4, 4, 1, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -3635,8 +4080,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 84;
             datDevilFormat.tbl[id].maxhp = 84;
-            datDevilFormat.tbl[id].mp = 56;
-            datDevilFormat.tbl[id].maxmp = 56;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[1] = 210; // Dormina
@@ -3661,6 +4106,15 @@ namespace NocturneInsaniax
 
         private static void KoppaTengu(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 17; // Strength
+            datDevilFormat.tbl[id].param[1] = 25; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 23; // Magic
+            datDevilFormat.tbl[id].param[3] = 12; // Vitality
+            datDevilFormat.tbl[id].param[4] = 32; // Agility
+            datDevilFormat.tbl[id].param[5] = 20; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 4, 4, 1, 4, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -3680,8 +4134,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 210;
             datDevilFormat.tbl[id].maxhp = 210;
-            datDevilFormat.tbl[id].mp = 116;
-            datDevilFormat.tbl[id].maxmp = 116;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[1] = 461; // Storm Gale
@@ -3713,6 +4167,15 @@ namespace NocturneInsaniax
 
         private static void Titania(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 34; // Strength
+            datDevilFormat.tbl[id].param[1] = 42; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 56; // Magic
+            datDevilFormat.tbl[id].param[3] = 36; // Vitality
+            datDevilFormat.tbl[id].param[4] = 30; // Agility
+            datDevilFormat.tbl[id].param[5] = 32; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 5, 6, 1, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][6] = 131072; // Light
             datAisyo.tbl[id][7] = 100; // Dark
@@ -3724,8 +4187,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 828;
             datDevilFormat.tbl[id].maxhp = 828;
-            datDevilFormat.tbl[id].mp = 320;
-            datDevilFormat.tbl[id].maxmp = 320;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[1] = 452; // Pulinpaon
@@ -3755,6 +4218,15 @@ namespace NocturneInsaniax
 
         private static void Oberon(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 38; // Strength
+            datDevilFormat.tbl[id].param[1] = 37; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 46; // Magic
+            datDevilFormat.tbl[id].param[3] = 33; // Vitality
+            datDevilFormat.tbl[id].param[4] = 20; // Agility
+            datDevilFormat.tbl[id].param[5] = 24; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 4, 2, 2, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -3770,8 +4242,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 762;
             datDevilFormat.tbl[id].maxhp = 762;
-            datDevilFormat.tbl[id].mp = 260;
-            datDevilFormat.tbl[id].maxmp = 260;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // AI
             datDevilAI.divTbls[0][54].aitable[0][0].skill = 32768;
@@ -3791,6 +4263,15 @@ namespace NocturneInsaniax
 
         private static void Troll(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 35; // Strength
+            datDevilFormat.tbl[id].param[1] = 30; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 25; // Magic
+            datDevilFormat.tbl[id].param[3] = 52; // Vitality
+            datDevilFormat.tbl[id].param[4] = 10; // Agility
+            datDevilFormat.tbl[id].param[5] = 22; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 1, 4, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][9] = 2147483778; // Nerve
             datAisyo.tbl[id][10] = 2147483778; // Mind
@@ -3817,8 +4298,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 702;
             datDevilFormat.tbl[id].maxhp = 702;
-            datDevilFormat.tbl[id].mp = 192;
-            datDevilFormat.tbl[id].maxmp = 192;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 181; // Glacial Blast
@@ -3839,6 +4320,15 @@ namespace NocturneInsaniax
 
         private static void Setanta(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 43; // Strength
+            datDevilFormat.tbl[id].param[1] = 32; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 30; // Magic
+            datDevilFormat.tbl[id].param[3] = 50; // Vitality
+            datDevilFormat.tbl[id].param[4] = 31; // Agility
+            datDevilFormat.tbl[id].param[5] = 15; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 3, 3, 3, 1, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -3861,8 +4351,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 600;
             datDevilFormat.tbl[id].maxhp = 600;
-            datDevilFormat.tbl[id].mp = 220;
-            datDevilFormat.tbl[id].maxmp = 220;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[4] = 205; // Taunt
@@ -3878,6 +4368,15 @@ namespace NocturneInsaniax
 
         private static void Kelpie(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 20; // Strength
+            datDevilFormat.tbl[id].param[1] = 30; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 31; // Magic
+            datDevilFormat.tbl[id].param[3] = 21; // Vitality
+            datDevilFormat.tbl[id].param[4] = 27; // Agility
+            datDevilFormat.tbl[id].param[5] = 17; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 4, 4, 1, 4, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -3912,8 +4411,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 324;
             datDevilFormat.tbl[id].maxhp = 324;
-            datDevilFormat.tbl[id].mp = 156;
-            datDevilFormat.tbl[id].maxmp = 156;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[2] = 457;
@@ -3950,6 +4449,15 @@ namespace NocturneInsaniax
 
         private static void PyroJack(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 20; // Strength
+            datDevilFormat.tbl[id].param[1] = 24; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 21; // Magic
+            datDevilFormat.tbl[id].param[3] = 20; // Vitality
+            datDevilFormat.tbl[id].param[4] = 15; // Agility
+            datDevilFormat.tbl[id].param[5] = 17; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 6, 5, 2, 2, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 262144; // Fire
@@ -3969,8 +4477,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 222;
             datDevilFormat.tbl[id].maxhp = 222;
-            datDevilFormat.tbl[id].mp = 116;
-            datDevilFormat.tbl[id].maxmp = 116;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 473;
@@ -4000,6 +4508,15 @@ namespace NocturneInsaniax
 
         private static void HighPixie(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 10; // Strength
+            datDevilFormat.tbl[id].param[1] = 15; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 15; // Magic
+            datDevilFormat.tbl[id].param[3] = 10; // Vitality
+            datDevilFormat.tbl[id].param[4] = 15; // Agility
+            datDevilFormat.tbl[id].param[5] = 25; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 1, 1, 1, 3, 6 };
+
             // Skills
             tblSkill.fclSkillTbl[id].Event[1].Param = 461; // Storm Gale
             tblSkill.fclSkillTbl[id].Event[9].Param = 53; // Sukunda
@@ -4008,8 +4525,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 84;
             datDevilFormat.tbl[id].maxhp = 84;
-            datDevilFormat.tbl[id].mp = 64;
-            datDevilFormat.tbl[id].maxmp = 64;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[1] = 13;
@@ -4036,6 +4553,15 @@ namespace NocturneInsaniax
 
         private static void JackFrost(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 12; // Strength
+            datDevilFormat.tbl[id].param[1] = 16; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 20; // Magic
+            datDevilFormat.tbl[id].param[3] = 14; // Vitality
+            datDevilFormat.tbl[id].param[4] = 9; // Agility
+            datDevilFormat.tbl[id].param[5] = 10; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 4, 4, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -4055,8 +4581,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 78;
             datDevilFormat.tbl[id].maxhp = 78;
-            datDevilFormat.tbl[id].mp = 60;
-            datDevilFormat.tbl[id].maxmp = 60;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 463; // Jack Bufu
@@ -4077,14 +4603,23 @@ namespace NocturneInsaniax
 
         private static void Pixie(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 7; // Strength
+            datDevilFormat.tbl[id].param[1] = 14; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 15; // Magic
+            datDevilFormat.tbl[id].param[3] = 10; // Vitality
+            datDevilFormat.tbl[id].param[4] = 5; // Agility
+            datDevilFormat.tbl[id].param[5] = 16; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 2, 2, 1, 1, 6 };
+
             // Skills
             tblSkill.fclSkillTbl[id].Event[6].Param = 461; // Storm Gale
 
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 36;
             datDevilFormat.tbl[id].maxhp = 36;
-            datDevilFormat.tbl[id].mp = 32;
-            datDevilFormat.tbl[id].maxmp = 32;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[2] = 54;
@@ -4109,6 +4644,15 @@ namespace NocturneInsaniax
 
         private static void Throne(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 43; // Strength
+            datDevilFormat.tbl[id].param[1] = 55; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 55; // Magic
+            datDevilFormat.tbl[id].param[3] = 43; // Vitality
+            datDevilFormat.tbl[id].param[4] = 34; // Agility
+            datDevilFormat.tbl[id].param[5] = 34; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 4, 4, 3, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 262144; // Fire
@@ -4165,8 +4709,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 1236;
             datDevilFormat.tbl[id].maxhp = 1236;
-            datDevilFormat.tbl[id].mp = 344;
-            datDevilFormat.tbl[id].maxmp = 344;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // AI
             datDevilAI.divTbls[0][62].aitable[0][0].skill = 31;
@@ -4187,6 +4731,15 @@ namespace NocturneInsaniax
 
         private static void Dominion(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 36; // Strength
+            datDevilFormat.tbl[id].param[1] = 41; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 45; // Magic
+            datDevilFormat.tbl[id].param[3] = 36; // Vitality
+            datDevilFormat.tbl[id].param[4] = 26; // Agility
+            datDevilFormat.tbl[id].param[5] = 26; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 4, 4, 3, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -4249,8 +4802,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 936;
             datDevilFormat.tbl[id].maxhp = 936;
-            datDevilFormat.tbl[id].mp = 272;
-            datDevilFormat.tbl[id].maxmp = 272;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // AI
             datDevilAI.divTbls[0][63].aitable[0][0].skill = 32768;
@@ -4285,6 +4838,15 @@ namespace NocturneInsaniax
 
         private static void Virtue(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 36; // Strength
+            datDevilFormat.tbl[id].param[1] = 41; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 45; // Magic
+            datDevilFormat.tbl[id].param[3] = 36; // Vitality
+            datDevilFormat.tbl[id].param[4] = 26; // Agility
+            datDevilFormat.tbl[id].param[5] = 26; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 4, 4, 3, 2, 2 };   
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -4347,8 +4909,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 744;
             datDevilFormat.tbl[id].maxhp = 744;
-            datDevilFormat.tbl[id].mp = 232;
-            datDevilFormat.tbl[id].maxmp = 232;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[1] = 29; // Hamaon
@@ -4385,9 +4947,15 @@ namespace NocturneInsaniax
 
         private static void Power(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 42; // Strength
+            datDevilFormat.tbl[id].param[1] = 24; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 24; // Magic
+            datDevilFormat.tbl[id].param[3] = 40; // Vitality
+            datDevilFormat.tbl[id].param[4] = 18; // Agility
+            datDevilFormat.tbl[id].param[5] = 16; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 2, 2, 3, 2, 1 };
             datDevilFormat.tbl[id].level = 34;
-            datDevilFormat.tbl[id].param[0] = 17;
-            datDevilFormat.tbl[id].param[2] = 9;
 
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
@@ -4451,8 +5019,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 600;
             datDevilFormat.tbl[id].maxhp = 600;
-            datDevilFormat.tbl[id].mp = 164;
-            datDevilFormat.tbl[id].maxmp = 164;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[2] = 30; // Mahama
@@ -4483,6 +5051,15 @@ namespace NocturneInsaniax
 
         private static void Principality(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 26; // Strength
+            datDevilFormat.tbl[id].param[1] = 28; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 30; // Magic
+            datDevilFormat.tbl[id].param[3] = 21; // Vitality
+            datDevilFormat.tbl[id].param[4] = 18; // Agility
+            datDevilFormat.tbl[id].param[5] = 22; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 4, 4, 2, 3, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -4539,8 +5116,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 452;
             datDevilFormat.tbl[id].maxhp = 452;
-            datDevilFormat.tbl[id].mp = 160;
-            datDevilFormat.tbl[id].maxmp = 160;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[1] = 188; // Punishment
@@ -4574,6 +5151,15 @@ namespace NocturneInsaniax
 
         private static void Archangel(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 27; // Strength
+            datDevilFormat.tbl[id].param[1] = 17; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 18; // Magic
+            datDevilFormat.tbl[id].param[3] = 20; // Vitality
+            datDevilFormat.tbl[id].param[4] = 18; // Agility
+            datDevilFormat.tbl[id].param[5] = 15; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 2, 2, 3, 3, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
@@ -4633,8 +5219,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 254;
             datDevilFormat.tbl[id].maxhp = 254;
-            datDevilFormat.tbl[id].mp = 96;
-            datDevilFormat.tbl[id].maxmp = 96;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[4] = 101; // Heat Wave
@@ -4659,6 +5245,15 @@ namespace NocturneInsaniax
 
         private static void Angel(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 10; // Strength
+            datDevilFormat.tbl[id].param[1] = 17; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 18; // Magic
+            datDevilFormat.tbl[id].param[3] = 17; // Vitality
+            datDevilFormat.tbl[id].param[4] = 17; // Agility
+            datDevilFormat.tbl[id].param[5] = 15; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 4, 4, 2, 3, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -4703,8 +5298,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 108;
             datDevilFormat.tbl[id].maxhp = 108;
-            datDevilFormat.tbl[id].mp = 72;
-            datDevilFormat.tbl[id].maxmp = 72;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 28;
@@ -4734,6 +5329,15 @@ namespace NocturneInsaniax
 
         private static void Flauros(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 68; // Strength
+            datDevilFormat.tbl[id].param[1] = 35; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 44; // Magic
+            datDevilFormat.tbl[id].param[3] = 55; // Vitality
+            datDevilFormat.tbl[id].param[4] = 32; // Agility
+            datDevilFormat.tbl[id].param[5] = 30; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 6, 1, 1, 2, 2, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 65536; // Fire
@@ -4782,8 +5386,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 1164;
             datDevilFormat.tbl[id].maxhp = 1164;
-            datDevilFormat.tbl[id].mp = 328;
-            datDevilFormat.tbl[id].maxmp = 328;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[3] = 104; // Hassohappa
@@ -4815,6 +5419,15 @@ namespace NocturneInsaniax
 
         private static void Decarabia(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 36; // Strength
+            datDevilFormat.tbl[id].param[1] = 49; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 55; // Magic
+            datDevilFormat.tbl[id].param[3] = 41; // Vitality
+            datDevilFormat.tbl[id].param[4] = 30; // Agility
+            datDevilFormat.tbl[id].param[5] = 30; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 5, 6, 1, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][12] = 2147483778; // Shot
 
@@ -4829,8 +5442,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 930;
             datDevilFormat.tbl[id].maxhp = 930;
-            datDevilFormat.tbl[id].mp = 320;
-            datDevilFormat.tbl[id].maxmp = 320;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // AI
             datDevilAI.divTbls[0][70].aitable[0][0].skill = 65;
@@ -4859,6 +5472,15 @@ namespace NocturneInsaniax
 
         private static void Ose(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 42; // Strength
+            datDevilFormat.tbl[id].param[1] = 27; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 29; // Magic
+            datDevilFormat.tbl[id].param[3] = 36; // Vitality
+            datDevilFormat.tbl[id].param[4] = 31; // Agility
+            datDevilFormat.tbl[id].param[5] = 28; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 5, 1, 1, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -4906,8 +5528,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 846;
             datDevilFormat.tbl[id].maxhp = 846;
-            datDevilFormat.tbl[id].mp = 224;
-            datDevilFormat.tbl[id].maxmp = 224;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // AI
             datDevilAI.divTbls[0][71].aitable[0][0].skill = 32768;
@@ -4918,6 +5540,15 @@ namespace NocturneInsaniax
 
         private static void Berith(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 41; // Strength
+            datDevilFormat.tbl[id].param[1] = 25; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 25; // Magic
+            datDevilFormat.tbl[id].param[3] = 43; // Vitality
+            datDevilFormat.tbl[id].param[4] = 21; // Agility
+            datDevilFormat.tbl[id].param[5] = 16; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 2, 2, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 262144; // Fire
@@ -4950,8 +5581,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 624;
             datDevilFormat.tbl[id].maxhp = 624;
-            datDevilFormat.tbl[id].mp = 188;
-            datDevilFormat.tbl[id].maxmp = 188;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[2] = 446; // Damnation
@@ -4976,6 +5607,15 @@ namespace NocturneInsaniax
 
         private static void Eligor(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 35; // Strength
+            datDevilFormat.tbl[id].param[1] = 23; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 24; // Magic
+            datDevilFormat.tbl[id].param[3] = 35; // Vitality
+            datDevilFormat.tbl[id].param[4] = 15; // Agility
+            datDevilFormat.tbl[id].param[5] = 15; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 5, 2, 2, 2, 1, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -5010,8 +5650,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 420;
             datDevilFormat.tbl[id].maxhp = 420;
-            datDevilFormat.tbl[id].mp = 152;
-            datDevilFormat.tbl[id].maxmp = 152;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[3] = 97;
@@ -5035,6 +5675,15 @@ namespace NocturneInsaniax
 
         private static void Forneus(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 25; // Strength
+            datDevilFormat.tbl[id].param[1] = 17; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 19; // Magic
+            datDevilFormat.tbl[id].param[3] = 25; // Vitality
+            datDevilFormat.tbl[id].param[4] = 13; // Agility
+            datDevilFormat.tbl[id].param[5] = 21; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 2, 3, 3, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -5053,8 +5702,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 280;
             datDevilFormat.tbl[id].maxhp = 280;
-            datDevilFormat.tbl[id].mp = 108;
-            datDevilFormat.tbl[id].maxmp = 108;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[1] = 121;
@@ -5078,6 +5727,15 @@ namespace NocturneInsaniax
 
         private static void Yurlungur(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 45; // Strength
+            datDevilFormat.tbl[id].param[1] = 41; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 42; // Magic
+            datDevilFormat.tbl[id].param[3] = 75; // Vitality
+            datDevilFormat.tbl[id].param[4] = 23; // Agility
+            datDevilFormat.tbl[id].param[5] = 32; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 2, 2, 5, 1, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 65536; // Fire
@@ -5100,8 +5758,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 1368;
             datDevilFormat.tbl[id].maxhp = 1368;
-            datDevilFormat.tbl[id].mp = 328;
-            datDevilFormat.tbl[id].maxmp = 328;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // AI
             datDevilAI.divTbls[0][75].aitable[0][0].skill = 183;
@@ -5123,6 +5781,15 @@ namespace NocturneInsaniax
 
         private static void Quetzalcoatl(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 40; // Strength
+            datDevilFormat.tbl[id].param[1] = 36; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 30; // Magic
+            datDevilFormat.tbl[id].param[3] = 68; // Vitality
+            datDevilFormat.tbl[id].param[4] = 23; // Agility
+            datDevilFormat.tbl[id].param[5] = 28; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 3, 2, 5, 1, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -5148,8 +5815,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 996;
             datDevilFormat.tbl[id].maxhp = 996;
-            datDevilFormat.tbl[id].mp = 268;
-            datDevilFormat.tbl[id].maxmp = 268;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[3] = 181; // Glacial Blast
@@ -5179,6 +5846,15 @@ namespace NocturneInsaniax
 
         private static void NagaRaja(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 38; // Strength
+            datDevilFormat.tbl[id].param[1] = 25; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 26; // Magic
+            datDevilFormat.tbl[id].param[3] = 54; // Vitality
+            datDevilFormat.tbl[id].param[4] = 21; // Agility
+            datDevilFormat.tbl[id].param[5] = 23; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 1, 1, 5, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -5206,8 +5882,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 744;
             datDevilFormat.tbl[id].maxhp = 744;
-            datDevilFormat.tbl[id].mp = 184;
-            datDevilFormat.tbl[id].maxmp = 184;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[1] = 183; // Bolt Storm
@@ -5233,6 +5909,15 @@ namespace NocturneInsaniax
 
         private static void Mizuchi(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 30; // Strength
+            datDevilFormat.tbl[id].param[1] = 31; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 32; // Magic
+            datDevilFormat.tbl[id].param[3] = 47; // Vitality
+            datDevilFormat.tbl[id].param[4] = 17; // Agility
+            datDevilFormat.tbl[id].param[5] = 17; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 2, 2, 5, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -5248,8 +5933,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 564;
             datDevilFormat.tbl[id].maxhp = 564;
-            datDevilFormat.tbl[id].mp = 188;
-            datDevilFormat.tbl[id].maxmp = 188;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[2] = 11; // Mabufula
@@ -5271,6 +5956,15 @@ namespace NocturneInsaniax
 
         private static void Naga(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 34; // Strength
+            datDevilFormat.tbl[id].param[1] = 21; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 21; // Magic
+            datDevilFormat.tbl[id].param[3] = 40; // Vitality
+            datDevilFormat.tbl[id].param[4] = 19; // Agility
+            datDevilFormat.tbl[id].param[5] = 21; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 1, 1, 5, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -5286,8 +5980,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 444;
             datDevilFormat.tbl[id].maxhp = 444;
-            datDevilFormat.tbl[id].mp = 144;
-            datDevilFormat.tbl[id].maxmp = 144;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[3] = 204; // Fog Breath
@@ -5313,6 +6007,15 @@ namespace NocturneInsaniax
 
         private static void Nozuchi(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 28; // Strength
+            datDevilFormat.tbl[id].param[1] = 15; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 16; // Magic
+            datDevilFormat.tbl[id].param[3] = 26; // Vitality
+            datDevilFormat.tbl[id].param[4] = 11; // Agility
+            datDevilFormat.tbl[id].param[5] = 18; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 1, 1, 5, 1, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -5345,8 +6048,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 180;
             datDevilFormat.tbl[id].maxhp = 180;
-            datDevilFormat.tbl[id].mp = 80;
-            datDevilFormat.tbl[id].maxmp = 80;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[4] = 90; // Poison Arrow
@@ -5380,6 +6083,15 @@ namespace NocturneInsaniax
 
         private static void Cerberus(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 58; // Strength
+            datDevilFormat.tbl[id].param[1] = 36; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 35; // Magic
+            datDevilFormat.tbl[id].param[3] = 39; // Vitality
+            datDevilFormat.tbl[id].param[4] = 44; // Agility
+            datDevilFormat.tbl[id].param[5] = 31; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 5, 3, 3, 1, 2, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 131072; // Fire
@@ -5399,8 +6111,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 1296;
             datDevilFormat.tbl[id].maxhp = 1296;
-            datDevilFormat.tbl[id].mp = 300;
-            datDevilFormat.tbl[id].maxmp = 300;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 122; // Hell Fang
@@ -5421,6 +6133,15 @@ namespace NocturneInsaniax
 
         private static void Orthrus(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 41; // Strength
+            datDevilFormat.tbl[id].param[1] = 19; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 23; // Magic
+            datDevilFormat.tbl[id].param[3] = 34; // Vitality
+            datDevilFormat.tbl[id].param[4] = 28; // Agility
+            datDevilFormat.tbl[id].param[5] = 16; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 5, 3, 3, 1, 2, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 262144; // Fire
@@ -5456,8 +6177,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 402;
             datDevilFormat.tbl[id].maxhp = 402;
-            datDevilFormat.tbl[id].mp = 168;
-            datDevilFormat.tbl[id].maxmp = 168;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[4] = 430;
@@ -5489,6 +6210,15 @@ namespace NocturneInsaniax
 
         private static void Suparna(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 31; // Strength
+            datDevilFormat.tbl[id].param[1] = 45; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 47; // Magic
+            datDevilFormat.tbl[id].param[3] = 34; // Vitality
+            datDevilFormat.tbl[id].param[4] = 54; // Agility
+            datDevilFormat.tbl[id].param[5] = 26; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 4, 4, 1, 4, 1 };
+
             // Affinities
             datAisyo.tbl[id][12] = 2147483778; // Shot
 
@@ -5501,8 +6231,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 812;
             datDevilFormat.tbl[id].maxhp = 812;
-            datDevilFormat.tbl[id].mp = 292;
-            datDevilFormat.tbl[id].maxmp = 292;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[3] = 124; // Venom Claw
@@ -5539,6 +6269,15 @@ namespace NocturneInsaniax
 
         private static void BadbCatha(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 28; // Strength
+            datDevilFormat.tbl[id].param[1] = 16; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 15; // Magic
+            datDevilFormat.tbl[id].param[3] = 20; // Vitality
+            datDevilFormat.tbl[id].param[4] = 30; // Agility
+            datDevilFormat.tbl[id].param[5] = 20; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 4, 2, 1, 4, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -5575,8 +6314,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 234;
             datDevilFormat.tbl[id].maxhp = 234;
-            datDevilFormat.tbl[id].mp = 116;
-            datDevilFormat.tbl[id].maxmp = 116;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 23;
@@ -5601,6 +6340,15 @@ namespace NocturneInsaniax
 
         private static void Inugami(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 25; // Strength
+            datDevilFormat.tbl[id].param[1] = 14; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 17; // Magic
+            datDevilFormat.tbl[id].param[3] = 21; // Vitality
+            datDevilFormat.tbl[id].param[4] = 19; // Agility
+            datDevilFormat.tbl[id].param[5] = 17; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 2, 3, 1, 3, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 65536; // Fire
@@ -5616,8 +6364,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 156;
             datDevilFormat.tbl[id].maxhp = 156;
-            datDevilFormat.tbl[id].mp = 80;
-            datDevilFormat.tbl[id].maxmp = 80;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[3] = 176; // Fire Breath
@@ -5646,6 +6394,15 @@ namespace NocturneInsaniax
 
         private static void Nekomata(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 17; // Strength
+            datDevilFormat.tbl[id].param[1] = 26; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 29; // Magic
+            datDevilFormat.tbl[id].param[3] = 20; // Vitality
+            datDevilFormat.tbl[id].param[4] = 17; // Agility
+            datDevilFormat.tbl[id].param[5] = 17; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 4, 5, 1, 3, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
@@ -5677,8 +6434,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 182;
             datDevilFormat.tbl[id].maxhp = 182;
-            datDevilFormat.tbl[id].mp = 120;
-            datDevilFormat.tbl[id].maxmp = 120;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[1] = 125;
@@ -5707,6 +6464,15 @@ namespace NocturneInsaniax
 
         private static void Gogmagog(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 56; // Strength
+            datDevilFormat.tbl[id].param[1] = 32; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 36; // Magic
+            datDevilFormat.tbl[id].param[3] = 54; // Vitality
+            datDevilFormat.tbl[id].param[4] = 18; // Agility
+            datDevilFormat.tbl[id].param[5] = 36; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 2, 2, 4, 1, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 65536; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -5722,8 +6488,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 954;
             datDevilFormat.tbl[id].maxhp = 954;
-            datDevilFormat.tbl[id].mp = 276;
-            datDevilFormat.tbl[id].maxmp = 276;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // AI
             datDevilAI.divTbls[0][87].aitable[0][0].skill = 53;
@@ -5745,6 +6511,15 @@ namespace NocturneInsaniax
 
         private static void Titan(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 54; // Strength
+            datDevilFormat.tbl[id].param[1] = 29; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 26; // Magic
+            datDevilFormat.tbl[id].param[3] = 44; // Vitality
+            datDevilFormat.tbl[id].param[4] = 21; // Agility
+            datDevilFormat.tbl[id].param[5] = 33; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 5, 1, 1, 3, 1, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -5780,8 +6555,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 582;
             datDevilFormat.tbl[id].maxhp = 582;
-            datDevilFormat.tbl[id].mp = 120;
-            datDevilFormat.tbl[id].maxmp = 120;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[4] = 205; // Taunt
@@ -5802,6 +6577,15 @@ namespace NocturneInsaniax
 
         private static void Sarutahiko(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 45; // Strength
+            datDevilFormat.tbl[id].param[1] = 19; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 19; // Magic
+            datDevilFormat.tbl[id].param[3] = 44; // Vitality
+            datDevilFormat.tbl[id].param[4] = 19; // Agility
+            datDevilFormat.tbl[id].param[5] = 17; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 5, 1, 1, 3, 1, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -5834,12 +6618,21 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 480;
             datDevilFormat.tbl[id].maxhp = 480;
-            datDevilFormat.tbl[id].mp = 168;
-            datDevilFormat.tbl[id].maxmp = 168;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
         }
 
         private static void Sudama(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 18; // Strength
+            datDevilFormat.tbl[id].param[1] = 16; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 18; // Magic
+            datDevilFormat.tbl[id].param[3] = 11; // Vitality
+            datDevilFormat.tbl[id].param[4] = 23; // Agility
+            datDevilFormat.tbl[id].param[5] = 24; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 2, 4, 1, 3, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -5875,8 +6668,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 114;
             datDevilFormat.tbl[id].maxhp = 114;
-            datDevilFormat.tbl[id].mp = 80;
-            datDevilFormat.tbl[id].maxmp = 80;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // AI
             datDevilAI.divTbls[0][90].aitable[0][0].skill = 67;
@@ -5903,6 +6696,15 @@ namespace NocturneInsaniax
 
         private static void HuaPo(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 10; // Strength
+            datDevilFormat.tbl[id].param[1] = 13; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 12; // Magic
+            datDevilFormat.tbl[id].param[3] = 13; // Vitality
+            datDevilFormat.tbl[id].param[4] = 15; // Agility
+            datDevilFormat.tbl[id].param[5] = 12; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 4, 4, 1, 3, 3 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
@@ -5922,8 +6724,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 54;
             datDevilFormat.tbl[id].maxhp = 54;
-            datDevilFormat.tbl[id].mp = 40;
-            datDevilFormat.tbl[id].maxmp = 40;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[3] = 214;
@@ -5948,6 +6750,15 @@ namespace NocturneInsaniax
 
         private static void Kodama(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 10; // Strength
+            datDevilFormat.tbl[id].param[1] = 10; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 12; // Magic
+            datDevilFormat.tbl[id].param[3] = 10; // Vitality
+            datDevilFormat.tbl[id].param[4] = 12; // Agility
+            datDevilFormat.tbl[id].param[5] = 15; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 4, 4, 1, 3, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -5967,8 +6778,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 24;
             datDevilFormat.tbl[id].maxhp = 24;
-            datDevilFormat.tbl[id].mp = 28;
-            datDevilFormat.tbl[id].maxmp = 28;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             datDevilFormat.tbl[id].param[4] = 5;
             datDevilFormat.tbl[id].param[5] = 6;
@@ -5976,6 +6787,15 @@ namespace NocturneInsaniax
 
         private static void ShikiOuji(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 34; // Strength
+            datDevilFormat.tbl[id].param[1] = 50; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 50; // Magic
+            datDevilFormat.tbl[id].param[3] = 40; // Vitality
+            datDevilFormat.tbl[id].param[4] = 24; // Agility
+            datDevilFormat.tbl[id].param[5] = 23; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 4, 4, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 65536; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -5996,12 +6816,21 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 810;
             datDevilFormat.tbl[id].maxhp = 810;
-            datDevilFormat.tbl[id].mp = 312;
-            datDevilFormat.tbl[id].maxmp = 312;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
         }
 
         private static void Oni(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 34; // Strength
+            datDevilFormat.tbl[id].param[1] = 17; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 19; // Magic
+            datDevilFormat.tbl[id].param[3] = 30; // Vitality
+            datDevilFormat.tbl[id].param[4] = 16; // Agility
+            datDevilFormat.tbl[id].param[5] = 19; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 1, 1, 4, 1, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -6021,8 +6850,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 300;
             datDevilFormat.tbl[id].maxhp = 300;
-            datDevilFormat.tbl[id].mp = 104;
-            datDevilFormat.tbl[id].maxmp = 104;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[2] = 428; // Defense Kuzushi
@@ -6038,6 +6867,15 @@ namespace NocturneInsaniax
 
         private static void YomotsuIkusa(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 43; // Strength
+            datDevilFormat.tbl[id].param[1] = 31; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 37; // Magic
+            datDevilFormat.tbl[id].param[3] = 33; // Vitality
+            datDevilFormat.tbl[id].param[4] = 23; // Agility
+            datDevilFormat.tbl[id].param[5] = 25; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 1, 1, 4, 1, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -6075,8 +6913,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 792;
             datDevilFormat.tbl[id].maxhp = 792;
-            datDevilFormat.tbl[id].mp = 236;
-            datDevilFormat.tbl[id].maxmp = 236;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // AI
             datDevilAI.divTbls[0][95].aitable[0][0].skill = 134;
@@ -6093,6 +6931,15 @@ namespace NocturneInsaniax
 
         private static void Momunofu(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 34; // Strength
+            datDevilFormat.tbl[id].param[1] = 16; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 17; // Magic
+            datDevilFormat.tbl[id].param[3] = 26; // Vitality
+            datDevilFormat.tbl[id].param[4] = 19; // Agility
+            datDevilFormat.tbl[id].param[5] = 20; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 2, 2, 3, 2, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -6122,12 +6969,21 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 240;
             datDevilFormat.tbl[id].maxhp = 240;
-            datDevilFormat.tbl[id].mp = 104;
-            datDevilFormat.tbl[id].maxmp = 104;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
         }
 
         private static void Shikigami(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 13; // Strength
+            datDevilFormat.tbl[id].param[1] = 11; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 13; // Magic
+            datDevilFormat.tbl[id].param[3] = 11; // Vitality
+            datDevilFormat.tbl[id].param[4] = 12; // Agility
+            datDevilFormat.tbl[id].param[5] = 12; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 2, 4, 2, 3, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -6143,8 +6999,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 42;
             datDevilFormat.tbl[id].maxhp = 42;
-            datDevilFormat.tbl[id].mp = 36;
-            datDevilFormat.tbl[id].maxmp = 36;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // AI
             datDevilAI.divTbls[0][97].aitable[1][0].skill = 32768;
@@ -6161,6 +7017,15 @@ namespace NocturneInsaniax
 
         private static void Rangda(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 47; // Strength
+            datDevilFormat.tbl[id].param[1] = 47; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 60; // Magic
+            datDevilFormat.tbl[id].param[3] = 50; // Vitality
+            datDevilFormat.tbl[id].param[4] = 35; // Agility
+            datDevilFormat.tbl[id].param[5] = 37; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 4, 1, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 131072; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -6190,8 +7055,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 1506;
             datDevilFormat.tbl[id].maxhp = 1506;
-            datDevilFormat.tbl[id].mp = 384;
-            datDevilFormat.tbl[id].maxmp = 384;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[2] = 178; // Prominence
@@ -6217,6 +7082,15 @@ namespace NocturneInsaniax
 
         private static void Dakini(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 53; // Strength
+            datDevilFormat.tbl[id].param[1] = 28; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 35; // Magic
+            datDevilFormat.tbl[id].param[3] = 42; // Vitality
+            datDevilFormat.tbl[id].param[4] = 33; // Agility
+            datDevilFormat.tbl[id].param[5] = 25; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 2, 3, 1, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
@@ -6251,8 +7125,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 954;
             datDevilFormat.tbl[id].maxhp = 954;
-            datDevilFormat.tbl[id].mp = 252;
-            datDevilFormat.tbl[id].maxmp = 252;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[3] = 105; // Dark Sword
@@ -6280,6 +7154,15 @@ namespace NocturneInsaniax
 
         private static void Yaksini(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 43; // Strength
+            datDevilFormat.tbl[id].param[1] = 28; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 31; // Magic
+            datDevilFormat.tbl[id].param[3] = 37; // Vitality
+            datDevilFormat.tbl[id].param[4] = 27; // Agility
+            datDevilFormat.tbl[id].param[5] = 23; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 2, 3, 1, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -6326,8 +7209,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 678;
             datDevilFormat.tbl[id].maxhp = 678;
-            datDevilFormat.tbl[id].mp = 216;
-            datDevilFormat.tbl[id].maxmp = 216;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[6] = 21;
@@ -6345,6 +7228,15 @@ namespace NocturneInsaniax
 
         private static void YomotsuShikome(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 20; // Strength
+            datDevilFormat.tbl[id].param[1] = 36; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 36; // Magic
+            datDevilFormat.tbl[id].param[3] = 21; // Vitality
+            datDevilFormat.tbl[id].param[4] = 24; // Agility
+            datDevilFormat.tbl[id].param[5] = 21; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 4, 4, 2, 2, 3 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -6380,8 +7272,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 504;
             datDevilFormat.tbl[id].maxhp = 504;
-            datDevilFormat.tbl[id].mp = 192;
-            datDevilFormat.tbl[id].maxmp = 192;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[3] = 23;
@@ -6425,6 +7317,15 @@ namespace NocturneInsaniax
 
         private static void Taraka(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 25; // Strength
+            datDevilFormat.tbl[id].param[1] = 15; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 18; // Magic
+            datDevilFormat.tbl[id].param[3] = 28; // Vitality
+            datDevilFormat.tbl[id].param[4] = 16; // Agility
+            datDevilFormat.tbl[id].param[5] = 18; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 1, 1, 2, 3, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -6459,8 +7360,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 264;
             datDevilFormat.tbl[id].maxhp = 264;
-            datDevilFormat.tbl[id].mp = 104;
-            datDevilFormat.tbl[id].maxmp = 104;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[3] = 14;
@@ -6481,6 +7382,15 @@ namespace NocturneInsaniax
 
         private static void DatsueBa(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 9; // Strength
+            datDevilFormat.tbl[id].param[1] = 20; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 16; // Magic
+            datDevilFormat.tbl[id].param[3] = 12; // Vitality
+            datDevilFormat.tbl[id].param[4] = 10; // Agility
+            datDevilFormat.tbl[id].param[5] = 14; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 5, 4, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -6510,8 +7420,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 72;
             datDevilFormat.tbl[id].maxhp = 72;
-            datDevilFormat.tbl[id].mp = 60;
-            datDevilFormat.tbl[id].maxmp = 60;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[3] = 7;
@@ -6527,6 +7437,15 @@ namespace NocturneInsaniax
 
         private static void Mada(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 75; // Strength
+            datDevilFormat.tbl[id].param[1] = 53; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 55; // Magic
+            datDevilFormat.tbl[id].param[3] = 75; // Vitality
+            datDevilFormat.tbl[id].param[4] = 35; // Agility
+            datDevilFormat.tbl[id].param[5] = 40; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 6, 2, 2, 2, 1, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 262144; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -6551,8 +7470,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 1974;
             datDevilFormat.tbl[id].maxhp = 1974;
-            datDevilFormat.tbl[id].mp = 416;
-            datDevilFormat.tbl[id].maxmp = 416;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[4] = 459; // Luster Candy
@@ -6592,6 +7511,15 @@ namespace NocturneInsaniax
 
         private static void Girimekhala(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 55; // Strength
+            datDevilFormat.tbl[id].param[1] = 42; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 43; // Magic
+            datDevilFormat.tbl[id].param[3] = 52; // Vitality
+            datDevilFormat.tbl[id].param[4] = 33; // Agility
+            datDevilFormat.tbl[id].param[5] = 33; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 3, 3, 2, 1, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 131072; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -6620,8 +7548,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 1416;
             datDevilFormat.tbl[id].maxhp = 1416;
-            datDevilFormat.tbl[id].mp = 300;
-            datDevilFormat.tbl[id].maxmp = 300;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[2] = 102; // Blight
@@ -6654,6 +7582,15 @@ namespace NocturneInsaniax
 
         private static void Taotie(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 44; // Strength
+            datDevilFormat.tbl[id].param[1] = 51; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 52; // Magic
+            datDevilFormat.tbl[id].param[3] = 49; // Vitality
+            datDevilFormat.tbl[id].param[4] = 38; // Agility
+            datDevilFormat.tbl[id].param[5] = 44; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 3, 3, 4, 1, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -6689,8 +7626,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 1566;
             datDevilFormat.tbl[id].maxhp = 1566;
-            datDevilFormat.tbl[id].mp = 344;
-            datDevilFormat.tbl[id].maxmp = 344;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[2] = 196;
@@ -6730,6 +7667,15 @@ namespace NocturneInsaniax
 
         private static void Pazuzu(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 40; // Strength
+            datDevilFormat.tbl[id].param[1] = 47; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 38; // Magic
+            datDevilFormat.tbl[id].param[3] = 50; // Vitality
+            datDevilFormat.tbl[id].param[4] = 24; // Agility
+            datDevilFormat.tbl[id].param[5] = 20; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 5, 4, 2, 2, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -6765,8 +7711,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 756;
             datDevilFormat.tbl[id].maxhp = 756;
-            datDevilFormat.tbl[id].mp = 256;
-            datDevilFormat.tbl[id].maxmp = 256;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // AI
             datDevilAI.divTbls[0][107].aitable[0][0].skill = 32768;
@@ -6801,6 +7747,15 @@ namespace NocturneInsaniax
 
         private static void Baphomet(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 20; // Strength
+            datDevilFormat.tbl[id].param[1] = 32; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 42; // Magic
+            datDevilFormat.tbl[id].param[3] = 42; // Vitality
+            datDevilFormat.tbl[id].param[4] = 22; // Agility
+            datDevilFormat.tbl[id].param[5] = 25; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 4, 5, 2, 2, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -6835,8 +7790,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 570;
             datDevilFormat.tbl[id].maxhp = 570;
-            datDevilFormat.tbl[id].mp = 200;
-            datDevilFormat.tbl[id].maxmp = 200;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 446; // Damnation
@@ -6858,6 +7813,15 @@ namespace NocturneInsaniax
 
         private static void Mot(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 62; // Strength
+            datDevilFormat.tbl[id].param[1] = 67; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 80; // Magic
+            datDevilFormat.tbl[id].param[3] = 74; // Vitality
+            datDevilFormat.tbl[id].param[4] = 40; // Agility
+            datDevilFormat.tbl[id].param[5] = 46; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 2, 5, 4, 1, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
@@ -6882,8 +7846,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 2036;
             datDevilFormat.tbl[id].maxhp = 2036;
-            datDevilFormat.tbl[id].mp = 492;
-            datDevilFormat.tbl[id].maxmp = 492;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2)); ;
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // AI
             datDevilAI.divTbls[0][109].aitable[0][0].skill = 6;
@@ -6916,6 +7880,15 @@ namespace NocturneInsaniax
 
         private static void Aciel(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 72; // Strength
+            datDevilFormat.tbl[id].param[1] = 62; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 57; // Magic
+            datDevilFormat.tbl[id].param[3] = 67; // Vitality
+            datDevilFormat.tbl[id].param[4] = 35; // Agility
+            datDevilFormat.tbl[id].param[5] = 40; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 2, 2, 5, 1, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 2147483778; // Phys
             datAisyo.tbl[id][1] = 65536; // Fire
@@ -6946,8 +7919,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 1878;
             datDevilFormat.tbl[id].maxhp = 1878;
-            datDevilFormat.tbl[id].mp = 408;
-            datDevilFormat.tbl[id].maxmp = 408;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[4] = 208; // Sol Niger
@@ -6982,6 +7955,15 @@ namespace NocturneInsaniax
 
         private static void Surt(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 70; // Strength
+            datDevilFormat.tbl[id].param[1] = 50; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 53; // Magic
+            datDevilFormat.tbl[id].param[3] = 60; // Vitality
+            datDevilFormat.tbl[id].param[4] = 38; // Agility
+            datDevilFormat.tbl[id].param[5] = 47; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 4, 4, 1, 1, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][2] = 2147483778; // Ice
@@ -6999,8 +7981,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 1998;
             datDevilFormat.tbl[id].maxhp = 1998;
-            datDevilFormat.tbl[id].mp = 376;
-            datDevilFormat.tbl[id].maxmp = 376;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 178; // Prominence
@@ -7028,6 +8010,15 @@ namespace NocturneInsaniax
 
         private static void Abaddon(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 64; // Strength
+            datDevilFormat.tbl[id].param[1] = 60; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 56; // Magic
+            datDevilFormat.tbl[id].param[3] = 62; // Vitality
+            datDevilFormat.tbl[id].param[4] = 32; // Agility
+            datDevilFormat.tbl[id].param[5] = 36; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 2, 2, 5, 1, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
@@ -7049,8 +8040,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 1614;
             datDevilFormat.tbl[id].maxhp = 1614;
-            datDevilFormat.tbl[id].mp = 372;
-            datDevilFormat.tbl[id].maxmp = 372;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[3] = 307; // Avenge
@@ -7071,6 +8062,15 @@ namespace NocturneInsaniax
 
         private static void Loki(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 40; // Strength
+            datDevilFormat.tbl[id].param[1] = 50; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 42; // Magic
+            datDevilFormat.tbl[id].param[3] = 50; // Vitality
+            datDevilFormat.tbl[id].param[4] = 30; // Agility
+            datDevilFormat.tbl[id].param[5] = 40; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 4, 4, 1, 2, 4 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
@@ -7106,8 +8106,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 1056;
             datDevilFormat.tbl[id].maxhp = 1056;
-            datDevilFormat.tbl[id].mp = 288;
-            datDevilFormat.tbl[id].maxmp = 288;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[4] = 437; // Refrigerate
@@ -7132,6 +8132,15 @@ namespace NocturneInsaniax
 
         private static void Lilith(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 40; // Strength
+            datDevilFormat.tbl[id].param[1] = 74; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 60; // Magic
+            datDevilFormat.tbl[id].param[3] = 50; // Vitality
+            datDevilFormat.tbl[id].param[4] = 40; // Agility
+            datDevilFormat.tbl[id].param[5] = 36; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 7, 6, 1, 2, 1 };
+
             // Affinities
             datAisyo.tbl[id][6] = 100; // Light
             datAisyo.tbl[id][10] = 65536; // Mind
@@ -7156,8 +8165,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 2160;
             datDevilFormat.tbl[id].maxhp = 2160;
-            datDevilFormat.tbl[id].mp = 440;
-            datDevilFormat.tbl[id].maxmp = 440;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[2] = 455; // Soul Drain
@@ -7188,6 +8197,15 @@ namespace NocturneInsaniax
 
         private static void Nyx(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 36; // Strength
+            datDevilFormat.tbl[id].param[1] = 51; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 66; // Magic
+            datDevilFormat.tbl[id].param[3] = 42; // Vitality
+            datDevilFormat.tbl[id].param[4] = 40; // Agility
+            datDevilFormat.tbl[id].param[5] = 36; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 7, 6, 1, 2, 1 };
+
             // Affinities
             datAisyo.tbl[id][10] = 65536; // Mind
             datAisyo.tbl[id][12] = 2147483778; // Shot
@@ -7203,8 +8221,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 1560;
             datDevilFormat.tbl[id].maxhp = 1560;
-            datDevilFormat.tbl[id].mp = 388;
-            datDevilFormat.tbl[id].maxmp = 388;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[2] = 455; // Soul Drain
@@ -7242,6 +8260,15 @@ namespace NocturneInsaniax
 
         private static void QueenMab(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 28; // Strength
+            datDevilFormat.tbl[id].param[1] = 52; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 42; // Magic
+            datDevilFormat.tbl[id].param[3] = 28; // Vitality
+            datDevilFormat.tbl[id].param[4] = 30; // Agility
+            datDevilFormat.tbl[id].param[5] = 48; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 7, 6, 1, 2, 1 };
+
             // Affinities
             datAisyo.tbl[id][6] = 100; // Light
             datAisyo.tbl[id][7] = 131072; // Dark
@@ -7261,8 +8288,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 1474;
             datDevilFormat.tbl[id].maxhp = 1474;
-            datDevilFormat.tbl[id].mp = 308;
-            datDevilFormat.tbl[id].maxmp = 308;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[2] = 41; // Mediarahan
@@ -7289,6 +8316,15 @@ namespace NocturneInsaniax
 
         private static void Succubus(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 25; // Strength
+            datDevilFormat.tbl[id].param[1] = 31; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 39; // Magic
+            datDevilFormat.tbl[id].param[3] = 27; // Vitality
+            datDevilFormat.tbl[id].param[4] = 25; // Agility
+            datDevilFormat.tbl[id].param[5] = 25; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 6, 7, 1, 2, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -7308,12 +8344,21 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 366;
             datDevilFormat.tbl[id].maxhp = 366;
-            datDevilFormat.tbl[id].mp = 212;
-            datDevilFormat.tbl[id].maxmp = 212;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
         }
 
         private static void Incubus(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 16; // Strength
+            datDevilFormat.tbl[id].param[1] = 29; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 30; // Magic
+            datDevilFormat.tbl[id].param[3] = 20; // Vitality
+            datDevilFormat.tbl[id].param[4] = 22; // Agility
+            datDevilFormat.tbl[id].param[5] = 18; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 5, 5, 1, 3, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -7348,8 +8393,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 294;
             datDevilFormat.tbl[id].maxhp = 294;
-            datDevilFormat.tbl[id].mp = 156;
-            datDevilFormat.tbl[id].maxmp = 156;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[3] = 125; // Stun Claw
@@ -7375,6 +8420,15 @@ namespace NocturneInsaniax
 
         private static void Fomorian(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 20; // Strength
+            datDevilFormat.tbl[id].param[1] = 18; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 19; // Magic
+            datDevilFormat.tbl[id].param[3] = 35; // Vitality
+            datDevilFormat.tbl[id].param[4] = 10; // Agility
+            datDevilFormat.tbl[id].param[5] = 12; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 3, 3, 1, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 80; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -7406,12 +8460,21 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 192;
             datDevilFormat.tbl[id].maxhp = 192;
-            datDevilFormat.tbl[id].mp = 100;
-            datDevilFormat.tbl[id].maxmp = 100;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
         }
 
         private static void Lilim(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 10; // Strength
+            datDevilFormat.tbl[id].param[1] = 15; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 20; // Magic
+            datDevilFormat.tbl[id].param[3] = 12; // Vitality
+            datDevilFormat.tbl[id].param[4] = 17; // Agility
+            datDevilFormat.tbl[id].param[5] = 10; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 6, 7, 1, 2, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -7445,8 +8508,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 78;
             datDevilFormat.tbl[id].maxhp = 78;
-            datDevilFormat.tbl[id].mp = 64;
-            datDevilFormat.tbl[id].maxmp = 64;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[4] = 61; // Pulinpa
@@ -7472,6 +8535,15 @@ namespace NocturneInsaniax
 
         private static void Hresvelgr(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 50; // Strength
+            datDevilFormat.tbl[id].param[1] = 48; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 50; // Magic
+            datDevilFormat.tbl[id].param[3] = 48; // Vitality
+            datDevilFormat.tbl[id].param[4] = 62; // Agility
+            datDevilFormat.tbl[id].param[5] = 27; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 3, 3, 1, 5, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -7503,8 +8575,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 1800;
             datDevilFormat.tbl[id].maxhp = 1800;
-            datDevilFormat.tbl[id].mp = 380;
-            datDevilFormat.tbl[id].maxmp = 380;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[1] = 462; // Winged Fury
@@ -7528,6 +8600,15 @@ namespace NocturneInsaniax
 
         private static void Mothman(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 26; // Strength
+            datDevilFormat.tbl[id].param[1] = 41; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 40; // Magic
+            datDevilFormat.tbl[id].param[3] = 41; // Vitality
+            datDevilFormat.tbl[id].param[4] = 20; // Agility
+            datDevilFormat.tbl[id].param[5] = 20; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 3, 3, 1, 5, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 65536; // Fire
@@ -7564,8 +8645,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 540;
             datDevilFormat.tbl[id].maxhp = 540;
-            datDevilFormat.tbl[id].mp = 244;
-            datDevilFormat.tbl[id].maxmp = 244;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 211;
@@ -7588,6 +8669,15 @@ namespace NocturneInsaniax
 
         private static void Raiju(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 20; // Strength
+            datDevilFormat.tbl[id].param[1] = 29; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 32; // Magic
+            datDevilFormat.tbl[id].param[3] = 22; // Vitality
+            datDevilFormat.tbl[id].param[4] = 20; // Agility
+            datDevilFormat.tbl[id].param[5] = 12; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 3, 3, 1, 5, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -7621,8 +8711,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 312;
             datDevilFormat.tbl[id].maxhp = 312;
-            datDevilFormat.tbl[id].mp = 160;
-            datDevilFormat.tbl[id].maxmp = 160;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[3] = 440;
@@ -7640,6 +8730,15 @@ namespace NocturneInsaniax
 
         private static void Nue(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 35; // Strength
+            datDevilFormat.tbl[id].param[1] = 23; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 25; // Magic
+            datDevilFormat.tbl[id].param[3] = 30; // Vitality
+            datDevilFormat.tbl[id].param[4] = 20; // Agility
+            datDevilFormat.tbl[id].param[5] = 20; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 3, 3, 1, 5, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -7672,8 +8771,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 360;
             datDevilFormat.tbl[id].maxhp = 360;
-            datDevilFormat.tbl[id].mp = 160;
-            datDevilFormat.tbl[id].maxmp = 160;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[5] = 437;
@@ -7698,6 +8797,15 @@ namespace NocturneInsaniax
 
         private static void Bicorn(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 25; // Strength
+            datDevilFormat.tbl[id].param[1] = 15; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 16; // Magic
+            datDevilFormat.tbl[id].param[3] = 25; // Vitality
+            datDevilFormat.tbl[id].param[4] = 14; // Agility
+            datDevilFormat.tbl[id].param[5] = 10; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 3, 3, 1, 5, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -7714,8 +8822,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 180;
             datDevilFormat.tbl[id].maxhp = 180;
-            datDevilFormat.tbl[id].mp = 84;
-            datDevilFormat.tbl[id].maxmp = 84;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[3] = 65; // Sukukaja
@@ -7751,6 +8859,15 @@ namespace NocturneInsaniax
 
         private static void Zhen(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 10; // Strength
+            datDevilFormat.tbl[id].param[1] = 13; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 15; // Magic
+            datDevilFormat.tbl[id].param[3] = 15; // Vitality
+            datDevilFormat.tbl[id].param[4] = 13; // Agility
+            datDevilFormat.tbl[id].param[5] = 12; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 3, 3, 1, 5, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -7785,8 +8902,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 72;
             datDevilFormat.tbl[id].maxhp = 72;
-            datDevilFormat.tbl[id].mp = 48;
-            datDevilFormat.tbl[id].maxmp = 48;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 461;
@@ -7823,6 +8940,15 @@ namespace NocturneInsaniax
 
         private static void Vetala(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 54; // Strength
+            datDevilFormat.tbl[id].param[1] = 44; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 50; // Magic
+            datDevilFormat.tbl[id].param[3] = 40; // Vitality
+            datDevilFormat.tbl[id].param[4] = 27; // Agility
+            datDevilFormat.tbl[id].param[5] = 34; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 3, 3, 2, 3, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -7858,8 +8984,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 1470;
             datDevilFormat.tbl[id].maxhp = 1470;
-            datDevilFormat.tbl[id].mp = 332;
-            datDevilFormat.tbl[id].maxmp = 332;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 449; // Poison Salvo
@@ -7879,6 +9005,15 @@ namespace NocturneInsaniax
 
         private static void Legion(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 48; // Strength
+            datDevilFormat.tbl[id].param[1] = 28; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 31; // Magic
+            datDevilFormat.tbl[id].param[3] = 53; // Vitality
+            datDevilFormat.tbl[id].param[4] = 24; // Agility
+            datDevilFormat.tbl[id].param[5] = 23; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 2, 2, 3, 1, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -7898,8 +9033,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 630;
             datDevilFormat.tbl[id].maxhp = 630;
-            datDevilFormat.tbl[id].mp = 240;
-            datDevilFormat.tbl[id].maxmp = 240;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[5] = 452; // Pulinpaon
@@ -7935,6 +9070,15 @@ namespace NocturneInsaniax
 
         private static void Yaka(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 20; // Strength
+            datDevilFormat.tbl[id].param[1] = 21; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 23; // Magic
+            datDevilFormat.tbl[id].param[3] = 20; // Vitality
+            datDevilFormat.tbl[id].param[4] = 12; // Agility
+            datDevilFormat.tbl[id].param[5] = 15; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 4, 4, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -7953,8 +9097,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 150;
             datDevilFormat.tbl[id].maxhp = 150;
-            datDevilFormat.tbl[id].mp = 108;
-            datDevilFormat.tbl[id].maxmp = 108;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 34; // Mamudo
@@ -7969,6 +9113,15 @@ namespace NocturneInsaniax
 
         private static void Choronzon(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 24; // Strength
+            datDevilFormat.tbl[id].param[1] = 9; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 11; // Magic
+            datDevilFormat.tbl[id].param[3] = 40; // Vitality
+            datDevilFormat.tbl[id].param[4] = 2; // Agility
+            datDevilFormat.tbl[id].param[5] = 5; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 2, 2, 3, 1, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 65536; // Fire
@@ -7985,8 +9138,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 182;
             datDevilFormat.tbl[id].maxhp = 182;
-            datDevilFormat.tbl[id].mp = 60;
-            datDevilFormat.tbl[id].maxmp = 60;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[2] = 1;
@@ -8020,6 +9173,15 @@ namespace NocturneInsaniax
 
         private static void Preta(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 13; // Strength
+            datDevilFormat.tbl[id].param[1] = 10; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 10; // Magic
+            datDevilFormat.tbl[id].param[3] = 12; // Vitality
+            datDevilFormat.tbl[id].param[4] = 16; // Agility
+            datDevilFormat.tbl[id].param[5] = 11; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 2, 4, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -8049,12 +9211,21 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 40;
             datDevilFormat.tbl[id].maxhp = 40;
-            datDevilFormat.tbl[id].mp = 32;
-            datDevilFormat.tbl[id].maxmp = 32;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
         }
 
         private static void Shadow(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 25; // Strength
+            datDevilFormat.tbl[id].param[1] = 38; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 48; // Magic
+            datDevilFormat.tbl[id].param[3] = 45; // Vitality
+            datDevilFormat.tbl[id].param[4] = 40; // Agility
+            datDevilFormat.tbl[id].param[5] = 20; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 4, 4, 1, 3, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -8074,8 +9245,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 1260;
             datDevilFormat.tbl[id].maxhp = 1260;
-            datDevilFormat.tbl[id].mp = 288;
-            datDevilFormat.tbl[id].maxmp = 288;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 18; // Maziodyne
@@ -8109,6 +9280,15 @@ namespace NocturneInsaniax
 
         private static void BlackOoze(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 27; // Strength
+            datDevilFormat.tbl[id].param[1] = 22; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 25; // Magic
+            datDevilFormat.tbl[id].param[3] = 40; // Vitality
+            datDevilFormat.tbl[id].param[4] = 15; // Agility
+            datDevilFormat.tbl[id].param[5] = 15; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 2, 2, 4, 2, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -8144,8 +9324,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 444;
             datDevilFormat.tbl[id].maxhp = 444;
-            datDevilFormat.tbl[id].mp = 148;
-            datDevilFormat.tbl[id].maxmp = 148;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[4] = 448; // Poison Volley
@@ -8179,6 +9359,15 @@ namespace NocturneInsaniax
 
         private static void Blob(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 20; // Strength
+            datDevilFormat.tbl[id].param[1] = 15; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 18; // Magic
+            datDevilFormat.tbl[id].param[3] = 25; // Vitality
+            datDevilFormat.tbl[id].param[4] = 12; // Agility
+            datDevilFormat.tbl[id].param[5] = 18; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 2, 2, 4, 2, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -8195,8 +9384,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 156;
             datDevilFormat.tbl[id].maxhp = 156;
-            datDevilFormat.tbl[id].mp = 88;
-            datDevilFormat.tbl[id].maxmp = 88;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[2] = 52; // Tarunda
@@ -8221,6 +9410,15 @@ namespace NocturneInsaniax
 
         private static void Slime(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 15; // Strength
+            datDevilFormat.tbl[id].param[1] = 12; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 13; // Magic
+            datDevilFormat.tbl[id].param[3] = 8; // Vitality
+            datDevilFormat.tbl[id].param[4] = 12; // Agility
+            datDevilFormat.tbl[id].param[5] = 18; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 2, 2, 4, 2, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -8251,8 +9449,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 66;
             datDevilFormat.tbl[id].maxhp = 66;
-            datDevilFormat.tbl[id].mp = 44;
-            datDevilFormat.tbl[id].maxmp = 44;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[3] = 190;
@@ -8288,6 +9486,15 @@ namespace NocturneInsaniax
 
         private static void MouRyo(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 15; // Strength
+            datDevilFormat.tbl[id].param[1] = 14; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 18; // Magic
+            datDevilFormat.tbl[id].param[3] = 10; // Vitality
+            datDevilFormat.tbl[id].param[4] = 12; // Agility
+            datDevilFormat.tbl[id].param[5] = 12; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 3, 3, 1, 3, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
@@ -8321,8 +9528,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 66;
             datDevilFormat.tbl[id].maxhp = 66;
-            datDevilFormat.tbl[id].mp = 56;
-            datDevilFormat.tbl[id].maxmp = 56;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[3] = 1;
@@ -8354,6 +9561,15 @@ namespace NocturneInsaniax
 
         private static void WillOWisp(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 10; // Strength
+            datDevilFormat.tbl[id].param[1] = 11; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 12; // Magic
+            datDevilFormat.tbl[id].param[3] = 10; // Vitality
+            datDevilFormat.tbl[id].param[4] = 12; // Agility
+            datDevilFormat.tbl[id].param[5] = 8; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 3, 3, 1, 3, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -8370,8 +9586,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 20;
             datDevilFormat.tbl[id].maxhp = 20;
-            datDevilFormat.tbl[id].mp = 24;
-            datDevilFormat.tbl[id].maxmp = 24;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[2] = 111;
@@ -8394,6 +9610,15 @@ namespace NocturneInsaniax
 
         private static void Michael(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 72; // Strength
+            datDevilFormat.tbl[id].param[1] = 65; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 75; // Magic
+            datDevilFormat.tbl[id].param[3] = 58; // Vitality
+            datDevilFormat.tbl[id].param[4] = 62; // Agility
+            datDevilFormat.tbl[id].param[5] = 45; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 3, 1, 4, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
@@ -8445,6 +9670,15 @@ namespace NocturneInsaniax
 
         private static void Gabriel(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 60; // Strength
+            datDevilFormat.tbl[id].param[1] = 75; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 65; // Magic
+            datDevilFormat.tbl[id].param[3] = 55; // Vitality
+            datDevilFormat.tbl[id].param[4] = 60; // Agility
+            datDevilFormat.tbl[id].param[5] = 55; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 3, 1, 4, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
@@ -8486,6 +9720,15 @@ namespace NocturneInsaniax
 
         private static void Raphael(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 65; // Strength
+            datDevilFormat.tbl[id].param[1] = 65; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 60; // Magic
+            datDevilFormat.tbl[id].param[3] = 55; // Vitality
+            datDevilFormat.tbl[id].param[4] = 70; // Agility
+            datDevilFormat.tbl[id].param[5] = 42; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 3, 1, 4, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -8530,6 +9773,15 @@ namespace NocturneInsaniax
 
         private static void Uriel(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 63; // Strength
+            datDevilFormat.tbl[id].param[1] = 60; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 60; // Magic
+            datDevilFormat.tbl[id].param[3] = 50; // Vitality
+            datDevilFormat.tbl[id].param[4] = 52; // Agility
+            datDevilFormat.tbl[id].param[5] = 45; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 3, 1, 4, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 131072; // Fire
@@ -8572,6 +9824,15 @@ namespace NocturneInsaniax
 
         private static void Ganesha(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 51; // Strength
+            datDevilFormat.tbl[id].param[1] = 51; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 51; // Magic
+            datDevilFormat.tbl[id].param[3] = 51; // Vitality
+            datDevilFormat.tbl[id].param[4] = 30; // Agility
+            datDevilFormat.tbl[id].param[5] = 32; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 2, 2, 3, 2, 3 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -8600,8 +9861,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 4200;
             datDevilFormat.tbl[id].maxhp = 4200;
-            datDevilFormat.tbl[id].mp = 510;
-            datDevilFormat.tbl[id].maxmp = 510;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             datDevilFormat.tbl[id].dropexp = 900;
             datDevilFormat.tbl[id].dropmakka = 4500;
@@ -8619,6 +9880,15 @@ namespace NocturneInsaniax
 
         private static void Valkyrie(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 37; // Strength
+            datDevilFormat.tbl[id].param[1] = 30; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 32; // Magic
+            datDevilFormat.tbl[id].param[3] = 35; // Vitality
+            datDevilFormat.tbl[id].param[4] = 30; // Agility
+            datDevilFormat.tbl[id].param[5] = 25; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 1, 1, 3, 2, 3 };
+
             // Affinities
             datAisyo.tbl[id][12] = 50; // Shot
 
@@ -8660,6 +9930,15 @@ namespace NocturneInsaniax
 
         private static void Arahabaki(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 35; // Strength
+            datDevilFormat.tbl[id].param[1] = 24; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 30; // Magic
+            datDevilFormat.tbl[id].param[3] = 48; // Vitality
+            datDevilFormat.tbl[id].param[4] = 15; // Agility
+            datDevilFormat.tbl[id].param[5] = 22; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 2, 2, 5, 1, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 65536; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -8688,8 +9967,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 594;
             datDevilFormat.tbl[id].maxhp = 594;
-            datDevilFormat.tbl[id].mp = 160;
-            datDevilFormat.tbl[id].maxmp = 160;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 446; // Damnation
@@ -8711,6 +9990,15 @@ namespace NocturneInsaniax
 
         private static void KuramaTengu(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 32; // Strength
+            datDevilFormat.tbl[id].param[1] = 42; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 36; // Magic
+            datDevilFormat.tbl[id].param[3] = 32; // Vitality
+            datDevilFormat.tbl[id].param[4] = 42; // Agility
+            datDevilFormat.tbl[id].param[5] = 20; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 2, 2, 1, 6, 1 };
+
             // Affinities
             datAisyo.tbl[id][1] = 65536; // Fire
             datAisyo.tbl[id][12] = 2147483778; // Shot
@@ -8738,6 +10026,15 @@ namespace NocturneInsaniax
 
         private static void Hanuman(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 44; // Strength
+            datDevilFormat.tbl[id].param[1] = 34; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 30; // Magic
+            datDevilFormat.tbl[id].param[3] = 36; // Vitality
+            datDevilFormat.tbl[id].param[4] = 48; // Agility
+            datDevilFormat.tbl[id].param[5] = 34; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 1, 1, 1, 6, 1 };
+
             // Affinities
             datAisyo.tbl[id][12] = 50; // Shot
 
@@ -8762,6 +10059,15 @@ namespace NocturneInsaniax
 
         private static void CuChulainn(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 53; // Strength
+            datDevilFormat.tbl[id].param[1] = 41; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 37; // Magic
+            datDevilFormat.tbl[id].param[3] = 42; // Vitality
+            datDevilFormat.tbl[id].param[4] = 35; // Agility
+            datDevilFormat.tbl[id].param[5] = 38; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 2, 2, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
 
@@ -8801,6 +10107,15 @@ namespace NocturneInsaniax
 
         private static void QingLong(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 38; // Strength
+            datDevilFormat.tbl[id].param[1] = 36; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 32; // Magic
+            datDevilFormat.tbl[id].param[3] = 55; // Vitality
+            datDevilFormat.tbl[id].param[4] = 23; // Agility
+            datDevilFormat.tbl[id].param[5] = 28; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 2, 2, 5, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -8850,6 +10165,15 @@ namespace NocturneInsaniax
 
         private static void Xuanwu(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 24; // Strength
+            datDevilFormat.tbl[id].param[1] = 28; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 28; // Magic
+            datDevilFormat.tbl[id].param[3] = 40; // Vitality
+            datDevilFormat.tbl[id].param[4] = 10; // Agility
+            datDevilFormat.tbl[id].param[5] = 24; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 2, 2, 6, 1, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -8890,6 +10214,15 @@ namespace NocturneInsaniax
 
         private static void Barong(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 55; // Strength
+            datDevilFormat.tbl[id].param[1] = 48; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 55; // Magic
+            datDevilFormat.tbl[id].param[3] = 40; // Vitality
+            datDevilFormat.tbl[id].param[4] = 40; // Agility
+            datDevilFormat.tbl[id].param[5] = 36; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 4, 4, 2, 3, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -8911,6 +10244,15 @@ namespace NocturneInsaniax
 
         private static void Makami(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 27; // Strength
+            datDevilFormat.tbl[id].param[1] = 35; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 27; // Magic
+            datDevilFormat.tbl[id].param[3] = 22; // Vitality
+            datDevilFormat.tbl[id].param[4] = 18; // Agility
+            datDevilFormat.tbl[id].param[5] = 27; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 4, 4, 2, 3, 2 };
+
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 800;
             datDevilFormat.tbl[id].maxhp = 800;
@@ -8933,6 +10275,15 @@ namespace NocturneInsaniax
 
         private static void Garuda(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 55; // Strength
+            datDevilFormat.tbl[id].param[1] = 45; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 47; // Magic
+            datDevilFormat.tbl[id].param[3] = 48; // Vitality
+            datDevilFormat.tbl[id].param[4] = 60; // Agility
+            datDevilFormat.tbl[id].param[5] = 30; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 4, 4, 2, 4, 1 };
+
             // Affinities
             datAisyo.tbl[id][4] = 131072; // Force
             datAisyo.tbl[id][7] = 2147483778; // Dark
@@ -8969,6 +10320,15 @@ namespace NocturneInsaniax
 
         private static void Yatagarasu(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 32; // Strength
+            datDevilFormat.tbl[id].param[1] = 42; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 48; // Magic
+            datDevilFormat.tbl[id].param[3] = 30; // Vitality
+            datDevilFormat.tbl[id].param[4] = 40; // Agility
+            datDevilFormat.tbl[id].param[5] = 25; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 4, 4, 2, 4, 1 };
+
             // Affinities
             datAisyo.tbl[id][12] = 2147483778; // Shot
 
@@ -9004,6 +10364,15 @@ namespace NocturneInsaniax
 
         private static void Gurulu(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 45; // Strength
+            datDevilFormat.tbl[id].param[1] = 51; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 55; // Magic
+            datDevilFormat.tbl[id].param[3] = 47; // Vitality
+            datDevilFormat.tbl[id].param[4] = 60; // Agility
+            datDevilFormat.tbl[id].param[5] = 30; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 4, 4, 2, 4, 1 };
+
             // Affinities
             datAisyo.tbl[id][4] = 131072; // Force
             datAisyo.tbl[id][6] = 2147483778; // Light
@@ -9027,8 +10396,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 1044;
             datDevilFormat.tbl[id].maxhp = 1044;
-            datDevilFormat.tbl[id].mp = 340;
-            datDevilFormat.tbl[id].maxmp = 340;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 183; // Bolt Storm
@@ -9060,6 +10429,15 @@ namespace NocturneInsaniax
 
         private static void Albion(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 63; // Strength
+            datDevilFormat.tbl[id].param[1] = 45; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 50; // Magic
+            datDevilFormat.tbl[id].param[3] = 62; // Vitality
+            datDevilFormat.tbl[id].param[4] = 28; // Agility
+            datDevilFormat.tbl[id].param[5] = 40; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 1, 1, 4, 1, 2 };
+
             // Affinities
             datAisyo.tbl[id][1] = 80; // Fire
             datAisyo.tbl[id][2] = 80; // Ice
@@ -9084,6 +10462,14 @@ namespace NocturneInsaniax
 
         private static void Manikin1(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 17; // Strength
+            datDevilFormat.tbl[id].param[1] = 12; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 12; // Magic
+            datDevilFormat.tbl[id].param[3] = 4; // Vitality
+            datDevilFormat.tbl[id].param[4] = 17; // Agility
+            datDevilFormat.tbl[id].param[5] = 17; // Luck
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -9099,8 +10485,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 84;
             datDevilFormat.tbl[id].maxhp = 84;
-            datDevilFormat.tbl[id].mp = 72;
-            datDevilFormat.tbl[id].maxmp = 72;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 203; // War Cry
@@ -9136,6 +10522,14 @@ namespace NocturneInsaniax
 
         private static void Manikin2(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 17; // Strength
+            datDevilFormat.tbl[id].param[1] = 12; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 12; // Magic
+            datDevilFormat.tbl[id].param[3] = 4; // Vitality
+            datDevilFormat.tbl[id].param[4] = 17; // Agility
+            datDevilFormat.tbl[id].param[5] = 17; // Luck
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -9151,8 +10545,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 84;
             datDevilFormat.tbl[id].maxhp = 84;
-            datDevilFormat.tbl[id].mp = 72;
-            datDevilFormat.tbl[id].maxmp = 72;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 203;
@@ -9188,6 +10582,14 @@ namespace NocturneInsaniax
 
         private static void Manikin3(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 17; // Strength
+            datDevilFormat.tbl[id].param[1] = 12; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 12; // Magic
+            datDevilFormat.tbl[id].param[3] = 4; // Vitality
+            datDevilFormat.tbl[id].param[4] = 17; // Agility
+            datDevilFormat.tbl[id].param[5] = 17; // Luck
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -9203,8 +10605,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 84;
             datDevilFormat.tbl[id].maxhp = 84;
-            datDevilFormat.tbl[id].mp = 72;
-            datDevilFormat.tbl[id].maxmp = 72;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 203;
@@ -9240,6 +10642,14 @@ namespace NocturneInsaniax
 
         private static void Manikin4(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 17; // Strength
+            datDevilFormat.tbl[id].param[1] = 12; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 12; // Magic
+            datDevilFormat.tbl[id].param[3] = 4; // Vitality
+            datDevilFormat.tbl[id].param[4] = 17; // Agility
+            datDevilFormat.tbl[id].param[5] = 17; // Luck
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -9255,8 +10665,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 84;
             datDevilFormat.tbl[id].maxhp = 84;
-            datDevilFormat.tbl[id].mp = 72;
-            datDevilFormat.tbl[id].maxmp = 72;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 203;
@@ -9292,6 +10702,14 @@ namespace NocturneInsaniax
 
         private static void Manikin5(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 17; // Strength
+            datDevilFormat.tbl[id].param[1] = 12; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 12; // Magic
+            datDevilFormat.tbl[id].param[3] = 4; // Vitality
+            datDevilFormat.tbl[id].param[4] = 17; // Agility
+            datDevilFormat.tbl[id].param[5] = 17; // Luck
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -9307,8 +10725,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 84;
             datDevilFormat.tbl[id].maxhp = 84;
-            datDevilFormat.tbl[id].mp = 72;
-            datDevilFormat.tbl[id].maxmp = 72;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 203;
@@ -9344,6 +10762,15 @@ namespace NocturneInsaniax
 
         private static void Samael(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 48; // Strength
+            datDevilFormat.tbl[id].param[1] = 62; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 64; // Magic
+            datDevilFormat.tbl[id].param[3] = 56; // Vitality
+            datDevilFormat.tbl[id].param[4] = 46; // Agility
+            datDevilFormat.tbl[id].param[5] = 40; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 4, 4, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -9368,6 +10795,15 @@ namespace NocturneInsaniax
 
         private static void Pisaca(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 20; // Strength
+            datDevilFormat.tbl[id].param[1] = 24; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 25; // Magic
+            datDevilFormat.tbl[id].param[3] = 42; // Vitality
+            datDevilFormat.tbl[id].param[4] = 18; // Agility
+            datDevilFormat.tbl[id].param[5] = 15; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 5, 5, 1, 1, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 2147483778; // Fire
@@ -9402,8 +10838,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 444;
             datDevilFormat.tbl[id].maxhp = 444;
-            datDevilFormat.tbl[id].mp = 152;
-            datDevilFormat.tbl[id].maxmp = 152;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[5] = 440;
@@ -9434,6 +10870,15 @@ namespace NocturneInsaniax
 
         private static void Kaiwan(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 33; // Strength
+            datDevilFormat.tbl[id].param[1] = 47; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 37; // Magic
+            datDevilFormat.tbl[id].param[3] = 37; // Vitality
+            datDevilFormat.tbl[id].param[4] = 27; // Agility
+            datDevilFormat.tbl[id].param[5] = 20; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 4, 4, 2, 3, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
@@ -9455,8 +10900,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 726;
             datDevilFormat.tbl[id].maxhp = 726;
-            datDevilFormat.tbl[id].mp = 264;
-            datDevilFormat.tbl[id].maxmp = 264;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[4] = 447;
@@ -9486,6 +10931,15 @@ namespace NocturneInsaniax
 
         private static void KinKi(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 58; // Strength
+            datDevilFormat.tbl[id].param[1] = 32; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 40; // Magic
+            datDevilFormat.tbl[id].param[3] = 60; // Vitality
+            datDevilFormat.tbl[id].param[4] = 18; // Agility
+            datDevilFormat.tbl[id].param[5] = 38; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 5, 2, 3, 2, 1, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 10; // Phys
             datAisyo.tbl[id][8] = 2147483778; // Curse
@@ -9524,6 +10978,15 @@ namespace NocturneInsaniax
 
         private static void SuiKi(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 45; // Strength
+            datDevilFormat.tbl[id].param[1] = 60; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 44; // Magic
+            datDevilFormat.tbl[id].param[3] = 50; // Vitality
+            datDevilFormat.tbl[id].param[4] = 35; // Agility
+            datDevilFormat.tbl[id].param[5] = 22; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 3, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][1] = 2147483778; // Fire
             datAisyo.tbl[id][8] = 50; // Curse
@@ -9560,6 +11023,15 @@ namespace NocturneInsaniax
 
         private static void FuuKi(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 45; // Strength
+            datDevilFormat.tbl[id].param[1] = 52; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 45; // Magic
+            datDevilFormat.tbl[id].param[3] = 50; // Vitality
+            datDevilFormat.tbl[id].param[4] = 48; // Agility
+            datDevilFormat.tbl[id].param[5] = 27; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 3, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][3] = 2147483778; // Elec
             datAisyo.tbl[id][8] = 50; // Curse
@@ -9595,6 +11067,15 @@ namespace NocturneInsaniax
 
         private static void OngyoKi(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 58; // Strength
+            datDevilFormat.tbl[id].param[1] = 66; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 53; // Magic
+            datDevilFormat.tbl[id].param[3] = 58; // Vitality
+            datDevilFormat.tbl[id].param[4] = 50; // Agility
+            datDevilFormat.tbl[id].param[5] = 27; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 5, 3, 1, 2, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Shot
             datAisyo.tbl[id][6] = 2147483778; // Light
@@ -9635,6 +11116,15 @@ namespace NocturneInsaniax
 
         private static void Clotho(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 40; // Strength
+            datDevilFormat.tbl[id].param[1] = 55; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 44; // Magic
+            datDevilFormat.tbl[id].param[3] = 36; // Vitality
+            datDevilFormat.tbl[id].param[4] = 40; // Agility
+            datDevilFormat.tbl[id].param[5] = 30; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 5, 5, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][6] = 65536; // Light
             datAisyo.tbl[id][7] = 65536; // Dark
@@ -9656,6 +11146,15 @@ namespace NocturneInsaniax
 
         private static void Lachesis(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 40; // Strength
+            datDevilFormat.tbl[id].param[1] = 65; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 49; // Magic
+            datDevilFormat.tbl[id].param[3] = 46; // Vitality
+            datDevilFormat.tbl[id].param[4] = 25; // Agility
+            datDevilFormat.tbl[id].param[5] = 37; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 5, 5, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][6] = 65536; // Light
             datAisyo.tbl[id][7] = 65536; // Dark
@@ -9672,6 +11171,15 @@ namespace NocturneInsaniax
 
         private static void Atropos(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 40; // Strength
+            datDevilFormat.tbl[id].param[1] = 70; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 54; // Magic
+            datDevilFormat.tbl[id].param[3] = 41; // Vitality
+            datDevilFormat.tbl[id].param[4] = 37; // Agility
+            datDevilFormat.tbl[id].param[5] = 35; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 5, 5, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][6] = 65536; // Light
             datAisyo.tbl[id][7] = 65536; // Dark
@@ -9691,6 +11199,15 @@ namespace NocturneInsaniax
 
         private static void Loa(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 38; // Strength
+            datDevilFormat.tbl[id].param[1] = 55; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 42; // Magic
+            datDevilFormat.tbl[id].param[3] = 36; // Vitality
+            datDevilFormat.tbl[id].param[4] = 30; // Agility
+            datDevilFormat.tbl[id].param[5] = 18; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 5, 5, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -9716,8 +11233,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 918;
             datDevilFormat.tbl[id].maxhp = 918;
-            datDevilFormat.tbl[id].mp = 300;
-            datDevilFormat.tbl[id].maxmp = 300;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[3] = 448; // Poison Volley
@@ -9748,6 +11265,15 @@ namespace NocturneInsaniax
 
         private static void Chatterskull(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 16; // Strength
+            datDevilFormat.tbl[id].param[1] = 30; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 24; // Magic
+            datDevilFormat.tbl[id].param[3] = 15; // Vitality
+            datDevilFormat.tbl[id].param[4] = 16; // Agility
+            datDevilFormat.tbl[id].param[5] = 20; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 5, 5, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 262144; // Fire
@@ -9763,12 +11289,21 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 156;
             datDevilFormat.tbl[id].maxhp = 156;
-            datDevilFormat.tbl[id].mp = 128;
-            datDevilFormat.tbl[id].maxmp = 128;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
         }
 
         private static void Phantom(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 22; // Strength
+            datDevilFormat.tbl[id].param[1] = 34; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 42; // Magic
+            datDevilFormat.tbl[id].param[3] = 35; // Vitality
+            datDevilFormat.tbl[id].param[4] = 36; // Agility
+            datDevilFormat.tbl[id].param[5] = 18; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 5, 5, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -9785,12 +11320,21 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 660;
             datDevilFormat.tbl[id].maxhp = 660;
-            datDevilFormat.tbl[id].mp = 236;
-            datDevilFormat.tbl[id].maxmp = 236;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
         }
 
         private static void DanteRaidou(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 65; // Strength
+            datDevilFormat.tbl[id].param[1] = 55; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 55; // Magic
+            datDevilFormat.tbl[id].param[3] = 55; // Vitality
+            datDevilFormat.tbl[id].param[4] = 65; // Agility
+            datDevilFormat.tbl[id].param[5] = 40; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 2, 2, 2, 3, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
@@ -9846,6 +11390,15 @@ namespace NocturneInsaniax
 
         private static void Metatron(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 80; // Strength
+            datDevilFormat.tbl[id].param[1] = 82; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 82; // Magic
+            datDevilFormat.tbl[id].param[3] = 72; // Vitality
+            datDevilFormat.tbl[id].param[4] = 60; // Agility
+            datDevilFormat.tbl[id].param[5] = 40; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 2, 2, 2, 3, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 65536; // Fire
@@ -9868,6 +11421,15 @@ namespace NocturneInsaniax
 
         private static void BeelzebubFly(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 85; // Strength
+            datDevilFormat.tbl[id].param[1] = 72; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 72; // Magic
+            datDevilFormat.tbl[id].param[3] = 70; // Vitality
+            datDevilFormat.tbl[id].param[4] = 72; // Agility
+            datDevilFormat.tbl[id].param[5] = 52; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 3, 3, 1, 4, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -9900,6 +11462,15 @@ namespace NocturneInsaniax
 
         private static void PaleRider(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 60; // Strength
+            datDevilFormat.tbl[id].param[1] = 65; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 50; // Magic
+            datDevilFormat.tbl[id].param[3] = 45; // Vitality
+            datDevilFormat.tbl[id].param[4] = 42; // Agility
+            datDevilFormat.tbl[id].param[5] = 32; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 3, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -9955,6 +11526,15 @@ namespace NocturneInsaniax
 
         private static void WhiteRider(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 57; // Strength
+            datDevilFormat.tbl[id].param[1] = 45; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 42; // Magic
+            datDevilFormat.tbl[id].param[3] = 40; // Vitality
+            datDevilFormat.tbl[id].param[4] = 45; // Agility
+            datDevilFormat.tbl[id].param[5] = 32; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 3, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 65536; // Fire
@@ -10010,6 +11590,15 @@ namespace NocturneInsaniax
 
         private static void RedRider(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 57; // Strength
+            datDevilFormat.tbl[id].param[1] = 52; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 47; // Magic
+            datDevilFormat.tbl[id].param[3] = 45; // Vitality
+            datDevilFormat.tbl[id].param[4] = 37; // Agility
+            datDevilFormat.tbl[id].param[5] = 32; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 3, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -10065,6 +11654,15 @@ namespace NocturneInsaniax
 
         private static void BlackRider(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 55; // Strength
+            datDevilFormat.tbl[id].param[1] = 62; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 50; // Magic
+            datDevilFormat.tbl[id].param[3] = 40; // Vitality
+            datDevilFormat.tbl[id].param[4] = 50; // Agility
+            datDevilFormat.tbl[id].param[5] = 32; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 3, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -10119,6 +11717,15 @@ namespace NocturneInsaniax
 
         private static void Matador(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 31; // Strength
+            datDevilFormat.tbl[id].param[1] = 28; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 26; // Magic
+            datDevilFormat.tbl[id].param[3] = 28; // Vitality
+            datDevilFormat.tbl[id].param[4] = 48; // Agility
+            datDevilFormat.tbl[id].param[5] = 22; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 2, 2, 2, 3, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -10173,6 +11780,15 @@ namespace NocturneInsaniax
 
         private static void HellBiker(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 43; // Strength
+            datDevilFormat.tbl[id].param[1] = 35; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 35; // Magic
+            datDevilFormat.tbl[id].param[3] = 35; // Vitality
+            datDevilFormat.tbl[id].param[4] = 43; // Agility
+            datDevilFormat.tbl[id].param[5] = 25; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 4, 1, 1, 2, 4, 1 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 65536; // Fire
@@ -10229,6 +11845,15 @@ namespace NocturneInsaniax
 
         private static void Daisoujou(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 30; // Strength
+            datDevilFormat.tbl[id].param[1] = 40; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 50; // Magic
+            datDevilFormat.tbl[id].param[3] = 26; // Vitality
+            datDevilFormat.tbl[id].param[4] = 25; // Agility
+            datDevilFormat.tbl[id].param[5] = 32; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 3, 3, 2, 2, 3 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -10284,6 +11909,15 @@ namespace NocturneInsaniax
 
         private static void MotherHarlot(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 56; // Strength
+            datDevilFormat.tbl[id].param[1] = 58; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 60; // Magic
+            datDevilFormat.tbl[id].param[3] = 46; // Vitality
+            datDevilFormat.tbl[id].param[4] = 46; // Agility
+            datDevilFormat.tbl[id].param[5] = 46; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 3, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][6] = 50; // Light
             datAisyo.tbl[id][7] = 50; // Dark
@@ -10324,6 +11958,15 @@ namespace NocturneInsaniax
 
         private static void Trumpeter(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 50; // Strength
+            datDevilFormat.tbl[id].param[1] = 75; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 65; // Magic
+            datDevilFormat.tbl[id].param[3] = 50; // Vitality
+            datDevilFormat.tbl[id].param[4] = 60; // Agility
+            datDevilFormat.tbl[id].param[5] = 36; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 3, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
@@ -10367,6 +12010,15 @@ namespace NocturneInsaniax
 
         private static void Futomimi(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 50; // Strength
+            datDevilFormat.tbl[id].param[1] = 64; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 64; // Magic
+            datDevilFormat.tbl[id].param[3] = 50; // Vitality
+            datDevilFormat.tbl[id].param[4] = 36; // Agility
+            datDevilFormat.tbl[id].param[5] = 42; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 3, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -10419,6 +12071,16 @@ namespace NocturneInsaniax
 
         private static void Sakahagi(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].level = 65;
+            datDevilFormat.tbl[id].param[0] = 60; // Strength
+            datDevilFormat.tbl[id].param[1] = 60; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 52; // Magic
+            datDevilFormat.tbl[id].param[3] = 40; // Vitality
+            datDevilFormat.tbl[id].param[4] = 45; // Agility
+            datDevilFormat.tbl[id].param[5] = 26; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 2, 3, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 80; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
@@ -10430,14 +12092,6 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][8] = 50; // Curse
             datAisyo.tbl[id][9] = 50; // Nerve
             datAisyo.tbl[id][10] = 50; // Mind
-
-            // Stats
-            datDevilFormat.tbl[id].level = 65;
-            datDevilFormat.tbl[id].param[0] = 24;
-            datDevilFormat.tbl[id].param[2] = 24;
-            datDevilFormat.tbl[id].param[3] = 16;
-            datDevilFormat.tbl[id].param[4] = 18;
-            datDevilFormat.tbl[id].param[5] = 11;
 
             // Skills
             tblSkill.fclSkillTbl[id].Event[0].Param = 367; // Knowledge of Tools
@@ -10471,6 +12125,15 @@ namespace NocturneInsaniax
 
         private static void BlackFrost(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 55; // Strength
+            datDevilFormat.tbl[id].param[1] = 55; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 60; // Magic
+            datDevilFormat.tbl[id].param[3] = 30; // Vitality
+            datDevilFormat.tbl[id].param[4] = 40; // Agility
+            datDevilFormat.tbl[id].param[5] = 60; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 3, 2, 2, 2 };
+
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 50; // Fire
@@ -10498,6 +12161,15 @@ namespace NocturneInsaniax
 
         private static void BeelzebubMan(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 80; // Strength
+            datDevilFormat.tbl[id].param[1] = 66; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 66; // Magic
+            datDevilFormat.tbl[id].param[3] = 66; // Vitality
+            datDevilFormat.tbl[id].param[4] = 46; // Agility
+            datDevilFormat.tbl[id].param[5] = 46; // Luck
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 3, 2, 2, 2 };
+
             datDevilFormat.tbl[id].aisyoid = (short)id;
 
             // Affinities
@@ -10550,12 +12222,28 @@ namespace NocturneInsaniax
 
         private static void BrokerPisaca(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 20; // Strength
+            datDevilFormat.tbl[id].param[1] = 24; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 25; // Magic
+            datDevilFormat.tbl[id].param[3] = 42; // Vitality
+            datDevilFormat.tbl[id].param[4] = 18; // Agility
+            datDevilFormat.tbl[id].param[5] = 15; // Luck
+
             // Skills
             tblSkill.fclSkillTbl[id].Event[6].Param = 369; // Spirit Well
         }
 
         private static void BrokerNue(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 35; // Strength
+            datDevilFormat.tbl[id].param[1] = 23; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 25; // Magic
+            datDevilFormat.tbl[id].param[3] = 30; // Vitality
+            datDevilFormat.tbl[id].param[4] = 20; // Agility
+            datDevilFormat.tbl[id].param[5] = 20; // Luck
+
             // Skills
             tblSkill.fclSkillTbl[id].Event[0].Param = 457; // Diamrita
             tblSkill.fclSkillTbl[id].Event[1].Param = 456; // Amrita
@@ -10563,6 +12251,14 @@ namespace NocturneInsaniax
 
         private static void BrokerArahabaki(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 35; // Strength
+            datDevilFormat.tbl[id].param[1] = 24; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 30; // Magic
+            datDevilFormat.tbl[id].param[3] = 48; // Vitality
+            datDevilFormat.tbl[id].param[4] = 15; // Agility
+            datDevilFormat.tbl[id].param[5] = 22; // Luck
+
             // Skills
             tblSkill.fclSkillTbl[id].Event[4].Param = 459; // Luster Candy
             tblSkill.fclSkillTbl[id].Event[5].Param = 206; // Debilitate
@@ -10570,6 +12266,14 @@ namespace NocturneInsaniax
 
         private static void BrokerPreta(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 13; // Strength
+            datDevilFormat.tbl[id].param[1] = 10; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 10; // Magic
+            datDevilFormat.tbl[id].param[3] = 12; // Vitality
+            datDevilFormat.tbl[id].param[4] = 16; // Agility
+            datDevilFormat.tbl[id].param[5] = 11; // Luck
+
             // Skills
             tblSkill.fclSkillTbl[id].Event[0].Param = 27; // Megidolaon
             tblSkill.fclSkillTbl[id].Event[1].Param = 453; // Antichthon
@@ -10583,6 +12287,14 @@ namespace NocturneInsaniax
 
         private static void BrokerMothman(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 35; // Strength
+            datDevilFormat.tbl[id].param[1] = 60; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 55; // Magic
+            datDevilFormat.tbl[id].param[3] = 50; // Vitality
+            datDevilFormat.tbl[id].param[4] = 25; // Agility
+            datDevilFormat.tbl[id].param[5] = 25; // Luck
+
             // Skills
             tblSkill.fclSkillTbl[id].Event[0].Param = 436; // Ragnarok
             tblSkill.fclSkillTbl[id].Event[1].Param = 439; // Fimbulvetr
@@ -10596,6 +12308,14 @@ namespace NocturneInsaniax
 
         private static void BrokerGirimekhala(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 55; // Strength
+            datDevilFormat.tbl[id].param[1] = 42; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 43; // Magic
+            datDevilFormat.tbl[id].param[3] = 52; // Vitality
+            datDevilFormat.tbl[id].param[4] = 33; // Agility
+            datDevilFormat.tbl[id].param[5] = 33; // Luck
+
             // Skills
             tblSkill.fclSkillTbl[id].Event[0].Param = 299; // Might
             tblSkill.fclSkillTbl[id].Event[1].Param = 300; // Bright Might
@@ -10609,6 +12329,14 @@ namespace NocturneInsaniax
 
         private static void UberPixie(ushort id)
         {
+            // Stats
+            datDevilFormat.tbl[id].param[0] = 75; // Strength
+            datDevilFormat.tbl[id].param[1] = 75; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 75; // Magic
+            datDevilFormat.tbl[id].param[3] = 75; // Vitality
+            datDevilFormat.tbl[id].param[4] = 75; // Agility
+            datDevilFormat.tbl[id].param[5] = 75; // Luck
+
             // Skills
             tblSkill.fclSkillTbl[id].Event[0].Param = 441; // Thunder Gods
             tblSkill.fclSkillTbl[id].Event[0].Type = 1;
@@ -10642,13 +12370,13 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 24;
             datDevilFormat.tbl[id].level = 56;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 22, 0, 14, 19, 16, 14 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 56, 36, 42, 46, 40, 36 };
             datDevilFormat.tbl[id].keisyotype = 1;
             datDevilFormat.tbl[id].keisyoform = 2459;
 
             datDevilName.txt[id] = "オセ・ハレル";
 
-            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 0, 1, 3, 2, 1 };
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 5, 1, 1, 2, 2, 2 };
 
             tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 110, TargetLevel = 0, Type = 1 };
             tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 57, TargetLevel = 0, Type = 1 };
@@ -10701,13 +12429,13 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 24;
             datDevilFormat.tbl[id].level = 76;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 29, 0, 20, 23, 14, 13 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 72, 50, 50, 58, 35, 32 };
             datDevilFormat.tbl[id].keisyotype = 1;
             datDevilFormat.tbl[id].keisyoform = 2523;
 
             datDevilName.txt[id] = "フラロウス・ハレル";
 
-            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 0, 2, 2, 1, 1 };
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 6, 1, 1, 2, 2, 1 };
 
             tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 104, TargetLevel = 0, Type = 1 };
             tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 307, TargetLevel = 0, Type = 1 };
@@ -10760,13 +12488,13 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 32;
             datDevilFormat.tbl[id].level = 41;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 19, 0, 12, 17, 11, 14 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 48, 36, 30, 42, 28, 35 };
             datDevilFormat.tbl[id].keisyotype = 4;
             datDevilFormat.tbl[id].keisyoform = 2177;
 
             datDevilName.txt[id] = "アーソナ";
 
-            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 0, 1, 2, 1, 1 };
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 2, 1, 2, 1, 2 };
 
             tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 15, TargetLevel = 0, Type = 1 };
             tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 67, TargetLevel = 0, Type = 1 };
@@ -10811,13 +12539,13 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 49;
             datDevilFormat.tbl[id].level = 30;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 21, 0, 14, 16, 11, 18 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 52, 41, 35, 40, 27, 45 };
             datDevilFormat.tbl[id].keisyotype = 4;
             datDevilFormat.tbl[id].keisyoform = 2177;
 
             datDevilName.txt[id] = "ユリゼン";
 
-            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 0, 1, 2, 1, 1 };
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 2, 1, 2, 1, 2 };
 
             tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 3, TargetLevel = 0, Type = 1 };
             tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 64, TargetLevel = 0, Type = 1 };
@@ -10862,13 +12590,13 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 32;
             datDevilFormat.tbl[id].level = 43;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 19, 0, 13, 16, 12, 15 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 47, 38, 33, 40, 30, 37 };
             datDevilFormat.tbl[id].keisyotype = 4;
             datDevilFormat.tbl[id].keisyoform = 2177;
 
             datDevilName.txt[id] = "ルヴァ";
 
-            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 0, 1, 2, 1, 1 };
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 2, 1, 2, 1, 2 };
 
             tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 21, TargetLevel = 0, Type = 1 };
             tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 66, TargetLevel = 0, Type = 1 };
@@ -10913,13 +12641,13 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 32;
             datDevilFormat.tbl[id].level = 46;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 20, 0, 13, 17, 11, 17 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 50, 38, 32, 43, 28, 43 };
             datDevilFormat.tbl[id].keisyotype = 4;
             datDevilFormat.tbl[id].keisyoform = 2177;
 
             datDevilName.txt[id] = "サーマス";
 
-            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 0, 1, 2, 1, 1 };
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 2, 1, 2, 1, 2 };
 
             tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 9, TargetLevel = 0, Type = 1 };
             tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 65, TargetLevel = 0, Type = 1 };
@@ -10964,13 +12692,13 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 23;
             datDevilFormat.tbl[id].level = 71;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 26, 0, 21, 23, 11, 10 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 65, 47, 52, 57, 27, 25 };
             datDevilFormat.tbl[id].keisyotype = 4;
             datDevilFormat.tbl[id].keisyoform = 2177;
 
             datDevilName.txt[id] = "スペクター";
 
-            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 0, 2, 2, 1, 1 };
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 2, 3, 2, 1, 1 };
 
             tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 153, TargetLevel = 0, Type = 1 };
             tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 192, TargetLevel = 0, Type = 1 };
@@ -11017,13 +12745,13 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 19;
             datDevilFormat.tbl[id].level = 62;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 23, 0, 14, 18, 11, 17 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 58, 42, 35, 45, 27, 42 };
             datDevilFormat.tbl[id].keisyotype = 6;
             datDevilFormat.tbl[id].keisyoform = 187;
 
             datDevilName.txt[id] = "マーラ";
 
-            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 0, 1, 2, 1, 1 };
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 2, 1, 3, 1, 3 };
 
             tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 130, TargetLevel = 0, Type = 1 };
             tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 224, TargetLevel = 0, Type = 1 };
@@ -11072,13 +12800,13 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 26;
             datDevilFormat.tbl[id].level = 27;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 14, 0, 8, 11, 12, 9 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 35, 25, 22, 28, 30, 22 };
             datDevilFormat.tbl[id].keisyotype = 6;
             datDevilFormat.tbl[id].keisyoform = 2457;
 
             datDevilName.txt[id] = "タム・リン";
 
-            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 0, 1, 2, 2, 1 };
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 1, 1, 2, 3, 1 };
 
             tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 103, TargetLevel = 0, Type = 1 }; // Brutal Slash
             tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 182, TargetLevel = 0, Type = 1 }; // Shock
@@ -11150,13 +12878,13 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 23;
             datDevilFormat.tbl[id].level = 60;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 17, 0, 17, 17, 17, 17 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 42, 42, 42, 42, 42, 42 };
             datDevilFormat.tbl[id].keisyotype = 6;
             datDevilFormat.tbl[id].keisyoform = 2523;
 
             datDevilName.txt[id] = "ドッペルゲンガー";
 
-            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 0, 2, 2, 2, 2 };
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 2, 2, 2, 2, 2 };
 
             tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 69, TargetLevel = 0, Type = 1 }; // Makarakarn
             tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 63, TargetLevel = 0, Type = 1 }; // Tentarafoo
@@ -11182,8 +12910,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 1300;
             datDevilFormat.tbl[id].maxhp = 1300;
-            datDevilFormat.tbl[id].mp = 308;
-            datDevilFormat.tbl[id].maxmp = 308;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             datDevilFormat.tbl[id].dropexp = 501;
             datDevilFormat.tbl[id].dropmakka = 512;
@@ -11224,13 +12952,13 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 22;
             datDevilFormat.tbl[id].level = 36;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 9, 0, 16, 9, 12, 10 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 22, 40, 30, 22, 30, 25 };
             datDevilFormat.tbl[id].keisyotype = 2;
             datDevilFormat.tbl[id].keisyoform = 2235;
 
             datDevilName.txt[id] = "ナイトメア";
 
-            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 0, 3, 1, 2, 1 };
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 3, 3, 1, 2, 1 };
 
             tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 32, TargetLevel = 0, Type = 1 }; // Mudo
             tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 210, TargetLevel = 0, Type = 1 }; // Dormina
@@ -11256,8 +12984,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 420;
             datDevilFormat.tbl[id].maxhp = 420;
-            datDevilFormat.tbl[id].mp = 208;
-            datDevilFormat.tbl[id].maxmp = 208;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             datDevilFormat.tbl[id].dropexp = 202;
             datDevilFormat.tbl[id].dropmakka = 219;
@@ -11346,13 +13074,13 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 14;
             datDevilFormat.tbl[id].level = 40;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 19, 0, 9, 13, 12, 11 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 48, 22, 32, 32, 30, 28 };
             datDevilFormat.tbl[id].keisyotype = 3;
             datDevilFormat.tbl[id].keisyoform = 2299;
 
             datDevilName.txt[id] = "ドゥン";
 
-            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 0, 1, 2, 1, 1 };
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 1, 2, 2, 2, 1 };
 
             tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 5, TargetLevel = 0, Type = 1 }; // Maragion
             tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 121, TargetLevel = 0, Type = 1 }; // Stun Bite
@@ -11377,8 +13105,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 810;
             datDevilFormat.tbl[id].maxhp = 810;
-            datDevilFormat.tbl[id].mp = 196;
-            datDevilFormat.tbl[id].maxmp = 196;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             datDevilFormat.tbl[id].dropexp = 241;
             datDevilFormat.tbl[id].dropmakka = 258;
@@ -11432,13 +13160,13 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 27;
             datDevilFormat.tbl[id].level = 51;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 20, 0, 20, 16, 17, 15 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 50, 46, 50, 40, 42, 36 };
             datDevilFormat.tbl[id].keisyotype = 4;
             datDevilFormat.tbl[id].keisyoform = 2235;
 
             datDevilName.txt[id] = "ヴリトラ";
 
-            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 0, 1, 2, 1, 1 };
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 3, 2, 1, 1 };
 
             tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 54, TargetLevel = 0, Type = 1 }; // Rakunda
             tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 121, TargetLevel = 0, Type = 1 }; // Stun Bite
@@ -11523,13 +13251,13 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 10;
             datDevilFormat.tbl[id].level = 71;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 24, 0, 21, 17, 15, 16 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 60, 49, 52, 42, 36, 40 };
             datDevilFormat.tbl[id].keisyotype = 4;
             datDevilFormat.tbl[id].keisyoform = 2267;
 
             datDevilName.txt[id] = "ひホしゅら";
 
-            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 0, 1, 2, 1, 1 };
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 2, 2, 2, 1, 1 };
 
             tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 126, TargetLevel = 0, Type = 1 }; // Iron Claw
             tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 308, TargetLevel = 0, Type = 1 }; // Double Attack
@@ -11601,13 +13329,13 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 18;
             datDevilFormat.tbl[id].level = 88;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 29, 0, 23, 26, 22, 19 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 72, 58, 60, 65, 55, 48 };
             datDevilFormat.tbl[id].keisyotype = 9;
             datDevilFormat.tbl[id].keisyoform = 191;
 
             datDevilName.txt[id] = "セト";
 
-            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 0, 1, 2, 1, 1 };
+            tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 2, 3, 1, 1 };
 
             tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 307, TargetLevel = 0, Type = 1 }; // Avenge
             tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 206, TargetLevel = 0, Type = 1 }; // Debilitate
@@ -11633,8 +13361,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 684;
             datDevilFormat.tbl[id].maxhp = 684;
-            datDevilFormat.tbl[id].mp = 444;
-            datDevilFormat.tbl[id].maxmp = 444;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
             datDevilFormat.tbl[id].dropexp = 0;
             datDevilFormat.tbl[id].dropmakka = 0;
@@ -11731,11 +13459,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 60000;
             datDevilFormat.tbl[id].level = 90;
             datDevilFormat.tbl[id].flag = 563;
-            datDevilFormat.tbl[id].param[0] = 24;
-            datDevilFormat.tbl[id].param[2] = 24;
-            datDevilFormat.tbl[id].param[3] = 40;
-            datDevilFormat.tbl[id].param[4] = 26;
-            datDevilFormat.tbl[id].param[5] = 26;
+            datDevilFormat.tbl[id].param[0] = 60;
+            datDevilFormat.tbl[id].param[1] = 60;
+            datDevilFormat.tbl[id].param[2] = 99;
+            datDevilFormat.tbl[id].param[3] = 99;
+            datDevilFormat.tbl[id].param[4] = 65;
+            datDevilFormat.tbl[id].param[5] = 65;
 
             datDevilFormat.tbl[id].dropexp = 20000;
             datDevilFormat.tbl[id].dropmakka = 30000;
@@ -11796,11 +13525,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 60000;
             datDevilFormat.tbl[id].level = 90;
             datDevilFormat.tbl[id].flag = 563;
-            datDevilFormat.tbl[id].param[0] = 20;
-            datDevilFormat.tbl[id].param[2] = 20;
-            datDevilFormat.tbl[id].param[3] = 30;
-            datDevilFormat.tbl[id].param[4] = 28;
-            datDevilFormat.tbl[id].param[5] = 28;
+            datDevilFormat.tbl[id].param[0] = 50;
+            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[2] = 75;
+            datDevilFormat.tbl[id].param[3] = 75;
+            datDevilFormat.tbl[id].param[4] = 70;
+            datDevilFormat.tbl[id].param[5] = 70;
 
             datDevilFormat.tbl[id].dropexp = 20000;
             datDevilFormat.tbl[id].dropmakka = 30000;
@@ -11866,11 +13596,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 60000;
             datDevilFormat.tbl[id].level = 90;
             datDevilFormat.tbl[id].flag = 563;
-            datDevilFormat.tbl[id].param[0] = 20;
-            datDevilFormat.tbl[id].param[2] = 40;
+            datDevilFormat.tbl[id].param[0] = 50;
+            datDevilFormat.tbl[id].param[1] = 70;
+            datDevilFormat.tbl[id].param[2] = 99;
             datDevilFormat.tbl[id].param[3] = 30;
-            datDevilFormat.tbl[id].param[4] = 26;
-            datDevilFormat.tbl[id].param[5] = 26;
+            datDevilFormat.tbl[id].param[4] = 65;
+            datDevilFormat.tbl[id].param[5] = 65;
 
             datDevilFormat.tbl[id].dropexp = 20000;
             datDevilFormat.tbl[id].dropmakka = 30000;
@@ -11921,7 +13652,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 48;
             datDevilFormat.tbl[id].level = 88;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 32, 0, 36, 36, 32, 32 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 80, 80, 90, 90, 80, 80 };
             datDevilFormat.tbl[id].keisyotype = 9;
             datDevilFormat.tbl[id].keisyoform = 191;
 
@@ -11985,7 +13716,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 47;
             datDevilFormat.tbl[id].level = 78;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 32, 0, 27, 31, 23, 23 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 80, 70, 75, 75, 60, 60 };
             datDevilFormat.tbl[id].keisyotype = 1;
             datDevilFormat.tbl[id].keisyoform = 2459;
 
@@ -12049,7 +13780,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 10;
             datDevilFormat.tbl[id].level = 80;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 30, 0, 30, 30, 30, 30 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 75, 75, 75, 75, 75, 75 };
             datDevilFormat.tbl[id].keisyotype = 4;
             datDevilFormat.tbl[id].keisyoform = 3213;
 
@@ -12112,7 +13843,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 38;
             datDevilFormat.tbl[id].level = 60;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 20, 0, 20, 10, 14, 14 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 50, 70, 70, 60, 35, 35 };
             datDevilFormat.tbl[id].keisyotype = 4;
             datDevilFormat.tbl[id].keisyoform = 2203;
 
@@ -12176,7 +13907,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 39;
             datDevilFormat.tbl[id].level = 60;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 18, 0, 14, 20, 18, 14 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 45, 45, 50, 50, 45, 35 };
             datDevilFormat.tbl[id].keisyotype = 1;
             datDevilFormat.tbl[id].keisyoform = 2329;
 
@@ -12246,7 +13977,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 23;
             datDevilFormat.tbl[id].level = 36;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 14, 0, 10, 18, 8, 8 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 35, 35, 45, 45, 25, 25 };
             datDevilFormat.tbl[id].keisyotype = 10;
             datDevilFormat.tbl[id].keisyoform = 187;
 
@@ -12268,8 +13999,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 880;
             datDevilFormat.tbl[id].maxhp = 880;
-            datDevilFormat.tbl[id].mp = 184;
-            datDevilFormat.tbl[id].maxmp = 184;
+            datDevilFormat.tbl[id].mp = 234;
+            datDevilFormat.tbl[id].maxmp = 234;
 
             datDevilFormat.tbl[id].dropexp = 0;
             datDevilFormat.tbl[id].dropmakka = 0;
@@ -12324,8 +14055,12 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 800;
             datDevilFormat.tbl[id].hp = 800;
-            datDevilFormat.tbl[id].param[0] = 6;
-            datDevilFormat.tbl[id].param[2] = 6;
+            datDevilFormat.tbl[id].param[0] = 15;
+            datDevilFormat.tbl[id].param[1] = 15;
+            datDevilFormat.tbl[id].param[2] = 15;
+            datDevilFormat.tbl[id].param[3] = 15;
+            datDevilFormat.tbl[id].param[4] = 5;
+            datDevilFormat.tbl[id].param[5] = 5;
 
             datDevilFormat.tbl[id].dropexp = 200;
             //datDevilFormat.tbl[id].dropmakka = 65000;
@@ -12359,11 +14094,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 500;
             datDevilFormat.tbl[id].level = 50;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 24;
-            datDevilFormat.tbl[id].param[2] = 18;
-            datDevilFormat.tbl[id].param[3] = 20;
-            datDevilFormat.tbl[id].param[4] = 8;
-            datDevilFormat.tbl[id].param[5] = 6;
+            datDevilFormat.tbl[id].param[0] = 60;
+            datDevilFormat.tbl[id].param[1] = 45;
+            datDevilFormat.tbl[id].param[2] = 50;
+            datDevilFormat.tbl[id].param[3] = 50;
+            datDevilFormat.tbl[id].param[4] = 20;
+            datDevilFormat.tbl[id].param[5] = 15;
 
             datDevilFormat.tbl[id].dropexp = 2000;
             datDevilFormat.tbl[id].dropmakka = 1000;
@@ -12393,6 +14129,12 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 65536; // Mind
 
             // Enemy Stats
+            datDevilFormat.tbl[id].param[1] = 29; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 30; // Magic
+            datDevilFormat.tbl[id].param[3] = 20; // Vitality
+            datDevilFormat.tbl[id].param[4] = 22; // Agility
+            datDevilFormat.tbl[id].param[5] = 18; // Luck
+
             datDevilFormat.tbl[id].hp = 420;
             datDevilFormat.tbl[id].maxhp = 420;
             datDevilFormat.tbl[id].mp = 156;
@@ -12464,6 +14206,13 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][12] = 2147483778; // Shot
 
             // Enemy Stats
+            datDevilFormat.tbl[id].param[0] = 17; // Strength
+            datDevilFormat.tbl[id].param[1] = 25; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 23; // Magic
+            datDevilFormat.tbl[id].param[3] = 12; // Vitality
+            datDevilFormat.tbl[id].param[4] = 32; // Agility
+            datDevilFormat.tbl[id].param[5] = 20; // Luck
+
             datDevilFormat.tbl[id].hp = 312;
             datDevilFormat.tbl[id].maxhp = 312;
             datDevilFormat.tbl[id].mp = 116;
@@ -12520,6 +14269,13 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Enemy Stats
+            datDevilFormat.tbl[id].param[0] = 25; // Strength
+            datDevilFormat.tbl[id].param[1] = 42; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 50; // Magic
+            datDevilFormat.tbl[id].param[3] = 50; // Vitality
+            datDevilFormat.tbl[id].param[4] = 28; // Agility
+            datDevilFormat.tbl[id].param[5] = 28; // Luck
+
             datDevilFormat.tbl[id].hp = 1200;
             datDevilFormat.tbl[id].maxhp = 1200;
 
@@ -12562,6 +14318,13 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Enemy Stats
+            datDevilFormat.tbl[id].param[0] = 75; // Strength
+            datDevilFormat.tbl[id].param[1] = 50; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 50; // Magic
+            datDevilFormat.tbl[id].param[3] = 70; // Vitality
+            datDevilFormat.tbl[id].param[4] = 35; // Agility
+            datDevilFormat.tbl[id].param[5] = 35; // Luck
+
             datDevilFormat.tbl[id].hp = 4000;
             datDevilFormat.tbl[id].maxhp = 4000;
             datDevilFormat.tbl[id].level = 45;
@@ -12598,11 +14361,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 5400;
             datDevilFormat.tbl[id].hp = 5400;
             datDevilFormat.tbl[id].level = 48;
-            datDevilFormat.tbl[id].param[0] = 24;
-            datDevilFormat.tbl[id].param[2] = 16;
-            datDevilFormat.tbl[id].param[3] = 20;
-            datDevilFormat.tbl[id].param[4] = 8;
-            datDevilFormat.tbl[id].param[5] = 8;
+            datDevilFormat.tbl[id].param[0] = 60;
+            datDevilFormat.tbl[id].param[1] = 30;
+            datDevilFormat.tbl[id].param[2] = 30;
+            datDevilFormat.tbl[id].param[3] = 50;
+            datDevilFormat.tbl[id].param[4] = 20;
+            datDevilFormat.tbl[id].param[5] = 20;
 
             datDevilFormat.tbl[id].dropexp = 1800;
 
@@ -12635,11 +14399,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 6000;
             datDevilFormat.tbl[id].hp = 6000;
             datDevilFormat.tbl[id].level = 48;
-            datDevilFormat.tbl[id].param[0] = 20;
-            datDevilFormat.tbl[id].param[2] = 20;
-            datDevilFormat.tbl[id].param[3] = 10;
-            datDevilFormat.tbl[id].param[4] = 10;
-            datDevilFormat.tbl[id].param[5] = 10;
+            datDevilFormat.tbl[id].param[0] = 50;
+            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[2] = 30;
+            datDevilFormat.tbl[id].param[3] = 30;
+            datDevilFormat.tbl[id].param[4] = 25;
+            datDevilFormat.tbl[id].param[5] = 25;
 
             datDevilFormat.tbl[id].dropexp = 1800;
 
@@ -12672,11 +14437,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 6000;
             datDevilFormat.tbl[id].hp = 6000;
             datDevilFormat.tbl[id].level = 48;
-            datDevilFormat.tbl[id].param[0] = 20;
-            datDevilFormat.tbl[id].param[2] = 20;
-            datDevilFormat.tbl[id].param[3] = 10;
-            datDevilFormat.tbl[id].param[4] = 10;
-            datDevilFormat.tbl[id].param[5] = 10;
+            datDevilFormat.tbl[id].param[0] = 50;
+            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[2] = 30;
+            datDevilFormat.tbl[id].param[3] = 30;
+            datDevilFormat.tbl[id].param[4] = 25;
+            datDevilFormat.tbl[id].param[5] = 25;
 
             datDevilFormat.tbl[id].dropexp = 1800;
 
@@ -12710,11 +14476,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 6000;
             datDevilFormat.tbl[id].hp = 6000;
             datDevilFormat.tbl[id].level = 54;
-            datDevilFormat.tbl[id].param[0] = 30;
-            datDevilFormat.tbl[id].param[2] = 24;
-            datDevilFormat.tbl[id].param[3] = 10;
-            datDevilFormat.tbl[id].param[4] = 10;
-            datDevilFormat.tbl[id].param[5] = 20;
+            datDevilFormat.tbl[id].param[0] = 70;
+            datDevilFormat.tbl[id].param[1] = 60;
+            datDevilFormat.tbl[id].param[2] = 30;
+            datDevilFormat.tbl[id].param[3] = 30;
+            datDevilFormat.tbl[id].param[4] = 25;
+            datDevilFormat.tbl[id].param[5] = 50;
 
             datDevilFormat.tbl[id].dropexp = 5400;
 
@@ -12748,11 +14515,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].hp = 4000;
             datDevilFormat.tbl[id].level = 58;
             datDevilFormat.tbl[id].flag = 803;
-            datDevilFormat.tbl[id].param[0] = 30;
-            datDevilFormat.tbl[id].param[2] = 24;
-            datDevilFormat.tbl[id].param[3] = 30;
-            datDevilFormat.tbl[id].param[4] = 16;
-            datDevilFormat.tbl[id].param[5] = 24;
+            datDevilFormat.tbl[id].param[0] = 70;
+            datDevilFormat.tbl[id].param[1] = 60;
+            datDevilFormat.tbl[id].param[2] = 60;
+            datDevilFormat.tbl[id].param[3] = 60;
+            datDevilFormat.tbl[id].param[4] = 40;
+            datDevilFormat.tbl[id].param[5] = 60;
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 37; // Diarama
@@ -12784,11 +14552,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].hp = 4000;
             datDevilFormat.tbl[id].level = 60;
             datDevilFormat.tbl[id].flag = 803;
-            datDevilFormat.tbl[id].param[0] = 30;
-            datDevilFormat.tbl[id].param[2] = 24;
-            datDevilFormat.tbl[id].param[3] = 30;
-            datDevilFormat.tbl[id].param[4] = 16;
-            datDevilFormat.tbl[id].param[5] = 24;
+            datDevilFormat.tbl[id].param[0] = 70;
+            datDevilFormat.tbl[id].param[1] = 60;
+            datDevilFormat.tbl[id].param[2] = 60;
+            datDevilFormat.tbl[id].param[3] = 60;
+            datDevilFormat.tbl[id].param[4] = 40;
+            datDevilFormat.tbl[id].param[5] = 60;
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 52; // Tarunda
@@ -12820,11 +14589,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].hp = 4000;
             datDevilFormat.tbl[id].level = 62;
             datDevilFormat.tbl[id].flag = 803;
-            datDevilFormat.tbl[id].param[0] = 30;
-            datDevilFormat.tbl[id].param[2] = 24;
-            datDevilFormat.tbl[id].param[3] = 30;
-            datDevilFormat.tbl[id].param[4] = 16;
-            datDevilFormat.tbl[id].param[5] = 24;
+            datDevilFormat.tbl[id].param[0] = 70;
+            datDevilFormat.tbl[id].param[1] = 60;
+            datDevilFormat.tbl[id].param[2] = 60;
+            datDevilFormat.tbl[id].param[3] = 60;
+            datDevilFormat.tbl[id].param[4] = 40;
+            datDevilFormat.tbl[id].param[5] = 60;
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 2; // Agilao
@@ -12859,11 +14629,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 26;
             datDevilFormat.tbl[id].level = 9;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 1;
-            datDevilFormat.tbl[id].param[2] = 3;
-            datDevilFormat.tbl[id].param[3] = 3;
-            datDevilFormat.tbl[id].param[4] = 1;
-            datDevilFormat.tbl[id].param[5] = 1;
+            datDevilFormat.tbl[id].param[0] = 5;
+            datDevilFormat.tbl[id].param[1] = 8;
+            datDevilFormat.tbl[id].param[2] = 8;
+            datDevilFormat.tbl[id].param[3] = 8;
+            datDevilFormat.tbl[id].param[4] = 3;
+            datDevilFormat.tbl[id].param[5] = 3;
 
             datDevilFormat.tbl[id].dropexp = 100;
             datDevilFormat.tbl[id].dropmakka = 160;
@@ -12896,11 +14667,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 9000;
             datDevilFormat.tbl[id].level = 72;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 28;
-            datDevilFormat.tbl[id].param[2] = 20;
-            datDevilFormat.tbl[id].param[3] = 28;
-            datDevilFormat.tbl[id].param[4] = 16;
-            datDevilFormat.tbl[id].param[5] = 16;
+            datDevilFormat.tbl[id].param[0] = 70;
+            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[2] = 50;
+            datDevilFormat.tbl[id].param[3] = 70;
+            datDevilFormat.tbl[id].param[4] = 40;
+            datDevilFormat.tbl[id].param[5] = 40;
 
             datDevilAI.divTbls[2][18].scriptid = 133;
             datDevilAI.divTbls[2][18].deadscriptid = 40;
@@ -12938,11 +14710,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 500;
             datDevilFormat.tbl[id].level = 40;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 24;
-            datDevilFormat.tbl[id].param[2] = 18;
-            datDevilFormat.tbl[id].param[3] = 20;
-            datDevilFormat.tbl[id].param[4] = 8;
-            datDevilFormat.tbl[id].param[5] = 6;
+            datDevilFormat.tbl[id].param[0] = 60;
+            datDevilFormat.tbl[id].param[1] = 45;
+            datDevilFormat.tbl[id].param[2] = 50;
+            datDevilFormat.tbl[id].param[3] = 50;
+            datDevilFormat.tbl[id].param[4] = 20;
+            datDevilFormat.tbl[id].param[5] = 15;
 
             datDevilFormat.tbl[id].dropexp = 2000;
             datDevilFormat.tbl[id].dropmakka = 600;
@@ -12974,11 +14747,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 6000;
             datDevilFormat.tbl[id].level = 70;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 30;
-            datDevilFormat.tbl[id].param[2] = 30;
-            datDevilFormat.tbl[id].param[3] = 25;
-            datDevilFormat.tbl[id].param[4] = 16;
-            datDevilFormat.tbl[id].param[5] = 16;
+            datDevilFormat.tbl[id].param[0] = 75;
+            datDevilFormat.tbl[id].param[1] = 75;
+            datDevilFormat.tbl[id].param[2] = 60;
+            datDevilFormat.tbl[id].param[3] = 60;
+            datDevilFormat.tbl[id].param[4] = 40;
+            datDevilFormat.tbl[id].param[5] = 40;
 
             datDevilFormat.tbl[id].dropexp = 7500;
             datDevilFormat.tbl[id].dropmakka = 10000;
@@ -13013,11 +14787,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 6000;
             datDevilFormat.tbl[id].level = 70;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 30;
-            datDevilFormat.tbl[id].param[2] = 30;
-            datDevilFormat.tbl[id].param[3] = 25;
-            datDevilFormat.tbl[id].param[4] = 20;
-            datDevilFormat.tbl[id].param[5] = 15;
+            datDevilFormat.tbl[id].param[0] = 75;
+            datDevilFormat.tbl[id].param[2] = 75;
+            datDevilFormat.tbl[id].param[2] = 60;
+            datDevilFormat.tbl[id].param[3] = 60;
+            datDevilFormat.tbl[id].param[4] = 50;
+            datDevilFormat.tbl[id].param[5] = 40;
 
             datDevilFormat.tbl[id].dropexp = 7500;
             datDevilFormat.tbl[id].dropmakka = 10000;
@@ -13055,11 +14830,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 6000;
             datDevilFormat.tbl[id].level = 60;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 20;
-            datDevilFormat.tbl[id].param[2] = 20;
-            datDevilFormat.tbl[id].param[3] = 20;
-            datDevilFormat.tbl[id].param[4] = 18;
-            datDevilFormat.tbl[id].param[5] = 18;
+            datDevilFormat.tbl[id].param[0] = 50;
+            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[2] = 50;
+            datDevilFormat.tbl[id].param[3] = 50;
+            datDevilFormat.tbl[id].param[4] = 45;
+            datDevilFormat.tbl[id].param[5] = 45;
 
             datDevilFormat.tbl[id].dropexp = 1800;
             datDevilFormat.tbl[id].dropmakka = 6000;
@@ -13096,11 +14872,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 4000;
             datDevilFormat.tbl[id].level = 50;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 20;
-            datDevilFormat.tbl[id].param[2] = 20;
-            datDevilFormat.tbl[id].param[3] = 10;
-            datDevilFormat.tbl[id].param[4] = 15;
-            datDevilFormat.tbl[id].param[5] = 15;
+            datDevilFormat.tbl[id].param[0] = 50;
+            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[2] = 40;
+            datDevilFormat.tbl[id].param[3] = 40;
+            datDevilFormat.tbl[id].param[4] = 35;
+            datDevilFormat.tbl[id].param[5] = 35;
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 15; // Ziodyne
@@ -13130,11 +14907,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 4000;
             datDevilFormat.tbl[id].level = 50;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 20;
-            datDevilFormat.tbl[id].param[2] = 20;
-            datDevilFormat.tbl[id].param[3] = 10;
-            datDevilFormat.tbl[id].param[4] = 15;
-            datDevilFormat.tbl[id].param[5] = 15;
+            datDevilFormat.tbl[id].param[0] = 50;
+            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[2] = 40;
+            datDevilFormat.tbl[id].param[3] = 40;
+            datDevilFormat.tbl[id].param[4] = 35;
+            datDevilFormat.tbl[id].param[5] = 35;
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 3; // Agidyne
@@ -13164,11 +14942,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 4000;
             datDevilFormat.tbl[id].level = 50;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 20;
-            datDevilFormat.tbl[id].param[2] = 20;
-            datDevilFormat.tbl[id].param[3] = 10;
-            datDevilFormat.tbl[id].param[4] = 15;
-            datDevilFormat.tbl[id].param[5] = 15;
+            datDevilFormat.tbl[id].param[0] = 50;
+            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[2] = 40;
+            datDevilFormat.tbl[id].param[3] = 40;
+            datDevilFormat.tbl[id].param[4] = 35;
+            datDevilFormat.tbl[id].param[5] = 35;
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 21; // Zandyne
@@ -13198,11 +14977,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 4000;
             datDevilFormat.tbl[id].level = 50;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 20;
-            datDevilFormat.tbl[id].param[2] = 20;
-            datDevilFormat.tbl[id].param[3] = 10;
-            datDevilFormat.tbl[id].param[4] = 15;
-            datDevilFormat.tbl[id].param[5] = 15;
+            datDevilFormat.tbl[id].param[0] = 50;
+            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[2] = 40;
+            datDevilFormat.tbl[id].param[3] = 40;
+            datDevilFormat.tbl[id].param[4] = 35;
+            datDevilFormat.tbl[id].param[5] = 35;
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 9; // Bufudyne
@@ -13232,11 +15012,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 8000;
             datDevilFormat.tbl[id].level = 65;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 30;
-            datDevilFormat.tbl[id].param[2] = 30;
-            datDevilFormat.tbl[id].param[3] = 20;
-            datDevilFormat.tbl[id].param[4] = 16;
-            datDevilFormat.tbl[id].param[5] = 16;
+            datDevilFormat.tbl[id].param[0] = 75;
+            datDevilFormat.tbl[id].param[1] = 75;
+            datDevilFormat.tbl[id].param[2] = 75;
+            datDevilFormat.tbl[id].param[3] = 55;
+            datDevilFormat.tbl[id].param[4] = 40;
+            datDevilFormat.tbl[id].param[5] = 40;
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 427; // Fang Breaker
@@ -13270,11 +15051,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 4000;
             datDevilFormat.tbl[id].level = 70;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 20;
-            datDevilFormat.tbl[id].param[2] = 22;
-            datDevilFormat.tbl[id].param[3] = 20;
-            datDevilFormat.tbl[id].param[4] = 15;
-            datDevilFormat.tbl[id].param[5] = 15;
+            datDevilFormat.tbl[id].param[0] = 50;
+            datDevilFormat.tbl[id].param[1] = 55;
+            datDevilFormat.tbl[id].param[2] = 55;
+            datDevilFormat.tbl[id].param[3] = 50;
+            datDevilFormat.tbl[id].param[4] = 65;
+            datDevilFormat.tbl[id].param[5] = 65;
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 426; // Sakura Rage
@@ -13306,11 +15088,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 4000;
             datDevilFormat.tbl[id].level = 70;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 24;
-            datDevilFormat.tbl[id].param[2] = 20;
-            datDevilFormat.tbl[id].param[3] = 20;
-            datDevilFormat.tbl[id].param[4] = 16;
-            datDevilFormat.tbl[id].param[5] = 16;
+            datDevilFormat.tbl[id].param[0] = 60;
+            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[2] = 50;
+            datDevilFormat.tbl[id].param[3] = 50;
+            datDevilFormat.tbl[id].param[4] = 40;
+            datDevilFormat.tbl[id].param[5] = 40;
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 106; // Stasis Blade
@@ -13343,11 +15126,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 4000;
             datDevilFormat.tbl[id].level = 70;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 24;
-            datDevilFormat.tbl[id].param[2] = 20;
-            datDevilFormat.tbl[id].param[3] = 20;
-            datDevilFormat.tbl[id].param[4] = 16;
-            datDevilFormat.tbl[id].param[5] = 16;
+            datDevilFormat.tbl[id].param[0] = 60;
+            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[2] = 50;
+            datDevilFormat.tbl[id].param[3] = 50;
+            datDevilFormat.tbl[id].param[4] = 40;
+            datDevilFormat.tbl[id].param[5] = 40;
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 431; // Revelation
@@ -13378,11 +15162,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].hp = 24000;
             datDevilFormat.tbl[id].level = 73;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 30;
-            datDevilFormat.tbl[id].param[2] = 30;
-            datDevilFormat.tbl[id].param[3] = 30;
-            datDevilFormat.tbl[id].param[4] = 20;
-            datDevilFormat.tbl[id].param[5] = 20;
+            datDevilFormat.tbl[id].param[0] = 75;
+            datDevilFormat.tbl[id].param[1] = 75;
+            datDevilFormat.tbl[id].param[2] = 75;
+            datDevilFormat.tbl[id].param[3] = 75;
+            datDevilFormat.tbl[id].param[4] = 50;
+            datDevilFormat.tbl[id].param[5] = 50;
 
             datDevilFormat.tbl[id].dropexp = 12000;
             datDevilFormat.tbl[id].dropmakka = 15000;
@@ -13417,11 +15202,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].hp = 4000;
             datDevilFormat.tbl[id].level = 58;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 30;
-            datDevilFormat.tbl[id].param[2] = 20;
-            datDevilFormat.tbl[id].param[3] = 30;
-            datDevilFormat.tbl[id].param[4] = 14;
-            datDevilFormat.tbl[id].param[5] = 20;
+            datDevilFormat.tbl[id].param[0] = 70;
+            datDevilFormat.tbl[id].param[1] = 60;
+            datDevilFormat.tbl[id].param[2] = 60;
+            datDevilFormat.tbl[id].param[3] = 60;
+            datDevilFormat.tbl[id].param[4] = 40;
+            datDevilFormat.tbl[id].param[5] = 60;
 
             datDevilFormat.tbl[id].dropexp = 2500;
             datDevilFormat.tbl[id].dropmakka = 3000;
@@ -13456,11 +15242,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].hp = 4000;
             datDevilFormat.tbl[id].level = 60;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 30;
-            datDevilFormat.tbl[id].param[2] = 20;
-            datDevilFormat.tbl[id].param[3] = 30;
-            datDevilFormat.tbl[id].param[4] = 13;
-            datDevilFormat.tbl[id].param[5] = 20;
+            datDevilFormat.tbl[id].param[0] = 70;
+            datDevilFormat.tbl[id].param[1] = 60;
+            datDevilFormat.tbl[id].param[2] = 60;
+            datDevilFormat.tbl[id].param[3] = 60;
+            datDevilFormat.tbl[id].param[4] = 40;
+            datDevilFormat.tbl[id].param[5] = 60;
 
             datDevilFormat.tbl[id].dropexp = 2500;
             datDevilFormat.tbl[id].dropmakka = 3000;
@@ -13495,11 +15282,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].hp = 4000;
             datDevilFormat.tbl[id].level = 62;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 30;
-            datDevilFormat.tbl[id].param[2] = 20;
-            datDevilFormat.tbl[id].param[3] = 30;
-            datDevilFormat.tbl[id].param[4] = 12;
-            datDevilFormat.tbl[id].param[5] = 20;
+            datDevilFormat.tbl[id].param[0] = 70;
+            datDevilFormat.tbl[id].param[1] = 60;
+            datDevilFormat.tbl[id].param[2] = 60;
+            datDevilFormat.tbl[id].param[3] = 60;
+            datDevilFormat.tbl[id].param[4] = 40;
+            datDevilFormat.tbl[id].param[5] = 60;
 
             datDevilFormat.tbl[id].dropexp = 2500;
             datDevilFormat.tbl[id].dropmakka = 3000;
@@ -13535,11 +15323,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].hp = 24000;
             datDevilFormat.tbl[id].level = 78;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 36;
-            datDevilFormat.tbl[id].param[2] = 30;
-            datDevilFormat.tbl[id].param[3] = 30;
-            datDevilFormat.tbl[id].param[4] = 26;
-            datDevilFormat.tbl[id].param[5] = 28;
+            datDevilFormat.tbl[id].param[0] = 80;
+            datDevilFormat.tbl[id].param[1] = 75;
+            datDevilFormat.tbl[id].param[2] = 75;
+            datDevilFormat.tbl[id].param[3] = 75;
+            datDevilFormat.tbl[id].param[4] = 65;
+            datDevilFormat.tbl[id].param[5] = 70;
 
             datDevilFormat.tbl[id].dropexp = 12000;
             datDevilFormat.tbl[id].dropmakka = 15000;
@@ -13577,11 +15366,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 10000;
             datDevilFormat.tbl[id].level = 83;
             datDevilFormat.tbl[id].flag = 34;
-            datDevilFormat.tbl[id].param[0] = 28;
-            datDevilFormat.tbl[id].param[2] = 32;
-            datDevilFormat.tbl[id].param[3] = 30;
-            datDevilFormat.tbl[id].param[4] = 26;
-            datDevilFormat.tbl[id].param[5] = 20;
+            datDevilFormat.tbl[id].param[0] = 70;
+            datDevilFormat.tbl[id].param[1] = 80;
+            datDevilFormat.tbl[id].param[2] = 75;
+            datDevilFormat.tbl[id].param[3] = 75;
+            datDevilFormat.tbl[id].param[4] = 65;
+            datDevilFormat.tbl[id].param[5] = 50;
 
             datDevilFormat.tbl[id].dropexp = 9000;
             datDevilFormat.tbl[id].dropmakka = 12000;
@@ -13616,11 +15406,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 10000;
             datDevilFormat.tbl[id].level = 89;
             datDevilFormat.tbl[id].flag = 34;
-            datDevilFormat.tbl[id].param[0] = 34;
-            datDevilFormat.tbl[id].param[2] = 30;
-            datDevilFormat.tbl[id].param[3] = 10;
-            datDevilFormat.tbl[id].param[4] = 30;
-            datDevilFormat.tbl[id].param[5] = 32;
+            datDevilFormat.tbl[id].param[0] = 85;
+            datDevilFormat.tbl[id].param[1] = 75;
+            datDevilFormat.tbl[id].param[2] = 25;
+            datDevilFormat.tbl[id].param[3] = 25;
+            datDevilFormat.tbl[id].param[4] = 75;
+            datDevilFormat.tbl[id].param[5] = 80;
 
             datDevilFormat.tbl[id].dropexp = 9000;
             datDevilFormat.tbl[id].dropmakka = 12000;
@@ -13658,11 +15449,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 10000;
             datDevilFormat.tbl[id].level = 74;
             datDevilFormat.tbl[id].flag = 34;
-            datDevilFormat.tbl[id].param[0] = 30;
-            datDevilFormat.tbl[id].param[2] = 28;
-            datDevilFormat.tbl[id].param[3] = 30;
-            datDevilFormat.tbl[id].param[4] = 20;
-            datDevilFormat.tbl[id].param[5] = 24;
+            datDevilFormat.tbl[id].param[0] = 75;
+            datDevilFormat.tbl[id].param[1] = 70;
+            datDevilFormat.tbl[id].param[2] = 75;
+            datDevilFormat.tbl[id].param[3] = 75;
+            datDevilFormat.tbl[id].param[4] = 50;
+            datDevilFormat.tbl[id].param[5] = 60;
 
             datDevilFormat.tbl[id].dropexp = 9000;
             datDevilFormat.tbl[id].dropmakka = 12000;
@@ -13683,7 +15475,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 18;
             datDevilFormat.tbl[id].level = 55;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 22, 0, 22, 20, 20, 18 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 55, 55, 50, 50, 50, 45 };
             datDevilFormat.tbl[id].keisyotype = 9;
             datDevilFormat.tbl[id].keisyoform = 2207;
 
@@ -13756,11 +15548,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 60000;
             datDevilFormat.tbl[id].level = 90;
             datDevilFormat.tbl[id].flag = 563;
-            datDevilFormat.tbl[id].param[0] = 24;
-            datDevilFormat.tbl[id].param[2] = 24;
-            datDevilFormat.tbl[id].param[3] = 40;
-            datDevilFormat.tbl[id].param[4] = 24;
-            datDevilFormat.tbl[id].param[5] = 24;
+            datDevilFormat.tbl[id].param[0] = 60;
+            datDevilFormat.tbl[id].param[1] = 60;
+            datDevilFormat.tbl[id].param[2] = 99;
+            datDevilFormat.tbl[id].param[3] = 99;
+            datDevilFormat.tbl[id].param[4] = 60;
+            datDevilFormat.tbl[id].param[5] = 60;
 
             datDevilFormat.tbl[id].dropexp = 20000;
             datDevilFormat.tbl[id].dropmakka = 30000;
@@ -13797,11 +15590,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 60000;
             datDevilFormat.tbl[id].level = 90;
             datDevilFormat.tbl[id].flag = 563;
-            datDevilFormat.tbl[id].param[0] = 20;
-            datDevilFormat.tbl[id].param[2] = 20;
-            datDevilFormat.tbl[id].param[3] = 30;
-            datDevilFormat.tbl[id].param[4] = 24;
-            datDevilFormat.tbl[id].param[5] = 24;
+            datDevilFormat.tbl[id].param[0] = 50;
+            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[2] = 70;
+            datDevilFormat.tbl[id].param[3] = 70;
+            datDevilFormat.tbl[id].param[4] = 60;
+            datDevilFormat.tbl[id].param[5] = 60;
 
             datDevilFormat.tbl[id].dropexp = 20000;
             datDevilFormat.tbl[id].dropmakka = 30000;
@@ -13841,11 +15635,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 30000;
             datDevilFormat.tbl[id].level = 76;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 20;
-            datDevilFormat.tbl[id].param[2] = 20;
-            datDevilFormat.tbl[id].param[3] = 20;
-            datDevilFormat.tbl[id].param[4] = 20;
-            datDevilFormat.tbl[id].param[5] = 20;
+            datDevilFormat.tbl[id].param[0] = 50;
+            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[2] = 50;
+            datDevilFormat.tbl[id].param[3] = 50;
+            datDevilFormat.tbl[id].param[4] = 50;
+            datDevilFormat.tbl[id].param[5] = 50;
 
             datDevilFormat.tbl[id].dropexp = 0;
             datDevilFormat.tbl[id].dropmakka = 0;
@@ -13881,11 +15676,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 30000;
             datDevilFormat.tbl[id].level = 76;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 20;
-            datDevilFormat.tbl[id].param[2] = 20;
-            datDevilFormat.tbl[id].param[3] = 20;
-            datDevilFormat.tbl[id].param[4] = 20;
-            datDevilFormat.tbl[id].param[5] = 20;
+            datDevilFormat.tbl[id].param[0] = 50;
+            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[2] = 50;
+            datDevilFormat.tbl[id].param[3] = 50;
+            datDevilFormat.tbl[id].param[4] = 50;
+            datDevilFormat.tbl[id].param[5] = 50;
 
             datDevilFormat.tbl[id].dropexp = 0;
             datDevilFormat.tbl[id].dropmakka = 0;
@@ -13921,11 +15717,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 60000;
             datDevilFormat.tbl[id].level = 80;
             datDevilFormat.tbl[id].flag = 819;
-            datDevilFormat.tbl[id].param[0] = 36;
-            datDevilFormat.tbl[id].param[2] = 40;
-            datDevilFormat.tbl[id].param[3] = 40;
-            datDevilFormat.tbl[id].param[4] = 24;
-            datDevilFormat.tbl[id].param[5] = 24;
+            datDevilFormat.tbl[id].param[0] = 90;
+            datDevilFormat.tbl[id].param[1] = 99;
+            datDevilFormat.tbl[id].param[2] = 99;
+            datDevilFormat.tbl[id].param[3] = 99;
+            datDevilFormat.tbl[id].param[4] = 60;
+            datDevilFormat.tbl[id].param[5] = 60;
 
             datDevilFormat.tbl[id].dropexp = 20000;
             datDevilFormat.tbl[id].dropmakka = 30000;
@@ -13967,11 +15764,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 60000;
             datDevilFormat.tbl[id].level = 90;
             datDevilFormat.tbl[id].flag = 563;
-            datDevilFormat.tbl[id].param[0] = 20;
-            datDevilFormat.tbl[id].param[2] = 40;
-            datDevilFormat.tbl[id].param[3] = 30;
-            datDevilFormat.tbl[id].param[4] = 26;
-            datDevilFormat.tbl[id].param[5] = 26;
+            datDevilFormat.tbl[id].param[0] = 55;
+            datDevilFormat.tbl[id].param[1] = 99;
+            datDevilFormat.tbl[id].param[2] = 75;
+            datDevilFormat.tbl[id].param[3] = 40;
+            datDevilFormat.tbl[id].param[4] = 65;
+            datDevilFormat.tbl[id].param[5] = 65;
 
             datDevilFormat.tbl[id].dropexp = 20000;
             datDevilFormat.tbl[id].dropmakka = 30000;
@@ -14013,11 +15811,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 60000;
             datDevilFormat.tbl[id].level = 80;
             datDevilFormat.tbl[id].flag = 819;
-            datDevilFormat.tbl[id].param[0] = 10;
-            datDevilFormat.tbl[id].param[2] = 40;
-            datDevilFormat.tbl[id].param[3] = 20;
-            datDevilFormat.tbl[id].param[4] = 26;
-            datDevilFormat.tbl[id].param[5] = 26;
+            datDevilFormat.tbl[id].param[0] = 25;
+            datDevilFormat.tbl[id].param[1] = 99;
+            datDevilFormat.tbl[id].param[2] = 75;
+            datDevilFormat.tbl[id].param[3] = 40;
+            datDevilFormat.tbl[id].param[4] = 65;
+            datDevilFormat.tbl[id].param[5] = 65;
 
             datDevilFormat.tbl[id].dropexp = 20000;
             datDevilFormat.tbl[id].dropmakka = 30000;
@@ -14056,11 +15855,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 60000;
             datDevilFormat.tbl[id].level = 95;
             datDevilFormat.tbl[id].flag = 563;
-            datDevilFormat.tbl[id].param[0] = 40;
-            datDevilFormat.tbl[id].param[2] = 40;
-            datDevilFormat.tbl[id].param[3] = 40;
-            datDevilFormat.tbl[id].param[4] = 30;
-            datDevilFormat.tbl[id].param[5] = 30;
+            datDevilFormat.tbl[id].param[0] = 99;
+            datDevilFormat.tbl[id].param[1] = 99;
+            datDevilFormat.tbl[id].param[2] = 99;
+            datDevilFormat.tbl[id].param[3] = 99;
+            datDevilFormat.tbl[id].param[4] = 75;
+            datDevilFormat.tbl[id].param[5] = 75;
 
             datDevilFormat.tbl[id].dropexp = 0;
             datDevilFormat.tbl[id].dropmakka = 0;
@@ -14100,11 +15900,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 60000;
             datDevilFormat.tbl[id].level = 90;
             datDevilFormat.tbl[id].flag = 819;
-            datDevilFormat.tbl[id].param[0] = 36;
-            datDevilFormat.tbl[id].param[2] = 36;
-            datDevilFormat.tbl[id].param[3] = 36;
-            datDevilFormat.tbl[id].param[4] = 30;
-            datDevilFormat.tbl[id].param[5] = 30;
+            datDevilFormat.tbl[id].param[0] = 90;
+            datDevilFormat.tbl[id].param[1] = 90;
+            datDevilFormat.tbl[id].param[2] = 90;
+            datDevilFormat.tbl[id].param[3] = 90;
+            datDevilFormat.tbl[id].param[4] = 76;
+            datDevilFormat.tbl[id].param[5] = 76;
 
             datDevilFormat.tbl[id].dropexp = 0;
             datDevilFormat.tbl[id].dropmakka = 0;
@@ -14142,11 +15943,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 5000;
             datDevilFormat.tbl[id].level = 75;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 32;
-            datDevilFormat.tbl[id].param[2] = 32;
-            datDevilFormat.tbl[id].param[3] = 20;
-            datDevilFormat.tbl[id].param[4] = 16;
-            datDevilFormat.tbl[id].param[5] = 16;
+            datDevilFormat.tbl[id].param[0] = 80;
+            datDevilFormat.tbl[id].param[1] = 80;
+            datDevilFormat.tbl[id].param[2] = 50;
+            datDevilFormat.tbl[id].param[3] = 50;
+            datDevilFormat.tbl[id].param[4] = 40;
+            datDevilFormat.tbl[id].param[5] = 40;
 
             datDevilFormat.tbl[id].dropexp = 14000;
             datDevilFormat.tbl[id].dropmakka = 7000;
@@ -14184,11 +15986,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 5000;
             datDevilFormat.tbl[id].level = 70;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 26;
-            datDevilFormat.tbl[id].param[2] = 26;
-            datDevilFormat.tbl[id].param[3] = 20;
-            datDevilFormat.tbl[id].param[4] = 16;
-            datDevilFormat.tbl[id].param[5] = 16;
+            datDevilFormat.tbl[id].param[0] = 65;
+            datDevilFormat.tbl[id].param[1] = 65;
+            datDevilFormat.tbl[id].param[2] = 50;
+            datDevilFormat.tbl[id].param[3] = 50;
+            datDevilFormat.tbl[id].param[4] = 40;
+            datDevilFormat.tbl[id].param[5] = 40;
 
             datDevilFormat.tbl[id].dropexp = 10000;
             datDevilFormat.tbl[id].dropmakka = 5000;
@@ -14226,11 +16029,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 5000;
             datDevilFormat.tbl[id].level = 65;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 20;
-            datDevilFormat.tbl[id].param[2] = 20;
-            datDevilFormat.tbl[id].param[3] = 20;
-            datDevilFormat.tbl[id].param[4] = 16;
-            datDevilFormat.tbl[id].param[5] = 16;
+            datDevilFormat.tbl[id].param[0] = 50;
+            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[2] = 50;
+            datDevilFormat.tbl[id].param[3] = 50;
+            datDevilFormat.tbl[id].param[4] = 40;
+            datDevilFormat.tbl[id].param[5] = 40;
 
             datDevilFormat.tbl[id].dropexp = 6000;
             datDevilFormat.tbl[id].dropmakka = 3000;
@@ -14264,11 +16068,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 6000;
             datDevilFormat.tbl[id].hp = 6000;
             datDevilFormat.tbl[id].level = 40;
-            datDevilFormat.tbl[id].param[0] = 20;
-            datDevilFormat.tbl[id].param[2] = 25;
-            datDevilFormat.tbl[id].param[3] = 10;
-            datDevilFormat.tbl[id].param[4] = 10;
-            datDevilFormat.tbl[id].param[5] = 10;
+            datDevilFormat.tbl[id].param[0] = 50;
+            datDevilFormat.tbl[id].param[1] = 62;
+            datDevilFormat.tbl[id].param[2] = 30;
+            datDevilFormat.tbl[id].param[3] = 30;
+            datDevilFormat.tbl[id].param[4] = 25;
+            datDevilFormat.tbl[id].param[5] = 25;
 
             datDevilFormat.tbl[id].dropexp = 1200;
 
@@ -14304,11 +16109,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 0;
             datDevilFormat.tbl[id].level = 65;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 11;
-            datDevilFormat.tbl[id].param[2] = 11;
-            datDevilFormat.tbl[id].param[3] = 20;
-            datDevilFormat.tbl[id].param[4] = 20;
-            datDevilFormat.tbl[id].param[5] = 20;
+            datDevilFormat.tbl[id].param[0] = 27;
+            datDevilFormat.tbl[id].param[1] = 27;
+            datDevilFormat.tbl[id].param[2] = 50;
+            datDevilFormat.tbl[id].param[3] = 50;
+            datDevilFormat.tbl[id].param[4] = 50;
+            datDevilFormat.tbl[id].param[5] = 50;
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 27; // Megidolaon
@@ -14334,11 +16140,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 1600;
             datDevilFormat.tbl[id].hp = 1600;
             datDevilFormat.tbl[id].level = 30;
-            datDevilFormat.tbl[id].param[0] = 8;
-            datDevilFormat.tbl[id].param[2] = 12;
-            datDevilFormat.tbl[id].param[3] = 14;
-            datDevilFormat.tbl[id].param[4] = 6;
-            datDevilFormat.tbl[id].param[5] = 6;
+            datDevilFormat.tbl[id].param[0] = 20;
+            datDevilFormat.tbl[id].param[1] = 30;
+            datDevilFormat.tbl[id].param[2] = 35;
+            datDevilFormat.tbl[id].param[3] = 35;
+            datDevilFormat.tbl[id].param[4] = 15;
+            datDevilFormat.tbl[id].param[5] = 15;
 
             datDevilFormat.tbl[id].dropexp = 300;
 
@@ -14371,11 +16178,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 1800;
             datDevilFormat.tbl[id].hp = 1800;
             datDevilFormat.tbl[id].level = 32;
-            datDevilFormat.tbl[id].param[0] = 8;
-            datDevilFormat.tbl[id].param[2] = 16;
-            datDevilFormat.tbl[id].param[3] = 18;
-            datDevilFormat.tbl[id].param[4] = 8;
-            datDevilFormat.tbl[id].param[5] = 8;
+            datDevilFormat.tbl[id].param[0] = 20;
+            datDevilFormat.tbl[id].param[1] = 40;
+            datDevilFormat.tbl[id].param[2] = 45;
+            datDevilFormat.tbl[id].param[3] = 45;
+            datDevilFormat.tbl[id].param[4] = 20;
+            datDevilFormat.tbl[id].param[5] = 20;
 
             datDevilFormat.tbl[id].dropexp = 400;
 
@@ -14408,11 +16216,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 3000;
             datDevilFormat.tbl[id].hp = 3000;
             datDevilFormat.tbl[id].level = 36;
-            datDevilFormat.tbl[id].param[0] = 10;
-            datDevilFormat.tbl[id].param[2] = 20;
-            datDevilFormat.tbl[id].param[3] = 20;
-            datDevilFormat.tbl[id].param[4] = 10;
-            datDevilFormat.tbl[id].param[5] = 10;
+            datDevilFormat.tbl[id].param[0] = 25;
+            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[2] = 50;
+            datDevilFormat.tbl[id].param[3] = 50;
+            datDevilFormat.tbl[id].param[4] = 25;
+            datDevilFormat.tbl[id].param[5] = 25;
             datDevilFormat.tbl[id].flag = 547;
 
             datDevilFormat.tbl[id].dropexp = 800;
@@ -14445,11 +16254,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 30000;
             datDevilFormat.tbl[id].hp = 30000;
             datDevilFormat.tbl[id].level = 80;
-            datDevilFormat.tbl[id].param[0] = 36;
-            datDevilFormat.tbl[id].param[2] = 30;
-            datDevilFormat.tbl[id].param[3] = 30;
-            datDevilFormat.tbl[id].param[4] = 20;
-            datDevilFormat.tbl[id].param[5] = 20;
+            datDevilFormat.tbl[id].param[0] = 80;
+            datDevilFormat.tbl[id].param[1] = 75;
+            datDevilFormat.tbl[id].param[2] = 75;
+            datDevilFormat.tbl[id].param[3] = 75;
+            datDevilFormat.tbl[id].param[4] = 50;
+            datDevilFormat.tbl[id].param[5] = 50;
             datDevilFormat.tbl[id].flag = 547;
 
             datDevilFormat.tbl[id].dropexp = 9000;
@@ -14484,11 +16294,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 8000;
             datDevilFormat.tbl[id].hp = 8000;
             datDevilFormat.tbl[id].level = 66;
-            datDevilFormat.tbl[id].param[0] = 24;
-            datDevilFormat.tbl[id].param[2] = 24;
-            datDevilFormat.tbl[id].param[3] = 13;
-            datDevilFormat.tbl[id].param[4] = 16;
-            datDevilFormat.tbl[id].param[5] = 14;
+            datDevilFormat.tbl[id].param[0] = 60;
+            datDevilFormat.tbl[id].param[1] = 60;
+            datDevilFormat.tbl[id].param[2] = 50;
+            datDevilFormat.tbl[id].param[3] = 45;
+            datDevilFormat.tbl[id].param[4] = 40;
+            datDevilFormat.tbl[id].param[5] = 35;
             datDevilFormat.tbl[id].flag = 547;
 
             datDevilFormat.tbl[id].dropexp = 7000;
@@ -14521,11 +16332,12 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 1200;
             datDevilFormat.tbl[id].hp = 1200;
-            datDevilFormat.tbl[id].param[0] = 14;
-            datDevilFormat.tbl[id].param[2] = 9;
-            datDevilFormat.tbl[id].param[3] = 14;
-            datDevilFormat.tbl[id].param[4] = 10;
-            datDevilFormat.tbl[id].param[5] = 10;
+            datDevilFormat.tbl[id].param[0] = 35;
+            datDevilFormat.tbl[id].param[1] = 25;
+            datDevilFormat.tbl[id].param[2] = 35;
+            datDevilFormat.tbl[id].param[3] = 35;
+            datDevilFormat.tbl[id].param[4] = 25;
+            datDevilFormat.tbl[id].param[5] = 25;
 
             datDevilFormat.tbl[id].dropexp = 450;
 
@@ -14556,11 +16368,12 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 1000;
             datDevilFormat.tbl[id].hp = 1000;
-            datDevilFormat.tbl[id].param[0] = 13;
-            datDevilFormat.tbl[id].param[2] = 13;
-            datDevilFormat.tbl[id].param[3] = 9;
-            datDevilFormat.tbl[id].param[4] = 8;
-            datDevilFormat.tbl[id].param[5] = 7;
+            datDevilFormat.tbl[id].param[0] = 33;
+            datDevilFormat.tbl[id].param[1] = 33;
+            datDevilFormat.tbl[id].param[2] = 25;
+            datDevilFormat.tbl[id].param[3] = 25;
+            datDevilFormat.tbl[id].param[4] = 20;
+            datDevilFormat.tbl[id].param[5] = 18;
 
             datDevilFormat.tbl[id].dropexp = 200;
 
@@ -14588,11 +16401,12 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 1800;
             datDevilFormat.tbl[id].hp = 1800;
-            datDevilFormat.tbl[id].param[0] = 16;
-            datDevilFormat.tbl[id].param[2] = 10;
-            datDevilFormat.tbl[id].param[3] = 17;
-            datDevilFormat.tbl[id].param[4] = 10;
-            datDevilFormat.tbl[id].param[5] = 10;
+            datDevilFormat.tbl[id].param[0] = 40;
+            datDevilFormat.tbl[id].param[1] = 25;
+            datDevilFormat.tbl[id].param[2] = 42;
+            datDevilFormat.tbl[id].param[3] = 42;
+            datDevilFormat.tbl[id].param[4] = 25;
+            datDevilFormat.tbl[id].param[5] = 25;
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 101; // Heat Wave
@@ -14622,11 +16436,12 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 600;
             datDevilFormat.tbl[id].hp = 600;
-            datDevilFormat.tbl[id].param[0] = 10;
-            datDevilFormat.tbl[id].param[2] = 16;
-            datDevilFormat.tbl[id].param[3] = 11;
-            datDevilFormat.tbl[id].param[4] = 8;
-            datDevilFormat.tbl[id].param[5] = 8;
+            datDevilFormat.tbl[id].param[0] = 25;
+            datDevilFormat.tbl[id].param[1] = 40;
+            datDevilFormat.tbl[id].param[2] = 40;
+            datDevilFormat.tbl[id].param[3] = 28;
+            datDevilFormat.tbl[id].param[4] = 20;
+            datDevilFormat.tbl[id].param[5] = 20;
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 214; // Sexy Gaze
@@ -14648,6 +16463,13 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Enemy Stats
+            datDevilFormat.tbl[id].param[0] = 25; // Strength
+            datDevilFormat.tbl[id].param[1] = 42; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 50; // Magic
+            datDevilFormat.tbl[id].param[3] = 50; // Vitality
+            datDevilFormat.tbl[id].param[4] = 28; // Agility
+            datDevilFormat.tbl[id].param[5] = 28; // Luck
+
             datDevilFormat.tbl[id].hp = 1200;
             datDevilFormat.tbl[id].maxhp = 1200;
 
@@ -14693,10 +16515,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 1400;
             datDevilFormat.tbl[id].hp = 1400;
             datDevilFormat.tbl[id].level = 18;
-            datDevilFormat.tbl[id].param[0] = 14;
-            datDevilFormat.tbl[id].param[2] = 10;
-            datDevilFormat.tbl[id].param[4] = 9;
-            datDevilFormat.tbl[id].param[5] = 9;
+            datDevilFormat.tbl[id].param[0] = 35;
+            datDevilFormat.tbl[id].param[1] = 25;
+            datDevilFormat.tbl[id].param[2] = 40;
+            datDevilFormat.tbl[id].param[3] = 40;
+            datDevilFormat.tbl[id].param[4] = 22;
+            datDevilFormat.tbl[id].param[5] = 22;
 
             datDevilFormat.tbl[id].dropexp = 200;
 
@@ -14741,6 +16565,13 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Enemy Stats
+            datDevilFormat.tbl[id].param[0] = 16;
+            datDevilFormat.tbl[id].param[1] = 16;
+            datDevilFormat.tbl[id].param[2] = 22;
+            datDevilFormat.tbl[id].param[3] = 22;
+            datDevilFormat.tbl[id].param[4] = 5;
+            datDevilFormat.tbl[id].param[5] = 5;
+
             datDevilFormat.tbl[id].hp = 240;
             datDevilFormat.tbl[id].maxhp = 240;
             datDevilFormat.tbl[id].mp = 120;
@@ -14792,8 +16623,12 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][12] = 65536; // Shot
 
             // Stats
-            datDevilFormat.tbl[id].param[0] = 1;
-            datDevilFormat.tbl[id].param[2] = 3;
+            datDevilFormat.tbl[id].param[0] = 2;
+            datDevilFormat.tbl[id].param[1] = 6;
+            datDevilFormat.tbl[id].param[2] = 1;
+            datDevilFormat.tbl[id].param[3] = 1;
+            datDevilFormat.tbl[id].param[4] = 1;
+            datDevilFormat.tbl[id].param[5] = 1;
 
             // Display Skill
             datDevilFormat.tbl[id].skill[1] = 67;
@@ -14822,6 +16657,11 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 32;
             datDevilFormat.tbl[id].maxmp = 32;
             datDevilFormat.tbl[id].param[0] = 1;
+            datDevilFormat.tbl[id].param[1] = 1;
+            datDevilFormat.tbl[id].param[2] = 1;
+            datDevilFormat.tbl[id].param[3] = 1;
+            datDevilFormat.tbl[id].param[4] = 1;
+            datDevilFormat.tbl[id].param[5] = 1;
         }
 
         private static void BossBishamonten1(ushort id)
@@ -14843,11 +16683,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].hp = 20000;
             datDevilFormat.tbl[id].level = 72;
             datDevilFormat.tbl[id].flag = 98;
-            datDevilFormat.tbl[id].param[0] = 36;
-            datDevilFormat.tbl[id].param[2] = 20;
-            datDevilFormat.tbl[id].param[3] = 25;
-            datDevilFormat.tbl[id].param[4] = 25;
-            datDevilFormat.tbl[id].param[5] = 20;
+            datDevilFormat.tbl[id].param[0] = 80;
+            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[2] = 62;
+            datDevilFormat.tbl[id].param[3] = 62;
+            datDevilFormat.tbl[id].param[4] = 62;
+            datDevilFormat.tbl[id].param[5] = 50;
 
             datDevilFormat.tbl[id].dropexp = 10000;
             datDevilFormat.tbl[id].dropmakka = 10000;
@@ -14885,11 +16726,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].hp = 1;
             datDevilFormat.tbl[id].level = 62;
             datDevilFormat.tbl[id].flag = 34;
-            datDevilFormat.tbl[id].param[0] = 30;
-            datDevilFormat.tbl[id].param[2] = 20;
-            datDevilFormat.tbl[id].param[3] = 30;
-            datDevilFormat.tbl[id].param[4] = 15;
-            datDevilFormat.tbl[id].param[5] = 10;
+            datDevilFormat.tbl[id].param[0] = 75;
+            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[2] = 75;
+            datDevilFormat.tbl[id].param[3] = 75;
+            datDevilFormat.tbl[id].param[4] = 36;
+            datDevilFormat.tbl[id].param[5] = 26;
 
             datDevilFormat.tbl[id].dropexp = 6000;
             datDevilFormat.tbl[id].dropmakka = 20000;
@@ -14924,11 +16766,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].hp = 32000;
             datDevilFormat.tbl[id].level = 99;
             datDevilFormat.tbl[id].flag = 98;
-            datDevilFormat.tbl[id].param[0] = 40;
-            datDevilFormat.tbl[id].param[2] = 40;
-            datDevilFormat.tbl[id].param[3] = 40;
-            datDevilFormat.tbl[id].param[4] = 30;
-            datDevilFormat.tbl[id].param[5] = 30;
+            datDevilFormat.tbl[id].param[0] = 99;
+            datDevilFormat.tbl[id].param[1] = 99;
+            datDevilFormat.tbl[id].param[2] = 99;
+            datDevilFormat.tbl[id].param[3] = 99;
+            datDevilFormat.tbl[id].param[4] = 75;
+            datDevilFormat.tbl[id].param[5] = 75;
 
             datDevilFormat.tbl[id].dropexp = 16000;
             datDevilFormat.tbl[id].dropmakka = 30000;
@@ -14980,11 +16823,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].hp = 32000;
             datDevilFormat.tbl[id].level = 99;
             datDevilFormat.tbl[id].flag = 98;
-            datDevilFormat.tbl[id].param[0] = 40;
-            datDevilFormat.tbl[id].param[2] = 40;
-            datDevilFormat.tbl[id].param[3] = 40;
-            datDevilFormat.tbl[id].param[4] = 30;
-            datDevilFormat.tbl[id].param[5] = 30;
+            datDevilFormat.tbl[id].param[0] = 99;
+            datDevilFormat.tbl[id].param[1] = 99;
+            datDevilFormat.tbl[id].param[2] = 99;
+            datDevilFormat.tbl[id].param[3] = 99;
+            datDevilFormat.tbl[id].param[4] = 75;
+            datDevilFormat.tbl[id].param[5] = 75;
 
             datDevilFormat.tbl[id].dropexp = 12000;
             datDevilFormat.tbl[id].dropmakka = 25000;
@@ -15021,11 +16865,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].hp = 32000;
             datDevilFormat.tbl[id].level = 99;
             datDevilFormat.tbl[id].flag = 98;
-            datDevilFormat.tbl[id].param[0] = 40;
-            datDevilFormat.tbl[id].param[2] = 40;
-            datDevilFormat.tbl[id].param[3] = 40;
-            datDevilFormat.tbl[id].param[4] = 30;
-            datDevilFormat.tbl[id].param[5] = 30;
+            datDevilFormat.tbl[id].param[0] = 99;
+            datDevilFormat.tbl[id].param[1] = 99;
+            datDevilFormat.tbl[id].param[2] = 99;
+            datDevilFormat.tbl[id].param[3] = 99;
+            datDevilFormat.tbl[id].param[4] = 75;
+            datDevilFormat.tbl[id].param[5] = 75;
 
             datDevilFormat.tbl[id].dropexp = 12000;
             datDevilFormat.tbl[id].dropmakka = 25000;
@@ -15062,11 +16907,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].hp = 32000;
             datDevilFormat.tbl[id].level = 99;
             datDevilFormat.tbl[id].flag = 98;
-            datDevilFormat.tbl[id].param[0] = 40;
-            datDevilFormat.tbl[id].param[2] = 40;
-            datDevilFormat.tbl[id].param[3] = 40;
-            datDevilFormat.tbl[id].param[4] = 30;
-            datDevilFormat.tbl[id].param[5] = 30;
+            datDevilFormat.tbl[id].param[0] = 99;
+            datDevilFormat.tbl[id].param[1] = 99;
+            datDevilFormat.tbl[id].param[2] = 99;
+            datDevilFormat.tbl[id].param[3] = 99;
+            datDevilFormat.tbl[id].param[4] = 75;
+            datDevilFormat.tbl[id].param[5] = 75;
 
             datDevilFormat.tbl[id].dropexp = 12000;
             datDevilFormat.tbl[id].dropmakka = 25000;
@@ -15104,11 +16950,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 2000;
             datDevilFormat.tbl[id].hp = 2000;
             datDevilFormat.tbl[id].level = 40;
-            datDevilFormat.tbl[id].param[0] = 2;
-            datDevilFormat.tbl[id].param[2] = 10;
-            datDevilFormat.tbl[id].param[3] = 10;
-            datDevilFormat.tbl[id].param[4] = 8;
-            datDevilFormat.tbl[id].param[5] = 8;
+            datDevilFormat.tbl[id].param[0] = 5;
+            datDevilFormat.tbl[id].param[1] = 25;
+            datDevilFormat.tbl[id].param[2] = 25;
+            datDevilFormat.tbl[id].param[3] = 25;
+            datDevilFormat.tbl[id].param[4] = 20;
+            datDevilFormat.tbl[id].param[5] = 20;
             datDevilFormat.tbl[id].flag = 34;
 
             // Enemy Skills
@@ -15139,11 +16986,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 7500;
             datDevilFormat.tbl[id].hp = 7500;
             datDevilFormat.tbl[id].level = 60;
-            datDevilFormat.tbl[id].param[0] = 18;
-            datDevilFormat.tbl[id].param[2] = 14;
-            datDevilFormat.tbl[id].param[3] = 20;
-            datDevilFormat.tbl[id].param[4] = 18;
-            datDevilFormat.tbl[id].param[5] = 14;
+            datDevilFormat.tbl[id].param[0] = 45;
+            datDevilFormat.tbl[id].param[1] = 35;
+            datDevilFormat.tbl[id].param[2] = 50;
+            datDevilFormat.tbl[id].param[3] = 50;
+            datDevilFormat.tbl[id].param[4] = 45;
+            datDevilFormat.tbl[id].param[5] = 35;
             datDevilFormat.tbl[id].flag = 34;
 
             // Enemy Skills
@@ -15177,11 +17025,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 7500;
             datDevilFormat.tbl[id].hp = 7500;
             datDevilFormat.tbl[id].level = 60;
-            datDevilFormat.tbl[id].param[0] = 18;
-            datDevilFormat.tbl[id].param[2] = 14;
-            datDevilFormat.tbl[id].param[3] = 20;
-            datDevilFormat.tbl[id].param[4] = 18;
-            datDevilFormat.tbl[id].param[5] = 14;
+            datDevilFormat.tbl[id].param[0] = 45;
+            datDevilFormat.tbl[id].param[1] = 35;
+            datDevilFormat.tbl[id].param[2] = 50;
+            datDevilFormat.tbl[id].param[3] = 50;
+            datDevilFormat.tbl[id].param[4] = 45;
+            datDevilFormat.tbl[id].param[5] = 35;
             datDevilFormat.tbl[id].flag = 34;
 
             // Enemy Skills
@@ -15216,11 +17065,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxmp = 16000;
             datDevilFormat.tbl[id].mp = 16000;
             datDevilFormat.tbl[id].flag = 98;
-            datDevilFormat.tbl[id].param[0] = 30;
-            datDevilFormat.tbl[id].param[2] = 24;
-            datDevilFormat.tbl[id].param[3] = 40;
-            datDevilFormat.tbl[id].param[4] = 24;
-            datDevilFormat.tbl[id].param[5] = 30;
+            datDevilFormat.tbl[id].param[0] = 75;
+            datDevilFormat.tbl[id].param[1] = 60;
+            datDevilFormat.tbl[id].param[2] = 99;
+            datDevilFormat.tbl[id].param[3] = 99;
+            datDevilFormat.tbl[id].param[4] = 60;
+            datDevilFormat.tbl[id].param[5] = 75;
 
             datDevilFormat.tbl[id].dropexp = 18000;
             datDevilFormat.tbl[id].dropmakka = 32000;
@@ -15257,11 +17107,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxmp = 16000;
             datDevilFormat.tbl[id].mp = 16000;
             datDevilFormat.tbl[id].flag = 162;
-            datDevilFormat.tbl[id].param[0] = 30;
-            datDevilFormat.tbl[id].param[2] = 28;
-            datDevilFormat.tbl[id].param[3] = 40;
-            datDevilFormat.tbl[id].param[4] = 28;
-            datDevilFormat.tbl[id].param[5] = 24;
+            datDevilFormat.tbl[id].param[0] = 75;
+            datDevilFormat.tbl[id].param[1] = 70;
+            datDevilFormat.tbl[id].param[2] = 99;
+            datDevilFormat.tbl[id].param[3] = 99;
+            datDevilFormat.tbl[id].param[4] = 70;
+            datDevilFormat.tbl[id].param[5] = 60;
 
             datDevilFormat.tbl[id].dropexp = 16666;
             datDevilFormat.tbl[id].dropmakka = 26666;
@@ -15301,11 +17152,12 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 60000;
             datDevilFormat.tbl[id].level = 99;
             datDevilFormat.tbl[id].flag = 162;
-            datDevilFormat.tbl[id].param[0] = 40;
-            datDevilFormat.tbl[id].param[2] = 40;
-            datDevilFormat.tbl[id].param[3] = 40;
-            datDevilFormat.tbl[id].param[4] = 40;
-            datDevilFormat.tbl[id].param[5] = 40;
+            datDevilFormat.tbl[id].param[0] = 99;
+            datDevilFormat.tbl[id].param[1] = 99;
+            datDevilFormat.tbl[id].param[2] = 99;
+            datDevilFormat.tbl[id].param[3] = 99;
+            datDevilFormat.tbl[id].param[4] = 99;
+            datDevilFormat.tbl[id].param[5] = 99;
 
             datDevilFormat.tbl[id].dropexp = 0;
             datDevilFormat.tbl[id].dropmakka = 0;
@@ -15338,6 +17190,13 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 65536; // Mind
 
             // Enemy Stats
+            datDevilFormat.tbl[id].param[0] = 60; // Strength
+            datDevilFormat.tbl[id].param[1] = 65; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 50; // Magic
+            datDevilFormat.tbl[id].param[3] = 45; // Vitality
+            datDevilFormat.tbl[id].param[4] = 42; // Agility
+            datDevilFormat.tbl[id].param[5] = 32; // Luck
+
             datDevilFormat.tbl[id].maxhp = 7500;
             datDevilFormat.tbl[id].hp = 7500;
             datDevilFormat.tbl[id].flag = 34;
@@ -15373,8 +17232,12 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 6300;
             datDevilFormat.tbl[id].hp = 6300;
-            datDevilFormat.tbl[id].param[2] = 13;
-            datDevilFormat.tbl[id].param[4] = 13;
+            datDevilFormat.tbl[id].param[0] = 50; // Strength
+            datDevilFormat.tbl[id].param[1] = 32; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 42; // Magic
+            datDevilFormat.tbl[id].param[3] = 40; // Vitality
+            datDevilFormat.tbl[id].param[4] = 32; // Agility
+            datDevilFormat.tbl[id].param[5] = 32; // Luck
             datDevilFormat.tbl[id].flag = 34;
 
             datDevilFormat.tbl[id].dropexp = 6000;
@@ -15406,8 +17269,12 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 6600;
             datDevilFormat.tbl[id].hp = 6600;
-            datDevilFormat.tbl[id].param[2] = 13;
-            datDevilFormat.tbl[id].param[4] = 13;
+            datDevilFormat.tbl[id].param[0] = 56; // Strength
+            datDevilFormat.tbl[id].param[1] = 32; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 47; // Magic
+            datDevilFormat.tbl[id].param[3] = 45; // Vitality
+            datDevilFormat.tbl[id].param[4] = 32; // Agility
+            datDevilFormat.tbl[id].param[5] = 32; // Luck
             datDevilFormat.tbl[id].flag = 34;
 
             datDevilFormat.tbl[id].dropexp = 6200;
@@ -15440,7 +17307,12 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 6900;
             datDevilFormat.tbl[id].hp = 6900;
-            datDevilFormat.tbl[id].param[2] = 18;
+            datDevilFormat.tbl[id].param[0] = 55; // Strength
+            datDevilFormat.tbl[id].param[1] = 44; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 50; // Magic
+            datDevilFormat.tbl[id].param[3] = 40; // Vitality
+            datDevilFormat.tbl[id].param[4] = 50; // Agility
+            datDevilFormat.tbl[id].param[5] = 32; // Luck
             datDevilFormat.tbl[id].flag = 34;
 
             datDevilFormat.tbl[id].dropexp = 6400;
@@ -15473,7 +17345,12 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 2000;
             datDevilFormat.tbl[id].hp = 2000;
-            datDevilFormat.tbl[id].param[0] = 6;
+            datDevilFormat.tbl[id].param[0] = 16;
+            datDevilFormat.tbl[id].param[1] = 22;
+            datDevilFormat.tbl[id].param[2] = 26;
+            datDevilFormat.tbl[id].param[3] = 26;
+            datDevilFormat.tbl[id].param[4] = 45;
+            datDevilFormat.tbl[id].param[5] = 22;
             datDevilFormat.tbl[id].flag = 34;
 
             // Display Skill
@@ -15504,6 +17381,9 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 5000;
             datDevilFormat.tbl[id].hp = 5000;
             datDevilFormat.tbl[id].param[0] = 12;
+            datDevilFormat.tbl[id].param[1] = 35;
+            datDevilFormat.tbl[id].param[2] = 35;
+            datDevilFormat.tbl[id].param[3] = 35;
             datDevilFormat.tbl[id].param[4] = 12;
             datDevilFormat.tbl[id].param[5] = 10;
             datDevilFormat.tbl[id].flag = 34;
@@ -15535,8 +17415,12 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 3500;
             datDevilFormat.tbl[id].hp = 3500;
-            datDevilFormat.tbl[id].param[2] = 18;
-            datDevilFormat.tbl[id].param[4] = 11;
+            datDevilFormat.tbl[id].param[0] = 30;
+            datDevilFormat.tbl[id].param[1] = 40;
+            datDevilFormat.tbl[id].param[2] = 26;
+            datDevilFormat.tbl[id].param[3] = 26;
+            datDevilFormat.tbl[id].param[4] = 26;
+            datDevilFormat.tbl[id].param[5] = 25;
             datDevilFormat.tbl[id].flag = 34;
 
             // Display Skill
@@ -15562,11 +17446,12 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 12000;
             datDevilFormat.tbl[id].hp = 12000;
-            datDevilFormat.tbl[id].param[0] = 22;
-            datDevilFormat.tbl[id].param[2] = 22;
-            datDevilFormat.tbl[id].param[3] = 22;
-            datDevilFormat.tbl[id].param[4] = 18;
-            datDevilFormat.tbl[id].param[5] = 18;
+            datDevilFormat.tbl[id].param[0] = 55;
+            datDevilFormat.tbl[id].param[1] = 55;
+            datDevilFormat.tbl[id].param[2] = 55;
+            datDevilFormat.tbl[id].param[3] = 55;
+            datDevilFormat.tbl[id].param[4] = 45;
+            datDevilFormat.tbl[id].param[5] = 45;
             datDevilFormat.tbl[id].flag = 34;
 
             datDevilFormat.tbl[id].dropexp = 9000;
@@ -15600,11 +17485,12 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 20000;
             datDevilFormat.tbl[id].hp = 20000;
-            datDevilFormat.tbl[id].param[0] = 21;
-            datDevilFormat.tbl[id].param[2] = 31;
-            datDevilFormat.tbl[id].param[3] = 21;
-            datDevilFormat.tbl[id].param[4] = 24;
-            datDevilFormat.tbl[id].param[5] = 15;
+            datDevilFormat.tbl[id].param[0] = 54;
+            datDevilFormat.tbl[id].param[1] = 76;
+            datDevilFormat.tbl[id].param[2] = 54;
+            datDevilFormat.tbl[id].param[3] = 54;
+            datDevilFormat.tbl[id].param[4] = 60;
+            datDevilFormat.tbl[id].param[5] = 40;
             datDevilFormat.tbl[id].flag = 34;
 
             datDevilFormat.tbl[id].dropexp = 12000;
@@ -15636,6 +17522,13 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Enemy Stats
+            datDevilFormat.tbl[id].param[0] = 38; // Strength
+            datDevilFormat.tbl[id].param[1] = 55; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 42; // Magic
+            datDevilFormat.tbl[id].param[3] = 36; // Vitality
+            datDevilFormat.tbl[id].param[4] = 30; // Agility
+            datDevilFormat.tbl[id].param[5] = 18; // Luck
+
             datDevilFormat.tbl[id].hp = 1200;
             datDevilFormat.tbl[id].maxhp = 1200;
             datDevilFormat.tbl[id].mp = 300;
@@ -15671,6 +17564,13 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Enemy Stats
+            datDevilFormat.tbl[id].param[0] = 36; // Strength
+            datDevilFormat.tbl[id].param[1] = 41; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 45; // Magic
+            datDevilFormat.tbl[id].param[3] = 36; // Vitality
+            datDevilFormat.tbl[id].param[4] = 26; // Agility
+            datDevilFormat.tbl[id].param[5] = 26; // Luck
+
             datDevilFormat.tbl[id].hp = 800;
             datDevilFormat.tbl[id].maxhp = 800;
             datDevilFormat.tbl[id].mp = 300;
@@ -15703,6 +17603,13 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Enemy Stats
+            datDevilFormat.tbl[id].param[0] = 42; // Strength
+            datDevilFormat.tbl[id].param[1] = 24; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 24; // Magic
+            datDevilFormat.tbl[id].param[3] = 40; // Vitality
+            datDevilFormat.tbl[id].param[4] = 18; // Agility
+            datDevilFormat.tbl[id].param[5] = 16; // Luck
+
             datDevilFormat.tbl[id].hp = 900;
             datDevilFormat.tbl[id].maxhp = 900;
             datDevilFormat.tbl[id].mp = 300;
@@ -15734,6 +17641,13 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][12] = 65536; // Shot
 
             // Enemy Stats
+            datDevilFormat.tbl[id].param[0] = 48; // Strength
+            datDevilFormat.tbl[id].param[1] = 28; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 31; // Magic
+            datDevilFormat.tbl[id].param[3] = 53; // Vitality
+            datDevilFormat.tbl[id].param[4] = 24; // Agility
+            datDevilFormat.tbl[id].param[5] = 23; // Luck
+
             datDevilFormat.tbl[id].hp = 1000;
             datDevilFormat.tbl[id].maxhp = 1000;
             datDevilFormat.tbl[id].mp = 300;
@@ -15758,7 +17672,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 12;
             datDevilFormat.tbl[id].level = 50;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 30, 0, 16, 30, 18, 16 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 75, 40, 75, 75, 45, 40 };
             datDevilFormat.tbl[id].keisyotype = 1;
             datDevilFormat.tbl[id].keisyoform = 2523;
 
@@ -15820,7 +17734,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 41;//26;
             datDevilFormat.tbl[id].level = 50;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 10, 0, 10, 10, 12, 12 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 25, 25, 25, 25, 30, 30 };
             datDevilFormat.tbl[id].keisyotype = 6;
             datDevilFormat.tbl[id].keisyoform = 2457;
 
@@ -15877,7 +17791,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 42;//14;
             datDevilFormat.tbl[id].level = 50;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 10, 0, 10, 10, 12, 12 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 25, 25, 25, 25, 30, 30 };
             datDevilFormat.tbl[id].keisyotype = 3;
             datDevilFormat.tbl[id].keisyoform = 2299;
 
@@ -15934,7 +17848,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 42;//27;
             datDevilFormat.tbl[id].level = 50;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 10, 0, 10, 10, 12, 12 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 25, 25, 25, 25, 30, 30 };
             datDevilFormat.tbl[id].keisyotype = 4;
             datDevilFormat.tbl[id].keisyoform = 2235;
 
@@ -15991,7 +17905,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 43;//10;
             datDevilFormat.tbl[id].level = 50;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 10, 0, 10, 10, 12, 12 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 25, 25, 25, 25, 30, 30 };
             datDevilFormat.tbl[id].keisyotype = 4;
             datDevilFormat.tbl[id].keisyoform = 2203;
 
@@ -16048,7 +17962,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 45;
             datDevilFormat.tbl[id].level = 66;
             datDevilFormat.tbl[id].aisyoid = (short)81;
-            datDevilFormat.tbl[id].param = new sbyte[] { 24, 0, 20, 20, 18, 18 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 60, 50, 50, 50, 45, 45 };
             datDevilFormat.tbl[id].keisyotype = 3;
             datDevilFormat.tbl[id].keisyoform = 2299;
 
@@ -16111,7 +18025,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 45;
             datDevilFormat.tbl[id].level = 66;
             datDevilFormat.tbl[id].aisyoid = (short)81;
-            datDevilFormat.tbl[id].param = new sbyte[] { 30, 0, 24, 30, 18, 18 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 75, 60, 75, 75, 45, 45 };
             datDevilFormat.tbl[id].keisyotype = 3;
             datDevilFormat.tbl[id].keisyoform = 2299;
 
@@ -16174,7 +18088,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 45;
             datDevilFormat.tbl[id].level = 66;
             datDevilFormat.tbl[id].aisyoid = (short)81;
-            datDevilFormat.tbl[id].param = new sbyte[] { 24, 0, 20, 20, 18, 18 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 60, 50, 50, 50, 45, 45 };
             datDevilFormat.tbl[id].keisyotype = 3;
             datDevilFormat.tbl[id].keisyoform = 2299;
 
@@ -16234,7 +18148,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 33;
             datDevilFormat.tbl[id].level = 50;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 16, 0, 20, 16, 14, 14 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 40, 50, 40, 40, 35, 35 };
             datDevilFormat.tbl[id].keisyotype = 10;
             datDevilFormat.tbl[id].keisyoform = 139;
             datDevilFormat.tbl[id].attackcnt = 3;
@@ -16292,7 +18206,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 33;
             datDevilFormat.tbl[id].level = 50;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 16, 0, 20, 16, 14, 14 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 40, 50, 40, 40, 35, 35 };
             datDevilFormat.tbl[id].keisyotype = 10;
             datDevilFormat.tbl[id].keisyoform = 139;
             datDevilFormat.tbl[id].attackcnt = 3;
@@ -16350,7 +18264,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 33;
             datDevilFormat.tbl[id].level = 50;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 16, 0, 20, 16, 14, 14 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 40, 50, 40, 40, 35, 35 };
             datDevilFormat.tbl[id].keisyotype = 10;
             datDevilFormat.tbl[id].keisyoform = 139;
             datDevilFormat.tbl[id].attackcnt = 3;
@@ -16408,7 +18322,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 33;
             datDevilFormat.tbl[id].level = 50;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 16, 0, 20, 16, 14, 14 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 40, 50, 40, 40, 35, 35 };
             datDevilFormat.tbl[id].keisyotype = 10;
             datDevilFormat.tbl[id].keisyoform = 139;
             datDevilFormat.tbl[id].attackcnt = 3;
@@ -16466,7 +18380,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 33;
             datDevilFormat.tbl[id].level = 50;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 16, 0, 20, 16, 14, 14 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 40, 50, 40, 40, 35, 35 };
             datDevilFormat.tbl[id].keisyotype = 10;
             datDevilFormat.tbl[id].keisyoform = 139;
             datDevilFormat.tbl[id].attackcnt = 3;
@@ -16524,7 +18438,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 24;
             datDevilFormat.tbl[id].level = 75;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 30, 0, 22, 20, 18, 18 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 75, 55, 60, 60, 45, 45 };
             datDevilFormat.tbl[id].keisyotype = 7;
             datDevilFormat.tbl[id].keisyoform = 2461;
 
@@ -16586,7 +18500,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 46;
             datDevilFormat.tbl[id].level = 10;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 26, 0, 1, 1, 40, 1 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 65, 2, 2, 2, 99, 5 };
             datDevilFormat.tbl[id].keisyotype = 9;
             datDevilFormat.tbl[id].keisyoform = 1;
 
@@ -16642,7 +18556,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 44;
             datDevilFormat.tbl[id].level = 99;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 40, 0, 40, 40, 40, 40 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 99, 99, 99, 99, 99, 99 };
             datDevilFormat.tbl[id].keisyotype = 5;
             datDevilFormat.tbl[id].keisyoform = 411;
 

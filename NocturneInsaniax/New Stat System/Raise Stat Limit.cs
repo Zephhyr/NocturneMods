@@ -7,6 +7,7 @@ using Il2Cppnewdata_H;
 using Il2Cppresult2_H;
 using Il2CppTMPro;
 using MelonLoader;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -123,7 +124,8 @@ namespace NocturneInsaniax
                 value = datCalc.datGetPlayerParam(value);
 
                 // Scale properly, then return.
-                value = EnableStatScaling ? (int)Math.Floor((float)value / (Math.Ceiling((float)MAXSTATS / 40f) / STATS_SCALING)) : value;
+                //value = EnableStatScaling ? (int)Math.Floor((float)value / (Math.Ceiling((float)MAXSTATS / 40f) / STATS_SCALING)) : value;
+                value = EnableStatScaling ? (int)(Math.Floor((float)value / 5) * 2 + 1) : value;
                 ScrTraceCode.scrSetIntReturnValue(value);
                 __result = 1;
                 return false;
@@ -145,7 +147,8 @@ namespace NocturneInsaniax
                 param = datCalc.datGetNakamaParam(id, param);
 
                 // Scale it properly, then return.
-                param = EnableStatScaling ? (int)Math.Floor((float)param / (Math.Ceiling((float)MAXSTATS / 40f) / STATS_SCALING)) : param;
+                //param = EnableStatScaling ? (int)Math.Floor((float)param / (Math.Ceiling((float)MAXSTATS / 40f) / STATS_SCALING)) : param;
+                param = EnableStatScaling ? (int)(Math.Floor((float)param / 5) * 2 + 1) : param;
                 ScrTraceCode.scrSetIntReturnValue(param);
                 __result = 1;
                 return false;
@@ -195,7 +198,7 @@ namespace NocturneInsaniax
             {
                 // Returns the base stat of the given parameter.
                 int heartParam = work.id == 0 ? rstCalcCore.cmbGetHeartsParam((sbyte)dds3GlobalWork.DDS3_GBWK.heartsequip, (sbyte)paratype) : 0;
-                __result = Math.Clamp(datCalc.datGetBaseParam(work, paratype) + heartParam + work.mitamaparam[paratype], 0, MAXSTATS + heartParam + work.mitamaparam[paratype]);
+                __result = Math.Clamp(datCalc.datGetBaseParam(work, paratype) + heartParam + work.mitamaparam[paratype] + work.skillparam[paratype], 0, MAXSTATS + heartParam + work.mitamaparam[paratype] + work.skillparam[paratype]); 
                 return false;
             }
         }
@@ -206,11 +209,7 @@ namespace NocturneInsaniax
             public static int GetBaseMaxHP(datUnitWork_t work)
             {
                 // Calculate the unit's actual Base Max HP value.
-                int result = (Math.Clamp(datCalc.datGetParam(work, 3), 0, MAXSTATS) + work.level) * 6;
-
-                // If enabled, scale differently.
-                if (EnableStatScaling)
-                { result = (int)((float)(Math.Clamp(datCalc.datGetParam(work, 3), 0, MAXSTATS) / (float)STATS_SCALING + (float)work.level) * 6f); }
+                int result = (Math.Clamp(datCalc.datGetParam(work, 3), 0, MAXSTATS) * 3) + (work.level * 6);
 
                 // Return the result.
                 return result;
@@ -230,11 +229,7 @@ namespace NocturneInsaniax
             public static int GetBaseMaxMP(datUnitWork_t work)
             {
                 // Calculate the unit's actual Base Max MP value.
-                int result = (Math.Clamp(datCalc.datGetParam(work, 2), 0, MAXSTATS) + work.level) * 4;
-
-                // If enabled, scale differently.
-                if (EnableStatScaling)
-                { result = (int)(((float)Math.Clamp(datCalc.datGetParam(work, 2), 0, MAXSTATS) / (float)STATS_SCALING + (float)work.level) * 4f); }
+                int result = (Math.Clamp(datCalc.datGetParam(work, 2), 0, MAXSTATS) * 2) + (work.level * 4);
 
                 // Return the result.
                 return result;
@@ -1200,6 +1195,16 @@ namespace NocturneInsaniax
                 if (stsObj.GetComponentsInChildren<TMP_Text>() != null)
                 { stsObj.GetComponentsInChildren<TMP_Text>()[(ctr2 > 1 && !EnableIntStat) ? ctr2 - 1 : ctr2].SetText(Localize.GetLocalizeText(cmpMisc.cmpGetParamName(ctr2))); }
 
+                // Check if there's a BirthDevil and return its stats instead.
+                if (fclCombineInit.CMB_GBWK != null)
+                {
+                    if (fclCombineInit.CMB_GBWK.BirthDevil != null)
+                    {
+                        if (ShowFusionStats)
+                        { pStock = fclCombineInit.CMB_GBWK.BirthDevil; }
+                    }
+                }
+
                 // If there's Counter objects in the Status Menu's children, set up their values and colors.
                 if (stsObj.GetComponentsInChildren<CounterCtr>() != null)
                 { stsObj.GetComponentsInChildren<CounterCtr>()[(ctr2 > 1 && !EnableIntStat) ? ctr2 - 1 : ctr2].Set(datCalc.datGetParam(pStock, ctr2), Color.white, (CursorMode == 2 && CursorPos > -1) ? 1 : 0); }
@@ -1936,24 +1941,24 @@ namespace NocturneInsaniax
         private class PatchDrawParamGauge
         {
             // This should NEVER get called, but if it ever does this is here as a back up.
-            private static bool Prefix(int X, int Y, uint[] pBaseCol, int StepY, sbyte Pos, sbyte ParamOfs, sbyte FlashMode, datUnitWork_t pStock, GameObject stsObj)
-            {
-                // If no demon or status object, return.
-                if (pStock == null || stsObj == null)
-                { return false; }
-                // Rework the Stat Bar.
-                ReworkParamGauge(pBaseCol, StepY, Pos, ParamOfs, FlashMode, pStock, stsObj);
-                return false;
-            }
-            private static void Postfix(int X, int Y, uint[] pBaseCol, int StepY, sbyte Pos, sbyte ParamOfs, sbyte FlashMode, datUnitWork_t pStock, GameObject stsObj)
-            {
-                // If no demon or status object, return.
-                if (pStock == null || stsObj == null)
-                { return; }
-                // Rework the Stat Bar.
-                ReworkParamGauge(pBaseCol, StepY, Pos, ParamOfs, FlashMode, pStock, stsObj);
-                return;
-            }
+            //private static bool Prefix(int X, int Y, uint[] pBaseCol, int StepY, sbyte Pos, sbyte ParamOfs, sbyte FlashMode, datUnitWork_t pStock, GameObject stsObj)
+            //{
+            //    // If no demon or status object, return.
+            //    if (pStock == null || stsObj == null)
+            //    { return false; }
+            //    // Rework the Stat Bar.
+            //    ReworkParamGauge(pBaseCol, StepY, Pos, ParamOfs, FlashMode, pStock, stsObj);
+            //    return false;
+            //}
+            //private static void Postfix(int X, int Y, uint[] pBaseCol, int StepY, sbyte Pos, sbyte ParamOfs, sbyte FlashMode, datUnitWork_t pStock, GameObject stsObj)
+            //{
+            //    // If no demon or status object, return.
+            //    if (pStock == null || stsObj == null)
+            //    { return; }
+            //    // Rework the Stat Bar.
+            //    ReworkParamGauge(pBaseCol, StepY, Pos, ParamOfs, FlashMode, pStock, stsObj);
+            //    return;
+            //}
 
             public static void ReworkParamGauge(uint[] pBaseCol, int StepY, sbyte Pos, sbyte ParamOfs, sbyte FlashMode, datUnitWork_t pStock, GameObject stsObj)
             {
@@ -2065,13 +2070,6 @@ namespace NocturneInsaniax
                     }
                 }
 
-                // Magatama Value.
-                int heartValue = 0;
-                if ((pStock.flag >> 2 & 1) == 0)
-                { heartValue = 0; }
-                else
-                { heartValue = rstCalcCore.cmbGetHeartsParam((sbyte)dds3GlobalWork.DDS3_GBWK.heartsequip, ParamOfs); }
-
                 // Stat Value
                 int paramValue = pStock.param[ParamOfs];
 
@@ -2081,8 +2079,18 @@ namespace NocturneInsaniax
                 // LevelUp Value.
                 int levelupValue = pStock.levelupparam[ParamOfs];
 
+                // Magatama/Extra Mitama Bonus Value.
+                int heartValue = 0;
+                if ((pStock.flag >> 2 & 1) == 0)
+                { heartValue = pStock.skillparam[ParamOfs]; }
+                else
+                {
+                    heartValue = rstCalcCore.cmbGetHeartsParam((sbyte)dds3GlobalWork.DDS3_GBWK.heartsequip, ParamOfs);
+                    paramValue -= heartValue;
+                }
+
                 // Set up the values into a list.
-                int[] values = new int[] { Math.Max(paramValue - heartValue, 0), levelupValue, mitamaValue, heartValue };
+                int[] values = new int[] { paramValue, levelupValue, mitamaValue, heartValue };
 
                 // Iterate through the Animator list to set the correct scale and position.
                 float posOffset = 0;
@@ -2109,7 +2117,7 @@ namespace NocturneInsaniax
                     stsObj.GetComponentsInChildren<sstatusbarUI>()[stat].gameObject.GetComponentsInChildren<Animator>()[len].gameObject.transform.localPosition = barPos;
 
                     // Set the Animator Color
-                    stsObj.GetComponentsInChildren<sstatusbarUI>()[stat].gameObject.GetComponentsInChildren<Animator>()[len].SetInteger("sstatusbar_color", (len >= 2 ? 3 : len + 1));
+                    stsObj.GetComponentsInChildren<sstatusbarUI>()[stat].gameObject.GetComponentsInChildren<Animator>()[len].SetInteger("sstatusbar_color", len + 1);
                 }
 
                 // If Stat Position is greater than or equal to Blink que length, cap it.

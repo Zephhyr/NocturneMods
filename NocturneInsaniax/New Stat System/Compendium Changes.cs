@@ -26,14 +26,10 @@ namespace NocturneInsaniax
             if (EnableIntStat)
             {
                 // Mitama Bonuses
-                fclCombineTable.fclSpiritParamUpTbl[3].ParamType = fclCombineTable.fclSpiritParamUpTbl[3].ParamType.Append<ushort>(2).ToArray(); // Saki  -> Int
                 fclCombineTable.fclSpiritParamUpTbl[3].ParamType = fclCombineTable.fclSpiritParamUpTbl[3].ParamType.Append<ushort>(3).ToArray(); // Saki  -> Mag
-                fclCombineTable.fclSpiritParamUpTbl[2].ParamType = fclCombineTable.fclSpiritParamUpTbl[2].ParamType.Append<ushort>(1).ToArray(); // Musi  -> Str
-                fclCombineTable.fclSpiritParamUpTbl[2].ParamType = fclCombineTable.fclSpiritParamUpTbl[2].ParamType.Append<ushort>(2).ToArray(); // Musi  -> Int
-                fclCombineTable.fclSpiritParamUpTbl[1].ParamType = fclCombineTable.fclSpiritParamUpTbl[1].ParamType.Append<ushort>(3).ToArray(); // Nigi  -> Mag
-                fclCombineTable.fclSpiritParamUpTbl[1].ParamType = fclCombineTable.fclSpiritParamUpTbl[1].ParamType.Append<ushort>(5).ToArray(); // Nigi  -> Agi
-                fclCombineTable.fclSpiritParamUpTbl[0].ParamType = fclCombineTable.fclSpiritParamUpTbl[0].ParamType.Append<ushort>(3).ToArray(); // Ara   -> Mag
-                fclCombineTable.fclSpiritParamUpTbl[0].ParamType = fclCombineTable.fclSpiritParamUpTbl[0].ParamType.Append<ushort>(4).ToArray(); // Ara   -> Vit
+                fclCombineTable.fclSpiritParamUpTbl[2].ParamType = fclCombineTable.fclSpiritParamUpTbl[2].ParamType.Append<ushort>(1).ToArray(); // Kushi  -> Str
+                fclCombineTable.fclSpiritParamUpTbl[1].ParamType = fclCombineTable.fclSpiritParamUpTbl[1].ParamType.Append<ushort>(2).ToArray(); // Nigi  -> Int
+                fclCombineTable.fclSpiritParamUpTbl[0].ParamType = fclCombineTable.fclSpiritParamUpTbl[0].ParamType.Append<ushort>(2).ToArray(); // Ara   -> Int
             }
         }
 
@@ -46,7 +42,7 @@ namespace NocturneInsaniax
                 { return 0; }
 
                 // If the unit is either Dante or Raidou, return 0.
-                if (pelem.id == 192)
+                if (pelem.id == 191 || pelem.id == 192)
                 { return 0; }
 
                 // Summoning price formula with applied discount
@@ -61,7 +57,7 @@ namespace NocturneInsaniax
                 { return 0; }
 
                 // If the unit is either Dante or Raidou, return 0.
-                if (pelem.id == 192)
+                if (pelem.id == 191 || pelem.id == 192)
                 { return 0; }
 
                 // Grab unit's stats
@@ -415,12 +411,13 @@ namespace NocturneInsaniax
             {
                 // Get the unit about to be summoned
                 fclencyceelem_t pelem = dds3GlobalWork.DDS3_GBWK.encyc_record.pelem[pwork.recindex];
+                    
 
                 // Get discounted price for that summon
                 pwork.mak = CompendiumPriceHelper.GetPrice(pelem);
 
                 // If enough macca post-discount but not pre-discount (and stock not full and not already in stock and something idk)
-                if (__result == 0 && dds3GlobalWork.DDS3_GBWK.maka >= pwork.mak && datCalc.datCheckStockFull() == 0 && datCalc.datSearchDevilStock(pelem.id) == -1 && pwork.flags == 80)
+                if (pwork.mak > 0 && __result == 0 && dds3GlobalWork.DDS3_GBWK.maka >= pwork.mak && datCalc.datCheckStockFull() == 0 && datCalc.datSearchDevilStock(pelem.id) == -1 && pwork.flags == 80)
                 {
                     pwork.flags = (ushort)(pwork.flags | 1);
                     __result = 1;
@@ -442,11 +439,26 @@ namespace NocturneInsaniax
                     int price = CompendiumPriceHelper.GetPrice(pelem);
 
                     // If enough macca post-discount but not pre-discount (and stock not full and not already in stock and something idk)
-                    if (dds3GlobalWork.DDS3_GBWK.maka >= price && datCalc.datCheckStockFull() == 0 && datCalc.datSearchDevilStock(pelem.id) == -1)
+                    if (price > 0 && dds3GlobalWork.DDS3_GBWK.maka >= price && datCalc.datCheckStockFull() == 0 && datCalc.datSearchDevilStock(pelem.id) == -1)
                     {
                         StartNo = 17;
                     }
                 }
+            }
+        }
+
+        [HarmonyPatch(typeof(fclCombineUpdate), nameof(fclCombineUpdate.cmbUpdateDecideDevil))]
+        private class PatchUpdateDecideDevil
+        {
+            private static void Postfix()
+            {
+                datUnitWork_t pDevil = fclCombineInit.CMB_GBWK.BirthDevil;
+                for (int i = 0; i < pDevil.skillparam.Length; i++)
+                {
+                    pDevil.mitamaparam[i] += pDevil.skillparam[i];
+                    pDevil.skillparam[i] = 0;
+                }
+                fclCombineInit.CMB_GBWK.BirthDevil = pDevil;
             }
         }
 
@@ -512,9 +524,9 @@ namespace NocturneInsaniax
                     while (paramNewValue < 1f);
 
                     // If it's under or equal to the maximum, set the Mitama Bonus.
-                    if (pStock.param[paramID] + pStock.mitamaparam[paramID] + paramNewValue < MAXSTATS)
+                    if (pStock.param[paramID] + pStock.skillparam[paramID] + pStock.mitamaparam[paramID] + paramNewValue < MAXSTATS)
                     {
-                        pStock.mitamaparam[paramID] += (sbyte)paramNewValue;
+                        pStock.skillparam[paramID] += (sbyte)paramNewValue;
                         paramNewValue = 0;
                     }
                 }
