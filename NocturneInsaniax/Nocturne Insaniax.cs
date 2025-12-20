@@ -17,7 +17,7 @@ using System.Linq;
 using Il2Cppeffect_H;
 using Il2Cppmodel_H;
 
-[assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax", "0.9.2", "Zephhyr, Matthiew Purple, Bud, X Kirby, Margothic, Scribe, Snappy, Mason White")]
+[assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax", "1.0.0", "Zephhyr, Matthiew Purple, Bud, X Kirby, Margothic, Scribe, Snappy, Mason White")]
 [assembly: MelonGame("アトラス", "smt3hd")]
 
 namespace NocturneInsaniax
@@ -30,8 +30,6 @@ namespace NocturneInsaniax
         public static MelonPreferences_Entry<bool> EnableSkillColourGradient;
         public static MelonPreferences_Entry<bool> EnableColourPassives;
         public static MelonPreferences_Entry<bool> EnableEnemyLevelDisplay;
-        public static MelonPreferences_Entry<bool> EnableModeOverride;
-        public static MelonPreferences_Entry<bool> ModeOverrideValue;
         public static MelonPreferences_Entry<bool> ToggleExpOnRandomEncounters;
         public static MelonPreferences_Entry<bool> ToggleItemUseInBattle;
         public static MelonPreferences_Entry<double> EncounterMaccaMultiplier;
@@ -135,8 +133,6 @@ namespace NocturneInsaniax
             EnableSkillColourGradient = InsaniaxSettings.CreateEntry("Enable Skill Colour Gradient", true);
             EnableColourPassives = InsaniaxSettings.CreateEntry("Enable Colour Passives", true);
             EnableEnemyLevelDisplay = InsaniaxSettings.CreateEntry("Enable Enemy Level Display", true);
-            EnableModeOverride = InsaniaxSettings.CreateEntry("Enable Mode Override", false);
-            ModeOverrideValue = InsaniaxSettings.CreateEntry("Mode Override Value (false=Chronicle, true=Maniax)", false);
             ToggleExpOnRandomEncounters = InsaniaxSettings.CreateEntry("Toggle Random Encounter EXP", true);
             ToggleItemUseInBattle = InsaniaxSettings.CreateEntry("Toggle Item Use In Battle", true);
             EncounterMaccaMultiplier = InsaniaxSettings.CreateEntry("Encounter Macca Multiplier", 1.0);
@@ -732,10 +728,8 @@ namespace NocturneInsaniax
                 try
                 {
                     //MelonLogger.Msg("--EventBit.evtBitCheck--");
-                    if (EnableModeOverride.Value && no == 3712)
-                        __result = ModeOverrideValue.Value;
                     // Checks the flag responsible for unlocking Pierce
-                    else if (no == 2241)
+                    if (no == 2241)
                     {
                         //if (!__result) __result = true; // Artificially makes it obtainable
                         //else tblHearts.fclHeartsTbl[1].Skill[6].TargetLevel = 15; // If unlocked normally, you can get it early

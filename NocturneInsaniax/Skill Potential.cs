@@ -2688,7 +2688,7 @@ namespace NocturneInsaniax
                     default: break;
                 }
 
-                var lukMultiplier = 1 + ((float)luk / 100);
+                var lukMultiplier = 1 + ((float)luk / 250);
                 return ailmentRate * multiplier * lukMultiplier;
             }
         }

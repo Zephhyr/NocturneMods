@@ -35,9 +35,9 @@ namespace NocturneInsaniax
                 var level = work.level;
                 var str = datCalc.datGetParam(work, 0);
                 if (work.id == 111 || work.id == 335)
-                    __result = Convert.ToInt32((level + (str * 4/5)) * 45 / 20);
+                    __result = Convert.ToInt32((level + (str * 0.8f)) * 45 / 20);
                 else
-                    __result = Convert.ToInt32((level + (str * 4/5)) * 30 / 20);
+                    __result = Convert.ToInt32((level + (str * 0.8f)) * 30 / 20);
                 return false;
             }
         }
@@ -51,7 +51,7 @@ namespace NocturneInsaniax
                 var intStat = datCalc.datGetParam(work, 1);
                 var agi = datCalc.datGetParam(work, 4);
                 var luk = datCalc.datGetParam(work, 5);
-                __result = level + Convert.ToInt32((intStat + (agi * 2) + luk) * 2/5);
+                __result = level + Convert.ToInt32((intStat + (agi * 2) + luk) * 0.4f);
                 return false;
             }
         }
@@ -75,7 +75,7 @@ namespace NocturneInsaniax
                 var level = work.level;
                 var agi = datCalc.datGetParam(work, 4);
                 var luk = datCalc.datGetParam(work, 5);
-                __result = level + Convert.ToInt32(((agi * 2) + luk) * 2/5);
+                __result = level + Convert.ToInt32(((agi * 2) + luk) * 0.4f);
                 return false;
             }
         }
@@ -245,7 +245,7 @@ namespace NocturneInsaniax
 
                 double atkPow = (nskill == 0 || nskill == 167) ?
                     datCalc.datGetNormalAtkPow(workFromFormindex1) :
-                    (workFromFormindex1.level + datCalc.datGetParam(workFromFormindex1, 0) * (4/5)) * waza / 20;
+                    (workFromFormindex1.level + (datCalc.datGetParam(workFromFormindex1, 0) * 0.8f)) * waza / 20;
 
                 //double defPow = datCalc.datGetParam(workFromFormindex2, 3);
 
@@ -278,7 +278,7 @@ namespace NocturneInsaniax
                 }
 
                 //double atkPow = workFromFormindex1.maxhp * waza * 0.8 / 69.6;
-                double atkPow = ((workFromFormindex1.level + datCalc.datGetParam(workFromFormindex1, 0) * (4 / 5)) * waza / 20) * hpModifier;
+                double atkPow = ((workFromFormindex1.level + (datCalc.datGetParam(workFromFormindex1, 0) * 0.8f)) * waza / 20) * hpModifier;
 
                 //double defPow = datCalc.datGetParam(workFromFormindex2, 3);
 
@@ -305,7 +305,7 @@ namespace NocturneInsaniax
                 if (nskill == 490)
                     waza = waza * Math.Min(4, (workFromFormindex1.maxhp / workFromFormindex1.hp));
 
-                double atkPow = (workFromFormindex1.level + datCalc.datGetParam(workFromFormindex1, 1) * (4 / 5)) * waza / 20;
+                double atkPow = (workFromFormindex1.level + (datCalc.datGetParam(workFromFormindex1, 1) * 0.8f)) * waza / 20;
 
                 //double defPow = datCalc.datGetParam(workFromFormindex2, 3);
 
@@ -342,7 +342,7 @@ namespace NocturneInsaniax
                     var agi = datCalc.datGetParam(work, 4);
                     var luk = datCalc.datGetParam(work, 5);
 
-                    double chance = Math.Min(90, (72 + (level * 2) + ((agi * 4) + (luk * 3) * 2/5)) - ((lvAvg * 2) + ((avgAgi * 4) + (avgLuk * 3) * 2/5)));
+                    double chance = Math.Min(90, (72 + (level * 2) + ((agi * 4) + (luk * 3)) * 0.4f) - ((lvAvg * 2) + ((avgAgi * 4) + (avgLuk * 3)) * 0.4f));
                     var rand = dds3KernelCore.dds3GetRandIntA(128);
                     __result = rand < chance ? 0 : 1;
                 }
@@ -369,7 +369,7 @@ namespace NocturneInsaniax
                 var agi = datCalc.datGetParam(work, 4);
                 var luk = datCalc.datGetParam(work, 5);
 
-                double chance = 12 * (lvAvg + (avgAgi + (avgLuk * 2) * 2/5)) / (level + (agi + (luk * 2)) * 2/5);
+                double chance = 12 * (lvAvg + ((avgAgi + (avgLuk * 2)) * 0.4f) / (level + (agi + (luk * 2)) * 0.4f));
                 var rand = dds3KernelCore.dds3GetRandIntA(128);
                 __result = rand > chance ? 0 : 1 + datEncount.Get(data.encno).backattack;
 
@@ -786,16 +786,16 @@ namespace NocturneInsaniax
                         var userStr = datCalc.datGetParam(workFromFormindex1, 0);
 
                         chance = (datNormalSkill.tbl[nskill].hitlevel - datNormalSkill.tbl[nskill].failpoint)
-                        + ((userLevel / 2) + ((userStr/2) + (userAgi * 2) + userLuk) * 2/5)
-                        - ((targetLevel / 2) + ((targetAgi * 2) + targetLuk) * 2/5);
+                        + ((userLevel / 2) + ((userStr/2) + (userAgi * 2) + userLuk) * 0.4f)
+                        - ((targetLevel / 2) + ((targetAgi * 2) + targetLuk) * 0.4f);
                     }
                     else if (datNormalSkill.tbl[nskill].koukatype == 1)
                     {
                         var userInt = datCalc.datGetParam(workFromFormindex1, 1);
 
                         chance = datNormalSkill.tbl[nskill].hitlevel
-                        + ((userLevel / 2) + (userInt + (userAgi * 2) + userLuk) * 2/5)
-                        - ((targetLevel / 2) + ((targetAgi * 2) + targetLuk) * 2/5);
+                        + ((userLevel / 2) + (userInt + (userAgi * 2) + userLuk) * 0.4f)
+                        - ((targetLevel / 2) + ((targetAgi * 2) + targetLuk) * 0.4f);
                     }
 
                     // Deathly Affliction

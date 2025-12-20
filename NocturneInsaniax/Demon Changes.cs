@@ -1856,6 +1856,36 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[9].Param = 17;
             tblSkill.fclSkillTbl[id].Event[9].TargetLevel = 69;
             tblSkill.fclSkillTbl[id].Event[9].Type = 5;
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 1800;
+            datDevilFormat.tbl[id].maxhp = 1800;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+
+            // AI
+            datDevilAI.divTbls[0][8].aitable[0][0].skill = 134;
+            datDevilAI.divTbls[0][8].aitable[0][0].ritu = 10;
+            datDevilAI.divTbls[0][8].aitable[0][1].skill = 444;
+            datDevilAI.divTbls[0][8].aitable[0][1].ritu = 70;
+            datDevilAI.divTbls[0][8].aitable[0][2].skill = 24;
+            datDevilAI.divTbls[0][8].aitable[0][2].ritu = 20;
+
+            datDevilAI.divTbls[0][8].aitable[1][0].skill = 188;
+            datDevilAI.divTbls[0][8].aitable[1][0].ritu = 70;
+            datDevilAI.divTbls[0][8].aitable[1][1].skill = 24;
+            datDevilAI.divTbls[0][8].aitable[1][1].ritu = 20;
+            datDevilAI.divTbls[0][8].aitable[1][2].skill = 134;
+            datDevilAI.divTbls[0][8].aitable[1][2].ritu = 10;
+
+            datDevilAI.divTbls[0][8].aitable[2][0].skill = 134;
+            datDevilAI.divTbls[0][8].aitable[2][0].ritu = 20;
+            datDevilAI.divTbls[0][8].aitable[2][1].skill = 444;
+            datDevilAI.divTbls[0][8].aitable[2][1].ritu = 70;
+            datDevilAI.divTbls[0][8].aitable[2][2].skill = 188;
+            datDevilAI.divTbls[0][8].aitable[2][2].ritu = 10;
+            datDevilAI.divTbls[0][8].aitable[2][3].skill = 0;
+            datDevilAI.divTbls[0][8].aitable[2][3].ritu = 0;
         }
 
         private static void Sarasvati(ushort id)
@@ -1969,8 +1999,8 @@ namespace NocturneInsaniax
             datDevilAI.divTbls[0][10].aitable[2][1].ritu = 30;
             datDevilAI.divTbls[0][10].aitable[2][2].skill = 6;
             datDevilAI.divTbls[0][10].aitable[2][2].ritu = 30;
-            datDevilAI.divTbls[0][10].aitable[2][2].skill = 215;
-            datDevilAI.divTbls[0][10].aitable[2][2].ritu = 20;
+            datDevilAI.divTbls[0][10].aitable[2][3].skill = 215;
+            datDevilAI.divTbls[0][10].aitable[2][3].ritu = 20;
         }
 
         private static void AmeNoUzume(ushort id)
@@ -2912,6 +2942,29 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[7].Param = 116; // Kamikaze
             tblSkill.fclSkillTbl[id].Event[7].TargetLevel = 60;
             tblSkill.fclSkillTbl[id].Event[7].Type = 1;
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 1500;
+            datDevilFormat.tbl[id].maxhp = 1500;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+
+            // AI
+            datDevilAI.divTbls[0][29].aitable[0][0].skill = 32768;
+            datDevilAI.divTbls[0][29].aitable[0][0].ritu = 20;
+            datDevilAI.divTbls[0][29].aitable[0][1].skill = 178;
+            datDevilAI.divTbls[0][29].aitable[0][1].ritu = 50;
+            datDevilAI.divTbls[0][29].aitable[0][2].skill = 126;
+            datDevilAI.divTbls[0][29].aitable[0][2].ritu = 30;
+
+            datDevilAI.divTbls[0][29].aitable[1][0].skill = 32768;
+            datDevilAI.divTbls[0][29].aitable[1][0].ritu = 10;
+            datDevilAI.divTbls[0][29].aitable[1][1].skill = 178;
+            datDevilAI.divTbls[0][29].aitable[1][1].ritu = 40;
+            datDevilAI.divTbls[0][29].aitable[1][2].skill = 126;
+            datDevilAI.divTbls[0][29].aitable[1][2].ritu = 30;
+            datDevilAI.divTbls[0][29].aitable[1][3].skill = 116;
+            datDevilAI.divTbls[0][29].aitable[1][3].ritu = 20;
         }
 
         private static void Baihu(ushort id)
@@ -10240,6 +10293,31 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[6].Param = 370; // Qigong
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 65;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
+
+            // Enemy Stats
+            datDevilFormat.tbl[id].hp = 2283;
+            datDevilFormat.tbl[id].maxhp = 2283;
+            datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+            datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+
+            // AI
+            datDevilAI.divTbls[1][22].aitable[0][0].skill = 32768;
+            datDevilAI.divTbls[1][22].aitable[0][0].ritu = 10;
+            datDevilAI.divTbls[1][22].aitable[0][1].skill = 211;
+            datDevilAI.divTbls[1][22].aitable[0][1].ritu = 30;
+            datDevilAI.divTbls[1][22].aitable[0][2].skill = 181;
+            datDevilAI.divTbls[1][22].aitable[0][2].ritu = 30;
+            datDevilAI.divTbls[1][22].aitable[0][3].skill = 183;
+            datDevilAI.divTbls[1][22].aitable[0][3].ritu = 30;
+
+            datDevilAI.divTbls[1][22].aitable[1][0].skill = 32768;
+            datDevilAI.divTbls[1][22].aitable[1][0].ritu = 10;
+            datDevilAI.divTbls[1][22].aitable[1][1].skill = 126;
+            datDevilAI.divTbls[1][22].aitable[1][1].ritu = 30;
+            datDevilAI.divTbls[1][22].aitable[1][2].skill = 181;
+            datDevilAI.divTbls[1][22].aitable[1][2].ritu = 30;
+            datDevilAI.divTbls[1][22].aitable[1][3].skill = 183;
+            datDevilAI.divTbls[1][22].aitable[1][3].ritu = 30;
         }
 
         private static void Makami(ushort id)

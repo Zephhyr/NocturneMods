@@ -222,16 +222,18 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Flag = 4; // Dark
 
             // Stats
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 2; // Strength
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 2; // Strength
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 1; // Magic
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 1; // Magic
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 2; // Vitality
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 2; // Vitality
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 1; // Agility
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 1; // Agility
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 2; // Luck
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 2; // Luck
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0]       = 4; // Strength
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 4; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[1]       = 3; // Intelligence
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[1] = 3; // Intelligence
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2]       = 3; // Magic
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 3; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3]       = 4; // Vitality
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 4; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4]       = 3; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 3; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5]       = 4; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 4; // Luck
 
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 96; // Lunge
@@ -281,16 +283,18 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Flag = 0; // Neutral
 
             // Stats
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 0; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0]       = 0; // Strength
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 0; // Strength
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 4; // Magic
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 4; // Magic
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 2; // Vitality
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 2; // Vitality
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 2; // Agility
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 2; // Agility
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 1; // Luck
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 1; // Luck
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[1]       = 8; // Intelligence
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[1] = 8; // Intelligence
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2]       = 6; // Magic
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 6; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3]       = 5; // Vitality
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 5; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4]       = 5; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 5; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5]       = 3; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 3; // Luck
 
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 180; // Ice Breath
@@ -340,16 +344,18 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Flag = 1; // Light
 
             // Stats
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 1; // Strength
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 1; // Strength
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 1; // Magic
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 1; // Magic
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 4; // Vitality
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 4; // Vitality
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 0; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0]       = 2; // Strength
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 2; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[1]       = 3; // Intelligence
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[1] = 3; // Intelligence
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2]       = 5; // Magic
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 5; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3]       = 9; // Vitality
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 9; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4]       = 0; // Agility
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 0; // Agility
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 3; // Luck
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 3; // Luck
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5]       = 8; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 8; // Luck
 
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 36; // Dia
@@ -397,16 +403,18 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Flag = 1; // Light
 
             // Stats
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 3; // Strength
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 3; // Strength
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 1; // Magic
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 1; // Magic
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 3; // Vitality
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 3; // Vitality
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 1; // Agility
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 1; // Agility
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 2; // Luck
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 2; // Luck
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0]       = 8; // Strength
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 8; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[1]       = 3; // Intelligence
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[1] = 3; // Intelligence
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2]       = 3; // Magic
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 3; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3]       = 8; // Vitality
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 8; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4]       = 3; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 3; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5]       = 3; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 3; // Luck
 
 
             // Skills
@@ -455,15 +463,17 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Flag = 4; // Dark
 
             // Stats
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 0; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0]       = 0; // Strength
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 0; // Strength
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 5; // Magic
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 5; // Magic
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 0; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[1]       = 11; // Intelligence
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[1] = 11; // Intelligence
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2]       = 11; // Magic
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 11; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3]       = 0; // Vitality
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 0; // Vitality
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 5; // Agility
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 5; // Agility
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 0; // Luck
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4]       = 11; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 11; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5]       = 0; // Luck
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 0; // Luck
 
             // Skills
@@ -514,16 +524,18 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Flag = 0; // Neutral
 
             // Stats
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 0; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0]       = 0; // Strength
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 0; // Strength
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 3; // Magic
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 3; // Magic
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 0; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[1]       = 12; // Intelligence
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[1] = 12; // Intelligence
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2]       = 6; // Magic
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 6; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3]       = 0; // Vitality
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 0; // Vitality
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 3; // Agility
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 3; // Agility
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 5; // Luck
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 5; // Luck
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4]       = 5; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 5; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5]       = 10; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 10; // Luck
 
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 461; // Storm Gale
@@ -573,16 +585,18 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Flag = 1; // Light
 
             // Stats
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 5; // Strength
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 5; // Strength
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 0; // Magic
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 0; // Magic
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 3; // Vitality
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 3; // Vitality
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 3; // Agility
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 3; // Agility
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 1; // Luck
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 1; // Luck
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0]       = 12; // Strength
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 12; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[1]       = 0; // Intelligence
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[1] = 0; // Intelligence
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2]       = 2; // Magic
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 2; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3]       = 8; // Vitality
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 8; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4]       = 8; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 8; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5]       = 6; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 6; // Luck
 
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 430; // Chi Blast
@@ -632,15 +646,17 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Flag = 0; // Neutral
 
             // Stats
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 6; // Strength
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 6; // Strength
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 6; // Magic
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 6; // Magic
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 0; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0]       = 14; // Strength
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 14; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[1]       = 14; // Intelligence
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[1] = 14; // Intelligence
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2]       = 5; // Magic
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 5; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3]       = 0; // Vitality
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 0; // Vitality
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 4; // Agility
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 4; // Agility
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 0; // Luck
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4]       = 9; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 9; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5]       = 0; // Luck
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 0; // Luck
 
             // Skills
@@ -691,16 +707,18 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Flag = 4; // Dark
 
             // Stats
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 1; // Strength
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 1; // Strength
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 8; // Magic
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 8; // Magic
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 2; // Vitality
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 2; // Vitality
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 2; // Agility
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 2; // Agility
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 1; // Luck
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 1; // Luck
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0]       = 3; // Strength
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 3; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[1]       = 18; // Intelligence
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[1] = 18; // Intelligence
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2]       = 10; // Magic
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 10; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3]       = 4; // Vitality
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 4; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4]       = 4; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 4; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5]       = 3; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 3; // Luck
 
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 34; // Mamudo
@@ -750,16 +768,18 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Flag = 4; // Dark
 
             // Stats
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 2; // Strength
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 2; // Strength
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 3; // Magic
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 3; // Magic
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 2; // Vitality
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 2; // Vitality
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 3; // Agility
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 3; // Agility
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 8; // Luck
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 8; // Luck
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0]       = 4; // Strength
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 4; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[1]       = 6; // Intelligence
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[1] = 6; // Intelligence
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2]       = 5; // Magic
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 5; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3]       = 4; // Vitality
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 4; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4]       = 6; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 6; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5]       = 18; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 18; // Luck
 
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 202; // Toxic Spray
@@ -809,16 +829,18 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Flag = 1; // Light
 
             // Stats
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 1; // Strength
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 1; // Strength
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 4; // Magic
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 4; // Magic
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 3; // Vitality
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 3; // Vitality
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 3; // Agility
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 3; // Agility
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 6; // Luck
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 6; // Luck
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0]       = 5; // Strength
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 5; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[1]       = 8; // Intelligence
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[1] = 8; // Intelligence
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2]       = 9; // Magic
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 9; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3]       = 7; // Vitality
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 7; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4]       = 7; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 7; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5]       = 15; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 15; // Luck
 
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 193; // Violet Flash
@@ -868,16 +890,18 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Flag = 0; // Neutral
 
             // Stats
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 8; // Strength
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 8; // Strength
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 2; // Magic
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 2; // Magic
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 3; // Vitality
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 3; // Vitality
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 3; // Agility
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 3; // Agility
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 2; // Luck
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 2; // Luck
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0]       = 18; // Strength
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 18; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[1]       = 6; // Intelligence
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[1] = 6; // Intelligence
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2]       = 6; // Magic
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 6; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3]       = 9; // Vitality
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 9; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4]       = 9; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 9; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5]       = 6; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 6; // Luck
 
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 130; // Blast Arrow
@@ -927,16 +951,18 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Flag = 1; // Light
 
             // Stats
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 3; // Strength
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 3; // Strength
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 4; // Magic
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 4; // Magic
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 3; // Vitality
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 3; // Vitality
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 6; // Agility
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 6; // Agility
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 3; // Luck
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 3; // Luck
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0]       = 8; // Strength
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 8; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[1]       = 6; // Intelligence
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[1] = 6; // Intelligence
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2]       = 15; // Magic
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 15; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3]       = 8; // Vitality
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 8; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4]       = 12; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 12; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5]       = 8; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 8; // Luck
 
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 181; // Glacial Blast
@@ -984,16 +1010,18 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Flag = 0; // Neutral
 
             // Stats
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 2; // Strength
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 2; // Strength
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 5; // Magic
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 5; // Magic
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 5; // Vitality
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 5; // Vitality
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 5; // Agility
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 5; // Agility
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 2; // Luck
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 2; // Luck
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0]       = 5; // Strength
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 5; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[1]       = 5; // Intelligence
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[1] = 5; // Intelligence
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2]       = 14; // Magic
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 14; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3]       = 14; // Vitality
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 14; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4]       = 14; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 14; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5]       = 5; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 5; // Luck
 
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 64; // Tarukaja
@@ -1041,16 +1069,18 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Flag = 4; // Dark
 
             // Stats
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 3; // Strength
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 3; // Strength
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 6; // Magic
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 6; // Magic
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 3; // Vitality
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 3; // Vitality
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 3; // Agility
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 3; // Agility
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 6; // Luck
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 6; // Luck
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0]       = 8; // Strength
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 8; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[1]       = 16; // Intelligence
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[1] = 16; // Intelligence
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2]       = 12; // Magic
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 12; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3]       = 6; // Vitality
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 6; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4]       = 7; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 7; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5]       = 14; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 14; // Luck
 
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 177; // Hellfire
@@ -1098,16 +1128,18 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Flag = 4; // Dark
 
             // Stats
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 4; // Strength
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 4; // Strength
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 4; // Magic
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 4; // Magic
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 4; // Vitality
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 4; // Vitality
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 4; // Agility
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 4; // Agility
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 4; // Luck
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 4; // Luck
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0]       = 10; // Strength
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 10; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[1]       = 10; // Intelligence
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[1] = 10; // Intelligence
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2]       = 10; // Magic
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 10; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3]       = 10; // Vitality
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 10; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4]       = 10; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 10; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5]       = 10; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 10; // Luck
 
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 191; // Mana Drain
@@ -1157,16 +1189,18 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Flag = 0; // Neutral
 
             // Stats
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 3; // Strength
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 3; // Strength
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 5; // Magic
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 5; // Magic
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 3; // Vitality
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 3; // Vitality
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 2; // Agility
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 2; // Agility
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 9; // Luck
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 9; // Luck
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0]       = 6; // Strength
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 6; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[1]       = 7; // Intelligence
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[1] = 7; // Intelligence
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2]       = 17; // Magic
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 17; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3]       = 7; // Vitality
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 7; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4]       = 6; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 6; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5]       = 21; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 21; // Luck
 
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 332; // Null Mind
@@ -1214,16 +1248,18 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Flag = 4; // Dark
 
             // Stats
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 1; // Strength
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 1; // Strength
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 7; // Magic
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 7; // Magic
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 5; // Vitality
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 5; // Vitality
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 4; // Agility
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 4; // Agility
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 4; // Luck
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 4; // Luck
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0]       = 2; // Strength
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 2; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[1]       = 21; // Intelligence
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[1] = 21; // Intelligence
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2]       = 9; // Magic
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 9; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3]       = 13; // Vitality
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 13; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4]       = 10; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 10; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5]       = 10; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 10; // Luck
 
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 35; // Mamudoon
@@ -1271,16 +1307,18 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Flag = 1; // Light
 
             // Stats
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 1; // Strength
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 1; // Strength
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 3; // Magic
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 3; // Magic
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 4; // Vitality
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 4; // Vitality
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 7; // Agility
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 7; // Agility
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 7; // Luck
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 7; // Luck
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0]       = 2; // Strength
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 2; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[1]       = 7; // Intelligence
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[1] = 7; // Intelligence
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2]       = 13; // Magic
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 13; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3]       = 11; // Vitality
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 11; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4]       = 17; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 17; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5]       = 17; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 17; // Luck
 
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 38; // Diarahan
@@ -1328,16 +1366,18 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Flag = 0; // Neutral
 
             // Stats
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 6; // Strength
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 6; // Strength
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 6; // Magic
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 6; // Magic
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 5; // Vitality
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 5; // Vitality
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 1; // Agility
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 1; // Agility
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 3; // Luck
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 3; // Luck
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0]       = 16; // Strength
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 16; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[1]       = 15; // Intelligence
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[1] = 15; // Intelligence
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2]       = 13; // Magic
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 13; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3]       = 12; // Vitality
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 12; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4]       = 4; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 4; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5]       = 5; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 5; // Luck
 
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 472; // Kusanagi
@@ -1385,16 +1425,18 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Flag = 1; // Light
 
             // Stats
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 5; // Strength
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 5; // Strength
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 5; // Magic
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 5; // Magic
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 4; // Vitality
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 4; // Vitality
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 10; // Agility
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 10; // Agility
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 3; // Luck
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 3; // Luck
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0]       = 12; // Strength
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 12; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[1]       = 14; // Intelligence
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[1] = 14; // Intelligence
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2]       = 12; // Magic
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 12; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3]       = 10; // Vitality
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 10; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4]       = 24; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 24; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5]       = 8; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 8; // Luck
 
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 189; // Judgement Light
@@ -1442,16 +1484,18 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Flag = 1; // Light
 
             // Stats
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 4; // Strength
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 4; // Strength
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 5; // Magic
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 5; // Magic
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 10; // Vitality
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 10; // Vitality
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 4; // Agility
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 4; // Agility
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 3; // Luck
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 3; // Luck
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0]       = 11; // Strength
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 11; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[1]       = 17; // Intelligence
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[1] = 17; // Intelligence
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2]       = 11; // Magic
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 11; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3]       = 22; // Vitality
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 22; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4]       = 10; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 10; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5]       = 9; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 9; // Luck
 
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 183; // Bolt Storm
@@ -1499,16 +1543,18 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Flag = 4; // Dark
 
             // Stats
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 10; // Strength
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 10; // Strength
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 0; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0]       = 24; // Strength
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 24; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[1]       = 0; // Intelligence
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[1] = 0; // Intelligence
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2]       = 0; // Magic
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 0; // Magic
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 10; // Vitality
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 10; // Vitality
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 3; // Agility
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 3; // Agility
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 1; // Luck
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 1; // Luck
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3]       = 24; // Vitality
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 24; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4]       = 11; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 11; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5]       = 13; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 13; // Luck
 
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 126; // Iron Claw
@@ -1556,16 +1602,18 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Flag = 0; // Neutral
 
             // Stats
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 6; // Strength
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 6; // Strength
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 10; // Magic
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 10; // Magic
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 8; // Vitality
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 8; // Vitality
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 4; // Agility
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 4; // Agility
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 6; // Luck
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 6; // Luck
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0]       = 21; // Strength
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 21; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[1]       = 21; // Intelligence
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[1] = 21; // Intelligence
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2]       = 13; // Magic
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 13; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3]       = 13; // Vitality
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 13; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4]       = 10; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 10; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5]       = 10; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 10; // Luck
 
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 27; // Megidolaon
@@ -1610,16 +1658,18 @@ namespace NocturneInsaniax
             datAisyo.tbl[433][12] = 50; // Shot
 
             // Stats
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[0] = 10; // Strength
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 10; // Strength
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[2] = 10; // Magic
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 10; // Magic
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[3] = 10; // Vitality
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 10; // Vitality
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[4] = 10; // Agility
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 10; // Agility
-            tblHearts.fclHeartsTbl[id].GrowParamTbl[5] = 10; // Luck
-            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 10; // Luck
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[0]       = 24; // Strength
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[0] = 24; // Strength
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[1]       = 24; // Intelligence
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[1] = 24; // Intelligence
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[2]       = 24; // Magic
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[2] = 24; // Magic
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[3]       = 24; // Vitality
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[3] = 24; // Vitality
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[4]       = 24; // Agility
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[4] = 24; // Agility
+            tblHearts.fclHeartsTbl[id].GrowParamTbl[5]       = 24; // Luck
+            tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 24; // Luck
 
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 357; // Pierce
