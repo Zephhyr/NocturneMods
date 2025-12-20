@@ -7029,11 +7029,11 @@ namespace NocturneInsaniax
         private static void Shikigami(ushort id)
         {
             // Stats
-            datDevilFormat.tbl[id].param[0] = 13; // Strength
-            datDevilFormat.tbl[id].param[1] = 11; // Intelligence
-            datDevilFormat.tbl[id].param[2] = 13; // Magic
-            datDevilFormat.tbl[id].param[3] = 11; // Vitality
-            datDevilFormat.tbl[id].param[4] = 12; // Agility
+            datDevilFormat.tbl[id].param[0] = 14; // Strength
+            datDevilFormat.tbl[id].param[1] = 6; // Intelligence
+            datDevilFormat.tbl[id].param[2] = 14; // Magic
+            datDevilFormat.tbl[id].param[3] = 12; // Vitality
+            datDevilFormat.tbl[id].param[4] = 13; // Agility
             datDevilFormat.tbl[id].param[5] = 12; // Luck
             tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 1, 2, 4, 2, 3, 2 };
 
@@ -16730,16 +16730,16 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Enemy Stats
-            datDevilFormat.tbl[id].hp = 24;
-            datDevilFormat.tbl[id].maxhp = 24;
+            datDevilFormat.tbl[id].hp = 30;
+            datDevilFormat.tbl[id].maxhp = 30;
             datDevilFormat.tbl[id].mp = 32;
             datDevilFormat.tbl[id].maxmp = 32;
-            datDevilFormat.tbl[id].param[0] = 1;
-            datDevilFormat.tbl[id].param[1] = 1;
-            datDevilFormat.tbl[id].param[2] = 1;
-            datDevilFormat.tbl[id].param[3] = 1;
-            datDevilFormat.tbl[id].param[4] = 1;
-            datDevilFormat.tbl[id].param[5] = 1;
+            datDevilFormat.tbl[id].param[0] = 2;
+            datDevilFormat.tbl[id].param[1] = 2;
+            datDevilFormat.tbl[id].param[2] = 2;
+            datDevilFormat.tbl[id].param[3] = 2;
+            datDevilFormat.tbl[id].param[4] = 2;
+            datDevilFormat.tbl[id].param[5] = 2;
         }
 
         private static void BossBishamonten1(ushort id)

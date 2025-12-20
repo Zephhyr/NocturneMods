@@ -1293,7 +1293,7 @@ namespace NocturneInsaniax
                             newPos.x *= 1;
                             newPos.y *= 0.9f;
                             newPos.x *= 1;
-                            newScale.x *= 1;
+                            newScale.x *= 1f;
                             newScale.y *= 0.9f;
                             newScale.z *= 1;
 
@@ -1403,7 +1403,7 @@ namespace NocturneInsaniax
                             newPos.x *= 1;
                             newPos.y *= 0.9f;
                             newPos.x *= 1;
-                            newScale.x *= 1;
+                            newScale.x *= 0.9f;
                             newScale.y *= 0.9f;
                             newScale.z *= 1;
 

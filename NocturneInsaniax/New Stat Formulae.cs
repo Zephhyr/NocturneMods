@@ -320,6 +320,24 @@ namespace NocturneInsaniax
             }
         }
 
+        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetMagicKaifuku))]
+        private class MagicKaifukuPatch
+        {
+            public static bool Prefix(ref int nskill, ref int sformindex, ref int dformindex, ref int waza, ref int __result)
+            {
+                datUnitWork_t workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
+
+                double magicPow = (workFromFormindex1.level + (datCalc.datGetParam(workFromFormindex1, 2) * 0.8f)) * waza * 1.25 / 10f;
+
+                var magicBuff = nbCalc.nbGetHojoRitu(sformindex, 5);
+
+                magicPow *= magicBuff;
+
+                __result = Convert.ToInt32(magicPow);
+                return false;
+            }
+        }
+
         [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbCheckSensei))]
         private class CheckSenseiPatch
         {

@@ -49,12 +49,6 @@ namespace NocturneInsaniax
                         __result = 100;
                 }
 
-                MelonLogger.Msg("--nbCalc.nbGetAisyo--");
-                MelonLogger.Msg("nskill: " + nskill);
-                MelonLogger.Msg("attr: " + attr);
-                MelonLogger.Msg("formindex: " + formindex);
-                MelonLogger.Msg("result: " + __result);
-
                 if (work.id == 246 || work.id == 259 || work.id == 292)
                 {
                     var party = nbMainProcess.nbGetPartyFromFormindex(formindex);

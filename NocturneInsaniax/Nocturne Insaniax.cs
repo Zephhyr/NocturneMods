@@ -725,19 +725,19 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int no, ref bool __result)
             {
-                try
-                {
-                    //MelonLogger.Msg("--EventBit.evtBitCheck--");
-                    // Checks the flag responsible for unlocking Pierce
-                    if (no == 2241)
-                    {
-                        //if (!__result) __result = true; // Artificially makes it obtainable
-                        //else tblHearts.fclHeartsTbl[1].Skill[6].TargetLevel = 15; // If unlocked normally, you can get it early
-                        if (__result) tblHearts.fclHeartsTbl[1].Skill[6].TargetLevel = 15; // If unlocked normally, you can get it
-                        else tblHearts.fclHeartsTbl[1].Skill[6].TargetLevel = 200; // Otherwise, you can't
-                    }
-                }
-                catch { }
+                //try
+                //{
+                //    //MelonLogger.Msg("--EventBit.evtBitCheck--");
+                //    // Checks the flag responsible for unlocking Pierce
+                //    if (no == 2241)
+                //    {
+                //        //if (!__result) __result = true; // Artificially makes it obtainable
+                //        //else tblHearts.fclHeartsTbl[1].Skill[6].TargetLevel = 15; // If unlocked normally, you can get it early
+                //        if (__result) tblHearts.fclHeartsTbl[1].Skill[6].TargetLevel = 15; // If unlocked normally, you can get it
+                //        else tblHearts.fclHeartsTbl[1].Skill[6].TargetLevel = 200; // Otherwise, you can't
+                //    }
+                //}
+                //catch { }
             }
         }
 
@@ -746,8 +746,6 @@ namespace NocturneInsaniax
         {
             public static void Postfix(int devil_id)
             {
-                MelonLogger.Msg("--SoundManager.p2sdPlaySE_Dead--");
-                MelonLogger.Msg("devil_id: " + devil_id);
                 if (devil_id == 230 || devil_id == 248)
                     SoundManager.PlaySE("D230_MSEA1_23");
             }
