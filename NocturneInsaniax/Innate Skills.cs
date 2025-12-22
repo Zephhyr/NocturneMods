@@ -423,7 +423,7 @@ namespace NocturneInsaniax
             { 17, new InnateSkill(383, 15, "Magnified Malady", "All allies deal 20% more damage \nagainst enemies with an ailment.")}, // 17 Adama
             { 18, new InnateSkill(383, 07, "Dark Opus", "If the entire active party has natural \npositive Dark potential, gain a flashing \nturn icon at the start of each turn.")}, // 18 Gehenna
             { 19, new InnateSkill(383, 15, "Withheld Sentence", "Allies are immune to \nrandom instakills.")}, // 19 Sophia
-            { 20, new InnateSkill(383, 04, "Orochi's Bane", "Your Force attacks may \ninflict poison.")}, // 20 Murakumo
+            { 20, new InnateSkill(383, 04, "Orochi's Bane", "Your Force attacks may \ninflict poison. (30% base rate)")}, // 20 Murakumo
             { 21, new InnateSkill(383, 06, "Light Opus", "If the entire active party has natural \npositive Light potential, gain a flashing \nturn icon at the start of each turn.")}, // 21 Gundari
             { 22, new InnateSkill(383, 03, "Vanquishing Bolts", "All allies' Elec attacks \nmay Critically Strike.")}, // 22 Narukami
             { 23, new InnateSkill(383, 14, "Megalomania", "After using a charge effect, \ngain a 30% chance to retain it.")}, // 23 Gaea

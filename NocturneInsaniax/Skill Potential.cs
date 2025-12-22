@@ -1394,7 +1394,7 @@ namespace NocturneInsaniax
 
                     if (skillPotential != 0)
                     {
-                        __result = Convert.ToInt32(SkillPotentialUtility.ApplyHealMultiplier(skillPotential, __result));
+                        __result = Convert.ToInt32(SkillPotentialUtility.ApplyHealMultiplier(skillPotential, Convert.ToInt32(__result / 2f)));
                     }
                 }
             }
@@ -1473,11 +1473,11 @@ namespace NocturneInsaniax
                             datNormalSkill.tbl[nskill].hptype != 2)
                             __result = Convert.ToInt32(__result / 2);
 
-                        var targetInt = datCalc.datGetParam(nbMainProcess.nbGetUnitWorkFromFormindex(dformindex), 1);
+                        var targetMag = datCalc.datGetParam(nbMainProcess.nbGetUnitWorkFromFormindex(dformindex), 2);
                         var targetVit = datCalc.datGetParam(nbMainProcess.nbGetUnitWorkFromFormindex(dformindex), 3);
 
                         if (datNormalSkill.tbl[nskill].koukatype == 1)
-                            __result = Convert.ToInt32(__result / (1 + (targetInt / 330)));
+                            __result = Convert.ToInt32(__result / (1 + (targetMag / 330)));
                         if (datNormalSkill.tbl[nskill].koukatype == 0)
                             __result = Convert.ToInt32(__result / (1 + (targetVit / 330)));
                     }

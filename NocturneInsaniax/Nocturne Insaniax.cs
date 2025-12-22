@@ -1189,16 +1189,16 @@ namespace NocturneInsaniax
             }
         }
 
-        [HarmonyPatch(typeof(fldProcess), nameof(fldProcess.ProcSequence))]
-        private class fldProcessProcSequencePatch
-        {
-            public static void Prefix()
-            {
-                MelonLogger.Msg("--fldProcess.ProcSequence--");
-                MelonLogger.Msg("encounttbl: " + fldProcess.fldBattleData.encounttbl);
-                MelonLogger.Msg("encountpack: " + fldProcess.fldBattleData.encountpack);
-            }
-        }
+        //[HarmonyPatch(typeof(fldProcess), nameof(fldProcess.ProcSequence))]
+        //private class fldProcessProcSequencePatch
+        //{
+        //    public static void Prefix()
+        //    {
+        //        MelonLogger.Msg("--fldProcess.ProcSequence--");
+        //        MelonLogger.Msg("encounttbl: " + fldProcess.fldBattleData.encounttbl);
+        //        MelonLogger.Msg("encountpack: " + fldProcess.fldBattleData.encountpack);
+        //    }
+        //}
 
         // These patches seem to prevent a crash during the level up screen, I don't know why
         [HarmonyPatch(typeof(rstinit), nameof(rstinit.rstChkLevelUpTarget))]

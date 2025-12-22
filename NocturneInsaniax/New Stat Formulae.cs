@@ -327,7 +327,7 @@ namespace NocturneInsaniax
             {
                 datUnitWork_t workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
 
-                double magicPow = (workFromFormindex1.level + (datCalc.datGetParam(workFromFormindex1, 2) * 0.8f)) * waza * 1.25 / 10f;
+                double magicPow = (workFromFormindex1.level + (datCalc.datGetParam(workFromFormindex1, 2) * 1.6f)) * waza * 1.25 / 10f;
 
                 var magicBuff = nbCalc.nbGetHojoRitu(sformindex, 5);
 
@@ -387,7 +387,7 @@ namespace NocturneInsaniax
                 var agi = datCalc.datGetParam(work, 4);
                 var luk = datCalc.datGetParam(work, 5);
 
-                double chance = 12 * (lvAvg + ((avgAgi + (avgLuk * 2)) * 0.4f) / (level + (agi + (luk * 2)) * 0.4f));
+                double chance = 12 * (lvAvg + ((avgAgi + (avgLuk * 2)) * 0.4f) / (level + (agi + (luk * 2)) * 0.6f));
                 var rand = dds3KernelCore.dds3GetRandIntA(128);
                 __result = rand > chance ? 0 : 1 + datEncount.Get(data.encno).backattack;
 
@@ -658,7 +658,7 @@ namespace NocturneInsaniax
                     }
 
                     var luk = datCalc.datGetParam(workFromFormindex1, 5);
-                    var lukMultiplier = 1 + ((float)luk / 100);
+                    var lukMultiplier = 1 + ((float)luk / 250);
                     var critChance = critRate * lukMultiplier;
 
                     var rand = dds3KernelCore.dds3GetRandIntA(100);

@@ -306,7 +306,7 @@ namespace NocturneInsaniax
                     case 68: __result = "Negates one Light/Dark attack \nfor all allies."; return false; // Tetraja
                     case 69: __result = "Repels Magic-based attacks \nfor one ally once \nnext turn."; return false; // Makarakarn
                     case 70: __result = "Repels Strength-based attacks \nfor one ally once \nnext turn."; return false; // Tetrakarn
-                    case 71: __result = "Displays an enemy's info."; return false; // Analyze
+                    case 71: __result = "Displays an enemy's info \nat 1/2 turn cost."; return false; // Analyze
                     case 72: __result = "Escape from most battles without fail."; return false; // Trafuri
                     case 73: __result = "Reduces encounter rate \nof low-level demons \nuntil a new Kagutsuchi."; return false; // Trafuri
                     case 74: __result = "Raises encounter rate \nuntil a new Kagutsuchi."; return false; // Riberama
@@ -438,9 +438,9 @@ namespace NocturneInsaniax
                     case 295: __result = "Raises Maximum MP by 30%."; return false; // Mana Surge
                     case 296: __result = "Guarantees escape \nwhen possible."; return false; // Fast Retreat
                     case 298: __result = "Prevents being attacked \nfrom behind."; return false; // Mind's Eye
-                    case 299: __result = "Greatly raises Critical Rate \nof normal attacks."; return false; // Might
-                    case 300: __result = "Drastically raises Critical Rate of \nnormal attacks during full Kagutsuchi."; return false; // Bright Might
-                    case 301: __result = "Drastically raises Critical Rate of \nnormal attacks during new Kagutsuchi."; return false; // Dark Might
+                    case 299: __result = "Raises Critical Rate of \nnormal attacks to 30%."; return false; // Might
+                    case 300: __result = "Raises Critical Rate of \nnormal attacks to 50% \nduring full Kagutsuchi."; return false; // Bright Might
+                    case 301: __result = "Raises Critical Rate of \nnormal attacks to 50% \nduring new Kagutsuchi."; return false; // Dark Might
                     case 302: __result = "Normal attacks will drain HP."; return false; // Drain Attack
                     case 304: __result = "Normal attacks will \nhit all enemies."; return false; // Attack All
                     case 305: __result = "May perform a weak counterattack \nwhen physically attacked. Pow: 32"; return false; // Counter
@@ -855,6 +855,12 @@ namespace NocturneInsaniax
                     //}
                     foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 0)) // Demi-fiend
                     {
+                        work.param[0] = 98;
+                        work.param[1] = 98;
+                        work.param[2] = 98;
+                        work.param[3] = 98;
+                        work.param[4] = 98;
+                        work.param[5] = 98;
                         //work.skill[0] = 226;
                         //work.badstatus = 32768;
                         //work.level = 95;
@@ -1014,14 +1020,14 @@ namespace NocturneInsaniax
             public static void Prefix(ref int side, ref int stockno, ref int formindex)
             {
                 // Dismiss Dante when summoning Devil Dante
-                if (formindex == 6 && nbMainProcess.nbGetMainProcessData().enemyunit[0].nowindex == 497)
+                if (formindex == 6 && actionProcessData.work.nowindex == 497)
                 {
                     nbUnitProcess.nbReturnUnit(4, 0, 0);
                     nbMakePacket.nbAddNewPressPacket(0, 0, -10, -10);
                 }
                 // Remove additional turns after Foul Gathering
-                else if ((nbMainProcess.nbGetMainProcessData().enemyunit[0].id == 257 || nbMainProcess.nbGetMainProcessData().enemyunit[0].id == 273 || nbMainProcess.nbGetMainProcessData().enemyunit[0].id == 275)
-                    && nbMainProcess.nbGetMainProcessData().enemyunit[0].nowindex == 252)
+                else if ((actionProcessData.work.id == 257 || actionProcessData.work.id == 273 || actionProcessData.work.id == 275)
+                    && actionProcessData.work.nowindex == 252)
                 {
                     nbMakePacket.nbAddNewPressPacket(0, 0, -10, -10);
                 }

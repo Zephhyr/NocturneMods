@@ -111,7 +111,7 @@ namespace NocturneInsaniax
                     encno = 267;
                 else if (encno == 267)
                     encno = 20;
-                else if (GuaranteeNKEs.Value == true || (evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0 && random.Next(2) == 0))
+                else if (encpackno <= 216 && (GuaranteeNKEs.Value == true || (evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0 && random.Next(2) == 0)))
                 {
                     encno = NewKagutsuchiEncounter(encno, encpackno);
                 }

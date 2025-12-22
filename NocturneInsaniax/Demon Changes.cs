@@ -12779,7 +12779,7 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 2, 3, 2, 1, 1 };
 
             tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 153, TargetLevel = 0, Type = 1 };
-            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 192, TargetLevel = 0, Type = 1 };
+            tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 455, TargetLevel = 0, Type = 1 };
             tblSkill.fclSkillTbl[id].Event[2] = new fclSkillParam_t { Param = 3, TargetLevel = 0, Type = 1 };
             tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 56, TargetLevel = 72, Type = 1 };
             tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 57, TargetLevel = 73, Type = 1 };
@@ -14708,7 +14708,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].level = 9;
             datDevilFormat.tbl[id].flag = 547;
             datDevilFormat.tbl[id].param[0] = 5;
-            datDevilFormat.tbl[id].param[1] = 8;
+            datDevilFormat.tbl[id].param[1] = 12;
             datDevilFormat.tbl[id].param[2] = 8;
             datDevilFormat.tbl[id].param[3] = 8;
             datDevilFormat.tbl[id].param[4] = 3;

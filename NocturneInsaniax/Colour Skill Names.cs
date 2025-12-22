@@ -19,6 +19,13 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref string text1, ref string text2, ref int type, ref int max, ref uint col, ref bool type_skill)
             {
+                if (text1 == "The enemy attacked from behind!")
+                {
+                    nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = new Color(0.294f, 0.294f, 0.980f, 1);
+                    nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = false;
+                    return;
+                }
+
                 try
                 {
                     if (EnableSkillColourOutlines.Value)

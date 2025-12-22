@@ -40,6 +40,26 @@ namespace NocturneInsaniax
         // Menu manipulation variables
         private static bool SettingAsignParam;
 
+        [HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstCheckHeartsEvent))]
+        private class PatchCheckHeartsEvent
+        {
+            private static bool Prefix(ref sbyte __result)
+            {
+                __result = 1;
+                return false;
+            }
+        }
+
+        [HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstCalcHeartsEvent))]
+        private class PatchCalcHeartsEvent
+        {
+            private static bool Prefix(ref sbyte __result)
+            {
+                __result = 0;
+                return false;
+            }
+        }
+
         [HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstChkParamLimitAll))]
         private class PatchChkParamLimitAll
         {
@@ -49,63 +69,26 @@ namespace NocturneInsaniax
                 __result = 0;
 
                 // If your stats are not capped completely, return.
-                if (datCalc.datGetBaseParam(pStock, 0) >= MAXSTATS)
+                if (datCalc.datGetBaseParam(pStock, 0) < MAXSTATS) { return false; }
+                if (EnableIntStat && datCalc.datGetBaseParam(pStock, 1) < MAXSTATS) { return false; }
+                if (datCalc.datGetBaseParam(pStock, 2) < MAXSTATS) { return false; }
+                if (datCalc.datGetBaseParam(pStock, 3) < MAXSTATS) { return false; }
+                if (datCalc.datGetBaseParam(pStock, 4) < MAXSTATS) { return false; }
+                if (datCalc.datGetBaseParam(pStock, 5) < MAXSTATS) { return false; }
+
+                // If you got to this point, your stats are completely maxed out.
+                // Additionally, if this is true, recalculate your HP/MP.
+                if (paramSet)
                 {
-                    if (EnableIntStat && datCalc.datGetBaseParam(pStock, 1) < MAXSTATS) { return false; }
-                    if (datCalc.datGetBaseParam(pStock, 2) < MAXSTATS) { return false; }
-                    if (datCalc.datGetBaseParam(pStock, 3) < MAXSTATS) { return false; }
-                    if (datCalc.datGetBaseParam(pStock, 4) < MAXSTATS) { return false; }
-                    if (datCalc.datGetBaseParam(pStock, 5) < MAXSTATS) { return false; }
+                    pStock.maxhp = (ushort)datCalc.datGetMaxHp(pStock);
+                    pStock.maxmp = (ushort)datCalc.datGetMaxMp(pStock);
 
-                    // If you got to this point, your stats are completely maxed out.
-                    // Additionally, if this is true, recalculate your HP/MP.
-                    if (paramSet)
-                    {
-                        pStock.maxhp = (ushort)datCalc.datGetMaxHp(pStock);
-                        pStock.maxmp = (ushort)datCalc.datGetMaxMp(pStock);
-
-                        // Make sure both HP/MP don't overshoot.
-                        pStock.hp = pStock.hp > pStock.maxhp ? pStock.maxhp : pStock.hp;
-                        pStock.mp = pStock.mp > pStock.maxmp ? pStock.maxmp : pStock.mp;
-                    }
-
-                    // Make sure to return 1 to tell the game your stats are capped.
-                    __result = 1;
-                }
-                return false;
-            }
-        }
-
-        [HarmonyPatch(typeof(datCalc), nameof(datCalc.datCheckSkillTakaraSagasi))]
-        private class PatchLuckyFind
-        {
-            private static bool Prefix(out int __result)
-            {
-                __result = 0;
-
-                // Loop through all of your Demons to search for any that have Lucky Find.
-                for (int i = 0; i < dds3GlobalWork.DDS3_GBWK.unitwork.Length; i++)
-                {
-                    // Grab the work demon.
-                    datUnitWork_t work = dds3GlobalWork.DDS3_GBWK.unitwork[i];
-
-                    // Flag Check of some sort.
-                    if ((~work.flag & 3) == 0)
-                    {
-                        // Grab the Demon's Luck.
-                        int luck = EnableStatScaling ? (int)((float)datCalc.datGetParam(work, 5) / STATS_SCALING) : datCalc.datGetParam(work, 5);
-
-                        // If the Demon has Lucky Find as a Skill.
-                        if (datCalc.datCheckSyojiSkill(work, 0x161) != 0)
-                        {
-                            // A random integer check to see if the Demon's ID is returned.
-                            uint randomChance = dds3KernelCore.dds3GetRandIntA(0x20);
-                            if (randomChance <= (luck << 7) / 100)
-                            { __result = work.id; return false; }
-                        }
-                    }
+                    // Make sure both HP/MP don't overshoot.
+                    pStock.hp = pStock.hp > pStock.maxhp ? pStock.maxhp : pStock.hp;
+                    pStock.mp = pStock.mp > pStock.maxmp ? pStock.maxmp : pStock.mp;
                 }
 
+                __result = 1;
                 return false;
             }
         }
@@ -155,6 +138,40 @@ namespace NocturneInsaniax
             }
         }
 
+        [HarmonyPatch(typeof(datCalc), nameof(datCalc.datCheckSkillTakaraSagasi))]
+        private class PatchLuckyFind
+        {
+            private static bool Prefix(out int __result)
+            {
+                __result = 0;
+
+                // Loop through all of your Demons to search for any that have Lucky Find.
+                for (int i = 0; i < dds3GlobalWork.DDS3_GBWK.unitwork.Length; i++)
+                {
+                    // Grab the work demon.
+                    datUnitWork_t work = dds3GlobalWork.DDS3_GBWK.unitwork[i];
+
+                    // Flag Check of some sort.
+                    if ((~work.flag & 3) == 0)
+                    {
+                        // Grab the Demon's Luck.
+                        int luck = EnableStatScaling ? (int)((float)datCalc.datGetParam(work, 5) / STATS_SCALING) : datCalc.datGetParam(work, 5);
+
+                        // If the Demon has Lucky Find as a Skill.
+                        if (datCalc.datCheckSyojiSkill(work, 0x161) != 0)
+                        {
+                            // A random integer check to see if the Demon's ID is returned.
+                            uint randomChance = dds3KernelCore.dds3GetRandIntA(0x20);
+                            if (randomChance <= (luck << 7) / 100)
+                            { __result = work.id; return false; }
+                        }
+                    }
+                }
+
+                return false;
+            }
+        }
+
         [HarmonyPatch(typeof(datCalc), nameof(datCalc.datAddPlayerParam))]
         private class PatchAddPlayerParam
         {
@@ -185,8 +202,7 @@ namespace NocturneInsaniax
             private static bool Prefix(ref int __result, datUnitWork_t work, int paratype)
             {
                 // Just returns the parameter of the given type.
-                int heartParam = work.id == 0 ? rstCalcCore.cmbGetHeartsParam((sbyte)dds3GlobalWork.DDS3_GBWK.heartsequip, (sbyte)paratype) : 0;
-                __result = Math.Clamp(work.param[paratype] - heartParam + work.levelupparam[paratype], 0, MAXSTATS); ;
+                __result = work.param[paratype] + work.levelupparam[paratype];
                 return false;
             }
         }
@@ -196,9 +212,8 @@ namespace NocturneInsaniax
         {
             private static bool Prefix(out int __result, datUnitWork_t work, int paratype)
             {
-                // Returns the base stat of the given parameter.
-                int heartParam = work.id == 0 ? rstCalcCore.cmbGetHeartsParam((sbyte)dds3GlobalWork.DDS3_GBWK.heartsequip, (sbyte)paratype) : 0;
-                __result = Math.Clamp(datCalc.datGetBaseParam(work, paratype) + heartParam + work.mitamaparam[paratype] + work.skillparam[paratype], 0, MAXSTATS + heartParam + work.mitamaparam[paratype] + work.skillparam[paratype]); 
+                // Returns the total value of the given parameter type.
+                __result = Math.Clamp(datCalc.datGetBaseParam(work, paratype) + work.mitamaparam[paratype] + work.skillparam[paratype], 0, MAXSTATS + work.mitamaparam[paratype] + work.skillparam[paratype]);
                 return false;
             }
         }
@@ -360,11 +375,6 @@ namespace NocturneInsaniax
                     if (paramChecks[ctr] == true)
                     { continue; }
 
-                    // If this somehow happened, return 0x7f.
-                    // This is probably an error code.
-                    if (pStock.levelupparam.Length <= ctr)
-                    { return 0x7f; }
-
                     // If Mode is zero, increment the LevelUp Stat.
                     if (Mode == 0)
                     { pStock.levelupparam[ctr]++; }
@@ -375,7 +385,7 @@ namespace NocturneInsaniax
                 while (true);
 
                 // If you got to here, the function broke somehow, so just make sure it assigns nothing.
-                return 6;
+                return -1;
             }
 
             private static bool Prefix(out sbyte __result, ref datUnitWork_t pStock, sbyte Mode)
@@ -445,7 +455,7 @@ namespace NocturneInsaniax
                     { continue; }
 
                     // Add to the demon's stats.
-                    pStock.levelupparam[paramID] += 1;
+                    pStock.levelupparam[paramID]++;
 
                     // Set a boolean to true if the stat becomed capped out.
                     // Also forcibly set the stat to its new cap.
@@ -876,6 +886,7 @@ namespace NocturneInsaniax
             public static sbyte NoResponse()
             {
                 // Return that you said no.
+                PatchResetAsignParam.ResetParam();
                 return 0;
             }
             private static bool Prefix(ref datUnitWork_t pStock)
@@ -1028,7 +1039,7 @@ namespace NocturneInsaniax
                     || (dds3PadManager.DDS3_PADCHECK_PRESS(Il2Cpplibsdf_H.SDF_PADMAP.R) && dds3PadManager.DDS3_PADCHECK_REP(Il2Cpplibsdf_H.SDF_PADMAP.R) == true))
                 {
                     // If your Stat plus the LevelUp stats exceed or go up to the maximum, then play a sound and skip the rest of the function.
-                    if (datCalc.datGetBaseParam(pStock, 0) >= MAXSTATS)
+                    if (datCalc.datGetBaseParam(pStock, cursorParam) >= MAXSTATS)
                     { cmpMisc.cmpPlaySE(2 & 0xFFFF); return false; }
 
                     // If you still have points to assign, assing one.
@@ -1081,6 +1092,34 @@ namespace NocturneInsaniax
         {
             private static void Postfix()
             {
+                // Check if you have no messages open.
+                if (fclMisc.fclChkMessage() == 0)
+                {
+                    // Grab the current Demon (should be the Demifiend).
+                    datUnitWork_t pStock = rstinit.GBWK.pCurrentStock;
+
+                    // Distributes Levelup points added by the Magatama (hopefully).
+                    for (int i = 0; i < pStock.param.Length; i++)
+                    {
+                        pStock.param[i] += pStock.levelupparam[i];
+                        pStock.levelupparam[i] = 0;
+                    }
+
+                    // Recalculate HP/MP.
+                    pStock.maxhp = (ushort)datCalc.datGetMaxHp(pStock);
+                    pStock.maxmp = (ushort)datCalc.datGetMaxMp(pStock);
+                }
+            }
+        }
+
+        [HarmonyPatch(typeof(rstupdate), nameof(rstupdate.rstStandbyHeartsEvent))]
+        private class PatchStandbyMagatamaEvent
+        {
+            private static bool Prefix(out sbyte __result, ref sbyte EventType)
+            {
+                // Result Init.
+                __result = 0;
+
                 // Grab the current Demon (should be the Demifiend).
                 datUnitWork_t pStock = rstinit.GBWK.pCurrentStock;
 
@@ -1094,66 +1133,61 @@ namespace NocturneInsaniax
                 // Recalculate HP/MP.
                 pStock.maxhp = (ushort)datCalc.datGetMaxHp(pStock);
                 pStock.maxmp = (ushort)datCalc.datGetMaxMp(pStock);
+
+                switch (EventType)
+                {
+                    case 0:
+                        {
+                            // Grab whether or not it added a Stat Point to Demifiend.
+                            int AddedPoint = rstupdate.rstStandbyHeartsAddPoint();
+                            if (AddedPoint >= 0 && AddedPoint <= 5)
+                            {
+                                // Put the Hearts Event Data value above the list size.
+                                rstinit.GBWK.HeartsEventData = (ushort)AddedPoint;
+
+                                // Also, turn it's mode to -1.
+                                rstinit.GBWK.HeartsEventMode = -1;
+
+                                // Grab the Currently equipped Magatama's Name.
+                                string heartName = datHeartsName.Get(dds3GlobalWork.DDS3_GBWK.heartsequip);
+
+                                // Message Display setup
+                                fclMisc.fclSetMessageVar(0xc, heartName);
+                                string paramName = cmpMisc.cmpGetParamName((sbyte)AddedPoint);
+                                fclMisc.fclSetMessageVar(8, paramName);
+                                fclMisc.fclSetMessageVar(9, "1");
+                                fclMisc.fclStartMessage(0x1e);
+
+                                // Recalculate HP/MP.
+                                pStock.maxhp = (ushort)datCalc.datGetMaxHp(pStock);
+                                pStock.maxmp = (ushort)datCalc.datGetMaxMp(pStock);
+                                __result = 1;
+                            }
+                            return false;
+                        }
+                    default:
+                        { break; }
+                }
+
+                return true;
             }
         }
 
         [HarmonyPatch(typeof(rstupdate), nameof(rstupdate.rstStandbyHeartsAddPoint))]
         private class PatchMagatamaAddPoint
         {
-            private static bool Prefix()
+            private static bool Prefix(out int __result)
             {
+                // Basic Result
+                __result = -1;
+
                 // Grab the current Demon (should be the Demifiend).
                 datUnitWork_t pStock = rstinit.GBWK.pCurrentStock;
 
-                // This is a list of Stats it needs to check.
-                bool[] paramChecks = { false, false, false, false, false, false };
-
-                // Iterate a loop through Stats and checks for if the stat's capped already and set a boolean.
-                for (int i = 0; i < pStock.param.Length; i++)
-                {
-                    if (i == 1 && !EnableIntStat)
-                    { continue; }
-                    if (datCalc.datGetBaseParam(pStock, i) >= MAXSTATS)
-                    { paramChecks[i] = true; }
-                }
-
-                // Loop until you find a stat to increase.
-                int param = -1;
-                do
-                {
-                    // If your stats are completely capped out, break.
-                    if (EnableIntStat &&
-                        paramChecks[0] == true &&
-                        paramChecks[1] == true &&
-                        paramChecks[2] == true &&
-                        paramChecks[3] == true &&
-                        paramChecks[4] == true &&
-                        paramChecks[5] == true)
-                    { break; }
-                    if (!EnableIntStat &&
-                        paramChecks[0] == true &&
-                        paramChecks[2] == true &&
-                        paramChecks[3] == true &&
-                        paramChecks[4] == true &&
-                        paramChecks[5] == true)
-                    { break; }
-
-                    // Grab a stat at random to add to.
-                    param = rstCalcCore.cmbAddLevelUpParamEx(ref pStock, 1);
-
-                    // If a stat couldn't be found, break.
-                    if (param > 5 || param < 0)
-                    { break; }
-
-                    // if it's capped, search again.
-                    if (datCalc.datGetBaseParam(pStock, param) >= MAXSTATS)
-                    { paramChecks[param] = true; continue; }
-
-                    // Increase their LevelUp points.
-                    pStock.levelupparam[param]++;
-                    break;
-                }
-                while (param < 0 || param > 5);
+                // Grab a stat at random to add to.
+                __result = rstCalcCore.cmbAddLevelUpParamEx(ref pStock, 0);
+                if (__result < 0 || __result > 5)
+                { __result = -1; }
 
                 // Recalculate HP/MP.
                 pStock.maxhp = (ushort)datCalc.datGetMaxHp(pStock);
@@ -1171,6 +1205,394 @@ namespace NocturneInsaniax
                 // Grab the Stat's Name from a clamped index.
                 Index = (sbyte)Math.Clamp((int)Index, 0, 5);
                 __result = paramNames[Index];
+                return false;
+            }
+        }
+
+        [HarmonyPatch(typeof(fclRecoverDraw), nameof(fclRecoverDraw.rcvDrawStockWindowList))]
+        private class PatchRecoverReviveDraw
+        {
+            private static bool Prefix(GameObject obj, uint Col, sbyte localstockidx, bool curidx)
+            {
+                // String List of GameObject Names.
+                string[] objList = { "_current", "_full" };
+
+                // Grab the parent object of the entire Recovery menu.
+                GameObject g = GameObject.Find("recovUI/rcvlist");
+                GameObject g2;
+                GameObject g3;
+                GameObject g4;
+
+                // If the Recovery UI doesn't exist.
+                if (g == null)
+                { return true; }
+
+                // If the Recovery UI isn't active.
+                if (!g.activeSelf)
+                { return true; }
+
+                // Iterate between all 9 visible rows in the Recover List.
+                for (int i = 0; i < 9; i++)
+                {
+                    // Grab the Row.
+                    g2 = GameObject.Find("recovUI/rcvlist/rcv_row/rcv_row0" + (i + 1));
+
+                    if (g2 == null)
+                    { return true; }
+
+                    if (!g2.activeSelf)
+                    { return true; }
+
+                    // This is gonna be a bit jank, basically gotta iterate through a couple of partial object names.
+                    for (int j = 0; j < objList.Length; j++)
+                    {
+                        // Grab one of the HP Bar GameObjects.
+                        g3 = GameObject.Find("recovUI/rcvlist/rcv_row/rcv_row0" + (i + 1) + "/rcvhpbar/rcvhpnum" + objList[j]);
+
+                        // If there's less than 4 Digits, add another one.
+                        if (g3.GetComponent<CounterCtr>().image.Length < 4)
+                        {
+                            // Create a duplicate of the first number in the list.
+                            g4 = GameObject.Instantiate(g3.GetComponent<CounterCtr>().image[0].gameObject);
+                            GameObject.DontDestroyOnLoad(g4);
+
+                            // Rename it.
+                            g4.name = "num_hp04";
+
+                            // Parent it.
+                            g4.transform.parent = g3.transform;
+
+                            // Set up original local Position and Scale.
+                            g4.transform.localPosition.Set(g3.transform.localPosition.x - 30, g3.transform.localPosition.y, g3.transform.localPosition.z);
+                            g4.transform.localScale = g3.GetComponent<CounterCtr>().image[0].transform.localScale;
+
+                            // Add it to the CounterCtr's image list.
+                            g3.GetComponent<CounterCtr>().image = g3.GetComponent<CounterCtr>().image.Append<Image>(g4.GetComponent<Image>()).ToArray<Image>();
+
+                            // Iterate through the objects and reposition/rescale them.
+                            for (int k = 0; k < g3.GetComponent<CounterCtr>().image.Length; k++)
+                            {
+                                // Grab the game object.
+                                g4 = g3.GetComponent<CounterCtr>().image[k].gameObject;
+
+                                // Grab position and scale.
+                                Vector3 newPos = g4.transform.localPosition;
+                                Vector3 newScale = g4.transform.localScale;
+
+                                // Change position and scale.
+                                newPos.x += 15;
+                                newPos.x *= 0.825f;
+                                newPos.y *= 0.825f;
+                                newPos.z *= 1;
+                                newScale.x *= 0.825f;
+                                newScale.y *= 0.825f;
+                                newScale.z *= 1;
+
+                                g4.transform.localPosition = newPos;
+                                g4.transform.localScale = newScale;
+                            }
+                        }
+                    }
+
+                    // This is gonna be a bit jank, basically gotta iterate through a couple of partial object names.
+                    for (int j = 0; j < objList.Length; j++)
+                    {
+                        // Grab one of the HP Bar GameObjects.
+                        g3 = GameObject.Find("recovUI/rcvlist/rcv_row/rcv_row0" + (i + 1) + "/rcvmpbar/rcvmpnum" + objList[j]);
+
+                        // If there's less than 4 Digits, add another one.
+                        if (g3.GetComponent<CounterCtr>().image.Length < 4)
+                        {
+                            // Create a duplicate of the first number in the list.
+                            g4 = GameObject.Instantiate(g3.GetComponent<CounterCtr>().image[0].gameObject);
+                            GameObject.DontDestroyOnLoad(g4);
+
+                            // Rename it.
+                            g4.name = "num_mp04";
+
+                            // Parent it.
+                            g4.transform.parent = g3.transform;
+
+                            // Set up original local Position and Scale.
+                            g4.transform.localPosition.Set(g3.transform.localPosition.x - 30, g3.transform.localPosition.y, g3.transform.localPosition.z);
+                            g4.transform.localScale = g3.GetComponent<CounterCtr>().image[0].transform.localScale;
+
+                            // Add it to the CounterCtr's image list.
+                            g3.GetComponent<CounterCtr>().image = g3.GetComponent<CounterCtr>().image.Append<Image>(g4.GetComponent<Image>()).ToArray<Image>();
+
+                            // Iterate through the objects and reposition/rescale them.
+                            for (int k = 0; k < g3.GetComponent<CounterCtr>().image.Length; k++)
+                            {
+                                // Grab the game object.
+                                g4 = g3.GetComponent<CounterCtr>().image[k].gameObject;
+
+                                // Grab position and scale.
+                                Vector3 newPos = g4.transform.localPosition;
+                                Vector3 newScale = g4.transform.localScale;
+
+                                // Change position and scale.
+                                newPos.x += 15;
+                                newPos.x *= 0.825f;
+                                newPos.y *= 0.825f;
+                                newPos.z *= 1;
+                                newScale.x *= 0.825f;
+                                newScale.y *= 0.825f;
+                                newScale.z *= 1;
+
+                                g4.transform.localPosition = newPos;
+                                g4.transform.localScale = newScale;
+                            }
+                        }
+                    }
+                }
+
+                return true;
+            }
+        }
+
+        [HarmonyPatch(typeof(cmpDrawDH), nameof(cmpDrawDH.cmpDrawHeartsInfo))]
+        private class PatchDrawMagatamaInfo
+        {
+            private static bool Prefix(cmpHeartsInfo_t pHeartsInfo, sbyte HeartsID)
+            {
+                // If you're not using the Int stat, just skip this entire function.
+                if (!EnableIntStat)
+                { return true; }
+
+                // This is for the various loops used within this function.
+                int i = 0;
+
+                // Grab the parent object of the entire Magatama Status menu.
+                GameObject g = GameObject.Find("magUI(Clone)/magstatus");
+                GameObject g2;
+                GameObject g3;
+
+                // If null, return.
+                if (g == null)
+                { return false; }
+
+                // If it's inactive, return.
+                if (g.activeSelf == false)
+                { return false; }
+
+                // If there's no 6th base.
+                if (!GameObject.Find("magUI(Clone)/magstatus/magstatus_base06"))
+                {
+                    // Find the first one.
+                    GameObject orig = GameObject.Find("magUI(Clone)/magstatus/magstatus_base01");
+
+                    // Copy it.
+                    g2 = GameObject.Instantiate(orig);
+
+                    // MAKE SURE it stays put.
+                    GameObject.DontDestroyOnLoad(g2);
+
+                    // Rename it.
+                    g2.name = "magstatus_base06";
+
+                    // Set its parent to the whole menu.
+                    g2.transform.parent = g.transform;
+
+                    // Adjust position and scale.
+                    g2.transform.position = orig.transform.position;
+                    g2.transform.localScale = orig.transform.localScale;
+
+                    // Make sure its local position compared to the parent is correct, since it's gonna get multiplied a bit.
+                    g2.transform.localPosition = new(orig.transform.localPosition.x, orig.transform.localPosition.y - 56 * 5, orig.transform.localPosition.z);
+
+                    // Increment through all of the base bars.
+                    for (i = 0; i < 6; i++)
+                    {
+                        // Grab the base bar
+                        g3 = GameObject.Find("magUI(Clone)/magstatus/magstatus_base0" + (i + 1));
+
+                        // If it doesn't exist, continue;
+                        if (g3 == null)
+                        { continue; }
+
+                        // Grab position and scale.
+                        Vector3 newScale = g3.transform.localScale;
+                        Vector3 newPos = g3.transform.localPosition;
+
+                        // Multiply position and scale.
+                        newPos.x *= 1;
+                        newPos.y *= 0.825f;
+                        newPos.x *= 1;
+                        newScale.x *= 0.825f;
+                        newScale.y *= 0.825f;
+                        newScale.z *= 1;
+
+                        // Set new position and scale.
+                        g3.transform.localScale = newScale;
+                        g3.transform.localPosition = newPos;
+                    }
+                }
+
+                // If there's no 6th item.
+                if (!GameObject.Find("magUI(Clone)/magstatus/magstatus_item06"))
+                {
+                    // Grab the first one.
+                    GameObject orig = GameObject.Find("magUI(Clone)/magstatus/magstatus_item01");
+
+                    // Copy it.
+                    g2 = GameObject.Instantiate(orig);
+
+                    // MAKE SURE it stays put.
+                    GameObject.DontDestroyOnLoad(g2.gameObject);
+
+                    // Rename it.
+                    g2.name = "magstatus_item06";
+
+                    // Set parent.
+                    g2.transform.parent = g.transform;
+
+                    // Set position and scale.
+                    g2.transform.position = orig.transform.position;
+                    g2.transform.localScale = orig.transform.localScale;
+
+                    // Make sure it's in the right spot before scaling.
+                    g2.transform.localPosition = new(orig.transform.localPosition.x, orig.transform.localPosition.y - 56 * 5, orig.transform.localPosition.z);
+
+                    // Iterate through each item.
+                    for (i = 0; i < 6; i++)
+                    {
+                        // Grab item.
+                        g3 = GameObject.Find("magUI(Clone)/magstatus/magstatus_item0" + (i + 1));
+
+                        // If null, continue.
+                        if (g3 == null)
+                        { continue; }
+
+                        // Grab position and scale.
+                        Vector3 newScale = g3.transform.localScale;
+                        Vector3 newPos = g3.transform.localPosition;
+
+                        // Multiply them.
+                        newPos.x *= 1;
+                        newPos.y *= 0.825f;
+                        newPos.x *= 1;
+                        newScale.x *= 0.825f;
+                        newScale.y *= 0.825f;
+                        newScale.z *= 1;
+
+                        // Set them to new values.
+                        g3.transform.localScale = newScale;
+                        g3.transform.localPosition = newPos;
+                    }
+                }
+
+                // Draw some various things to the screen.
+                fclDraw.fclDrawParts(0, 0x28 + i * 0xd0, 0, new(4), 0xb, 0, cmpInitDH.GBWK.TexHandle, etcSprTbl.cmpSprTblArry, 0x47);
+                fclDraw.fclDrawParts(0, 0x28 + i * 0xd0, 0, new(4), 0xb, 1, cmpInitDH.GBWK.TexHandle, etcSprTbl.cmpSprTblArry, 0x47);
+
+                // Grab a color.
+                uint color = fclMisc.fclGetBlendColor(0x80808080, 0x40404080, (uint)pHeartsInfo.Timer);
+
+                // Set a list to that color.
+                uint[] colorptr = { color, color, color, color };
+
+                // Check if you have this particular Magatama.
+                sbyte hasHeart = cmpInitDH.cmpChkHaveHearts(HeartsID);
+
+                // Iterate until i is 6.
+                i = 0;
+                do
+                {
+                    // Unknown value.
+                    int unk = 0;
+
+                    // If i goes over the list of Stat Names, break.
+                    if (paramNames.Length < i)
+                    { break; }
+
+                    // Grab Magatama Status Item object.
+                    g = GameObject.Find("magUI(Clone)/magstatus/magstatus_item0" + (i + 1));
+
+                    // If null, increment and continue.
+                    if (g == null)
+                    { i++; continue; }
+
+                    // Set up the previous object.
+                    cmpUpdate.cmpSetupObject(g, hasHeart == 1 ? true : false);
+
+                    // Grab the text object from the previous object.
+                    g2 = GameObject.Find("magUI(Clone)/magstatus/" + g.name + "/TextTM");
+
+                    // If null, increment and continue.
+                    if (g2 == null)
+                    { i++; continue; }
+
+                    // Set the text object's text.
+                    g2.GetComponentInChildren<TMP_Text>().SetText(Localize.GetLocalizeText(cmpMisc.cmpGetParamName((sbyte)i)));
+
+                    // Draw more parts to the screen.
+                    fclDraw.fclDrawParts(0, 0x28 + i * 0xd0, 0, colorptr, 0xb, 3, cmpInitDH.GBWK.TexHandle, etcSprTbl.cmpSprTblArry, 0x47);
+                    fclDraw.fclDrawParts(0, 0x28 + i * 0xd0, 0, colorptr, 0xb, (ushort)(i + 4), cmpInitDH.GBWK.TexHandle, etcSprTbl.cmpSprTblArry, 0x47);
+
+                    // Set up the text object.
+                    cmpUpdate.cmpSetupObject(g2, true);
+
+                    // Grab the numerical text object.
+                    g2 = GameObject.Find("magUI(Clone)/magstatus/" + g.name + "/magtex");
+
+                    // If null, increment and continue.
+                    if (g2 == null)
+                    { i++; continue; }
+
+                    // Grab the Magatama Stat with ID i.
+                    int heartParam = hasHeart == 1 ? rstCalcCore.cmbGetHeartsParam(HeartsID, (sbyte)i) : 0;
+
+                    // If it's 0, set the unknown value to 11.
+                    if (heartParam == 0)
+                    { unk = 0xb; }
+
+                    // Otherwise set it to 9.
+                    // If you somehow get the Stat to be negative, set it to 10 instead.
+                    else
+                    {
+                        unk = 9;
+                        if (heartParam < 1)
+                        { unk = 10; }
+                    }
+
+                    // More draw calls.
+                    fclDraw.fclDrawParts(0, 0x28 + i * 0xd0, 0, colorptr, 0xb, (ushort)unk, cmpInitDH.GBWK.TexHandle, etcSprTbl.cmpSprTblArry, 0x47);
+
+                    // Set up the numerical text object.
+                    cmpUpdate.cmpSetupObject(g2, true);
+
+                    // Grab the number object
+                    g2 = GameObject.Find("magUI(Clone)/magstatus/" + g.name + "/magtex/num_mag");
+
+                    // If the object's Counter is null, return.
+                    if (g2.GetComponent<CounterCtr>() == null)
+                    { i++; continue; }
+
+                    // Generate a color and set the Counter's value and color.
+                    Color rgb = cmpInit.GetToRGBA(hasHeart != 0 ? heartParam > 0 ? 0xFFFFFFFF : heartParam < 0 ? 0xFF8080FF : 0x80808080 : 0x80808080);
+                    g2.GetComponent<CounterCtr>().Set(heartParam, rgb);
+
+                    // Set up the number object.
+                    cmpUpdate.cmpSetupObject(g2, hasHeart == 1 ? true : false);
+                    i++;
+                }
+                while (i < 6);
+
+                // Draw the Magatama Help panel
+                cmpDrawDH.cmpDrawHeartsHelpPanel(pHeartsInfo.Timer);
+
+                // If the Magatama object is visible, draw its name.
+                if (hasHeart == 1)
+                { cmpDrawDH.cmpDrawHeartsName(0, 0, 0, pHeartsInfo.Timer, (sbyte)(HeartsID)); }
+                else
+                { cmpDrawDH.cmpDrawHeartsName(0, 0, 0, pHeartsInfo.Timer, -1); }
+
+                // Grab the Magamama Menu object.
+                g = cmpInitDH.DHeartsObj;
+
+                // Set it up and draw a gradient of some sort.
+                cmpUpdate.cmpSetupObject(g, true);
+                cmpDrawDH.cmpDrawDisactiveGrad(pHeartsInfo.Timer);
                 return false;
             }
         }
@@ -1549,416 +1971,19 @@ namespace NocturneInsaniax
             }
         }
 
-        [HarmonyPatch(typeof(cmpDrawDH), nameof(cmpDrawDH.cmpDrawHeartsInfo))]
-        private class PatchDrawMagatamaInfo
-        {
-            private static bool Prefix(cmpHeartsInfo_t pHeartsInfo, sbyte HeartsID)
-            {
-                // If you're not using the Int stat, just skip this entire function.
-                if (!EnableIntStat)
-                { return true; }
-
-                // This is for the various loops used within this function.
-                int i = 0;
-
-                // Grab the parent object of the entire Magatama Status menu.
-                GameObject g = GameObject.Find("magUI(Clone)/magstatus");
-                GameObject g2;
-                GameObject g3;
-
-                // If null, return.
-                if (g == null)
-                { return false; }
-
-                // If it's inactive, return.
-                if (g.activeSelf == false)
-                { return false; }
-
-                // If there's no 6th base.
-                if (!GameObject.Find("magUI(Clone)/magstatus/magstatus_base06"))
-                {
-                    // Find the first one.
-                    GameObject orig = GameObject.Find("magUI(Clone)/magstatus/magstatus_base01");
-
-                    // Copy it.
-                    g2 = GameObject.Instantiate(orig);
-
-                    // MAKE SURE it stays put.
-                    GameObject.DontDestroyOnLoad(g2);
-
-                    // Rename it.
-                    g2.name = "magstatus_base06";
-
-                    // Set its parent to the whole menu.
-                    g2.transform.parent = g.transform;
-
-                    // Adjust position and scale.
-                    g2.transform.position = orig.transform.position;
-                    g2.transform.localScale = orig.transform.localScale;
-
-                    // Make sure its local position compared to the parent is correct, since it's gonna get multiplied a bit.
-                    g2.transform.localPosition = new(orig.transform.localPosition.x, orig.transform.localPosition.y - 56 * 5, orig.transform.localPosition.z);
-
-                    // Increment through all of the base bars.
-                    for (i = 0; i < 6; i++)
-                    {
-                        // Grab the base bar
-                        g3 = GameObject.Find("magUI(Clone)/magstatus/magstatus_base0" + (i + 1));
-
-                        // If it doesn't exist, continue;
-                        if (g3 == null)
-                        { continue; }
-
-                        // Grab position and scale.
-                        Vector3 newScale = g3.transform.localScale;
-                        Vector3 newPos = g3.transform.localPosition;
-
-                        // Multiply position and scale.
-                        newPos.x *= 1;
-                        newPos.y *= 0.825f;
-                        newPos.x *= 1;
-                        newScale.x *= 0.825f;
-                        newScale.y *= 0.825f;
-                        newScale.z *= 1;
-
-                        // Set new position and scale.
-                        g3.transform.localScale = newScale;
-                        g3.transform.localPosition = newPos;
-                    }
-                }
-
-                // If there's no 6th item.
-                if (!GameObject.Find("magUI(Clone)/magstatus/magstatus_item06"))
-                {
-                    // Grab the first one.
-                    GameObject orig = GameObject.Find("magUI(Clone)/magstatus/magstatus_item01");
-
-                    // Copy it.
-                    g2 = GameObject.Instantiate(orig);
-
-                    // MAKE SURE it stays put.
-                    GameObject.DontDestroyOnLoad(g2.gameObject);
-
-                    // Rename it.
-                    g2.name = "magstatus_item06";
-
-                    // Set parent.
-                    g2.transform.parent = g.transform;
-
-                    // Set position and scale.
-                    g2.transform.position = orig.transform.position;
-                    g2.transform.localScale = orig.transform.localScale;
-
-                    // Make sure it's in the right spot before scaling.
-                    g2.transform.localPosition = new(orig.transform.localPosition.x, orig.transform.localPosition.y - 56 * 5, orig.transform.localPosition.z);
-
-                    // Iterate through each item.
-                    for (i = 0; i < 6; i++)
-                    {
-                        // Grab item.
-                        g3 = GameObject.Find("magUI(Clone)/magstatus/magstatus_item0" + (i + 1));
-
-                        // If null, continue.
-                        if (g3 == null)
-                        { continue; }
-
-                        // Grab position and scale.
-                        Vector3 newScale = g3.transform.localScale;
-                        Vector3 newPos = g3.transform.localPosition;
-
-                        // Multiply them.
-                        newPos.x *= 1;
-                        newPos.y *= 0.825f;
-                        newPos.x *= 1;
-                        newScale.x *= 0.825f;
-                        newScale.y *= 0.825f;
-                        newScale.z *= 1;
-
-                        // Set them to new values.
-                        g3.transform.localScale = newScale;
-                        g3.transform.localPosition = newPos;
-                    }
-                }
-
-                // Draw some various things to the screen.
-                fclDraw.fclDrawParts(0, 0x28 + i * 0xd0, 0, new(4), 0xb, 0, cmpInitDH.GBWK.TexHandle, etcSprTbl.cmpSprTblArry, 0x47);
-                fclDraw.fclDrawParts(0, 0x28 + i * 0xd0, 0, new(4), 0xb, 1, cmpInitDH.GBWK.TexHandle, etcSprTbl.cmpSprTblArry, 0x47);
-
-                // Grab a color.
-                uint color = fclMisc.fclGetBlendColor(0x80808080, 0x40404080, (uint)pHeartsInfo.Timer);
-
-                // Set a list to that color.
-                uint[] colorptr = { color, color, color, color };
-
-                // Check if you have this particular Magatama.
-                sbyte hasHeart = cmpInitDH.cmpChkHaveHearts(HeartsID);
-
-                // Iterate until i is 6.
-                i = 0;
-                do
-                {
-                    // Unknown value.
-                    int unk = 0;
-
-                    // If i goes over the list of Stat Names, break.
-                    if (paramNames.Length < i)
-                    { break; }
-
-                    // Grab Magatama Status Item object.
-                    g = GameObject.Find("magUI(Clone)/magstatus/magstatus_item0" + (i + 1));
-
-                    // If null, increment and continue.
-                    if (g == null)
-                    { i++; continue; }
-
-                    // Set up the previous object.
-                    cmpUpdate.cmpSetupObject(g, hasHeart == 1 ? true : false);
-
-                    // Grab the text object from the previous object.
-                    g2 = GameObject.Find("magUI(Clone)/magstatus/" + g.name + "/TextTM");
-
-                    // If null, increment and continue.
-                    if (g2 == null)
-                    { i++; continue; }
-
-                    // Set the text object's text.
-                    g2.GetComponentInChildren<TMP_Text>().SetText(Localize.GetLocalizeText(cmpMisc.cmpGetParamName((sbyte)i)));
-
-                    // Draw more parts to the screen.
-                    fclDraw.fclDrawParts(0, 0x28 + i * 0xd0, 0, colorptr, 0xb, 3, cmpInitDH.GBWK.TexHandle, etcSprTbl.cmpSprTblArry, 0x47);
-                    fclDraw.fclDrawParts(0, 0x28 + i * 0xd0, 0, colorptr, 0xb, (ushort)(i + 4), cmpInitDH.GBWK.TexHandle, etcSprTbl.cmpSprTblArry, 0x47);
-
-                    // Set up the text object.
-                    cmpUpdate.cmpSetupObject(g2, true);
-
-                    // Grab the numerical text object.
-                    g2 = GameObject.Find("magUI(Clone)/magstatus/" + g.name + "/magtex");
-
-                    // If null, increment and continue.
-                    if (g2 == null)
-                    { i++; continue; }
-
-                    // Grab the Magatama Stat with ID i.
-                    int heartParam = hasHeart == 1 ? rstCalcCore.cmbGetHeartsParam(HeartsID, (sbyte)i) : 0;
-
-                    // If it's 0, set the unknown value to 11.
-                    if (heartParam == 0)
-                    { unk = 0xb; }
-
-                    // Otherwise set it to 9.
-                    // If you somehow get the Stat to be negative, set it to 10 instead.
-                    else
-                    {
-                        unk = 9;
-                        if (heartParam < 1)
-                        { unk = 10; }
-                    }
-
-                    // More draw calls.
-                    fclDraw.fclDrawParts(0, 0x28 + i * 0xd0, 0, colorptr, 0xb, (ushort)unk, cmpInitDH.GBWK.TexHandle, etcSprTbl.cmpSprTblArry, 0x47);
-
-                    // Set up the numerical text object.
-                    cmpUpdate.cmpSetupObject(g2, true);
-
-                    // Grab the number object
-                    g2 = GameObject.Find("magUI(Clone)/magstatus/" + g.name + "/magtex/num_mag");
-
-                    // If the object's Counter is null, return.
-                    if (g2.GetComponent<CounterCtr>() == null)
-                    { i++; continue; }
-
-                    // Generate a color and set the Counter's value and color.
-                    Color rgb = cmpInit.GetToRGBA(hasHeart != 0 ? heartParam > 0 ? 0xFFFFFFFF : heartParam < 0 ? 0xFF8080FF : 0x80808080 : 0x80808080);
-                    g2.GetComponent<CounterCtr>().Set(heartParam, rgb);
-
-                    // Set up the number object.
-                    cmpUpdate.cmpSetupObject(g2, hasHeart == 1 ? true : false);
-                    i++;
-                }
-                while (i < 6);
-
-                // Draw the Magatama Help panel
-                cmpDrawDH.cmpDrawHeartsHelpPanel(pHeartsInfo.Timer);
-
-                // If the Magatama object is visible, draw its name.
-                if (hasHeart == 1)
-                { cmpDrawDH.cmpDrawHeartsName(0, 0, 0, pHeartsInfo.Timer, (sbyte)(HeartsID)); }
-                else
-                { cmpDrawDH.cmpDrawHeartsName(0, 0, 0, pHeartsInfo.Timer, -1); }
-
-                // Grab the Magamama Menu object.
-                g = cmpInitDH.DHeartsObj;
-
-                // Set it up and draw a gradient of some sort.
-                cmpUpdate.cmpSetupObject(g, true);
-                cmpDrawDH.cmpDrawDisactiveGrad(pHeartsInfo.Timer);
-                return false;
-            }
-        }
-
-        [HarmonyPatch(typeof(fclRecoverDraw), nameof(fclRecoverDraw.rcvDrawStockWindowList))]
-        private class PatchRecoverReviveDraw
-        {
-            private static bool Prefix(GameObject obj, uint Col, sbyte localstockidx, bool curidx)
-            {
-                // String List of GameObject Names.
-                string[] objList = { "_current", "_full" };
-
-                // Grab the parent object of the entire Recovery menu.
-                GameObject g = GameObject.Find("recovUI/rcvlist");
-                GameObject g2;
-                GameObject g3;
-                GameObject g4;
-
-                // If the Recovery UI doesn't exist.
-                if (g == null)
-                { return true; }
-
-                // If the Recovery UI isn't active.
-                if (!g.activeSelf)
-                { return true; }
-
-                // Iterate between all 9 visible rows in the Recover List.
-                for (int i = 0; i < 9; i++)
-                {
-                    // Grab the Row.
-                    g2 = GameObject.Find("recovUI/rcvlist/rcv_row/rcv_row0" + (i + 1));
-
-                    if (g2 == null)
-                    { return true; }
-
-                    if (!g2.activeSelf)
-                    { return true; }
-
-                    // This is gonna be a bit jank, basically gotta iterate through a couple of partial object names.
-                    for (int j = 0; j < objList.Length; j++)
-                    {
-                        // Grab one of the HP Bar GameObjects.
-                        g3 = GameObject.Find("recovUI/rcvlist/rcv_row/rcv_row0" + (i + 1) + "/rcvhpbar/rcvhpnum" + objList[j]);
-
-                        // If there's less than 4 Digits, add another one.
-                        if (g3.GetComponent<CounterCtr>().image.Length < 4)
-                        {
-                            // Create a duplicate of the first number in the list.
-                            g4 = GameObject.Instantiate(g3.GetComponent<CounterCtr>().image[0].gameObject);
-                            GameObject.DontDestroyOnLoad(g4);
-
-                            // Rename it.
-                            g4.name = "num_hp04";
-
-                            // Parent it.
-                            g4.transform.parent = g3.transform;
-
-                            // Set up original local Position and Scale.
-                            g4.transform.localPosition.Set(g3.transform.localPosition.x - 30, g3.transform.localPosition.y, g3.transform.localPosition.z);
-                            g4.transform.localScale = g3.GetComponent<CounterCtr>().image[0].transform.localScale;
-
-                            // Add it to the CounterCtr's image list.
-                            g3.GetComponent<CounterCtr>().image = g3.GetComponent<CounterCtr>().image.Append<Image>(g4.GetComponent<Image>()).ToArray<Image>();
-
-                            // Iterate through the objects and reposition/rescale them.
-                            for (int k = 0; k < g3.GetComponent<CounterCtr>().image.Length; k++)
-                            {
-                                // Grab the game object.
-                                g4 = g3.GetComponent<CounterCtr>().image[k].gameObject;
-
-                                // Grab position and scale.
-                                Vector3 newPos = g4.transform.localPosition;
-                                Vector3 newScale = g4.transform.localScale;
-
-                                // Change position and scale.
-                                newPos.x += 15;
-                                newPos.x *= 0.825f;
-                                newPos.y *= 0.825f;
-                                newPos.z *= 1;
-                                newScale.x *= 0.825f;
-                                newScale.y *= 0.825f;
-                                newScale.z *= 1;
-
-                                g4.transform.localPosition = newPos;
-                                g4.transform.localScale = newScale;
-                            }
-                        }
-                    }
-
-                    // This is gonna be a bit jank, basically gotta iterate through a couple of partial object names.
-                    for (int j = 0; j < objList.Length; j++)
-                    {
-                        // Grab one of the HP Bar GameObjects.
-                        g3 = GameObject.Find("recovUI/rcvlist/rcv_row/rcv_row0" + (i + 1) + "/rcvmpbar/rcvmpnum" + objList[j]);
-
-                        // If there's less than 4 Digits, add another one.
-                        if (g3.GetComponent<CounterCtr>().image.Length < 4)
-                        {
-                            // Create a duplicate of the first number in the list.
-                            g4 = GameObject.Instantiate(g3.GetComponent<CounterCtr>().image[0].gameObject);
-                            GameObject.DontDestroyOnLoad(g4);
-
-                            // Rename it.
-                            g4.name = "num_mp04";
-
-                            // Parent it.
-                            g4.transform.parent = g3.transform;
-
-                            // Set up original local Position and Scale.
-                            g4.transform.localPosition.Set(g3.transform.localPosition.x - 30, g3.transform.localPosition.y, g3.transform.localPosition.z);
-                            g4.transform.localScale = g3.GetComponent<CounterCtr>().image[0].transform.localScale;
-
-                            // Add it to the CounterCtr's image list.
-                            g3.GetComponent<CounterCtr>().image = g3.GetComponent<CounterCtr>().image.Append<Image>(g4.GetComponent<Image>()).ToArray<Image>();
-
-                            // Iterate through the objects and reposition/rescale them.
-                            for (int k = 0; k < g3.GetComponent<CounterCtr>().image.Length; k++)
-                            {
-                                // Grab the game object.
-                                g4 = g3.GetComponent<CounterCtr>().image[k].gameObject;
-
-                                // Grab position and scale.
-                                Vector3 newPos = g4.transform.localPosition;
-                                Vector3 newScale = g4.transform.localScale;
-
-                                // Change position and scale.
-                                newPos.x += 15;
-                                newPos.x *= 0.825f;
-                                newPos.y *= 0.825f;
-                                newPos.z *= 1;
-                                newScale.x *= 0.825f;
-                                newScale.y *= 0.825f;
-                                newScale.z *= 1;
-
-                                g4.transform.localPosition = newPos;
-                                g4.transform.localScale = newScale;
-                            }
-                        }
-                    }
-                }
-
-                return true;
-            }
-        }
-
         [HarmonyPatch(typeof(cmpDrawStatus), nameof(cmpDrawStatus.cmpDrawParamGauge))]
         private class PatchDrawParamGauge
         {
             // This should NEVER get called, but if it ever does this is here as a back up.
-            //private static bool Prefix(int X, int Y, uint[] pBaseCol, int StepY, sbyte Pos, sbyte ParamOfs, sbyte FlashMode, datUnitWork_t pStock, GameObject stsObj)
-            //{
-            //    // If no demon or status object, return.
-            //    if (pStock == null || stsObj == null)
-            //    { return false; }
-            //    // Rework the Stat Bar.
-            //    ReworkParamGauge(pBaseCol, StepY, Pos, ParamOfs, FlashMode, pStock, stsObj);
-            //    return false;
-            //}
-            //private static void Postfix(int X, int Y, uint[] pBaseCol, int StepY, sbyte Pos, sbyte ParamOfs, sbyte FlashMode, datUnitWork_t pStock, GameObject stsObj)
-            //{
-            //    // If no demon or status object, return.
-            //    if (pStock == null || stsObj == null)
-            //    { return; }
-            //    // Rework the Stat Bar.
-            //    ReworkParamGauge(pBaseCol, StepY, Pos, ParamOfs, FlashMode, pStock, stsObj);
-            //    return;
-            //}
+            private static bool Prefix(int X, int Y, uint[] pBaseCol, int StepY, sbyte Pos, sbyte ParamOfs, sbyte FlashMode, datUnitWork_t pStock, GameObject stsObj)
+            {
+                // If no demon or status object, return.
+                if (pStock == null || stsObj == null)
+                { return false; }
+                // Rework the Stat Bar.
+                ReworkParamGauge(pBaseCol, StepY, Pos, ParamOfs, FlashMode, pStock, stsObj);
+                return false;
+            }
 
             public static void ReworkParamGauge(uint[] pBaseCol, int StepY, sbyte Pos, sbyte ParamOfs, sbyte FlashMode, datUnitWork_t pStock, GameObject stsObj)
             {
@@ -2086,6 +2111,9 @@ namespace NocturneInsaniax
                 else
                 {
                     heartValue = rstCalcCore.cmbGetHeartsParam((sbyte)dds3GlobalWork.DDS3_GBWK.heartsequip, ParamOfs);
+                    //MelonLogger.Msg("ParamOfs: " + ParamOfs);
+                    //MelonLogger.Msg("paramValue: " + paramValue);
+                    //MelonLogger.Msg("heartValue: " + heartValue);
                     paramValue -= heartValue;
                 }
 

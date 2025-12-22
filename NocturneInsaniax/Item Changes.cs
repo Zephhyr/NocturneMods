@@ -109,8 +109,8 @@ namespace NocturneInsaniax
                     case 41: __result = "Raises Vitality by 2 \nand full HP recovery \nfor one ally."; return false; // Vitality Incense
                     case 42: __result = "Raises Agility by 2 \nand full HP recovery \nfor one ally."; return false; // Agility Incense
                     case 43: __result = "Raises Luck by 2 \nand full HP recovery \nfor one ally."; return false; // Luck Incense
-                    case 44: __result = "Great HP recovery for one ally. \nReusable."; return false; // Graven Image
-                    case 47: __result = "Displays an enemy's info."; return false; // Spyglass
+                    case 44: __result = "Great HP recovery for one ally \nat 1/2 turn cost \nReusable."; return false; // Graven Image
+                    case 47: __result = "Displays an enemy's info \nat 1/2 turn cost."; return false; // Spyglass
                     case 48: __result = "Medium Fire damage to one foe. \nPow: 45, Acc: 100%"; return false; // Agilao Rock
                     case 49: __result = "Medium Ice damage to one foe. \nPow: 39, Acc: 100%, Freeze: 25%"; return false; // Bufula Rock
                     case 50: __result = "Medium Elec damage to one foe. \nPow: 39, Acc: 100%, Shock: 25%"; return false; // Zionga Rock
@@ -121,29 +121,29 @@ namespace NocturneInsaniax
                     case 62: __result = "Grants " + frName.frGetCNameString(0) + " enough \nEXP to level up but reduces \nlevel by one."; return false; // Cursed Gospel
                     case 63: __result = "Grants four flashing turn icons. \n(Limit: 1)"; return false; // Impel Stone
                     case 64: __result = "Neutral Magatama \nImparts basic skills \nNormal resistance"; return false; // Marogareh
-                    case 65: __result = "Ice-type Magatama \nImparts Ice magic and potential \n<material=\"MsgFont2\">Null: Ice<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Elec"; return false; // Wadatsumi
-                    case 66: __result = "Healing-type Magatama \nImparts Healing magic and potential \n<material=\"MsgFont2\">Null: Light<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Dark"; return false; // Ankh
-                    case 67: __result = "Support-type Magatama \nImparts Support magic and potential \n<material=\"MsgFont2\">Null: Mind"; return false; // Iyomante
-                    case 68: __result = "Fire-type Magatama \nImparts Fire magic and potential \n<material=\"MsgFont2\">Null: Fire<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Force"; return false; // Shiranui
-                    case 69: __result = "Force-type Magatama \nImparts Force magic and potential \n<material=\"MsgFont2\">Null: Force<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire"; return false; // Hifumi
-                    case 70: __result = "Physical-type Magatama \nImparts Physical skills and potential \n<material=\"MsgFont2\">Strong: Phys/Shot<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ailments"; return false; // Kamurogi
-                    case 71: __result = "Electricity-type Magatama \nImparts Electricity magic and potential \n<material=\"MsgFont2\">Null: Elec<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ice"; return false; // Kamudo
-                    case 72: __result = "Dark-type Magatama \nImparts Dark magic and potential \n<material=\"MsgFont2\">Null: Dark<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Light"; return false; // Anathema
-                    case 73: __result = "Ailment-type Magatama \nImparts Ailment magic and potential \n<material=\"MsgFont2\">Strong: Ailments<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Shot"; return false; // Miasma
-                    case 74: __result = "Light-type Magatama \nImparts Light magic and potential \n<material=\"MsgFont2\">Null: Light<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Dark"; return false; // Nirvana
-                    case 75: __result = "Shot-type Magatama \nImparts Shot skills and potential \n<material=\"MsgFont2\">Strong: Phys/Shot<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire/Ice"; return false; // Vimana
-                    case 76: __result = "Ice-type Magatama \nImparts Ice magic and potential \n<material=\"MsgFont2\">Drain: Ice<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire"; return false; // Geis
-                    case 77: __result = "Support-type Magatama \nImparts Support magic and potential \n<material=\"MsgFont2\">Null: Curse"; return false; // Djed
-                    case 78: __result = "Fire-type Magatama \nImparts Fire magic and potential \n<material=\"MsgFont2\">Drain: Fire<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ice"; return false; // Muspell
-                    case 79: __result = "Almighty-type Magatama \nImparts Almighty magic and potential \n<material=\"MsgFont2\">Null: Dark"; return false; // Satan
-                    case 80: __result = "Ailment-type Magatama. \nImparts Ailment magic and potential \n<material=\"MsgFont2\">Null: Ailments<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Light/Dark"; return false; // Adama
-                    case 81: __result = "Dark-type Magatama. \nImparts Dark magic and potential \n<material=\"MsgFont2\">Repel: Dark"; return false; // Gehenna
-                    case 82: __result = "Healing-type Magatama. \nImparts Healing magic and potential \n<material=\"MsgFont2\">Null: Nerve"; return false; // Sophia
-                    case 83: __result = "Force-type Magatama. \nImparts Force magic and potential \n<material=\"MsgFont2\">Repel: Force<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Elec"; return false; // Murakumo
-                    case 84: __result = "Light-type Magatama. \nImparts Light magic and potential \n<material=\"MsgFont2\">Repel: Light"; return false; // Gundari
-                    case 85: __result = "Elec-type Magatama. \nImparts Electricity magic and potential \n<material=\"MsgFont2\">Repel: Elec<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Force"; return false; // Narukami
-                    case 86: __result = "Physical/Shot-type Magatama. \nImparts Physical/Shot skills and potential \n<material=\"MsgFont2\">Strong: Phys/Shot<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Elec/Force"; return false; // Gaea
-                    case 87: __result = "Almighty-type Magatama. \nImparts Almighty magic and potential \n<material=\"MsgFont2\">Strong: Light/Dark"; return false; // Kailash
+                    case 65: __result = "Ice-type Magatama \nImparts Ice magic & potential \n<material=\"MsgFont2\">Null: Ice<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Elec"; return false; // Wadatsumi
+                    case 66: __result = "Healing-type Magatama \nImparts Healing magic & potential \n<material=\"MsgFont2\">Null: Light<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Dark"; return false; // Ankh
+                    case 67: __result = "Support-type Magatama \nImparts Support magic & potential \n<material=\"MsgFont2\">Null: Mind"; return false; // Iyomante
+                    case 68: __result = "Fire-type Magatama \nImparts Fire magic & potential \n<material=\"MsgFont2\">Null: Fire<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Force"; return false; // Shiranui
+                    case 69: __result = "Force-type Magatama \nImparts Force magic & potential \n<material=\"MsgFont2\">Null: Force<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire"; return false; // Hifumi
+                    case 70: __result = "Physical-type Magatama \nImparts Physical skills & potential \n<material=\"MsgFont2\">Strong: Phys/Shot<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ailments"; return false; // Kamurogi
+                    case 71: __result = "Elec-type Magatama \nImparts Electricity magic & potential \n<material=\"MsgFont2\">Null: Elec<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ice"; return false; // Kamudo
+                    case 72: __result = "Dark-type Magatama \nImparts Dark magic & potential \n<material=\"MsgFont2\">Null: Dark<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Light"; return false; // Anathema
+                    case 73: __result = "Ailment-type Magatama \nImparts Ailment magic & potential \n<material=\"MsgFont2\">Strong: Ailments<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Shot"; return false; // Miasma
+                    case 74: __result = "Light-type Magatama \nImparts Light magic & potential \n<material=\"MsgFont2\">Null: Light<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Dark"; return false; // Nirvana
+                    case 75: __result = "Shot-type Magatama \nImparts Shot skills & potential \n<material=\"MsgFont2\">Strong: Phys/Shot<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire/Ice"; return false; // Vimana
+                    case 76: __result = "Ice-type Magatama \nImparts Ice magic & potential \n<material=\"MsgFont2\">Drain: Ice<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire"; return false; // Geis
+                    case 77: __result = "Support-type Magatama \nImparts Support magic & potential \n<material=\"MsgFont2\">Null: Curse"; return false; // Djed
+                    case 78: __result = "Fire-type Magatama \nImparts Fire magic & potential \n<material=\"MsgFont2\">Drain: Fire<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ice"; return false; // Muspell
+                    case 79: __result = "Almighty-type Magatama \nImparts Almighty magic & potential \n<material=\"MsgFont2\">Null: Dark"; return false; // Satan
+                    case 80: __result = "Ailment-type Magatama. \nImparts Ailment magic & potential \n<material=\"MsgFont2\">Null: Ailments<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Light/Dark"; return false; // Adama
+                    case 81: __result = "Dark-type Magatama. \nImparts Dark magic & potential \n<material=\"MsgFont2\">Repel: Dark"; return false; // Gehenna
+                    case 82: __result = "Healing-type Magatama. \nImparts Healing magic & potential \n<material=\"MsgFont2\">Null: Nerve"; return false; // Sophia
+                    case 83: __result = "Force-type Magatama. \nImparts Force magic & potential \n<material=\"MsgFont2\">Repel: Force<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Elec"; return false; // Murakumo
+                    case 84: __result = "Light-type Magatama. \nImparts Light magic & potential \n<material=\"MsgFont2\">Repel: Light"; return false; // Gundari
+                    case 85: __result = "Elec-type Magatama. \nImparts Electricity magic & potential \n<material=\"MsgFont2\">Repel: Elec<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Force"; return false; // Narukami
+                    case 86: __result = "Physical/Shot-type Magatama. \nImparts Phys/Shot skills & potential \n<material=\"MsgFont2\">Strong: Phys/Shot<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Elec/Force"; return false; // Gaea
+                    case 87: __result = "Almighty-type Magatama. \nImparts Almighty magic & potential \n<material=\"MsgFont2\">Strong: Light/Dark"; return false; // Kailash
                     case 88: __result = "Magatama that holds ultimate power \n<material=\"MsgFont2\">Strong: All except Almighty"; return false; // Masakados
                     case 107: __result = "A beautiful gemstone \nthat symbolizes \nearth."; return false; // Malachite
                     default: return true;
@@ -1330,6 +1330,10 @@ namespace NocturneInsaniax
             //fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemNum = 0;
             //fldGlobal.fldHitData._fldItemBoxTbl[351]._Trap = 1;
             //fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 1278;
+
+            // Unknown Realm Box Testing
+            fldGlobal.fldHitData._fldItemBoxTbl[320]._ItemID = 21;
+            fldGlobal.fldHitData._fldItemBoxTbl[320]._ItemNum = 50;
 
             //fldGlobal.fldHitData._fldItemBoxTbl.Add(new fldTakaraTbl_t { _ItemID = 47, _ItemNum = 5 });
         }
