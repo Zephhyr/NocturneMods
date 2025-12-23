@@ -1139,8 +1139,8 @@ namespace NocturneInsaniax
             // Medusa Eye Item Box in Underpass Manikin Hideout
             fldGlobal.fldHitData._fldItemBoxTbl[40]._ItemID = 32;
 
-            // Dekaja Rock Item Box in Underpass before Matador
-            fldGlobal.fldHitData._fldItemBoxTbl[42]._ItemID = 36;
+            // Dekunda Rock Item Box in Underpass before Matador
+            fldGlobal.fldHitData._fldItemBoxTbl[42]._ItemID = 33;
             fldGlobal.fldHitData._fldItemBoxTbl[42]._ItemNum = 1;
 
             // Chakra Pot Item Box in Ikebukuro Tunnel
@@ -1162,6 +1162,11 @@ namespace NocturneInsaniax
             // New Item Box outside Ikebukuro
             fldGlobal.fldHitData._fldItemBoxTbl[336]._ItemID = 59;
             fldGlobal.fldHitData._fldItemBoxTbl[336]._ItemNum = 2;
+
+            // Kailash Magatama Box behind Mitra
+            fldGlobal.fldHitData._fldItemBoxTbl[338]._Type = 1;
+            fldGlobal.fldHitData._fldItemBoxTbl[338]._ItemID = 39;
+            fldGlobal.fldHitData._fldItemBoxTbl[338]._ItemNum = 1;
 
             // Item Box surrounded by damage-floor near Ikebukuro
             fldGlobal.fldHitData._fldItemBoxTbl[236]._ItemNum = 10;
@@ -1330,10 +1335,6 @@ namespace NocturneInsaniax
             //fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemNum = 0;
             //fldGlobal.fldHitData._fldItemBoxTbl[351]._Trap = 1;
             //fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 1278;
-
-            // Unknown Realm Box Testing
-            fldGlobal.fldHitData._fldItemBoxTbl[320]._ItemID = 21;
-            fldGlobal.fldHitData._fldItemBoxTbl[320]._ItemNum = 50;
 
             //fldGlobal.fldHitData._fldItemBoxTbl.Add(new fldTakaraTbl_t { _ItemID = 47, _ItemNum = 5 });
         }

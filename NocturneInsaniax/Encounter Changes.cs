@@ -98,6 +98,9 @@ namespace NocturneInsaniax
             {
                 MelonLogger.Msg("-nbMainProcess.nbInitMainProcess-");
                 MelonLogger.Msg("encpackno: " + encpackno);
+                MelonLogger.Msg("packno: " + packno);
+                MelonLogger.Msg("packindex: " + packindex);
+                MelonLogger.Msg("encno: " + encno);
                 MelonLogger.Msg("bgmno: " + nbSound.bgmno);
 
                 //if (dds3GlobalWork.DDS3_GBWK.hearts.Contains(9) || dds3ConfigMain.cfgGetBit(9u) == 0)
@@ -1478,17 +1481,17 @@ namespace NocturneInsaniax
             datEncount.tbl[64].devil[3] = 68;
 
             // Great Underpass of Ginza Encounters
-            datEncount.tbl[82].devil[0] = 68;
-            datEncount.tbl[82].devil[1] = 68;
+            datEncount.tbl[82].devil[0] = 50;
+            datEncount.tbl[82].devil[1] = 50;
 
-            datEncount.tbl[78].devil[0] = 68;
-            datEncount.tbl[78].devil[1] = 68;
-            datEncount.tbl[78].devil[2] = 68;
+            datEncount.tbl[78].devil[0] = 50;
+            datEncount.tbl[78].devil[1] = 50;
+            datEncount.tbl[78].devil[2] = 50;
 
-            datEncount.tbl[79].devil[0] = 68;
-            datEncount.tbl[79].devil[1] = 68;
-            datEncount.tbl[79].devil[2] = 68;
-            datEncount.tbl[79].devil[3] = 68;
+            datEncount.tbl[79].devil[0] = 50;
+            datEncount.tbl[79].devil[1] = 50;
+            datEncount.tbl[79].devil[2] = 50;
+            datEncount.tbl[79].devil[3] = 50;
 
             // Ikebukuro 1 Encounters
             datEncount.tbl[15].devil[0] = 125;
@@ -1520,6 +1523,8 @@ namespace NocturneInsaniax
             datEncount.tbl[1269].flag = 13; // Forced Kodama + Will o' Wisp in Unknown Realm
             datEncount.tbl[1269].devil[1] = 318;
             datEncount.tbl[14].flag = 11; // Boss Forneus
+
+            datEncount.tbl[971].devil[0] = 136; // Optional Forced Mou-Ryo
 
             datEncount.tbl[266].maxparty = 7; // Boss Specter 1 (2)
             datEncount.tbl[266].devil[2] = 0;

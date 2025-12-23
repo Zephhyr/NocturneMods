@@ -40,23 +40,38 @@ namespace NocturneInsaniax
         // Menu manipulation variables
         private static bool SettingAsignParam;
 
-        [HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstCheckHeartsEvent))]
-        private class PatchCheckHeartsEvent
-        {
-            private static bool Prefix(ref sbyte __result)
-            {
-                __result = 1;
-                return false;
-            }
-        }
+        //[HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstCheckHeartsEvent))]
+        //private class PatchCheckHeartsEvent
+        //{
+        //    private static bool Prefix(ref sbyte __result)
+        //    {
+        //        __result = 1;
+        //        return false;
+        //    }
+        //}
 
-        [HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstCalcHeartsEvent))]
-        private class PatchCalcHeartsEvent
+        //[HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstCalcHeartsEvent))]
+        //private class PatchCalcHeartsEvent
+        //{
+        //    private static bool Prefix(ref sbyte __result)
+        //    {
+        //        __result = 0;
+        //        return false;
+        //    }
+        //}
+
+        [HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstSetMaxHpMp))]
+        private class PatchSetMaxHpMp
         {
-            private static bool Prefix(ref sbyte __result)
+            private static void Postfix(sbyte Mode, ref datUnitWork_t pStock)
             {
-                __result = 0;
-                return false;
+                // Set the target's Max HP and MP
+                pStock.maxhp = (ushort)datCalc.datGetMaxHp(pStock);
+                pStock.maxmp = (ushort)datCalc.datGetMaxMp(pStock);
+
+                // Make sure both HP/MP don't overshoot.
+                pStock.hp = pStock.hp > pStock.maxhp ? pStock.maxhp : pStock.hp;
+                pStock.mp = pStock.mp > pStock.maxmp ? pStock.maxmp : pStock.mp;
             }
         }
 
@@ -202,7 +217,8 @@ namespace NocturneInsaniax
             private static bool Prefix(ref int __result, datUnitWork_t work, int paratype)
             {
                 // Just returns the parameter of the given type.
-                __result = work.param[paratype] + work.levelupparam[paratype];
+                int heartParam = rstCalcCore.cmbGetHeartsParam((sbyte)dds3GlobalWork.DDS3_GBWK.heartsequip, (sbyte)paratype);
+                __result = work.param[paratype] - heartParam + work.levelupparam[paratype];
                 return false;
             }
         }
@@ -213,7 +229,8 @@ namespace NocturneInsaniax
             private static bool Prefix(out int __result, datUnitWork_t work, int paratype)
             {
                 // Returns the total value of the given parameter type.
-                __result = Math.Clamp(datCalc.datGetBaseParam(work, paratype) + work.mitamaparam[paratype] + work.skillparam[paratype], 0, MAXSTATS + work.mitamaparam[paratype] + work.skillparam[paratype]);
+                int heartParam = rstCalcCore.cmbGetHeartsParam((sbyte)dds3GlobalWork.DDS3_GBWK.heartsequip, (sbyte)paratype);
+                __result = Math.Clamp(datCalc.datGetBaseParam(work, paratype) + heartParam + work.mitamaparam[paratype] + work.skillparam[paratype], 0, MAXSTATS + work.mitamaparam[paratype] + work.skillparam[paratype]);
                 return false;
             }
         }
@@ -310,21 +327,6 @@ namespace NocturneInsaniax
                 // Grab and return.
                 __result = GetMaxMP(work);
                 return false;
-            }
-        }
-
-        [HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstSetMaxHpMp))]
-        private class PatchSetMaxHpMp
-        {
-            private static void Postfix(sbyte Mode, ref datUnitWork_t pStock)
-            {
-                // Set the target's Max HP and MP
-                pStock.maxhp = (ushort)datCalc.datGetMaxHp(pStock);
-                pStock.maxmp = (ushort)datCalc.datGetMaxMp(pStock);
-
-                // Make sure both HP/MP don't overshoot.
-                pStock.hp = pStock.hp > pStock.maxhp ? pStock.maxhp : pStock.hp;
-                pStock.mp = pStock.mp > pStock.maxmp ? pStock.maxmp : pStock.mp;
             }
         }
 
@@ -518,7 +520,7 @@ namespace NocturneInsaniax
                     // Copy the Demon into your Stock.
                     fclCombineCalcCore.cmbCopyDefaultDevilToStock((ushort)DemonID, pEvoDevil);
 
-                    // If the new demon is a higher level.
+                    // If the new demon is a lower level.
                     if (pStock.level > pEvoDevil.level)
                     {
                         // Recalculate the new demon's Experience.
@@ -541,7 +543,7 @@ namespace NocturneInsaniax
 
                             // Otherwise, break loop.
                             else
-                            { continue; }
+                            { break; }
 
                             // Increment.
                             i++;
@@ -879,6 +881,10 @@ namespace NocturneInsaniax
                 // Recalculate HP/MP
                 pStock.maxhp = (ushort)datCalc.datGetMaxHp(pStock);
                 pStock.maxmp = (ushort)datCalc.datGetMaxMp(pStock);
+
+                // Remove the stat cursor
+                GameObject stsObj = GameObject.Find("statusUI(Clone)/sstatus");
+                GameObject.Find(stsObj.name + "/sstatusbar_cursur").active = false;
 
                 // Return that you said yes.
                 return 1;
@@ -1606,10 +1612,6 @@ namespace NocturneInsaniax
                 if (ctr2 > pStock.param.Length || pBaseCol.Length == 0 || cmpStatus.statusObj == null)
                 { return; }
 
-                // If the Stat is capped, make sure it doesn't overshoot.
-                if (pStock.param[ctr2] >= MAXSTATS)
-                { pStock.param[ctr2] = MAXSTATS; }
-
                 // Grab the Status Menu object.
                 GameObject stsObj = GameObject.Find("statusUI(Clone)/sstatus");
 
@@ -1629,7 +1631,7 @@ namespace NocturneInsaniax
 
                 // If there's Counter objects in the Status Menu's children, set up their values and colors.
                 if (stsObj.GetComponentsInChildren<CounterCtr>() != null)
-                { stsObj.GetComponentsInChildren<CounterCtr>()[(ctr2 > 1 && !EnableIntStat) ? ctr2 - 1 : ctr2].Set(datCalc.datGetParam(pStock, ctr2), Color.white, (CursorMode == 2 && CursorPos > -1) ? 1 : 0); }
+                { stsObj.GetComponentsInChildren<CounterCtr>()[(ctr2 > 1 && !EnableIntStat) ? ctr2 - 1 : ctr2].Set(Math.Clamp(datCalc.datGetParam(pStock, ctr2), 0, MAXSTATS), Color.white, (CursorMode == 2 && CursorPos > -1) ? 1 : 0); }
 
                 // If your Cursor Position is over -1, set the FlashMode to 2.
                 // Not sure what this does.
@@ -1938,11 +1940,8 @@ namespace NocturneInsaniax
                     // Grab Stat ID.
                     int stat = (i > 0 && !EnableIntStat) ? i + 1 : i;
 
-                    // Set default LevelUp stat value equal to both your Level Up and Mitama Bonuses.
-                    int levelstat = LevelUpPoints[stat] + pStock.levelupparam[stat] + pStock.mitamaparam[stat];
-
                     // Set Stat value and color.
-                    g2.GetComponent<CounterCtr>().Set(pStock.param[stat] + levelstat, Color.white, 0);
+                    g2.GetComponent<CounterCtr>().Set(Math.Clamp(datCalc.datGetParam(pStock, stat), 0, MAXSTATS), Color.white, 0);
                 }
 
                 // If the Status Bar UI components don't exist, return.

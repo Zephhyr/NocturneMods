@@ -1126,6 +1126,8 @@ namespace NocturneInsaniax
                     __result = "Summon Fly";
                 else if (id == 252 && (currentDemonWork.id == 343))
                     __result = "Summon Flies";
+                else if (id == 425 && !EventBit.evtBitCheck(2241))
+                    __result = "？";
                 else if (id < 288 || id > 421) // If it isn't a passive skill
                 {
                     sbyte skillPotential = 0;
@@ -1154,7 +1156,7 @@ namespace NocturneInsaniax
                 {
                     tmp_datNormalSkill.cost = datNormalSkill.tbl[nskill].cost; // Memorize the original skill cost
 
-                    if (w.id == 299 && nskill != 27)
+                    if ((w.id == 299 && nskill != 27) || (w.id == 273 && nskill == 191))
                     {
                         datNormalSkill.tbl[nskill].cost = 0;
                         return;
@@ -1820,12 +1822,12 @@ namespace NocturneInsaniax
                     var nextSkillName = datSkillName.Get(tblHearts.fclHeartsTbl[id].Skill[consumedSkillsLength].ID);
                     if (nextSkillName.Contains("1") || nextSkillName.Contains("2") || nextSkillName.Contains("3") || nextSkillName.Contains("4") || nextSkillName.Contains("5") || nextSkillName.Contains("6") || nextSkillName.Contains("7") || nextSkillName.Contains("8") || nextSkillName.Contains("9"))
                         nextSkillName = nextSkillName.Remove(nextSkillName.LastIndexOf(" "));
-                    if (nextSkillName == "Impaler's Animus" && tblHearts.fclHeartsTbl[id].Skill[consumedSkillsLength].TargetLevel == 200)
+                    if (nextSkillName == "Impaler's Animus" && !EventBit.evtBitCheck(2241))
                         nextSkillName = "？";
                     __result += "  <material=\"MsgFont3\">Next Skill - " + nextSkillName;
                     
                     var nextSkillLevel = tblHearts.fclHeartsTbl[id].Skill[consumedSkillsLength].TargetLevel;
-                    if (nextSkillLevel > demiFiendWork.level && tblHearts.fclHeartsTbl[id].Skill[consumedSkillsLength].TargetLevel != 200)
+                    if (nextSkillLevel > demiFiendWork.level && nextSkillName != "Impaler's Animus" && nextSkillName != "？")
                         __result += " (Level " + nextSkillLevel + ")";
                 }
                 else if (tierOneElemMagatama.Contains((byte) id))
@@ -1890,7 +1892,7 @@ namespace NocturneInsaniax
                 sbyte skillAttribute = datSkill.tbl[skillID].skillattr; // Get the attribute of the skill
                 sbyte skillType = datSkill.tbl[skillID].type;
 
-                if (skillAttribute != -1 && skillType == 0 && !pushedSkillList.Contains((ushort) skillID)) // Filters a lot of unused skills
+                if (demonID <= 383 && skillAttribute != -1 && skillType == 0 && !pushedSkillList.Contains((ushort) skillID)) // Filters a lot of unused skills
                 {
                     /*byte skillBadType;
                     if (skillID < datNormalSkill.tbl.Length)

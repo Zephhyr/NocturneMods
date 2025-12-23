@@ -462,6 +462,21 @@ namespace NocturneInsaniax
             }
         }
 
+        [HarmonyPatch(typeof(fclCombineUpdate), nameof(fclCombineUpdate.cmbUpdateIntroduce))]
+        private class PatchUpdateIntroduce
+        {
+            private static void Postfix()
+            {
+                datUnitWork_t pDevil = fclCombineInit.CMB_GBWK.BirthDevil;
+                for (int i = 0; i < pDevil.levelupparam.Length; i++)
+                {
+                    pDevil.param[i] += pDevil.levelupparam[i];
+                    pDevil.levelupparam[i] = 0;
+                }
+                fclCombineInit.CMB_GBWK.BirthDevil = pDevil;
+            }
+        }
+
         [HarmonyPatch(typeof(fclCombineCalcCore), nameof(fclCombineCalcCore.cmbCalcParamPowerUp))]
         private class PatchMitamaPowerUp
         {

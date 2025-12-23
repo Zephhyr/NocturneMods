@@ -416,7 +416,7 @@ namespace NocturneInsaniax
             { 10, new InnateSkill(383, 15, "Contagious Curse", "Allies' Ailment Rate is \nincreased by 20%.")}, // 10 Miasma
             { 11, new InnateSkill(383, 06, "Light Gestalt", "Gain Light skill potential \nbased on the total positive potential \nof allies in the active party.")}, // 11 Nirvana
             { 12, new InnateSkill(383, 12, "Shot Gestalt", "Gain Shot skill potential \nbased on the total positive potential \nof allies in the active party.")}, // 12 Vimana
-            { 13, new InnateSkill(383, 02, "Storm Shatter", "Allied Elec and Force attacks \nwill Critically Strike against frozen \nenemies.")}, // 13 Geis
+            { 13, new InnateSkill(383, 02, "Storm Shatter", "Allied Elec and Force attacks \nwill Critically Strike and gain \nPierce against frozen enemies.")}, // 13 Geis
             { 14, new InnateSkill(383, 15, "Destabilize", "Element attacks may Critically Strike \nfor all allies and enemies.")}, // 14 Djed
             { 15, new InnateSkill(383, 01, "Malevolent Flames", "All allies' Fire attacks \nmay Critically Strike.")}, // 15 Muspell
             { 16, new InnateSkill(383, 05, "Forbidden Fruit", "Allies' Almighty attacks \nmay Critically Strike.")}, // 16 Satan
@@ -589,16 +589,7 @@ namespace NocturneInsaniax
                     // Don't do anything if there's no skill
                     //if (skillID == 0) break;
 
-                    if (skillID == 425 && pStock.id == 0)
-                    {
-                        // If you cannot get "Pierce"
-                        if (!EventBit.evtBitCheck(2241))
-                        {
-                            cmpStatus._statusUIScr.awaitText[i].text = "？"; // Displays a "？"
-                        }
-                        continue; //Skip "Pierce" on Demi-fiend
-                    }
-                    else if (skillID != 0)
+                    if (skillID != 0)
                     {
                         string name = datSkillName.Get(skillID, pStock.id);
 

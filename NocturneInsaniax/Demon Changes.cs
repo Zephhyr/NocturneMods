@@ -8970,24 +8970,24 @@ namespace NocturneInsaniax
             datDevilAI.divTbls[0][126].aitable[0][2].skill = 90;
             datDevilAI.divTbls[0][126].aitable[0][2].ritu = 30;
 
-            datDevilAI.divTbls[0][126].aitable[1][0].skill = 113;
+            datDevilAI.divTbls[0][126].aitable[1][0].skill = 90;
             datDevilAI.divTbls[0][126].aitable[1][0].ritu = 60;
             datDevilAI.divTbls[0][126].aitable[1][1].skill = 461;
             datDevilAI.divTbls[0][126].aitable[1][1].ritu = 20;
             datDevilAI.divTbls[0][126].aitable[1][2].skill = 32768;
             datDevilAI.divTbls[0][126].aitable[1][2].ritu = 10;
-            datDevilAI.divTbls[0][126].aitable[1][3].skill = 90;
+            datDevilAI.divTbls[0][126].aitable[1][3].skill = 19;
             datDevilAI.divTbls[0][126].aitable[1][3].ritu = 10;
 
             datDevilAI.divTbls[0][126].aitable[2][0].skill = 461;
             datDevilAI.divTbls[0][126].aitable[2][0].ritu = 30;
-            datDevilAI.divTbls[0][126].aitable[2][1].skill = 113;
+            datDevilAI.divTbls[0][126].aitable[2][1].skill = 90;
             datDevilAI.divTbls[0][126].aitable[2][1].ritu = 20;
             datDevilAI.divTbls[0][126].aitable[2][2].skill = 32768;
             datDevilAI.divTbls[0][126].aitable[2][2].ritu = 10;
             datDevilAI.divTbls[0][126].aitable[2][3].skill = 203;
             datDevilAI.divTbls[0][126].aitable[2][3].ritu = 20;
-            datDevilAI.divTbls[0][126].aitable[2][4].skill = 90;
+            datDevilAI.divTbls[0][126].aitable[2][4].skill = 19;
             datDevilAI.divTbls[0][126].aitable[2][4].ritu = 20;
         }
 
@@ -14707,10 +14707,10 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 26;
             datDevilFormat.tbl[id].level = 9;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 5;
+            datDevilFormat.tbl[id].param[0] = 4;
             datDevilFormat.tbl[id].param[1] = 12;
-            datDevilFormat.tbl[id].param[2] = 8;
-            datDevilFormat.tbl[id].param[3] = 8;
+            datDevilFormat.tbl[id].param[2] = 18;
+            datDevilFormat.tbl[id].param[3] = 4;
             datDevilFormat.tbl[id].param[4] = 3;
             datDevilFormat.tbl[id].param[5] = 3;
 
@@ -16597,8 +16597,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].param[1] = 25;
             datDevilFormat.tbl[id].param[2] = 40;
             datDevilFormat.tbl[id].param[3] = 40;
-            datDevilFormat.tbl[id].param[4] = 22;
-            datDevilFormat.tbl[id].param[5] = 22;
+            datDevilFormat.tbl[id].param[4] = 12;
+            datDevilFormat.tbl[id].param[5] = 12;
 
             datDevilFormat.tbl[id].dropexp = 200;
 
@@ -16730,16 +16730,16 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Enemy Stats
-            datDevilFormat.tbl[id].hp = 30;
-            datDevilFormat.tbl[id].maxhp = 30;
-            datDevilFormat.tbl[id].mp = 32;
-            datDevilFormat.tbl[id].maxmp = 32;
-            datDevilFormat.tbl[id].param[0] = 2;
-            datDevilFormat.tbl[id].param[1] = 2;
-            datDevilFormat.tbl[id].param[2] = 2;
-            datDevilFormat.tbl[id].param[3] = 2;
-            datDevilFormat.tbl[id].param[4] = 2;
-            datDevilFormat.tbl[id].param[5] = 2;
+            datDevilFormat.tbl[id].hp = 40;
+            datDevilFormat.tbl[id].maxhp = 40;
+            datDevilFormat.tbl[id].mp = 36;
+            datDevilFormat.tbl[id].maxmp = 36;
+            datDevilFormat.tbl[id].param[0] = 5;
+            datDevilFormat.tbl[id].param[1] = 5;
+            datDevilFormat.tbl[id].param[2] = 5;
+            datDevilFormat.tbl[id].param[3] = 5;
+            datDevilFormat.tbl[id].param[4] = 5;
+            datDevilFormat.tbl[id].param[5] = 5;
         }
 
         private static void BossBishamonten1(ushort id)
@@ -17419,16 +17419,16 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][8] = 100; // Curse
             datAisyo.tbl[id][9] = 100; // Nerve
             datAisyo.tbl[id][10] = 100; // Mind
-
             // Enemy Stats
+
             datDevilFormat.tbl[id].maxhp = 2000;
             datDevilFormat.tbl[id].hp = 2000;
-            datDevilFormat.tbl[id].param[0] = 16;
-            datDevilFormat.tbl[id].param[1] = 22;
-            datDevilFormat.tbl[id].param[2] = 26;
-            datDevilFormat.tbl[id].param[3] = 26;
-            datDevilFormat.tbl[id].param[4] = 45;
-            datDevilFormat.tbl[id].param[5] = 22;
+            datDevilFormat.tbl[id].param[0] = 15;
+            datDevilFormat.tbl[id].param[1] = 20;
+            datDevilFormat.tbl[id].param[2] = 24;
+            datDevilFormat.tbl[id].param[3] = 24;
+            datDevilFormat.tbl[id].param[4] = 36;
+            datDevilFormat.tbl[id].param[5] = 20;
             datDevilFormat.tbl[id].flag = 34;
 
             // Display Skill

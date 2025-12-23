@@ -303,6 +303,7 @@ namespace NocturneInsaniax
                 //var output = JsonConvert.SerializeObject(fld_Npc.gfldTakaraWork);
                 //MelonLogger.Msg(output);
 
+                fldGlobal.fldHitData._fldNpcUp[70]._model_id2 = 224; // Tam Lin in Shibuya
                 ApplyItemBoxChanges();
             }
         }
@@ -720,24 +721,13 @@ namespace NocturneInsaniax
             }
         }
 
-        [HarmonyPatch(typeof(EventBit), nameof(EventBit.evtBitCheck))]
-        private class evtBitCheckPatch
+        [HarmonyPatch(typeof(rstCalcCore), nameof(rstCalcCore.cmbChkGetHeartsSkill))]
+        private class cmbChkGetHeartsSkillPatch
         {
-            public static void Postfix(ref int no, ref bool __result)
+            public static void Postfix(ref byte HeartsID, ref datUnitWork_t pStock, ref ushort __result)
             {
-                //try
-                //{
-                //    //MelonLogger.Msg("--EventBit.evtBitCheck--");
-                //    // Checks the flag responsible for unlocking Pierce
-                //    if (no == 2241)
-                //    {
-                //        //if (!__result) __result = true; // Artificially makes it obtainable
-                //        //else tblHearts.fclHeartsTbl[1].Skill[6].TargetLevel = 15; // If unlocked normally, you can get it early
-                //        if (__result) tblHearts.fclHeartsTbl[1].Skill[6].TargetLevel = 15; // If unlocked normally, you can get it
-                //        else tblHearts.fclHeartsTbl[1].Skill[6].TargetLevel = 200; // Otherwise, you can't
-                //    }
-                //}
-                //catch { }
+                if (__result == 425 && !EventBit.evtBitCheck(2241))
+                    __result = 0;
             }
         }
 
@@ -1131,6 +1121,11 @@ namespace NocturneInsaniax
                 {
                     // -42.0961 14.5565 -33.3055
                     fld_Npc.fldItemBoxAdd(336, -4209.61f, -1455.65f, -3330.55f, new Vector4(0, 0, 0, 1)); // Add Item Box outside Ikebukuro
+                }
+                if (pFileName == "dds3data/fld/f/f023m/f023_004") // Ikebukuro
+                {
+                    // -30.703 0.1 42.8122
+                    fld_Npc.fldItemBoxAdd(338, -3070.3f, 0f, 4281.66f, new Vector4(0, 0, 0, 1)); // Add Item Box inside Ikebukuro
                 }
                 if (pFileName == "dds3data/fld/f/f020/f020_006") // Assembly of Nihilo Core
                 {

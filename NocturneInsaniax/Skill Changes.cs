@@ -6,6 +6,7 @@ using Il2Cppmodel_H;
 using Il2Cppnewbattle_H;
 using Il2Cppnewdata_H;
 using Il2Cppresult2_H;
+using Il2CppTMPro;
 using MelonLoader;
 using Newtonsoft.Json;
 using System.Linq;
@@ -618,6 +619,11 @@ namespace NocturneInsaniax
             public static void Postfix()
             {
                 actionProcessData = null;
+                try
+                {
+                    nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = new Color(0.294f, 0.294f, 0.980f, 1);
+                    nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = false;
+                } catch { }
             }
         }
 
@@ -841,9 +847,8 @@ namespace NocturneInsaniax
                     //var output = Newtonsoft.Json.JsonConvert.SerializeObject(mdlManager.mdlResrcMajorList);
                     //MelonLogger.Msg(output);
 
-                    //datCalc.datAddMaka(1000000);
+                    //datCalc.datAddMaka(10000000);
                     //datCalc.datAddItem(96, 70);
-                    //datCalc.datAddDevil(225, 0);
                     //datCalc.datAddDevil(23, 0);
                     //datCalc.datAddDevil(7, 0);
                     //datCalc.datAddDevil(104, 0);
@@ -855,12 +860,12 @@ namespace NocturneInsaniax
                     //}
                     foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 0)) // Demi-fiend
                     {
-                        work.param[0] = 98;
-                        work.param[1] = 98;
-                        work.param[2] = 98;
-                        work.param[3] = 98;
-                        work.param[4] = 98;
-                        work.param[5] = 98;
+                        //work.param[0] = 98;
+                        //work.param[1] = 98;
+                        //work.param[2] = 98;
+                        //work.param[3] = 98;
+                        //work.param[4] = 98;
+                        //work.param[5] = 98;
                         //work.skill[0] = 226;
                         //work.badstatus = 32768;
                         //work.level = 95;

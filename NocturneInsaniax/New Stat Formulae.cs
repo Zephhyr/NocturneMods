@@ -387,7 +387,7 @@ namespace NocturneInsaniax
                 var agi = datCalc.datGetParam(work, 4);
                 var luk = datCalc.datGetParam(work, 5);
 
-                double chance = 12 * (lvAvg + ((avgAgi + (avgLuk * 2)) * 0.4f) / (level + (agi + (luk * 2)) * 0.6f));
+                double chance = 12 * ((lvAvg + (avgAgi + (avgLuk * 2)) * 0.4f) / (level + (agi + (luk * 2)) * 0.4f));
                 var rand = dds3KernelCore.dds3GetRandIntA(128);
                 __result = rand > chance ? 0 : 1 + datEncount.Get(data.encno).backattack;
 
