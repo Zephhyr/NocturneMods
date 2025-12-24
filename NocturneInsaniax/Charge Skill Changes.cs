@@ -47,8 +47,8 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref nbActionProcessData_t a, ref int nskill, ref int sformindex, ref int dformindex, ref int sframe)
             {
-                //MelonLogger.Msg("--nbActionProcess.SetPlayerSummonPacket--");
-                //MelonLogger.Msg("a.aisummonid: " + a.aisummonid);
+                ////MelonLogger.Msg("--nbActionProcess.SetPlayerSummonPacket--");
+                ////MelonLogger.Msg("a.aisummonid: " + a.aisummonid);
                 if (a.aisummonid == 162) a.aisummonid = 163;
                 else if (a.aisummonid == 163) a.aisummonid = 164;
                 else if (a.aisummonid == 164) a.aisummonid = 165;

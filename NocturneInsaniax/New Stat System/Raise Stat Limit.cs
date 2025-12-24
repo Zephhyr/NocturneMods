@@ -2110,9 +2110,9 @@ namespace NocturneInsaniax
                 else
                 {
                     heartValue = rstCalcCore.cmbGetHeartsParam((sbyte)dds3GlobalWork.DDS3_GBWK.heartsequip, ParamOfs);
-                    //MelonLogger.Msg("ParamOfs: " + ParamOfs);
-                    //MelonLogger.Msg("paramValue: " + paramValue);
-                    //MelonLogger.Msg("heartValue: " + heartValue);
+                    ////MelonLogger.Msg("ParamOfs: " + ParamOfs);
+                    ////MelonLogger.Msg("paramValue: " + paramValue);
+                    ////MelonLogger.Msg("heartValue: " + heartValue);
                     paramValue -= heartValue;
                 }
 

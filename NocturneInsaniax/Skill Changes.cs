@@ -847,7 +847,7 @@ namespace NocturneInsaniax
                     //dds3GlobalWork.DDS3_GBWK.maka = 0;
 
                     //var output = Newtonsoft.Json.JsonConvert.SerializeObject(mdlManager.mdlResrcMajorList);
-                    //MelonLogger.Msg(output);
+                    ////MelonLogger.Msg(output);
 
                     //datCalc.datAddMaka(10000000);
                     //datCalc.datAddItem(38, 10);
@@ -1309,17 +1309,17 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int phase)
             {
-                //MelonLogger.Msg("--nbMainProcess.nbSetPhase--");
+                ////MelonLogger.Msg("--nbMainProcess.nbSetPhase--");
                 //try
                 //{
-                //    MelonLogger.Msg("phase: " + phase);
-                //    MelonLogger.Msg("demon: " + datDevilName.Get(actionProcessData.work.id));
-                //    MelonLogger.Msg("nowcommand: " + actionProcessData.work.nowcommand);
-                //    MelonLogger.Msg("nowindex: " + actionProcessData.work.nowindex);
-                //    MelonLogger.Msg("partyindex: " + actionProcessData.partyindex);
-                //    MelonLogger.Msg("nowtform: " + actionProcessData.work.nowtform);
-                //    MelonLogger.Msg("type: " + actionProcessData.type);
-                //    MelonLogger.Msg("target: " + actionProcessData.target);
+                //    //MelonLogger.Msg("phase: " + phase);
+                //    //MelonLogger.Msg("demon: " + datDevilName.Get(actionProcessData.work.id));
+                //    //MelonLogger.Msg("nowcommand: " + actionProcessData.work.nowcommand);
+                //    //MelonLogger.Msg("nowindex: " + actionProcessData.work.nowindex);
+                //    //MelonLogger.Msg("partyindex: " + actionProcessData.partyindex);
+                //    //MelonLogger.Msg("nowtform: " + actionProcessData.work.nowtform);
+                //    //MelonLogger.Msg("type: " + actionProcessData.type);
+                //    //MelonLogger.Msg("target: " + actionProcessData.target);
                 //}
                 //catch { }
 
@@ -1654,8 +1654,8 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref nbActionProcessData_t a)
             {
-                //MelonLogger.Msg("--nbActionProcess.SetAction_SKILL--");
-                //MelonLogger.Msg("select: " + a.select);
+                ////MelonLogger.Msg("--nbActionProcess.SetAction_SKILL--");
+                ////MelonLogger.Msg("select: " + a.select);
 
                 // Set Oberon's Fairy King's Melody to target the whole party
                 if (a.work.id == 54 & a.work.nowcommand == 1 && a.work.nowindex == 408)
@@ -3893,7 +3893,7 @@ namespace NocturneInsaniax
             //    pbdata = newSobed[newSobedIndex].pbdata
             //};
 
-            //MelonLogger.Msg(JsonConvert.SerializeObject(nbActionProcess.sobedtbl[id]));
+            ////MelonLogger.Msg(JsonConvert.SerializeObject(nbActionProcess.sobedtbl[id]));
         }
 
         private static void Agilao(ushort id)

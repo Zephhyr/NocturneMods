@@ -13,8 +13,8 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref string message, ref frMsgInfo_t mi, ref List<int> index, ref string __result)
             {
-                //MelonLogger.Msg("--frFont.frReplaceLocalizeText--");
-                //MelonLogger.Msg("message: " + message);
+                ////MelonLogger.Msg("--frFont.frReplaceLocalizeText--");
+                ////MelonLogger.Msg("message: " + message);
                 try
                 {
                     if (nbMainProcess.nbGetMainProcessData().encno == 1278)
@@ -107,7 +107,7 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref instanceMes_tag pinst, ref int mode)
             {
-                //MelonLogger.Msg("--itfMesManager.ReadytoMessage--");
+                ////MelonLogger.Msg("--itfMesManager.ReadytoMessage--");
                 
                 try
                 {

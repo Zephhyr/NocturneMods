@@ -41,30 +41,30 @@ namespace NocturneInsaniax
         public override void OnInitializeMelon()
         {
             //foreach (var skill in tblSkill.fclSkillTbl[192].Event)
-            //    MelonLogger.Msg(skill.TargetLevel + " - " + skill.Param + " - " + skill.Type);
+            //    //MelonLogger.Msg(skill.TargetLevel + " - " + skill.Param + " - " + skill.Type);
 
             //foreach (var skill in tblHearts.fclHeartsTbl[1].Skill)
-            //    MelonLogger.Msg(skill.TargetLevel + " - " + skill.ID);
+            //    //MelonLogger.Msg(skill.TargetLevel + " - " + skill.ID);
 
-            //MelonLogger.Msg("[");
+            ////MelonLogger.Msg("[");
             //foreach (var v in fld_Npc.fldNpc)
             //{
             //    var output = JsonConvert.SerializeObject(v);
-            //    MelonLogger.Msg(output + ",");
+            //    //MelonLogger.Msg(output + ",");
             //}
-            //MelonLogger.Msg("]");
+            ////MelonLogger.Msg("]");
 
             //var output = JsonConvert.SerializeObject(fclJunkShopTable.fclShopItemBoxTbl);
-            //MelonLogger.Msg(output);
+            ////MelonLogger.Msg(output);
 
             //var output = JsonConvert.SerializeObject(nbEventProcess.nbEtbl);
-            //MelonLogger.Msg(output);
+            ////MelonLogger.Msg(output);
 
             //var output = JsonConvert.SerializeObject(tblSkill.fclSkillTbl);
-            //MelonLogger.Msg(output);
+            ////MelonLogger.Msg(output);
 
             //var output = JsonConvert.SerializeObject(nbActionProcess.sobedtbl);
-            //MelonLogger.Msg(output);
+            ////MelonLogger.Msg(output);
 
             // Load New Sobeds
             //AssetBundle sobedData = AssetBundle.LoadFromFile(AppContext.BaseDirectory + BundlePath + "sobed_dds2");
@@ -99,21 +99,21 @@ namespace NocturneInsaniax
             //}
             //for (int i = 0; i < newSobed.Count; i++)
             //{
-            //    MelonLogger.Msg("- Index " + i + " of newSobed -");
-            //    MelonLogger.Msg("bed_fname: " + newSobed[i].bed_fname);
-            //    MelonLogger.Msg("keyname: " + newSobed[i].keyname);
-            //    MelonLogger.Msg("se0_str: " + newSobed[i].se0_str);
-            //    MelonLogger.Msg("se1_str: " + newSobed[i].se1_str);
+            //    //MelonLogger.Msg("- Index " + i + " of newSobed -");
+            //    //MelonLogger.Msg("bed_fname: " + newSobed[i].bed_fname);
+            //    //MelonLogger.Msg("keyname: " + newSobed[i].keyname);
+            //    //MelonLogger.Msg("se0_str: " + newSobed[i].se0_str);
+            //    //MelonLogger.Msg("se1_str: " + newSobed[i].se1_str);
             //    for (int j = 0; j < newSobed[i].tga_fname.Length; j++)
             //    {
-            //        MelonLogger.Msg("- Texture " + j + " found -");
-            //        MelonLogger.Msg("tga_fname: " + newSobed[i].tga_fname[j]);
+            //        //MelonLogger.Msg("- Texture " + j + " found -");
+            //        //MelonLogger.Msg("tga_fname: " + newSobed[i].tga_fname[j]);
             //    }
             //    for (int j = 0; j < newSobed[i].pbdata.Length; j++)
             //    {
-            //        MelonLogger.Msg("- SOBED_PB Data " + j + " found -");
-            //        MelonLogger.Msg("prefab_name: " + newSobed[i].pbdata[j].prefab_name);
-            //        MelonLogger.Msg("type: " + newSobed[i].pbdata[j].type);
+            //        //MelonLogger.Msg("- SOBED_PB Data " + j + " found -");
+            //        //MelonLogger.Msg("prefab_name: " + newSobed[i].pbdata[j].prefab_name);
+            //        //MelonLogger.Msg("type: " + newSobed[i].pbdata[j].type);
             //    }
             //}
 
@@ -297,11 +297,11 @@ namespace NocturneInsaniax
         {
             public static void Postfix()
             {
-                MelonLogger.Msg("-fldMain.fldFirstInit-");
+                //MelonLogger.Msg("-fldMain.fldFirstInit-");
                 //var output = JsonConvert.SerializeObject(fldGlobal.fldHitData._fldItemBoxTbl);
                 //var output = JsonConvert.SerializeObject(fldGlobal.fldHitData._fldNpcUp);
                 //var output = JsonConvert.SerializeObject(fld_Npc.gfldTakaraWork);
-                //MelonLogger.Msg(output);
+                ////MelonLogger.Msg(output);
 
                 fldGlobal.fldHitData._fldNpcUp[70]._model_id2 = 224; // Tam Lin in Shibuya
                 ApplyItemBoxChanges();
@@ -454,7 +454,7 @@ namespace NocturneInsaniax
 
 
                 //foreach (var sound in Smg.Instance._tableSe_MSE)
-                //    MelonLogger.Msg(sound.key + " - " + sound.value.MidiId);
+                //    //MelonLogger.Msg(sound.key + " - " + sound.value.MidiId);
             }
         }
 
@@ -637,10 +637,10 @@ namespace NocturneInsaniax
 
                 //foreach (var dic in SndAssetBundleManager.SEBundleTable)
                 //{
-                //    MelonLogger.Msg(dic.key + ":");
+                //    //MelonLogger.Msg(dic.key + ":");
                 //    foreach (var sound in dic.value)
                 //    {
-                //        MelonLogger.Msg(sound.key + " - " + sound.value.name);
+                //        //MelonLogger.Msg(sound.key + " - " + sound.value.name);
                 //    }
                 //}
             }
@@ -651,7 +651,7 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int __result)
             {
-                //MelonLogger.Msg("--nbEncount.nbGetBgmCategoryInBattle--");
+                ////MelonLogger.Msg("--nbEncount.nbGetBgmCategoryInBattle--");
                 if (__result == 14)
                 {
                     if (!EventBit.evtBitCheck(3712))
@@ -746,8 +746,8 @@ namespace NocturneInsaniax
         //{
         //    public static void Postfix(string name)
         //    {
-        //        MelonLogger.Msg("--SoundManager.PlaySE--");
-        //        MelonLogger.Msg("name: " + name);
+        //        //MelonLogger.Msg("--SoundManager.PlaySE--");
+        //        //MelonLogger.Msg("name: " + name);
         //    }
         //}
 
@@ -756,13 +756,13 @@ namespace NocturneInsaniax
         //{
         //    public static void Postfix()
         //    {
-        //        MelonLogger.Msg("--SndAssetBundleManager.LoadKeysMSE--");
-        //        MelonLogger.Msg("Samael keys");
+        //        //MelonLogger.Msg("--SndAssetBundleManager.LoadKeysMSE--");
+        //        //MelonLogger.Msg("Samael keys");
         //        for (int i = 0; i <= 25; i++)
-        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(161, i));
-        //        MelonLogger.Msg("Seth keys");
+        //            //MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(161, i));
+        //        //MelonLogger.Msg("Seth keys");
         //        for (int i = 0; i <= 25; i++)
-        //            MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(230, i));
+        //            //MelonLogger.Msg(i + ": " + nbSound.GetMotionMIDI(230, i));
         //    }
         //}
 
@@ -771,10 +771,10 @@ namespace NocturneInsaniax
         //{
         //    public static void Postfix(int id, int mot, int __result)
         //    {
-        //        MelonLogger.Msg("--nbSound.nbGetMotionSeNo--");
-        //        MelonLogger.Msg("id: " + id);
-        //        MelonLogger.Msg("mot: " + mot);
-        //        MelonLogger.Msg("result: " + __result);
+        //        //MelonLogger.Msg("--nbSound.nbGetMotionSeNo--");
+        //        //MelonLogger.Msg("id: " + id);
+        //        //MelonLogger.Msg("mot: " + mot);
+        //        //MelonLogger.Msg("result: " + __result);
         //    }
         //}
 
@@ -783,10 +783,10 @@ namespace NocturneInsaniax
         //{
         //    public static void Postfix(int id, int mot, uint __result)
         //    {
-        //        MelonLogger.Msg("--nbSound.GetMotionMIDI--");
-        //        MelonLogger.Msg("id: " + id);
-        //        MelonLogger.Msg("mot: " + mot);
-        //        MelonLogger.Msg("result: " + __result);
+        //        //MelonLogger.Msg("--nbSound.GetMotionMIDI--");
+        //        //MelonLogger.Msg("id: " + id);
+        //        //MelonLogger.Msg("mot: " + mot);
+        //        //MelonLogger.Msg("result: " + __result);
         //    }
         //}
 
@@ -795,12 +795,12 @@ namespace NocturneInsaniax
         //{
         //    public static void Postfix(ref dds3ModelHandle_t aHandle, ref int aPlayGroup, ref int aType, ref int bPos)
         //    {
-        //        MelonLogger.Msg("--mdlEffect.mdlCreateEffect_P2A_D3P--");
-        //        MelonLogger.Msg("aPlayGroup: " + aPlayGroup);
-        //        MelonLogger.Msg("aType: " + aType);
-        //        MelonLogger.Msg("bPos: " + bPos);
-        //        MelonLogger.Msg("aHandle.resrc.effectResrcList.items.Count: " + aHandle.resrc.effectResrcList.items.Count);
-        //        //MelonLogger.Msg("resrc: " + Newtonsoft.Json.JsonConvert.SerializeObject(aHandle.resrc));
+        //        //MelonLogger.Msg("--mdlEffect.mdlCreateEffect_P2A_D3P--");
+        //        //MelonLogger.Msg("aPlayGroup: " + aPlayGroup);
+        //        //MelonLogger.Msg("aType: " + aType);
+        //        //MelonLogger.Msg("bPos: " + bPos);
+        //        //MelonLogger.Msg("aHandle.resrc.effectResrcList.items.Count: " + aHandle.resrc.effectResrcList.items.Count);
+        //        ////MelonLogger.Msg("resrc: " + Newtonsoft.Json.JsonConvert.SerializeObject(aHandle.resrc));
         //    }
         //}
 
@@ -809,11 +809,11 @@ namespace NocturneInsaniax
         //{
         //    public static void Postfix(ref dds3ModelHandle_t aHandle, ref int aGroup, ref int aPlayGroup)
         //    {
-        //        MelonLogger.Msg("--mdlEffect.mdlGenEffect--");
-        //        MelonLogger.Msg("aGroup: " + aGroup);
-        //        MelonLogger.Msg("aPlayGroup: " + aPlayGroup);
-        //        MelonLogger.Msg("aHandle.resrc.effectResrcList.items.Count: " + aHandle.resrc.effectResrcList.items.Count);
-        //        //MelonLogger.Msg("resrc: " + Newtonsoft.Json.JsonConvert.SerializeObject(aHandle.resrc));
+        //        //MelonLogger.Msg("--mdlEffect.mdlGenEffect--");
+        //        //MelonLogger.Msg("aGroup: " + aGroup);
+        //        //MelonLogger.Msg("aPlayGroup: " + aPlayGroup);
+        //        //MelonLogger.Msg("aHandle.resrc.effectResrcList.items.Count: " + aHandle.resrc.effectResrcList.items.Count);
+        //        ////MelonLogger.Msg("resrc: " + Newtonsoft.Json.JsonConvert.SerializeObject(aHandle.resrc));
         //    }
         //}
 
@@ -822,13 +822,13 @@ namespace NocturneInsaniax
         //{
         //    public static void Postfix(ref int aMajor, ref int aMinor, ref mdlEffectResrcList_t efc_res_list)
         //    {
-        //        MelonLogger.Msg("--mdlManager.mdlEffectCreateUnity--");
-        //        MelonLogger.Msg("aMajor: " + aMajor);
-        //        MelonLogger.Msg("aMinor: " + aMinor);
-        //        MelonLogger.Msg("efc_res_list.items.Count: " + efc_res_list.items.Count);
-        //        MelonLogger.Msg("aKey: " + mdlFileDefTable.GetAkey(aMinor));
-        //        //MelonLogger.Msg("resrc: " + cmpModel.cmpModelHandle.resrc);
-        //        //MelonLogger.Msg("resrc: " + Newtonsoft.Json.JsonConvert.SerializeObject(cmpModel.cmpModelHandle.resrc));
+        //        //MelonLogger.Msg("--mdlManager.mdlEffectCreateUnity--");
+        //        //MelonLogger.Msg("aMajor: " + aMajor);
+        //        //MelonLogger.Msg("aMinor: " + aMinor);
+        //        //MelonLogger.Msg("efc_res_list.items.Count: " + efc_res_list.items.Count);
+        //        //MelonLogger.Msg("aKey: " + mdlFileDefTable.GetAkey(aMinor));
+        //        ////MelonLogger.Msg("resrc: " + cmpModel.cmpModelHandle.resrc);
+        //        ////MelonLogger.Msg("resrc: " + Newtonsoft.Json.JsonConvert.SerializeObject(cmpModel.cmpModelHandle.resrc));
         //    }
         //}
 
@@ -837,12 +837,12 @@ namespace NocturneInsaniax
         //{
         //    public static void Postfix(ref int aMajor, ref int aMinor, ref int bPos, ref dds3ModelHandle_t __result)
         //    {
-        //        MelonLogger.Msg("--mdlManager.mdlLoad--");
-        //        MelonLogger.Msg("aMajor: " + aMajor);
-        //        MelonLogger.Msg("aMinor: " + aMinor);
-        //        MelonLogger.Msg("bPos: " + bPos);
-        //        //MelonLogger.Msg("aKey: " + mdlFileDefTable.GetAkey(aMinor));
-        //        //MelonLogger.Msg("resrc: " + cmpModel.cmpModelHandle.resrc);
+        //        //MelonLogger.Msg("--mdlManager.mdlLoad--");
+        //        //MelonLogger.Msg("aMajor: " + aMajor);
+        //        //MelonLogger.Msg("aMinor: " + aMinor);
+        //        //MelonLogger.Msg("bPos: " + bPos);
+        //        ////MelonLogger.Msg("aKey: " + mdlFileDefTable.GetAkey(aMinor));
+        //        ////MelonLogger.Msg("resrc: " + cmpModel.cmpModelHandle.resrc);
         //    }
         //}
 
@@ -851,11 +851,11 @@ namespace NocturneInsaniax
         //{
         //    public static void Postfix(ref int MajorNo, ref int MinorNo, ref int BlockMode, ref bool __result)
         //    {
-        //        MelonLogger.Msg("--cmpModel.cmpModelLoadForUnity--");
-        //        MelonLogger.Msg("MajorNo: " + MajorNo);
-        //        MelonLogger.Msg("MinorNo: " + MinorNo);
-        //        MelonLogger.Msg("BlockMode: " + BlockMode);
-        //        MelonLogger.Msg("result: " + __result);
+        //        //MelonLogger.Msg("--cmpModel.cmpModelLoadForUnity--");
+        //        //MelonLogger.Msg("MajorNo: " + MajorNo);
+        //        //MelonLogger.Msg("MinorNo: " + MinorNo);
+        //        //MelonLogger.Msg("BlockMode: " + BlockMode);
+        //        //MelonLogger.Msg("result: " + __result);
         //    }
         //}
 
@@ -864,12 +864,12 @@ namespace NocturneInsaniax
         //{
         //    public static void Postfix(ref int MajorNo, ref int MinorNo, ref int BlockMode, ref bool __result)
         //    {
-        //        MelonLogger.Msg("--cmpModel.cmpModelLoadEffectForUnity--");
-        //        MelonLogger.Msg("MajorNo: " + MajorNo);
-        //        MelonLogger.Msg("MinorNo: " + MinorNo);
-        //        MelonLogger.Msg("BlockMode: " + BlockMode);
-        //        MelonLogger.Msg("aFilename: " + "dds3data/dvl_pb/" + mdlFileDefTable.GetPBname(MinorNo) + ".bytes");
-        //        MelonLogger.Msg("result: " + __result);
+        //        //MelonLogger.Msg("--cmpModel.cmpModelLoadEffectForUnity--");
+        //        //MelonLogger.Msg("MajorNo: " + MajorNo);
+        //        //MelonLogger.Msg("MinorNo: " + MinorNo);
+        //        //MelonLogger.Msg("BlockMode: " + BlockMode);
+        //        //MelonLogger.Msg("aFilename: " + "dds3data/dvl_pb/" + mdlFileDefTable.GetPBname(MinorNo) + ".bytes");
+        //        //MelonLogger.Msg("result: " + __result);
         //    }
         //}
 
@@ -878,10 +878,10 @@ namespace NocturneInsaniax
         //{
         //    public static void Postfix(ref int type, ref string pFileName, ref string akey)
         //    {
-        //        MelonLogger.Msg("--billManager.dds3BillboardFileLoad--");
-        //        MelonLogger.Msg("type: " + type);
-        //        MelonLogger.Msg("pFileName: " + pFileName);
-        //        MelonLogger.Msg("akey: " + akey);
+        //        //MelonLogger.Msg("--billManager.dds3BillboardFileLoad--");
+        //        //MelonLogger.Msg("type: " + type);
+        //        //MelonLogger.Msg("pFileName: " + pFileName);
+        //        //MelonLogger.Msg("akey: " + akey);
         //    }
         //}
 
@@ -890,8 +890,8 @@ namespace NocturneInsaniax
         //{
         //    public static void Postfix(ref int number)
         //    {
-        //        MelonLogger.Msg("--billManager.dds3BillboardGeneral--");
-        //        MelonLogger.Msg("number: " + number);
+        //        //MelonLogger.Msg("--billManager.dds3BillboardGeneral--");
+        //        //MelonLogger.Msg("number: " + number);
         //    }
         //}
         //[HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_BasicCreate))]
@@ -899,8 +899,8 @@ namespace NocturneInsaniax
         //{
         //    public static void Postfix(ref dds3Particle_Basic_t pParBasic, ref bool pCopy)
         //    {
-        //        MelonLogger.Msg("--parManager.dds3Particle_BasicCreate--");
-        //        MelonLogger.Msg("pCopy: " + pCopy);
+        //        //MelonLogger.Msg("--parManager.dds3Particle_BasicCreate--");
+        //        //MelonLogger.Msg("pCopy: " + pCopy);
         //    }
         //}
         //[HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_SpiralCreate))]
@@ -908,10 +908,10 @@ namespace NocturneInsaniax
         //{
         //    public static void Postfix(ref int bPos, ref bool pCopy, ref int billno)
         //    {
-        //        MelonLogger.Msg("--parManager.dds3Particle_SpiralCreate--");
-        //        MelonLogger.Msg("bPos: " + bPos);
-        //        MelonLogger.Msg("pCopy: " + pCopy);
-        //        MelonLogger.Msg("billno: " + billno);
+        //        //MelonLogger.Msg("--parManager.dds3Particle_SpiralCreate--");
+        //        //MelonLogger.Msg("bPos: " + bPos);
+        //        //MelonLogger.Msg("pCopy: " + pCopy);
+        //        //MelonLogger.Msg("billno: " + billno);
         //    }
         //}
         //[HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_SmokeCreate))]
@@ -919,10 +919,10 @@ namespace NocturneInsaniax
         //{
         //    public static void Postfix(ref int bPos, ref bool pCopy, ref int billno)
         //    {
-        //        MelonLogger.Msg("--parManager.dds3Particle_SmokeCreate--");
-        //        MelonLogger.Msg("bPos: " + bPos);
-        //        MelonLogger.Msg("pCopy: " + pCopy);
-        //        MelonLogger.Msg("billno: " + billno);
+        //        //MelonLogger.Msg("--parManager.dds3Particle_SmokeCreate--");
+        //        //MelonLogger.Msg("bPos: " + bPos);
+        //        //MelonLogger.Msg("pCopy: " + pCopy);
+        //        //MelonLogger.Msg("billno: " + billno);
         //    }
         //}
         //[HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_SparkCreate))]
@@ -930,10 +930,10 @@ namespace NocturneInsaniax
         //{
         //    public static void Postfix(ref int bPos, ref bool pCopy, ref int billno)
         //    {
-        //        MelonLogger.Msg("--parManager.dds3Particle_SparkCreate--");
-        //        MelonLogger.Msg("bPos: " + bPos);
-        //        MelonLogger.Msg("pCopy: " + pCopy);
-        //        MelonLogger.Msg("billno: " + billno);
+        //        //MelonLogger.Msg("--parManager.dds3Particle_SparkCreate--");
+        //        //MelonLogger.Msg("bPos: " + bPos);
+        //        //MelonLogger.Msg("pCopy: " + pCopy);
+        //        //MelonLogger.Msg("billno: " + billno);
         //    }
         //}
         //[HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_RadiateCreate))]
@@ -941,10 +941,10 @@ namespace NocturneInsaniax
         //{
         //    public static void Postfix(ref int bPos, ref bool pCopy, ref int billno)
         //    {
-        //        MelonLogger.Msg("--parManager.dds3Particle_RadiateCreate--");
-        //        MelonLogger.Msg("bPos: " + bPos);
-        //        MelonLogger.Msg("pCopy: " + pCopy);
-        //        MelonLogger.Msg("billno: " + billno);
+        //        //MelonLogger.Msg("--parManager.dds3Particle_RadiateCreate--");
+        //        //MelonLogger.Msg("bPos: " + bPos);
+        //        //MelonLogger.Msg("pCopy: " + pCopy);
+        //        //MelonLogger.Msg("billno: " + billno);
         //    }
         //}
         //[HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_SphereSpiralCreate))]
@@ -952,10 +952,10 @@ namespace NocturneInsaniax
         //{
         //    public static void Postfix(ref int bPos, ref bool pCopy, ref int billno)
         //    {
-        //        MelonLogger.Msg("--parManager.dds3Particle_SphereSpiralCreate--");
-        //        MelonLogger.Msg("bPos: " + bPos);
-        //        MelonLogger.Msg("pCopy: " + pCopy);
-        //        MelonLogger.Msg("billno: " + billno);
+        //        //MelonLogger.Msg("--parManager.dds3Particle_SphereSpiralCreate--");
+        //        //MelonLogger.Msg("bPos: " + bPos);
+        //        //MelonLogger.Msg("pCopy: " + pCopy);
+        //        //MelonLogger.Msg("billno: " + billno);
         //    }
         //}
         //[HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_SphereSmokeCreate))]
@@ -963,10 +963,10 @@ namespace NocturneInsaniax
         //{
         //    public static void Postfix(ref int bPos, ref bool pCopy, ref int billno)
         //    {
-        //        MelonLogger.Msg("--parManager.dds3Particle_SphereSmokeCreate--");
-        //        MelonLogger.Msg("bPos: " + bPos);
-        //        MelonLogger.Msg("pCopy: " + pCopy);
-        //        MelonLogger.Msg("billno: " + billno);
+        //        //MelonLogger.Msg("--parManager.dds3Particle_SphereSmokeCreate--");
+        //        //MelonLogger.Msg("bPos: " + bPos);
+        //        //MelonLogger.Msg("pCopy: " + pCopy);
+        //        //MelonLogger.Msg("billno: " + billno);
         //    }
         //}
         //[HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_SphereRingCreate))]
@@ -974,10 +974,10 @@ namespace NocturneInsaniax
         //{
         //    public static void Postfix(ref int bPos, ref bool pCopy, ref int billno)
         //    {
-        //        MelonLogger.Msg("--parManager.dds3Particle_SphereRingCreate--");
-        //        MelonLogger.Msg("bPos: " + bPos);
-        //        MelonLogger.Msg("pCopy: " + pCopy);
-        //        MelonLogger.Msg("billno: " + billno);
+        //        //MelonLogger.Msg("--parManager.dds3Particle_SphereRingCreate--");
+        //        //MelonLogger.Msg("bPos: " + bPos);
+        //        //MelonLogger.Msg("pCopy: " + pCopy);
+        //        //MelonLogger.Msg("billno: " + billno);
         //    }
         //}
         //[HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_Spark2Create))]
@@ -985,10 +985,10 @@ namespace NocturneInsaniax
         //{
         //    public static void Postfix(ref int bPos, ref bool pCopy, ref int billno)
         //    {
-        //        MelonLogger.Msg("--parManager.dds3Particle_Spark2Create--");
-        //        MelonLogger.Msg("bPos: " + bPos);
-        //        MelonLogger.Msg("pCopy: " + pCopy);
-        //        MelonLogger.Msg("billno: " + billno);
+        //        //MelonLogger.Msg("--parManager.dds3Particle_Spark2Create--");
+        //        //MelonLogger.Msg("bPos: " + bPos);
+        //        //MelonLogger.Msg("pCopy: " + pCopy);
+        //        //MelonLogger.Msg("billno: " + billno);
         //    }
         //}
         //[HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_SphereAtomCreate))]
@@ -996,10 +996,10 @@ namespace NocturneInsaniax
         //{
         //    public static void Postfix(ref int bPos, ref bool pCopy, ref int billno)
         //    {
-        //        MelonLogger.Msg("--parManager.dds3Particle_SphereAtomCreate--");
-        //        MelonLogger.Msg("bPos: " + bPos);
-        //        MelonLogger.Msg("pCopy: " + pCopy);
-        //        MelonLogger.Msg("billno: " + billno);
+        //        //MelonLogger.Msg("--parManager.dds3Particle_SphereAtomCreate--");
+        //        //MelonLogger.Msg("bPos: " + bPos);
+        //        //MelonLogger.Msg("pCopy: " + pCopy);
+        //        //MelonLogger.Msg("billno: " + billno);
         //    }
         //}
         //[HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_NopCreate))]
@@ -1007,10 +1007,10 @@ namespace NocturneInsaniax
         //{
         //    public static void Postfix(ref int bPos, ref bool pCopy, ref int billno)
         //    {
-        //        MelonLogger.Msg("--parManager.dds3Particle_NopCreate--");
-        //        MelonLogger.Msg("bPos: " + bPos);
-        //        MelonLogger.Msg("pCopy: " + pCopy);
-        //        MelonLogger.Msg("billno: " + billno);
+        //        //MelonLogger.Msg("--parManager.dds3Particle_NopCreate--");
+        //        //MelonLogger.Msg("bPos: " + bPos);
+        //        //MelonLogger.Msg("pCopy: " + pCopy);
+        //        //MelonLogger.Msg("billno: " + billno);
         //    }
         //}
         //[HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_SparkOffsetCreate))]
@@ -1018,10 +1018,10 @@ namespace NocturneInsaniax
         //{
         //    public static void Postfix(ref int bPos, ref bool pCopy, ref int billno)
         //    {
-        //        MelonLogger.Msg("--parManager.dds3Particle_SparkOffsetCreate--");
-        //        MelonLogger.Msg("bPos: " + bPos);
-        //        MelonLogger.Msg("pCopy: " + pCopy);
-        //        MelonLogger.Msg("billno: " + billno);
+        //        //MelonLogger.Msg("--parManager.dds3Particle_SparkOffsetCreate--");
+        //        //MelonLogger.Msg("bPos: " + bPos);
+        //        //MelonLogger.Msg("pCopy: " + pCopy);
+        //        //MelonLogger.Msg("billno: " + billno);
         //    }
         //}
         //[HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_SmokeOffsetCreate))]
@@ -1029,10 +1029,10 @@ namespace NocturneInsaniax
         //{
         //    public static void Postfix(ref int bPos, ref bool pCopy, ref int billno)
         //    {
-        //        MelonLogger.Msg("--parManager.dds3Particle_SmokeOffsetCreate--");
-        //        MelonLogger.Msg("bPos: " + bPos);
-        //        MelonLogger.Msg("pCopy: " + pCopy);
-        //        MelonLogger.Msg("billno: " + billno);
+        //        //MelonLogger.Msg("--parManager.dds3Particle_SmokeOffsetCreate--");
+        //        //MelonLogger.Msg("bPos: " + bPos);
+        //        //MelonLogger.Msg("pCopy: " + pCopy);
+        //        //MelonLogger.Msg("billno: " + billno);
         //    }
         //}
         //[HarmonyPatch(typeof(parManager), nameof(parManager.dds3Particle_SphereSpiral2Create))]
@@ -1040,10 +1040,10 @@ namespace NocturneInsaniax
         //{
         //    public static void Postfix(ref int bPos, ref bool pCopy, ref int billno)
         //    {
-        //        MelonLogger.Msg("--parManager.dds3Particle_SphereSpiral2Create--");
-        //        MelonLogger.Msg("bPos: " + bPos);
-        //        MelonLogger.Msg("pCopy: " + pCopy);
-        //        MelonLogger.Msg("billno: " + billno);
+        //        //MelonLogger.Msg("--parManager.dds3Particle_SphereSpiral2Create--");
+        //        //MelonLogger.Msg("bPos: " + bPos);
+        //        //MelonLogger.Msg("pCopy: " + pCopy);
+        //        //MelonLogger.Msg("billno: " + billno);
         //    }
         //}
 
@@ -1054,12 +1054,12 @@ namespace NocturneInsaniax
         {
             public static void Prefix(int idx, float x, float y, float z, Vector4 rot)
             {
-                MelonLogger.Msg("-fld_Npc.fldItemBoxAdd-");
-                MelonLogger.Msg("idx: " + idx);
-                MelonLogger.Msg("x: " + x);
-                MelonLogger.Msg("y: " + y);
-                MelonLogger.Msg("z: " + z);
-                MelonLogger.Msg("rot: " + rot);
+                //MelonLogger.Msg("-fld_Npc.fldItemBoxAdd-");
+                //MelonLogger.Msg("idx: " + idx);
+                //MelonLogger.Msg("x: " + x);
+                //MelonLogger.Msg("y: " + y);
+                //MelonLogger.Msg("z: " + z);
+                //MelonLogger.Msg("rot: " + rot);
             }
         }
 
@@ -1068,15 +1068,15 @@ namespace NocturneInsaniax
         {
             public static void Prefix(int Type, float x, float y, float z, Vector4 rot, int hojiID, ref string name, int eveidx)
             {
-                MelonLogger.Msg("-fld_Npc.fldNpcAdd-");
-                MelonLogger.Msg("Type: " + Type);
-                MelonLogger.Msg("x: " + x);
-                MelonLogger.Msg("y: " + y);
-                MelonLogger.Msg("z: " + z);
-                MelonLogger.Msg("rot: " + rot);
-                MelonLogger.Msg("hojiID: " + hojiID);
-                MelonLogger.Msg("name: " + name);
-                MelonLogger.Msg("eveidx: " + eveidx);
+                //MelonLogger.Msg("-fld_Npc.fldNpcAdd-");
+                //MelonLogger.Msg("Type: " + Type);
+                //MelonLogger.Msg("x: " + x);
+                //MelonLogger.Msg("y: " + y);
+                //MelonLogger.Msg("z: " + z);
+                //MelonLogger.Msg("rot: " + rot);
+                //MelonLogger.Msg("hojiID: " + hojiID);
+                //MelonLogger.Msg("name: " + name);
+                //MelonLogger.Msg("eveidx: " + eveidx);
             }
         }
 
@@ -1085,8 +1085,8 @@ namespace NocturneInsaniax
         {
             public static void Prefix(int idx)
             {
-                MelonLogger.Msg("-fld_Npc.fldItemBoxOpen-");
-                MelonLogger.Msg("idx: " + idx);
+                //MelonLogger.Msg("-fld_Npc.fldItemBoxOpen-");
+                //MelonLogger.Msg("idx: " + idx);
             }
         }
 
@@ -1095,8 +1095,8 @@ namespace NocturneInsaniax
         {
             public static void Prefix(int idx)
             {
-                MelonLogger.Msg("-fldGlobal.fldGbSetTakaraOpen-");
-                MelonLogger.Msg("idx: " + idx);
+                //MelonLogger.Msg("-fldGlobal.fldGbSetTakaraOpen-");
+                //MelonLogger.Msg("idx: " + idx);
             }
         }
 
@@ -1105,9 +1105,9 @@ namespace NocturneInsaniax
         {
             public static void Prefix(string pFileName, string akey)
             {
-                MelonLogger.Msg("-fldFileResolver.fldLoadFile-");
-                MelonLogger.Msg("pFileName: " + pFileName);
-                MelonLogger.Msg("akey: " + akey);
+                //MelonLogger.Msg("-fldFileResolver.fldLoadFile-");
+                //MelonLogger.Msg("pFileName: " + pFileName);
+                //MelonLogger.Msg("akey: " + akey);
             }
 
             public static void Postfix(string pFileName, string akey)
@@ -1204,9 +1204,9 @@ namespace NocturneInsaniax
         //{
         //    public static void Prefix()
         //    {
-        //        MelonLogger.Msg("--fldProcess.ProcSequence--");
-        //        MelonLogger.Msg("encounttbl: " + fldProcess.fldBattleData.encounttbl);
-        //        MelonLogger.Msg("encountpack: " + fldProcess.fldBattleData.encountpack);
+        //        //MelonLogger.Msg("--fldProcess.ProcSequence--");
+        //        //MelonLogger.Msg("encounttbl: " + fldProcess.fldBattleData.encounttbl);
+        //        //MelonLogger.Msg("encountpack: " + fldProcess.fldBattleData.encountpack);
         //    }
         //}
 
@@ -1216,14 +1216,14 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref datUnitWork_t pStock)
             {
-                //MelonLogger.Msg("--rstinit.rstChkLevelUpTarget--");
-                //MelonLogger.Msg("pStock.id: " + pStock.id);
+                ////MelonLogger.Msg("--rstinit.rstChkLevelUpTarget--");
+                ////MelonLogger.Msg("pStock.id: " + pStock.id);
             }
             public static void Postfix(ref datUnitWork_t pStock, ref int __result)
             {
-                //MelonLogger.Msg("--rstinit.rstChkLevelUpTarget Post--");
-                //MelonLogger.Msg("pStock.id: " + pStock.id);
-                //MelonLogger.Msg("result: " + __result);
+                ////MelonLogger.Msg("--rstinit.rstChkLevelUpTarget Post--");
+                ////MelonLogger.Msg("pStock.id: " + pStock.id);
+                ////MelonLogger.Msg("result: " + __result);
             }
         }
 
@@ -1232,9 +1232,9 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref int Val, ref datUnitWork_t pStock)
             {
-                //MelonLogger.Msg("--rstcalc.rstAddLevel--");
-                //MelonLogger.Msg("Val: " + Val);
-                //MelonLogger.Msg("pStock.id: " + pStock.id);
+                ////MelonLogger.Msg("--rstcalc.rstAddLevel--");
+                ////MelonLogger.Msg("Val: " + Val);
+                ////MelonLogger.Msg("pStock.id: " + pStock.id);
             }
         }
 
@@ -1243,14 +1243,14 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref datUnitWork_t pStock)
             {
-                //MelonLogger.Msg("--rstcalc.rstSetLevelUpCount--");
-                //MelonLogger.Msg("pStock.id: " + pStock.id);
+                ////MelonLogger.Msg("--rstcalc.rstSetLevelUpCount--");
+                ////MelonLogger.Msg("pStock.id: " + pStock.id);
             }
             public static void Postfix(ref datUnitWork_t pStock, ref sbyte __result)
             {
-                //MelonLogger.Msg("--rstcalc.rstSetLevelUpCount Post--");
-                //MelonLogger.Msg("pStock.id: " + pStock.id);
-                //MelonLogger.Msg("result: " + __result);
+                ////MelonLogger.Msg("--rstcalc.rstSetLevelUpCount Post--");
+                ////MelonLogger.Msg("pStock.id: " + pStock.id);
+                ////MelonLogger.Msg("result: " + __result);
             }
         }
 
@@ -1259,12 +1259,12 @@ namespace NocturneInsaniax
         {
             public static void Prefix()
             {
-                //MelonLogger.Msg("--rstcalc.rstCalcSeqDevilLevelUp--");
+                ////MelonLogger.Msg("--rstcalc.rstCalcSeqDevilLevelUp--");
             }
             public static void Postfix(ref int __result)
             {
-                //MelonLogger.Msg("--rstcalc.rstCalcSeqDevilLevelUp Post--");
-                //MelonLogger.Msg("result: " + __result);
+                ////MelonLogger.Msg("--rstcalc.rstCalcSeqDevilLevelUp Post--");
+                ////MelonLogger.Msg("result: " + __result);
             }
         }
 
@@ -1273,11 +1273,11 @@ namespace NocturneInsaniax
         {
             public static void Prefix()
             {
-                //MelonLogger.Msg("--rstcalc.rstCalc--");
+                ////MelonLogger.Msg("--rstcalc.rstCalc--");
             }
             public static void Postfix()
             {
-                //MelonLogger.Msg("--rstcalc.rstCalc Post--");
+                ////MelonLogger.Msg("--rstcalc.rstCalc Post--");
             }
         }
 
@@ -1286,9 +1286,9 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref sbyte Index, ref string pStr)
             {
-                //MelonLogger.Msg("--fclMisc.fclSetMessageVar--");
-                //MelonLogger.Msg("Index: " + Index);
-                //MelonLogger.Msg("pStr: " + pStr);
+                ////MelonLogger.Msg("--fclMisc.fclSetMessageVar--");
+                ////MelonLogger.Msg("Index: " + Index);
+                ////MelonLogger.Msg("pStr: " + pStr);
             }
         }
         [HarmonyPatch(typeof(fclMisc), nameof(fclMisc.fclStartMessage))]
@@ -1296,8 +1296,8 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref int MsgNo)
             {
-                //MelonLogger.Msg("--fclMisc.fclStartMessage--");
-                //MelonLogger.Msg("MsgNo: " + MsgNo);
+                ////MelonLogger.Msg("--fclMisc.fclStartMessage--");
+                ////MelonLogger.Msg("MsgNo: " + MsgNo);
             }
         }
         [HarmonyPatch(typeof(fclMisc), nameof(fclMisc.fclStartSelMessage))]
@@ -1305,8 +1305,8 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref int SelMsgNo)
             {
-                //MelonLogger.Msg("--fclMisc.fclStartSelMessage--");
-                //MelonLogger.Msg("SelMsgNo: " + SelMsgNo);
+                ////MelonLogger.Msg("--fclMisc.fclStartSelMessage--");
+                ////MelonLogger.Msg("SelMsgNo: " + SelMsgNo);
             }
         }
     }
