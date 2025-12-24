@@ -877,10 +877,6 @@ namespace NocturneInsaniax
                         //work.badstatus = 32768;
                         //work.level = 95;
                         //work.exp = rstCalcCore.GetNextExpDisp(work, 0) - 1;
-                        work.maxhp = 1111;
-                        work.hp = 1111;
-                        work.maxmp = 1111;
-                        work.mp = 1111;
                     }
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 61)) // Pixie
                     //{
