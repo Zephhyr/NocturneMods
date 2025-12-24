@@ -131,6 +131,7 @@ namespace NocturneInsaniax
                     case 376: __result = "Shot Drain"; return false;
                     case 377: __result = "Shot Repel"; return false;
                     case 378: __result = "Solitary Drift"; return false;
+                    case 379: __result = "Pierce"; return false;
 
                     case 403: __result = "Estocada"; return false;
                     case 404: __result = "Nation Founder"; return false;
@@ -358,7 +359,7 @@ namespace NocturneInsaniax
                     case 153: __result = "High Physical damage to all foes. \nPow: 40, Acc: 98%, Crit: 20%"; return false; // Foul Havoc
                     case 155: __result = "Mega Physical damage to all foes. \nPow: 60, Acc: 200%, Crit: 0%, \nStun: 20%"; return false; // Earthquake
                     case 160: __result = "Mega Shot damage to one foe. \nPow: 62, Acc: 95%, Crit: 30%"; return false; // Spiral Viper
-                    case 161: __result = "Mega Fire damage to one foe. \nPow: 80, Acc: 100%"; return false; // Magma Axis
+                    case 161: __result = "Mega Fire damage to one foe. \nPow: 80, Acc: 120%"; return false; // Magma Axis
                     case 163: __result = "Mega Physical damage to all foes. \nPow: 52, Acc: 95%, Crit: 30%"; return false; // Gaea Rage
                     case 176: __result = "Low Fire damage to random foes. \n3-5 hits. Pow: 20, Acc: 100%"; return false; // Fire Breath
                     case 177: __result = "Medium Fire damage to random foes. \n3-6 hits. Pow: 30, Acc: 100%"; return false; // Hellfire
@@ -517,6 +518,7 @@ namespace NocturneInsaniax
                     case 376: __result = "Absorbs Shot attacks, \nreplenishing HP."; return false; // Shot Drain
                     case 377: __result = "Repels Shot attacks."; return false; // Shot Repel
                     case 378: __result = "While alone, gain a flashing \nturn icon at the start of each turn. \n(Does not stack with similar effects)"; return false; // Solitary Drift
+                    case 379: __result = "Attacks ignore all resistances \nexcept Repel."; return false; // Pierce
 
                     //case 373: __result = "Survive a fatal blow then fully \nrecover HP once per battle. \n(Does not stack with similar effects)"; return false; // Enduring Soul
 
@@ -575,7 +577,7 @@ namespace NocturneInsaniax
                     case 476: __result = "Mega Light damage to one foe. \nPow: 80, Acc: 100%"; return false; // Smite
                     case 477: __result = "Medium Dark damage to one foe. \nPow: 45, Acc: 100%, Bind: 20%"; return false; // Makai Thunder
                     case 478: __result = "Mega Dark damage to all foes. \nPow: 60, Acc: 100%"; return false; // Scintilla
-                    case 479: __result = "Full HP recovery, Negates \n-nda effects and cures \nall ailments for one ally."; return false; // Liberation
+                    case 479: __result = "Full HP recovery, negates \n-nda effects and cures \nall ailments for one ally."; return false; // Liberation
                     case 480: __result = "Medium Physical damage to one foe. \nPow: 34, Acc: 120%, Crit: 100%"; return false; // Acrobat Kick
                     case 481: __result = "High Physical damage to all foes. \nPow: 42, Acc: 90%, Crit: 30%, \nFreeze: 30%"; return false; // Oni-Jackura
                     default: return true;
@@ -848,7 +850,12 @@ namespace NocturneInsaniax
                     //MelonLogger.Msg(output);
 
                     //datCalc.datAddMaka(10000000);
-                    //datCalc.datAddItem(96, 70);
+                    //datCalc.datAddItem(38, 10);
+                    //datCalc.datAddItem(39, 10);
+                    //datCalc.datAddItem(40, 10);
+                    //datCalc.datAddItem(41, 10);
+                    //datCalc.datAddItem(42, 10);
+                    //datCalc.datAddItem(43, 10);
                     //datCalc.datAddDevil(23, 0);
                     //datCalc.datAddDevil(7, 0);
                     //datCalc.datAddDevil(104, 0);
@@ -870,6 +877,10 @@ namespace NocturneInsaniax
                         //work.badstatus = 32768;
                         //work.level = 95;
                         //work.exp = rstCalcCore.GetNextExpDisp(work, 0) - 1;
+                        work.maxhp = 1111;
+                        work.hp = 1111;
+                        work.maxmp = 1111;
+                        work.mp = 1111;
                     }
                     //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 61)) // Pixie
                     //{
@@ -1715,6 +1726,9 @@ namespace NocturneInsaniax
                 var work = nbMainProcess.nbGetUnitWorkFromFormindex(formindex);
                 var party = nbMainProcess.nbGetPartyFromFormindex(formindex);
 
+                if (work.id > 383)
+                    return;
+
                 if (retributiveZealRaces.Contains(datDevilFormat.tbl[work.id].race))
                 {
                     if (party.partyindex <= 3)
@@ -2336,6 +2350,7 @@ namespace NocturneInsaniax
             ShotDrain(88);
             ShotRepel(89);
             SolitaryDrift(90);
+            Pierce(91);
 
             // Talk Skills
             TalkSkillChanges();
@@ -3925,6 +3940,7 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].cost = 20;
             datNormalSkill.tbl[id].criticalpoint = 0;
+            datNormalSkill.tbl[id].hitlevel = 120;
             datNormalSkill.tbl[id].failpoint = 0;
             datNormalSkill.tbl[id].hpn = 80;
             datNormalSkill.tbl[id].magicbase = 30;
@@ -10122,6 +10138,18 @@ namespace NocturneInsaniax
             datSkill.tbl[378].keisyoform = 1;
             datSkill.tbl[378].skillattr = 15;
             datSkill.tbl[378].type = 1;
+
+            datSpecialSkill.tbl[id].a = 2;
+            datSpecialSkill.tbl[id].b = 1;
+            datSpecialSkill.tbl[id].m = 3;
+            datSpecialSkill.tbl[id].n = 4;
+        }
+
+        private static void Pierce(ushort id)
+        {
+            datSkill.tbl[379].keisyoform = 1;
+            datSkill.tbl[379].skillattr = 15;
+            datSkill.tbl[379].type = 1;
 
             datSpecialSkill.tbl[id].a = 2;
             datSpecialSkill.tbl[id].b = 1;

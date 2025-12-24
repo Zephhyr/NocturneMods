@@ -32,10 +32,10 @@ namespace NocturneInsaniax
         public static MelonPreferences_Entry<bool> EnableEnemyLevelDisplay;
         public static MelonPreferences_Entry<bool> ToggleExpOnRandomEncounters;
         public static MelonPreferences_Entry<bool> ToggleItemUseInBattle;
-        public static MelonPreferences_Entry<double> EncounterMaccaMultiplier;
-        public static MelonPreferences_Entry<bool> GuaranteeEscape;
-        public static MelonPreferences_Entry<bool> GuaranteeNKEs;
-        public static MelonPreferences_Entry<bool> GuaranteeFiendNKEs;
+        //public static MelonPreferences_Entry<double> EncounterMaccaMultiplier;
+        //public static MelonPreferences_Entry<bool> GuaranteeEscape;
+        //public static MelonPreferences_Entry<bool> GuaranteeNKEs;
+        //public static MelonPreferences_Entry<bool> GuaranteeFiendNKEs;
 
 
         public override void OnInitializeMelon()
@@ -135,10 +135,10 @@ namespace NocturneInsaniax
             EnableEnemyLevelDisplay = InsaniaxSettings.CreateEntry("Enable Enemy Level Display", true);
             ToggleExpOnRandomEncounters = InsaniaxSettings.CreateEntry("Toggle Random Encounter EXP", true);
             ToggleItemUseInBattle = InsaniaxSettings.CreateEntry("Toggle Item Use In Battle", true);
-            EncounterMaccaMultiplier = InsaniaxSettings.CreateEntry("Encounter Macca Multiplier", 1.0);
-            GuaranteeEscape = InsaniaxSettings.CreateEntry("Guarantee Escape", false);
-            GuaranteeNKEs = InsaniaxSettings.CreateEntry("Guarantee New Kagutsuchi Encounters", false);
-            GuaranteeFiendNKEs = InsaniaxSettings.CreateEntry("Guarantee Fiend NKEs In Labyrinth", false);
+            //EncounterMaccaMultiplier = InsaniaxSettings.CreateEntry("Encounter Macca Multiplier", 1.0);
+            //GuaranteeEscape = InsaniaxSettings.CreateEntry("Guarantee Escape", false);
+            //GuaranteeNKEs = InsaniaxSettings.CreateEntry("Guarantee New Kagutsuchi Encounters", false);
+            //GuaranteeFiendNKEs = InsaniaxSettings.CreateEntry("Guarantee Fiend NKEs In Labyrinth", false);
 
             InsaniaxSettings.SetFilePath(configPath, autoload: true, printmsg: false);
 
@@ -1133,10 +1133,20 @@ namespace NocturneInsaniax
                     // 0 45 0
                     fld_Npc.fldItemBoxAdd(350, 194.22f, 0f, -267.64f, new Vector4(0, 45, 0, 1)); // Add Item Box in Nihilo Core
                 }
+                if (pFileName == "dds3data/fld/f/f031/f031_009") // Obelisk 97F
+                {
+                    // 17.4625 0 12.5109
+                    fld_Npc.fldItemBoxAdd(339, 1746.25f, 0f, 1251.09f, new Vector4(0, 270, 0, 1)); // Add Item Box in Obelisk
+                }
                 if (pFileName == "dds3data/fld/f/f034/f034_001") // Amala Temple Entrance
                 {
                     // 19.5531 0 51.822
                     fld_Npc.fldItemBoxAdd(349, 1955.31f, 0f, 5182.2f, new Vector4(0, 90, 0, 1)); // Add Item Box in Amala Temple Entrance
+                }
+                if (pFileName == "dds3data/fld/f/f034/f034_022") // White Temple 1F
+                {
+                    // 75.1737 0 63.1044
+                    fld_Npc.fldItemBoxAdd(340, 7517.37f, 0f, 6310.44f, new Vector4(0, 90, 0, 1)); // Add Item Box in White Temple
                 }
                 if (pFileName == "dds3data/fld/f/f027/f027_001") // Asakusa 1
                 {
@@ -1154,6 +1164,11 @@ namespace NocturneInsaniax
                     // fld_Npc.fldItemBoxAdd(337, 1373.02f, -126.92f, -1288.15f, new Vector4(0, 0, 0, 1)); // Add Item Box in Diet Building after Mitra
                     // 15.2281 0 -24.3815
                     fld_Npc.fldItemBoxAdd(337, 1522.81f, 0f, -2438.15f, new Vector4(0, 0, 0, 1)); // Add Item Box in Diet Building after Mitra
+                }
+                if (pFileName == "dds3data/fld/f/f037/f037_024") // ToK 444F Outside
+                {
+                    // 32.4872 30 82.5207
+                    fld_Npc.fldItemBoxAdd(341, 3248.72f, -3000f, 8252.07f, new Vector4(0, 180, 0, 1)); // Add Item Box in in outside section of ToK
                 }
                 if (pFileName == "dds3data/fld/f/f037/f037_027") // Top of ToK
                 {
@@ -1174,15 +1189,15 @@ namespace NocturneInsaniax
             }
         }
 
-        [HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetKakutokuMaka))]
-        private class nbGetKakutokuMakaPatch
-        {
-            public static void Postfix(ref nbMainProcessData_t data, ref int __result)
-            {
-                // Macca multiplier
-                __result = Convert.ToInt32(__result * EncounterMaccaMultiplier.Value);
-            }
-        }
+        //[HarmonyPatch(typeof(nbCalc), nameof(nbCalc.nbGetKakutokuMaka))]
+        //private class nbGetKakutokuMakaPatch
+        //{
+        //    public static void Postfix(ref nbMainProcessData_t data, ref int __result)
+        //    {
+        //        // Macca multiplier
+        //        __result = Convert.ToInt32(__result * EncounterMaccaMultiplier.Value);
+        //    }
+        //}
 
         //[HarmonyPatch(typeof(fldProcess), nameof(fldProcess.ProcSequence))]
         //private class fldProcessProcSequencePatch

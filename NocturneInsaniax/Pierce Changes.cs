@@ -45,7 +45,7 @@ namespace NocturneInsaniax
                     else if (datCalc.datCheckSyojiSkill(work, 374) != 0)
                         __result = 50;
 
-                    if (work.badstatus == 2 && (__result == 65536 || __result == 131072 || __result == 262144 || __result < 100))
+                    if ((work.badstatus == 2 || work.badstatus == 1024) && (__result == 65536 || __result == 131072 || __result == 262144 || __result < 100))
                         __result = 100;
                 }
 
@@ -85,7 +85,8 @@ namespace NocturneInsaniax
                 bool isDrain = resistance[resistance.Length - 19] == '1';
 
                 bool hasPierce = datCalc.datCheckSyojiSkill(nbMainProcess.nbGetUnitWorkFromFormindex(nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].formindex), 357) == 1 ||
-                    datCalc.datCheckSyojiSkill(nbMainProcess.nbGetUnitWorkFromFormindex(nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].formindex), 361) == 1;
+                    datCalc.datCheckSyojiSkill(nbMainProcess.nbGetUnitWorkFromFormindex(nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].formindex), 361) == 1 ||
+                    datCalc.datCheckSyojiSkill(nbMainProcess.nbGetUnitWorkFromFormindex(nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].formindex), 379) == 1;
 
                 bool hasAnimus = nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].count[15] > 0 && nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].count[20] > 0;
 

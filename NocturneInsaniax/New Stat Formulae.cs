@@ -99,6 +99,13 @@ namespace NocturneInsaniax
         {
             public static bool Prefix(ref int sformindex, ref float pow, ref float __result)
             {
+                if (nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id > 383)
+                {
+                    __result = pow * (1 + 0.3f);
+                    return false;
+                }
+
+
                 bool criticalMelodyActive = false;
                 byte pawToPawCount = 0;
                 bool pawToPawActive = false;
@@ -400,11 +407,11 @@ namespace NocturneInsaniax
         {
             public static bool Prefix(ref nbMainProcessData_t data, ref int __result)
             {
-                if (GuaranteeEscape.Value == true)
-                {
-                    __result = 1;
-                    return false;
-                }
+                //if (GuaranteeEscape.Value == true)
+                //{
+                //    __result = 1;
+                //    return false;
+                //}
 
                 var encounter = datEncount.Get(data.encno);
                 if ((encounter.flag >> 5 & 1) != 0 || datCalc.datCheckSkillInParty(296) != 0)

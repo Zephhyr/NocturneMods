@@ -114,7 +114,8 @@ namespace NocturneInsaniax
                     encno = 267;
                 else if (encno == 267)
                     encno = 20;
-                else if (encpackno <= 216 && (GuaranteeNKEs.Value == true || (evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0 && random.Next(2) == 0)))
+                //else if (encpackno <= 216 && (GuaranteeNKEs.Value == true || (evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0 && random.Next(2) == 0)))
+                else if (encpackno <= 216 && evtMoon.evtGetAgeOfMoon() == 0 && datEncount.tbl[encno].btlsound == 0 && random.Next(2) == 0)
                 {
                     encno = NewKagutsuchiEncounter(encno, encpackno);
                 }
@@ -1016,7 +1017,8 @@ namespace NocturneInsaniax
 
         private static void FirstKalpaEncounter1()
         {
-            if (GuaranteeFiendNKEs.Value == true || random.Next(3) == 0)
+            //if (GuaranteeFiendNKEs.Value == true || random.Next(3) == 0)
+            if (random.Next(3) == 0)
                 FirstKalpaMatadorEncounter();
             else
                 FirstKalpaTamLinEncounter();
@@ -1024,7 +1026,8 @@ namespace NocturneInsaniax
 
         private static void FirstKalpaEncounter2()
         {
-            if (GuaranteeFiendNKEs.Value == true || random.Next(3) == 0)
+            //if (GuaranteeFiendNKEs.Value == true || random.Next(3) == 0)
+            if (random.Next(3) == 0)
                 FirstKalpaMatadorEncounter();
             else
                 FirstKalpaXuanwuKikuriHimeEncounter();
@@ -1032,7 +1035,8 @@ namespace NocturneInsaniax
 
         private static void FirstKalpaEncounter3()
         {
-            if (GuaranteeFiendNKEs.Value == true || random.Next(3) == 0)
+            //if (GuaranteeFiendNKEs.Value == true || random.Next(3) == 0)
+            if (random.Next(3) == 0)
                 FirstKalpaMatadorEncounter();
             else
                 FirstKalpaXiezhaiEncounter();
@@ -1040,7 +1044,8 @@ namespace NocturneInsaniax
 
         private static void FirstKalpaEncounter4()
         {
-            if (GuaranteeFiendNKEs.Value == true || random.Next(3) == 0)
+            //if (GuaranteeFiendNKEs.Value == true || random.Next(3) == 0)
+            if (random.Next(3) == 0)
                 FirstKalpaMatadorEncounter();
             else
                 FirstKalpaSenriEncounter();
@@ -1048,7 +1053,8 @@ namespace NocturneInsaniax
 
         private static void SecondKalpaEncounter1()
         {
-            if (GuaranteeFiendNKEs.Value == true || random.Next(3) == 0)
+            //if (GuaranteeFiendNKEs.Value == true || random.Next(3) == 0)
+            if (random.Next(3) == 0)
                 SecondKalpaDaisoujouEncounter();
             else
                 SecondKalpaShadowEncounter();
@@ -1056,7 +1062,8 @@ namespace NocturneInsaniax
 
         private static void SecondKalpaEncounter2()
         {
-            if (GuaranteeFiendNKEs.Value == true || random.Next(3) == 0)
+            //if (GuaranteeFiendNKEs.Value == true || random.Next(3) == 0)
+            if (random.Next(3) == 0)
                 SecondKalpaDaisoujouEncounter();
             else
                 SecondKalpaShikiOujiEncounter();
@@ -1064,7 +1071,8 @@ namespace NocturneInsaniax
 
         private static void SecondKalpaEncounter3()
         {
-            if (GuaranteeFiendNKEs.Value == true || random.Next(3) == 0)
+            //if (GuaranteeFiendNKEs.Value == true || random.Next(3) == 0)
+            if (random.Next(3) == 0)
                 SecondKalpaHellBikerEncounter();
             else
                 SecondKalpaDoppelgangerEncounter();
@@ -1072,7 +1080,8 @@ namespace NocturneInsaniax
 
         private static void ThirdKalpaEncounter1()
         {
-            if (GuaranteeFiendNKEs.Value == true || random.Next(3) == 0)
+            //if (GuaranteeFiendNKEs.Value == true || random.Next(3) == 0)
+            if (random.Next(3) == 0)
                 ThirdKalpaFourHorsemenEncounter();
             else
                 ThirdKalpaVritraEncounter();
@@ -1080,7 +1089,8 @@ namespace NocturneInsaniax
 
         private static void FourthKalpaEncounter1()
         {
-            if (GuaranteeFiendNKEs.Value == true || random.Next(3) == 0)
+            //if (GuaranteeFiendNKEs.Value == true || random.Next(3) == 0)
+            if (random.Next(3) == 0)
                 FourthKalpaMotherHarlotEncounter();
             else
                 FourthKalpaQitianDashengEncounter();
@@ -1088,7 +1098,8 @@ namespace NocturneInsaniax
 
         private static void FourthKalpaEncounter2()
         {
-            if (GuaranteeFiendNKEs.Value == true || random.Next(3) == 0)
+            //if (GuaranteeFiendNKEs.Value == true || random.Next(3) == 0)
+            if (random.Next(3) == 0)
                 FourthKalpaTrumpeterEncounter();
             else
                 FourthKalpaDemeeHoEncounter();

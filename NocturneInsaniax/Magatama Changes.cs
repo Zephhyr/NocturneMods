@@ -1672,7 +1672,7 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].MasterGrowParamTbl[5] = 24; // Luck
 
             // Skills
-            tblHearts.fclHeartsTbl[id].Skill[0].ID = 357; // Pierce
+            tblHearts.fclHeartsTbl[id].Skill[0].ID = 379; // Pierce
             tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 1;
             tblHearts.fclHeartsTbl[id].Skill[1].ID = 339; // Fire Repel
             tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 1;

@@ -109,7 +109,8 @@ namespace NocturneInsaniax
                     case 41: __result = "Raises Vitality by 2 \nand full HP recovery \nfor one ally."; return false; // Vitality Incense
                     case 42: __result = "Raises Agility by 2 \nand full HP recovery \nfor one ally."; return false; // Agility Incense
                     case 43: __result = "Raises Luck by 2 \nand full HP recovery \nfor one ally."; return false; // Luck Incense
-                    case 44: __result = "Great HP recovery for one ally \nat 1/2 turn cost \nReusable."; return false; // Graven Image
+                    case 44: __result = "Great HP recovery for one ally. \nReusable."; return false; // Graven Image
+                    case 46: __result = "Displays an enemy's info \nat 1/2 turn cost \nReusable."; return false; // Spyglass
                     case 47: __result = "Displays an enemy's info \nat 1/2 turn cost."; return false; // Spyglass
                     case 48: __result = "Medium Fire damage to one foe. \nPow: 45, Acc: 100%"; return false; // Agilao Rock
                     case 49: __result = "Medium Ice damage to one foe. \nPow: 39, Acc: 100%, Freeze: 25%"; return false; // Bufula Rock
@@ -225,6 +226,9 @@ namespace NocturneInsaniax
                         if (datCalc.datGetBaseParam(pStock, statID) < MAXSTATS)
                         {
                             pStock.param[statID] = (sbyte)Math.Min(pStock.param[statID] + 2, MAXSTATS);
+                            while (pStock.param[statID] + pStock.mitamaparam[statID] > MAXSTATS)
+                                pStock.mitamaparam[statID]--;
+
                             pStock.maxhp = (ushort)datCalc.datGetMaxHp(pStock);
                             pStock.maxmp = (ushort)datCalc.datGetMaxMp(pStock);
                             pStock.hp = pStock.maxhp;
@@ -1163,7 +1167,7 @@ namespace NocturneInsaniax
             fldGlobal.fldHitData._fldItemBoxTbl[336]._ItemID = 59;
             fldGlobal.fldHitData._fldItemBoxTbl[336]._ItemNum = 2;
 
-            // Kailash Magatama Box behind Mitra
+            // New Item Box In Ikebukuro
             fldGlobal.fldHitData._fldItemBoxTbl[338]._Type = 1;
             fldGlobal.fldHitData._fldItemBoxTbl[338]._ItemID = 39;
             fldGlobal.fldHitData._fldItemBoxTbl[338]._ItemNum = 1;
@@ -1210,6 +1214,11 @@ namespace NocturneInsaniax
             // Great Chakra Item Box in Obelisk
             fldGlobal.fldHitData._fldItemBoxTbl[134]._ItemID = 8;
 
+            // New Item Box In Ikebukuro
+            fldGlobal.fldHitData._fldItemBoxTbl[339]._Type = 1;
+            fldGlobal.fldHitData._fldItemBoxTbl[339]._ItemID = 39;
+            fldGlobal.fldHitData._fldItemBoxTbl[339]._ItemNum = 1;
+
             // Dekunda Rock Item Box in Obelisk Treasure Room
             fldGlobal.fldHitData._fldItemBoxTbl[166]._ItemID = 33;
             fldGlobal.fldHitData._fldItemBoxTbl[166]._ItemNum = 10;
@@ -1253,6 +1262,16 @@ namespace NocturneInsaniax
             // Life Stone Item Box in Yoyogi Park
             fldGlobal.fldHitData._fldItemBoxTbl[165]._ItemNum = 5;
 
+            // New Item Box In White Temple
+            fldGlobal.fldHitData._fldItemBoxTbl[340]._Type = 1;
+            fldGlobal.fldHitData._fldItemBoxTbl[340]._ItemID = 39;
+            fldGlobal.fldHitData._fldItemBoxTbl[340]._ItemNum = 1;
+
+            // New Item Box In Tower of Kagutsuchi
+            fldGlobal.fldHitData._fldItemBoxTbl[341]._Type = 1;
+            fldGlobal.fldHitData._fldItemBoxTbl[341]._ItemID = 39;
+            fldGlobal.fldHitData._fldItemBoxTbl[341]._ItemNum = 1;
+
             // Macca Box in Overworld 6
             fldGlobal.fldHitData._fldItemBoxTbl[14]._Param = 10000;
 
@@ -1276,6 +1295,9 @@ namespace NocturneInsaniax
 
             // Satan Magatama Box behind Ongyo-Ki
             fldGlobal.fldHitData._fldItemBoxTbl[104]._ItemID = 16;
+
+            // Int Incenses in TDE room in 5th Kalpa
+            fldGlobal.fldHitData._fldItemBoxTbl[330]._ItemID = 39;
 
             // Kailash Magatama Box behind Mitra
             fldGlobal.fldHitData._fldItemBoxTbl[337]._Type = 2;
@@ -1330,11 +1352,6 @@ namespace NocturneInsaniax
             fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemNum = 1;
             fldGlobal.fldHitData._fldItemBoxTbl[351]._Trap = 0;
             fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 10000;
-            //fldGlobal.fldHitData._fldItemBoxTbl[351]._Type = 2;
-            //fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemID = 0;
-            //fldGlobal.fldHitData._fldItemBoxTbl[351]._ItemNum = 0;
-            //fldGlobal.fldHitData._fldItemBoxTbl[351]._Trap = 1;
-            //fldGlobal.fldHitData._fldItemBoxTbl[351]._Param = 1278;
 
             //fldGlobal.fldHitData._fldItemBoxTbl.Add(new fldTakaraTbl_t { _ItemID = 47, _ItemNum = 5 });
         }

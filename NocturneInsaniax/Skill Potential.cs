@@ -278,7 +278,7 @@ namespace NocturneInsaniax
             new sbyte[] {5    , -5   , -5   , -5   , -5   , 5    , -5   , 5    , 5    , 5    , -3   , 5    , 0    , -3   , 2    , 0 }, // 249 Sarge Girimekhala
             new sbyte[] {0    , 0    , 0    , 8    , 0    , 6    , 0    , 0    , 0    , 0    , 0    , 6    , 0    , 4    , 4    , 0 }, // 250 NKE Pixie
             new sbyte[] {0    , -5   , 4    , 0    , 0    , 0    , 1    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 251 NKE Jack Frost
-            new sbyte[] {7    , 0    , 0    , 7    , 7    , 5    , 0    , 0    , 0    , 0    , 0    , 5    , 0    , 0    , 5    , 0 }, // 252 Devil Dante
+            new sbyte[] {7    , 0    , 0    , 7    , 7    , 5    , 0    , 0    , 0    , 0    , 0    , 5    , 7    , 0    , 5    , 0 }, // 252 Devil Dante
             new sbyte[] {3    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0    , 0    , 0    , 1    , 0 }, // 253 Gamete
             new sbyte[] {9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 0    , 5    , 5    , 0 }, // 254 YHVH
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 255 
@@ -1066,6 +1066,9 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int id, ref string __result)
             {
+                if (currentDemonWork.id > 383)
+                    return;
+
                 if (currentDemonWork.id == 162 || currentDemonWork.id == 163 || currentDemonWork.id == 164 || currentDemonWork.id == 165 || currentDemonWork.id == 166 || currentDemonWork.id == 299)
                 {
                     switch (id)
@@ -1155,6 +1158,9 @@ namespace NocturneInsaniax
                 if (datSkill.tbl[nskill].type == 0 && nskill != 265) // If it isn't a passive skill
                 {
                     tmp_datNormalSkill.cost = datNormalSkill.tbl[nskill].cost; // Memorize the original skill cost
+
+                    if (w.id > 383)
+                        return;
 
                     if ((w.id == 299 && nskill != 27) || (w.id == 273 && nskill == 191))
                     {
@@ -1492,9 +1498,12 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int nskill, ref int sformindex, ref int __result)
             {
+                ushort demonID = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id; // Get the demon's ID
+                if (demonID > 383)
+                    return;
+
                 if ((nskill < 288 || nskill > 421) && __result != -1) // If it isn't a passive skill and MP have been altered
                 {
-                    ushort demonID = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id; // Get the demon's ID
                     sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(nskill, demonID);
 
                     if (skillPotential != 0)

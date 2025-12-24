@@ -516,34 +516,15 @@ namespace NocturneInsaniax
                 ushort paramID = 6;
                 int fails = 0;
 
-                for (int i = 0; i < POINTS_PER_LEVEL; i++)
+                var paramTypes = fclCombineTable.fclSpiritParamUpTbl[3 - mitama].ParamType;
+
+                foreach (var paramType in paramTypes)
                 {
-                    do
-                    {
-                        // Pull a random stat from whatever the Mitama's upgradable stat pool is.
-                        paramID = (ushort)(fclCombineTable.fclSpiritParamUpTbl[3 - mitama].ParamType[rng.Next(fclCombineTable.fclSpiritParamUpTbl[3 - mitama].ParamType.Length)] - 1);
+                    pStock.skillparam[paramType - 1] = (sbyte) Math.Ceiling(pStock.param[paramType - 1] * 0.1f);
 
-                        // If it's somehow below zero or over 5, just return here and don't continue.
-                        if (paramID < 0 || paramID > 5)
-                        { return false; }
-
-                        // Check the chance of the stat upgrading and if it's greater than 1, set it to 1.
-                        paramNewValue += (float)Math.Max(Math.Ceiling(((float)pStock.param[paramID] / 2f * (float)fclCombineTable.fclSpiritParamUpTbl[3 - mitama].UpRate) / 100f - ((float)pStock.param[paramID] / 2f)), 0);
-                        if (paramNewValue > 0f)
-                        { paramNewValue = 1f; }
-
-                        // If it fails, increment then return false if we failed 100 times.
-                        else if (fails++ >= 100)
-                        { return false; }
-                    }
-                    while (paramNewValue < 1f);
-
-                    // If it's under or equal to the maximum, set the Mitama Bonus.
-                    if (pStock.param[paramID] + pStock.skillparam[paramID] + pStock.mitamaparam[paramID] + paramNewValue < MAXSTATS)
-                    {
-                        pStock.skillparam[paramID] += (sbyte)paramNewValue;
-                        paramNewValue = 0;
-                    }
+                    while ((pStock.param[paramType - 1] + pStock.mitamaparam[paramType - 1] + pStock.skillparam[paramType - 1] > Math.Floor(pStock.param[paramType - 1] * 1.5f))
+                        || (pStock.param[paramType - 1] + pStock.mitamaparam[paramType - 1] + pStock.skillparam[paramType - 1] > MAXSTATS))
+                        pStock.skillparam[paramType - 1]--;
                 }
 
                 // Return 1

@@ -32,7 +32,7 @@ namespace NocturneInsaniax
         private static string[] paramNames = { "Str", "Int", "Mag", "Vit", "Agi", "Luc" };
         private static int[] LevelUpPoints = { 0, 0, 0, 0, 0, 0 };
         private const string barSpriteName = "sstatusbar_base";
-        private static string[] StatusBarValues = { "shpnum_current", "shpnum_full", "smpnum_current", "smpnum_full" };
+        private static string[] StatusBarValues = { "sinfo_basic/shpbar/shpnum_current", "sinfo_basic/shpbar/shpnum_full", "sinfo_basic/smpbar/smpnum_current", "sinfo_basic/smpbar/smpnum_full" };
         private static string[] StockBarValues = { "barhp", "barmp" };
         private static string[] AnalyzeBarValues = { "banalyze_hp_known", "banalyze_mp_known" };
         private static string[] PartyBarValues = { "barhp", "barmp" };
@@ -817,8 +817,8 @@ namespace NocturneInsaniax
                             for (int j = 0; j < g2.GetComponent<CounterCtr>().image.Length; j++)
                             {
                                 // Set position and scale accordingly.
-                                g2.GetComponent<CounterCtr>().image[j].transform.localPosition = new Vector3((i % 2) * 130 + 86 - j * 20 + 5, 32, -8);
-                                g2.GetComponent<CounterCtr>().image[j].transform.localScale = new Vector3(0.8f, 1, 1);
+                                g2.GetComponent<CounterCtr>().image[j].transform.localPosition = new Vector3((i % 2) * 130 + 86 - j * 20 + 5, 27, -8);
+                                g2.GetComponent<CounterCtr>().image[j].transform.localScale = new Vector3(0.8f, 0.8f, 1);
                             }
                         }
 
@@ -1631,7 +1631,7 @@ namespace NocturneInsaniax
 
                 // If there's Counter objects in the Status Menu's children, set up their values and colors.
                 if (stsObj.GetComponentsInChildren<CounterCtr>() != null)
-                { stsObj.GetComponentsInChildren<CounterCtr>()[(ctr2 > 1 && !EnableIntStat) ? ctr2 - 1 : ctr2].Set(Math.Clamp(datCalc.datGetParam(pStock, ctr2), 0, MAXSTATS), Color.white, (CursorMode == 2 && CursorPos > -1) ? 1 : 0); }
+                { stsObj.GetComponentsInChildren<CounterCtr>()[(ctr2 > 1 && !EnableIntStat) ? ctr2 - 1 : ctr2].Set(Math.Clamp(datCalc.datGetParam(pStock, ctr2), 0, MAXSTATS), Color.white, (CursorMode == 2 && CursorPos == ctr2) ? 1 : 0); }
 
                 // If your Cursor Position is over -1, set the FlashMode to 2.
                 // Not sure what this does.
@@ -1842,7 +1842,7 @@ namespace NocturneInsaniax
                 for (int i = 0; i < 4; i++)
                 {
                     // Grab.
-                    GameObject g2 = GameObject.Find(stsObj.name + "/" + StatusBarValues[i]);
+                    GameObject g2 = GameObject.Find(StatusBarValues[i]);
 
                     // If null, continue.
                     if (g2 == null)
@@ -1874,7 +1874,7 @@ namespace NocturneInsaniax
 
                             // Set new pos and scale/
                             g2.GetComponent<CounterCtr>().image[j].transform.localPosition = new Vector3(60 - j * 25, 0, -4);
-                            g2.GetComponent<CounterCtr>().image[j].transform.localScale = new Vector3(g2.GetComponent<CounterCtr>().image[j].transform.localScale.x * 0.85f, g2.GetComponent<CounterCtr>().image[j].transform.localScale.y * 0.85f, g2.GetComponent<CounterCtr>().image[j].transform.localScale.z);
+                            g2.GetComponent<CounterCtr>().image[j].transform.localScale = new Vector3(g2.GetComponent<CounterCtr>().image[j].transform.localScale.x * 0.9f, g2.GetComponent<CounterCtr>().image[j].transform.localScale.y * 0.9f, g2.GetComponent<CounterCtr>().image[j].transform.localScale.z);
 
                             // Reset active state.
                             g2.GetComponent<CounterCtr>().image[j].gameObject.active = chk;

@@ -98,15 +98,15 @@ namespace NocturneInsaniax
             }
         }
 
-        [HarmonyPatch(typeof(fclCombineCalcCore), nameof(fclCombineCalcCore.cmbCalcParamPowerUp))]
-        private class MitamaFusionStatIncreasePatch
-        {
-            public static void Postfix(ref ushort MitamaID, ref datUnitWork_t pStock, ref sbyte __result)
-            {
-                for (int i = 0; i <= 5; i++)
-                    if (pStock.mitamaparam[i] >= (sbyte)(pStock.param[i] * 0.5))
-                        pStock.mitamaparam[i] = (sbyte)(pStock.param[i] * 0.5);
-            }
-        }
+        //[HarmonyPatch(typeof(fclCombineCalcCore), nameof(fclCombineCalcCore.cmbCalcParamPowerUp))]
+        //private class MitamaFusionStatIncreasePatch
+        //{
+        //    public static void Postfix(ref ushort MitamaID, ref datUnitWork_t pStock, ref sbyte __result)
+        //    {
+        //        for (int i = 0; i <= 5; i++)
+        //            if (pStock.mitamaparam[i] >= (sbyte)(pStock.param[i] * 0.5))
+        //                pStock.mitamaparam[i] = (sbyte)(pStock.param[i] * 0.5);
+        //    }
+        //}
     }
 }

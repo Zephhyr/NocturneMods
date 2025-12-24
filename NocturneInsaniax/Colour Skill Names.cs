@@ -418,7 +418,7 @@ namespace NocturneInsaniax
 
                         if (Style == 3)
                         {
-                            if (pStock.mitamaparam.Where(x => x != 0).Any())
+                            if (pStock.mitamaparam.Where(x => x != 0).Any() || pStock.skillparam.Where(x => x != 0).Any())
                                 baseSkillCount = 0;
 
                             for (int i = baseSkillCount + 1; i <= pStock.skillcnt; i++)

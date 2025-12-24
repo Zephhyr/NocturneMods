@@ -1416,7 +1416,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 3000;
             datDevilFormat.tbl[id].maxmp = 3000;
 
-            datDevilFormat.tbl[id].dropexp = 4000;
+            datDevilFormat.tbl[id].dropexp = 2000;
             datDevilFormat.tbl[id].dropmakka = 8000;
 
             // Enemy Skills
@@ -1732,7 +1732,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 640;
             datDevilFormat.tbl[id].maxmp = 640;
 
-            datDevilFormat.tbl[id].dropexp = 1000;
+            datDevilFormat.tbl[id].dropexp = 444;
             datDevilFormat.tbl[id].dropmakka = 5000;
 
             // Enemy Skills
@@ -1791,7 +1791,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 720;
             datDevilFormat.tbl[id].maxmp = 720;
 
-            datDevilFormat.tbl[id].dropexp = 1000;
+            datDevilFormat.tbl[id].dropexp = 848;
             datDevilFormat.tbl[id].dropmakka = 5000;
 
             // Enemy Skills
@@ -1934,7 +1934,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 480;
             datDevilFormat.tbl[id].maxmp = 480;
 
-            datDevilFormat.tbl[id].dropexp = 600;
+            datDevilFormat.tbl[id].dropexp = 292;
             datDevilFormat.tbl[id].dropmakka = 2400;
 
             // Enemy Skills
@@ -2049,7 +2049,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 400;
             datDevilFormat.tbl[id].maxmp = 400;
 
-            datDevilFormat.tbl[id].dropexp = 100;
+            datDevilFormat.tbl[id].dropexp = 120;
             datDevilFormat.tbl[id].dropmakka = 1000;
 
 
@@ -2101,7 +2101,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 3000;
             datDevilFormat.tbl[id].maxmp = 3000;
 
-            datDevilFormat.tbl[id].dropexp = 4000;
+            datDevilFormat.tbl[id].dropexp = 2152;
             datDevilFormat.tbl[id].dropmakka = 8000;
 
             // Enemy Skills
@@ -2203,7 +2203,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 900;
             datDevilFormat.tbl[id].maxmp = 900;
 
-            datDevilFormat.tbl[id].dropexp = 1400;
+            datDevilFormat.tbl[id].dropexp = 848;
             datDevilFormat.tbl[id].dropmakka = 5000;
 
             // Enemy Skills
@@ -2250,7 +2250,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 900;
             datDevilFormat.tbl[id].maxmp = 900;
 
-            datDevilFormat.tbl[id].dropexp = 1200;
+            datDevilFormat.tbl[id].dropexp = 582;
             datDevilFormat.tbl[id].dropmakka = 5000;
 
             // Enemy Skills
@@ -2421,7 +2421,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 720;
             datDevilFormat.tbl[id].maxmp = 720;
 
-            datDevilFormat.tbl[id].dropexp = 1600;
+            datDevilFormat.tbl[id].dropexp = 938;
             datDevilFormat.tbl[id].dropmakka = 6000;
 
             // Enemy Skills
@@ -2479,7 +2479,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 540;
             datDevilFormat.tbl[id].maxmp = 540;
 
-            datDevilFormat.tbl[id].dropexp = 1500;
+            datDevilFormat.tbl[id].dropexp = 512;
             datDevilFormat.tbl[id].dropmakka = 5000;
 
             // Enemy Skills
@@ -2536,7 +2536,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 300;
             datDevilFormat.tbl[id].maxmp = 300;
 
-            datDevilFormat.tbl[id].dropexp = 300;
+            datDevilFormat.tbl[id].dropexp = 198;
             datDevilFormat.tbl[id].dropmakka = 1000;
 
             // Enemy Skills
@@ -2736,7 +2736,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 600;
             datDevilFormat.tbl[id].maxmp = 600;
 
-            datDevilFormat.tbl[id].dropexp = 1600;
+            datDevilFormat.tbl[id].dropexp = 466;
             datDevilFormat.tbl[id].dropmakka = 4000;
 
             // Enemy Skills
@@ -3015,7 +3015,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 540;
             datDevilFormat.tbl[id].maxmp = 540;
 
-            datDevilFormat.tbl[id].dropexp = 2000;
+            datDevilFormat.tbl[id].dropexp = 558;
             datDevilFormat.tbl[id].dropmakka = 5000;
 
             // Enemy Skills
@@ -3068,7 +3068,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
             datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
-            datDevilFormat.tbl[id].dropexp = 200;
+            datDevilFormat.tbl[id].dropexp = 182;
             datDevilFormat.tbl[id].dropmakka = 1000;
 
             // Enemy Skills
@@ -3130,7 +3130,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 480;
             datDevilFormat.tbl[id].maxmp = 480;
 
-            datDevilFormat.tbl[id].dropexp = 800;
+            datDevilFormat.tbl[id].dropexp = 404;
             datDevilFormat.tbl[id].dropmakka = 3000;
 
             // Enemy Skills
@@ -3189,7 +3189,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
             datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
-            datDevilFormat.tbl[id].dropexp = 40;
+            datDevilFormat.tbl[id].dropexp = 54;
             datDevilFormat.tbl[id].dropmakka = 200;
 
             // Enemy Skills
@@ -3249,7 +3249,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 400;
             datDevilFormat.tbl[id].maxmp = 400;
 
-            datDevilFormat.tbl[id].dropexp = 400;
+            datDevilFormat.tbl[id].dropexp = 226;
             datDevilFormat.tbl[id].dropmakka = 2000;
 
             // Enemy Skills
@@ -3295,7 +3295,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 300;
             datDevilFormat.tbl[id].maxmp = 300;
 
-            datDevilFormat.tbl[id].dropexp = 200;
+            datDevilFormat.tbl[id].dropexp = 158;
             datDevilFormat.tbl[id].dropmakka = 600;
 
             // Enemy Skills
@@ -5074,6 +5074,9 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 600;
             datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
             datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
+
+            datDevilFormat.tbl[id].dropmakka = 182;
+            datDevilFormat.tbl[id].dropexp = 201;
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[2] = 30; // Mahama
@@ -9707,7 +9710,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 1200;
             datDevilFormat.tbl[id].maxmp = 1200;
 
-            datDevilFormat.tbl[id].dropexp = 2500;
+            datDevilFormat.tbl[id].dropexp = 1030;
             datDevilFormat.tbl[id].dropmakka = 6000;
 
             // Enemy Skills
@@ -9758,7 +9761,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 900;
             datDevilFormat.tbl[id].maxmp = 900;
 
-            datDevilFormat.tbl[id].dropexp = 500;
+            datDevilFormat.tbl[id].dropexp = 946;
             datDevilFormat.tbl[id].dropmakka = 2000;
 
             // Enemy Skills
@@ -9811,7 +9814,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 900;
             datDevilFormat.tbl[id].maxmp = 900;
 
-            datDevilFormat.tbl[id].dropexp = 500;
+            datDevilFormat.tbl[id].dropexp = 900;
             datDevilFormat.tbl[id].dropmakka = 2000;
 
             // Enemy Skills
@@ -9862,7 +9865,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 900;
             datDevilFormat.tbl[id].maxmp = 900;
 
-            datDevilFormat.tbl[id].dropexp = 500;
+            datDevilFormat.tbl[id].dropexp = 724;
             datDevilFormat.tbl[id].dropmakka = 2000;
 
             // Enemy Skills
@@ -9917,7 +9920,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
             datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
-            datDevilFormat.tbl[id].dropexp = 900;
+            datDevilFormat.tbl[id].dropexp = 968;
             datDevilFormat.tbl[id].dropmakka = 4500;
 
             // Enemy Skills
@@ -9967,7 +9970,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 480;
             datDevilFormat.tbl[id].maxmp = 480;
 
-            datDevilFormat.tbl[id].dropexp = 800;
+            datDevilFormat.tbl[id].dropexp = 346;
             datDevilFormat.tbl[id].dropmakka = 4000;
 
             // Enemy Skills
@@ -10065,7 +10068,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 640;
             datDevilFormat.tbl[id].maxmp = 640;
 
-            datDevilFormat.tbl[id].dropexp = 1000;
+            datDevilFormat.tbl[id].dropexp = 444;
             datDevilFormat.tbl[id].dropmakka = 5000;
 
             // Enemy Skills
@@ -10097,7 +10100,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 480;
             datDevilFormat.tbl[id].maxmp = 480;
 
-            datDevilFormat.tbl[id].dropexp = 1800;
+            datDevilFormat.tbl[id].dropexp = 630;
             datDevilFormat.tbl[id].dropmakka = 4500;
 
             // Enemy Skills
@@ -10142,7 +10145,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 700;
             datDevilFormat.tbl[id].maxmp = 700;
 
-            datDevilFormat.tbl[id].dropexp = 2000;
+            datDevilFormat.tbl[id].dropexp = 792;
             datDevilFormat.tbl[id].dropmakka = 5000;
 
             // Enemy Skills
@@ -10203,7 +10206,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 540;
             datDevilFormat.tbl[id].maxmp = 540;
 
-            datDevilFormat.tbl[id].dropexp = 1500;
+            datDevilFormat.tbl[id].dropexp = 582;
             datDevilFormat.tbl[id].dropmakka = 5000;
 
             // Enemy Skills
@@ -10253,7 +10256,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 300;
             datDevilFormat.tbl[id].maxmp = 300;
 
-            datDevilFormat.tbl[id].dropexp = 300;
+            datDevilFormat.tbl[id].dropexp = 198;
             datDevilFormat.tbl[id].dropmakka = 1000;
 
             // Enemy Skills
@@ -10337,18 +10340,17 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 700;
             datDevilFormat.tbl[id].maxmp = 700;
 
-            datDevilFormat.tbl[id].dropexp = 360;
+            datDevilFormat.tbl[id].dropexp = 170;
             datDevilFormat.tbl[id].dropmakka = 1000;
 
             // Enemy Skills
-            datDevilFormat.tbl[id].skill[0] = 
-            datDevilFormat.tbl[id].skill[1] = 176; // Fire Breath
-            datDevilFormat.tbl[id].skill[2] = 39; // Media
-            datDevilFormat.tbl[id].skill[3] = 37; // Diarama
-            datDevilFormat.tbl[id].skill[4] = 117; // Feral Bite
-            datDevilFormat.tbl[id].skill[5] = 226; // Gathering
-            datDevilFormat.tbl[id].skill[6] = 309; // Fire Boost
-            datDevilFormat.tbl[id].skill[7] = 366; // Abyssal Mask
+            datDevilFormat.tbl[id].skill[0] = 176; // Fire Breath
+            datDevilFormat.tbl[id].skill[1] = 39; // Media
+            datDevilFormat.tbl[id].skill[2] = 37; // Diarama
+            datDevilFormat.tbl[id].skill[3] = 117; // Feral Bite
+            datDevilFormat.tbl[id].skill[4] = 226; // Gathering
+            datDevilFormat.tbl[id].skill[5] = 309; // Fire Boost
+            datDevilFormat.tbl[id].skill[6] = 366; // Abyssal Mask
         }
 
         private static void Garuda(ushort id)
@@ -10382,7 +10384,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 840;
             datDevilFormat.tbl[id].maxmp = 840;
 
-            datDevilFormat.tbl[id].dropexp = 1000;
+            datDevilFormat.tbl[id].dropexp = 1128;
             datDevilFormat.tbl[id].dropmakka = 4800;
 
             // Enemy Skills
@@ -10416,6 +10418,9 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[6].Param = 444; // Heavenly Cyclone
             tblSkill.fclSkillTbl[id].Event[6].TargetLevel = 51;
             tblSkill.fclSkillTbl[id].Event[6].Type = 1;
+
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[1] = 444; // Heavenly Cyclone
 
             // AI
             datDevilAI.divTbls[1][25].aitable[0][0].skill = 32768;
@@ -11086,7 +11091,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 900;
             datDevilFormat.tbl[id].maxmp = 900;
 
-            datDevilFormat.tbl[id].dropexp = 500;
+            datDevilFormat.tbl[id].dropexp = 548;
             datDevilFormat.tbl[id].dropmakka = 2000;
 
             // Enemy Skills
@@ -11129,7 +11134,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 900;
             datDevilFormat.tbl[id].maxmp = 900;
 
-            datDevilFormat.tbl[id].dropexp = 500;
+            datDevilFormat.tbl[id].dropexp = 612;
             datDevilFormat.tbl[id].dropmakka = 2000;
 
             // Enemy Skills
@@ -11178,7 +11183,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 1200;
             datDevilFormat.tbl[id].maxmp = 1200;
 
-            datDevilFormat.tbl[id].dropexp = 2500;
+            datDevilFormat.tbl[id].dropexp = 840;
             datDevilFormat.tbl[id].dropmakka = 6000;
 
             // Enemy Skills
@@ -12913,7 +12918,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 200;
             datDevilFormat.tbl[id].maxmp = 200;
 
-            datDevilFormat.tbl[id].dropexp = 400;
+            datDevilFormat.tbl[id].dropexp = 226;
             datDevilFormat.tbl[id].dropmakka = 2000;
 
             // Enemy Skills
@@ -12991,8 +12996,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
             datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
-            datDevilFormat.tbl[id].dropexp = 501;
-            datDevilFormat.tbl[id].dropmakka = 512;
+            datDevilFormat.tbl[id].dropexp = 516;
+            datDevilFormat.tbl[id].dropmakka = 498;
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 69; // Makarakarn
@@ -13272,7 +13277,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 700;
             datDevilFormat.tbl[id].maxmp = 700;
 
-            datDevilFormat.tbl[id].dropexp = 2000;
+            datDevilFormat.tbl[id].dropexp = 762;
             datDevilFormat.tbl[id].dropmakka = 5000;
 
             // Enemy Skills
@@ -13363,7 +13368,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 960;
             datDevilFormat.tbl[id].maxmp = 960;
 
-            datDevilFormat.tbl[id].dropexp = 1400;
+            datDevilFormat.tbl[id].dropexp = 1376;
             datDevilFormat.tbl[id].dropmakka = 5000;
 
             // Enemy Skills
@@ -13819,7 +13824,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 3000;
             datDevilFormat.tbl[id].maxmp = 3000;
 
-            datDevilFormat.tbl[id].dropexp = 2400;
+            datDevilFormat.tbl[id].dropexp = 1600;
             datDevilFormat.tbl[id].dropmakka = 8000;
 
             datDevilAI.divTbls[1][121].scriptid = 133;
@@ -13882,7 +13887,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 10000;
             datDevilFormat.tbl[id].maxmp = 10000;
 
-            datDevilFormat.tbl[id].dropexp = 2400;
+            datDevilFormat.tbl[id].dropexp = 1672;
             datDevilFormat.tbl[id].dropmakka = 8000;
 
             datDevilAI.divTbls[1][122].ailevel = 1;
@@ -13945,7 +13950,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 10000;
             datDevilFormat.tbl[id].maxmp = 10000;
 
-            datDevilFormat.tbl[id].dropexp = 2222;
+            datDevilFormat.tbl[id].dropexp = 1032;
             datDevilFormat.tbl[id].dropmakka = 6000;
 
             datDevilAI.divTbls[1][123].scriptid = 133;
@@ -16910,6 +16915,7 @@ namespace NocturneInsaniax
 
             datDevilFormat.tbl[id].dropexp = 12000;
             datDevilFormat.tbl[id].dropmakka = 25000;
+            datDevilFormat.tbl[id].dropitem[0] = 39;
 
             // Display Skill
             datDevilFormat.tbl[id].skill[0] = 105; // Dark Sword
@@ -18578,7 +18584,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 46;
             datDevilFormat.tbl[id].level = 10;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 65, 2, 2, 2, 99, 5 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 65, 2, 2, 2, 90, 5 };
             datDevilFormat.tbl[id].keisyotype = 9;
             datDevilFormat.tbl[id].keisyoform = 1;
 
