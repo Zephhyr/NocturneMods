@@ -485,6 +485,12 @@ namespace NocturneInsaniax
         {
             fclRagShopTable.fclRagItemPackTbl[1] = new byte[]{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
+            fclRagShopTable.fclRagItemTbl[8].ItemID = 32;
+            fclRagShopTable.fclRagItemTbl[8].Rate[0].ItemID = 104;
+            fclRagShopTable.fclRagItemTbl[8].Rate[0].Nums = 1;
+            fclRagShopTable.fclRagItemTbl[8].Rate[1].ItemID = 110;
+            fclRagShopTable.fclRagItemTbl[8].Rate[1].Nums = 1;
+
             fclRagShopTable.fclRagItemTbl[9].ItemID = 33;
             fclRagShopTable.fclRagItemTbl[9].Rate[0].ItemID = 103;
             fclRagShopTable.fclRagItemTbl[9].Rate[1].ItemID = 110;
