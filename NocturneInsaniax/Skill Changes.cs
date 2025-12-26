@@ -569,7 +569,7 @@ namespace NocturneInsaniax
                     case 468: __result = "Mega Ice damage to all foes. \nLowers targets' Defense/Evasion. \nPow: 60, Acc: 100%, Freeze: 25%"; return false; // Niflheim
                     case 469: __result = "High Str-based Elec damage to one \nfoe. HP-based. Max Pow: 50, \nAcc: 90%, Crit: 20%, Shock: 20%"; return false; // Mjolnir
                     case 470: __result = "Mega Almighty damage to all foes. \nMinimizes targets' Defense. \nPow: 60, Acc: 100%"; return false; // Tandava
-                    case 471: __result = "Mega Str-based Almighty damage to \nrandom foes. 5-7 hits. Pow: 20, \nAcc: 100%, Crit: 1%"; return false; // Chaturbhuja
+                    case 471: __result = "Mega Str-based Almighty damage to \nrandom foes. 5-7 hits. Pow: 40, \nAcc: 100%, Crit: 1%"; return false; // Chaturbhuja
                     case 472: __result = "High Str-based Force damage to \none foe. HP-based. \nMax Pow: 54, Acc: 90%, Crit: 24%"; return false; // Kusanagi
                     case 473: __result = "Medium Fire damage to one foe. \nLowers target's Phys/Mag Attack. \nPow: 45, Acc: 100%"; return false; // Jack Agilao
                     case 474: __result = "Medium Str-based Force damage to \none foe. HP-based. \nMax Pow: 34, Acc: 120%, Crit: 100%"; return false; // Gae Bolg
@@ -5824,7 +5824,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 20;
+            datNormalSkill.tbl[id].hpn = 40;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].koukatype = 0;
             datNormalSkill.tbl[id].magicbase = 30;
