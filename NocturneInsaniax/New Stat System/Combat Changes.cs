@@ -180,12 +180,14 @@ namespace NocturneInsaniax
                 // Check if a Bead drops.
                 chance = rng.Next(100);
                 bool foundBead = false;
-                if ((float)devil.hougyokupoint * dropRateMult >= chance)
+                var hougyokupoint = devil.hougyokupoint != 0 ? 2 : 0;
+                if ((float)hougyokupoint * dropRateMult >= chance)
                 { foundBead = true; }
 
                 // Check if a LifeStone drops.
                 chance = rng.Next(100);
                 bool foundLifeStone = false;
+                var masekipoint = devil.masekipoint != 0 ? 8 : 0;
                 if ((float)devil.masekipoint * dropRateMult >= chance)
                 { foundLifeStone = true; }
 
