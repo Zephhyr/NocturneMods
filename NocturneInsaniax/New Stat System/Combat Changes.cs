@@ -138,7 +138,7 @@ namespace NocturneInsaniax
                 data.exp += (uint)exp;
 
                 // Check the Drop Chance
-                int chance = rng.Next(100);
+                float chance = rng.Next(10000) / 100f;
 
                 // Keep looping until it finds an item and attempts to drop it.
                 do
@@ -178,7 +178,7 @@ namespace NocturneInsaniax
                 { return false; }
 
                 // Check if a Bead drops.
-                chance = rng.Next(100);
+                chance = rng.Next(10000) / 100f;
                 bool foundBead = false;
                 var hougyokupoint = devil.hougyokupoint != 0 ? 2 : 0;
                 if ((float)hougyokupoint * dropRateMult >= chance)

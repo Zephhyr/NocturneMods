@@ -1876,7 +1876,7 @@ namespace NocturneInsaniax
                 normalSkills[i] = new datNormalSkill_t();
             datNormalSkill.tbl = normalSkills;
 
-            fclKeisyoSkillLevel_t[] skillLevels = new fclKeisyoSkillLevel_t[512];
+            fclKeisyoSkillLevel_t[] skillLevels = new fclKeisyoSkillLevel_t[291];
             for (int i = 0; i < tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Length; i++)
                 skillLevels[i] = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl[i];
             for (int i = tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.Length; i < skillLevels.Length; i++)
@@ -5008,7 +5008,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].targetcntmax = 6;
             datNormalSkill.tbl[id].targetcntmin = 3;
 
-            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 82;
+            tblKeisyoSkillLevel.fclKeisyoSkillLevelTbl.FirstOrDefault(x => x.SkillID == id).Level = 8;
         }
 
         private static void WindCutter(ushort id)

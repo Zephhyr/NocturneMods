@@ -1268,19 +1268,6 @@ namespace NocturneInsaniax
             }
         }
 
-        [HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstCalc))]
-        private class rstCalcPatch
-        {
-            public static void Prefix()
-            {
-                //MelonLogger.Msg("--rstcalc.rstCalc--");
-            }
-            public static void Postfix()
-            {
-                //MelonLogger.Msg("--rstcalc.rstCalc Post--");
-            }
-        }
-
         [HarmonyPatch(typeof(fclMisc), nameof(fclMisc.fclSetMessageVar))]
         private class fclSetMessageVarPatch
         {
@@ -1307,6 +1294,249 @@ namespace NocturneInsaniax
             {
                 //MelonLogger.Msg("--fclMisc.fclStartSelMessage--");
                 //MelonLogger.Msg("SelMsgNo: " + SelMsgNo);
+            }
+        }
+
+        [HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstCalc))]
+        private class rstCalcPatch
+        {
+            public static void Prefix()
+            {
+                MelonLogger.Msg("--rstcalc.rstCalc--");
+                MelonLogger.Msg("PUpSkillID: " + rstinit.GBWK.PUpSkillID);
+                MelonLogger.Msg("PUpSkillIndex: " + rstinit.GBWK.PUpSkillIndex);
+                MelonLogger.Msg("PUpSkillResult: " + rstinit.GBWK.PUpSkillResult);
+            }
+            public static void Postfix()
+            {
+                MelonLogger.Msg("--rstcalc.rstCalc Post--");
+            }
+        }
+
+        [HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstCalcSkillPowerUpCore))]
+        private class rstCalcSkillPowerUpCorePatch
+        {
+            public static void Prefix(ref sbyte __result)
+            {
+                MelonLogger.Msg("--rstcalc.rstCalcSkillPowerUpCore Prefix--");
+                MelonLogger.Msg("PUpSkillID: " + rstinit.GBWK.PUpSkillID);
+                MelonLogger.Msg("PUpSkillIndex: " + rstinit.GBWK.PUpSkillIndex);
+                MelonLogger.Msg("PUpSkillResult: " + rstinit.GBWK.PUpSkillResult);
+            }
+
+            public static void Postfix(ref sbyte __result)
+            {
+                MelonLogger.Msg("--rstcalc.rstCalcSkillPowerUpCore Postfix--");
+                MelonLogger.Msg("result: " + __result);
+            }
+        }
+
+        [HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstRndGetPowerUpSkill))]
+        private class rstRndGetPowerUpSkillPatch
+        {
+            public static void Prefix(ref datUnitWork_t pStock, ref sbyte pIdx, ref ushort __result)
+            {
+                MelonLogger.Msg("--rstcalc.rstRndGetPowerUpSkill Prefix--");
+                MelonLogger.Msg("pStock.id: " + pStock.id);
+                MelonLogger.Msg("pldx: " + pIdx);
+            }
+
+            public static void Postfix(ref datUnitWork_t pStock, ref sbyte pIdx, ref ushort __result)
+            {
+                MelonLogger.Msg("--rstcalc.rstRndGetPowerUpSkill Postfix--");
+                MelonLogger.Msg("pStock.id: " + pStock.id);
+                MelonLogger.Msg("pldx: " + pIdx);
+                MelonLogger.Msg("result: " + __result);
+            }
+        }
+
+        [HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstChkBeforeSkillOwner))]
+        private class rstChkBeforeSkillOwnerPatch
+        {
+            public static void Prefix(ref ushort SkillID, ref sbyte LevelOfs, ref datUnitWork_t pStock, ref sbyte __result)
+            {
+                MelonLogger.Msg("--rstcalc.rstChkBeforeSkillOwner Prefix--");
+                MelonLogger.Msg("SkillID: " + SkillID);
+                MelonLogger.Msg("LevelOfs: " + LevelOfs);
+                MelonLogger.Msg("pStock.id: " + pStock.id);
+            }
+
+            public static void Postfix(ref ushort SkillID, ref sbyte LevelOfs, ref datUnitWork_t pStock, ref sbyte __result)
+            {
+                MelonLogger.Msg("--rstcalc.rstChkBeforeSkillOwner Postfix--");
+                MelonLogger.Msg("SkillID: " + SkillID);
+                MelonLogger.Msg("LevelOfs: " + LevelOfs);
+                MelonLogger.Msg("pStock.id: " + pStock.id);
+                MelonLogger.Msg("result: " + __result);
+            }
+        }
+
+        [HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstChkSkillPowerUp2))]
+        private class rstChkSkillPowerUp2Patch
+        {
+            public static void Prefix( ref sbyte __result)
+            {
+                MelonLogger.Msg("--rstcalc.rstChkSkillPowerUp2 Prefix--");
+            }
+
+            public static void Postfix(ref sbyte __result)
+            {
+                MelonLogger.Msg("--rstcalc.rstChkSkillPowerUp2 Postfix--");
+                MelonLogger.Msg("result: " + __result);
+            }
+        }
+
+        [HarmonyPatch(typeof(fclCombineCalcCore), nameof(fclCombineCalcCore.cmbChkSkillOwner))]
+        private class cmbChkSkillOwnerPatch
+        {
+            public static void Prefix(ref ushort SkillID, ref datUnitWork_t pStock, ref sbyte __result)
+            {
+                MelonLogger.Msg("--fclCombineCalcCore.cmbChkSkillOwner Prefix--");
+                MelonLogger.Msg("SkillID: " + SkillID);
+                MelonLogger.Msg("pStock.id: " + pStock.id);
+            }
+
+            public static void Postfix(ref ushort SkillID, ref datUnitWork_t pStock, ref sbyte __result)
+            {
+                MelonLogger.Msg("--fclCombineCalcCore.cmbChkSkillOwner Postfix--");
+                MelonLogger.Msg("SkillID: " + SkillID);
+                MelonLogger.Msg("pStock.id: " + pStock.id);
+                MelonLogger.Msg("result: " + __result);
+            }
+        }
+
+        [HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstChkPartyDevilSkillPowerUp))]
+        private class rstChkPartyDevilSkillPowerUpPatch
+        {
+            public static void Prefix (ref sbyte __result)
+            {
+                MelonLogger.Msg("--rstcalc.rstChkPartyDevilSkillPowerUp Prefix--");
+            }
+
+            public static void Postfix(ref sbyte __result)
+            {
+                MelonLogger.Msg("--rstcalc.rstChkPartyDevilSkillPowerUp Postfix--");
+                MelonLogger.Msg("result: " + __result);
+            }
+        }
+
+        [HarmonyPatch(typeof(rstCalcCore), nameof(rstCalcCore.cmbGetMutationSkill))]
+        private class cmbGetMutationSkillPatch
+        {
+            public static void Prefix(ref ushort KeisyoSkillID, ref datUnitWork_t pStock, ref ushort __result)
+            {
+                MelonLogger.Msg("--rstCalcCore.cmbGetMutationSkill Prefix--");
+                MelonLogger.Msg("KeisyoSkillID: " + KeisyoSkillID);
+                MelonLogger.Msg("pStock.id: " + pStock.id);
+            }
+
+            public static void Postfix(ref ushort KeisyoSkillID, ref datUnitWork_t pStock, ref ushort __result)
+            {
+                MelonLogger.Msg("--rstCalcCore.cmbGetMutationSkill Postfix--");
+                MelonLogger.Msg("KeisyoSkillID: " + KeisyoSkillID);
+                MelonLogger.Msg("pStock.id: " + pStock.id);
+                MelonLogger.Msg("result: " + __result);
+            }
+        }
+
+        [HarmonyPatch(typeof(fclMisc), nameof(fclMisc.FCL_RAND))]
+        private class FCL_RANDPatch
+        {
+            public static void Prefix(ref uint __result)
+            {
+                MelonLogger.Msg("--fclMisc.FCL_RAND Prefix--");
+            }
+
+            public static void Postfix(ref uint __result)
+            {
+                MelonLogger.Msg("--fclMisc.FCL_RAND Postfix--");
+                MelonLogger.Msg("result: " + __result);
+            }
+        }
+
+        [HarmonyPatch(typeof(rstCalcCore), nameof(rstCalcCore.cmbGetKeisyoSkillLevel))]
+        private class cmbGetKeisyoSkillLevelPatch
+        {
+            public static void Prefix(ref ushort KeisyoSkillID, ref byte __result)
+            {
+                MelonLogger.Msg("--rstCalcCore.cmbGetKeisyoSkillLevel Prefix--");
+                MelonLogger.Msg("KeisyoSkillID: " + KeisyoSkillID);
+            }
+
+            public static void Postfix(ref ushort KeisyoSkillID, ref byte __result)
+            {
+                MelonLogger.Msg("--rstCalcCore.cmbGetKeisyoSkillLevel Postfix--");
+                MelonLogger.Msg("KeisyoSkillID: " + KeisyoSkillID);
+                MelonLogger.Msg("result: " + __result);
+            }
+        }
+
+        [HarmonyPatch(typeof(rstCalcCore), nameof(rstCalcCore.cmbCalcKeisyoSkillRate))]
+        private class cmbCalcKeisyoSkillRatePatch
+        {
+            public static void Prefix(ref datUnitWork_t pStock, ref ushort KeisyoSkillID, ref byte __result)
+            {
+                MelonLogger.Msg("--rstCalcCore.cmbCalcKeisyoSkillRate Prefix--");
+                MelonLogger.Msg("pStock.id: " + pStock.id);
+                MelonLogger.Msg("KeisyoSkillID: " + KeisyoSkillID);
+            }
+
+            public static void Postfix(ref datUnitWork_t pStock, ref ushort KeisyoSkillID, ref byte __result)
+            {
+                MelonLogger.Msg("--rstCalcCore.cmbCalcKeisyoSkillRate Postfix--");
+                MelonLogger.Msg("pStock.id: " + pStock.id);
+                MelonLogger.Msg("KeisyoSkillID: " + KeisyoSkillID);
+                MelonLogger.Msg("result: " + __result);
+            }
+        }
+
+        [HarmonyPatch(typeof(rstCalcCore), nameof(rstCalcCore.cmbGetKeisyoSkillScore))]
+        private class cmbGetKeisyoSkillScorePatch
+        {
+            public static void Prefix(ref short SkillAttr, ref ushort KeisyoType, ref byte __result)
+            {
+                MelonLogger.Msg("--rstCalcCore.cmbGetKeisyoSkillScore Prefix--");
+                MelonLogger.Msg("SkillAttr: " + SkillAttr);
+                MelonLogger.Msg("KeisyoType: " + KeisyoType);
+            }
+
+            public static void Postfix(ref short SkillAttr, ref ushort KeisyoType, ref byte __result)
+            {
+                MelonLogger.Msg("--rstCalcCore.cmbGetKeisyoSkillScore Postfix--");
+                MelonLogger.Msg("SkillAttr: " + SkillAttr);
+                MelonLogger.Msg("KeisyoType: " + KeisyoType);
+                MelonLogger.Msg("result: " + __result);
+            }
+        }
+
+
+        [HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstCalcSkillPowerUp))]
+        private class rstCalcSkillPowerUpPatch
+        {
+            public static void Prefix(ref sbyte __result)
+            {
+                MelonLogger.Msg("--rstcalc.rstCalcSkillPowerUp Prefix--");
+            }
+
+            public static void Postfix(ref sbyte __result)
+            {
+                MelonLogger.Msg("--rstcalc.rstCalcSkillPowerUp Postfix--");
+                MelonLogger.Msg("result: " + __result);
+            }
+        }
+
+        [HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstChkSkillPowerUp1))]
+        private class rstChkSkillPowerUp1Patch
+        {
+            public static void Prefix(ref sbyte __result)
+            {
+                MelonLogger.Msg("--rstcalc.rstChkSkillPowerUp1 Prefix--");
+            }
+
+            public static void Postfix(ref sbyte __result)
+            {
+                MelonLogger.Msg("--rstcalc.rstChkSkillPowerUp1 Postfix--");
+                MelonLogger.Msg("result: " + __result);
             }
         }
     }
