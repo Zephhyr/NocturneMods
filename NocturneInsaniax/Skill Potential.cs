@@ -367,9 +367,9 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , -5   , 0    , 4    , 0    , 0    , 2    , 4    , 0    , 4    , 0    , 0    , 2    , 0    , 0 }, // 336 Boss Pazuzu
             new sbyte[] {5    , 0    , 0    , 7    , -7   , 0    , 0    , 0    , -3   , -3   , -3   , 0    , 0    , 0    , 2    , 0 }, // 337 Boss Thor 2
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 338 
-            new sbyte[] {5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 3    , 0 }, // 339 Boss Raidou/Dante 1
-            new sbyte[] {6    , 0    , 0    , 6    , 6    , 4    , 0    , 0    , 0    , 0    , 0    , 4    , 0    , 0    , 4    , 0 }, // 340 Chase Raidou/Dante
-            new sbyte[] {6    , 0    , 0    , 6    , 6    , 4    , 0    , 0    , 0    , 0    , 0    , 4    , 0    , 0    , 4    , 0 }, // 341 Boss Raidou/Dante 2
+            new sbyte[] {5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 5    , 3    , 0 }, // 339 Boss Raidou/Dante 1
+            new sbyte[] {6    , 0    , 0    , 6    , 6    , 4    , 0    , 0    , 0    , 0    , 0    , 4    , 0    , 6    , 4    , 0 }, // 340 Chase Raidou/Dante
+            new sbyte[] {6    , 0    , 0    , 6    , 6    , 4    , 0    , 0    , 0    , 0    , 0    , 4    , 0    , 7    , 4    , 0 }, // 341 Boss Raidou/Dante 2
             new sbyte[] {7    , 7    , -7   , 0    , 0    , 7    , 7    , -7   , 0    , 0    , 0    , 7    , 0    , -4   , 4    , 0 }, // 342 Boss Metatron
             new sbyte[] {0    , -7   , 0    , 7    , 7    , 7    , -7   , 7    , 0    , 0    , 0    , 7    , 4    , -4   , 4    , 0 }, // 343 Boss Beelzebub
             new sbyte[] {9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 9    , 5    , 5    , 0 }, // 344 Boss Lucifer
