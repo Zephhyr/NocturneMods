@@ -9189,7 +9189,7 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][8] = 100; // Curse
             datAisyo.tbl[id][9] = 100; // Nerve
             datAisyo.tbl[id][10] = 100; // Mind
-            datAisyo.tbl[id][12] = 65536; // Shot
+            datAisyo.tbl[id][12] = 50; // Shot
 
             // Enemy Stats
             datDevilFormat.tbl[id].hp = 182;
