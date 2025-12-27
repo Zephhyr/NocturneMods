@@ -1773,7 +1773,7 @@ namespace NocturneInsaniax
                     int randomValue = random.Next(2);
                     __result = randomValue == 0 ? 0 : __result;
                 }
-                else if (bossList.Contains(work.id) && datNormalSkill.tbl[nskill].basstatus == 2048)
+                else if (bossList.Contains(work.id) && (datNormalSkill.tbl[nskill].basstatus == 1024 || datNormalSkill.tbl[nskill].basstatus == 2048))
                 {
                     __result = 0;
                 }
