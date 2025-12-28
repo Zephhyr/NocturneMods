@@ -1400,9 +1400,12 @@ namespace NocturneInsaniax
                 {
                     sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(nskill, s.id);
 
+                    if (datSkill.tbl[nskill].skillattr == 13 && datNormalSkill.tbl[nskill].hptype != 11)
+                        Convert.ToInt32(__result / 2f);
+
                     if (skillPotential != 0)
                     {
-                        __result = Convert.ToInt32(SkillPotentialUtility.ApplyHealMultiplier(skillPotential, Convert.ToInt32(__result / 2f)));
+                        __result = Convert.ToInt32(SkillPotentialUtility.ApplyHealMultiplier(skillPotential, __result));
                     }
                 }
             }
