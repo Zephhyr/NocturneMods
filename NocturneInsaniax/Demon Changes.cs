@@ -2703,7 +2703,7 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[0].TargetLevel = 0;
             tblSkill.fclSkillTbl[id].Event[1].Param = 440; // Jolt
             tblSkill.fclSkillTbl[id].Event[1].TargetLevel = 0;
-            tblSkill.fclSkillTbl[id].Event[2].Param = 410; // Arbitration
+            tblSkill.fclSkillTbl[id].Event[2].Param = 73; // Estoma
             tblSkill.fclSkillTbl[id].Event[2].TargetLevel = 0;
             tblSkill.fclSkillTbl[id].Event[3].Param = 428; // Defense Kuzushi
             tblSkill.fclSkillTbl[id].Event[3].TargetLevel = 46;
@@ -12619,8 +12619,8 @@ namespace NocturneInsaniax
         private static void Urizen(int id)
         {
             datDevilFormat.tbl[id].flag = 3;
-            datDevilFormat.tbl[id].race = 49;
-            datDevilFormat.tbl[id].level = 30;
+            datDevilFormat.tbl[id].race = 32;
+            datDevilFormat.tbl[id].level = 49;
             datDevilFormat.tbl[id].aisyoid = (short)id;
             datDevilFormat.tbl[id].param = new sbyte[] { 52, 41, 35, 40, 27, 45 };
             datDevilFormat.tbl[id].keisyotype = 4;

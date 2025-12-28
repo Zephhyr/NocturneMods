@@ -244,7 +244,7 @@ namespace NocturneInsaniax
             { 226, new InnateSkill(383, 15, "Magnified Malady", "While in the active party, all allies \ndeal 20% more damage against \nenemies with an ailment.")}, // 226 Nightmare
             { 227, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Gdon's Critical Damage increases \nby 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 227 Gdon
             { 228, new InnateSkill(383, 03, "Elec Enhancer", "While in the active party, \nraise allies' Elec skill potential \nto Vritra's if it was lower.")}, // 228 Vritra
-            { 229, new InnateSkill(383, 15, "Magatama Mimicry", "Demee-Ho gains skill potential \ndependant on which Magatama is \ncurrently ingested.")}, // 229 Demee-Ho
+            { 229, new InnateSkill(383, 15, "Magatama Mimicry", "Demee-Ho gains skill potential \ndependent on which Magatama is \ncurrently ingested.")}, // 229 Demee-Ho
             { 230, new InnateSkill(383, 15, "Covetous Fury", "Seth's attacks, including Magic, \ngain 10% Critical Rate against \ntargets with any greater stat.")}, // 230 Seth
             { 231, new InnateSkill(383, 15, "", "")}, // 231 
             { 232, new InnateSkill(383, 15, "", "")}, // 232 

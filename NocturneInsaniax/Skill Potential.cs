@@ -1794,7 +1794,7 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int id, ref string __result)
             {
-                if (id == 61 && currentDemonWork.level >= 80 && currentDemonWork.param[0] >= 30 && currentDemonWork.param[2] >= 30 && currentDemonWork.param[3] >= 30 && currentDemonWork.param[4] >= 30 && currentDemonWork.param[5] >= 30)
+                if (id == 61 && currentDemonWork.level >= 80 && currentDemonWork.param[0] >= 75 && currentDemonWork.param[1] >= 75 && currentDemonWork.param[2] >= 75 && currentDemonWork.param[3] >= 75 && currentDemonWork.param[4] >= 75 && currentDemonWork.param[5] >= 75)
                     __result += potentialHelp[215]; // Get Uber Pixie's potential help
                 else if (id >= 384 && id <= 433)
                 {

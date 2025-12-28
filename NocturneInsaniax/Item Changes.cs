@@ -110,7 +110,7 @@ namespace NocturneInsaniax
                     case 42: __result = "Raises Agility by 2 \nand full HP recovery \nfor one ally."; return false; // Agility Incense
                     case 43: __result = "Raises Luck by 2 \nand full HP recovery \nfor one ally."; return false; // Luck Incense
                     case 44: __result = "Great HP recovery for one ally. \nReusable."; return false; // Graven Image
-                    case 46: __result = "Displays an enemy's info \nat 1/2 turn cost \nReusable."; return false; // Spyglass
+                    case 46: __result = "Displays an enemy's info \nat 1/2 turn cost. \nReusable."; return false; // Eternal Spyglass
                     case 47: __result = "Displays an enemy's info \nat 1/2 turn cost."; return false; // Spyglass
                     case 48: __result = "Medium Fire damage to one foe. \nPow: 45, Acc: 100%"; return false; // Agilao Rock
                     case 49: __result = "Medium Ice damage to one foe. \nPow: 39, Acc: 100%, Freeze: 25%"; return false; // Bufula Rock
