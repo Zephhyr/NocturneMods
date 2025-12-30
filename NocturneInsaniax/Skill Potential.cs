@@ -269,7 +269,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 240 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 241 
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 242 
-            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 243 
+            new sbyte[] {0    , 0    , -5   , 0    , 4    , 0    , 0    , 2    , 4    , 0    , 4    , 0    , 0    , 2    , 0    , 0 }, // 243 Boss Pazuzu
             new sbyte[] {7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 3    , 3    , 0 }, // 244 Triple Reason Ahriman
             new sbyte[] {6    , 6    , 6    , 6    , 6    , 6    , 6    , 6    , 6    , 6    , 6    , 6    , 6    , 4    , 4    , 0 }, // 245 Triple Reason Baal Avatar
             new sbyte[] {7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 7    , 3    , 3    , 0 }, // 246 Triple Reason Noah
@@ -364,7 +364,7 @@ namespace NocturneInsaniax
             new sbyte[] {0    , 4    , 0    , -7   , 6    , 6    , 0    , 6    , 0    , 0    , 0    , 6    , 0    , 0    , 0    , 0 }, // 334 Boss Mot
             new sbyte[] {5    , 7    , -7   , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 335 Boss Surt
             //          {Phys , Fire , Ice  , Elec , Force, Alm  , Light, Dark , Curse, Nerve, Mind , SD   , Shot , Heal , Supp , Util}
-            new sbyte[] {0    , 0    , -5   , 0    , 4    , 0    , 0    , 2    , 4    , 0    , 4    , 0    , 0    , 2    , 0    , 0 }, // 336 Boss Pazuzu
+            new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 336 Puzzle Boy
             new sbyte[] {5    , 0    , 0    , 7    , -7   , 0    , 0    , 0    , -3   , -3   , -3   , 0    , 0    , 0    , 2    , 0 }, // 337 Boss Thor 2
             new sbyte[] {0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0 }, // 338 
             new sbyte[] {5    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 5    , 3    , 0 }, // 339 Boss Raidou/Dante 1
@@ -1729,7 +1729,7 @@ namespace NocturneInsaniax
                 }
 
                 // Instakill restrictions
-                if (datNormalSkill.tbl[nskill].basstatus == 2048 && nskill != 159 && nskill != 243)
+                if ((datNormalSkill.tbl[nskill].basstatus == 1024 || datNormalSkill.tbl[nskill].basstatus == 2048) && nskill != 159 && nskill != 243)
                 {
                     // Demi-fiend natural resistance
                     if (work.id == 0)

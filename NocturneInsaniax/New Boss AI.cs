@@ -473,7 +473,7 @@ namespace NocturneInsaniax
                         case 333: BossMadaAI(ref a, ref code, ref n); break;
                         case 334: BossMotAI(ref a, ref code, ref n); break;
                         case 335: BossSurtAI(ref a, ref code, ref n); break;
-                        case 336: BossPazuzuAI(ref a, ref code, ref n); break;
+                        case 243: BossPazuzuAI(ref a, ref code, ref n); break;
                         case 337: BossThor2AI(ref a, ref code, ref n); break;
 
                         case 339: BossDanteRaidou1AI(ref a, ref code, ref n); break;
@@ -5548,9 +5548,9 @@ namespace NocturneInsaniax
             if (actionTrackers[a.work.id].extraTurns < 1)
                 UseSkill(ref a, 422);
             else if (actionTrackers[a.work.id].currentBattleActionCount == 2)
-                UseSummonSkill(ref a, 226, 336);
+                UseSummonSkill(ref a, 226, 243);
             else if (a.data.enemypcnt < 3 && random.Next(2) == 0)
-                UseSummonSkill(ref a, 226, 336);
+                UseSummonSkill(ref a, 226, 243);
             else if (EnemyPartyDebuffed(1) && random.Next(2) == 0)
                 UseSkill(ref a, 77);
             else

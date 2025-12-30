@@ -258,7 +258,7 @@ namespace NocturneInsaniax
             { 240, new InnateSkill(383, 15, "", "")}, // 240 
             { 241, new InnateSkill(383, 15, "", "")}, // 241 
             { 242, new InnateSkill(383, 15, "", "")}, // 242 
-            { 243, new InnateSkill(383, 15, "", "")}, // 243 
+            { 243, new InnateSkill(383, 15, "Magnified Malady", "")}, // 243 Boss Pazuzu
             { 244, new InnateSkill(383, 15, "Silencing Bellow", "")}, // 244 Triple Reason Ahriman
             { 245, new InnateSkill(383, 15, "Condemn Weakness", "")}, // 245 Triple Reason Baal Avatar
             { 246, new InnateSkill(383, 15, "Aurora", "")}, // 246 Triple Reason Noah
@@ -351,7 +351,7 @@ namespace NocturneInsaniax
             { 333, new InnateSkill(383, 15, "Wine Party", "")}, // 333 Boss Mada
             { 334, new InnateSkill(383, 15, "Megalomania", "")}, // 334 Boss Mot
             { 335, new InnateSkill(383, 01, "Laevateinn", "")}, // 335 Boss Surt
-            { 336, new InnateSkill(383, 15, "Magnified Malady", "")}, // 336 Boss Pazuzu
+            { 336, new InnateSkill(383, 15, "Puzzle Boy", "")}, // 336 Puzzle Boy
             { 337, new InnateSkill(383, 03, "Odinson", "")}, // 337 Boss Thor 2
             { 338, new InnateSkill(383, 15, "", "")}, // 338 
             { 339, new InnateSkill(383, 15, "Boss Raidou/Dante 1", "")}, // 339 Boss Raidou/Dante 1
@@ -545,7 +545,7 @@ namespace NocturneInsaniax
         private static ushort[] focusedAssaultIds = new ushort[] { 5, 67, 131 };
         private static ushort[] helmsmanIds = new ushort[] { 34, 73, 143, 153, 307, 308, 309 };
         private static ushort[] deathlyAfflictionIds = new ushort[] { 128, 129, 135, 361 };
-        private static ushort[] magnifiedMaladyIds = new ushort[] { 80, 107, 136, 226, 336 };
+        private static ushort[] magnifiedMaladyIds = new ushort[] { 80, 107, 136, 226, 243 };
         private static ushort[] contagiousCurseIds = new ushort[] { 102, 126, 133, 178 };
         private static ushort[] wardOffEvilIds = new ushort[] { 93, 145 };
         private static ushort[] essenceThiefIds = new ushort[] { 127, 124, 137 };
