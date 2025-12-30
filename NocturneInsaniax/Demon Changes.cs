@@ -496,9 +496,9 @@ namespace NocturneInsaniax
                         __result = "Cerberus L"; return false;
                     case "<AISYO_L0306":
                         __result = "Rpl: Fire • Null: Dark • Str: Phys/Ailments • Weak: Ice"; return false;
-                    case "<DEVIL_L0336>":
+                    case "<DEVIL_L0243>":
                         __result = "Pazuzu"; return false;
-                    case "<AISYO_L0336>":
+                    case "<AISYO_L0243>":
                         __result = "Null: Dark • Str: Shot/Force/Mind • Weak: Ice"; return false;
                     case "<AISYO_L0344>":
                         __result = "Drn: Dark • Str: All Other"; return false;
@@ -1293,7 +1293,7 @@ namespace NocturneInsaniax
             BossMada(333);
             BossMot(334);
             BossSurt(335);
-            BossPazuzu(336);
+            BossPazuzu(243);
 
             BossThor2(337);
 
@@ -15602,7 +15602,7 @@ namespace NocturneInsaniax
             mdlFileDefTable.devilModelIndex[id].scale = 4096;
             mdlFileDefTable.devilModelIndex[id].radius = 1000;
 
-            datDevilVisual10.tbl_10_140_15F[16] = CopyDevilVisual(datDevilVisual03.tbl_3_060_07F[11]);
+            datDevilVisual07.tbl_7_0E0_0FF[19] = CopyDevilVisual(datDevilVisual03.tbl_3_060_07F[11]);
 
             datMotionSeTable.tbl[id] = 107;
 
