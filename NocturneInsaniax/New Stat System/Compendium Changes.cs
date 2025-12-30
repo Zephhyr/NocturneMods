@@ -438,8 +438,8 @@ namespace NocturneInsaniax
                     // Summoning price formula with applied discount
                     int price = CompendiumPriceHelper.GetPrice(pelem);
 
-                    // If enough macca post-discount but not pre-discount (and stock not full and not already in stock and something idk)
-                    if (price > 0 && dds3GlobalWork.DDS3_GBWK.maka >= price && datCalc.datCheckStockFull() == 0 && datCalc.datSearchDevilStock(pelem.id) == -1)
+                    // If enough macca post-discount but not pre-discount (and stock not full and not already in stock and also has a lower level than Demi-Fiend)
+                    if (pelem.level <= dds3GlobalWork.DDS3_GBWK.unitwork[0].level && price > 0 && dds3GlobalWork.DDS3_GBWK.maka >= price && datCalc.datCheckStockFull() == 0 && datCalc.datSearchDevilStock(pelem.id) == -1)
                     {
                         StartNo = 17;
                     }
