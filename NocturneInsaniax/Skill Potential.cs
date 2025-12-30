@@ -1396,6 +1396,9 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int nskill, ref int type, ref datUnitWork_t s, ref int __result)
             {
+                if (datSkill.tbl[nskill].skillattr == 13 && datNormalSkill.tbl[nskill].hptype == 11)
+                    return;
+
                 if ((nskill < 288 || nskill > 421) && type == 0) // If it isn't a passive skill and the method is called for the first time
                 {
                     sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(nskill, s.id);
