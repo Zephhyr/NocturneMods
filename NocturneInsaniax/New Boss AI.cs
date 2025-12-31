@@ -3538,7 +3538,7 @@ namespace NocturneInsaniax
             MelonLogger.Msg("Ose Hallel HP%: " + currentHpPercent);
             MelonLogger.Msg("Ose Hallel HP: " + a.work.hp);
 
-            if (a.data.enemyunit.Where(x => x.id == 288 && x.hp <= x.maxhp * (3/5) && x.flag != 0).Any())
+            if (a.data.enemyunit.Where(x => x.id == 288 && x.hp <= x.maxhp * 0.6f && x.flag != 0).Any())
             {
                 UseSkill(ref a, 38); 
                 SetTargetingRule(ref code, ref n, 3, 288);
@@ -3564,7 +3564,7 @@ namespace NocturneInsaniax
             MelonLogger.Msg("Flauros Hallel HP%: " + currentHpPercent);
             MelonLogger.Msg("Flauros Hallel HP: " + a.work.hp);
 
-            if (a.data.enemyunit.Where(x => x.id == 288 && x.hp <= x.maxhp * (3/5) && x.flag != 0).Any())
+            if (a.data.enemyunit.Where(x => x.id == 288 && x.hp <= x.maxhp * 0.6f && x.flag != 0).Any())
             {
                 UseSkill(ref a, 38);
                 SetTargetingRule(ref code, ref n, 3, 288);
