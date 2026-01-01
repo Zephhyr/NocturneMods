@@ -5336,6 +5336,10 @@ namespace NocturneInsaniax
                 UseSkill(ref a, 422);
             else
             {
+                if (actionTrackers[a.work.id].extraTurns != 0)
+                    foreach (var actionTracker in actionTrackers)
+                        actionTracker.Value.extraTurns = 1;
+
                 switch (enemypcnt)
                 {
                     case 3:
@@ -5420,6 +5424,10 @@ namespace NocturneInsaniax
                 UseSkill(ref a, 422);
             else
             {
+                if (actionTrackers[a.work.id].extraTurns != 0)
+                    foreach (var actionTracker in actionTrackers)
+                        actionTracker.Value.extraTurns = 1;
+
                 switch (enemypcnt)
                 {
                     case 3:
