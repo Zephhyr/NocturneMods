@@ -14602,8 +14602,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].param[1] = 60;
             datDevilFormat.tbl[id].param[2] = 60;
             datDevilFormat.tbl[id].param[3] = 60;
-            datDevilFormat.tbl[id].param[4] = 40;
-            datDevilFormat.tbl[id].param[5] = 60;
+            datDevilFormat.tbl[id].param[4] = 30;
+            datDevilFormat.tbl[id].param[5] = 40;
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 37; // Diarama
@@ -14639,8 +14639,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].param[1] = 60;
             datDevilFormat.tbl[id].param[2] = 60;
             datDevilFormat.tbl[id].param[3] = 60;
-            datDevilFormat.tbl[id].param[4] = 40;
-            datDevilFormat.tbl[id].param[5] = 60;
+            datDevilFormat.tbl[id].param[4] = 30;
+            datDevilFormat.tbl[id].param[5] = 40;
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 52; // Tarunda
@@ -14676,8 +14676,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].param[1] = 60;
             datDevilFormat.tbl[id].param[2] = 60;
             datDevilFormat.tbl[id].param[3] = 60;
-            datDevilFormat.tbl[id].param[4] = 40;
-            datDevilFormat.tbl[id].param[5] = 60;
+            datDevilFormat.tbl[id].param[4] = 30;
+            datDevilFormat.tbl[id].param[5] = 40;
 
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 2; // Agilao
@@ -15289,8 +15289,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].param[1] = 60;
             datDevilFormat.tbl[id].param[2] = 60;
             datDevilFormat.tbl[id].param[3] = 60;
-            datDevilFormat.tbl[id].param[4] = 40;
-            datDevilFormat.tbl[id].param[5] = 60;
+            datDevilFormat.tbl[id].param[4] = 30;
+            datDevilFormat.tbl[id].param[5] = 40;
 
             datDevilFormat.tbl[id].dropexp = 2500;
             datDevilFormat.tbl[id].dropmakka = 3000;
@@ -15329,8 +15329,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].param[1] = 60;
             datDevilFormat.tbl[id].param[2] = 60;
             datDevilFormat.tbl[id].param[3] = 60;
-            datDevilFormat.tbl[id].param[4] = 40;
-            datDevilFormat.tbl[id].param[5] = 60;
+            datDevilFormat.tbl[id].param[4] = 29;
+            datDevilFormat.tbl[id].param[5] = 40;
 
             datDevilFormat.tbl[id].dropexp = 2500;
             datDevilFormat.tbl[id].dropmakka = 3000;
@@ -15369,8 +15369,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].param[1] = 60;
             datDevilFormat.tbl[id].param[2] = 60;
             datDevilFormat.tbl[id].param[3] = 60;
-            datDevilFormat.tbl[id].param[4] = 40;
-            datDevilFormat.tbl[id].param[5] = 60;
+            datDevilFormat.tbl[id].param[4] = 28;
+            datDevilFormat.tbl[id].param[5] = 40;
 
             datDevilFormat.tbl[id].dropexp = 2500;
             datDevilFormat.tbl[id].dropmakka = 3000;
