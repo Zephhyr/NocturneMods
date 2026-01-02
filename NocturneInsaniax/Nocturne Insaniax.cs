@@ -17,7 +17,7 @@ using System.Linq;
 using Il2Cppeffect_H;
 using Il2Cppmodel_H;
 
-[assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax", "1.0.12", "Zephhyr, Matthiew Purple, Bud, X Kirby, Margothic, Scribe, Snappy, Mason White")]
+[assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax", "1.0.14", "Zephhyr, Matthiew Purple, Bud, X Kirby, Margothic, Scribe, Snappy, Mason White")]
 [assembly: MelonGame("アトラス", "smt3hd")]
 
 namespace NocturneInsaniax
@@ -122,8 +122,8 @@ namespace NocturneInsaniax
             ApplyItemChanges();
             ApplyIncenseChanges();
             ApplyShopChanges();
-            ApplyMagatamaChanges();
             ApplyDemonChanges();
+            ApplyMagatamaChanges();
             ApplyMitamaFusionChanges();
             ApplyEncounterChanges();
 

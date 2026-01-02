@@ -1559,6 +1559,7 @@ namespace NocturneInsaniax
                         else if ((!(actionProcessData.work.nowcommand == 1 && pushedSkillList.Contains(actionProcessData.work.nowindex)) &&
                             !(actionProcessData.work.nowcommand == 2 && actionProcessData.work.nowindex == 0) && 
                             !(actionProcessData.work.nowcommand == 3 && actionProcessData.work.nowindex == 0) && 
+                            !(actionProcessData.work.nowcommand == 4) && 
                             !(actionProcessData.work.nowcommand == 7 && actionProcessData.work.nowindex == 0))
                             && actionProcessData.work.badstatus != 32)
                         {

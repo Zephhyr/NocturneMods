@@ -14800,7 +14800,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].param[4] = 20;
             datDevilFormat.tbl[id].param[5] = 15;
 
-            datDevilFormat.tbl[id].dropexp = 2000;
+            datDevilFormat.tbl[id].dropexp = 1000;
             datDevilFormat.tbl[id].dropmakka = 600;
 
             // Enemy Skills
