@@ -203,7 +203,7 @@ namespace NocturneInsaniax
 
                     // Adjust Max HP/MP and fully heal.
                     work.maxhp = (ushort)datCalc.datGetMaxHp(work);
-                    work.maxhp = (ushort)datCalc.datGetMaxHp(work);
+                    work.maxmp = (ushort)datCalc.datGetMaxMp(work);
                     work.hp = work.hp > work.maxhp ? work.maxhp : work.hp;
                     work.mp = work.mp > work.maxmp ? work.maxmp : work.mp;
                 }
@@ -933,23 +933,6 @@ namespace NocturneInsaniax
                     SettingAsignParam = true;
                 }
 
-                // If your stats are capped, immediately skip the entire process.
-                if (EnableIntStat && datCalc.datGetBaseParam(pStock, 0) >= MAXSTATS &&
-                    datCalc.datGetBaseParam(pStock, 1) >= MAXSTATS &&
-                    datCalc.datGetBaseParam(pStock, 2) >= MAXSTATS &&
-                    datCalc.datGetBaseParam(pStock, 3) >= MAXSTATS &&
-                    datCalc.datGetBaseParam(pStock, 4) >= MAXSTATS &&
-                    datCalc.datGetBaseParam(pStock, 5) >= MAXSTATS)
-                { YesResponse(); return false; }
-
-                // Same thing as above, but without Int.
-                else if (datCalc.datGetBaseParam(pStock, 0) >= MAXSTATS &&
-                    datCalc.datGetBaseParam(pStock, 2) >= MAXSTATS &&
-                    datCalc.datGetBaseParam(pStock, 3) >= MAXSTATS &&
-                    datCalc.datGetBaseParam(pStock, 4) >= MAXSTATS &&
-                    datCalc.datGetBaseParam(pStock, 5) >= MAXSTATS)
-                { YesResponse(); return false; }
-
                 // If the status object is null, immediately skip the entire process.
                 if (cmpStatus.statusObj == null)
                 { YesResponse(); return false; }
@@ -1056,8 +1039,19 @@ namespace NocturneInsaniax
                         cmpMisc.cmpPlaySE(1 & 0xFFFF);
                     }
 
-                    // If you ran out, ask the player if they're okay with the changes.
-                    if (rstinit.GBWK.AsignParam == 0)
+                    // If you ran out of points to spend or the ability to spend points, ask the player if they're okay with the changes.
+                    if (rstinit.GBWK.AsignParam == 0 || ((EnableIntStat && datCalc.datGetBaseParam(pStock, 0) >= MAXSTATS &&
+                        datCalc.datGetBaseParam(pStock, 1) >= MAXSTATS &&
+                        datCalc.datGetBaseParam(pStock, 2) >= MAXSTATS &&
+                        datCalc.datGetBaseParam(pStock, 3) >= MAXSTATS &&
+                        datCalc.datGetBaseParam(pStock, 4) >= MAXSTATS &&
+                        datCalc.datGetBaseParam(pStock, 5) >= MAXSTATS) || (datCalc.datGetBaseParam(pStock, 0) >= MAXSTATS &&
+                        datCalc.datGetBaseParam(pStock, 1) >= MAXSTATS &&
+                        datCalc.datGetBaseParam(pStock, 2) >= MAXSTATS &&
+                        datCalc.datGetBaseParam(pStock, 3) >= MAXSTATS &&
+                        datCalc.datGetBaseParam(pStock, 4) >= MAXSTATS &&
+                        datCalc.datGetBaseParam(pStock, 5) >= MAXSTATS))
+                        )
                     {
                         // This message asks the player if they're good.
                         fclMisc.fclStartMessage(2);
@@ -1168,8 +1162,9 @@ namespace NocturneInsaniax
                                 pStock.maxhp = (ushort)datCalc.datGetMaxHp(pStock);
                                 pStock.maxmp = (ushort)datCalc.datGetMaxMp(pStock);
                                 __result = 1;
+                                return false;
                             }
-                            return false;
+                            else return true;
                         }
                     default:
                         { break; }
