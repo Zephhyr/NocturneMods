@@ -19,7 +19,13 @@ namespace NocturneInsaniax
 
                 if (attr == 12) // Shot
                 {
-                    var aisyo = datAisyo.Get(work.id, attr, work.flag);
+                    uint aisyo = 100;
+
+                    if (work.id == 0)
+                        aisyo = datAisyo.Get(tblHearts.fclHeartsTbl[dds3GlobalWork.DDS3_GBWK.heartsequip].AisyoID, attr);
+                    if (work.id != 0)
+                        aisyo = datAisyo.Get(work.id, attr);
+
                     __result = aisyo;
 
                     var aisyoString = Convert.ToString(aisyo, 2);
