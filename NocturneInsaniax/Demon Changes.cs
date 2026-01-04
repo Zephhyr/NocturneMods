@@ -14026,8 +14026,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].skill[2] = 266; // Tekisatsu/Stinger
             datDevilFormat.tbl[id].skill[3] = 274; // Raptor Guardian/Holy Star
             datDevilFormat.tbl[id].skill[4] = 264; // Mokoi Boomerang/Twosome Time
-            datDevilFormat.tbl[id].skill[5] = 266; // Mishaguji Raiden/Roundtrip
-            datDevilFormat.tbl[id].skill[6] = 267; // Hitokoto Storm/Whirlwind
+            datDevilFormat.tbl[id].skill[5] = 267; // Mishaguji Raiden/Roundtrip
+            datDevilFormat.tbl[id].skill[6] = 268; // Hitokoto Storm/Whirlwind
             datDevilFormat.tbl[id].skill[7] = 360; // Never Yield
 
 
@@ -17084,8 +17084,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].skill[2] = 266; // Tekisatsu/Stinger
             datDevilFormat.tbl[id].skill[3] = 274; // Raptor Guardian/Holy Star
             datDevilFormat.tbl[id].skill[4] = 264; // Mokoi Boomerang/Twosome Time
-            datDevilFormat.tbl[id].skill[5] = 266; // Mishaguji Raiden/Roundtrip
-            datDevilFormat.tbl[id].skill[6] = 267; // Hitokoto Storm/Whirlwind
+            datDevilFormat.tbl[id].skill[5] = 267; // Mishaguji Raiden/Roundtrip
+            datDevilFormat.tbl[id].skill[6] = 268; // Hitokoto Storm/Whirlwind
             datDevilFormat.tbl[id].skill[7] = 360; // Never Yield
         }
 
@@ -17123,8 +17123,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].skill[2] = 266; // Tekisatsu/Stinger
             datDevilFormat.tbl[id].skill[3] = 274; // Raptor Guardian/Holy Star
             datDevilFormat.tbl[id].skill[4] = 264; // Mokoi Boomerang/Twosome Time
-            datDevilFormat.tbl[id].skill[5] = 266; // Mishaguji Raiden/Roundtrip
-            datDevilFormat.tbl[id].skill[6] = 267; // Hitokoto Storm/Whirlwind
+            datDevilFormat.tbl[id].skill[5] = 267; // Mishaguji Raiden/Roundtrip
+            datDevilFormat.tbl[id].skill[6] = 268; // Hitokoto Storm/Whirlwind
             datDevilFormat.tbl[id].skill[7] = 360; // Never Yield
         }
 
@@ -17464,12 +17464,12 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 5000;
             datDevilFormat.tbl[id].hp = 5000;
-            datDevilFormat.tbl[id].param[0] = 12;
+            datDevilFormat.tbl[id].param[0] = 25;
             datDevilFormat.tbl[id].param[1] = 35;
             datDevilFormat.tbl[id].param[2] = 35;
             datDevilFormat.tbl[id].param[3] = 35;
-            datDevilFormat.tbl[id].param[4] = 12;
-            datDevilFormat.tbl[id].param[5] = 10;
+            datDevilFormat.tbl[id].param[4] = 25;
+            datDevilFormat.tbl[id].param[5] = 25;
             datDevilFormat.tbl[id].flag = 34;
 
             // Display Skill

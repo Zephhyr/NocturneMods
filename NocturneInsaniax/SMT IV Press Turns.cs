@@ -18,17 +18,16 @@ namespace NocturneInsaniax
                 if (nbMainProcess.nbGetMainProcessData().press4_p != 0)
                 {
                     // If there are no blinking press turns
-                    if (nbMainProcess.nbGetMainProcessData().press4_p == nbMainProcess.nbGetMainProcessData().press4_ten)
+                    if (nbMainProcess.nbGetMainProcessData().press4_ten == nbMainProcess.nbGetMainProcessData().press4_p)
                     {
                         PressTurnsAdjustements.MainFullToBlinking(); // Changes the main press turn from full to blinking
                         if (actionProcessData.work.id == 49 && actionProcessData.work.nowcommand == 7) // Dis' Planck of Norn
                             nbMainProcess.nbGetMainProcessData().press4_p++;
                     }
-                }
-                else if (nbMainProcess.nbGetMainProcessData().press4_ten > nbMainProcess.nbGetMainProcessData().press4_p
+                    else if (nbMainProcess.nbGetMainProcessData().press4_ten > nbMainProcess.nbGetMainProcessData().press4_p
                     && actionProcessData.work.id == 49 && actionProcessData.work.nowcommand == 7) // Dis' Planck of Norn
-                    nbMainProcess.nbGetMainProcessData().press4_ten++;
-
+                        nbMainProcess.nbGetMainProcessData().press4_ten++;
+                }
                 // If there are no full press turns or at least on blinking press turn, the default behavior is the same as in SMT IV
             }
         }
@@ -53,17 +52,16 @@ namespace NocturneInsaniax
                 if (nbMainProcess.nbGetMainProcessData().press4_p != 0)
                 {
                     // If there are no blinking press turns
-                    if (nbMainProcess.nbGetMainProcessData().press4_p == nbMainProcess.nbGetMainProcessData().press4_ten)
+                    if (nbMainProcess.nbGetMainProcessData().press4_ten == nbMainProcess.nbGetMainProcessData().press4_p)
                     {
                         PressTurnsAdjustements.MainFullToBlinking(); // Changes the main press turn from full to blinking
                         if (actionProcessData.work.id == 49  || (actionProcessData.work.id == 0 && activeUnitIds[actionProcessData.work.nowtform] == 49)) // Dis' Planck of Norn
                             nbMainProcess.nbGetMainProcessData().press4_p++;
                     }
-                }
-                else if (nbMainProcess.nbGetMainProcessData().press4_ten > nbMainProcess.nbGetMainProcessData().press4_p 
+                    else if (nbMainProcess.nbGetMainProcessData().press4_ten > nbMainProcess.nbGetMainProcessData().press4_p
                     && (actionProcessData.work.id == 49 || (actionProcessData.work.id == 0 && activeUnitIds[actionProcessData.work.nowtform] == 49))) // Dis' Planck of Norn
-                    nbMainProcess.nbGetMainProcessData().press4_ten++;
-
+                        nbMainProcess.nbGetMainProcessData().press4_ten++;
+                }
                 // If there are no full press turns or at least on blinking press turn, the default behavior is the same as in SMT IV
             }
         }

@@ -569,7 +569,7 @@ namespace NocturneInsaniax
             private static void Postfix(int X, int Y, uint Z, uint Col, sbyte SelFlag, sbyte DrawType, datUnitWork_t pStock, cmpCursorEff_t pEff, int FadeRate, GameObject obj, int MatCol)
             {
                 // Set up a list of the demon's HP/MP. We'll be referencing this.
-                int[] StockStats = new int[] { pStock.hp, pStock.mp };
+                int[] StockStats = new int[] { pStock.hp, pStock.mp, pStock.maxhp, pStock.maxmp };
 
                 // For loop going through Game Objects.
                 for (int i = 0; i < 2; i++)
@@ -618,7 +618,12 @@ namespace NocturneInsaniax
                     }
 
                     // Set the object's color to white and set it to the proper Stat's value.
-                    g2.GetComponent<CounterCtr>().Set(StockStats[i], Color.white, 0);
+                    if (((float)StockStats[i] / (float)StockStats[i + 2]) <= 0.1f)
+                        g2.GetComponent<CounterCtr>().Set(StockStats[i], Color.white, 3);
+                    else if (((float)StockStats[i] / (float)StockStats[i + 2]) <= 0.5f)
+                        g2.GetComponent<CounterCtr>().Set(StockStats[i], Color.white, 2);
+                    else
+                        g2.GetComponent<CounterCtr>().Set(StockStats[i], Color.white, 0);
                 }
             }
         }
@@ -642,7 +647,7 @@ namespace NocturneInsaniax
                     datUnitWork_t pStock = dds3GlobalWork.DDS3_GBWK.unitwork[party.statindex];
 
                     // Grab their HP/MP for later.
-                    int[] PartyStats = new int[] { pStock.hp, pStock.mp };
+                    int[] PartyStats = new int[] { pStock.hp, pStock.mp, pStock.maxhp, pStock.maxmp };
 
                     // Loops through the party's Bar objects
                     for (int k = 0; k < 2; k++)
@@ -691,7 +696,12 @@ namespace NocturneInsaniax
                         }
 
                         // Set color to white and set it up with the demon's stats.
-                        g2.GetComponent<CounterCtrBattle>().Set(PartyStats[k], Color.white, 0);
+                        if (((float)PartyStats[k] / (float)PartyStats[k + 2]) <= 0.1f)
+                            g2.GetComponent<CounterCtrBattle>().Set(PartyStats[k], Color.white, 2);
+                        else if (((float)PartyStats[k] / (float)PartyStats[k + 2]) <= 0.5f)
+                            g2.GetComponent<CounterCtrBattle>().Set(PartyStats[k], Color.white, 1);
+                        else
+                            g2.GetComponent<CounterCtrBattle>().Set(PartyStats[k], Color.white, 0);
                     }
                 }
 
@@ -1878,7 +1888,17 @@ namespace NocturneInsaniax
                         GameObject.DontDestroyOnLoad(g);
                     }
                     // Set Stat value and color.
-                    g2.GetComponent<CounterCtr>().Set(StatusStats[i], Color.white, 0);
+                    if (i == 0 || i == 2)
+                    {
+                        if (((float)StatusStats[i] / (float)StatusStats[i + 1]) <= 0.1f)
+                            g2.GetComponent<CounterCtr>().Set(StatusStats[i], Color.white, 3);
+                        else if (((float)StatusStats[i] / (float)StatusStats[i + 1]) <= 0.5f)
+                            g2.GetComponent<CounterCtr>().Set(StatusStats[i], Color.white, 2);
+                        else
+                            g2.GetComponent<CounterCtr>().Set(StatusStats[i], Color.white, 0);
+                    }
+                    else
+                        g2.GetComponent<CounterCtr>().Set(StatusStats[i], Color.white, 0);
                 }
 
                 // Check the bar count.

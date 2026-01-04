@@ -282,7 +282,7 @@ namespace NocturneInsaniax
 
                     // If enabled, do a different one.
                     if (EnableStatScaling)
-                    { baseform = ((float)w.level + (float)luck) / 300f; }
+                    { baseform = ((float)w.level / 5f + (float)luck / STATS_SCALING) / (100f + ((float)work.level / 5f + (float)playerLuck / STATS_SCALING)); }
 
                     // If you're under 1/1000, just set the adjustment to zero.
                     if (baseform < 0.001f)
@@ -294,9 +294,8 @@ namespace NocturneInsaniax
                         adjform = (float)macca / 20.0f * baseform;
 
                         // If enabled, use your whole stack of Macca instead of 1/20.
-                        // Also, clamp it to as low as 1/10 of your total Macca and as high as your entire stack.
                         if (EnableStatScaling)
-                        { adjform = (float)Math.Clamp((float)macca * baseform, (float)macca / 10f, (float)macca / 2f); }
+                        { adjform = (float)macca * baseform; }
                     }
                 }
 
@@ -309,11 +308,10 @@ namespace NocturneInsaniax
 
                     // If enabled, scale differently.
                     if (EnableStatScaling)
-                    { baseform = ((float)work.level + (float)playerLuck) / 300f; }
+                    { baseform = ((float)work.level / 5f + (float)playerLuck / STATS_SCALING) / (100f + ((float)w.level / 5f + (float)luck / STATS_SCALING)); }
 
                     // Grab the enemy's whole stack.
-                    // Also make sure you don't accidentally generate more (or less) Macca than intended.
-                    adjform = (float)Math.Clamp(devil.dropmakka * baseform, devil.dropmakka / 10f, devil.dropmakka);
+                    adjform = (float)devil.dropmakka * baseform;
                 }
 
                 // Generate a number between 0.0 and 1.0.
@@ -324,7 +322,7 @@ namespace NocturneInsaniax
 
                 // If enabled, scale it differently.
                 if (EnableStatScaling)
-                { __result = (int)Math.Clamp((variance + 0.5f) * adjform, 0d, (w.flag >> 5 & 1) == 0 ? macca : devil.dropmakka); }
+                { __result = (int)Math.Clamp((0.9f + variance / 5f) * adjform, 0f, (w.flag >> 5 & 1) == 0 ? (float)macca / 5f : (float)devil.dropmakka / 4f); }
 
                 // If difficulty bit is 1 or lower and some more flag nonsense, divide by 10.
                 if (dds3ConfigMain.cfgGetBit(9) <= 1 && (w.flag & 0x20) == 0)

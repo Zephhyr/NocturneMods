@@ -548,7 +548,7 @@ namespace NocturneInsaniax
         private static ushort[] magnifiedMaladyIds = new ushort[] { 80, 107, 136, 226, 243 };
         private static ushort[] contagiousCurseIds = new ushort[] { 102, 126, 133, 178 };
         private static ushort[] wardOffEvilIds = new ushort[] { 93, 145 };
-        private static ushort[] essenceThiefIds = new ushort[] { 127, 124, 137 };
+        private static ushort[] essenceThiefIds = new ushort[] { 127, 134, 137 };
         private static ushort[] behemothicBounceIds = new ushort[] { 105, 249, 274 };
         private static ushort[] withheldSentenceIds = new ushort[] { 13, 110, 253 };
         private static ushort[] megalomaniaIds = new ushort[] { 14, 109, 115, 334 };
