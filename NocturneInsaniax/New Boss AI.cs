@@ -3222,6 +3222,8 @@ namespace NocturneInsaniax
                 else
                     UseSkill(ref a, 208);
             }
+            else if (a.work.nowindex == 191)
+                UseSkill(ref a, 191);
             else if (a.work.nowindex != 220 && a.work.nowindex != 208 && a.work.nowindex != 191 && a.work.nowindex != 77 && a.work.nowindex != 57)
             {
                 if (actionTrackers[a.work.id].skillsUsedThisTurn.Contains(208))
