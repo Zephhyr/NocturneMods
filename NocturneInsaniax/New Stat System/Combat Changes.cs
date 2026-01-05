@@ -64,7 +64,7 @@ namespace NocturneInsaniax
                 System.Random rng = new();
 
                 // Return 1 if you hit the defender and killed them, otherwise return 0.
-                __result = finalvalue >= rng.Next(100) ? 1 : 0;
+                __result = finalvalue >= (rng.Next(10000) / 100f) ? 1 : 0;
                 return false;
             }
         }
@@ -185,7 +185,7 @@ namespace NocturneInsaniax
                 { foundBead = true; }
 
                 // Check if a LifeStone drops.
-                chance = rng.Next(100);
+                chance = rng.Next(10000) / 100f;
                 bool foundLifeStone = false;
                 var masekipoint = devil.masekipoint != 0 ? 8 : 0;
                 if ((float)devil.masekipoint * dropRateMult >= chance)

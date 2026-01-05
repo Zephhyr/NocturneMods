@@ -3434,7 +3434,10 @@ namespace NocturneInsaniax
             if (actionTrackers[a.work.id].currentBattleActionCount == 1 && a.data.playerpcnt == 4)
                 UseSkill(ref a, 277);
             else if (AllyPartyStatus(0))
+            {
                 UseSkill(ref a, 201);
+                SetTargetingRule(ref code, ref n, 2, 0);
+            }
             else
             {
                 if (actionTrackers[a.work.id].phase == 1)
