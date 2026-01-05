@@ -505,7 +505,7 @@ namespace NocturneInsaniax
                 else if (!(new uint[] { 65536, 131072, 262144 }.Contains(aisyo) || datCalc.datCheckSyojiSkill(workFromFormindex2, 372) != 0)) // If target isn't immune or doesn't have Firm Stance
                 {
                     // Kagutsuchi's Sear cannot randomly crit
-                    if (nskill == 172 || nskill == 172)
+                    if (nskill == 172 || nskill == 173)
                     {
                         __result = 0;
                         return false;
@@ -710,6 +710,12 @@ namespace NocturneInsaniax
                 //if (nskill == 255)
                 if (__result == 6)
                     return;
+
+                if (nskill == 201)
+                {
+                    __result = 0;
+                    return;
+                }
 
                 datUnitWork_t workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
                 datUnitWork_t workFromFormindex2 = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
