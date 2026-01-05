@@ -911,7 +911,7 @@ namespace NocturneInsaniax
 
             // Alter Macca Drops
             for (int i = 0; i <= 230; i++)
-                datDevilFormat.tbl[i].dropmakka = (ushort) (15 + 2 * datDevilFormat.tbl[i].level + 0.2 * (datDevilFormat.tbl[i].level ^ 2));
+                datDevilFormat.tbl[i].dropmakka = (ushort) (15 + 2 * datDevilFormat.tbl[i].level + 0.2 * Math.Pow(datDevilFormat.tbl[i].level, 2));
 
             // Demons
             DemiFiend(0);
