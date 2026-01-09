@@ -16,6 +16,7 @@ namespace NocturneInsaniax
         {
             public static bool Prefix(ref int formindex, ref int type, ref float __result)
             {
+                datUnitWork_t work = nbMainProcess.nbGetUnitWorkFromFormindex(formindex);
                 nbParty_t party = nbMainProcess.nbGetPartyFromFormindex(formindex);
                 short[] count = party.count;
                 short stacks = count[type];
@@ -138,10 +139,10 @@ namespace NocturneInsaniax
                     }
                 }
 
-                if (((type == 4 && count[15] > 0) || (type == 5 && count[20] > 0)) && 
-                    ((currentDemonWork.nowcommand == 0 && currentDemonWork.nowindex == 0) ||
-                    (currentDemonWork.nowcommand == 1 && (datNormalSkill.tbl[currentDemonWork.nowindex].hptype != 2 || datNormalSkill.tbl[currentDemonWork.nowindex].hptype != 11)) ||
-                    (currentDemonWork.nowcommand == 5 && (datNormalSkill.tbl[datItem.tbl[currentDemonWork.nowindex].skillid].hptype != 2 || datNormalSkill.tbl[datItem.tbl[currentDemonWork.nowindex].skillid].hptype != 11))))
+                if (((type == 4 && count[15] > 0) || (type == 5 && count[20] > 0)) &&
+                    ((work.nowcommand == 0 && currentDemonWork.nowindex == 0) ||
+                    (work.nowcommand == 1 && (datSkill.tbl[work.nowindex].skillattr != 13 && datNormalSkill.tbl[work.nowindex].hptype != 2 || datNormalSkill.tbl[work.nowindex].hptype != 11)) ||
+                    (work.nowcommand == 5 && (datSkill.tbl[datItem.tbl[work.nowindex].skillid].skillattr != 13 && datNormalSkill.tbl[datItem.tbl[work.nowindex].skillid].hptype != 2 || datNormalSkill.tbl[datItem.tbl[work.nowindex].skillid].hptype != 11))))
                     newEffect *= (2.2 + (fourOniCount * 0.1));
 
                 __result = (float) newEffect;

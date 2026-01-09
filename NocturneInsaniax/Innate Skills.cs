@@ -559,6 +559,7 @@ namespace NocturneInsaniax
         private static ushort[] fourDevasIds = new ushort[] { 21, 23, 26, 27 };
         private static ushort[] fourOniIds = new ushort[] { 169, 170, 171, 172, 266, 267, 268, 269 };
         private static ushort[] fourHorsemenIds = new ushort[] { 195, 196, 197, 198 };
+        private static ushort[] luckyFindIds = new ushort[] { 59, 106, 122, 167 };
 
         static ushort innateSkillId = 383;
 

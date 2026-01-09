@@ -75,16 +75,16 @@ namespace NocturneInsaniax
                 switch (id)
                 {
                     case 1: __result = "Recovers an ally's HP or MP. \nMay cause side effects."; return false; // Muscle Drink
-                    case 2: __result = "Fixed HP recovery for one ally."; return false; // Medicine
-                    case 3: __result = "Moderate HP recovery for one ally."; return false; // Life Stone
-                    case 4: __result = "Full HP recovery for one ally."; return false; // Bead
-                    case 5: __result = "Full HP recovery for all allies."; return false; // Bead Chain
-                    case 6: __result = "Fixed MP recovery for one ally."; return false; // Chakra Drop
-                    case 7: __result = "Full MP recovery for one ally."; return false; // Chakra Pot
-                    case 8: __result = "Full MP recovery for all allies."; return false; // Great Chakra
-                    case 9: __result = "Moderate HP/MP recovery for one ally."; return false; // Soma Droplet
-                    case 10: __result = "Full HP/MP recovery for one ally."; return false; // Soma
-                    case 11: __result = "Full HP/MP recovery for all allies."; return false; // Bead of Life
+                    case 2: __result = "Fixed HP recovery \nfor one ally."; return false; // Medicine
+                    case 3: __result = "Moderate HP recovery \nfor one ally."; return false; // Life Stone
+                    case 4: __result = "Full HP recovery \nfor one ally."; return false; // Bead
+                    case 5: __result = "Full HP recovery \nfor all allies."; return false; // Bead Chain
+                    case 6: __result = "Fixed MP recovery \nfor one ally."; return false; // Chakra Drop
+                    case 7: __result = "Full MP recovery \nfor one ally."; return false; // Chakra Pot
+                    case 8: __result = "Full MP recovery \nfor all allies."; return false; // Great Chakra
+                    case 9: __result = "Moderate HP/MP recovery \nfor one ally."; return false; // Soma Droplet
+                    case 10: __result = "Full HP/MP recovery \nfor one ally."; return false; // Soma
+                    case 11: __result = "Full HP/MP recovery \nfor all allies."; return false; // Bead of Life
                     case 12: __result = "Slight MP recovery for one ally. \nReusable."; return false; // Chakra Elixir
                     case 15: __result = "Cures Bind/Sleep/Panic \nfor all allies."; return false; // Sacred Water
                     case 21: __result = "Low Fire damage to all foes. \nPow: 24, Acc: 100%"; return false; // Maragi Rock

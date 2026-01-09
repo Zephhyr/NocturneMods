@@ -122,7 +122,7 @@ namespace NocturneInsaniax
                         {
                             if (criticalMelodyIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id) ||
                                 (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 12))
-                                criticalMelodyActive = true; break;
+                                criticalMelodyActive = true;
                         }
                         catch { }
                     }
@@ -134,7 +134,7 @@ namespace NocturneInsaniax
                         try
                         {
                             if (criticalMelodyIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
-                                criticalMelodyActive = true; break;
+                                criticalMelodyActive = true;
                         }
                         catch { }
                     }
@@ -149,7 +149,7 @@ namespace NocturneInsaniax
                             try
                             {
                                 if (pawToPawCombatIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
-                                    pawToPawCount++; break;
+                                    pawToPawCount++;
                             }
                             catch { }
                         }
@@ -161,7 +161,7 @@ namespace NocturneInsaniax
                             try
                             {
                                 if (pawToPawCombatIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
-                                    pawToPawCount++; break;
+                                    pawToPawCount++;
                             }
                             catch { }
                         }
@@ -179,7 +179,7 @@ namespace NocturneInsaniax
                             try
                             {
                                 if (proxyGuardHoundIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id))
-                                    proxyGuardHoundActive = true; break;
+                                    proxyGuardHoundActive = true;
                             }
                             catch { }
                         }
@@ -191,7 +191,7 @@ namespace NocturneInsaniax
                             try
                             {
                                 if (proxyGuardHoundIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
-                                    proxyGuardHoundActive = true; break;
+                                    proxyGuardHoundActive = true;
                             }
                             catch { }
                         }
@@ -711,7 +711,7 @@ namespace NocturneInsaniax
                 if (__result == 6)
                     return;
 
-                if (nskill == 201)
+                if (nskill == 201 || nskill >= 505 || datSkill.tbl[nskill].skillattr == 13 || datSkill.tbl[nskill].skillattr == 14)
                 {
                     __result = 0;
                     return;

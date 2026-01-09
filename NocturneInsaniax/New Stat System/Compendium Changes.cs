@@ -520,9 +520,9 @@ namespace NocturneInsaniax
 
                 foreach (var paramType in paramTypes)
                 {
-                    pStock.skillparam[paramType - 1] = (sbyte) Math.Ceiling(pStock.param[paramType - 1] * 0.1f);
+                    pStock.skillparam[paramType - 1] = (sbyte) Math.Ceiling(pStock.param[paramType - 1] * 0.05f);
 
-                    while ((pStock.param[paramType - 1] + pStock.mitamaparam[paramType - 1] + pStock.skillparam[paramType - 1] > Math.Floor(pStock.param[paramType - 1] * 1.5f))
+                    while ((pStock.param[paramType - 1] + pStock.mitamaparam[paramType - 1] + pStock.skillparam[paramType - 1] > Math.Floor(pStock.param[paramType - 1] * 1.25f))
                         || (pStock.param[paramType - 1] + pStock.mitamaparam[paramType - 1] + pStock.skillparam[paramType - 1] > MAXSTATS))
                         pStock.skillparam[paramType - 1]--;
                 }
