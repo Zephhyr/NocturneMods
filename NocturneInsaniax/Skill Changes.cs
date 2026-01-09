@@ -696,8 +696,9 @@ namespace NocturneInsaniax
                 }
 
                 // Okuninushi's Nation Founder, Hanuman's Ramayana
-                if (a.work.nowcommand == 1 && new ushort[] { 36, 37, 38, 457 }.Contains(a.work.nowindex) || 
-                    a.work.nowcommand == 5 && new ushort[] { 1, 2, 3, 4, 9, 10 }.Contains(a.work.nowindex))
+                if (!(a.work.badstatus == 64 && a.work.hp <= (a.work.maxhp / 4f)) &&
+                    (a.work.nowcommand == 1 && new ushort[] { 36, 37, 38, 457 }.Contains(a.work.nowindex) || 
+                    a.work.nowcommand == 5 && new ushort[] { 1, 2, 3, 4, 9, 10 }.Contains(a.work.nowindex)))
                 {
                     if (a.work.id == 25) nbMainProcess.nbPushAction(4, a.partyindex, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, 404);
                     else if (a.work.id == 146 && nbMainProcess.nbGetUnitWorkFromFormindex(dformindex).badstatus != 0) nbMainProcess.nbPushAction(4, a.partyindex, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, 416);

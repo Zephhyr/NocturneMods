@@ -6094,8 +6094,8 @@ namespace NocturneInsaniax
                 {
                     UseSkill(ref a, 235);
                 }
-                else if (a.data.playerpcnt > 1 && (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(424) || 
-                    (actionTrackers[a.work.id].currentTurnActionCount >= 2 && !EnemyConcentrated(ref a) && random.Next(2) == 0)))
+                else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(424) || 
+                    (actionTrackers[a.work.id].currentTurnActionCount >= 2 && !EnemyConcentrated(ref a) && random.Next(2) == 0))
                 {
                     UseSkill(ref a, 424);
                 }

@@ -1533,6 +1533,7 @@ namespace NocturneInsaniax
                             datNormalSkill.tbl[nskill].koukatype == 0)
                             __result = Convert.ToInt32((__result * 5) + random.Next(5));
                         else if (nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).badstatus == 512 &&
+                            !new int[] { 82, 83, 85, 86, 92, 93, 149, 150, 151 }.Contains(nskill) &&
                             datNormalSkill.tbl[nskill].koukatype == 1)
                             __result = Convert.ToInt32(__result / 2);
                     }
@@ -1782,6 +1783,12 @@ namespace NocturneInsaniax
                 if (bossList.Contains(work.id) && (datNormalSkill.tbl[nskill].basstatus == 1024 || datNormalSkill.tbl[nskill].basstatus == 2048))
                 {
                     __result = 0;
+                }
+
+                if (nskill == 266 && __result != 0 && nbMainProcess.nbGetPartyFromFormindex(dformindex).count[11] != 0)
+                {
+                    __result = 0;
+                    nbMainProcess.nbGetPartyFromFormindex(dformindex).count[11] = 0;
                 }
 
                 if (datNormalSkill.tbl[nskill].badlevel != 255)

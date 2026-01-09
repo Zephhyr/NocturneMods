@@ -14008,6 +14008,7 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][9] = 50; // Nerve
             datAisyo.tbl[id][10] = 50; // Mind
             datAisyo.tbl[id][11] = 100; // Self-Destruct
+            datAisyo.tbl[id][12] = 50; // Shot
 
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 7500;

@@ -173,7 +173,8 @@ namespace NocturneInsaniax
                         int luck = EnableStatScaling ? (int)((float)datCalc.datGetParam(work, 5) / STATS_SCALING) : datCalc.datGetParam(work, 5);
 
                         // If the Demon has Lucky Find as a Skill.
-                        if (datCalc.datCheckSyojiSkill(work, 0x161) != 0)
+                        if (luckyFindIds.Contains(work.id))
+                        //if (datCalc.datCheckSyojiSkill(work, 0x161) != 0)
                         {
                             // A random integer check to see if the Demon's ID is returned.
                             uint randomChance = dds3KernelCore.dds3GetRandIntA(0x20);
