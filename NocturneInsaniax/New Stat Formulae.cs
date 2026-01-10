@@ -367,8 +367,8 @@ namespace NocturneInsaniax
                     var agi = datCalc.datGetParam(work, 4);
                     var luk = datCalc.datGetParam(work, 5);
 
-                    double chance = Math.Min(90, (72 + (level * 2) + ((agi * 4) + (luk * 3)) * 0.4f) - ((lvAvg * 2) + ((avgAgi * 4) + (avgLuk * 3)) * 0.4f));
-                    var rand = dds3KernelCore.dds3GetRandIntA(128);
+                    double chance = Math.Min(102, (77 + (level * 2) + ((agi * 4) + (luk * 3)) * 0.4f) - ((lvAvg * 2) + ((avgAgi * 4) + (avgLuk * 3)) * 0.4f));
+                    var rand = dds3KernelCore.dds3GetRandIntA(12800) / 100f;
                     __result = rand < chance ? 0 : 1;
                 }
                 return false;
@@ -395,7 +395,7 @@ namespace NocturneInsaniax
                 var luk = datCalc.datGetParam(work, 5);
 
                 double chance = 12 * ((lvAvg + (avgAgi + (avgLuk * 2)) * 0.4f) / (level + (agi + (luk * 2)) * 0.4f));
-                var rand = dds3KernelCore.dds3GetRandIntA(128);
+                var rand = dds3KernelCore.dds3GetRandIntA(12800) / 100f;
                 __result = rand > chance ? 0 : 1 + datEncount.Get(data.encno).backattack;
 
                 return false;
@@ -443,7 +443,7 @@ namespace NocturneInsaniax
                     double chance = 20 * ((allyAvgAgi + allyAvgLuk) / (enemyAvgAgi + enemyAvgLuk)) + 40 - moonModifier + 10 * attemptCount;
                     if (dds3ConfigMain.cfgGetBit(9) == 2)
                         chance /= 2;
-                    var rand = dds3KernelCore.dds3GetRandIntA(100);
+                    var rand = dds3KernelCore.dds3GetRandIntA(10000) / 100f;
                     __result = rand < chance ? 1 - encounter.esc : 0;
                 }
 
@@ -668,7 +668,7 @@ namespace NocturneInsaniax
                     var lukMultiplier = 1 + ((float)luk / 250);
                     var critChance = critRate * lukMultiplier;
 
-                    var rand = dds3KernelCore.dds3GetRandIntA(100);
+                    var rand = dds3KernelCore.dds3GetRandIntA(10000) / 100f;
                     __result = rand < critChance ? 1 : __result;
                 }
 
@@ -882,7 +882,7 @@ namespace NocturneInsaniax
                     chance = chance * accuracyBuff * evasionBuff;
                     if (workFromFormindex1.badstatus == 256)
                         chance /= (float) 1.5;
-                    var rand = dds3KernelCore.dds3GetRandIntA(100);
+                    var rand = dds3KernelCore.dds3GetRandIntA(10000) / 100f;
                     __result = rand < chance ? 0 : 4;
                 }
 
