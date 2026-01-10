@@ -1549,6 +1549,9 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref int nskill, ref int sformindex) // Before attempting to inflinct an ailment
             {
+                if (nskill == 49 || nskill == 50)
+                    return;
+
                 if ((nskill < 288 || nskill > 421) && datNormalSkill.tbl[nskill].badlevel != 255) // If it isn't a passive skill
                 {
                     tmp_datNormalSkill.basstatus = datNormalSkill.tbl[nskill].basstatus; // Memorize the original ailment 
@@ -1699,6 +1702,9 @@ namespace NocturneInsaniax
                 //    var aisyoRitu = nbCalc.nbGetAisyoRitu(nskill, sformindex, dformindex);
                 //    __result = (rand * aisyoRitu) < datNormalSkill.tbl[nskill].badlevel ? __result : 0;
                 //}
+
+                if (nskill == 49 || nskill == 50)
+                    return;
 
                 if (datSkill.tbl[nskill].skillattr == 6 || datSkill.tbl[nskill].skillattr == 7)
                 {

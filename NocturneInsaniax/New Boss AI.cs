@@ -3599,7 +3599,7 @@ namespace NocturneInsaniax
                 actionTrackers[a.work.id].phase = 2;
             if (currentHpPercent <= 50 && actionTrackers[a.work.id].phase == 2)
                 actionTrackers[a.work.id].phase = 3;
-            if (currentHpPercent <= 25 && actionTrackers[a.work.id].phase == 4)
+            if (currentHpPercent <= 25 && actionTrackers[a.work.id].phase == 3)
                 actionTrackers[a.work.id].phase = 4;
 
 

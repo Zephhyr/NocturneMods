@@ -85,7 +85,7 @@ namespace NocturneInsaniax
                 else
                 {
                     discountFactor = 1 - (compendiumProgress * finalDiscount) / (100f * 100f);
-                    discountFactor *= 2; // To counteract the 50% discount of the vanilla game when the compendium is completed
+                    //discountFactor *= 2; // To counteract the 50% discount of the vanilla game when the compendium is completed
                 }
 
                 return discountFactor;

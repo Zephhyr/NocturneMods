@@ -68,8 +68,12 @@ namespace NocturneInsaniax
                             itemCommands[i] = itemIndices[i];
 
                         var itemDisableCommands = new sbyte[288];
-                        if (datEncount.tbl[s.act.data.encno].esc == 1 && itemCommands.Contains((ushort)56))
-                            itemDisableCommands[Array.IndexOf(itemCommands, (ushort)56)] = 1;
+
+                        if (s.act.data.encno <= 1279)
+                        {
+                            if (datEncount.tbl[s.act.data.encno].esc == 1 && itemCommands.Contains((ushort)56))
+                                itemDisableCommands[Array.IndexOf(itemCommands, (ushort)56)] = 1;
+                        }
 
                         // Toggle item use in battle
                         if (ToggleItemUseInBattle.Value == false)
