@@ -329,7 +329,7 @@ namespace NocturneInsaniax
                 //MelonLogger.Msg("currentTurnActionCount:" + actionTrackers[a.work.id].currentTurnActionCount);
                 //MelonLogger.Msg("-Action Starts-");
                 SetTargetingRule(ref code, ref n, 0, 0);
-                if (!pushedSkillList.Contains(a.work.nowindex))
+                if (!pushedSkillList.Contains(a.work.nowindex) || (a.work.nowindex == 234 && actionTrackers[a.work.id].currentTurnActionCount == 1))
                 {
                     switch (a.work.id)
                     {
