@@ -140,9 +140,9 @@ namespace NocturneInsaniax
                 }
 
                 if (((type == 4 && count[15] > 0) || (type == 5 && count[20] > 0)) && 
-                    ((work.nowcommand == 0 && currentDemonWork.nowindex == 0) ||
-                    (work.nowcommand == 1 && (datSkill.tbl[work.nowindex].skillattr != 13 && datNormalSkill.tbl[work.nowindex].hptype != 2 || datNormalSkill.tbl[work.nowindex].hptype != 11)) ||
-                    (work.nowcommand == 5 && (datSkill.tbl[datItem.tbl[work.nowindex].skillid].skillattr != 13 && datNormalSkill.tbl[datItem.tbl[work.nowindex].skillid].hptype != 2 || datNormalSkill.tbl[datItem.tbl[work.nowindex].skillid].hptype != 11))))
+                    ((work.nowcommand == 0 && work.nowindex == 0) ||
+                    (work.nowcommand == 1 && (datSkill.tbl[work.nowindex].skillattr != 13 && datNormalSkill.tbl[work.nowindex].hptype != 2 && datNormalSkill.tbl[work.nowindex].hptype != 11)) ||
+                    (work.nowcommand == 5 && (datSkill.tbl[datItem.tbl[work.nowindex].skillid].skillattr != 13 && datNormalSkill.tbl[datItem.tbl[work.nowindex].skillid].hptype != 2 && datNormalSkill.tbl[datItem.tbl[work.nowindex].skillid].hptype != 11))))
                     newEffect *= (2.2 + (fourOniCount * 0.1));
 
                 __result = (float) newEffect;
