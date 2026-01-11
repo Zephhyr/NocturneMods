@@ -3764,6 +3764,11 @@ namespace NocturneInsaniax
                 UseSkill(ref a, 24);
             else if (a.work.nowindex == 250)
                 UseSkill(ref a, 250);
+
+            if (actionTrackers[a.work.id].phase == 2 &&
+                !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(250) &&
+                (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(250) || random.Next(3) == 0))
+                UseSkill(ref a, 250);
         }
 
         private static void BossNoah1AI(ref nbActionProcessData_t a, ref int code, ref int n)
