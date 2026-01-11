@@ -1094,7 +1094,7 @@ namespace NocturneInsaniax
             tblHearts.fclHeartsTbl[id].Skill[4].ID = 334; // Fire Drain
             tblHearts.fclHeartsTbl[id].Skill[4].TargetLevel = 58;
             tblHearts.fclHeartsTbl[id].Skill[5].ID = 161; // Magma Axis
-            tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 66;
+            tblHearts.fclHeartsTbl[id].Skill[5].TargetLevel = 65;
         }
 
         private static void Satan(ushort id)
