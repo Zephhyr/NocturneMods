@@ -1,0 +1,6 @@
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\FusableBossesNormalRaces\obj\Debug\net6.0\FusableBossesNormalRaces.csproj.AssemblyReference.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\FusableBossesNormalRaces\obj\Debug\net6.0\FusableBossesNormalRaces.GeneratedMSBuildEditorConfig.editorconfig
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\FusableBossesNormalRaces\obj\Debug\net6.0\FusableBossesNormalRaces.AssemblyInfoInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\FusableBossesNormalRaces\obj\Debug\net6.0\FusableBossesNormalRaces.AssemblyInfo.cs
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\FusableBossesNormalRaces\obj\Debug\net6.0\FusableBossesNormalRaces.csproj.CoreCompileInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\FusableBossesNormalRaces\obj\Debug\net6.0\FusableBossesNormalRaces.sourcelink.json

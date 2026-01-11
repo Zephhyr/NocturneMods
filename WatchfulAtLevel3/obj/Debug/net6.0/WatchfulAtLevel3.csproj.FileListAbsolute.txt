@@ -1,0 +1,6 @@
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\WatchfulAtLevel3\obj\Debug\net6.0\WatchfulAtLevel3.csproj.AssemblyReference.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\WatchfulAtLevel3\obj\Debug\net6.0\WatchfulAtLevel3.GeneratedMSBuildEditorConfig.editorconfig
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\WatchfulAtLevel3\obj\Debug\net6.0\WatchfulAtLevel3.AssemblyInfoInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\WatchfulAtLevel3\obj\Debug\net6.0\WatchfulAtLevel3.AssemblyInfo.cs
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\WatchfulAtLevel3\obj\Debug\net6.0\WatchfulAtLevel3.csproj.CoreCompileInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\WatchfulAtLevel3\obj\Debug\net6.0\WatchfulAtLevel3.sourcelink.json

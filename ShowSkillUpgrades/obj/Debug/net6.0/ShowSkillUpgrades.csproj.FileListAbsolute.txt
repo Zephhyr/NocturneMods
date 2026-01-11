@@ -1,0 +1,6 @@
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\ShowSkillUpgrades\obj\Debug\net6.0\ShowSkillUpgrades.csproj.AssemblyReference.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\ShowSkillUpgrades\obj\Debug\net6.0\ShowSkillUpgrades.GeneratedMSBuildEditorConfig.editorconfig
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\ShowSkillUpgrades\obj\Debug\net6.0\ShowSkillUpgrades.AssemblyInfoInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\ShowSkillUpgrades\obj\Debug\net6.0\ShowSkillUpgrades.AssemblyInfo.cs
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\ShowSkillUpgrades\obj\Debug\net6.0\ShowSkillUpgrades.csproj.CoreCompileInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\ShowSkillUpgrades\obj\Debug\net6.0\ShowSkillUpgrades.sourcelink.json

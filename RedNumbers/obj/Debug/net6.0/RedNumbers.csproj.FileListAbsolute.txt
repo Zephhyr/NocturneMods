@@ -1,0 +1,4 @@
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\RedNumbers\obj\Debug\net6.0\RedNumbers.csproj.AssemblyReference.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\RedNumbers\obj\Debug\net6.0\RedNumbers.GeneratedMSBuildEditorConfig.editorconfig
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\RedNumbers\obj\Debug\net6.0\RedNumbers.csproj.CoreCompileInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\RedNumbers\obj\Debug\net6.0\RedNumbers.sourcelink.json

@@ -1,0 +1,4 @@
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\DemonDefaultTalk\obj\Debug\net6.0\DemonDefaultTalk.csproj.AssemblyReference.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\DemonDefaultTalk\obj\Debug\net6.0\DemonDefaultTalk.GeneratedMSBuildEditorConfig.editorconfig
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\DemonDefaultTalk\obj\Debug\net6.0\DemonDefaultTalk.csproj.CoreCompileInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\DemonDefaultTalk\obj\Debug\net6.0\DemonDefaultTalk.sourcelink.json

@@ -1,0 +1,4 @@
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\PrintDataTables\obj\Debug\net6.0\PrintDataTables.csproj.AssemblyReference.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\PrintDataTables\obj\Debug\net6.0\PrintDataTables.GeneratedMSBuildEditorConfig.editorconfig
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\PrintDataTables\obj\Debug\net6.0\PrintDataTables.csproj.CoreCompileInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\PrintDataTables\obj\Debug\net6.0\PrintDataTables.sourcelink.json

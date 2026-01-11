@@ -1,0 +1,6 @@
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\ReworkedMitamaFusion50\obj\Debug\net6.0\ReworkedMitamaFusion50.csproj.AssemblyReference.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\ReworkedMitamaFusion50\obj\Debug\net6.0\ReworkedMitamaFusion50.GeneratedMSBuildEditorConfig.editorconfig
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\ReworkedMitamaFusion50\obj\Debug\net6.0\ReworkedMitamaFusion50.AssemblyInfoInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\ReworkedMitamaFusion50\obj\Debug\net6.0\ReworkedMitamaFusion50.AssemblyInfo.cs
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\ReworkedMitamaFusion50\obj\Debug\net6.0\ReworkedMitamaFusion50.csproj.CoreCompileInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\ReworkedMitamaFusion50\obj\Debug\net6.0\ReworkedMitamaFusion50.sourcelink.json

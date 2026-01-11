@@ -1,0 +1,6 @@
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\StandardLibrary\obj\Debug\net6.0\StandardLibrary.csproj.AssemblyReference.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\StandardLibrary\obj\Debug\net6.0\StandardLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\StandardLibrary\obj\Debug\net6.0\StandardLibrary.AssemblyInfoInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\StandardLibrary\obj\Debug\net6.0\StandardLibrary.AssemblyInfo.cs
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\StandardLibrary\obj\Debug\net6.0\StandardLibrary.csproj.CoreCompileInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\StandardLibrary\obj\Debug\net6.0\StandardLibrary.sourcelink.json

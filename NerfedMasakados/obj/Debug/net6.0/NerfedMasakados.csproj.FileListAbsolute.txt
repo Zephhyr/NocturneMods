@@ -1,0 +1,6 @@
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\NerfedMasakados\obj\Debug\net6.0\NerfedMasakados.csproj.AssemblyReference.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\NerfedMasakados\obj\Debug\net6.0\NerfedMasakados.GeneratedMSBuildEditorConfig.editorconfig
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\NerfedMasakados\obj\Debug\net6.0\NerfedMasakados.AssemblyInfoInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\NerfedMasakados\obj\Debug\net6.0\NerfedMasakados.AssemblyInfo.cs
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\NerfedMasakados\obj\Debug\net6.0\NerfedMasakados.csproj.CoreCompileInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\NerfedMasakados\obj\Debug\net6.0\NerfedMasakados.sourcelink.json

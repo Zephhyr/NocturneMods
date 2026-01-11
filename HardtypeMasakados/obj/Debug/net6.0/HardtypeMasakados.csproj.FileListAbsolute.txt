@@ -1,0 +1,6 @@
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\HardtypeMasakados\obj\Debug\net6.0\HardtypeMasakados.csproj.AssemblyReference.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\HardtypeMasakados\obj\Debug\net6.0\HardtypeMasakados.GeneratedMSBuildEditorConfig.editorconfig
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\HardtypeMasakados\obj\Debug\net6.0\HardtypeMasakados.AssemblyInfoInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\HardtypeMasakados\obj\Debug\net6.0\HardtypeMasakados.AssemblyInfo.cs
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\HardtypeMasakados\obj\Debug\net6.0\HardtypeMasakados.csproj.CoreCompileInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\HardtypeMasakados\obj\Debug\net6.0\HardtypeMasakados.sourcelink.json

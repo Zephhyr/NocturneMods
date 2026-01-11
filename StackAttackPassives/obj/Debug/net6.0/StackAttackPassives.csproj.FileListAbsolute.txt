@@ -1,0 +1,6 @@
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\StackAttackPassives\obj\Debug\net6.0\StackAttackPassives.csproj.AssemblyReference.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\StackAttackPassives\obj\Debug\net6.0\StackAttackPassives.GeneratedMSBuildEditorConfig.editorconfig
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\StackAttackPassives\obj\Debug\net6.0\StackAttackPassives.AssemblyInfoInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\StackAttackPassives\obj\Debug\net6.0\StackAttackPassives.AssemblyInfo.cs
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\StackAttackPassives\obj\Debug\net6.0\StackAttackPassives.csproj.CoreCompileInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\StackAttackPassives\obj\Debug\net6.0\StackAttackPassives.sourcelink.json

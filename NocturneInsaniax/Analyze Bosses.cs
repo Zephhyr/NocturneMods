@@ -591,10 +591,10 @@ namespace NocturneInsaniax
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(12);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill03/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(18);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill04/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(24);
-                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill05/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(170);
-                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill06/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(250);
-                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill07/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(57);
-                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill08/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(77);
+                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill05/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(250);
+                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill06/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(57);
+                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill07/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(77);
+                            nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill08/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(366);
                             break;
                         case 0246: //Noah (Triple Reason)
                             var noah3party = nbMainProcess.nbGetPartyFromFormindex(4);

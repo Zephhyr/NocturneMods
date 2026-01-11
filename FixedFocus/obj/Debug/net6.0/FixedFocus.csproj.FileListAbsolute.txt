@@ -1,0 +1,6 @@
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\FixedFocus\obj\Debug\net6.0\FixedFocus.csproj.AssemblyReference.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\FixedFocus\obj\Debug\net6.0\FixedFocus.GeneratedMSBuildEditorConfig.editorconfig
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\FixedFocus\obj\Debug\net6.0\FixedFocus.AssemblyInfoInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\FixedFocus\obj\Debug\net6.0\FixedFocus.AssemblyInfo.cs
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\FixedFocus\obj\Debug\net6.0\FixedFocus.csproj.CoreCompileInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\FixedFocus\obj\Debug\net6.0\FixedFocus.sourcelink.json

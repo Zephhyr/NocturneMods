@@ -1,0 +1,6 @@
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\FusableBossDemons\obj\Debug\net6.0\FusableBossDemons.csproj.AssemblyReference.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\FusableBossDemons\obj\Debug\net6.0\FusableBossDemons.GeneratedMSBuildEditorConfig.editorconfig
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\FusableBossDemons\obj\Debug\net6.0\FusableBossDemons.AssemblyInfoInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\FusableBossDemons\obj\Debug\net6.0\FusableBossDemons.AssemblyInfo.cs
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\FusableBossDemons\obj\Debug\net6.0\FusableBossDemons.csproj.CoreCompileInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\FusableBossDemons\obj\Debug\net6.0\FusableBossDemons.sourcelink.json

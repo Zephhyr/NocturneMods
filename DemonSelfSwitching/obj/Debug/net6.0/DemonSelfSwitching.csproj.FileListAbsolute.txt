@@ -1,0 +1,4 @@
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\DemonSelfSwitching\obj\Debug\net6.0\DemonSelfSwitching.csproj.AssemblyReference.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\DemonSelfSwitching\obj\Debug\net6.0\DemonSelfSwitching.GeneratedMSBuildEditorConfig.editorconfig
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\DemonSelfSwitching\obj\Debug\net6.0\DemonSelfSwitching.csproj.CoreCompileInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\DemonSelfSwitching\obj\Debug\net6.0\DemonSelfSwitching.sourcelink.json

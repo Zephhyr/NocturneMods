@@ -1,0 +1,4 @@
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\DemonsCanUseItems\obj\Debug\net6.0\DemonsCanUseItems.csproj.AssemblyReference.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\DemonsCanUseItems\obj\Debug\net6.0\DemonsCanUseItems.GeneratedMSBuildEditorConfig.editorconfig
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\DemonsCanUseItems\obj\Debug\net6.0\DemonsCanUseItems.csproj.CoreCompileInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\DemonsCanUseItems\obj\Debug\net6.0\DemonsCanUseItems.sourcelink.json

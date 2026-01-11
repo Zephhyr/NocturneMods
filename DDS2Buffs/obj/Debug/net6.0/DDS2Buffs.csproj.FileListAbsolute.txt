@@ -1,0 +1,6 @@
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\DDS2Buffs\obj\Debug\net6.0\DDS2Buffs.csproj.AssemblyReference.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\DDS2Buffs\obj\Debug\net6.0\DDS2Buffs.GeneratedMSBuildEditorConfig.editorconfig
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\DDS2Buffs\obj\Debug\net6.0\DDS2Buffs.AssemblyInfoInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\DDS2Buffs\obj\Debug\net6.0\DDS2Buffs.AssemblyInfo.cs
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\DDS2Buffs\obj\Debug\net6.0\DDS2Buffs.csproj.CoreCompileInputs.cache
+D:\Data\Nocturne-Mods\Development\Solutions\NocturneModding\DDS2Buffs\obj\Debug\net6.0\DDS2Buffs.sourcelink.json
