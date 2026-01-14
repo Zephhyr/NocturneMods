@@ -5048,6 +5048,12 @@ namespace NocturneInsaniax
                     case 1: UseSkill(ref a, 436); break;
                 }
             }
+
+            if ((new ushort[] { 104, 109 }.Contains(a.work.nowindex) && AllyPartyAllImmuneToAttr(104, 0)) ||
+                (new ushort[] { 178, 436 }.Contains(a.work.nowindex) && AllyPartyAllImmuneToAttr(178, 1)))
+            {
+                UseSkill(ref a, 27);
+            }
         }
 
         private static void BossJikokutenAI(ref nbActionProcessData_t a, ref int code, ref int n)
