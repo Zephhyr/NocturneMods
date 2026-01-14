@@ -1,0 +1,447 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|d:\\data\\nocturne-mods\\development\\solutions\\nocturnemodding\\nocturneinsaniax\\new boss ai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|solutionrelative:nocturneinsaniax\\new boss ai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|d:\\data\\nocturne-mods\\development\\solutions\\nocturnemodding\\nocturneinsaniax\\skill changes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|solutionrelative:nocturneinsaniax\\skill changes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|d:\\data\\nocturne-mods\\development\\solutions\\nocturnemodding\\nocturneinsaniax\\nocturne insaniax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|solutionrelative:nocturneinsaniax\\nocturne insaniax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|d:\\data\\nocturne-mods\\development\\solutions\\nocturnemodding\\nocturneinsaniax\\demon changes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|solutionrelative:nocturneinsaniax\\demon changes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|d:\\data\\nocturne-mods\\development\\solutions\\nocturnemodding\\nocturneinsaniax\\magatama changes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|solutionrelative:nocturneinsaniax\\magatama changes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|d:\\data\\nocturne-mods\\development\\solutions\\nocturnemodding\\nocturneinsaniax\\analyze bosses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|solutionrelative:nocturneinsaniax\\analyze bosses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|d:\\data\\nocturne-mods\\development\\solutions\\nocturnemodding\\nocturneinsaniax\\item changes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|solutionrelative:nocturneinsaniax\\item changes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|d:\\data\\nocturne-mods\\development\\solutions\\nocturnemodding\\nocturneinsaniax\\dds2 buffs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|solutionrelative:nocturneinsaniax\\dds2 buffs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|d:\\data\\nocturne-mods\\development\\solutions\\nocturnemodding\\nocturneinsaniax\\charge skill changes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|solutionrelative:nocturneinsaniax\\charge skill changes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|d:\\data\\nocturne-mods\\development\\solutions\\nocturnemodding\\nocturneinsaniax\\new stat formulae.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|solutionrelative:nocturneinsaniax\\new stat formulae.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|d:\\data\\nocturne-mods\\development\\solutions\\nocturnemodding\\nocturneinsaniax\\skill potential.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|solutionrelative:nocturneinsaniax\\skill potential.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|d:\\data\\nocturne-mods\\development\\solutions\\nocturnemodding\\nocturneinsaniax\\new stat system\\compendium changes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|solutionrelative:nocturneinsaniax\\new stat system\\compendium changes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|d:\\data\\nocturne-mods\\development\\solutions\\nocturnemodding\\nocturneinsaniax\\new demon commands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|solutionrelative:nocturneinsaniax\\new demon commands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|d:\\data\\nocturne-mods\\development\\solutions\\nocturnemodding\\nocturneinsaniax\\smt iv press turns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|solutionrelative:nocturneinsaniax\\smt iv press turns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|d:\\data\\nocturne-mods\\development\\solutions\\nocturnemodding\\nocturneinsaniax\\new stat system\\raise stat limit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|solutionrelative:nocturneinsaniax\\new stat system\\raise stat limit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|d:\\data\\nocturne-mods\\development\\solutions\\nocturnemodding\\nocturneinsaniax\\innate skills.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|solutionrelative:nocturneinsaniax\\innate skills.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|d:\\data\\nocturne-mods\\development\\solutions\\nocturnemodding\\nocturneinsaniax\\new stat system\\combat changes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|solutionrelative:nocturneinsaniax\\new stat system\\combat changes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|d:\\data\\nocturne-mods\\development\\solutions\\nocturnemodding\\nocturneinsaniax\\reworked mitama fusion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|solutionrelative:nocturneinsaniax\\reworked mitama fusion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|d:\\data\\nocturne-mods\\development\\solutions\\nocturnemodding\\nocturneinsaniax\\encounter changes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|solutionrelative:nocturneinsaniax\\encounter changes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|d:\\data\\nocturne-mods\\development\\solutions\\nocturnemodding\\nocturneinsaniax\\pierce changes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|solutionrelative:nocturneinsaniax\\pierce changes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|d:\\data\\nocturne-mods\\development\\solutions\\nocturnemodding\\nocturneinsaniax\\new stat system\\incense changes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|solutionrelative:nocturneinsaniax\\new stat system\\incense changes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|d:\\data\\nocturne-mods\\development\\solutions\\nocturnemodding\\nocturneinsaniax\\colour skill names.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|solutionrelative:nocturneinsaniax\\colour skill names.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|d:\\data\\nocturne-mods\\development\\solutions\\nocturnemodding\\nocturneinsaniax\\battle dialogue changes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|solutionrelative:nocturneinsaniax\\battle dialogue changes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|d:\\data\\nocturne-mods\\development\\solutions\\nocturnemodding\\nocturneinsaniax\\anti damage passives.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B0600D2-8397-4C9B-B19E-F084009A164A}|NocturneInsaniax\\NocturneInsaniax.csproj|solutionrelative:nocturneinsaniax\\anti damage passives.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 17,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Nocturne Insaniax.cs",
+              "DocumentMoniker": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Nocturne Insaniax.cs",
+              "RelativeDocumentMoniker": "NocturneInsaniax\\Nocturne Insaniax.cs",
+              "ToolTip": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Nocturne Insaniax.cs",
+              "RelativeToolTip": "NocturneInsaniax\\Nocturne Insaniax.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T00:16:49.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Demon Changes.cs",
+              "DocumentMoniker": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Demon Changes.cs",
+              "RelativeDocumentMoniker": "NocturneInsaniax\\Demon Changes.cs",
+              "ToolTip": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Demon Changes.cs",
+              "RelativeToolTip": "NocturneInsaniax\\Demon Changes.cs",
+              "ViewState": "AgIAAAM0AAAAAAAAAAAAABg0AAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T22:33:47.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Skill Changes.cs",
+              "DocumentMoniker": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Skill Changes.cs",
+              "RelativeDocumentMoniker": "NocturneInsaniax\\Skill Changes.cs",
+              "ToolTip": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Skill Changes.cs",
+              "RelativeToolTip": "NocturneInsaniax\\Skill Changes.cs",
+              "ViewState": "AgIAAEwaAAAAAAAAAAAUwGUaAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T00:16:54.074Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Charge Skill Changes.cs",
+              "DocumentMoniker": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Charge Skill Changes.cs",
+              "RelativeDocumentMoniker": "NocturneInsaniax\\Charge Skill Changes.cs",
+              "ToolTip": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Charge Skill Changes.cs",
+              "RelativeToolTip": "NocturneInsaniax\\Charge Skill Changes.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAAMAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T00:17:00.589Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Item Changes.cs",
+              "DocumentMoniker": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Item Changes.cs",
+              "RelativeDocumentMoniker": "NocturneInsaniax\\Item Changes.cs",
+              "ToolTip": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Item Changes.cs",
+              "RelativeToolTip": "NocturneInsaniax\\Item Changes.cs",
+              "ViewState": "AgIAADkFAAAAAAAAAAAkwFUFAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T22:42:33.74Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Encounter Changes.cs",
+              "DocumentMoniker": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Encounter Changes.cs",
+              "RelativeDocumentMoniker": "NocturneInsaniax\\Encounter Changes.cs",
+              "ToolTip": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Encounter Changes.cs",
+              "RelativeToolTip": "NocturneInsaniax\\Encounter Changes.cs",
+              "ViewState": "AgIAABECAAAAAAAAAAAUwBYCAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T17:14:28.607Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Magatama Changes.cs",
+              "DocumentMoniker": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Magatama Changes.cs",
+              "RelativeDocumentMoniker": "NocturneInsaniax\\Magatama Changes.cs",
+              "ToolTip": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Magatama Changes.cs",
+              "RelativeToolTip": "NocturneInsaniax\\Magatama Changes.cs",
+              "ViewState": "AgIAADAEAAAAAAAAAAAuwEgEAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T00:19:44.84Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "New Boss AI.cs",
+              "DocumentMoniker": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\New Boss AI.cs",
+              "RelativeDocumentMoniker": "NocturneInsaniax\\New Boss AI.cs",
+              "ToolTip": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\New Boss AI.cs",
+              "RelativeToolTip": "NocturneInsaniax\\New Boss AI.cs",
+              "ViewState": "AgIAALcTAAAAAAAAAAAiwPITAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T00:17:22.834Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Innate Skills.cs",
+              "DocumentMoniker": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Innate Skills.cs",
+              "RelativeDocumentMoniker": "NocturneInsaniax\\Innate Skills.cs",
+              "ToolTip": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Innate Skills.cs",
+              "RelativeToolTip": "NocturneInsaniax\\Innate Skills.cs",
+              "ViewState": "AgIAAA0CAAAAAAAAAAAAADECAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T00:17:31.556Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Skill Potential.cs",
+              "DocumentMoniker": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Skill Potential.cs",
+              "RelativeDocumentMoniker": "NocturneInsaniax\\Skill Potential.cs",
+              "ToolTip": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Skill Potential.cs",
+              "RelativeToolTip": "NocturneInsaniax\\Skill Potential.cs",
+              "ViewState": "AgIAAPkFAAAAAAAAAAAUwAoGAAB1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T00:17:46.199Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "New Stat Formulae.cs",
+              "DocumentMoniker": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\New Stat Formulae.cs",
+              "RelativeDocumentMoniker": "NocturneInsaniax\\New Stat Formulae.cs",
+              "ToolTip": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\New Stat Formulae.cs",
+              "RelativeToolTip": "NocturneInsaniax\\New Stat Formulae.cs",
+              "ViewState": "AgIAAGYDAAAAAAAAAAAuwHQDAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T23:12:25.263Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DDS2 Buffs.cs",
+              "DocumentMoniker": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\DDS2 Buffs.cs",
+              "RelativeDocumentMoniker": "NocturneInsaniax\\DDS2 Buffs.cs",
+              "ToolTip": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\DDS2 Buffs.cs",
+              "RelativeToolTip": "NocturneInsaniax\\DDS2 Buffs.cs",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAkwIgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-08T13:20:16.45Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "New Demon Commands.cs",
+              "DocumentMoniker": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\New Demon Commands.cs",
+              "RelativeDocumentMoniker": "NocturneInsaniax\\New Demon Commands.cs",
+              "ToolTip": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\New Demon Commands.cs",
+              "RelativeToolTip": "NocturneInsaniax\\New Demon Commands.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowEIAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T15:02:55.494Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Analyze Bosses.cs",
+              "DocumentMoniker": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Analyze Bosses.cs",
+              "RelativeDocumentMoniker": "NocturneInsaniax\\Analyze Bosses.cs",
+              "ToolTip": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Analyze Bosses.cs",
+              "RelativeToolTip": "NocturneInsaniax\\Analyze Bosses.cs",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAAALIAAADDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T00:18:47.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Battle Dialogue Changes.cs",
+              "DocumentMoniker": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Battle Dialogue Changes.cs",
+              "RelativeDocumentMoniker": "NocturneInsaniax\\Battle Dialogue Changes.cs",
+              "ToolTip": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Battle Dialogue Changes.cs",
+              "RelativeToolTip": "NocturneInsaniax\\Battle Dialogue Changes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T19:52:46.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Anti Damage Passives.cs",
+              "DocumentMoniker": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Anti Damage Passives.cs",
+              "RelativeDocumentMoniker": "NocturneInsaniax\\Anti Damage Passives.cs",
+              "ToolTip": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Anti Damage Passives.cs",
+              "RelativeToolTip": "NocturneInsaniax\\Anti Damage Passives.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-02T19:30:00.285Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Pierce Changes.cs",
+              "DocumentMoniker": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Pierce Changes.cs",
+              "RelativeDocumentMoniker": "NocturneInsaniax\\Pierce Changes.cs",
+              "ToolTip": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Pierce Changes.cs",
+              "RelativeToolTip": "NocturneInsaniax\\Pierce Changes.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-02T19:29:06.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Colour Skill Names.cs",
+              "DocumentMoniker": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Colour Skill Names.cs",
+              "RelativeDocumentMoniker": "NocturneInsaniax\\Colour Skill Names.cs",
+              "ToolTip": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Colour Skill Names.cs",
+              "RelativeToolTip": "NocturneInsaniax\\Colour Skill Names.cs",
+              "ViewState": "AgIAAJEBAAAAAAAAAAAiwK0BAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-28T13:31:08.204Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SMT IV Press Turns.cs",
+              "DocumentMoniker": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\SMT IV Press Turns.cs",
+              "RelativeDocumentMoniker": "NocturneInsaniax\\SMT IV Press Turns.cs",
+              "ToolTip": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\SMT IV Press Turns.cs",
+              "RelativeToolTip": "NocturneInsaniax\\SMT IV Press Turns.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAmwEEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T21:55:02.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Reworked Mitama Fusion.cs",
+              "DocumentMoniker": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Reworked Mitama Fusion.cs",
+              "RelativeDocumentMoniker": "NocturneInsaniax\\Reworked Mitama Fusion.cs",
+              "ToolTip": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\Reworked Mitama Fusion.cs",
+              "RelativeToolTip": "NocturneInsaniax\\Reworked Mitama Fusion.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAowEoAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T21:07:51.069Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Raise Stat Limit.cs",
+              "DocumentMoniker": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\New Stat System\\Raise Stat Limit.cs",
+              "RelativeDocumentMoniker": "NocturneInsaniax\\New Stat System\\Raise Stat Limit.cs",
+              "ToolTip": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\New Stat System\\Raise Stat Limit.cs",
+              "RelativeToolTip": "NocturneInsaniax\\New Stat System\\Raise Stat Limit.cs",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAAAK4AAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T00:19:32.865Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Compendium Changes.cs",
+              "DocumentMoniker": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\New Stat System\\Compendium Changes.cs",
+              "RelativeDocumentMoniker": "NocturneInsaniax\\New Stat System\\Compendium Changes.cs",
+              "ToolTip": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\New Stat System\\Compendium Changes.cs",
+              "RelativeToolTip": "NocturneInsaniax\\New Stat System\\Compendium Changes.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAIwFcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-28T13:45:32.943Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Incense Changes.cs",
+              "DocumentMoniker": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\New Stat System\\Incense Changes.cs",
+              "RelativeDocumentMoniker": "NocturneInsaniax\\New Stat System\\Incense Changes.cs",
+              "ToolTip": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\New Stat System\\Incense Changes.cs",
+              "RelativeToolTip": "NocturneInsaniax\\New Stat System\\Incense Changes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T19:55:32.652Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Combat Changes.cs",
+              "DocumentMoniker": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\New Stat System\\Combat Changes.cs",
+              "RelativeDocumentMoniker": "NocturneInsaniax\\New Stat System\\Combat Changes.cs",
+              "ToolTip": "D:\\Data\\Nocturne-Mods\\Development\\Solutions\\NocturneModding\\NocturneInsaniax\\New Stat System\\Combat Changes.cs",
+              "RelativeToolTip": "NocturneInsaniax\\New Stat System\\Combat Changes.cs",
+              "ViewState": "AgIAAOYAAAAAAAAAAAAgwLsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T21:55:50.155Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
