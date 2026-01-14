@@ -5104,7 +5104,7 @@ namespace NocturneInsaniax
                 }
 
                 if ((new ushort[] { 104, 105, 106 }.Contains(a.work.nowindex) && AllyPartyAllImmuneToAttr(104, 0)) ||
-                    (a.work.nowindex == 275 && AllyPartyAllImmuneToAttr(439, 2)))
+                    (a.work.nowindex == 439 && AllyPartyAllImmuneToAttr(439, 2)))
                 {
                     UseSkill(ref a, 27);
                 }
