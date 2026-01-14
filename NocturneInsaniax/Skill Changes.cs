@@ -6759,6 +6759,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].magicbase = 24;
             datNormalSkill.tbl[id].magiclimit = 268;
+            datNormalSkill.tbl[id].targetrandom = 1;
             datNormalSkill.tbl[id].targetcntmax = 7;
             datNormalSkill.tbl[id].targetcntmin = 3;
             datNormalSkill.tbl[id].badlevel = 40;
