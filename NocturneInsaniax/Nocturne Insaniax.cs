@@ -17,7 +17,7 @@ using System.Linq;
 using Il2Cppeffect_H;
 using Il2Cppmodel_H;
 
-[assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax", "1.0.26", "Zephhyr, Matthiew Purple, Bud, X Kirby, Margothic, Scribe, Snappy, Mason White")]
+[assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax", "1.0.27", "Zephhyr, Matthiew Purple, Bud, X Kirby, Margothic, Scribe, Snappy, Mason White")]
 [assembly: MelonGame("アトラス", "smt3hd")]
 
 namespace NocturneInsaniax
@@ -645,6 +645,24 @@ namespace NocturneInsaniax
                 //}
             }
         }
+
+        //[HarmonyPatch(typeof(EventBit), nameof(EventBit.evtBitCheck))]
+        //private class evtBitCheckPatch
+        //{
+        //    public static void Postfix(ref int no, ref bool __result)
+        //    {
+        //        if (no == 2208)
+        //        {
+        //            MelonLogger.Msg("--EventBit.evtBitCheck--");
+        //            MelonLogger.Msg("no: " + no);
+        //            MelonLogger.Msg("result: " + __result);
+        //        }
+        //        //if (no == 2208) // New Game Plus
+        //        //    __result = true;
+        //        //if (no == 2800) // First Person View
+        //        //    __result = true;
+        //    }
+        //}
 
         [HarmonyPatch(typeof(nbEncount), nameof(nbEncount.nbGetBgmCategoryInBattle))]
         private class nbGetBgmCategoryInBattlePatch
