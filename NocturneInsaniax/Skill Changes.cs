@@ -524,7 +524,7 @@ namespace NocturneInsaniax
 
                     case 424: __result = "Increases the damage of the user's \nnext Magic-based attack by 120%."; return false; // Concentrate
                     case 425: __result = "Increases the damage of the user's \nnext attack by 120% and grants \nit Pierce."; return false; // Impaler's Animus
-                    case 426: __result = "High Physical damage to all foes. \nPow: 36, Acc: 90%, Crit: 20%, \nCharm: 20%"; return false; // Sakura Rage
+                    case 426: __result = "High Physical damage to random foes. \n3-5 hits, Pow: 36, Acc: 90%, \nCrit: 20%, Charm: 20%"; return false; // Sakura Rage
                     case 427: __result = "Low Physical damage to one foe. \nLowers target's Physical Attack. \nPow: 36, Acc: 90%, Crit: 10%"; return false; // Fang Breaker
                     case 428: __result = "Low Physical damage to one foe. \nLowers target's Defense. \nPow: 32, Acc: 90%, Crit: 10%"; return false; // Defense Kuzushi
                     case 429: __result = "Mega Physical damage to one foe. \nPow: 80, Acc: 94%, Crit: 0%"; return false; // Primal Force
@@ -6520,7 +6520,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 39;
+            datNormalSkill.tbl[id].hpn = 13;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].koukatype = 1;
             datNormalSkill.tbl[id].magicbase = 18;

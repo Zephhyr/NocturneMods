@@ -2949,6 +2949,11 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
             datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
 
+            // Enemy Skills
+            datDevilFormat.tbl[id].skill[0] = 178; // Prominence
+            datDevilFormat.tbl[id].skill[1] = 126; // Iron Claw
+            datDevilFormat.tbl[id].skill[2] = 116; // KamiKaze
+
             // AI
             datDevilAI.divTbls[0][29].aitable[0][0].skill = 32768;
             datDevilAI.divTbls[0][29].aitable[0][0].ritu = 20;
@@ -11599,10 +11604,10 @@ namespace NocturneInsaniax
             // Enemy Skills
             datDevilFormat.tbl[id].skill[0] = 79; // Pestilence
             datDevilFormat.tbl[id].skill[1] = 63; // Tentarafoo
-            datDevilFormat.tbl[id].skill[3] = 102; // Blight
-            datDevilFormat.tbl[id].skill[4] = 451; // Overload
-            datDevilFormat.tbl[id].skill[5] = 229; // Laughter
-            datDevilFormat.tbl[id].skill[6] = 366; // Abyssal Mask
+            datDevilFormat.tbl[id].skill[2] = 102; // Blight
+            datDevilFormat.tbl[id].skill[3] = 451; // Overload
+            datDevilFormat.tbl[id].skill[4] = 229; // Laughter
+            datDevilFormat.tbl[id].skill[5] = 366; // Abyssal Mask
 
             datDevilAI.divTbls[1][67].ailevel = 1;
         }

@@ -1546,7 +1546,7 @@ namespace NocturneInsaniax
         {
             public static void Prefix(ref int nskill, ref int sformindex) // Before attempting to inflinct an ailment
             {
-                if (nskill == 49 || nskill == 50)
+                if (nskill == 49 || nskill == 50 || nskill == 201)
                     return;
 
                 if ((nskill < 288 || nskill > 421) && datNormalSkill.tbl[nskill].badlevel != 255) // If it isn't a passive skill
@@ -1700,7 +1700,7 @@ namespace NocturneInsaniax
                 //    __result = (rand * aisyoRitu) < datNormalSkill.tbl[nskill].badlevel ? __result : 0;
                 //}
 
-                if (nskill == 49 || nskill == 50)
+                if (nskill == 49 || nskill == 50 || nskill == 201)
                     return;
 
                 if (datSkill.tbl[nskill].skillattr == 6 || datSkill.tbl[nskill].skillattr == 7)
