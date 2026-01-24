@@ -2730,6 +2730,9 @@ namespace NocturneInsaniax
 
                             break;
                         }
+
+                        if ((a.work.nowindex == 499 || a.work.nowindex == 500) && (AllyPartyAllImmuneToAttr(499, 0) || AllyPartyTetrakarn()))
+                            UseSkill(ref a, 505); // Planned Chaos
                 }
             }
         }
