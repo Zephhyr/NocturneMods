@@ -43,11 +43,11 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref byte HeartsID, ref sbyte __result)
             {
-                //MelonLogger.Msg("--rstCalcCore.cmbChkHeartsMaster--");
-                //MelonLogger.Msg("HeartsID: " + HeartsID);
-                //MelonLogger.Msg("result: " + __result);
-                //MelonLogger.Msg("magatama skills: " + InfiniteMagatamaSkillsUtility.GetMagatamaSkillsLength(HeartsID));
-                //MelonLogger.Msg("consumed skills: " + InfiniteMagatamaSkillsUtility.GetConsummedSkillsLength(HeartsID));
+                ////MelonLogger.Msg("--rstCalcCore.cmbChkHeartsMaster--");
+                ////MelonLogger.Msg("HeartsID: " + HeartsID);
+                ////MelonLogger.Msg("result: " + __result);
+                ////MelonLogger.Msg("magatama skills: " + InfiniteMagatamaSkillsUtility.GetMagatamaSkillsLength(HeartsID));
+                ////MelonLogger.Msg("consumed skills: " + InfiniteMagatamaSkillsUtility.GetConsummedSkillsLength(HeartsID));
 
                 int consumedSkillsLength = InfiniteMagatamaSkillsUtility.GetConsummedSkillsLength(HeartsID); // Get the progression of learned skills from this magatama
                 int MagatamaSkillsLength = InfiniteMagatamaSkillsUtility.GetMagatamaSkillsLength(HeartsID); // Get the number of learnable skills from this magatama
