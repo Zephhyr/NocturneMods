@@ -180,8 +180,8 @@ namespace NocturneInsaniax
         {
             private static bool Prefix(datUnitWork_t pStock, datUnitWork_t pDevil1, datUnitWork_t pDevil2, datUnitWork_t pSacrifice)
             {
-                // Calculate the Sacrificed Demon's EXP, multiplied by 1.5x, then add it to the current Demon's EXP total.
-                uint newExp = (uint)((float)pSacrifice.exp * 1.5f) + rstCalcCore.cmbCalcLevelUpExp(ref pStock, pStock.level);
+                // Calculate the Sacrificed Demon's EXP, multiplied by 1.25x, then add it to the current Demon's EXP total.
+                uint newExp = (uint)((float)pSacrifice.exp * 1.25f) + rstCalcCore.cmbCalcLevelUpExp(ref pStock, pStock.level);
 
                 // Calculate the new Level of the current Demon.
                 // Also, cap it at 255, we don't need to do the game's really wonky math it was doing.

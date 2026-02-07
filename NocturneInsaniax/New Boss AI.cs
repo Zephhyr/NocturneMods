@@ -1042,6 +1042,12 @@ namespace NocturneInsaniax
                 UseSummonSkill(ref a, 226, 95);
         }
 
+        private static void ForcedKodamaAI(ref nbActionProcessData_t a, ref int code, ref int n)
+        {
+            if (a.data.encno == 1268)
+                UseNormalAttack(ref a);
+        }
+
         private static void ForcedShikigamiAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
             if (a.data.encno == 1267)
@@ -2201,6 +2207,8 @@ namespace NocturneInsaniax
                     {
                         UseSkill(ref a, 77); return;
                     }
+                    else
+                        UseSkill(ref a, 489);
                 }
                 else if (actionTrackers[a.work.id].skillsUsedThisTurn.Contains(432) ||
                     actionTrackers[a.work.id].skillsUsedThisTurn.Contains(27) ||
@@ -2257,6 +2265,8 @@ namespace NocturneInsaniax
                     {
                         UseSkill(ref a, 77); return;
                     }
+                    else
+                        UseSkill(ref a, 489);
                 }
                 else if (!AllyPartyDebuffed(3) && random.Next(3 + (Convert.ToInt32(actionTrackers[a.work.id].skillsUsedThisTurn.Contains(206)) * 3)) == 0)
                     UseSkill(ref a, 206);
@@ -5874,19 +5884,7 @@ namespace NocturneInsaniax
                         actionTrackers.Add(364, new ActionTracker());
                         actionTrackers.Add(365, new ActionTracker());
                         actionTrackers.Add(366, new ActionTracker());
-                    }
-                    else if (a.data.enemypcnt > 3)
-                    {
-                        int randomValue = random.Next(4);
-                        switch (randomValue)
-                        {
-                            case 0: UseNormalAttack(ref a); break;
-                            case 1: UseSkill(ref a, 262); break;
-                            case 2: UseSkill(ref a, 263); break;
-                            case 3: UseSkill(ref a, 264); break;
-                        }
-                    }
-                    else
+                    }else
                     {
                         if (EnemyPartyDebuffed(1) && random.Next(4) == 0)
                         {
@@ -6487,6 +6485,8 @@ namespace NocturneInsaniax
                 if (!actionTrackers.ContainsKey(359))
                     actionTrackers.Add(359, new ActionTracker());
             }
+            else if (a.work.nowcommand == 0 && a.work.nowindex == 0)
+                UseSkill(ref a, 135);
         }
 
         private static void BossRedRiderAI(ref nbActionProcessData_t a, ref int code, ref int n)
@@ -6943,29 +6943,39 @@ namespace NocturneInsaniax
         private static bool AllyPartyBuffed(ushort threshold)
         {
             var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].flag != 0);
+            bool result = true;
             foreach (var unit in allyParty)
             {
+                if (result == false) break;
+
                 for (int i = 4; i <= 8; i++)
                 {
-                    if (unit.count[i] >= threshold)
-                        return true;
+                    if (result == false) break;
+
+                    if (unit.count[i] < threshold)
+                        result = false;
                 }
             }
-            return false;
+            return result;
         }
 
         private static bool AllyPartyDebuffed(ushort threshold)
         {
             var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].flag != 0);
+            bool result = true;
             foreach (var unit in allyParty)
             {
+                if (result == false) break;
+
                 for (int i = 4; i <= 8; i++)
                 {
-                    if (unit.count[i] <= threshold * -1)
-                        return true;
+                    if (result == false) break;
+
+                    if (unit.count[i] > threshold * -1)
+                        result = false;
                 }
             }
-            return false;
+            return result;
         }
 
         private static bool AllyPartyDebuffed(ushort threshold, int type)
@@ -6982,15 +6992,20 @@ namespace NocturneInsaniax
         private static bool EnemyPartyBuffed(ushort threshold)
         {
             var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex >= 4 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].flag != 0);
+            bool result = true;
             foreach (var unit in allyParty)
             {
+                if (result == false) break;
+
                 for (int i = 4; i <= 8; i++)
                 {
-                    if (unit.count[i] >= threshold)
-                        return true;
+                    if (result == false) break;
+
+                    if (unit.count[i] < threshold)
+                        result = false;
                 }
             }
-            return false;
+            return result;
         }
 
         private static bool EnemyPartyBuffed(ushort threshold, int type)
@@ -7007,15 +7022,20 @@ namespace NocturneInsaniax
         private static bool EnemyPartyDebuffed(ushort threshold)
         {
             var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex >= 4 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].flag != 0);
+            bool result = true;
             foreach (var unit in allyParty)
             {
+                if (result == false) break;
+
                 for (int i = 4; i <= 8; i++)
                 {
-                    if (unit.count[i] <= threshold * -1)
-                        return true;
+                    if (result == false) break;
+
+                    if (unit.count[i] > threshold * -1)
+                        result = false;
                 }
             }
-            return false;
+            return result;
         }
 
         private static bool AllyPartyStatus(ushort status)

@@ -13547,8 +13547,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 60000;
             datDevilFormat.tbl[id].level = 90;
             datDevilFormat.tbl[id].flag = 563;
-            datDevilFormat.tbl[id].param[0] = 60;
-            datDevilFormat.tbl[id].param[1] = 60;
+            datDevilFormat.tbl[id].param[0] = 75;
+            datDevilFormat.tbl[id].param[1] = 75;
             datDevilFormat.tbl[id].param[2] = 99;
             datDevilFormat.tbl[id].param[3] = 99;
             datDevilFormat.tbl[id].param[4] = 65;
@@ -13613,8 +13613,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 60000;
             datDevilFormat.tbl[id].level = 90;
             datDevilFormat.tbl[id].flag = 563;
-            datDevilFormat.tbl[id].param[0] = 50;
-            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[0] = 70;
+            datDevilFormat.tbl[id].param[1] = 70;
             datDevilFormat.tbl[id].param[2] = 75;
             datDevilFormat.tbl[id].param[3] = 75;
             datDevilFormat.tbl[id].param[4] = 70;
@@ -13684,8 +13684,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 60000;
             datDevilFormat.tbl[id].level = 90;
             datDevilFormat.tbl[id].flag = 563;
-            datDevilFormat.tbl[id].param[0] = 50;
-            datDevilFormat.tbl[id].param[1] = 70;
+            datDevilFormat.tbl[id].param[0] = 70;
+            datDevilFormat.tbl[id].param[1] = 95;
             datDevilFormat.tbl[id].param[2] = 99;
             datDevilFormat.tbl[id].param[3] = 30;
             datDevilFormat.tbl[id].param[4] = 65;
@@ -13740,7 +13740,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 48;
             datDevilFormat.tbl[id].level = 88;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 80, 80, 90, 90, 80, 80 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 90, 90, 90, 90, 80, 80 };
             datDevilFormat.tbl[id].keisyotype = 9;
             datDevilFormat.tbl[id].keisyoform = 191;
 
@@ -13752,11 +13752,13 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][2] = 2147483778; // Ice
             datAisyo.tbl[id][3] = 65536; // Elec
             datAisyo.tbl[id][4] = 65536; // Force
+            datAisyo.tbl[id][5] = 100; // Almighty
             datAisyo.tbl[id][6] = 100; // Light
             datAisyo.tbl[id][7] = 262144; // Dark
             datAisyo.tbl[id][8] = 50; // Curse
             datAisyo.tbl[id][9] = 50; // Nerve
             datAisyo.tbl[id][10] = 50; // Mind
+            datAisyo.tbl[id][11] = 100; // Self-Destruct
             datAisyo.tbl[id][12] = 2147483778; // Shot
 
             // Enemy Stats
@@ -13995,7 +13997,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 39;
             datDevilFormat.tbl[id].level = 60;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 45, 45, 50, 50, 45, 35 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 70, 70, 50, 50, 45, 35 };
             datDevilFormat.tbl[id].keisyotype = 1;
             datDevilFormat.tbl[id].keisyoform = 2329;
 
@@ -14066,7 +14068,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 23;
             datDevilFormat.tbl[id].level = 36;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 35, 35, 45, 45, 25, 25 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 45, 45, 45, 45, 25, 25 };
             datDevilFormat.tbl[id].keisyotype = 10;
             datDevilFormat.tbl[id].keisyoform = 187;
 
@@ -14183,8 +14185,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 500;
             datDevilFormat.tbl[id].level = 50;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 60;
-            datDevilFormat.tbl[id].param[1] = 45;
+            datDevilFormat.tbl[id].param[0] = 70;
+            datDevilFormat.tbl[id].param[1] = 55;
             datDevilFormat.tbl[id].param[2] = 50;
             datDevilFormat.tbl[id].param[3] = 50;
             datDevilFormat.tbl[id].param[4] = 20;
@@ -14407,7 +14409,7 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Enemy Stats
-            datDevilFormat.tbl[id].param[0] = 75; // Strength
+            datDevilFormat.tbl[id].param[0] = 80; // Strength
             datDevilFormat.tbl[id].param[1] = 50; // Intelligence
             datDevilFormat.tbl[id].param[2] = 50; // Magic
             datDevilFormat.tbl[id].param[3] = 70; // Vitality
@@ -14450,7 +14452,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 5400;
             datDevilFormat.tbl[id].hp = 5400;
             datDevilFormat.tbl[id].level = 48;
-            datDevilFormat.tbl[id].param[0] = 60;
+            datDevilFormat.tbl[id].param[0] = 65;
             datDevilFormat.tbl[id].param[1] = 30;
             datDevilFormat.tbl[id].param[2] = 30;
             datDevilFormat.tbl[id].param[3] = 50;
@@ -14488,8 +14490,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 6000;
             datDevilFormat.tbl[id].hp = 6000;
             datDevilFormat.tbl[id].level = 48;
-            datDevilFormat.tbl[id].param[0] = 50;
-            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[0] = 55;
+            datDevilFormat.tbl[id].param[1] = 55;
             datDevilFormat.tbl[id].param[2] = 30;
             datDevilFormat.tbl[id].param[3] = 30;
             datDevilFormat.tbl[id].param[4] = 25;
@@ -14526,8 +14528,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 6000;
             datDevilFormat.tbl[id].hp = 6000;
             datDevilFormat.tbl[id].level = 48;
-            datDevilFormat.tbl[id].param[0] = 50;
-            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[0] = 55;
+            datDevilFormat.tbl[id].param[1] = 55;
             datDevilFormat.tbl[id].param[2] = 30;
             datDevilFormat.tbl[id].param[3] = 30;
             datDevilFormat.tbl[id].param[4] = 25;
@@ -14566,7 +14568,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].hp = 6000;
             datDevilFormat.tbl[id].level = 54;
             datDevilFormat.tbl[id].param[0] = 70;
-            datDevilFormat.tbl[id].param[1] = 60;
+            datDevilFormat.tbl[id].param[1] = 70;
             datDevilFormat.tbl[id].param[2] = 30;
             datDevilFormat.tbl[id].param[3] = 30;
             datDevilFormat.tbl[id].param[4] = 25;
@@ -14718,8 +14720,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 26;
             datDevilFormat.tbl[id].level = 9;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 4;
-            datDevilFormat.tbl[id].param[1] = 12;
+            datDevilFormat.tbl[id].param[0] = 8;
+            datDevilFormat.tbl[id].param[1] = 18;
             datDevilFormat.tbl[id].param[2] = 18;
             datDevilFormat.tbl[id].param[3] = 4;
             datDevilFormat.tbl[id].param[4] = 3;
@@ -14756,8 +14758,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 9000;
             datDevilFormat.tbl[id].level = 72;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 70;
-            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[0] = 80;
+            datDevilFormat.tbl[id].param[1] = 60;
             datDevilFormat.tbl[id].param[2] = 50;
             datDevilFormat.tbl[id].param[3] = 70;
             datDevilFormat.tbl[id].param[4] = 40;
@@ -14799,8 +14801,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 500;
             datDevilFormat.tbl[id].level = 40;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 60;
-            datDevilFormat.tbl[id].param[1] = 45;
+            datDevilFormat.tbl[id].param[0] = 70;
+            datDevilFormat.tbl[id].param[1] = 55;
             datDevilFormat.tbl[id].param[2] = 50;
             datDevilFormat.tbl[id].param[3] = 50;
             datDevilFormat.tbl[id].param[4] = 20;
@@ -14836,8 +14838,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 6000;
             datDevilFormat.tbl[id].level = 70;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 75;
-            datDevilFormat.tbl[id].param[1] = 75;
+            datDevilFormat.tbl[id].param[0] = 80;
+            datDevilFormat.tbl[id].param[1] = 80;
             datDevilFormat.tbl[id].param[2] = 60;
             datDevilFormat.tbl[id].param[3] = 60;
             datDevilFormat.tbl[id].param[4] = 40;
@@ -14876,8 +14878,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 6000;
             datDevilFormat.tbl[id].level = 70;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 75;
-            datDevilFormat.tbl[id].param[2] = 75;
+            datDevilFormat.tbl[id].param[0] = 85;
+            datDevilFormat.tbl[id].param[2] = 85;
             datDevilFormat.tbl[id].param[2] = 60;
             datDevilFormat.tbl[id].param[3] = 60;
             datDevilFormat.tbl[id].param[4] = 50;
@@ -14919,8 +14921,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 6000;
             datDevilFormat.tbl[id].level = 60;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 50;
-            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[0] = 80;
+            datDevilFormat.tbl[id].param[1] = 80;
             datDevilFormat.tbl[id].param[2] = 50;
             datDevilFormat.tbl[id].param[3] = 50;
             datDevilFormat.tbl[id].param[4] = 45;
@@ -14961,8 +14963,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 4000;
             datDevilFormat.tbl[id].level = 50;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 50;
-            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[0] = 70;
+            datDevilFormat.tbl[id].param[1] = 70;
             datDevilFormat.tbl[id].param[2] = 40;
             datDevilFormat.tbl[id].param[3] = 40;
             datDevilFormat.tbl[id].param[4] = 35;
@@ -14996,8 +14998,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 4000;
             datDevilFormat.tbl[id].level = 50;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 50;
-            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[0] = 70;
+            datDevilFormat.tbl[id].param[1] = 70;
             datDevilFormat.tbl[id].param[2] = 40;
             datDevilFormat.tbl[id].param[3] = 40;
             datDevilFormat.tbl[id].param[4] = 35;
@@ -15031,8 +15033,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 4000;
             datDevilFormat.tbl[id].level = 50;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 50;
-            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[0] = 70;
+            datDevilFormat.tbl[id].param[1] = 70;
             datDevilFormat.tbl[id].param[2] = 40;
             datDevilFormat.tbl[id].param[3] = 40;
             datDevilFormat.tbl[id].param[4] = 35;
@@ -15066,8 +15068,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 4000;
             datDevilFormat.tbl[id].level = 50;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 50;
-            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[0] = 70;
+            datDevilFormat.tbl[id].param[1] = 70;
             datDevilFormat.tbl[id].param[2] = 40;
             datDevilFormat.tbl[id].param[3] = 40;
             datDevilFormat.tbl[id].param[4] = 35;
@@ -15101,8 +15103,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 8000;
             datDevilFormat.tbl[id].level = 65;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 75;
-            datDevilFormat.tbl[id].param[1] = 75;
+            datDevilFormat.tbl[id].param[0] = 95;
+            datDevilFormat.tbl[id].param[1] = 95;
             datDevilFormat.tbl[id].param[2] = 75;
             datDevilFormat.tbl[id].param[3] = 55;
             datDevilFormat.tbl[id].param[4] = 40;
@@ -15140,8 +15142,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 4000;
             datDevilFormat.tbl[id].level = 70;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 50;
-            datDevilFormat.tbl[id].param[1] = 55;
+            datDevilFormat.tbl[id].param[0] = 70;
+            datDevilFormat.tbl[id].param[1] = 75;
             datDevilFormat.tbl[id].param[2] = 55;
             datDevilFormat.tbl[id].param[3] = 50;
             datDevilFormat.tbl[id].param[4] = 65;
@@ -15177,8 +15179,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 4000;
             datDevilFormat.tbl[id].level = 70;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 60;
-            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[0] = 80;
+            datDevilFormat.tbl[id].param[1] = 70;
             datDevilFormat.tbl[id].param[2] = 50;
             datDevilFormat.tbl[id].param[3] = 50;
             datDevilFormat.tbl[id].param[4] = 40;
@@ -15215,8 +15217,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 4000;
             datDevilFormat.tbl[id].level = 70;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 60;
-            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[0] = 80;
+            datDevilFormat.tbl[id].param[1] = 70;
             datDevilFormat.tbl[id].param[2] = 50;
             datDevilFormat.tbl[id].param[3] = 50;
             datDevilFormat.tbl[id].param[4] = 40;
@@ -15251,8 +15253,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].hp = 24000;
             datDevilFormat.tbl[id].level = 73;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 75;
-            datDevilFormat.tbl[id].param[1] = 75;
+            datDevilFormat.tbl[id].param[0] = 90;
+            datDevilFormat.tbl[id].param[1] = 90;
             datDevilFormat.tbl[id].param[2] = 75;
             datDevilFormat.tbl[id].param[3] = 75;
             datDevilFormat.tbl[id].param[4] = 50;
@@ -15412,7 +15414,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].hp = 24000;
             datDevilFormat.tbl[id].level = 78;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 80;
+            datDevilFormat.tbl[id].param[0] = 90;
             datDevilFormat.tbl[id].param[1] = 75;
             datDevilFormat.tbl[id].param[2] = 75;
             datDevilFormat.tbl[id].param[3] = 75;
@@ -15455,8 +15457,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 10000;
             datDevilFormat.tbl[id].level = 83;
             datDevilFormat.tbl[id].flag = 34;
-            datDevilFormat.tbl[id].param[0] = 70;
-            datDevilFormat.tbl[id].param[1] = 80;
+            datDevilFormat.tbl[id].param[0] = 80;
+            datDevilFormat.tbl[id].param[1] = 90;
             datDevilFormat.tbl[id].param[2] = 75;
             datDevilFormat.tbl[id].param[3] = 75;
             datDevilFormat.tbl[id].param[4] = 65;
@@ -15495,8 +15497,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 10000;
             datDevilFormat.tbl[id].level = 89;
             datDevilFormat.tbl[id].flag = 34;
-            datDevilFormat.tbl[id].param[0] = 85;
-            datDevilFormat.tbl[id].param[1] = 75;
+            datDevilFormat.tbl[id].param[0] = 95;
+            datDevilFormat.tbl[id].param[1] = 95;
             datDevilFormat.tbl[id].param[2] = 25;
             datDevilFormat.tbl[id].param[3] = 25;
             datDevilFormat.tbl[id].param[4] = 75;
@@ -15538,8 +15540,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 10000;
             datDevilFormat.tbl[id].level = 74;
             datDevilFormat.tbl[id].flag = 34;
-            datDevilFormat.tbl[id].param[0] = 75;
-            datDevilFormat.tbl[id].param[1] = 70;
+            datDevilFormat.tbl[id].param[0] = 85;
+            datDevilFormat.tbl[id].param[1] = 80;
             datDevilFormat.tbl[id].param[2] = 75;
             datDevilFormat.tbl[id].param[3] = 75;
             datDevilFormat.tbl[id].param[4] = 50;
@@ -15564,7 +15566,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 18;
             datDevilFormat.tbl[id].level = 55;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 55, 55, 50, 50, 50, 45 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 65, 65, 50, 50, 50, 45 };
             datDevilFormat.tbl[id].keisyotype = 9;
             datDevilFormat.tbl[id].keisyoform = 2207;
 
@@ -15615,6 +15617,26 @@ namespace NocturneInsaniax
             //datDevilNegoFormat.tbl[id] = datDevilNegoFormat.tbl[107];
         }
 
+        private static void PuzzleBoyPazuzu(int id)
+        {
+            mdlFileDefTable.devilModelFileTable[id] = mdlFileDefTable.devilModelFileTable[107];
+            mdlFileDefTable.devilOnModelFileTable[id] = mdlFileDefTable.devilOnModelFileTable[107];
+            mdlFileDefTable.devilModelIndex[id] = mdlFileDefTable.devilModelIndex[107];
+            mdlFileDefTable.devilOnModelIndex[id] = mdlFileDefTable.devilOnModelIndex[107];
+
+            mdlFileDefTable.devilModelIndex[id].major = 6;
+            mdlFileDefTable.devilModelIndex[id].minor = 107;
+            mdlFileDefTable.devilModelIndex[id].scale = 4096;
+            mdlFileDefTable.devilModelIndex[id].radius = 1000;
+
+            datDevilVisual07.tbl_7_0E0_0FF[19] = CopyDevilVisual(datDevilVisual03.tbl_3_060_07F[11]);
+            datDevilVisual07.tbl_7_0E0_0FF[19].formscale = 0.3f;
+
+            datMotionSeTable.tbl[id] = 107;
+
+            //datDevilNegoFormat.tbl[id] = datDevilNegoFormat.tbl[107];
+        }
+
         private static void BossAhriman2(ushort id)
         {
             // Affinities
@@ -15637,8 +15659,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 60000;
             datDevilFormat.tbl[id].level = 90;
             datDevilFormat.tbl[id].flag = 563;
-            datDevilFormat.tbl[id].param[0] = 60;
-            datDevilFormat.tbl[id].param[1] = 60;
+            datDevilFormat.tbl[id].param[0] = 80;
+            datDevilFormat.tbl[id].param[1] = 80;
             datDevilFormat.tbl[id].param[2] = 99;
             datDevilFormat.tbl[id].param[3] = 99;
             datDevilFormat.tbl[id].param[4] = 60;
@@ -15679,8 +15701,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 60000;
             datDevilFormat.tbl[id].level = 90;
             datDevilFormat.tbl[id].flag = 563;
-            datDevilFormat.tbl[id].param[0] = 50;
-            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[0] = 75;
+            datDevilFormat.tbl[id].param[1] = 75;
             datDevilFormat.tbl[id].param[2] = 70;
             datDevilFormat.tbl[id].param[3] = 70;
             datDevilFormat.tbl[id].param[4] = 60;
@@ -15724,8 +15746,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 30000;
             datDevilFormat.tbl[id].level = 76;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 50;
-            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[0] = 60;
+            datDevilFormat.tbl[id].param[1] = 60;
             datDevilFormat.tbl[id].param[2] = 50;
             datDevilFormat.tbl[id].param[3] = 50;
             datDevilFormat.tbl[id].param[4] = 50;
@@ -15765,8 +15787,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 30000;
             datDevilFormat.tbl[id].level = 76;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 50;
-            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[0] = 60;
+            datDevilFormat.tbl[id].param[1] = 60;
             datDevilFormat.tbl[id].param[2] = 50;
             datDevilFormat.tbl[id].param[3] = 50;
             datDevilFormat.tbl[id].param[4] = 50;
@@ -15853,7 +15875,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 60000;
             datDevilFormat.tbl[id].level = 90;
             datDevilFormat.tbl[id].flag = 563;
-            datDevilFormat.tbl[id].param[0] = 55;
+            datDevilFormat.tbl[id].param[0] = 65;
             datDevilFormat.tbl[id].param[1] = 99;
             datDevilFormat.tbl[id].param[2] = 75;
             datDevilFormat.tbl[id].param[3] = 40;
@@ -15900,7 +15922,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 60000;
             datDevilFormat.tbl[id].level = 80;
             datDevilFormat.tbl[id].flag = 819;
-            datDevilFormat.tbl[id].param[0] = 25;
+            datDevilFormat.tbl[id].param[0] = 35;
             datDevilFormat.tbl[id].param[1] = 99;
             datDevilFormat.tbl[id].param[2] = 75;
             datDevilFormat.tbl[id].param[3] = 40;
@@ -15942,7 +15964,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].hp = 50000;
             datDevilFormat.tbl[id].maxmp = 60000;
             datDevilFormat.tbl[id].mp = 60000;
-            datDevilFormat.tbl[id].level = 95;
+            datDevilFormat.tbl[id].level = 99;
             datDevilFormat.tbl[id].flag = 563;
             datDevilFormat.tbl[id].param[0] = 99;
             datDevilFormat.tbl[id].param[1] = 99;
@@ -15987,10 +16009,10 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].hp = 40000;
             datDevilFormat.tbl[id].maxmp = 60000;
             datDevilFormat.tbl[id].mp = 60000;
-            datDevilFormat.tbl[id].level = 90;
+            datDevilFormat.tbl[id].level = 95;
             datDevilFormat.tbl[id].flag = 819;
-            datDevilFormat.tbl[id].param[0] = 90;
-            datDevilFormat.tbl[id].param[1] = 90;
+            datDevilFormat.tbl[id].param[0] = 95;
+            datDevilFormat.tbl[id].param[1] = 95;
             datDevilFormat.tbl[id].param[2] = 90;
             datDevilFormat.tbl[id].param[3] = 90;
             datDevilFormat.tbl[id].param[4] = 76;
@@ -16032,8 +16054,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 5000;
             datDevilFormat.tbl[id].level = 75;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 80;
-            datDevilFormat.tbl[id].param[1] = 80;
+            datDevilFormat.tbl[id].param[0] = 90;
+            datDevilFormat.tbl[id].param[1] = 90;
             datDevilFormat.tbl[id].param[2] = 50;
             datDevilFormat.tbl[id].param[3] = 50;
             datDevilFormat.tbl[id].param[4] = 40;
@@ -16075,8 +16097,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 5000;
             datDevilFormat.tbl[id].level = 70;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 65;
-            datDevilFormat.tbl[id].param[1] = 65;
+            datDevilFormat.tbl[id].param[0] = 80;
+            datDevilFormat.tbl[id].param[1] = 80;
             datDevilFormat.tbl[id].param[2] = 50;
             datDevilFormat.tbl[id].param[3] = 50;
             datDevilFormat.tbl[id].param[4] = 40;
@@ -16118,8 +16140,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 5000;
             datDevilFormat.tbl[id].level = 65;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 50;
-            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[0] = 65;
+            datDevilFormat.tbl[id].param[1] = 65;
             datDevilFormat.tbl[id].param[2] = 50;
             datDevilFormat.tbl[id].param[3] = 50;
             datDevilFormat.tbl[id].param[4] = 40;
@@ -16158,7 +16180,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].hp = 6000;
             datDevilFormat.tbl[id].level = 40;
             datDevilFormat.tbl[id].param[0] = 50;
-            datDevilFormat.tbl[id].param[1] = 62;
+            datDevilFormat.tbl[id].param[1] = 65;
             datDevilFormat.tbl[id].param[2] = 30;
             datDevilFormat.tbl[id].param[3] = 30;
             datDevilFormat.tbl[id].param[4] = 25;
@@ -16198,8 +16220,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].mp = 0;
             datDevilFormat.tbl[id].level = 65;
             datDevilFormat.tbl[id].flag = 547;
-            datDevilFormat.tbl[id].param[0] = 27;
-            datDevilFormat.tbl[id].param[1] = 27;
+            datDevilFormat.tbl[id].param[0] = 40;
+            datDevilFormat.tbl[id].param[1] = 40;
             datDevilFormat.tbl[id].param[2] = 50;
             datDevilFormat.tbl[id].param[3] = 50;
             datDevilFormat.tbl[id].param[4] = 50;
@@ -16229,8 +16251,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 1600;
             datDevilFormat.tbl[id].hp = 1600;
             datDevilFormat.tbl[id].level = 30;
-            datDevilFormat.tbl[id].param[0] = 20;
-            datDevilFormat.tbl[id].param[1] = 30;
+            datDevilFormat.tbl[id].param[0] = 25;
+            datDevilFormat.tbl[id].param[1] = 35;
             datDevilFormat.tbl[id].param[2] = 35;
             datDevilFormat.tbl[id].param[3] = 35;
             datDevilFormat.tbl[id].param[4] = 15;
@@ -16267,8 +16289,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 1800;
             datDevilFormat.tbl[id].hp = 1800;
             datDevilFormat.tbl[id].level = 32;
-            datDevilFormat.tbl[id].param[0] = 20;
-            datDevilFormat.tbl[id].param[1] = 40;
+            datDevilFormat.tbl[id].param[0] = 25;
+            datDevilFormat.tbl[id].param[1] = 45;
             datDevilFormat.tbl[id].param[2] = 45;
             datDevilFormat.tbl[id].param[3] = 45;
             datDevilFormat.tbl[id].param[4] = 20;
@@ -16305,7 +16327,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 3000;
             datDevilFormat.tbl[id].hp = 3000;
             datDevilFormat.tbl[id].level = 36;
-            datDevilFormat.tbl[id].param[0] = 25;
+            datDevilFormat.tbl[id].param[0] = 35;
             datDevilFormat.tbl[id].param[1] = 50;
             datDevilFormat.tbl[id].param[2] = 50;
             datDevilFormat.tbl[id].param[3] = 50;
@@ -16343,8 +16365,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 30000;
             datDevilFormat.tbl[id].hp = 30000;
             datDevilFormat.tbl[id].level = 80;
-            datDevilFormat.tbl[id].param[0] = 80;
-            datDevilFormat.tbl[id].param[1] = 75;
+            datDevilFormat.tbl[id].param[0] = 90;
+            datDevilFormat.tbl[id].param[1] = 85;
             datDevilFormat.tbl[id].param[2] = 75;
             datDevilFormat.tbl[id].param[3] = 75;
             datDevilFormat.tbl[id].param[4] = 50;
@@ -16383,8 +16405,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 8000;
             datDevilFormat.tbl[id].hp = 8000;
             datDevilFormat.tbl[id].level = 66;
-            datDevilFormat.tbl[id].param[0] = 60;
-            datDevilFormat.tbl[id].param[1] = 60;
+            datDevilFormat.tbl[id].param[0] = 70;
+            datDevilFormat.tbl[id].param[1] = 70;
             datDevilFormat.tbl[id].param[2] = 50;
             datDevilFormat.tbl[id].param[3] = 45;
             datDevilFormat.tbl[id].param[4] = 40;
@@ -16421,8 +16443,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 1200;
             datDevilFormat.tbl[id].hp = 1200;
-            datDevilFormat.tbl[id].param[0] = 35;
-            datDevilFormat.tbl[id].param[1] = 25;
+            datDevilFormat.tbl[id].param[0] = 40;
+            datDevilFormat.tbl[id].param[1] = 30;
             datDevilFormat.tbl[id].param[2] = 35;
             datDevilFormat.tbl[id].param[3] = 35;
             datDevilFormat.tbl[id].param[4] = 25;
@@ -16457,8 +16479,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 1000;
             datDevilFormat.tbl[id].hp = 1000;
-            datDevilFormat.tbl[id].param[0] = 33;
-            datDevilFormat.tbl[id].param[1] = 33;
+            datDevilFormat.tbl[id].param[0] = 38;
+            datDevilFormat.tbl[id].param[1] = 38;
             datDevilFormat.tbl[id].param[2] = 25;
             datDevilFormat.tbl[id].param[3] = 25;
             datDevilFormat.tbl[id].param[4] = 20;
@@ -16490,8 +16512,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 1800;
             datDevilFormat.tbl[id].hp = 1800;
-            datDevilFormat.tbl[id].param[0] = 40;
-            datDevilFormat.tbl[id].param[1] = 25;
+            datDevilFormat.tbl[id].param[0] = 50;
+            datDevilFormat.tbl[id].param[1] = 35;
             datDevilFormat.tbl[id].param[2] = 42;
             datDevilFormat.tbl[id].param[3] = 42;
             datDevilFormat.tbl[id].param[4] = 25;
@@ -16525,7 +16547,7 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 600;
             datDevilFormat.tbl[id].hp = 600;
-            datDevilFormat.tbl[id].param[0] = 25;
+            datDevilFormat.tbl[id].param[0] = 30;
             datDevilFormat.tbl[id].param[1] = 40;
             datDevilFormat.tbl[id].param[2] = 40;
             datDevilFormat.tbl[id].param[3] = 28;
@@ -16604,8 +16626,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 1400;
             datDevilFormat.tbl[id].hp = 1400;
             datDevilFormat.tbl[id].level = 18;
-            datDevilFormat.tbl[id].param[0] = 35;
-            datDevilFormat.tbl[id].param[1] = 25;
+            datDevilFormat.tbl[id].param[0] = 40;
+            datDevilFormat.tbl[id].param[1] = 30;
             datDevilFormat.tbl[id].param[2] = 40;
             datDevilFormat.tbl[id].param[3] = 40;
             datDevilFormat.tbl[id].param[4] = 12;
@@ -16654,8 +16676,8 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 100; // Mind
 
             // Enemy Stats
-            datDevilFormat.tbl[id].param[0] = 16;
-            datDevilFormat.tbl[id].param[1] = 16;
+            datDevilFormat.tbl[id].param[0] = 18;
+            datDevilFormat.tbl[id].param[1] = 18;
             datDevilFormat.tbl[id].param[2] = 22;
             datDevilFormat.tbl[id].param[3] = 22;
             datDevilFormat.tbl[id].param[4] = 5;
@@ -16712,7 +16734,7 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][12] = 65536; // Shot
 
             // Stats
-            datDevilFormat.tbl[id].param[0] = 2;
+            datDevilFormat.tbl[id].param[0] = 4;
             datDevilFormat.tbl[id].param[1] = 6;
             datDevilFormat.tbl[id].param[2] = 1;
             datDevilFormat.tbl[id].param[3] = 1;
@@ -16772,8 +16794,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].hp = 20000;
             datDevilFormat.tbl[id].level = 72;
             datDevilFormat.tbl[id].flag = 98;
-            datDevilFormat.tbl[id].param[0] = 80;
-            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[0] = 90;
+            datDevilFormat.tbl[id].param[1] = 60;
             datDevilFormat.tbl[id].param[2] = 62;
             datDevilFormat.tbl[id].param[3] = 62;
             datDevilFormat.tbl[id].param[4] = 62;
@@ -16815,8 +16837,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].hp = 1;
             datDevilFormat.tbl[id].level = 62;
             datDevilFormat.tbl[id].flag = 34;
-            datDevilFormat.tbl[id].param[0] = 75;
-            datDevilFormat.tbl[id].param[1] = 50;
+            datDevilFormat.tbl[id].param[0] = 90;
+            datDevilFormat.tbl[id].param[1] = 60;
             datDevilFormat.tbl[id].param[2] = 75;
             datDevilFormat.tbl[id].param[3] = 75;
             datDevilFormat.tbl[id].param[4] = 36;
@@ -17040,7 +17062,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 2000;
             datDevilFormat.tbl[id].hp = 2000;
             datDevilFormat.tbl[id].level = 40;
-            datDevilFormat.tbl[id].param[0] = 5;
+            datDevilFormat.tbl[id].param[0] = 20;
             datDevilFormat.tbl[id].param[1] = 25;
             datDevilFormat.tbl[id].param[2] = 25;
             datDevilFormat.tbl[id].param[3] = 25;
@@ -17115,8 +17137,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 7500;
             datDevilFormat.tbl[id].hp = 7500;
             datDevilFormat.tbl[id].level = 60;
-            datDevilFormat.tbl[id].param[0] = 45;
-            datDevilFormat.tbl[id].param[1] = 35;
+            datDevilFormat.tbl[id].param[0] = 55;
+            datDevilFormat.tbl[id].param[1] = 45;
             datDevilFormat.tbl[id].param[2] = 50;
             datDevilFormat.tbl[id].param[3] = 50;
             datDevilFormat.tbl[id].param[4] = 45;
@@ -17155,8 +17177,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxmp = 16000;
             datDevilFormat.tbl[id].mp = 16000;
             datDevilFormat.tbl[id].flag = 98;
-            datDevilFormat.tbl[id].param[0] = 75;
-            datDevilFormat.tbl[id].param[1] = 60;
+            datDevilFormat.tbl[id].param[0] = 85;
+            datDevilFormat.tbl[id].param[1] = 70;
             datDevilFormat.tbl[id].param[2] = 99;
             datDevilFormat.tbl[id].param[3] = 99;
             datDevilFormat.tbl[id].param[4] = 60;
@@ -17197,8 +17219,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxmp = 16000;
             datDevilFormat.tbl[id].mp = 16000;
             datDevilFormat.tbl[id].flag = 162;
-            datDevilFormat.tbl[id].param[0] = 75;
-            datDevilFormat.tbl[id].param[1] = 70;
+            datDevilFormat.tbl[id].param[0] = 90;
+            datDevilFormat.tbl[id].param[1] = 80;
             datDevilFormat.tbl[id].param[2] = 99;
             datDevilFormat.tbl[id].param[3] = 99;
             datDevilFormat.tbl[id].param[4] = 70;
@@ -17280,8 +17302,8 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][10] = 65536; // Mind
 
             // Enemy Stats
-            datDevilFormat.tbl[id].param[0] = 60; // Strength
-            datDevilFormat.tbl[id].param[1] = 65; // Intelligence
+            datDevilFormat.tbl[id].param[0] = 70; // Strength
+            datDevilFormat.tbl[id].param[1] = 75; // Intelligence
             datDevilFormat.tbl[id].param[2] = 50; // Magic
             datDevilFormat.tbl[id].param[3] = 45; // Vitality
             datDevilFormat.tbl[id].param[4] = 42; // Agility
@@ -17323,7 +17345,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 6300;
             datDevilFormat.tbl[id].hp = 6300;
             datDevilFormat.tbl[id].param[0] = 50; // Strength
-            datDevilFormat.tbl[id].param[1] = 32; // Intelligence
+            datDevilFormat.tbl[id].param[1] = 40; // Intelligence
             datDevilFormat.tbl[id].param[2] = 42; // Magic
             datDevilFormat.tbl[id].param[3] = 40; // Vitality
             datDevilFormat.tbl[id].param[4] = 32; // Agility
@@ -17334,12 +17356,13 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].dropmakka = 5000;
 
             // Display Skill
-            datDevilFormat.tbl[id].skill[0] = 287;
-            datDevilFormat.tbl[id].skill[1] = 178;
-            datDevilFormat.tbl[id].skill[2] = 57;
-            datDevilFormat.tbl[id].skill[3] = 220;
-            datDevilFormat.tbl[id].skill[4] = 226;
-            datDevilFormat.tbl[id].skill[5] = 366;
+            datDevilFormat.tbl[id].skill[0] = 135;
+            datDevilFormat.tbl[id].skill[1] = 287;
+            datDevilFormat.tbl[id].skill[2] = 178;
+            datDevilFormat.tbl[id].skill[3] = 57;
+            datDevilFormat.tbl[id].skill[4] = 220;
+            datDevilFormat.tbl[id].skill[5] = 226;
+            datDevilFormat.tbl[id].skill[6] = 366;
         }
 
         private static void BossRedRider(ushort id)
@@ -17359,8 +17382,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 6600;
             datDevilFormat.tbl[id].hp = 6600;
-            datDevilFormat.tbl[id].param[0] = 56; // Strength
-            datDevilFormat.tbl[id].param[1] = 32; // Intelligence
+            datDevilFormat.tbl[id].param[0] = 66; // Strength
+            datDevilFormat.tbl[id].param[1] = 42; // Intelligence
             datDevilFormat.tbl[id].param[2] = 47; // Magic
             datDevilFormat.tbl[id].param[3] = 45; // Vitality
             datDevilFormat.tbl[id].param[4] = 32; // Agility
@@ -17397,8 +17420,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 6900;
             datDevilFormat.tbl[id].hp = 6900;
-            datDevilFormat.tbl[id].param[0] = 55; // Strength
-            datDevilFormat.tbl[id].param[1] = 44; // Intelligence
+            datDevilFormat.tbl[id].param[0] = 65; // Strength
+            datDevilFormat.tbl[id].param[1] = 54; // Intelligence
             datDevilFormat.tbl[id].param[2] = 50; // Magic
             datDevilFormat.tbl[id].param[3] = 40; // Vitality
             datDevilFormat.tbl[id].param[4] = 50; // Agility
@@ -17435,8 +17458,8 @@ namespace NocturneInsaniax
 
             datDevilFormat.tbl[id].maxhp = 2000;
             datDevilFormat.tbl[id].hp = 2000;
-            datDevilFormat.tbl[id].param[0] = 15;
-            datDevilFormat.tbl[id].param[1] = 20;
+            datDevilFormat.tbl[id].param[0] = 20;
+            datDevilFormat.tbl[id].param[1] = 25;
             datDevilFormat.tbl[id].param[2] = 24;
             datDevilFormat.tbl[id].param[3] = 24;
             datDevilFormat.tbl[id].param[4] = 36;
@@ -17470,8 +17493,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 5000;
             datDevilFormat.tbl[id].hp = 5000;
-            datDevilFormat.tbl[id].param[0] = 25;
-            datDevilFormat.tbl[id].param[1] = 35;
+            datDevilFormat.tbl[id].param[0] = 35;
+            datDevilFormat.tbl[id].param[1] = 45;
             datDevilFormat.tbl[id].param[2] = 35;
             datDevilFormat.tbl[id].param[3] = 35;
             datDevilFormat.tbl[id].param[4] = 35;
@@ -17505,8 +17528,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 3500;
             datDevilFormat.tbl[id].hp = 3500;
-            datDevilFormat.tbl[id].param[0] = 30;
-            datDevilFormat.tbl[id].param[1] = 40;
+            datDevilFormat.tbl[id].param[0] = 40;
+            datDevilFormat.tbl[id].param[1] = 45;
             datDevilFormat.tbl[id].param[2] = 26;
             datDevilFormat.tbl[id].param[3] = 26;
             datDevilFormat.tbl[id].param[4] = 26;
@@ -17536,8 +17559,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 12000;
             datDevilFormat.tbl[id].hp = 12000;
-            datDevilFormat.tbl[id].param[0] = 55;
-            datDevilFormat.tbl[id].param[1] = 55;
+            datDevilFormat.tbl[id].param[0] = 65;
+            datDevilFormat.tbl[id].param[1] = 65;
             datDevilFormat.tbl[id].param[2] = 55;
             datDevilFormat.tbl[id].param[3] = 55;
             datDevilFormat.tbl[id].param[4] = 45;
@@ -17575,8 +17598,8 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 20000;
             datDevilFormat.tbl[id].hp = 20000;
-            datDevilFormat.tbl[id].param[0] = 54;
-            datDevilFormat.tbl[id].param[1] = 76;
+            datDevilFormat.tbl[id].param[0] = 64;
+            datDevilFormat.tbl[id].param[1] = 90;
             datDevilFormat.tbl[id].param[2] = 54;
             datDevilFormat.tbl[id].param[3] = 54;
             datDevilFormat.tbl[id].param[4] = 60;
@@ -17762,7 +17785,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 12;
             datDevilFormat.tbl[id].level = 50;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 75, 40, 75, 75, 45, 40 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 85, 50, 75, 75, 45, 40 };
             datDevilFormat.tbl[id].keisyotype = 1;
             datDevilFormat.tbl[id].keisyoform = 2523;
 
@@ -17824,7 +17847,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 41;//26;
             datDevilFormat.tbl[id].level = 50;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 25, 25, 25, 25, 30, 30 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 40, 40, 25, 25, 30, 30 };
             datDevilFormat.tbl[id].keisyotype = 6;
             datDevilFormat.tbl[id].keisyoform = 2457;
 
@@ -17881,7 +17904,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 42;//14;
             datDevilFormat.tbl[id].level = 50;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 25, 25, 25, 25, 30, 30 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 40, 40, 25, 25, 30, 30 };
             datDevilFormat.tbl[id].keisyotype = 3;
             datDevilFormat.tbl[id].keisyoform = 2299;
 
@@ -17938,7 +17961,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 42;//27;
             datDevilFormat.tbl[id].level = 50;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 25, 25, 25, 25, 30, 30 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 40, 40, 25, 25, 30, 30 };
             datDevilFormat.tbl[id].keisyotype = 4;
             datDevilFormat.tbl[id].keisyoform = 2235;
 
@@ -17995,7 +18018,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 43;//10;
             datDevilFormat.tbl[id].level = 50;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 25, 25, 25, 25, 30, 30 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 40, 40, 25, 25, 30, 30 };
             datDevilFormat.tbl[id].keisyotype = 4;
             datDevilFormat.tbl[id].keisyoform = 2203;
 
@@ -18052,7 +18075,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 45;
             datDevilFormat.tbl[id].level = 66;
             datDevilFormat.tbl[id].aisyoid = (short)81;
-            datDevilFormat.tbl[id].param = new sbyte[] { 60, 50, 50, 50, 45, 45 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 70, 60, 50, 50, 45, 45 };
             datDevilFormat.tbl[id].keisyotype = 3;
             datDevilFormat.tbl[id].keisyoform = 2299;
 
@@ -18115,7 +18138,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 45;
             datDevilFormat.tbl[id].level = 66;
             datDevilFormat.tbl[id].aisyoid = (short)81;
-            datDevilFormat.tbl[id].param = new sbyte[] { 75, 60, 75, 75, 45, 45 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 90, 75, 75, 75, 45, 45 };
             datDevilFormat.tbl[id].keisyotype = 3;
             datDevilFormat.tbl[id].keisyoform = 2299;
 
@@ -18178,7 +18201,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 45;
             datDevilFormat.tbl[id].level = 66;
             datDevilFormat.tbl[id].aisyoid = (short)81;
-            datDevilFormat.tbl[id].param = new sbyte[] { 60, 50, 50, 50, 45, 45 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 70, 60, 50, 50, 45, 45 };
             datDevilFormat.tbl[id].keisyotype = 3;
             datDevilFormat.tbl[id].keisyoform = 2299;
 
@@ -18590,7 +18613,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 46;
             datDevilFormat.tbl[id].level = 10;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 65, 2, 2, 2, 90, 5 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 85, 1, 1, 1, 90, 5 };
             datDevilFormat.tbl[id].keisyotype = 9;
             datDevilFormat.tbl[id].keisyoform = 1;
 

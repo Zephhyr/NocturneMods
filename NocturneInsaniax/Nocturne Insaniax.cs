@@ -17,7 +17,7 @@ using System.Linq;
 using Il2Cppeffect_H;
 using Il2Cppmodel_H;
 
-[assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax", "1.0.28", "Zephhyr, Matthiew Purple, Bud, X Kirby, Margothic, Scribe, Snappy, Mason White")]
+[assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax", "1.1.0", "Zephhyr, Matthiew Purple, Bud, X Kirby, Margothic, Scribe, Snappy, Mason White")]
 [assembly: MelonGame("アトラス", "smt3hd")]
 
 namespace NocturneInsaniax
@@ -32,6 +32,8 @@ namespace NocturneInsaniax
         public static MelonPreferences_Entry<bool> EnableEnemyLevelDisplay;
         public static MelonPreferences_Entry<bool> ToggleExpOnRandomEncounters;
         public static MelonPreferences_Entry<bool> ToggleItemUseInBattle;
+        public static MelonPreferences_Entry<bool> ToggleFirstPersonView;
+        public static MelonPreferences_Entry<bool> TogglePazuzuInPuzzleBoy;
         //public static MelonPreferences_Entry<double> EncounterMaccaMultiplier;
         //public static MelonPreferences_Entry<bool> GuaranteeEscape;
         //public static MelonPreferences_Entry<bool> GuaranteeNKEs;
@@ -117,6 +119,21 @@ namespace NocturneInsaniax
             //    }
             //}
 
+            // Apply Config
+            InsaniaxSettings = MelonPreferences.CreateCategory("INSANIAX SETTINGS");
+            EnableSkillColourOutlines = InsaniaxSettings.CreateEntry("Enable Skill Colour Outlines", true);
+            EnableSkillColourGradient = InsaniaxSettings.CreateEntry("Enable Skill Colour Gradient", true);
+            EnableColourPassives = InsaniaxSettings.CreateEntry("Enable Colour Passives", true);
+            EnableEnemyLevelDisplay = InsaniaxSettings.CreateEntry("Enable Enemy Level Display", true);
+            ToggleExpOnRandomEncounters = InsaniaxSettings.CreateEntry("Toggle Random Encounter EXP", true);
+            ToggleItemUseInBattle = InsaniaxSettings.CreateEntry("Toggle Item Use In Battle", true);
+            ToggleFirstPersonView = InsaniaxSettings.CreateEntry("Toggle First Person View", false);
+            TogglePazuzuInPuzzleBoy = InsaniaxSettings.CreateEntry("Toggle Pazuzu In Puzzle Boy", false);
+            //EncounterMaccaMultiplier = InsaniaxSettings.CreateEntry("Encounter Macca Multiplier", 1.0);
+            //GuaranteeEscape = InsaniaxSettings.CreateEntry("Guarantee Escape", false);
+            //GuaranteeNKEs = InsaniaxSettings.CreateEntry("Guarantee New Kagutsuchi Encounters", false);
+            //GuaranteeFiendNKEs = InsaniaxSettings.CreateEntry("Guarantee Fiend NKEs In Labyrinth", false);
+
             // Apply Changes
             ApplySkillChanges();
             ApplyItemChanges();
@@ -126,19 +143,6 @@ namespace NocturneInsaniax
             ApplyMagatamaChanges();
             ApplyMitamaFusionChanges();
             ApplyEncounterChanges();
-
-            // Apply Config
-            InsaniaxSettings = MelonPreferences.CreateCategory("INSANIAX SETTINGS");
-            EnableSkillColourOutlines = InsaniaxSettings.CreateEntry("Enable Skill Colour Outlines", true);
-            EnableSkillColourGradient = InsaniaxSettings.CreateEntry("Enable Skill Colour Gradient", true);
-            EnableColourPassives = InsaniaxSettings.CreateEntry("Enable Colour Passives", true);
-            EnableEnemyLevelDisplay = InsaniaxSettings.CreateEntry("Enable Enemy Level Display", true);
-            ToggleExpOnRandomEncounters = InsaniaxSettings.CreateEntry("Toggle Random Encounter EXP", true);
-            ToggleItemUseInBattle = InsaniaxSettings.CreateEntry("Toggle Item Use In Battle", true);
-            //EncounterMaccaMultiplier = InsaniaxSettings.CreateEntry("Encounter Macca Multiplier", 1.0);
-            //GuaranteeEscape = InsaniaxSettings.CreateEntry("Guarantee Escape", false);
-            //GuaranteeNKEs = InsaniaxSettings.CreateEntry("Guarantee New Kagutsuchi Encounters", false);
-            //GuaranteeFiendNKEs = InsaniaxSettings.CreateEntry("Guarantee Fiend NKEs In Labyrinth", false);
 
             InsaniaxSettings.SetFilePath(configPath, autoload: true, printmsg: false);
 
@@ -302,6 +306,9 @@ namespace NocturneInsaniax
                 //var output = JsonConvert.SerializeObject(fldGlobal.fldHitData._fldNpcUp);
                 //var output = JsonConvert.SerializeObject(fld_Npc.gfldTakaraWork);
                 //MelonLogger.Msg(output);
+
+                if (TogglePazuzuInPuzzleBoy.Value)
+                    PuzzleBoyPazuzu(336);
 
                 fldGlobal.fldHitData._fldNpcUp[70]._model_id2 = 224; // Tam Lin in Shibuya
                 ApplyItemBoxChanges();
@@ -646,23 +653,15 @@ namespace NocturneInsaniax
             }
         }
 
-        //[HarmonyPatch(typeof(EventBit), nameof(EventBit.evtBitCheck))]
-        //private class evtBitCheckPatch
-        //{
-        //    public static void Postfix(ref int no, ref bool __result)
-        //    {
-        //        if (no == 2208)
-        //        {
-        //            MelonLogger.Msg("--EventBit.evtBitCheck--");
-        //            MelonLogger.Msg("no: " + no);
-        //            MelonLogger.Msg("result: " + __result);
-        //        }
-        //        //if (no == 2208) // New Game Plus
-        //        //    __result = true;
-        //        //if (no == 2800) // First Person View
-        //        //    __result = true;
-        //    }
-        //}
+        [HarmonyPatch(typeof(EventBit), nameof(EventBit.evtBitCheck))]
+        private class evtBitCheckPatch
+        {
+            public static void Postfix(ref int no, ref bool __result)
+            {
+                if (no == 2800 && ToggleFirstPersonView.Value) // First Person View
+                    __result = true;
+            }
+        }
 
         [HarmonyPatch(typeof(nbEncount), nameof(nbEncount.nbGetBgmCategoryInBattle))]
         private class nbGetBgmCategoryInBattlePatch

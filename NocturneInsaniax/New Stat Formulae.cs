@@ -35,9 +35,9 @@ namespace NocturneInsaniax
                 var level = work.level;
                 var str = datCalc.datGetParam(work, 0);
                 if (work.id == 111 || work.id == 335)
-                    __result = Convert.ToInt32((level + (str * 0.8f)) * 45 / 20);
+                    __result = Convert.ToInt32((level + (str * 0.8f)) * 45f / 20f);
                 else
-                    __result = Convert.ToInt32((level + (str * 0.8f)) * 30 / 20);
+                    __result = Convert.ToInt32((level + (str * 0.8f)) * 30f / 20f);
                 return false;
             }
         }
@@ -251,7 +251,7 @@ namespace NocturneInsaniax
 
                 double atkPow = (nskill == 0 || nskill == 167) ?
                     datCalc.datGetNormalAtkPow(workFromFormindex1) :
-                    (workFromFormindex1.level + (datCalc.datGetParam(workFromFormindex1, 0) * 0.8f)) * waza / 20;
+                    (workFromFormindex1.level + (datCalc.datGetParam(workFromFormindex1, 0) * 0.8f)) * (float) waza / 20f;
 
                 //double defPow = datCalc.datGetParam(workFromFormindex2, 3);
 
@@ -274,17 +274,17 @@ namespace NocturneInsaniax
                 datUnitWork_t workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
                 //datUnitWork_t workFromFormindex2 = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
 
-                double hpModifier = 1;
+                float hpModifier = 1;
                 if (datCalc.datCheckSyojiSkill(actionProcessData.work, 371) == 0) // Arms Master
                 {
-                    var maxhp = (double)workFromFormindex1.maxhp;
-                    var currenthp = (double)(int)(workFromFormindex1.hp + (datCalc.datGetSkillCost(workFromFormindex1, nskill) * maxhp / 100));
-                    double hpPercentage = (currenthp / maxhp);
-                    hpModifier = 0.5 + (hpPercentage / 2);
+                    var maxhp = (float)workFromFormindex1.maxhp;
+                    var currenthp = (float)(int)(workFromFormindex1.hp + (float)(datCalc.datGetSkillCost(workFromFormindex1, nskill) * (float) maxhp / 100f));
+                    float hpPercentage = (currenthp / maxhp);
+                    hpModifier = 0.5f + (hpPercentage / 2f);
                 }
 
                 //double atkPow = workFromFormindex1.maxhp * waza * 0.8 / 69.6;
-                double atkPow = ((workFromFormindex1.level + (datCalc.datGetParam(workFromFormindex1, 0) * 0.8f)) * waza / 20) * hpModifier;
+                double atkPow = ((workFromFormindex1.level + (datCalc.datGetParam(workFromFormindex1, 0) * 0.8f)) * (float) waza / 20f) * hpModifier;
 
                 //double defPow = datCalc.datGetParam(workFromFormindex2, 3);
 
@@ -333,7 +333,7 @@ namespace NocturneInsaniax
             {
                 datUnitWork_t workFromFormindex1 = nbMainProcess.nbGetUnitWorkFromFormindex(sformindex);
 
-                double magicPow = (workFromFormindex1.level + (datCalc.datGetParam(workFromFormindex1, 2) * 1.6f)) * waza * 1.25 / 10f;
+                float magicPow = (float)(workFromFormindex1.level + (datCalc.datGetParam(workFromFormindex1, 2) * 1.6f)) * (float) waza * 1.25f / 10f;
 
                 var magicBuff = nbCalc.nbGetHojoRitu(sformindex, 5);
 
@@ -515,7 +515,7 @@ namespace NocturneInsaniax
                     {
                         if ((datCalc.datCheckSyojiSkill(workFromFormindex1, 300) != 0 && evtMoon.evtGetAgeOfMoon() == 8) ||
                             (datCalc.datCheckSyojiSkill(workFromFormindex1, 301) != 0 && evtMoon.evtGetAgeOfMoon() == 0))
-                            critRate = 50;
+                            critRate = 75;
                         else if (datCalc.datCheckSyojiSkill(workFromFormindex1, 299) != 0 || (workFromFormindex1.id == 111 || workFromFormindex1.id == 335))
                             critRate = 30;
                     }

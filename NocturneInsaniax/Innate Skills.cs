@@ -29,7 +29,7 @@ namespace NocturneInsaniax
             { 011, new InnateSkill(383, 14, "Curious Dance", "When switching out, all -kaja and \n-nda effects on Ame-no-Uzume will \nbe passed to the switched ally.")}, // 011 Ame-no-Uzume
             { 012, new InnateSkill(383, 15, "Tripura Samhara", "While in the active party, \nskill costs are reduced by 20% \nfor allies with a charge effect.")}, // 012 Shiva
             { 013, new InnateSkill(383, 15, "Withheld Sentence", "While in the active party, \nallies are immune to random \ninstakills.")}, // 013 Beidou Xingjun
-            { 014, new InnateSkill(383, 14, "Megalomania", "After Qitian Dasheng uses a \ncharge effect, he has a 30% \nchance to retain it.")}, // 014 Qitian Dasheng
+            { 014, new InnateSkill(383, 14, "Megalomania", "After Qitian Dasheng uses a \ncharge effect, he has a 20% \nchance to retain it.")}, // 014 Qitian Dasheng
             { 015, new InnateSkill(419, 15, "Wine Party", "While in the active party, \nmay step in during negotiation to \nfix trouble with the power of liquor.")}, // 015 Dionysus
             { 016, new InnateSkill(383, 00, "Phys Gestalt", "Kali gains Phys skill potential \nbased on the total positive potential \nof allies in the active party.")}, // 016 Kali
             { 017, new InnateSkill(383, 02, "Queen of Winter", "Ice Enhancer & Skadi's Ice \nattacks have an increased \nchance to inflict Freeze.")}, // 017 Skadi
@@ -124,13 +124,13 @@ namespace NocturneInsaniax
             { 106, new InnateSkill(353, 15, "Lucky Find", "Occasionally find items on the Vortex World Map while in the active party.")}, // 106 Taotie
             { 107, new InnateSkill(383, 15, "Magnified Malady", "While in the active party, all allies \ndeal 20% more damage against \nenemies with an ailment.")}, // 107 Pazuzu
             { 108, new InnateSkill(383, 07, "Dark Gestalt", "Baphomet gains Dark skill potential \nbased on the total positive potential \nof allies in the active party.")}, // 108 Baphomet
-            { 109, new InnateSkill(383, 14, "Megalomania", "After Mot uses a \ncharge effect, he has a 30% \nchance to retain it.")}, // 109 Mot
+            { 109, new InnateSkill(383, 14, "Megalomania", "After Mot uses a \ncharge effect, he has a 20% \nchance to retain it.")}, // 109 Mot
             { 110, new InnateSkill(383, 15, "Withheld Sentence", "While in the active party, \nallies are immune to random \ninstakills.")}, // 110 Alciel
             { 111, new InnateSkill(383, 01, "Laevateinn", "Fire Enhancer & Surt's normal \nattacks deal medium Fire damage.")}, // 111 Surt
             { 112, new InnateSkill(414, 15, "Intimidate", "While in the active party, \nmay step in during negotiation to \n'convince' a lower level demon.")}, // 112 Abaddon
             { 113, new InnateSkill(383, 15, "Destabilize", "While in the active party, Element \nattacks may Critically Strike \nfor all allies and enemies.")}, // 113 Loki
             { 114, new InnateSkill(383, 05, "Forbidden Fruit", "While in the active party, all allies' \nAlmighty attacks may Critically Strike. \n(10% base rate)")}, // 114 Lilith
-            { 115, new InnateSkill(383, 14, "Megalomania", "After Nyx uses a \ncharge effect, she has a 30% \nchance to retain it.")}, // 115 Nyx
+            { 115, new InnateSkill(383, 14, "Megalomania", "After Nyx uses a \ncharge effect, she has a 20% \nchance to retain it.")}, // 115 Nyx
             { 116, new InnateSkill(383, 14, "Unseelie Decree", "When switching to a Night demon \nall Support effects on Queen Mab \nwill be passed to the switched ally.")}, // 116 Queen Mab
             { 117, new InnateSkill(415, 15, "Entice", "While in the active party, \nmay step in during negotiation to \ntempt a male demon.")}, // 117 Succubus
             { 118, new InnateSkill(383, 07, "Twilit Melody", "While in the active party, \nallies' Dark damage is increased \nby 10% when striking a weakness.")}, // 118 Incubus
@@ -277,7 +277,7 @@ namespace NocturneInsaniax
             { 259, new InnateSkill(383, 15, "Aurora", "")}, // 259 Boss Noah 2
             { 260, new InnateSkill(383, 15, "Twilit Melody", "")}, // 260 Forced Incubus
             { 261, new InnateSkill(383, 15, "Force Gestalt", "")}, // 261 Forced Koppa Tengu
-            { 262, new InnateSkill(383, 15, "Dark Star", "")}, // 262 Forced Kaiwan
+            { 262, new InnateSkill(383, 07, "Dark Star", "")}, // 262 Forced Kaiwan
             { 263, new InnateSkill(383, 15, "Paw-to-Paw Combat", "")}, // 263 Boss Ose
             { 264, new InnateSkill(383, 15, "Eternal Light", "")}, // 264 Boss Kagutsuchi 2
             { 265, new InnateSkill(383, 15, "Frigid Melody", "")}, // 265 Ambush Mizuchi
@@ -318,7 +318,7 @@ namespace NocturneInsaniax
             { 300, new InnateSkill(383, 15, "Faithful Companion", "")}, // 300 Boss Orthrus
             { 301, new InnateSkill(383, 15, "Critical Melody", "")}, // 301 Boss Yaksini
             { 302, new InnateSkill(383, 03, "Odinson", "")}, // 302 Boss Thor
-            { 303, new InnateSkill(383, 15, "Cold World", "")}, // 303 Boss Black Frost
+            { 303, new InnateSkill(383, 02, "Cold World", "")}, // 303 Boss Black Frost
             { 304, new InnateSkill(383, 15, "Faithful Companion", "")}, // 304 Boss Cerberus R
             { 305, new InnateSkill(383, 15, "Faithful Companion", "")}, // 305 Boss Cerberus C
             { 306, new InnateSkill(383, 15, "Faithful Companion", "")}, // 306 Boss Cerberus L
@@ -330,7 +330,7 @@ namespace NocturneInsaniax
             { 312, new InnateSkill(383, 01, "Fire Gestalt", "")}, // 312 Boss Berith
             { 313, new InnateSkill(383, 15, "Entice", "")}, // 313 Boss Succubus
             { 314, new InnateSkill(383, 15, "Lucky Find", "")}, // 314 Ambush High Pixie
-            { 315, new InnateSkill(383, 15, "Dark Star", "")}, // 315 Boss Kaiwan
+            { 315, new InnateSkill(383, 07, "Dark Star", "")}, // 315 Boss Kaiwan
             { 316, new InnateSkill(383, 15, "Paw-to-Paw Combat", "")}, // 316 Forced Nekomata
             { 317, new InnateSkill(383, 02, "Ice Gestalt", "")}, // 317 Boss Troll
             { 318, new InnateSkill(383, 15, "Forced Will o' Wisp", "")}, // 318 Forced Will o' Wisp
@@ -426,7 +426,7 @@ namespace NocturneInsaniax
             { 20, new InnateSkill(383, 04, "Orochi's Bane", "Your Force attacks may \ninflict poison. \n(30% base rate)")}, // 20 Murakumo
             { 21, new InnateSkill(383, 06, "Light Opus", "If the entire active party has natural \npositive Light potential, gain a flashing \nturn icon at the start of each turn.")}, // 21 Gundari
             { 22, new InnateSkill(383, 03, "Vanquishing Bolts", "All allies' Elec attacks \nmay Critically Strike. \n(10% base rate)")}, // 22 Narukami
-            { 23, new InnateSkill(383, 14, "Megalomania", "After using a charge effect, \ngain a 30% chance to retain it.")}, // 23 Gaea
+            { 23, new InnateSkill(383, 14, "Megalomania", "After using a charge effect, \ngain a 20% chance to retain it.")}, // 23 Gaea
             { 24, new InnateSkill(383, 15, "Tripura Samhara", "Skill costs are reduced by 20% \nfor allies with a charge effect.")}, // 24 Kailash
             { 25, new InnateSkill(383, 15, "Ruler's Virtuosity", "Gain 5% increased Critical Damage \nfor each unique effect active on you.")} // 25 Masakados
         };

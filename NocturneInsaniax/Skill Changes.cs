@@ -432,17 +432,17 @@ namespace NocturneInsaniax
                     case 286: __result = "High Almighty damage to all foes. \nSlight HP recovery for the user. \nPow: 48, Acc: 100%, Charm: 30%"; return false; // Death Lust
                     case 287: __result = "Mega Light damage to one foe. \nMay instakill when weak to Light. \nPow: 80, Acc: 100%, Fatal: 90%"; return false; // God's Bow
                     
-                    case 290: __result = "Raises Maximum HP by 10%."; return false; // Life Bonus
-                    case 291: __result = "Raises Maximum HP by 20%."; return false; // Life Gain
-                    case 292: __result = "Raises Maximum HP by 30%."; return false; // Life Surge
-                    case 293: __result = "Raises Maximum MP by 10%."; return false; // Mana Bonus
-                    case 294: __result = "Raises Maximum MP by 20%."; return false; // Mana Gain
-                    case 295: __result = "Raises Maximum MP by 30%."; return false; // Mana Surge
+                    case 290: __result = "Raises Maximum HP by 10%. \n(Does not stack with similar effects)"; return false; // Life Bonus
+                    case 291: __result = "Raises Maximum HP by 20%. \n(Does not stack with similar effects)"; return false; // Life Gain
+                    case 292: __result = "Raises Maximum HP by 30%. \n(Does not stack with similar effects)"; return false; // Life Surge
+                    case 293: __result = "Raises Maximum MP by 10%. \n(Does not stack with similar effects)"; return false; // Mana Bonus
+                    case 294: __result = "Raises Maximum MP by 20%. \n(Does not stack with similar effects)"; return false; // Mana Gain
+                    case 295: __result = "Raises Maximum MP by 30%. \n(Does not stack with similar effects)"; return false; // Mana Surge
                     case 296: __result = "Guarantees escape \nwhen possible."; return false; // Fast Retreat
                     case 298: __result = "Prevents being attacked \nfrom behind."; return false; // Mind's Eye
                     case 299: __result = "Raises Critical Rate of \nnormal attacks to 30%."; return false; // Might
-                    case 300: __result = "Raises Critical Rate of \nnormal attacks to 50% \nduring full Kagutsuchi."; return false; // Bright Might
-                    case 301: __result = "Raises Critical Rate of \nnormal attacks to 50% \nduring new Kagutsuchi."; return false; // Dark Might
+                    case 300: __result = "Raises Critical Rate of \nnormal attacks to 75% \nduring full Kagutsuchi."; return false; // Bright Might
+                    case 301: __result = "Raises Critical Rate of \nnormal attacks to 75% \nduring new Kagutsuchi."; return false; // Dark Might
                     case 302: __result = "Normal attacks will drain HP."; return false; // Drain Attack
                     case 304: __result = "Normal attacks will \nhit all enemies."; return false; // Attack All
                     case 305: __result = "May perform a weak counterattack \nwhen physically attacked. Pow: 32"; return false; // Counter
@@ -7863,26 +7863,26 @@ namespace NocturneInsaniax
 
         private static void Sear1(ushort id)
         {
-            datNormalSkill.tbl[id].hpn = 42;
+            datNormalSkill.tbl[id].hpn = 54;
             datNormalSkill.tbl[id].criticalpoint = 0;
         }
 
         private static void Sear2(ushort id)
         {
-            datNormalSkill.tbl[id].hpn = 48;
+            datNormalSkill.tbl[id].hpn = 60;
             datNormalSkill.tbl[id].criticalpoint = 0;
         }
 
         private static void VastLight(ushort id)
         {
-            datNormalSkill.tbl[id].hpn = 90;
+            datNormalSkill.tbl[id].hpn = 115;
             datNormalSkill.tbl[id].magicbase = 30;
             datNormalSkill.tbl[id].magiclimit = 32767;
         }
 
         private static void InfiniteLight(ushort id)
         {
-            datNormalSkill.tbl[id].hpn = 120;
+            datNormalSkill.tbl[id].hpn = 150;
             datNormalSkill.tbl[id].magicbase = 30;
             datNormalSkill.tbl[id].magiclimit = 32767;
             datNormalSkill.tbl[id].targetarea = 11;
@@ -7902,8 +7902,8 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].badlevel = 100;
             datNormalSkill.tbl[id].badtype = 1;
             datNormalSkill.tbl[id].basstatus = 16;
-            datNormalSkill.tbl[id].hpn = 60;
-            datNormalSkill.tbl[id].mpn = 30;
+            datNormalSkill.tbl[id].hpn = 72;
+            datNormalSkill.tbl[id].mpn = 36;
             datNormalSkill.tbl[id].magicbase = 30;
             datNormalSkill.tbl[id].magiclimit = 32767;
         }
@@ -7924,19 +7924,19 @@ namespace NocturneInsaniax
 
         private static void Tentacle(ushort id)
         {
-            datNormalSkill.tbl[id].hpn = 40;
+            datNormalSkill.tbl[id].hpn = 54;
             datNormalSkill.tbl[id].criticalpoint = 20;
         }
 
         private static void AhrimanCrush(ushort id)
         {
-            datNormalSkill.tbl[id].hpn = 48;
+            datNormalSkill.tbl[id].hpn = 60;
             datNormalSkill.tbl[id].criticalpoint = 4;
         }
 
         private static void Apocalypse(ushort id)
         {
-            datNormalSkill.tbl[id].hpn = 80;
+            datNormalSkill.tbl[id].hpn = 100;
             datNormalSkill.tbl[id].magicbase = 30;
             datNormalSkill.tbl[id].magiclimit = 32767;
         }
@@ -7965,15 +7965,15 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 50;
             datNormalSkill.tbl[id].hojotype = 1024;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 10;
+            datNormalSkill.tbl[id].hpn = 15;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].koukatype = 1;
             datNormalSkill.tbl[id].magicbase = 30;
             datNormalSkill.tbl[id].magiclimit = 32767;
             datNormalSkill.tbl[id].minus = 100;
             datNormalSkill.tbl[id].mpbase = 0;
-            datNormalSkill.tbl[id].mpn = 50;
-            datNormalSkill.tbl[id].mptype = 0;
+            datNormalSkill.tbl[id].mpn = 15;
+            datNormalSkill.tbl[id].mptype = 1;
             datNormalSkill.tbl[id].program = 0;
             datNormalSkill.tbl[id].targetarea = 2;
             datNormalSkill.tbl[id].targetcntmax = 1;
@@ -8768,9 +8768,9 @@ namespace NocturneInsaniax
         {
             datNormalSkill.tbl[id].criticalpoint = 29;
             datNormalSkill.tbl[id].hptype = 14;
-            datNormalSkill.tbl[id].hpn = 30;
+            datNormalSkill.tbl[id].hpn = 35;
             datNormalSkill.tbl[id].mptype = 14;
-            datNormalSkill.tbl[id].mpn = 10;
+            datNormalSkill.tbl[id].mpn = 15;
         }
 
         private static void EvilGleam(ushort id)
@@ -8781,7 +8781,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].badtype = 1;
             datNormalSkill.tbl[id].basstatus = 8;
             datNormalSkill.tbl[id].hitlevel = 100;
-            datNormalSkill.tbl[id].hpn = 36;
+            datNormalSkill.tbl[id].hpn = 40;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].magicbase = 30;
             datNormalSkill.tbl[id].magiclimit = 32767;
@@ -8806,7 +8806,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].badlevel = 36;
             datNormalSkill.tbl[id].badtype = 1;
             datNormalSkill.tbl[id].basstatus = 32;
-            datNormalSkill.tbl[id].hpn = 90;
+            datNormalSkill.tbl[id].hpn = 120;
             datNormalSkill.tbl[id].magicbase = 30;
             datNormalSkill.tbl[id].magiclimit = 32767;
         }
@@ -8835,7 +8835,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 1;
             datNormalSkill.tbl[id].hojotype = 10;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 60;
+            datNormalSkill.tbl[id].hpn = 80;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].koukatype = 1;
             datNormalSkill.tbl[id].magicbase = 30;
@@ -8882,7 +8882,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 60;
+            datNormalSkill.tbl[id].hpn = 80;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].koukatype = 1;
             datNormalSkill.tbl[id].magicbase = 30;
@@ -8929,7 +8929,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 60;
+            datNormalSkill.tbl[id].hpn = 80;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].koukatype = 1;
             datNormalSkill.tbl[id].magicbase = 30;
@@ -8976,7 +8976,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 60;
+            datNormalSkill.tbl[id].hpn = 80;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].koukatype = 1;
             datNormalSkill.tbl[id].magicbase = 30;
@@ -9097,7 +9097,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 45;
+            datNormalSkill.tbl[id].hpn = 50;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].koukatype = 0;
             datNormalSkill.tbl[id].magicbase = 0;
@@ -9144,7 +9144,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 0;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 30;
+            datNormalSkill.tbl[id].hpn = 40;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].koukatype = 0;
             datNormalSkill.tbl[id].magicbase = 0;
@@ -9202,7 +9202,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 45;
+            datNormalSkill.tbl[id].hpn = 60;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].koukatype = 1;
             datNormalSkill.tbl[id].magicbase = 30;
@@ -9260,7 +9260,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 45;
+            datNormalSkill.tbl[id].hpn = 60;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].koukatype = 1;
             datNormalSkill.tbl[id].magicbase = 30;
@@ -9318,7 +9318,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 45;
+            datNormalSkill.tbl[id].hpn = 60;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].koukatype = 1;
             datNormalSkill.tbl[id].magicbase = 30;
@@ -9376,7 +9376,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 45;
+            datNormalSkill.tbl[id].hpn = 60;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].koukatype = 1;
             datNormalSkill.tbl[id].magicbase = 30;
@@ -9434,7 +9434,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 40;
+            datNormalSkill.tbl[id].hpn = 60;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].koukatype = 1;
             datNormalSkill.tbl[id].magicbase = 24;
@@ -9557,7 +9557,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].magiclimit = 32767;
             datNormalSkill.tbl[id].minus = 100;
             datNormalSkill.tbl[id].mpbase = 0;
-            datNormalSkill.tbl[id].mpn = 32;
+            datNormalSkill.tbl[id].mpn = 40;
             datNormalSkill.tbl[id].mptype = 12;
             datNormalSkill.tbl[id].program = 0;
             datNormalSkill.tbl[id].targetarea = 2;
@@ -9608,7 +9608,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 50;
+            datNormalSkill.tbl[id].hpn = 64;
             datNormalSkill.tbl[id].hptype = 1;
             datNormalSkill.tbl[id].koukatype = 1;
             datNormalSkill.tbl[id].magicbase = 30;

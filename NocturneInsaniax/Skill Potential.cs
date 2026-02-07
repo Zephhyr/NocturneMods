@@ -1480,20 +1480,20 @@ namespace NocturneInsaniax
                         // Fly status
                         if (nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).badstatus == 512 && 
                             datNormalSkill.tbl[nskill].koukatype == 0 && 
-                            datNormalSkill.tbl[nskill].hptype != 2)
+                            datNormalSkill.tbl[nskill].hptype != 2 && datNormalSkill.tbl[nskill].hptype != 5 && datNormalSkill.tbl[nskill].hptype != 11)
                             __result = Convert.ToInt32((__result * 5) + random.Next(5));
                         else if (nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).badstatus == 512 && 
                             datNormalSkill.tbl[nskill].koukatype == 1 && 
-                            datNormalSkill.tbl[nskill].hptype != 2)
+                            datNormalSkill.tbl[nskill].hptype != 2 && datNormalSkill.tbl[nskill].hptype != 5 && datNormalSkill.tbl[nskill].hptype != 11)
                             __result = Convert.ToInt32(__result / 2);
 
-                        var targetMag = datCalc.datGetParam(nbMainProcess.nbGetUnitWorkFromFormindex(dformindex), 2);
-                        var targetVit = datCalc.datGetParam(nbMainProcess.nbGetUnitWorkFromFormindex(dformindex), 3);
+                        float targetMag = datCalc.datGetParam(nbMainProcess.nbGetUnitWorkFromFormindex(dformindex), 2);
+                        float targetVit = datCalc.datGetParam(nbMainProcess.nbGetUnitWorkFromFormindex(dformindex), 3);
 
-                        if (datNormalSkill.tbl[nskill].koukatype == 1)
-                            __result = Convert.ToInt32(__result / (1 + (targetMag / 330)));
+                        if (datNormalSkill.tbl[nskill].koukatype == 1 && datSkill.tbl[nskill].skillattr <= 12)
+                            __result = Convert.ToInt32((float) __result / (float) (1f + (targetMag / 330f)));
                         if (datNormalSkill.tbl[nskill].koukatype == 0)
-                            __result = Convert.ToInt32(__result / (1 + (targetVit / 330)));
+                            __result = Convert.ToInt32((float) __result / (float) (1f + (targetVit / 330f)));
                     }
                 }
             }
