@@ -12977,10 +12977,10 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].Event[0] = new fclSkillParam_t { Param = 69, TargetLevel = 0, Type = 1 }; // Makarakarn
             tblSkill.fclSkillTbl[id].Event[1] = new fclSkillParam_t { Param = 63, TargetLevel = 0, Type = 1 }; // Tentarafoo
             tblSkill.fclSkillTbl[id].Event[2] = new fclSkillParam_t { Param = 196, TargetLevel = 0, Type = 1 }; // Hell Gaze
-            tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 345, TargetLevel = 61, Type = 1 }; // Endure
-            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 68, TargetLevel = 62, Type = 1 }; // Tetraja
-            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 366, TargetLevel = 63, Type = 1 }; // Abyssal Mask
-            tblSkill.fclSkillTbl[id].Event[5] = new fclSkillParam_t { Param = 26, TargetLevel = 64, Type = 1 }; // Megidola
+            tblSkill.fclSkillTbl[id].Event[3] = new fclSkillParam_t { Param = 345, TargetLevel = 61, Type = 1 }; // Endure
+            tblSkill.fclSkillTbl[id].Event[4] = new fclSkillParam_t { Param = 68, TargetLevel = 62, Type = 1 }; // Tetraja
+            tblSkill.fclSkillTbl[id].Event[5] = new fclSkillParam_t { Param = 366, TargetLevel = 63, Type = 1 }; // Abyssal Mask
+            tblSkill.fclSkillTbl[id].Event[6] = new fclSkillParam_t { Param = 26, TargetLevel = 64, Type = 1 }; // Megidola
 
             // Affinities
             datAisyo.tbl[id][0] = 131072; // Phys
@@ -15629,8 +15629,8 @@ namespace NocturneInsaniax
             mdlFileDefTable.devilModelIndex[id].scale = 4096;
             mdlFileDefTable.devilModelIndex[id].radius = 1000;
 
-            datDevilVisual07.tbl_7_0E0_0FF[19] = CopyDevilVisual(datDevilVisual03.tbl_3_060_07F[11]);
-            datDevilVisual07.tbl_7_0E0_0FF[19].formscale = 0.3f;
+            datDevilVisual10.tbl_10_140_15F[16] = CopyDevilVisual(datDevilVisual03.tbl_3_060_07F[11]);
+            datDevilVisual10.tbl_10_140_15F[16].formscale = 0.3f;
 
             datMotionSeTable.tbl[id] = 107;
 
@@ -17382,7 +17382,7 @@ namespace NocturneInsaniax
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 6600;
             datDevilFormat.tbl[id].hp = 6600;
-            datDevilFormat.tbl[id].param[0] = 66; // Strength
+            datDevilFormat.tbl[id].param[0] = 60; // Strength
             datDevilFormat.tbl[id].param[1] = 42; // Intelligence
             datDevilFormat.tbl[id].param[2] = 47; // Magic
             datDevilFormat.tbl[id].param[3] = 45; // Vitality
