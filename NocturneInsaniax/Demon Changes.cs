@@ -6841,9 +6841,6 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].maxhp = 24;
             datDevilFormat.tbl[id].mp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
             datDevilFormat.tbl[id].maxmp = Convert.ToUInt16((datDevilFormat.tbl[id].level * 4) + (datDevilFormat.tbl[id].param[2] * 2));
-
-            datDevilFormat.tbl[id].param[4] = 5;
-            datDevilFormat.tbl[id].param[5] = 6;
         }
 
         private static void ShikiOuji(ushort id)
@@ -12105,6 +12102,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].param[3] = 50; // Vitality
             datDevilFormat.tbl[id].param[4] = 36; // Agility
             datDevilFormat.tbl[id].param[5] = 42; // Luck
+            datDevilFormat.tbl[id].level = 65;
             tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 3, 3, 2, 2, 2 };
 
             // Affinities
@@ -12118,14 +12116,6 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][8] = 80; // Curse
             datAisyo.tbl[id][9] = 80; // Nerve
             datAisyo.tbl[id][10] = 80; // Mind
-
-            // Stats
-            datDevilFormat.tbl[id].level = 65;
-            datDevilFormat.tbl[id].param[0] = 24;
-            datDevilFormat.tbl[id].param[2] = 24;
-            datDevilFormat.tbl[id].param[3] = 18;
-            datDevilFormat.tbl[id].param[4] = 15;
-            datDevilFormat.tbl[id].param[5] = 12;
 
             // Skills
             tblSkill.fclSkillTbl[id].Event[0].Param = 370; // Qigong
