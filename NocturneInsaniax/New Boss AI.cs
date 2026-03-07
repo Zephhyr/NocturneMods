@@ -864,7 +864,7 @@ namespace NocturneInsaniax
         {
             if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(220))
                 UseSkill(ref a, 220);
-            else if (AllyPartyBuffed(1))
+            else if (AllyPartyBuffed2(1))
                 UseSkill(ref a, 57);
             else if (EnemyFocused(ref a))
             {
@@ -1434,7 +1434,7 @@ namespace NocturneInsaniax
         {
             if (a.data.enemypcnt < 2 && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(220))
                 UseSkill(ref a, 220);
-            else if (AllyPartyBuffed(1) && random.Next(3) == 0)
+            else if (AllyPartyBuffed2(1) && random.Next(3) == 0)
                 UseSkill(ref a, 57);
             else
             {
@@ -1453,7 +1453,7 @@ namespace NocturneInsaniax
         {
             if (a.data.enemypcnt < 2 && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(220))
                 UseSkill(ref a, 220);
-            else if (AllyPartyBuffed(1) && random.Next(3) == 0)
+            else if (AllyPartyBuffed2(1) && random.Next(3) == 0)
                 UseSkill(ref a, 57);
             else
             {
@@ -1526,7 +1526,7 @@ namespace NocturneInsaniax
             }
             else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(277) && nbMainProcess.nbGetMainProcessData().enemypcnt == 1)
                 UseSkill(ref a, 277);
-            else if (AllyPartyBuffed(1) && random.Next(3) == 0)
+            else if (AllyPartyBuffed2(1) && random.Next(3) == 0)
                 UseSkill(ref a, 57);
             else
             {
@@ -1562,7 +1562,7 @@ namespace NocturneInsaniax
             }
             else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(277) && nbMainProcess.nbGetMainProcessData().enemypcnt == 1)
                 UseSkill(ref a, 277);
-            else if (EnemyPartyDebuffed(3) && random.Next(3) == 0)
+            else if (EnemyPartyDebuffed2(1) && random.Next(3) == 0)
                 UseSkill(ref a, 77);
             else
             {
@@ -1606,7 +1606,7 @@ namespace NocturneInsaniax
             }
             else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(277) && nbMainProcess.nbGetMainProcessData().enemypcnt == 1)
                 UseSkill(ref a, 277);
-            else if (AllyPartyBuffed(1) && random.Next(3) == 0)
+            else if (AllyPartyBuffed2(1) && random.Next(3) == 0)
                 UseSkill(ref a, 57);
             else
             {
@@ -1638,7 +1638,7 @@ namespace NocturneInsaniax
             {
                 UseSkill(ref a, 224); return;
             }
-            else if (EnemyPartyDebuffed(1) && random.Next(3) == 0)
+            else if (EnemyPartyDebuffed2(1) && random.Next(3) == 0)
             {
                 UseSkill(ref a, 77); return;
             }
@@ -1683,7 +1683,7 @@ namespace NocturneInsaniax
             }
             else
             {
-                if (actionTrackers[a.work.id].currentTurnActionCount >= 4 && EnemyPartyDebuffed(1) && random.Next(4) == 0)
+                if (actionTrackers[a.work.id].currentTurnActionCount >= 4 && EnemyPartyDebuffed2(1) && random.Next(4) == 0)
                 {
                     UseSkill(ref a, 77);
                 }
@@ -1724,7 +1724,7 @@ namespace NocturneInsaniax
             {
                 UseSkill(ref a, 67); return;
             }
-            else if (AllyPartyBuffed(1) && random.Next(4) == 0)
+            else if (AllyPartyBuffed2(1) && random.Next(4) == 0)
             {
                 UseSkill(ref a, 57);
             }
@@ -1752,7 +1752,7 @@ namespace NocturneInsaniax
             {
                 UseSkill(ref a, 18); return;
             }
-            else if (EnemyPartyDebuffed(1) && random.Next(3) == 0)
+            else if (EnemyPartyDebuffed2(1) && random.Next(3) == 0)
             {
                 UseSkill(ref a, 77);
             }
@@ -1795,7 +1795,7 @@ namespace NocturneInsaniax
             {
                 UseSkill(ref a, 158); return;
             }
-            else if (AllyPartyBuffed(1) && (actionTrackers[a.work.id].currentBattleActionCount % 4) == 0)
+            else if (AllyPartyBuffed2(1) && (actionTrackers[a.work.id].currentBattleActionCount % 4) == 0)
             {
                 UseSkill(ref a, 57); return;
             }
@@ -1832,7 +1832,7 @@ namespace NocturneInsaniax
             {
                 UseSkill(ref a, 219);
             }
-            else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77) && EnemyPartyDebuffed(1))
+            else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77) && EnemyPartyDebuffed2(1))
             {
                 UseSkill(ref a, 77);
             }
@@ -1940,7 +1940,7 @@ namespace NocturneInsaniax
             MelonLogger.Msg("Ahriman HP%: " + currentHpPercent);
             MelonLogger.Msg("Ahriman HP: " + a.work.hp);
 
-            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(460) && EnemyPartyDebuffed(1) &&
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(460) && EnemyPartyDebuffed2(1) &&
                 (a.data.playerpcnt == 1 && (actionTrackers[a.work.id].currentBattleTurnCount % 4) == 0) || (a.data.playerpcnt > 1 && (actionTrackers[a.work.id].currentBattleTurnCount % 3) == 0) &&
                 actionTrackers[a.work.id].currentTurnActionCount >= 2 && a.data.press4_p <= 1 && a.data.press4_ten <= 1
                 && random.Next(4) != 0)
@@ -2053,13 +2053,13 @@ namespace NocturneInsaniax
             MelonLogger.Msg("Noah HP: " + a.work.hp);
 
             if (actionTrackers[a.work.id].currentTurnActionCount == 1 && (actionTrackers[a.work.id].currentBattleTurnCount % 2) == 0 &&
-                (AllyPartyBuffed(1) || EnemyPartyDebuffed(1)))
+                (AllyPartyBuffed2(1) || EnemyPartyDebuffed2(1)))
             {
-                if (AllyPartyBuffed(1) && !EnemyPartyDebuffed(1))
+                if (AllyPartyBuffed2(1) && !EnemyPartyDebuffed2(1))
                 {
                     UseSkill(ref a, 57); return;
                 }
-                else if (!AllyPartyBuffed(1) && EnemyPartyDebuffed(1))
+                else if (!AllyPartyBuffed2(1) && EnemyPartyDebuffed2(1))
                 {
                     UseSkill(ref a, 77); return;
                 }
@@ -2199,11 +2199,11 @@ namespace NocturneInsaniax
                     !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(57) &&
                     !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77))
                 {
-                    if (AllyPartyBuffed(1) && random.Next(2) == 0)
+                    if (AllyPartyBuffed2(1) && random.Next(2) == 0)
                     {
                         UseSkill(ref a, 57); return;
                     }
-                    else if (EnemyPartyDebuffed(1))
+                    else if (EnemyPartyDebuffed2(1))
                     {
                         UseSkill(ref a, 77); return;
                     }
@@ -2257,11 +2257,11 @@ namespace NocturneInsaniax
                     !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(57) &&
                     !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77))
                 {
-                    if (AllyPartyBuffed(1) && random.Next(2) == 0)
+                    if (AllyPartyBuffed2(1) && random.Next(2) == 0)
                     {
                         UseSkill(ref a, 57); return;
                     }
-                    else if (EnemyPartyDebuffed(1))
+                    else if (EnemyPartyDebuffed2(1))
                     {
                         UseSkill(ref a, 77); return;
                     }
@@ -2307,7 +2307,7 @@ namespace NocturneInsaniax
                 UseSkill(ref a, 422);
             else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(27))
                 UseSkill(ref a, 27);
-            else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77) && EnemyPartyDebuffed(1))
+            else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77) && EnemyPartyDebuffed2(1))
                 UseSkill(ref a, 77);
             else
             {
@@ -2330,7 +2330,7 @@ namespace NocturneInsaniax
             {
                 UseSkill(ref a, 219);
             }
-            else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77) && EnemyPartyDebuffed(1))
+            else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77) && EnemyPartyDebuffed2(1))
             {
                 UseSkill(ref a, 77);
             }
@@ -2363,11 +2363,11 @@ namespace NocturneInsaniax
             {
                 UseNormalAttack(ref a); SetTargetingRule(ref code, ref n, 2, 2);
             }
-            else if ((AllyPartyBuffed(2) || EnemyPartyDebuffed(2)) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(219))
+            else if ((AllyPartyBuffed2(2) || EnemyPartyDebuffed2(2)) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(219))
                 UseSkill(ref a, 219);
-            else if (actionTrackers[a.work.id].skillsUsedThisTurn.Contains(219) && AllyPartyBuffed(2))
+            else if (actionTrackers[a.work.id].skillsUsedThisTurn.Contains(219) && AllyPartyBuffed2(2))
                 UseSkill(ref a, 57);
-            else if (actionTrackers[a.work.id].skillsUsedThisTurn.Contains(219) && EnemyPartyDebuffed(2))
+            else if (actionTrackers[a.work.id].skillsUsedThisTurn.Contains(219) && EnemyPartyDebuffed2(2))
                 UseSkill(ref a, 77);
             else if (AllyPartyTetrakarn() || AllyPartyMakarakarn())
                 UseSkill(ref a, 26);
@@ -2389,7 +2389,7 @@ namespace NocturneInsaniax
         {
             if (a.work.mp >= 13)
             {
-                if (a.work.mp >= 17 && AllyPartyBuffed(3))
+                if (a.work.mp >= 17 && AllyPartyBuffed2(3))
                 {
                     UseSkill(ref a, 57);
                 }
@@ -2885,7 +2885,7 @@ namespace NocturneInsaniax
             }
             else if (actionTrackers[a.work.id].currentTurnActionCount == 1)
             {
-                if (AllyPartyBuffed(2))
+                if (AllyPartyBuffed2(2))
                 {
                     UseSkill(ref a, 57); return;
                 }
@@ -2937,7 +2937,7 @@ namespace NocturneInsaniax
             {
                 UseSkill(ref a, 220); return;
             }
-            else if (EnemyPartyDebuffed(1) && random.Next(4) == 0)
+            else if (EnemyPartyDebuffed2(1) && random.Next(4) == 0)
             {
                 UseSkill(ref a, 77); return;
             }
@@ -2978,7 +2978,7 @@ namespace NocturneInsaniax
             {
                 UseSkill(ref a, 97); SetTargetingRule(ref code, ref n, 2, 2); return;
             }
-            else if (AllyPartyBuffed(1) && random.Next(4) == 0)
+            else if (AllyPartyBuffed2(1) && random.Next(4) == 0)
             {
                 UseSkill(ref a, 57); return;
             }
@@ -3014,7 +3014,7 @@ namespace NocturneInsaniax
             {
                 UseSkill(ref a, 220); return;
             }
-            else if (AllyPartyBuffed(1) && random.Next(4) == 0)
+            else if (AllyPartyBuffed2(1) && random.Next(4) == 0)
             {
                 UseSkill(ref a, 57); return;
             }
@@ -3055,7 +3055,7 @@ namespace NocturneInsaniax
 
             if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(422))
                 UseSkill(ref a, 422);
-            else if (EnemyPartyDebuffed(1) && (actionTrackers[a.work.id].currentBattleTurnCount % 4) == 0)
+            else if (EnemyPartyDebuffed2(1) && (actionTrackers[a.work.id].currentBattleTurnCount % 4) == 0)
                 UseSkill(ref a, 77);
             else if (a.work.hp < a.work.maxhp && currentHpPercent > 1 && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(37))
             {
@@ -3268,7 +3268,7 @@ namespace NocturneInsaniax
                 UseSkill(ref a, 219);
             else if (a.work.nowindex == 24)
                 UseSkill(ref a, 468);
-            else if (a.work.nowindex == 64 && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77) && EnemyPartyDebuffed(1))
+            else if (a.work.nowindex == 64 && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77) && EnemyPartyDebuffed2(1))
                 UseSkill(ref a, 77);
         }
 
@@ -3343,9 +3343,9 @@ namespace NocturneInsaniax
                 Flee(ref a);
             else if (a.data.enemypcnt < 5)
                 UseSummonSkill(ref a, 226, (ushort)(162 + random.Next(4)));
-            else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(57) && EnemyPartyDebuffed(1) && random.Next(5) == 0)
+            else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(57) && EnemyPartyDebuffed2(1) && random.Next(5) == 0)
                 UseSkill(ref a, 77);
-            else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77) && AllyPartyBuffed(1) && random.Next(5) == 0)
+            else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77) && AllyPartyBuffed2(1) && random.Next(5) == 0)
                 UseSkill(ref a, 57);
             else
             {
@@ -3397,9 +3397,9 @@ namespace NocturneInsaniax
 
         private static void BossUrielAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
-            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(57) && EnemyPartyDebuffed(2) && random.Next(2) == 0)
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(57) && EnemyPartyDebuffed2(2) && random.Next(2) == 0)
                 UseSkill(ref a, 77);
-            else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77) && AllyPartyBuffed(2) && random.Next(2) == 0)
+            else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77) && AllyPartyBuffed2(2) && random.Next(2) == 0)
                 UseSkill(ref a, 57);
             else
             {
@@ -3561,7 +3561,7 @@ namespace NocturneInsaniax
                 UseSkill(ref a, 38); 
                 SetTargetingRule(ref code, ref n, 3, 288);
             }
-            else if (EnemyPartyDebuffed(1) && random.Next(3) == 0)
+            else if (EnemyPartyDebuffed2(1) && random.Next(3) == 0)
                 UseSkill(ref a, 77);
             else
             {
@@ -3587,7 +3587,7 @@ namespace NocturneInsaniax
                 UseSkill(ref a, 38);
                 SetTargetingRule(ref code, ref n, 3, 288);
             }
-            else if (AllyPartyBuffed(1) && random.Next(3) == 0)
+            else if (AllyPartyBuffed2(1) && random.Next(3) == 0)
                 UseSkill(ref a, 57);
             else
             {
@@ -3616,7 +3616,7 @@ namespace NocturneInsaniax
                 actionTrackers[a.work.id].phase = 4;
 
 
-            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(460) && EnemyPartyDebuffed(1) &&
+            if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(460) && EnemyPartyDebuffed2(1) &&
                 (a.data.playerpcnt == 1 && (actionTrackers[a.work.id].currentBattleTurnCount % 4) == 0) || (a.data.playerpcnt > 1 && (actionTrackers[a.work.id].currentBattleTurnCount % 3) == 0) &&
                 actionTrackers[a.work.id].currentTurnActionCount >= 2 && a.data.press4_p <= 1 && a.data.press4_ten <= 1
                 && random.Next(3) != 0)
@@ -3738,13 +3738,13 @@ namespace NocturneInsaniax
                 actionTrackers[a.work.id].phase = 2;
 
             if (actionTrackers[a.work.id].currentTurnActionCount == 1 && (actionTrackers[a.work.id].currentBattleTurnCount % 2) == 0 &&
-                (AllyPartyBuffed(1) || EnemyPartyDebuffed(1)))
+                (AllyPartyBuffed2(1) || EnemyPartyDebuffed2(1)))
             {
-                if (AllyPartyBuffed(1) && !EnemyPartyDebuffed(1))
+                if (AllyPartyBuffed2(1) && !EnemyPartyDebuffed2(1))
                 {
                     UseSkill(ref a, 57); return;
                 }
-                else if (!AllyPartyBuffed(1) && EnemyPartyDebuffed(1))
+                else if (!AllyPartyBuffed2(1) && EnemyPartyDebuffed2(1))
                 {
                     UseSkill(ref a, 77); return;
                 }
@@ -3844,13 +3844,13 @@ namespace NocturneInsaniax
 
             if (a.work.nowindex == 221)
                 UseSkill(ref a, 221);
-            else if (actionTrackers[a.work.id].currentTurnActionCount == 3 && (AllyPartyBuffed(1) || EnemyPartyDebuffed(1)))
+            else if (actionTrackers[a.work.id].currentTurnActionCount == 3 && (AllyPartyBuffed2(1) || EnemyPartyDebuffed2(1)))
             {
-                if (AllyPartyBuffed(1) && random.Next(2) == 0)
+                if (AllyPartyBuffed2(1) && random.Next(2) == 0)
                 {
                     UseSkill(ref a, 57); return;
                 }
-                else if (EnemyPartyDebuffed(1))
+                else if (EnemyPartyDebuffed2(1))
                 {
                     UseSkill(ref a, 77); return;
                 }
@@ -3923,7 +3923,7 @@ namespace NocturneInsaniax
                 UseSkill(ref a, 423);
             else if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(153))
                 UseSkill(ref a, 153);
-            else if (AllyPartyBuffed(1) && ((actionTrackers[a.work.id].currentBattleTurnCount + 2) % 3) == 0)
+            else if (AllyPartyBuffed2(1) && ((actionTrackers[a.work.id].currentBattleTurnCount + 2) % 3) == 0)
                 UseSkill(ref a, 57);
             else if (actionTrackers[a.work.id].skillsUsedThisTurn.Contains(57) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(26) && actionTrackers[a.work.id].currentBattleTurnCount != 1)
                 UseSkill(ref a, 26);
@@ -3971,7 +3971,7 @@ namespace NocturneInsaniax
                 {
                     UseSkill(ref a, 245); return;
                 }
-                else if (EnemyPartyDebuffed(1) && (actionTrackers[a.work.id].currentBattleTurnCount % 3) == 0 && actionTrackers[a.work.id].currentTurnActionCount == 1)
+                else if (EnemyPartyDebuffed2(1) && (actionTrackers[a.work.id].currentBattleTurnCount % 3) == 0 && actionTrackers[a.work.id].currentTurnActionCount == 1)
                 {
                     UseSkill(ref a, 77); return;
                 }
@@ -3993,7 +3993,7 @@ namespace NocturneInsaniax
                 {
                     UseSkill(ref a, 245); return;
                 }
-                else if (EnemyPartyDebuffed(1) && (actionTrackers[a.work.id].currentBattleTurnCount % 3) == 0 && actionTrackers[a.work.id].currentTurnActionCount == 1)
+                else if (EnemyPartyDebuffed2(1) && (actionTrackers[a.work.id].currentBattleTurnCount % 3) == 0 && actionTrackers[a.work.id].currentTurnActionCount == 1)
                 {
                     UseSkill(ref a, 77); return;
                 }
@@ -4015,7 +4015,7 @@ namespace NocturneInsaniax
                 {
                     UseSkill(ref a, 245); return;
                 }
-                else if (EnemyPartyDebuffed(1) && (actionTrackers[a.work.id].currentBattleTurnCount % 3) == 0 && actionTrackers[a.work.id].currentTurnActionCount == 1)
+                else if (EnemyPartyDebuffed2(1) && (actionTrackers[a.work.id].currentBattleTurnCount % 3) == 0 && actionTrackers[a.work.id].currentTurnActionCount == 1)
                 {
                     UseSkill(ref a, 77); return;
                 }
@@ -4131,9 +4131,9 @@ namespace NocturneInsaniax
                 }
                 if (actionTrackers[a.work.id].skillsUsedThisTurn.Contains(81))
                     itemSkills.Add(81);
-                if (AllyPartyBuffed(1) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77))
+                if (AllyPartyBuffed2(1) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77))
                     itemSkills.Add(57);
-                if (EnemyPartyDebuffed(1) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(57))
+                if (EnemyPartyDebuffed2(1) && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(57))
                     itemSkills.Add(77);
 
                 for (ushort i = 1; i <= 424; i++)
@@ -4335,7 +4335,7 @@ namespace NocturneInsaniax
                 {
                     UseSkill(ref a, 457); return;
                 }
-                else if (AllyPartyBuffed(1) && random.Next(2) == 0)
+                else if (AllyPartyBuffed2(1) && random.Next(2) == 0)
                 {
                     UseSkill(ref a, 57);
                 }
@@ -4371,9 +4371,9 @@ namespace NocturneInsaniax
                 {
                     UseSkill(ref a, 35); return;
                 }
-                else if (AllyPartyBuffed(2) || EnemyPartyDebuffed(2))
+                else if (AllyPartyBuffed2(2) || EnemyPartyDebuffed2(2))
                 {
-                    if (AllyPartyBuffed(2))
+                    if (AllyPartyBuffed2(2))
                     {
                         UseSkill(ref a, 57); return;
                     }
@@ -4401,9 +4401,9 @@ namespace NocturneInsaniax
                 {
                     UseSkill(ref a, 6); return;
                 }
-                else if (AllyPartyBuffed(3) || EnemyPartyDebuffed(3))
+                else if (AllyPartyBuffed2(3) || EnemyPartyDebuffed2(3))
                 {
-                    if (AllyPartyBuffed(3))
+                    if (AllyPartyBuffed2(3))
                     {
                         UseSkill(ref a, 57); return;
                     }
@@ -4435,7 +4435,7 @@ namespace NocturneInsaniax
 
             var enemypcnt = a.data.enemypcnt;
             
-            if (EnemyPartyDebuffed(1) && (actionTrackers[a.work.id].currentBattleTurnCount % 3) == 0)
+            if (EnemyPartyDebuffed2(1) && (actionTrackers[a.work.id].currentBattleTurnCount % 3) == 0)
             {
                 UseSkill(ref a, 77);
             }
@@ -4808,7 +4808,7 @@ namespace NocturneInsaniax
             }
             else
             {
-                if (AllyPartyBuffed(1))
+                if (AllyPartyBuffed2(1))
                 {
                     UseSkill(ref a, 57);
                 }
@@ -4905,7 +4905,7 @@ namespace NocturneInsaniax
             }
             else if (actionTrackers[a.work.id].phase == 2)
             {
-                if (EnemyPartyDebuffed(1) && !actionTrackers[a.work.id].skillsUsedThisBattle.Contains(77))
+                if (EnemyPartyDebuffed2(1) && !actionTrackers[a.work.id].skillsUsedThisBattle.Contains(77))
                 {
                     UseSkill(ref a, 77); return;
                 }
@@ -4942,7 +4942,7 @@ namespace NocturneInsaniax
             }
             else if (actionTrackers[a.work.id].phase == 3)
             {
-                if (AllyPartyBuffed(1) && !actionTrackers[a.work.id].skillsUsedThisBattle.Contains(57))
+                if (AllyPartyBuffed2(1) && !actionTrackers[a.work.id].skillsUsedThisBattle.Contains(57))
                 {
                     UseSkill(ref a, 57);
                 }
@@ -5181,11 +5181,11 @@ namespace NocturneInsaniax
             }
             else if (actionTrackers[a.work.id].currentTurnActionCount == 1 && random.Next(2) == 0)
             {
-                if (AllyPartyBuffed(1) && random.Next(2) == 0)
+                if (AllyPartyBuffed2(1) && random.Next(2) == 0)
                 {
                     UseSkill(ref a, 57); return;
                 }
-                else if (EnemyPartyDebuffed(1))
+                else if (EnemyPartyDebuffed2(1))
                 {
                     UseSkill(ref a, 77); return;
                 }
@@ -5279,7 +5279,7 @@ namespace NocturneInsaniax
                         }
                     case 2:
                         {
-                            if (EnemyPartyDebuffed(1) && (actionTrackers[a.work.id].currentBattleTurnCount % 4) == 0)
+                            if (EnemyPartyDebuffed2(1) && (actionTrackers[a.work.id].currentBattleTurnCount % 4) == 0)
                                 UseSkill(ref a, 77);
                             else if (a.data.enemyunit.Where(x => x.hp < x.maxhp && x.flag != 0).Any())
                             {
@@ -5317,7 +5317,7 @@ namespace NocturneInsaniax
                         }
                     case 1:
                         {
-                            if (EnemyPartyDebuffed(1) && (actionTrackers[a.work.id].currentBattleTurnCount % 3) == 0)
+                            if (EnemyPartyDebuffed2(1) && (actionTrackers[a.work.id].currentBattleTurnCount % 3) == 0)
                                 UseSkill(ref a, 77);
                             else if (a.data.enemyunit.Where(x => x.hp < x.maxhp && x.flag != 0).Any())
                             {
@@ -5546,7 +5546,7 @@ namespace NocturneInsaniax
                 UseSkill(ref a, 454);
                 SetTargetingRule(ref code, ref n, 10, n);
             }
-            else if (EnemyPartyDebuffed(1) && random.Next(2) == 0)
+            else if (EnemyPartyDebuffed2(1) && random.Next(2) == 0)
                 UseSkill(ref a, 77);
             else if (actionTrackers[a.work.id].currentTurnActionCount == 1 && random.Next(3) != 0 && !AllyPartyDebuffed(3))
                 UseSkill(ref a, 206);
@@ -5588,7 +5588,7 @@ namespace NocturneInsaniax
                 UseSummonSkill(ref a, 226, 243);
             else if (a.data.enemypcnt < 3 && random.Next(2) == 0)
                 UseSummonSkill(ref a, 226, 243);
-            else if (EnemyPartyDebuffed(1) && random.Next(2) == 0)
+            else if (EnemyPartyDebuffed2(1) && random.Next(2) == 0)
                 UseSkill(ref a, 77);
             else
             {
@@ -5683,7 +5683,7 @@ namespace NocturneInsaniax
                     UseSkill(ref a, 423);
                 else if (random.Next(5) <= 1)
                     UseSkill(ref a, 219);
-                else if (EnemyPartyDebuffed(1) && random.Next(2) == 0)
+                else if (EnemyPartyDebuffed2(1) && random.Next(2) == 0)
                     UseSkill(ref a, 77);
                 else
                 {
@@ -5705,9 +5705,9 @@ namespace NocturneInsaniax
             {
                 if (actionTrackers[a.work.id].extraTurns == 5 && !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(422))
                 {
-                    if (EnemyPartyDebuffed(1))
+                    if (EnemyPartyDebuffed2(1))
                         UseSkill(ref a, 77);
-                    else if (AllyPartyBuffed(1))
+                    else if (AllyPartyBuffed2(1))
                         UseSkill(ref a, 57);
                     else if (!EnemyPartyBuffed(3, 5))
                         UseSkill(ref a, 67);
@@ -5718,7 +5718,7 @@ namespace NocturneInsaniax
                     UseSkill(ref a, 422);
                 else if (actionTrackers[a.work.id].currentBattleActionCount == 2)
                     UseSkill(ref a, 67);
-                else if (EnemyPartyDebuffed(1) && random.Next(2) == 0)
+                else if (EnemyPartyDebuffed2(1) && random.Next(2) == 0)
                     UseSkill(ref a, 77);
                 else
                 {
@@ -5758,7 +5758,7 @@ namespace NocturneInsaniax
                 UseSkill(ref a, 423);
             else if (actionTrackers[a.work.id].currentBattleActionCount == 2)
                 UseSkill(ref a, 436);
-            else if (EnemyPartyDebuffed(1) && random.Next(2) == 0)
+            else if (EnemyPartyDebuffed2(1) && random.Next(2) == 0)
                 UseSkill(ref a, 77);
             else
             {
@@ -5812,7 +5812,7 @@ namespace NocturneInsaniax
                 UseSkill(ref a, 265);
             else if (actionTrackers[a.work.id].phase == 1)
             {
-                if (EnemyPartyDebuffed(1) && random.Next(4) != 0)
+                if (EnemyPartyDebuffed2(1) && random.Next(4) != 0)
                 {
                     UseSkill(ref a, 274);
                 }
@@ -5886,7 +5886,7 @@ namespace NocturneInsaniax
                         actionTrackers.Add(366, new ActionTracker());
                     }else
                     {
-                        if (EnemyPartyDebuffed(1) && random.Next(4) == 0)
+                        if (EnemyPartyDebuffed2(1) && random.Next(4) == 0)
                         {
                             UseSkill(ref a, 274);
                         }
@@ -5928,7 +5928,7 @@ namespace NocturneInsaniax
             MelonLogger.Msg("Boss HP%: " + currentHpPercent);
             MelonLogger.Msg("Boss HP: " + a.work.hp);
 
-            if (EnemyPartyDebuffed(1) && random.Next(4) == 0)
+            if (EnemyPartyDebuffed2(1) && random.Next(4) == 0)
             {
                 UseSkill(ref a, 274);
             }
@@ -6028,11 +6028,11 @@ namespace NocturneInsaniax
                 }
                 else if (actionTrackers[a.work.id].currentTurnActionCount == 1 && random.Next(2) == 0)
                 {
-                    if (AllyPartyBuffed(1) && random.Next(2) == 0)
+                    if (AllyPartyBuffed2(1) && random.Next(2) == 0)
                     {
                         UseSkill(ref a, 57); return;
                     }
-                    else if (EnemyPartyDebuffed(1))
+                    else if (EnemyPartyDebuffed2(1))
                     {
                         UseSkill(ref a, 77); return;
                     }
@@ -6160,7 +6160,7 @@ namespace NocturneInsaniax
                     UseSkill(ref a, 422); return;
                 }
                 else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(57) &&
-                    (a.data.playerpcnt == 1 && AllyPartyBuffed(3)) || (a.data.playerpcnt > 1 && AllyPartyBuffed(2)))
+                    (a.data.playerpcnt == 1 && AllyPartyBuffed2(3)) || (a.data.playerpcnt > 1 && AllyPartyBuffed2(2)))
                 {
                     UseSkill(ref a, 57);
                 }
@@ -6202,7 +6202,7 @@ namespace NocturneInsaniax
                     UseSummonSkill(ref a, 226, 356);
                 }
                 else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(57) && 
-                    (a.data.playerpcnt == 1 && AllyPartyBuffed(3)) || (a.data.playerpcnt > 1 && AllyPartyBuffed(2)))
+                    (a.data.playerpcnt == 1 && AllyPartyBuffed2(3)) || (a.data.playerpcnt > 1 && AllyPartyBuffed2(2)))
                 {
                     UseSkill(ref a, 57);
                 }
@@ -6218,7 +6218,7 @@ namespace NocturneInsaniax
                 {
                     UseSummonSkill(ref a, 252, 356);
                 }
-                else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77) && EnemyPartyDebuffed(1) && random.Next(2) == 0)
+                else if (!actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77) && EnemyPartyDebuffed2(1) && random.Next(2) == 0)
                 {
                     UseSkill(ref a, 77);
                 }
@@ -6287,11 +6287,11 @@ namespace NocturneInsaniax
                     !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(57) &&
                     !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77))
                 {
-                    if (AllyPartyBuffed(1) && random.Next(2) == 0)
+                    if (AllyPartyBuffed2(1) && random.Next(2) == 0)
                     {
                         UseSkill(ref a, 57);
                     }
-                    else if (EnemyPartyDebuffed(1))
+                    else if (EnemyPartyDebuffed2(1))
                     {
                         UseSkill(ref a, 77);
                     }
@@ -6335,11 +6335,11 @@ namespace NocturneInsaniax
                     !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(57) &&
                     !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77))
                 {
-                    if (AllyPartyBuffed(1) && random.Next(2) == 0)
+                    if (AllyPartyBuffed2(1) && random.Next(2) == 0)
                     {
                         UseSkill(ref a, 57);
                     }
-                    else if (EnemyPartyDebuffed(1))
+                    else if (EnemyPartyDebuffed2(1))
                     {
                         UseSkill(ref a, 77);
                     }
@@ -6395,11 +6395,11 @@ namespace NocturneInsaniax
                     !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(57) &&
                     !actionTrackers[a.work.id].skillsUsedThisTurn.Contains(77))
                 {
-                    if (AllyPartyBuffed(1) && random.Next(2) == 0)
+                    if (AllyPartyBuffed2(1) && random.Next(2) == 0)
                     {
                         UseSkill(ref a, 57);
                     }
-                    else if (EnemyPartyDebuffed(1))
+                    else if (EnemyPartyDebuffed2(1))
                     {
                         UseSkill(ref a, 77);
                     }
@@ -6531,7 +6531,7 @@ namespace NocturneInsaniax
                 if (!actionTrackers.ContainsKey(361))
                     actionTrackers.Add(361, new ActionTracker());
             }
-            else if (AllyPartyBuffed(1) && random.Next(3) == 0)
+            else if (AllyPartyBuffed2(1) && random.Next(3) == 0)
                 UseSkill(ref a, 57);
             else if (a.work.nowindex == 27)
                 UseSkill(ref a, 26);
@@ -6574,7 +6574,7 @@ namespace NocturneInsaniax
                 {
                     UseSkill(ref a, 282);
                 }
-                else if (EnemyPartyDebuffed(1) && random.Next(4) == 0)
+                else if (EnemyPartyDebuffed2(1) && random.Next(4) == 0)
                 {
                     UseSkill(ref a, 77);
                 }
@@ -6599,7 +6599,7 @@ namespace NocturneInsaniax
                 {
                     UseSkill(ref a, 284);
                 }
-                else if (actionTrackers[a.work.id].currentTurnActionCount >= 3 && EnemyPartyDebuffed(1) && random.Next(4) == 0)
+                else if (actionTrackers[a.work.id].currentTurnActionCount >= 3 && EnemyPartyDebuffed2(1) && random.Next(4) == 0)
                 {
                     UseSkill(ref a, 77);
                 }
@@ -6658,7 +6658,7 @@ namespace NocturneInsaniax
                 {
                     UseSkill(ref a, 67);
                 }
-                else if (AllyPartyBuffed(1) && random.Next(3) == 0)
+                else if (AllyPartyBuffed2(1) && random.Next(3) == 0)
                 {
                     UseSkill(ref a, 57);
                 }
@@ -6683,7 +6683,7 @@ namespace NocturneInsaniax
                 {
                     UseSkill(ref a, 67);
                 }
-                else if (AllyPartyBuffed(1) && random.Next(4) == 0)
+                else if (AllyPartyBuffed2(1) && random.Next(4) == 0)
                 {
                     UseSkill(ref a, 57);
                 }
@@ -6959,6 +6959,20 @@ namespace NocturneInsaniax
             return result;
         }
 
+        private static bool AllyPartyBuffed2(ushort threshold)
+        {
+            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].flag != 0);
+            foreach (var unit in allyParty)
+            {
+                for (int i = 4; i <= 8; i++)
+                {
+                    if (unit.count[i] >= threshold)
+                        return true;
+                }
+            }
+            return false;
+        }
+
         private static bool AllyPartyDebuffed(ushort threshold)
         {
             var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].flag != 0);
@@ -6976,6 +6990,20 @@ namespace NocturneInsaniax
                 }
             }
             return result;
+        }
+
+        private static bool AllyPartyDebuffed2(ushort threshold)
+        {
+            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].flag != 0);
+            foreach (var unit in allyParty)
+            {
+                for (int i = 4; i <= 8; i++)
+                {
+                    if (unit.count[i] <= threshold * -1)
+                        return true;
+                }
+            }
+            return false;
         }
 
         private static bool AllyPartyDebuffed(ushort threshold, int type)
@@ -7008,6 +7036,20 @@ namespace NocturneInsaniax
             return result;
         }
 
+        private static bool EnemyPartyBuffed2(ushort threshold)
+        {
+            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex >= 4 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].flag != 0);
+            foreach (var unit in allyParty)
+            {
+                for (int i = 4; i <= 8; i++)
+                {
+                    if (unit.count[i] >= threshold)
+                        return true;
+                }
+            }
+            return false;
+        }
+
         private static bool EnemyPartyBuffed(ushort threshold, int type)
         {
             var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex >= 4 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].flag != 0);
@@ -7036,6 +7078,20 @@ namespace NocturneInsaniax
                 }
             }
             return result;
+        }
+
+        private static bool EnemyPartyDebuffed2(ushort threshold)
+        {
+            var allyParty = nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex >= 4 && dds3GlobalWork.DDS3_GBWK.unitwork[x.partyindex].flag != 0);
+            foreach (var unit in allyParty)
+            {
+                for (int i = 4; i <= 8; i++)
+                {
+                    if (unit.count[i] <= threshold * -1)
+                        return true;
+                }
+            }
+            return false;
         }
 
         private static bool AllyPartyStatus(ushort status)
