@@ -43,7 +43,7 @@ namespace NocturneInsaniax
                         __result = 131072 + aisyoRatio;
                     else if (datCalc.datCheckSyojiSkill(work, 376) != 0 && __result != 131072)
                         __result = 262144;
-                    else if (datCalc.datCheckSyojiSkill(work, 375) != 0 && __result <= 65536)
+                    else if (datCalc.datCheckSyojiSkill(work, 375) != 0 && (__result <= 65536 || __result >= 2147483748))
                         __result = 65536;
                     else if (datCalc.datCheckSyojiSkill(work, 374) != 0 && __result == 50)
                         __result = 25;

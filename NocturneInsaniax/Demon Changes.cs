@@ -10979,7 +10979,7 @@ namespace NocturneInsaniax
             // Skills
             tblSkill.fclSkillTbl[id].Event[2].Param = 400; // Trade
             tblSkill.fclSkillTbl[id].Event[3].Param = 213; // Sonic Wave
-            tblSkill.fclSkillTbl[id].Event[3].Param = 65; // Sukukaja
+            tblSkill.fclSkillTbl[id].Event[4].Param = 65; // Sukukaja
             tblSkill.fclSkillTbl[id].Event[6].Param = 447; // Millenia Curse
 
             // Enemy Stats
