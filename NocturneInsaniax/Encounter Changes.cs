@@ -131,6 +131,37 @@ namespace NocturneInsaniax
             }
         }
 
+        // Fixes the Specter Tombstone - credit to Allania
+        [HarmonyPatch(typeof(datCalc), "datBossRashGetRec")]
+        public static class Patch_GetRec
+        {
+            static void Prefix(ref int eid, int type)
+            {
+                if (eid == 20)
+                    eid = 267;
+            }
+        }
+
+        [HarmonyPatch(typeof(datCalc), "datBossRashChk")]
+        public static class Patch_Chk
+        {
+            static void Prefix(ref int eid)
+            {
+                if (eid == 20)
+                    eid = 267;
+            }
+        }
+
+        [HarmonyPatch(typeof(datCalc), "datBossRashUpdRec")]
+        public static class Patch_UpdRec
+        {
+            static void Prefix(ref int eid, ref int press)
+            {
+                if (eid == 20)
+                    eid = 267;
+            }
+        }
+
         //[HarmonyPatch(typeof(nbNegoProcess), nameof(nbNegoProcess.nbInitNegoProcess))]
         //private class nbInitNegoProcessPatch
         //{
