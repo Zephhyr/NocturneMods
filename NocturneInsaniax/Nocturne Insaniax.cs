@@ -16,6 +16,7 @@ using UnityEngine;
 using System.Linq;
 using Il2Cppeffect_H;
 using Il2Cppmodel_H;
+using Il2CppSteamworks;
 
 [assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax", "1.1.4", "Zephhyr, Matthiew Purple, Bud, X Kirby, Margothic, Scribe, Snappy, Mason White")]
 [assembly: MelonGame("アトラス", "smt3hd")]
@@ -39,6 +40,8 @@ namespace NocturneInsaniax
         //public static MelonPreferences_Entry<bool> GuaranteeNKEs;
         //public static MelonPreferences_Entry<bool> GuaranteeFiendNKEs;
 
+        public static string GameLanguage;
+        public static bool JapaneseLanguage => GameLanguage == "japanese";
 
         public override void OnInitializeMelon()
         {
@@ -118,6 +121,8 @@ namespace NocturneInsaniax
             //        MelonLogger.Msg("type: " + newSobed[i].pbdata[j].type);
             //    }
             //}
+
+            GameLanguage = SteamApps.GetCurrentGameLanguage();
 
             // Apply Config
             InsaniaxSettings = MelonPreferences.CreateCategory("INSANIAX SETTINGS");

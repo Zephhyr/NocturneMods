@@ -50,7 +50,7 @@ namespace NocturneInsaniax
                                 ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 74)) ||
                                 (actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 74)))))
                     {
-                        __result = "Kept Waiting";
+                        __result = JapaneseLanguage ? "待たせたな" : "Kept Waiting";
                         return false;
                     }
                 } catch { }
@@ -59,173 +59,174 @@ namespace NocturneInsaniax
                 switch (id)
                 {            
                     // Vanilla Skills
-                    case 60: __result = "Lullaby"; return false;
-                    case 80: __result = "Muscle Drink"; return false;
-                    case 81: __result = "Life Stone"; return false;
-                    case 82: __result = "Chakra Drop"; return false;
-                    case 83: __result = "Chakra Pot"; return false;
-                    case 84: __result = "Great Chakra"; return false;
-                    case 85: __result = "Soma Droplet"; return false;
-                    case 86: __result = "Soma"; return false;
-                    case 90: __result = "Poison Arrow"; return false;
-                    case 92: __result = "Bead of Life"; return false;
-                    case 94: __result = "Medicine"; return false;
-                    case 113: __result = "Venom Needle"; return false;
-                    case 133: __result = "Javelin Rain"; return false;
-                    case 143: __result = "Xeros Beat"; return false;
-                    case 169: __result = "Decimate"; return false;
-                    case 170: __result = "Decimate"; return false;
-                    case 172: __result = "Sear"; return false;
-                    case 173: __result = "Sear"; return false;
-                    case 174: __result = "Crush"; return false;
-                    case 175: __result = "Repulse"; return false;
-                    case 179: __result = "Trisagion"; return false;
-                    case 202: __result = "Toxic Spray"; return false;
-                    case 210: __result = "Dormina"; return false;
-                    case 219: __result = "Rage"; return false;
-                    case 220: __result = "Psycho Rage"; return false;
-                    case 243: __result = "Hell's Forfeit"; return false;
-                    case 252: __result = "Foul Gathering"; return false;
-                    case 254: __result = "Omnipotence"; return false;
-                    case 270: __result = "Dark Matter"; return false;
-                    case 285: __result = "Babylon Goblet"; return false;
-                    case 286: __result = "Death Lust"; return false;
-                    case 413: __result = "Silver Tongue"; return false;
-                    case 415: __result = "Entice"; return false;
+                    case 60: __result = JapaneseLanguage ? "子守唄" : "Lullaby"; return false;
+                    case 80: __result = JapaneseLanguage ? "マッスルドリンコ" : "Muscle Drink"; return false;
+                    case 81: __result = JapaneseLanguage ? "魔石" : "Life Stone"; return false;
+                    case 82: __result = JapaneseLanguage ? "チャクラドロップ" : "Chakra Drop"; return false;
+                    case 83: __result = JapaneseLanguage ? "チャクラポット" : "Chakra Pot"; return false;
+                    case 84: __result = JapaneseLanguage ? "グレイトチャクラ" : "Great Chakra"; return false;
+                    case 85: __result = JapaneseLanguage ? "ソーマの雫" : "Soma Droplet"; return false;
+                    case 86: __result = JapaneseLanguage ? "ソーマ" : "Soma"; return false;
+                    case 90: __result = JapaneseLanguage ? "毒矢" : "Poison Arrow"; return false;
+                    case 92: __result = JapaneseLanguage ? "生玉" : "Bead of Life"; return false;
+                    case 94: __result = JapaneseLanguage ? "傷薬" : "Medicine"; return false;
+                    case 113: __result = JapaneseLanguage ? "邪毒針" : "Venom Needle"; return false;
+                    case 133: __result = JapaneseLanguage ? "ジャベリンレイン" : "Javelin Rain"; return false;
+                    case 143: __result = JapaneseLanguage ? "ゼロス・ビート" : "Xeros Beat"; return false;
+                    case 147: __result = JapaneseLanguage ? "至高の魔弾・改" : "Freikugel"; return false;
+                    case 169: __result = JapaneseLanguage ? "デシメイト" : "Decimate"; return false;
+                    case 170: __result = JapaneseLanguage ? "デシメイト" : "Decimate"; return false;
+                    case 172: __result = JapaneseLanguage ? "焼け付く" : "Sear"; return false;
+                    case 173: __result = JapaneseLanguage ? "焼け付く" : "Sear"; return false;
+                    case 174: __result = JapaneseLanguage ? "たたきつぶし" : "Crush"; return false;
+                    case 175: __result = JapaneseLanguage ? "撃退する" : "Repulse"; return false;
+                    case 179: __result = JapaneseLanguage ? "トリスアギオン" : "Trisagion"; return false;
+                    case 202: __result = JapaneseLanguage ? "毒の液" : "Toxic Spray"; return false;
+                    case 210: __result = JapaneseLanguage ? "ドルミナー" : "Dormina"; return false;
+                    case 219: __result = JapaneseLanguage ? "バイオレンス" : "Rage"; return false;
+                    case 220: __result = JapaneseLanguage ? "ギガバイオレンス" : "Psycho Rage"; return false;
+                    case 243: __result = JapaneseLanguage ? "地獄の代償" : "Hell's Forfeit"; return false;
+                    case 252: __result = JapaneseLanguage ? "不穏群れ集い" : "Foul Gathering"; return false;
+                    case 254: __result = JapaneseLanguage ? "的全能" : "Omnipotence"; return false;
+                    case 270: __result = JapaneseLanguage ? "ダークマター" : "Dark Matter"; return false;
+                    case 285: __result = JapaneseLanguage ? "バビロンの杯" : "Babylon Goblet"; return false;
+                    case 286: __result = JapaneseLanguage ? "女帝のリビドー" : "Death Lust"; return false;
+                    case 413: __result = JapaneseLanguage ? "雄弁な演説" : "Silver Tongue"; return false;
+                    case 415: __result = JapaneseLanguage ? "惹き付ける" : "Entice"; return false;
 
                         // High King = "King of Kings"
                         // Root of Evil = "In the beginning, there was darkness"
 
                     // New Skills
-                    case 128: __result = "Rapid Needle"; return false;
-                    case 129: __result = "Tathlum Shot"; return false;
-                    case 130: __result = "Blast Arrow"; return false;
-                    case 134: __result = "Grand Tack"; return false;
-                    case 135: __result = "Heaven's Bow"; return false;
-                    case 141: __result = "Riot Gun"; return false;
-                    case 142: __result = "Silencing Bellow"; return false;
-                    case 148: __result = "Renewal"; return false;
-                    case 149: __result = "Spirit Well"; return false;
-                    case 150: __result = "Qigong"; return false;
-                    case 151: __result = "Renewal & Spirit Well"; return false;
-                    case 167: __result = "Double Attack"; return false;
-                    case 188: __result = "Punishment"; return false;
-                    case 189: __result = "Judgement Light"; return false;
+                    case 128: __result = JapaneseLanguage ? "ラピッドニードル" : "Rapid Needle"; return false;
+                    case 129: __result = JapaneseLanguage ? "タスラムショット" : "Tathlum Shot"; return false;
+                    case 130: __result = JapaneseLanguage ? "ブラストアロー" : "Blast Arrow"; return false;
+                    case 134: __result = JapaneseLanguage ? "グランドタック" : "Grand Tack"; return false;
+                    case 135: __result = JapaneseLanguage ? "天扇弓" : "Heaven's Bow"; return false;
+                    case 141: __result = JapaneseLanguage ? "至高の魔弾" : "Riot Gun"; return false;
+                    case 142: __result = JapaneseLanguage ? "静寂の轟き" : "Silencing Bellow"; return false;
+                    case 148: __result = JapaneseLanguage ? "治癒促進" : "Renewal"; return false;
+                    case 149: __result = JapaneseLanguage ? "小気功" : "Spirit Well"; return false;
+                    case 150: __result = JapaneseLanguage ? "気功" : "Qigong"; return false;
+                    case 151: __result = JapaneseLanguage ? "治癒促進と小気功" : "Renewal & Spirit Well"; return false;
+                    case 167: __result = JapaneseLanguage ? "二連撃" : "Double Attack"; return false;
+                    case 188: __result = JapaneseLanguage ? "天罰" : "Punishment"; return false;
+                    case 189: __result = JapaneseLanguage ? "審判の光" : "Judgement Light"; return false;
 
-                    case 308: __result = "Double Attack"; return false;
-                    case 360: __result = "Never Yield"; return false;      
-                    case 362: __result = "Phys Boost"; return false;
-                    case 363: __result = "Element Boost"; return false;
-                    case 364: __result = "Anti-Elements"; return false;
-                    case 365: __result = "Anti-Ailments"; return false;
-                    case 366: __result = "Abyssal Mask"; return false;
-                    case 367: __result = "Knowledge of Tools"; return false;
-                    case 368: __result = "Renewal"; return false;
-                    case 369: __result = "Spirit Well"; return false;
-                    case 370: __result = "Qigong"; return false;
-                    case 371: __result = "Arms Master"; return false;
-                    case 372: __result = "Firm Stance"; return false;
-                    case 373: __result = "Shot Boost"; return false;
-                    case 374: __result = "Anti-Shot"; return false;
-                    case 375: __result = "Null: Shot"; return false;
-                    case 376: __result = "Shot Drain"; return false;
-                    case 377: __result = "Shot Repel"; return false;
-                    case 378: __result = "Solitary Drift"; return false;
-                    case 379: __result = "Pierce"; return false;
+                    case 308: __result = JapaneseLanguage ? "二連撃" : "Double Attack"; return false;
+                    case 360: __result = JapaneseLanguage ? "ネバーギブアップ" : "Never Yield"; return false;      
+                    case 362: __result = JapaneseLanguage ? "物理ブースタ" : "Phys Boost"; return false;
+                    case 363: __result = JapaneseLanguage ? "属性ブースタ" : "Element Boost"; return false;
+                    case 364: __result = JapaneseLanguage ? "全属性耐性" : "Anti-Elements"; return false;
+                    case 365: __result = JapaneseLanguage ? "全異常耐性" : "Anti-Ailments"; return false;
+                    case 366: __result = JapaneseLanguage ? "奈落のマスク" : "Abyssal Mask"; return false;
+                    case 367: __result = JapaneseLanguage ? "道具の知識" : "Knowledge of Tools"; return false;
+                    case 368: __result = JapaneseLanguage ? "治癒促進" : "Renewal"; return false;
+                    case 369: __result = JapaneseLanguage ? "小気功" : "Spirit Well"; return false;
+                    case 370: __result = JapaneseLanguage ? "気功" : "Qigong"; return false;
+                    case 371: __result = JapaneseLanguage ? "武道の心得" : "Arms Master"; return false;
+                    case 372: __result = JapaneseLanguage ? "仁王立ち" : "Firm Stance"; return false;
+                    case 373: __result = JapaneseLanguage ? "銃撃ブースタ" : "Shot Boost"; return false;
+                    case 374: __result = JapaneseLanguage ? "銃撃耐性" : "Anti-Shot"; return false;
+                    case 375: __result = JapaneseLanguage ? "銃撃無効" : "Null: Shot"; return false;
+                    case 376: __result = JapaneseLanguage ? "銃撃吸収" : "Shot Drain"; return false;
+                    case 377: __result = JapaneseLanguage ? "銃撃反射" : "Shot Repel"; return false;
+                    case 378: __result = JapaneseLanguage ? "孤高の放漂流" : "Solitary Drift"; return false;
+                    case 379: __result = JapaneseLanguage ? "貫通" : "Pierce"; return false;
 
-                    case 403: __result = "Estocada"; return false;
-                    case 404: __result = "Nation Founder"; return false;
-                    case 405: __result = "Retributive Zeal"; return false;
+                    case 403: __result = JapaneseLanguage ? "エストカーダ" : "Estocada"; return false;
+                    case 404: __result = JapaneseLanguage ? "国造り" : "Nation Founder"; return false;
+                    case 405: __result = JapaneseLanguage ? "報復の熱意" : "Retributive Zeal"; return false;
                     case 406: __result = switchOutSkillName2; return false;
                     case 407: __result = switchOutSkillName; return false;
                     case 408: __result = postSummonSkillName; return false;
-                    case 416: __result = "Ramayana"; return false;
-                    case 417: __result = "Evil Mirror"; return false;
+                    case 416: __result = JapaneseLanguage ? "ラーマーヤナ" : "Ramayana"; return false;
+                    case 417: __result = JapaneseLanguage ? "邪悪な鏡" : "Evil Mirror"; return false;
 
-                    case 422: __result = "Beast Eye"; return false;      
-                    case 423: __result = "Dragon Eye"; return false;     
-                    case 424: __result = "Concentrate"; return false;
-                    case 425: __result = "Impaler's Animus"; return false;
-                    case 426: __result = "Sakura Rage"; return false;
-                    case 427: __result = "Fang Breaker"; return false;
-                    case 428: __result = "Defense Kuzushi"; return false;
-                    case 429: __result = "Primal Force"; return false;
-                    case 430: __result = "Chi Blast"; return false;
-                    case 431: __result = "Revelation"; return false;
-                    case 432: __result = "Gate of Hell"; return false;
-                    case 433: __result = "Akashic Arts"; return false;
-                    case 434: __result = "Bloodbath"; return false;
-                    case 435: __result = "Scald"; return false;
-                    case 436: __result = "Ragnarok"; return false;
-                    case 437: __result = "Refrigerate"; return false;
-                    case 438: __result = "Cocytus"; return false;
-                    case 439: __result = "Fimbulvetr"; return false;
-                    case 440: __result = "Jolt"; return false;
-                    case 441: __result = "Thunder Gods"; return false;
-                    case 442: __result = "Thunder Reign"; return false;
-                    case 443: __result = "Dervish"; return false;
-                    case 444: __result = "Heavenly Cyclone"; return false;
-                    case 445: __result = "Vayavya"; return false;
-                    case 446: __result = "Damnation"; return false;
-                    case 447: __result = "Millennia Curse"; return false;
-                    case 448: __result = "Poison Volley"; return false;
-                    case 449: __result = "Poison Salvo"; return false;
-                    case 450: __result = "Neural Shock"; return false;
-                    case 451: __result = "Overload"; return false;
-                    case 452: __result = "Pulinpaon"; return false;      
-                    case 453: __result = "Antichthon"; return false;      
-                    case 454: __result = "Last Word"; return false;
-                    case 455: __result = "Soul Drain"; return false;
-                    case 456: __result = "Amrita"; return false;
-                    case 457: __result = "Diamrita"; return false;
-                    case 458: __result = "Heat Riser"; return false;
-                    case 459: __result = "Luster Candy"; return false;
-                    case 460: __result = "Silent Prayer"; return false;
-                    case 461: __result = "Storm Gale"; return false;
-                    case 462: __result = "Winged Fury"; return false;
-                    case 463: __result = "Jack Bufu"; return false;
-                    case 464: __result = "Humble Blessing"; return false;
-                    case 465: __result = "Rend"; return false;
-                    case 466: __result = "Jack Bufudyne"; return false;
-                    case 467: __result = "Divine Light"; return false;
-                    case 468: __result = "Niflheim"; return false;
-                    case 469: __result = "Mjolnir"; return false;
-                    case 470: __result = "Tandava"; return false;
-                    case 471: __result = "Chaturbhuja"; return false;
-                    case 472: __result = "Kusanagi"; return false;
-                    case 473: __result = "Jack Agilao"; return false;
-                    case 474: __result = "Gae Bolg"; return false;
-                    case 475: __result = "Gungnir"; return false;
-                    case 476: __result = "Smite"; return false;
-                    case 477: __result = "Makai Thunder"; return false;
-                    case 478: __result = "Scintilla"; return false;
-                    case 479: __result = "Liberation"; return false;
-                    case 480: __result = "Acrobat Kick"; return false;
-                    case 481: __result = "Oni-Jackura"; return false;
+                    case 422: __result = JapaneseLanguage ? "獣の眼光" : "Beast Eye"; return false;      
+                    case 423: __result = JapaneseLanguage ? "龍の眼光" : "Dragon Eye"; return false;     
+                    case 424: __result = JapaneseLanguage ? "コンセントレイト" : "Concentrate"; return false;
+                    case 425: __result = JapaneseLanguage ? "貫く闘気" : "Impaler's Animus"; return false;
+                    case 426: __result = JapaneseLanguage ? "桜花閃乱" : "Sakura Rage"; return false;
+                    case 427: __result = JapaneseLanguage ? "牙折り" : "Fang Breaker"; return false;
+                    case 428: __result = JapaneseLanguage ? "マモリクズシ" : "Defense Kuzushi"; return false;
+                    case 429: __result = JapaneseLanguage ? "イノセントタック" : "Primal Force"; return false;
+                    case 430: __result = JapaneseLanguage ? "気功破" : "Chi Blast"; return false;
+                    case 431: __result = JapaneseLanguage ? "黙示録" : "Revelation"; return false;
+                    case 432: __result = JapaneseLanguage ? "冥界の門" : "Gate of Hell"; return false;
+                    case 433: __result = JapaneseLanguage ? "アカシャアーツ" : "Akashic Arts"; return false;
+                    case 434: __result = JapaneseLanguage ? "血の祭壇" : "Bloodbath"; return false;
+                    case 435: __result = JapaneseLanguage ? "熱湯撃" : "Scald"; return false;
+                    case 436: __result = JapaneseLanguage ? "ラグナロク" : "Ragnarok"; return false;
+                    case 437: __result = JapaneseLanguage ? "リフリジレイト" : "Refrigerate"; return false;
+                    case 438: __result = JapaneseLanguage ? "コキュートス" : "Cocytus"; return false;
+                    case 439: __result = JapaneseLanguage ? "フィムブルヴェト" : "Fimbulvetr"; return false;
+                    case 440: __result = JapaneseLanguage ? "感電" : "Jolt"; return false;
+                    case 441: __result = JapaneseLanguage ? "八色雷公" : "Thunder Gods"; return false;
+                    case 442: __result = JapaneseLanguage ? "真理の雷" : "Thunder Reign"; return false;
+                    case 443: __result = JapaneseLanguage ? "デルヴィッシュ" : "Dervish"; return false;
+                    case 444: __result = JapaneseLanguage ? "天の旋風" : "Heavenly Cyclone"; return false;
+                    case 445: __result = JapaneseLanguage ? "ヴァーヤヴィヤ" : "Vayavya"; return false;
+                    case 446: __result = JapaneseLanguage ? "ダムネイション" : "Damnation"; return false;
+                    case 447: __result = JapaneseLanguage ? "千年の呪怨" : "Millennia Curse"; return false;
+                    case 448: __result = JapaneseLanguage ? "毒の斉射" : "Poison Volley"; return false;
+                    case 449: __result = JapaneseLanguage ? "毒の集中砲撃" : "Poison Salvo"; return false;
+                    case 450: __result = JapaneseLanguage ? "ニューロクランチ" : "Neural Shock"; return false;
+                    case 451: __result = JapaneseLanguage ? "感覚過負荷" : "Overload"; return false;
+                    case 452: __result = JapaneseLanguage ? "プリンパオン" : "Pulinpaon"; return false;      
+                    case 453: __result = JapaneseLanguage ? "アンティクトン" : "Antichthon"; return false;      
+                    case 454: __result = JapaneseLanguage ? "ロストワード" : "Last Word"; return false;
+                    case 455: __result = JapaneseLanguage ? "吸魂" : "Soul Drain"; return false;
+                    case 456: __result = JapaneseLanguage ? "アムリタ" : "Amrita"; return false;
+                    case 457: __result = JapaneseLanguage ? "ディアムリタ" : "Diamrita"; return false;
+                    case 458: __result = JapaneseLanguage ? "ヒートライザ" : "Heat Riser"; return false;
+                    case 459: __result = JapaneseLanguage ? "ラスタキャンディ" : "Luster Candy"; return false;
+                    case 460: __result = JapaneseLanguage ? "静寂の祈り" : "Silent Prayer"; return false;
+                    case 461: __result = JapaneseLanguage ? "強風" : "Storm Gale"; return false;
+                    case 462: __result = JapaneseLanguage ? "天羽の舞" : "Winged Fury"; return false;
+                    case 463: __result = JapaneseLanguage ? "ジャックブフ" : "Jack Bufu"; return false;
+                    case 464: __result = JapaneseLanguage ? "祝福" : "Humble Blessing"; return false;
+                    case 465: __result = JapaneseLanguage ? "獣牙断" : "Rend"; return false;
+                    case 466: __result = JapaneseLanguage ? "ジャックブフダイン" : "Jack Bufudyne"; return false;
+                    case 467: __result = JapaneseLanguage ? "破邪の光刃" : "Divine Light"; return false;
+                    case 468: __result = JapaneseLanguage ? "ニブルヘイム" : "Niflheim"; return false;
+                    case 469: __result = JapaneseLanguage ? "ミョルニル" : "Mjolnir"; return false;
+                    case 470: __result = JapaneseLanguage ? "ターンダヴァ" : "Tandava"; return false;
+                    case 471: __result = JapaneseLanguage ? "チャトゥルブジャ" : "Chaturbhuja"; return false;
+                    case 472: __result = JapaneseLanguage ? "草薙剣" : "Kusanagi"; return false;
+                    case 473: __result = JapaneseLanguage ? "ジャックアギラオ" : "Jack Agilao"; return false;
+                    case 474: __result = JapaneseLanguage ? "ゲイボルグ" : "Gae Bolg"; return false;
+                    case 475: __result = JapaneseLanguage ? "グングニル" : "Gungnir"; return false;
+                    case 476: __result = JapaneseLanguage ? "スマイト" : "Smite"; return false;
+                    case 477: __result = JapaneseLanguage ? "魔界の雷" : "Makai Thunder"; return false;
+                    case 478: __result = JapaneseLanguage ? "忘却の闇" : "Scintilla"; return false;
+                    case 479: __result = JapaneseLanguage ? "心を自由に" : "Liberation"; return false;
+                    case 480: __result = JapaneseLanguage ? "とんぼ蹴り" : "Acrobat Kick"; return false;
+                    case 481: __result = JapaneseLanguage ? "鬼ジャックラ" : "Oni-Jackura"; return false;
 
-                    case 489: __result = "Pain"; return false;
-                    case 490: __result = "Spiteful Force"; return false;
-                    case 491: __result = "Phlegethon"; return false;
-                    case 492: __result = "Judecca Tomb"; return false;
-                    case 493: __result = "Weeping Heaven"; return false;
-                    case 494: __result = "Carnal Winds"; return false;
-                    case 495: __result = "Verdict"; return false;
-                    case 496: __result = "Devil Regeneration"; return false;
-                    case 497: __result = "Devil Trigger"; return false;
-                    case 498: __result = "Scorn"; return false;
-                    case 499: __result = "Crush"; return false;
-                    case 500: __result = "Rampage"; return false;
-                    case 501: __result = "Inferno of God"; return false;
-                    case 502: __result = "Hailstorm of God"; return false;
-                    case 503: __result = "Lightning of God"; return false;
-                    case 504: __result = "Tornado of God"; return false;
-                    case 505: __result = "Planned Chaos"; return false;
-                    case 506: __result = "Mouth of God"; return false;
-                    case 507: __result = "Black Hole"; return false;
-                    case 508: __result = "Supernova"; return false;
-                    case 509: __result = "Infinite Power"; return false;
-                    case 510: __result = "Unending Curse"; return false;
-                    case 511: __result = "Divine Harmony"; return false;
+                    case 489: __result = JapaneseLanguage ? "アゲンストペイン" : "Pain"; return false;
+                    case 490: __result = JapaneseLanguage ? "妬みの暴圧" : "Spiteful Force"; return false;
+                    case 491: __result = JapaneseLanguage ? "プレゲトン" : "Phlegethon"; return false;
+                    case 492: __result = JapaneseLanguage ? "ジュデッカの墓" : "Judecca Tomb"; return false;
+                    case 493: __result = JapaneseLanguage ? "涙する天" : "Weeping Heaven"; return false;
+                    case 494: __result = JapaneseLanguage ? "肉欲の風" : "Carnal Winds"; return false;
+                    case 495: __result = JapaneseLanguage ? "評決" : "Verdict"; return false;
+                    case 496: __result = JapaneseLanguage ? "魔人の自動回復" : "Devil Regeneration"; return false;
+                    case 497: __result = JapaneseLanguage ? "デビルトリガー" : "Devil Trigger"; return false;
+                    case 498: __result = JapaneseLanguage ? "憤怒" : "Scorn"; return false;
+                    case 499: __result = JapaneseLanguage ? "たたきつぶし" : "Crush"; return false;
+                    case 500: __result = JapaneseLanguage ? "暴れまくり" : "Rampage"; return false;
+                    case 501: __result = JapaneseLanguage ? "神の業火" : "Inferno of God"; return false;
+                    case 502: __result = JapaneseLanguage ? "神の雹撃" : "Hailstorm of God"; return false;
+                    case 503: __result = JapaneseLanguage ? "神の雷光" : "Lightning of God"; return false;
+                    case 504: __result = JapaneseLanguage ? "神の竜巻" : "Tornado of God"; return false;
+                    case 505: __result = JapaneseLanguage ? "創られし災禍" : "Planned Chaos"; return false;
+                    case 506: __result = JapaneseLanguage ? "ゴッドボイス" : "Mouth of God"; return false;
+                    case 507: __result = JapaneseLanguage ? "ブラックホール" : "Black Hole"; return false;
+                    case 508: __result = JapaneseLanguage ? "スーパーノヴァ" : "Supernova"; return false;
+                    case 509: __result = JapaneseLanguage ? "無限大の力" : "Infinite Power"; return false;
+                    case 510: __result = JapaneseLanguage ? "永遠の呪い" : "Unending Curse"; return false;
+                    case 511: __result = JapaneseLanguage ? "神の調和" : "Divine Harmony"; return false;
                     default: return true;
                 }
             }
@@ -239,245 +240,480 @@ namespace NocturneInsaniax
                 switch (id)
                 {
                     // Vanilla Skills
-                    case 1: __result = "Low Fire damage to one foe. \nPow: 30, Acc: 100%"; return false; // Agi
-                    case 2: __result = "Medium Fire damage to one foe. \nPow: 45, Acc: 100%"; return false; // Agilao
-                    case 3: __result = "High Fire damage to one foe. \nPow: 60, Acc: 100%"; return false; // Agidyne
-                    case 4: __result = "Low Fire damage to all foes. \nPow: 24, Acc: 100%"; return false; // Maragi
-                    case 5: __result = "Medium Fire damage to all foes. \nPow: 36, Acc: 100%"; return false; // Maragion
-                    case 6: __result = "High Fire damage to all foes. \nPow: 48, Acc: 100%"; return false; // Maragidyne
-                    case 7: __result = "Low Ice damage to one foe. \nPow: 27, Acc: 100%, Freeze: 20%"; return false; // Bufu
-                    case 8: __result = "Medium Ice damage to one foe. \nPow: 39, Acc: 100%, Freeze: 24%"; return false; // Bufula
-                    case 9: __result = "High Ice damage to one foe. \nPow: 51, Acc: 100%, Freeze: 28%"; return false; // Bufudyne
-                    case 10: __result = "Low Ice damage to all foes. \nPow: 20, Acc: 100%, Freeze: 11%"; return false; // Mabufu
-                    case 11: __result = "Medium Ice damage to all foes. \nPow: 30, Acc: 100%, Freeze: 14%"; return false; // Mabufula
-                    case 12: __result = "High Ice damage to all foes. \nPow: 40, Acc: 100%, Freeze: 17%"; return false; // Mabufudyne
-                    case 13: __result = "Low Elec damage to one foe. \nPow: 27, Acc: 100%, Shock: 22%"; return false; // Zio
-                    case 14: __result = "Medium Elec damage to one foe. \nPow: 39, Acc: 100%, Shock: 26%"; return false; // Zionga
-                    case 15: __result = "High Elec damage to one foe. \nPow: 51, Acc: 100%, Shock: 30%"; return false; // Ziodyne
-                    case 16: __result = "Low Elec damage to all foes. \nPow: 20, Acc: 100%, Shock: 13%"; return false; // Mazio
-                    case 17: __result = "Medium Elec damage to all foes. \nPow: 30, Acc: 100%, Shock: 16%"; return false; // Mazionga
-                    case 18: __result = "High Elec damage to all foes. \nPow: 40, Acc: 100%, Shock: 19%"; return false; // Maziodyne
-                    case 19: __result = "Low Force damage to one foe. \nPow: 30, Acc: 100%"; return false; // Zan
-                    case 20: __result = "Medium Force damage to one foe. \nPow: 45, Acc: 100%"; return false; // Zanma
-                    case 21: __result = "High Force damage to one foe. \nPow: 60, Acc: 100%"; return false; // Zandyne
-                    case 22: __result = "Low Force damage to all foes. \nPow: 24, Acc: 100%"; return false; // Mazan
-                    case 23: __result = "Medium Force damage to all foes. \nPow: 36, Acc: 100%"; return false; // Mazanma
-                    case 24: __result = "High Force damage to all foes. \nPow: 48, Acc: 100%"; return false; // Mazandyne
-                    case 25: __result = "Medium Almighty damage to all foes. \nPow: 36, Acc: 100%"; return false; // Megido
-                    case 26: __result = "Med-High Almighty damage to all foes. \nPow: 42, Acc: 100%"; return false; // Megidola
-                    case 27: __result = "High Almighty damage to all foes. \nPow: 48, Acc: 100%"; return false; // Megidolaon
-                    case 28: __result = "Low Light damage to one foe. \nMay instakill when weak to Light. \nPow: 36, Acc: 100%, Fatal: 30%"; return false; // Hama
-                    case 29: __result = "Med-High Light damage to one foe. \nMay instakill when weak to Light. \nPow: 54, Acc: 100%, Fatal: 50%"; return false; // Hamaon
-                    case 30: __result = "Low Light damage to all foes. \nMay instakill when weak to Light. \nPow: 30, Acc: 100%, Fatal: 20%"; return false; // Mahama
-                    case 31: __result = "Med-High Light damage to all foes. \nMay instakill when weak to Light. \nPow: 42, Acc: 100%, Fatal: 30%"; return false; // Mahamaon
-                    case 32: __result = "Low Dark damage to one foe. \nMay instakill when weak to Dark. \nPow: 36, Acc: 100%, Fatal: 30%"; return false; // Mudo
-                    case 33: __result = "Med-High Dark damage to one foe. \nMay instakill when weak to Dark. \nPow: 54, Acc: 100%, Fatal: 50%"; return false; // Mudoon
-                    case 34: __result = "Low Dark damage to all foes. \nMay instakill when weak to Dark. \nPow: 30, Acc: 100%, Fatal: 20%"; return false; // Mamudo
-                    case 35: __result = "Med-High Dark damage to all foes. \nMay instakill when weak to Dark. \nPow: 42, Acc: 100%, Fatal: 30%"; return false; // Mamudoon
-                    case 36: __result = "Moderate HP recovery for one ally. \nPow: 10"; return false; // Dia
-                    case 37: __result = "Great HP recovery for one ally. \nPow: 20"; return false; // Diarama
-                    case 38: __result = "Full HP recovery for one ally."; return false; // Diarahan
-                    case 39: __result = "Moderate HP recovery for all allies. \nPow: 10"; return false; // Media
-                    case 40: __result = "Great HP recovery for all allies. \nPow: 20"; return false; // Mediarama
-                    case 41: __result = "Full HP recovery for all allies."; return false; // Mediarahan
+                    case 1: __result = JapaneseLanguage ? "敵1体に火炎属性の小ダメージ。\n威力: 30, 命中: 100%" : 
+                            "Low Fire damage to one foe. \nPow: 30, Acc: 100%"; return false; // Agi
+                    case 2: __result = JapaneseLanguage ? "敵1体に火炎属性の中ダメージ。\n威力: 45, 命中: 100%" : 
+                            "Medium Fire damage to one foe. \nPow: 45, Acc: 100%"; return false; // Agilao
+                    case 3: __result = JapaneseLanguage ? "敵1体に火炎属性の大ダメージ。\n威力: 60, 命中: 100%" : 
+                            "High Fire damage to one foe. \nPow: 60, Acc: 100%"; return false; // Agidyne
+                    case 4: __result = JapaneseLanguage ? "敵全体に火炎属性の小ダメージ。\n威力: 24, 命中: 100%" : 
+                            "Low Fire damage to all foes. \nPow: 24, Acc: 100%"; return false; // Maragi
+                    case 5: __result = JapaneseLanguage ? "敵全体に火炎属性の中ダメージ。\n威力: 36, 命中: 100%" : 
+                            "Medium Fire damage to all foes. \nPow: 36, Acc: 100%"; return false; // Maragion
+                    case 6: __result = JapaneseLanguage ? "敵全体に火炎属性の大ダメージ。\n威力: 48, 命中: 100%" : 
+                            "High Fire damage to all foes. \nPow: 48, Acc: 100%"; return false; // Maragidyne
+                    case 7: __result = JapaneseLanguage ? "敵1体に氷結属性の小ダメージ。\n威力: 27, 命中: 100%, 凍結: 20%" : 
+                            "Low Ice damage to one foe. \nPow: 27, Acc: 100%, Freeze: 20%"; return false; // Bufu
+                    case 8: __result = JapaneseLanguage ? "敵1体に氷結属性の中ダメージ。\n威力: 39, 命中: 100%, 凍結: 24%" : 
+                            "Medium Ice damage to one foe. \nPow: 39, Acc: 100%, Freeze: 24%"; return false; // Bufula
+                    case 9: __result = JapaneseLanguage ? "敵1体に氷結属性の大ダメージ。\n威力: 51, 命中: 100%, 凍結: 28%" : 
+                            "High Ice damage to one foe. \nPow: 51, Acc: 100%, Freeze: 28%"; return false; // Bufudyne
+                    case 10: __result = JapaneseLanguage ? "敵全体に氷結属性の小ダメージ。\n威力: 20, 命中: 100%, 凍結: 11%" : 
+                            "Low Ice damage to all foes. \nPow: 20, Acc: 100%, Freeze: 11%"; return false; // Mabufu
+                    case 11: __result = JapaneseLanguage ? "敵全体に氷結属性の中ダメージ。\n威力: 30, 命中: 100%, 凍結: 14%" : 
+                            "Medium Ice damage to all foes. \nPow: 30, Acc: 100%, Freeze: 14%"; return false; // Mabufula
+                    case 12: __result = JapaneseLanguage ? "敵全体に氷結属性の大ダメージ。\n威力: 40, 命中: 100%, 凍結: 17%" : 
+                            "High Ice damage to all foes. \nPow: 40, Acc: 100%, Freeze: 17%"; return false; // Mabufudyne
+                    case 13: __result = JapaneseLanguage ? "敵1体に電撃属性の小ダメージ。\n威力: 27, 命中: 100%, 感電: 22%" : 
+                            "Low Elec damage to one foe. \nPow: 27, Acc: 100%, Shock: 22%"; return false; // Zio
+                    case 14: __result = JapaneseLanguage ? "敵1体に電撃属性の中ダメージ。\n威力: 39, 命中: 100%, 感電: 26%" : 
+                            "Medium Elec damage to one foe. \nPow: 39, Acc: 100%, Shock: 26%"; return false; // Zionga
+                    case 15: __result = JapaneseLanguage ? "敵1体に電撃属性の大ダメージ。\n威力: 51, 命中: 100%, 感電: 30%" : 
+                            "High Elec damage to one foe. \nPow: 51, Acc: 100%, Shock: 30%"; return false; // Ziodyne
+                    case 16: __result = JapaneseLanguage ? "敵全体に電撃属性の小ダメージ。\n威力: 20, 命中: 100%, 感電: 13%" : 
+                            "Low Elec damage to all foes. \nPow: 20, Acc: 100%, Shock: 13%"; return false; // Mazio
+                    case 17: __result = JapaneseLanguage ? "敵全体に電撃属性の中ダメージ。\n威力: 30, 命中: 100%, 感電: 16%" : 
+                            "Medium Elec damage to all foes. \nPow: 30, Acc: 100%, Shock: 16%"; return false; // Mazionga
+                    case 18: __result = JapaneseLanguage ? "敵全体に電撃属性の大ダメージ。\n威力: 40, 命中: 100%, 感電: 19%" : 
+                            "High Elec damage to all foes. \nPow: 40, Acc: 100%, Shock: 19%"; return false; // Maziodyne
+                    case 19: __result = JapaneseLanguage ? "敵1体に衝撃属性の小ダメージ。\n威力: 30, 命中: 100%" : 
+                            "Low Force damage to one foe. \nPow: 30, Acc: 100%"; return false; // Zan
+                    case 20: __result = JapaneseLanguage ? "敵1体に衝撃属性の中ダメージ。\n威力: 45, 命中: 100%" : 
+                            "Medium Force damage to one foe. \nPow: 45, Acc: 100%"; return false; // Zanma
+                    case 21: __result = JapaneseLanguage ? "敵1体に衝撃属性の大ダメージ。\n威力: 60, 命中: 100%" : 
+                            "High Force damage to one foe. \nPow: 60, Acc: 100%"; return false; // Zandyne
+                    case 22: __result = JapaneseLanguage ? "敵全体に衝撃属性の小ダメージ。\n威力: 24, 命中: 100%" : 
+                            "Low Force damage to all foes. \nPow: 24, Acc: 100%"; return false; // Mazan
+                    case 23: __result = JapaneseLanguage ? "敵全体に衝撃属性の中ダメージ。\n威力: 36, 命中: 100%" : 
+                            "Medium Force damage to all foes. \nPow: 36, Acc: 100%"; return false; // Mazanma
+                    case 24: __result = JapaneseLanguage ? "敵全体に衝撃属性の大ダメージ。\n威力: 48, 命中: 100%" : 
+                            "High Force damage to all foes. \nPow: 48, Acc: 100%"; return false; // Mazandyne
+                    case 25: __result = JapaneseLanguage ? "敵全体に万能属性の中ダメージ。\n威力: 36, 命中: 100%" : 
+                            "Medium Almighty damage to all foes. \nPow: 36, Acc: 100%"; return false; // Megido
+                    case 26: __result = JapaneseLanguage ? "敵全体に万能属性の中〜大ダメージ。\n威力: 42, 命中: 100%" : 
+                            "Med-High Almighty damage to all foes. \nPow: 42, Acc: 100%"; return false; // Megidola
+                    case 27: __result = JapaneseLanguage ? "敵全体に万能属性の大ダメージ。\n威力: 48, 命中: 100%" : 
+                            "High Almighty damage to all foes. \nPow: 48, Acc: 100%"; return false; // Megidolaon
+                    case 28: __result = JapaneseLanguage ? "敵1体に破魔属性の小ダメージ。\n破魔弱点の敵を即死させることがある。\n威力: 36, 命中: 100%, 即死率: 30%" : 
+                            "Low Light damage to one foe. \nMay instakill when weak to Light. \nPow: 36, Acc: 100%, Fatal: 30%"; return false; // Hama
+                    case 29: __result = JapaneseLanguage ? "敵1体に破魔属性の中〜大ダメージ。\n破魔弱点の敵を即死させることがある。\n威力: 54, 命中: 100%, 即死率: 50%" : 
+                            "Med-High Light damage to one foe. \nMay instakill when weak to Light. \nPow: 54, Acc: 100%, Fatal: 50%"; return false; // Hamaon
+                    case 30: __result = JapaneseLanguage ? "敵全体に破魔属性の小ダメージ。\n破魔弱点の敵を即死させることがある。\n威力: 30, 命中: 100%, 即死率: 20%" : 
+                            "Low Light damage to all foes. \nMay instakill when weak to Light. \nPow: 30, Acc: 100%, Fatal: 20%"; return false; // Mahama
+                    case 31: __result = JapaneseLanguage ? "敵全体に破魔属性の中〜大ダメージ。\n破魔弱点の敵を即死させることがある。\n威力: 42, 命中: 100%, 即死率: 30%" : 
+                            "Med-High Light damage to all foes. \nMay instakill when weak to Light. \nPow: 42, Acc: 100%, Fatal: 30%"; return false; // Mahamaon
+                    case 32: __result = JapaneseLanguage ? "敵1体に呪殺属性の小ダメージ。\n呪殺弱点の敵を即死させることがある。\n威力: 36, 命中: 100%, 即死率: 30%" : 
+                            "Low Dark damage to one foe. \nMay instakill when weak to Dark. \nPow: 36, Acc: 100%, Fatal: 30%"; return false; // Mudo
+                    case 33: __result = JapaneseLanguage ? "敵1体に呪殺属性の中〜大ダメージ。\n呪殺弱点の敵を即死させることがある。\n威力: 54, 命中: 100%, 即死率: 50%" : 
+                            "Med-High Dark damage to one foe. \nMay instakill when weak to Dark. \nPow: 54, Acc: 100%, Fatal: 50%"; return false; // Mudoon
+                    case 34: __result = JapaneseLanguage ? "敵全体に呪殺属性の小ダメージ。\n呪殺弱点の敵を即死させることがある。\n威力: 30, 命中: 100%, 即死率: 20%" : 
+                            "Low Dark damage to all foes. \nMay instakill when weak to Dark. \nPow: 30, Acc: 100%, Fatal: 20%"; return false; // Mamudo
+                    case 35: __result = JapaneseLanguage ? "敵全体に呪殺属性の中〜大ダメージ。\n呪殺弱点の敵を即死させることがある。\n威力: 42, 命中: 100%, 即死率: 30%" : 
+                            "Med-High Dark damage to all foes. \nMay instakill when weak to Dark. \nPow: 42, Acc: 100%, Fatal: 30%"; return false; // Mamudoon
+                    case 36: __result = JapaneseLanguage ? "味方1体のHPを中回復。\n威力: 10" : 
+                            "Moderate HP recovery for one ally. \nPow: 10"; return false; // Dia
+                    case 37: __result = JapaneseLanguage ? "味方1体のHPを大回復。\n威力: 20" : 
+                            "Great HP recovery for one ally. \nPow: 20"; return false; // Diarama
+                    case 38: __result = JapaneseLanguage ? "味方1体のHPを全回復。" : 
+                            "Full HP recovery for one ally."; return false; // Diarahan
+                    case 39: __result = JapaneseLanguage ? "味方全体のHPを中回復。\n威力: 10" : 
+                            "Moderate HP recovery for all allies. \nPow: 10"; return false; // Media
+                    case 40: __result = JapaneseLanguage ? "味方全体のHPを大回復。\n威力: 20" : 
+                            "Great HP recovery for all allies. \nPow: 20"; return false; // Mediarama
+                    case 41: __result = JapaneseLanguage ? "味方全体のHPを全回復。" : 
+                            "Full HP recovery for all allies."; return false; // Mediarahan
                     //case 42: __result = "Donates MP to one ally."; return false; // Makatora
-                    case 43: __result = "Cures Bind/Sleep/Panic for one ally."; return false; // Patra
-                    case 44: __result = "Cures Bind/Sleep/Panic for all allies."; return false; // Me Patra
-                    case 45: __result = "Cures Mute for one ally."; return false; // Mutudi
-                    case 46: __result = "Cures Poison for one ally."; return false; // Posumudi
-                    case 47: __result = "Cures Stun for one ally."; return false; // Paraladi
-                    case 48: __result = "Cures Stone for one ally."; return false; // Petradi
-                    case 49: __result = "Revives one ally with slight HP."; return false; // Recarm
-                    case 50: __result = "Revives one ally to full HP."; return false; // Samarecarm
-                    case 51: __result = "Sacrifice self to fully recover allies' HP/MP."; return false; // Recarmdra
-                    case 52: __result = "Lowers all foes' \nPhysical/Magical Attack \nby one rank."; return false; // Tarunda
-                    case 53: __result = "Lowers all foes' Evasion/Hit Rate \nby one rank."; return false; // Sukunda
-                    case 54: __result = "Lowers all foes' Defense \nby one rank."; return false; // Rakunda
-                    case 55: __result = "50% Chance to inflict Mute \non one foe. (Curse-Type)"; return false; // Makajam
-                    case 56: __result = "25% Chance to inflict Mute \non all foes. (Curse-Type)"; return false; // Makajamon
-                    case 57: __result = "Negates -kaja effects on all foes."; return false; // Dekaja
-                    case 59: __result = "Low Nerve damage to one foe. \nPow: 30, Acc: 100%, Bind: 30%"; return false; // Shibaboo
-                    case 60: __result = "30% Chance to inflict Sleep \non all foes. (Mind-Type)"; return false; // Lullaby
-                    case 61: __result = "Low Mind damage to one foe. \nPow: 30, Acc: 100%, Panic: 30%"; return false; // Pulinpa
-                    case 62: __result = "50% Chance to inflict Charm \non one foe. (Mind-Type)"; return false; // Marin Karin
-                    case 63: __result = "Medium Mind damage to all foes. \nPow: 30, Acc: 100%, Panic: 40%"; return false; // Tentarafoo
-                    case 64: __result = "Raises all allies' \nPhysical/Magical Attack \nby one rank."; return false; // Tarukaja
-                    case 65: __result = "Raises all allies' Evasion/Hit Rate \nby one rank."; return false; // Sukukaja
-                    case 66: __result = "Raises all allies' Defense \nby one rank."; return false; // Rakukaja
-                    case 67: __result = "Raises all allies' \nMagical Attack/Hit Rate \nby one rank."; return false; // Makakaja
-                    case 68: __result = "Negates one Light/Dark attack \nfor all allies."; return false; // Tetraja
-                    case 69: __result = "Repels Magic-based attacks \nfor one ally once \nnext turn."; return false; // Makarakarn
-                    case 70: __result = "Repels Strength-based attacks \nfor one ally once \nnext turn."; return false; // Tetrakarn
-                    case 71: __result = "Displays an enemy's info \nat 1/2 turn cost."; return false; // Analyze
-                    case 72: __result = "Escape from most battles without fail."; return false; // Trafuri
-                    case 73: __result = "Reduces encounter rate \nof low-level demons \nuntil a new Kagutsuchi."; return false; // Trafuri
-                    case 74: __result = "Raises encounter rate \nuntil a new Kagutsuchi."; return false; // Riberama
-                    case 75: __result = "Negates floor damage \nuntil a new Kagutsuchi."; return false; // Liftoma
-                    case 76: __result = "Lights up dark areas \nuntil a new Kagutsuchi."; return false; // Lightoma
-                    case 77: __result = "Negates -nda effects on all allies."; return false; // Dekunda
-                    case 79: __result = "Medium Almighty damage to all foes. \nMay instakill when poisoned. \nPow: 36, Acc: 100%, Fatal: 90%"; return false; // Pestilence
-                    case 90: __result = "Low Curse damage to one foe. \nPow: 30, Acc: 100%, Poison: 30%"; return false; // Poison Arrow
-                    case 96: __result = "Low Physical damage to one foe. \nPow: 42, Acc: 90%, Crit: 20%"; return false; // Lunge
-                    case 97: __result = "Medium Physical damage to one foe. \nPow: 48, Acc: 86%, Crit: 28%"; return false; // Hell Thrust
-                    case 98: __result = "Low Physical damage to random foes. \n2-5 hits. Pow: 20, Acc: 94%, \nCrit: 12%"; return false; // Berserk
-                    case 99: __result = "Medium Physical damage to all foes. \nPow: 30, Acc: 85%, Crit: 25%"; return false; // Tempest
-                    case 100: __result = "High Physical damage to all foes. \nPow: 40, Acc: 82%, Crit: 36%"; return false; // Hades Blast
-                    case 101: __result = "Low Physical damage to all foes. \nHP-based. Max Pow: 24, Acc: 88%, \nCrit: 24%"; return false; // Heat Wave
-                    case 102: __result = "Medium Physical damage to all foes. \nHP-based. Max Pow: 32, Acc: 85%, \nCrit: 30%, Poison: 24%"; return false; // Blight
-                    case 103: __result = "Medium Physical damage to one foe. \nHP-based. Max Pow: 52, Acc: 88%, \nCrit: 24%"; return false; // Brutal Slash
-                    case 104: __result = "Mega Physical damage to all foes. \nHP-based. Max Pow: 48, Acc: 80%, \nCrit: 40%"; return false; // Hassohappa
-                    case 105: __result = "High Physical damage to one foe. \nHP-based. Max Pow: 60, Acc: 80%, \nCrit: 40%, Mute: 30%"; return false; // Dark Sword
-                    case 106: __result = "High Physical damage to one foe. \nHP-based. Max Pow: 60, Acc: 80%, \nCrit: 40%, Bind: 30%"; return false; // Stasis Blade
-                    case 107: __result = "Low Physical damage to one foe. \nHP-based. Max Pow: 48, Acc: 90%, \nCrit: 20%"; return false; // Mighty Gust
-                    case 108: __result = "High Physical damage to random foes. \n3-5 hits. HP-based. Max Pow: 40, \nAcc: 94%, Crit: 20%"; return false; // Deathbound
-                    case 109: __result = "High Physical damage to one foe. \nHP-based. Max Pow: 56, Acc: 85%, \nCrit: 30%, Stun: 30%"; return false; // Guillotine
-                    case 110: __result = "High Physical damage to random foes. \n3-5 hits. HP-based. Max Pow: 30, \nAcc: 92%, Crit: 20%, Panic: 24%"; return false; // Chaos Blade
-                    case 111: __result = "Low Shot damage to one foe. \n2-4 hits. Pow: 13, Acc: 90%, \nCrit: 20%"; return false; // Needle Rush
-                    case 112: __result = "Low Shot damage to one foe. \n2-4 hits. Pow: 12, Acc: 90%, \nCrit: 18%, Stun: 18%"; return false; // Stun Needle
-                    case 113: __result = "Low Shot damage to one foe. \n2-4 hits. Pow: 12, Acc: 90%, \nCrit: 18%, Poison: 18%"; return false; // Venom Needle
-                    case 114: __result = "Low Shot damage to one foe. \n2-4 hits. Pow: 11, Acc: 90%, \nCrit: 18%, Stone: 16%"; return false; // Arid Needle
-                    case 115: __result = "Sacrifice self to deal Mega Str-based \nAlmighty damage to all foes. \nPow: 55, Acc: 90%, Crit: 20%"; return false; // Sacrifice
-                    case 116: __result = "Sacrifice self to deal Mega Str-based \nAlmighty damage to one foe. \nPow: 80, Acc: 90%, Crit: 20%"; return false; // Kamikaze
-                    case 117: __result = "Low Physical damage to one foe. \nPow: 44, Acc: 88%, Crit: 24%"; return false; // Feral Bite
-                    case 118: __result = "Low Physical damage to one foe. \nPow: 42, Acc: 88%, Crit: 22%, \nPoison: 22%"; return false; // Venom Bite
-                    case 119: __result = "Low Physical damage to one foe. \nPow: 42, Acc: 88%, Crit: 22%, \nCharm: 22%"; return false; // Charm Bite
-                    case 120: __result = "Low Physical damage to one foe. \nPow: 40, Acc: 88%, Crit: 22%, \nStone: 20%"; return false; // Stone Bite
-                    case 121: __result = "Low Physical damage to one foe. \nPow: 42, Acc: 88%, Crit: 22%, \nStun: 22%"; return false; // Stun Bite
-                    case 122: __result = "High Physical damage to one foe. \nPow: 56, Acc: 80%, Crit: 40%"; return false; // Hell Fang
-                    case 123: __result = "Low Physical damage to one foe. \nPow: 44, Acc: 88%, Crit: 24%"; return false; // Feral Claw
-                    case 124: __result = "Low Physical damage to one foe. \nPow: 42, Acc: 88%, Crit: 22%, \nPoison: 22%"; return false; // Venom Claw
-                    case 125: __result = "Low Physical damage to one foe. \nPow: 42, Acc: 88%, Crit: 22%, \nStun: 22%"; return false; // Stun Claw
-                    case 126: __result = "High Physical damage to one foe. \nPow: 56, Acc: 80%, Crit: 40%"; return false; // Iron Claw
-                    case 127: __result = "High Light damage to all foes. \nPow: 48, Acc: 100%, Mute: 30%"; return false; // Godly Light
-                    case 131: __result = "High Physical damage to one foe. \nPow: 54, Acc: 95%, Crit: 50%"; return false; // Deadly Fury
-                    case 133: __result = "Medium Shot damage to all foes. \nPow: 32, Acc: 95%, Crit: 24%, \nBind: 30%"; return false; // Javelin Rain
-                    case 136: __result = "Medium Mag-based Shot damage to \none foe. Pow: 34, Acc: 120%, \nCrit: 100%"; return false; // Divine Shot
-                    case 143: __result = "High Physical damage to all foes. \nPow: 36, Acc: 95%, Crit: 24%, \nMute: 30%"; return false; // Xeros Beat
-                    case 144: __result = "High Physical damage to all foes. \nPow: 42, Acc: 95%, Crit: 30%"; return false; // Oni Kagura
-                    case 147: __result = "Mega Str-based Almighty damage to \none foe. Pow: 66, Acc: 95%, Crit: 30%"; return false; // Freikugel
-                    case 152: __result = "Sacrifice self to deal Mega Str-based \nAlmighty damage to all foes and allies. \nPow: 60, Acc: 100%, Crit: 0%"; return false; // Last Resort
-                    case 153: __result = "High Physical damage to all foes. \nPow: 40, Acc: 98%, Crit: 20%"; return false; // Foul Havoc
-                    case 155: __result = "Mega Physical damage to all foes. \nPow: 60, Acc: 200%, Crit: 0%, \nStun: 20%"; return false; // Earthquake
-                    case 160: __result = "Mega Shot damage to one foe. \nPow: 62, Acc: 95%, Crit: 30%"; return false; // Spiral Viper
-                    case 161: __result = "Mega Fire damage to one foe. \nPow: 80, Acc: 120%"; return false; // Magma Axis
-                    case 163: __result = "Mega Physical damage to all foes. \nPow: 52, Acc: 95%, Crit: 30%"; return false; // Gaea Rage
-                    case 176: __result = "Low Fire damage to random foes. \n3-5 hits. Pow: 20, Acc: 100%"; return false; // Fire Breath
-                    case 177: __result = "Medium Fire damage to random foes. \n3-6 hits. Pow: 30, Acc: 100%"; return false; // Hellfire
-                    case 178: __result = "High Fire damage to random foes. \n3-7 hits. Pow: 40, Acc: 100%"; return false; // Prominence
-                    case 179: __result = "Mega Fire damage to one foe. \nPow: 80, Acc: 100%"; return false; // Trisagion
-                    case 180: __result = "Low Ice damage to random foes. \n3-5 hits. Pow: 18, Acc: 100%, \nFreeze: 15%"; return false; // Ice Breath
-                    case 181: __result = "Medium Ice damage to random foes. \n3-6 hits. Pow: 24, Acc: 100%, \nFreeze: 18%"; return false; // Glacial Blast
-                    case 182: __result = "Low Elec damage to random foes. \n3-5 hits. Pow: 18, Acc: 100%, \nShock: 15%"; return false; // Shock
-                    case 183: __result = "Medium Elec damage to random foes. \n3-6 hits. Pow: 24, Acc: 100%, \nShock: 18%"; return false; // Bolt Storm
-                    case 184: __result = "Low Force damage to random foes. \n3-5 hits. Pow: 20, Acc: 100%"; return false; // Wing Buffet
-                    case 185: __result = "Medium Force damage to random foes. \n3-6 hits. Pow: 30, Acc: 100%"; return false; // Tornado
-                    case 186: __result = "Mega Force damage to one foe. \nPow: 80, Acc: 100%"; return false; // Wind Cutter
-                    case 187: __result = "High Force damage to all foes. \nPow: 45, Acc: 100%, Stun: 30%"; return false; // Wet Wind
-                    case 190: __result = "Drains HP from one foe. \nPow: 25, Acc: 100% (Almighty-Type)"; return false; // Deathtouch
-                    case 191: __result = "Drains MP from one foe. \nPow: 15, Acc: 100% (Almighty-Type)"; return false; // Mana Drain
-                    case 192: __result = "Drains HP/MP from one foe. \nPow: 25/15, Acc: 100% \n(Almighty-Type)"; return false; // Life Drain
-                    case 193: __result = "Medium Light damage to one foe. \nPow: 45, Acc: 100%"; return false; // Violet Flash
-                    case 194: __result = "Medium Light damage to all foes. \nPow: 36, Acc: 100%"; return false; // Starlight
-                    case 195: __result = "Mega Light damage to all foes. \nPow: 60, Acc: 100%"; return false; // Radiance
-                    case 196: __result = "60% Chance to instakill one foe. \n(Dark-Type)"; return false; // Hell Gaze
-                    case 197: __result = "60% Chance to inflict Stone \non one foe. (Dark-Type)"; return false; // Stone Gaze
-                    case 198: __result = "60% Chance to inflict Mute \non one foe. (Curse-Type)"; return false; // Mute Gaze
-                    case 199: __result = "60% Chance to reduce HP of one foe \nto 1. (Dark-Type)"; return false; // Evil Gaze
-                    case 202: __result = "50% Chance to inflict Poison on \nall foes. Lowers Defense by one rank. \n(Curse-Type)"; return false; // Toxic Spray
-                    case 203: __result = "Lowers all foes' \nPhysical/Magical Attack \nby two ranks."; return false; // War Cry
-                    case 204: __result = "Lowers all foes' Evasion/Hit Rate \nby two ranks."; return false; // Fog Breath
-                    case 205: __result = "Lowers Defense and raises \nPhysical Attack by two ranks \nfor all foes."; return false; // Taunt
-                    case 206: __result = "Lowers all stats by one rank \nfor all foes."; return false; // Debilitate
-                    case 207: __result = "Medium Curse damage to all foes. \nPow: 30, Acc: 100%, Mute: 40%"; return false; // Dismal Tune
-                    case 208: __result = "40% Chance to reduce HP of all foes \nto 1. (Almighty-Type)"; return false; // Sol Niger
-                    case 209: __result = "50% Chance to inflict Stun \non one foe. (Nerve-Type)"; return false; // Stun Gaze
-                    case 210: __result = "60% Chance to inflict Sleep \non one foe. (Mind-Type)"; return false; // Dormina
-                    case 211: __result = "30% Chance to inflict Bind \non all foes. (Nerve-Type)"; return false; // Binding Cry
-                    case 212: __result = "Instakill all foes afflicted \nwith Sleep."; return false; // Eternal Rest
-                    case 213: __result = "30% Chance to inflict Panic on \nall foes. (Mind-Type)"; return false; // Sonic Wave
-                    case 214: __result = "60% Chance to inflict Charm on \none foe. (Mind-Type)"; return false; // Sexy Gaze
-                    case 215: __result = "40% Chance to inflict Charm on \nall foes. (Mind-Type)"; return false; // Allure
-                    case 216: __result = "30% Chance to inflict Panic on \nall foes. (Mind-Type)"; return false; // Panic Voice
-                    case 217: __result = "Mega Mind damage to all foes. \nPow: 60, Acc: 100%, Panic: 40%"; return false; // Intoxicate
-                    case 218: __result = "Full HP recovery & cures all ailments \nfor all allies."; return false; // Prayer
-                    case 223: __result = "Summons a random ally \nfrom the stock."; return false; // Beckon Call
-                    case 224: __result = "Increases the damage of the user's \nnext Strength-based attack by 120%."; return false; // Focus
-                    case 235: __result = "Mega Almighty damage to random foes. \n4-8 hits. Pow: 36, Acc: 100%"; return false; // Fire of Sinai
-                    case 242: __result = "High Almighty damage to all foes. \nMay inflict random ailments. \nPow: 40, Acc: 100%, Random: 50%"; return false; // God's Curse
-                    case 244: __result = "Medium Ice damage to all foes. \nLowers targets' Evasion/Hit Rate. \nPow: 30, Acc: 100%, Freeze: 25%"; return false; // Icy Death
-                    case 249: __result = "High Mind damage to random foes. \n3-7 hits. Pow: 36, Acc: 100%, Panic: 40%"; return false; // Wild Dance
-                    case 250: __result = "Drains HP/MP from one foe. \nPow: 80/40, Acc: 100% \n(Almighty-Type)"; return false; // Domination
-                    case 257: __result = "Mega Almighty damage to random foes. \n4-8 hits. Pow: 40, Acc: 100%."; return false; // Fire of Sinai
-                    case 259: __result = "Mega Almighty damage to all foes. \nMay instakill when not immune to Dark. \nPow: 60, Acc: 100%, Fatal: 90%"; return false; // Death Flies
-                    case 260: __result = "Mega Almighty damage to all foes. \nMay instakill when not immune to Dark. \nPow: 60, Acc: 100%, Fatal: 90%"; return false; // Death Flies
-                    case 261: __result = "High Curse damage to all foes. \nPow: 48, Acc: 60%, Mute: 100%"; return false; // Soul Divide
-                    case 262: __result = "Low Shot damage to one foe. \nLowers target's Evasion/Defense. \nPow: 32, Acc: 120%, Crit: 18%"; return false; // Boogie-Woogie/E & I
-                    case 263: __result = "High Physical damage to one foe. \nPow: 48, Acc: 200%, Crit: 40%"; return false; // Enter Yoshitsune/Rebellion
-                    case 264: __result = "Medium Shot damage to all foes. \nPow: 30, Acc: 200%, Crit: 0%, \nPanic: 24%"; return false; // Mokoi Boomerang/Twosome Time
-                    case 265: __result = "Lowers Defense/raises Physical Attack \nby two ranks for all foes. \nSlight MP recovery for the user."; return false; // Provoke
-                    case 266: __result = "Medium Str-based Almighty damage \nto one foe. May instakill when not \nimmune to Dark. Pow: 42, Acc: 90%"; return false; // Tekisatsu/Stinger
-                    case 267: __result = "High Elec damage to all foes. \nLowers targets' Evasion/Hit Rate. \nPow: 40, Acc: 120%, Shock: 20%"; return false; // Mishaguji Raiden/Roundtrip
-                    case 268: __result = "High Force damage to all foes. \nLowers targets' Physical/Magical Attack. \nPow: 48, Acc: 120%"; return false; // Hitokoto Storm/Whirlwind
-                    case 269: __result = "High Almighty damage to all foes. \nPow: 48, Acc: 200%"; return false; // Jiraiya Dance/Showtime
-                    case 275: __result = "Medium Physical damage to all foes. \nPow: 32, Acc: 100%, Crit: 5%"; return false; // Andalucia
-                    case 276: __result = "Maximizes own Evasion/Hit Rate."; return false; // Red Capote
-                    case 278: __result = "Medium Mind damage to all foes. \nMay inflict random ailments. \nPow: 30, Acc: 100%, Random: 40%"; return false; // Preach
-                    case 279: __result = "Drains HP/MP from one foe. \nPow: 35/20, Acc: 100% \n(Almighty-Type)"; return false; // Meditation
-                    case 280: __result = "Medium Physical damage to random foes. \n3-6 hits. Pow: 32, Acc: 96%, \nCrit: 10%, Panic: 40%"; return false; // Terrorblade
-                    case 281: __result = "Medium Physical damage to all foes. \nPow: 32, Acc: 94%, Crit: 12%"; return false; // Hell Spin
-                    case 282: __result = "Medium Force damage to all foes. \nNegates -kaja effects. \nPow: 30, Acc: 100%"; return false; // Hell Exhaust
-                    case 283: __result = "Medium Str-based Fire damage \nto all foes. Pow: 32, Acc: 88%, \nCrit: 12%"; return false; // Hell Burner
-                    case 284: __result = "Raises all allies' \nPhysical Attack/Evasion/Hit Rate \nby one rank."; return false; // Hell Throttle
-                    case 285: __result = "Lowers all foes' Evasion/Hit Rate \nby one rank. 50% Chance to \ninflict Panic. (Almighty-Type)"; ; return false; // Babylon Goblet
-                    case 286: __result = "High Almighty damage to all foes. \nSlight HP recovery for the user. \nPow: 48, Acc: 100%, Charm: 30%"; return false; // Death Lust
-                    case 287: __result = "Mega Light damage to one foe. \nMay instakill when weak to Light. \nPow: 80, Acc: 100%, Fatal: 90%"; return false; // God's Bow
+                    case 43: __result = JapaneseLanguage ? "味方1体の縛着/睡眠/混乱を治療。" : 
+                            "Cures Bind/Sleep/Panic for one ally."; return false; // Patra
+                    case 44: __result = JapaneseLanguage ? "味方全体の縛着/睡眠/混乱を治療。" : 
+                            "Cures Bind/Sleep/Panic for all allies."; return false; // Me Patra
+                    case 45: __result = JapaneseLanguage ? "味方1体の魔封を治療。" : 
+                            "Cures Mute for one ally."; return false; // Mutudi
+                    case 46: __result = JapaneseLanguage ? "味方1体の毒を治療。" : 
+                            "Cures Poison for one ally."; return false; // Posumudi
+                    case 47: __result = JapaneseLanguage ? "味方1体のスタンを治療。" : 
+                            "Cures Stun for one ally."; return false; // Paraladi
+                    case 48: __result = JapaneseLanguage ? "味方1体の石化を治療。" : 
+                            "Cures Stone for one ally."; return false; // Petradi
+                    case 49: __result = JapaneseLanguage ? "味方1体を少量のHPで蘇生。" : 
+                            "Revives one ally with slight HP."; return false; // Recarm
+                    case 50: __result = JapaneseLanguage ? "味方1体をHP全回復で蘇生。" : 
+                            "Revives one ally to full HP."; return false; // Samarecarm
+                    case 51: __result = JapaneseLanguage ? "自身を犠牲にして味方全体のHP/MPを全回復。" : 
+                            "Sacrifice self to fully recover allies' HP/MP."; return false; // Recarmdra
+                    case 52: __result = JapaneseLanguage ? "敵全体の物理／魔法攻撃力\nを1段階低下。" : 
+                            "Lowers all foes' \nPhysical/Magical Attack \nby one rank."; return false; // Tarunda
+                    case 53: __result = JapaneseLanguage ? "敵全体の回避／命中率\nを1段階低下。" : 
+                            "Lowers all foes' Evasion/Hit Rate \nby one rank."; return false; // Sukunda
+                    case 54: __result = JapaneseLanguage ? "敵全体の防御力\nを1段階低下。" : 
+                            "Lowers all foes' Defense \nby one rank."; return false; // Rakunda
+                    case 55: __result = JapaneseLanguage ? "50%の確率で敵1体に魔封を付与。\n(魔力属性)" : 
+                            "50% Chance to inflict Mute \non one foe. (Curse-Type)"; return false; // Makajam
+                    case 56: __result = JapaneseLanguage ? "25%の確率で敵全体に魔封を付与。\n(魔力属性)" : 
+                            "25% Chance to inflict Mute \non all foes. (Curse-Type)"; return false; // Makajamon
+                    case 57: __result = JapaneseLanguage ? "敵全体の「カジャ系」\n効果を打ち消す。" : 
+                            "Negates -kaja effects on all foes."; return false; // Dekaja
+                    case 59: __result = JapaneseLanguage ? "敵1体に神経属性の小ダメージ。\n威力: 30, 命中: 100%, 縛着: 30%" : 
+                            "Low Nerve damage to one foe. \nPow: 30, Acc: 100%, Bind: 30%"; return false; // Shibaboo
+                    case 60: __result = JapaneseLanguage ? "30%の確率で敵全体に睡眠を付与。\n(精神属性)" : 
+                            "30% Chance to inflict Sleep \non all foes. (Mind-Type)"; return false; // Lullaby
+                    case 61: __result = JapaneseLanguage ? "敵1体に精神属性の小ダメージ。\n威力: 30, 命中: 100%, 混乱: 30%" : 
+                            "Low Mind damage to one foe. \nPow: 30, Acc: 100%, Panic: 30%"; return false; // Pulinpa
+                    case 62: __result = JapaneseLanguage ? "50%の確率で敵1体に魅了を付与。\n(精神属性)" : 
+                            "50% Chance to inflict Charm \non one foe. (Mind-Type)"; return false; // Marin Karin
+                    case 63: __result = JapaneseLanguage ? "敵全体に精神属性の中ダメージ。\n威力: 30, 命中: 100%, 混乱: 40%" : 
+                            "Medium Mind damage to all foes. \nPow: 30, Acc: 100%, Panic: 40%"; return false; // Tentarafoo
+                    case 64: __result = JapaneseLanguage ? "味方全体の物理／魔法攻撃力\nを1段階低昇。" : 
+                            "Raises all allies' \nPhysical/Magical Attack \nby one rank."; return false; // Tarukaja
+                    case 65: __result = JapaneseLanguage ? "味方全体の回避／命中率\nを1段階昇。" : 
+                            "Raises all allies' Evasion/Hit Rate \nby one rank."; return false; // Sukukaja
+                    case 66: __result = JapaneseLanguage ? "味方全体の防御力\nを1段階昇。" : 
+                            "Raises all allies' Defense \nby one rank."; return false; // Rakukaja
+                    case 67: __result = JapaneseLanguage ? "味方全体の魔法攻撃力／命中率\nを1段階昇" : 
+                            "Raises all allies' \nMagical Attack/Hit Rate \nby one rank."; return false; // Makakaja
+                    case 68: __result = JapaneseLanguage ? "味方一人につき、破魔／呪殺属性の攻撃\nを1回無効化する。" : 
+                            "Negates one Light/Dark attack \nfor all allies."; return false; // Tetraja
+                    case 69: __result = JapaneseLanguage ? "次のターン、味方1体への魔法攻（魔法攻）\n攻撃を1回反射。" : 
+                            "Repels Magic-based attacks \nfor one ally once \nnext turn."; return false; // Makarakarn
+                    case 70: __result = JapaneseLanguage ? "次のターン、味方1体への物理系（力依存）\n攻撃を1回反射。" : 
+                            "Repels Strength-based attacks \nfor one ally once \nnext turn."; return false; // Tetrakarn
+                    case 71: __result = JapaneseLanguage ? "プレスターンアイコン1/2個\nの消費で敵の情報を表示。" : 
+                            "Displays an enemy's info \nat 1/2 turn cost."; return false; // Analyze
+                    case 72: __result = JapaneseLanguage ? "ほとんどの戦闘から確実に脱出。" : 
+                            "Escape from most battles without fail."; return false; // Trafuri
+                    case 73: __result = JapaneseLanguage ? "次のカグツチまで悪魔\nとの遭遇率を低下。" :
+                            "Reduces encounter rate \nof low-level demons \nuntil a new Kagutsuchi."; return false; // Estoma
+                    case 74: __result = JapaneseLanguage ? "次のカグツチまで悪魔\nとの遭遇率を上昇。" : 
+                            "Raises encounter rate \nuntil a new Kagutsuchi."; return false; // Riberama
+                    case 75: __result = JapaneseLanguage ? "次のカグツチまで\n床ダメージを無効化。" : 
+                            "Negates floor damage \nuntil a new Kagutsuchi."; return false; // Liftoma
+                    case 76: __result = JapaneseLanguage ? "次のカグツチまで\n暗闇を照らす。" : 
+                            "Lights up dark areas \nuntil a new Kagutsuchi."; return false; // Lightoma
+                    case 77: __result = JapaneseLanguage ? "味方全体の「ンダ系」\n効果を打ち消す。" : 
+                            "Negates -nda effects on all allies."; return false; // Dekunda
+                    case 79: __result = JapaneseLanguage ? "敵全体に万能属性の中ダメージ。\n毒状態の敵を即死させることがある。\n威力: 36, 命中: 100%, 即死率: 90%" : 
+                            "Medium Almighty damage to all foes. \nMay instakill when poisoned. \nPow: 36, Acc: 100%, Fatal: 90%"; return false; // Pestilence
+                    case 90: __result = JapaneseLanguage ? "敵1体にバ魔力属性の小ダメージ。\n威力: 30, 命中: 100%, 毒: 30%" : 
+                            "Low Curse damage to one foe. \nPow: 30, Acc: 100%, Poison: 30%"; return false; // Poison Arrow
+                    case 96: __result = JapaneseLanguage ? "敵1体に物理属性の小ダメージ。\n威力: 42, 命中: 90%, 会心率: 20%" : 
+                            "Low Physical damage to one foe. \nPow: 42, Acc: 90%, Crit: 20%"; return false; // Lunge
+                    case 97: __result = JapaneseLanguage ? "敵1体に物理属性の中ダメージ。\n威力: 48, 命中: 86%, 会心率: 28%" : 
+                            "Medium Physical damage to one foe. \nPow: 48, Acc: 86%, Crit: 28%"; return false; // Hell Thrust
+                    case 98: __result = JapaneseLanguage ? "敵ランダムに物理属性の小ダメージ。\n2〜5回ヒット。威力: 20, 命中: 94%, \n会心率: 12%" : 
+                            "Low Physical damage to random foes. \n2-5 hits. Pow: 20, Acc: 94%, \nCrit: 12%"; return false; // Berserk
+                    case 99: __result = JapaneseLanguage ? "敵全体に物理属性の中ダメージ。\n威力: 30, 命中: 85%, 会心率: 25%" : 
+                            "Medium Physical damage to all foes. \nPow: 30, Acc: 85%, Crit: 25%"; return false; // Tempest
+                    case 100: __result = JapaneseLanguage ? "敵全体に物理属性の大ダメージ。\n威力: 40, 命中: 82%, 会心率: 36%" : 
+                            "High Physical damage to all foes. \nPow: 40, Acc: 82%, Crit: 36%"; return false; // Hades Blast
+                    case 101: __result = JapaneseLanguage ? "敵全体に物理属性の小ダメージ。\nHP依存。最大威力: 24, 命中: 88%, \n会心率: 24%" : 
+                            "Low Physical damage to all foes. \nHP-based. Max Pow: 24, Acc: 88%, \nCrit: 24%"; return false; // Heat Wave
+                    case 102: __result = JapaneseLanguage ? "敵全体に物理属性の中ダメージ。\nHP依存。最大威力: 32, 命中: 85%, \n会心率: 30%, 毒: 24%" : 
+                            "Medium Physical damage to all foes. \nHP-based. Max Pow: 32, Acc: 85%, \nCrit: 30%, Poison: 24%"; return false; // Blight
+                    case 103: __result = JapaneseLanguage ? "敵1体に物理属性の中ダメージ。\nHP依存。最大威力: 52, 命中: 88%, \n会心率: 24%" : 
+                            "Medium Physical damage to one foe. \nHP-based. Max Pow: 52, Acc: 88%, \nCrit: 24%"; return false; // Brutal Slash
+                    case 104: __result = JapaneseLanguage ? "敵全体に物理属性の特大ダメージ。\nHP依存。最大威力: 48, 命中: 80%, \n会心率: 40%" : 
+                            "Mega Physical damage to all foes. \nHP-based. Max Pow: 48, Acc: 80%, \nCrit: 40%"; return false; // Hassohappa
+                    case 105: __result = JapaneseLanguage ? "敵1体に物理属性の大ダメージ。\nHP依存。最大威力: 60, 命中: 80%, \n会心率: 40%, 魔封: 30%" : 
+                            "High Physical damage to one foe. \nHP-based. Max Pow: 60, Acc: 80%, \nCrit: 40%, Mute: 30%"; return false; // Dark Sword
+                    case 106: __result = JapaneseLanguage ? "敵1体に物理属性の大ダメージ。\nHP依存。最大威力: 60, 命中: 80%, \n会心率: 40%, 縛着: 30%" : 
+                            "High Physical damage to one foe. \nHP-based. Max Pow: 60, Acc: 80%, \nCrit: 40%, Bind: 30%"; return false; // Stasis Blade
+                    case 107: __result = JapaneseLanguage ? "敵1体に物理属性の小ダメージ。\nHP依存。最大威力: 48, 命中: 90%, \n会心率: 20%" : 
+                            "Low Physical damage to one foe. \nHP-based. Max Pow: 48, Acc: 90%, \nCrit: 20%"; return false; // Mighty Gust
+                    case 108: __result = JapaneseLanguage ? "敵ランダムに物理属性の大ダメージ。\n3〜5回ヒット。HP依存。最大威力: 40, \n命中: 94%, 会心率: 20%" : 
+                            "High Physical damage to random foes. \n3-5 hits. HP-based. Max Pow: 40, \nAcc: 94%, Crit: 20%"; return false; // Deathbound
+                    case 109: __result = JapaneseLanguage ? "敵1体に物理属性の大ダメージ。\nHP依存。最大威力: 56, 命中: 85%, \n会心率: 30%, スタン: 30%" : 
+                            "High Physical damage to one foe. \nHP-based. Max Pow: 56, Acc: 85%, \nCrit: 30%, Stun: 30%"; return false; // Guillotine
+                    case 110: __result = JapaneseLanguage ? "敵ランダムに物理属性の大ダメージ。\n3〜5回ヒット。HP依存。最大威力: 30, \n命中: 92%, 会心率: 20%, 混乱: 24%" : 
+                            "High Physical damage to random foes. \n3-5 hits. HP-based. Max Pow: 30, \nAcc: 92%, Crit: 20%, Panic: 24%"; return false; // Chaos Blade
+                    case 111: __result = JapaneseLanguage ? "敵1体に銃撃属性の小ダメージ。\n2〜4回ヒット。威力: 13, 命中: 90%, \n会心率: 20%" : 
+                            "Low Shot damage to one foe. \n2-4 hits. Pow: 13, Acc: 90%, \nCrit: 20%"; return false; // Needle Rush
+                    case 112: __result = JapaneseLanguage ? "敵1体に銃撃属性の小ダメージ。\n2〜4回ヒット。威力: 12, 命中: 90%, \n会心率: 18%, スタン: 18%" : 
+                            "Low Shot damage to one foe. \n2-4 hits. Pow: 12, Acc: 90%, \nCrit: 18%, Stun: 18%"; return false; // Stun Needle
+                    case 113: __result = JapaneseLanguage ? "敵1体に銃撃属性の小ダメージ。\n2〜4回ヒット。威力: 12, 命中: 90%, \n会心率: 18%, 毒: 18%" : 
+                            "Low Shot damage to one foe. \n2-4 hits. Pow: 12, Acc: 90%, \nCrit: 18%, Poison: 18%"; return false; // Venom Needle
+                    case 114: __result = JapaneseLanguage ? "敵1体に銃撃属性の小ダメージ。\n2〜4回ヒット。威力: 11, 命中: 90%, \n会心率: 18%, 石化: 16%" : 
+                            "Low Shot damage to one foe. \n2-4 hits. Pow: 11, Acc: 90%, \nCrit: 18%, Stone: 16%"; return false; // Arid Needle
+                    case 115: __result = JapaneseLanguage ? "自身を犠牲にして敵全体に力依存\nの万能属性特大ダメージ。\n威力: 55, 命中: 90%, 会心率: 20%" : 
+                            "Sacrifice self to deal Mega Str-based \nAlmighty damage to all foes. \nPow: 55, Acc: 90%, Crit: 20%"; return false; // Sacrifice
+                    case 116: __result = JapaneseLanguage ? "自身を犠牲にして敵1体に力依存\nの万能属性特大ダメージ。\n威力: 80, 命中: 90%, 会心率: 20%" : 
+                            "Sacrifice self to deal Mega Str-based \nAlmighty damage to one foe. \nPow: 80, Acc: 90%, Crit: 20%"; return false; // Kamikaze
+                    case 117: __result = JapaneseLanguage ? "敵1体に物理属性の小ダメージ。\n威力: 44, 命中: 88%, 会心率: 24%" : 
+                            "Low Physical damage to one foe. \nPow: 44, Acc: 88%, Crit: 24%"; return false; // Feral Bite
+                    case 118: __result = JapaneseLanguage ? "敵1体に物理属性の小ダメージ。\n威力: 42, 命中: 88%, 会心率: 22%, \n毒: 22%" : 
+                            "Low Physical damage to one foe. \nPow: 42, Acc: 88%, Crit: 22%, \nPoison: 22%"; return false; // Venom Bite
+                    case 119: __result = JapaneseLanguage ? "敵1体に物理属性の小ダメージ。\n威力: 42, 命中: 88%, 会心率: 22%, \n魅了: 22%" : 
+                            "Low Physical damage to one foe. \nPow: 42, Acc: 88%, Crit: 22%, \nCharm: 22%"; return false; // Charm Bite
+                    case 120: __result = JapaneseLanguage ? "敵1体に物理属性の小ダメージ。\n威力: 40, 命中: 88%, 会心率: 22%, \n石化: 20%" : 
+                            "Low Physical damage to one foe. \nPow: 40, Acc: 88%, Crit: 22%, \nStone: 20%"; return false; // Stone Bite
+                    case 121: __result = JapaneseLanguage ? "敵1体に物理属性の小ダメージ。\n威力: 42, 命中: 88%, 会心率: 22%, \nスタン: 22%" : 
+                            "Low Physical damage to one foe. \nPow: 42, Acc: 88%, Crit: 22%, \nStun: 22%"; return false; // Stun Bite
+                    case 122: __result = JapaneseLanguage ? "敵1体に物理属性の大ダメージ。\n威力: 56, 命中: 80%, 会心率: 40%" : 
+                            "High Physical damage to one foe. \nPow: 56, Acc: 80%, Crit: 40%"; return false; // Hell Fang
+                    case 123: __result = JapaneseLanguage ? "敵1体に物理属性の小ダメージ。\n威力: 44, 命中: 88%, 会心率: 24%" : 
+                            "Low Physical damage to one foe. \nPow: 44, Acc: 88%, Crit: 24%"; return false; // Feral Claw
+                    case 124: __result = JapaneseLanguage ? "敵1体に物理属性の小ダメージ。\n威力: 42, 命中: 88%, 会心率: 22%, \n毒: 22%" : 
+                            "Low Physical damage to one foe. \nPow: 42, Acc: 88%, Crit: 22%, \nPoison: 22%"; return false; // Venom Claw
+                    case 125: __result = JapaneseLanguage ? "敵1体に物理属性の小ダメージ。\n威力: 42, 命中: 88%, 会心率: 22%, \nスタン: 22%" : 
+                            "Low Physical damage to one foe. \nPow: 42, Acc: 88%, Crit: 22%, \nStun: 22%"; return false; // Stun Claw
+                    case 126: __result = JapaneseLanguage ? "敵1体に物理属性の大ダメージ。\n威力: 56, 命中: 80%, 会心率: 40%" : 
+                            "High Physical damage to one foe. \nPow: 56, Acc: 80%, Crit: 40%"; return false; // Iron Claw
+                    case 127: __result = JapaneseLanguage ? "敵全体に破魔属性の大ダメージ。\n威力: 48, 命中: 100%, 魔封: 30%" : 
+                            "High Light damage to all foes. \nPow: 48, Acc: 100%, Mute: 30%"; return false; // Godly Light
+                    case 131: __result = JapaneseLanguage ? "敵1体に物理属性の大ダメージ。\n威力: 54, 命中: 95%, 会心率: 50%" : 
+                            "High Physical damage to one foe. \nPow: 54, Acc: 95%, Crit: 50%"; return false; // Deadly Fury
+                    case 133: __result = JapaneseLanguage ? "敵全体に銃撃属性の中ダメージ。\n威力: 32, 命中: 95%, 会心率: 24%, \n縛着: 30%" : 
+                            "Medium Shot damage to all foes. \nPow: 32, Acc: 95%, Crit: 24%, \nBind: 30%"; return false; // Javelin Rain
+                    case 136: __result = JapaneseLanguage ? "敵1体に魔力依存の銃撃属性中ダメージ。\n威力: 34, 命中: 120%, 会心率: 100%" : 
+                            "Medium Mag-based Shot damage to \none foe. Pow: 34, Acc: 120%, \nCrit: 100%"; return false; // Divine Shot
+                    case 143: __result = JapaneseLanguage ? "敵全体に物理属性の大ダメージ。\n威力: 36, 命中: 95%, 会心率: 24%, \n魔封: 30%" : 
+                            "High Physical damage to all foes. \nPow: 36, Acc: 95%, Crit: 24%, \nMute: 30%"; return false; // Xeros Beat
+                    case 144: __result = JapaneseLanguage ? "敵全体に物理属性の大ダメージ。\n威力: 42, 命中: 95%, 会心率: 30%" : 
+                            "High Physical damage to all foes. \nPow: 42, Acc: 95%, Crit: 30%"; return false; // Oni Kagura
+                    case 147: __result = JapaneseLanguage ? "敵1体に力依存の万能属性特大ダメージ。\n威力: 66, 命中: 95%, 会心率: 30%" : 
+                            "Mega Str-based Almighty damage to \none foe. Pow: 66, Acc: 95%, Crit: 30%"; return false; // Freikugel
+                    case 152: __result = JapaneseLanguage ? "自身を犠牲にして敵味方全体に力依存\nの万能属性特大ダメージ。\n威力: 60, 命中: 100%, 会心率: 0%" : 
+                            "Sacrifice self to deal Mega Str-based \nAlmighty damage to all foes and allies. \nPow: 60, Acc: 100%, Crit: 0%"; return false; // Last Resort
+                    case 153: __result = JapaneseLanguage ? "敵全体に物理属性の大ダメージ。\n威力: 40, 命中: 98%, 会心率: 20%" : 
+                            "High Physical damage to all foes. \nPow: 40, Acc: 98%, Crit: 20%"; return false; // Foul Havoc
+                    case 155: __result = JapaneseLanguage ? "敵全体に物理属性の特大ダメージ。\n威力: 60, 命中: 200%, 会心率: 0%, \nスタン: 20%" : 
+                            "Mega Physical damage to all foes. \nPow: 60, Acc: 200%, Crit: 0%, \nStun: 20%"; return false; // Earthquake
+                    case 160: __result = JapaneseLanguage ? "敵1体に銃撃属性の特大ダメージ。\n威力: 62, 命中: 95%, 会心率: 30%" : 
+                            "Mega Shot damage to one foe. \nPow: 62, Acc: 95%, Crit: 30%"; return false; // Spiral Viper
+                    case 161: __result = JapaneseLanguage ? "敵1体に火炎属性の特大ダメージ。\n威力: 80, 命中: 120%" : 
+                            "Mega Fire damage to one foe. \nPow: 80, Acc: 120%"; return false; // Magma Axis
+                    case 163: __result = JapaneseLanguage ? "敵全体に物理属性の特大ダメージ。\n威力: 52, 命中: 95%, 会心率: 30%" : 
+                            "Mega Physical damage to all foes. \nPow: 52, Acc: 95%, Crit: 30%"; return false; // Gaea Rage
+                    case 176: __result = JapaneseLanguage ? "敵ランダムに火炎属性の小ダメージ。\n3〜5回ヒット。威力: 20, 命中: 100%" : 
+                            "Low Fire damage to random foes. \n3-5 hits. Pow: 20, Acc: 100%"; return false; // Fire Breath
+                    case 177: __result = JapaneseLanguage ? "敵ランダムに火炎属性の中ダメージ。\n3〜6回ヒット。威力: 30, 命中: 100%" : 
+                            "Medium Fire damage to random foes. \n3-6 hits. Pow: 30, Acc: 100%"; return false; // Hellfire
+                    case 178: __result = JapaneseLanguage ? "敵ランダムに火炎属性の大ダメージ。\n3〜7回ヒット。威力: 40, 命中: 100%" : 
+                            "High Fire damage to random foes. \n3-7 hits. Pow: 40, Acc: 100%"; return false; // Prominence
+                    case 179: __result = JapaneseLanguage ? "敵1体に火炎属性の特大ダメージ。\n威力: 80, 命中: 100%" : 
+                            "Mega Fire damage to one foe. \nPow: 80, Acc: 100%"; return false; // Trisagion
+                    case 180: __result = JapaneseLanguage ? "敵ランダムに氷結属性の小ダメージ。\n3〜5回ヒット。威力: 18, 命中: 100%, \n凍結: 15%" : 
+                            "Low Ice damage to random foes. \n3-5 hits. Pow: 18, Acc: 100%, \nFreeze: 15%"; return false; // Ice Breath
+                    case 181: __result = JapaneseLanguage ? "敵ランダムに氷結属性の中ダメージ。\n3〜6回ヒット。威力: 24, 命中: 100%, \n凍結: 18%" : 
+                            "Medium Ice damage to random foes. \n3-6 hits. Pow: 24, Acc: 100%, \nFreeze: 18%"; return false; // Glacial Blast
+                    case 182: __result = JapaneseLanguage ? "敵ランダムに電撃属性の小ダメージ。\n3〜5回ヒット。威力: 18, 命中: 100%, \n感電: 15%" : 
+                            "Low Elec damage to random foes. \n3-5 hits. Pow: 18, Acc: 100%, \nShock: 15%"; return false; // Shock
+                    case 183: __result = JapaneseLanguage ? "敵ランダムに電撃属性の中ダメージ。\n3〜6回ヒット。威力: 24, 命中: 100%, \n感電: 18%" : 
+                            "Medium Elec damage to random foes. \n3-6 hits. Pow: 24, Acc: 100%, \nShock: 18%"; return false; // Bolt Storm
+                    case 184: __result = JapaneseLanguage ? "敵ランダムに衝撃属性の小ダメージ。\n3〜5回ヒット。威力: 20, 命中: 100%" : 
+                            "Low Force damage to random foes. \n3-5 hits. Pow: 20, Acc: 100%"; return false; // Wing Buffet
+                    case 185: __result = JapaneseLanguage ? "敵ランダムに衝撃属性の中ダメージ。\n3〜6回ヒット。威力: 30, 命中: 100%" : 
+                            "Medium Force damage to random foes. \n3-6 hits. Pow: 30, Acc: 100%"; return false; // Tornado
+                    case 186: __result = JapaneseLanguage ? "敵1体に衝撃属性の特大ダメージ。\n威力: 80, 命中: 100%" : 
+                            "Mega Force damage to one foe. \nPow: 80, Acc: 100%"; return false; // Wind Cutter
+                    case 187: __result = JapaneseLanguage ? "敵全体に衝撃属性の大ダメージ。\n威力: 45, 命中: 100%, スタン: 30%" : 
+                            "High Force damage to all foes. \nPow: 45, Acc: 100%, Stun: 30%"; return false; // Wet Wind
+                    case 190: __result = JapaneseLanguage ? "敵1体からHPを吸収。\n威力: 25, 命中: 100% (万能属性)" : 
+                            "Drains HP from one foe. \nPow: 25, Acc: 100% (Almighty-Type)"; return false; // Deathtouch
+                    case 191: __result = JapaneseLanguage ? "敵1体からMPを吸収。\n威力: 15, 命中: 100% (万能属性)" : 
+                            "Drains MP from one foe. \nPow: 15, Acc: 100% (Almighty-Type)"; return false; // Mana Drain
+                    case 192: __result = JapaneseLanguage ? "敵1体からHPとMPを吸収。\n威力: 25/15, 命中: 100% \n(万能属性)" : 
+                            "Drains HP/MP from one foe. \nPow: 25/15, Acc: 100% \n(Almighty-Type)"; return false; // Life Drain
+                    case 193: __result = JapaneseLanguage ? "敵1体に破魔属性の中ダメージ。\n威力: 45, 命中: 100%" : 
+                            "Medium Light damage to one foe. \nPow: 45, Acc: 100%"; return false; // Violet Flash
+                    case 194: __result = JapaneseLanguage ? "敵全体に破魔属性の中ダメージ。\n威力: 36, 命中: 100%" : 
+                            "Medium Light damage to all foes. \nPow: 36, Acc: 100%"; return false; // Starlight
+                    case 195: __result = JapaneseLanguage ? "敵全体に破魔属性の特大ダメージ。\n威力: 60, 命中: 100%" : 
+                            "Mega Light damage to all foes. \nPow: 60, Acc: 100%"; return false; // Radiance
+                    case 196: __result = JapaneseLanguage ? "60%の確率で敵1体を即死させる。\n(呪殺属性)" : 
+                            "60% Chance to instakill one foe. \n(Dark-Type)"; return false; // Hell Gaze
+                    case 197: __result = JapaneseLanguage ? "60%の確率で敵1体に石化を付与。\n(呪殺属性)" : 
+                            "60% Chance to inflict Stone \non one foe. (Dark-Type)"; return false; // Stone Gaze
+                    case 198: __result = JapaneseLanguage ? "60%の確率で敵1体に魔封を付与。\n(魔力属性)" : 
+                            "60% Chance to inflict Mute \non one foe. (Curse-Type)"; return false; // Mute Gaze
+                    case 199: __result = JapaneseLanguage ? "60%の確率で敵1体のHPを1にする。\n(呪殺属性)" : 
+                            "60% Chance to reduce HP of one foe \nto 1. (Dark-Type)"; return false; // Evil Gaze
+                    case 202: __result = JapaneseLanguage ? "50%の確率で敵全体に毒を付与。\n防御力を1段階低下。\n(魔力属性)" : 
+                            "50% Chance to inflict Poison on \nall foes. Lowers Defense by one rank. \n(Curse-Type)"; return false; // Toxic Spray
+                    case 203: __result = JapaneseLanguage ? "敵全体の物理／魔法攻撃力\nを2段階低下。" : 
+                            "Lowers all foes' \nPhysical/Magical Attack \nby two ranks."; return false; // War Cry
+                    case 204: __result = JapaneseLanguage ? "敵全体の回避／命中率\nを2段階低下。" : 
+                            "Lowers all foes' Evasion/Hit Rate \nby two ranks."; return false; // Fog Breath
+                    case 205: __result = JapaneseLanguage ? "敵全体の防御力を2段階低下、\n物理攻撃力を2段階上昇。" : 
+                            "Lowers Defense and raises \nPhysical Attack by two ranks \nfor all foes."; return false; // Taunt
+                    case 206: __result = JapaneseLanguage ? "敵全体の全能力を1段階低下。" : 
+                            "Lowers all stats by one rank \nfor all foes."; return false; // Debilitate
+                    case 207: __result = JapaneseLanguage ? "敵全体にバ魔力属性の中ダメージ。\n威力: 30, 命中: 100%, 魔封: 40%" : 
+                            "Medium Curse damage to all foes. \nPow: 30, Acc: 100%, Mute: 40%"; return false; // Dismal Tune
+                    case 208: __result = JapaneseLanguage ? "40%の確率で敵全体のHPを1にする。\n(万能属性)" : 
+                            "40% Chance to reduce HP of all foes \nto 1. (Almighty-Type)"; return false; // Sol Niger
+                    case 209: __result = JapaneseLanguage ? "50%の確率で敵1体にスタンを付与。\n(神経属性)" : 
+                            "50% Chance to inflict Stun \non one foe. (Nerve-Type)"; return false; // Stun Gaze
+                    case 210: __result = JapaneseLanguage ? "60%の確率で敵1体に睡眠を付与。\n(精神属性)" : 
+                            "60% Chance to inflict Sleep \non one foe. (Mind-Type)"; return false; // Dormina
+                    case 211: __result = JapaneseLanguage ? "30%の確率で敵全体に縛着を付与。\n(神経属性)" : 
+                            "30% Chance to inflict Bind \non all foes. (Nerve-Type)"; return false; // Binding Cry
+                    case 212: __result = JapaneseLanguage ? "睡眠状態の敵全体を即死させる。" : 
+                            "Instakill all foes afflicted \nwith Sleep."; return false; // Eternal Rest
+                    case 213: __result = JapaneseLanguage ? "30%の確率で敵全体に混乱を付与。\n(精神属性)" : 
+                            "30% Chance to inflict Panic on \nall foes. (Mind-Type)"; return false; // Sonic Wave
+                    case 214: __result = JapaneseLanguage ? "60%の確率で敵1体に魅了を付与。\n(精神属性)" : 
+                            "60% Chance to inflict Charm on \none foe. (Mind-Type)"; return false; // Sexy Gaze
+                    case 215: __result = JapaneseLanguage ? "40%の確率で敵全体に魅了を付与。\n(精神属性)" : 
+                            "40% Chance to inflict Charm on \nall foes. (Mind-Type)"; return false; // Allure
+                    case 216: __result = JapaneseLanguage ? "30%の確率で敵全体に混乱を付与。\n(精神属性)" : 
+                            "30% Chance to inflict Panic on \nall foes. (Mind-Type)"; return false; // Panic Voice
+                    case 217: __result = JapaneseLanguage ? "敵全体に精神属性の特大ダメージ。\n威力: 60, 命中: 100%, 混乱: 40%" : 
+                            "Mega Mind damage to all foes. \nPow: 60, Acc: 100%, Panic: 40%"; return false; // Intoxicate
+                    case 218: __result = JapaneseLanguage ? "味方全体のHP全回復＆\n全状態異常を治療。" : 
+                            "Full HP recovery & cures all ailments \nfor all allies."; return false; // Prayer
+                    case 223: __result = JapaneseLanguage ? "ストックからランダム\nな悪魔を召喚。" : 
+                            "Summons a random ally \nfrom the stock."; return false; // Beckon Call
+                    case 224: __result = JapaneseLanguage ? "次の力依存攻撃のダメージ\nを120%増加。" : 
+                            "Increases the damage of the user's \nnext Strength-based attack by 120%."; return false; // Focus
+                    case 235: __result = JapaneseLanguage ? "敵ランダムに万能属性の特大ダメージ。\n4〜8回ヒット。威力: 40, 命中: 100%" : 
+                            "Mega Almighty damage to random foes. \n4-8 hits. Pow: 36, Acc: 100%"; return false; // Fire of Sinai
+                    case 242: __result = JapaneseLanguage ? "敵全体に万能属性の大ダメージ。\nランダムで異常状態を付与。\n威力: 40, 命中: 100%, 異常: 50%" : 
+                            "High Almighty damage to all foes. \nMay inflict random ailments. \nPow: 40, Acc: 100%, Random: 50%"; return false; // God's Curse
+                    case 244: __result = JapaneseLanguage ? "敵全体に氷結属性の中ダメージ。\n対象の回避／命中率を低下。\n威力: 30, 命中: 100%, 凍結: 25%" : 
+                            "Medium Ice damage to all foes. \nLowers targets' Evasion/Hit Rate. \nPow: 30, Acc: 100%, Freeze: 25%"; return false; // Icy Death
+                    case 249: __result = JapaneseLanguage ? "敵ランダムに精神属性の大ダメージ。\n3〜7回ヒット。威力: 36, 命中: 100%, 混乱: 40%" : 
+                            "High Mind damage to random foes. \n3-7 hits. Pow: 36, Acc: 100%, Panic: 40%"; return false; // Wild Dance
+                    case 250: __result = JapaneseLanguage ? "敵1体からHPとMPを吸収。\n威力: 80/40, 命中: 100% \n(万能属性)" : 
+                            "Drains HP/MP from one foe. \nPow: 80/40, Acc: 100% \n(Almighty-Type)"; return false; // Domination
+                    case 257: __result = JapaneseLanguage ? "敵ランダムに万能属性の特大ダメージ。\n4〜8回ヒット。威力: 40, 命中: 100%" : 
+                            "Mega Almighty damage to random foes. \n4-8 hits. Pow: 40, Acc: 100%."; return false; // Fire of Sinai
+                    case 259: __result = JapaneseLanguage ? "敵全体に万能属性の特大ダメージ。\n呪殺無効でない敵を即死させることがある。\n威力: 60, 命中: 100%, 即死率: 90%" : 
+                            "Mega Almighty damage to all foes. \nMay instakill when not immune to Dark. \nPow: 60, Acc: 100%, Fatal: 90%"; return false; // Death Flies
+                    case 260: __result = JapaneseLanguage ? "敵全体に万能属性の特大ダメージ。\n呪殺無効でない敵を即死させることがある。\n威力: 60, 命中: 100%, 即死率: 90%" : 
+                            "Mega Almighty damage to all foes. \nMay instakill when not immune to Dark. \nPow: 60, Acc: 100%, Fatal: 90%"; return false; // Death Flies
+                    case 261: __result = JapaneseLanguage ? "敵全体にバ魔力属性の大ダメージ。\n威力: 48, 命中: 60%, 魔封: 100%" : 
+                            "High Curse damage to all foes. \nPow: 48, Acc: 60%, Mute: 100%"; return false; // Soul Divide
+                    case 262: __result = JapaneseLanguage ? "敵1体に銃撃属性の小ダメージ。\n対象の回避／防御を低下。\n威力: 32, 命中: 120%, 会心率: 18%" : 
+                            "Low Shot damage to one foe. \nLowers target's Evasion/Defense. \nPow: 32, Acc: 120%, Crit: 18%"; return false; // Boogie-Woogie/E & I
+                    case 263: __result = JapaneseLanguage ? "敵1体に物理属性の大ダメージ。\n威力: 48, 命中: 200%, 会心率: 40%" : 
+                            "High Physical damage to one foe. \nPow: 48, Acc: 200%, Crit: 40%"; return false; // Enter Yoshitsune/Rebellion
+                    case 264: __result = JapaneseLanguage ? "敵全体に銃撃属性の中ダメージ。\n威力: 30, 命中: 200%, 会心率: 0%, \n混乱: 24%" : 
+                            "Medium Shot damage to all foes. \nPow: 30, Acc: 200%, Crit: 0%, \nPanic: 24%"; return false; // Mokoi Boomerang/Twosome Time
+                    case 265: __result = JapaneseLanguage ? "敵全体の防御力を2段階低下、\n物理攻撃力を2段階上昇。\n使用者のMPをわずかに回復。" : 
+                            "Lowers Defense/raises Physical Attack \nby two ranks for all foes. \nSlight MP recovery for the user."; return false; // Provoke
+                    case 266: __result = JapaneseLanguage ? "敵1体に力依存の万能属性中ダメージ。\n呪殺無効でない敵を即死させることがある。\n威力: 42, 命中: 90%" : 
+                            "Medium Str-based Almighty damage \nto one foe. May instakill when not \nimmune to Dark. Pow: 42, Acc: 90%"; return false; // Tekisatsu/Stinger
+                    case 267: __result = JapaneseLanguage ? "敵全体に電撃属性の大ダメージ。\n対象の回避／命中率を低下。\n威力: 40, 命中: 120%, 感電: 20%" : 
+                            "High Elec damage to all foes. \nLowers targets' Evasion/Hit Rate. \nPow: 40, Acc: 120%, Shock: 20%"; return false; // Mishaguji Raiden/Roundtrip
+                    case 268: __result = JapaneseLanguage ? "敵全体に衝撃属性の大ダメージ。\n対象の物理／魔法攻撃力を低下。\n威力: 48, 命中: 120%" : 
+                            "High Force damage to all foes. \nLowers targets' Physical/Magical Attack. \nPow: 48, Acc: 120%"; return false; // Hitokoto Storm/Whirlwind
+                    case 269: __result = JapaneseLanguage ? "敵全体に万能属性の大ダメージ。\n威力: 48, 命中: 200%" : 
+                            "High Almighty damage to all foes. \nPow: 48, Acc: 200%"; return false; // Jiraiya Dance/Showtime
+                    case 275: __result = JapaneseLanguage ? "敵全体に物理属性の中ダメージ。\n威力: 32, 命中: 100%, 会心率: 5%" : 
+                            "Medium Physical damage to all foes. \nPow: 32, Acc: 100%, Crit: 5%"; return false; // Andalucia
+                    case 276: __result = JapaneseLanguage ? "自身の回避／命中率を最大にする。" : 
+                            "Maximizes own Evasion/Hit Rate."; return false; // Red Capote
+                    case 278: __result = JapaneseLanguage ? "敵全体に精神属性の中ダメージ。\nランダムで異常状態を付与。\n威力: 30, 命中: 100%, 異常: 40%" : 
+                            "Medium Mind damage to all foes. \nMay inflict random ailments. \nPow: 30, Acc: 100%, Random: 40%"; return false; // Preach
+                    case 279: __result = JapaneseLanguage ? "敵1体からHPとMPを吸収。\n威力: 35/20, 命中: 100% \n(万能属性)" : 
+                            "Drains HP/MP from one foe. \nPow: 35/20, Acc: 100% \n(Almighty-Type)"; return false; // Meditation
+                    case 280: __result = JapaneseLanguage ? "敵ランダムに物理属性の中ダメージ。\n3〜6回ヒット。威力: 32, 命中: 96%, \n会心率: 10%, 混乱: 40%" : 
+                            "Medium Physical damage to random foes. \n3-6 hits. Pow: 32, Acc: 96%, \nCrit: 10%, Panic: 40%"; return false; // Terrorblade
+                    case 281: __result = JapaneseLanguage ? "敵全体に物理属性の中ダメージ。\n威力: 32, 命中: 94%, 会心率: 12%" : 
+                            "Medium Physical damage to all foes. \nPow: 32, Acc: 94%, Crit: 12%"; return false; // Hell Spin
+                    case 282: __result = JapaneseLanguage ? "敵全体に衝撃属性の中ダメージ。\n「カジャ系」効果を打ち消す。\n威力: 30, 命中: 100%" : 
+                            "Medium Force damage to all foes. \nNegates -kaja effects. \nPow: 30, Acc: 100%"; return false; // Hell Exhaust
+                    case 283: __result = JapaneseLanguage ? "敵全体に力依存の火炎属性中ダメージ。\n威力: 32, 命中: 88%, 会心率: 12%" : 
+                            "Medium Str-based Fire damage \nto all foes. Pow: 32, Acc: 88%, \nCrit: 12%"; return false; // Hell Burner
+                    case 284: __result = JapaneseLanguage ? "味方全体の物理攻撃力／回避／命中率\nを1段階上昇。" : 
+                            "Raises all allies' \nPhysical Attack/Evasion/Hit Rate \nby one rank."; return false; // Hell Throttle
+                    case 285: __result = JapaneseLanguage ? "敵全体の回避／命中率を1段階低下。\n50%の確率で混乱を付与。\n(万能属性)" : 
+                            "Lowers all foes' Evasion/Hit Rate \nby one rank. 50% Chance to \ninflict Panic. (Almighty-Type)"; ; return false; // Babylon Goblet
+                    case 286: __result = JapaneseLanguage ? "敵全体に万能属性の大ダメージ。\n使用者のHPをわずかに回復。\n威力: 48, 命中: 100%, 魅了: 30%" : 
+                            "High Almighty damage to all foes. \nSlight HP recovery for the user. \nPow: 48, Acc: 100%, Charm: 30%"; return false; // Death Lust
+                    case 287: __result = JapaneseLanguage ? "敵1体に破魔属性の特大ダメージ。\n破魔弱点の敵を即死させることがある。\n威力: 80, 命中: 100%, 即死率: 90%" : 
+                            "Mega Light damage to one foe. \nMay instakill when weak to Light. \nPow: 80, Acc: 100%, Fatal: 90%"; return false; // God's Bow
                     
-                    case 290: __result = "Raises Maximum HP by 10%. \n(Does not stack with similar effects)"; return false; // Life Bonus
-                    case 291: __result = "Raises Maximum HP by 20%. \n(Does not stack with similar effects)"; return false; // Life Gain
-                    case 292: __result = "Raises Maximum HP by 30%. \n(Does not stack with similar effects)"; return false; // Life Surge
-                    case 293: __result = "Raises Maximum MP by 10%. \n(Does not stack with similar effects)"; return false; // Mana Bonus
-                    case 294: __result = "Raises Maximum MP by 20%. \n(Does not stack with similar effects)"; return false; // Mana Gain
-                    case 295: __result = "Raises Maximum MP by 30%. \n(Does not stack with similar effects)"; return false; // Mana Surge
-                    case 296: __result = "Guarantees escape \nwhen possible."; return false; // Fast Retreat
-                    case 298: __result = "Prevents being attacked \nfrom behind."; return false; // Mind's Eye
-                    case 299: __result = "Raises Critical Rate of \nnormal attacks to 30%."; return false; // Might
-                    case 300: __result = "Raises Critical Rate of \nnormal attacks to 75% \nduring full Kagutsuchi."; return false; // Bright Might
-                    case 301: __result = "Raises Critical Rate of \nnormal attacks to 75% \nduring new Kagutsuchi."; return false; // Dark Might
-                    case 302: __result = "Normal attacks will drain HP."; return false; // Drain Attack
-                    case 304: __result = "Normal attacks will \nhit all enemies."; return false; // Attack All
-                    case 305: __result = "May perform a weak counterattack \nwhen physically attacked. Pow: 32"; return false; // Counter
-                    case 306: __result = "May perform a medium counterattack \nwhen physically attacked. Pow: 48"; return false; // Retaliate
-                    case 307: __result = "May perform a strong counterattack \nwhen physically attacked. Pow: 56"; return false; // Avenge
-                    case 309: __result = "Raises Fire attack damage by 30%."; return false; // Fire Boost
-                    case 310: __result = "Raises Ice attack damage by 30%."; return false; // Ice Boost
-                    case 311: __result = "Raises Elec attack damage by 30%."; return false; // Elec Boost
-                    case 312: __result = "Raises Force attack damage by 30%."; return false; // Force Boost
-                    case 313: __result = "Protects against Physical attacks."; return false; // Anti-Phys
-                    case 314: __result = "Protects against Fire attacks."; return false; // Anti-Fire
-                    case 315: __result = "Protects against Ice attacks."; return false; // Anti-Ice
-                    case 316: __result = "Protects against Elec attacks."; return false; // Anti-Elec
-                    case 317: __result = "Protects against Force attacks."; return false; // Anti-Force
-                    case 345: __result = "Survive a fatal blow with 1 HP \nremaining once per battle."; return false; // Endure
-                    case 346: __result = "Great HP recovery after battle. \nMust be in the active party."; return false; // Life Aid
-                    case 347: __result = "Moderate MP recovery after battle. \nMust be in the active party."; return false; // Mana Aid
-                    case 354: __result = "Earn 100% EXP when not \nparticipating in battle."; return false; // Watchful
-                    case 357: __result = "Attacks ignore all resistances \nexcept Repel."; return false; // Pierce
-                    case 360: __result = "Protects against ailments and instakills. \nSurvive a fatal blow with 1 HP \nremaining once per battle."; return false; // Raidou Endure/Never Yield
-                    case 361: __result = "Pierce & raises damage of all attacks by 30%."; return false; // Raidou the Eternal/Son's Oath
+                    case 290: __result = JapaneseLanguage ? "最大HPが10%上昇。\n(同様の効果とは重複不可)" : 
+                            "Raises Maximum HP by 10%. \n(Does not stack with similar effects)"; return false; // Life Bonus
+                    case 291: __result = JapaneseLanguage ? "最大HPが20%上昇。\n(同様の効果とは重複不可)" : 
+                            "Raises Maximum HP by 20%. \n(Does not stack with similar effects)"; return false; // Life Gain
+                    case 292: __result = JapaneseLanguage ? "最大HPが30%上昇。\n(同様の効果とは重複不可)" : 
+                            "Raises Maximum HP by 30%. \n(Does not stack with similar effects)"; return false; // Life Surge
+                    case 293: __result = JapaneseLanguage ? "最大MPが10%上昇。\n(同様の効果とは重複不可)" : 
+                            "Raises Maximum MP by 10%. \n(Does not stack with similar effects)"; return false; // Mana Bonus
+                    case 294: __result = JapaneseLanguage ? "最大MPが20%上昇。\n(同様の効果とは重複不可)" : 
+                            "Raises Maximum MP by 20%. \n(Does not stack with similar effects)"; return false; // Mana Gain
+                    case 295: __result = JapaneseLanguage ? "最大MPが30%上昇。\n(同様の効果とは重複不可)" : 
+                            "Raises Maximum MP by 30%. \n(Does not stack with similar effects)"; return false; // Mana Surge
+                    case 296: __result = JapaneseLanguage ? "逃走可能な場合、\n確実に逃走。" : 
+                            "Guarantees escape \nwhen possible."; return false; // Fast Retreat
+                    case 298: __result = JapaneseLanguage ? "バックアタックを受ける\nのを防ぐ。" : 
+                            "Prevents being attacked \nfrom behind."; return false; // Mind's Eye
+                    case 299: __result = JapaneseLanguage ? "通常攻撃のクリティカル率が\n30%に上昇。" : 
+                            "Raises Critical Rate of \nnormal attacks to 30%."; return false; // Might
+                    case 300: __result = JapaneseLanguage ? "FULL KAGUTSUCHI（満月）時、\n通常攻撃のクリティカル率が\n75%に上昇。" : 
+                            "Raises Critical Rate of \nnormal attacks to 75% \nduring full Kagutsuchi."; return false; // Bright Might
+                    case 301: __result = JapaneseLanguage ? "SILENT KAGUTSUCHI（新月）時、\n通常攻撃のクリティカル率が\n75%に上昇。" : 
+                            "Raises Critical Rate of \nnormal attacks to 75% \nduring new Kagutsuchi."; return false; // Dark Might
+                    case 302: __result = JapaneseLanguage ? "通常攻撃にHP吸収効果を付与。" : 
+                            "Normal attacks will drain HP."; return false; // Drain Attack
+                    case 304: __result = JapaneseLanguage ? "通常攻撃が敵全体化。" : 
+                            "Normal attacks will \nhit all enemies."; return false; // Attack All
+                    case 305: __result = JapaneseLanguage ? "物理攻撃を受けた際、\n確率で弱反撃。\n威力: 32" : 
+                            "May perform a weak counterattack \nwhen physically attacked. \nPow: 32"; return false; // Counter
+                    case 306: __result = JapaneseLanguage ? "物理攻撃を受けた際、\n確率で中反撃。\n威力: 48" : 
+                            "May perform a medium counterattack \nwhen physically attacked. \nPow: 48"; return false; // Retaliate
+                    case 307: __result = JapaneseLanguage ? "物理攻撃を受けた際、\n確率で強反撃。\n威力: 56" : 
+                            "May perform a strong counterattack \nwhen physically attacked. \nPow: 56"; return false; // Avenge
+                    case 309: __result = JapaneseLanguage ? "火炎属性攻撃のダメージが30%上昇。" : 
+                            "Raises Fire attack damage by 30%."; return false; // Fire Boost
+                    case 310: __result = JapaneseLanguage ? "氷結属性攻撃のダメージが30%上昇。" : 
+                            "Raises Ice attack damage by 30%."; return false; // Ice Boost
+                    case 311: __result = JapaneseLanguage ? "電撃属性攻撃のダメージが30%上昇。" : 
+                            "Raises Elec attack damage by 30%."; return false; // Elec Boost
+                    case 312: __result = JapaneseLanguage ? "衝撃属性攻撃のダメージが30%上昇。" : 
+                            "Raises Force attack damage by 30%."; return false; // Force Boost
+                    case 313: __result = JapaneseLanguage ? "物理属性攻撃のダメージを軽減。" : 
+                            "Protects against Physical attacks."; return false; // Anti-Phys
+                    case 314: __result = JapaneseLanguage ? "火炎属性攻撃のダメージを軽減。" : 
+                            "Protects against Fire attacks."; return false; // Anti-Fire
+                    case 315: __result = JapaneseLanguage ? "氷結属性攻撃のダメージを軽減。" : 
+                            "Protects against Ice attacks."; return false; // Anti-Ice
+                    case 316: __result = JapaneseLanguage ? "電撃属性攻撃のダメージを軽減。" : 
+                            "Protects against Elec attacks."; return false; // Anti-Elec
+                    case 317: __result = JapaneseLanguage ? "衝撃属性攻撃のダメージを軽減。" : 
+                            "Protects against Force attacks."; return false; // Anti-Force
+                    case 345: __result = JapaneseLanguage ? "1戦闘に1回、致死ダメージを受け\nてもHP1で耐える。" : 
+                            "Survive a fatal blow with 1 HP \nremaining once per battle."; return false; // Endure
+                    case 346: __result = JapaneseLanguage ? "戦闘終了後、HPが大回復。\n戦闘メンバーである必要あり。" : 
+                            "Great HP recovery after battle. \nMust be in the active party."; return false; // Life Aid
+                    case 347: __result = JapaneseLanguage ? "戦闘終了後、MPが中回復。\n戦闘メンバーである必要あり。" : 
+                            "Moderate MP recovery after battle. \nMust be in the active party."; return false; // Mana Aid
+                    case 354: __result = JapaneseLanguage ? "戦闘に参加していなくて\nも100%の経験値を獲得。" : 
+                            "Earn 100% EXP when not \nparticipating in battle."; return false; // Watchful
+                    case 357: __result = JapaneseLanguage ? "攻撃時、反射以外のすべて\nの耐性を無視。" : 
+                            "Attacks ignore all resistances \nexcept Repel."; return false; // Pierce
+                    case 360: __result = JapaneseLanguage ? "状態異常と即死の発生率を半減させる。\n1戦闘に1回、致死ダメージを受け\nてもHP1で耐える。" : 
+                            "Protects against ailments and instakills. \nSurvive a fatal blow with 1 HP \nremaining once per battle."; return false; // Raidou Endure/Never Yield
+                    case 361: __result = JapaneseLanguage ? "貫通効果＆すべての攻撃のダメージが30%上昇。" : 
+                            "Pierce & raises damage of all attacks by 30%."; return false; // Raidou the Eternal/Son's Oath
 
-                    case 385: __result = "Invite a demon to join. \nEffective when speaker is adult \nand target is female."; return false; // Scout
-                    case 386: __result = "Invite a demon to join. \nEffective when speaker is older \nthan target."; return false; // Kidnap
-                    case 387: __result = "Invite a demon to join. \nEffective when speaker is female \nand target is male."; return false; // Seduce
-                    case 388: __result = "Invite a demon to join. \nEffective when speaker is much \nhigher level than target."; return false; // Brainwash
-                    case 390: __result = "Invite a demon to join. \nEffective during new Kagutsuchi."; return false; // Dark Pledge
-                    case 391: __result = "Invite a demon to join. Effective when \nspeaker is young male or old female \nand target is young female."; return false; // Wooing
-                    case 392: __result = "Invite a demon to join. \nEffective when speaker is much lower \nlevel than target."; return false; // Beseech
-                    case 393: __result = "Invite a demon to join in Odin's name. \nEffective when target is male."; return false; // Soul Recruit
-                    case 394: __result = "Invite a demon to join using sex appeal. \nEffective when speaker is male \nand target is female."; return false; // Mischief
+                    case 385: __result = JapaneseLanguage ? "悪魔を勧誘。\n話し手が大人で対象が女性\nの場合に有効。" : 
+                            "Invite a demon to join. \nEffective when speaker is adult \nand target is female."; return false; // Scout
+                    case 386: __result = JapaneseLanguage ? "悪魔を勧誘。\n話し手が対象より年上\nの場合に有効。" : 
+                            "Invite a demon to join. \nEffective when speaker is older \nthan target."; return false; // Kidnap
+                    case 387: __result = JapaneseLanguage ? "悪魔を勧誘。\n話し手が女性で対象が男性\nの場合に有効。" : 
+                            "Invite a demon to join. \nEffective when speaker is female \nand target is male."; return false; // Seduce
+                    case 388: __result = JapaneseLanguage ? "悪魔を勧誘。\n話し手が対象よりかなり高レベル\nの場合に有効。" : 
+                            "Invite a demon to join. \nEffective when speaker is much \nhigher level than target."; return false; // Brainwash
+                    case 390: __result = JapaneseLanguage ? "悪魔を勧誘。\nSILENT KAGUTSUCHI（新月）\n時に有効。" : 
+                            "Invite a demon to join. \nEffective during new Kagutsuchi."; return false; // Dark Pledge
+                    case 391: __result = JapaneseLanguage ? "悪魔を勧誘。\n話し手が若い男性または年配の女性で、\n対象が若い女性の場合に有効。" : 
+                            "Invite a demon to join. Effective when \nspeaker is young male or old female \nand target is young female."; return false; // Wooing
+                    case 392: __result = JapaneseLanguage ? "悪魔を勧誘。\n話し手が対象よりかなり低レベル\nの場合に有効。" : 
+                            "Invite a demon to join. \nEffective when speaker is much lower \nlevel than target."; return false; // Beseech
+                    case 393: __result = JapaneseLanguage ? "オーディンの名のもとに悪魔を勧誘。\n対象が男性の場合に有効。" : 
+                            "Invite a demon to join in Odin's name. \nEffective when target is male."; return false; // Soul Recruit
+                    case 394: __result = JapaneseLanguage ? "性的な魅力で悪魔を勧誘。\n話し手が男性で対象が女性\nの場合に有効。" : 
+                            "Invite a demon to join using sex appeal. \nEffective when speaker is male \nand target is female."; return false; // Mischief
 
-                    case 396: __result = "Ask for Macca and items."; return false; // Plead
-                    case 397: __result = "Ask for Macca and items. \nEffective when speaker is much lower \nlevel than target."; return false; // Begging
-                    case 398: __result = "Ask for Macca and items. \nEffective when speaker is much higher \nlevel than target."; return false; // Threaten
+                    case 396: __result = JapaneseLanguage ? "マッカやアイテムを要求。" : 
+                            "Ask for Macca and items."; return false; // Plead
+                    case 397: __result = JapaneseLanguage ? "マッカやアイテムを要求。\n話し手が対象よりかなり低レベル\nの場合に有効。" : 
+                            "Ask for Macca and items. \nEffective when speaker is much lower \nlevel than target."; return false; // Begging
+                    case 398: __result = JapaneseLanguage ? "マッカやアイテムを要求。\n話し手が対象よりかなり高レベル\nの場合に有効。" : 
+                            "Ask for Macca and items. \nEffective when speaker is much higher \nlevel than target."; return false; // Threaten
 
                     case 409: __result = "While in the active party, \nmay step in during negotiation and \nensure lesser demands."; return false; // Haggle
                     case 410: __result = "While in the active party, \nmay step in during negotiation and \nsoothe an enraged demon."; return false; // Arbitration
@@ -491,95 +727,179 @@ namespace NocturneInsaniax
                     case 420: __result = "While in the active party, \nmay step in during negotiation to \nconvince a higher level demon."; return false; // Flatter
 
                     // New Skills
-                    case 128: __result = "Low Shot damage to random foes. \n2-5 hits. Pow: 22, Acc: 90%, \nCrit: 18%"; return false; // Rapid Needle
-                    case 129: __result = "Medium Shot damage to one foe. \nPow: 44, Acc: 84%, Crit: 30%"; return false; // Tathlum Shot
-                    case 130: __result = "Medium Shot damage to all foes. \nPow: 28, Acc: 82%, Crit: 28%"; return false; // Blast Arrow
-                    case 134: __result = "High Shot damage to one foe. \nPow: 52, Acc: 80%, Crit: 40%"; return false; // Grand Tack
-                    case 135: __result = "High Shot damage to all foes. \nPow: 36, Acc: 84%, Crit: 30%"; return false; // Heaven's Bow
-                    case 141: __result = "Mega Shot damage to one foe. \nPow: 60, Acc: 90%, Crit: 30%"; return false; // Riot Gun
-                    case 188: __result = "50% Chance to instakill one foe. \n(Light-Type)"; return false; // Punishment
-                    case 189: __result = "30% Chance to instakill all foes. \n(Light-Type)"; return false; // Judgement Light
+                    case 128: __result = JapaneseLanguage ? "敵ランダムに銃撃属性の小ダメージ。\n2〜5回ヒット。威力: 22, 命中: 90%, \n会心率: 18%" : 
+                            "Low Shot damage to random foes. \n2-5 hits. Pow: 22, Acc: 90%, \nCrit: 18%"; return false; // Rapid Needle
+                    case 129: __result = JapaneseLanguage ? "敵1体に銃撃属性の中ダメージ。\n威力: 44, 命中: 84%, 会心率: 30%" : 
+                            "Medium Shot damage to one foe. \nPow: 44, Acc: 84%, Crit: 30%"; return false; // Tathlum Shot
+                    case 130: __result = JapaneseLanguage ? "敵全体に銃撃属性の中ダメージ。\n威力: 28, 命中: 82%, 会心率: 28%" : 
+                            "Medium Shot damage to all foes. \nPow: 28, Acc: 82%, Crit: 28%"; return false; // Blast Arrow
+                    case 134: __result = JapaneseLanguage ? "敵1体に銃撃属性の大ダメージ。\n威力: 52, 命中: 80%, 会心率: 40%" : 
+                            "High Shot damage to one foe. \nPow: 52, Acc: 80%, Crit: 40%"; return false; // Grand Tack
+                    case 135: __result = JapaneseLanguage ? "敵全体に銃撃属性の大ダメージ。\n威力: 36, 命中: 84%, 会心率: 30%" : 
+                            "High Shot damage to all foes. \nPow: 36, Acc: 84%, Crit: 30%"; return false; // Heaven's Bow
+                    case 141: __result = JapaneseLanguage ? "敵1体に銃撃属性の特大ダメージ。\n威力: 60, 命中: 90%, 会心率: 30%" : 
+                            "Mega Shot damage to one foe. \nPow: 60, Acc: 90%, Crit: 30%"; return false; // Riot Gun
+                    case 188: __result = JapaneseLanguage ? "50%の確率で敵1体を即死させる。\n(破魔属性)" : 
+                            "50% Chance to instakill one foe. \n(Light-Type)"; return false; // Punishment
+                    case 189: __result = JapaneseLanguage ? "30%の確率で敵全体を即死させる。\n(破魔属性)" : 
+                            "30% Chance to instakill all foes. \n(Light-Type)"; return false; // Judgement Light
 
-                    case 308: __result = "Attack again after a \ncritical normal attack."; return false; // Double Attack
-                    case 362: __result = "Raises Physical attack damage by 30%."; return false; // Phys Boost
-                    case 363: __result = "Raises Element attack damage by 30%. \n(Does not stack with similar effects)"; return false; // Element Boost
-                    case 364: __result = "Protects against Element attacks. \n(Does not stack with similar effects)"; return false; // Anti-Elements
-                    case 365: __result = "Protects against Ailment attacks. \n(Does not stack with similar effects)"; return false; // Anti-Ailments
-                    case 366: __result = "Protects against ailments \nand instakills."; return false; // Abyssal Mask
-                    case 367: __result = "Allows the use of items."; return false; // Knowledge of Tools
-                    case 368: __result = "Very slight HP recovery \nafter each action."; return false; // Renewal
-                    case 369: __result = "Very slight MP recovery \nafter each action."; return false; // Spirit Well
-                    case 370: __result = "Slight HP/MP recovery \nafter each action. \n(Does not stack with similar effects)"; return false; // Qigong
-                    case 371: __result = "Reduce the base HP costs of skills \nby 50%. HP-based skills always deal \nmaximum damage."; return false; // Arms Master
-                    case 372: __result = "Negates random Critical hits \nbut prevents dodging attacks."; return false; // Firm Stance
-                    case 373: __result = "Raises Shot attack damage by 30%."; return false; // Shot Boost
-                    case 374: __result = "Protects against Shot attacks."; return false; // Anti-Shot
-                    case 375: __result = "Nullifies Shot attacks."; return false; // Null: Shot
-                    case 376: __result = "Absorbs Shot attacks, \nreplenishing HP."; return false; // Shot Drain
-                    case 377: __result = "Repels Shot attacks."; return false; // Shot Repel
-                    case 378: __result = "While alone, gain a flashing \nturn icon at the start of each turn. \n(Does not stack with similar effects)"; return false; // Solitary Drift
+                    case 308: __result = JapaneseLanguage ? "通常攻撃でクリティカル発生時、\n再度攻撃。" : 
+                            "Attack again after a \ncritical normal attack."; return false; // Double Attack
+                    case 362: __result = JapaneseLanguage ? "物理属性攻撃のダメージが30%上昇。" : 
+                            "Raises Physical attack damage by 30%."; return false; // Phys Boost
+                    case 363: __result = JapaneseLanguage ? "属性攻撃のダメージが30%上昇。\n(同様の効果とは重複不可)" : 
+                            "Raises Element attack damage by 30%. \n(Does not stack with similar effects)"; return false; // Element Boost
+                    case 364: __result = JapaneseLanguage ? "属性攻撃のダメージを軽減。\n(同様の効果とは重複不可)" :
+                            "Protects against Element attacks. \n(Does not stack with similar effects)"; return false; // Anti-Elements
+                    case 365: __result = JapaneseLanguage ? "異常耐性攻撃のダメージを軽減。\n(同様の効果とは重複不可)" : 
+                            "Protects against Ailment attacks. \n(Does not stack with similar effects)"; return false; // Anti-Ailments
+                    case 366: __result = JapaneseLanguage ? "状態異常と即死の発生率を半減させる。" : 
+                            "Protects against ailments \nand instakills."; return false; // Abyssal Mask
+                    case 367: __result = JapaneseLanguage ? "アイテムを使用可能にする。" : 
+                            "Allows the use of items."; return false; // Knowledge of Tools
+                    case 368: __result = JapaneseLanguage ? "行動ごとにHPがごくわずかに回復。" : 
+                            "Very slight HP recovery \nafter each action."; return false; // Renewal
+                    case 369: __result = JapaneseLanguage ? "行動ごとにMPがごくわずかに回復。" : 
+                            "Very slight MP recovery \nafter each action."; return false; // Spirit Well
+                    case 370: __result = JapaneseLanguage ? "行動ごとにHPとMPがわずかに回復。\n(同様の効果とは重複不可)" : 
+                            "Slight HP/MP recovery \nafter each action. \n(Does not stack with similar effects)"; return false; // Qigong
+                    case 371: __result = JapaneseLanguage ? "スキルの基本消費HPを50%軽減。\nHP依存スキルが常に最大ダメージを出す。" : 
+                            "Reduce the base HP costs of skills \nby 50%. HP-based skills always deal \nmaximum damage."; return false; // Arms Master
+                    case 372: __result = JapaneseLanguage ? "ランダムクリティカルを無効化するが、\n攻撃の回避ができなくなる。" : 
+                            "Negates random Critical hits \nbut prevents dodging attacks."; return false; // Firm Stance
+                    case 373: __result = JapaneseLanguage ? "銃撃属性攻撃のダメージが30%上昇。" : 
+                            "Raises Shot attack damage by 30%."; return false; // Shot Boost
+                    case 374: __result = JapaneseLanguage ? "銃撃属性攻撃のダメージを軽減。" : 
+                            "Protects against Shot attacks."; return false; // Anti-Shot
+                    case 375: __result = JapaneseLanguage ? "銃撃属性攻撃を無効化。" : 
+                            "Nullifies Shot attacks."; return false; // Null: Shot
+                    case 376: __result = JapaneseLanguage ? "銃撃属性攻撃を吸収しHPを回復。" : 
+                            "Absorbs Shot attacks, \nreplenishing HP."; return false; // Shot Drain
+                    case 377: __result = JapaneseLanguage ? "銃撃属性攻撃を反射。" : 
+                            "Repels Shot attacks."; return false; // Shot Repel
+                    case 378: __result = JapaneseLanguage ? "1人だけの時、各ターンの開始時に\n点滅するターンアイコンを獲得。\n(同様の効果とは重複不可)" : 
+                            "While alone, gain a flashing \nturn icon at the start of each turn. \n(Does not stack with similar effects)"; return false; // Solitary Drift
                     case 379: __result = "Attacks ignore all resistances \nexcept Repel."; return false; // Pierce
 
                     //case 373: __result = "Survive a fatal blow then fully \nrecover HP once per battle. \n(Does not stack with similar effects)"; return false; // Enduring Soul
 
-                    case 424: __result = "Increases the damage of the user's \nnext Magic-based attack by 120%."; return false; // Concentrate
-                    case 425: __result = "Increases the damage of the user's \nnext attack by 120% and grants \nit Pierce."; return false; // Impaler's Animus
-                    case 426: __result = "High Physical damage to random foes. \n3-5 hits, Pow: 36, Acc: 90%, \nCrit: 20%, Charm: 20%"; return false; // Sakura Rage
-                    case 427: __result = "Low Physical damage to one foe. \nLowers target's Physical Attack. \nPow: 36, Acc: 90%, Crit: 10%"; return false; // Fang Breaker
-                    case 428: __result = "Low Physical damage to one foe. \nLowers target's Defense. \nPow: 32, Acc: 90%, Crit: 10%"; return false; // Defense Kuzushi
-                    case 429: __result = "Mega Physical damage to one foe. \nPow: 80, Acc: 94%, Crit: 0%"; return false; // Primal Force
-                    case 430: __result = "Low Physical damage to all foes. \nPow: 24, Acc: 86%, Crit: 34%"; return false; // Chi Blast
-                    case 431: __result = "High Physical damage to all foes. \nPow: 42, Acc: 90%, Crit: 30%, \nMute: 30%"; return false; // Revelation
-                    case 432: __result = "High Physical damage to all foes. \nPow: 42, Acc: 90%, Crit: 30%, \nStone: 24%"; return false; // Gate of Hell
-                    case 433: __result = "High Physical damage to one foe. \nPow: 54, Acc: 97%, Crit: 50%"; return false; // Akashic Arts
-                    case 434: __result = "High Physical damage to random foes. \n3-5 hits, Pow: 32, Acc: 86%, \nCrit: 40%"; return false; // Bloodbath
-                    case 435: __result = "Low Fire damage to all foes. \nLowers targets' Physical Attack. \nPow: 30, Acc: 100%"; return false; // Scald
-                    case 436: __result = "Mega Fire damage to all foes. \nPow: 60, Acc: 100%"; return false; // Ragnarok
-                    case 437: __result = "Low Ice damage to one foe. \nLowers target's Evasion/Hit Rate. \nPow: 32, Acc: 100%, Freeze: 24%"; return false; // Refrigerate
-                    case 438: __result = "High Ice damage to random foes. \n3-7 hits, Pow: 40, Acc: 100%, \nFreeze: 30%"; return false; // Cocytus
-                    case 439: __result = "Mega Ice damage to all foes. \nPow: 50, Acc: 100%, Freeze: 22%"; return false; // Fimbulvetr
-                    case 440: __result = "Low Elec damage to one foe. \nPow: 32, Acc: 100%, Shock: 65%"; return false; // Jolt
-                    case 441: __result = "Mega Elec damage to one foe. \nPow: 70, Acc: 100%, Shock: 34%"; return false; // Thunder Gods
-                    case 442: __result = "Mega Elec damage to all foes. \nPow: 50, Acc: 100%, Shock: 22%"; return false; // Thunder Reign
-                    case 443: __result = "Low Force damage to all foes. \nLowers targets' Evasion. \nPow: 30, Acc: 100%"; return false; // Dervish
-                    case 444: __result = "High Force damage to random foes. \n3-7 hits, Pow: 40, Acc: 100%"; return false; // Heavenly Cyclone
-                    case 445: __result = "Mega Force damage to all foes. \nPow: 60, Acc: 100%"; return false; // Vayavya
-                    case 446: __result = "50% Chance to instakill one foe. \n(Dark-Type)"; return false; // Damnation
-                    case 447: __result = "30% Chance to instakill all foes. \n(Dark-Type)"; return false; // Millennia Curse
-                    case 448: __result = "Low Curse damage to random foes. \n3-6 hits, Pow: 18, Acc: 100%, \nPoison: 40%"; return false; // Poison Volley
-                    case 449: __result = "Medium Curse damage to one foe. \nPow: 39, Acc: 100%, Poison: 70%"; return false; // Poison Salvo
-                    case 450: __result = "Medium Nerve damage to one foe. \nPow: 39, Acc: 100%, Stun: 70%"; return false; // Neural Shock
-                    case 451: __result = "Medium Nerve damage to all foes. \nPow: 30, Acc: 100%, Stun: 50%"; return false; // Overload
-                    case 452: __result = "Medium Mind damage to one foe. \nPow: 39, Acc: 100%, Panic: 70%"; return false; // Pulinpaon
-                    case 453: __result = "High Almighty damage to one foe. \nLowers all stats for target. \nPow: 50, Acc: 100%"; return false; // Antichthon
-                    case 454: __result = "Mega Almighty damage to one foe. \nPow: 80, Acc: 100%"; return false; // Last Word
-                    case 455: __result = "Drains HP/MP from one foe. \nPow: 32/32, Acc: 100% \n(Almighty-Type)"; return false; // Soul Drain
-                    case 456: __result = "Cures all ailments for all allies."; return false; // Amrita
-                    case 457: __result = "Great HP recovery and cures \nall ailments for one ally. \nPow: 18"; return false; // Diamrita
-                    case 458: __result = "Raises all stats by two ranks \nfor one ally."; return false; // Heat Riser
-                    case 459: __result = "Raises all stats by one rank \nfor all allies."; return false; // Luster Candy
-                    case 460: __result = "Negates -kaja & -nda effects \non all foes & allies."; return false; // Silent Prayer
-                    case 461: __result = "Low Force damage to random foes. \n3-5 hits. Pow: 20, Acc: 100%"; return false; // Storm Gale
-                    case 462: __result = "High Str-based Force damage to \nall foes. Pow: 36, Acc: 90%, \nCrit: 20%"; return false; // Winged Fury
-                    case 463: __result = "Low Ice damage to one foe. \nLowers target's Defense. \nPow: 27, Acc: 100%, Freeze: 20%"; return false; // Jack Bufu
-                    case 464: __result = "Moderate HP recovery \nfor all allies. Pow: 8 \n(Cannot be used outside of battle)"; return false; // Humble Blessing
-                    case 465: __result = "Mega Physical damage to one foe. \nPow: 60, Acc: 90%, Crit: 40%"; return false; // Rend
-                    case 466: __result = "Mega Ice damage to one foe. Lowers \ntarget's Defense. Ignores Cold World. \nPow: 70, Acc: 100%, Freeze: 20%"; return false; // Jack Bufudyne
-                    case 467: __result = "High Physical damage to all foes. \nLowers all stats for all targets. \nPow: 48, Acc: 85%, Crit: 0%"; return false; // Divine Light
-                    case 468: __result = "Mega Ice damage to all foes. \nLowers targets' Defense/Evasion. \nPow: 60, Acc: 100%, Freeze: 25%"; return false; // Niflheim
-                    case 469: __result = "High Str-based Elec damage to one \nfoe. HP-based. Max Pow: 50, \nAcc: 90%, Crit: 20%, Shock: 20%"; return false; // Mjolnir
-                    case 470: __result = "Mega Almighty damage to all foes. \nMinimizes targets' Defense. \nPow: 60, Acc: 100%"; return false; // Tandava
-                    case 471: __result = "Mega Str-based Almighty damage to \nrandom foes. 5-7 hits. Pow: 40, \nAcc: 100%, Crit: 1%"; return false; // Chaturbhuja
-                    case 472: __result = "High Str-based Force damage to \none foe. HP-based. \nMax Pow: 54, Acc: 90%, Crit: 24%"; return false; // Kusanagi
-                    case 473: __result = "Medium Fire damage to one foe. \nLowers target's Phys/Mag Attack. \nPow: 45, Acc: 100%"; return false; // Jack Agilao
-                    case 474: __result = "Medium Str-based Force damage to \none foe. HP-based. \nMax Pow: 34, Acc: 120%, Crit: 100%"; return false; // Gae Bolg
-                    case 475: __result = "High Physical damage to one foe. \nIgnores target's -kaja effects. \nPow: 52, Acc: 90%, Crit: 20%"; return false; // Gungnir
-                    case 476: __result = "Mega Light damage to one foe. \nPow: 80, Acc: 100%"; return false; // Smite
-                    case 477: __result = "Medium Dark damage to one foe. \nPow: 45, Acc: 100%, Bind: 20%"; return false; // Makai Thunder
-                    case 478: __result = "Mega Dark damage to all foes. \nPow: 60, Acc: 100%"; return false; // Scintilla
-                    case 479: __result = "Full HP recovery, negates \n-nda effects and cures \nall ailments for one ally."; return false; // Liberation
-                    case 480: __result = "Medium Physical damage to one foe. \nPow: 34, Acc: 120%, Crit: 100%"; return false; // Acrobat Kick
-                    case 481: __result = "High Physical damage to all foes. \nPow: 42, Acc: 90%, Crit: 30%, \nFreeze: 30%"; return false; // Oni-Jackura
+                    case 424: __result = JapaneseLanguage ? "次の魔法攻撃のダメージ\nを120%増加。" : 
+                            "Increases the damage of the user's \nnext Magic-based attack by 120%."; return false; // Concentrate
+                    case 425: __result = JapaneseLanguage ? "次の攻撃のダメージを120%増加させ、\n貫通効果を付与する。" : 
+                            "Increases the damage of the user's \nnext attack by 120% and grants \nit Pierce."; return false; // Impaler's Animus
+                    case 426: __result = JapaneseLanguage ? "敵全体に物理属性の大ダメージ。\n威力: 36, 命中: 90%, 会心率: 20%, \n魅了: 20%" : 
+                            "High Physical damage to random foes. \n3-5 hits, Pow: 36, Acc: 90%, \nCrit: 20%, Charm: 20%"; return false; // Sakura Rage
+                    case 427: __result = JapaneseLanguage ? "敵1体に物理属性の小ダメージ。\n対象の物理攻撃力を低下。\n威力: 36, 命中: 90%, 会心率: 10%" : 
+                            "Low Physical damage to one foe. \nLowers target's Physical Attack. \nPow: 36, Acc: 90%, Crit: 10%"; return false; // Fang Breaker
+                    case 428: __result = JapaneseLanguage ? "敵1体に物理属性の小ダメージ。\n対象の防御力を低下。\n威力: 32, 命中: 90%, 会心率: 10%" : 
+                            "Low Physical damage to one foe. \nLowers target's Defense. \nPow: 32, Acc: 90%, Crit: 10%"; return false; // Defense Kuzushi
+                    case 429: __result = JapaneseLanguage ? "敵1体に物理属性の特大ダメージ。\n威力: 80, 命中: 94%, 会心率: 0%" : 
+                            "Mega Physical damage to one foe. \nPow: 80, Acc: 94%, Crit: 0%"; return false; // Primal Force
+                    case 430: __result = JapaneseLanguage ? "敵全体に物理属性の小ダメージ。\n威力: 24, 命中: 86%, 会心率: 34%" : 
+                            "Low Physical damage to all foes. \nPow: 24, Acc: 86%, Crit: 34%"; return false; // Chi Blast
+                    case 431: __result = JapaneseLanguage ? "敵全体に物理属性の大ダメージ。\n威力: 42, 命中: 90%, 会心率: 30%, \n魔封: 30%" : 
+                            "High Physical damage to all foes. \nPow: 42, Acc: 90%, Crit: 30%, \nMute: 30%"; return false; // Revelation
+                    case 432: __result = JapaneseLanguage ? "敵全体に物理属性の大ダメージ。\n威力: 42, 命中: 90%, 会心率: 30%, \n石化: 24%" : 
+                            "High Physical damage to all foes. \nPow: 42, Acc: 90%, Crit: 30%, \nStone: 24%"; return false; // Gate of Hell
+                    case 433: __result = JapaneseLanguage ? "敵1体に物理属性の大ダメージ。\n威力: 54, 命中: 97%, 会心率: 50%" : 
+                            "High Physical damage to one foe. \nPow: 54, Acc: 97%, Crit: 50%"; return false; // Akashic Arts
+                    case 434: __result = JapaneseLanguage ? "敵ランダムに物理属性の大ダメージ。\n3〜5回ヒット。威力: 32, 命中: 86%, \n会心率: 40%" : 
+                            "High Physical damage to random foes. \n3-5 hits, Pow: 32, Acc: 86%, \nCrit: 40%"; return false; // Bloodbath
+                    case 435: __result = JapaneseLanguage ? "敵全体に火炎属性の小ダメージ。\n対象の物理攻撃力を低下。\n威力: 30, 命中: 100%" : 
+                            "Low Fire damage to all foes. \nLowers targets' Physical Attack. \nPow: 30, Acc: 100%"; return false; // Scald
+                    case 436: __result = JapaneseLanguage ? "敵全体に火炎属性の特大ダメージ。\n威力: 60, 命中: 100%" : 
+                            "Mega Fire damage to all foes. \nPow: 60, Acc: 100%"; return false; // Ragnarok
+                    case 437: __result = JapaneseLanguage ? "敵1体に氷結属性の小ダメージ。\n対象の回避／命中率を低下。\n威力: 32, 命中: 100%, 凍結: 24%" : 
+                            "Low Ice damage to one foe. \nLowers target's Evasion/Hit Rate. \nPow: 32, Acc: 100%, Freeze: 24%"; return false; // Refrigerate
+                    case 438: __result = JapaneseLanguage ? "敵ランダムに氷結属性の大ダメージ。\n3〜7回ヒット。威力: 40, 命中: 100%, \n凍結: 30%" : 
+                            "High Ice damage to random foes. \n3-7 hits, Pow: 40, Acc: 100%, \nFreeze: 30%"; return false; // Cocytus
+                    case 439: __result = JapaneseLanguage ? "敵全体に氷結属性の特大ダメージ。\n威力: 50, 命中: 100%, 凍結: 22%" : 
+                            "Mega Ice damage to all foes. \nPow: 50, Acc: 100%, Freeze: 22%"; return false; // Fimbulvetr
+                    case 440: __result = JapaneseLanguage ? "敵1体に電撃属性の小ダメージ。\n威力: 32, 命中: 100%, 感電: 65%" : 
+                            "Low Elec damage to one foe. \nPow: 32, Acc: 100%, Shock: 65%"; return false; // Jolt
+                    case 441: __result = JapaneseLanguage ? "敵1体に電撃属性の特大ダメージ。\n威力: 70, 命中: 100%, 感電: 34%" : 
+                            "Mega Elec damage to one foe. \nPow: 70, Acc: 100%, Shock: 34%"; return false; // Thunder Gods
+                    case 442: __result = JapaneseLanguage ? "敵全体に電撃属性の特大ダメージ。\n威力: 50, 命中: 100%, 感電: 22%" : 
+                            "Mega Elec damage to all foes. \nPow: 50, Acc: 100%, Shock: 22%"; return false; // Thunder Reign
+                    case 443: __result = JapaneseLanguage ? "敵全体に衝撃属性の小ダメージ。\n対象の回避率を低下。\n威力: 30, 命中: 100%" : 
+                            "Low Force damage to all foes. \nLowers targets' Evasion. \nPow: 30, Acc: 100%"; return false; // Dervish
+                    case 444: __result = JapaneseLanguage ? "敵ランダムに衝撃属性の大ダメージ。\n3〜7回ヒット。威力: 40, 命中: 100%" : 
+                            "High Force damage to random foes. \n3-7 hits, Pow: 40, Acc: 100%"; return false; // Heavenly Cyclone
+                    case 445: __result = JapaneseLanguage ? "敵全体に衝撃属性の特大ダメージ。\n威力: 60, 命中: 100%" : 
+                            "Mega Force damage to all foes. \nPow: 60, Acc: 100%"; return false; // Vayavya
+                    case 446: __result = JapaneseLanguage ? "50%の確率で敵1体を即死させる。\n(呪殺属性)" : 
+                            "50% Chance to instakill one foe. \n(Dark-Type)"; return false; // Damnation
+                    case 447: __result = JapaneseLanguage ? "30%の確率で敵全体を即死させる。\n(呪殺属性)" : 
+                            "30% Chance to instakill all foes. \n(Dark-Type)"; return false; // Millennia Curse
+                    case 448: __result = JapaneseLanguage ? "敵ランダムにバ魔力属性の小ダメージ。\n3〜6回ヒット。威力: 18, 命中: 100%, \n毒: 40%)" : 
+                            "Low Curse damage to random foes. \n3-6 hits, Pow: 18, Acc: 100%, \nPoison: 40%"; return false; // Poison Volley
+                    case 449: __result = JapaneseLanguage ? "敵1体にバ魔力属性の中ダメージ。\n威力: 39, 命中: 100%, 毒: 70%" : 
+                            "Medium Curse damage to one foe. \nPow: 39, Acc: 100%, Poison: 70%"; return false; // Poison Salvo
+                    case 450: __result = JapaneseLanguage ? "敵1体に神経属性の中ダメージ。\n威力: 39, 命中: 100%, スタン: 70%" : 
+                            "Medium Nerve damage to one foe. \nPow: 39, Acc: 100%, Stun: 70%"; return false; // Neural Shock
+                    case 451: __result = JapaneseLanguage ? "敵全体に神経属性の中ダメージ。\n威力: 30, 命中: 100%, スタン: 50%" : 
+                            "Medium Nerve damage to all foes. \nPow: 30, Acc: 100%, Stun: 50%"; return false; // Overload
+                    case 452: __result = JapaneseLanguage ? "敵1体に精神属性の中ダメージ。\n威力: 39, 命中: 100%, 混乱: 70%" : 
+                            "Medium Mind damage to one foe. \nPow: 39, Acc: 100%, Panic: 70%"; return false; // Pulinpaon
+                    case 453: __result = JapaneseLanguage ? "敵1体に万能属性の大ダメージ。\n対象の全能力を低下。\n威力: 50, 命中: 100%" : 
+                            "High Almighty damage to one foe. \nLowers all stats for target. \nPow: 50, Acc: 100%"; return false; // Antichthon
+                    case 454: __result = JapaneseLanguage ? "敵1体に万能属性の特大ダメージ。\n威力: 80, 命中: 100%" : 
+                            "Mega Almighty damage to one foe. \nPow: 80, Acc: 100%"; return false; // Last Word
+                    case 455: __result = JapaneseLanguage ? "敵1体からHPとMPを吸収。\n威力: 32/32, 命中: 100% \n(万能属性)" : 
+                            "Drains HP/MP from one foe. \nPow: 32/32, Acc: 100% \n(Almighty-Type)"; return false; // Soul Drain
+                    case 456: __result = JapaneseLanguage ? "味方全体の全状態異常を治療。" : 
+                            "Cures all ailments for all allies."; return false; // Amrita
+                    case 457: __result = JapaneseLanguage ? "味方1体のHPを大回復\n＆全状態異常を治療。\n威力: 18" : 
+                            "Great HP recovery and cures \nall ailments for one ally. \nPow: 18"; return false; // Diamrita
+                    case 458: __result = JapaneseLanguage ? "味方1体の全能力を2段階上昇。" : 
+                            "Raises all stats by two ranks \nfor one ally."; return false; // Heat Riser
+                    case 459: __result = JapaneseLanguage ? "味方全体の全能力を1段階上昇。" : 
+                            "Raises all stats by one rank \nfor all allies."; return false; // Luster Candy
+                    case 460: __result = JapaneseLanguage ? "すべての敵とすべての味方の\n「カジャ系」と「ンダ系」効果を打ち消す。" : 
+                            "Negates -kaja & -nda effects \non all foes & allies."; return false; // Silent Prayer
+                    case 461: __result = JapaneseLanguage ? "敵ランダムに衝撃属性の小ダメージ。\n3〜5回ヒット。威力: 20, 命中: 100%" : 
+                            "Low Force damage to random foes. \n3-5 hits. Pow: 20, Acc: 100%"; return false; // Storm Gale
+                    case 462: __result = JapaneseLanguage ? "敵全体に力依存の衝撃属性大ダメージ。\n威力: 36, 命中: 90%, 会心率: 20%" : 
+                            "High Str-based Force damage to \nall foes. Pow: 36, Acc: 90%, \nCrit: 20%"; return false; // Winged Fury
+                    case 463: __result = JapaneseLanguage ? "敵1体に氷結属性の小ダメージ。\n対象の防御力を低下。\n威力: 27, 命中: 100%, 凍結: 20%" : 
+                            "Low Ice damage to one foe. \nLowers target's Defense. \nPow: 27, Acc: 100%, Freeze: 20%"; return false; // Jack Bufu
+                    case 464: __result = JapaneseLanguage ? "味方全体のHPを中回復。\n威力: 8 (戦闘外での使用不可)" : 
+                            "Moderate HP recovery \nfor all allies. Pow: 8 \n(Cannot be used outside of battle)"; return false; // Humble Blessing
+                    case 465: __result = JapaneseLanguage ? "敵1体に物理属性の特大ダメージ。\n威力: 60, 命中: 90%, 会心率: 40%" : 
+                            "Mega Physical damage to one foe. \nPow: 60, Acc: 90%, Crit: 40%"; return false; // Rend
+                    case 466: __result = JapaneseLanguage ? "敵1体に氷結属性の特大ダメージ。\n対象の防御力を低下。\n威力: 70, 命中: 100%, 凍結: 20%" : 
+                            "Mega Ice damage to one foe. Lowers \ntarget's Defense. Ignores Cold World. \nPow: 70, Acc: 100%, Freeze: 20%"; return false; // Jack Bufudyne
+                    case 467: __result = JapaneseLanguage ? "敵全体に物理属性の大ダメージ。\nすべての対象の全能力を低下。\n威力: 48, 命中: 85%, 会心率: 0%" : 
+                            "High Physical damage to all foes. \nLowers all stats for all targets. \nPow: 48, Acc: 85%, Crit: 0%"; return false; // Divine Light
+                    case 468: __result = JapaneseLanguage ? "敵全体に氷結属性の特大ダメージ。\n対象の防御／回避を低下。\n威力: 60, 命中: 100%, 凍結: 25%" : 
+                            "Mega Ice damage to all foes. \nLowers targets' Defense/Evasion. \nPow: 60, Acc: 100%, Freeze: 25%"; return false; // Niflheim
+                    case 469: __result = JapaneseLanguage ? "敵1体に力依存の電撃属性大ダメージ。\nHP依存。最大威力: 50, \n命中: 90%, 会心率: 20%, 感電: 20%" : 
+                            "High Str-based Elec damage to one \nfoe. HP-based. Max Pow: 50, \nAcc: 90%, Crit: 20%, Shock: 20%"; return false; // Mjolnir
+                    case 470: __result = JapaneseLanguage ? "敵全体に万能属性の特大ダメージ。\n対象の防御力を最低値にする。\n威力: 60, 命中: 100%" : 
+                            "Mega Almighty damage to all foes. \nMinimizes targets' Defense. \nPow: 60, Acc: 100%"; return false; // Tandava
+                    case 471: __result = JapaneseLanguage ? "敵ランダムに力依存の万能属性特大ダメージ。\n5〜7回ヒット。威力: 40, 命中: 100%, \n会心率: 1%" : 
+                            "Mega Str-based Almighty damage to \nrandom foes. 5-7 hits. Pow: 40, \nAcc: 100%, Crit: 1%"; return false; // Chaturbhuja
+                    case 472: __result = JapaneseLanguage ? "敵1体に力依存の衝撃属性大ダメージ。\nHP依存。最大威力: 54, 命中: 90%, \n会心率: 24%" : 
+                            "High Str-based Force damage to \none foe. HP-based. \nMax Pow: 54, Acc: 90%, Crit: 24%"; return false; // Kusanagi
+                    case 473: __result = JapaneseLanguage ? "敵1体に火炎属性の中ダメージ。\n対象の物理/魔法攻撃力を低下。\n威力: 45, 命中: 100%" : 
+                            "Medium Fire damage to one foe. \nLowers target's Phys/Mag Attack. \nPow: 45, Acc: 100%"; return false; // Jack Agilao
+                    case 474: __result = JapaneseLanguage ? "敵1体に力依存の衝撃属性中ダメージ。\nHP依存。最大威力: 34, 命中: 120%, \n会心率: 100%" : 
+                            "Medium Str-based Force damage to \none foe. HP-based. \nMax Pow: 34, Acc: 120%, Crit: 100%"; return false; // Gae Bolg
+                    case 475: __result = JapaneseLanguage ? "敵1体に物理属性の大ダメージ。\n対象の「カジャ系」効果を無視。\n威力: 52, 命中: 90%, 会心率: 20%" : 
+                            "High Physical damage to one foe. \nIgnores target's -kaja effects. \nPow: 52, Acc: 90%, Crit: 20%"; return false; // Gungnir
+                    case 476: __result = JapaneseLanguage ? "敵1体に破魔属性の特大ダメージ。\n威力: 80, 命中: 100%" : 
+                            "Mega Light damage to one foe. \nPow: 80, Acc: 100%"; return false; // Smite
+                    case 477: __result = JapaneseLanguage ? "敵1体に呪殺属性の中ダメージ。\n威力: 45, 命中: 100%, 縛着: 20%" : 
+                            "Medium Dark damage to one foe. \nPow: 45, Acc: 100%, Bind: 20%"; return false; // Makai Thunder
+                    case 478: __result = JapaneseLanguage ? "敵全体に呪殺属性の特大ダメージ。\n威力: 60, 命中: 100%" : 
+                            "Mega Dark damage to all foes. \nPow: 60, Acc: 100%"; return false; // Scintilla
+                    case 479: __result = JapaneseLanguage ? "味方1体のHPを全回復、\n「ンダ系」効果を消去、\n全状態異常を治療。" : 
+                            "Full HP recovery, negates \n-nda effects and cures \nall ailments for one ally."; return false; // Liberation
+                    case 480: __result = JapaneseLanguage ? "敵1体に物理属性の中ダメージ。\n威力: 34, 命中: 120%, 会心率: 100%" : 
+                            "Medium Physical damage to one foe. \nPow: 34, Acc: 120%, Crit: 100%"; return false; // Acrobat Kick
+                    case 481: __result = JapaneseLanguage ? "敵全体に物理属性の大ダメージ。\n威力: 42, 命中: 90%, 会心率: 30%, \n凍結: 30%" : 
+                            "High Physical damage to all foes. \nPow: 42, Acc: 90%, Crit: 30%, \nFreeze: 30%"; return false; // Oni-Jackura
                     default: return true;
                 }
             }
@@ -662,17 +982,26 @@ namespace NocturneInsaniax
             {
                 if (ptype == 20 && nbMainProcess.nbGetUnitWorkFromFormindex(form.formindex).id == 254)
                 {
-                    nbHelpProcess.nbDispText("YHVH trembles with scorn...", string.Empty, 2, 45, 2315190144, false);
+                    if (JapaneseLanguage)
+                        nbHelpProcess.nbDispText("YHVHは軽蔑に震えている…", string.Empty, 2, 45, 2315190144, false);
+                    else
+                        nbHelpProcess.nbDispText("YHVH trembles with scorn...", string.Empty, 2, 45, 2315190144, false);
                 }
                 else if (ptype == 18)
                 {
                     nbMakePacket.nbAddNewPressPacket(startframe, uniqueid, 1, 1);
-                    nbHelpProcess.nbDispText("Turn Count increased!", string.Empty, 2, 45, 2315190144, false);
+                    if (JapaneseLanguage)
+                        nbHelpProcess.nbDispText("ターン数が増えました！", string.Empty, 2, 45, 2315190144, false);
+                    else    
+                        nbHelpProcess.nbDispText("Turn Count increased!", string.Empty, 2, 45, 2315190144, false);
                 }
                 else if (ptype == 19)
                 {
                     nbMakePacket.nbAddNewPressPacket(startframe, uniqueid, 2, 2);
-                    nbHelpProcess.nbDispText("Turn Count increased!", string.Empty, 2, 45, 2315190144, false);
+                    if (JapaneseLanguage)
+                        nbHelpProcess.nbDispText("ターン数が増えました！", string.Empty, 2, 45, 2315190144, false);
+                    else
+                        nbHelpProcess.nbDispText("Turn Count increased!", string.Empty, 2, 45, 2315190144, false);
                 }
             }
         }
@@ -966,7 +1295,10 @@ namespace NocturneInsaniax
                                         if (unitBuffs[7] >= -2)
                                             limitReached = false;
                                     }
-                                    text1 = limitReached ? "Limit reached!" : "Decreased enemy's Defense!";
+                                    if (JapaneseLanguage)
+                                        text1 = limitReached ? "上限に達しました！" : "敵の防御力が低下しました！";
+                                    else
+                                        text1 = limitReached ? "Limit reached!" : "Decreased enemy's Defense!";
                                     break;
                                 }
                             case 64: // Tarukaja
@@ -978,7 +1310,10 @@ namespace NocturneInsaniax
                                         if (unitBuffs[4] <= 2 || unitBuffs[5] <= 2)
                                             limitReached = false;
                                     }
-                                    text1 = limitReached ? "Limit reached!" : "Physical/Magical Attack increased!";
+                                    if (JapaneseLanguage)
+                                        text1 = limitReached ? "上限に達しました！" : "物理／魔法攻撃力が上昇しました！";
+                                    else
+                                        text1 = limitReached ? "Limit reached!" : "Physical/Magical Attack increased!";
                                     break;
                                 }
                             case 67: // Makakaja
@@ -990,7 +1325,10 @@ namespace NocturneInsaniax
                                         if (unitBuffs[5] <= 2 || unitBuffs[8] <= 2)
                                             limitReached = false;
                                     }
-                                    text1 = limitReached ? "Limit reached!" : "Magical Attack/Hit Rate increased!";
+                                    if (JapaneseLanguage)
+                                        text1 = limitReached ? "上限に達しました！" : "魔法攻撃力／命中率が上昇しました！";
+                                    else
+                                        text1 = limitReached ? "Limit reached!" : "Magical Attack/Hit Rate increased!";
                                     break;
                                 }
                             case 206: // Debilitate
@@ -1005,7 +1343,10 @@ namespace NocturneInsaniax
                                     var limitReached = true;
                                     if (currentUnitBuffs[6] <= 2 || currentUnitBuffs[8] <= 2)
                                         limitReached = false;
-                                    text1 = limitReached ? "Limit reached!" : "Evasion/Hit Rate maximized!";
+                                    if (JapaneseLanguage)
+                                        text1 = limitReached ? "上限に達しました！" : "回避／命中率を最大！";
+                                    else
+                                        text1 = limitReached ? "Limit reached!" : "Evasion/Hit Rate maximized!";
                                     break;
                                 }
                             default: break;
@@ -1020,9 +1361,9 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref int id, ref int message, ref int page, ref string __result)
             {
-                if (nbMainProcess.nbGetMainProcessData().enemyunit[0].nowindex == 497 && __result == "Dante appeared! ")
+                if (nbMainProcess.nbGetMainProcessData().enemyunit[0].nowindex == 497 && (__result == "Dante appeared! " || __result == "ダンテが現れた！"))
                 {
-                    __result = "Dante transformed! ";
+                    __result = JapaneseLanguage ? "ダンテが変わった！" : "Dante transformed! ";
                 }
             }
         }
@@ -1368,7 +1709,7 @@ namespace NocturneInsaniax
                                     }
                                     if (activate)
                                     {
-                                        switchOutSkillName2 = "Affable Hospitality";
+                                        switchOutSkillName2 = JapaneseLanguage ? "客人歓待" : "Affable Hospitality";
                                         SwitchOutSkillCopy2(67, 67, 0, false);
                                         nbMainProcess.nbPushAction(4, arahabakiParty.partyindex, incomingParty.partyindex, 406);
                                     }
@@ -1394,7 +1735,7 @@ namespace NocturneInsaniax
 
                                 if (guidingWisdomActive)
                                 {
-                                    switchOutSkillName2 = "Guiding Wisdom";
+                                    switchOutSkillName2 = JapaneseLanguage ? "導きの叡智" : "Guiding Wisdom";
                                     SwitchOutSkillCopy2(416, 416, 0, false);
                                     var incomingParty = nbMainProcess.nbGetPartyFromFormindex(actionProcessData.work.nowtform);
                                     nbMainProcess.nbPushAction(4, daisoujouParty.partyindex, incomingParty.partyindex, 406);
@@ -1406,7 +1747,7 @@ namespace NocturneInsaniax
                                 if (actionProcessData.work.id == 4 || (actionProcessData.work.id == 0 && activeUnitIds[actionProcessData.work.nowtform] == 4))
                                 {
                                     var party = nbMainProcess.nbGetPartyFromFormindex(actionProcessData.work.nowtform);
-                                    switchOutSkillName = "Runes Of Wisdom";
+                                    switchOutSkillName = JapaneseLanguage ? "知恵のルーン" : "Runes Of Wisdom";
                                     SwitchOutSkillCopy(224, 224, 0, true);
                                     nbMainProcess.nbPushAction(4, party.partyindex, party.partyindex, 407);
                                 }
@@ -1414,7 +1755,7 @@ namespace NocturneInsaniax
                                 else if (actionProcessData.work.id == 6 || (actionProcessData.work.id == 0 && activeUnitIds[actionProcessData.work.nowtform] == 6))
                                 {
                                     var party = nbMainProcess.nbGetPartyFromFormindex(actionProcessData.work.nowtform);
-                                    switchOutSkillName = "Eye of Horus";
+                                    switchOutSkillName = JapaneseLanguage ? "ウジャトの目" : "Eye of Horus";
                                     SwitchOutSkillCopy(424, 424, 0, true);
                                     nbMainProcess.nbPushAction(4, party.partyindex, party.partyindex, 407);
                                 }
@@ -1431,7 +1772,7 @@ namespace NocturneInsaniax
                                     }
                                     if (activate)
                                     {
-                                        switchOutSkillName = "Curious Dance";
+                                        switchOutSkillName = JapaneseLanguage ? "岩戸開きの舞" : "Curious Dance";
                                         SwitchOutSkillCopy(67, 67, 0, false);
                                         nbMainProcess.nbPushAction(4, incomingParty.partyindex, incomingParty.partyindex, 407);
                                     }
@@ -1453,7 +1794,7 @@ namespace NocturneInsaniax
                                     }
                                     if (activate)
                                     {
-                                        switchOutSkillName = "Monstrous Offering";
+                                        switchOutSkillName = JapaneseLanguage ? "怪物の贄" : "Monstrous Offering";
                                         SwitchOutSkillCopy(67, 67, 0, false);
                                         nbMainProcess.nbPushAction(4, incomingParty.partyindex, incomingParty.partyindex, 407);
                                     }
@@ -1475,7 +1816,7 @@ namespace NocturneInsaniax
                                     }
                                     if (activate)
                                     {
-                                        switchOutSkillName = "Seelie Decree";
+                                        switchOutSkillName = JapaneseLanguage ? "シーリーの布告" : "Seelie Decree";
                                         SwitchOutSkillCopy(67, 67, 0, false);
                                         nbMainProcess.nbPushAction(4, incomingParty.partyindex, incomingParty.partyindex, 407);
                                     }
@@ -1497,7 +1838,7 @@ namespace NocturneInsaniax
                                     }
                                     if (activate)
                                     {
-                                        switchOutSkillName = "Unseelie Decree";
+                                        switchOutSkillName = JapaneseLanguage ? "ウヌシーリーの布告" : "Unseelie Decree";
                                         SwitchOutSkillCopy(67, 67, 0, false);
                                         nbMainProcess.nbPushAction(4, incomingParty.partyindex, incomingParty.partyindex, 407);
                                     }
@@ -1519,7 +1860,7 @@ namespace NocturneInsaniax
                                     }
                                     if (activate)
                                     {
-                                        switchOutSkillName = "Four Horsemen";
+                                        switchOutSkillName = JapaneseLanguage ? "黙示の四騎士" : "Four Horsemen";
                                         SwitchOutSkillCopy(67, 67, 0, false);
                                         nbMainProcess.nbPushAction(4, incomingParty.partyindex, incomingParty.partyindex, 407);
                                     }
@@ -1529,7 +1870,7 @@ namespace NocturneInsaniax
                             if (nbMainProcess.nbGetUnitWorkFromFormindex(actionProcessData.work.nowtform).id == 54)
                             {
                                 var party = nbMainProcess.nbGetPartyFromFormindex(actionProcessData.work.nowtform);
-                                postSummonSkillName = "Fairy King's Melody";
+                                postSummonSkillName = JapaneseLanguage ? "妖精王の魔笛" : "Fairy King's Melody";
                                 PostSummonSkillCopy(77, 77, 1);
                                 nbMainProcess.nbPushAction(4, party.partyindex, party.partyindex, 408);
                             }
@@ -1537,7 +1878,7 @@ namespace NocturneInsaniax
                             if (fourDevasIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(actionProcessData.work.nowtform).id))
                             {
                                 var party = nbMainProcess.nbGetPartyFromFormindex(actionProcessData.work.nowtform);
-                                postSummonSkillName = "Four Devas";
+                                postSummonSkillName = JapaneseLanguage ? "四天王" : "Four Devas";
                                 PostSummonSkillCopy(459, 64, 1);
                                 nbMainProcess.nbPushAction(4, party.partyindex, party.partyindex, 408);
 
@@ -1593,7 +1934,10 @@ namespace NocturneInsaniax
                                         party.count[i] = 0;
                                 }
 
-                                nbHelpProcess.nbDispText("All -kaja & -nda effects negated!", string.Empty, 2, 45, 2315190144, false);
+                                if (JapaneseLanguage)
+                                    nbHelpProcess.nbDispText("カジャとンダの効果が消された！！", string.Empty, 2, 45, 2315190144, false);
+                                else
+                                    nbHelpProcess.nbDispText("All -kaja & -nda effects negated!", string.Empty, 2, 45, 2315190144, false);
                             }
                         }
 
@@ -1607,7 +1951,10 @@ namespace NocturneInsaniax
                                         party.count[i] = 0;
                                 }
 
-                                nbHelpProcess.nbDispText("All -kaja effects negated!", string.Empty, 2, 45, 2315190144, false);
+                                if (JapaneseLanguage)
+                                    nbHelpProcess.nbDispText("カジャの効果が消された！！", string.Empty, 2, 45, 2315190144, false);
+                                else
+                                    nbHelpProcess.nbDispText("All -kaja effects negated!", string.Empty, 2, 45, 2315190144, false);
                             }
                         }
 

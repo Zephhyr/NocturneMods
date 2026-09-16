@@ -443,7 +443,7 @@ namespace NocturneInsaniax
                     case "<AISYO_L0251>":
                         __result = "Drn: Ice • Weak: Fire"; return false;
                     case "<DEVIL_L0252>":
-                        __result = "Dante"; return false;
+                        __result = JapaneseLanguage ? "ダンテ" : "Dante"; return false;
                     case "<AISYO_L0252>":
                         __result = "Str: All except Almighty"; return false;
                     case "<DEVIL_L0253>":

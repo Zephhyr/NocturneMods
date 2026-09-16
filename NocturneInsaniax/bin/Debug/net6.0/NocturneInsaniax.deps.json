@@ -10,6 +10,7 @@
         "dependencies": {
           "Newtonsoft.Json": "13.0.2",
           "0Harmony": "2.10.2.0",
+          "Assembly-CSharp-firstpass": "0.0.0.0",
           "Assembly-CSharp": "0.0.0.0",
           "Iced": "1.21.0.0",
           "Il2CppBacktrace.Unity": "0.0.0.0",
@@ -47,6 +48,14 @@
           "0Harmony.dll": {
             "assemblyVersion": "2.10.2.0",
             "fileVersion": "2.10.2.0"
+          }
+        }
+      },
+      "Assembly-CSharp-firstpass/0.0.0.0": {
+        "runtime": {
+          "Assembly-CSharp-firstpass.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -213,14 +222,6 @@
       "UnityEngine.UIModule/0.0.0.0": {
         "runtime": {
           "UnityEngine.UIModule.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Assembly-CSharp-firstpass/0.0.0.0": {
-        "runtime": {
-          "Assembly-CSharp-firstpass.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -478,6 +479,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Assembly-CSharp-firstpass/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Assembly-CSharp/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
@@ -579,11 +585,6 @@
       "sha512": ""
     },
     "UnityEngine.UIModule/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Assembly-CSharp-firstpass/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
