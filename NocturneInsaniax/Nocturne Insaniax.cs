@@ -1144,7 +1144,7 @@ namespace NocturneInsaniax
                     // -42.0961 14.5565 -33.3055
                     fld_Npc.fldItemBoxAdd(336, -4209.61f, -1455.65f, -3330.55f, new Vector4(0, 0, 0, 1)); // Add Item Box outside Ikebukuro
                 }
-                if (pFileName == "dds3data/fld/f/f023m/f023_004") // Ikebukuro
+                if (pFileName == "dds3data/fld/f/f023m/f023_004" || pFileName == "dds3data/fld/f/f023/f023_004") // Ikebukuro
                 {
                     // -30.703 0.1 42.8122
                     fld_Npc.fldItemBoxAdd(338, -3070.3f, 0f, 4281.66f, new Vector4(0, 0, 0, 1)); // Add Item Box inside Ikebukuro
