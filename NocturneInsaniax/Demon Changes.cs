@@ -26,7 +26,8 @@ namespace NocturneInsaniax
                 {
                     // Skill Text
                     case "<DATACTIONMISCHELP_L0001>": // Normal Attack
-                        __result = "Weak Physical damage to one foe. \nPow: 30, Acc: 96%, Crit: 4%"; return false;
+                        __result = JapaneseLanguage ? "敵1体に物理属性の弱ダメージ。\n威力: 30, 命中: 96%, 会心率: 4%" : 
+                            "Weak Physical damage to one foe. \nPow: 30, Acc: 96%, Crit: 4%"; return false;
                     //case "<DATJYOKYOHELP_L0018>": // Rakunda
                     //    __result = "<COLOR 4>\nDecreased enemy's Defense!"; return false;
                     //case "<DATJYOKYOHELP_L0024>": // Tarukaja
@@ -47,585 +48,837 @@ namespace NocturneInsaniax
                     //    __result = "<COLOR 4>\nEvasion/Hit Rate maximized!"; return false;
                     // Demon Text
                     case "<AISYO_L0001>": // Vishnu
-                        __result = "Rpl: Light • Null: Dark • Str: Phys/Shot/Elements/Ailments"; return false;
+                        __result = JapaneseLanguage ? "破魔反射、呪殺無効、物理・銃撃・魔法全般・バッドステータス攻撃に強い" : 
+                            "Rpl: Light • Null: Dark • Str: Phys/Shot/Elements/Ailments"; return false;
                     case "<AISYO_L0002>": // Mitra
-                        __result = "Rpl: Phys • Null: Light/Dark • Str: Shot/Fire/Ice • Weak: Force"; return false;
+                        __result = JapaneseLanguage ? "物理反射、破魔・呪殺無効、火炎・氷結・銃撃に強い／衝撃に弱い" : 
+                            "Rpl: Phys • Null: Light/Dark • Str: Shot/Fire/Ice • Weak: Force"; return false;
                     case "<AISYO_L0004>": // Odin
-                        __result = "Rpl: Elec • Null: Ice • Str: Light/Dark • Weak: Force"; return false;
+                        __result = JapaneseLanguage ? "電撃反射、氷結無効、破魔・呪殺に強い／衝撃に弱い" : 
+                            "Rpl: Elec • Null: Ice • Str: Light/Dark • Weak: Force"; return false;
                     case "<AISYO_L0005>": // Atavaka
-                        __result = "Rpl: Shot/Light/Dark • Weak: Nerve/Mind"; return false;
+                        __result = JapaneseLanguage ? "銃撃・破魔・呪殺反射／神経・精神に弱い" : 
+                            "Rpl: Shot/Light/Dark • Weak: Nerve/Mind"; return false;
                     case "<AISYO_L0006>": // Horus
-                        __result = "Rpl: Light • Str: Phys • Weak: Shot/Dark"; return false;
+                        __result = JapaneseLanguage ? "破魔反射、物理に強い／銃撃・呪殺に弱い" : 
+                            "Rpl: Light • Str: Phys • Weak: Shot/Dark"; return false;
                     case "<AISYO_L0008>": // Scathach
-                        __result = "Null: Force/Light/Curse • Str: Shot • Weak: Elec"; return false;
+                        __result = JapaneseLanguage ? "衝撃・破魔・魔力無効、銃撃に強い／電撃に弱い" : 
+                            "Null: Force/Light/Curse • Str: Shot • Weak: Elec"; return false;
                     case "<AISYO_L0012>": // Shiva
-                        __result = "Rpl: Dark • Null: Light • Str: Phys/Shot/Elements/Ailments"; return false;
+                        __result = JapaneseLanguage ? "呪殺反射、破魔無効、物理・銃撃・魔法全般・バッドステータス攻撃に強い" : 
+                            "Rpl: Dark • Null: Light • Str: Phys/Shot/Elements/Ailments"; return false;
                     case "<AISYO_L0014>": // Qitian Dasheng
-                        __result = "Null: Phys/Shot/Light"; return false;
+                        __result = JapaneseLanguage ? "破魔・物理・銃撃タス攻撃に強い" : 
+                            "Null: Phys/Shot/Light"; return false;
                     case "<AISYO_L0015>": // Dionysus
-                        __result = "Null: Fire/Light/Dark/Mind • Weak: Ice"; return false;
+                        __result = JapaneseLanguage ? "火炎・破魔・呪殺・精神無効／氷結に弱い" : 
+                            "Null: Fire/Light/Dark/Mind • Weak: Ice"; return false;
                     case "<AISYO_L0016>": // Kali
-                        __result = "Rpl: Dark • Null: Phys/Fire/Light • Weak: Shot/Ice"; return false;
+                        __result = JapaneseLanguage ? "呪殺反射、物理・火炎・破魔無効／銃撃・氷結に弱い" : 
+                            "Rpl: Dark • Null: Phys/Fire/Light • Weak: Shot/Ice"; return false;
                     case "<AISYO_L0017>": // Skadi
-                        __result = "Drn: Ice • Null: Light/Curse • Str: Phys/Force • Weak: Elec"; return false;
+                        __result = JapaneseLanguage ? "氷結吸収、破魔・魔力無効、物理・衝撃に強い／電撃に弱い" : 
+                            "Drn: Ice • Null: Light/Curse • Str: Phys/Force • Weak: Elec"; return false;
                     case "<AISYO_L0018>": // Parvati
-                        __result = "Rpl: Light • Drn: Fire • Str: Ailments"; return false;
+                        __result = JapaneseLanguage ? "火炎吸収、破魔反射、バッドステータス攻撃に強い" :
+                            "Drn: Fire • Rpl: Light • Str: Ailments"; return false;
                     case "<AISYO_L0019>": // Kushinada-Hime
-                        __result = "Rpl: Light • Str: Ailments • Weak: Dark"; return false;
+                        __result = JapaneseLanguage ? "破魔反射、バッドステータス攻撃に強い／呪殺に弱い" : 
+                            "Rpl: Light • Str: Ailments • Weak: Dark"; return false;
                     case "<AISYO_L0022>": // Thor
-                        __result = "Drn: Elec • Null: Light • Str: Phys • Weak: Curse/Nerve"; return false;
+                        __result = JapaneseLanguage ? "電撃吸収、破魔無効、物理に強い／魔力・神経に弱い" : 
+                            "Drn: Elec • Null: Light • Str: Phys • Weak: Curse/Nerve"; return false;
                     case "<AISYO_L0027>": // Zouchouten
-                        __result = "Null: Light/Nerve/Curse • Str: Elec • Weak: Force"; return false;
+                        __result = JapaneseLanguage ? "破魔・神経魔力・魔力無効、電撃に強い／衝撃に弱い" : 
+                            "Null: Light/Nerve/Curse • Str: Elec • Weak: Force"; return false;
                     case "<AISYO_L0028>": // Take-Minakata
-                        __result = "Rpl: Elec • Null: Light • Str: Phys/Dark • Weak: Fire/Nerve"; return false;
+                        __result = JapaneseLanguage ? "電撃反射、破魔無効、物理・呪殺に強い／火炎・神経に弱い" : 
+                            "Rpl: Elec • Null: Light • Str: Phys/Dark • Weak: Fire/Nerve"; return false;
                     case "<AISYO_L0030>": // Baihu
-                        __result = "Null: Elec/Light • Str: Ice • Weak: Fire"; return false;
+                        __result = JapaneseLanguage ? "電撃・破魔無効、氷結に強い／火炎に弱い" : 
+                            "Null: Elec/Light • Str: Ice • Weak: Fire"; return false;
                     case "<AISYO_L0032>": // Zhuque
-                        __result = "Drn: Fire • Null: Light • Str: Elec • Weak: Shot/Ice"; return false;
+                        __result = JapaneseLanguage ? "火炎吸収、破魔無効、電撃に強い／銃撃・氷結に弱い" : 
+                            "Drn: Fire • Null: Light • Str: Elec • Weak: Shot/Ice"; return false;
                     case "<AISYO_L0033>": // Shiisaa
-                        __result = "Null: Elec/Light • Str: Force • Weak: Fire"; return false;
+                        __result = JapaneseLanguage ? "電撃・破魔無効、衝撃に強い／火炎に弱い" : 
+                            "Null: Elec/Light • Str: Force • Weak: Fire"; return false;
                     case "<AISYO_L0035>": // Unicorn
-                        __result = "Null: Light/Curse/Mind • Str: Shot • Weak: Elec"; return false;
+                        __result = JapaneseLanguage ? "破魔・魔力・精神無効、銃撃に強い／電撃に弱い" : 
+                            "Null: Light/Curse/Mind • Str: Shot • Weak: Elec"; return false;
                     case "<AISYO_L0036>": // Flaemis
-                        __result = "Drn: Fire • Weak: Ice"; return false;
+                        __result = JapaneseLanguage ? "火炎吸収／氷結に弱い" : 
+                            "Drn: Fire • Weak: Ice"; return false;
                     case "<AISYO_L0037>": // Aquans
-                        __result = "Rpl: Ice • Weak: Fire"; return false;
+                        __result = JapaneseLanguage ? "氷結反射／火炎に弱い" : 
+                            "Rpl: Ice • Weak: Fire"; return false;
                     case "<AISYO_L0038>": // Aeros
-                        __result = "Null: Force • Weak: Elec"; return false;
+                        __result = JapaneseLanguage ? "衝撃無効／電撃に弱い" : 
+                            "Null: Force • Weak: Elec"; return false;
                     case "<AISYO_L0039>": // Erthys
-                        __result = "Str: Elec • Weak: Force"; return false;
+                        __result = JapaneseLanguage ? "電撃に強い／衝撃に弱い" : 
+                            "Str: Elec • Weak: Force"; return false;
                     case "<AISYO_L0040>": // Saki Mitama
-                        __result = "Str: Light/Dark/Ailments"; return false;
+                        __result = JapaneseLanguage ? "破魔・呪殺・バッドステータス攻撃に強い" : 
+                            "Str: Light/Dark/Ailments"; return false;
                     case "<AISYO_L0041>": // Kushi Mitama
-                        __result = "Str: Light/Dark/Ailments"; return false;
+                        __result = JapaneseLanguage ? "破魔・呪殺・バッドステータス攻撃に強い" : 
+                            "Str: Light/Dark/Ailments"; return false;
                     case "<AISYO_L0042>": // Nigi Mitama
-                        __result = "Str: Light/Dark/Ailments"; return false;
+                        __result = JapaneseLanguage ? "破魔・呪殺・バッドステータス攻撃に強い" : 
+                            "Str: Light/Dark/Ailments"; return false;
                     case "<AISYO_L0043>": // Ara Mitama
-                        __result = "Str: Light/Dark/Ailments"; return false;
+                        __result = JapaneseLanguage ? "破魔・呪殺・バッドステータス攻撃に強い" : 
+                            "Str: Light/Dark/Ailments"; return false;
                     case "<AISYO_L0044>": // Efreet
-                        __result = "Drn: Fire • Str: Shot • Weak: Ice"; return false;
+                        __result = JapaneseLanguage ? "火炎吸収、銃撃に強い／氷結に弱い" : 
+                            "Drn: Fire • Str: Shot • Weak: Ice"; return false;
                     case "<AISYO_L0045>": // Pulukishi
-                        __result = "Null: Force/Light • Str: Shot • Weak: Elec"; return false;
+                        __result = JapaneseLanguage ? "衝撃・破魔無効、銃撃に強い／電撃に弱い" : 
+                            "Null: Force/Light • Str: Shot • Weak: Elec"; return false;
                     case "<AISYO_L0046>": // Ongkhot
-                        __result = "Str: Phys/Shot • Weak: Curse/Nerve"; return false;
+                        __result = JapaneseLanguage ? "物理・銃撃に強い／魔力・神経に弱い" : 
+                            "Str: Phys/Shot • Weak: Curse/Nerve"; return false;
                     case "<AISYO_L0047>": // Jinn
-                        __result = "Drn: Force • Str: Shot • Weak: Nerve"; return false;
+                        __result = JapaneseLanguage ? "衝撃吸収、銃撃に強い／神経に弱い" : 
+                            "Drn: Force • Str: Shot • Weak: Nerve"; return false;
                     case "<AISYO_L0048>": // Karasu Tengu
-                        __result = "Rpl: Force • Str: Fire • Weak: Shot/Curse"; return false;
+                        __result = JapaneseLanguage ? "衝撃反射、火炎に強い／銃撃・魔力に弱い" : 
+                            "Rpl: Force • Str: Fire • Weak: Shot/Curse"; return false;
                     case "<AISYO_L0049>": // Dís
-                        __result = "Drn: Fire • Weak: Shot"; return false;
+                        __result = JapaneseLanguage ? "火炎吸収／銃撃に弱い" : 
+                            "Drn: Fire • Weak: Shot"; return false;
                     case "<AISYO_L0050>": // Isora
-                        __result = "Null: Ice • Weak: Fire"; return false;
+                        __result = JapaneseLanguage ? "氷結無効／火炎に弱い" : 
+                            "Null: Ice • Weak: Fire"; return false;
                     case "<AISYO_L0051>": // Apsaras
-                        __result = "Null: Elec • Weak: Fire"; return false;
+                        __result = JapaneseLanguage ? "電撃無効／火炎に弱い" : 
+                            "Null: Elec • Weak: Fire"; return false;
                     case "<AISYO_L0052>": // Koppa Tengu
-                        __result = "Null: Force • Weak: Shot/Curse"; return false;
+                        __result = JapaneseLanguage ? "衝撃無効／銃撃・魔力に弱い" : 
+                            "Null: Force • Weak: Shot/Curse"; return false;
                     case "<AISYO_L0053>": // Titania
-                        __result = "Rpl: Light • Str: Elements • Weak: Shot"; return false;
+                        __result = JapaneseLanguage ? "破魔反射、魔法全般に強い／銃撃に弱い" : 
+                            "Rpl: Light • Str: Elements • Weak: Shot"; return false;
                     case "<AISYO_L0055>": // Troll
-                        __result = "Drn: Ice • Weak: Nerve/Mind"; return false;
+                        __result = JapaneseLanguage ? "氷結吸収／神経・精神に弱い" : 
+                            "Drn: Ice • Weak: Nerve/Mind"; return false;
                     case "<AISYO_L0057>": // Kelpie
-                        __result = "Str: Ice/Elec/Nerve • Weak: Force"; return false;
+                        __result = JapaneseLanguage ? "氷結・電撃・神経に強い／衝撃に弱い" : 
+                            "Str: Ice/Elec/Nerve • Weak: Force"; return false;
                     case "<AISYO_L0062>": // Throne
-                        __result = "Rpl: Light • Drn: Fire • Weak: Ice/Dark"; return false;
+                        __result = JapaneseLanguage ? "破魔反射、火炎吸収／氷結・呪殺に弱い" : 
+                            "Rpl: Light • Drn: Fire • Weak: Ice/Dark"; return false;
                     case "<AISYO_L0063>": // Dominion
-                        __result = "Rpl: Light • Str: Force • Weak: Dark/Curse"; return false;
+                        __result = JapaneseLanguage ? "破魔反射、衝撃に強い／呪殺・魔力に弱い" : 
+                            "Rpl: Light • Str: Force • Weak: Dark/Curse"; return false;
                     case "<AISYO_L0064>": // Virtue
-                        __result = "Rpl: Light • Str: Elec • Weak: Force/Dark"; return false;
+                        __result = JapaneseLanguage ? "破魔反射、電撃に強い／衝撃・呪殺に弱い" : 
+                            "Rpl: Light • Str: Elec • Weak: Force/Dark"; return false;
                     case "<AISYO_L0067>": // Archangel
-                        __result = "Null: Light • Str: Fire • Weak: Ice/Dark"; return false;
+                        __result = JapaneseLanguage ? "破魔無効、火炎に強い／氷結・呪殺に弱い" : 
+                            "Null: Light • Str: Fire • Weak: Ice/Dark"; return false;
                     case "<AISYO_L0068>": // Angel
-                        __result = "Null: Light • Str: Force • Weak: Elec/Dark"; return false;
+                        __result = JapaneseLanguage ? "破魔無効、衝撃に強い／電撃・呪殺に弱い" : 
+                            "Null: Light • Str: Force • Weak: Elec/Dark"; return false;
                     case "<AISYO_L0069>": // Flauros
-                        __result = "Rpl: Dark • Null: Fire • Str: Shot • Weak: Nerve"; return false;
+                        __result = JapaneseLanguage ? "呪殺反射、火炎無効、銃撃に強い／神経に弱い" : 
+                            "Rpl: Dark • Null: Fire • Str: Shot • Weak: Nerve"; return false;
                     case "<AISYO_L0070>": // Decarabia
-                        __result = "Null: Dark • Str: Elements • Weak: Shot"; return false;
+                        __result = JapaneseLanguage ? "呪殺無効、魔法全般に強い／銃撃に弱い" : 
+                            "Null: Dark • Str: Elements • Weak: Shot"; return false;
                     case "<AISYO_L0072>": // Berith
-                        __result = "Drn: Fire • Null: Dark • Str: Phys • Weak: Force"; return false;
+                        __result = JapaneseLanguage ? "火炎吸収、呪殺無効、物理に強い／衝撃に弱い" : 
+                            "Drn: Fire • Null: Dark • Str: Phys • Weak: Force"; return false;
                     case "<AISYO_L0075>": // Yurlungur
-                        __result = "Null: Elements • Weak: Ailments"; return false;
+                        __result = JapaneseLanguage ? "魔法全般無効／バッドステータス攻撃に弱い" : 
+                            "Null: Elements • Weak: Ailments"; return false;
                     case "<AISYO_L0080>": // Nozuchi
-                        __result = "Null: Curse • Str: Phys/Force • Weak: Fire/Elec"; return false;
+                        __result = JapaneseLanguage ? "魔力無効、物理・衝撃に強い／火炎・電撃に弱い" : 
+                            "Null: Curse • Str: Phys/Force • Weak: Fire/Elec"; return false;
                     case "<AISYO_L0081>": // Cerberus
-                        __result = "Rpl: Fire • Null: Dark • Str: Phys/Ailments • Weak: Ice"; return false;
+                        __result = JapaneseLanguage ? "火炎反射、呪殺無効、物理・バッドステータス攻撃に強い／氷結に弱い" : 
+                            "Rpl: Fire • Null: Dark • Str: Phys/Ailments • Weak: Ice"; return false;
                     case "<AISYO_L0082>": // Orthrus
-                        __result = "Drn: Fire • Str: Dark/Mind • Weak: Ice"; return false;
+                        __result = JapaneseLanguage ? "火炎吸収、呪殺・精神に強い／氷結に弱い" : 
+                            "Drn: Fire • Str: Dark/Mind • Weak: Ice"; return false;
                     case "<AISYO_L0083>": // Suparna
-                        __result = "Rpl: Force • Null: Ailments • Weak: Shot"; return false;
+                        __result = JapaneseLanguage ? "衝撃反射、バッドステータス攻撃無効／銃撃に弱い" : 
+                            "Rpl: Force • Null: Ailments • Weak: Shot"; return false;
                     case "<AISYO_L0084>": // Badb Catha
-                        __result = "Str: Phys/Force/Dark • Weak: Shot/Elec"; return false;
+                        __result = JapaneseLanguage ? "物理・衝撃・呪殺に強い／銃撃・電撃に弱い" : 
+                            "Str: Phys/Force/Dark • Weak: Shot/Elec"; return false;
                     case "<AISYO_L0086>": // Nekomata
-                        __result = "Null: Force • Str: Fire • Weak: Ice"; return false;
+                        __result = JapaneseLanguage ? "衝撃無効、火炎に強い／氷結に弱い" : 
+                            "Null: Force • Str: Fire • Weak: Ice"; return false;
                     case "<AISYO_L0088>": // Titan
-                        __result = "Null: Force • Str: Phys/Shot • Weak: Elec"; return false;
+                        __result = JapaneseLanguage ? "衝撃無効、物理・銃撃に強い／電撃に弱い" : 
+                            "Null: Force • Str: Phys/Shot • Weak: Elec"; return false;
                     case "<AISYO_L0089>": // Sarutahiko
-                        __result = "Null: Light • Str: Shot/Dark • Weak: Nerve"; return false;
+                        __result = JapaneseLanguage ? "破魔無効、銃撃・呪殺に強い／神経に弱い" : 
+                            "Null: Light • Str: Shot/Dark • Weak: Nerve"; return false;
                     case "<AISYO_L0090>": // Sudama
-                        __result = "Str: Shot/Force • Weak: Fire"; return false;
+                        __result = JapaneseLanguage ? "銃撃・衝撃に強い／火炎に弱い" : 
+                            "Str: Shot/Force • Weak: Fire"; return false;
                     case "<AISYO_L0093>": // Shiki-Ouji
-                        __result = "Rpl: Light/Dark • Null: Phys/Shot • Weak: Fire"; return false;
+                        __result = JapaneseLanguage ? "破魔・呪殺反射、物理・銃撃無効／火炎に弱い" : 
+                            "Rpl: Light/Dark • Null: Phys/Shot • Weak: Fire"; return false;
                     case "<AISYO_L0094>": // Oni
-                        __result = "Str: Phys • Weak: Light/Nerve"; return false;
+                        __result = JapaneseLanguage ? "物理・呪殺に強い／破魔・神経に弱い" : 
+                            "Str: Phys/Dark • Weak: Light/Nerve"; return false;
                     case "<AISYO_L0095>": // Yomotsu-Ikusa
-                        __result = "Null: Nerve • Str: Dark • Weak: Force"; return false;
+                        __result = JapaneseLanguage ? "神経無効、呪殺に強い／衝撃に弱い" : 
+                            "Null: Nerve • Str: Dark • Weak: Force"; return false;
                     case "<AISYO_L0096>": // Momunofu
-                        __result = "Str: Phys • Weak: Force/Ailments"; return false;
+                        __result = JapaneseLanguage ? "物理に強い／衝撃・バッドステータス攻撃に弱い" : 
+                            "Str: Phys • Weak: Force/Ailments"; return false;
                     case "<AISYO_L0097>": // Shikigami
-                        __result = "Null: Elec • Weak: Fire"; return false;
+                        __result = JapaneseLanguage ? "電撃無効／火炎に弱い" : 
+                            "Null: Elec • Weak: Fire"; return false;
                     case "<AISYO_L0098>": // Rangda
-                        __result = "Rpl: Phys/Shot • Weak: Elec"; return false;
+                        __result = JapaneseLanguage ? "物理・銃撃反射／電撃に弱い" : 
+                            "Rpl: Phys/Shot • Weak: Elec"; return false;
                     case "<AISYO_L0099>": // Dakini
-                        __result = "Str: Phys/Fire • Weak: Ice"; return false;
+                        __result = JapaneseLanguage ? "物理・火炎に強い／氷結に弱い" : 
+                            "Str: Phys/Fire • Weak: Ice"; return false;
                     case "<AISYO_L0100>": // Yaksini
-                        __result = "Null: Force • Str: Curse/Nerve • Weak: Elec"; return false;
+                        __result = JapaneseLanguage ? "衝撃無効、魔力・神経に強い／電撃に弱い" : 
+                            "Null: Force • Str: Curse/Nerve • Weak: Elec"; return false;
                     case "<AISYO_L0101>": // Yomotsu-Shikome
-                        __result = "Null: Curse/Nerve • Str: Shot/Mind • Weak: Fire"; return false;
+                        __result = JapaneseLanguage ? "魔力・神経無効、銃撃・精神に強い／火炎に弱い" : 
+                            "Null: Curse/Nerve • Str: Shot/Mind • Weak: Fire"; return false;
                     case "<AISYO_L0102>": // Taraka
-                        __result = "Null: Elec/Nerve • Str: Dark • Weak: Shot"; return false;
+                        __result = JapaneseLanguage ? "電撃・神経無効、呪殺に強い／銃撃に弱い" : 
+                            "Null: Elec/Nerve • Str: Dark • Weak: Shot"; return false;
                     case "<AISYO_L0103>": // Datsue-Ba
-                        __result = "Null: Nerve/Mind • Str: Ice • Weak: Elec"; return false;
+                        __result = JapaneseLanguage ? "神経・精神無効、氷結に強い／電撃に弱い" : 
+                            "Null: Nerve/Mind • Str: Ice • Weak: Elec"; return false;
                     case "<AISYO_L0104>": // Mada
-                        __result = "Drn: Phys/Shot • Null: Dark • Weak: Curse"; return false;
+                        __result = JapaneseLanguage ? "物理・銃撃吸収、呪殺無効／魔力に弱い" : 
+                            "Drn: Phys/Shot • Null: Dark • Weak: Curse"; return false;
                     case "<AISYO_L0105>": // Girimekhala
-                        __result = "Rpl: Phys/Shot • Null: Dark/Curse • Weak: Light/Mind"; return false;
+                        __result = JapaneseLanguage ? "物理・銃撃反射、呪殺・魔力無効／破魔・精神に弱い" : 
+                            "Rpl: Phys/Shot • Null: Dark/Curse • Weak: Light/Mind"; return false;
                     case "<AISYO_L0106>": // Taotie
-                        __result = "Null: Shot/Dark • Weak: Curse"; return false;
+                        __result = JapaneseLanguage ? "銃撃・呪殺無効／精神に弱い" : 
+                            "Null: Shot/Dark • Weak: Curse"; return false;
                     case "<AISYO_L0107>": // Pazuzu
-                        __result = "Null: Dark • Str: Shot/Force/Mind • Weak: Ice"; return false;
+                        __result = JapaneseLanguage ? "呪殺無効、銃撃・衝撃・精神に強い／氷結に弱い" : 
+                            "Null: Dark • Str: Shot/Force/Mind • Weak: Ice"; return false;
                     case "<AISYO_L0109>": // Mot
-                        __result = "Rpl: Force/Dark • Null: Ailments • Str: Phys/Fire • Weak: Elec"; return false;
+                        __result = JapaneseLanguage ? "衝撃・呪殺反射、バッドステータス攻撃無効、物理・火炎に強い／電撃に弱い" : 
+                            "Rpl: Force/Dark • Null: Ailments • Str: Phys/Fire • Weak: Elec"; return false;
                     case "<AISYO_L0110>": // Aciel
-                        __result = "Rpl: Dark • Null: Elements • Weak: Phys/Shot/Light"; return false;
+                        __result = JapaneseLanguage ? "呪殺反射、魔法全般無効／物理・銃撃・破魔に弱い" : 
+                            "Rpl: Dark • Null: Elements • Weak: Phys/Shot/Light"; return false;
                     case "<AISYO_L0111>": // Surt
-                        __result = "Drn: Fire • Null: Dark/Ailments • Str: Phys • Weak: Ice"; return false;
+                        __result = JapaneseLanguage ? "火炎吸収、呪殺・バッドステータス攻撃無効、物理に強い／氷結に弱い" : 
+                            "Drn: Fire • Null: Dark/Ailments • Str: Phys • Weak: Ice"; return false;
                     case "<AISYO_L0112>": // Abaddon
-                        __result = "Rpl: Dark • Str: Elements • Weak: Light"; return false;
+                        __result = JapaneseLanguage ? "呪殺反射、魔法全般に強い／破魔に弱い" : 
+                            "Rpl: Dark • Str: Elements • Weak: Light"; return false;
                     case "<AISYO_L0113>": // Loki
-                        __result = "Str: Shot/Elements/Ailments"; return false;
+                        __result = JapaneseLanguage ? "銃撃・魔法全般・バッドステータス攻撃に強い" : 
+                            "Str: Shot/Elements/Ailments"; return false;
                     case "<AISYO_L0114>": // Lilith
-                        __result = "Null: Dark/Mind • Str: Elements • Weak: Shot"; return false;
+                        __result = JapaneseLanguage ? "呪殺・精神無効、魔法全般に強い／銃撃に弱い" : 
+                            "Null: Dark/Mind • Str: Elements • Weak: Shot"; return false;
                     case "<AISYO_L0115>": // Nyx
-                        __result = "Null: Mind • Str: Elements • Weak: Shot"; return false;
+                        __result = JapaneseLanguage ? "精神無効、魔法全般に強い／銃撃に弱い" : 
+                            "Null: Mind • Str: Elements • Weak: Shot"; return false;
                     case "<AISYO_L0116>": // Queen Mab
-                        __result = "Rpl: Dark • Str: Elements"; return false;
+                        __result = JapaneseLanguage ? "呪殺反射、魔法全般に強い" : 
+                            "Rpl: Dark • Str: Elements"; return false;
                     case "<AISYO_L0117>": // Succubus
-                        __result = "Null: Mind • Str: Ice/Curse/Nerve • Weak: Shot/Light"; return false;
+                        __result = JapaneseLanguage ? "精神無効、氷結・魔力・神経に強い／銃撃・破魔に弱い" : 
+                            "Null: Mind • Str: Ice/Curse/Nerve • Weak: Shot/Light"; return false;
                     case "<AISYO_L0118>": // Incubus
-                        __result = "Null: Curse/Mind • Str: Dark • Weak: Force"; return false;
+                        __result = JapaneseLanguage ? "魔力・精神無効、呪殺に強い／衝撃に弱い" : 
+                            "Null: Curse/Mind • Str: Dark • Weak: Force"; return false;
                     case "<AISYO_L0120>": // Lilim
-                        __result = "Null: Elec • Str: Dark/Mind • Weak: Ice"; return false;
+                        __result = JapaneseLanguage ? "電撃無効、呪殺・精神に強い／氷結に弱い" : 
+                            "Null: Elec • Str: Dark/Mind • Weak: Ice"; return false;
                     case "<AISYO_L0121>": // Hresvelgr
-                        __result = "Rpl: Ice • Null: Force/Dark • Str: Phys • Weak: Shot/Fire"; return false;
+                        __result = JapaneseLanguage ? "氷結反射、衝撃・呪殺無効、物理に強い／銃撃・火炎に弱い" : 
+                            "Rpl: Ice • Null: Force/Dark • Str: Phys • Weak: Shot/Fire"; return false;
                     case "<AISYO_L0122>": // Mothman
-                        __result = "Null: Fire/Dark/Curse • Weak: Shot/Elec"; return false;
+                        __result = JapaneseLanguage ? "火炎・呪殺・魔力無効／銃撃・電撃に弱い" : 
+                            "Null: Fire/Dark/Curse • Weak: Shot/Elec"; return false;
                     case "<AISYO_L0123>": // Raiju
-                        __result = "Drn: Elec • Null: Dark • Str: Shot • Weak: Force"; return false;
+                        __result = JapaneseLanguage ? "電撃吸収、呪殺無効、銃撃に強い／衝撃に弱い" : 
+                            "Drn: Elec • Null: Dark • Str: Shot • Weak: Force"; return false;
                     case "<AISYO_L0125>": // Bicorn
-                        __result = "Null: Dark • Str: Shot/Ailments • Weak: Elec"; return false;
+                        __result = JapaneseLanguage ? "呪殺無効、銃撃・バッドステータス攻撃に強い／電撃に弱い" : 
+                            "Null: Dark • Str: Shot/Ailments • Weak: Elec"; return false;
                     case "<AISYO_L0126>": // Zhen
-                        __result = "Str: Dark/Ailments • Weak: Shot/Fire"; return false;
+                        __result = JapaneseLanguage ? "呪殺・バッドステータス攻撃に強い／銃撃・火炎に弱い" : 
+                            "Str: Dark/Ailments • Weak: Shot/Fire"; return false;
                     case "<AISYO_L0127>": // Vetala
-                        __result = "Rpl: Dark • Str: Shot/Ailments • Weak: Elec/Light"; return false;
+                        __result = JapaneseLanguage ? "呪殺反射、銃撃・バッドステータス攻撃に強い／電撃・破魔に弱い" : 
+                            "Rpl: Dark • Str: Shot/Ailments • Weak: Elec/Light"; return false;
                     case "<AISYO_L0128>": // Legion
-                        __result = "Rpl: Dark • Null: Shot • Weak: Elec/Light"; return false;
+                        __result = JapaneseLanguage ? "呪殺反射、銃撃無効／電撃・破魔に弱い" : 
+                            "Rpl: Dark • Null: Shot • Weak: Elec/Light"; return false;
                     case "<AISYO_L0130>": // Choronzon
-                        __result = "Null: Fire/Dark • Str: Phys/Shot • Weak: Force/Light"; return false;
+                        __result = JapaneseLanguage ? "火炎・呪殺無効、物理・銃撃に強い／衝撃・破魔に弱い" : 
+                            "Null: Fire/Dark • Str: Phys/Shot • Weak: Force/Light"; return false;
                     case "<AISYO_L0131>": // Preta
-                        __result = "Null: Dark • Weak: Elements/Light"; return false;
+                        __result = JapaneseLanguage ? "呪殺無効／魔法全般・破魔に弱い" : 
+                            "Null: Dark • Weak: Elements/Light"; return false;
                     case "<AISYO_L0132>": // Shadow
-                        __result = "Null: Shot/Dark • Str: Phys • Weak: Force/Light"; return false;
+                        __result = JapaneseLanguage ? "銃撃・呪殺無効、物理に強い／衝撃・破魔に弱い" : 
+                            "Null: Shot/Dark • Str: Phys • Weak: Force/Light"; return false;
                     case "<AISYO_L0133>": // Black Ooze
-                        __result = "Null: Dark • Str: Phys/Shot • Weak: Elec/Light"; return false;
+                        __result = JapaneseLanguage ? "呪殺無効、物理・銃撃に強い／電撃・破魔に弱い" : 
+                            "Null: Dark • Str: Phys/Shot • Weak: Elec/Light"; return false;
                     case "<AISYO_L0134>": // Blob
-                        __result = "Null: Dark • Str: Phys/Shot • Weak: Fire/Ice/Light"; return false;
+                        __result = JapaneseLanguage ? "呪殺無効、物理・銃撃に強い／火炎・氷結・破魔に弱い" : 
+                            "Null: Dark • Str: Phys/Shot • Weak: Fire/Ice/Light"; return false;
                     case "<AISYO_L0135>": // Slime
-                        __result = "Null: Dark • Str: Phys/Shot • Weak: Elements/Light"; return false;
+                        __result = JapaneseLanguage ? "呪殺無効、物理・銃撃に強い／魔法全般・破魔に弱い" : 
+                            "Null: Dark • Str: Phys/Shot • Weak: Elements/Light"; return false;
                     case "<AISYO_L0136>": // Mou-Ryo
-                        __result = "Null: Shot/Dark • Str: Fire • Weak: Ice/Light"; return false;
+                        __result = JapaneseLanguage ? "物理・銃撃無効、火炎に強い／氷結・破魔に弱い" : 
+                            "Null: Shot/Dark • Str: Fire • Weak: Ice/Light"; return false;
                     case "<AISYO_L0137>": // Will O' Wisp
-                        __result = "Null: Shot/Dark • Str: Phys • Weak: Elements/Light"; return false;
+                        __result = JapaneseLanguage ? "銃撃・呪殺無効、物理に強い／魔法全般・破魔に弱い" : 
+                            "Null: Shot/Dark • Str: Phys • Weak: Elements/Light"; return false;
                     case "<AISYO_L0138>": // Michael
-                        __result = "Rpl: Light • Str: Shot/Elements • Weak: Dark"; return false;
+                        __result = JapaneseLanguage ? "破魔反射、銃撃・魔法全般に強い／呪殺に弱い" : 
+                            "Rpl: Light • Str: Shot/Elements • Weak: Dark"; return false;
                     case "<AISYO_L0139>": // Gabriel
-                        __result = "Rpl: Ice/Light • Str: Fire/Force • Weak: Elec"; return false;
+                        __result = JapaneseLanguage ? "氷結・破魔反射、火炎・衝撃に強い／電撃に弱い" : 
+                            "Rpl: Ice/Light • Str: Fire/Force • Weak: Elec"; return false;
                     case "<AISYO_L0140>": // Raphael
-                        __result = "Rpl: Force/Light • Str: Ice/Elec • Weak: Fire"; return false;
+                        __result = JapaneseLanguage ? "衝撃・破魔反射、氷結・電撃に強い／火炎に弱い" : 
+                            "Rpl: Force/Light • Str: Ice/Elec • Weak: Fire"; return false;
                     case "<AISYO_L0141>": // Uriel
-                        __result = "Rpl: Fire/Light • Str: Elec/Force • Weak: Ice"; return false;
+                        __result = JapaneseLanguage ? "火炎・破魔反射、電撃・衝撃に強い／氷結に弱い" : 
+                            "Rpl: Fire/Light • Str: Elec/Force • Weak: Ice"; return false;
                     case "<AISYO_L0142>": // Ganesha
-                        __result = "Null: Ice/Force/Light • Str: Phys/Shot • Weak: Elec"; return false;
+                        __result = JapaneseLanguage ? "氷結・衝撃・破魔無効、物理・銃撃に強い／電撃に弱い" : 
+                            "Null: Ice/Force/Light • Str: Phys/Shot • Weak: Elec"; return false;
                     case "<AISYO_L0143>": // Valkyrie
-                        __result = "Drn: Fire • Null: Light • Str: Shot"; return false;
+                        __result = JapaneseLanguage ? "火炎吸収、破魔無効、銃撃に強い" : 
+                            "Drn: Fire • Null: Light • Str: Shot"; return false;
                     case "<AISYO_L0144>": // Arahabaki
-                        __result = "Null: Phys/Shot • Str: Light/Dark • Weak: Elements/Ailments"; return false;
+                        __result = JapaneseLanguage ? "物理・銃撃無効、破魔・呪殺に強い／魔法全般・バッドステータス攻撃に弱い" : 
+                            "Null: Phys/Shot • Str: Light/Dark • Weak: Elements/Ailments"; return false;
                     case "<AISYO_L0145>": // Kurama Tengu
-                        __result = "Drn: Force • Null: Fire/Light • Weak: Shot"; return false;
+                        __result = JapaneseLanguage ? "衝撃吸収、火炎・破魔無効／銃撃に弱い" : 
+                            "Drn: Force • Null: Fire/Light • Weak: Shot"; return false;
                     case "<AISYO_L0146>": // Hanuman
-                        __result = "Null: Light • Str: Phys/Shot"; return false;
+                        __result = JapaneseLanguage ? "破魔無効、物理・銃撃に強い" : 
+                            "Null: Light • Str: Phys/Shot"; return false;
                     case "<AISYO_L0147>": // Cu Chulainn
-                        __result = "Rpl: Force • Null: Light • Str: Phys"; return false;
+                        __result = JapaneseLanguage ? "衝撃反射、破魔無効、物理に強い" : 
+                            "Rpl: Force • Null: Light • Str: Phys"; return false;
                     case "<AISYO_L0148>": // Qing Long
-                        __result = "Drn: Force • Null: Light • Str: Ice • Weak: Fire"; return false;
+                        __result = JapaneseLanguage ? "衝撃吸収、破魔無効、氷結に強い／火炎に弱い" : 
+                            "Drn: Force • Null: Light • Str: Ice • Weak: Fire"; return false;
                     case "<AISYO_L0149>": // Xuanwu
-                        __result = "Drn: Ice • Null: Light • Str: Curse • Weak: Elec"; return false;
+                        __result = JapaneseLanguage ? "氷結吸収、破魔無効、魔力に強い／電撃に弱い" : 
+                            "Drn: Ice • Null: Light • Str: Curse • Weak: Elec"; return false;
                     case "<AISYO_L0150>": // Barong
-                        __result = "Rpl: Light • Drn: Elec • Str: Shot/Ice • Weak: Dark"; return false;
+                        __result = JapaneseLanguage ? "電撃吸収、破魔反射、銃撃・氷結に強い／呪殺に弱い" :
+                            "Drn: Elec • Rpl: Light • Str: Shot/Ice • Weak: Dark"; return false;
                     case "<AISYO_L0152>": // Garuda
-                        __result = "Rpl: Force/Light • Null: Ailments • Weak: Shot/Dark"; return false;
+                        __result = JapaneseLanguage ? "衝撃・破魔反射、バッドステータス攻撃無効／銃撃・呪殺に弱い" : 
+                            "Rpl: Force/Light • Null: Ailments • Weak: Shot/Dark"; return false;
                     case "<AISYO_L0153>": // Yatagarasu
-                        __result = "Rpl: Force/Light • Weak: Shot"; return false;
+                        __result = JapaneseLanguage ? "衝撃・破魔反射／銃撃に弱い" : 
+                            "Rpl: Force/Light • Weak: Shot"; return false;
                     case "<AISYO_L0154>": // Gurulu
-                        __result = "Rpl: Force/Dark • Null: Ailments • Weak: Shot/Light"; return false;
+                        __result = JapaneseLanguage ? "衝撃・呪殺反射、バッドステータス攻撃無効／銃撃・破魔に弱い" : 
+                            "Rpl: Force/Dark • Null: Ailments • Weak: Shot/Light"; return false;
                     case "<AISYO_L0155>": // Albion
-                        __result = "Null: Phys/Shot/Light"; return false;
+                        __result = JapaneseLanguage ? "物理・銃撃・破魔無効" : 
+                            "Null: Phys/Shot/Light"; return false;
                     case "<AISYO_L0156>": // Manikin
-                        __result = "Normal resistance"; return false;
+                        __result = JapaneseLanguage ? "ノーマル耐性" : 
+                            "Normal resistance"; return false;
                     case "<AISYO_L0157>": // Manikin
-                        __result = "Normal resistance"; return false;
+                        __result = JapaneseLanguage ? "ノーマル耐性" : 
+                            "Normal resistance"; return false;
                     case "<AISYO_L0158>": // Manikin
-                        __result = "Normal resistance"; return false;
+                        __result = JapaneseLanguage ? "ノーマル耐性" : 
+                            "Normal resistance"; return false;
                     case "<AISYO_L0159>": // Manikin
-                        __result = "Normal resistance"; return false;
+                        __result = JapaneseLanguage ? "ノーマル耐性" : 
+                            "Normal resistance"; return false;
                     case "<AISYO_L0160>": // Manikin
-                        __result = "Normal resistance"; return false;
+                        __result = JapaneseLanguage ? "ノーマル耐性" : 
+                            "Normal resistance"; return false;
                     case "<AISYO_L0161>": // Samael
-                        __result = "Rpl: Dark • Null: Curse/Mind • Weak: Light"; return false;
+                        __result = JapaneseLanguage ? "呪殺反射、魔力・無効無効／破魔に弱い" : 
+                            "Rpl: Dark • Null: Curse/Mind • Weak: Light"; return false;
                     case "<AISYO_L0162>": // Boss Manikin
-                        __result = "Normal resistance"; return false;
+                        __result = JapaneseLanguage ? "ノーマル耐性" : 
+                            "Normal resistance"; return false;
                     case "<AISYO_L0163>": // Boss Manikin
-                        __result = "Normal resistance"; return false;
+                        __result = JapaneseLanguage ? "ノーマル耐性" : 
+                            "Normal resistance"; return false;
                     case "<AISYO_L0164>": // Boss Manikin
-                        __result = "Normal resistance"; return false;
+                        __result = JapaneseLanguage ? "ノーマル耐性" : 
+                            "Normal resistance"; return false;
                     case "<AISYO_L0165>": // Boss Manikin
-                        __result = "Normal resistance"; return false;
+                        __result = JapaneseLanguage ? "ノーマル耐性" : 
+                            "Normal resistance"; return false;
                     case "<AISYO_L0166>": // Boss Manikin
-                        __result = "Normal resistance"; return false;
+                        __result = JapaneseLanguage ? "ノーマル耐性" : 
+                            "Normal resistance"; return false;
                     case "<AISYO_L0168>": // Kaiwan
-                        __result = "Null: Dark • Str: Elements • Weak: Light"; return false;
+                        __result = JapaneseLanguage ? "呪殺無効、魔法全般に強い／破魔に弱い" : 
+                            "Null: Dark • Str: Elements • Weak: Light"; return false;
                     case "<AISYO_L0169>": // Kin-Ki
-                        __result = "Str: Phys/Shot/Nerve/Mind • Weak: Curse"; return false;
+                        __result = JapaneseLanguage ? "物理・銃撃・神経・精神に強い／魔力に弱い" : 
+                            "Str: Phys/Shot/Nerve/Mind • Weak: Curse"; return false;
                     case "<AISYO_L0170>": // Sui-Ki
-                        __result = "Null: Ice/Dark • Str: Ailments • Weak: Fire"; return false;
+                        __result = JapaneseLanguage ? "氷結・呪殺無効、バッドステータス攻撃に強い／火炎に弱い" : 
+                            "Null: Ice/Dark • Str: Ailments • Weak: Fire"; return false;
                     case "<AISYO_L0171>": // Fuu-Ki
-                        __result = "Null: Force/Dark • Str: Ailments • Weak: Elec"; return false;
+                        __result = JapaneseLanguage ? "衝撃・呪殺無効、バッドステータス攻撃に強い／電撃に弱い" : 
+                            "Null: Force/Dark • Str: Ailments • Weak: Elec"; return false;
                     case "<AISYO_L0172>": // Ongyo-Ki
-                        __result = "Null: Dark/Ailments • Str: Phys/Shot • Weak: Light"; return false;
+                        __result = JapaneseLanguage ? "呪殺・バッドステータス攻撃無効 、物理・銃撃に強い／破魔に弱い" : 
+                            "Null: Dark/Ailments • Str: Phys/Shot • Weak: Light"; return false;
                     case "<AISYO_L0173>": // Clotho
-                        __result = "Null: Light/Dark • Str: Nerve/Mind"; return false;
+                        __result = JapaneseLanguage ? "破魔・呪殺無効、神経・精神に強い" : 
+                            "Null: Light/Dark • Str: Nerve/Mind"; return false;
                     case "<AISYO_L0174>": // Lachesis
-                        __result = "Null: Light/Dark • Str: Curse/Nerve"; return false;
+                        __result = JapaneseLanguage ? "破魔・呪殺無効、魔力・神経に強い" : 
+                            "Null: Light/Dark • Str: Curse/Nerve"; return false;
                     case "<AISYO_L0175>": // Atropos
-                        __result = "Null: Light/Dark • Str: Curse/Mind"; return false;
+                        __result = JapaneseLanguage ? "破魔・呪殺無効、魔力・精神に強い" : 
+                            "Null: Light/Dark • Str: Curse/Mind"; return false;
                     case "<AISYO_L0178>": // Phantom
-                        __result = "Null: Shot/Dark • Str: Phys/Elec • Weak: Force/Light"; return false;
+                        __result = JapaneseLanguage ? "銃撃・呪殺無効、物理・電撃に強い／衝撃・破魔に弱い" : 
+                            "Null: Shot/Dark • Str: Phys/Elec • Weak: Force/Light"; return false;
                     case "<AISYO_L0192>": // Dante/Raidou
-                        __result = "Str: All except Almighty"; return false;
+                        __result = JapaneseLanguage ? "万能以外のあらゆる攻撃に強い" : 
+                            "Str: All except Almighty"; return false;
                     case "<AISYO_L0193>": // Metatron
-                        __result = "Rpl: Shot/Light • Null: Fire/Ailments • Str: Phys/Elec/Force/Dark"; return false;
+                        __result = JapaneseLanguage ? "銃撃・破魔反射、火炎・バッドステータス攻撃無効、物理・電撃・衝撃・呪殺に強い" : 
+                            "Rpl: Shot/Light • Null: Fire/Ailments • Str: Phys/Elec/Force/Dark"; return false;
                     case "<AISYO_L0194>": // Beelzebub (Fly)
-                        __result = "Drn: Shot/Elec • Null: Force/Dark/Ailments • Str: Phys/Ice/Light"; return false;
+                        __result = JapaneseLanguage ? "銃撃・電撃吸収、衝撃・呪殺・バッドステータス攻撃無効、物理・氷結・破魔に強い" : 
+                            "Drn: Shot/Elec • Null: Force/Dark/Ailments • Str: Phys/Ice/Light"; return false;
                     case "<AISYO_L0195>": // Pale Rider
-                        __result = "Rpl: Force/Dark • Null: Ailments • Str: Ice/Light"; return false;
+                        __result = JapaneseLanguage ? "衝撃・呪殺反射、バッドステータス攻撃無効、氷結・破魔に強い" : 
+                            "Rpl: Force/Dark • Null: Ailments • Str: Ice/Light"; return false;
                     case "<AISYO_L0196>": // White Rider
-                        __result = "Null: Fire/Light/Mind"; return false;
+                        __result = JapaneseLanguage ? "火炎・破魔・精神無効" : 
+                            "Null: Fire/Light/Mind"; return false;
                     case "<AISYO_L0197>": // Red Rider
-                        __result = "Null: Elec/Force/Dark/Nerve"; return false;
+                        __result = JapaneseLanguage ? "電撃・衝撃・呪殺・神経無効" : 
+                            "Null: Elec/Force/Dark/Nerve"; return false;
                     case "<AISYO_L0198>": // Black Rider
-                        __result = "Drn: Ice • Null: Dark/Curse"; return false;
+                        __result = JapaneseLanguage ? "氷結吸収、呪殺・魔力無効" : 
+                            "Drn: Ice • Null: Dark/Curse"; return false;
                     case "<AISYO_L0199>": // Matador
-                        __result = "Null: Force/Dark"; return false;
+                        __result = JapaneseLanguage ? "衝撃・呪殺無効" : 
+                            "Null: Force/Dark"; return false;
                     case "<AISYO_L0200>": // Hell Biker
-                        __result = "Null: Fire/Force • Str: Dark/Curse"; return false;
+                        __result = JapaneseLanguage ? "火炎・衝撃無効、呪殺・魔力に強い" : 
+                            "Null: Fire/Force • Str: Dark/Curse"; return false;
                     case "<AISYO_L0201>": // Daisoujou
-                        __result = "Null: Light/Dark/Curse/Mind"; return false;
+                        __result = JapaneseLanguage ? "破魔・呪殺・魔力・精神無効" : 
+                            "Null: Light/Dark/Curse/Mind"; return false;
                     case "<AISYO_L0202>": // Mother Harlot
-                        __result = "Rpl: Phys • Drn: Elec • Str: Light/Dark/Ailments"; return false;
+                        __result = JapaneseLanguage ? "電撃吸収、物理反射、破魔・呪殺・バッドステータス攻撃無効" :
+                            "Drn: Elec • Rpl: Phys • Str: Light/Dark/Ailments"; return false;
                     case "<AISYO_L0203>": // Trumpeter
-                        __result = "Null: Light/Dark/Ailments • Str: Elements"; return false;
+                        __result = JapaneseLanguage ? "破魔・呪殺・バッドステータス攻撃無効、魔法全般に強い" : 
+                            "Null: Light/Dark/Ailments • Str: Elements"; return false;
                     case "<AISYO_L0204>": // Futomimi
-                        __result = "Null: Light • Str: Phys"; return false;
+                        __result = JapaneseLanguage ? "破魔無効、物理に強い" : 
+                            "Null: Light • Str: Phys"; return false;
                     case "<AISYO_L0205>": // Sakahagi
-                        __result = "Null: Dark • Str: Ailments"; return false;
+                        __result = JapaneseLanguage ? "呪殺無効、バッドステータス攻撃に強い" : 
+                            "Null: Dark • Str: Ailments"; return false;
                     case "<AISYO_L0206>": // Black Frost
-                        __result = "Drn: Ice • Null: Dark • Str: Phys/Fire • Weak: Light"; return false;
+                        __result = JapaneseLanguage ? "氷結吸収、呪殺無効、物理・火炎に強い／破魔に弱い" : 
+                            "Drn: Ice • Null: Dark • Str: Phys/Fire • Weak: Light"; return false;
                     case "<AISYO_L0207>": // Beelzebub (Man)
-                        __result = "Drn: Elec • Null: Dark/Ailments • Str: Ice/Force"; return false;
+                        __result = JapaneseLanguage ? "電撃吸収、呪殺・バッドステータス攻撃無効、氷結・衝撃に強い" : 
+                            "Drn: Elec • Null: Dark/Ailments • Str: Ice/Force"; return false;
                     case "<AISYO_L00316>": // Forced Nekomata
-                        __result = "Null: Force • Str: Fire • Weak: Ice"; return false;
+                        __result = JapaneseLanguage ? "衝撃無効、火炎に強い／氷結に弱い" : 
+                            "Null: Force • Str: Fire • Weak: Ice"; return false;
                     case "<DEVIL_L0019>":
-                        __result = "Kushinada-Hime"; return false;
+                        __result = JapaneseLanguage ? "クシナダヒメ" : "Kushinada-Hime"; return false;
                     case "<DEVIL_L0179>":
-                        __result = "Ose Hallel"; return false;
+                        __result = JapaneseLanguage ? "オセ・ハレル" : "Ose Hallel"; return false;
                     case "<AISYO_L0179>":
-                        __result = "Rpl: Light • Null: Shot/Ice • Weak: Dark"; return false;
+                        __result = JapaneseLanguage ? "破魔反射、銃撃・氷結無効／呪殺に弱い" : 
+                            "Rpl: Light • Null: Shot/Ice • Weak: Dark"; return false;
                     case "<DEVIL_L0180>":
-                        __result = "Flauros Hallel"; return false;
+                        __result = JapaneseLanguage ? "フラロウス・ハレル" : "Flauros Hallel"; return false;
                     case "<AISYO_L0180>":
-                        __result = "Rpl: Light • Null: Shot/Fire • Weak: Dark"; return false;
+                        __result = JapaneseLanguage ? "破魔反射、銃撃・火炎無効／呪殺に弱い" : 
+                            "Rpl: Light • Null: Shot/Fire • Weak: Dark"; return false;
                     case "<DEVIL_L0181>":
-                        __result = "Urthona"; return false;
+                        __result = JapaneseLanguage ? "アーソナ" : "Urthona"; return false;
                     case "<AISYO_L0181>":
-                        __result = "Rpl: Elec • Null: Light • Weak: Force"; return false;
+                        __result = JapaneseLanguage ? "電撃反射、破魔無効／衝撃に弱い" : 
+                            "Rpl: Elec • Null: Light • Weak: Force"; return false;
                     case "<DEVIL_L0182>":
-                        __result = "Urizen"; return false;
+                        __result = JapaneseLanguage ? "ユリゼン" : "Urizen"; return false;
                     case "<AISYO_L0182>":
-                        __result = "Rpl: Fire • Null: Light • Weak: Ice"; return false;
+                        __result = JapaneseLanguage ? "火炎反射、破魔無効／氷結に弱い" : 
+                            "Rpl: Fire • Null: Light • Weak: Ice"; return false;
                     case "<DEVIL_L0183>":
-                        __result = "Luvah"; return false;
+                        __result = JapaneseLanguage ? "ルヴァ" : "Luvah"; return false;
                     case "<AISYO_L0183>":
-                        __result = "Rpl: Force • Null: Light • Weak: Elec"; return false;
+                        __result = JapaneseLanguage ? "衝撃反射、破魔無効／電撃に弱い" : 
+                            "Rpl: Force • Null: Light • Weak: Elec"; return false;
                     case "<DEVIL_L0184>":
-                        __result = "Tharmus"; return false;
+                        __result = JapaneseLanguage ? "サーマス" : "Tharmus"; return false;
                     case "<AISYO_L0184>":
-                        __result = "Rpl: Ice • Null: Light • Weak: Fire"; return false;
+                        __result = JapaneseLanguage ? "氷結反射、破魔無効／火炎に弱い" : 
+                            "Rpl: Ice • Null: Light • Weak: Fire"; return false;
                     case "<DEVIL_L0185>":
-                        __result = "Specter"; return false;
+                        __result = JapaneseLanguage ? "スペクター" : "Specter"; return false;
                     case "<AISYO_L0185>":
-                        __result = "Null: Dark/Elements • Str: Shot • Weak: Light"; return false;
+                        __result = JapaneseLanguage ? "魔法全般・呪殺無効、銃撃に強い／破魔に弱い" :
+                            "Null: Dark/Elements • Str: Shot • Weak: Light"; return false;
                     case "<DEVIL_L0186>":
-                        __result = "Mara"; return false;
+                        __result = JapaneseLanguage ? "マーラ" : "Mara"; return false;
                     case "<AISYO_L0186>":
-                        __result = "Drn: Shot • Null: Curse/Mind • Str: Phys/Light/Dark • Weak: Ice"; return false;
+                        __result = JapaneseLanguage ? "銃撃吸収、魔力・精神無効、物理・破魔・呪殺に強い／氷結に弱い" : 
+                            "Drn: Shot • Null: Curse/Mind • Str: Phys/Light/Dark • Weak: Ice"; return false;
                     case "<DEVIL_L0224>":
-                        __result = "Tam Lin"; return false;
+                        __result = JapaneseLanguage ? "タム・リン" : "Tam Lin"; return false;
                     case "<AISYO_L0224>":
-                        __result = "Str: Phys/Fire/Elec/Light • Weak: Ice/Dark"; return false;
+                        __result = JapaneseLanguage ? "物理・火炎・電撃・破魔に強い／氷結・呪殺に弱い" : 
+                            "Str: Phys/Fire/Elec/Light • Weak: Ice/Dark"; return false;
                     case "<DEVIL_L0225>":
-                        __result = "Doppelgänger"; return false;
+                        __result = JapaneseLanguage ? "ドッペルゲンガー" : "Doppelgänger"; return false;
                     case "<AISYO_L0225>":
-                        __result = "Rpl: Phys/Shot • Str: Ailments • Weak: Light/Dark"; return false;
+                        __result = JapaneseLanguage ? "物理・銃撃反射、バッドステータス攻撃に強い／破魔・呪殺に弱い" : 
+                            "Rpl: Phys/Shot • Str: Ailments • Weak: Light/Dark"; return false;
                     case "<DEVIL_L0226>":
-                        __result = "Nightmare"; return false;
+                        __result = JapaneseLanguage ? "ナイトメア" : "Nightmare"; return false;
                     case "<AISYO_L0226>":
-                        __result = "Null: Dark/Mind • Str: Ice/Force/Nerve • Weak: Elec/Light"; return false;
+                        __result = JapaneseLanguage ? "呪殺・精神無効、氷結・衝撃・神経に強い／電撃・破魔に弱い" : 
+                            "Null: Dark/Mind • Str: Ice/Force/Nerve • Weak: Elec/Light"; return false;
                     case "<DEVIL_L0227>":
-                        __result = "Gdon"; return false;
+                        __result = JapaneseLanguage ? "ドゥン" : "Gdon"; return false;
                     case "<AISYO_L0227>":
-                        __result = "Drn: Fire • Str: Phys/Light/Mind • Weak: Ice/Curse"; return false;
+                        __result = JapaneseLanguage ? "火炎吸収、物理・破魔・精神に強い／氷結・魔力に弱い" : 
+                            "Drn: Fire • Str: Phys/Light/Mind • Weak: Ice/Curse"; return false;
                     case "<DEVIL_L0228>":
-                        __result = "Vritra"; return false;
+                        __result = JapaneseLanguage ? "ヴリトラ" : "Vritra"; return false;
                     case "<AISYO_L0228>":
-                        __result = "Drn: Elec • Str: Ice/Light/Nerve • Weak: Force"; return false;
+                        __result = JapaneseLanguage ? "電撃吸収、氷結・破魔・神経に強い／衝撃に弱い" : 
+                            "Drn: Elec • Str: Ice/Light/Nerve • Weak: Force"; return false;
                     case "<DEVIL_L0229>":
-                        __result = "Demee-Ho"; return false;
+                        __result = JapaneseLanguage ? "ひホしゅら" : "Demee-Ho"; return false;
                     case "<AISYO_L0229>":
-                        __result = "Drn: Ice • Null: Dark • Str: Phys/Light • Weak: Shot"; return false;
+                        __result = JapaneseLanguage ? "氷結吸収、呪殺無効、物理・破魔に強い／銃撃に弱い" : 
+                            "Drn: Ice • Null: Dark • Str: Phys/Light • Weak: Shot"; return false;
                     case "<DEVIL_L0230>":
-                        __result = "Seth"; return false;
+                        __result = JapaneseLanguage ? "セト" : "Seth"; return false;
                     case "<AISYO_L0230>":
-                        __result = "Rpl: Dark • Null: Elec/Force • Str: Fire/Ailments • Weak: Ice/Shot"; return false;
+                        __result = JapaneseLanguage ? "呪殺反射、電撃・衝撃無効、火炎・バッドステータス攻撃に強い／氷結・銃撃に弱い" : 
+                            "Rpl: Dark • Null: Elec/Force • Str: Fire/Ailments • Weak: Ice/Shot"; return false;
                     case "<DEVIL_L0244>":
-                        __result = "Ahriman"; return false;
+                        __result = JapaneseLanguage ? "アーリマン" : "Ahriman"; return false;
                     case "<AISYO_L0244>":
-                        __result = "Rpl: Dark"; return false;
+                        __result = JapaneseLanguage ? "呪殺反射" : 
+                            "Rpl: Dark"; return false;
                     case "<DEVIL_L0245>":
-                        __result = "Baal Avatar"; return false;
+                        __result = JapaneseLanguage ? "バアル" : "Baal Avatar"; return false;
                     case "<AISYO_L0245>":
-                        __result = "Rpl: Light"; return false;
+                        __result = JapaneseLanguage ? "破魔反射" : 
+                            "Rpl: Light"; return false;
                     case "<DEVIL_L0246>":
-                        __result = "Noah"; return false;
+                        __result = JapaneseLanguage ? "ノア" : "Noah"; return false;
                     case "<AISYO_L0246>":
-                        __result = "Null: Light/Dark • Weak: Elements"; return false;
+                        __result = JapaneseLanguage ? "破魔・呪殺無効／魔法全般に弱い" : 
+                            "Null: Light/Dark • Weak: Elements"; return false;
                     case "<DEVIL_L0248>":
-                        __result = "Seth"; return false;
+                        __result = JapaneseLanguage ? "セト" : "Seth"; return false;
                     case "<AISYO_L0248>":
-                        __result = "Rpl: Dark • Null: Elec/Force • Str: Fire/Ailments • Weak: Ice/Shot"; return false;
+                        __result = JapaneseLanguage ? "呪殺反射、電撃・衝撃無効、火炎・バッドステータス攻撃に強い／氷結・銃撃に弱い" : 
+                            "Rpl: Dark • Null: Elec/Force • Str: Fire/Ailments • Weak: Ice/Shot"; return false;
                     case "<DEVIL_L0249>":
-                        __result = "Girimekhala"; return false;
+                        __result = JapaneseLanguage ? "ギリメカラ" : "Girimekhala"; return false;
                     case "<AISYO_L0249>":
-                        __result = "Rpl: Phys/Shot • Null: Dark/Curse • Weak: Light/Mind"; return false;
+                        __result = JapaneseLanguage ? "物理・銃撃反射、呪殺・魔力無効／破魔・精神に弱い" : 
+                            "Rpl: Phys/Shot • Null: Dark/Curse • Weak: Light/Mind"; return false;
                     case "<DEVIL_L0250>":
-                        __result = "Pixie"; return false;
+                        __result = JapaneseLanguage ? "ピクシー" : "Pixie"; return false;
                     case "<AISYO_L0250>":
-                        __result = "Str: Elec"; return false;
+                        __result = JapaneseLanguage ? "電撃に強い" : 
+                            "Str: Elec"; return false;
                     case "<DEVIL_L0251>":
-                        __result = "Jack Frost"; return false;
+                        __result = JapaneseLanguage ? "ジャックフロスト" : "Jack Frost"; return false;
                     case "<AISYO_L0251>":
-                        __result = "Drn: Ice • Weak: Fire"; return false;
+                        __result = JapaneseLanguage ? "氷結吸収／火炎に弱い" : 
+                            "Drn: Ice • Weak: Fire"; return false;
                     case "<DEVIL_L0252>":
                         __result = JapaneseLanguage ? "ダンテ" : "Dante"; return false;
                     case "<AISYO_L0252>":
-                        __result = "Str: All except Almighty"; return false;
+                        __result = JapaneseLanguage ? "万能以外のあらゆる攻撃に強い" : 
+                            "Str: All except Almighty"; return false;
                     case "<DEVIL_L0253>":
-                        __result = "Gamete"; return false;
+                        __result = JapaneseLanguage ? "配偶子" : "Gamete"; return false;
                     case "<AISYO_L0253>":
-                        __result = "Null: Shot/Dark • Str: Phys • Weak: Fire/Light"; return false;
+                        __result = JapaneseLanguage ? "銃撃・呪殺無効、物理に強い／火炎・破魔に弱い" : 
+                            "Null: Shot/Dark • Str: Phys • Weak: Fire/Light"; return false;
                     case "<DEVIL_L0254>":
-                        __result = "YHVH"; return false;
+                        __result = JapaneseLanguage ? "ヤハウェ" : "YHVH"; return false;
                     case "<AISYO_L0254>":
-                        __result = "Str: All"; return false;
+                        __result = JapaneseLanguage ? "あらゆる攻撃に強い" : 
+                            "Str: All"; return false;
                     case "<AISYO_L0257>":
-                        __result = "Null: Dark • Str: Shot/Elements • Weak: Light"; return false;
+                        __result = JapaneseLanguage ? "呪殺無効、銃撃・魔法全般に強い／破魔に弱い" : 
+                            "Null: Dark • Str: Shot/Elements • Weak: Light"; return false;
                     case "<AISYO_L0258>":
-                        __result = "Rpl: Dark"; return false;
+                        __result = JapaneseLanguage ? "呪殺反射" : 
+                            "Rpl: Dark"; return false;
                     case "<AISYO_L0259>":
-                        __result = "Null: Light/Dark • Weak: Elements"; return false;
+                        __result = JapaneseLanguage ? "破魔・呪殺無効／魔法全般に弱い" : 
+                            "Null: Light/Dark • Weak: Elements"; return false;
                     case "<AISYO_L0264>":
-                        __result = "Drn: Light"; return false;
+                        __result = JapaneseLanguage ? "破魔吸収" : 
+                            "Drn: Light"; return false;
                     case "<AISYO_L0273>":
-                        __result = "Null: Dark • Str: Shot/Elements • Weak: Light"; return false;
+                        __result = JapaneseLanguage ? "呪殺無効、銃撃・魔法全般に強い／破魔に弱い" : 
+                            "Null: Dark • Str: Shot/Elements • Weak: Light"; return false;
                     case "<AISYO_L0275>":
-                        __result = "Null: Dark • Str: Shot/Elements • Weak: Light"; return false;
+                        __result = JapaneseLanguage ? "呪殺無効、銃撃・魔法全般に強い／破魔に弱い" : 
+                            "Null: Dark • Str: Shot/Elements • Weak: Light"; return false;
                     case "<AISYO_L0288>":
-                        __result = "Rpl: Light"; return false;
+                        __result = JapaneseLanguage ? "破魔反射" : 
+                            "Rpl: Light"; return false;
                     case "<AISYO_L0291>":
-                        __result = "Rpl: Dark"; return false;
+                        __result = JapaneseLanguage ? "呪殺反射" : 
+                            "Rpl: Dark"; return false;
                     case "<AISYO_L0292>":
-                        __result = "Null: Light/Dark • Weak: Elements"; return false;
+                        __result = JapaneseLanguage ? "破魔・呪殺無効／魔法全般に弱い" : 
+                            "Null: Light/Dark • Weak: Elements"; return false;
                     case "<AISYO_L0293>":
-                        __result = "Drn: Light"; return false;
+                        __result = JapaneseLanguage ? "破魔吸収" : 
+                            "Drn: Light"; return false;
                     case "<AISYO_L0294>":
-                        __result = "Null: Elements/Dark • Str: Shot • Weak: Light"; return false;
+                        __result = JapaneseLanguage ? "魔法全般・呪殺無効、銃撃に強い／破魔に弱い" :
+                            "Null: Elements/Dark • Str: Shot • Weak: Light"; return false;
                     case "<AISYO_L0295>":
-                        __result = "Null: Elements/Dark • Str: Shot • Weak: Light"; return false;
+                        __result = JapaneseLanguage ? "魔法全般・呪殺無効、銃撃に強い／破魔に弱い" : 
+                            "Null: Elements/Dark • Str: Shot • Weak: Light"; return false;
                     case "<AISYO_L0296>":
-                        __result = "Null: Elements/Dark • Str: Shot • Weak: Light"; return false;
+                        __result = JapaneseLanguage ? "魔法全般・呪殺無効、銃撃に強い／破魔に弱い" : 
+                            "Null: Elements/Dark • Str: Shot • Weak: Light"; return false;
                     case "<DEVIL_L0298>":
-                        __result = "Michael"; return false;
+                        __result = JapaneseLanguage ? "ミカエル" : "Michael"; return false;
                     case "<AISYO_L0298>":
-                        __result = "Rpl: Light • Str: Shot/Elements • Weak: Dark"; return false;
+                        __result = JapaneseLanguage ? "破魔反射、銃撃・魔法全般に強い／呪殺に弱い" : 
+                            "Rpl: Light • Str: Shot/Elements • Weak: Dark"; return false;
                     case "<DEVIL_L0304>":
-                        __result = "Cerberus R"; return false;
+                        __result = JapaneseLanguage ? "ケルベロスR" : "Cerberus R"; return false;
                     case "<AISYO_L0304>":
-                        __result = "Rpl: Fire • Null: Dark • Str: Phys/Ailments • Weak: Ice"; return false;
+                        __result = JapaneseLanguage ? "火炎反射、呪殺無効、物理・バッドステータス攻撃に強い／氷結に弱い" : 
+                            "Rpl: Fire • Null: Dark • Str: Phys/Ailments • Weak: Ice"; return false;
                     case "<DEVIL_L0305>":
-                        __result = "Cerberus C"; return false;
+                        __result = JapaneseLanguage ? "ケルベロスC" : "Cerberus C"; return false;
                     case "<AISYO_L0305>":
-                        __result = "Rpl: Fire • Null: Dark • Str: Phys/Ailments • Weak: Ice"; return false;
+                        __result = JapaneseLanguage ? "火炎反射、呪殺無効、物理・バッドステータス攻撃に強い／氷結に弱い" : 
+                            "Rpl: Fire • Null: Dark • Str: Phys/Ailments • Weak: Ice"; return false;
                     case "<DEVIL_L0306>":
-                        __result = "Cerberus L"; return false;
+                        __result = JapaneseLanguage ? "ケルベロスL" : "Cerberus L"; return false;
                     case "<AISYO_L0306":
-                        __result = "Rpl: Fire • Null: Dark • Str: Phys/Ailments • Weak: Ice"; return false;
+                        __result = JapaneseLanguage ? "火炎反射、呪殺無効、物理・バッドステータス攻撃に強い／氷結に弱い" : 
+                            "Rpl: Fire • Null: Dark • Str: Phys/Ailments • Weak: Ice"; return false;
                     case "<DEVIL_L0243>":
-                        __result = "Pazuzu"; return false;
+                        __result = JapaneseLanguage ? "パズス" : "Pazuzu"; return false;
                     case "<AISYO_L0243>":
-                        __result = "Null: Dark • Str: Shot/Force/Mind • Weak: Ice"; return false;
+                        __result = JapaneseLanguage ? "呪殺無効、銃撃・衝撃・精神に強い／氷結に弱い" : 
+                            "Null: Dark • Str: Shot/Force/Mind • Weak: Ice"; return false;
                     case "<AISYO_L0344>":
                         __result = "Drn: Dark • Str: All Other"; return false;
                     case "<DEVIL_L0356>":
-                        __result = "Nasu"; return false;
+                        __result = JapaneseLanguage ? "パズス" : "Nasu"; return false;
                     case "<AISYO_L0356>":
-                        __result = "Null: Dark/Ailments • Weak: Shot/Light"; return false;
+                        __result = JapaneseLanguage ? "呪殺・バッドステータス攻撃無効／銃撃・破魔に弱い" : 
+                            "Null: Dark/Ailments • Weak: Shot/Light"; return false;
                     case "<DEVIL_L0362>":
-                        __result = "Flauros"; return false;
+                        __result = JapaneseLanguage ? "フラロウス" : "Flauros"; return false;
                     case "<AISYO_L0362>":
-                        __result = "Rpl: Dark • Null: Fire • Str: Shot • Weak: Nerve"; return false;
+                        __result = JapaneseLanguage ? "呪殺反射、火炎無効、銃撃に強い／神経に弱い" : 
+                            "Rpl: Dark • Null: Fire • Str: Shot • Weak: Nerve"; return false;
                     case "<DEVIL_L0363>":
-                        __result = "Tam Lin"; return false;
+                        __result = JapaneseLanguage ? "タム・リン" : "Tam Lin"; return false;
                     case "<AISYO_L0363>":
-                        __result = "Str: Phys/Fire/Elec/Light • Weak: Ice/Dark"; return false;
+                        __result = JapaneseLanguage ? "物理・火炎・電撃・破魔に強い／氷結・呪殺に弱い" : 
+                            "Str: Phys/Fire/Elec/Light • Weak: Ice/Dark"; return false;
                     case "<DEVIL_L0364>":
-                        __result = "Gdon"; return false;
+                        __result = JapaneseLanguage ? "ドゥン" : "Gdon"; return false;
                     case "<AISYO_L0364>":
-                        __result = "Drn: Fire • Str: Phys/Light/Mind • Weak: Ice/Curse"; return false;
+                        __result = JapaneseLanguage ? "火炎吸収、物理・破魔・精神に強い／氷結・魔力に弱い" : 
+                            "Drn: Fire • Str: Phys/Light/Mind • Weak: Ice/Curse"; return false;
                     case "<DEVIL_L0365>":
-                        __result = "Vritra"; return false;
+                        __result = JapaneseLanguage ? "ヴリトラ" : "Vritra"; return false;
                     case "<AISYO_L0365>":
-                        __result = "Drn: Elec • Str: Ice/Light/Nerve • Weak: Force"; return false;
+                        __result = JapaneseLanguage ? "電撃吸収、氷結・破魔・神経に強い／衝撃に弱い" : 
+                            "Drn: Elec • Str: Ice/Light/Nerve • Weak: Force"; return false;
                     case "<DEVIL_L0366>":
-                        __result = "Jack Frost"; return false;
+                        __result = JapaneseLanguage ? "ジャックフロスト" : "Jack Frost"; return false;
                     case "<AISYO_L0366>":
-                        __result = "Drn: Ice • Weak: Fire"; return false;
+                        __result = JapaneseLanguage ? "氷結吸収／火炎に弱い" : 
+                            "Drn: Ice • Weak: Fire"; return false;
                     case "<AISYO_L0384>": // Marogareh
-                        __result = "Normal resistance"; return false;
+                        __result = JapaneseLanguage ? "ノーマル耐性" : 
+                            "Normal resistance"; return false;
                     case "<AISYO_L0385>": // Marogareh
-                        __result = "Normal resistance"; return false;
+                        __result = JapaneseLanguage ? "ノーマル耐性" : 
+                            "Normal resistance"; return false;
                     case "<AISYO_L0386>": // Wadatsumi
-                        __result = "Null: Ice • Weak: Elec"; return false;
+                        __result = JapaneseLanguage ? "氷結無効／電撃に弱い" : 
+                            "Null: Ice • Weak: Elec"; return false;
                     case "<AISYO_L0387>": // Wadatsumi
-                        __result = "Null: Ice • Weak: Elec"; return false;
+                        __result = JapaneseLanguage ? "氷結無効／電撃に弱い" : 
+                            "Null: Ice • Weak: Elec"; return false;
                     case "<AISYO_L0388>": // Ankh
-                        __result = "Null: Light • Weak: Dark"; return false;
+                        __result = JapaneseLanguage ? "破魔無効／呪殺に弱い" : 
+                            "Null: Light • Weak: Dark"; return false;
                     case "<AISYO_L0389>": // Ankh
-                        __result = "Null: Light • Weak: Dark"; return false;
+                        __result = JapaneseLanguage ? "破魔無効／呪殺に弱い" : 
+                            "Null: Light • Weak: Dark"; return false;
                     case "<AISYO_L0390>": // Iyomante
-                        __result = "Null: Mind"; return false;
+                        __result = JapaneseLanguage ? "精神無効" : 
+                            "Null: Mind"; return false;
                     case "<AISYO_L0391>": // Iyomante
-                        __result = "Null: Mind"; return false;
+                        __result = JapaneseLanguage ? "精神無効" : 
+                            "Null: Mind"; return false;
                     case "<AISYO_L0392>": // Shiranui
-                        __result = "Null: Fire • Weak: Force"; return false;
+                        __result = JapaneseLanguage ? "火炎無効／衝撃に弱い" : 
+                            "Null: Fire • Weak: Force"; return false;
                     case "<AISYO_L0393>": // Shiranui
-                        __result = "Null: Fire • Weak: Force"; return false;
+                        __result = JapaneseLanguage ? "火炎無効／衝撃に弱い" : 
+                            "Null: Fire • Weak: Force"; return false;
                     case "<AISYO_L0394>": // Hifumi
-                        __result = "Null: Force • Weak: Fire"; return false;
+                        __result = JapaneseLanguage ? "衝撃無効／火炎に弱い" : 
+                            "Null: Force • Weak: Fire"; return false;
                     case "<AISYO_L0395>": // Hifumi
-                        __result = "Null: Force • Weak: Fire"; return false;
+                        __result = JapaneseLanguage ? "衝撃無効／火炎に弱い" : 
+                            "Null: Force • Weak: Fire"; return false;
                     case "<AISYO_L0396>": // Kamurogi
-                        __result = "Str: Phys/Shot • Weak: Ailments"; return false;
+                        __result = JapaneseLanguage ? "物理・銃撃に強い／バッドステータス攻撃に弱い" : 
+                            "Str: Phys/Shot • Weak: Ailments"; return false;
                     case "<AISYO_L0397>": // Kamurogi
-                        __result = "Str: Phys/Shot • Weak: Ailments"; return false;
+                        __result = JapaneseLanguage ? "物理・銃撃に強い／バッドステータス攻撃に弱い" : 
+                            "Str: Phys/Shot • Weak: Ailments"; return false;
                     case "<AISYO_L0398>": // Kamudo
-                        __result = "Null: Elec • Weak: Ice"; return false;
+                        __result = JapaneseLanguage ? "電撃無効／氷結に弱い" : 
+                            "Null: Elec • Weak: Ice"; return false;
                     case "<AISYO_L0399>": // Kamudo
-                        __result = "Null: Elec • Weak: Ice"; return false;
+                        __result = JapaneseLanguage ? "電撃無効／氷結に弱い" : 
+                            "Null: Elec • Weak: Ice"; return false;
                     case "<AISYO_L0400>": // Anathema
-                        __result = "Null: Dark • Weak: Light"; return false;
+                        __result = JapaneseLanguage ? "呪殺無効／破魔に弱い" : 
+                            "Null: Dark • Weak: Light"; return false;
                     case "<AISYO_L0401>": // Anathema
-                        __result = "Null: Dark • Weak: Light"; return false;
+                        __result = JapaneseLanguage ? "呪殺無効／破魔に弱い" : 
+                            "Null: Dark • Weak: Light"; return false;
                     case "<AISYO_L0402>": // Miasma
-                        __result = "Str: Ailments • Weak: Shot"; return false;
+                        __result = JapaneseLanguage ? "バッドステータス攻撃に強い／銃撃に弱い" : 
+                            "Str: Ailments • Weak: Shot"; return false;
                     case "<AISYO_L0403>": // Miasma
-                        __result = "Str: Ailments • Weak: Shot"; return false;
+                        __result = JapaneseLanguage ? "バッドステータス攻撃に強い／銃撃に弱い" : 
+                            "Str: Ailments • Weak: Shot"; return false;
                     case "<AISYO_L0404>": // Nirvana
-                        __result = "Null: Light • Weak: Dark"; return false;
+                        __result = JapaneseLanguage ? "破魔無効／呪殺に弱い" : 
+                            "Null: Light • Weak: Dark"; return false;
                     case "<AISYO_L0405>": // Nirvana
-                        __result = "Null: Light • Weak: Dark"; return false;
+                        __result = JapaneseLanguage ? "破魔無効／呪殺に弱い" : 
+                            "Null: Light • Weak: Dark"; return false;
                     case "<AISYO_L0406>": // Vimana
-                        __result = "Str: Phys/Shot • Weak: Fire/Ice"; return false;
+                        __result = JapaneseLanguage ? "物理・銃撃に強い／火炎・氷結に弱い" : 
+                            "Str: Phys/Shot • Weak: Fire/Ice"; return false;
                     case "<AISYO_L0407>": // Vimana
-                        __result = "Str: Phys/Shot • Weak: Fire/Ice"; return false;
+                        __result = JapaneseLanguage ? "物理・銃撃に強い／火炎・氷結に弱い" : 
+                            "Str: Phys/Shot • Weak: Fire/Ice"; return false;
                     case "<AISYO_L0408>": // Geis
-                        __result = "Drain: Ice • Weak: Fire"; return false;
+                        __result = JapaneseLanguage ? "氷結吸収／火炎に弱い" : 
+                            "Drain: Ice • Weak: Fire"; return false;
                     case "<AISYO_L0409>": // Geis
-                        __result = "Drain: Ice • Weak: Fire"; return false;
+                        __result = JapaneseLanguage ? "氷結吸収／火炎に弱い" : 
+                            "Drain: Ice • Weak: Fire"; return false;
                     case "<AISYO_L0410>": // Djed
-                        __result = "Null: Curse"; return false;
+                        __result = JapaneseLanguage ? "魔力無効" : 
+                            "Null: Curse"; return false;
                     case "<AISYO_L0411>": // Djed
-                        __result = "Null: Curse"; return false;
+                        __result = JapaneseLanguage ? "魔力無効" : 
+                            "Null: Curse"; return false;
                     case "<AISYO_L0412>": // Muspell
-                        __result = "Drain: Fire • Weak: Ice"; return false;
+                        __result = JapaneseLanguage ? "火炎吸収／氷結に弱い" : 
+                            "Drain: Fire • Weak: Ice"; return false;
                     case "<AISYO_L0413>": // Muspell
-                        __result = "Drain: Fire • Weak: Ice"; return false;
+                        __result = JapaneseLanguage ? "火炎吸収／氷結に弱い" : 
+                            "Drain: Fire • Weak: Ice"; return false;
                     case "<AISYO_L0414>": // Satan
-                        __result = "Null: Dark"; return false;
+                        __result = JapaneseLanguage ? "呪殺無効" : 
+                            "Null: Dark"; return false;
                     case "<AISYO_L0415>": // Satan
-                        __result = "Null: Dark"; return false;
+                        __result = JapaneseLanguage ? "呪殺無効" : 
+                            "Null: Dark"; return false;
                     case "<AISYO_L0416>": // Adama
-                        __result = "Null: Ailments • Weak: Light/Dark"; return false;
+                        __result = JapaneseLanguage ? "バッドステータス攻撃無効／破魔・呪殺に弱い" : 
+                            "Null: Ailments • Weak: Light/Dark"; return false;
                     case "<AISYO_L0417>": // Adama
-                        __result = "Null: Ailments • Weak: Light/Dark"; return false;
+                        __result = JapaneseLanguage ? "バッドステータス攻撃無効／破魔・呪殺に弱い" : 
+                            "Null: Ailments • Weak: Light/Dark"; return false;
                     case "<AISYO_L0418>": // Gehenna
-                        __result = "Rpl: Dark"; return false;
+                        __result = JapaneseLanguage ? "呪殺反射" : 
+                            "Rpl: Dark"; return false;
                     case "<AISYO_L0419>": // Gehenna
-                        __result = "Rpl: Dark"; return false;
+                        __result = JapaneseLanguage ? "呪殺反射" : 
+                            "Rpl: Dark"; return false;
                     case "<AISYO_L0420>": // Sophia
-                        __result = "Null: Nerve"; return false;
+                        __result = JapaneseLanguage ? "神経無効" : 
+                            "Null: Nerve"; return false;
                     case "<AISYO_L0421>": // Sophia
-                        __result = "Null: Nerve"; return false;
+                        __result = JapaneseLanguage ? "神経無効" : 
+                            "Null: Nerve"; return false;
                     case "<AISYO_L0422>": // Murakumo
-                        __result = "Rpl: Force • Weak: Elec"; return false;
+                        __result = JapaneseLanguage ? "衝撃反射／電撃に弱い" : 
+                            "Rpl: Force • Weak: Elec"; return false;
                     case "<AISYO_L0423>": // Murakumo
-                        __result = "Rpl: Force • Weak: Elec"; return false;
+                        __result = JapaneseLanguage ? "衝撃反射／電撃に弱い" : 
+                            "Rpl: Force • Weak: Elec"; return false;
                     case "<AISYO_L0424>": // Gundari
-                        __result = "Rpl: Light"; return false;
+                        __result = JapaneseLanguage ? "破魔反射" : 
+                            "Rpl: Light"; return false;
                     case "<AISYO_L0425>": // Gundari
-                        __result = "Rpl: Light"; return false;
+                        __result = JapaneseLanguage ? "破魔反射" : 
+                            "Rpl: Light"; return false;
                     case "<AISYO_L0426>": // Narukami
-                        __result = "Rpl: Elec • Weak: Force"; return false;
+                        __result = JapaneseLanguage ? "電撃反射／衝撃に弱い" : 
+                            "Rpl: Elec • Weak: Force"; return false;
                     case "<AISYO_L0427>": // Narukami
-                        __result = "Rpl: Elec • Weak: Force"; return false;
+                        __result = JapaneseLanguage ? "電撃反射／衝撃に弱い" : 
+                            "Rpl: Elec • Weak: Force"; return false;
                     case "<AISYO_L0428>": // Gaea
-                        __result = "Str: Phys/Shot • Weak: Elec/Force"; return false;
+                        __result = JapaneseLanguage ? "物理・銃撃に強い／電撃・衝撃に弱い" : 
+                            "Str: Phys/Shot • Weak: Elec/Force"; return false;
                     case "<AISYO_L0429>": // Gaea
-                        __result = "Str: Phys/Shot • Weak: Elec/Force"; return false;
+                        __result = JapaneseLanguage ? "物理・銃撃に強い／電撃・衝撃に弱い" : 
+                            "Str: Phys/Shot • Weak: Elec/Force"; return false;
                     case "<AISYO_L0430>": // Kailash
-                        __result = "Str: Light/Dark"; return false;
+                        __result = JapaneseLanguage ? "破魔・呪殺に強い" : 
+                            "Str: Light/Dark"; return false;
                     case "<AISYO_L0431>": // Kailash
-                        __result = "Str: Light/Dark"; return false;
+                        __result = JapaneseLanguage ? "破魔・呪殺に強い" : 
+                            "Str: Light/Dark"; return false;
                     case "<AISYO_L0432>": // Masakados
-                        __result = "Str: All except Almighty"; return false;
+                        __result = JapaneseLanguage ? "万能以外のあらゆる攻撃に強い" : 
+                            "Str: All except Almighty"; return false;
                     case "<AISYO_L0433>": // Masakados
-                        __result = "Str: All except Almighty"; return false;
+                        __result = JapaneseLanguage ? "万能以外のあらゆる攻撃に強い" : 
+                            "Str: All except Almighty"; return false;
                     default: return true;
                 }
             }
@@ -639,35 +892,50 @@ namespace NocturneInsaniax
                 switch (message)
                 {
                     case "<COLLECTIONBOOK_L0179>":
-                        __result = "Another form of Ose, one of the 72 demons of the Goetia. His divine appearence reflects him as he was before joining Lucifer's rebellion against God, after which he became a fallen angel."; break;
+                        __result = JapaneseLanguage ? "ゴエティアの72柱の悪魔の一柱であるオセの、もう一つの姿。その神々しい姿は、ルシファーによる神への反乱に加わり堕天使となる以前の彼を反映したものである。" : 
+                            "Another form of Ose, one of the 72 demons of the Goetia. His divine appearence reflects him as he was before joining Lucifer's rebellion against God, after which he became a fallen angel."; break;
                     case "<COLLECTIONBOOK_L0180>":
-                        __result = "Another form of Flauros, one of the 72 demons of the Goetia. His divine appearence reflects him as he was before joining Lucifer's rebellion against God, after which he became a fallen angel."; break;
+                        __result = JapaneseLanguage ? "ゴエティアの72柱の悪魔の一柱、フラウロスの別形態。その神々しい姿は、ルシファーによる神への反乱に加わり堕天使となる以前の彼を反映したものである。" : 
+                            "Another form of Flauros, one of the 72 demons of the Goetia. His divine appearence reflects him as he was before joining Lucifer's rebellion against God, after which he became a fallen angel."; break;
                     case "<COLLECTIONBOOK_L0181>":
-                        __result = "One of the four Zoas created when Albion was divided fourfold. He represents inspiration, creativity and the north."; break;
+                        __result = JapaneseLanguage ? "アルビオンが四つに分かたれた際に生み出された四つのゾアの一つ。彼はインスピレーション、創造性、そして北を象徴しています。" : 
+                            "One of the four Zoas created when Albion was divided fourfold. He represents inspiration, creativity and the north."; break;
                     case "<COLLECTIONBOOK_L0182>":
-                        __result = "One of the four Zoas created when Albion was divided fourfold. He represents conventional reason and law."; break;
+                        __result = JapaneseLanguage ? "アルビオンが四つに分かたれた際に生み出された四つのゾアの一つ。彼は、既存の理性と法を象徴している。" : 
+                            "One of the four Zoas created when Albion was divided fourfold. He represents conventional reason and law."; break;
                     case "<COLLECTIONBOOK_L0183>":
-                        __result = "One of the four Zoas created when Albion was divided fourfold. He represents love, passion and rebellious energy."; break;
+                        __result = JapaneseLanguage ? "アルビオンが四つに分かたれた際に生み出された四つのゾアの一つ。彼は愛、情熱、そして反逆のエネルギーを象徴している。" : 
+                            "One of the four Zoas created when Albion was divided fourfold. He represents love, passion and rebellious energy."; break;
                     case "<COLLECTIONBOOK_L0184>":
-                        __result = "One of the four Zoas created when Albion was divided fourfold. He represents time, sensation and free speech."; break;
+                        __result = JapaneseLanguage ? "アルビオンが四つに分かたれた際に生み出された四つのゾアの一つ。彼は時間、感覚、そして言論の自由を象徴している。" : 
+                            "One of the four Zoas created when Albion was divided fourfold. He represents time, sensation and free speech."; break;
                     case "<COLLECTIONBOOK_L0185>":
-                        __result = "A spirit of the dead in Western folklore. A specter's appearance is said to be horrifying beyond anything imaginable. Those to whom it appears are paralyzed with fear, but are very rarely harmed."; break;
+                        __result = JapaneseLanguage ? "西洋の伝承に登場する死者の霊。その姿は、想像を絶するほど恐ろしいものだと言われています。姿を目にした者は恐怖のあまり身動きが取れなくなりますが、実際に危害を加えられることは極めて稀です。" : 
+                            "A spirit of the dead in Western folklore. A specter's appearance is said to be horrifying beyond anything imaginable. Those to whom it appears are paralyzed with fear, but are very rarely harmed."; break;
                     case "<COLLECTIONBOOK_L0186>":
-                        __result = "A Buddhist demon that represents the fear of death. He sent his daughter to tempt Buddha during his meditations. Improper summoning has caused him to manifest with rather flaccid appearence and power."; break;
+                        __result = JapaneseLanguage ? "死への恐怖を象徴する仏教の魔神。彼は瞑想中の仏陀を誘惑させるために娘を差し向けたことがある。不適切な召喚を行ったせいで、その姿も力もかなり締まりのない状態で現れてしまった。" : 
+                            "A Buddhist demon that represents the fear of death. He sent his daughter to tempt Buddha during his meditations. Improper summoning has caused him to manifest with rather flaccid appearence and power."; break;
                     case "<COLLECTIONBOOK_L0224>":
-                        __result = "A faerie knight from Scotland. As a member of the Seelie Court, he is charged with protecting Carterhaugh. He was originally a child from the area, but after his kidnapping by the faeries at age nine, he took up their ways."; break;
+                        __result = JapaneseLanguage ? "スコットランド出身の妖精の騎士。「シーリー・コート（光の妖精の宮廷）」の一員として、カーターホーの地を守る任に就いている。元はこの土地の子供だったが、9歳の時に妖精にさらわれて以来、彼らの流儀に従って生きるようになった。" : 
+                            "A faerie knight from Scotland. As a member of the Seelie Court, he is charged with protecting Carterhaugh. He was originally a child from the area, but after his kidnapping by the faeries at age nine, he took up their ways."; break;
                     case "<COLLECTIONBOOK_L0225>":
-                        __result = "A phantom copy of a living being. Doppelgängers are a sign of bad luck. Often, others see your doppelgänger from afar, but it is said you may also see your own doppelgänger right before you die."; break;
+                        __result = JapaneseLanguage ? "生身の存在の幻影のような複製。ドッペルゲンガーは不吉な予兆とされています。他人が遠くからあなたのドッペルゲンガーを目撃することもあれば、死の直前に自分自身がそれを見ることもあると言われています。" : 
+                            "A phantom copy of a living being. Doppelgängers are a sign of bad luck. Often, others see your doppelgänger from afar, but it is said you may also see your own doppelgänger right before you die."; break;
                     case "<COLLECTIONBOOK_L0226>":
-                        __result = "A malevolent spirit which inflicts bad dreams upon sleeping people. They are often depicted as ghostly black horses with manes of fire or smoke, fading away into the night."; break;
+                        __result = JapaneseLanguage ? "眠っている人々に悪夢をもたらす邪悪な精霊。炎や煙のたてがみを持つ黒い幽霊のような馬の姿で描かれることが多く、夜の闇の中へと消え去っていく。" : 
+                            "A malevolent spirit which inflicts bad dreams upon sleeping people. They are often depicted as ghostly black horses with manes of fire or smoke, fading away into the night."; break;
                     case "<COLLECTIONBOOK_L0227>":
-                        __result = "The tiger mount of the goddess Durga, of Hindu mythology. Durga was born to defeat the Asura Mahisha, and Gdon was granted to her to help complete the task."; break;
+                        __result = JapaneseLanguage ? "ヒンドゥー教の女神ドゥルガーが乗る虎です。ドゥルガーはアスラのマヒシャを討つために生まれ、その使命を果たす助けとして、この虎が彼女に授けられました。" : 
+                            "The tiger mount of the goddess Durga, of Hindu mythology. Durga was born to defeat the Asura Mahisha, and Gdon was granted to her to help complete the task."; break;
                     case "<COLLECTIONBOOK_L0228>":
-                        __result = "A large, violent serpent of Hindu lore whose name means \"enveloper.\" It blocked the rivers and caused severe droughts until it was defeated by Indra. Despite this, Vritra resurrected itself the following year, and the two have fought ever since."; break;
+                        __result = JapaneseLanguage ? "ヒンドゥー教の伝承に登場する、巨大で凶暴な蛇の怪物であり、その名は「包み込む者」を意味します。彼は川の流れをせき止めて深刻な干ばつを引き起こしましたが、インドラによって打ち倒されました。しかし、ヴリトラは翌年には蘇り、それ以来、両者は戦い続けています。" : 
+                            "A large, violent serpent of Hindu lore whose name means \"enveloper.\" It blocked the rivers and caused severe droughts until it was defeated by Indra. Despite this, Vritra resurrected itself the following year, and the two have fought ever since."; break;
                     case "<COLLECTIONBOOK_L0229>":
-                        __result = "A Jack Frost who looks oddly familiar. Obsessed with the prophecy of the Demi-fiend, he trained his body and donned matching clothes and tattoos to be like his hero."; break;
+                        __result = JapaneseLanguage ? "どこか見覚えのあるジャックフロスト。彼は「人修羅」の予言に心酔し、憧れの英雄にあやかるべく肉体を鍛え上げ、同じ服装と刺青を身にまとっている。" : 
+                            "A Jack Frost who looks oddly familiar. Obsessed with the prophecy of the Demi-fiend, he trained his body and donned matching clothes and tattoos to be like his hero."; break;
                     case "<COLLECTIONBOOK_L0230>":
-                        __result = "The Egyptian god of the desert, chaos and evil. He murdered his brother Osiris and tried to become chief god, but was castrated by Osiris' son, Horus."; break;
+                        __result = JapaneseLanguage ? "砂漠と混沌、そして悪を司るエジプトの神。彼は兄弟であるオシリスを殺害して最高神の座に就こうとしたが、オシリスの息子ホルスによって去勢された。" : 
+                            "The Egyptian god of the desert, chaos and evil. He murdered his brother Osiris and tried to become chief god, but was castrated by Osiris' son, Horus."; break;
                     default: break;
                 }
             }
@@ -680,14 +948,14 @@ namespace NocturneInsaniax
             {
                 switch (id)
                 {
-                    case 41: __result = "Skill"; return false;
-                    case 42: __result = "Pyro"; return false;
-                    case 43: __result = "Frost"; return false;
-                    case 44: __result = "Godly"; return false;
-                    case 45: __result = "Asura"; return false;
-                    case 46: __result = "Shinoma"; return false;
-                    case 47: __result = "Sarge"; return false;
-                    case 48: __result = "Death"; return false;
+                    case 41: __result = JapaneseLanguage ? "技芸属" : "Skill"; return false;
+                    case 42: __result = JapaneseLanguage ? "紅蓮属" : "Pyro"; return false;
+                    case 43: __result = JapaneseLanguage ? "銀氷属" : "Frost"; return false;
+                    case 44: __result = JapaneseLanguage ? "唯一神" : "Godly"; return false;
+                    case 45: __result = JapaneseLanguage ? "アスラ" : "Asura"; return false;
+                    case 46: __result = JapaneseLanguage ? "下魔" : "Shinoma"; return false;
+                    case 47: __result = JapaneseLanguage ? "軍曹" : "Sarge"; return false;
+                    case 48: __result = JapaneseLanguage ? "死神" : "Death"; return false;
                     default: return true;
                 }
             }
@@ -6896,7 +7164,7 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][3] = 100; // Elec
             datAisyo.tbl[id][4] = 100; // Force
             datAisyo.tbl[id][6] = 2147483778; // Light
-            datAisyo.tbl[id][7] = 100; // Dark
+            datAisyo.tbl[id][7] = 50; // Dark
             datAisyo.tbl[id][8] = 100; // Curse
             datAisyo.tbl[id][9] = 2147483778; // Nerve
             datAisyo.tbl[id][10] = 100; // Mind
@@ -14063,7 +14331,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].keisyotype = 10;
             datDevilFormat.tbl[id].keisyoform = 187;
 
-            datDevilName.txt[id] = "はいぐうし";
+            datDevilName.txt[id] = "配偶子";
 
             // Affinities
             datAisyo.tbl[id][0] = 50; // Phys

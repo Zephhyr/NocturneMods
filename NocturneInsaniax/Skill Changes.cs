@@ -107,7 +107,7 @@ namespace NocturneInsaniax
                     case 142: __result = JapaneseLanguage ? "静寂の轟き" : "Silencing Bellow"; return false;
                     case 148: __result = JapaneseLanguage ? "治癒促進" : "Renewal"; return false;
                     case 149: __result = JapaneseLanguage ? "小気功" : "Spirit Well"; return false;
-                    case 150: __result = JapaneseLanguage ? "気功" : "Qigong"; return false;
+                    case 150: __result = JapaneseLanguage ? "気功術" : "Qigong"; return false;
                     case 151: __result = JapaneseLanguage ? "治癒促進と小気功" : "Renewal & Spirit Well"; return false;
                     case 167: __result = JapaneseLanguage ? "二連撃" : "Double Attack"; return false;
                     case 188: __result = JapaneseLanguage ? "天罰" : "Punishment"; return false;
@@ -983,7 +983,7 @@ namespace NocturneInsaniax
                 if (ptype == 20 && nbMainProcess.nbGetUnitWorkFromFormindex(form.formindex).id == 254)
                 {
                     if (JapaneseLanguage)
-                        nbHelpProcess.nbDispText("YHVHは軽蔑に震えている…", string.Empty, 2, 45, 2315190144, false);
+                        nbHelpProcess.nbDispText("ヤハウェは軽蔑に震えている…", string.Empty, 2, 45, 2315190144, false);
                     else
                         nbHelpProcess.nbDispText("YHVH trembles with scorn...", string.Empty, 2, 45, 2315190144, false);
                 }
