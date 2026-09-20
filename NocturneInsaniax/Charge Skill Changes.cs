@@ -253,7 +253,10 @@ namespace NocturneInsaniax
                         ? datDevilName.Get(nbMainProcess.nbGetUnitWorkFromFormindex(formindex).id)
                         : frName.frGetCNameString(0);
 
-                    nbHelpProcess.nbDispText(devilName + " is building up energy!", string.Empty, 2, 45, 2315190144, false);
+                    if (JapaneseLanguage)
+                        nbHelpProcess.nbDispText(devilName + "はエネルギーを溜めた！", string.Empty, 2, 45, 2315190144, false);
+                    else
+                        nbHelpProcess.nbDispText(devilName + " is building up energy!", string.Empty, 2, 45, 2315190144, false);
                 }
                 // Switch Out Skill passing on effects
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 1 && hojopoint == 0 && actionProcessData.work.nowindex == 407)
@@ -262,7 +265,10 @@ namespace NocturneInsaniax
                         ? datDevilName.Get(nbMainProcess.nbGetUnitWorkFromFormindex(formindex).id)
                         : frName.frGetCNameString(0);
 
-                    nbHelpProcess.nbDispText("Effects passed to " + devilName + "!", string.Empty, 2, 45, 2315190144, false);
+                    if (JapaneseLanguage)
+                        nbHelpProcess.nbDispText(devilName + "に引き継がれた効果！", string.Empty, 2, 45, 2315190144, false);
+                    else
+                        nbHelpProcess.nbDispText("Effects passed to " + devilName + "!", string.Empty, 2, 45, 2315190144, false);
                 }
                 // Affable Hospitality passing on effects
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 1 && hojopoint == 0 && actionProcessData.work.nowindex == 406 && actionProcessData.work.id != 201)
@@ -271,7 +277,10 @@ namespace NocturneInsaniax
                         ? datDevilName.Get(nbMainProcess.nbGetUnitWorkFromFormindex(formindex).id)
                         : frName.frGetCNameString(0);
 
-                    nbHelpProcess.nbDispText("Effects shared with " + devilName + "!", string.Empty, 2, 45, 2315190144, false);
+                    if (JapaneseLanguage)
+                        nbHelpProcess.nbDispText(devilName + "と共有される効果！", string.Empty, 2, 45, 2315190144, false);
+                    else
+                        nbHelpProcess.nbDispText("Effects shared with " + devilName + "!", string.Empty, 2, 45, 2315190144, false);
                 }
                 // Doppelganger's Evil Mirror copying Focus
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 16777216 && hojopoint == 99 && (actionProcessData.work.nowindex == 407 || actionProcessData.work.nowindex == 417))
@@ -280,7 +289,10 @@ namespace NocturneInsaniax
                         ? datDevilName.Get(nbMainProcess.nbGetUnitWorkFromFormindex(formindex).id)
                         : frName.frGetCNameString(0);
 
-                    nbHelpProcess.nbDispText(devilName + " is building up power!", string.Empty, 2, 45, 2315190144, false);
+                    if (JapaneseLanguage)
+                        nbHelpProcess.nbDispText(devilName + "は力を溜めた！", string.Empty, 2, 45, 2315190144, false);
+                    else
+                        nbHelpProcess.nbDispText(devilName + " is building up power!", string.Empty, 2, 45, 2315190144, false);
                 }
                 // Fang Breaker
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 2 && (actionProcessData.work.nowindex == 427 || actionProcessData.work.nowindex == 417))
@@ -290,9 +302,19 @@ namespace NocturneInsaniax
                         limitReached = false;
 
                     if (limitReached)
-                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("これ以上効果が無い", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    }
                     else
-                        nbHelpProcess.nbDispText("Decreased Physical Attack!", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("攻撃力が下がった！！", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Decreased Physical Attack!", string.Empty, 2, 45, 2315190144, false);
+                    }
                 }
                 // Scald
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 2 && actionProcessData.work.nowindex == 435)
@@ -308,11 +330,21 @@ namespace NocturneInsaniax
                     }
 
                     if (limitReached)
-                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("これ以上効果が無い", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    }
                     else
-                        nbHelpProcess.nbDispText("Decreased Physical Attack!", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("攻撃力が下がった！！", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Decreased Physical Attack!", string.Empty, 2, 45, 2315190144, false);
+                    }
                 }
-                // Hitokoto Storm/Whirlwind, Phlegathon
+                // Hitokoto Storm/Whirlwind, Phlegethon
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 10 && (actionProcessData.work.nowindex == 268 || actionProcessData.work.nowindex == 491))
                 {
                     var limitReached = true;
@@ -326,9 +358,19 @@ namespace NocturneInsaniax
                     }
 
                     if (limitReached)
-                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("これ以上効果が無い", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    }
                     else
-                        nbHelpProcess.nbDispText("Decreased Physical/Magical Attack!", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("攻撃力と魔法威力が下がった！", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Decreased Physical/Magical Attack!", string.Empty, 2, 45, 2315190144, false);
+                    }
                 }
                 // Jack Agilao
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 10 && (actionProcessData.work.nowindex == 473 || actionProcessData.work.nowindex == 417))
@@ -338,9 +380,19 @@ namespace NocturneInsaniax
                         limitReached = false;
 
                     if (limitReached)
-                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("これ以上効果が無い", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    }
                     else
-                        nbHelpProcess.nbDispText("Decreased Physical/Magical Attack!", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("攻撃力と魔法威力が下がった！", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Decreased Physical/Magical Attack!", string.Empty, 2, 45, 2315190144, false);
+                    }
                 }
                 // Toxic Spray
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 128 && actionProcessData.work.nowindex == 202)
@@ -356,9 +408,19 @@ namespace NocturneInsaniax
                     }
 
                     if (limitReached)
-                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("これ以上効果が無い", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    }
                     else
-                        nbHelpProcess.nbDispText("Decreased Defense!", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("防御力が下がった！！", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Decreased Defense!", string.Empty, 2, 45, 2315190144, false);
+                    }
                 }
                 // Tandava
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 128 && actionProcessData.work.nowindex == 470)
@@ -374,9 +436,19 @@ namespace NocturneInsaniax
                     }
 
                     if (limitReached)
-                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("これ以上効果が無い", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    }
                     else
-                        nbHelpProcess.nbDispText("Defense minimized!", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("防御力が最低値に達しました！！", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Decreased minimized!", string.Empty, 2, 45, 2315190144, false);
+                    }
                 }
                 // Defense Kuzushi/Jack Bufu/Jack Bufudyne
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 128 && (actionProcessData.work.nowindex == 428 || actionProcessData.work.nowindex == 463 || actionProcessData.work.nowindex == 466 || actionProcessData.work.nowindex == 417))
@@ -386,9 +458,19 @@ namespace NocturneInsaniax
                         limitReached = false;
 
                     if (limitReached)
-                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("これ以上効果が無い", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    }
                     else
-                        nbHelpProcess.nbDispText("Decreased Defense!", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("防御力が下がった！！", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Decreased Defense!", string.Empty, 2, 45, 2315190144, false);
+                    }
                 }
                 // Icy Death/Mishaguji Raiden/Roundtrip/Babylon Goblet/Refrigerate
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 544 && (actionProcessData.work.nowindex == 244 || actionProcessData.work.nowindex == 267 || actionProcessData.work.nowindex == 285 || actionProcessData.work.nowindex == 437 || actionProcessData.work.nowindex == 417))
@@ -398,9 +480,19 @@ namespace NocturneInsaniax
                         limitReached = false;
 
                     if (limitReached)
-                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("これ以上効果が無い", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    }
                     else
-                        nbHelpProcess.nbDispText("Decreased Evasion/Hit Rate!", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("回避＆命中力が下がった！！", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Decreased Evasion/Hit Rate!", string.Empty, 2, 45, 2315190144, false);
+                    }
                 }
                 // Dervish
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 32 && actionProcessData.work.nowindex == 443)
@@ -416,9 +508,19 @@ namespace NocturneInsaniax
                     }
 
                     if (limitReached)
-                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("これ以上効果が無い", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    }
                     else
-                        nbHelpProcess.nbDispText("Decreased Evasion!", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("回避力が下がった！！", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Decreased Evasion!", string.Empty, 2, 45, 2315190144, false);
+                    }
                 }
                 // Boogie-Woogie/E & I
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 160 && actionProcessData.work.nowindex == 262)
@@ -430,9 +532,19 @@ namespace NocturneInsaniax
                     }
 
                     if (limitReached)
-                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("これ以上効果が無い", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    }
                     else
-                        nbHelpProcess.nbDispText("Decreased Defense/Evasion!", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("防御＆回避力が下がった！！", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Decreased Defense/Evasion!", string.Empty, 2, 45, 2315190144, false);
+                    }
                 }
                 // Niflheim
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 160 && actionProcessData.work.nowindex == 468)
@@ -448,9 +560,19 @@ namespace NocturneInsaniax
                     }
 
                     if (limitReached)
-                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("これ以上効果が無い", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    }
                     else
-                        nbHelpProcess.nbDispText("Decreased Defense/Evasion!", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("防御＆回避力が下がった！！", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Decreased Defense/Evasion!", string.Empty, 2, 45, 2315190144, false);
+                    }
                 }
                 // Antichthon
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 682 && (actionProcessData.work.nowindex == 453 || actionProcessData.work.nowindex == 417))
@@ -464,9 +586,19 @@ namespace NocturneInsaniax
                     }
 
                     if (limitReached)
-                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("これ以上効果が無い", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    }
                     else
-                        nbHelpProcess.nbDispText("All stats decreased!", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("全ての能力が下がった！", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("All stats decreased!", string.Empty, 2, 45, 2315190144, false);
+                    }
                 }
                 // Divine Light
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 682 && actionProcessData.work.nowindex == 467)
@@ -486,9 +618,19 @@ namespace NocturneInsaniax
                     }
 
                     if (limitReached)
-                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("これ以上効果が無い", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    }
                     else
-                        nbHelpProcess.nbDispText("All stats decreased!", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("全ての能力が下がった！", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("All stats decreased!", string.Empty, 2, 45, 2315190144, false);
+                    }
                 }
                 // Hell Throttle
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 273 && actionProcessData.work.nowindex == 284)
@@ -504,9 +646,19 @@ namespace NocturneInsaniax
                     }
 
                     if (limitReached)
-                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("これ以上効果が無い", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    }
                     else
-                        nbHelpProcess.nbDispText("Physical Attack/Evasion/Hit Rate increased!", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("攻撃力、回避、命中力が上がった！！", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Physical Attack/Evasion/Hit Rate increased!", string.Empty, 2, 45, 2315190144, false);
+                    }
                 }
                 // Heat Riser
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 341 && (actionProcessData.work.nowindex == 458 || actionProcessData.work.nowindex == 417))
@@ -518,11 +670,21 @@ namespace NocturneInsaniax
                             limitReached = false; 
                         break;
                     }
-                        
+
                     if (limitReached)
-                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("これ以上効果が無い", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    }
                     else
-                        nbHelpProcess.nbDispText("All stats greatly increased!", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("全ての能力大幅が上がった！", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("All stats greatly increased!", string.Empty, 2, 45, 2315190144, false);
+                    }
                 }
                 // Omnipotence
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 341 && (actionProcessData.work.nowindex == 254))
@@ -533,6 +695,21 @@ namespace NocturneInsaniax
                         if (currentUnitBuffs[i] <= 2)
                             limitReached = false;
                         break;
+                    }
+
+                    if (limitReached)
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("これ以上効果が無い", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    }
+                    else
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("全ての能力大幅が上がった！", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("All stats drastically increased!", string.Empty, 2, 45, 2315190144, false);
                     }
 
                     if (limitReached)
@@ -555,9 +732,19 @@ namespace NocturneInsaniax
                     }
 
                     if (limitReached)
-                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("これ以上効果が無い", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    }
                     else
-                        nbHelpProcess.nbDispText("All stats increased!", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("全ての能力が上がった！", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("All stats increased!", string.Empty, 2, 45, 2315190144, false);
+                    }
                 }
                 // Retributive Zeal
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 5 && actionProcessData.work.nowindex == 405)
@@ -569,21 +756,40 @@ namespace NocturneInsaniax
                     }
 
                     if (limitReached)
-                        nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("これ以上効果が無い", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Limit reached.", string.Empty, 2, 45, 2315190144, false);
+                    }
                     else
-                        nbHelpProcess.nbDispText("Physical/Magical Attack maximized!", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("攻撃力と魔法威力率を最大！", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("Physical/Magical Attack maximized!", string.Empty, 2, 45, 2315190144, false);
+                    }
                 }
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 262144 && actionProcessData.work.nowindex == 408)
                 {
-                    nbHelpProcess.nbDispText("Negated all -nda effects!", string.Empty, 2, 45, 2315190144, false);
+                    if (JapaneseLanguage)
+                        nbHelpProcess.nbDispText("ンダの効果をかき消した！！", string.Empty, 2, 45, 2315190144, false);
+                    else
+                        nbHelpProcess.nbDispText("All -nda effects negated!", string.Empty, 2, 45, 2315190144, false);
                 }
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 341 && actionProcessData.work.nowindex == 509)
                 {
-                    nbHelpProcess.nbDispText("All stats maximized!", string.Empty, 2, 45, 2315190144, false);
+                    if (JapaneseLanguage)
+                        nbHelpProcess.nbDispText("全ての能力が率を最大！", string.Empty, 2, 45, 2315190144, false);
+                    else
+                        nbHelpProcess.nbDispText("All stats maximized!", string.Empty, 2, 45, 2315190144, false);
                 }
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 682 && actionProcessData.work.nowindex == 510)
                 {
-                    nbHelpProcess.nbDispText("All stats minimized!", string.Empty, 2, 45, 2315190144, false);
+                    if (JapaneseLanguage)
+                        nbHelpProcess.nbDispText("全ての能力が最低値に達しました！", string.Empty, 2, 45, 2315190144, false);
+                    else
+                        nbHelpProcess.nbDispText("All stats minimized!", string.Empty, 2, 45, 2315190144, false);
                 }
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 263168 && actionProcessData.work.nowindex == 460)
                 {
@@ -591,11 +797,17 @@ namespace NocturneInsaniax
                 }
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 262144 && actionProcessData.work.nowindex == 479)
                 {
-                    nbHelpProcess.nbDispText("All -nda effects negated!", string.Empty, 2, 45, 2315190144, false);
+                    if (JapaneseLanguage)
+                        nbHelpProcess.nbDispText("ンダの効果をかき消した！！", string.Empty, 2, 45, 2315190144, false);
+                    else
+                        nbHelpProcess.nbDispText("All -nda effects negated!", string.Empty, 2, 45, 2315190144, false);
                 }
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 1024 && actionProcessData.work.nowindex == 142)
                 {
-                    nbHelpProcess.nbDispText("All -kaja effects negated!", string.Empty, 2, 45, 2315190144, false);
+                    if (JapaneseLanguage)
+                        nbHelpProcess.nbDispText("カジャの効果が消された！！", string.Empty, 2, 45, 2315190144, false);
+                    else
+                        nbHelpProcess.nbDispText("All -kaja effects negated!", string.Empty, 2, 45, 2315190144, false);
                 }
                 else if (actionProcessData.work.nowcommand == 1 && hojotype == 263168 && (actionProcessData.work.nowindex == 272 || actionProcessData.work.nowindex == 511))
                 {
@@ -606,7 +818,12 @@ namespace NocturneInsaniax
                         unit.count[20] = 0;
                     }
                     if (actionProcessData.work.nowindex == 511)
-                        nbHelpProcess.nbDispText("All effects negated!", string.Empty, 2, 45, 2315190144, false);
+                    {
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText("すべての効果は無効化される！！", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText("All effects negated!", string.Empty, 2, 45, 2315190144, false);
+                    }
                 }
             }
         }

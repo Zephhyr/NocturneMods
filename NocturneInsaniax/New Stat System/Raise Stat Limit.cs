@@ -30,6 +30,7 @@ namespace NocturneInsaniax
         private static uint[] pCol = (uint[])Array.CreateInstance(typeof(uint), 4);
         private static AssetBundle barData = null;
         private static string[] paramNames = { "Str", "Int", "Mag", "Vit", "Agi", "Luc" };
+        private static string[] paramNamesJp = { "力", "知恵", "魔力", "体力", "速さ", "運" };
         private static int[] LevelUpPoints = { 0, 0, 0, 0, 0, 0 };
         private const string barSpriteName = "sstatusbar_base";
         private static string[] StatusBarValues = { "sinfo_basic/shpbar/shpnum_current", "sinfo_basic/shpbar/shpnum_full", "sinfo_basic/smpbar/smpnum_current", "sinfo_basic/smpbar/smpnum_full" };
@@ -1222,7 +1223,7 @@ namespace NocturneInsaniax
             {
                 // Grab the Stat's Name from a clamped index.
                 Index = (sbyte)Math.Clamp((int)Index, 0, 5);
-                __result = paramNames[Index];
+                __result = JapaneseLanguage ? paramNamesJp[Index] : paramNames[Index];
                 return false;
             }
         }
