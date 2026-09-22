@@ -114,9 +114,9 @@ namespace NocturneInsaniax
                             "Low Dark damage to all foes. \nMay instakill when weak to Dark. \nPow: 30, Acc: 100%, Fatal: 20%"; return false; // Mamudo Rock
                     case 27: __result = JapaneseLanguage ? "敵全体に万能属性の中ダメージ。\n威力: 36, 命中: 100%" : 
                             "Medium Almighty damage to all foes. \nPow: 36, Acc: 100%"; return false; // Megido Rock
-                    case 28: __result = JapaneseLanguage ? "敵全体に万能属性の中〜大ダメージ。\n威力: 42, 命中: 100%" : 
+                    case 28: __result = JapaneseLanguage ? "敵全体に万能属性の中~大ダメージ。\n威力: 42, 命中: 100%" : 
                             "Med-High Almighty damage to all foes. \nPow: 42, Acc: 100%"; return false; // Megidola Rock
-                    case 29: __result = JapaneseLanguage ? "敵ランダムに銃撃属性の小ダメージ。\n2〜5回ヒット。威力: 22, 命中: 90%, \n会心率: 18%" : 
+                    case 29: __result = JapaneseLanguage ? "敵ランダムに銃撃属性の小ダメージ。\n2~5回ヒット。威力: 22, 命中: 90%, \n会心率: 18%" : 
                             "Low Shot damage to random foes. \n2-5 hits. Pow: 22, Acc: 90%, \nCrit: 18%"; return false; // Needle Orb
                     case 31: __result = JapaneseLanguage ? "50%の確率で敵1体に魔封を付与。\n(魔力属性)" : 
                             "50% Chance to inflict Mute \non one foe. (Curse-Type)"; return false; // Makajam Rock
@@ -132,23 +132,23 @@ namespace NocturneInsaniax
                             "Negates -kaja effects on all foes."; return false; // Dekaja Rock
                     case 37: __result = JapaneseLanguage ? "味方一人につき、破魔／呪殺属性の攻撃\nを1回無効化する。" : 
                             "Negates one Light/Dark attack \nfor all allies."; return false; // Tetraja Rock
-                    case 38: __result = JapaneseLanguage ? "味方単体の\n『力』を１上昇させ\nＨＰを全回復" : 
+                    case 38: __result = JapaneseLanguage ? "味方単体の『力』を２\n上昇させＨＰを全回復" : 
                             "Raises Strength by 2 \nand full HP recovery \nfor one ally."; return false; // Strength Incense
-                    case 39: __result = JapaneseLanguage ? "味方単体の\n『知恵』を１上昇させ\nＨＰを全回復" : 
+                    case 39: __result = JapaneseLanguage ? "味方単体の『知恵』を２\n上昇させＨＰを全回復" : 
                             "Raises Intelligence by 2 \nand full HP recovery \nfor one ally."; return false; // Intelligence Incense
-                    case 40: __result = JapaneseLanguage ? "味方単体の\n『魔力』を１上昇させ\nＨＰを全回復" : 
+                    case 40: __result = JapaneseLanguage ? "味方単体の『魔力』を２\n上昇させＨＰを全回復" : 
                             "Raises Magic by 2 \nand full HP recovery \nfor one ally."; return false; // Magic Incense
-                    case 41: __result = JapaneseLanguage ? "味方単体の\n『体力』を１上昇させ\nＨＰを全回復" : 
+                    case 41: __result = JapaneseLanguage ? "味方単体の『体力』を２\n上昇させＨＰを全回復" : 
                             "Raises Vitality by 2 \nand full HP recovery \nfor one ally."; return false; // Vitality Incense
-                    case 42: __result = JapaneseLanguage ? "味方単体の\n『速さ』を１上昇させ\nＨＰを全回復" : 
+                    case 42: __result = JapaneseLanguage ? "味方単体の『速さ』を２\n上昇させＨＰを全回復" : 
                             "Raises Agility by 2 \nand full HP recovery \nfor one ally."; return false; // Agility Incense
-                    case 43: __result = JapaneseLanguage ? "味方単体の\n『運』を１上昇させ\nＨＰを全回復" : 
+                    case 43: __result = JapaneseLanguage ? "味方単体の『運』を２\n上昇させＨＰを全回復" : 
                             "Raises Luck by 2 \nand full HP recovery \nfor one ally."; return false; // Luck Incense
                     case 44: __result = JapaneseLanguage ? "味方1体のHPを\n大回復。無くならない" : 
                             "Great HP recovery for one ally. \nReusable."; return false; // Graven Image
-                    case 46: __result = JapaneseLanguage ? "敵単体の個体情報を\n調べる。無くならない" : 
+                    case 46: __result = JapaneseLanguage ? "敵単体の個体情報を調べる。\n無くならない" : 
                             "Displays an enemy's info \nat 1/2 turn cost. \nReusable."; return false; // Eternal Spyglass
-                    case 47: __result = JapaneseLanguage ? "敵単体の個体情報を\n調べる" : 
+                    case 47: __result = JapaneseLanguage ? "敵単体の個体情報を調べる" : 
                             "Displays an enemy's info \nat 1/2 turn cost."; return false; // Spyglass
                     case 48: __result = JapaneseLanguage ? "敵1体に火炎属性の中ダメージ。\n威力: 45, 命中: 100%" : 
                             "Medium Fire damage to one foe. \nPow: 45, Acc: 100%"; return false; // Agilao Rock
@@ -180,7 +180,7 @@ namespace NocturneInsaniax
                             "Fire-type Magatama \nImparts Fire magic & potential \n<material=\"MsgFont2\">Null: Fire<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Force"; return false; // Shiranui
                     case 69: __result = JapaneseLanguage ? "衝撃タイプのマガタマくわ\n衝撃魔法と適性を授ける\n<material=\"MsgFont2\">衝撃無効<material=\"MsgFont0\">／<material=\"MsgFont1\">火炎に弱い" : 
                             "Force-type Magatama \nImparts Force magic & potential \n<material=\"MsgFont2\">Null: Force<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire"; return false; // Hifumi
-                    case 70: __result = JapaneseLanguage ? "物理タイプのマガタマくわ\n物理スキルと適性を授ける\n<material=\"MsgFont2\">物理に強い<material=\"MsgFont0\">／<material=\"MsgFont1\">バッドステータス攻撃に弱い" : 
+                    case 70: __result = JapaneseLanguage ? "物理タイプのマガタマくわ\n物理スキルと適性を授ける\n<material=\"MsgFont2\">物理・銃撃に強い<material=\"MsgFont0\">／<material=\"MsgFont1\">バッドステータス攻撃に弱い" : 
                             "Physical-type Magatama \nImparts Physical skills & potential \n<material=\"MsgFont2\">Strong: Phys/Shot<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ailments"; return false; // Kamurogi
                     case 71: __result = JapaneseLanguage ? "電撃タイプのマガタマくわ\n電撃魔法と適性を授ける\n<material=\"MsgFont2\">電撃無効<material=\"MsgFont0\">／<material=\"MsgFont1\">氷結に弱い" : 
                             "Elec-type Magatama \nImparts Electricity magic & potential \n<material=\"MsgFont2\">Null: Elec<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ice"; return false; // Kamudo
@@ -198,7 +198,7 @@ namespace NocturneInsaniax
                             "Support-type Magatama \nImparts Support magic & potential \n<material=\"MsgFont2\">Null: Curse"; return false; // Djed
                     case 78: __result = JapaneseLanguage ? "火炎タイプのマガタマくわ\n火炎魔法と適性を授ける\n<material=\"MsgFont2\">火炎吸収<material=\"MsgFont0\">／<material=\"MsgFont1\">氷結に弱い" : 
                             "Fire-type Magatama \nImparts Fire magic & potential \n<material=\"MsgFont2\">Drain: Fire<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ice"; return false; // Muspell
-                    case 79: __result = JapaneseLanguage ? "万能タイプのマガタマくわ\n万能属性の魔法と適性を授ける\n<material=\"MsgFont2\">呪殺無効" : 
+                    case 79: __result = JapaneseLanguage ? "万能タイプのマガタマくわ\n万能の魔法と適性を授ける\n<material=\"MsgFont2\">呪殺無効" : 
                             "Almighty-type Magatama \nImparts Almighty magic & potential \n<material=\"MsgFont2\">Null: Dark"; return false; // Satan
                     case 80: __result = JapaneseLanguage ? "バッドステタイプのマガタマくわ\n状態異常魔法と適性を授ける\n<material=\"MsgFont2\">バッドステータス攻撃無効<material=\"MsgFont0\">／<material=\"MsgFont1\">破魔・呪殺に弱い" : 
                             "Ailment-type Magatama. \nImparts Ailment magic & potential \n<material=\"MsgFont2\">Null: Ailments<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Light/Dark"; return false; // Adama

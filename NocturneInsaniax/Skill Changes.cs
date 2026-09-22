@@ -290,25 +290,25 @@ namespace NocturneInsaniax
                             "High Force damage to all foes. \nPow: 48, Acc: 100%"; return false; // Mazandyne
                     case 25: __result = JapaneseLanguage ? "敵全体に万能属性の中ダメージ。\n威力: 36, 命中: 100%" : 
                             "Medium Almighty damage to all foes. \nPow: 36, Acc: 100%"; return false; // Megido
-                    case 26: __result = JapaneseLanguage ? "敵全体に万能属性の中〜大ダメージ。\n威力: 42, 命中: 100%" : 
+                    case 26: __result = JapaneseLanguage ? "敵全体に万能属性の中~大ダメージ。\n威力: 42, 命中: 100%" : 
                             "Med-High Almighty damage to all foes. \nPow: 42, Acc: 100%"; return false; // Megidola
                     case 27: __result = JapaneseLanguage ? "敵全体に万能属性の大ダメージ。\n威力: 48, 命中: 100%" : 
                             "High Almighty damage to all foes. \nPow: 48, Acc: 100%"; return false; // Megidolaon
                     case 28: __result = JapaneseLanguage ? "敵1体に破魔属性の小ダメージ。\n破魔弱点の敵を即死させることがある。\n威力: 36, 命中: 100%, 即死率: 30%" : 
                             "Low Light damage to one foe. \nMay instakill when weak to Light. \nPow: 36, Acc: 100%, Fatal: 30%"; return false; // Hama
-                    case 29: __result = JapaneseLanguage ? "敵1体に破魔属性の中〜大ダメージ。\n破魔弱点の敵を即死させることがある。\n威力: 54, 命中: 100%, 即死率: 50%" : 
+                    case 29: __result = JapaneseLanguage ? "敵1体に破魔属性の中~大ダメージ。\n破魔弱点の敵を即死させることがある。\n威力: 54, 命中: 100%, 即死率: 50%" : 
                             "Med-High Light damage to one foe. \nMay instakill when weak to Light. \nPow: 54, Acc: 100%, Fatal: 50%"; return false; // Hamaon
                     case 30: __result = JapaneseLanguage ? "敵全体に破魔属性の小ダメージ。\n破魔弱点の敵を即死させることがある。\n威力: 30, 命中: 100%, 即死率: 20%" : 
                             "Low Light damage to all foes. \nMay instakill when weak to Light. \nPow: 30, Acc: 100%, Fatal: 20%"; return false; // Mahama
-                    case 31: __result = JapaneseLanguage ? "敵全体に破魔属性の中〜大ダメージ。\n破魔弱点の敵を即死させることがある。\n威力: 42, 命中: 100%, 即死率: 30%" : 
+                    case 31: __result = JapaneseLanguage ? "敵全体に破魔属性の中~大ダメージ。\n破魔弱点の敵を即死させることがある。\n威力: 42, 命中: 100%, 即死率: 30%" : 
                             "Med-High Light damage to all foes. \nMay instakill when weak to Light. \nPow: 42, Acc: 100%, Fatal: 30%"; return false; // Mahamaon
                     case 32: __result = JapaneseLanguage ? "敵1体に呪殺属性の小ダメージ。\n呪殺弱点の敵を即死させることがある。\n威力: 36, 命中: 100%, 即死率: 30%" : 
                             "Low Dark damage to one foe. \nMay instakill when weak to Dark. \nPow: 36, Acc: 100%, Fatal: 30%"; return false; // Mudo
-                    case 33: __result = JapaneseLanguage ? "敵1体に呪殺属性の中〜大ダメージ。\n呪殺弱点の敵を即死させることがある。\n威力: 54, 命中: 100%, 即死率: 50%" : 
+                    case 33: __result = JapaneseLanguage ? "敵1体に呪殺属性の中~大ダメージ。\n呪殺弱点の敵を即死させることがある。\n威力: 54, 命中: 100%, 即死率: 50%" : 
                             "Med-High Dark damage to one foe. \nMay instakill when weak to Dark. \nPow: 54, Acc: 100%, Fatal: 50%"; return false; // Mudoon
                     case 34: __result = JapaneseLanguage ? "敵全体に呪殺属性の小ダメージ。\n呪殺弱点の敵を即死させることがある。\n威力: 30, 命中: 100%, 即死率: 20%" : 
                             "Low Dark damage to all foes. \nMay instakill when weak to Dark. \nPow: 30, Acc: 100%, Fatal: 20%"; return false; // Mamudo
-                    case 35: __result = JapaneseLanguage ? "敵全体に呪殺属性の中〜大ダメージ。\n呪殺弱点の敵を即死させることがある。\n威力: 42, 命中: 100%, 即死率: 30%" : 
+                    case 35: __result = JapaneseLanguage ? "敵全体に呪殺属性の中~大ダメージ。\n呪殺弱点の敵を即死させることがある。\n威力: 42, 命中: 100%, 即死率: 30%" : 
                             "Med-High Dark damage to all foes. \nMay instakill when weak to Dark. \nPow: 42, Acc: 100%, Fatal: 30%"; return false; // Mamudoon
                     case 36: __result = JapaneseLanguage ? "味方1体のHPを中回復。\n威力: 10" : 
                             "Moderate HP recovery for one ally. \nPow: 10"; return false; // Dia
@@ -399,7 +399,7 @@ namespace NocturneInsaniax
                             "Low Physical damage to one foe. \nPow: 42, Acc: 90%, Crit: 20%"; return false; // Lunge
                     case 97: __result = JapaneseLanguage ? "敵1体に物理属性の中ダメージ。\n威力: 48, 命中: 86%, 会心率: 28%" : 
                             "Medium Physical damage to one foe. \nPow: 48, Acc: 86%, Crit: 28%"; return false; // Hell Thrust
-                    case 98: __result = JapaneseLanguage ? "敵ランダムに物理属性の小ダメージ。\n2〜5回ヒット。威力: 20, 命中: 94%, \n会心率: 12%" : 
+                    case 98: __result = JapaneseLanguage ? "敵ランダムに物理属性の小ダメージ。\n2~5回ヒット。威力: 20, 命中: 94%, \n会心率: 12%" : 
                             "Low Physical damage to random foes. \n2-5 hits. Pow: 20, Acc: 94%, \nCrit: 12%"; return false; // Berserk
                     case 99: __result = JapaneseLanguage ? "敵全体に物理属性の中ダメージ。\n威力: 30, 命中: 85%, 会心率: 25%" : 
                             "Medium Physical damage to all foes. \nPow: 30, Acc: 85%, Crit: 25%"; return false; // Tempest
@@ -419,19 +419,19 @@ namespace NocturneInsaniax
                             "High Physical damage to one foe. \nHP-based. Max Pow: 60, Acc: 80%, \nCrit: 40%, Bind: 30%"; return false; // Stasis Blade
                     case 107: __result = JapaneseLanguage ? "敵1体に物理属性の小ダメージ。\nHP依存。最大威力: 48, 命中: 90%, \n会心率: 20%" : 
                             "Low Physical damage to one foe. \nHP-based. Max Pow: 48, Acc: 90%, \nCrit: 20%"; return false; // Mighty Gust
-                    case 108: __result = JapaneseLanguage ? "敵ランダムに物理属性の大ダメージ。\n3〜5回ヒット。HP依存。最大威力: 40, \n命中: 94%, 会心率: 20%" : 
+                    case 108: __result = JapaneseLanguage ? "敵ランダムに物理属性の大ダメージ。\n3~5回ヒット。HP依存。最大威力: 40, \n命中: 94%, 会心率: 20%" : 
                             "High Physical damage to random foes. \n3-5 hits. HP-based. Max Pow: 40, \nAcc: 94%, Crit: 20%"; return false; // Deathbound
                     case 109: __result = JapaneseLanguage ? "敵1体に物理属性の大ダメージ。\nHP依存。最大威力: 56, 命中: 85%, \n会心率: 30%, スタン: 30%" : 
                             "High Physical damage to one foe. \nHP-based. Max Pow: 56, Acc: 85%, \nCrit: 30%, Stun: 30%"; return false; // Guillotine
-                    case 110: __result = JapaneseLanguage ? "敵ランダムに物理属性の大ダメージ。\n3〜5回ヒット。HP依存。最大威力: 30, \n命中: 92%, 会心率: 20%, 混乱: 24%" : 
+                    case 110: __result = JapaneseLanguage ? "敵ランダムに物理属性の大ダメージ。\n3~5回ヒット。HP依存。最大威力: 30, \n命中: 92%, 会心率: 20%, 混乱: 24%" : 
                             "High Physical damage to random foes. \n3-5 hits. HP-based. Max Pow: 30, \nAcc: 92%, Crit: 20%, Panic: 24%"; return false; // Chaos Blade
-                    case 111: __result = JapaneseLanguage ? "敵1体に銃撃属性の小ダメージ。\n2〜4回ヒット。威力: 13, 命中: 90%, \n会心率: 20%" : 
+                    case 111: __result = JapaneseLanguage ? "敵1体に銃撃属性の小ダメージ。\n2~4回ヒット。威力: 13, 命中: 90%, \n会心率: 20%" : 
                             "Low Shot damage to one foe. \n2-4 hits. Pow: 13, Acc: 90%, \nCrit: 20%"; return false; // Needle Rush
-                    case 112: __result = JapaneseLanguage ? "敵1体に銃撃属性の小ダメージ。\n2〜4回ヒット。威力: 12, 命中: 90%, \n会心率: 18%, スタン: 18%" : 
+                    case 112: __result = JapaneseLanguage ? "敵1体に銃撃属性の小ダメージ。\n2~4回ヒット。威力: 12, 命中: 90%, \n会心率: 18%, スタン: 18%" : 
                             "Low Shot damage to one foe. \n2-4 hits. Pow: 12, Acc: 90%, \nCrit: 18%, Stun: 18%"; return false; // Stun Needle
-                    case 113: __result = JapaneseLanguage ? "敵1体に銃撃属性の小ダメージ。\n2〜4回ヒット。威力: 12, 命中: 90%, \n会心率: 18%, 毒: 18%" : 
+                    case 113: __result = JapaneseLanguage ? "敵1体に銃撃属性の小ダメージ。\n2~4回ヒット。威力: 12, 命中: 90%, \n会心率: 18%, 毒: 18%" : 
                             "Low Shot damage to one foe. \n2-4 hits. Pow: 12, Acc: 90%, \nCrit: 18%, Poison: 18%"; return false; // Venom Needle
-                    case 114: __result = JapaneseLanguage ? "敵1体に銃撃属性の小ダメージ。\n2〜4回ヒット。威力: 11, 命中: 90%, \n会心率: 18%, 石化: 16%" : 
+                    case 114: __result = JapaneseLanguage ? "敵1体に銃撃属性の小ダメージ。\n2~4回ヒット。威力: 11, 命中: 90%, \n会心率: 18%, 石化: 16%" : 
                             "Low Shot damage to one foe. \n2-4 hits. Pow: 11, Acc: 90%, \nCrit: 18%, Stone: 16%"; return false; // Arid Needle
                     case 115: __result = JapaneseLanguage ? "自身を犠牲にして敵全体に力依存\nの万能属性特大ダメージ。\n威力: 55, 命中: 90%, 会心率: 20%" : 
                             "Sacrifice self to deal Mega Str-based \nAlmighty damage to all foes. \nPow: 55, Acc: 90%, Crit: 20%"; return false; // Sacrifice
@@ -483,25 +483,25 @@ namespace NocturneInsaniax
                             "Mega Fire damage to one foe. \nPow: 80, Acc: 120%"; return false; // Magma Axis
                     case 163: __result = JapaneseLanguage ? "敵全体に物理属性の特大ダメージ。\n威力: 52, 命中: 95%, 会心率: 30%" : 
                             "Mega Physical damage to all foes. \nPow: 52, Acc: 95%, Crit: 30%"; return false; // Gaea Rage
-                    case 176: __result = JapaneseLanguage ? "敵ランダムに火炎属性の小ダメージ。\n3〜5回ヒット。威力: 20, 命中: 100%" : 
+                    case 176: __result = JapaneseLanguage ? "敵ランダムに火炎属性の小ダメージ。\n3~5回ヒット。威力: 20, 命中: 100%" : 
                             "Low Fire damage to random foes. \n3-5 hits. Pow: 20, Acc: 100%"; return false; // Fire Breath
-                    case 177: __result = JapaneseLanguage ? "敵ランダムに火炎属性の中ダメージ。\n3〜6回ヒット。威力: 30, 命中: 100%" : 
+                    case 177: __result = JapaneseLanguage ? "敵ランダムに火炎属性の中ダメージ。\n3~6回ヒット。威力: 30, 命中: 100%" : 
                             "Medium Fire damage to random foes. \n3-6 hits. Pow: 30, Acc: 100%"; return false; // Hellfire
-                    case 178: __result = JapaneseLanguage ? "敵ランダムに火炎属性の大ダメージ。\n3〜7回ヒット。威力: 40, 命中: 100%" : 
+                    case 178: __result = JapaneseLanguage ? "敵ランダムに火炎属性の大ダメージ。\n3~7回ヒット。威力: 40, 命中: 100%" : 
                             "High Fire damage to random foes. \n3-7 hits. Pow: 40, Acc: 100%"; return false; // Prominence
                     case 179: __result = JapaneseLanguage ? "敵1体に火炎属性の特大ダメージ。\n威力: 80, 命中: 100%" : 
                             "Mega Fire damage to one foe. \nPow: 80, Acc: 100%"; return false; // Trisagion
-                    case 180: __result = JapaneseLanguage ? "敵ランダムに氷結属性の小ダメージ。\n3〜5回ヒット。威力: 18, 命中: 100%, \n凍結: 15%" : 
+                    case 180: __result = JapaneseLanguage ? "敵ランダムに氷結属性の小ダメージ。\n3~5回ヒット。威力: 18, 命中: 100%, \n凍結: 15%" : 
                             "Low Ice damage to random foes. \n3-5 hits. Pow: 18, Acc: 100%, \nFreeze: 15%"; return false; // Ice Breath
-                    case 181: __result = JapaneseLanguage ? "敵ランダムに氷結属性の中ダメージ。\n3〜6回ヒット。威力: 24, 命中: 100%, \n凍結: 18%" : 
+                    case 181: __result = JapaneseLanguage ? "敵ランダムに氷結属性の中ダメージ。\n3~6回ヒット。威力: 24, 命中: 100%, \n凍結: 18%" : 
                             "Medium Ice damage to random foes. \n3-6 hits. Pow: 24, Acc: 100%, \nFreeze: 18%"; return false; // Glacial Blast
-                    case 182: __result = JapaneseLanguage ? "敵ランダムに電撃属性の小ダメージ。\n3〜5回ヒット。威力: 18, 命中: 100%, \n感電: 15%" : 
+                    case 182: __result = JapaneseLanguage ? "敵ランダムに電撃属性の小ダメージ。\n3~5回ヒット。威力: 18, 命中: 100%, \n感電: 15%" : 
                             "Low Elec damage to random foes. \n3-5 hits. Pow: 18, Acc: 100%, \nShock: 15%"; return false; // Shock
-                    case 183: __result = JapaneseLanguage ? "敵ランダムに電撃属性の中ダメージ。\n3〜6回ヒット。威力: 24, 命中: 100%, \n感電: 18%" : 
+                    case 183: __result = JapaneseLanguage ? "敵ランダムに電撃属性の中ダメージ。\n3~6回ヒット。威力: 24, 命中: 100%, \n感電: 18%" : 
                             "Medium Elec damage to random foes. \n3-6 hits. Pow: 24, Acc: 100%, \nShock: 18%"; return false; // Bolt Storm
-                    case 184: __result = JapaneseLanguage ? "敵ランダムに衝撃属性の小ダメージ。\n3〜5回ヒット。威力: 20, 命中: 100%" : 
+                    case 184: __result = JapaneseLanguage ? "敵ランダムに衝撃属性の小ダメージ。\n3~5回ヒット。威力: 20, 命中: 100%" : 
                             "Low Force damage to random foes. \n3-5 hits. Pow: 20, Acc: 100%"; return false; // Wing Buffet
-                    case 185: __result = JapaneseLanguage ? "敵ランダムに衝撃属性の中ダメージ。\n3〜6回ヒット。威力: 30, 命中: 100%" : 
+                    case 185: __result = JapaneseLanguage ? "敵ランダムに衝撃属性の中ダメージ。\n3~6回ヒット。威力: 30, 命中: 100%" : 
                             "Medium Force damage to random foes. \n3-6 hits. Pow: 30, Acc: 100%"; return false; // Tornado
                     case 186: __result = JapaneseLanguage ? "敵1体に衝撃属性の特大ダメージ。\n威力: 80, 命中: 100%" : 
                             "Mega Force damage to one foe. \nPow: 80, Acc: 100%"; return false; // Wind Cutter
@@ -565,17 +565,17 @@ namespace NocturneInsaniax
                             "Summons a random ally \nfrom the stock."; return false; // Beckon Call
                     case 224: __result = JapaneseLanguage ? "次の力依存攻撃のダメージ\nを120%増加。" : 
                             "Increases the damage of the user's \nnext Strength-based attack by 120%."; return false; // Focus
-                    case 235: __result = JapaneseLanguage ? "敵ランダムに万能属性の特大ダメージ。\n4〜8回ヒット。威力: 40, 命中: 100%" : 
+                    case 235: __result = JapaneseLanguage ? "敵ランダムに万能属性の特大ダメージ。\n4~8回ヒット。威力: 40, 命中: 100%" : 
                             "Mega Almighty damage to random foes. \n4-8 hits. Pow: 36, Acc: 100%"; return false; // Fire of Sinai
                     case 242: __result = JapaneseLanguage ? "敵全体に万能属性の大ダメージ。\nランダムで異常状態を付与。\n威力: 40, 命中: 100%, 異常: 50%" : 
                             "High Almighty damage to all foes. \nMay inflict random ailments. \nPow: 40, Acc: 100%, Random: 50%"; return false; // God's Curse
                     case 244: __result = JapaneseLanguage ? "敵全体に氷結属性の中ダメージ。\n対象の回避／命中率を低下。\n威力: 30, 命中: 100%, 凍結: 25%" : 
                             "Medium Ice damage to all foes. \nLowers targets' Evasion/Hit Rate. \nPow: 30, Acc: 100%, Freeze: 25%"; return false; // Icy Death
-                    case 249: __result = JapaneseLanguage ? "敵ランダムに精神属性の大ダメージ。\n3〜7回ヒット。威力: 36, 命中: 100%, 混乱: 40%" : 
+                    case 249: __result = JapaneseLanguage ? "敵ランダムに精神属性の大ダメージ。\n3~7回ヒット。威力: 36, 命中: 100%, 混乱: 40%" : 
                             "High Mind damage to random foes. \n3-7 hits. Pow: 36, Acc: 100%, Panic: 40%"; return false; // Wild Dance
                     case 250: __result = JapaneseLanguage ? "敵1体からHPとMPを吸収。\n威力: 80/40, 命中: 100% \n(万能属性)" : 
                             "Drains HP/MP from one foe. \nPow: 80/40, Acc: 100% \n(Almighty-Type)"; return false; // Domination
-                    case 257: __result = JapaneseLanguage ? "敵ランダムに万能属性の特大ダメージ。\n4〜8回ヒット。威力: 40, 命中: 100%" : 
+                    case 257: __result = JapaneseLanguage ? "敵ランダムに万能属性の特大ダメージ。\n4~8回ヒット。威力: 40, 命中: 100%" : 
                             "Mega Almighty damage to random foes. \n4-8 hits. Pow: 40, Acc: 100%."; return false; // Fire of Sinai
                     case 259: __result = JapaneseLanguage ? "敵全体に万能属性の特大ダメージ。\n呪殺無効でない敵を即死させることがある。\n威力: 60, 命中: 100%, 即死率: 90%" : 
                             "Mega Almighty damage to all foes. \nMay instakill when not immune to Dark. \nPow: 60, Acc: 100%, Fatal: 90%"; return false; // Death Flies
@@ -607,7 +607,7 @@ namespace NocturneInsaniax
                             "Medium Mind damage to all foes. \nMay inflict random ailments. \nPow: 30, Acc: 100%, Random: 40%"; return false; // Preach
                     case 279: __result = JapaneseLanguage ? "敵1体からHPとMPを吸収。\n威力: 35/20, 命中: 100% \n(万能属性)" : 
                             "Drains HP/MP from one foe. \nPow: 35/20, Acc: 100% \n(Almighty-Type)"; return false; // Meditation
-                    case 280: __result = JapaneseLanguage ? "敵ランダムに物理属性の中ダメージ。\n3〜6回ヒット。威力: 32, 命中: 96%, \n会心率: 10%, 混乱: 40%" : 
+                    case 280: __result = JapaneseLanguage ? "敵ランダムに物理属性の中ダメージ。\n3~6回ヒット。威力: 32, 命中: 96%, \n会心率: 10%, 混乱: 40%" : 
                             "Medium Physical damage to random foes. \n3-6 hits. Pow: 32, Acc: 96%, \nCrit: 10%, Panic: 40%"; return false; // Terrorblade
                     case 281: __result = JapaneseLanguage ? "敵全体に物理属性の中ダメージ。\n威力: 32, 命中: 94%, 会心率: 12%" : 
                             "Medium Physical damage to all foes. \nPow: 32, Acc: 94%, Crit: 12%"; return false; // Hell Spin
@@ -727,7 +727,7 @@ namespace NocturneInsaniax
                     case 420: __result = "While in the active party, \nmay step in during negotiation to \nconvince a higher level demon."; return false; // Flatter
 
                     // New Skills
-                    case 128: __result = JapaneseLanguage ? "敵ランダムに銃撃属性の小ダメージ。\n2〜5回ヒット。威力: 22, 命中: 90%, \n会心率: 18%" : 
+                    case 128: __result = JapaneseLanguage ? "敵ランダムに銃撃属性の小ダメージ。\n2~5回ヒット。威力: 22, 命中: 90%, \n会心率: 18%" : 
                             "Low Shot damage to random foes. \n2-5 hits. Pow: 22, Acc: 90%, \nCrit: 18%"; return false; // Rapid Needle
                     case 129: __result = JapaneseLanguage ? "敵1体に銃撃属性の中ダメージ。\n威力: 44, 命中: 84%, 会心率: 30%" : 
                             "Medium Shot damage to one foe. \nPow: 44, Acc: 84%, Crit: 30%"; return false; // Tathlum Shot
@@ -804,7 +804,7 @@ namespace NocturneInsaniax
                             "High Physical damage to all foes. \nPow: 42, Acc: 90%, Crit: 30%, \nStone: 24%"; return false; // Gate of Hell
                     case 433: __result = JapaneseLanguage ? "敵1体に物理属性の大ダメージ。\n威力: 54, 命中: 97%, 会心率: 50%" : 
                             "High Physical damage to one foe. \nPow: 54, Acc: 97%, Crit: 50%"; return false; // Akashic Arts
-                    case 434: __result = JapaneseLanguage ? "敵ランダムに物理属性の大ダメージ。\n3〜5回ヒット。威力: 32, 命中: 86%, \n会心率: 40%" : 
+                    case 434: __result = JapaneseLanguage ? "敵ランダムに物理属性の大ダメージ。\n3~5回ヒット。威力: 32, 命中: 86%, \n会心率: 40%" : 
                             "High Physical damage to random foes. \n3-5 hits, Pow: 32, Acc: 86%, \nCrit: 40%"; return false; // Bloodbath
                     case 435: __result = JapaneseLanguage ? "敵全体に火炎属性の小ダメージ。\n対象の物理攻撃力を低下。\n威力: 30, 命中: 100%" : 
                             "Low Fire damage to all foes. \nLowers targets' Physical Attack. \nPow: 30, Acc: 100%"; return false; // Scald
@@ -812,7 +812,7 @@ namespace NocturneInsaniax
                             "Mega Fire damage to all foes. \nPow: 60, Acc: 100%"; return false; // Ragnarok
                     case 437: __result = JapaneseLanguage ? "敵1体に氷結属性の小ダメージ。\n対象の回避／命中率を低下。\n威力: 32, 命中: 100%, 凍結: 24%" : 
                             "Low Ice damage to one foe. \nLowers target's Evasion/Hit Rate. \nPow: 32, Acc: 100%, Freeze: 24%"; return false; // Refrigerate
-                    case 438: __result = JapaneseLanguage ? "敵ランダムに氷結属性の大ダメージ。\n3〜7回ヒット。威力: 40, 命中: 100%, \n凍結: 30%" : 
+                    case 438: __result = JapaneseLanguage ? "敵ランダムに氷結属性の大ダメージ。\n3~7回ヒット。威力: 40, 命中: 100%, \n凍結: 30%" : 
                             "High Ice damage to random foes. \n3-7 hits, Pow: 40, Acc: 100%, \nFreeze: 30%"; return false; // Cocytus
                     case 439: __result = JapaneseLanguage ? "敵全体に氷結属性の特大ダメージ。\n威力: 50, 命中: 100%, 凍結: 22%" : 
                             "Mega Ice damage to all foes. \nPow: 50, Acc: 100%, Freeze: 22%"; return false; // Fimbulvetr
@@ -824,7 +824,7 @@ namespace NocturneInsaniax
                             "Mega Elec damage to all foes. \nPow: 50, Acc: 100%, Shock: 22%"; return false; // Thunder Reign
                     case 443: __result = JapaneseLanguage ? "敵全体に衝撃属性の小ダメージ。\n対象の回避率を低下。\n威力: 30, 命中: 100%" : 
                             "Low Force damage to all foes. \nLowers targets' Evasion. \nPow: 30, Acc: 100%"; return false; // Dervish
-                    case 444: __result = JapaneseLanguage ? "敵ランダムに衝撃属性の大ダメージ。\n3〜7回ヒット。威力: 40, 命中: 100%" : 
+                    case 444: __result = JapaneseLanguage ? "敵ランダムに衝撃属性の大ダメージ。\n3~7回ヒット。威力: 40, 命中: 100%" : 
                             "High Force damage to random foes. \n3-7 hits, Pow: 40, Acc: 100%"; return false; // Heavenly Cyclone
                     case 445: __result = JapaneseLanguage ? "敵全体に衝撃属性の特大ダメージ。\n威力: 60, 命中: 100%" : 
                             "Mega Force damage to all foes. \nPow: 60, Acc: 100%"; return false; // Vayavya
@@ -832,7 +832,7 @@ namespace NocturneInsaniax
                             "50% Chance to instakill one foe. \n(Dark-Type)"; return false; // Damnation
                     case 447: __result = JapaneseLanguage ? "30%の確率で敵全体を即死させる。\n(呪殺属性)" : 
                             "30% Chance to instakill all foes. \n(Dark-Type)"; return false; // Millennia Curse
-                    case 448: __result = JapaneseLanguage ? "敵ランダムにバ魔力属性の小ダメージ。\n3〜6回ヒット。威力: 18, 命中: 100%, \n毒: 40%)" : 
+                    case 448: __result = JapaneseLanguage ? "敵ランダムにバ魔力属性の小ダメージ。\n3~6回ヒット。威力: 18, 命中: 100%, \n毒: 40%)" : 
                             "Low Curse damage to random foes. \n3-6 hits, Pow: 18, Acc: 100%, \nPoison: 40%"; return false; // Poison Volley
                     case 449: __result = JapaneseLanguage ? "敵1体にバ魔力属性の中ダメージ。\n威力: 39, 命中: 100%, 毒: 70%" : 
                             "Medium Curse damage to one foe. \nPow: 39, Acc: 100%, Poison: 70%"; return false; // Poison Salvo
@@ -858,7 +858,7 @@ namespace NocturneInsaniax
                             "Raises all stats by one rank \nfor all allies."; return false; // Luster Candy
                     case 460: __result = JapaneseLanguage ? "すべての敵とすべての味方の\n「カジャ系」と「ンダ系」効果を打ち消す。" : 
                             "Negates -kaja & -nda effects \non all foes & allies."; return false; // Silent Prayer
-                    case 461: __result = JapaneseLanguage ? "敵ランダムに衝撃属性の小ダメージ。\n3〜5回ヒット。威力: 20, 命中: 100%" : 
+                    case 461: __result = JapaneseLanguage ? "敵ランダムに衝撃属性の小ダメージ。\n3~5回ヒット。威力: 20, 命中: 100%" : 
                             "Low Force damage to random foes. \n3-5 hits. Pow: 20, Acc: 100%"; return false; // Storm Gale
                     case 462: __result = JapaneseLanguage ? "敵全体に力依存の衝撃属性大ダメージ。\n威力: 36, 命中: 90%, 会心率: 20%" : 
                             "High Str-based Force damage to \nall foes. Pow: 36, Acc: 90%, \nCrit: 20%"; return false; // Winged Fury
@@ -878,7 +878,7 @@ namespace NocturneInsaniax
                             "High Str-based Elec damage to one \nfoe. HP-based. Max Pow: 50, \nAcc: 90%, Crit: 20%, Shock: 20%"; return false; // Mjolnir
                     case 470: __result = JapaneseLanguage ? "敵全体に万能属性の特大ダメージ。\n対象の防御力を最低値にする。\n威力: 60, 命中: 100%" : 
                             "Mega Almighty damage to all foes. \nMinimizes targets' Defense. \nPow: 60, Acc: 100%"; return false; // Tandava
-                    case 471: __result = JapaneseLanguage ? "敵ランダムに力依存の万能属性特大ダメージ。\n5〜7回ヒット。威力: 40, 命中: 100%, \n会心率: 1%" : 
+                    case 471: __result = JapaneseLanguage ? "敵ランダムに力依存の万能属性特大ダメージ。\n5~7回ヒット。威力: 40, 命中: 100%, \n会心率: 1%" : 
                             "Mega Str-based Almighty damage to \nrandom foes. 5-7 hits. Pow: 40, \nAcc: 100%, Crit: 1%"; return false; // Chaturbhuja
                     case 472: __result = JapaneseLanguage ? "敵1体に力依存の衝撃属性大ダメージ。\nHP依存。最大威力: 54, 命中: 90%, \n会心率: 24%" : 
                             "High Str-based Force damage to \none foe. HP-based. \nMax Pow: 54, Acc: 90%, Crit: 24%"; return false; // Kusanagi
