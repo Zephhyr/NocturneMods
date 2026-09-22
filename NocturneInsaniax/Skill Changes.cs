@@ -145,7 +145,7 @@ namespace NocturneInsaniax
 
                     case 422: __result = JapaneseLanguage ? "獣の眼光" : "Beast Eye"; return false;      
                     case 423: __result = JapaneseLanguage ? "龍の眼光" : "Dragon Eye"; return false;     
-                    case 424: __result = JapaneseLanguage ? "コンセントレイト" : "Concentrate"; return false;
+                    case 424: __result = JapaneseLanguage ? "魔力集中" : "Concentrate"; return false;
                     case 425: __result = JapaneseLanguage ? "貫く闘気" : "Impaler's Animus"; return false;
                     case 426: __result = JapaneseLanguage ? "桜花閃乱" : "Sakura Rage"; return false;
                     case 427: __result = JapaneseLanguage ? "牙折り" : "Fang Breaker"; return false;

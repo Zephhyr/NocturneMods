@@ -158,7 +158,7 @@ namespace NocturneInsaniax
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill08/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(63);
                             break;
                         case 0302: //Thor1
-                            affinitiesText = "Drn: Elec • Null: Light • Weak: Curse/Nerve";
+                            affinitiesText = JapaneseLanguage ? "電撃吸収、破魔無効／魔力・神経に弱い" : "Drn: Elec • Null: Light • Weak: Curse/Nerve";
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill01/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(428);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(14);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill03/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(16);
@@ -179,7 +179,7 @@ namespace NocturneInsaniax
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill08/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(307);
                             break;
                         case 0307: //Eligor1
-                            affinitiesText = "Null: Dark • Str: Phys • Weak: Elec";
+                            affinitiesText = datAisyoName.Get(73);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill01/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(98);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(97);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill03/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(32);
@@ -189,7 +189,7 @@ namespace NocturneInsaniax
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill07/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(226);
                             break;
                         case 0308: //Eligor2
-                            affinitiesText = "Null: Dark • Str: Phys • Weak: Elec";
+                            affinitiesText = datAisyoName.Get(73);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill01/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(98);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(97);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill03/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(32);
@@ -199,7 +199,7 @@ namespace NocturneInsaniax
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill07/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(226);
                             break;
                         case 0309: //Eligor3
-                            affinitiesText = "Null: Dark • Str: Phys • Weak: Elec";
+                            affinitiesText = datAisyoName.Get(73);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill01/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(98);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(97);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill03/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(32);
@@ -562,10 +562,10 @@ namespace NocturneInsaniax
                             var noah1affinity = noah1party.count[19];
                             switch (noah1affinity)
                             {
-                                case 248: affinitiesText = "Rpl: All except Ice/Almighty • Str: Almighty • Weak: Ice"; break;
-                                case 249: affinitiesText = "Rpl: All except Fire/Almighty • Str: Almighty • Weak: Fire"; break;
-                                case 250: affinitiesText = "Rpl: All except Force/Almighty • Str: Almighty • Weak: Force"; break;
-                                case 251: affinitiesText = "Rpl: All except Elec/Almighty • Str: Almighty • Weak: Elec"; break;
+                                case 248: affinitiesText = JapaneseLanguage ? "氷結・万能以外の全ての攻撃が反射、万能に強い／氷結に弱い" : "Rpl: All except Ice/Almighty • Str: Almighty • Weak: Ice"; break;
+                                case 249: affinitiesText = JapaneseLanguage ? "火炎・万能以外の全ての攻撃が反射、万能に強い／火炎に弱い" : "Rpl: All except Fire/Almighty • Str: Almighty • Weak: Fire"; break;
+                                case 250: affinitiesText = JapaneseLanguage ? "衝撃・万能以外の全ての攻撃が反射、万能に強い／衝撃に弱い" : "Rpl: All except Force/Almighty • Str: Almighty • Weak: Force"; break;
+                                case 251: affinitiesText = JapaneseLanguage ? "電撃・万能以外の全ての攻撃が反射、万能に強い／電撃に弱い" : "Rpl: All except Elec/Almighty • Str: Almighty • Weak: Elec"; break;
                                 default: affinitiesText = datAisyoName.Get(292); break;
                             }
 
@@ -580,10 +580,10 @@ namespace NocturneInsaniax
                             var noah2affinity = noah2party.count[19];
                             switch (noah2affinity)
                             {
-                                case 248: affinitiesText = "Rpl: All except Ice/Almighty • Str: Almighty • Weak: Ice"; break;
-                                case 249: affinitiesText = "Rpl: All except Fire/Almighty • Str: Almighty • Weak: Fire"; break;
-                                case 250: affinitiesText = "Rpl: All except Force/Almighty • Str: Almighty • Weak: Force"; break;
-                                case 251: affinitiesText = "Rpl: All except Elec/Almighty • Str: Almighty • Weak: Elec"; break;
+                                case 248: affinitiesText = JapaneseLanguage ? "氷結・万能以外の全ての攻撃が反射、万能に強い／氷結に弱い" : "Rpl: All except Ice/Almighty • Str: Almighty • Weak: Ice"; break;
+                                case 249: affinitiesText = JapaneseLanguage ? "火炎・万能以外の全ての攻撃が反射、万能に強い／火炎に弱い" : "Rpl: All except Fire/Almighty • Str: Almighty • Weak: Fire"; break;
+                                case 250: affinitiesText = JapaneseLanguage ? "衝撃・万能以外の全ての攻撃が反射、万能に強い／衝撃に弱い" : "Rpl: All except Force/Almighty • Str: Almighty • Weak: Force"; break;
+                                case 251: affinitiesText = JapaneseLanguage ? "電撃・万能以外の全ての攻撃が反射、万能に強い／電撃に弱い" : "Rpl: All except Elec/Almighty • Str: Almighty • Weak: Elec"; break;
                                 default: affinitiesText = datAisyoName.Get(259); break;
                             }
 
@@ -601,10 +601,10 @@ namespace NocturneInsaniax
                             var noah3affinity = noah3party.count[19];
                             switch (noah3affinity)
                             {
-                                case 248: affinitiesText = "Rpl: All except Ice/Almighty • Str: Almighty • Weak: Ice"; break;
-                                case 249: affinitiesText = "Rpl: All except Fire/Almighty • Str: Almighty • Weak: Fire"; break;
-                                case 250: affinitiesText = "Rpl: All except Force/Almighty • Str: Almighty • Weak: Force"; break;
-                                case 251: affinitiesText = "Rpl: All except Elec/Almighty • Str: Almighty • Weak: Elec"; break;
+                                case 248: affinitiesText = JapaneseLanguage ? "氷結・万能以外の全ての攻撃が反射、万能に強い／氷結に弱い" : "Rpl: All except Ice/Almighty • Str: Almighty • Weak: Ice"; break;
+                                case 249: affinitiesText = JapaneseLanguage ? "火炎・万能以外の全ての攻撃が反射、万能に強い／火炎に弱い" : "Rpl: All except Fire/Almighty • Str: Almighty • Weak: Fire"; break;
+                                case 250: affinitiesText = JapaneseLanguage ? "衝撃・万能以外の全ての攻撃が反射、万能に強い／衝撃に弱い" : "Rpl: All except Force/Almighty • Str: Almighty • Weak: Force"; break;
+                                case 251: affinitiesText = JapaneseLanguage ? "電撃・万能以外の全ての攻撃が反射、万能に強い／電撃に弱い" : "Rpl: All except Elec/Almighty • Str: Almighty • Weak: Elec"; break;
                                 default: affinitiesText = datAisyoName.Get(246); break;
                             }
                             
@@ -710,7 +710,7 @@ namespace NocturneInsaniax
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill08/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(219);
                             break;
                         case 0269: //Ongyo-Ki
-                            affinitiesText = "Null: Dark/Ailments • Weak: Light";
+                            affinitiesText = JapaneseLanguage ? "呪殺・バッドステータス攻撃無効／破魔に弱い" : "Null: Dark/Ailments • Weak: Light";
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill01/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(220);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill02/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(33);
                             nbMainProcess.GetBattleUI(5).transform.Find("banalyze_skill/banalyze_skill03/banalyze_textTM").gameObject.GetComponent<TextMeshProUGUI>().text = datSkillName.Get(199);

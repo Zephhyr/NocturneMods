@@ -20,48 +20,48 @@ namespace NocturneInsaniax
             {
                 switch (id)
                 {
-                    case 29: __result = "Needle Orb"; return false;
-                    case 32: __result = "Medusa Eye"; return false;
-                    case 33: __result = "Dekunda Rock"; return false;
-                    case 39: __result = "Intelligence Incense"; return false;
-                    case 44: __result = "Graven Image"; return false;
-                    case 46: __result = "Eternal Spyglass"; return false;
-                    case 47: __result = "Spyglass"; return false;
-                    case 48: __result = "Agilao Rock"; return false;
-                    case 49: __result = "Bufula Rock"; return false;
-                    case 50: __result = "Zionga Rock"; return false;
-                    case 51: __result = "Zanma Rock"; return false;
-                    case 57: __result = "Hourglass"; return false;
-                    case 59: __result = "Focus Rock"; return false;
-                    case 60: __result = "Concentrate Rock"; return false;
-                    case 62: __result = "Cursed Gospel"; return false;
-                    case 63: __result = "Impel Stone"; return false;
-                    case 64: __result = "Marogareh"; return false;
-                    case 65: __result = "Wadatsumi"; return false;
-                    case 66: __result = "Ankh"; return false;
-                    case 67: __result = "Iyomante"; return false;
-                    case 68: __result = "Shiranui"; return false;
-                    case 69: __result = "Hifumi"; return false;
-                    case 70: __result = "Kamurogi"; return false;
-                    case 71: __result = "Kamudo"; return false;
-                    case 72: __result = "Anathema"; return false;
-                    case 73: __result = "Miasma"; return false;
-                    case 74: __result = "Nirvana"; return false;
-                    case 75: __result = "Vimana"; return false;
-                    case 76: __result = "Geis"; return false;
-                    case 77: __result = "Djed"; return false;
-                    case 78: __result = "Muspell"; return false;
-                    case 79: __result = "Satan"; return false;
-                    case 80: __result = "Adama"; return false;
-                    case 81: __result = "Gehenna"; return false;
-                    case 82: __result = "Sophia"; return false;
-                    case 83: __result = "Murakumo"; return false;
-                    case 84: __result = "Gundari"; return false;
-                    case 85: __result = "Narukami"; return false;
-                    case 86: __result = "Gaea"; return false;
-                    case 87: __result = "Kailash"; return false;
-                    case 88: __result = "Masakados"; return false;
-                    case 107: __result = "Malachite"; return false;
+                    case 29: __result = JapaneseLanguage ? "針の宝珠" : "Needle Orb"; return false;
+                    case 32: __result = JapaneseLanguage ? "メドゥーサの目" : "Medusa Eye"; return false;
+                    case 33: __result = JapaneseLanguage ? "デクンダの石" : "Dekunda Rock"; return false;
+                    case 39: __result = JapaneseLanguage ? "知恵の香" : "Intelligence Incense"; return false;
+                    case 44: __result = JapaneseLanguage ? "グラヴァンの石像" : "Graven Image"; return false;
+                    case 46: __result = JapaneseLanguage ? "永遠の万里の眼鏡" : "Eternal Spyglass"; return false;
+                    case 47: __result = JapaneseLanguage ? "万里の眼鏡" : "Spyglass"; return false;
+                    case 48: __result = JapaneseLanguage ? "アギラオの石" : "Agilao Rock"; return false;
+                    case 49: __result = JapaneseLanguage ? "ブフーラの石" : "Bufula Rock"; return false;
+                    case 50: __result = JapaneseLanguage ? "ジオンガの石 " : "Zionga Rock"; return false;
+                    case 51: __result = JapaneseLanguage ? "ザンマの石" : "Zanma Rock"; return false;
+                    case 57: __result = JapaneseLanguage ? "魔法の砂時計" : "Hourglass"; return false;
+                    case 59: __result = JapaneseLanguage ? "気合いの石" : "Focus Rock"; return false;
+                    case 60: __result = JapaneseLanguage ? "魔力集中の石" : "Concentrate Rock"; return false;
+                    case 62: __result = JapaneseLanguage ? "呪われた福音書" : "Cursed Gospel"; return false;
+                    case 63: __result = JapaneseLanguage ? "威圧の魔石" : "Impel Stone"; return false;
+                    case 64: __result = JapaneseLanguage ? "マロガレ" : "Marogareh"; return false;
+                    case 65: __result = JapaneseLanguage ? "ワダツミ" : "Wadatsumi"; return false;
+                    case 66: __result = JapaneseLanguage ? "アンク" : "Ankh"; return false;
+                    case 67: __result = JapaneseLanguage ? "イヨマンテ" : "Iyomante"; return false;
+                    case 68: __result = JapaneseLanguage ? "シラヌイ" : "Shiranui"; return false;
+                    case 69: __result = JapaneseLanguage ? "ヒフミ" : "Hifumi"; return false;
+                    case 70: __result = JapaneseLanguage ? "カムロギ" : "Kamurogi"; return false;
+                    case 71: __result = JapaneseLanguage ? "カムド" : "Kamudo"; return false;
+                    case 72: __result = JapaneseLanguage ? "アナテマ" : "Anathema"; return false;
+                    case 73: __result = JapaneseLanguage ? "ミアズマ" : "Miasma"; return false;
+                    case 74: __result = JapaneseLanguage ? "ニルヴァーナ" : "Nirvana"; return false;
+                    case 75: __result = JapaneseLanguage ? "ヴィマーナ" : "Vimana"; return false;
+                    case 76: __result = JapaneseLanguage ? "ゲッシュ" : "Geis"; return false;
+                    case 77: __result = JapaneseLanguage ? "ジェド" : "Djed"; return false;
+                    case 78: __result = JapaneseLanguage ? "ムスペル" : "Muspell"; return false;
+                    case 79: __result = JapaneseLanguage ? "サタン" : "Satan"; return false;
+                    case 80: __result = JapaneseLanguage ? "アダマ" : "Adama"; return false;
+                    case 81: __result = JapaneseLanguage ? "ゲヘナ" : "Gehenna"; return false;
+                    case 82: __result = JapaneseLanguage ? "ソフィア" : "Sophia"; return false;
+                    case 83: __result = JapaneseLanguage ? "ムラクモ" : "Murakumo"; return false;
+                    case 84: __result = JapaneseLanguage ? "グンダリ" : "Gundari"; return false;
+                    case 85: __result = JapaneseLanguage ? "ナルカミ" : "Narukami"; return false;
+                    case 86: __result = JapaneseLanguage ? "ガイア" : "Gaea"; return false;
+                    case 87: __result = JapaneseLanguage ? "カイラース" : "Kailash"; return false;
+                    case 88: __result = JapaneseLanguage ? "マサカドゥス" : "Masakados"; return false;
+                    case 107: __result = JapaneseLanguage ? "マラカイト" : "Malachite"; return false;
                     default: return true;
                 }
             }
@@ -74,79 +74,152 @@ namespace NocturneInsaniax
             {
                 switch (id)
                 {
-                    case 1: __result = "Recovers an ally's HP or MP. \nMay cause side effects."; return false; // Muscle Drink
-                    case 2: __result = "Fixed HP recovery \nfor one ally."; return false; // Medicine
-                    case 3: __result = "Moderate HP recovery \nfor one ally."; return false; // Life Stone
-                    case 4: __result = "Full HP recovery \nfor one ally."; return false; // Bead
-                    case 5: __result = "Full HP recovery \nfor all allies."; return false; // Bead Chain
-                    case 6: __result = "Fixed MP recovery \nfor one ally."; return false; // Chakra Drop
-                    case 7: __result = "Full MP recovery \nfor one ally."; return false; // Chakra Pot
-                    case 8: __result = "Full MP recovery \nfor all allies."; return false; // Great Chakra
-                    case 9: __result = "Moderate HP/MP recovery \nfor one ally."; return false; // Soma Droplet
-                    case 10: __result = "Full HP/MP recovery \nfor one ally."; return false; // Soma
-                    case 11: __result = "Full HP/MP recovery \nfor all allies."; return false; // Bead of Life
-                    case 12: __result = "Slight MP recovery for one ally. \nReusable."; return false; // Chakra Elixir
-                    case 15: __result = "Cures Bind/Sleep/Panic \nfor all allies."; return false; // Sacred Water
-                    case 21: __result = "Low Fire damage to all foes. \nPow: 24, Acc: 100%"; return false; // Maragi Rock
-                    case 22: __result = "Low Ice damage to all foes. \nPow: 20, Acc: 100%, Freeze: 12%"; return false; // Mabufu Rock
-                    case 23: __result = "Low Elec damage to all foes. \nPow: 20, Acc: 100%, Shock: 12%"; return false; // Mazio Rock
-                    case 24: __result = "Low Force damage to all foes. \nPow: 24, Acc: 100%"; return false; // Mazan Rock
-                    case 25: __result = "Low Light damage to all foes. \nMay instakill when weak to Light. \nPow: 30, Acc: 100%, Fatal: 20%"; return false; // Mahama Rock
-                    case 26: __result = "Low Dark damage to all foes. \nMay instakill when weak to Dark. \nPow: 30, Acc: 100%, Fatal: 20%"; return false; // Mamudo Rock
-                    case 27: __result = "Medium Almighty damage to all foes. \nPow: 36, Acc: 100%"; return false; // Megido Rock
-                    case 28: __result = "Med-High Almighty damage to all foes. \nPow: 42, Acc: 100%"; return false; // Megidola Rock
-                    case 29: __result = "Low Shot damage to random foes. \n2-5 hits. Pow: 22, Acc: 90%, \nCrit: 18%"; return false; // Needle Orb
-                    case 31: __result = "50% Chance to inflict Mute \non one foe. (Curse-Type)"; return false; // Makajam Rock
-                    case 32: __result = "60% Chance to inflict Stone \non one foe. (Dark-Type)"; return false; // Medusa Eye
-                    case 33: __result = "Negates -nda effects on all allies."; return false; // Dekunda Rock
-                    case 34: __result = "Repels Magical attacks \nfor one ally once \nnext turn."; return false; // Magic Mirror
-                    case 35: __result = "Repels Physical attacks \nfor one ally once \nnext turn."; return false; // Attack Mirror
-                    case 36: __result = "Negates -kaja effects on all foes."; return false; // Dekaja Rock
-                    case 37: __result = "Negates one Light/Dark attack \nfor all allies."; return false; // Tetraja Rock
-                    case 38: __result = "Raises Strength by 2 \nand full HP recovery \nfor one ally."; return false; // Strength Incense
-                    case 39: __result = "Raises Intelligence by 2 \nand full HP recovery \nfor one ally."; return false; // Intelligence Incense
-                    case 40: __result = "Raises Magic by 2 \nand full HP recovery \nfor one ally."; return false; // Magic Incense
-                    case 41: __result = "Raises Vitality by 2 \nand full HP recovery \nfor one ally."; return false; // Vitality Incense
-                    case 42: __result = "Raises Agility by 2 \nand full HP recovery \nfor one ally."; return false; // Agility Incense
-                    case 43: __result = "Raises Luck by 2 \nand full HP recovery \nfor one ally."; return false; // Luck Incense
-                    case 44: __result = "Great HP recovery for one ally. \nReusable."; return false; // Graven Image
-                    case 46: __result = "Displays an enemy's info \nat 1/2 turn cost. \nReusable."; return false; // Eternal Spyglass
-                    case 47: __result = "Displays an enemy's info \nat 1/2 turn cost."; return false; // Spyglass
-                    case 48: __result = "Medium Fire damage to one foe. \nPow: 45, Acc: 100%"; return false; // Agilao Rock
-                    case 49: __result = "Medium Ice damage to one foe. \nPow: 39, Acc: 100%, Freeze: 25%"; return false; // Bufula Rock
-                    case 50: __result = "Medium Elec damage to one foe. \nPow: 39, Acc: 100%, Shock: 25%"; return false; // Zionga Rock
-                    case 51: __result = "Medium Force damage to one foe. \nPow: 45, Acc: 100%"; return false; // Zanma Rock
-                    case 57: __result = "Passes the time \nuntil the next new \nor full Kagutsuchi."; return false; // Hourglass
-                    case 59: __result = "Increases the damage of the user's \nnext Strength-based attack by 120%."; return false; // Focus Rock
-                    case 60: __result = "Increases the damage of the user's \nnext Magic-based attack by 120%."; return false; // Concentrate Rock
-                    case 62: __result = "Grants " + frName.frGetCNameString(0) + " enough \nEXP to level up but reduces \nlevel by one."; return false; // Cursed Gospel
-                    case 63: __result = "Grants four flashing turn icons. \n(Limit: 1)"; return false; // Impel Stone
-                    case 64: __result = "Neutral Magatama \nImparts basic skills \nNormal resistance"; return false; // Marogareh
-                    case 65: __result = "Ice-type Magatama \nImparts Ice magic & potential \n<material=\"MsgFont2\">Null: Ice<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Elec"; return false; // Wadatsumi
-                    case 66: __result = "Healing-type Magatama \nImparts Healing magic & potential \n<material=\"MsgFont2\">Null: Light<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Dark"; return false; // Ankh
-                    case 67: __result = "Support-type Magatama \nImparts Support magic & potential \n<material=\"MsgFont2\">Null: Mind"; return false; // Iyomante
-                    case 68: __result = "Fire-type Magatama \nImparts Fire magic & potential \n<material=\"MsgFont2\">Null: Fire<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Force"; return false; // Shiranui
-                    case 69: __result = "Force-type Magatama \nImparts Force magic & potential \n<material=\"MsgFont2\">Null: Force<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire"; return false; // Hifumi
-                    case 70: __result = "Physical-type Magatama \nImparts Physical skills & potential \n<material=\"MsgFont2\">Strong: Phys/Shot<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ailments"; return false; // Kamurogi
-                    case 71: __result = "Elec-type Magatama \nImparts Electricity magic & potential \n<material=\"MsgFont2\">Null: Elec<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ice"; return false; // Kamudo
-                    case 72: __result = "Dark-type Magatama \nImparts Dark magic & potential \n<material=\"MsgFont2\">Null: Dark<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Light"; return false; // Anathema
-                    case 73: __result = "Ailment-type Magatama \nImparts Ailment magic & potential \n<material=\"MsgFont2\">Strong: Ailments<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Shot"; return false; // Miasma
-                    case 74: __result = "Light-type Magatama \nImparts Light magic & potential \n<material=\"MsgFont2\">Null: Light<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Dark"; return false; // Nirvana
-                    case 75: __result = "Shot-type Magatama \nImparts Shot skills & potential \n<material=\"MsgFont2\">Strong: Phys/Shot<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire/Ice"; return false; // Vimana
-                    case 76: __result = "Ice-type Magatama \nImparts Ice magic & potential \n<material=\"MsgFont2\">Drain: Ice<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire"; return false; // Geis
-                    case 77: __result = "Support-type Magatama \nImparts Support magic & potential \n<material=\"MsgFont2\">Null: Curse"; return false; // Djed
-                    case 78: __result = "Fire-type Magatama \nImparts Fire magic & potential \n<material=\"MsgFont2\">Drain: Fire<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ice"; return false; // Muspell
-                    case 79: __result = "Almighty-type Magatama \nImparts Almighty magic & potential \n<material=\"MsgFont2\">Null: Dark"; return false; // Satan
-                    case 80: __result = "Ailment-type Magatama. \nImparts Ailment magic & potential \n<material=\"MsgFont2\">Null: Ailments<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Light/Dark"; return false; // Adama
-                    case 81: __result = "Dark-type Magatama. \nImparts Dark magic & potential \n<material=\"MsgFont2\">Repel: Dark"; return false; // Gehenna
-                    case 82: __result = "Healing-type Magatama. \nImparts Healing magic & potential \n<material=\"MsgFont2\">Null: Nerve"; return false; // Sophia
-                    case 83: __result = "Force-type Magatama. \nImparts Force magic & potential \n<material=\"MsgFont2\">Repel: Force<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Elec"; return false; // Murakumo
-                    case 84: __result = "Light-type Magatama. \nImparts Light magic & potential \n<material=\"MsgFont2\">Repel: Light"; return false; // Gundari
-                    case 85: __result = "Elec-type Magatama. \nImparts Electricity magic & potential \n<material=\"MsgFont2\">Repel: Elec<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Force"; return false; // Narukami
-                    case 86: __result = "Physical/Shot-type Magatama. \nImparts Phys/Shot skills & potential \n<material=\"MsgFont2\">Strong: Phys/Shot<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Elec/Force"; return false; // Gaea
-                    case 87: __result = "Almighty-type Magatama. \nImparts Almighty magic & potential \n<material=\"MsgFont2\">Strong: Light/Dark"; return false; // Kailash
-                    case 88: __result = "Magatama that holds ultimate power \n<material=\"MsgFont2\">Strong: All except Almighty"; return false; // Masakados
-                    case 107: __result = "A beautiful gemstone \nthat symbolizes \nearth."; return false; // Malachite
+                    case 1: __result = JapaneseLanguage ? "味方単体のＨＰかＭＰ\nを回復／副作用あり" : 
+                            "Recovers an ally's HP or MP. \nMay cause side effects."; return false; // Muscle Drink
+                    case 2: __result = JapaneseLanguage ? "味方単体のＨＰを\n一定量回復" : 
+                            "Fixed HP recovery \nfor one ally."; return false; // Medicine
+                    case 3: __result = JapaneseLanguage ? "味方単体のＨＰを\n小回復" : 
+                            "Moderate HP recovery \nfor one ally."; return false; // Life Stone
+                    case 4: __result = JapaneseLanguage ? "味方単体のＨＰを\n全回復" : 
+                            "Full HP recovery \nfor one ally."; return false; // Bead
+                    case 5: __result = JapaneseLanguage ? "味方全体のＨＰを\n全回復" : 
+                            "Full HP recovery \nfor all allies."; return false; // Bead Chain
+                    case 6: __result = JapaneseLanguage ? "味方単体のＭＰを\n一定量回復" : 
+                            "Fixed MP recovery \nfor one ally."; return false; // Chakra Drop
+                    case 7: __result = JapaneseLanguage ? "味方単体のＭＰを\n全回復" : 
+                            "Full MP recovery \nfor one ally."; return false; // Chakra Pot
+                    case 8: __result = JapaneseLanguage ? "味方全体のＭＰを\n全回復" : 
+                            "Full MP recovery \nfor all allies."; return false; // Great Chakra
+                    case 9: __result = JapaneseLanguage ? "味方単体のＨＰとＭＰを\n中回復" : 
+                            "Moderate HP/MP recovery \nfor one ally."; return false; // Soma Droplet
+                    case 10: __result = JapaneseLanguage ? "味方単体のＨＰとＭＰを\n全回復" : 
+                            "Full HP/MP recovery \nfor one ally."; return false; // Soma
+                    case 11: __result = JapaneseLanguage ? "味方全体のＨＰとＭＰを\n全回復" : 
+                            "Full HP/MP recovery \nfor all allies."; return false; // Bead of Life
+                    case 12: __result = JapaneseLanguage ? "味方単体のＭＰを\n小回復。無くならない" : 
+                            "Slight MP recovery for one ally. \nReusable."; return false; // Chakra Elixir
+                    case 15: __result = JapaneseLanguage ? "全体のＢＩＮＤ、\nＳＬＥＥＰ、\nＰＡＮＩＣを治療" : 
+                            "Cures Bind/Sleep/Panic \nfor all allies."; return false; // Sacred Water
+                    case 21: __result = JapaneseLanguage ? "敵全体に火炎属性の小ダメージ。\n威力: 24, 命中: 100%" : 
+                            "Low Fire damage to all foes. \nPow: 24, Acc: 100%"; return false; // Maragi Rock
+                    case 22: __result = JapaneseLanguage ? "敵全体に氷結属性の小ダメージ。\n威力: 20, 命中: 100%, 凍結: 11%" : 
+                            "Low Ice damage to all foes. \nPow: 20, Acc: 100%, Freeze: 12%"; return false; // Mabufu Rock
+                    case 23: __result = JapaneseLanguage ? "敵全体に電撃属性の小ダメージ。\n威力: 20, 命中: 100%, 感電: 13%" : 
+                            "Low Elec damage to all foes. \nPow: 20, Acc: 100%, Shock: 12%"; return false; // Mazio Rock
+                    case 24: __result = JapaneseLanguage ? "敵全体に衝撃属性の小ダメージ。\n威力: 24, 命中: 100%" : 
+                            "Low Force damage to all foes. \nPow: 24, Acc: 100%"; return false; // Mazan Rock
+                    case 25: __result = JapaneseLanguage ? "敵全体に破魔属性の小ダメージ。\n破魔弱点の敵を即死させることがある。\n威力: 30, 命中: 100%, 即死率: 20%" : 
+                            "Low Light damage to all foes. \nMay instakill when weak to Light. \nPow: 30, Acc: 100%, Fatal: 20%"; return false; // Mahama Rock
+                    case 26: __result = JapaneseLanguage ? "敵全体に呪殺属性の小ダメージ。\n呪殺弱点の敵を即死させることがある。\n威力: 30, 命中: 100%, 即死率: 20%" : 
+                            "Low Dark damage to all foes. \nMay instakill when weak to Dark. \nPow: 30, Acc: 100%, Fatal: 20%"; return false; // Mamudo Rock
+                    case 27: __result = JapaneseLanguage ? "敵全体に万能属性の中ダメージ。\n威力: 36, 命中: 100%" : 
+                            "Medium Almighty damage to all foes. \nPow: 36, Acc: 100%"; return false; // Megido Rock
+                    case 28: __result = JapaneseLanguage ? "敵全体に万能属性の中〜大ダメージ。\n威力: 42, 命中: 100%" : 
+                            "Med-High Almighty damage to all foes. \nPow: 42, Acc: 100%"; return false; // Megidola Rock
+                    case 29: __result = JapaneseLanguage ? "敵ランダムに銃撃属性の小ダメージ。\n2〜5回ヒット。威力: 22, 命中: 90%, \n会心率: 18%" : 
+                            "Low Shot damage to random foes. \n2-5 hits. Pow: 22, Acc: 90%, \nCrit: 18%"; return false; // Needle Orb
+                    case 31: __result = JapaneseLanguage ? "50%の確率で敵1体に魔封を付与。\n(魔力属性)" : 
+                            "50% Chance to inflict Mute \non one foe. (Curse-Type)"; return false; // Makajam Rock
+                    case 32: __result = JapaneseLanguage ? "60%の確率で敵1体に石化を付与。\n(呪殺属性)" : 
+                            "60% Chance to inflict Stone \non one foe. (Dark-Type)"; return false; // Medusa Eye
+                    case 33: __result = JapaneseLanguage ? "味方全体の「ンダ系」\n効果を打ち消す。" : 
+                            "Negates -nda effects on all allies."; return false; // Dekunda Rock
+                    case 34: __result = JapaneseLanguage ? "次のターン、味方1体への魔法攻（魔法攻）\n攻撃を1回反射。" : 
+                            "Repels Magical attacks \nfor one ally once \nnext turn."; return false; // Magic Mirror
+                    case 35: __result = JapaneseLanguage ? "次のターン、味方1体への物理系（力依存）\n攻撃を1回反射。" : 
+                            "Repels Physical attacks \nfor one ally once \nnext turn."; return false; // Attack Mirror
+                    case 36: __result = JapaneseLanguage ? "敵全体の「カジャ系」\n効果を打ち消す。" : 
+                            "Negates -kaja effects on all foes."; return false; // Dekaja Rock
+                    case 37: __result = JapaneseLanguage ? "味方一人につき、破魔／呪殺属性の攻撃\nを1回無効化する。" : 
+                            "Negates one Light/Dark attack \nfor all allies."; return false; // Tetraja Rock
+                    case 38: __result = JapaneseLanguage ? "味方単体の\n『力』を１上昇させ\nＨＰを全回復" : 
+                            "Raises Strength by 2 \nand full HP recovery \nfor one ally."; return false; // Strength Incense
+                    case 39: __result = JapaneseLanguage ? "味方単体の\n『知恵』を１上昇させ\nＨＰを全回復" : 
+                            "Raises Intelligence by 2 \nand full HP recovery \nfor one ally."; return false; // Intelligence Incense
+                    case 40: __result = JapaneseLanguage ? "味方単体の\n『魔力』を１上昇させ\nＨＰを全回復" : 
+                            "Raises Magic by 2 \nand full HP recovery \nfor one ally."; return false; // Magic Incense
+                    case 41: __result = JapaneseLanguage ? "味方単体の\n『体力』を１上昇させ\nＨＰを全回復" : 
+                            "Raises Vitality by 2 \nand full HP recovery \nfor one ally."; return false; // Vitality Incense
+                    case 42: __result = JapaneseLanguage ? "味方単体の\n『速さ』を１上昇させ\nＨＰを全回復" : 
+                            "Raises Agility by 2 \nand full HP recovery \nfor one ally."; return false; // Agility Incense
+                    case 43: __result = JapaneseLanguage ? "味方単体の\n『運』を１上昇させ\nＨＰを全回復" : 
+                            "Raises Luck by 2 \nand full HP recovery \nfor one ally."; return false; // Luck Incense
+                    case 44: __result = JapaneseLanguage ? "味方1体のHPを\n大回復。無くならない" : 
+                            "Great HP recovery for one ally. \nReusable."; return false; // Graven Image
+                    case 46: __result = JapaneseLanguage ? "敵単体の個体情報を\n調べる。無くならない" : 
+                            "Displays an enemy's info \nat 1/2 turn cost. \nReusable."; return false; // Eternal Spyglass
+                    case 47: __result = JapaneseLanguage ? "敵単体の個体情報を\n調べる" : 
+                            "Displays an enemy's info \nat 1/2 turn cost."; return false; // Spyglass
+                    case 48: __result = JapaneseLanguage ? "敵1体に火炎属性の中ダメージ。\n威力: 45, 命中: 100%" : 
+                            "Medium Fire damage to one foe. \nPow: 45, Acc: 100%"; return false; // Agilao Rock
+                    case 49: __result = JapaneseLanguage ? "敵1体に氷結属性の中ダメージ。\n威力: 39, 命中: 100%, 凍結: 24%" : 
+                            "Medium Ice damage to one foe. \nPow: 39, Acc: 100%, Freeze: 25%"; return false; // Bufula Rock
+                    case 50: __result = JapaneseLanguage ? "敵1体に電撃属性の中ダメージ。\n威力: 39, 命中: 100%, 感電: 26%" : 
+                            "Medium Elec damage to one foe. \nPow: 39, Acc: 100%, Shock: 25%"; return false; // Zionga Rock
+                    case 51: __result = JapaneseLanguage ? "敵1体に衝撃属性の中ダメージ。\n威力: 45, 命中: 100%" : 
+                            "Medium Force damage to one foe. \nPow: 45, Acc: 100%"; return false; // Zanma Rock
+                    case 57: __result = JapaneseLanguage ? "次のSILENTまたはFULL \nKAGUTSUCHIまで時間を進める。" : 
+                            "Passes the time \nuntil the next new \nor full Kagutsuchi."; return false; // Hourglass
+                    case 59: __result = JapaneseLanguage ? "次の力依存攻撃のダメージ\nを120%増加。" : 
+                            "Increases the damage of the user's \nnext Strength-based attack by 120%."; return false; // Focus Rock
+                    case 60: __result = JapaneseLanguage ? "次の魔法攻撃のダメージ\nを120%増加。" : 
+                            "Increases the damage of the user's \nnext Magic-based attack by 120%."; return false; // Concentrate Rock
+                    case 62: __result = JapaneseLanguage ? frName.frGetCNameString(0) + "がレベルアップするの\nに十分な経験値を得るが、\nレベルが1低下する。" : 
+                            "Grants " + frName.frGetCNameString(0) + " enough \nEXP to level up but reduces \nlevel by one."; return false; // Cursed Gospel
+                    case 63: __result = JapaneseLanguage ? "点滅するプレスターンアイコン\nを4つ獲得する。\n(所持上限: 1)" : 
+                            "Grants four flashing turn icons. \n(Limit: 1)"; return false; // Impel Stone
+                    case 64: __result = JapaneseLanguage ? "中立タイプのマガタマくわ\n基本的なスキルを授ける\nノーマル耐性" : 
+                            "Neutral Magatama \nImparts basic skills \nNormal resistance"; return false; // Marogareh
+                    case 65: __result = JapaneseLanguage ? "氷結タイプのマガタマくわ\n氷結魔法と適性を授ける\n<material=\"MsgFont2\">氷結無効<material=\"MsgFont0\">／<material=\"MsgFont1\">電撃に弱い" : 
+                            "Ice-type Magatama \nImparts Ice magic & potential \n<material=\"MsgFont2\">Null: Ice<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Elec"; return false; // Wadatsumi
+                    case 66: __result = JapaneseLanguage ? "回復魔法タイプのマガタマくわ\n回復魔法と適性を授ける\n<material=\"MsgFont2\">破魔無効<material=\"MsgFont0\">／<material=\"MsgFont1\">呪殺に弱い" : 
+                            "Healing-type Magatama \nImparts Healing magic & potential \n<material=\"MsgFont2\">Null: Light<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Dark"; return false; // Ankh
+                    case 67: __result = JapaneseLanguage ? "補助魔法タイプのマガタマくわ\n補助魔法と適性を授ける\n<material=\"MsgFont2\">精神無効" : 
+                            "Support-type Magatama \nImparts Support magic & potential \n<material=\"MsgFont2\">Null: Mind"; return false; // Iyomante
+                    case 68: __result = JapaneseLanguage ? "火炎タイプのマガタマくわ\n火炎魔法と適性を授ける\n<material=\"MsgFont2\">火炎無効<material=\"MsgFont0\">／<material=\"MsgFont1\">衝撃に弱い" : 
+                            "Fire-type Magatama \nImparts Fire magic & potential \n<material=\"MsgFont2\">Null: Fire<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Force"; return false; // Shiranui
+                    case 69: __result = JapaneseLanguage ? "衝撃タイプのマガタマくわ\n衝撃魔法と適性を授ける\n<material=\"MsgFont2\">衝撃無効<material=\"MsgFont0\">／<material=\"MsgFont1\">火炎に弱い" : 
+                            "Force-type Magatama \nImparts Force magic & potential \n<material=\"MsgFont2\">Null: Force<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire"; return false; // Hifumi
+                    case 70: __result = JapaneseLanguage ? "物理タイプのマガタマくわ\n物理スキルと適性を授ける\n<material=\"MsgFont2\">物理に強い<material=\"MsgFont0\">／<material=\"MsgFont1\">バッドステータス攻撃に弱い" : 
+                            "Physical-type Magatama \nImparts Physical skills & potential \n<material=\"MsgFont2\">Strong: Phys/Shot<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ailments"; return false; // Kamurogi
+                    case 71: __result = JapaneseLanguage ? "電撃タイプのマガタマくわ\n電撃魔法と適性を授ける\n<material=\"MsgFont2\">電撃無効<material=\"MsgFont0\">／<material=\"MsgFont1\">氷結に弱い" : 
+                            "Elec-type Magatama \nImparts Electricity magic & potential \n<material=\"MsgFont2\">Null: Elec<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ice"; return false; // Kamudo
+                    case 72: __result = JapaneseLanguage ? "呪殺タイプのマガタマくわ\n呪殺魔法と適性を授ける\n<material=\"MsgFont2\">呪殺無効<material=\"MsgFont0\">／<material=\"MsgFont1\">破魔に弱い" : 
+                            "Dark-type Magatama \nImparts Dark magic & potential \n<material=\"MsgFont2\">Null: Dark<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Light"; return false; // Anathema
+                    case 73: __result = JapaneseLanguage ? "バッドステタイプのマガタマくわ\n状態異常魔法と適性を授ける\n<material=\"MsgFont2\">バッドステータス攻撃に強い<material=\"MsgFont0\">／<material=\"MsgFont1\">銃撃に弱い" : 
+                            "Ailment-type Magatama \nImparts Ailment magic & potential \n<material=\"MsgFont2\">Strong: Ailments<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Shot"; return false; // Miasma
+                    case 74: __result = JapaneseLanguage ? "破魔タイプのマガタマくわ\n破魔魔法と適性を授ける\n<material=\"MsgFont2\">破魔無効<material=\"MsgFont0\">／<material=\"MsgFont1\">呪殺に弱い" : 
+                            "Light-type Magatama \nImparts Light magic & potential \n<material=\"MsgFont2\">Null: Light<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Dark"; return false; // Nirvana
+                    case 75: __result = JapaneseLanguage ? "銃撃タイプのマガタマくわ\n銃撃スキルと適性を授ける\n<material=\"MsgFont2\">物理・銃撃に強い<material=\"MsgFont0\">／<material=\"MsgFont1\">火炎・氷結に弱い" :
+                            "Shot-type Magatama \nImparts Shot skills & potential \n<material=\"MsgFont2\">Strong: Phys/Shot<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire/Ice"; return false; // Vimana
+                    case 76: __result = JapaneseLanguage ? "氷結タイプのマガタマくわ\n氷結魔法と適性を授ける\n<material=\"MsgFont2\">氷結吸収<material=\"MsgFont0\">／<material=\"MsgFont1\">火炎に弱い" : 
+                            "Ice-type Magatama \nImparts Ice magic & potential \n<material=\"MsgFont2\">Drain: Ice<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire"; return false; // Geis
+                    case 77: __result = JapaneseLanguage ? "補助魔法タイプのマガタマくわ\n補助魔法と適性を授ける\n<material=\"MsgFont2\">魔力無効" : 
+                            "Support-type Magatama \nImparts Support magic & potential \n<material=\"MsgFont2\">Null: Curse"; return false; // Djed
+                    case 78: __result = JapaneseLanguage ? "火炎タイプのマガタマくわ\n火炎魔法と適性を授ける\n<material=\"MsgFont2\">火炎吸収<material=\"MsgFont0\">／<material=\"MsgFont1\">氷結に弱い" : 
+                            "Fire-type Magatama \nImparts Fire magic & potential \n<material=\"MsgFont2\">Drain: Fire<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Ice"; return false; // Muspell
+                    case 79: __result = JapaneseLanguage ? "万能タイプのマガタマくわ\n万能属性の魔法と適性を授ける\n<material=\"MsgFont2\">呪殺無効" : 
+                            "Almighty-type Magatama \nImparts Almighty magic & potential \n<material=\"MsgFont2\">Null: Dark"; return false; // Satan
+                    case 80: __result = JapaneseLanguage ? "バッドステタイプのマガタマくわ\n状態異常魔法と適性を授ける\n<material=\"MsgFont2\">バッドステータス攻撃無効<material=\"MsgFont0\">／<material=\"MsgFont1\">破魔・呪殺に弱い" : 
+                            "Ailment-type Magatama. \nImparts Ailment magic & potential \n<material=\"MsgFont2\">Null: Ailments<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Light/Dark"; return false; // Adama
+                    case 81: __result = JapaneseLanguage ? "呪殺タイプのマガタマくわ\n呪殺魔法と適性を授ける\n<material=\"MsgFont2\">呪殺反射" : 
+                            "Dark-type Magatama. \nImparts Dark magic & potential \n<material=\"MsgFont2\">Repel: Dark"; return false; // Gehenna
+                    case 82: __result = JapaneseLanguage ? "回復魔法タイプのマガタマくわ\n回復魔法と適性を授ける\n<material=\"MsgFont2\">神経無効" : 
+                            "Healing-type Magatama. \nImparts Healing magic & potential \n<material=\"MsgFont2\">Null: Nerve"; return false; // Sophia
+                    case 83: __result = JapaneseLanguage ? "衝撃タイプのマガタマくわ\n衝撃魔法と適性を授ける\n<material=\"MsgFont2\">衝撃反射<material=\"MsgFont0\">／<material=\"MsgFont1\">電撃に弱い" : 
+                            "Force-type Magatama. \nImparts Force magic & potential \n<material=\"MsgFont2\">Repel: Force<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Elec"; return false; // Murakumo
+                    case 84: __result = JapaneseLanguage ? "破魔タイプのマガタマくわ\n破魔魔法と適性を授ける\n<material=\"MsgFont2\">破魔反射" : 
+                            "Light-type Magatama. \nImparts Light magic & potential \n<material=\"MsgFont2\">Repel: Light"; return false; // Gundari
+                    case 85: __result = JapaneseLanguage ? "電撃タイプのマガタマくわ\n電撃魔法と適性を授ける\n<material=\"MsgFont2\">電撃反射<material=\"MsgFont0\">／<material=\"MsgFont1\">衝撃に弱い" : 
+                            "Elec-type Magatama. \nImparts Electricity magic & potential \n<material=\"MsgFont2\">Repel: Elec<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Force"; return false; // Narukami
+                    case 86: __result = JapaneseLanguage ? "物理／銃撃タイプのマガタマくわ\n物理／銃撃魔法と適性を授ける\n<material=\"MsgFont2\">物理・銃撃に強い<material=\"MsgFont0\">／<material=\"MsgFont1\">電撃・衝撃に弱い" : 
+                            "Physical/Shot-type Magatama. \nImparts Phys/Shot skills & potential \n<material=\"MsgFont2\">Strong: Phys/Shot<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Elec/Force"; return false; // Gaea
+                    case 87: __result = JapaneseLanguage ? "万能タイプのマガタマくわ\n万能属性の魔法と適性を授ける\n<material=\"MsgFont2\">破魔・呪殺に強い" : 
+                            "Almighty-type Magatama. \nImparts Almighty magic & potential \n<material=\"MsgFont2\">Strong: Light/Dark"; return false; // Kailash
+                    case 88: __result = JapaneseLanguage ? "究極の力を秘めたマガタマ\n<material=\"MsgFont2\">万能以外のあらゆる攻撃に強い" : 
+                            "Magatama that holds ultimate power \n<material=\"MsgFont2\">Strong: All except Almighty"; return false; // Masakados
+                    case 107: __result = JapaneseLanguage ? "美しく輝く石。\n大地を象徴する" : 
+                            "A beautiful gemstone \nthat symbolizes \nearth."; return false; // Malachite
                     default: return true;
                 }
             }

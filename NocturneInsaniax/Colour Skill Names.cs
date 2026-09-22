@@ -19,7 +19,7 @@ namespace NocturneInsaniax
         {
             public static void Postfix(ref string text1, ref string text2, ref int type, ref int max, ref uint col, ref bool type_skill)
             {
-                if (text1 == "The enemy attacked from behind!")
+                if (text1.Contains("The enemy attacked from behind!") || text1.Contains("敵に背後をとられた！！"))
                 {
                     nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = new Color(0.294f, 0.294f, 0.980f, 1);
                     nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().enableVertexGradient = false;
@@ -32,12 +32,13 @@ namespace NocturneInsaniax
                     {
                         if ((type_skill && (actionProcessData.work.nowcommand == 1 || actionProcessData.work.nowcommand == 5))
                             || (!type_skill && actionProcessData.work.nowcommand == 0 && actionProcessData.work.nowindex == 0 &&
-                               (text1 == "Attack" || text1 == "Attack All" || text1 == demonInnateSkills[currentDemonWork.id].skillName)))
+                               (text1 == "Attack" || text1 == "Attack All" || text1 == demonInnateSkills[currentDemonWork.id].skillName ||
+                                text1 == "攻撃" || text1 == "全体攻撃" || text1 == demonInnateSkills[currentDemonWork.id].skillName)))
                         {
                             var commandId = actionProcessData.work.nowcommand; // 0 = normal, 1 = skill, 5 = item
                             Color attrColour;
 
-                            if (text1 == "Endure" || text1 == "Never Yield")
+                            if (text1 == "Endure" || text1 == "Never Yield" || text1 == "食いしばり" || text1 == "ネバーギブアップ")
                                 attrColour = GetAttackAttrColour(15, 1);
                             else
                             {
@@ -71,7 +72,7 @@ namespace NocturneInsaniax
                                 nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().colorGradient = attrGradient;
                             }
                         }
-                        else if (text1 == "Condemn Weakness")
+                        else if (text1 == "Condemn Weakness" || text1 == "弱さを非難する")
                         {
                             nbMainProcess.GetBattleUI().transform.Find("../bannounce(Clone)/stretch/TextTM").gameObject.GetComponent<TextMeshProUGUI>().outlineColor = GetAttackAttrColour(15, 1);
                             if (EnableSkillColourGradient.Value)

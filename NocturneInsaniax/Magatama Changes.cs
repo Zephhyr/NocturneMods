@@ -93,31 +93,56 @@ namespace NocturneInsaniax
             {
                 switch (id)
                 {
-                    case 01: __result = "Marogareh"; return false; // 01 (Marogareh)
-                    case 02: __result = "Wadatsumi"; return false; // 02 (Wadatsumi)
-                    case 03: __result = "Ankh"; return false;      // 03 (Ankh)
-                    case 04: __result = "Iyomante"; return false;  // 04 (Iyomante)
-                    case 05: __result = "Shiranui"; return false;  // 05 (Shiranui)
-                    case 06: __result = "Hifumi"; return false;    // 06 (Hifumi)
-                    case 07: __result = "Kamurogi"; return false;  // 07 (Kamudo)
-                    case 08: __result = "Kamudo"; return false;    // 08 (Narukami)
-                    case 09: __result = "Anathema"; return false;  // 09 (Anathema)
-                    case 10: __result = "Miasma"; return false;    // 10 (Miasma)
-                    case 11: __result = "Nirvana"; return false;   // 11 (Nirvana)
-                    case 12: __result = "Vimana"; return false;    // 12 (Murakumo)
-                    case 13: __result = "Geis"; return false;      // 13 (Geis)
-                    case 14: __result = "Djed"; return false;      // 14 (Djed)
-                    case 15: __result = "Muspell"; return false;   // 15 (Muspell)
-                    case 16: __result = "Satan"; return false;     // 16 (Gehenna)
-                    case 17: __result = "Adama"; return false;     // 17 (Kamurogi)
-                    case 18: __result = "Gehenna"; return false;   // 18 (Satan)
-                    case 19: __result = "Sophia"; return false;    // 19 (Adama)
-                    case 20: __result = "Murakumo"; return false;  // 20 (Vimana)
-                    case 21: __result = "Gundari"; return false;   // 21 (Gundari)
-                    case 22: __result = "Narukami"; return false;  // 22 (Sophia)
-                    case 23: __result = "Gaea"; return false;      // 23 (Gaea)
-                    case 24: __result = "Kailash"; return false;   // 24 (Kailash)
-                    case 25: __result = "Masakados"; return false; // 25 Masakados
+                    case 01: __result = JapaneseLanguage ? "マロガレ" : 
+                            "Marogareh"; return false; // 01 (Marogareh)
+                    case 02: __result = JapaneseLanguage ? "ワダツミ" : 
+                            "Wadatsumi"; return false; // 02 (Wadatsumi)
+                    case 03: __result = JapaneseLanguage ? "アンク" : 
+                            "Ankh"; return false;      // 03 (Ankh)
+                    case 04: __result = JapaneseLanguage ? "イヨマンテ" : 
+                            "Iyomante"; return false;  // 04 (Iyomante)
+                    case 05: __result = JapaneseLanguage ? "シラヌイ" : 
+                            "Shiranui"; return false;  // 05 (Shiranui)
+                    case 06: __result = JapaneseLanguage ? "ヒフミ" : 
+                            "Hifumi"; return false;    // 06 (Hifumi)
+                    case 07: __result = JapaneseLanguage ? "カムロギ" : 
+                            "Kamurogi"; return false;  // 07 (Kamudo)
+                    case 08: __result = JapaneseLanguage ? "カムド" : 
+                            "Kamudo"; return false;    // 08 (Narukami)
+                    case 09: __result = JapaneseLanguage ? "アナテマ" : 
+                            "Anathema"; return false;  // 09 (Anathema)
+                    case 10: __result = JapaneseLanguage ? "ミアズマ" : 
+                            "Miasma"; return false;    // 10 (Miasma)
+                    case 11: __result = JapaneseLanguage ? "ニルヴァーナ" : 
+                            "Nirvana"; return false;   // 11 (Nirvana)
+                    case 12: __result = JapaneseLanguage ? "ヴィマーナ" : 
+                            "Vimana"; return false;    // 12 (Murakumo)
+                    case 13: __result = JapaneseLanguage ? "ゲッシュ" : 
+                            "Geis"; return false;      // 13 (Geis)
+                    case 14: __result = JapaneseLanguage ? "ジェド" : 
+                            "Djed"; return false;      // 14 (Djed)
+                    case 15: __result = JapaneseLanguage ? "ムスペル" : 
+                            "Muspell"; return false;   // 15 (Muspell)
+                    case 16: __result = JapaneseLanguage ? "サタン" : 
+                            "Satan"; return false;     // 16 (Gehenna)
+                    case 17: __result = JapaneseLanguage ? "アダマ" : 
+                            "Adama"; return false;     // 17 (Kamurogi)
+                    case 18: __result = JapaneseLanguage ? "ゲヘナ" : 
+                            "Gehenna"; return false;   // 18 (Satan)
+                    case 19: __result = JapaneseLanguage ? "ソフィア" : 
+                            "Sophia"; return false;    // 19 (Adama)
+                    case 20: __result = JapaneseLanguage ? "ムラクモ" : 
+                            "Murakumo"; return false;  // 20 (Vimana)
+                    case 21: __result = JapaneseLanguage ? "グンダリ" : 
+                            "Gundari"; return false;   // 21 (Gundari)
+                    case 22: __result = JapaneseLanguage ? "ナルカミ" : 
+                            "Narukami"; return false;  // 22 (Sophia)
+                    case 23: __result = JapaneseLanguage ? "ガイア" : 
+                            "Gaea"; return false;      // 23 (Gaea)
+                    case 24: __result = JapaneseLanguage ? "カイラース" : 
+                            "Kailash"; return false;   // 24 (Kailash)
+                    case 25: __result = JapaneseLanguage ? "マサカドゥス" : 
+                            "Masakados"; return false; // 25 Masakados
                     default: return true;
                 }
             }
@@ -130,17 +155,28 @@ namespace NocturneInsaniax
             {
                 switch (message)
                 {
-                    case "<SPD 7><F015_L0190><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(2) + "<CO0>. <WA>"; break; // After Forneus
-                    case "<SPD 7><F016_L0067><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(3) + "<CO0>. <WA>"; break; // After Leaving Pixe in Yoyogi
-                    case "<SPD 7><F024_L0222><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(8) + "<CO0>. <WA>"; break; // After Thor
-                    case "<SPD 7><F020_L0134><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(9) + "<CO0>. <WA>"; break; // After Ose
-                    case "<SPD 7><F025_L0209><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(10) + "<CO0>. <WA>"; break; // After Mizuchi
-                    case "<SPD 7><F027_L0021><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(13) + "<CO0>. <WA>"; break; // After Puzzle Boy
-                    case "<SPD 7><F031_L0067><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(14) + "<CO0>. <WA>"; break; // After Moirae Sisters
-                    case "<SPD 7><F017_L0046><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(15) + "<CO0>. <WA>"; break; // After Mara
-                    case "<F025_L0260><WAIT>": __result = "> You obtained the Magatama <CO2>" + datHeartsName.Get(18) + "<CO0>. <WA>"; break; // After Black Frost
-                    case "<SPD 7><F034_L0013><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(19) + "<CO0>. <WA>"; break; // After Albion
-                    case "<SPD 7><F039_L0037><WAIT>": __result = "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(21) + "<CO0>. <WA>"; break; // After Bishamonten
+                    case "<SPD 7><F015_L0190><WAIT>": __result = JapaneseLanguage ? "<SP7>＞<CO2>" + datHeartsName.Get(2) + "<CO0>のマガタマを手に入れた。 <WA>" : 
+                            "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(2) + "<CO0>. <WA>"; break; // After Forneus
+                    case "<SPD 7><F016_L0067><WAIT>": __result = JapaneseLanguage ? "<SP7>＞<CO2>" + datHeartsName.Get(3) + "<CO0>のマガタマを手に入れた。 <WA>" : 
+                            "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(3) + "<CO0>. <WA>"; break; // After Leaving Pixe in Yoyogi
+                    case "<SPD 7><F024_L0222><WAIT>": __result = JapaneseLanguage ? "<SP7>＞<CO2>" + datHeartsName.Get(8) + "<CO0>のマガタマを手に入れた。 <WA>" : 
+                            "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(8) + "<CO0>. <WA>"; break; // After Thor
+                    case "<SPD 7><F020_L0134><WAIT>": __result = JapaneseLanguage ? "<SP7>＞<CO2>" + datHeartsName.Get(9) + "<CO0>のマガタマを手に入れた。 <WA>" : 
+                            "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(9) + "<CO0>. <WA>"; break; // After Ose
+                    case "<SPD 7><F025_L0209><WAIT>": __result = JapaneseLanguage ? "<SP7>＞<CO2>" + datHeartsName.Get(10) + "<CO0>のマガタマを手に入れた。 <WA>" : 
+                            "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(10) + "<CO0>. <WA>"; break; // After Mizuchi
+                    case "<SPD 7><F027_L0021><WAIT>": __result = JapaneseLanguage ? "<SP7>＞<CO2>" + datHeartsName.Get(13) + "<CO0>のマガタマを手に入れた。 <WA>" : 
+                            "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(13) + "<CO0>. <WA>"; break; // After Puzzle Boy
+                    case "<SPD 7><F031_L0067><WAIT>": __result = JapaneseLanguage ? "<SP7>＞<CO2>" + datHeartsName.Get(14) + "<CO0>のマガタマを手に入れた。 <WA>" : 
+                            "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(14) + "<CO0>. <WA>"; break; // After Moirae Sisters
+                    case "<SPD 7><F017_L0046><WAIT>": __result = JapaneseLanguage ? "<SP7>＞<CO2>" + datHeartsName.Get(15) + "<CO0>のマガタマを手に入れた。 <WA>" : 
+                            "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(15) + "<CO0>. <WA>"; break; // After Mara
+                    case "<F025_L0260><WAIT>": __result = JapaneseLanguage ? "<SP7>＞<CO2>" + datHeartsName.Get(18) + "<CO0>のマガタマを手に入れた。 <WA>" : 
+                            "> You obtained the Magatama <CO2>" + datHeartsName.Get(18) + "<CO0>. <WA>"; break; // After Black Frost
+                    case "<SPD 7><F034_L0013><WAIT>": __result = JapaneseLanguage ? "<SP7>＞<CO2>" + datHeartsName.Get(19) + "<CO0>のマガタマを手に入れた。 <WA>" : 
+                            "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(19) + "<CO0>. <WA>"; break; // After Albion
+                    case "<SPD 7><F039_L0037><WAIT>": __result = JapaneseLanguage ? "<SP7>＞<CO2>" + datHeartsName.Get(21) + "<CO0>のマガタマを手に入れた。 <WA>" : 
+                            "<SP7>> You obtained the Magatama <CO2>" + datHeartsName.Get(21) + "<CO0>. <WA>"; break; // After Bishamonten
                 }
             }
         }

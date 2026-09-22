@@ -685,14 +685,17 @@ namespace NocturneInsaniax
                 if (__result == 0 && workFromFormindex1.id == 288 && workFromFormindex2.badstatus == 512)
                 {
                     __result = 2;
-                    nbHelpProcess.nbDispText("Condemn Weakness", string.Empty, 2, 45, 2315190144, false);
+                    if (JapaneseLanguage)
+                        nbHelpProcess.nbDispText("弱さを非難する", string.Empty, 2, 45, 2315190144, false);
+                    else
+                        nbHelpProcess.nbDispText("Condemn Weakness", string.Empty, 2, 45, 2315190144, false);
                 }
 
                 // Mitra's Righteous Vow
                 if ((__result == 1 || __result == 2) && (workFromFormindex2.id == 2 || workFromFormindex2.id == 329) &&
                     !((datSkill.tbl[nskill].skillattr == 6 && nbMainProcess.nbGetPartyFromFormindex(dformindex).count[12] != 0) || (datSkill.tbl[nskill].skillattr == 7 && nbMainProcess.nbGetPartyFromFormindex(dformindex).count[11] != 0)))
                 {
-                    postSummonSkillName = "Righteous Vow";
+                    postSummonSkillName = JapaneseLanguage ? "正義の誓い" : "Righteous Vow";
                     PostSummonSkillCopy(459, 64, 0);
                     nbMainProcess.nbPushAction(4, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, nbMainProcess.nbGetPartyFromFormindex(dformindex).partyindex, 408);
                 }
@@ -737,7 +740,10 @@ namespace NocturneInsaniax
                     if (nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id == 329 && nbMainProcess.nbGetUnitWorkFromFormindex(dformindex).id == 0 && nskill == 495)
                     {
                         nbMainProcess.nbGetUnitWorkFromFormindex(dformindex).badstatus = 32768;
-                        nbHelpProcess.nbDispText(frName.frGetCNameString(0) + " is cursed!", string.Empty, 2, 45, 2315190144, false);
+                        if (JapaneseLanguage)
+                            nbHelpProcess.nbDispText(frName.frGetCNameString(0) + "は呪われている！", string.Empty, 2, 45, 2315190144, false);
+                        else
+                            nbHelpProcess.nbDispText(frName.frGetCNameString(0) + " is cursed!", string.Empty, 2, 45, 2315190144, false);
                         __result = 0;
                     }
                 } catch { }
