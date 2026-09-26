@@ -133,8 +133,10 @@ namespace NocturneInsaniax
 
                 if (skillattr >= 0 && skillattr <= 12 && (chargedPhysical || chargedMagical))
                 {
-                    if (!((megalomaniaIds.Contains(a.work.id) || (a.work.id == 0 && a.form.formindex == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 23)) 
-                        && random.Next(10) <= 1))
+                    if (!(((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && megalomaniaIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id))) || 
+                        (actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && megalomaniaIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id))) || 
+                        (actionProcessData.partyindex <= 3 && dds3GlobalWork.DDS3_GBWK.heartsequip == 23)) 
+                        && random.Next(5) <= 0))
                     {
                         a.party.count[15] = 0;
                         a.party.count[20] = 0;

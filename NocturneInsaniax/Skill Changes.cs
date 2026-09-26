@@ -373,9 +373,9 @@ namespace NocturneInsaniax
                             "Raises all allies' \nMagical Attack/Hit Rate \nby one rank."; return false; // Makakaja
                     case 68: __result = JapaneseLanguage ? "味方一人につき、破魔／呪殺属性の攻撃\nを1回無効化する。" : 
                             "Negates one Light/Dark attack \nfor all allies."; return false; // Tetraja
-                    case 69: __result = JapaneseLanguage ? "次のターン、味方1体への魔法攻（魔法攻）\n攻撃を1回反射。" : 
+                    case 69: __result = JapaneseLanguage ? "次のターン、味方1体への魔法攻(魔法攻)\n攻撃を1回反射。" : 
                             "Repels Magic-based attacks \nfor one ally once \nnext turn."; return false; // Makarakarn
-                    case 70: __result = JapaneseLanguage ? "次のターン、味方1体への物理系（力依存）\n攻撃を1回反射。" : 
+                    case 70: __result = JapaneseLanguage ? "次のターン、味方1体への物理系(力依存)\n攻撃を1回反射。" : 
                             "Repels Strength-based attacks \nfor one ally once \nnext turn."; return false; // Tetrakarn
                     case 71: __result = JapaneseLanguage ? "プレスターンアイコン1/2個\nの消費で敵の情報を表示。" : 
                             "Displays an enemy's info \nat 1/2 turn cost."; return false; // Analyze
@@ -715,16 +715,26 @@ namespace NocturneInsaniax
                     case 398: __result = JapaneseLanguage ? "マッカやアイテムを要求。\n話し手が対象よりかなり高レベル\nの場合に有効。" : 
                             "Ask for Macca and items. \nEffective when speaker is much higher \nlevel than target."; return false; // Threaten
 
-                    case 409: __result = "While in the active party, \nmay step in during negotiation and \nensure lesser demands."; return false; // Haggle
-                    case 410: __result = "While in the active party, \nmay step in during negotiation and \nsoothe an enraged demon."; return false; // Arbitration
-                    case 411: __result = "While in the active party, may step \nin during negotiation and prevent a \ndemon from making off with payment."; return false; // Detain
-                    case 412: __result = "While in the active party, \nmay step in during negotiation to \nurge a demon of the same race."; return false; // Kinspeak
-                    case 413: __result = "While in the active party, \nmay step in during negotiation to \npersuade an indecisive demon."; return false; // Silver Tongue
-                    case 414: __result = "While in the active party, \nmay step in during negotiation to \n'convince' a lower level demon."; return false; // Intimidate
-                    case 415: __result = "While in the active party, \nmay step in during negotiation to \ntempt a male demon."; return false; // Entice
-                    case 418: __result = "While in the active party, \nmay step in during negotiation and \npacify an enraged demon."; return false; // Maiden Plea
-                    case 419: __result = "While in the active party, \nmay step in during negotiation to \nfix trouble with the power of liquor."; return false; // Wine Party
-                    case 420: __result = "While in the active party, \nmay step in during negotiation to \nconvince a higher level demon."; return false; // Flatter
+                    case 409: __result = JapaneseLanguage ? "戦闘メンバーにいる間、\n悪魔交渉に割り込んで要求を軽減\nさせることがある。" : 
+                            "While in the active party, \nmay step in during negotiation and \nensure lesser demands."; return false; // Haggle
+                    case 410: __result = JapaneseLanguage ? "戦闘メンバーにいる間、\n悪魔交渉に割り込んで怒った悪魔\nをなだめることがある。" : 
+                            "While in the active party, \nmay step in during negotiation and \nsoothe an enraged demon."; return false; // Arbitration
+                    case 411: __result = JapaneseLanguage ? "戦闘メンバーにいる間、\n悪魔交渉中に介入し、悪魔が報酬を持\nち逃げするのを防ぐことがある。" : 
+                            "While in the active party, may step \nin during negotiation and prevent a \ndemon from making off with payment."; return false; // Detain
+                    case 412: __result = JapaneseLanguage ? "戦闘メンバーにいる間、\n" : 
+                            "While in the active party, \nmay step in during negotiation to \nurge a demon of the same race."; return false; // Kinspeak
+                    case 413: __result = JapaneseLanguage ? "戦闘メンバーにいる間、\n悪魔交渉に割り込んで迷っている\n悪魔を説得することがある。" : 
+                            "While in the active party, \nmay step in during negotiation to \npersuade an indecisive demon."; return false; // Silver Tongue
+                    case 414: __result = JapaneseLanguage ? "戦闘メンバーにいる間、\n悪魔交渉に割り込んで自分よりレベルの\n低い悪魔を「説得」することがある。" : 
+                            "While in the active party, \nmay step in during negotiation to \n'convince' a lower level demon."; return false; // Intimidate
+                    case 415: __result = JapaneseLanguage ? "戦闘メンバーにいる間、\n悪魔交渉に割り込んで男性悪魔を\n口説き落としすることがある。" : 
+                            "While in the active party, \nmay step in during negotiation to \ntempt a male demon."; return false; // Entice
+                    case 418: __result = JapaneseLanguage ? "戦闘メンバーにいる間、\n悪魔交渉に介入して激怒した悪魔\nをなだめることがある。" : 
+                            "While in the active party, \nmay step in during negotiation and \npacify an enraged demon."; return false; // Maiden Plea
+                    case 419: __result = JapaneseLanguage ? "戦闘メンバーにいる間、\n悪魔交渉に割り込んで酒の力でト\nラブルを解決することがある。" : 
+                            "While in the active party, \nmay step in during negotiation to \nfix trouble with the power of liquor."; return false; // Wine Party
+                    case 420: __result = JapaneseLanguage ? "戦闘メンバーにいる間、\n悪魔交渉に割り込んで格上の悪魔\nを説得することがある。" : 
+                            "While in the active party, \nmay step in during negotiation to \nconvince a higher level demon."; return false; // Flatter
 
                     // New Skills
                     case 128: __result = JapaneseLanguage ? "敵ランダムに銃撃属性の小ダメージ。\n2~5回ヒット。威力: 22, 命中: 90%, \n会心率: 18%" : 
@@ -1189,7 +1199,7 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(23, 0);
                     //datCalc.datAddDevil(7, 0);
                     //datCalc.datAddDevil(104, 0);
-                    //datCalc.datAddDevil(230, 0);
+                    //datCalc.datAddDevil(202, 0);
 
                     //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 56).Count() == 0)
                     //{

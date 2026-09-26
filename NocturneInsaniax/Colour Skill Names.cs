@@ -33,7 +33,7 @@ namespace NocturneInsaniax
                         if ((type_skill && (actionProcessData.work.nowcommand == 1 || actionProcessData.work.nowcommand == 5))
                             || (!type_skill && actionProcessData.work.nowcommand == 0 && actionProcessData.work.nowindex == 0 &&
                                (text1 == "Attack" || text1 == "Attack All" || text1 == demonInnateSkills[currentDemonWork.id].skillName ||
-                                text1 == "攻撃" || text1 == "全体攻撃" || text1 == demonInnateSkills[currentDemonWork.id].skillName)))
+                                text1 == "攻撃" || text1 == "全体攻撃" || text1 == demonInnateSkillsJp[currentDemonWork.id].skillName)))
                         {
                             var commandId = actionProcessData.work.nowcommand; // 0 = normal, 1 = skill, 5 = item
                             Color attrColour;

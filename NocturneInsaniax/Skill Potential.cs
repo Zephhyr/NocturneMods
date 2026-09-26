@@ -2865,30 +2865,30 @@ namespace NocturneInsaniax
                     while (potential.Any(x => x == maxPotential))
                     {
                         maxPotentialIndex = potential.ToList().IndexOf(maxPotential);
-                        helpString += "/" + elem[maxPotentialIndex];
+                        helpString += "・" + elem[maxPotentialIndex];
 
                         potential[maxPotentialIndex] = 0;
                     }
 
-                    helpString += " • ";
+                    helpString += "、";
                 }
 
-                helpString = helpString.Remove(helpString.LastIndexOf(" • "));
+                helpString = helpString.Remove(helpString.LastIndexOf("、"));
 
-                if (shotOverlap && !helpString.Contains("物理/銃撃"))
+                if (shotOverlap && !helpString.Contains("物理・銃撃"))
                 {
-                    helpString = helpString.Replace("/銃撃", "");
+                    helpString = helpString.Replace("・銃撃", "");
                     var shotPotentialIndex = attackPotential.IndexOf(attackPotential[12]);
-                    helpString = helpString.Replace(elem[shotPotentialIndex], "銃撃/" + elem[shotPotentialIndex]);
+                    helpString = helpString.Replace(elem[shotPotentialIndex], "銃撃・" + elem[shotPotentialIndex]);
 
-                    if (helpString.Contains("銃撃/物理"))
-                        helpString = helpString.Replace("銃撃/物理", "物理/銃撃");
+                    if (helpString.Contains("銃撃・物理"))
+                        helpString = helpString.Replace("銃撃・物理", "物理・銃撃");
                 }
 
-                if (helpString.Contains("火炎/氷結/電撃/衝撃"))
-                    helpString = helpString.Replace("火炎/氷結/電撃/衝撃", "魔法全般");
-                if (helpString.Contains("魔力/神経/精神"))
-                    helpString = helpString.Replace("魔力/神経/精神", "バッドステータス攻撃");
+                if (helpString.Contains("火炎・氷結・電撃・衝撃"))
+                    helpString = helpString.Replace("火炎・氷結・電撃・衝撃", "魔法全般");
+                if (helpString.Contains("魔力・神経・精神"))
+                    helpString = helpString.Replace("魔力・神経・精神", "バッドステータス攻撃");
 
                 helpString += "<material=\"MsgFont1\">";
 

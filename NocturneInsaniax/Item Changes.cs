@@ -21,7 +21,7 @@ namespace NocturneInsaniax
                 switch (id)
                 {
                     case 29: __result = JapaneseLanguage ? "針の宝珠" : "Needle Orb"; return false;
-                    case 32: __result = JapaneseLanguage ? "メドゥーサの目" : "Medusa Eye"; return false;
+                    case 32: __result = JapaneseLanguage ? "メデューサの目" : "Medusa Eye"; return false;
                     case 33: __result = JapaneseLanguage ? "デクンダの石" : "Dekunda Rock"; return false;
                     case 39: __result = JapaneseLanguage ? "知恵の香" : "Intelligence Incense"; return false;
                     case 44: __result = JapaneseLanguage ? "グラヴァンの石像" : "Graven Image"; return false;
