@@ -19,82 +19,175 @@ namespace NocturneInsaniax
                 {
                     if (nbMainProcess.nbGetMainProcessData().encno == 1278)
                     {
-                        switch (message)
+                        if (JapaneseLanguage)
                         {
-                            // YHVH Dialogue 1
-                            case "<SPD 6><AI_MSG_L0120><WAIT>": __result = "<SP6>How could you diminish me to such a state? Pathless fool... I cannot forgive you...<WA>"; break;
-                            case "<SPD 6><AI_MSG_L0121><WAIT>": __result = "<SP6>I asked only that you take the life I granted you and obediently follow my word.<WA>"; break;
-                            case "<AI_MSG_L0122><WAIT>": __result = "<SP6>The weight of your blasphemy is too great for death! Eternal suffering is the only suitable punishment!<WA>"; break;
-                            // YHVH Dialogue 2
-                            case "<SPD 6><AI_MSG_L0123><WAIT>": __result = "<SP6>Guh... Do you fully comprehend your actions?<WA>"; break;
-                            case "<SPD 6><AI_MSG_L0124><WAIT>": __result = "<SP6>How will you repent for a sin this grave? Do you think yourself capable of carrying that cross?<WA>"; break;
-                            case "<AI_MSG_L0125><WAIT>": __result = "<SP6>Praise my name, before it is too late! Praise my glory!<WA>"; break;
-                            // YHVH Death Dialogue
-                            case "<SPD 6><AI_MSG_L0040><WAIT>": __result = "<SP6>How could a mere human surpass gods and destroy even me, your Creator?<WA>"; break;
-                            case "<SPD 6><AI_MSG_L0126><WAIT>": __result = "<SP6>No, this is not the end. You've only led yourself further astray.<WA>"; break;
-                            case "<SPD 6><AI_MSG_L0127><WAIT>": __result = "<SP6>Humans are weak. You cannot live without my law, my order. You need something to believe in.<WA>"; break;
-                            case "<SPD 6><AI_MSG_L0128><WAIT>": __result = "<SP6>But now you've debased my truths, and so I shall slip from the minds of humans.<WA>"; break;
-                            case "<AI_MSG_L0129><WAIT>": __result = "<SP6>Humanity will inevitably lose its way and long for salvation. Then... You can regret this decision...<WA>"; break;
+                            switch (message)
+                            {
+                                // YHVH Dialogue 1
+                                case "<SPD 6><AI_MSG_L0120><WAIT>": __result = "<SP6>我がこのような姿に貶められるとは…\n道を外れた半端者が…我は汝らを赦さぬ<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0121><WAIT>": __result = "<SP6>…大人しく我が与えた肉の身体と\nその範囲の答えに盲従すれば良いものを…<WA>"; break;
+                                case "<AI_MSG_L0122><WAIT>": __result = "<SP6>涜聖せしめた汝らの罪は死より重く\nその罰は永久の苦痛を強いることだろう<WA>"; break;
+                                // YHVH Dialogue 2
+                                case "<SPD 6><AI_MSG_L0123><WAIT>": __result = "<SP6>ヌゥゥ…汝ら　自分が何をしているのか\n解しているのか…？<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0124><WAIT>": __result = "<SP6>このような大過　どう贖うつもりだ…\n汝ら如きに背負い切れるものか<WA>"; break;
+                                case "<AI_MSG_L0125><WAIT>": __result = "<SP6>今すぐ　並ぶ者無き我が名を讃えよ…！\n栄光に満ちた我が名を讃えよ…ッ！<WA>"; break;
+                                // YHVH Death Dialogue
+                                case "<SPD 6><AI_MSG_L0040><WAIT>": __result = "<SP6>まさか人の子が神となり\n創造主である我を超えようとは…<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0126><WAIT>": __result = "<SP6>だが　これで終わりではない\n汝は自らを苦境へと追い込んだのだ<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0127><WAIT>": __result = "<SP6>人人は弱い…我が法と秩序無しに生きられぬ\n頼るもの　すがるものが必要だ<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0128><WAIT>": __result = "<SP6>汝はそれを――我が答えを貶めた\nこの宇宙ごと　我は消え失せるだろう<WA>"; break;
+                                case "<AI_MSG_L0129><WAIT>": __result = "<SP6>いずれ汝が迷い　救いを欲した時…\n己がした選択を…後悔するが　良い…<WA>"; break;
+                            }
+                        }
+                        else
+                        {
+                            switch (message)
+                            {
+                                // YHVH Dialogue 1
+                                case "<SPD 6><AI_MSG_L0120><WAIT>": __result = "<SP6>How could you diminish me to such a state? Pathless fool... I cannot forgive you...<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0121><WAIT>": __result = "<SP6>I asked only that you take the life I granted you and obediently follow my word.<WA>"; break;
+                                case "<AI_MSG_L0122><WAIT>": __result = "<SP6>The weight of your blasphemy is too great for death! Eternal suffering is the only suitable punishment!<WA>"; break;
+                                // YHVH Dialogue 2
+                                case "<SPD 6><AI_MSG_L0123><WAIT>": __result = "<SP6>Guh... Do you fully comprehend your actions?<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0124><WAIT>": __result = "<SP6>How will you repent for a sin this grave? Do you think yourself capable of carrying that cross?<WA>"; break;
+                                case "<AI_MSG_L0125><WAIT>": __result = "<SP6>Praise my name, before it is too late! Praise my glory!<WA>"; break;
+                                // YHVH Death Dialogue
+                                case "<SPD 6><AI_MSG_L0040><WAIT>": __result = "<SP6>How could a mere human surpass gods and destroy even me, your Creator?<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0126><WAIT>": __result = "<SP6>No, this is not the end. You've only led yourself further astray.<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0127><WAIT>": __result = "<SP6>Humans are weak. You cannot live without my law, my order. You need something to believe in.<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0128><WAIT>": __result = "<SP6>But now you've debased my truths, and so I shall slip from the minds of humans.<WA>"; break;
+                                case "<AI_MSG_L0129><WAIT>": __result = "<SP6>Humanity will inevitably lose its way and long for salvation. Then... You can regret this decision...<WA>"; break;
+                            }
                         }
                     }
                     else if (nbMainProcess.nbGetMainProcessData().encno == 307)
                     {
-                        switch (message)
+                        if (JapaneseLanguage)
                         {
-                            // Girimekhala Dialogue 1
-                            case "<SPD 6><AI_MSG_L0120><WAIT>": __result = "<SP6>KILL YOU! *trumpet*<WA>"; break;
-                            // Girimekhala Dialogue 2
-                            case "<SPD 6><AI_MSG_L0121><WAIT>": __result = "<SP6>Guh... ugh... ughhh...<WA>"; break;
-                            case "<AI_MSG_L0122><WAIT>": __result = "<SP6>...I am... Girimekhala... I... will kill... you...<WA>"; break;
-                            // Girimekhala Death Dialogue
-                            case "<SPD 6><AI_MSG_L0040><WAIT>": __result = "<SP6>...Kill... you...<WA>"; break;
+                            switch (message)
+                            {
+                                // Girimekhala Dialogue 1
+                                case "<SPD 6><AI_MSG_L0120><WAIT>": __result = "<SP6>パァァァオォォォォォンッ！！<WA>"; break;
+                                // Girimekhala Dialogue 2
+                                case "<SPD 6><AI_MSG_L0121><WAIT>": __result = "<SP6>グググ…、ギギギ……<WA>"; break;
+                                case "<AI_MSG_L0122><WAIT>": __result = "<SP6>…ワレ…ハ…邪神…ギリメカラ……\nオマエ…ヲ……コロ…ス…<WA>"; break;
+                                // Girimekhala Death Dialogue
+                                case "<SPD 6><AI_MSG_L0040><WAIT>": __result = "<SP6>…コロ…ス…<WA>"; break;
+                            }
+                        }
+                        else
+                        {
+                            switch (message)
+                            {
+                                // Girimekhala Dialogue 1
+                                case "<SPD 6><AI_MSG_L0120><WAIT>": __result = "<SP6>KILL YOU! *trumpet*<WA>"; break;
+                                // Girimekhala Dialogue 2
+                                case "<SPD 6><AI_MSG_L0121><WAIT>": __result = "<SP6>Guh... ugh... ughhh...<WA>"; break;
+                                case "<AI_MSG_L0122><WAIT>": __result = "<SP6>...I am... Girimekhala... I... will kill... you...<WA>"; break;
+                                // Girimekhala Death Dialogue
+                                case "<SPD 6><AI_MSG_L0040><WAIT>": __result = "<SP6>...Kill... you...<WA>"; break;
+                            }
                         }
                     }
                     else if (nbMainProcess.nbGetMainProcessData().encno == 1272)
                     {
-                        switch (message)
+                        if (JapaneseLanguage)
                         {
-                            // Jack Frost Dialogue 1
-                            case "<SPD 6><AI_MSG_L0120><WAIT>": __result = "<SP6>Hee, why are you standing on your hee-ho toes?<WA>"; break;
-                            case "<SPD 6><AI_MSG_L0126><WAIT>": __result = "<SP6>Oh, I see-ho. You think I'm just a plain old Frost!<WA>"; break;
-                            case "<SPD 6><AI_MSG_L0127><WAIT>": __result = "<SP6>Isn't that right!? Yeah, I'm talking to you, hee-ho!<WA>"; break;
-                            case "<SPD 6><AI_MSG_L0128><WAIT>": __result = "<SP6>I'm Jack... Jack Frost the Magnificent!<WA>"; break;
-                            case "<AI_MSG_L0129><WAIT>": __result = "<SP6>I'll teach you a lesson you'll never forget! Heeeeeeeeeeho!!!!!<WA>"; break;
-                            // Jack Frost Dialogue 2
-                            case "<SPD 6><AI_MSG_L0121><WAIT>": __result = "<SP6>Heeeee-ya ho!<WA>"; break;
+                            switch (message)
+                            {
+                                // Jack Frost Dialogue 1
+                                case "<SPD 6><AI_MSG_L0120><WAIT>": __result = "<SP6>へぇ、\nなんでそんなにつま先立ちしてるの？<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0126><WAIT>": __result = "<SP6>なるほどね。私のことを、\nただのありふれたフロストだと思っているわけか！<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0127><WAIT>": __result = "<SP6>だろ！？ そう、\nお前のことだよ、ヒーホー！<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0128><WAIT>": __result = "<SP6>俺はジャック……\n偉大なるジャック・フロストさ！<WA>"; break;
+                                case "<AI_MSG_L0129><WAIT>": __result = "<SP6>一生忘れられないような教訓を教えてやるよ！\nヒーーーーーーーッホ！！！！！<WA>"; break;
+                                // Jack Frost Dialogue 2
+                                case "<SPD 6><AI_MSG_L0121><WAIT>": __result = "<SP6>ヒーヤホー！<WA>"; break;
+                            }
+                        }
+                        else
+                        {
+                            switch (message)
+                            {
+                                // Jack Frost Dialogue 1
+                                case "<SPD 6><AI_MSG_L0120><WAIT>": __result = "<SP6>Hee, why are you standing on your hee-ho toes?<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0126><WAIT>": __result = "<SP6>Oh, I see-ho. You think I'm just a plain old Frost!<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0127><WAIT>": __result = "<SP6>Isn't that right!? Yeah, I'm talking to you, hee-ho!<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0128><WAIT>": __result = "<SP6>I'm Jack... Jack Frost the Magnificent!<WA>"; break;
+                                case "<AI_MSG_L0129><WAIT>": __result = "<SP6>I'll teach you a lesson you'll never forget! Heeeeeeeeeeho!!!!!<WA>"; break;
+                                // Jack Frost Dialogue 2
+                                case "<SPD 6><AI_MSG_L0121><WAIT>": __result = "<SP6>Heeeee-ya ho!<WA>"; break;
+                            }
                         }
                     }
                     else if (nbMainProcess.nbGetMainProcessData().encno == 1273)
                     {
-                        switch (message)
+                        if (JapaneseLanguage)
                         {
-                            // Sarge Girimekhala Dialogue 1
-                            case "<SPD 6><AI_MSG_L0120><WAIT>": __result = "<SP6>It's my duty to kill all demons without the balls to survive!<WA>"; break;
-                            case "<SPD 6><AI_MSG_L0121><WAIT>": __result = "<SP6>When I get through with you, you'll be sipping Magatsuhi through a straw!<WA>"; break;
-                            case "<AI_MSG_L0122><WAIT>": __result = "<SP6>Got that, you worthless piece of shit!?<WA>"; break;
-                            // Sarge Girimekhala Dialogue 2
-                            case "<SPD 6><AI_MSG_L0123><WAIT>": __result = "<SP6>You call that a battle stance!? My grandmother looks more menacing than that!<WA>"; break;
-                            case "<SPD 6><AI_MSG_L0124><WAIT>": __result = "<SP6>Don't you have a Reason? My Reason is kicking your ass!<WA>"; break;
-                            case "<AI_MSG_L0125><WAIT>": __result = "<SP6>Got that, you worthless piece of shit!?<WA>"; break;
+                            switch (message)
+                            {
+                                // Sarge Girimekhala Dialogue 1
+                                case "<SPD 6><AI_MSG_L0120><WAIT>": __result = "<SP6>生き残る度胸すらない悪魔ども\nを皆殺しにするのが、俺の務めだ！<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0121><WAIT>": __result = "<SP6>俺が片付けた後には、\nお前はストローで禍津日をすする羽目になるんだよ！<WA>"; break;
+                                case "<AI_MSG_L0122><WAIT>": __result = "<SP6>分かったか、\nこの役立たずのクズが！<WA>"; break;
+                                // Sarge Girimekhala Dialogue 2
+                                case "<SPD 6><AI_MSG_L0123><WAIT>": __result = "<SP6>それを戦闘の構えだと言うのか！？\nうちのばあちゃんの方がよっぽど威圧感があるぞ！<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0124><WAIT>": __result = "<SP6>理由がないのか？　俺の理由は、\nお前をボコボコにすることだ！<WA>"; break;
+                                case "<AI_MSG_L0125><WAIT>": __result = "<SP6>分かったか、\nこの役立たずのクズが！<WA>"; break;
+                            }
+                        }
+                        else
+                        {
+                            switch (message)
+                            {
+                                // Sarge Girimekhala Dialogue 1
+                                case "<SPD 6><AI_MSG_L0120><WAIT>": __result = "<SP6>It's my duty to kill all demons without the balls to survive!<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0121><WAIT>": __result = "<SP6>When I get through with you, you'll be sipping Magatsuhi through a straw!<WA>"; break;
+                                case "<AI_MSG_L0122><WAIT>": __result = "<SP6>Got that, you worthless piece of shit!?<WA>"; break;
+                                // Sarge Girimekhala Dialogue 2
+                                case "<SPD 6><AI_MSG_L0123><WAIT>": __result = "<SP6>You call that a battle stance!? My grandmother looks more menacing than that!<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0124><WAIT>": __result = "<SP6>Don't you have a Reason? My Reason is kicking your ass!<WA>"; break;
+                                case "<AI_MSG_L0125><WAIT>": __result = "<SP6>Got that, you worthless piece of shit!?<WA>"; break;
+                            }
                         }
                     }
                     else
                     {
-                        switch (message)
+                        if (JapaneseLanguage)
                         {
-                            // Specter 1 Dialogue
-                            case "<SPD 6><AI_MSG_L0055><WAIT>": __result = "<SP6>My MaGiC bIggEr ThAn YoUrS!<WA>"; break;
-                            // Specter 3 Dialogue
-                            case "<SPD 6><AI_MSG_L0004><WAIT>": __result = "<SP6>ThIs TiMe Me HaVe PlAn!<WA>"; break;
-                            case "<SPD 6><AI_MSG_L0005><WAIT>": __result = "<SP6>ThIs TiMe Me HaVe PlAn!<WA>"; break;
-                            case "<SPD 6><AI_MSG_L0006><WAIT>": __result = "<SP6>ThIs TiMe Me HaVe PlAn!<WA>"; break;
-                            case "<SPD 6><AI_MSG_L0007><WAIT>": __result = "<SP6>ThIs TiMe Me HaVe PlAn!<WA>"; break;
-                            case "<SPD 6><AI_MSG_L0009><WAIT>": __result = "<SP6>NoW mE bIggEr ThAn YoOoOoOoU! NoW yOu DiIiIiIiIiIiE!<WA>"; break;
-                            case "<SPD 6><AI_MSG_L0010><WAIT>": __result = "<SP6>M-Me NoT bIg EnOUgh! Me StIll KiLL YoOoOoOoU!<WA>"; break;
-                            case "<SPD 6><AI_MSG_L0011><WAIT>": __result = "<SP6>...I WeAk! YoUr FaULt! Me StIll KiLL YoOoOoOoU!<WA>"; break;
-                            case "<SPD 6><AI_MSG_L0012><WAIT>": __result = "<SP6>Me BiG... wHy Me StIll Too WeAk...<WA>"; break;
-                            // Albion Dialogue
-                            case "<SPD 6><AI_MSG_L0061><WAIT>": __result = "<SP6>LINE-UP-THE-FLEET! TIME-FOR-SOME-HEAT! WITH-MY-BOYS-ON-THE-STREET! I-CANNOT-BE-BEAT!<WA>"; break;
+                            switch (message)
+                            {
+                                // Specter 1 Dialogue
+                                case "<SPD 6><AI_MSG_L0055><WAIT>": __result = "<SP6>俺の魔法の方がお前のより強力だ！！<WA>"; break;
+                                // Specter 3 Dialogue
+                                case "<SPD 6><AI_MSG_L0004><WAIT>": __result = "<SP6>今回は計画がある！！<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0005><WAIT>": __result = "<SP6>今回は計画がある！！<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0006><WAIT>": __result = "<SP6>今回は計画がある！！<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0007><WAIT>": __result = "<SP6>今回は計画がある！！<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0009><WAIT>": __result = "<SP6>今じゃ、俺の方がお前よりでかいぞォォォ～！！\n今、あなたは死ィィィィぬ～！！<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0010><WAIT>": __result = "<SP6>ウォ、ウォレ、スコシ、タリナイ…\n……デ、デモ、ウォマエ、ヲ、クウ！！<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0011><WAIT>": __result = "<SP6>私が弱いのは……あなたのせいよ…\n……デ、デモ、ウォマエ、ヲ、クウ！！<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0012><WAIT>": __result = "<SP6>俺は大きくなったのに……\nなんでまだこんなに弱いんだ……？<WA>"; break;
+                            }
+                        }
+                        else
+                        {
+                            switch (message)
+                            {
+                                // Specter 1 Dialogue
+                                case "<SPD 6><AI_MSG_L0055><WAIT>": __result = "<SP6>My MaGiC bIggEr ThAn YoUrS!<WA>"; break;
+                                // Specter 3 Dialogue
+                                case "<SPD 6><AI_MSG_L0004><WAIT>": __result = "<SP6>ThIs TiMe Me HaVe PlAn!<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0005><WAIT>": __result = "<SP6>ThIs TiMe Me HaVe PlAn!<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0006><WAIT>": __result = "<SP6>ThIs TiMe Me HaVe PlAn!<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0007><WAIT>": __result = "<SP6>ThIs TiMe Me HaVe PlAn!<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0009><WAIT>": __result = "<SP6>NoW mE bIggEr ThAn YoOoOoOoU! NoW yOu DiIiIiIiIiIiE!<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0010><WAIT>": __result = "<SP6>M-Me NoT bIg EnOUgh! Me StIll KiLL YoOoOoOoU!<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0011><WAIT>": __result = "<SP6>...I WeAk! YoUr FaULt! Me StIll KiLL YoOoOoOoU!<WA>"; break;
+                                case "<SPD 6><AI_MSG_L0012><WAIT>": __result = "<SP6>Me BiG... wHy Me StIll Too WeAk...?<WA>"; break;
+                                // Albion Dialogue
+                                case "<SPD 6><AI_MSG_L0061><WAIT>": __result = "<SP6>LINE-UP-THE-FLEET! TIME-FOR-SOME-HEAT! WITH-MY-BOYS-ON-THE-STREET! I-CANNOT-BE-BEAT!<WA>"; break;
+                            }
                         }
                     }
                 }

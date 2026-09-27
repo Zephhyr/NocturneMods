@@ -432,8 +432,8 @@ namespace NocturneInsaniax
                         __result = JapaneseLanguage ? "呪殺無効、魔法全般に強い／破魔に弱い" : 
                             "Null: Dark • Str: Elements • Weak: Light"; return false;
                     case "<AISYO_L0169>": // Kin-Ki
-                        __result = JapaneseLanguage ? "物理・銃撃・神経・精神に強い／魔力に弱い" : 
-                            "Str: Phys/Shot/Nerve/Mind • Weak: Curse"; return false;
+                        __result = JapaneseLanguage ? "呪殺無効、物理・銃撃・神経・精神に強い／魔力に弱い" :
+                            "Null: Dark • Str: Phys/Shot/Nerve/Mind • Weak: Curse"; return false;
                     case "<AISYO_L0170>": // Sui-Ki
                         __result = JapaneseLanguage ? "氷結・呪殺無効、バッドステータス攻撃に強い／火炎に弱い" : 
                             "Null: Ice/Dark • Str: Ailments • Weak: Fire"; return false;
@@ -459,11 +459,11 @@ namespace NocturneInsaniax
                         __result = JapaneseLanguage ? "万能以外のあらゆる攻撃に強い" : 
                             "Str: All except Almighty"; return false;
                     case "<AISYO_L0193>": // Metatron
-                        __result = JapaneseLanguage ? "銃撃・破魔反射、火炎・バッドステータス攻撃無効、物理・電撃・衝撃・呪殺に強い" : 
-                            "Rpl: Shot/Light • Null: Fire/Ailments • Str: Phys/Elec/Force/Dark"; return false;
+                        __result = JapaneseLanguage ? "破魔反射、火炎・バッドステータス攻撃無効、物理・電撃・衝撃・呪殺に強い" : 
+                            "Rpl: Light • Null: Fire/Ailments • Str: Phys/Elec/Force/Dark"; return false;
                     case "<AISYO_L0194>": // Beelzebub (Fly)
-                        __result = JapaneseLanguage ? "銃撃・電撃吸収、衝撃・呪殺・バッドステータス攻撃無効、物理・氷結・破魔に強い" : 
-                            "Drn: Shot/Elec • Null: Force/Dark/Ailments • Str: Phys/Ice/Light"; return false;
+                        __result = JapaneseLanguage ? "電撃吸収、衝撃・呪殺・バッドステータス攻撃無効、銃撃・氷結・破魔に強い" :
+                            "Drn: Elec • Null: Force/Dark/Ailments • Str: Shot/Ice/Light"; return false;
                     case "<AISYO_L0195>": // Pale Rider
                         __result = JapaneseLanguage ? "衝撃・呪殺反射、バッドステータス攻撃無効、氷結・破魔に強い" : 
                             "Rpl: Force/Dark • Null: Ailments • Str: Ice/Light"; return false;
@@ -11295,6 +11295,7 @@ namespace NocturneInsaniax
 
             // Affinities
             datAisyo.tbl[id][0] = 10; // Phys
+            datAisyo.tbl[id][7] = 65536; // Dark
             datAisyo.tbl[id][8] = 2147483778; // Curse
             datAisyo.tbl[id][9] = 50; // Nerve
             datAisyo.tbl[id][10] = 50; // Mind
@@ -11753,7 +11754,7 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 2, 2, 2, 3, 1 };
 
             // Affinities
-            datAisyo.tbl[id][0] = 50; // Phys
+            datAisyo.tbl[id][0] = 40; // Phys
             datAisyo.tbl[id][1] = 65536; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
             datAisyo.tbl[id][3] = 50; // Elec
@@ -11763,7 +11764,7 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][8] = 65536; // Curse
             datAisyo.tbl[id][9] = 65536; // Nerve
             datAisyo.tbl[id][10] = 65536; // Mind
-            datAisyo.tbl[id][12] = 131072; // Shot
+            datAisyo.tbl[id][12] = 80; // Shot
 
             // Skills
             tblSkill.fclSkillTbl[id].Event[1].Param = 6; // Maragidyne
@@ -11784,7 +11785,7 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 3, 3, 1, 4, 2 };
 
             // Affinities
-            datAisyo.tbl[id][0] = 50; // Phys
+            datAisyo.tbl[id][0] = 80; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 50; // Ice
             datAisyo.tbl[id][3] = 262144; // Elec
@@ -11794,6 +11795,7 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][8] = 65536; // Curse
             datAisyo.tbl[id][9] = 65536; // Nerve
             datAisyo.tbl[id][10] = 262144; // Mind
+            datAisyo.tbl[id][12] = 40; // Shot
 
             // Skills
             tblSkill.fclSkillTbl[id].Event[1].Param = 24; // Mazandyne
@@ -12520,7 +12522,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].aisyoid = (short)id;
 
             // Affinities
-            datAisyo.tbl[id][0] = 100; // Phys
+            datAisyo.tbl[id][0] = 80; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 50; // Ice
             datAisyo.tbl[id][3] = 262144; // Elec
@@ -14701,7 +14703,7 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][3] = 130; // Elec
             datAisyo.tbl[id][4] = 130; // Force
             datAisyo.tbl[id][6] = 100; // Light
-            datAisyo.tbl[id][7] = 100; // Dark
+            datAisyo.tbl[id][7] = 65536; // Dark
             datAisyo.tbl[id][8] = 2147483778; // Curse
             datAisyo.tbl[id][9] = 50; // Nerve
             datAisyo.tbl[id][10] = 50; // Mind
@@ -17418,7 +17420,7 @@ namespace NocturneInsaniax
         private static void BossMetatron(ushort id)
         {
             // Affinities
-            datAisyo.tbl[id][0] = 50; // Phys
+            datAisyo.tbl[id][0] = 40; // Phys
             datAisyo.tbl[id][1] = 65536; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
             datAisyo.tbl[id][3] = 50; // Elec
@@ -17428,7 +17430,7 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][8] = 65536; // Curse
             datAisyo.tbl[id][9] = 65536; // Nerve
             datAisyo.tbl[id][10] = 65536; // Mind
-            datAisyo.tbl[id][12] = 131072; // Shot
+            datAisyo.tbl[id][12] = 80; // Shot
 
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 30000;
@@ -17460,7 +17462,7 @@ namespace NocturneInsaniax
         private static void BossBeelzebubFly(ushort id)
         {
             // Affinities
-            datAisyo.tbl[id][0] = 50; // Phys
+            datAisyo.tbl[id][0] = 80; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 50; // Ice
             datAisyo.tbl[id][3] = 262144; // Elec
@@ -17470,7 +17472,7 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][8] = 65536; // Curse
             datAisyo.tbl[id][9] = 65536; // Nerve
             datAisyo.tbl[id][10] = 65536; // Mind
-            datAisyo.tbl[id][12] = 262144; // Shot
+            datAisyo.tbl[id][12] = 40; // Shot
 
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 26666;

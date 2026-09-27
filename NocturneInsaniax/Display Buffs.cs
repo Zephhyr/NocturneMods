@@ -90,9 +90,9 @@ namespace NocturneInsaniax
                     {
                         if (party.count[i] > 0)
                         {
-                            buff += "+";
+                            buff += "＋";
                         }
-                        buff += party.count[i].ToString();
+                        buff += party.count[i].ToString().Replace("-", "－");
                     }
                     buffs_strings.Add(buff);
                 }
@@ -128,7 +128,7 @@ namespace NocturneInsaniax
                     buffs_strings[0] = buffs_strings[0].Contains("+")
                         ? "<material=\"MsgFont4\">" + buffs_strings[0] + "<material=\"MsgFont0\">"
                         : "<material=\"MsgFont1\">" + buffs_strings[0] + "<material=\"MsgFont0\">";
-                    result += "AT:" + buffs_strings[0];
+                    result += JapaneseLanguage ? "物理:" + buffs_strings[0] : "AT:" + buffs_strings[0];
                 }
 
                 if (buffs_strings[1] != "")
@@ -137,7 +137,7 @@ namespace NocturneInsaniax
                     buffs_strings[1] = buffs_strings[1].Contains("+")
                         ? "<material=\"MsgFont4\">" + buffs_strings[1] + "<material=\"MsgFont0\">"
                         : "<material=\"MsgFont1\">" + buffs_strings[1] + "<material=\"MsgFont0\">";
-                    result += "MA:" + buffs_strings[1];
+                    result += JapaneseLanguage ? "魔法:" + buffs_strings[1] : "MA:" + buffs_strings[1];
                 }
 
                 if (buffs_strings[3] != "")
@@ -146,7 +146,7 @@ namespace NocturneInsaniax
                     buffs_strings[3] = buffs_strings[3].Contains("+")
                         ? "<material=\"MsgFont4\">" + buffs_strings[3] + "<material=\"MsgFont0\">"
                         : "<material=\"MsgFont1\">" + buffs_strings[3] + "<material=\"MsgFont0\">";
-                    result += "DF:" + buffs_strings[3];
+                    result += JapaneseLanguage ? "防御:" + buffs_strings[3] : "DF:" + buffs_strings[3];
                 }
 
                 if (buffs_strings[4] != "")
@@ -155,7 +155,7 @@ namespace NocturneInsaniax
                     buffs_strings[4] = buffs_strings[4].Contains("+")
                         ? "<material=\"MsgFont4\">" + buffs_strings[4] + "<material=\"MsgFont0\">"
                         : "<material=\"MsgFont1\">" + buffs_strings[4] + "<material=\"MsgFont0\">";
-                    result += "HT:" + buffs_strings[4];
+                    result += JapaneseLanguage ? "命中:" + buffs_strings[4] : "HT:" + buffs_strings[4];
                 }
 
                 if (buffs_strings[2] != "")
@@ -164,7 +164,7 @@ namespace NocturneInsaniax
                     buffs_strings[2] = buffs_strings[2].Contains("+")
                         ? "<material=\"MsgFont4\">" + buffs_strings[2] + "<material=\"MsgFont0\">"
                         : "<material=\"MsgFont1\">" + buffs_strings[2] + "<material=\"MsgFont0\">";
-                    result += "EV:" + buffs_strings[2];
+                    result += JapaneseLanguage ? "回避:" + buffs_strings[2] : "EV:" + buffs_strings[2];
                 }
 
                 switch (buffs_strings[5])
@@ -172,19 +172,19 @@ namespace NocturneInsaniax
                     case "1":
                         {
                             if (result != "\n ") result += "  ";
-                            result += "<material=\"MsgFont3\">Focus<material=\"MsgFont0\">";
+                            result += JapaneseLanguage ? "<material=\"MsgFont3\">気合い<material=\"MsgFont0\">" : "<material=\"MsgFont3\">Focus<material=\"MsgFont0\">";
                             break;
                         }
                     case "2":
                         {
                             if (result != "\n ") result += "  ";
-                            result += "<material=\"MsgFont3\">Concentrate<material=\"MsgFont0\">";
+                            result += JapaneseLanguage ? "<material=\"MsgFont3\">魔力集中<material=\"MsgFont0\">" : "<material=\"MsgFont3\">Concentrate<material=\"MsgFont0\">";
                             break;
                         }
                     case "3":
                         {
                             if (result != "\n ") result += "  ";
-                            result += "<material=\"MsgFont3\">Animus<material=\"MsgFont0\">";
+                            result += JapaneseLanguage ? "<material=\"MsgFont3\">貫く闘気<material=\"MsgFont0\">" : "<material=\"MsgFont3\">Animus<material=\"MsgFont0\">";
                             break;
                         }
                     default: break;
@@ -195,19 +195,19 @@ namespace NocturneInsaniax
                     case "1":
                         {
                             if (result != "\n ") result += "  ";
-                            result += "<material=\"MsgFont2\">Makarakarn<material=\"MsgFont0\">";
+                            result += JapaneseLanguage ? "<material=\"MsgFont2\">マカラカーン<material=\"MsgFont0\">" : "<material=\"MsgFont2\">Makarakarn<material=\"MsgFont0\">";
                             break;
                         }
                     case "2":
                         {
                             if (result != "\n ") result += "  ";
-                            result += "<material=\"MsgFont2\">Tetrakarn<material=\"MsgFont0\">";
+                            result += JapaneseLanguage ? "<material=\"MsgFont2\">テトラカーン<material=\"MsgFont0\">" : "<material=\"MsgFont2\">Tetrakarn<material=\"MsgFont0\">";
                             break;
                         }
                     case "3":
                         {
                             if (result != "\n ") result += "  ";
-                            result += "<material=\"MsgFont2\">Tetra/Makarakarn<material=\"MsgFont0\">";
+                            result += JapaneseLanguage ? "<material=\"MsgFont2\">テトラ/マカラカーン<material=\"MsgFont0\">" : "<material=\"MsgFont2\">Tetra/Makarakarn<material=\"MsgFont0\">";
                             break;
                         }
                     default: break;

@@ -24,6 +24,9 @@ namespace NocturneInsaniax
 
                         if (__result.Contains("to change a skill..."))
                             __result = __result.Replace("to change a skill...", "to change <CO4>" + currentSkillName + "<CO0> to <CO4>" + newSkillName + "<CO0>...");
+
+                        if (__result.Contains("何かを起こそうとしている……"))
+                            __result = __result.Replace("何かを起こそうとしている……", "<CO4>" + currentSkillName + "<CO0>を<CO4>" + newSkillName + "<CO0>に変更しようと……");
                     }
                 }
             }

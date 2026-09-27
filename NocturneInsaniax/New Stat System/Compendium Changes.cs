@@ -144,12 +144,22 @@ namespace NocturneInsaniax
                 if (__result.Contains("<SP7><FO1>It will cost <CO4>") && __result.Contains("Are you okay with that?"))
                 { __result = "<SP7><FO1>It will cost <CO4>" + macca + " Macca. <CO0>Are you okay with that?"; }
 
+                if (__result.Contains("をもらい受けるが、\nよいか？"))
+                { __result = "<CO4>" + macca + "マッカ<CO0>をもらい受けるが、\nよいか？"; }
+
                 // Replace Mido's text to display the correct price when not enough macca
                 else if (__result.Contains("<SP7><FO1>It will cost <CO4>") && __result.Contains("But it seems you don't have enough."))
                 { __result = "<SP7><FO1>It will cost <CO4>" + macca + " Macca... <CO0>But it seems you don't have enough."; }
 
+                if (__result.Contains("必要だが……\n持ち合わせが足りぬようだな。"))
+                { __result = "<CO4>" + macca + "マッカ<CO0>必要だが……\n持ち合わせが足りぬようだな。"; }
+
+                // Extend Mido's text to explain the 
                 else if (__result.Contains("Naturally, the stronger the demon, the more it will cost."))
                     __result += " The cost will be discounted based on how many demons you have registered.";
+
+                else if (__result.Contains("強い悪魔ならば代償額も相応にいただく。\nそうそう頼ってばかりもいられんぞ。"))
+                    __result += "\n登録された悪魔の数に応じて、割引を提供いたします。";
             }
         }
 
