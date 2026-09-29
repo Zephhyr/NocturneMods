@@ -3029,7 +3029,7 @@ namespace NocturneInsaniax
 
             public static float ApplyHealMultiplier(sbyte skillPotential, int heal)
             {
-                //MelonLogger.Msg("Heal!");
+                ////MelonLogger.Msg("Heal!");
                 float multiplier = 1;
 
                 switch (skillPotential)
@@ -3071,7 +3071,7 @@ namespace NocturneInsaniax
 
             public static float ApplyDamageMultiplier(sbyte skillPotential, int damage)
             {
-                //MelonLogger.Msg("ATTACKING!");
+                ////MelonLogger.Msg("ATTACKING!");
                 float multiplier = 1;
 
                 switch (skillPotential)
@@ -3200,7 +3200,7 @@ namespace NocturneInsaniax
 
             public static float ApplyAilmentMultiplier(sbyte skillPotential, bool skillIsAttack, int luk, float ailmentRate)
             {
-                //MelonLogger.Msg("INFLINCTING AILMENT!");
+                ////MelonLogger.Msg("INFLINCTING AILMENT!");
                 float multiplier = 1;
 
                 switch (skillPotential)

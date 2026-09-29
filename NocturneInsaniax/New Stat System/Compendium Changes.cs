@@ -175,9 +175,9 @@ namespace NocturneInsaniax
                 int currentCount = fclEncyc.fclEncycGetNum();
                 int existingIndex = fclEncyc.fclEncycSearch(demonId);
 
-                //MelonLogger.Msg($"[DEBUG] Compendium search: {existingIndex}");
-                //MelonLogger.Msg($"[DEBUG] Pre currentCount: {currentCount} | Complete Ratio: {fclEncyc.fclEncycGetRatio2()}");
-                //MelonLogger.Msg($"[DEBUG] Demon: {demonName} (ID {demonId})");
+                ////MelonLogger.Msg($"[DEBUG] Compendium search: {existingIndex}");
+                ////MelonLogger.Msg($"[DEBUG] Pre currentCount: {currentCount} | Complete Ratio: {fclEncyc.fclEncycGetRatio2()}");
+                ////MelonLogger.Msg($"[DEBUG] Demon: {demonName} (ID {demonId})");
 
                 if (existingIndex != -1)
                 {
@@ -188,7 +188,7 @@ namespace NocturneInsaniax
                 // Block Insaniax demons
                 //if (InsaniaxNewDemons.ContainsKey(demonId))
                 //{
-                //    MelonLogger.Msg($"[DEBUG] Skipping compendium registration for Insaniax demon: {demonName} (ID {demonId})");
+                //    //MelonLogger.Msg($"[DEBUG] Skipping compendium registration for Insaniax demon: {demonName} (ID {demonId})");
                 //    __result = -1;
                 //    return false;
                 //}
@@ -196,7 +196,7 @@ namespace NocturneInsaniax
                 // Block if compendium at vanilla limit (183 base + Dante/Raidou)
                 if (currentCount == 184)
                 {
-                    MelonLogger.Msg($"[DEBUG] Compendium limit reached, skipping registration for demon: {demonName} (ID {demonId})");
+                    //MelonLogger.Msg($"[DEBUG] Compendium limit reached, skipping registration for demon: {demonName} (ID {demonId})");
                     __result = -1;
                     return false;
                 }
@@ -208,8 +208,8 @@ namespace NocturneInsaniax
                 int demonId = (int)__0.id;
                 int currentCount = fclEncyc.fclEncycGetNum();
 
-                //MelonLogger.Msg($"[DEBUG] Compendium search: {existingIndex}");
-                //MelonLogger.Msg($"[DEBUG] Post currentCount: {currentCount} | Complete Ratio: {fclEncyc.fclEncycGetRatio2()}");
+                ////MelonLogger.Msg($"[DEBUG] Compendium search: {existingIndex}");
+                ////MelonLogger.Msg($"[DEBUG] Post currentCount: {currentCount} | Complete Ratio: {fclEncyc.fclEncycGetRatio2()}");
             }
         }
 
