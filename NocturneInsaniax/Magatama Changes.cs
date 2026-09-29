@@ -229,30 +229,60 @@ namespace NocturneInsaniax
 
         private static void Marogareh(ushort id)
         {
-            // Affinities
-            datAisyo.tbl[384][0] = 100; // Phys
-            datAisyo.tbl[384][1] = 100; // Fire
-            datAisyo.tbl[384][2] = 100; // Ice
-            datAisyo.tbl[384][3] = 100; // Elec
-            datAisyo.tbl[384][4] = 100; // Force
-            datAisyo.tbl[384][6] = 100; // Light
-            datAisyo.tbl[384][7] = 100; // Dark
-            datAisyo.tbl[384][8] = 100; // Curse
-            datAisyo.tbl[384][9] = 100; // Nerve
-            datAisyo.tbl[384][10] = 100; // Mind
-            datAisyo.tbl[384][12] = 100; // Shot
+            if (ToggleHumanMode.Value)
+            {
+                // Human Mode Affinities
+                datAisyo.tbl[384][0] = 100; // Phys
+                datAisyo.tbl[384][1] = 100; // Fire
+                datAisyo.tbl[384][2] = 100; // Ice
+                datAisyo.tbl[384][3] = 100; // Elec
+                datAisyo.tbl[384][4] = 100; // Force
+                datAisyo.tbl[384][6] = 65536; // Light
+                datAisyo.tbl[384][7] = 100; // Dark
+                datAisyo.tbl[384][8] = 100; // Curse
+                datAisyo.tbl[384][9] = 100; // Nerve
+                datAisyo.tbl[384][10] = 100; // Mind
+                datAisyo.tbl[384][12] = 100; // Shot
 
-            datAisyo.tbl[385][0] = 100; // Phys
-            datAisyo.tbl[385][1] = 100; // Fire
-            datAisyo.tbl[385][2] = 100; // Ice
-            datAisyo.tbl[385][3] = 100; // Elec
-            datAisyo.tbl[385][4] = 100; // Force
-            datAisyo.tbl[385][6] = 100; // Light
-            datAisyo.tbl[385][7] = 100; // Dark
-            datAisyo.tbl[385][8] = 100; // Curse
-            datAisyo.tbl[385][9] = 100; // Nerve
-            datAisyo.tbl[385][10] = 100; // Mind
-            datAisyo.tbl[385][12] = 100; // Shot
+                datAisyo.tbl[385][0] = 100; // Phys
+                datAisyo.tbl[385][1] = 100; // Fire
+                datAisyo.tbl[385][2] = 100; // Ice
+                datAisyo.tbl[385][3] = 100; // Elec
+                datAisyo.tbl[385][4] = 100; // Force
+                datAisyo.tbl[385][6] = 65536; // Light
+                datAisyo.tbl[385][7] = 100; // Dark
+                datAisyo.tbl[385][8] = 100; // Curse
+                datAisyo.tbl[385][9] = 100; // Nerve
+                datAisyo.tbl[385][10] = 100; // Mind
+                datAisyo.tbl[385][12] = 100; // Shot
+            }
+            else
+            {
+                // Affinities
+                datAisyo.tbl[384][0] = 100; // Phys
+                datAisyo.tbl[384][1] = 100; // Fire
+                datAisyo.tbl[384][2] = 100; // Ice
+                datAisyo.tbl[384][3] = 100; // Elec
+                datAisyo.tbl[384][4] = 100; // Force
+                datAisyo.tbl[384][6] = 100; // Light
+                datAisyo.tbl[384][7] = 100; // Dark
+                datAisyo.tbl[384][8] = 100; // Curse
+                datAisyo.tbl[384][9] = 100; // Nerve
+                datAisyo.tbl[384][10] = 100; // Mind
+                datAisyo.tbl[384][12] = 100; // Shot
+
+                datAisyo.tbl[385][0] = 100; // Phys
+                datAisyo.tbl[385][1] = 100; // Fire
+                datAisyo.tbl[385][2] = 100; // Ice
+                datAisyo.tbl[385][3] = 100; // Elec
+                datAisyo.tbl[385][4] = 100; // Force
+                datAisyo.tbl[385][6] = 100; // Light
+                datAisyo.tbl[385][7] = 100; // Dark
+                datAisyo.tbl[385][8] = 100; // Curse
+                datAisyo.tbl[385][9] = 100; // Nerve
+                datAisyo.tbl[385][10] = 100; // Mind
+                datAisyo.tbl[385][12] = 100; // Shot
+            }
 
             // Alignment
             tblHearts.fclHeartsTbl[id].Flag = 4; // Dark
@@ -290,30 +320,60 @@ namespace NocturneInsaniax
 
         private static void Wadatsumi(ushort id)
         {
-            // Affinities
-            datAisyo.tbl[386][0] = 100; // Phys
-            datAisyo.tbl[386][1] = 100; // Fire
-            datAisyo.tbl[386][2] = 65536; // Ice
-            datAisyo.tbl[386][3] = 2147483778; // Elec
-            datAisyo.tbl[386][4] = 100; // Force
-            datAisyo.tbl[386][6] = 100; // Light
-            datAisyo.tbl[386][7] = 100; // Dark
-            datAisyo.tbl[386][8] = 100; // Curse
-            datAisyo.tbl[386][9] = 100; // Nerve
-            datAisyo.tbl[386][10] = 100; // Mind
-            datAisyo.tbl[386][12] = 100; // Shot
+            if (ToggleHumanMode.Value)
+            {
+                // Human Mode Affinities
+                datAisyo.tbl[386][0] = 100; // Phys
+                datAisyo.tbl[386][1] = 100; // Fire
+                datAisyo.tbl[386][2] = 100; // Ice
+                datAisyo.tbl[386][3] = 100; // Elec
+                datAisyo.tbl[386][4] = 100; // Force
+                datAisyo.tbl[386][6] = 65536; // Light
+                datAisyo.tbl[386][7] = 100; // Dark
+                datAisyo.tbl[386][8] = 100; // Curse
+                datAisyo.tbl[386][9] = 100; // Nerve
+                datAisyo.tbl[386][10] = 100; // Mind
+                datAisyo.tbl[386][12] = 100; // Shot
 
-            datAisyo.tbl[387][0] = 100; // Phys
-            datAisyo.tbl[387][1] = 100; // Fire
-            datAisyo.tbl[387][2] = 65536; // Ice
-            datAisyo.tbl[387][3] = 2147483778; // Elec
-            datAisyo.tbl[387][4] = 100; // Force
-            datAisyo.tbl[387][6] = 100; // Light
-            datAisyo.tbl[387][7] = 100; // Dark
-            datAisyo.tbl[387][8] = 100; // Curse
-            datAisyo.tbl[387][9] = 100; // Nerve
-            datAisyo.tbl[387][10] = 100; // Mind
-            datAisyo.tbl[387][12] = 100; // Shot
+                datAisyo.tbl[387][0] = 100; // Phys
+                datAisyo.tbl[387][1] = 100; // Fire
+                datAisyo.tbl[387][2] = 100; // Ice
+                datAisyo.tbl[387][3] = 100; // Elec
+                datAisyo.tbl[387][4] = 100; // Force
+                datAisyo.tbl[387][6] = 65536; // Light
+                datAisyo.tbl[387][7] = 100; // Dark
+                datAisyo.tbl[387][8] = 100; // Curse
+                datAisyo.tbl[387][9] = 100; // Nerve
+                datAisyo.tbl[387][10] = 100; // Mind
+                datAisyo.tbl[387][12] = 100; // Shot
+            }
+            else
+            {
+                // Affinities
+                datAisyo.tbl[386][0] = 100; // Phys
+                datAisyo.tbl[386][1] = 100; // Fire
+                datAisyo.tbl[386][2] = 65536; // Ice
+                datAisyo.tbl[386][3] = 2147483778; // Elec
+                datAisyo.tbl[386][4] = 100; // Force
+                datAisyo.tbl[386][6] = 100; // Light
+                datAisyo.tbl[386][7] = 100; // Dark
+                datAisyo.tbl[386][8] = 100; // Curse
+                datAisyo.tbl[386][9] = 100; // Nerve
+                datAisyo.tbl[386][10] = 100; // Mind
+                datAisyo.tbl[386][12] = 100; // Shot
+
+                datAisyo.tbl[387][0] = 100; // Phys
+                datAisyo.tbl[387][1] = 100; // Fire
+                datAisyo.tbl[387][2] = 65536; // Ice
+                datAisyo.tbl[387][3] = 2147483778; // Elec
+                datAisyo.tbl[387][4] = 100; // Force
+                datAisyo.tbl[387][6] = 100; // Light
+                datAisyo.tbl[387][7] = 100; // Dark
+                datAisyo.tbl[387][8] = 100; // Curse
+                datAisyo.tbl[387][9] = 100; // Nerve
+                datAisyo.tbl[387][10] = 100; // Mind
+                datAisyo.tbl[387][12] = 100; // Shot
+            }
 
             // Alignment
             tblHearts.fclHeartsTbl[id].Flag = 0; // Neutral
@@ -351,30 +411,60 @@ namespace NocturneInsaniax
 
         private static void Ankh(ushort id)
         {
-            // Affinities
-            datAisyo.tbl[388][0] = 100; // Phys
-            datAisyo.tbl[388][1] = 100; // Fire
-            datAisyo.tbl[388][2] = 100; // Ice
-            datAisyo.tbl[388][3] = 100; // Elec
-            datAisyo.tbl[388][4] = 100; // Force
-            datAisyo.tbl[388][6] = 65536; // Light
-            datAisyo.tbl[388][7] = 2147483778; // Dark
-            datAisyo.tbl[388][8] = 100; // Curse
-            datAisyo.tbl[388][9] = 100; // Nerve
-            datAisyo.tbl[388][10] = 100; // Mind
-            datAisyo.tbl[388][12] = 100; // Shot
+            if (ToggleHumanMode.Value)
+            {
+                // Human Mode Affinities
+                datAisyo.tbl[388][0] = 100; // Phys
+                datAisyo.tbl[388][1] = 100; // Fire
+                datAisyo.tbl[388][2] = 100; // Ice
+                datAisyo.tbl[388][3] = 100; // Elec
+                datAisyo.tbl[388][4] = 100; // Force
+                datAisyo.tbl[388][6] = 65536; // Light
+                datAisyo.tbl[388][7] = 100; // Dark
+                datAisyo.tbl[388][8] = 100; // Curse
+                datAisyo.tbl[388][9] = 100; // Nerve
+                datAisyo.tbl[388][10] = 100; // Mind
+                datAisyo.tbl[388][12] = 100; // Shot
 
-            datAisyo.tbl[389][0] = 100; // Phys
-            datAisyo.tbl[389][1] = 100; // Fire
-            datAisyo.tbl[389][2] = 100; // Ice
-            datAisyo.tbl[389][3] = 100; // Elec
-            datAisyo.tbl[389][4] = 100; // Force
-            datAisyo.tbl[389][6] = 65536; // Light
-            datAisyo.tbl[389][7] = 2147483778; // Dark
-            datAisyo.tbl[389][8] = 100; // Curse
-            datAisyo.tbl[389][9] = 100; // Nerve
-            datAisyo.tbl[389][10] = 100; // Mind
-            datAisyo.tbl[389][12] = 100; // Shot
+                datAisyo.tbl[389][0] = 100; // Phys
+                datAisyo.tbl[389][1] = 100; // Fire
+                datAisyo.tbl[389][2] = 100; // Ice
+                datAisyo.tbl[389][3] = 100; // Elec
+                datAisyo.tbl[389][4] = 100; // Force
+                datAisyo.tbl[389][6] = 65536; // Light
+                datAisyo.tbl[389][7] = 100; // Dark
+                datAisyo.tbl[389][8] = 100; // Curse
+                datAisyo.tbl[389][9] = 100; // Nerve
+                datAisyo.tbl[389][10] = 100; // Mind
+                datAisyo.tbl[389][12] = 100; // Shot
+            }
+            else
+            {
+                // Affinities
+                datAisyo.tbl[388][0] = 100; // Phys
+                datAisyo.tbl[388][1] = 100; // Fire
+                datAisyo.tbl[388][2] = 100; // Ice
+                datAisyo.tbl[388][3] = 100; // Elec
+                datAisyo.tbl[388][4] = 100; // Force
+                datAisyo.tbl[388][6] = 65536; // Light
+                datAisyo.tbl[388][7] = 2147483778; // Dark
+                datAisyo.tbl[388][8] = 100; // Curse
+                datAisyo.tbl[388][9] = 100; // Nerve
+                datAisyo.tbl[388][10] = 100; // Mind
+                datAisyo.tbl[388][12] = 100; // Shot
+
+                datAisyo.tbl[389][0] = 100; // Phys
+                datAisyo.tbl[389][1] = 100; // Fire
+                datAisyo.tbl[389][2] = 100; // Ice
+                datAisyo.tbl[389][3] = 100; // Elec
+                datAisyo.tbl[389][4] = 100; // Force
+                datAisyo.tbl[389][6] = 65536; // Light
+                datAisyo.tbl[389][7] = 2147483778; // Dark
+                datAisyo.tbl[389][8] = 100; // Curse
+                datAisyo.tbl[389][9] = 100; // Nerve
+                datAisyo.tbl[389][10] = 100; // Mind
+                datAisyo.tbl[389][12] = 100; // Shot
+            }
 
             // Alignment
             tblHearts.fclHeartsTbl[id].Flag = 1; // Light
@@ -410,30 +500,60 @@ namespace NocturneInsaniax
 
         private static void Iyomante(ushort id)
         {
-            // Affinities
-            datAisyo.tbl[390][0] = 100; // Phys
-            datAisyo.tbl[390][1] = 100; // Fire
-            datAisyo.tbl[390][2] = 100; // Ice
-            datAisyo.tbl[390][3] = 100; // Elec
-            datAisyo.tbl[390][4] = 100; // Force
-            datAisyo.tbl[390][6] = 100; // Light
-            datAisyo.tbl[390][7] = 100; // Dark
-            datAisyo.tbl[390][8] = 100; // Curse
-            datAisyo.tbl[390][9] = 100; // Nerve
-            datAisyo.tbl[390][10] = 65536; // Mind
-            datAisyo.tbl[390][12] = 100; // Shot
+            if (ToggleHumanMode.Value)
+            {
+                // Human Mode Affinities
+                datAisyo.tbl[390][0] = 100; // Phys
+                datAisyo.tbl[390][1] = 100; // Fire
+                datAisyo.tbl[390][2] = 100; // Ice
+                datAisyo.tbl[390][3] = 100; // Elec
+                datAisyo.tbl[390][4] = 100; // Force
+                datAisyo.tbl[390][6] = 65536; // Light
+                datAisyo.tbl[390][7] = 100; // Dark
+                datAisyo.tbl[390][8] = 100; // Curse
+                datAisyo.tbl[390][9] = 100; // Nerve
+                datAisyo.tbl[390][10] = 100; // Mind
+                datAisyo.tbl[390][12] = 100; // Shot
 
-            datAisyo.tbl[391][0] = 100; // Phys
-            datAisyo.tbl[391][1] = 100; // Fire
-            datAisyo.tbl[391][2] = 100; // Ice
-            datAisyo.tbl[391][3] = 100; // Elec
-            datAisyo.tbl[391][4] = 100; // Force
-            datAisyo.tbl[391][6] = 100; // Light
-            datAisyo.tbl[391][7] = 100; // Dark
-            datAisyo.tbl[391][8] = 100; // Curse
-            datAisyo.tbl[391][9] = 100; // Nerve
-            datAisyo.tbl[391][10] = 65536; // Mind
-            datAisyo.tbl[391][12] = 100; // Shot
+                datAisyo.tbl[391][0] = 100; // Phys
+                datAisyo.tbl[391][1] = 100; // Fire
+                datAisyo.tbl[391][2] = 100; // Ice
+                datAisyo.tbl[391][3] = 100; // Elec
+                datAisyo.tbl[391][4] = 100; // Force
+                datAisyo.tbl[391][6] = 65536; // Light
+                datAisyo.tbl[391][7] = 100; // Dark
+                datAisyo.tbl[391][8] = 100; // Curse
+                datAisyo.tbl[391][9] = 100; // Nerve
+                datAisyo.tbl[391][10] = 100; // Mind
+                datAisyo.tbl[391][12] = 100; // Shot
+            }
+            else
+            {
+                // Affinities
+                datAisyo.tbl[390][0] = 100; // Phys
+                datAisyo.tbl[390][1] = 100; // Fire
+                datAisyo.tbl[390][2] = 100; // Ice
+                datAisyo.tbl[390][3] = 100; // Elec
+                datAisyo.tbl[390][4] = 100; // Force
+                datAisyo.tbl[390][6] = 100; // Light
+                datAisyo.tbl[390][7] = 100; // Dark
+                datAisyo.tbl[390][8] = 100; // Curse
+                datAisyo.tbl[390][9] = 100; // Nerve
+                datAisyo.tbl[390][10] = 65536; // Mind
+                datAisyo.tbl[390][12] = 100; // Shot
+
+                datAisyo.tbl[391][0] = 100; // Phys
+                datAisyo.tbl[391][1] = 100; // Fire
+                datAisyo.tbl[391][2] = 100; // Ice
+                datAisyo.tbl[391][3] = 100; // Elec
+                datAisyo.tbl[391][4] = 100; // Force
+                datAisyo.tbl[391][6] = 100; // Light
+                datAisyo.tbl[391][7] = 100; // Dark
+                datAisyo.tbl[391][8] = 100; // Curse
+                datAisyo.tbl[391][9] = 100; // Nerve
+                datAisyo.tbl[391][10] = 65536; // Mind
+                datAisyo.tbl[391][12] = 100; // Shot
+            }
 
             // Alignment
             tblHearts.fclHeartsTbl[id].Flag = 1; // Light
@@ -470,30 +590,60 @@ namespace NocturneInsaniax
 
         private static void Shiranui(ushort id)
         {
-            // Affinities
-            datAisyo.tbl[392][0] = 100; // Phys
-            datAisyo.tbl[392][1] = 65536; // Fire
-            datAisyo.tbl[392][2] = 100; // Ice
-            datAisyo.tbl[392][3] = 100; // Elec
-            datAisyo.tbl[392][4] = 2147483778; // Force
-            datAisyo.tbl[392][6] = 100; // Light
-            datAisyo.tbl[392][7] = 100; // Dark
-            datAisyo.tbl[392][8] = 100; // Curse
-            datAisyo.tbl[392][9] = 100; // Nerve
-            datAisyo.tbl[392][10] = 100; // Mind
-            datAisyo.tbl[392][12] = 100; // Shot
+            if (ToggleHumanMode.Value)
+            {
+                // Human Mode Affinities
+                datAisyo.tbl[392][0] = 100; // Phys
+                datAisyo.tbl[392][1] = 100; // Fire
+                datAisyo.tbl[392][2] = 100; // Ice
+                datAisyo.tbl[392][3] = 100; // Elec
+                datAisyo.tbl[392][4] = 100; // Force
+                datAisyo.tbl[392][6] = 65536; // Light
+                datAisyo.tbl[392][7] = 100; // Dark
+                datAisyo.tbl[392][8] = 100; // Curse
+                datAisyo.tbl[392][9] = 100; // Nerve
+                datAisyo.tbl[392][10] = 100; // Mind
+                datAisyo.tbl[392][12] = 100; // Shot
 
-            datAisyo.tbl[393][0] = 100; // Phys
-            datAisyo.tbl[393][1] = 65536; // Fire
-            datAisyo.tbl[393][2] = 100; // Ice
-            datAisyo.tbl[393][3] = 100; // Elec
-            datAisyo.tbl[393][4] = 2147483778; // Force
-            datAisyo.tbl[393][6] = 100; // Light
-            datAisyo.tbl[393][7] = 100; // Dark
-            datAisyo.tbl[393][8] = 100; // Curse
-            datAisyo.tbl[393][9] = 100; // Nerve
-            datAisyo.tbl[393][10] = 100; // Mind
-            datAisyo.tbl[393][12] = 100; // Shot
+                datAisyo.tbl[393][0] = 100; // Phys
+                datAisyo.tbl[393][1] = 100; // Fire
+                datAisyo.tbl[393][2] = 100; // Ice
+                datAisyo.tbl[393][3] = 100; // Elec
+                datAisyo.tbl[393][4] = 100; // Force
+                datAisyo.tbl[393][6] = 65536; // Light
+                datAisyo.tbl[393][7] = 100; // Dark
+                datAisyo.tbl[393][8] = 100; // Curse
+                datAisyo.tbl[393][9] = 100; // Nerve
+                datAisyo.tbl[393][10] = 100; // Mind
+                datAisyo.tbl[393][12] = 100; // Shot
+            }
+            else
+            {
+                // Affinities
+                datAisyo.tbl[392][0] = 100; // Phys
+                datAisyo.tbl[392][1] = 65536; // Fire
+                datAisyo.tbl[392][2] = 100; // Ice
+                datAisyo.tbl[392][3] = 100; // Elec
+                datAisyo.tbl[392][4] = 2147483778; // Force
+                datAisyo.tbl[392][6] = 100; // Light
+                datAisyo.tbl[392][7] = 100; // Dark
+                datAisyo.tbl[392][8] = 100; // Curse
+                datAisyo.tbl[392][9] = 100; // Nerve
+                datAisyo.tbl[392][10] = 100; // Mind
+                datAisyo.tbl[392][12] = 100; // Shot
+
+                datAisyo.tbl[393][0] = 100; // Phys
+                datAisyo.tbl[393][1] = 65536; // Fire
+                datAisyo.tbl[393][2] = 100; // Ice
+                datAisyo.tbl[393][3] = 100; // Elec
+                datAisyo.tbl[393][4] = 2147483778; // Force
+                datAisyo.tbl[393][6] = 100; // Light
+                datAisyo.tbl[393][7] = 100; // Dark
+                datAisyo.tbl[393][8] = 100; // Curse
+                datAisyo.tbl[393][9] = 100; // Nerve
+                datAisyo.tbl[393][10] = 100; // Mind
+                datAisyo.tbl[393][12] = 100; // Shot
+            }
 
             // Alignment
             tblHearts.fclHeartsTbl[id].Flag = 4; // Dark
@@ -531,30 +681,60 @@ namespace NocturneInsaniax
 
         private static void Hifumi(ushort id)
         {
-            // Affinities
-            datAisyo.tbl[394][0] = 100; // Phys
-            datAisyo.tbl[394][1] = 2147483778; // Fire
-            datAisyo.tbl[394][2] = 100; // Ice
-            datAisyo.tbl[394][3] = 100; // Elec
-            datAisyo.tbl[394][4] = 65536; // Force
-            datAisyo.tbl[394][6] = 100; // Light
-            datAisyo.tbl[394][7] = 100; // Dark
-            datAisyo.tbl[394][8] = 100; // Curse
-            datAisyo.tbl[394][9] = 100; // Nerve
-            datAisyo.tbl[394][10] = 100; // Mind
-            datAisyo.tbl[394][12] = 100; // Shot
+            if (ToggleHumanMode.Value)
+            {
+                // Human Mode Affinities
+                datAisyo.tbl[394][0] = 100; // Phys
+                datAisyo.tbl[394][1] = 100; // Fire
+                datAisyo.tbl[394][2] = 100; // Ice
+                datAisyo.tbl[394][3] = 100; // Elec
+                datAisyo.tbl[394][4] = 100; // Force
+                datAisyo.tbl[394][6] = 65536; // Light
+                datAisyo.tbl[394][7] = 100; // Dark
+                datAisyo.tbl[394][8] = 100; // Curse
+                datAisyo.tbl[394][9] = 100; // Nerve
+                datAisyo.tbl[394][10] = 100; // Mind
+                datAisyo.tbl[394][12] = 100; // Shot
 
-            datAisyo.tbl[395][0] = 100; // Phys
-            datAisyo.tbl[395][1] = 2147483778; // Fire
-            datAisyo.tbl[395][2] = 100; // Ice
-            datAisyo.tbl[395][3] = 100; // Elec
-            datAisyo.tbl[395][4] = 65536; // Force
-            datAisyo.tbl[395][6] = 100; // Light
-            datAisyo.tbl[395][7] = 100; // Dark
-            datAisyo.tbl[395][8] = 100; // Curse
-            datAisyo.tbl[395][9] = 100; // Nerve
-            datAisyo.tbl[395][10] = 100; // Mind
-            datAisyo.tbl[395][12] = 100; // Shot
+                datAisyo.tbl[395][0] = 100; // Phys
+                datAisyo.tbl[395][1] = 100; // Fire
+                datAisyo.tbl[395][2] = 100; // Ice
+                datAisyo.tbl[395][3] = 100; // Elec
+                datAisyo.tbl[395][4] = 100; // Force
+                datAisyo.tbl[395][6] = 65536; // Light
+                datAisyo.tbl[395][7] = 100; // Dark
+                datAisyo.tbl[395][8] = 100; // Curse
+                datAisyo.tbl[395][9] = 100; // Nerve
+                datAisyo.tbl[395][10] = 100; // Mind
+                datAisyo.tbl[395][12] = 100; // Shot
+            }
+            else
+            {
+                // Affinities
+                datAisyo.tbl[394][0] = 100; // Phys
+                datAisyo.tbl[394][1] = 2147483778; // Fire
+                datAisyo.tbl[394][2] = 100; // Ice
+                datAisyo.tbl[394][3] = 100; // Elec
+                datAisyo.tbl[394][4] = 65536; // Force
+                datAisyo.tbl[394][6] = 100; // Light
+                datAisyo.tbl[394][7] = 100; // Dark
+                datAisyo.tbl[394][8] = 100; // Curse
+                datAisyo.tbl[394][9] = 100; // Nerve
+                datAisyo.tbl[394][10] = 100; // Mind
+                datAisyo.tbl[394][12] = 100; // Shot
+
+                datAisyo.tbl[395][0] = 100; // Phys
+                datAisyo.tbl[395][1] = 2147483778; // Fire
+                datAisyo.tbl[395][2] = 100; // Ice
+                datAisyo.tbl[395][3] = 100; // Elec
+                datAisyo.tbl[395][4] = 65536; // Force
+                datAisyo.tbl[395][6] = 100; // Light
+                datAisyo.tbl[395][7] = 100; // Dark
+                datAisyo.tbl[395][8] = 100; // Curse
+                datAisyo.tbl[395][9] = 100; // Nerve
+                datAisyo.tbl[395][10] = 100; // Mind
+                datAisyo.tbl[395][12] = 100; // Shot
+            }
 
             // Alignment
             tblHearts.fclHeartsTbl[id].Flag = 0; // Neutral
@@ -592,30 +772,60 @@ namespace NocturneInsaniax
 
         private static void Kamurogi(ushort id)
         {
-            // Affinities
-            datAisyo.tbl[396][0] = 50; // Phys
-            datAisyo.tbl[396][1] = 100; // Fire
-            datAisyo.tbl[396][2] = 100; // Ice
-            datAisyo.tbl[396][3] = 100; // Elec
-            datAisyo.tbl[396][4] = 100; // Force
-            datAisyo.tbl[396][6] = 100; // Light
-            datAisyo.tbl[396][7] = 100; // Dark
-            datAisyo.tbl[396][8] = 2147483778; // Curse
-            datAisyo.tbl[396][9] = 2147483778; // Nerve
-            datAisyo.tbl[396][10] = 2147483778; // Mind
-            datAisyo.tbl[396][12] = 50; // Shot
+            if (ToggleHumanMode.Value)
+            {
+                // Human Mode Affinities
+                datAisyo.tbl[396][0] = 100; // Phys
+                datAisyo.tbl[396][1] = 100; // Fire
+                datAisyo.tbl[396][2] = 100; // Ice
+                datAisyo.tbl[396][3] = 100; // Elec
+                datAisyo.tbl[396][4] = 100; // Force
+                datAisyo.tbl[396][6] = 65536; // Light
+                datAisyo.tbl[396][7] = 100; // Dark
+                datAisyo.tbl[396][8] = 100; // Curse
+                datAisyo.tbl[396][9] = 100; // Nerve
+                datAisyo.tbl[396][10] = 100; // Mind
+                datAisyo.tbl[396][12] = 100; // Shot
 
-            datAisyo.tbl[397][0] = 50; // Phys
-            datAisyo.tbl[397][1] = 100; // Fire
-            datAisyo.tbl[397][2] = 100; // Ice
-            datAisyo.tbl[397][3] = 100; // Elec
-            datAisyo.tbl[397][4] = 100; // Force
-            datAisyo.tbl[397][6] = 100; // Light
-            datAisyo.tbl[397][7] = 100; // Dark
-            datAisyo.tbl[397][8] = 2147483778; // Curse
-            datAisyo.tbl[397][9] = 2147483778; // Nerve
-            datAisyo.tbl[397][10] = 2147483778; // Mind
-            datAisyo.tbl[397][12] = 50; // Shot
+                datAisyo.tbl[397][0] = 100; // Phys
+                datAisyo.tbl[397][1] = 100; // Fire
+                datAisyo.tbl[397][2] = 100; // Ice
+                datAisyo.tbl[397][3] = 100; // Elec
+                datAisyo.tbl[397][4] = 100; // Force
+                datAisyo.tbl[397][6] = 65536; // Light
+                datAisyo.tbl[397][7] = 100; // Dark
+                datAisyo.tbl[397][8] = 100; // Curse
+                datAisyo.tbl[397][9] = 100; // Nerve
+                datAisyo.tbl[397][10] = 100; // Mind
+                datAisyo.tbl[397][12] = 100; // Shot
+            }
+            else
+            {
+                // Affinities
+                datAisyo.tbl[396][0] = 50; // Phys
+                datAisyo.tbl[396][1] = 100; // Fire
+                datAisyo.tbl[396][2] = 100; // Ice
+                datAisyo.tbl[396][3] = 100; // Elec
+                datAisyo.tbl[396][4] = 100; // Force
+                datAisyo.tbl[396][6] = 100; // Light
+                datAisyo.tbl[396][7] = 100; // Dark
+                datAisyo.tbl[396][8] = 2147483778; // Curse
+                datAisyo.tbl[396][9] = 2147483778; // Nerve
+                datAisyo.tbl[396][10] = 2147483778; // Mind
+                datAisyo.tbl[396][12] = 50; // Shot
+
+                datAisyo.tbl[397][0] = 50; // Phys
+                datAisyo.tbl[397][1] = 100; // Fire
+                datAisyo.tbl[397][2] = 100; // Ice
+                datAisyo.tbl[397][3] = 100; // Elec
+                datAisyo.tbl[397][4] = 100; // Force
+                datAisyo.tbl[397][6] = 100; // Light
+                datAisyo.tbl[397][7] = 100; // Dark
+                datAisyo.tbl[397][8] = 2147483778; // Curse
+                datAisyo.tbl[397][9] = 2147483778; // Nerve
+                datAisyo.tbl[397][10] = 2147483778; // Mind
+                datAisyo.tbl[397][12] = 50; // Shot
+            }
 
             // Alignment
             tblHearts.fclHeartsTbl[id].Flag = 1; // Light
@@ -653,30 +863,60 @@ namespace NocturneInsaniax
 
         private static void Kamudo(ushort id)
         {
-            // Affinities
-            datAisyo.tbl[398][0] = 100; // Phys
-            datAisyo.tbl[398][1] = 100; // Fire
-            datAisyo.tbl[398][2] = 2147483778; // Ice
-            datAisyo.tbl[398][3] = 65536; // Elec
-            datAisyo.tbl[398][4] = 100; // Force
-            datAisyo.tbl[398][6] = 100; // Light
-            datAisyo.tbl[398][7] = 100; // Dark
-            datAisyo.tbl[398][8] = 100; // Curse
-            datAisyo.tbl[398][9] = 100; // Nerve
-            datAisyo.tbl[398][10] = 100; // Mind
-            datAisyo.tbl[398][12] = 100; // Shot
+            if (ToggleHumanMode.Value)
+            {
+                // Human Mode Affinities
+                datAisyo.tbl[398][0] = 100; // Phys
+                datAisyo.tbl[398][1] = 100; // Fire
+                datAisyo.tbl[398][2] = 100; // Ice
+                datAisyo.tbl[398][3] = 100; // Elec
+                datAisyo.tbl[398][4] = 100; // Force
+                datAisyo.tbl[398][6] = 65536; // Light
+                datAisyo.tbl[398][7] = 100; // Dark
+                datAisyo.tbl[398][8] = 100; // Curse
+                datAisyo.tbl[398][9] = 100; // Nerve
+                datAisyo.tbl[398][10] = 100; // Mind
+                datAisyo.tbl[398][12] = 100; // Shot
 
-            datAisyo.tbl[399][0] = 100; // Phys
-            datAisyo.tbl[399][1] = 100; // Fire
-            datAisyo.tbl[399][2] = 2147483778; // Ice
-            datAisyo.tbl[399][3] = 65536; // Elec
-            datAisyo.tbl[399][4] = 100; // Force
-            datAisyo.tbl[399][6] = 100; // Light
-            datAisyo.tbl[399][7] = 100; // Dark
-            datAisyo.tbl[399][8] = 100; // Curse
-            datAisyo.tbl[399][9] = 100; // Nerve
-            datAisyo.tbl[399][10] = 100; // Mind
-            datAisyo.tbl[399][12] = 100; // Shot
+                datAisyo.tbl[399][0] = 100; // Phys
+                datAisyo.tbl[399][1] = 100; // Fire
+                datAisyo.tbl[399][2] = 100; // Ice
+                datAisyo.tbl[399][3] = 100; // Elec
+                datAisyo.tbl[399][4] = 100; // Force
+                datAisyo.tbl[399][6] = 65536; // Light
+                datAisyo.tbl[399][7] = 100; // Dark
+                datAisyo.tbl[399][8] = 100; // Curse
+                datAisyo.tbl[399][9] = 100; // Nerve
+                datAisyo.tbl[399][10] = 100; // Mind
+                datAisyo.tbl[399][12] = 100; // Shot
+            }
+            else
+            {
+                // Affinities
+                datAisyo.tbl[398][0] = 100; // Phys
+                datAisyo.tbl[398][1] = 100; // Fire
+                datAisyo.tbl[398][2] = 2147483778; // Ice
+                datAisyo.tbl[398][3] = 65536; // Elec
+                datAisyo.tbl[398][4] = 100; // Force
+                datAisyo.tbl[398][6] = 100; // Light
+                datAisyo.tbl[398][7] = 100; // Dark
+                datAisyo.tbl[398][8] = 100; // Curse
+                datAisyo.tbl[398][9] = 100; // Nerve
+                datAisyo.tbl[398][10] = 100; // Mind
+                datAisyo.tbl[398][12] = 100; // Shot
+
+                datAisyo.tbl[399][0] = 100; // Phys
+                datAisyo.tbl[399][1] = 100; // Fire
+                datAisyo.tbl[399][2] = 2147483778; // Ice
+                datAisyo.tbl[399][3] = 65536; // Elec
+                datAisyo.tbl[399][4] = 100; // Force
+                datAisyo.tbl[399][6] = 100; // Light
+                datAisyo.tbl[399][7] = 100; // Dark
+                datAisyo.tbl[399][8] = 100; // Curse
+                datAisyo.tbl[399][9] = 100; // Nerve
+                datAisyo.tbl[399][10] = 100; // Mind
+                datAisyo.tbl[399][12] = 100; // Shot
+            }
 
             // Alignment
             tblHearts.fclHeartsTbl[id].Flag = 0; // Neutral
@@ -714,30 +954,60 @@ namespace NocturneInsaniax
 
         private static void Anathema(ushort id)
         {
-            // Affinities
-            datAisyo.tbl[400][0] = 100; // Phys
-            datAisyo.tbl[400][1] = 100; // Fire
-            datAisyo.tbl[400][2] = 100; // Ice
-            datAisyo.tbl[400][3] = 100; // Elec
-            datAisyo.tbl[400][4] = 100; // Force
-            datAisyo.tbl[400][6] = 2147483778; // Light
-            datAisyo.tbl[400][7] = 65536; // Dark
-            datAisyo.tbl[400][8] = 100; // Curse
-            datAisyo.tbl[400][9] = 100; // Nerve
-            datAisyo.tbl[400][10] = 100; // Mind
-            datAisyo.tbl[400][12] = 100; // Shot
+            if (ToggleHumanMode.Value)
+            {
+                // Human Mode Affinities
+                datAisyo.tbl[400][0] = 100; // Phys
+                datAisyo.tbl[400][1] = 100; // Fire
+                datAisyo.tbl[400][2] = 100; // Ice
+                datAisyo.tbl[400][3] = 100; // Elec
+                datAisyo.tbl[400][4] = 100; // Force
+                datAisyo.tbl[400][6] = 65536; // Light
+                datAisyo.tbl[400][7] = 100; // Dark
+                datAisyo.tbl[400][8] = 100; // Curse
+                datAisyo.tbl[400][9] = 100; // Nerve
+                datAisyo.tbl[400][10] = 100; // Mind
+                datAisyo.tbl[400][12] = 100; // Shot
 
-            datAisyo.tbl[401][0] = 100; // Phys
-            datAisyo.tbl[401][1] = 100; // Fire
-            datAisyo.tbl[401][2] = 100; // Ice
-            datAisyo.tbl[401][3] = 100; // Elec
-            datAisyo.tbl[401][4] = 100; // Force
-            datAisyo.tbl[401][6] = 2147483778; // Light
-            datAisyo.tbl[401][7] = 65536; // Dark
-            datAisyo.tbl[401][8] = 100; // Curse
-            datAisyo.tbl[401][9] = 100; // Nerve
-            datAisyo.tbl[401][10] = 100; // Mind
-            datAisyo.tbl[401][12] = 100; // Shot
+                datAisyo.tbl[401][0] = 100; // Phys
+                datAisyo.tbl[401][1] = 100; // Fire
+                datAisyo.tbl[401][2] = 100; // Ice
+                datAisyo.tbl[401][3] = 100; // Elec
+                datAisyo.tbl[401][4] = 100; // Force
+                datAisyo.tbl[401][6] = 65536; // Light
+                datAisyo.tbl[401][7] = 100; // Dark
+                datAisyo.tbl[401][8] = 100; // Curse
+                datAisyo.tbl[401][9] = 100; // Nerve
+                datAisyo.tbl[401][10] = 100; // Mind
+                datAisyo.tbl[401][12] = 100; // Shot
+            }
+            else
+            {
+                // Affinities
+                datAisyo.tbl[400][0] = 100; // Phys
+                datAisyo.tbl[400][1] = 100; // Fire
+                datAisyo.tbl[400][2] = 100; // Ice
+                datAisyo.tbl[400][3] = 100; // Elec
+                datAisyo.tbl[400][4] = 100; // Force
+                datAisyo.tbl[400][6] = 2147483778; // Light
+                datAisyo.tbl[400][7] = 65536; // Dark
+                datAisyo.tbl[400][8] = 100; // Curse
+                datAisyo.tbl[400][9] = 100; // Nerve
+                datAisyo.tbl[400][10] = 100; // Mind
+                datAisyo.tbl[400][12] = 100; // Shot
+
+                datAisyo.tbl[401][0] = 100; // Phys
+                datAisyo.tbl[401][1] = 100; // Fire
+                datAisyo.tbl[401][2] = 100; // Ice
+                datAisyo.tbl[401][3] = 100; // Elec
+                datAisyo.tbl[401][4] = 100; // Force
+                datAisyo.tbl[401][6] = 2147483778; // Light
+                datAisyo.tbl[401][7] = 65536; // Dark
+                datAisyo.tbl[401][8] = 100; // Curse
+                datAisyo.tbl[401][9] = 100; // Nerve
+                datAisyo.tbl[401][10] = 100; // Mind
+                datAisyo.tbl[401][12] = 100; // Shot
+            }
 
             // Alignment
             tblHearts.fclHeartsTbl[id].Flag = 4; // Dark
@@ -775,30 +1045,60 @@ namespace NocturneInsaniax
 
         private static void Miasma(ushort id)
         {
-            // Affinities
-            datAisyo.tbl[402][0] = 100; // Phys
-            datAisyo.tbl[402][1] = 100; // Fire
-            datAisyo.tbl[402][2] = 100; // Ice
-            datAisyo.tbl[402][3] = 100; // Elec
-            datAisyo.tbl[402][4] = 100; // Force
-            datAisyo.tbl[402][6] = 100; // Light
-            datAisyo.tbl[402][7] = 100; // Dark
-            datAisyo.tbl[402][8] = 50; // Curse
-            datAisyo.tbl[402][9] = 50; // Nerve
-            datAisyo.tbl[402][10] = 50; // Mind
-            datAisyo.tbl[402][12] = 2147483778; // Shot
+            if (ToggleHumanMode.Value)
+            {
+                // Human Mode Affinities
+                datAisyo.tbl[402][0] = 100; // Phys
+                datAisyo.tbl[402][1] = 100; // Fire
+                datAisyo.tbl[402][2] = 100; // Ice
+                datAisyo.tbl[402][3] = 100; // Elec
+                datAisyo.tbl[402][4] = 100; // Force
+                datAisyo.tbl[402][6] = 65536; // Light
+                datAisyo.tbl[402][7] = 100; // Dark
+                datAisyo.tbl[402][8] = 100; // Curse
+                datAisyo.tbl[402][9] = 100; // Nerve
+                datAisyo.tbl[402][10] = 100; // Mind
+                datAisyo.tbl[402][12] = 100; // Shot
 
-            datAisyo.tbl[403][0] = 100; // Phys
-            datAisyo.tbl[403][1] = 100; // Fire
-            datAisyo.tbl[403][2] = 100; // Ice
-            datAisyo.tbl[403][3] = 100; // Elec
-            datAisyo.tbl[403][4] = 100; // Force
-            datAisyo.tbl[403][6] = 100; // Light
-            datAisyo.tbl[403][7] = 100; // Dark
-            datAisyo.tbl[403][8] = 50; // Curse
-            datAisyo.tbl[403][9] = 50; // Nerve
-            datAisyo.tbl[403][10] = 50; // Mind
-            datAisyo.tbl[403][12] = 2147483778; // Shot
+                datAisyo.tbl[403][0] = 100; // Phys
+                datAisyo.tbl[403][1] = 100; // Fire
+                datAisyo.tbl[403][2] = 100; // Ice
+                datAisyo.tbl[403][3] = 100; // Elec
+                datAisyo.tbl[403][4] = 100; // Force
+                datAisyo.tbl[403][6] = 65536; // Light
+                datAisyo.tbl[403][7] = 100; // Dark
+                datAisyo.tbl[403][8] = 100; // Curse
+                datAisyo.tbl[403][9] = 100; // Nerve
+                datAisyo.tbl[403][10] = 100; // Mind
+                datAisyo.tbl[403][12] = 100; // Shot
+            }
+            else
+            {
+                // Affinities
+                datAisyo.tbl[402][0] = 100; // Phys
+                datAisyo.tbl[402][1] = 100; // Fire
+                datAisyo.tbl[402][2] = 100; // Ice
+                datAisyo.tbl[402][3] = 100; // Elec
+                datAisyo.tbl[402][4] = 100; // Force
+                datAisyo.tbl[402][6] = 100; // Light
+                datAisyo.tbl[402][7] = 100; // Dark
+                datAisyo.tbl[402][8] = 50; // Curse
+                datAisyo.tbl[402][9] = 50; // Nerve
+                datAisyo.tbl[402][10] = 50; // Mind
+                datAisyo.tbl[402][12] = 2147483778; // Shot
+
+                datAisyo.tbl[403][0] = 100; // Phys
+                datAisyo.tbl[403][1] = 100; // Fire
+                datAisyo.tbl[403][2] = 100; // Ice
+                datAisyo.tbl[403][3] = 100; // Elec
+                datAisyo.tbl[403][4] = 100; // Force
+                datAisyo.tbl[403][6] = 100; // Light
+                datAisyo.tbl[403][7] = 100; // Dark
+                datAisyo.tbl[403][8] = 50; // Curse
+                datAisyo.tbl[403][9] = 50; // Nerve
+                datAisyo.tbl[403][10] = 50; // Mind
+                datAisyo.tbl[403][12] = 2147483778; // Shot
+            }
 
             // Alignment
             tblHearts.fclHeartsTbl[id].Flag = 4; // Dark
@@ -836,30 +1136,60 @@ namespace NocturneInsaniax
 
         private static void Nirvana(ushort id)
         {
-            // Affinities
-            datAisyo.tbl[404][0] = 100; // Phys
-            datAisyo.tbl[404][1] = 100; // Fire
-            datAisyo.tbl[404][2] = 100; // Ice
-            datAisyo.tbl[404][3] = 100; // Elec
-            datAisyo.tbl[404][4] = 100; // Force
-            datAisyo.tbl[404][6] = 65536; // Light
-            datAisyo.tbl[404][7] = 2147483778; // Dark
-            datAisyo.tbl[404][8] = 100; // Curse
-            datAisyo.tbl[404][9] = 100; // Nerve
-            datAisyo.tbl[404][10] = 100; // Mind
-            datAisyo.tbl[404][12] = 100; // Shot
+            if (ToggleHumanMode.Value)
+            {
+                // Human Mode Affinities
+                datAisyo.tbl[404][0] = 100; // Phys
+                datAisyo.tbl[404][1] = 100; // Fire
+                datAisyo.tbl[404][2] = 100; // Ice
+                datAisyo.tbl[404][3] = 100; // Elec
+                datAisyo.tbl[404][4] = 100; // Force
+                datAisyo.tbl[404][6] = 65536; // Light
+                datAisyo.tbl[404][7] = 100; // Dark
+                datAisyo.tbl[404][8] = 100; // Curse
+                datAisyo.tbl[404][9] = 100; // Nerve
+                datAisyo.tbl[404][10] = 100; // Mind
+                datAisyo.tbl[404][12] = 100; // Shot
 
-            datAisyo.tbl[405][0] = 100; // Phys
-            datAisyo.tbl[405][1] = 100; // Fire
-            datAisyo.tbl[405][2] = 100; // Ice
-            datAisyo.tbl[405][3] = 100; // Elec
-            datAisyo.tbl[405][4] = 100; // Force
-            datAisyo.tbl[405][6] = 65536; // Light
-            datAisyo.tbl[405][7] = 2147483778; // Dark
-            datAisyo.tbl[405][8] = 100; // Curse
-            datAisyo.tbl[405][9] = 100; // Nerve
-            datAisyo.tbl[405][10] = 100; // Mind
-            datAisyo.tbl[405][12] = 100; // Shot
+                datAisyo.tbl[405][0] = 100; // Phys
+                datAisyo.tbl[405][1] = 100; // Fire
+                datAisyo.tbl[405][2] = 100; // Ice
+                datAisyo.tbl[405][3] = 100; // Elec
+                datAisyo.tbl[405][4] = 100; // Force
+                datAisyo.tbl[405][6] = 65536; // Light
+                datAisyo.tbl[405][7] = 100; // Dark
+                datAisyo.tbl[405][8] = 100; // Curse
+                datAisyo.tbl[405][9] = 100; // Nerve
+                datAisyo.tbl[405][10] = 100; // Mind
+                datAisyo.tbl[405][12] = 100; // Shot
+            }
+            else
+            {
+                // Affinities
+                datAisyo.tbl[404][0] = 100; // Phys
+                datAisyo.tbl[404][1] = 100; // Fire
+                datAisyo.tbl[404][2] = 100; // Ice
+                datAisyo.tbl[404][3] = 100; // Elec
+                datAisyo.tbl[404][4] = 100; // Force
+                datAisyo.tbl[404][6] = 65536; // Light
+                datAisyo.tbl[404][7] = 2147483778; // Dark
+                datAisyo.tbl[404][8] = 100; // Curse
+                datAisyo.tbl[404][9] = 100; // Nerve
+                datAisyo.tbl[404][10] = 100; // Mind
+                datAisyo.tbl[404][12] = 100; // Shot
+
+                datAisyo.tbl[405][0] = 100; // Phys
+                datAisyo.tbl[405][1] = 100; // Fire
+                datAisyo.tbl[405][2] = 100; // Ice
+                datAisyo.tbl[405][3] = 100; // Elec
+                datAisyo.tbl[405][4] = 100; // Force
+                datAisyo.tbl[405][6] = 65536; // Light
+                datAisyo.tbl[405][7] = 2147483778; // Dark
+                datAisyo.tbl[405][8] = 100; // Curse
+                datAisyo.tbl[405][9] = 100; // Nerve
+                datAisyo.tbl[405][10] = 100; // Mind
+                datAisyo.tbl[405][12] = 100; // Shot
+            }
 
             // Alignment
             tblHearts.fclHeartsTbl[id].Flag = 1; // Light
@@ -897,30 +1227,60 @@ namespace NocturneInsaniax
 
         private static void Vimana(ushort id)
         {
-            // Affinities
-            datAisyo.tbl[406][0] = 50; // Phys
-            datAisyo.tbl[406][1] = 2147483778; // Fire
-            datAisyo.tbl[406][2] = 2147483778; // Ice
-            datAisyo.tbl[406][3] = 100; // Elec
-            datAisyo.tbl[406][4] = 100; // Force
-            datAisyo.tbl[406][6] = 100; // Light
-            datAisyo.tbl[406][7] = 100; // Dark
-            datAisyo.tbl[406][8] = 100; // Curse
-            datAisyo.tbl[406][9] = 100; // Nerve
-            datAisyo.tbl[406][10] = 100; // Mind
-            datAisyo.tbl[406][12] = 50; // Shot
+            if (ToggleHumanMode.Value)
+            {
+                // Human Mode Affinities
+                datAisyo.tbl[406][0] = 100; // Phys
+                datAisyo.tbl[406][1] = 100; // Fire
+                datAisyo.tbl[406][2] = 100; // Ice
+                datAisyo.tbl[406][3] = 100; // Elec
+                datAisyo.tbl[406][4] = 100; // Force
+                datAisyo.tbl[406][6] = 65536; // Light
+                datAisyo.tbl[406][7] = 100; // Dark
+                datAisyo.tbl[406][8] = 100; // Curse
+                datAisyo.tbl[406][9] = 100; // Nerve
+                datAisyo.tbl[406][10] = 100; // Mind
+                datAisyo.tbl[406][12] = 100; // Shot
 
-            datAisyo.tbl[407][0] = 50; // Phys
-            datAisyo.tbl[407][1] = 2147483778; // Fire
-            datAisyo.tbl[407][2] = 2147483778; // Ice
-            datAisyo.tbl[407][3] = 100; // Elec
-            datAisyo.tbl[407][4] = 100; // Force
-            datAisyo.tbl[407][6] = 100; // Light
-            datAisyo.tbl[407][7] = 100; // Dark
-            datAisyo.tbl[407][8] = 100; // Curse
-            datAisyo.tbl[407][9] = 100; // Nerve
-            datAisyo.tbl[407][10] = 100; // Mind
-            datAisyo.tbl[407][12] = 50; // Shot
+                datAisyo.tbl[407][0] = 100; // Phys
+                datAisyo.tbl[407][1] = 100; // Fire
+                datAisyo.tbl[407][2] = 100; // Ice
+                datAisyo.tbl[407][3] = 100; // Elec
+                datAisyo.tbl[407][4] = 100; // Force
+                datAisyo.tbl[407][6] = 65536; // Light
+                datAisyo.tbl[407][7] = 100; // Dark
+                datAisyo.tbl[407][8] = 100; // Curse
+                datAisyo.tbl[407][9] = 100; // Nerve
+                datAisyo.tbl[407][10] = 100; // Mind
+                datAisyo.tbl[407][12] = 100; // Shot
+            }
+            else
+            {
+                // Affinities
+                datAisyo.tbl[406][0] = 50; // Phys
+                datAisyo.tbl[406][1] = 2147483778; // Fire
+                datAisyo.tbl[406][2] = 2147483778; // Ice
+                datAisyo.tbl[406][3] = 100; // Elec
+                datAisyo.tbl[406][4] = 100; // Force
+                datAisyo.tbl[406][6] = 100; // Light
+                datAisyo.tbl[406][7] = 100; // Dark
+                datAisyo.tbl[406][8] = 100; // Curse
+                datAisyo.tbl[406][9] = 100; // Nerve
+                datAisyo.tbl[406][10] = 100; // Mind
+                datAisyo.tbl[406][12] = 50; // Shot
+
+                datAisyo.tbl[407][0] = 50; // Phys
+                datAisyo.tbl[407][1] = 2147483778; // Fire
+                datAisyo.tbl[407][2] = 2147483778; // Ice
+                datAisyo.tbl[407][3] = 100; // Elec
+                datAisyo.tbl[407][4] = 100; // Force
+                datAisyo.tbl[407][6] = 100; // Light
+                datAisyo.tbl[407][7] = 100; // Dark
+                datAisyo.tbl[407][8] = 100; // Curse
+                datAisyo.tbl[407][9] = 100; // Nerve
+                datAisyo.tbl[407][10] = 100; // Mind
+                datAisyo.tbl[407][12] = 50; // Shot
+            }
 
             // Alignment
             tblHearts.fclHeartsTbl[id].Flag = 0; // Neutral
@@ -958,30 +1318,60 @@ namespace NocturneInsaniax
 
         private static void Geis(ushort id)
         {
-            // Affinities
-            datAisyo.tbl[408][0] = 100; // Phys
-            datAisyo.tbl[408][1] = 2147483778; // Fire
-            datAisyo.tbl[408][2] = 262144; // Ice
-            datAisyo.tbl[408][3] = 100; // Elec
-            datAisyo.tbl[408][4] = 100; // Force
-            datAisyo.tbl[408][6] = 100; // Light
-            datAisyo.tbl[408][7] = 100; // Dark
-            datAisyo.tbl[408][8] = 100; // Curse
-            datAisyo.tbl[408][9] = 100; // Nerve
-            datAisyo.tbl[408][10] = 100; // Mind
-            datAisyo.tbl[408][12] = 100; // Shot
+            if (ToggleHumanMode.Value)
+            {
+                // Human Mode Affinities
+                datAisyo.tbl[408][0] = 100; // Phys
+                datAisyo.tbl[408][1] = 100; // Fire
+                datAisyo.tbl[408][2] = 100; // Ice
+                datAisyo.tbl[408][3] = 100; // Elec
+                datAisyo.tbl[408][4] = 100; // Force
+                datAisyo.tbl[408][6] = 65536; // Light
+                datAisyo.tbl[408][7] = 100; // Dark
+                datAisyo.tbl[408][8] = 100; // Curse
+                datAisyo.tbl[408][9] = 100; // Nerve
+                datAisyo.tbl[408][10] = 100; // Mind
+                datAisyo.tbl[408][12] = 100; // Shot
 
-            datAisyo.tbl[409][0] = 100; // Phys
-            datAisyo.tbl[409][1] = 2147483778; // Fire
-            datAisyo.tbl[409][2] = 262144; // Ice
-            datAisyo.tbl[409][3] = 100; // Elec
-            datAisyo.tbl[409][4] = 100; // Force
-            datAisyo.tbl[409][6] = 100; // Light
-            datAisyo.tbl[409][7] = 100; // Dark
-            datAisyo.tbl[409][8] = 100; // Curse
-            datAisyo.tbl[409][9] = 100; // Nerve
-            datAisyo.tbl[409][10] = 100; // Mind
-            datAisyo.tbl[409][12] = 100; // Shot
+                datAisyo.tbl[409][0] = 100; // Phys
+                datAisyo.tbl[409][1] = 100; // Fire
+                datAisyo.tbl[409][2] = 100; // Ice
+                datAisyo.tbl[409][3] = 100; // Elec
+                datAisyo.tbl[409][4] = 100; // Force
+                datAisyo.tbl[409][6] = 65536; // Light
+                datAisyo.tbl[409][7] = 100; // Dark
+                datAisyo.tbl[409][8] = 100; // Curse
+                datAisyo.tbl[409][9] = 100; // Nerve
+                datAisyo.tbl[409][10] = 100; // Mind
+                datAisyo.tbl[409][12] = 100; // Shot
+            }
+            else
+            {
+                // Affinities
+                datAisyo.tbl[408][0] = 100; // Phys
+                datAisyo.tbl[408][1] = 2147483778; // Fire
+                datAisyo.tbl[408][2] = 262144; // Ice
+                datAisyo.tbl[408][3] = 100; // Elec
+                datAisyo.tbl[408][4] = 100; // Force
+                datAisyo.tbl[408][6] = 100; // Light
+                datAisyo.tbl[408][7] = 100; // Dark
+                datAisyo.tbl[408][8] = 100; // Curse
+                datAisyo.tbl[408][9] = 100; // Nerve
+                datAisyo.tbl[408][10] = 100; // Mind
+                datAisyo.tbl[408][12] = 100; // Shot
+
+                datAisyo.tbl[409][0] = 100; // Phys
+                datAisyo.tbl[409][1] = 2147483778; // Fire
+                datAisyo.tbl[409][2] = 262144; // Ice
+                datAisyo.tbl[409][3] = 100; // Elec
+                datAisyo.tbl[409][4] = 100; // Force
+                datAisyo.tbl[409][6] = 100; // Light
+                datAisyo.tbl[409][7] = 100; // Dark
+                datAisyo.tbl[409][8] = 100; // Curse
+                datAisyo.tbl[409][9] = 100; // Nerve
+                datAisyo.tbl[409][10] = 100; // Mind
+                datAisyo.tbl[409][12] = 100; // Shot
+            }
 
             // Alignment
             tblHearts.fclHeartsTbl[id].Flag = 1; // Light
@@ -1017,30 +1407,60 @@ namespace NocturneInsaniax
 
         private static void Djed(ushort id)
         {
-            // Affinities
-            datAisyo.tbl[410][0] = 100; // Phys
-            datAisyo.tbl[410][1] = 100; // Fire
-            datAisyo.tbl[410][2] = 100; // Ice
-            datAisyo.tbl[410][3] = 100; // Elec
-            datAisyo.tbl[410][4] = 100; // Force
-            datAisyo.tbl[410][6] = 100; // Light
-            datAisyo.tbl[410][7] = 100; // Dark
-            datAisyo.tbl[410][8] = 65536; // Curse
-            datAisyo.tbl[410][9] = 100; // Nerve
-            datAisyo.tbl[410][10] = 100; // Mind
-            datAisyo.tbl[410][12] = 100; // Shot
+            if (ToggleHumanMode.Value)
+            {
+                // Human Mode Affinities
+                datAisyo.tbl[410][0] = 100; // Phys
+                datAisyo.tbl[410][1] = 100; // Fire
+                datAisyo.tbl[410][2] = 100; // Ice
+                datAisyo.tbl[410][3] = 100; // Elec
+                datAisyo.tbl[410][4] = 100; // Force
+                datAisyo.tbl[410][6] = 65536; // Light
+                datAisyo.tbl[410][7] = 100; // Dark
+                datAisyo.tbl[410][8] = 100; // Curse
+                datAisyo.tbl[410][9] = 100; // Nerve
+                datAisyo.tbl[410][10] = 100; // Mind
+                datAisyo.tbl[410][12] = 100; // Shot
 
-            datAisyo.tbl[411][0] = 100; // Phys
-            datAisyo.tbl[411][1] = 100; // Fire
-            datAisyo.tbl[411][2] = 100; // Ice
-            datAisyo.tbl[411][3] = 100; // Elec
-            datAisyo.tbl[411][4] = 100; // Force
-            datAisyo.tbl[411][6] = 100; // Light
-            datAisyo.tbl[411][7] = 100; // Dark
-            datAisyo.tbl[411][8] = 65536; // Curse
-            datAisyo.tbl[411][9] = 100; // Nerve
-            datAisyo.tbl[411][10] = 100; // Mind
-            datAisyo.tbl[411][12] = 100; // Shot
+                datAisyo.tbl[411][0] = 100; // Phys
+                datAisyo.tbl[411][1] = 100; // Fire
+                datAisyo.tbl[411][2] = 100; // Ice
+                datAisyo.tbl[411][3] = 100; // Elec
+                datAisyo.tbl[411][4] = 100; // Force
+                datAisyo.tbl[411][6] = 65536; // Light
+                datAisyo.tbl[411][7] = 100; // Dark
+                datAisyo.tbl[411][8] = 100; // Curse
+                datAisyo.tbl[411][9] = 100; // Nerve
+                datAisyo.tbl[411][10] = 100; // Mind
+                datAisyo.tbl[411][12] = 100; // Shot
+            }
+            else
+            {
+                // Affinities
+                datAisyo.tbl[410][0] = 100; // Phys
+                datAisyo.tbl[410][1] = 100; // Fire
+                datAisyo.tbl[410][2] = 100; // Ice
+                datAisyo.tbl[410][3] = 100; // Elec
+                datAisyo.tbl[410][4] = 100; // Force
+                datAisyo.tbl[410][6] = 100; // Light
+                datAisyo.tbl[410][7] = 100; // Dark
+                datAisyo.tbl[410][8] = 65536; // Curse
+                datAisyo.tbl[410][9] = 100; // Nerve
+                datAisyo.tbl[410][10] = 100; // Mind
+                datAisyo.tbl[410][12] = 100; // Shot
+
+                datAisyo.tbl[411][0] = 100; // Phys
+                datAisyo.tbl[411][1] = 100; // Fire
+                datAisyo.tbl[411][2] = 100; // Ice
+                datAisyo.tbl[411][3] = 100; // Elec
+                datAisyo.tbl[411][4] = 100; // Force
+                datAisyo.tbl[411][6] = 100; // Light
+                datAisyo.tbl[411][7] = 100; // Dark
+                datAisyo.tbl[411][8] = 65536; // Curse
+                datAisyo.tbl[411][9] = 100; // Nerve
+                datAisyo.tbl[411][10] = 100; // Mind
+                datAisyo.tbl[411][12] = 100; // Shot
+            }
 
             // Alignment
             tblHearts.fclHeartsTbl[id].Flag = 0; // Neutral
@@ -1076,30 +1496,60 @@ namespace NocturneInsaniax
 
         private static void Muspell(ushort id)
         {
-            // Affinities
-            datAisyo.tbl[412][0] = 100; // Phys
-            datAisyo.tbl[412][1] = 262144; // Fire
-            datAisyo.tbl[412][2] = 2147483778; // Ice
-            datAisyo.tbl[412][3] = 100; // Elec
-            datAisyo.tbl[412][4] = 100; // Force
-            datAisyo.tbl[412][6] = 100; // Light
-            datAisyo.tbl[412][7] = 100; // Dark
-            datAisyo.tbl[412][8] = 100; // Curse
-            datAisyo.tbl[412][9] = 100; // Nerve
-            datAisyo.tbl[412][10] = 100; // Mind
-            datAisyo.tbl[412][12] = 100; // Shot
+            if (ToggleHumanMode.Value)
+            {
+                // Human Mode Affinities
+                datAisyo.tbl[412][0] = 100; // Phys
+                datAisyo.tbl[412][1] = 100; // Fire
+                datAisyo.tbl[412][2] = 100; // Ice
+                datAisyo.tbl[412][3] = 100; // Elec
+                datAisyo.tbl[412][4] = 100; // Force
+                datAisyo.tbl[412][6] = 65536; // Light
+                datAisyo.tbl[412][7] = 100; // Dark
+                datAisyo.tbl[412][8] = 100; // Curse
+                datAisyo.tbl[412][9] = 100; // Nerve
+                datAisyo.tbl[412][10] = 100; // Mind
+                datAisyo.tbl[412][12] = 100; // Shot
 
-            datAisyo.tbl[413][0] = 100; // Phys
-            datAisyo.tbl[413][1] = 262144; // Fire
-            datAisyo.tbl[413][2] = 2147483778; // Ice
-            datAisyo.tbl[413][3] = 100; // Elec
-            datAisyo.tbl[413][4] = 100; // Force
-            datAisyo.tbl[413][6] = 100; // Light
-            datAisyo.tbl[413][7] = 100; // Dark
-            datAisyo.tbl[413][8] = 100; // Curse
-            datAisyo.tbl[413][9] = 100; // Nerve
-            datAisyo.tbl[413][10] = 100; // Mind
-            datAisyo.tbl[413][12] = 100; // Shot
+                datAisyo.tbl[413][0] = 100; // Phys
+                datAisyo.tbl[413][1] = 100; // Fire
+                datAisyo.tbl[413][2] = 100; // Ice
+                datAisyo.tbl[413][3] = 100; // Elec
+                datAisyo.tbl[413][4] = 100; // Force
+                datAisyo.tbl[413][6] = 65536; // Light
+                datAisyo.tbl[413][7] = 100; // Dark
+                datAisyo.tbl[413][8] = 100; // Curse
+                datAisyo.tbl[413][9] = 100; // Nerve
+                datAisyo.tbl[413][10] = 100; // Mind
+                datAisyo.tbl[413][12] = 100; // Shot
+            }
+            else
+            {
+                // Affinities
+                datAisyo.tbl[412][0] = 100; // Phys
+                datAisyo.tbl[412][1] = 262144; // Fire
+                datAisyo.tbl[412][2] = 2147483778; // Ice
+                datAisyo.tbl[412][3] = 100; // Elec
+                datAisyo.tbl[412][4] = 100; // Force
+                datAisyo.tbl[412][6] = 100; // Light
+                datAisyo.tbl[412][7] = 100; // Dark
+                datAisyo.tbl[412][8] = 100; // Curse
+                datAisyo.tbl[412][9] = 100; // Nerve
+                datAisyo.tbl[412][10] = 100; // Mind
+                datAisyo.tbl[412][12] = 100; // Shot
+
+                datAisyo.tbl[413][0] = 100; // Phys
+                datAisyo.tbl[413][1] = 262144; // Fire
+                datAisyo.tbl[413][2] = 2147483778; // Ice
+                datAisyo.tbl[413][3] = 100; // Elec
+                datAisyo.tbl[413][4] = 100; // Force
+                datAisyo.tbl[413][6] = 100; // Light
+                datAisyo.tbl[413][7] = 100; // Dark
+                datAisyo.tbl[413][8] = 100; // Curse
+                datAisyo.tbl[413][9] = 100; // Nerve
+                datAisyo.tbl[413][10] = 100; // Mind
+                datAisyo.tbl[413][12] = 100; // Shot
+            }
 
             // Alignment
             tblHearts.fclHeartsTbl[id].Flag = 4; // Dark
@@ -1135,30 +1585,60 @@ namespace NocturneInsaniax
 
         private static void Satan(ushort id)
         {
-            // Affinities
-            datAisyo.tbl[414][0] = 100; // Phys
-            datAisyo.tbl[414][1] = 100; // Fire
-            datAisyo.tbl[414][2] = 100; // Ice
-            datAisyo.tbl[414][3] = 100; // Elec
-            datAisyo.tbl[414][4] = 100; // Force
-            datAisyo.tbl[414][6] = 100; // Light
-            datAisyo.tbl[414][7] = 65536; // Dark
-            datAisyo.tbl[414][8] = 100; // Curse
-            datAisyo.tbl[414][9] = 100; // Nerve
-            datAisyo.tbl[414][10] = 100; // Mind
-            datAisyo.tbl[414][12] = 100; // Shot
+            if (ToggleHumanMode.Value)
+            {
+                // Human Mode Affinities
+                datAisyo.tbl[414][0] = 100; // Phys
+                datAisyo.tbl[414][1] = 100; // Fire
+                datAisyo.tbl[414][2] = 100; // Ice
+                datAisyo.tbl[414][3] = 100; // Elec
+                datAisyo.tbl[414][4] = 100; // Force
+                datAisyo.tbl[414][6] = 65536; // Light
+                datAisyo.tbl[414][7] = 100; // Dark
+                datAisyo.tbl[414][8] = 100; // Curse
+                datAisyo.tbl[414][9] = 100; // Nerve
+                datAisyo.tbl[414][10] = 100; // Mind
+                datAisyo.tbl[414][12] = 100; // Shot
 
-            datAisyo.tbl[415][0] = 100; // Phys
-            datAisyo.tbl[415][1] = 100; // Fire
-            datAisyo.tbl[415][2] = 100; // Ice
-            datAisyo.tbl[415][3] = 100; // Elec
-            datAisyo.tbl[415][4] = 100; // Force
-            datAisyo.tbl[415][6] = 100; // Light
-            datAisyo.tbl[415][7] = 65536; // Dark
-            datAisyo.tbl[415][8] = 100; // Curse
-            datAisyo.tbl[415][9] = 100; // Nerve
-            datAisyo.tbl[415][10] = 100; // Mind
-            datAisyo.tbl[415][12] = 100; // Shot
+                datAisyo.tbl[415][0] = 100; // Phys
+                datAisyo.tbl[415][1] = 100; // Fire
+                datAisyo.tbl[415][2] = 100; // Ice
+                datAisyo.tbl[415][3] = 100; // Elec
+                datAisyo.tbl[415][4] = 100; // Force
+                datAisyo.tbl[415][6] = 65536; // Light
+                datAisyo.tbl[415][7] = 100; // Dark
+                datAisyo.tbl[415][8] = 100; // Curse
+                datAisyo.tbl[415][9] = 100; // Nerve
+                datAisyo.tbl[415][10] = 100; // Mind
+                datAisyo.tbl[415][12] = 100; // Shot
+            }
+            else
+            {
+                // Affinities
+                datAisyo.tbl[414][0] = 100; // Phys
+                datAisyo.tbl[414][1] = 100; // Fire
+                datAisyo.tbl[414][2] = 100; // Ice
+                datAisyo.tbl[414][3] = 100; // Elec
+                datAisyo.tbl[414][4] = 100; // Force
+                datAisyo.tbl[414][6] = 100; // Light
+                datAisyo.tbl[414][7] = 65536; // Dark
+                datAisyo.tbl[414][8] = 100; // Curse
+                datAisyo.tbl[414][9] = 100; // Nerve
+                datAisyo.tbl[414][10] = 100; // Mind
+                datAisyo.tbl[414][12] = 100; // Shot
+
+                datAisyo.tbl[415][0] = 100; // Phys
+                datAisyo.tbl[415][1] = 100; // Fire
+                datAisyo.tbl[415][2] = 100; // Ice
+                datAisyo.tbl[415][3] = 100; // Elec
+                datAisyo.tbl[415][4] = 100; // Force
+                datAisyo.tbl[415][6] = 100; // Light
+                datAisyo.tbl[415][7] = 65536; // Dark
+                datAisyo.tbl[415][8] = 100; // Curse
+                datAisyo.tbl[415][9] = 100; // Nerve
+                datAisyo.tbl[415][10] = 100; // Mind
+                datAisyo.tbl[415][12] = 100; // Shot
+            }
 
             // Alignment
             tblHearts.fclHeartsTbl[id].Flag = 4; // Dark
@@ -1196,30 +1676,60 @@ namespace NocturneInsaniax
 
         private static void Adama(ushort id)
         {
-            // Affinities
-            datAisyo.tbl[416][0] = 100; // Phys
-            datAisyo.tbl[416][1] = 100; // Fire
-            datAisyo.tbl[416][2] = 100; // Ice
-            datAisyo.tbl[416][3] = 100; // Elec
-            datAisyo.tbl[416][4] = 100; // Force
-            datAisyo.tbl[416][6] = 2147483778; // Light
-            datAisyo.tbl[416][7] = 2147483778; // Dark
-            datAisyo.tbl[416][8] = 65536; // Curse
-            datAisyo.tbl[416][9] = 65536; // Nerve
-            datAisyo.tbl[416][10] = 65536; // Mind
-            datAisyo.tbl[416][12] = 100; // Shot
+            if (ToggleHumanMode.Value)
+            {
+                // Human Mode Affinities
+                datAisyo.tbl[416][0] = 100; // Phys
+                datAisyo.tbl[416][1] = 100; // Fire
+                datAisyo.tbl[416][2] = 100; // Ice
+                datAisyo.tbl[416][3] = 100; // Elec
+                datAisyo.tbl[416][4] = 100; // Force
+                datAisyo.tbl[416][6] = 65536; // Light
+                datAisyo.tbl[416][7] = 100; // Dark
+                datAisyo.tbl[416][8] = 100; // Curse
+                datAisyo.tbl[416][9] = 100; // Nerve
+                datAisyo.tbl[416][10] = 100; // Mind
+                datAisyo.tbl[416][12] = 100; // Shot
 
-            datAisyo.tbl[417][0] = 100; // Phys
-            datAisyo.tbl[417][1] = 100; // Fire
-            datAisyo.tbl[417][2] = 100; // Ice
-            datAisyo.tbl[417][3] = 100; // Elec
-            datAisyo.tbl[417][4] = 100; // Force
-            datAisyo.tbl[417][6] = 2147483778; // Light
-            datAisyo.tbl[417][7] = 2147483778; // Dark
-            datAisyo.tbl[417][8] = 65536; // Curse
-            datAisyo.tbl[417][9] = 5655360; // Nerve
-            datAisyo.tbl[417][10] = 65536; // Mind
-            datAisyo.tbl[417][12] = 100; // Shot
+                datAisyo.tbl[417][0] = 100; // Phys
+                datAisyo.tbl[417][1] = 100; // Fire
+                datAisyo.tbl[417][2] = 100; // Ice
+                datAisyo.tbl[417][3] = 100; // Elec
+                datAisyo.tbl[417][4] = 100; // Force
+                datAisyo.tbl[417][6] = 65536; // Light
+                datAisyo.tbl[417][7] = 100; // Dark
+                datAisyo.tbl[417][8] = 100; // Curse
+                datAisyo.tbl[417][9] = 100; // Nerve
+                datAisyo.tbl[417][10] = 100; // Mind
+                datAisyo.tbl[417][12] = 100; // Shot
+            }
+            else
+            {
+                // Affinities
+                datAisyo.tbl[416][0] = 100; // Phys
+                datAisyo.tbl[416][1] = 100; // Fire
+                datAisyo.tbl[416][2] = 100; // Ice
+                datAisyo.tbl[416][3] = 100; // Elec
+                datAisyo.tbl[416][4] = 100; // Force
+                datAisyo.tbl[416][6] = 2147483778; // Light
+                datAisyo.tbl[416][7] = 2147483778; // Dark
+                datAisyo.tbl[416][8] = 65536; // Curse
+                datAisyo.tbl[416][9] = 65536; // Nerve
+                datAisyo.tbl[416][10] = 65536; // Mind
+                datAisyo.tbl[416][12] = 100; // Shot
+
+                datAisyo.tbl[417][0] = 100; // Phys
+                datAisyo.tbl[417][1] = 100; // Fire
+                datAisyo.tbl[417][2] = 100; // Ice
+                datAisyo.tbl[417][3] = 100; // Elec
+                datAisyo.tbl[417][4] = 100; // Force
+                datAisyo.tbl[417][6] = 2147483778; // Light
+                datAisyo.tbl[417][7] = 2147483778; // Dark
+                datAisyo.tbl[417][8] = 65536; // Curse
+                datAisyo.tbl[417][9] = 5655360; // Nerve
+                datAisyo.tbl[417][10] = 65536; // Mind
+                datAisyo.tbl[417][12] = 100; // Shot
+            }
 
             // Alignment
             tblHearts.fclHeartsTbl[id].Flag = 0; // Neutral
@@ -1255,30 +1765,60 @@ namespace NocturneInsaniax
 
         private static void Gehenna(ushort id)
         {
-            // Affinities
-            datAisyo.tbl[418][0] = 100; // Phys
-            datAisyo.tbl[418][1] = 100; // Fire
-            datAisyo.tbl[418][2] = 100; // Ice
-            datAisyo.tbl[418][3] = 100; // Elec
-            datAisyo.tbl[418][4] = 100; // Force
-            datAisyo.tbl[418][6] = 100; // Light
-            datAisyo.tbl[418][7] = 131072; // Dark
-            datAisyo.tbl[418][8] = 100; // Curse
-            datAisyo.tbl[418][9] = 100; // Nerve
-            datAisyo.tbl[418][10] = 100; // Mind
-            datAisyo.tbl[418][12] = 100; // Shot
+            if (ToggleHumanMode.Value)
+            {
+                // Human Mode Affinities
+                datAisyo.tbl[418][0] = 100; // Phys
+                datAisyo.tbl[418][1] = 100; // Fire
+                datAisyo.tbl[418][2] = 100; // Ice
+                datAisyo.tbl[418][3] = 100; // Elec
+                datAisyo.tbl[418][4] = 100; // Force
+                datAisyo.tbl[418][6] = 65536; // Light
+                datAisyo.tbl[418][7] = 100; // Dark
+                datAisyo.tbl[418][8] = 100; // Curse
+                datAisyo.tbl[418][9] = 100; // Nerve
+                datAisyo.tbl[418][10] = 100; // Mind
+                datAisyo.tbl[418][12] = 100; // Shot
 
-            datAisyo.tbl[419][0] = 100; // Phys
-            datAisyo.tbl[419][1] = 100; // Fire
-            datAisyo.tbl[419][2] = 100; // Ice
-            datAisyo.tbl[419][3] = 100; // Elec
-            datAisyo.tbl[419][4] = 100; // Force
-            datAisyo.tbl[419][6] = 100; // Light
-            datAisyo.tbl[419][7] = 131072; // Dark
-            datAisyo.tbl[419][8] = 100; // Curse
-            datAisyo.tbl[419][9] = 100; // Nerve
-            datAisyo.tbl[419][10] = 100; // Mind
-            datAisyo.tbl[419][12] = 100; // Shot
+                datAisyo.tbl[419][0] = 100; // Phys
+                datAisyo.tbl[419][1] = 100; // Fire
+                datAisyo.tbl[419][2] = 100; // Ice
+                datAisyo.tbl[419][3] = 100; // Elec
+                datAisyo.tbl[419][4] = 100; // Force
+                datAisyo.tbl[419][6] = 65536; // Light
+                datAisyo.tbl[419][7] = 100; // Dark
+                datAisyo.tbl[419][8] = 100; // Curse
+                datAisyo.tbl[419][9] = 100; // Nerve
+                datAisyo.tbl[419][10] = 100; // Mind
+                datAisyo.tbl[419][12] = 100; // Shot
+            }
+            else
+            {
+                // Affinities
+                datAisyo.tbl[418][0] = 100; // Phys
+                datAisyo.tbl[418][1] = 100; // Fire
+                datAisyo.tbl[418][2] = 100; // Ice
+                datAisyo.tbl[418][3] = 100; // Elec
+                datAisyo.tbl[418][4] = 100; // Force
+                datAisyo.tbl[418][6] = 100; // Light
+                datAisyo.tbl[418][7] = 131072; // Dark
+                datAisyo.tbl[418][8] = 100; // Curse
+                datAisyo.tbl[418][9] = 100; // Nerve
+                datAisyo.tbl[418][10] = 100; // Mind
+                datAisyo.tbl[418][12] = 100; // Shot
+
+                datAisyo.tbl[419][0] = 100; // Phys
+                datAisyo.tbl[419][1] = 100; // Fire
+                datAisyo.tbl[419][2] = 100; // Ice
+                datAisyo.tbl[419][3] = 100; // Elec
+                datAisyo.tbl[419][4] = 100; // Force
+                datAisyo.tbl[419][6] = 100; // Light
+                datAisyo.tbl[419][7] = 131072; // Dark
+                datAisyo.tbl[419][8] = 100; // Curse
+                datAisyo.tbl[419][9] = 100; // Nerve
+                datAisyo.tbl[419][10] = 100; // Mind
+                datAisyo.tbl[419][12] = 100; // Shot
+            }
 
             // Alignment
             tblHearts.fclHeartsTbl[id].Flag = 4; // Dark
@@ -1314,30 +1854,60 @@ namespace NocturneInsaniax
 
         private static void Sophia(ushort id)
         {
-            // Affinities
-            datAisyo.tbl[420][0] = 100; // Phys
-            datAisyo.tbl[420][1] = 100; // Fire
-            datAisyo.tbl[420][2] = 100; // Ice
-            datAisyo.tbl[420][3] = 100; // Elec
-            datAisyo.tbl[420][4] = 100; // Force
-            datAisyo.tbl[420][6] = 100; // Light
-            datAisyo.tbl[420][7] = 100; // Dark
-            datAisyo.tbl[420][8] = 100; // Curse
-            datAisyo.tbl[420][9] = 65536; // Nerve
-            datAisyo.tbl[420][10] = 100; // Mind
-            datAisyo.tbl[420][12] = 100; // Shot
+            if (ToggleHumanMode.Value)
+            {
+                // Human Mode Affinities
+                datAisyo.tbl[420][0] = 100; // Phys
+                datAisyo.tbl[420][1] = 100; // Fire
+                datAisyo.tbl[420][2] = 100; // Ice
+                datAisyo.tbl[420][3] = 100; // Elec
+                datAisyo.tbl[420][4] = 100; // Force
+                datAisyo.tbl[420][6] = 65536; // Light
+                datAisyo.tbl[420][7] = 100; // Dark
+                datAisyo.tbl[420][8] = 100; // Curse
+                datAisyo.tbl[420][9] = 100; // Nerve
+                datAisyo.tbl[420][10] = 100; // Mind
+                datAisyo.tbl[420][12] = 100; // Shot
 
-            datAisyo.tbl[421][0] = 100; // Phys
-            datAisyo.tbl[421][1] = 100; // Fire
-            datAisyo.tbl[421][2] = 100; // Ice
-            datAisyo.tbl[421][3] = 100; // Elec
-            datAisyo.tbl[421][4] = 100; // Force
-            datAisyo.tbl[421][6] = 100; // Light
-            datAisyo.tbl[421][7] = 100; // Dark
-            datAisyo.tbl[421][8] = 100; // Curse
-            datAisyo.tbl[421][9] = 65536; // Nerve
-            datAisyo.tbl[421][10] = 100; // Mind
-            datAisyo.tbl[421][12] = 100; // Shot
+                datAisyo.tbl[421][0] = 100; // Phys
+                datAisyo.tbl[421][1] = 100; // Fire
+                datAisyo.tbl[421][2] = 100; // Ice
+                datAisyo.tbl[421][3] = 100; // Elec
+                datAisyo.tbl[421][4] = 100; // Force
+                datAisyo.tbl[421][6] = 65536; // Light
+                datAisyo.tbl[421][7] = 100; // Dark
+                datAisyo.tbl[421][8] = 100; // Curse
+                datAisyo.tbl[421][9] = 100; // Nerve
+                datAisyo.tbl[421][10] = 100; // Mind
+                datAisyo.tbl[421][12] = 100; // Shot
+            }
+            else
+            {
+                // Affinities
+                datAisyo.tbl[420][0] = 100; // Phys
+                datAisyo.tbl[420][1] = 100; // Fire
+                datAisyo.tbl[420][2] = 100; // Ice
+                datAisyo.tbl[420][3] = 100; // Elec
+                datAisyo.tbl[420][4] = 100; // Force
+                datAisyo.tbl[420][6] = 100; // Light
+                datAisyo.tbl[420][7] = 100; // Dark
+                datAisyo.tbl[420][8] = 100; // Curse
+                datAisyo.tbl[420][9] = 65536; // Nerve
+                datAisyo.tbl[420][10] = 100; // Mind
+                datAisyo.tbl[420][12] = 100; // Shot
+
+                datAisyo.tbl[421][0] = 100; // Phys
+                datAisyo.tbl[421][1] = 100; // Fire
+                datAisyo.tbl[421][2] = 100; // Ice
+                datAisyo.tbl[421][3] = 100; // Elec
+                datAisyo.tbl[421][4] = 100; // Force
+                datAisyo.tbl[421][6] = 100; // Light
+                datAisyo.tbl[421][7] = 100; // Dark
+                datAisyo.tbl[421][8] = 100; // Curse
+                datAisyo.tbl[421][9] = 65536; // Nerve
+                datAisyo.tbl[421][10] = 100; // Mind
+                datAisyo.tbl[421][12] = 100; // Shot
+            }
 
             // Alignment
             tblHearts.fclHeartsTbl[id].Flag = 1; // Light
@@ -1373,30 +1943,60 @@ namespace NocturneInsaniax
 
         private static void Murakumo(ushort id)
         {
-            // Affinities
-            datAisyo.tbl[422][0] = 100; // Phys
-            datAisyo.tbl[422][1] = 100; // Fire
-            datAisyo.tbl[422][2] = 100; // Ice
-            datAisyo.tbl[422][3] = 2147483778; // Elec
-            datAisyo.tbl[422][4] = 131072; // Force
-            datAisyo.tbl[422][6] = 100; // Light
-            datAisyo.tbl[422][7] = 100; // Dark
-            datAisyo.tbl[422][8] = 100; // Curse
-            datAisyo.tbl[422][9] = 100; // Nerve
-            datAisyo.tbl[422][10] = 100; // Mind
-            datAisyo.tbl[422][12] = 100; // Shot
+            if (ToggleHumanMode.Value)
+            {
+                // Human Mode Affinities
+                datAisyo.tbl[422][0] = 100; // Phys
+                datAisyo.tbl[422][1] = 100; // Fire
+                datAisyo.tbl[422][2] = 100; // Ice
+                datAisyo.tbl[422][3] = 100; // Elec
+                datAisyo.tbl[422][4] = 100; // Force
+                datAisyo.tbl[422][6] = 65536; // Light
+                datAisyo.tbl[422][7] = 100; // Dark
+                datAisyo.tbl[422][8] = 100; // Curse
+                datAisyo.tbl[422][9] = 100; // Nerve
+                datAisyo.tbl[422][10] = 100; // Mind
+                datAisyo.tbl[422][12] = 100; // Shot
 
-            datAisyo.tbl[423][0] = 100; // Phys
-            datAisyo.tbl[423][1] = 100; // Fire
-            datAisyo.tbl[423][2] = 100; // Ice
-            datAisyo.tbl[423][3] = 2147483778; // Elec
-            datAisyo.tbl[423][4] = 131072; // Force
-            datAisyo.tbl[423][6] = 100; // Light
-            datAisyo.tbl[423][7] = 100; // Dark
-            datAisyo.tbl[423][8] = 100; // Curse
-            datAisyo.tbl[423][9] = 100; // Nerve
-            datAisyo.tbl[423][10] = 100; // Mind
-            datAisyo.tbl[423][12] = 100; // Shot
+                datAisyo.tbl[423][0] = 100; // Phys
+                datAisyo.tbl[423][1] = 100; // Fire
+                datAisyo.tbl[423][2] = 100; // Ice
+                datAisyo.tbl[423][3] = 100; // Elec
+                datAisyo.tbl[423][4] = 100; // Force
+                datAisyo.tbl[423][6] = 65536; // Light
+                datAisyo.tbl[423][7] = 100; // Dark
+                datAisyo.tbl[423][8] = 100; // Curse
+                datAisyo.tbl[423][9] = 100; // Nerve
+                datAisyo.tbl[423][10] = 100; // Mind
+                datAisyo.tbl[423][12] = 100; // Shot
+            }
+            else
+            {
+                // Affinities
+                datAisyo.tbl[422][0] = 100; // Phys
+                datAisyo.tbl[422][1] = 100; // Fire
+                datAisyo.tbl[422][2] = 100; // Ice
+                datAisyo.tbl[422][3] = 2147483778; // Elec
+                datAisyo.tbl[422][4] = 131072; // Force
+                datAisyo.tbl[422][6] = 100; // Light
+                datAisyo.tbl[422][7] = 100; // Dark
+                datAisyo.tbl[422][8] = 100; // Curse
+                datAisyo.tbl[422][9] = 100; // Nerve
+                datAisyo.tbl[422][10] = 100; // Mind
+                datAisyo.tbl[422][12] = 100; // Shot
+
+                datAisyo.tbl[423][0] = 100; // Phys
+                datAisyo.tbl[423][1] = 100; // Fire
+                datAisyo.tbl[423][2] = 100; // Ice
+                datAisyo.tbl[423][3] = 2147483778; // Elec
+                datAisyo.tbl[423][4] = 131072; // Force
+                datAisyo.tbl[423][6] = 100; // Light
+                datAisyo.tbl[423][7] = 100; // Dark
+                datAisyo.tbl[423][8] = 100; // Curse
+                datAisyo.tbl[423][9] = 100; // Nerve
+                datAisyo.tbl[423][10] = 100; // Mind
+                datAisyo.tbl[423][12] = 100; // Shot
+            }
 
             // Alignment
             tblHearts.fclHeartsTbl[id].Flag = 0; // Neutral
@@ -1432,30 +2032,60 @@ namespace NocturneInsaniax
 
         private static void Gundari(ushort id)
         {
-            // Affinities
-            datAisyo.tbl[424][0] = 100; // Phys
-            datAisyo.tbl[424][1] = 100; // Fire
-            datAisyo.tbl[424][2] = 100; // Ice
-            datAisyo.tbl[424][3] = 100; // Elec
-            datAisyo.tbl[424][4] = 100; // Force
-            datAisyo.tbl[424][6] = 131072; // Light
-            datAisyo.tbl[424][7] = 100; // Dark
-            datAisyo.tbl[424][8] = 100; // Curse
-            datAisyo.tbl[424][9] = 100; // Nerve
-            datAisyo.tbl[424][10] = 100; // Mind
-            datAisyo.tbl[424][12] = 100; // Shot
+            if (ToggleHumanMode.Value)
+            {
+                // Human Mode Affinities
+                datAisyo.tbl[424][0] = 100; // Phys
+                datAisyo.tbl[424][1] = 100; // Fire
+                datAisyo.tbl[424][2] = 100; // Ice
+                datAisyo.tbl[424][3] = 100; // Elec
+                datAisyo.tbl[424][4] = 100; // Force
+                datAisyo.tbl[424][6] = 65536; // Light
+                datAisyo.tbl[424][7] = 100; // Dark
+                datAisyo.tbl[424][8] = 100; // Curse
+                datAisyo.tbl[424][9] = 100; // Nerve
+                datAisyo.tbl[424][10] = 100; // Mind
+                datAisyo.tbl[424][12] = 100; // Shot
 
-            datAisyo.tbl[425][0] = 100; // Phys
-            datAisyo.tbl[425][1] = 100; // Fire
-            datAisyo.tbl[425][2] = 100; // Ice
-            datAisyo.tbl[425][3] = 100; // Elec
-            datAisyo.tbl[425][4] = 100; // Force
-            datAisyo.tbl[425][6] = 131072; // Light
-            datAisyo.tbl[425][7] = 100; // Dark
-            datAisyo.tbl[425][8] = 100; // Curse
-            datAisyo.tbl[425][9] = 100; // Nerve
-            datAisyo.tbl[425][10] = 100; // Mind
-            datAisyo.tbl[425][12] = 100; // Shot
+                datAisyo.tbl[425][0] = 100; // Phys
+                datAisyo.tbl[425][1] = 100; // Fire
+                datAisyo.tbl[425][2] = 100; // Ice
+                datAisyo.tbl[425][3] = 100; // Elec
+                datAisyo.tbl[425][4] = 100; // Force
+                datAisyo.tbl[425][6] = 65536; // Light
+                datAisyo.tbl[425][7] = 100; // Dark
+                datAisyo.tbl[425][8] = 100; // Curse
+                datAisyo.tbl[425][9] = 100; // Nerve
+                datAisyo.tbl[425][10] = 100; // Mind
+                datAisyo.tbl[425][12] = 100; // Shot
+            }
+            else
+            {
+                // Affinities
+                datAisyo.tbl[424][0] = 100; // Phys
+                datAisyo.tbl[424][1] = 100; // Fire
+                datAisyo.tbl[424][2] = 100; // Ice
+                datAisyo.tbl[424][3] = 100; // Elec
+                datAisyo.tbl[424][4] = 100; // Force
+                datAisyo.tbl[424][6] = 131072; // Light
+                datAisyo.tbl[424][7] = 100; // Dark
+                datAisyo.tbl[424][8] = 100; // Curse
+                datAisyo.tbl[424][9] = 100; // Nerve
+                datAisyo.tbl[424][10] = 100; // Mind
+                datAisyo.tbl[424][12] = 100; // Shot
+
+                datAisyo.tbl[425][0] = 100; // Phys
+                datAisyo.tbl[425][1] = 100; // Fire
+                datAisyo.tbl[425][2] = 100; // Ice
+                datAisyo.tbl[425][3] = 100; // Elec
+                datAisyo.tbl[425][4] = 100; // Force
+                datAisyo.tbl[425][6] = 131072; // Light
+                datAisyo.tbl[425][7] = 100; // Dark
+                datAisyo.tbl[425][8] = 100; // Curse
+                datAisyo.tbl[425][9] = 100; // Nerve
+                datAisyo.tbl[425][10] = 100; // Mind
+                datAisyo.tbl[425][12] = 100; // Shot
+            }
 
             // Alignment
             tblHearts.fclHeartsTbl[id].Flag = 1; // Light
@@ -1491,30 +2121,60 @@ namespace NocturneInsaniax
 
         private static void Narukami(ushort id)
         {
-            // Affinities
-            datAisyo.tbl[426][0] = 100; // Phys
-            datAisyo.tbl[426][1] = 100; // Fire
-            datAisyo.tbl[426][2] = 100; // Ice
-            datAisyo.tbl[426][3] = 131072; // Elec
-            datAisyo.tbl[426][4] = 2147483778; // Force
-            datAisyo.tbl[426][6] = 100; // Light
-            datAisyo.tbl[426][7] = 100; // Dark
-            datAisyo.tbl[426][8] = 100; // Curse
-            datAisyo.tbl[426][9] = 100; // Nerve
-            datAisyo.tbl[426][10] = 100; // Mind
-            datAisyo.tbl[426][12] = 100; // Shot
+            if (ToggleHumanMode.Value)
+            {
+                // Human Mode Affinities
+                datAisyo.tbl[426][0] = 100; // Phys
+                datAisyo.tbl[426][1] = 100; // Fire
+                datAisyo.tbl[426][2] = 100; // Ice
+                datAisyo.tbl[426][3] = 100; // Elec
+                datAisyo.tbl[426][4] = 100; // Force
+                datAisyo.tbl[426][6] = 65536; // Light
+                datAisyo.tbl[426][7] = 100; // Dark
+                datAisyo.tbl[426][8] = 100; // Curse
+                datAisyo.tbl[426][9] = 100; // Nerve
+                datAisyo.tbl[426][10] = 100; // Mind
+                datAisyo.tbl[426][12] = 100; // Shot
 
-            datAisyo.tbl[427][0] = 100; // Phys
-            datAisyo.tbl[427][1] = 100; // Fire
-            datAisyo.tbl[427][2] = 100; // Ice
-            datAisyo.tbl[427][3] = 131072; // Elec
-            datAisyo.tbl[427][4] = 2147483778; // Force
-            datAisyo.tbl[427][6] = 100; // Light
-            datAisyo.tbl[427][7] = 100; // Dark
-            datAisyo.tbl[427][8] = 100; // Curse
-            datAisyo.tbl[427][9] = 100; // Nerve
-            datAisyo.tbl[427][10] = 100; // Mind
-            datAisyo.tbl[427][12] = 100; // Shot
+                datAisyo.tbl[427][0] = 100; // Phys
+                datAisyo.tbl[427][1] = 100; // Fire
+                datAisyo.tbl[427][2] = 100; // Ice
+                datAisyo.tbl[427][3] = 100; // Elec
+                datAisyo.tbl[427][4] = 100; // Force
+                datAisyo.tbl[427][6] = 65536; // Light
+                datAisyo.tbl[427][7] = 100; // Dark
+                datAisyo.tbl[427][8] = 100; // Curse
+                datAisyo.tbl[427][9] = 100; // Nerve
+                datAisyo.tbl[427][10] = 100; // Mind
+                datAisyo.tbl[427][12] = 100; // Shot
+            }
+            else
+            {
+                // Affinities
+                datAisyo.tbl[426][0] = 100; // Phys
+                datAisyo.tbl[426][1] = 100; // Fire
+                datAisyo.tbl[426][2] = 100; // Ice
+                datAisyo.tbl[426][3] = 131072; // Elec
+                datAisyo.tbl[426][4] = 2147483778; // Force
+                datAisyo.tbl[426][6] = 100; // Light
+                datAisyo.tbl[426][7] = 100; // Dark
+                datAisyo.tbl[426][8] = 100; // Curse
+                datAisyo.tbl[426][9] = 100; // Nerve
+                datAisyo.tbl[426][10] = 100; // Mind
+                datAisyo.tbl[426][12] = 100; // Shot
+
+                datAisyo.tbl[427][0] = 100; // Phys
+                datAisyo.tbl[427][1] = 100; // Fire
+                datAisyo.tbl[427][2] = 100; // Ice
+                datAisyo.tbl[427][3] = 131072; // Elec
+                datAisyo.tbl[427][4] = 2147483778; // Force
+                datAisyo.tbl[427][6] = 100; // Light
+                datAisyo.tbl[427][7] = 100; // Dark
+                datAisyo.tbl[427][8] = 100; // Curse
+                datAisyo.tbl[427][9] = 100; // Nerve
+                datAisyo.tbl[427][10] = 100; // Mind
+                datAisyo.tbl[427][12] = 100; // Shot
+            }
 
             // Alignment
             tblHearts.fclHeartsTbl[id].Flag = 1; // Light
@@ -1550,30 +2210,60 @@ namespace NocturneInsaniax
 
         private static void Gaea(ushort id)
         {
-            // Affinities
-            datAisyo.tbl[428][0] = 50; // Phys
-            datAisyo.tbl[428][1] = 100; // Fire
-            datAisyo.tbl[428][2] = 100; // Ice
-            datAisyo.tbl[428][3] = 2147483778; // Elec
-            datAisyo.tbl[428][4] = 2147483778; // Force
-            datAisyo.tbl[428][6] = 100; // Light
-            datAisyo.tbl[428][7] = 100; // Dark
-            datAisyo.tbl[428][8] = 100; // Curse
-            datAisyo.tbl[428][9] = 100; // Nerve
-            datAisyo.tbl[428][10] = 100; // Mind
-            datAisyo.tbl[428][12] = 50; // Shot
+            if (ToggleHumanMode.Value)
+            {
+                // Human Mode Affinities
+                datAisyo.tbl[428][0] = 100; // Phys
+                datAisyo.tbl[428][1] = 100; // Fire
+                datAisyo.tbl[428][2] = 100; // Ice
+                datAisyo.tbl[428][3] = 100; // Elec
+                datAisyo.tbl[428][4] = 100; // Force
+                datAisyo.tbl[428][6] = 65536; // Light
+                datAisyo.tbl[428][7] = 100; // Dark
+                datAisyo.tbl[428][8] = 100; // Curse
+                datAisyo.tbl[428][9] = 100; // Nerve
+                datAisyo.tbl[428][10] = 100; // Mind
+                datAisyo.tbl[428][12] = 100; // Shot
 
-            datAisyo.tbl[429][0] = 50; // Phys
-            datAisyo.tbl[429][1] = 100; // Fire
-            datAisyo.tbl[429][2] = 100; // Ice
-            datAisyo.tbl[429][3] = 2147483778; // Elec
-            datAisyo.tbl[429][4] = 2147483778; // Force
-            datAisyo.tbl[429][6] = 100; // Light
-            datAisyo.tbl[429][7] = 100; // Dark
-            datAisyo.tbl[429][8] = 100; // Curse
-            datAisyo.tbl[429][9] = 100; // Nerve
-            datAisyo.tbl[429][10] = 100; // Mind
-            datAisyo.tbl[429][12] = 50; // Shot
+                datAisyo.tbl[429][0] = 100; // Phys
+                datAisyo.tbl[429][1] = 100; // Fire
+                datAisyo.tbl[429][2] = 100; // Ice
+                datAisyo.tbl[429][3] = 100; // Elec
+                datAisyo.tbl[429][4] = 100; // Force
+                datAisyo.tbl[429][6] = 65536; // Light
+                datAisyo.tbl[429][7] = 100; // Dark
+                datAisyo.tbl[429][8] = 100; // Curse
+                datAisyo.tbl[429][9] = 100; // Nerve
+                datAisyo.tbl[429][10] = 100; // Mind
+                datAisyo.tbl[429][12] = 100; // Shot
+            }
+            else
+            {
+                // Affinities
+                datAisyo.tbl[428][0] = 50; // Phys
+                datAisyo.tbl[428][1] = 100; // Fire
+                datAisyo.tbl[428][2] = 100; // Ice
+                datAisyo.tbl[428][3] = 2147483778; // Elec
+                datAisyo.tbl[428][4] = 2147483778; // Force
+                datAisyo.tbl[428][6] = 100; // Light
+                datAisyo.tbl[428][7] = 100; // Dark
+                datAisyo.tbl[428][8] = 100; // Curse
+                datAisyo.tbl[428][9] = 100; // Nerve
+                datAisyo.tbl[428][10] = 100; // Mind
+                datAisyo.tbl[428][12] = 50; // Shot
+
+                datAisyo.tbl[429][0] = 50; // Phys
+                datAisyo.tbl[429][1] = 100; // Fire
+                datAisyo.tbl[429][2] = 100; // Ice
+                datAisyo.tbl[429][3] = 2147483778; // Elec
+                datAisyo.tbl[429][4] = 2147483778; // Force
+                datAisyo.tbl[429][6] = 100; // Light
+                datAisyo.tbl[429][7] = 100; // Dark
+                datAisyo.tbl[429][8] = 100; // Curse
+                datAisyo.tbl[429][9] = 100; // Nerve
+                datAisyo.tbl[429][10] = 100; // Mind
+                datAisyo.tbl[429][12] = 50; // Shot
+            }
 
             // Alignment
             tblHearts.fclHeartsTbl[id].Flag = 4; // Dark
@@ -1595,7 +2285,7 @@ namespace NocturneInsaniax
             // Skills
             tblHearts.fclHeartsTbl[id].Skill[0].ID = 126; // Iron Claw
             tblHearts.fclHeartsTbl[id].Skill[0].TargetLevel = 47;
-            tblHearts.fclHeartsTbl[id].Skill[1].ID = 313; // Anti-Phys
+            tblHearts.fclHeartsTbl[id].Skill[1].ID = 372; // Firm Stance
             tblHearts.fclHeartsTbl[id].Skill[1].TargetLevel = 53;
             tblHearts.fclHeartsTbl[id].Skill[2].ID = 307; // Avenge
             tblHearts.fclHeartsTbl[id].Skill[2].TargetLevel = 59;
@@ -1609,30 +2299,60 @@ namespace NocturneInsaniax
 
         private static void Kailash(ushort id)
         {
-            // Affinities
-            datAisyo.tbl[430][0] = 100; // Phys
-            datAisyo.tbl[430][1] = 100; // Fire
-            datAisyo.tbl[430][2] = 100; // Ice
-            datAisyo.tbl[430][3] = 100; // Elec
-            datAisyo.tbl[430][4] = 100; // Force
-            datAisyo.tbl[430][6] = 50; // Light
-            datAisyo.tbl[430][7] = 50; // Dark
-            datAisyo.tbl[430][8] = 100; // Curse
-            datAisyo.tbl[430][9] = 100; // Nerve
-            datAisyo.tbl[430][10] = 100; // Mind
-            datAisyo.tbl[430][12] = 100; // Shot
+            if (ToggleHumanMode.Value)
+            {
+                // Human Mode Affinities
+                datAisyo.tbl[430][0] = 100; // Phys
+                datAisyo.tbl[430][1] = 100; // Fire
+                datAisyo.tbl[430][2] = 100; // Ice
+                datAisyo.tbl[430][3] = 100; // Elec
+                datAisyo.tbl[430][4] = 100; // Force
+                datAisyo.tbl[430][6] = 65536; // Light
+                datAisyo.tbl[430][7] = 100; // Dark
+                datAisyo.tbl[430][8] = 100; // Curse
+                datAisyo.tbl[430][9] = 100; // Nerve
+                datAisyo.tbl[430][10] = 100; // Mind
+                datAisyo.tbl[430][12] = 100; // Shot
 
-            datAisyo.tbl[431][0] = 100; // Phys
-            datAisyo.tbl[431][1] = 100; // Fire
-            datAisyo.tbl[431][2] = 100; // Ice
-            datAisyo.tbl[431][3] = 100; // Elec
-            datAisyo.tbl[431][4] = 100; // Force
-            datAisyo.tbl[431][6] = 50; // Light
-            datAisyo.tbl[431][7] = 50; // Dark
-            datAisyo.tbl[431][8] = 100; // Curse
-            datAisyo.tbl[431][9] = 100; // Nerve
-            datAisyo.tbl[431][10] = 100; // Mind
-            datAisyo.tbl[431][12] = 100; // Shot
+                datAisyo.tbl[431][0] = 100; // Phys
+                datAisyo.tbl[431][1] = 100; // Fire
+                datAisyo.tbl[431][2] = 100; // Ice
+                datAisyo.tbl[431][3] = 100; // Elec
+                datAisyo.tbl[431][4] = 100; // Force
+                datAisyo.tbl[431][6] = 65536; // Light
+                datAisyo.tbl[431][7] = 100; // Dark
+                datAisyo.tbl[431][8] = 100; // Curse
+                datAisyo.tbl[431][9] = 100; // Nerve
+                datAisyo.tbl[431][10] = 100; // Mind
+                datAisyo.tbl[431][12] = 100; // Shot
+            }
+            else
+            {
+                // Affinities
+                datAisyo.tbl[430][0] = 100; // Phys
+                datAisyo.tbl[430][1] = 100; // Fire
+                datAisyo.tbl[430][2] = 100; // Ice
+                datAisyo.tbl[430][3] = 100; // Elec
+                datAisyo.tbl[430][4] = 100; // Force
+                datAisyo.tbl[430][6] = 50; // Light
+                datAisyo.tbl[430][7] = 50; // Dark
+                datAisyo.tbl[430][8] = 100; // Curse
+                datAisyo.tbl[430][9] = 100; // Nerve
+                datAisyo.tbl[430][10] = 100; // Mind
+                datAisyo.tbl[430][12] = 100; // Shot
+
+                datAisyo.tbl[431][0] = 100; // Phys
+                datAisyo.tbl[431][1] = 100; // Fire
+                datAisyo.tbl[431][2] = 100; // Ice
+                datAisyo.tbl[431][3] = 100; // Elec
+                datAisyo.tbl[431][4] = 100; // Force
+                datAisyo.tbl[431][6] = 50; // Light
+                datAisyo.tbl[431][7] = 50; // Dark
+                datAisyo.tbl[431][8] = 100; // Curse
+                datAisyo.tbl[431][9] = 100; // Nerve
+                datAisyo.tbl[431][10] = 100; // Mind
+                datAisyo.tbl[431][12] = 100; // Shot
+            }
 
             // Alignment
             tblHearts.fclHeartsTbl[id].Flag = 0; // Neutral
@@ -1668,30 +2388,60 @@ namespace NocturneInsaniax
 
         private static void Masakados(ushort id)
         {
-            // Affinities
-            datAisyo.tbl[432][0] = 50; // Phys
-            datAisyo.tbl[432][1] = 50; // Fire
-            datAisyo.tbl[432][2] = 50; // Ice
-            datAisyo.tbl[432][3] = 50; // Elec
-            datAisyo.tbl[432][4] = 50; // Force
-            datAisyo.tbl[432][6] = 50; // Light
-            datAisyo.tbl[432][7] = 50; // Dark
-            datAisyo.tbl[432][8] = 50; // Curse
-            datAisyo.tbl[432][9] = 50; // Nerve
-            datAisyo.tbl[432][10] = 50; // Mind
-            datAisyo.tbl[432][12] = 50; // Shot
+            if (ToggleHumanMode.Value)
+            {
+                // Human Mode Affinities
+                datAisyo.tbl[432][0] = 100; // Phys
+                datAisyo.tbl[432][1] = 100; // Fire
+                datAisyo.tbl[432][2] = 100; // Ice
+                datAisyo.tbl[432][3] = 100; // Elec
+                datAisyo.tbl[432][4] = 100; // Force
+                datAisyo.tbl[432][6] = 65536; // Light
+                datAisyo.tbl[432][7] = 100; // Dark
+                datAisyo.tbl[432][8] = 100; // Curse
+                datAisyo.tbl[432][9] = 100; // Nerve
+                datAisyo.tbl[432][10] = 100; // Mind
+                datAisyo.tbl[432][12] = 100; // Shot
 
-            datAisyo.tbl[433][0] = 50; // Phys
-            datAisyo.tbl[433][1] = 50; // Fire
-            datAisyo.tbl[433][2] = 50; // Ice
-            datAisyo.tbl[433][3] = 50; // Elec
-            datAisyo.tbl[433][4] = 50; // Force
-            datAisyo.tbl[433][6] = 50; // Light
-            datAisyo.tbl[433][7] = 50; // Dark
-            datAisyo.tbl[433][8] = 50; // Curse
-            datAisyo.tbl[433][9] = 50; // Nerve
-            datAisyo.tbl[433][10] = 50; // Mind
-            datAisyo.tbl[433][12] = 50; // Shot
+                datAisyo.tbl[433][0] = 100; // Phys
+                datAisyo.tbl[433][1] = 100; // Fire
+                datAisyo.tbl[433][2] = 100; // Ice
+                datAisyo.tbl[433][3] = 100; // Elec
+                datAisyo.tbl[433][4] = 100; // Force
+                datAisyo.tbl[433][6] = 65536; // Light
+                datAisyo.tbl[433][7] = 100; // Dark
+                datAisyo.tbl[433][8] = 100; // Curse
+                datAisyo.tbl[433][9] = 100; // Nerve
+                datAisyo.tbl[433][10] = 100; // Mind
+                datAisyo.tbl[433][12] = 100; // Shot
+            }
+            else
+            {
+                // Affinities
+                datAisyo.tbl[432][0] = 50; // Phys
+                datAisyo.tbl[432][1] = 50; // Fire
+                datAisyo.tbl[432][2] = 50; // Ice
+                datAisyo.tbl[432][3] = 50; // Elec
+                datAisyo.tbl[432][4] = 50; // Force
+                datAisyo.tbl[432][6] = 50; // Light
+                datAisyo.tbl[432][7] = 50; // Dark
+                datAisyo.tbl[432][8] = 50; // Curse
+                datAisyo.tbl[432][9] = 50; // Nerve
+                datAisyo.tbl[432][10] = 50; // Mind
+                datAisyo.tbl[432][12] = 50; // Shot
+
+                datAisyo.tbl[433][0] = 50; // Phys
+                datAisyo.tbl[433][1] = 50; // Fire
+                datAisyo.tbl[433][2] = 50; // Ice
+                datAisyo.tbl[433][3] = 50; // Elec
+                datAisyo.tbl[433][4] = 50; // Force
+                datAisyo.tbl[433][6] = 50; // Light
+                datAisyo.tbl[433][7] = 50; // Dark
+                datAisyo.tbl[433][8] = 50; // Curse
+                datAisyo.tbl[433][9] = 50; // Nerve
+                datAisyo.tbl[433][10] = 50; // Mind
+                datAisyo.tbl[433][12] = 50; // Shot
+            }
 
             // Stats
             tblHearts.fclHeartsTbl[id].GrowParamTbl[0]       = 24; // Strength

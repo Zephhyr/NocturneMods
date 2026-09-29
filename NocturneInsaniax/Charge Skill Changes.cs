@@ -135,7 +135,7 @@ namespace NocturneInsaniax
                 {
                     if (!(((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && megalomaniaIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id))) || 
                         (actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && megalomaniaIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id))) || 
-                        (actionProcessData.partyindex <= 3 && dds3GlobalWork.DDS3_GBWK.heartsequip == 23)) 
+                        (actionProcessData.partyindex <= 3 && dds3GlobalWork.DDS3_GBWK.heartsequip == 23 && !ToggleHumanMode.Value)) 
                         && random.Next(5) <= 0))
                     {
                         a.party.count[15] = 0;

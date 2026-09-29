@@ -173,6 +173,11 @@ namespace NocturneInsaniax
                                 data.press4_ten += 1;
                             }
                         }
+
+                        if (data.encno == 1270 && currentDemonWork.id == 229 && dds3GlobalWork.DDS3_GBWK.heartsequip == 18 && !ToggleHumanMode.Value)
+                        {
+                            data.press4_ten += 1;
+                        }
                     }
 
                     foreach (var actionCounter in actionTrackers.Values)
@@ -197,7 +202,7 @@ namespace NocturneInsaniax
                 else if (activeUnit <= 3)
                 {
                     // Dark Opus
-                    if (dds3GlobalWork.DDS3_GBWK.heartsequip == 18)
+                    if (dds3GlobalWork.DDS3_GBWK.heartsequip == 18 && !ToggleHumanMode.Value)
                     {
                         bool darkOpusActive = true;
                         for (int i = 0; i <= 3; i++)
@@ -217,7 +222,7 @@ namespace NocturneInsaniax
                     }
 
                     // Light Opus
-                    if (dds3GlobalWork.DDS3_GBWK.heartsequip == 21)
+                    if (dds3GlobalWork.DDS3_GBWK.heartsequip == 21 && !ToggleHumanMode.Value)
                     {
                         bool lightOpusActive = true;
                         for (int i = 0; i <= 3; i++)
@@ -296,7 +301,7 @@ namespace NocturneInsaniax
                 //MelonLogger.Msg("sformindex: " + sformindex);
                 //MelonLogger.Msg("dformindex: " + dformindex);
                 //MelonLogger.Msg("result: " + __result);
-                if (new int[] { 65536, 131072, 262144 }.Contains(nbCalc.nbGetVirtualAisyo(nskill, sformindex, dformindex)))
+                if (sformindex >= 4 && nbMainProcess.nbGetMainProcessData().enemypcnt == 1 && new int[] { 65536, 131072, 262144 }.Contains(nbCalc.nbGetVirtualAisyo(nskill, sformindex, dformindex)))
                     __result = 0;
             }
         }
@@ -2455,6 +2460,9 @@ namespace NocturneInsaniax
                 {
                     case 1:
                         {
+                            if (!ToggleSmartEnemyTargeting.Value)
+                                datDevilAI.divTbls[1][126].ailevel = 0;
+
                             if (actionTrackers[a.work.id].currentBattleActionCount % 3 == 0)
                             {
                                 UseSkill(ref a, 498); return; // Scorn
@@ -2545,6 +2553,9 @@ namespace NocturneInsaniax
                         }
                     case 2:
                         {
+                            if (!ToggleSmartEnemyTargeting.Value)
+                                datDevilAI.divTbls[1][126].ailevel = 0;
+
                             if (actionTrackers[a.work.id].currentTurnActionCount == 1 && random.Next(5) == 0)
                             {
                                 UseSkill(ref a, 511); return; // Divine Harmony
@@ -2638,11 +2649,13 @@ namespace NocturneInsaniax
                         }
                     case 3:
                         {
+                            datDevilAI.divTbls[1][126].ailevel = 1;
+
                             if (!actionTrackers[a.work.id].skillsUsedThisBattle.Contains(507))
                             {
                                 UseSkill(ref a, 507); return; // Black Hole
                             }
-                            else if (actionTrackers[a.work.id].currentTurnActionCount == 1 && random.Next(5) == 0)
+                            else if (actionTrackers[a.work.id].currentTurnActionCount == 1 && random.Next(4) == 0)
                             {
                                 UseSkill(ref a, 511); return; // Divine Harmony
                             }
@@ -2736,6 +2749,17 @@ namespace NocturneInsaniax
                                             UseSkill(ref a, 499); // Crush
                                     }
                                     break;
+                            }
+
+                            if ((a.work.nowindex == 499 || a.work.nowindex == 500) && (AllyPartyAllImmuneToAttr(499, 0) || AllyPartyTetrakarn()))
+                            {
+                                if (random.Next(2) == 0)
+                                    UseSkill(ref a, 505); // Planned Chaos
+                                else
+                                {
+                                    UseSkill(ref a, 506); // Mouth of God
+                                    SetTargetingRule(ref code, ref n, 10, n);
+                                }
                             }
 
                             break;

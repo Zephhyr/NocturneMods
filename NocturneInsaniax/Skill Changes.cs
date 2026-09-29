@@ -12,7 +12,6 @@ using Newtonsoft.Json;
 using System.Linq;
 using System.Xml;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 namespace NocturneInsaniax
 {
@@ -316,10 +315,10 @@ namespace NocturneInsaniax
                             "Great HP recovery for one ally. \nPow: 20"; return false; // Diarama
                     case 38: __result = JapaneseLanguage ? "味方1体のHPを全回復。" : 
                             "Full HP recovery for one ally."; return false; // Diarahan
-                    case 39: __result = JapaneseLanguage ? "味方全体のHPを中回復。\n威力: 10" : 
-                            "Moderate HP recovery for all allies. \nPow: 10"; return false; // Media
-                    case 40: __result = JapaneseLanguage ? "味方全体のHPを大回復。\n威力: 20" : 
-                            "Great HP recovery for all allies. \nPow: 20"; return false; // Mediarama
+                    case 39: __result = JapaneseLanguage ? "味方全体のHPを中回復。\n威力: 8" : 
+                            "Moderate HP recovery for all allies. \nPow: 8"; return false; // Media
+                    case 40: __result = JapaneseLanguage ? "味方全体のHPを大回復。\n威力: 16" : 
+                            "Great HP recovery for all allies. \nPow: 16"; return false; // Mediarama
                     case 41: __result = JapaneseLanguage ? "味方全体のHPを全回復。" : 
                             "Full HP recovery for all allies."; return false; // Mediarahan
                     //case 42: __result = "Donates MP to one ally."; return false; // Makatora
@@ -435,8 +434,8 @@ namespace NocturneInsaniax
                             "Low Shot damage to one foe. \n2-4 hits. Pow: 11, Acc: 90%, \nCrit: 18%, Stone: 16%"; return false; // Arid Needle
                     case 115: __result = JapaneseLanguage ? "自身を犠牲にして敵全体に力依存\nの万能属性特大ダメージ。\n威力: 55, 命中: 90%, 会心率: 20%" : 
                             "Sacrifice self to deal Mega Str-based \nAlmighty damage to all foes. \nPow: 55, Acc: 90%, Crit: 20%"; return false; // Sacrifice
-                    case 116: __result = JapaneseLanguage ? "自身を犠牲にして敵1体に力依存\nの万能属性特大ダメージ。\n威力: 80, 命中: 90%, 会心率: 20%" : 
-                            "Sacrifice self to deal Mega Str-based \nAlmighty damage to one foe. \nPow: 80, Acc: 90%, Crit: 20%"; return false; // Kamikaze
+                    case 116: __result = JapaneseLanguage ? "自身を犠牲にして敵1体に力依存\nの万能属性特大ダメージ。\n威力: 90, 命中: 90%, 会心率: 20%" : 
+                            "Sacrifice self to deal Mega Str-based \nAlmighty damage to one foe. \nPow: 90, Acc: 90%, Crit: 20%"; return false; // Kamikaze
                     case 117: __result = JapaneseLanguage ? "敵1体に物理属性の小ダメージ。\n威力: 44, 命中: 88%, 会心率: 24%" : 
                             "Low Physical damage to one foe. \nPow: 44, Acc: 88%, Crit: 24%"; return false; // Feral Bite
                     case 118: __result = JapaneseLanguage ? "敵1体に物理属性の小ダメージ。\n威力: 42, 命中: 88%, 会心率: 22%, \n毒: 22%" : 
@@ -874,8 +873,8 @@ namespace NocturneInsaniax
                             "High Str-based Force damage to \nall foes. Pow: 36, Acc: 90%, \nCrit: 20%"; return false; // Winged Fury
                     case 463: __result = JapaneseLanguage ? "敵1体に氷結属性の小ダメージ。\n対象の防御力を低下。\n威力: 27, 命中: 100%, 凍結: 20%" : 
                             "Low Ice damage to one foe. \nLowers target's Defense. \nPow: 27, Acc: 100%, Freeze: 20%"; return false; // Jack Bufu
-                    case 464: __result = JapaneseLanguage ? "味方全体のHPを中回復。\n威力: 8 (戦闘外での使用不可)" : 
-                            "Moderate HP recovery \nfor all allies. Pow: 8 \n(Cannot be used outside of battle)"; return false; // Humble Blessing
+                    case 464: __result = JapaneseLanguage ? "味方全体のHPを中回復。\n威力: 10 (戦闘外での使用不可)" : 
+                            "Moderate HP recovery \nfor all allies. Pow: 10 \n(Cannot be used outside of battle)"; return false; // Humble Blessing
                     case 465: __result = JapaneseLanguage ? "敵1体に物理属性の特大ダメージ。\n威力: 60, 命中: 90%, 会心率: 40%" : 
                             "Mega Physical damage to one foe. \nPow: 60, Acc: 90%, Crit: 40%"; return false; // Rend
                     case 466: __result = JapaneseLanguage ? "敵1体に氷結属性の特大ダメージ。\n対象の防御力を低下。\n威力: 70, 命中: 100%, 凍結: 20%" : 
@@ -1027,7 +1026,7 @@ namespace NocturneInsaniax
                 datUnitWork_t target = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
 
                 // Remove Freeze and Shock after guaranteed critical strike
-                if ((datNormalSkill.tbl[nskill].koukatype == 0 || (dds3GlobalWork.DDS3_GBWK.heartsequip == 13 && sformindex <= 3 && (datSkill.tbl[nskill].skillattr == 3 || datSkill.tbl[nskill].skillattr == 4) && target.badstatus == 2)) && (target.badstatus == 1 || target.badstatus == 2)
+                if ((datNormalSkill.tbl[nskill].koukatype == 0 || (dds3GlobalWork.DDS3_GBWK.heartsequip == 13 && !ToggleHumanMode.Value && sformindex <= 3 && (datSkill.tbl[nskill].skillattr == 3 || datSkill.tbl[nskill].skillattr == 4) && target.badstatus == 2)) && (target.badstatus == 1 || target.badstatus == 2)
                     && (datNormalSkill.tbl[nskill].hptype == 1 || datNormalSkill.tbl[nskill].hptype == 6 || datNormalSkill.tbl[nskill].hptype == 12 || datNormalSkill.tbl[nskill].hptype == 14))
                 {
                     var form = a.data.form[dformindex];
@@ -1464,7 +1463,7 @@ namespace NocturneInsaniax
                             try
                             {
                                 if (magnifiedMaladyIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id) ||
-                                    (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 17))
+                                    (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 17 && !ToggleHumanMode.Value))
                                 {
                                     magnifiedMaladyActive = true; break;
                                 }
@@ -1478,7 +1477,8 @@ namespace NocturneInsaniax
                         {
                             try
                             {
-                                if (magnifiedMaladyIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id))
+                                if (magnifiedMaladyIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id) || 
+                                    (nbMainProcess.nbGetUnitWorkFromFormindex(enemy.formindex).id == 229 && dds3GlobalWork.DDS3_GBWK.heartsequip == 17 && !ToggleHumanMode.Value))
                                 {
                                     magnifiedMaladyActive = true; break;
                                 }
@@ -7192,7 +7192,7 @@ namespace NocturneInsaniax
 
         private static void Kamikaze(ushort id)
         {
-            datNormalSkill.tbl[id].hpn = 80;
+            datNormalSkill.tbl[id].hpn = 90;
             datNormalSkill.tbl[id].failpoint = 10;
             datNormalSkill.tbl[id].criticalpoint = 20;
         }
@@ -7227,13 +7227,13 @@ namespace NocturneInsaniax
         private static void Media(ushort id)
         {
             datNormalSkill.tbl[id].cost = 18;
-            datNormalSkill.tbl[id].hpn = 10;
+            datNormalSkill.tbl[id].hpn = 8;
         }
 
         private static void Mediarama(ushort id)
         {
             datNormalSkill.tbl[id].cost = 36;
-            datNormalSkill.tbl[id].hpn = 20;
+            datNormalSkill.tbl[id].hpn = 16;
         }
 
         private static void Mediarahan(ushort id)
@@ -7411,7 +7411,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 10;
+            datNormalSkill.tbl[id].hpn = 9;
             datNormalSkill.tbl[id].hptype = 11;
             datNormalSkill.tbl[id].koukatype = 1;
             datNormalSkill.tbl[id].magicbase = 0;
@@ -7509,14 +7509,14 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 15;
+            datNormalSkill.tbl[id].hpn = 12;
             datNormalSkill.tbl[id].hptype = 11;
             datNormalSkill.tbl[id].koukatype = 1;
             datNormalSkill.tbl[id].magicbase = 0;
             datNormalSkill.tbl[id].magiclimit = 0;
             datNormalSkill.tbl[id].minus = 100;
             datNormalSkill.tbl[id].mpbase = 0;
-            datNormalSkill.tbl[id].mpn = 5;
+            datNormalSkill.tbl[id].mpn = 4;
             datNormalSkill.tbl[id].mptype = 11;
             datNormalSkill.tbl[id].program = 0;
             datNormalSkill.tbl[id].targetarea = 9;
@@ -7655,7 +7655,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hojopoint = 99;
             datNormalSkill.tbl[id].hojotype = 0;
             datNormalSkill.tbl[id].hpbase = 0;
-            datNormalSkill.tbl[id].hpn = 8;
+            datNormalSkill.tbl[id].hpn = 10;
             datNormalSkill.tbl[id].hptype = 2;
             datNormalSkill.tbl[id].koukatype = 1;
             datNormalSkill.tbl[id].magicbase = 0;
@@ -9225,7 +9225,7 @@ namespace NocturneInsaniax
 
             datNormalSkill.tbl[id].badlevel = 27;
             datNormalSkill.tbl[id].badtype = 1;
-            datNormalSkill.tbl[id].basstatus = 1025;
+            datNormalSkill.tbl[id].basstatus = 1024;
             datNormalSkill.tbl[id].cost = 0;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 2;
@@ -9272,7 +9272,7 @@ namespace NocturneInsaniax
 
             datNormalSkill.tbl[id].badlevel = 27;
             datNormalSkill.tbl[id].badtype = 1;
-            datNormalSkill.tbl[id].basstatus = 258;
+            datNormalSkill.tbl[id].basstatus = 256;
             datNormalSkill.tbl[id].cost = 0;
             datNormalSkill.tbl[id].costbase = 0;
             datNormalSkill.tbl[id].costtype = 2;

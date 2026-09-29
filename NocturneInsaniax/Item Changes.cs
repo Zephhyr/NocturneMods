@@ -1375,6 +1375,9 @@ namespace NocturneInsaniax
             // Satan Magatama Box behind Ongyo-Ki
             fldGlobal.fldHitData._fldItemBoxTbl[104]._ItemID = 16;
 
+            // Int Incenses in room after Beelzebub
+            fldGlobal.fldHitData._fldItemBoxTbl[322]._ItemID = 39;
+
             // Int Incenses in TDE room in 5th Kalpa
             fldGlobal.fldHitData._fldItemBoxTbl[330]._ItemID = 39;
 

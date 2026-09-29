@@ -18,7 +18,7 @@ using Il2Cppeffect_H;
 using Il2Cppmodel_H;
 using Il2CppSteamworks;
 
-[assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax", "1.2.0", "Zephhyr, Matthiew Purple, Bud, X Kirby, Margothic, Scribe, Snappy, Mason White")]
+[assembly: MelonInfo(typeof(NocturneInsaniax.NocturneInsaniax), "Nocturne Insaniax", "1.2.0", "Zephhyr, Matthiew Purple, Bud, X Kirby, Allania, Margothic, Scribe, Snappy, Mason White")]
 [assembly: MelonGame("アトラス", "smt3hd")]
 
 namespace NocturneInsaniax
@@ -33,8 +33,10 @@ namespace NocturneInsaniax
         public static MelonPreferences_Entry<bool> EnableEnemyLevelDisplay;
         public static MelonPreferences_Entry<bool> ToggleExpOnRandomEncounters;
         public static MelonPreferences_Entry<bool> ToggleItemUseInBattle;
+        public static MelonPreferences_Entry<bool> ToggleSmartEnemyTargeting;
         public static MelonPreferences_Entry<bool> ToggleFirstPersonView;
         public static MelonPreferences_Entry<bool> TogglePazuzuInPuzzleBoy;
+        public static MelonPreferences_Entry<bool> ToggleHumanMode;
         //public static MelonPreferences_Entry<double> EncounterMaccaMultiplier;
         //public static MelonPreferences_Entry<bool> GuaranteeEscape;
         //public static MelonPreferences_Entry<bool> GuaranteeNKEs;
@@ -132,8 +134,10 @@ namespace NocturneInsaniax
             EnableEnemyLevelDisplay = InsaniaxSettings.CreateEntry("Enable Enemy Level Display", true);
             ToggleExpOnRandomEncounters = InsaniaxSettings.CreateEntry("Toggle Random Encounter EXP", true);
             ToggleItemUseInBattle = InsaniaxSettings.CreateEntry("Toggle Item Use In Battle", true);
+            ToggleSmartEnemyTargeting = InsaniaxSettings.CreateEntry("Toggle Smart Targeting For All Enemies", false);
             ToggleFirstPersonView = InsaniaxSettings.CreateEntry("Toggle First Person View", false);
             TogglePazuzuInPuzzleBoy = InsaniaxSettings.CreateEntry("Toggle Pazuzu In Puzzle Boy", false);
+            ToggleHumanMode = InsaniaxSettings.CreateEntry("Toggle Human Mode", false);
             //EncounterMaccaMultiplier = InsaniaxSettings.CreateEntry("Encounter Macca Multiplier", 1.0);
             //GuaranteeEscape = InsaniaxSettings.CreateEntry("Guarantee Escape", false);
             //GuaranteeNKEs = InsaniaxSettings.CreateEntry("Guarantee New Kagutsuchi Encounters", false);
@@ -1208,6 +1212,30 @@ namespace NocturneInsaniax
                 // Toggle EXP on random encounters
                 if (ToggleExpOnRandomEncounters.Value == false && datEncount.tbl[data.encno].esc != 1)
                     __result = 0;
+            }
+        }
+
+        [HarmonyPatch(typeof(datCalc), nameof(datCalc.datCheckSyojiSkill))]
+        private class datCheckSyojiSkillHumanModePatch
+        {
+            public static bool Prefix(ref datUnitWork_t work, ref uint skill, ref int __result)
+            {
+                if (work.id == 0 && ToggleHumanMode.Value)
+                {
+                    __result = 0;
+                    return false;
+                }
+
+                return true;
+            }
+        }
+
+        [HarmonyPatch(typeof(GlobalData), nameof(GlobalData.DLCTerminalList))]
+        private class DLCTerminalListPatch
+        {
+            public static bool Prefix(ref fclDataTerminal_t term)
+            {
+                return false;
             }
         }
 

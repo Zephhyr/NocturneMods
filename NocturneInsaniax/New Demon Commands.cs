@@ -101,6 +101,14 @@ namespace NocturneInsaniax
                 }
                 else
                 {
+                    // Disable Skills in Human Mode
+                    if (ToggleHumanMode.Value)
+                    {
+                        for (int i = 0; i < s.commlist[0].Length; i++)
+                            if (s.commlist[0][i] > 0 && s.commlist[0][i] != 32768 && s.commlist[0][i] != 32770)
+                                s.commdisable[0][i] = 1;
+                    }
+
                     // Prevent Talking in NKEs
                     if (s.act.data.encno == 1270 || s.act.data.encno == 1271 || s.act.data.encno == 1272 || s.act.data.encno == 1273) 
                     {

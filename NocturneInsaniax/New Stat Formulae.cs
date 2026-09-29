@@ -225,7 +225,7 @@ namespace NocturneInsaniax
                     }
                 }
                 // Ruler's Virtuosity
-                else if (nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 25)
+                else if ((nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id == 0 || nbMainProcess.nbGetUnitWorkFromFormindex(sformindex).id == 229) && dds3GlobalWork.DDS3_GBWK.heartsequip == 25 && !ToggleHumanMode.Value)
                 {
                     try
                     {
@@ -407,10 +407,11 @@ namespace NocturneInsaniax
             public static bool Prefix(ref nbMainProcessData_t data, ref int __result)
             {
                 //if (GuaranteeEscape.Value == true)
-                //{
-                //    __result = 1;
-                //    return false;
-                //}
+                if (data.encno == 1270 || data.encno == 1271 || data.encno == 1272 || data.encno == 1273)
+                {
+                    __result = 1;
+                    return false;
+                }
 
                 var encounter = datEncount.Get(data.encno);
                 if ((encounter.flag >> 5 & 1) != 0 || datCalc.datCheckSkillInParty(296) != 0)
@@ -497,7 +498,7 @@ namespace NocturneInsaniax
                     (datSkill.tbl[nskill].skillattr == 2 && workFromFormindex2.badstatus == 256) || // If attack is ice and target is stunned
                     (datSkill.tbl[nskill].skillattr == 3 && workFromFormindex2.badstatus == 32) || // If attack is elec and target is muted
                     (datSkill.tbl[nskill].skillattr == 4 && workFromFormindex2.badstatus == 8) || // If attack is force and target is panicked
-                    ((datNormalSkill.tbl[nskill].koukatype == 0 || (dds3GlobalWork.DDS3_GBWK.heartsequip == 13 && sformindex <= 3 && (datSkill.tbl[nskill].skillattr == 3 || datSkill.tbl[nskill].skillattr == 4) && workFromFormindex2.badstatus == 2)) && 
+                    ((datNormalSkill.tbl[nskill].koukatype == 0 || (dds3GlobalWork.DDS3_GBWK.heartsequip == 13 && !ToggleHumanMode.Value && sformindex <= 3 && (datSkill.tbl[nskill].skillattr == 3 || datSkill.tbl[nskill].skillattr == 4) && workFromFormindex2.badstatus == 2)) && 
                     (workFromFormindex2.badstatus == 1 || workFromFormindex2.badstatus == 2))) // If attack is str-based or Storm Shatter is active and target is shocked or frozen
                     && (datNormalSkill.tbl[nskill].hptype == 1 || datNormalSkill.tbl[nskill].hptype == 6 || datNormalSkill.tbl[nskill].hptype == 12 || datNormalSkill.tbl[nskill].hptype == 14))
                     __result = 1; // Critical hit
@@ -536,9 +537,9 @@ namespace NocturneInsaniax
                                     try
                                     {
                                         if (critEnablerUsers[skillAttr].Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id) ||
-                                            (skillAttr == 1 && ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 15) ||
-                                            (skillAttr == 3 && ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 22) ||
-                                            (skillAttr == 5 && ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 16))
+                                            (skillAttr == 1 && ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 15 && !ToggleHumanMode.Value) ||
+                                            (skillAttr == 3 && ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 22 && !ToggleHumanMode.Value) ||
+                                            (skillAttr == 5 && ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 16 && !ToggleHumanMode.Value))
                                             critRate = Math.Max(critRate, (short) 10);
                                     }
                                     catch { }
@@ -593,7 +594,7 @@ namespace NocturneInsaniax
                                 try
                                 {
                                     if (nbMainProcess.nbGetUnitWorkFromFormindex(demon.formindex).id == 113
-                                        || (demon.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(demon.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 14))
+                                        || (demon.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(demon.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 14 && !ToggleHumanMode.Value))
                                         critRate = Math.Max(critRate, (short)10);
                                 }
                                 catch { }
@@ -654,7 +655,7 @@ namespace NocturneInsaniax
                         if (covetousFuryActive) critRate += 10;
                     }
                     // Focused Assault
-                    if (((sformindex == 0 && workFromFormindex1.id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 1) || focusedAssaultIds.Contains(workFromFormindex1.id)) && 
+                    if (((sformindex == 0 && (workFromFormindex1.id == 0 || workFromFormindex1.id == 229) && dds3GlobalWork.DDS3_GBWK.heartsequip == 1 && !ToggleHumanMode.Value) || focusedAssaultIds.Contains(workFromFormindex1.id)) && 
                         datNormalSkill.tbl[nskill].targetarea == 2 && 
                         datNormalSkill.tbl[nskill].targettype == 0 &&
                         previousSingleTargetFormIndex == dformindex &&
@@ -872,7 +873,7 @@ namespace NocturneInsaniax
                         chance += 30;
                     }
                     // Focused Assault
-                    if (((sformindex == 0 && workFromFormindex1.id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 1) || focusedAssaultIds.Contains(workFromFormindex1.id)) &&
+                    if (((sformindex == 0 && (workFromFormindex1.id == 0 || workFromFormindex1.id == 229) && dds3GlobalWork.DDS3_GBWK.heartsequip == 1 && !ToggleHumanMode.Value) || focusedAssaultIds.Contains(workFromFormindex1.id)) &&
                         datNormalSkill.tbl[nskill].targetarea == 2 &&
                         datNormalSkill.tbl[nskill].targettype == 0 &&
                         previousSingleTargetFormIndex == dformindex)

@@ -22,6 +22,63 @@ namespace NocturneInsaniax
         {
             public static bool Prefix(ref string ID, ref string __result)
             {
+                if (ToggleHumanMode.Value && new string[] { 
+                    "<AISYO_L0384>",
+                    "<AISYO_L0385>",
+                    "<AISYO_L0386>",
+                    "<AISYO_L0387>",
+                    "<AISYO_L0388>",
+                    "<AISYO_L0389>",
+                    "<AISYO_L0390>",
+                    "<AISYO_L0391>",
+                    "<AISYO_L0392>",
+                    "<AISYO_L0393>",
+                    "<AISYO_L0394>",
+                    "<AISYO_L0395>",
+                    "<AISYO_L0396>",
+                    "<AISYO_L0397>",
+                    "<AISYO_L0398>",
+                    "<AISYO_L0399>",
+                    "<AISYO_L0400>",
+                    "<AISYO_L0401>",
+                    "<AISYO_L0402>",
+                    "<AISYO_L0403>",
+                    "<AISYO_L0404>",
+                    "<AISYO_L0405>",
+                    "<AISYO_L0406>",
+                    "<AISYO_L0407>",
+                    "<AISYO_L0408>",
+                    "<AISYO_L0409>",
+                    "<AISYO_L0410>",
+                    "<AISYO_L0411>",
+                    "<AISYO_L0412>",
+                    "<AISYO_L0413>",
+                    "<AISYO_L0414>",
+                    "<AISYO_L0415>",
+                    "<AISYO_L0416>",
+                    "<AISYO_L0417>",
+                    "<AISYO_L0418>",
+                    "<AISYO_L0419>",
+                    "<AISYO_L0420>",
+                    "<AISYO_L0421>",
+                    "<AISYO_L0422>",
+                    "<AISYO_L0423>",
+                    "<AISYO_L0424>",
+                    "<AISYO_L0425>",
+                    "<AISYO_L0426>",
+                    "<AISYO_L0427>",
+                    "<AISYO_L0428>",
+                    "<AISYO_L0429>",
+                    "<AISYO_L0430>",
+                    "<AISYO_L0431>",
+                    "<AISYO_L0432>",
+                    "<AISYO_L0433>"
+                    }.Contains(ID))
+                {
+                    __result = JapaneseLanguage ? "破魔無効" : "Null: Light";
+                    return false;
+                }
+
                 switch (ID)
                 {
                     // Skill Text
@@ -1621,6 +1678,15 @@ namespace NocturneInsaniax
             datAisyo.tbl[247][10] = 130; // Mind
             datAisyo.tbl[247][11] = 130; // Self-destruct
             datAisyo.tbl[247][12] = 130; // Shot
+
+            if (ToggleSmartEnemyTargeting.Value)
+            foreach (var tbl in datDevilAI.divTbls)
+            {
+                foreach (var devil in tbl)
+                {
+                    devil.ailevel = 1;
+                }
+            }
 
             // Set all HP to 2
             //foreach (var devil in datDevilFormat.tbl)
@@ -11754,7 +11820,7 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 3, 2, 2, 2, 3, 1 };
 
             // Affinities
-            datAisyo.tbl[id][0] = 40; // Phys
+            datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 65536; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
             datAisyo.tbl[id][3] = 50; // Elec
@@ -11764,7 +11830,7 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][8] = 65536; // Curse
             datAisyo.tbl[id][9] = 65536; // Nerve
             datAisyo.tbl[id][10] = 65536; // Mind
-            datAisyo.tbl[id][12] = 80; // Shot
+            datAisyo.tbl[id][12] = 100; // Shot
 
             // Skills
             tblSkill.fclSkillTbl[id].Event[1].Param = 6; // Maragidyne
@@ -11785,7 +11851,7 @@ namespace NocturneInsaniax
             tblSkill.fclSkillTbl[id].GrowParamTbl = new sbyte[] { 2, 3, 3, 1, 4, 2 };
 
             // Affinities
-            datAisyo.tbl[id][0] = 80; // Phys
+            datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 50; // Ice
             datAisyo.tbl[id][3] = 262144; // Elec
@@ -11795,7 +11861,7 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][8] = 65536; // Curse
             datAisyo.tbl[id][9] = 65536; // Nerve
             datAisyo.tbl[id][10] = 262144; // Mind
-            datAisyo.tbl[id][12] = 40; // Shot
+            datAisyo.tbl[id][12] = 50; // Shot
 
             // Skills
             tblSkill.fclSkillTbl[id].Event[1].Param = 24; // Mazandyne
@@ -12522,7 +12588,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].aisyoid = (short)id;
 
             // Affinities
-            datAisyo.tbl[id][0] = 80; // Phys
+            datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 50; // Ice
             datAisyo.tbl[id][3] = 262144; // Elec
@@ -16606,6 +16672,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].skill[4] = 469; // Mjolnir
             datDevilFormat.tbl[id].skill[5] = 457; // Diamrita
             datDevilFormat.tbl[id].skill[6] = 57; // Dekaja
+            datDevilFormat.tbl[id].skill[7] = 371; // Arms Master
         }
 
         private static void BossThor2(ushort id)
@@ -16644,8 +16711,8 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].skill[3] = 469; // Mjolnir
             datDevilFormat.tbl[id].skill[4] = 457; // Diamrita
             datDevilFormat.tbl[id].skill[5] = 459; // Luster Candy
-            datDevilFormat.tbl[id].skill[6] = 224; // Focus
-            datDevilFormat.tbl[id].skill[7] = 307; // Avenge
+            datDevilFormat.tbl[id].skill[6] = 307; // Avenge
+            datDevilFormat.tbl[id].skill[7] = 371; // Firm Stance
         }
 
         private static void BossBlackFrost(ushort id)
@@ -17420,7 +17487,7 @@ namespace NocturneInsaniax
         private static void BossMetatron(ushort id)
         {
             // Affinities
-            datAisyo.tbl[id][0] = 40; // Phys
+            datAisyo.tbl[id][0] = 50; // Phys
             datAisyo.tbl[id][1] = 65536; // Fire
             datAisyo.tbl[id][2] = 100; // Ice
             datAisyo.tbl[id][3] = 50; // Elec
@@ -17430,7 +17497,7 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][8] = 65536; // Curse
             datAisyo.tbl[id][9] = 65536; // Nerve
             datAisyo.tbl[id][10] = 65536; // Mind
-            datAisyo.tbl[id][12] = 80; // Shot
+            datAisyo.tbl[id][12] = 100; // Shot
 
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 30000;
@@ -17462,7 +17529,7 @@ namespace NocturneInsaniax
         private static void BossBeelzebubFly(ushort id)
         {
             // Affinities
-            datAisyo.tbl[id][0] = 80; // Phys
+            datAisyo.tbl[id][0] = 100; // Phys
             datAisyo.tbl[id][1] = 100; // Fire
             datAisyo.tbl[id][2] = 50; // Ice
             datAisyo.tbl[id][3] = 262144; // Elec
@@ -17472,7 +17539,7 @@ namespace NocturneInsaniax
             datAisyo.tbl[id][8] = 65536; // Curse
             datAisyo.tbl[id][9] = 65536; // Nerve
             datAisyo.tbl[id][10] = 65536; // Mind
-            datAisyo.tbl[id][12] = 40; // Shot
+            datAisyo.tbl[id][12] = 50; // Shot
 
             // Enemy Stats
             datDevilFormat.tbl[id].maxhp = 26666;
@@ -18874,7 +18941,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].race = 46;
             datDevilFormat.tbl[id].level = 10;
             datDevilFormat.tbl[id].aisyoid = (short)id;
-            datDevilFormat.tbl[id].param = new sbyte[] { 85, 1, 1, 1, 90, 5 };
+            datDevilFormat.tbl[id].param = new sbyte[] { 75, 1, 1, 1, 90, 5 };
             datDevilFormat.tbl[id].keisyotype = 9;
             datDevilFormat.tbl[id].keisyoform = 1;
 

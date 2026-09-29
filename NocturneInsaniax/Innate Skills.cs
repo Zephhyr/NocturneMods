@@ -244,7 +244,7 @@ namespace NocturneInsaniax
             { 226, new InnateSkill(383, 15, "Magnified Malady", "While in the active party, all allies \ndeal 20% more damage against \nenemies with an ailment.")}, // 226 Nightmare
             { 227, new InnateSkill(383, 15, "Paw-to-Paw Combat", "Gdon's Critical Damage increases \nby 30% if at least two \nallies have Paw-to-Paw Combat.")}, // 227 Gdon
             { 228, new InnateSkill(383, 03, "Elec Enhancer", "While in the active party, \nraise allies' Elec skill potential \nto Vritra's if it was lower.")}, // 228 Vritra
-            { 229, new InnateSkill(383, 15, "Magatama Mimicry", "Demee-Ho gains skill potential \ndependent on which Magatama is \ncurrently ingested.")}, // 229 Demee-Ho
+            { 229, new InnateSkill(383, 15, "Magatama Mimicry", "Demee-Ho gains the innate skill \nand skill potential of the \ncurrently ingested Magatama.")}, // 229 Demee-Ho
             { 230, new InnateSkill(383, 15, "Covetous Fury", "Seth's attacks, including Magic, \ngain 10% Critical Rate against \ntargets with any greater stat.")}, // 230 Seth
             { 231, new InnateSkill(383, 15, "", "")}, // 231 
             { 232, new InnateSkill(383, 15, "", "")}, // 232 
@@ -632,7 +632,7 @@ namespace NocturneInsaniax
             { 226, new InnateSkill(383, 15, "連なる厄災", "戦闘メンバーにいる間、\n状態異常にかかった敵に対し、\n味方全体の与ダメージが20%増加する。")}, // 226 Nightmare
             { 227, new InnateSkill(383, 15, "にゃん2ブロー", "『にゃん2ブロー』を持つ味方が2体以上い\nる場合、ドゥンのクリティカル\nダメージが30%増加する。")}, // 227 Gdon
             { 228, new InnateSkill(383, 03, "電撃の増幅", "戦闘メンバーにいる間、味方の\n電撃適正がヴリトラより低い場合、\nヴリトラの数値まで引き上げる。")}, // 228 Vritra
-            { 229, new InnateSkill(383, 15, "マガタマコピー", "現在装着している\nマガタマに応じて\nスキル適性を得る。")}, // 229 Demee-Ho
+            { 229, new InnateSkill(383, 15, "マガタマコピー", "ひホしゅらーは現在取り込んで\nいるマガタマの固有スキルと\nスキル適性を獲得します。")}, // 229 Demee-Ho
             { 230, new InnateSkill(383, 15, "強欲な怒り", "セトの攻撃（魔法を含む）は、\n自分よりステータスが高い項目を持つ対象に対して\nクリティカル率が10%上昇する。")}, // 230 Seth
             { 231, new InnateSkill(383, 15, "", "")}, // 231 
             { 232, new InnateSkill(383, 15, "", "")}, // 232 
@@ -1047,7 +1047,11 @@ namespace NocturneInsaniax
                     // If it's Demi-fiend's trait skill
                     if (currentDemonWork.id == 0)
                     {
-                        if (demonInnateSkills[currentDemonWork.id].skillId != 383)
+                        if (ToggleHumanMode.Value)
+                        {
+                            __result = JapaneseLanguage ? "生来のスキルなし" : "No Innate Skill";
+                        }
+                        else if (demonInnateSkills[currentDemonWork.id].skillId != 383)
                         {
                             __result = datSkillName.Get(magatamaInnateSkills[dds3GlobalWork.DDS3_GBWK.heartsequip].skillId);
                         }
@@ -1098,7 +1102,11 @@ namespace NocturneInsaniax
                     // If it's Demi-fiend's trait skill
                     if (currentDemonWork.id == 0)
                     {
-                        if (demonInnateSkills[currentDemonWork.id].skillId != 383)
+                        if (ToggleHumanMode.Value)
+                        {
+                            __result = JapaneseLanguage ? "生来のスキルなし" : "No Innate Skill";
+                        }
+                        else if (demonInnateSkills[currentDemonWork.id].skillId != 383)
                         {
                             __result = datSkillHelp_msg.Get(magatamaInnateSkills[dds3GlobalWork.DDS3_GBWK.heartsequip].skillId);
                         }

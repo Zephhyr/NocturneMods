@@ -187,7 +187,7 @@ namespace NocturneInsaniax
                 // Check if a LifeStone drops.
                 chance = rng.Next(10000) / 100f;
                 bool foundLifeStone = false;
-                var masekipoint = devil.masekipoint != 0 ? 8 : 0;
+                var masekipoint = devil.masekipoint != 0 ? 12 : 0;
                 if ((float)devil.masekipoint * dropRateMult >= chance)
                 { foundLifeStone = true; }
 

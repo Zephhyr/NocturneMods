@@ -1716,7 +1716,7 @@ namespace NocturneInsaniax
                                 try
                                 {
                                     if (restorativeMelodyIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id) ||
-                                        (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 3))
+                                        (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 3 && !ToggleHumanMode.Value))
                                         restorativeMelodyActive = true;
                                 }
                                 catch { }
@@ -1734,7 +1734,7 @@ namespace NocturneInsaniax
                                 try
                                 {
                                     if (divineBenevolenceIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id) ||
-                                        (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 4))
+                                        (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 4 && !ToggleHumanMode.Value))
                                         divineBenevolenceActive = true;
                                 }
                                 catch { }
@@ -1752,7 +1752,7 @@ namespace NocturneInsaniax
                                 try
                                 {
                                     if (tripuraSamharaIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id) ||
-                                        (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 24))
+                                        (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 24 && !ToggleHumanMode.Value))
                                         tripuraSamharaActive = true;
                                 }
                                 catch { }
@@ -2088,7 +2088,7 @@ namespace NocturneInsaniax
                     sbyte skillPotential = SkillPotentialUtility.GetSkillPotential(nskill, demonID);
 
                     // Orochi's Bane
-                    if (demonID == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 20 && datSkill.tbl[nskill].skillattr == 4)
+                    if ((demonID == 0 || demonID == 229) && dds3GlobalWork.DDS3_GBWK.heartsequip == 20 && datSkill.tbl[nskill].skillattr == 4 && !ToggleHumanMode.Value)
                     {
                         datNormalSkill.tbl[nskill].basstatus = 64;
                         datNormalSkill.tbl[nskill].badlevel = 30;
@@ -2123,7 +2123,7 @@ namespace NocturneInsaniax
                             try
                             {
                                 if (contagiousCurseIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id) ||
-                                    (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 10))
+                                    (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 10 && !ToggleHumanMode.Value))
                                     contagiousCurseActive = true;
                             }
                             catch { }
@@ -2279,7 +2279,7 @@ namespace NocturneInsaniax
                             try
                             {
                                 if (withheldSentenceIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id) ||
-                                    (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 19))
+                                    (ally.formindex == 0 && nbMainProcess.nbGetUnitWorkFromFormindex(ally.formindex).id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == 19 && !ToggleHumanMode.Value))
                                     __result = 0;
                             }
                             catch { }
@@ -2338,7 +2338,7 @@ namespace NocturneInsaniax
             {
                 if (id == 61 && currentDemonWork.level >= 80 && currentDemonWork.param[0] >= 75 && currentDemonWork.param[1] >= 75 && currentDemonWork.param[2] >= 75 && currentDemonWork.param[3] >= 75 && currentDemonWork.param[4] >= 75 && currentDemonWork.param[5] >= 75)
                     __result += JapaneseLanguage ? potentialHelpJp[215] : potentialHelp[215]; // Get Uber Pixie's potential help
-                else if (id >= 384 && id <= 433)
+                else if (id >= 384 && id <= 433 && !ToggleHumanMode.Value)
                 {
                     __result += JapaneseLanguage ? SkillPotentialUtility.GetDemiFiendSkillPotentialHelpJapanese() : SkillPotentialUtility.GetDemiFiendSkillPotentialHelp();
                 }
@@ -2501,7 +2501,7 @@ namespace NocturneInsaniax
                     if (actionProcessData != null && skillAttribute <= 12)
                     { 
                         // Gestalts
-                        if (currentDemonWork.id == 0 && dds3GlobalWork.DDS3_GBWK.heartsequip == gestaltMagatama[skillAttribute])
+                        if ((currentDemonWork.id == 0 || currentDemonWork.id == 229) && dds3GlobalWork.DDS3_GBWK.heartsequip == gestaltMagatama[skillAttribute] && !ToggleHumanMode.Value)
                         {
                             foreach (var ally in nbMainProcess.nbGetMainProcessData().party.Where(x => x.partyindex <= 3))
                             {
@@ -2576,6 +2576,9 @@ namespace NocturneInsaniax
 
             public static sbyte GetDemiFiendSkillPotential(sbyte skillAttribute)
             {
+                if (ToggleHumanMode.Value)
+                    return 0;
+
                 sbyte skillPotential;
 
                 sbyte inherentMagatamaPotential = magatamaPotentials[dds3GlobalWork.DDS3_GBWK.heartsequip][skillAttribute]; // Get the potential from the currently equipped Magatama

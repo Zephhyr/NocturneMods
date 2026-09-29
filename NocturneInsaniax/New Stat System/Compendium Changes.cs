@@ -13,6 +13,7 @@ namespace NocturneInsaniax
 {
     internal partial class NocturneInsaniax : MelonMod
     {
+        private const int demonCount = 184; //200
         private static bool ShowFusionStats = false;
         public static short currentRecord;
         private static short listWindowCursorPos = 0;
@@ -122,12 +123,93 @@ namespace NocturneInsaniax
             return discountFactor;
         }
 
+        [HarmonyPatch(typeof(fclEncyc), "fclEncycGetRatio2")]
+        public static class Patch_fclEncycGetRatio2
+        {
+            public static bool Prefix(ref int __result)
+            {
+                int totalDemons = demonCount;
+                int currentCount = fclEncyc.fclEncycGetNum();
+
+                __result = (currentCount * 100) / totalDemons;
+
+                return false;
+            }
+        }
+
         [HarmonyPatch(typeof(fclEncyc), nameof(fclEncyc.GetNakamaMax))]
         private class GetNakamaMaxPatch
         {
             public static void Postfix(ref int __result)
             {
-                __result = 200;
+                __result = demonCount;
+            }
+        }
+
+        [HarmonyPatch(typeof(fclEncyc), "fclEncycRegist")]
+        public static class BlockNewDemonsRegistration
+        {
+            private static readonly Dictionary<int, string> InsaniaxNewDemons = new()
+        {
+            {179, "OseHallel"},
+            {180, "FlaurosHallel"},
+            {181, "Urthona"},
+            {182, "Urizen"},
+            {183, "Luvah"},
+            {184, "Tharmus"},
+            {185, "Specter"},
+            {186, "Mara"},
+            {224, "TamLin"},
+            {225, "Doppelganger"},
+            {226, "Nightmare"},
+            {227, "Gdon"},
+            {228, "Vritra"},
+            {229, "Demeeho"},
+            {230, "Seth"}
+        };
+
+            public static bool Prefix(ref int __result, datUnitWork_t __0, int __1, bool __2)
+            {
+                int demonId = (int)__0.id;
+                var demonName = datDevilName.Get(demonId);
+                int currentCount = fclEncyc.fclEncycGetNum();
+                int existingIndex = fclEncyc.fclEncycSearch(demonId);
+
+                //MelonLogger.Msg($"[DEBUG] Compendium search: {existingIndex}");
+                //MelonLogger.Msg($"[DEBUG] Pre currentCount: {currentCount} | Complete Ratio: {fclEncyc.fclEncycGetRatio2()}");
+                //MelonLogger.Msg($"[DEBUG] Demon: {demonName} (ID {demonId})");
+
+                if (existingIndex != -1)
+                {
+                    // Already in compendium → allow updates
+                    return true;
+                }
+
+                // Block Insaniax demons
+                //if (InsaniaxNewDemons.ContainsKey(demonId))
+                //{
+                //    MelonLogger.Msg($"[DEBUG] Skipping compendium registration for Insaniax demon: {demonName} (ID {demonId})");
+                //    __result = -1;
+                //    return false;
+                //}
+
+                // Block if compendium at vanilla limit (183 base + Dante/Raidou)
+                if (currentCount == 184)
+                {
+                    MelonLogger.Msg($"[DEBUG] Compendium limit reached, skipping registration for demon: {demonName} (ID {demonId})");
+                    __result = -1;
+                    return false;
+                }
+
+                return true; // Allow registration
+            }
+            public static void Postfix(ref int __result, datUnitWork_t __0, int __1, bool __2)
+            {
+                int demonId = (int)__0.id;
+                int currentCount = fclEncyc.fclEncycGetNum();
+
+                //MelonLogger.Msg($"[DEBUG] Compendium search: {existingIndex}");
+                //MelonLogger.Msg($"[DEBUG] Post currentCount: {currentCount} | Complete Ratio: {fclEncyc.fclEncycGetRatio2()}");
             }
         }
 

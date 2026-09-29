@@ -691,6 +691,9 @@ namespace NocturneInsaniax
                 ? magatamaInnateSkills[dds3GlobalWork.DDS3_GBWK.heartsequip].skillAttr
                 : demonInnateSkills[currentDemonWork.id].skillAttr : datSkill.tbl[skillId].skillattr;
 
+            if (currentDemonWork.id == 0 && skillId == 383 && ToggleHumanMode.Value)
+                skillAttr = 15;
+
             return GetAttackAttrColour((sbyte) skillAttr, a);
         }
 

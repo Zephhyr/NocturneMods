@@ -41,15 +41,16 @@ namespace NocturneInsaniax
         // Menu manipulation variables
         private static bool SettingAsignParam;
 
-        //[HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstCheckHeartsEvent))]
-        //private class PatchCheckHeartsEvent
-        //{
-        //    private static bool Prefix(ref sbyte __result)
-        //    {
-        //        __result = 1;
-        //        return false;
-        //    }
-        //}
+        [HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstCheckHeartsEvent))]
+        private class PatchCheckHeartsEvent
+        {
+            private static bool Prefix(ref sbyte __result)
+            {
+                if (ToggleHumanMode.Value)
+                __result = 0;
+                return false;
+            }
+        }
 
         //[HarmonyPatch(typeof(rstcalc), nameof(rstcalc.rstCalcHeartsEvent))]
         //private class PatchCalcHeartsEvent

@@ -99,7 +99,7 @@ namespace NocturneInsaniax
                     nbMainProcess.nbGetUnitWorkFromFormindex(nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].formindex).id == 287) &&
                     nbMainProcess.nbGetUnitWorkFromFormindex(formindex).badstatus != 0;
 
-                bool stormShatter = dds3GlobalWork.DDS3_GBWK.heartsequip == 13 && nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].formindex <= 3 && (datSkill.tbl[nskill].skillattr == 3 || datSkill.tbl[nskill].skillattr == 4) && work.badstatus == 2;
+                bool stormShatter = dds3GlobalWork.DDS3_GBWK.heartsequip == 13 && !ToggleHumanMode.Value && nbMainProcess.nbGetMainProcessData().party[actionProcessData.partyindex].formindex <= 3 && (datSkill.tbl[nskill].skillattr == 3 || datSkill.tbl[nskill].skillattr == 4) && work.badstatus == 2;
 
                 if (nskill != -1 && attr >= 0 && attr <= 12 && datSkill.tbl[nskill].skillattr >= 0 && datSkill.tbl[nskill].skillattr <= 12 && datSkill.tbl[nskill].skillattr == attr &&
                     (hasPierce || (hasAnimus && (nskill == 0 || !(datNormalSkill.tbl[nskill].badtype != 0 && datNormalSkill.tbl[nskill].hptype == 0))) || undermineDivinity || stormShatter
