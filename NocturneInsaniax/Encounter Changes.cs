@@ -716,7 +716,7 @@ namespace NocturneInsaniax
         {
             datEncount.tbl[1270].devil[0] = 62;
             datEncount.tbl[1270].devil[1] = 62;
-            datEncount.tbl[1270].item = 105;
+            datEncount.tbl[1270].item = 108;
             datEncount.tbl[1270].itemcnt = 1;
         }
 

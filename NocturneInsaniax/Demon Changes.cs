@@ -16712,7 +16712,7 @@ namespace NocturneInsaniax
             datDevilFormat.tbl[id].skill[4] = 457; // Diamrita
             datDevilFormat.tbl[id].skill[5] = 459; // Luster Candy
             datDevilFormat.tbl[id].skill[6] = 307; // Avenge
-            datDevilFormat.tbl[id].skill[7] = 371; // Firm Stance
+            datDevilFormat.tbl[id].skill[7] = 371; // Arms Master
         }
 
         private static void BossBlackFrost(ushort id)

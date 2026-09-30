@@ -583,8 +583,10 @@ namespace NocturneInsaniax
                     for (int i = 4; i <= 8; i++)
                     {
                         if (currentUnitBuffs[i] >= -2)
+                        {
                             limitReached = false;
-                        break;
+                            break;
+                        }
                     }
 
                     if (limitReached)
@@ -615,7 +617,6 @@ namespace NocturneInsaniax
                                 limitReached = false;
                                 break;
                             }
-                            break;
                         }
                     }
 
@@ -668,9 +669,11 @@ namespace NocturneInsaniax
                     var limitReached = true;
                     for (int i = 4; i <= 8; i++)
                     {
-                        if (currentUnitBuffs[i] <= 2) 
-                            limitReached = false; 
-                        break;
+                        if (currentUnitBuffs[i] <= 2)
+                        {
+                            limitReached = false;
+                            break;
+                        }
                     }
 
                     if (limitReached)
@@ -695,8 +698,10 @@ namespace NocturneInsaniax
                     for (int i = 4; i <= 8; i++)
                     {
                         if (currentUnitBuffs[i] <= 2)
+                        {
                             limitReached = false;
-                        break;
+                            break;
+                        }
                     }
 
                     if (limitReached)
@@ -728,8 +733,10 @@ namespace NocturneInsaniax
                         for (int i = 4; i <= 8; i++)
                         {
                             if (unitBuffs[i] <= 2)
+                            {
                                 limitReached = false;
-                            break;
+                                break;
+                            }
                         }
                     }
 
