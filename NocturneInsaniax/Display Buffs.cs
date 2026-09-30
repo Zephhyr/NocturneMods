@@ -125,7 +125,7 @@ namespace NocturneInsaniax
 
                 if (buffs_strings[0] != "")
                 {
-                    buffs_strings[0] = buffs_strings[0].Contains("+")
+                    buffs_strings[0] = buffs_strings[0].Contains("＋")
                         ? "<material=\"MsgFont4\">" + buffs_strings[0] + "<material=\"MsgFont0\">"
                         : "<material=\"MsgFont1\">" + buffs_strings[0] + "<material=\"MsgFont0\">";
                     result += JapaneseLanguage ? "物理:" + buffs_strings[0] : "AT:" + buffs_strings[0];
@@ -134,7 +134,7 @@ namespace NocturneInsaniax
                 if (buffs_strings[1] != "")
                 {
                     if (result != "\n ") result += " ";
-                    buffs_strings[1] = buffs_strings[1].Contains("+")
+                    buffs_strings[1] = buffs_strings[1].Contains("＋")
                         ? "<material=\"MsgFont4\">" + buffs_strings[1] + "<material=\"MsgFont0\">"
                         : "<material=\"MsgFont1\">" + buffs_strings[1] + "<material=\"MsgFont0\">";
                     result += JapaneseLanguage ? "魔法:" + buffs_strings[1] : "MA:" + buffs_strings[1];
@@ -143,7 +143,7 @@ namespace NocturneInsaniax
                 if (buffs_strings[3] != "")
                 {
                     if (result != "\n ") result += " ";
-                    buffs_strings[3] = buffs_strings[3].Contains("+")
+                    buffs_strings[3] = buffs_strings[3].Contains("＋")
                         ? "<material=\"MsgFont4\">" + buffs_strings[3] + "<material=\"MsgFont0\">"
                         : "<material=\"MsgFont1\">" + buffs_strings[3] + "<material=\"MsgFont0\">";
                     result += JapaneseLanguage ? "防御:" + buffs_strings[3] : "DF:" + buffs_strings[3];
@@ -152,7 +152,7 @@ namespace NocturneInsaniax
                 if (buffs_strings[4] != "")
                 {
                     if (result != "\n ") result += " ";
-                    buffs_strings[4] = buffs_strings[4].Contains("+")
+                    buffs_strings[4] = buffs_strings[4].Contains("＋")
                         ? "<material=\"MsgFont4\">" + buffs_strings[4] + "<material=\"MsgFont0\">"
                         : "<material=\"MsgFont1\">" + buffs_strings[4] + "<material=\"MsgFont0\">";
                     result += JapaneseLanguage ? "命中:" + buffs_strings[4] : "HT:" + buffs_strings[4];
@@ -161,7 +161,7 @@ namespace NocturneInsaniax
                 if (buffs_strings[2] != "")
                 {
                     if (result != "\n ") result += " ";
-                    buffs_strings[2] = buffs_strings[2].Contains("+")
+                    buffs_strings[2] = buffs_strings[2].Contains("＋")
                         ? "<material=\"MsgFont4\">" + buffs_strings[2] + "<material=\"MsgFont0\">"
                         : "<material=\"MsgFont1\">" + buffs_strings[2] + "<material=\"MsgFont0\">";
                     result += JapaneseLanguage ? "回避:" + buffs_strings[2] : "EV:" + buffs_strings[2];
