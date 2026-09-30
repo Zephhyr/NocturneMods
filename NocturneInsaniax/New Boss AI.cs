@@ -6834,7 +6834,7 @@ namespace NocturneInsaniax
 
         private static void BossFlaurosAI(ref nbActionProcessData_t a, ref int code, ref int n)
         {
-            if (actionTrackers[a.work.id].currentBattleActionCount == 1)
+            if (actionTrackers[a.work.id].extraTurns < 1)
             {
                 UseSkill(ref a, 423); return;
             }
