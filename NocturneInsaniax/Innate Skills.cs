@@ -214,7 +214,7 @@ namespace NocturneInsaniax
             { 196, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen, \nall Support effects on White Rider \nwill be passed to the switched ally.")}, // 196 White Rider
             { 197, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen, \nall Support effects on Red Rider \nwill be passed to the switched ally.")}, // 197 Red Rider
             { 198, new InnateSkill(383, 14, "Four Horsemen", "When switching to a Four Horsemen, \nall Support effects on Black Rider \nwill be passed to the switched ally.")}, // 198 Black Rider
-            { 199, new InnateSkill(383, 00, "Estocada", "Matador may perform a weak \ncounterattack after dodging or nullifying \nan attack. Pow: 32")}, // 199 Matador
+            { 199, new InnateSkill(383, 00, "Estocada", "Matador may perform a weak \ncounterattack after dodging or \nnullifying an attack. Pow: 32")}, // 199 Matador
             { 200, new InnateSkill(383, 15, "Speed Star", "Hell Biker's attacks, including Magic, \ngain 10% Critical Rate against \ntargets with a lower Agility stat.")}, // 200 Hell Biker
             { 201, new InnateSkill(383, 13, "Guiding Wisdom", "While in the active party, \nwhen an ally is summoned from the \nstock, cure their ailments.")}, // 201 Daisoujou
             { 202, new InnateSkill(383, 15, "Indulgence", "Mother Harlot's attacks with \npositive potential will not miss \nagainst targets with an ailment.")}, // 202 Mother Harlot

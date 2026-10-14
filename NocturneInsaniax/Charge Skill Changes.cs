@@ -133,9 +133,11 @@ namespace NocturneInsaniax
 
                 if (skillattr >= 0 && skillattr <= 12 && (chargedPhysical || chargedMagical))
                 {
-                    if (!(((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && megalomaniaIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id))) || 
-                        (actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && megalomaniaIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id))) || 
-                        (actionProcessData.partyindex <= 3 && dds3GlobalWork.DDS3_GBWK.heartsequip == 23 && !ToggleHumanMode.Value)) 
+                    bool allyMegalomaniaDemon = actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && megalomaniaIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id));
+                    bool enemyMegalomaniaDemon = actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && megalomaniaIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id));
+                    bool MegalomaniaDemifiend = actionProcessData.partyindex <= 3 && dds3GlobalWork.DDS3_GBWK.heartsequip == 23 && !ToggleHumanMode.Value;
+
+                    if (!((allyMegalomaniaDemon || enemyMegalomaniaDemon || MegalomaniaDemifiend)
                         && random.Next(5) <= 0))
                     {
                         a.party.count[15] = 0;
