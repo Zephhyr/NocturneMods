@@ -600,10 +600,10 @@ namespace NocturneInsaniax
                             "High Almighty damage to all foes. \nPow: 48, Acc: 200%"; return false; // Jiraiya Dance/Showtime
                     case 275: __result = JapaneseLanguage ? "敵全体に物理属性の中ダメージ。\n威力: 32, 命中: 100%, 会心率: 5%" : 
                             "Medium Physical damage to all foes. \nPow: 32, Acc: 100%, Crit: 5%"; return false; // Andalucia
-                    case 276: __result = JapaneseLanguage ? "自身の回避／命中率を最大にする。" : 
-                            "Maximizes own Evasion/Hit Rate."; return false; // Red Capote
-                    case 278: __result = JapaneseLanguage ? "敵全体に精神属性の中ダメージ。\nランダムで異常状態を付与。\n威力: 30, 命中: 100%, 異常: 40%" : 
-                            "Medium Mind damage to all foes. \nMay inflict random ailments. \nPow: 30, Acc: 100%, Random: 40%"; return false; // Preach
+                    case 276: __result = JapaneseLanguage ? "味方全員の回避／命中率を最大化する。" : 
+                            "Maximizes Evasion/Hit Rate \nfor all allies."; return false; // Red Capote
+                    case 278: __result = JapaneseLanguage ? "敵全体に精神属性の中ダメージ。\nランダムで異常状態を付与。\n威力: 30, 命中: 100%, 異常: 50%" : 
+                            "Medium Mind damage to all foes. \nMay inflict random ailments. \nPow: 30, Acc: 100%, Random: 50%"; return false; // Preach
                     case 279: __result = JapaneseLanguage ? "敵1体からHPとMPを吸収。\n威力: 35/20, 命中: 100% \n(万能属性)" : 
                             "Drains HP/MP from one foe. \nPow: 35/20, Acc: 100% \n(Almighty-Type)"; return false; // Meditation
                     case 280: __result = JapaneseLanguage ? "敵ランダムに物理属性の中ダメージ。\n3~6回ヒット。威力: 32, 命中: 96%, \n会心率: 10%, 混乱: 40%" : 
@@ -1198,7 +1198,7 @@ namespace NocturneInsaniax
                     //datCalc.datAddDevil(23, 0);
                     //datCalc.datAddDevil(7, 0);
                     //datCalc.datAddDevil(104, 0);
-                    //datCalc.datAddDevil(202, 0);
+                    //datCalc.datAddDevil(199, 0);
 
                     //if (dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 56).Count() == 0)
                     //{
@@ -1221,10 +1221,11 @@ namespace NocturneInsaniax
                     //{
                     //    work.exp = rstCalcCore.GetNextExpDisp(work, 0) - 1;
                     //}
-                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 59)) // High Pixie
+                    //foreach (datUnitWork_t work in dds3GlobalWork.DDS3_GBWK.unitwork.Where(x => x.id == 199)) // Matador
                     //{
-                    //    work.level = 15;
-                    //    work.exp = rstCalcCore.GetNextExpDisp(work, 0) - 1;
+                    //    work.skill[0] = 276;
+                    //    //work.level = 15;
+                    //    //work.exp = rstCalcCore.GetNextExpDisp(work, 0) - 1;
                     //}
                     //}
                     //}
@@ -1350,8 +1351,11 @@ namespace NocturneInsaniax
                                 {
                                     type = 0;
                                     var limitReached = true;
-                                    if (currentUnitBuffs[6] <= 2 || currentUnitBuffs[8] <= 2)
-                                        limitReached = false;
+                                    foreach (var unitBuffs in currentSideBuffs)
+                                    {
+                                        if (unitBuffs[6] <= 2 || unitBuffs[8] <= 2)
+                                            limitReached = false;
+                                    }
                                     if (JapaneseLanguage)
                                         text1 = limitReached ? "上限に達しました！" : "回避／命中率を最大！";
                                     else
@@ -7128,7 +7132,7 @@ namespace NocturneInsaniax
             datNormalSkill.tbl[id].hpn = 30;
             datNormalSkill.tbl[id].magicbase = 18;
             datNormalSkill.tbl[id].magiclimit = 154;
-            datNormalSkill.tbl[id].badlevel = 40;
+            datNormalSkill.tbl[id].badlevel = 50;
         }
 
         private static void Pulinpaon(ushort id)
@@ -7838,8 +7842,11 @@ namespace NocturneInsaniax
 
         private static void RedCapote(ushort id)
         {
-            datNormalSkill.tbl[id].cost = 20;
+            datNormalSkill.tbl[id].cost = 35;
             datNormalSkill.tbl[id].hojopoint = 6;
+            datNormalSkill.tbl[id].targetarea = 9;
+            datNormalSkill.tbl[id].targetrule = 0;
+            datNormalSkill.tbl[id].targettype = 1;
         }
 
         private static void HellThrottle(ushort id)
