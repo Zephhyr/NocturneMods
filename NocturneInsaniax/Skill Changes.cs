@@ -46,7 +46,7 @@ namespace NocturneInsaniax
                 try
                 {
                     if (id == 150 && (actionProcessData.work.id == 70 &&
-                                ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 74)) ||
+                                ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && x.formindex >= 0 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 74)) ||
                                 (actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 74)))))
                     {
                         __result = JapaneseLanguage ? "待たせたな" : "Kept Waiting";
@@ -601,7 +601,7 @@ namespace NocturneInsaniax
                     case 275: __result = JapaneseLanguage ? "敵全体に物理属性の中ダメージ。\n威力: 32, 命中: 100%, 会心率: 5%" : 
                             "Medium Physical damage to all foes. \nPow: 32, Acc: 100%, Crit: 5%"; return false; // Andalucia
                     case 276: __result = JapaneseLanguage ? "味方全員の回避／命中率を最大化する" :
-                            "Maximizes own Evasion/Hit Rate \nfor all allies."; return false; // Red Capote
+                            "Maximizes Evasion/Hit Rate \nfor all allies."; return false; // Red Capote
                     case 278: __result = JapaneseLanguage ? "敵全体に精神属性の中ダメージ。\nランダムで異常状態を付与。\n威力: 30, 命中: 100%, 異常: 50%" : 
                             "Medium Mind damage to all foes. \nMay inflict random ailments. \nPow: 30, Acc: 100%, Random: 50%"; return false; // Preach
                     case 279: __result = JapaneseLanguage ? "敵1体からHPとMPを吸収。\n威力: 35/20, 命中: 100% \n(万能属性)" : 
@@ -1920,7 +1920,7 @@ namespace NocturneInsaniax
                         {
                             if (datCalc.datCheckSyojiSkill(actionProcessData.work, 370) != 0 ||
                                 (actionProcessData.work.id == 70 && // Decarabia's Kept Waiting
-                                ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 74)) ||
+                                ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && x.formindex >= 0 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 74)) ||
                                 (actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 74)))))
                                 nbMainProcess.nbPushAction(4, actionProcessData.partyindex, actionProcessData.partyindex, 150);
                             else
