@@ -46,7 +46,7 @@ namespace NocturneInsaniax
                 try
                 {
                     if (id == 150 && (actionProcessData.work.id == 70 &&
-                                ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 74)) ||
+                                ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && x.formindex >= 0 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 74)) ||
                                 (actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 74)))))
                     {
                         __result = JapaneseLanguage ? "待たせたな" : "Kept Waiting";
@@ -1921,7 +1921,7 @@ namespace NocturneInsaniax
                         {
                             if (datCalc.datCheckSyojiSkill(actionProcessData.work, 370) != 0 ||
                                 (actionProcessData.work.id == 70 && // Decarabia's Kept Waiting
-                                ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 74)) ||
+                                ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && x.formindex >= 0 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 74)) ||
                                 (actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 74)))))
                                 nbMainProcess.nbPushAction(4, actionProcessData.partyindex, actionProcessData.partyindex, 150);
                             else

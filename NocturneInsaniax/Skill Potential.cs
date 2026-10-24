@@ -1370,7 +1370,6 @@ namespace NocturneInsaniax
             "<material=\"MsgFont4\">＋3: Shot", // Vimana
             "Imparts Ice magic and potential\r\n" +
             "<material=\"MsgFont2\">Drain: Ice<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire\r\n" +
-            "<material=\"MsgFont2\">Drain: Ice<material=\"MsgFont0\">  <material=\"MsgFont1\">Weak: Fire\r\n" +
             "<material=\"MsgFont4\">＋5: Ice", // Geis
             "Imparts Support magic and potential\r\n" +
             "<material=\"MsgFont2\">Null: Curse\r\n" +
@@ -2253,9 +2252,11 @@ namespace NocturneInsaniax
                         __result = 0;
                 }
 
+                // Abyssal Mask
                 var work = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
                 if (__result != 0 && datCalc.datCheckSyojiSkill(work, 366) != 0
-                    && (nskill != 79 && nskill != 159 && nskill != 243 && nskill != 259 && nskill != 260 && nskill != 287))
+                    && nskill != 79 && nskill != 159 && nskill != 243 && nskill != 259 && nskill != 260 && nskill != 287
+                    && datNormalSkill.tbl[nskill].basstatus != 512 && datNormalSkill.tbl[nskill].basstatus != 2048)
                 {
                     int randomValue = random.Next(2);
                     __result = randomValue == 0 ? 0 : __result;
@@ -2298,10 +2299,6 @@ namespace NocturneInsaniax
                         }
                     }
                 }
-
-                // Abyssal Mask
-                if (__result != 0 && datNormalSkill.tbl[nskill].basstatus != 512 && datNormalSkill.tbl[nskill].basstatus != 2048 && datCalc.datCheckSyojiSkill(work, 366) != 0 && random.Next(2) != 0)
-                    __result = 0;
 
                 // Boss Ailment resistance
                 if (bossList.Contains(work.id) && (datNormalSkill.tbl[nskill].basstatus == 8 || datNormalSkill.tbl[nskill].basstatus == 16 || datNormalSkill.tbl[nskill].basstatus == 32 || datNormalSkill.tbl[nskill].basstatus == 128 || datNormalSkill.tbl[nskill].basstatus == 1024 || datNormalSkill.tbl[nskill].basstatus == 140 || datNormalSkill.tbl[nskill].basstatus == 412))

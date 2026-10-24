@@ -133,7 +133,7 @@ namespace NocturneInsaniax
 
                 if (skillattr >= 0 && skillattr <= 12 && (chargedPhysical || chargedMagical))
                 {
-                    bool allyMegalomaniaDemon = actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && megalomaniaIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id));
+                    bool allyMegalomaniaDemon = actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && x.formindex >= 0 && megalomaniaIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id));
                     bool enemyMegalomaniaDemon = actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && megalomaniaIds.Contains(nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id));
                     bool MegalomaniaDemifiend = actionProcessData.partyindex <= 3 && dds3GlobalWork.DDS3_GBWK.heartsequip == 23 && !ToggleHumanMode.Value;
 
@@ -170,7 +170,7 @@ namespace NocturneInsaniax
                 {
                     if (new uint[] { 2, 10, 32, 128, 160, 544, 682 }.Contains(hojotype) && 
                         (actionProcessData.work.id == 74 &&
-                        ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 70)) ||
+                        ((actionProcessData.partyindex <= 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex <= 3 && x.formindex >= 0 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 70)) ||
                         (actionProcessData.partyindex > 3 && nbMainProcess.nbGetMainProcessData().party.Any(x => x.partyindex > 3 && nbMainProcess.nbGetUnitWorkFromFormindex(x.formindex).id == 70)))))
                     {
                         hojopoint++;
