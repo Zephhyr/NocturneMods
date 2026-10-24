@@ -2256,7 +2256,7 @@ namespace NocturneInsaniax
                 var work = nbMainProcess.nbGetUnitWorkFromFormindex(dformindex);
                 if (__result != 0 && datCalc.datCheckSyojiSkill(work, 366) != 0
                     && nskill != 79 && nskill != 159 && nskill != 243 && nskill != 259 && nskill != 260 && nskill != 287
-                    && datNormalSkill.tbl[nskill].basstatus != 512 && datNormalSkill.tbl[nskill].basstatus != 2048)
+                    && datNormalSkill.tbl[nskill].basstatus != 512)
                 {
                     int randomValue = random.Next(2);
                     __result = randomValue == 0 ? 0 : __result;
